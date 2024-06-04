@@ -49,17 +49,15 @@ public final class EmbedTextDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Provide a list of strings with a maximum number of 96 entries. Each string can be words,
-         * a phrase, or a paragraph. The maximum length of each string entry in the list is 512
-         * tokens.
+         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The
+         * maximum length of each string entry in the list is 512 tokens.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.List<String> inputs;
 
         /**
-         * Provide a list of strings with a maximum number of 96 entries. Each string can be words,
-         * a phrase, or a paragraph. The maximum length of each string entry in the list is 512
-         * tokens.
+         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The
+         * maximum length of each string entry in the list is 512 tokens.
          *
          * @param inputs the value to set
          * @return this builder
@@ -79,15 +77,15 @@ public final class EmbedTextDetails
             return this;
         }
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
+         * The OCID of compartment in which to call the Generative AI service to create text
+         * embeddings.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
+         * The OCID of compartment in which to call the Generative AI service to create text
+         * embeddings.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -201,15 +199,15 @@ public final class EmbedTextDetails
     }
 
     /**
-     * Provide a list of strings with a maximum number of 96 entries. Each string can be words, a
-     * phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum
+     * length of each string entry in the list is 512 tokens.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.List<String> inputs;
 
     /**
-     * Provide a list of strings with a maximum number of 96 entries. Each string can be words, a
-     * phrase, or a paragraph. The maximum length of each string entry in the list is 512 tokens.
+     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum
+     * length of each string entry in the list is 512 tokens.
      *
      * @return the value
      */
@@ -225,15 +223,13 @@ public final class EmbedTextDetails
     }
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
+     * The OCID of compartment in which to call the Generative AI service to create text embeddings.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
+     * The OCID of compartment in which to call the Generative AI service to create text embeddings.
      *
      * @return the value
      */

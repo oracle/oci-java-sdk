@@ -286,14 +286,14 @@ public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
         }
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus max_tokens cannot exceed the model's context length.
+         * of the prompt plus {@code maxTokens} cannot exceed the model's context length.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus max_tokens cannot exceed the model's context length.
+         * of the prompt plus {@code maxTokens} cannot exceed the model's context length.
          *
          * @param maxTokens the value to set
          * @return this builder
@@ -643,14 +643,14 @@ public final class LlamaLlmInferenceRequest extends LlmInferenceRequest {
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus max_tokens cannot exceed the model's context length.
+     * the prompt plus {@code maxTokens} cannot exceed the model's context length.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus max_tokens cannot exceed the model's context length.
+     * the prompt plus {@code maxTokens} cannot exceed the model's context length.
      *
      * @return the value
      */

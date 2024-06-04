@@ -143,12 +143,12 @@ public final class UpdateOggDeploymentDetails
             this.__explicitlySet__.add("adminPassword");
             return this;
         }
-        /** A PEM-encoded SSL certificate. */
+        /** The base64 encoded content of the PEM file containing the SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
         /**
-         * A PEM-encoded SSL certificate.
+         * The base64 encoded content of the PEM file containing the SSL certificate.
          *
          * @param certificate the value to set
          * @return this builder
@@ -158,12 +158,12 @@ public final class UpdateOggDeploymentDetails
             this.__explicitlySet__.add("certificate");
             return this;
         }
-        /** A PEM-encoded private key. */
+        /** The base64 encoded content of the PEM file containing the private key. */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
 
         /**
-         * A PEM-encoded private key.
+         * The base64 encoded content of the PEM file containing the private key.
          *
          * @param key the value to set
          * @return this builder
@@ -310,12 +310,12 @@ public final class UpdateOggDeploymentDetails
         return adminPassword;
     }
 
-    /** A PEM-encoded SSL certificate. */
+    /** The base64 encoded content of the PEM file containing the SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
      */
@@ -323,12 +323,12 @@ public final class UpdateOggDeploymentDetails
         return certificate;
     }
 
-    /** A PEM-encoded private key. */
+    /** The base64 encoded content of the PEM file containing the private key. */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
 
     /**
-     * A PEM-encoded private key.
+     * The base64 encoded content of the PEM file containing the private key.
      *
      * @return the value
      */

@@ -32,6 +32,7 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = JavaMessageServiceConnection.class,
             name = "JAVA_MESSAGE_SERVICE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Db2Connection.class, name = "DB2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ElasticsearchConnection.class,
             name = "ELASTICSEARCH"),
@@ -109,6 +110,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "lifecycleDetails",
         "timeCreated",
         "timeUpdated",
+        "locks",
         "vaultId",
         "keyId",
         "ingressIps",
@@ -128,6 +130,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
@@ -146,6 +149,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.locks = locks;
         this.vaultId = vaultId;
         this.keyId = keyId;
         this.ingressIps = ingressIps;
@@ -393,6 +397,19 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return timeUpdated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Refers to the customer's vault OCID. If provided, it references a vault where GoldenGate can
      * manage secrets. Customers must add policies to permit GoldenGate to manage secrets contained
@@ -533,6 +550,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
@@ -564,6 +582,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.ingressIps, other.ingressIps)
@@ -594,6 +613,7 @@ public class Connection extends com.oracle.bmc.http.client.internal.ExplicitlySe
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
         result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());

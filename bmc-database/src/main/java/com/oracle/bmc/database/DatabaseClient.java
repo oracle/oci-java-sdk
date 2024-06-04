@@ -6911,6 +6911,40 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListAutonomousDatabasePeersResponse listAutonomousDatabasePeers(
+            ListAutonomousDatabasePeersRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAutonomousDatabasePeersResponse::builder)
+                .logger(LOG, "listAutonomousDatabasePeers")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabasePeers",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabasePeers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabasePeersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("peers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabasePeerCollection.class,
+                        ListAutonomousDatabasePeersResponse.Builder
+                                ::autonomousDatabasePeerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAutonomousDatabasePeersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutonomousDatabasePeersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListAutonomousDatabaseRefreshableClonesResponse listAutonomousDatabaseRefreshableClones(
             ListAutonomousDatabaseRefreshableClonesRequest request) {
 

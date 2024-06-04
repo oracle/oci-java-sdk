@@ -7711,6 +7711,45 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabasePeersResponse>
+            listAutonomousDatabasePeers(
+                    ListAutonomousDatabasePeersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabasePeersRequest,
+                                    ListAutonomousDatabasePeersResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ListAutonomousDatabasePeersResponse::builder)
+                .logger(LOG, "listAutonomousDatabasePeers")
+                .serviceDetails(
+                        "Database",
+                        "ListAutonomousDatabasePeers",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabasePeers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListAutonomousDatabasePeersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("peers")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.AutonomousDatabasePeerCollection.class,
+                        ListAutonomousDatabasePeersResponse.Builder
+                                ::autonomousDatabasePeerCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListAutonomousDatabasePeersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListAutonomousDatabasePeersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabaseRefreshableClonesResponse>
             listAutonomousDatabaseRefreshableClones(
                     ListAutonomousDatabaseRefreshableClonesRequest request,

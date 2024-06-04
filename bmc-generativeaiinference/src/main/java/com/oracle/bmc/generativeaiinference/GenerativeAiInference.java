@@ -13,9 +13,9 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  * generation, summarization, and text embeddings.
  *
  * <p>Use the Generative AI service inference API to access your custom model endpoints, or to try
- * the out-of-the-box models to {@link #generateText(GenerateTextRequest) generateText}, {@link
- * #summarizeText(SummarizeTextRequest) summarizeText}, and {@link #embedText(EmbedTextRequest)
- * embedText}.
+ * the out-of-the-box models to {@link #chat(ChatRequest) chat}, {@link
+ * #generateText(GenerateTextRequest) generateText}, {@link #summarizeText(SummarizeTextRequest)
+ * summarizeText}, and {@link #embedText(EmbedTextRequest) embedText}.
  *
  * <p>To use a Generative AI custom model for inference, you must first create an endpoint for that
  * model. Use the [Generative AI service management

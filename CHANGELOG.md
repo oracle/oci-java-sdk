@@ -3,6 +3,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.43.0 - 2024-06-04
+### Added
+- Support for creating cross-region autonomous data guards in the Database service
+- Support for listing autonomous database peers in the Database service
+- Support for dedicated AI clusters in the Generative AI service
+- Support for Llama chat and Lora Fine-Tuning method in the Generative AI service
+- Support for adding and removing locks for connections, deployments, and deployment backups in the GoldenGate service
+- Support for additional connection types for deployments and connections in the GoldenGate service
+
+### Breaking Changes
+- Accessibility of method `public CohereMessage(com.oracle.bmc.generativeaiinference.model.CohereMessage$Role, java.lang.String)` has been decreased from public to protected in the model `om.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public java.lang.String getMessage()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Role getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Field `Dalle3` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Field `Openai` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Accessibility of method `public Message(java.lang.String, java.util.List)` has been decreased from public to protected in the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public java.lang.String getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+
 ## 3.42.0 - 2024-05-28
 ### Added
 - Support for Demand Signal service

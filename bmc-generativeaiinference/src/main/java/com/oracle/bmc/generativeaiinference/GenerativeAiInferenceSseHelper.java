@@ -90,7 +90,8 @@ public class GenerativeAiInferenceSseHelper {
                             ChatContent chatContent = TextContent.builder().text(textField).build();
                             List<ChatContent> chatContentList = new ArrayList<>();
                             chatContentList.add(chatContent);
-                            Message message = Message.builder().content(chatContentList).build();
+                            Message message =
+                                    AssistantMessage.builder().content(chatContentList).build();
                             ChatChoice chatChoice = ChatChoice.builder().message(message).build();
                             chatChoiceList.add(chatChoice);
                         }

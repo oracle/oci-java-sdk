@@ -44,6 +44,9 @@ package com.oracle.bmc.database.model;
             value = CreateCrossRegionDisasterRecoveryDetails.class,
             name = "CROSS_REGION_DISASTER_RECOVERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateCrossTenancyDisasterRecoveryDetails.class,
+            name = "CROSS_TENANCY_DISASTER_RECOVERY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousDatabaseFromBackupTimestampDetails.class,
             name = "BACKUP_FROM_TIMESTAMP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

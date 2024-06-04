@@ -126,6 +126,15 @@ public final class OracleConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -231,6 +240,25 @@ public final class OracleConnection extends Connection {
             return this;
         }
         /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         */
+        public Builder authenticationMode(AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
+            return this;
+        }
+        /**
          * The mode of the database connection session to be established by the data client.
          * 'REDIRECT' - for a RAC database, 'DIRECT' - for a non-RAC database. Connection to a RAC
          * database involves a redirection received from the SCAN listeners to the database node to
@@ -325,6 +353,7 @@ public final class OracleConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
@@ -334,6 +363,7 @@ public final class OracleConnection extends Connection {
                             this.technologyType,
                             this.username,
                             this.connectionString,
+                            this.authenticationMode,
                             this.sessionMode,
                             this.privateIp,
                             this.databaseId);
@@ -378,6 +408,9 @@ public final class OracleConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -404,6 +437,9 @@ public final class OracleConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
             }
             if (model.wasPropertyExplicitlySet("sessionMode")) {
                 this.sessionMode(model.getSessionMode());
@@ -440,6 +476,7 @@ public final class OracleConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
@@ -449,6 +486,7 @@ public final class OracleConnection extends Connection {
             TechnologyType technologyType,
             String username,
             String connectionString,
+            AuthenticationMode authenticationMode,
             SessionMode sessionMode,
             String privateIp,
             String databaseId) {
@@ -464,6 +502,7 @@ public final class OracleConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
@@ -473,6 +512,7 @@ public final class OracleConnection extends Connection {
         this.technologyType = technologyType;
         this.username = username;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
         this.databaseId = databaseId;
@@ -484,6 +524,7 @@ public final class OracleConnection extends Connection {
         OciAutonomousDatabase("OCI_AUTONOMOUS_DATABASE"),
         OracleDatabase("ORACLE_DATABASE"),
         OracleExadata("ORACLE_EXADATA"),
+        OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -569,6 +610,72 @@ public final class OracleConnection extends Connection {
      */
     public String getConnectionString() {
         return connectionString;
+    }
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    public enum AuthenticationMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Tls("TLS"),
+        Mtls("MTLS"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AuthenticationMode.class);
+
+        private final String value;
+        private static java.util.Map<String, AuthenticationMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AuthenticationMode v : AuthenticationMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AuthenticationMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AuthenticationMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AuthenticationMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     */
+    public AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
     }
 
     /**
@@ -711,6 +818,7 @@ public final class OracleConnection extends Connection {
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
@@ -731,6 +839,7 @@ public final class OracleConnection extends Connection {
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -748,6 +857,11 @@ public final class OracleConnection extends Connection {
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());

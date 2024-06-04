@@ -31,12 +31,12 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the model used in this inference request. */
+        /** The OCID of the model that's used in this inference request. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The OCID of the model used in this inference request.
+         * The OCID of the model that's used in this inference request.
          *
          * @param modelId the value to set
          * @return this builder
@@ -106,12 +106,12 @@ public final class ChatResult extends com.oracle.bmc.http.client.internal.Explic
         return new Builder().copy(this);
     }
 
-    /** The OCID of the model used in this inference request. */
+    /** The OCID of the model that's used in this inference request. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The OCID of the model used in this inference request.
+     * The OCID of the model that's used in this inference request.
      *
      * @return the value
      */

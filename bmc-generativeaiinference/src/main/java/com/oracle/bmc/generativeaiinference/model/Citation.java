@@ -5,7 +5,8 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * A section of the generated reply which cites external knowledge. <br>
+ * A section of the generated response which cites the documents that were used for generating the
+ * response. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +33,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The index of text that the citation starts at, counting from zero. */
+        /** Counting from zero, the index of the text where the citation starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("start")
         private Integer start;
 
         /**
-         * The index of text that the citation starts at, counting from zero.
+         * Counting from zero, the index of the text where the citation starts.
          *
          * @param start the value to set
          * @return this builder
@@ -47,12 +48,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("start");
             return this;
         }
-        /** The index of text that the citation ends after, counting from zero. */
+        /** Counting from zero, the index of the text that the citation ends after. */
         @com.fasterxml.jackson.annotation.JsonProperty("end")
         private Integer end;
 
         /**
-         * The index of text that the citation ends after, counting from zero.
+         * Counting from zero, the index of the text that the citation ends after.
          *
          * @param end the value to set
          * @return this builder
@@ -62,12 +63,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("end");
             return this;
         }
-        /** The text of the citation */
+        /** The text of the citation. */
         @com.fasterxml.jackson.annotation.JsonProperty("text")
         private String text;
 
         /**
-         * The text of the citation
+         * The text of the citation.
          *
          * @param text the value to set
          * @return this builder
@@ -77,12 +78,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("text");
             return this;
         }
-        /** Identifiers of documents cited by this section of the generated reply. */
+        /** Identifiers for the documents cited in the current generated response. */
         @com.fasterxml.jackson.annotation.JsonProperty("documentIds")
         private java.util.List<String> documentIds;
 
         /**
-         * Identifiers of documents cited by this section of the generated reply.
+         * Identifiers for the documents cited in the current generated response.
          *
          * @param documentIds the value to set
          * @return this builder
@@ -131,12 +132,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The index of text that the citation starts at, counting from zero. */
+    /** Counting from zero, the index of the text where the citation starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("start")
     private final Integer start;
 
     /**
-     * The index of text that the citation starts at, counting from zero.
+     * Counting from zero, the index of the text where the citation starts.
      *
      * @return the value
      */
@@ -144,12 +145,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         return start;
     }
 
-    /** The index of text that the citation ends after, counting from zero. */
+    /** Counting from zero, the index of the text that the citation ends after. */
     @com.fasterxml.jackson.annotation.JsonProperty("end")
     private final Integer end;
 
     /**
-     * The index of text that the citation ends after, counting from zero.
+     * Counting from zero, the index of the text that the citation ends after.
      *
      * @return the value
      */
@@ -157,12 +158,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         return end;
     }
 
-    /** The text of the citation */
+    /** The text of the citation. */
     @com.fasterxml.jackson.annotation.JsonProperty("text")
     private final String text;
 
     /**
-     * The text of the citation
+     * The text of the citation.
      *
      * @return the value
      */
@@ -170,12 +171,12 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         return text;
     }
 
-    /** Identifiers of documents cited by this section of the generated reply. */
+    /** Identifiers for the documents cited in the current generated response. */
     @com.fasterxml.jackson.annotation.JsonProperty("documentIds")
     private final java.util.List<String> documentIds;
 
     /**
-     * Identifiers of documents cited by this section of the generated reply.
+     * Identifiers for the documents cited in the current generated response.
      *
      * @return the value
      */

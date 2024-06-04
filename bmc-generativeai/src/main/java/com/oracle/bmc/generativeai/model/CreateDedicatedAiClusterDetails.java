@@ -142,7 +142,8 @@ public final class CreateDedicatedAiClusterDetails
          * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
          * hidden from customers.
          *
-         * <p>Allowed values are: - LARGE_COHERE - SMALL_COHERE - EMBED_COHERE - LLAMA2_70
+         * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
+         * - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
          */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
@@ -151,7 +152,8 @@ public final class CreateDedicatedAiClusterDetails
          * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
          * hidden from customers.
          *
-         * <p>Allowed values are: - LARGE_COHERE - SMALL_COHERE - EMBED_COHERE - LLAMA2_70
+         * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
+         * - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
          *
          * @param unitShape the value to set
          * @return this builder
@@ -349,7 +351,8 @@ public final class CreateDedicatedAiClusterDetails
      * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
      * hidden from customers.
      *
-     * <p>Allowed values are: - LARGE_COHERE - SMALL_COHERE - EMBED_COHERE - LLAMA2_70
+     * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
+     * EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -358,7 +361,8 @@ public final class CreateDedicatedAiClusterDetails
      * The shape of dedicated unit in this AI cluster. The underlying hardware configuration is
      * hidden from customers.
      *
-     * <p>Allowed values are: - LARGE_COHERE - SMALL_COHERE - EMBED_COHERE - LLAMA2_70
+     * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
+     * EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
      *
      * @return the value
      */

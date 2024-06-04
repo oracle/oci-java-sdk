@@ -31,16 +31,12 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
-         */
+        /** The OCID of compartment in which to call the Generative AI service to chat. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
+         * The OCID of compartment in which to call the Generative AI service to chat.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -105,16 +101,12 @@ public final class ChatDetails extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
-     */
+    /** The OCID of compartment in which to call the Generative AI service to chat. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
+     * The OCID of compartment in which to call the Generative AI service to chat.
      *
      * @return the value
      */

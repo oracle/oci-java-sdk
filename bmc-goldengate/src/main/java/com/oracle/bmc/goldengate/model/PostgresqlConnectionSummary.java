@@ -180,6 +180,15 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** The PostgreSQL technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private PostgresqlConnection.TechnologyType technologyType;
@@ -345,6 +354,25 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("privateIp");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -369,6 +397,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.databaseName,
                             this.host,
@@ -377,7 +406,8 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslMode,
-                            this.privateIp);
+                            this.privateIp,
+                            this.dbSystemId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -437,6 +467,9 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -463,6 +496,9 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
             }
             return this;
         }
@@ -496,6 +532,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             PostgresqlConnection.TechnologyType technologyType,
             String databaseName,
             String host,
@@ -504,7 +541,8 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
             java.util.List<NameValuePair> additionalAttributes,
             PostgresqlConnection.SecurityProtocol securityProtocol,
             PostgresqlConnection.SslMode sslMode,
-            String privateIp) {
+            String privateIp,
+            String dbSystemId) {
         super(
                 id,
                 displayName,
@@ -522,7 +560,8 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
@@ -532,6 +571,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
         this.securityProtocol = securityProtocol;
         this.sslMode = sslMode;
         this.privateIp = privateIp;
+        this.dbSystemId = dbSystemId;
     }
 
     /** The PostgreSQL technology type. */
@@ -681,6 +721,23 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
         return privateIp;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     *
+     * @return the value
+     */
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -705,6 +762,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(")");
         return sb.toString();
     }
@@ -728,6 +786,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && super.equals(other);
     }
 
@@ -752,6 +811,7 @@ public final class PostgresqlConnectionSummary extends ConnectionSummary {
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
         result = (result * PRIME) + (this.sslMode == null ? 43 : this.sslMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         return result;
     }
 }

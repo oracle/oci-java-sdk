@@ -28,15 +28,17 @@ public final class GenericChatRequest extends BaseChatRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The series of messages associated with this chat completion request. It should include
-         * previous messages in the conversation. Each message has a role and content.
+         * The series of messages in a chat request. Includes the previous messages in a
+         * conversation. Each message includes a role ({@code USER} or the {@code CHATBOT}) and
+         * content.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("messages")
         private java.util.List<Message> messages;
 
         /**
-         * The series of messages associated with this chat completion request. It should include
-         * previous messages in the conversation. Each message has a role and content.
+         * The series of messages in a chat request. Includes the previous messages in a
+         * conversation. Each message includes a role ({@code USER} or the {@code CHATBOT}) and
+         * content.
          *
          * @param messages the value to set
          * @return this builder
@@ -47,15 +49,15 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
+         * Whether to stream back partial progress. If set to true, as tokens become available, they
+         * are sent as data-only server-sent events.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isStream")
         private Boolean isStream;
 
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
+         * Whether to stream back partial progress. If set to true, as tokens become available, they
+         * are sent as data-only server-sent events.
          *
          * @param isStream the value to set
          * @return this builder
@@ -81,15 +83,13 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * Whether or not to return the user prompt in the response. Applies only to non-stream
-         * results.
+         * Whether to include the user prompt in the response. Applies only to non-stream results.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
         private Boolean isEcho;
 
         /**
-         * Whether or not to return the user prompt in the response. Applies only to non-stream
-         * results.
+         * Whether to include the user prompt in the response. Applies only to non-stream results.
          *
          * @param isEcho the value to set
          * @return this builder
@@ -286,14 +286,16 @@ public final class GenericChatRequest extends BaseChatRequest {
         }
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus max_tokens cannot exceed the model's context length.
+         * of your prompt plus {@code maxTokens} must not exceed the model's context length. Not
+         * setting a value for maxTokens results in the possible use of model's full context length.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
          * The maximum number of tokens that can be generated per output sequence. The token count
-         * of your prompt plus max_tokens cannot exceed the model's context length.
+         * of your prompt plus {@code maxTokens} must not exceed the model's context length. Not
+         * setting a value for maxTokens results in the possible use of model's full context length.
          *
          * @param maxTokens the value to set
          * @return this builder
@@ -303,12 +305,18 @@ public final class GenericChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("maxTokens");
             return this;
         }
-        /** Modify the likelihood of specified tokens appearing in the completion. */
+        /**
+         * Modifies the likelihood of specified tokens that appear in the completion.
+         *
+         * <p>Example: '{"6395": 2, "8134": 1, "21943": 0.5, "5923": -100}'
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("logitBias")
         private Object logitBias;
 
         /**
-         * Modify the likelihood of specified tokens appearing in the completion.
+         * Modifies the likelihood of specified tokens that appear in the completion.
+         *
+         * <p>Example: '{"6395": 2, "8134": 1, "21943": 0.5, "5923": -100}'
          *
          * @param logitBias the value to set
          * @return this builder
@@ -430,15 +438,15 @@ public final class GenericChatRequest extends BaseChatRequest {
     }
 
     /**
-     * The series of messages associated with this chat completion request. It should include
-     * previous messages in the conversation. Each message has a role and content.
+     * The series of messages in a chat request. Includes the previous messages in a conversation.
+     * Each message includes a role ({@code USER} or the {@code CHATBOT}) and content.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("messages")
     private final java.util.List<Message> messages;
 
     /**
-     * The series of messages associated with this chat completion request. It should include
-     * previous messages in the conversation. Each message has a role and content.
+     * The series of messages in a chat request. Includes the previous messages in a conversation.
+     * Each message includes a role ({@code USER} or the {@code CHATBOT}) and content.
      *
      * @return the value
      */
@@ -447,15 +455,15 @@ public final class GenericChatRequest extends BaseChatRequest {
     }
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
+     * Whether to stream back partial progress. If set to true, as tokens become available, they are
+     * sent as data-only server-sent events.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isStream")
     private final Boolean isStream;
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
+     * Whether to stream back partial progress. If set to true, as tokens become available, they are
+     * sent as data-only server-sent events.
      *
      * @return the value
      */
@@ -476,14 +484,12 @@ public final class GenericChatRequest extends BaseChatRequest {
         return numGenerations;
     }
 
-    /**
-     * Whether or not to return the user prompt in the response. Applies only to non-stream results.
-     */
+    /** Whether to include the user prompt in the response. Applies only to non-stream results. */
     @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
     private final Boolean isEcho;
 
     /**
-     * Whether or not to return the user prompt in the response. Applies only to non-stream results.
+     * Whether to include the user prompt in the response. Applies only to non-stream results.
      *
      * @return the value
      */
@@ -664,14 +670,16 @@ public final class GenericChatRequest extends BaseChatRequest {
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus max_tokens cannot exceed the model's context length.
+     * your prompt plus {@code maxTokens} must not exceed the model's context length. Not setting a
+     * value for maxTokens results in the possible use of model's full context length.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
      * The maximum number of tokens that can be generated per output sequence. The token count of
-     * your prompt plus max_tokens cannot exceed the model's context length.
+     * your prompt plus {@code maxTokens} must not exceed the model's context length. Not setting a
+     * value for maxTokens results in the possible use of model's full context length.
      *
      * @return the value
      */
@@ -679,12 +687,18 @@ public final class GenericChatRequest extends BaseChatRequest {
         return maxTokens;
     }
 
-    /** Modify the likelihood of specified tokens appearing in the completion. */
+    /**
+     * Modifies the likelihood of specified tokens that appear in the completion.
+     *
+     * <p>Example: '{"6395": 2, "8134": 1, "21943": 0.5, "5923": -100}'
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("logitBias")
     private final Object logitBias;
 
     /**
-     * Modify the likelihood of specified tokens appearing in the completion.
+     * Modifies the likelihood of specified tokens that appear in the completion.
+     *
+     * <p>Example: '{"6395": 2, "8134": 1, "21943": 0.5, "5923": -100}'
      *
      * @return the value
      */

@@ -90,7 +90,7 @@ public class GenericChatExample {
         List<ChatContent> contents = new ArrayList<>();
         contents.add(content);
 
-        Message message = Message.builder().role("user").content(contents).build();
+        Message message = UserMessage.builder().content(contents).build();
 
         List<Message> messages = new ArrayList<>();
         messages.add(message);

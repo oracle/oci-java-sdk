@@ -969,6 +969,132 @@ public class DatabasePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAutonomousDatabasePeers operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAutonomousDatabasePeersResponse>
+            listAutonomousDatabasePeersResponseIterator(
+                    final ListAutonomousDatabasePeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAutonomousDatabasePeersRequest.Builder,
+                ListAutonomousDatabasePeersRequest,
+                ListAutonomousDatabasePeersResponse>(
+                new java.util.function.Supplier<ListAutonomousDatabasePeersRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabasePeersRequest.Builder get() {
+                        return ListAutonomousDatabasePeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAutonomousDatabasePeersResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabasePeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabasePeersRequest.Builder>,
+                        ListAutonomousDatabasePeersRequest>() {
+                    @Override
+                    public ListAutonomousDatabasePeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabasePeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>() {
+                    @Override
+                    public ListAutonomousDatabasePeersResponse apply(
+                            ListAutonomousDatabasePeersRequest request) {
+                        return client.listAutonomousDatabasePeers(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.database.model.AutonomousDatabasePeerSummary} objects contained in responses
+     * from the listAutonomousDatabasePeers operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.database.model.AutonomousDatabasePeerSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.AutonomousDatabasePeerSummary>
+            listAutonomousDatabasePeersRecordIterator(
+                    final ListAutonomousDatabasePeersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAutonomousDatabasePeersRequest.Builder,
+                ListAutonomousDatabasePeersRequest,
+                ListAutonomousDatabasePeersResponse,
+                com.oracle.bmc.database.model.AutonomousDatabasePeerSummary>(
+                new java.util.function.Supplier<ListAutonomousDatabasePeersRequest.Builder>() {
+                    @Override
+                    public ListAutonomousDatabasePeersRequest.Builder get() {
+                        return ListAutonomousDatabasePeersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAutonomousDatabasePeersResponse, String>() {
+                    @Override
+                    public String apply(ListAutonomousDatabasePeersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAutonomousDatabasePeersRequest.Builder>,
+                        ListAutonomousDatabasePeersRequest>() {
+                    @Override
+                    public ListAutonomousDatabasePeersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAutonomousDatabasePeersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>() {
+                    @Override
+                    public ListAutonomousDatabasePeersResponse apply(
+                            ListAutonomousDatabasePeersRequest request) {
+                        return client.listAutonomousDatabasePeers(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAutonomousDatabasePeersResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.AutonomousDatabasePeerSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.AutonomousDatabasePeerSummary>
+                            apply(ListAutonomousDatabasePeersResponse response) {
+                        return response.getAutonomousDatabasePeerCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listAutonomousDatabaseRefreshableClones operation. This iterable will fetch more data from
      * the server as needed.
      *

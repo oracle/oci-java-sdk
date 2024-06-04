@@ -180,6 +180,15 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** The Oracle technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private OracleConnection.TechnologyType technologyType;
@@ -229,6 +238,25 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         public Builder connectionString(String connectionString) {
             this.connectionString = connectionString;
             this.__explicitlySet__.add("connectionString");
+            return this;
+        }
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private OracleConnection.AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         */
+        public Builder authenticationMode(OracleConnection.AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
             return this;
         }
         /**
@@ -332,9 +360,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.username,
                             this.connectionString,
+                            this.authenticationMode,
                             this.sessionMode,
                             this.privateIp,
                             this.databaseId);
@@ -397,6 +427,9 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -405,6 +438,9 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
             }
             if (model.wasPropertyExplicitlySet("sessionMode")) {
                 this.sessionMode(model.getSessionMode());
@@ -447,9 +483,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             OracleConnection.TechnologyType technologyType,
             String username,
             String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
             OracleConnection.SessionMode sessionMode,
             String privateIp,
             String databaseId) {
@@ -470,10 +508,12 @@ public final class OracleConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.username = username;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
         this.databaseId = databaseId;
@@ -522,6 +562,23 @@ public final class OracleConnectionSummary extends ConnectionSummary {
      */
     public String getConnectionString() {
         return connectionString;
+    }
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final OracleConnection.AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     */
+    public OracleConnection.AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
     }
 
     /**
@@ -613,6 +670,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
@@ -633,6 +691,7 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
@@ -650,6 +709,11 @@ public final class OracleConnectionSummary extends ConnectionSummary {
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());

@@ -31,6 +31,7 @@ public final class UpdateDeploymentDetails
         "definedTags",
         "nsgIds",
         "subnetId",
+        "loadBalancerSubnetId",
         "isPublic",
         "fqdn",
         "cpuCoreCount",
@@ -47,6 +48,7 @@ public final class UpdateDeploymentDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<String> nsgIds,
             String subnetId,
+            String loadBalancerSubnetId,
             Boolean isPublic,
             String fqdn,
             Integer cpuCoreCount,
@@ -62,6 +64,7 @@ public final class UpdateDeploymentDetails
         this.definedTags = definedTags;
         this.nsgIds = nsgIds;
         this.subnetId = subnetId;
+        this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.isPublic = isPublic;
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
@@ -184,14 +187,18 @@ public final class UpdateDeploymentDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint.
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint.
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -199,6 +206,31 @@ public final class UpdateDeploymentDetails
         public Builder subnetId(String subnetId) {
             this.subnetId = subnetId;
             this.__explicitlySet__.add("subnetId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+        private String loadBalancerSubnetId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+         * public subnet in the customer tenancy. Can be provided only for public deployments. If
+         * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
+         *
+         * @param loadBalancerSubnetId the value to set
+         * @return this builder
+         */
+        public Builder loadBalancerSubnetId(String loadBalancerSubnetId) {
+            this.loadBalancerSubnetId = loadBalancerSubnetId;
+            this.__explicitlySet__.add("loadBalancerSubnetId");
             return this;
         }
         /** True if this object is publicly available. */
@@ -303,6 +335,7 @@ public final class UpdateDeploymentDetails
                             this.definedTags,
                             this.nsgIds,
                             this.subnetId,
+                            this.loadBalancerSubnetId,
                             this.isPublic,
                             this.fqdn,
                             this.cpuCoreCount,
@@ -338,6 +371,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("loadBalancerSubnetId")) {
+                this.loadBalancerSubnetId(model.getLoadBalancerSubnetId());
             }
             if (model.wasPropertyExplicitlySet("isPublic")) {
                 this.isPublic(model.getIsPublic());
@@ -471,19 +507,46 @@ public final class UpdateDeploymentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint.
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint.
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      *
      * @return the value
      */
     public String getSubnetId() {
         return subnetId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatibility, this is an optional property. It will become mandatory for public
+     * deployments after October 1, 2024.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
+    private final String loadBalancerSubnetId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
+     * public subnet in the customer tenancy. Can be provided only for public deployments. If
+     * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
+     * backward compatibility, this is an optional property. It will become mandatory for public
+     * deployments after October 1, 2024.
+     *
+     * @return the value
+     */
+    public String getLoadBalancerSubnetId() {
+        return loadBalancerSubnetId;
     }
 
     /** True if this object is publicly available. */
@@ -581,6 +644,7 @@ public final class UpdateDeploymentDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", isPublic=").append(String.valueOf(this.isPublic));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -610,6 +674,7 @@ public final class UpdateDeploymentDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.isPublic, other.isPublic)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -632,6 +697,11 @@ public final class UpdateDeploymentDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.loadBalancerSubnetId == null
+                                ? 43
+                                : this.loadBalancerSubnetId.hashCode());
         result = (result * PRIME) + (this.isPublic == null ? 43 : this.isPublic.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());

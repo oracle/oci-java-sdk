@@ -127,6 +127,15 @@ public final class PostgresqlConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -345,6 +354,25 @@ public final class PostgresqlConnection extends Connection {
             this.__explicitlySet__.add("privateIp");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * database system being referenced.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         */
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -363,6 +391,7 @@ public final class PostgresqlConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
@@ -377,7 +406,8 @@ public final class PostgresqlConnection extends Connection {
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslMode,
-                            this.privateIp);
+                            this.privateIp,
+                            this.dbSystemId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -418,6 +448,9 @@ public final class PostgresqlConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
@@ -464,6 +497,9 @@ public final class PostgresqlConnection extends Connection {
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
             return this;
         }
     }
@@ -490,6 +526,7 @@ public final class PostgresqlConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
@@ -504,7 +541,8 @@ public final class PostgresqlConnection extends Connection {
             java.util.List<NameValuePair> additionalAttributes,
             SecurityProtocol securityProtocol,
             SslMode sslMode,
-            String privateIp) {
+            String privateIp,
+            String dbSystemId) {
         super(
                 id,
                 displayName,
@@ -517,6 +555,7 @@ public final class PostgresqlConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
@@ -532,14 +571,17 @@ public final class PostgresqlConnection extends Connection {
         this.securityProtocol = securityProtocol;
         this.sslMode = sslMode;
         this.privateIp = privateIp;
+        this.dbSystemId = dbSystemId;
     }
 
     /** The PostgreSQL technology type. */
     public enum TechnologyType implements com.oracle.bmc.http.internal.BmcEnum {
+        OciPostgresql("OCI_POSTGRESQL"),
         PostgresqlServer("POSTGRESQL_SERVER"),
         AmazonAuroraPostgresql("AMAZON_AURORA_POSTGRESQL"),
         AmazonRdsPostgresql("AMAZON_RDS_POSTGRESQL"),
         AzurePostgresql("AZURE_POSTGRESQL"),
+        AzureCosmosDbForPostgresql("AZURE_COSMOS_DB_FOR_POSTGRESQL"),
         GoogleCloudSqlPostgresql("GOOGLE_CLOUD_SQL_POSTGRESQL"),
 
         /**
@@ -825,6 +867,23 @@ public final class PostgresqlConnection extends Connection {
         return privateIp;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * database system being referenced.
+     *
+     * @return the value
+     */
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -849,6 +908,7 @@ public final class PostgresqlConnection extends Connection {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslMode=").append(String.valueOf(this.sslMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(")");
         return sb.toString();
     }
@@ -872,6 +932,7 @@ public final class PostgresqlConnection extends Connection {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslMode, other.sslMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && super.equals(other);
     }
 
@@ -896,6 +957,7 @@ public final class PostgresqlConnection extends Connection {
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
         result = (result * PRIME) + (this.sslMode == null ? 43 : this.sslMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         return result;
     }
 }

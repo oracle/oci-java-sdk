@@ -180,6 +180,15 @@ public final class GenericConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** The Generic technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private GenericConnection.TechnologyType technologyType;
@@ -242,6 +251,7 @@ public final class GenericConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.host);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -303,6 +313,9 @@ public final class GenericConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -341,6 +354,7 @@ public final class GenericConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             GenericConnection.TechnologyType technologyType,
             String host) {
         super(
@@ -360,7 +374,8 @@ public final class GenericConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.host = host;
     }
