@@ -73,6 +73,15 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -190,6 +199,25 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             return this;
         }
         /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private OracleConnection.AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database
+         * Serverless connections, when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         */
+        public Builder authenticationMode(OracleConnection.AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
+            return this;
+        }
+        /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
          * attribute is expected to be base64 encoded.
          */
@@ -297,6 +325,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.nsgIds,
@@ -306,6 +335,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
                             this.username,
                             this.password,
                             this.connectionString,
+                            this.authenticationMode,
                             this.wallet,
                             this.sessionMode,
                             this.privateIp,
@@ -333,6 +363,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -359,6 +392,9 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
+            }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
             }
             if (model.wasPropertyExplicitlySet("wallet")) {
                 this.wallet(model.getWallet());
@@ -392,6 +428,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
@@ -401,6 +438,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
             String username,
             String password,
             String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
             String wallet,
             OracleConnection.SessionMode sessionMode,
             String privateIp,
@@ -411,6 +449,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
                 compartmentId,
                 freeformTags,
                 definedTags,
+                locks,
                 vaultId,
                 keyId,
                 nsgIds,
@@ -420,6 +459,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         this.username = username;
         this.password = password;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.wallet = wallet;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
@@ -488,6 +528,23 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
      */
     public String getConnectionString() {
         return connectionString;
+    }
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final OracleConnection.AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless
+     * connections, when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     */
+    public OracleConnection.AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
     }
 
     /**
@@ -597,6 +654,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", wallet=").append(String.valueOf(this.wallet));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
@@ -619,6 +677,7 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.wallet, other.wallet)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
@@ -638,6 +697,11 @@ public final class CreateOracleConnectionDetails extends CreateConnectionDetails
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.wallet == null ? 43 : this.wallet.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());

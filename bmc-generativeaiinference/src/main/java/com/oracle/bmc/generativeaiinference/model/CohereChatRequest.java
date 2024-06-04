@@ -27,12 +27,12 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class CohereChatRequest extends BaseChatRequest {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Text input for the model to respond to. */
+        /** The text that the user inputs for the model to respond to. */
         @com.fasterxml.jackson.annotation.JsonProperty("message")
         private String message;
 
         /**
-         * Text input for the model to respond to.
+         * The text that the user inputs for the model to respond to.
          *
          * @param message the value to set
          * @return this builder
@@ -43,15 +43,15 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * A list of previous messages between the user and the model, meant to give the model
-         * conversational context for responding to the user's message.
+         * The list of previous messages between the user and the model. The chat history gives the
+         * model context for responding to the user's inputs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
         private java.util.List<CohereMessage> chatHistory;
 
         /**
-         * A list of previous messages between the user and the model, meant to give the model
-         * conversational context for responding to the user's message.
+         * The list of previous messages between the user and the model. The chat history gives the
+         * model context for responding to the user's inputs.
          *
          * @param chatHistory the value to set
          * @return this builder
@@ -62,19 +62,27 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * list of relevant documents that the model can cite to generate a more accurate reply.
-         * Some suggested keys are "text", "author", and "date". For better generation quality, it
-         * is recommended to keep the total word count of the strings in the dictionary to under 300
-         * words.
+         * A list of relevant documents that the model can refer to for generating grounded
+         * responses to the user's requests. Some example keys that you can add to the dictionary
+         * are "text", "author", and "date". Keep the total word count of the strings in the
+         * dictionary to 300 words or less.
+         *
+         * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
+         * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
+         * Antarctica." } ]}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("documents")
         private java.util.List<Object> documents;
 
         /**
-         * list of relevant documents that the model can cite to generate a more accurate reply.
-         * Some suggested keys are "text", "author", and "date". For better generation quality, it
-         * is recommended to keep the total word count of the strings in the dictionary to under 300
-         * words.
+         * A list of relevant documents that the model can refer to for generating grounded
+         * responses to the user's requests. Some example keys that you can add to the dictionary
+         * are "text", "author", and "date". Keep the total word count of the strings in the
+         * dictionary to 300 words or less.
+         *
+         * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
+         * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
+         * Antarctica." } ]}
          *
          * @param documents the value to set
          * @return this builder
@@ -85,17 +93,15 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * When true, the response will only contain a list of generated search queries, but no
-         * search will take place, and no reply from the model to the user's message will be
-         * generated.
+         * When set to true, the response contains only a list of generated search queries without
+         * the search results and the model will not respond to the user's message.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isSearchQueriesOnly")
         private Boolean isSearchQueriesOnly;
 
         /**
-         * When true, the response will only contain a list of generated search queries, but no
-         * search will take place, and no reply from the model to the user's message will be
-         * generated.
+         * When set to true, the response contains only a list of generated search queries without
+         * the search results and the model will not respond to the user's message.
          *
          * @param isSearchQueriesOnly the value to set
          * @return this builder
@@ -106,17 +112,21 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * When specified, the default Cohere preamble will be replaced with the provided one.
-         * Preambles are a part of the prompt used to adjust the model's overall behavior and
-         * conversation style. Default preambles vary for different models.
+         * If specified, the default Cohere preamble is replaced with the provided preamble. A
+         * preamble is an initial guideline message that can change the model's overall chat
+         * behavior and conversation style. Default preambles vary for different models.
+         *
+         * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("preambleOverride")
         private String preambleOverride;
 
         /**
-         * When specified, the default Cohere preamble will be replaced with the provided one.
-         * Preambles are a part of the prompt used to adjust the model's overall behavior and
-         * conversation style. Default preambles vary for different models.
+         * If specified, the default Cohere preamble is replaced with the provided preamble. A
+         * preamble is an initial guideline message that can change the model's overall chat
+         * behavior and conversation style. Default preambles vary for different models.
+         *
+         * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
          *
          * @param preambleOverride the value to set
          * @return this builder
@@ -127,15 +137,15 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
+         * Whether to stream the partial progress of the model's response. When set to true, as
+         * tokens become available, they are sent as data-only server-sent events.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isStream")
         private Boolean isStream;
 
         /**
-         * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-         * events as they become available.
+         * Whether to stream the partial progress of the model's response. When set to true, as
+         * tokens become available, they are sent as data-only server-sent events.
          *
          * @param isStream the value to set
          * @return this builder
@@ -145,16 +155,12 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("isStream");
             return this;
         }
-        /**
-         * The maximum number of tokens to predict for each response. Includes input plus output
-         * tokens.
-         */
+        /** The maximum number of output tokens that the model will generate for the response. */
         @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
         private Integer maxTokens;
 
         /**
-         * The maximum number of tokens to predict for each response. Includes input plus output
-         * tokens.
+         * The maximum number of output tokens that the model will generate for the response.
          *
          * @param maxTokens the value to set
          * @return this builder
@@ -165,23 +171,21 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means a
-         * less random generations. Use lower numbers for tasks with a correct answer such as
-         * question answering or summarizing. High temperatures can generate hallucinations or
-         * factually incorrect information. Start with temperatures lower than 1.0 and increase the
-         * temperature for more creative outputs, as you regenerate the prompts to refine the
-         * outputs.
+         * A number that sets the randomness of the generated output. A lower temperature means less
+         * random generations. Use lower numbers for tasks such as question answering or
+         * summarizing. High temperatures can generate hallucinations or factually incorrect
+         * information. Start with temperatures lower than 1.0 and increase the temperature for more
+         * creative outputs, as you regenerate the prompts to refine the outputs.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("temperature")
         private Double temperature;
 
         /**
-         * A number that sets the randomness of the generated output. A lower temperature means a
-         * less random generations. Use lower numbers for tasks with a correct answer such as
-         * question answering or summarizing. High temperatures can generate hallucinations or
-         * factually incorrect information. Start with temperatures lower than 1.0 and increase the
-         * temperature for more creative outputs, as you regenerate the prompts to refine the
-         * outputs.
+         * A number that sets the randomness of the generated output. A lower temperature means less
+         * random generations. Use lower numbers for tasks such as question answering or
+         * summarizing. High temperatures can generate hallucinations or factually incorrect
+         * information. Start with temperatures lower than 1.0 and increase the temperature for more
+         * creative outputs, as you regenerate the prompts to refine the outputs.
          *
          * @param temperature the value to set
          * @return this builder
@@ -192,27 +196,31 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * An integer that sets up the model to use only the top k most likely tokens in the
-         * generated output. A higher k introduces more randomness into the output making the output
-         * text sound more natural. Default value is 0 which disables this method and considers all
-         * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+         * A sampling method in which the model chooses the next token randomly from the top k most
+         * likely tokens. A higher value for k generates more random output, which makes the output
+         * text sound more natural. The default value for k is 0 which disables this method and
+         * considers all tokens. To set a number for the likely tokens, choose an integer between 1
+         * and 500.
          *
          * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but
-         * the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but
+         * only the probabilities of the top 10 add up to the value of p, then only the top 10
+         * tokens are chosen.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("topK")
         private Integer topK;
 
         /**
-         * An integer that sets up the model to use only the top k most likely tokens in the
-         * generated output. A higher k introduces more randomness into the output making the output
-         * text sound more natural. Default value is 0 which disables this method and considers all
-         * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
+         * A sampling method in which the model chooses the next token randomly from the top k most
+         * likely tokens. A higher value for k generates more random output, which makes the output
+         * text sound more natural. The default value for k is 0 which disables this method and
+         * considers all tokens. To set a number for the likely tokens, choose an integer between 1
+         * and 500.
          *
          * <p>If also using top p, then the model considers only the top tokens whose probabilities
-         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20, but
-         * the probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+         * add up to p percent and ignores the rest of the k tokens. For example, if k is 20 but
+         * only the probabilities of the top 10 add up to the value of p, then only the top 10
+         * tokens are chosen.
          *
          * @param topK the value to set
          * @return this builder
@@ -249,6 +257,33 @@ public final class CohereChatRequest extends BaseChatRequest {
         public Builder topP(Double topP) {
             this.topP = topP;
             this.__explicitlySet__.add("topP");
+            return this;
+        }
+        /**
+         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
+         * prompt_truncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history}
+         * and {@code documents} will be dropped to construct a prompt that fits within the model's
+         * context length limit. During this process the order of the documents and chat history
+         * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
+         * dropped.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("promptTruncation")
+        private PromptTruncation promptTruncation;
+
+        /**
+         * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
+         * prompt_truncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history}
+         * and {@code documents} will be dropped to construct a prompt that fits within the model's
+         * context length limit. During this process the order of the documents and chat history
+         * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
+         * dropped.
+         *
+         * @param promptTruncation the value to set
+         * @return this builder
+         */
+        public Builder promptTruncation(PromptTruncation promptTruncation) {
+            this.promptTruncation = promptTruncation;
+            this.__explicitlySet__.add("promptTruncation");
             return this;
         }
         /**
@@ -303,6 +338,150 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("presencePenalty");
             return this;
         }
+        /**
+         * If specified, the backend will make a best effort to sample tokens deterministically,
+         * such that repeated requests with the same seed and parameters should return the same
+         * result. However, determinism cannot be totally guaranteed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("seed")
+        private Integer seed;
+
+        /**
+         * If specified, the backend will make a best effort to sample tokens deterministically,
+         * such that repeated requests with the same seed and parameters should return the same
+         * result. However, determinism cannot be totally guaranteed.
+         *
+         * @param seed the value to set
+         * @return this builder
+         */
+        public Builder seed(Integer seed) {
+            this.seed = seed;
+            this.__explicitlySet__.add("seed");
+            return this;
+        }
+        /** Returns the full prompt that was sent to the model when True. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
+        private Boolean isEcho;
+
+        /**
+         * Returns the full prompt that was sent to the model when True.
+         *
+         * @param isEcho the value to set
+         * @return this builder
+         */
+        public Builder isEcho(Boolean isEcho) {
+            this.isEcho = isEcho;
+            this.__explicitlySet__.add("isEcho");
+            return this;
+        }
+        /**
+         * A list of available tools (functions) that the model may suggest invoking before
+         * producing a text response.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tools")
+        private java.util.List<CohereTool> tools;
+
+        /**
+         * A list of available tools (functions) that the model may suggest invoking before
+         * producing a text response.
+         *
+         * @param tools the value to set
+         * @return this builder
+         */
+        public Builder tools(java.util.List<CohereTool> tools) {
+            this.tools = tools;
+            this.__explicitlySet__.add("tools");
+            return this;
+        }
+        /**
+         * A list of results from invoking tools recommended by the model in the previous chat turn.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
+        private java.util.List<CohereToolResult> toolResults;
+
+        /**
+         * A list of results from invoking tools recommended by the model in the previous chat turn.
+         *
+         * @param toolResults the value to set
+         * @return this builder
+         */
+        public Builder toolResults(java.util.List<CohereToolResult> toolResults) {
+            this.toolResults = toolResults;
+            this.__explicitlySet__.add("toolResults");
+            return this;
+        }
+        /**
+         * When enabled, the model will issue (potentially multiple) tool calls in a single step,
+         * before it receives the tool responses and directly answers the user's original message.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isForceSingleStep")
+        private Boolean isForceSingleStep;
+
+        /**
+         * When enabled, the model will issue (potentially multiple) tool calls in a single step,
+         * before it receives the tool responses and directly answers the user's original message.
+         *
+         * @param isForceSingleStep the value to set
+         * @return this builder
+         */
+        public Builder isForceSingleStep(Boolean isForceSingleStep) {
+            this.isForceSingleStep = isForceSingleStep;
+            this.__explicitlySet__.add("isForceSingleStep");
+            return this;
+        }
+        /** Stop the model generation when it reaches a stop sequence defined in this parameter. */
+        @com.fasterxml.jackson.annotation.JsonProperty("stopSequences")
+        private java.util.List<String> stopSequences;
+
+        /**
+         * Stop the model generation when it reaches a stop sequence defined in this parameter.
+         *
+         * @param stopSequences the value to set
+         * @return this builder
+         */
+        public Builder stopSequences(java.util.List<String> stopSequences) {
+            this.stopSequences = stopSequences;
+            this.__explicitlySet__.add("stopSequences");
+            return this;
+        }
+        /**
+         * When enabled, the user\u2019s {@code message} will be sent to the model without any
+         * preprocessing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRawPrompting")
+        private Boolean isRawPrompting;
+
+        /**
+         * When enabled, the user\u2019s {@code message} will be sent to the model without any
+         * preprocessing.
+         *
+         * @param isRawPrompting the value to set
+         * @return this builder
+         */
+        public Builder isRawPrompting(Boolean isRawPrompting) {
+            this.isRawPrompting = isRawPrompting;
+            this.__explicitlySet__.add("isRawPrompting");
+            return this;
+        }
+        /**
+         * When FAST is selected, citations are generated at the same time as the text output and
+         * the request will be completed sooner. May result in less accurate citations.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("citationQuality")
+        private CitationQuality citationQuality;
+
+        /**
+         * When FAST is selected, citations are generated at the same time as the text output and
+         * the request will be completed sooner. May result in less accurate citations.
+         *
+         * @param citationQuality the value to set
+         * @return this builder
+         */
+        public Builder citationQuality(CitationQuality citationQuality) {
+            this.citationQuality = citationQuality;
+            this.__explicitlySet__.add("citationQuality");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -320,8 +499,17 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.temperature,
                             this.topK,
                             this.topP,
+                            this.promptTruncation,
                             this.frequencyPenalty,
-                            this.presencePenalty);
+                            this.presencePenalty,
+                            this.seed,
+                            this.isEcho,
+                            this.tools,
+                            this.toolResults,
+                            this.isForceSingleStep,
+                            this.stopSequences,
+                            this.isRawPrompting,
+                            this.citationQuality);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -360,11 +548,38 @@ public final class CohereChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("topP")) {
                 this.topP(model.getTopP());
             }
+            if (model.wasPropertyExplicitlySet("promptTruncation")) {
+                this.promptTruncation(model.getPromptTruncation());
+            }
             if (model.wasPropertyExplicitlySet("frequencyPenalty")) {
                 this.frequencyPenalty(model.getFrequencyPenalty());
             }
             if (model.wasPropertyExplicitlySet("presencePenalty")) {
                 this.presencePenalty(model.getPresencePenalty());
+            }
+            if (model.wasPropertyExplicitlySet("seed")) {
+                this.seed(model.getSeed());
+            }
+            if (model.wasPropertyExplicitlySet("isEcho")) {
+                this.isEcho(model.getIsEcho());
+            }
+            if (model.wasPropertyExplicitlySet("tools")) {
+                this.tools(model.getTools());
+            }
+            if (model.wasPropertyExplicitlySet("toolResults")) {
+                this.toolResults(model.getToolResults());
+            }
+            if (model.wasPropertyExplicitlySet("isForceSingleStep")) {
+                this.isForceSingleStep(model.getIsForceSingleStep());
+            }
+            if (model.wasPropertyExplicitlySet("stopSequences")) {
+                this.stopSequences(model.getStopSequences());
+            }
+            if (model.wasPropertyExplicitlySet("isRawPrompting")) {
+                this.isRawPrompting(model.getIsRawPrompting());
+            }
+            if (model.wasPropertyExplicitlySet("citationQuality")) {
+                this.citationQuality(model.getCitationQuality());
             }
             return this;
         }
@@ -391,8 +606,17 @@ public final class CohereChatRequest extends BaseChatRequest {
             Double temperature,
             Integer topK,
             Double topP,
+            PromptTruncation promptTruncation,
             Double frequencyPenalty,
-            Double presencePenalty) {
+            Double presencePenalty,
+            Integer seed,
+            Boolean isEcho,
+            java.util.List<CohereTool> tools,
+            java.util.List<CohereToolResult> toolResults,
+            Boolean isForceSingleStep,
+            java.util.List<String> stopSequences,
+            Boolean isRawPrompting,
+            CitationQuality citationQuality) {
         super();
         this.message = message;
         this.chatHistory = chatHistory;
@@ -404,16 +628,25 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.temperature = temperature;
         this.topK = topK;
         this.topP = topP;
+        this.promptTruncation = promptTruncation;
         this.frequencyPenalty = frequencyPenalty;
         this.presencePenalty = presencePenalty;
+        this.seed = seed;
+        this.isEcho = isEcho;
+        this.tools = tools;
+        this.toolResults = toolResults;
+        this.isForceSingleStep = isForceSingleStep;
+        this.stopSequences = stopSequences;
+        this.isRawPrompting = isRawPrompting;
+        this.citationQuality = citationQuality;
     }
 
-    /** Text input for the model to respond to. */
+    /** The text that the user inputs for the model to respond to. */
     @com.fasterxml.jackson.annotation.JsonProperty("message")
     private final String message;
 
     /**
-     * Text input for the model to respond to.
+     * The text that the user inputs for the model to respond to.
      *
      * @return the value
      */
@@ -422,15 +655,15 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * A list of previous messages between the user and the model, meant to give the model
-     * conversational context for responding to the user's message.
+     * The list of previous messages between the user and the model. The chat history gives the
+     * model context for responding to the user's inputs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("chatHistory")
     private final java.util.List<CohereMessage> chatHistory;
 
     /**
-     * A list of previous messages between the user and the model, meant to give the model
-     * conversational context for responding to the user's message.
+     * The list of previous messages between the user and the model. The chat history gives the
+     * model context for responding to the user's inputs.
      *
      * @return the value
      */
@@ -439,17 +672,27 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * list of relevant documents that the model can cite to generate a more accurate reply. Some
-     * suggested keys are "text", "author", and "date". For better generation quality, it is
-     * recommended to keep the total word count of the strings in the dictionary to under 300 words.
+     * A list of relevant documents that the model can refer to for generating grounded responses to
+     * the user's requests. Some example keys that you can add to the dictionary are "text",
+     * "author", and "date". Keep the total word count of the strings in the dictionary to 300 words
+     * or less.
+     *
+     * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
+     * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
+     * Antarctica." } ]}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("documents")
     private final java.util.List<Object> documents;
 
     /**
-     * list of relevant documents that the model can cite to generate a more accurate reply. Some
-     * suggested keys are "text", "author", and "date". For better generation quality, it is
-     * recommended to keep the total word count of the strings in the dictionary to under 300 words.
+     * A list of relevant documents that the model can refer to for generating grounded responses to
+     * the user's requests. Some example keys that you can add to the dictionary are "text",
+     * "author", and "date". Keep the total word count of the strings in the dictionary to 300 words
+     * or less.
+     *
+     * <p>Example: {@code [ { "title": "Tall penguins", "snippet": "Emperor penguins are the
+     * tallest." }, { "title": "Penguin habitats", "snippet": "Emperor penguins only live in
+     * Antarctica." } ]}
      *
      * @return the value
      */
@@ -458,15 +701,15 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * When true, the response will only contain a list of generated search queries, but no search
-     * will take place, and no reply from the model to the user's message will be generated.
+     * When set to true, the response contains only a list of generated search queries without the
+     * search results and the model will not respond to the user's message.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isSearchQueriesOnly")
     private final Boolean isSearchQueriesOnly;
 
     /**
-     * When true, the response will only contain a list of generated search queries, but no search
-     * will take place, and no reply from the model to the user's message will be generated.
+     * When set to true, the response contains only a list of generated search queries without the
+     * search results and the model will not respond to the user's message.
      *
      * @return the value
      */
@@ -475,17 +718,21 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * When specified, the default Cohere preamble will be replaced with the provided one. Preambles
-     * are a part of the prompt used to adjust the model's overall behavior and conversation style.
-     * Default preambles vary for different models.
+     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble
+     * is an initial guideline message that can change the model's overall chat behavior and
+     * conversation style. Default preambles vary for different models.
+     *
+     * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("preambleOverride")
     private final String preambleOverride;
 
     /**
-     * When specified, the default Cohere preamble will be replaced with the provided one. Preambles
-     * are a part of the prompt used to adjust the model's overall behavior and conversation style.
-     * Default preambles vary for different models.
+     * If specified, the default Cohere preamble is replaced with the provided preamble. A preamble
+     * is an initial guideline message that can change the model's overall chat behavior and
+     * conversation style. Default preambles vary for different models.
+     *
+     * <p>Example: {@code You are a travel advisor. Answer with a pirate tone.}
      *
      * @return the value
      */
@@ -494,15 +741,15 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
+     * Whether to stream the partial progress of the model's response. When set to true, as tokens
+     * become available, they are sent as data-only server-sent events.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isStream")
     private final Boolean isStream;
 
     /**
-     * Whether to stream back partial progress. If set, tokens are sent as data-only server-sent
-     * events as they become available.
+     * Whether to stream the partial progress of the model's response. When set to true, as tokens
+     * become available, they are sent as data-only server-sent events.
      *
      * @return the value
      */
@@ -510,14 +757,12 @@ public final class CohereChatRequest extends BaseChatRequest {
         return isStream;
     }
 
-    /**
-     * The maximum number of tokens to predict for each response. Includes input plus output tokens.
-     */
+    /** The maximum number of output tokens that the model will generate for the response. */
     @com.fasterxml.jackson.annotation.JsonProperty("maxTokens")
     private final Integer maxTokens;
 
     /**
-     * The maximum number of tokens to predict for each response. Includes input plus output tokens.
+     * The maximum number of output tokens that the model will generate for the response.
      *
      * @return the value
      */
@@ -526,21 +771,21 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means a less
-     * random generations. Use lower numbers for tasks with a correct answer such as question
-     * answering or summarizing. High temperatures can generate hallucinations or factually
-     * incorrect information. Start with temperatures lower than 1.0 and increase the temperature
-     * for more creative outputs, as you regenerate the prompts to refine the outputs.
+     * A number that sets the randomness of the generated output. A lower temperature means less
+     * random generations. Use lower numbers for tasks such as question answering or summarizing.
+     * High temperatures can generate hallucinations or factually incorrect information. Start with
+     * temperatures lower than 1.0 and increase the temperature for more creative outputs, as you
+     * regenerate the prompts to refine the outputs.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("temperature")
     private final Double temperature;
 
     /**
-     * A number that sets the randomness of the generated output. A lower temperature means a less
-     * random generations. Use lower numbers for tasks with a correct answer such as question
-     * answering or summarizing. High temperatures can generate hallucinations or factually
-     * incorrect information. Start with temperatures lower than 1.0 and increase the temperature
-     * for more creative outputs, as you regenerate the prompts to refine the outputs.
+     * A number that sets the randomness of the generated output. A lower temperature means less
+     * random generations. Use lower numbers for tasks such as question answering or summarizing.
+     * High temperatures can generate hallucinations or factually incorrect information. Start with
+     * temperatures lower than 1.0 and increase the temperature for more creative outputs, as you
+     * regenerate the prompts to refine the outputs.
      *
      * @return the value
      */
@@ -549,27 +794,27 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * An integer that sets up the model to use only the top k most likely tokens in the generated
-     * output. A higher k introduces more randomness into the output making the output text sound
-     * more natural. Default value is 0 which disables this method and considers all tokens. To set
-     * a number for the likely tokens, choose an integer between 1 and 500.
+     * A sampling method in which the model chooses the next token randomly from the top k most
+     * likely tokens. A higher value for k generates more random output, which makes the output text
+     * sound more natural. The default value for k is 0 which disables this method and considers all
+     * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
      *
      * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the
-     * probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+     * up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the
+     * probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("topK")
     private final Integer topK;
 
     /**
-     * An integer that sets up the model to use only the top k most likely tokens in the generated
-     * output. A higher k introduces more randomness into the output making the output text sound
-     * more natural. Default value is 0 which disables this method and considers all tokens. To set
-     * a number for the likely tokens, choose an integer between 1 and 500.
+     * A sampling method in which the model chooses the next token randomly from the top k most
+     * likely tokens. A higher value for k generates more random output, which makes the output text
+     * sound more natural. The default value for k is 0 which disables this method and considers all
+     * tokens. To set a number for the likely tokens, choose an integer between 1 and 500.
      *
      * <p>If also using top p, then the model considers only the top tokens whose probabilities add
-     * up to p percent and ignores the rest of the k tokens. For example, if k is 20, but the
-     * probabilities of the top 10 add up to .75, then only the top 10 tokens are chosen.
+     * up to p percent and ignores the rest of the k tokens. For example, if k is 20 but only the
+     * probabilities of the top 10 add up to the value of p, then only the top 10 tokens are chosen.
      *
      * @return the value
      */
@@ -602,6 +847,68 @@ public final class CohereChatRequest extends BaseChatRequest {
      */
     public Double getTopP() {
         return topP;
+    }
+
+    /**
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
+     * will be dropped to construct a prompt that fits within the model's context length limit.
+     * During this process the order of the documents and chat history will be preserved. With
+     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     */
+    public enum PromptTruncation implements com.oracle.bmc.http.internal.BmcEnum {
+        Off("OFF"),
+        AutoPreserveOrder("AUTO_PRESERVE_ORDER"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, PromptTruncation> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (PromptTruncation v : PromptTruncation.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        PromptTruncation(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static PromptTruncation create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid PromptTruncation: " + key);
+        }
+    };
+    /**
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
+     * will be dropped to construct a prompt that fits within the model's context length limit.
+     * During this process the order of the documents and chat history will be preserved. With
+     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("promptTruncation")
+    private final PromptTruncation promptTruncation;
+
+    /**
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
+     * will be dropped to construct a prompt that fits within the model's context length limit.
+     * During this process the order of the documents and chat history will be preserved. With
+     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     *
+     * @return the value
+     */
+    public PromptTruncation getPromptTruncation() {
+        return promptTruncation;
     }
 
     /**
@@ -650,6 +957,168 @@ public final class CohereChatRequest extends BaseChatRequest {
         return presencePenalty;
     }
 
+    /**
+     * If specified, the backend will make a best effort to sample tokens deterministically, such
+     * that repeated requests with the same seed and parameters should return the same result.
+     * However, determinism cannot be totally guaranteed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("seed")
+    private final Integer seed;
+
+    /**
+     * If specified, the backend will make a best effort to sample tokens deterministically, such
+     * that repeated requests with the same seed and parameters should return the same result.
+     * However, determinism cannot be totally guaranteed.
+     *
+     * @return the value
+     */
+    public Integer getSeed() {
+        return seed;
+    }
+
+    /** Returns the full prompt that was sent to the model when True. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isEcho")
+    private final Boolean isEcho;
+
+    /**
+     * Returns the full prompt that was sent to the model when True.
+     *
+     * @return the value
+     */
+    public Boolean getIsEcho() {
+        return isEcho;
+    }
+
+    /**
+     * A list of available tools (functions) that the model may suggest invoking before producing a
+     * text response.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tools")
+    private final java.util.List<CohereTool> tools;
+
+    /**
+     * A list of available tools (functions) that the model may suggest invoking before producing a
+     * text response.
+     *
+     * @return the value
+     */
+    public java.util.List<CohereTool> getTools() {
+        return tools;
+    }
+
+    /** A list of results from invoking tools recommended by the model in the previous chat turn. */
+    @com.fasterxml.jackson.annotation.JsonProperty("toolResults")
+    private final java.util.List<CohereToolResult> toolResults;
+
+    /**
+     * A list of results from invoking tools recommended by the model in the previous chat turn.
+     *
+     * @return the value
+     */
+    public java.util.List<CohereToolResult> getToolResults() {
+        return toolResults;
+    }
+
+    /**
+     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before
+     * it receives the tool responses and directly answers the user's original message.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isForceSingleStep")
+    private final Boolean isForceSingleStep;
+
+    /**
+     * When enabled, the model will issue (potentially multiple) tool calls in a single step, before
+     * it receives the tool responses and directly answers the user's original message.
+     *
+     * @return the value
+     */
+    public Boolean getIsForceSingleStep() {
+        return isForceSingleStep;
+    }
+
+    /** Stop the model generation when it reaches a stop sequence defined in this parameter. */
+    @com.fasterxml.jackson.annotation.JsonProperty("stopSequences")
+    private final java.util.List<String> stopSequences;
+
+    /**
+     * Stop the model generation when it reaches a stop sequence defined in this parameter.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getStopSequences() {
+        return stopSequences;
+    }
+
+    /**
+     * When enabled, the user\u2019s {@code message} will be sent to the model without any
+     * preprocessing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRawPrompting")
+    private final Boolean isRawPrompting;
+
+    /**
+     * When enabled, the user\u2019s {@code message} will be sent to the model without any
+     * preprocessing.
+     *
+     * @return the value
+     */
+    public Boolean getIsRawPrompting() {
+        return isRawPrompting;
+    }
+
+    /**
+     * When FAST is selected, citations are generated at the same time as the text output and the
+     * request will be completed sooner. May result in less accurate citations.
+     */
+    public enum CitationQuality implements com.oracle.bmc.http.internal.BmcEnum {
+        Accurate("ACCURATE"),
+        Fast("FAST"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CitationQuality> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CitationQuality v : CitationQuality.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CitationQuality(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CitationQuality create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CitationQuality: " + key);
+        }
+    };
+    /**
+     * When FAST is selected, citations are generated at the same time as the text output and the
+     * request will be completed sooner. May result in less accurate citations.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("citationQuality")
+    private final CitationQuality citationQuality;
+
+    /**
+     * When FAST is selected, citations are generated at the same time as the text output and the
+     * request will be completed sooner. May result in less accurate citations.
+     *
+     * @return the value
+     */
+    public CitationQuality getCitationQuality() {
+        return citationQuality;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -675,8 +1144,17 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", temperature=").append(String.valueOf(this.temperature));
         sb.append(", topK=").append(String.valueOf(this.topK));
         sb.append(", topP=").append(String.valueOf(this.topP));
+        sb.append(", promptTruncation=").append(String.valueOf(this.promptTruncation));
         sb.append(", frequencyPenalty=").append(String.valueOf(this.frequencyPenalty));
         sb.append(", presencePenalty=").append(String.valueOf(this.presencePenalty));
+        sb.append(", seed=").append(String.valueOf(this.seed));
+        sb.append(", isEcho=").append(String.valueOf(this.isEcho));
+        sb.append(", tools=").append(String.valueOf(this.tools));
+        sb.append(", toolResults=").append(String.valueOf(this.toolResults));
+        sb.append(", isForceSingleStep=").append(String.valueOf(this.isForceSingleStep));
+        sb.append(", stopSequences=").append(String.valueOf(this.stopSequences));
+        sb.append(", isRawPrompting=").append(String.valueOf(this.isRawPrompting));
+        sb.append(", citationQuality=").append(String.valueOf(this.citationQuality));
         sb.append(")");
         return sb.toString();
     }
@@ -701,8 +1179,17 @@ public final class CohereChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.temperature, other.temperature)
                 && java.util.Objects.equals(this.topK, other.topK)
                 && java.util.Objects.equals(this.topP, other.topP)
+                && java.util.Objects.equals(this.promptTruncation, other.promptTruncation)
                 && java.util.Objects.equals(this.frequencyPenalty, other.frequencyPenalty)
                 && java.util.Objects.equals(this.presencePenalty, other.presencePenalty)
+                && java.util.Objects.equals(this.seed, other.seed)
+                && java.util.Objects.equals(this.isEcho, other.isEcho)
+                && java.util.Objects.equals(this.tools, other.tools)
+                && java.util.Objects.equals(this.toolResults, other.toolResults)
+                && java.util.Objects.equals(this.isForceSingleStep, other.isForceSingleStep)
+                && java.util.Objects.equals(this.stopSequences, other.stopSequences)
+                && java.util.Objects.equals(this.isRawPrompting, other.isRawPrompting)
+                && java.util.Objects.equals(this.citationQuality, other.citationQuality)
                 && super.equals(other);
     }
 
@@ -728,10 +1215,29 @@ public final class CohereChatRequest extends BaseChatRequest {
         result = (result * PRIME) + (this.topP == null ? 43 : this.topP.hashCode());
         result =
                 (result * PRIME)
+                        + (this.promptTruncation == null ? 43 : this.promptTruncation.hashCode());
+        result =
+                (result * PRIME)
                         + (this.frequencyPenalty == null ? 43 : this.frequencyPenalty.hashCode());
         result =
                 (result * PRIME)
                         + (this.presencePenalty == null ? 43 : this.presencePenalty.hashCode());
+        result = (result * PRIME) + (this.seed == null ? 43 : this.seed.hashCode());
+        result = (result * PRIME) + (this.isEcho == null ? 43 : this.isEcho.hashCode());
+        result = (result * PRIME) + (this.tools == null ? 43 : this.tools.hashCode());
+        result = (result * PRIME) + (this.toolResults == null ? 43 : this.toolResults.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isForceSingleStep == null ? 43 : this.isForceSingleStep.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.stopSequences == null ? 43 : this.stopSequences.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRawPrompting == null ? 43 : this.isRawPrompting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.citationQuality == null ? 43 : this.citationQuality.hashCode());
         return result;
     }
 }

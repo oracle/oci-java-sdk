@@ -34,16 +34,12 @@ public final class GenerateTextDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
-         */
+        /** The OCID of compartment in which to call the Generative AI service to generate text. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI
-         * service.
+         * The OCID of compartment in which to call the Generative AI service to generate text.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -109,16 +105,12 @@ public final class GenerateTextDetails
         return new Builder().copy(this);
     }
 
-    /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
-     */
+    /** The OCID of compartment in which to call the Generative AI service to generate text. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI
-     * service.
+     * The OCID of compartment in which to call the Generative AI service to generate text.
      *
      * @return the value
      */

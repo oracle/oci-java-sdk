@@ -75,6 +75,13 @@ public class RollbackDeploymentUpgradeRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -185,6 +192,20 @@ public class RollbackDeploymentUpgradeRequest
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -220,6 +241,7 @@ public class RollbackDeploymentUpgradeRequest
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -272,9 +294,11 @@ public class RollbackDeploymentUpgradeRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
             // new RollbackDeploymentUpgradeRequest(deploymentUpgradeId,
-            // rollbackDeploymentUpgradeDetails, ifMatch, opcRequestId, opcRetryToken);
+            // rollbackDeploymentUpgradeDetails, ifMatch, opcRequestId, opcRetryToken,
+            // isLockOverride);
         }
     }
 
@@ -289,7 +313,8 @@ public class RollbackDeploymentUpgradeRequest
                 .rollbackDeploymentUpgradeDetails(rollbackDeploymentUpgradeDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -312,6 +337,7 @@ public class RollbackDeploymentUpgradeRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -333,7 +359,8 @@ public class RollbackDeploymentUpgradeRequest
                         other.rollbackDeploymentUpgradeDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -355,6 +382,9 @@ public class RollbackDeploymentUpgradeRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

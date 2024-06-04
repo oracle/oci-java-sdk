@@ -99,12 +99,12 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("oggVersion");
             return this;
         }
-        /** A PEM-encoded SSL certificate. */
+        /** The base64 encoded content of the PEM file containing the SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificate")
         private String certificate;
 
         /**
-         * A PEM-encoded SSL certificate.
+         * The base64 encoded content of the PEM file containing the SSL certificate.
          *
          * @param certificate the value to set
          * @return this builder
@@ -266,12 +266,12 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         return oggVersion;
     }
 
-    /** A PEM-encoded SSL certificate. */
+    /** The base64 encoded content of the PEM file containing the SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificate")
     private final String certificate;
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
      */

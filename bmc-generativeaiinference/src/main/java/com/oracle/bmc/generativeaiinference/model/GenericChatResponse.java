@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The response to the chat conversation. <br>
+ * The response for a chat conversation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,12 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class GenericChatResponse extends BaseChatResponse {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The Unix timestamp (in seconds) of when the generation was created. */
+        /** The Unix timestamp (in seconds) of when the response text was generated. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The Unix timestamp (in seconds) of when the generation was created.
+         * The Unix timestamp (in seconds) of when the response text was generated.
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class GenericChatResponse extends BaseChatResponse {
         this.choices = choices;
     }
 
-    /** The Unix timestamp (in seconds) of when the generation was created. */
+    /** The Unix timestamp (in seconds) of when the response text was generated. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The Unix timestamp (in seconds) of when the generation was created.
+     * The Unix timestamp (in seconds) of when the response text was generated.
      *
      * @return the value
      */

@@ -27,12 +27,16 @@ package com.oracle.bmc.generativeaiinference.model;
 public final class OnDemandServingMode extends ServingMode {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The unique ID of a model to use. Can use list Models API to list available models. */
+        /**
+         * The unique ID of a model to use. You can use the {@link #listModels(ListModelsRequest)
+         * listModels} API to list the available models.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The unique ID of a model to use. Can use list Models API to list available models.
+         * The unique ID of a model to use. You can use the {@link #listModels(ListModelsRequest)
+         * listModels} API to list the available models.
          *
          * @param modelId the value to set
          * @return this builder
@@ -78,12 +82,16 @@ public final class OnDemandServingMode extends ServingMode {
         this.modelId = modelId;
     }
 
-    /** The unique ID of a model to use. Can use list Models API to list available models. */
+    /**
+     * The unique ID of a model to use. You can use the {@link #listModels(ListModelsRequest)
+     * listModels} API to list the available models.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The unique ID of a model to use. Can use list Models API to list available models.
+     * The unique ID of a model to use. You can use the {@link #listModels(ListModelsRequest)
+     * listModels} API to list the available models.
      *
      * @return the value
      */

@@ -129,12 +129,12 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("deploymentId");
             return this;
         }
-        /** A PEM-encoded SSL certificate. */
+        /** The base64 encoded content of the PEM file containing the SSL certificate. */
         @com.fasterxml.jackson.annotation.JsonProperty("certificateContent")
         private String certificateContent;
 
         /**
-         * A PEM-encoded SSL certificate.
+         * The base64 encoded content of the PEM file containing the SSL certificate.
          *
          * @param certificateContent the value to set
          * @return this builder
@@ -555,12 +555,12 @@ public final class Certificate extends com.oracle.bmc.http.client.internal.Expli
         return deploymentId;
     }
 
-    /** A PEM-encoded SSL certificate. */
+    /** The base64 encoded content of the PEM file containing the SSL certificate. */
     @com.fasterxml.jackson.annotation.JsonProperty("certificateContent")
     private final String certificateContent;
 
     /**
-     * A PEM-encoded SSL certificate.
+     * The base64 encoded content of the PEM file containing the SSL certificate.
      *
      * @return the value
      */

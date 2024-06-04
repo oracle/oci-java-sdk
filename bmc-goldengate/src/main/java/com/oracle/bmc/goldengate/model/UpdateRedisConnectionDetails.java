@@ -263,6 +263,25 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("keyStorePassword");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Redis cluster.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+        private String redisClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Redis cluster.
+         *
+         * @param redisClusterId the value to set
+         * @return this builder
+         */
+        public Builder redisClusterId(String redisClusterId) {
+            this.redisClusterId = redisClusterId;
+            this.__explicitlySet__.add("redisClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -287,7 +306,8 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
                             this.trustStore,
                             this.trustStorePassword,
                             this.keyStore,
-                            this.keyStorePassword);
+                            this.keyStorePassword,
+                            this.redisClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -350,6 +370,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             if (model.wasPropertyExplicitlySet("keyStorePassword")) {
                 this.keyStorePassword(model.getKeyStorePassword());
             }
+            if (model.wasPropertyExplicitlySet("redisClusterId")) {
+                this.redisClusterId(model.getRedisClusterId());
+            }
             return this;
         }
     }
@@ -382,7 +405,8 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
             String trustStore,
             String trustStorePassword,
             String keyStore,
-            String keyStorePassword) {
+            String keyStorePassword,
+            String redisClusterId) {
         super(
                 displayName,
                 description,
@@ -402,6 +426,7 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         this.trustStorePassword = trustStorePassword;
         this.keyStore = keyStore;
         this.keyStorePassword = keyStorePassword;
+        this.redisClusterId = redisClusterId;
     }
 
     /**
@@ -541,6 +566,23 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         return keyStorePassword;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Redis cluster.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+    private final String redisClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Redis cluster.
+     *
+     * @return the value
+     */
+    public String getRedisClusterId() {
+        return redisClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -565,6 +607,7 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         sb.append(", trustStorePassword=").append("<redacted>");
         sb.append(", keyStore=").append(String.valueOf(this.keyStore));
         sb.append(", keyStorePassword=").append("<redacted>");
+        sb.append(", redisClusterId=").append(String.valueOf(this.redisClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -588,6 +631,7 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
                 && java.util.Objects.equals(this.trustStorePassword, other.trustStorePassword)
                 && java.util.Objects.equals(this.keyStore, other.keyStore)
                 && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
+                && java.util.Objects.equals(this.redisClusterId, other.redisClusterId)
                 && super.equals(other);
     }
 
@@ -616,6 +660,9 @@ public final class UpdateRedisConnectionDetails extends UpdateConnectionDetails 
         result =
                 (result * PRIME)
                         + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redisClusterId == null ? 43 : this.redisClusterId.hashCode());
         return result;
     }
 }

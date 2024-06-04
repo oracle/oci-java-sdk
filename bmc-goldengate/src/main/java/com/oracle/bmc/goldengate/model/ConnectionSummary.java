@@ -83,6 +83,9 @@ package com.oracle.bmc.goldengate.model;
             value = ElasticsearchConnectionSummary.class,
             name = "ELASTICSEARCH"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = Db2ConnectionSummary.class,
+            name = "DB2"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonRedshiftConnectionSummary.class,
             name = "AMAZON_REDSHIFT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -113,7 +116,8 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         "ingressIps",
         "nsgIds",
         "subnetId",
-        "routingMethod"
+        "routingMethod",
+        "locks"
     })
     protected ConnectionSummary(
             String id,
@@ -132,7 +136,8 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
             java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds,
             String subnetId,
-            RoutingMethod routingMethod) {
+            RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -151,6 +156,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.nsgIds = nsgIds;
         this.subnetId = subnetId;
         this.routingMethod = routingMethod;
+        this.locks = locks;
     }
 
     /**
@@ -456,6 +462,19 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         return routingMethod;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -488,6 +507,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -519,6 +539,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.routingMethod, other.routingMethod)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -551,6 +572,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         result =
                 (result * PRIME)
                         + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

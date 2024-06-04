@@ -35,6 +35,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         "lifecycleDetails",
         "freeformTags",
         "definedTags",
+        "locks",
         "isHealthy",
         "subnetId",
         "loadBalancerSubnetId",
@@ -77,6 +78,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             Boolean isHealthy,
             String subnetId,
             String loadBalancerSubnetId,
@@ -118,6 +120,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.isHealthy = isHealthy;
         this.subnetId = subnetId;
         this.loadBalancerSubnetId = loadBalancerSubnetId;
@@ -369,6 +372,21 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** True if all of the aggregate resources are working correctly. */
         @com.fasterxml.jackson.annotation.JsonProperty("isHealthy")
         private Boolean isHealthy;
@@ -386,14 +404,18 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint.
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * subnet of the deployment's private endpoint.
+         * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+         * backward compatibility, public subnets are allowed until May 31 2025, after which the
+         * private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -407,8 +429,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
          * public subnet in the customer tenancy. Can be provided only for public deployments. If
          * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become
-         * mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
         private String loadBalancerSubnetId;
@@ -417,8 +439,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
          * public subnet in the customer tenancy. Can be provided only for public deployments. If
          * provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become
-         * mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for
+         * public deployments after October 1, 2024.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -865,6 +887,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                             this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.isHealthy,
                             this.subnetId,
                             this.loadBalancerSubnetId,
@@ -936,6 +959,9 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("isHealthy")) {
                 this.isHealthy(model.getIsHealthy());
@@ -1229,6 +1255,19 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /** True if all of the aggregate resources are working correctly. */
     @com.fasterxml.jackson.annotation.JsonProperty("isHealthy")
     private final Boolean isHealthy;
@@ -1244,14 +1283,18 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint.
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * subnet of the deployment's private endpoint.
+     * subnet of the deployment's private endpoint. The subnet must be a private subnet. For
+     * backward compatibility, public subnets are allowed until May 31 2025, after which the private
+     * subnet will be enforced.
      *
      * @return the value
      */
@@ -1263,8 +1306,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
      * public subnet in the customer tenancy. Can be provided only for public deployments. If
      * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
-     * backward compatiblity this is an optional property for now, but it will become mandatory (for
-     * public deployments only) after October 1, 2024.
+     * backward compatibility, this is an optional property. It will become mandatory for public
+     * deployments after October 1, 2024.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
     private final String loadBalancerSubnetId;
@@ -1273,8 +1316,8 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a
      * public subnet in the customer tenancy. Can be provided only for public deployments. If
      * provided, the loadbalancer will be created in this subnet instead of the service tenancy. For
-     * backward compatiblity this is an optional property for now, but it will become mandatory (for
-     * public deployments only) after October 1, 2024.
+     * backward compatibility, this is an optional property. It will become mandatory for public
+     * deployments after October 1, 2024.
      *
      * @return the value
      */
@@ -1676,6 +1719,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", isHealthy=").append(String.valueOf(this.isHealthy));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
@@ -1737,6 +1781,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.isHealthy, other.isHealthy)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
@@ -1804,6 +1849,7 @@ public final class Deployment extends com.oracle.bmc.http.client.internal.Explic
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.isHealthy == null ? 43 : this.isHealthy.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =

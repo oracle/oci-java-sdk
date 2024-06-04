@@ -113,7 +113,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ChangeOccDemandSignalCompartmentResponse::builder)
                 .logger(LOG, "changeOccDemandSignalCompartment")
-                .serviceDetails("OccDemandSignal", "ChangeOccDemandSignalCompartment", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "ChangeOccDemandSignalCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/ChangeOccDemandSignalCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOccDemandSignalCompartmentRequest::builder)
                 .basePath("/20240430")
@@ -146,7 +149,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateOccDemandSignalResponse::builder)
                 .logger(LOG, "createOccDemandSignal")
-                .serviceDetails("OccDemandSignal", "CreateOccDemandSignal", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "CreateOccDemandSignal",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/CreateOccDemandSignal")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOccDemandSignalRequest::builder)
                 .basePath("/20240430")
@@ -177,7 +183,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteOccDemandSignalResponse::builder)
                 .logger(LOG, "deleteOccDemandSignal")
-                .serviceDetails("OccDemandSignal", "DeleteOccDemandSignal", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "DeleteOccDemandSignal",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/DeleteOccDemandSignal")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOccDemandSignalRequest::builder)
                 .basePath("/20240430")
@@ -205,7 +214,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetOccDemandSignalResponse::builder)
                 .logger(LOG, "getOccDemandSignal")
-                .serviceDetails("OccDemandSignal", "GetOccDemandSignal", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "GetOccDemandSignal",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/GetOccDemandSignal")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOccDemandSignalRequest::builder)
                 .basePath("/20240430")
@@ -231,7 +243,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListOccDemandSignalsResponse::builder)
                 .logger(LOG, "listOccDemandSignals")
-                .serviceDetails("OccDemandSignal", "ListOccDemandSignals", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "ListOccDemandSignals",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignalCollection/ListOccDemandSignals")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccDemandSignalsRequest::builder)
                 .basePath("/20240430")
@@ -270,7 +285,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, PatchOccDemandSignalResponse::builder)
                 .logger(LOG, "patchOccDemandSignal")
-                .serviceDetails("OccDemandSignal", "PatchOccDemandSignal", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "PatchOccDemandSignal",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/PatchOccDemandSignal")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchOccDemandSignalRequest::builder)
                 .basePath("/20240430")
@@ -305,7 +323,10 @@ public class OccDemandSignalAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateOccDemandSignalResponse::builder)
                 .logger(LOG, "updateOccDemandSignal")
-                .serviceDetails("OccDemandSignal", "UpdateOccDemandSignal", "")
+                .serviceDetails(
+                        "OccDemandSignal",
+                        "UpdateOccDemandSignal",
+                        "https://docs.oracle.com/iaas/api/#/en/occds/20240430/OccDemandSignal/UpdateOccDemandSignal")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOccDemandSignalRequest::builder)
                 .basePath("/20240430")

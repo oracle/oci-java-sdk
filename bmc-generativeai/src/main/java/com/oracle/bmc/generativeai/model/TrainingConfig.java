@@ -23,6 +23,9 @@ package com.oracle.bmc.generativeai.model;
         defaultImpl = TrainingConfig.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = LoraTrainingConfig.class,
+            name = "LORA_TRAINING_CONFIG"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VanillaTrainingConfig.class,
             name = "VANILLA_TRAINING_CONFIG"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -230,6 +233,7 @@ public class TrainingConfig extends com.oracle.bmc.http.client.internal.Explicit
     public enum TrainingConfigType implements com.oracle.bmc.http.internal.BmcEnum {
         TfewTrainingConfig("TFEW_TRAINING_CONFIG"),
         VanillaTrainingConfig("VANILLA_TRAINING_CONFIG"),
+        LoraTrainingConfig("LORA_TRAINING_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

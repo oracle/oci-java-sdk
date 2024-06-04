@@ -180,6 +180,15 @@ public final class MongoDbConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** The MongoDB technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MongoDbConnection.TechnologyType technologyType;
@@ -274,6 +283,7 @@ public final class MongoDbConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.connectionString,
                             this.username,
@@ -337,6 +347,9 @@ public final class MongoDbConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -381,6 +394,7 @@ public final class MongoDbConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             MongoDbConnection.TechnologyType technologyType,
             String connectionString,
             String username,
@@ -402,7 +416,8 @@ public final class MongoDbConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;

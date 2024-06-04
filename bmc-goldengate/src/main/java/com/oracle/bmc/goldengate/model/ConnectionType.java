@@ -25,6 +25,7 @@ public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
     Mongodb("MONGODB"),
     AmazonKinesis("AMAZON_KINESIS"),
     AmazonRedshift("AMAZON_REDSHIFT"),
+    Db2("DB2"),
     Redis("REDIS"),
     Elasticsearch("ELASTICSEARCH"),
     Generic("GENERIC"),
