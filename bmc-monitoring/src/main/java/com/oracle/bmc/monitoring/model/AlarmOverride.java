@@ -109,9 +109,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Optionally include
+         * [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance to operators for resolving the alarm condition.
+         * Consider adding links to standard runbook practices. Avoid entering confidential
+         * information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          */
@@ -119,9 +122,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
         private String body;
 
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Optionally include
+         * [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance to operators for resolving the alarm condition.
+         * Consider adding links to standard runbook practices. Avoid entering confidential
+         * information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -159,7 +165,9 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * value means that the trigger rule condition has been met. The query must specify a
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions.
+         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
+         * you can customize the [absence detection
+         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
          * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
@@ -183,6 +191,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * <p>-----
          *
          * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
          * <p>-----
          */
@@ -196,7 +210,9 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * value means that the trigger rule condition has been met. The query must specify a
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions.
+         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
+         * you can customize the [absence detection
+         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
          * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
@@ -220,6 +236,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
          * <p>-----
          *
          * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
          * <p>-----
          *
@@ -342,9 +364,10 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
+     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
+     * adding links to standard runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      */
@@ -352,9 +375,10 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
     private final String body;
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
+     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
+     * adding links to standard runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
@@ -388,9 +412,11 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
-     * the MQL Expression for a
+     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
+     * detection
+     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
+     * writing MQL expressions, see [Editing the MQL Expression for a
      * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
@@ -411,6 +437,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * <p>-----
      *
      * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
      * <p>-----
      */
@@ -424,9 +456,11 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
-     * the MQL Expression for a
+     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
+     * detection
+     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
+     * writing MQL expressions, see [Editing the MQL Expression for a
      * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
@@ -447,6 +481,12 @@ public final class AlarmOverride extends com.oracle.bmc.http.client.internal.Exp
      * <p>-----
      *
      * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
      * <p>-----
      *

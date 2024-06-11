@@ -570,6 +570,37 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public GenerateExtractDetailsResponse generateExtractDetails(
+            GenerateExtractDetailsRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, GenerateExtractDetailsResponse::builder)
+                .logger(LOG, "generateExtractDetails")
+                .serviceDetails(
+                        "FusionApplications",
+                        "GenerateExtractDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/GenerateExtractDetails")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(GenerateExtractDetailsRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("generateExtractDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fusionapps.model.ExtractDetailsCollection.class,
+                        GenerateExtractDetailsResponse.Builder::extractDetailsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", GenerateExtractDetailsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetDataMaskingActivityResponse getDataMaskingActivity(
             GetDataMaskingActivityRequest request) {
 
@@ -894,6 +925,35 @@ public class FusionApplicationsClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", GetWorkRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderFloat(
                         "retry-after", GetWorkRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public InitiateExtractResponse initiateExtract(InitiateExtractRequest request) {
+
+        Validate.notBlank(
+                request.getFusionEnvironmentId(), "fusionEnvironmentId must not be blank");
+
+        return clientCall(request, InitiateExtractResponse::builder)
+                .logger(LOG, "initiateExtract")
+                .serviceDetails(
+                        "FusionApplications",
+                        "InitiateExtract",
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/InitiateExtract")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(InitiateExtractRequest::builder)
+                .basePath("/20211201")
+                .appendPathParam("fusionEnvironments")
+                .appendPathParam(request.getFusionEnvironmentId())
+                .appendPathParam("actions")
+                .appendPathParam("initiateExtract")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", InitiateExtractResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", InitiateExtractResponse.Builder::opcRequestId)
                 .callSync();
     }
 

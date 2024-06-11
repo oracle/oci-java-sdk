@@ -212,6 +212,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.globallydistributeddatabase.model.DedicatedShardedDatabase$ReplicationMethod",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.globallydistributeddatabase.model.DedicatedShardedDatabase$DbWorkload",
     "allDeclaredFields": true,
     "allDeclaredMethods": true

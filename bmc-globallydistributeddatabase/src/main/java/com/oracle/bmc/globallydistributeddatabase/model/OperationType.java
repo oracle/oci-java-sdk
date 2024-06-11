@@ -25,6 +25,18 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UploadSignedCertAndGenerateWallet("UPLOAD_SIGNED_CERT_AND_GENERATE_WALLET"),
     GenerateGsmCertSigningReq("GENERATE_GSM_CERT_SIGNING_REQ"),
     ConfigureSharding("CONFIGURE_SHARDING"),
+    ExecuteValidateNetworkTests("EXECUTE_VALIDATE_NETWORK_TESTS"),
+    UpdateShard("UPDATE_SHARD"),
+    PrivateDeleteSdb("PRIVATE_DELETE_SDB"),
+    ProcessShardedDatabase("PROCESS_SHARDED_DATABASE"),
+    CreateCatalogs("CREATE_CATALOGS"),
+    CreateShards("CREATE_SHARDS"),
+    CreateGsmNodes("CREATE_GSM_NODES"),
+    AddGsmNodes("ADD_GSM_NODES"),
+    PrivateDeleteAtpdCatalog("PRIVATE_DELETE_ATPD_CATALOG"),
+    PrivateDeleteAtpdShard("PRIVATE_DELETE_ATPD_SHARD"),
+    PrivateDeleteGsm("PRIVATE_DELETE_GSM"),
+    ReinstateProxyInstance("REINSTATE_PROXY_INSTANCE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

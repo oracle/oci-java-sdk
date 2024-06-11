@@ -14,7 +14,6 @@ import org.junit.Test;
 import static com.oracle.bmc.http.client.jersey.internal.IdleConnectionMonitor.DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -115,22 +114,10 @@ public class IdleConnectionMonitorTest {
         assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager1, 10, 10));
         assertEquals(1, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
 
-        int actualIdleConnectionMonitorThreadSize = 1;
-
         // connectionManager1 is automatically removed from the IdleConnectionMonitor thread
         connectionManager1 = null;
-        for (int attempt = 0; attempt < 5; ++attempt) {
-            System.gc();
-            Thread.sleep(1000);
-            IdleConnectionMonitor.cleanStaleReferences();
-            actualIdleConnectionMonitorThreadSize =
-                    IdleConnectionMonitor.idleConnectionMonitorThreadSize();
-            if (actualIdleConnectionMonitorThreadSize == 0) {
-                break;
-            }
-        }
-
-        assertEquals(0, actualIdleConnectionMonitorThreadSize);
+        garbageCollect(5, 0);
+        assertEquals(0, IdleConnectionMonitor.getInstance().idleConnectionMonitorThreadSize());
 
         // Register connectionManager to IdleConnectionMonitor
         assertTrue(IdleConnectionMonitor.registerConnectionManager(connectionManager2, 10, 10));
@@ -150,9 +137,7 @@ public class IdleConnectionMonitorTest {
             connectionManager1 = null;
         }
 
-        System.gc();
-        Thread.sleep(1000);
-        IdleConnectionMonitor.cleanStaleReferences();
+        garbageCollect(3, 0);
         assertEquals(0, IdleConnectionMonitor.idleConnectionMonitorThreadSize());
     }
 
@@ -188,12 +173,13 @@ public class IdleConnectionMonitorTest {
         waitTimeInSeconds = IdleConnectionMonitor.getInstance().getWaitTimeInSeconds();
         assertEquals(waitTimeInSeconds3, waitTimeInSeconds);
 
+        assertEquals(3, IdleConnectionMonitor.getInstance().idleConnectionMonitorThreadSize());
+
         connectionManager1 = null;
         connectionManager3 = null;
 
-        System.gc();
-        Thread.sleep(1000);
-        IdleConnectionMonitor.cleanStaleReferences();
+        garbageCollect(3, 1);
+        assertEquals(1, IdleConnectionMonitor.getInstance().idleConnectionMonitorThreadSize());
 
         IdleConnectionMonitor.getInstance().closeIdleConnections();
         waitTimeInSeconds = IdleConnectionMonitor.getInstance().getWaitTimeInSeconds();
@@ -201,13 +187,24 @@ public class IdleConnectionMonitorTest {
 
         connectionManager2 = null;
 
-        System.gc();
-        Thread.sleep(1000);
-        IdleConnectionMonitor.cleanStaleReferences();
+        garbageCollect(3, 0);
+        assertEquals(0, IdleConnectionMonitor.getInstance().idleConnectionMonitorThreadSize());
 
         IdleConnectionMonitor.getInstance().closeIdleConnections();
         waitTimeInSeconds = IdleConnectionMonitor.getInstance().getWaitTimeInSeconds();
         assertEquals(
                 DEFAULT_IDLE_CONNECTION_MONITOR_THREAD_WAIT_TIME_IN_SECONDS, waitTimeInSeconds);
+    }
+
+    private static void garbageCollect(int maxAttempts, int expectedConnectionMonitorThreadSize)
+            throws InterruptedException {
+        int numAttempts = maxAttempts;
+        do {
+            System.gc();
+            Thread.sleep(1000);
+            IdleConnectionMonitor.cleanStaleReferences();
+        } while (IdleConnectionMonitor.getInstance().idleConnectionMonitorThreadSize()
+                        > expectedConnectionMonitorThreadSize
+                && numAttempts-- > 0);
     }
 }

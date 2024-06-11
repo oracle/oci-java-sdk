@@ -290,6 +290,36 @@ public class ConfigClient extends com.oracle.bmc.http.internal.BaseSyncClient im
     }
 
     @Override
+    public TestResponse test(TestRequest request) {
+        Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
+
+        Objects.requireNonNull(request.getTestDetails(), "testDetails is required");
+
+        return clientCall(request, TestResponse::builder)
+                .logger(LOG, "test")
+                .serviceDetails(
+                        "Config",
+                        "Test",
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/TestOutput/Test")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestRequest::builder)
+                .basePath("/20210201")
+                .appendPathParam("actions")
+                .appendPathParam("test")
+                .appendQueryParam("apmDomainId", request.getApmDomainId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.apmconfig.model.TestOutput.class,
+                        TestResponse.Builder::testOutput)
+                .handleResponseHeaderString("opc-request-id", TestResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", TestResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public UpdateConfigResponse updateConfig(UpdateConfigRequest request) {
         Objects.requireNonNull(request.getApmDomainId(), "apmDomainId is required");
 
