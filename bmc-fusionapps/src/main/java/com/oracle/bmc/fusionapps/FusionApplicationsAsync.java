@@ -287,6 +287,23 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Begin the process of showing the details about where to retrieve data extract for a Fusion
+     * environment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateExtractDetailsResponse> generateExtractDetails(
+            GenerateExtractDetailsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>
+                    handler);
+
+    /**
      * Gets a DataMaskingActivity by identifier
      *
      * @param request The request object containing the details to send
@@ -448,6 +465,21 @@ public interface FusionApplicationsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Begin the process of generating the data extract for a Fusion environment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<InitiateExtractResponse> initiateExtract(
+            InitiateExtractRequest request,
+            com.oracle.bmc.responses.AsyncHandler<InitiateExtractRequest, InitiateExtractResponse>
                     handler);
 
     /**

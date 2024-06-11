@@ -542,6 +542,7 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getShardedDatabaseId())
                 .appendPathParam("actions")
                 .appendPathParam("generateGsmCertificateSigningRequest")
+                .appendQueryParam("caBundleId", request.getCaBundleId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())
@@ -610,6 +611,7 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam("privateEndpoints")
                 .appendPathParam(request.getPrivateEndpointId())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
                 .handleBody(
@@ -639,6 +641,7 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getShardedDatabaseId())
                 .appendQueryParam("metadata", request.getMetadata())
                 .accept("application/json")
+                .appendHeader("if-none-match", request.getIfNoneMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
                 .handleBody(
@@ -922,6 +925,38 @@ public class ShardedDatabaseServiceClient extends com.oracle.bmc.http.internal.B
                                 ::prevalidateShardedDatabaseResult)
                 .handleResponseHeaderString(
                         "opc-request-id", PrevalidateShardedDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReinstateProxyInstanceResponse reinstateProxyInstance(
+            ReinstateProxyInstanceRequest request) {
+
+        Validate.notBlank(request.getPrivateEndpointId(), "privateEndpointId must not be blank");
+
+        return clientCall(request, ReinstateProxyInstanceResponse::builder)
+                .logger(LOG, "reinstateProxyInstance")
+                .serviceDetails(
+                        "ShardedDatabaseService",
+                        "ReinstateProxyInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/ReinstateProxyInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReinstateProxyInstanceRequest::builder)
+                .basePath("/20230301")
+                .appendPathParam("privateEndpoints")
+                .appendPathParam(request.getPrivateEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("reinstateProxyInstance")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReinstateProxyInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReinstateProxyInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 

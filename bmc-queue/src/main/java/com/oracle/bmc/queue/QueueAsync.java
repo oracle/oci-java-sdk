@@ -82,7 +82,8 @@ public interface QueueAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes multiple messages from the queue. You must use the [messages
+     * Deletes multiple messages from the queue or the consumer group. Only messages from the same
+     * queue/consumer group can be deleted at once. You must use the [messages
      * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to delete messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's
@@ -196,7 +197,8 @@ public interface QueueAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates multiple messages in the queue. You must use the [messages
+     * Updates multiple messages in the queue or the consumer group. Only messages from the same
+     * queue/consumer group can be updated at once. You must use the [messages
      * endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint)
      * to update messages. The messages endpoint may be different for different queues. Use {@link
      * #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's

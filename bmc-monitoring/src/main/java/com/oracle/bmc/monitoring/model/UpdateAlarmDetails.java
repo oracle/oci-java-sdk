@@ -45,7 +45,10 @@ public final class UpdateAlarmDetails
         "definedTags",
         "overrides",
         "ruleName",
-        "notificationVersion"
+        "notificationVersion",
+        "notificationTitle",
+        "evaluationSlackDuration",
+        "alarmSummary"
     })
     public UpdateAlarmDetails(
             String displayName,
@@ -69,7 +72,10 @@ public final class UpdateAlarmDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<AlarmOverride> overrides,
             String ruleName,
-            String notificationVersion) {
+            String notificationVersion,
+            String notificationTitle,
+            String evaluationSlackDuration,
+            String alarmSummary) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -93,6 +99,9 @@ public final class UpdateAlarmDetails
         this.overrides = overrides;
         this.ruleName = ruleName;
         this.notificationVersion = notificationVersion;
+        this.notificationTitle = notificationTitle;
+        this.evaluationSlackDuration = evaluationSlackDuration;
+        this.alarmSummary = alarmSummary;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -252,7 +261,9 @@ public final class UpdateAlarmDetails
          * value means that the trigger rule condition has been met. The query must specify a
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions.
+         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
+         * you can customize the [absence detection
+         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
          * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
@@ -276,6 +287,12 @@ public final class UpdateAlarmDetails
          * <p>-----
          *
          * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
          * <p>-----
          */
@@ -289,7 +306,9 @@ public final class UpdateAlarmDetails
          * value means that the trigger rule condition has been met. The query must specify a
          * metric, statistic, interval, and trigger rule (threshold or absence). Supported values
          * for interval depend on the specified time range. More interval values are supported for
-         * smaller time ranges. You can optionally specify dimensions and grouping functions.
+         * smaller time ranges. You can optionally specify dimensions and grouping functions. Also,
+         * you can customize the [absence detection
+         * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
          * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information
          * about writing MQL expressions, see [Editing the MQL Expression for a
          * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm).
@@ -313,6 +332,12 @@ public final class UpdateAlarmDetails
          * <p>-----
          *
          * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+         *
+         * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+         *
+         * <p>-----
+         *
+         * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
          *
          * <p>-----
          *
@@ -410,9 +435,12 @@ public final class UpdateAlarmDetails
             return this;
         }
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Optionally include
+         * [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance to operators for resolving the alarm condition.
+         * Consider adding links to standard runbook practices. Avoid entering confidential
+         * information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          */
@@ -420,9 +448,12 @@ public final class UpdateAlarmDetails
         private String body;
 
         /**
-         * The human-readable content of the delivered alarm notification. Oracle recommends
-         * providing guidance to operators for resolving the alarm condition. Consider adding links
-         * to standard runbook practices. Avoid entering confidential information.
+         * The human-readable content of the delivered alarm notification. Optionally include
+         * [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * Oracle recommends providing guidance to operators for resolving the alarm condition.
+         * Consider adding links to standard runbook practices. Avoid entering confidential
+         * information.
          *
          * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
          *
@@ -640,20 +671,16 @@ public final class UpdateAlarmDetails
         }
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
-         * contains overrides. A valid ruleName value starts with an alphabetic character and
-         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
-         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
-         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
+         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
         private String ruleName;
 
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm
-         * contains overrides. A valid ruleName value starts with an alphabetic character and
-         * includes only alphanumeric characters, underscores and square brackets. Minimum number of
-         * characters: 3. Default value is {@code BASE}. For information about alarm overrides, see
-         * {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * contains overrides. Default value is {@code BASE}. For information about alarm overrides,
+         * see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          * @param ruleName the value to set
          * @return this builder
@@ -684,6 +711,89 @@ public final class UpdateAlarmDetails
             this.__explicitlySet__.add("notificationVersion");
             return this;
         }
+        /**
+         * Customizable notification title ({@code title} [alarm message
+         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The notification title appears as the subject line in a formatted email message and as
+         * the title in a Slack message.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTitle")
+        private String notificationTitle;
+
+        /**
+         * Customizable notification title ({@code title} [alarm message
+         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The notification title appears as the subject line in a formatted email message and as
+         * the title in a Slack message.
+         *
+         * @param notificationTitle the value to set
+         * @return this builder
+         */
+        public Builder notificationTitle(String notificationTitle) {
+            this.notificationTitle = notificationTitle;
+            this.__explicitlySet__.add("notificationTitle");
+            return this;
+        }
+        /**
+         * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+         * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for
+         * one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the
+         * slack period, see [About the Internal Reset
+         * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
+        private String evaluationSlackDuration;
+
+        /**
+         * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+         * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for
+         * one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the
+         * slack period, see [About the Internal Reset
+         * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         *
+         * @param evaluationSlackDuration the value to set
+         * @return this builder
+         */
+        public Builder evaluationSlackDuration(String evaluationSlackDuration) {
+            this.evaluationSlackDuration = evaluationSlackDuration;
+            this.__explicitlySet__.add("evaluationSlackDuration");
+            return this;
+        }
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message
+         * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic
+         * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to {@link
+         * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+         * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+         * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         */
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -712,7 +822,10 @@ public final class UpdateAlarmDetails
                             this.definedTags,
                             this.overrides,
                             this.ruleName,
-                            this.notificationVersion);
+                            this.notificationVersion,
+                            this.notificationTitle,
+                            this.evaluationSlackDuration,
+                            this.alarmSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -787,6 +900,15 @@ public final class UpdateAlarmDetails
             }
             if (model.wasPropertyExplicitlySet("notificationVersion")) {
                 this.notificationVersion(model.getNotificationVersion());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTitle")) {
+                this.notificationTitle(model.getNotificationTitle());
+            }
+            if (model.wasPropertyExplicitlySet("evaluationSlackDuration")) {
+                this.evaluationSlackDuration(model.getEvaluationSlackDuration());
+            }
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
             }
             return this;
         }
@@ -940,9 +1062,11 @@ public final class UpdateAlarmDetails
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
-     * the MQL Expression for a
+     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
+     * detection
+     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
+     * writing MQL expressions, see [Editing the MQL Expression for a
      * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
@@ -963,6 +1087,12 @@ public final class UpdateAlarmDetails
      * <p>-----
      *
      * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
      * <p>-----
      */
@@ -976,9 +1106,11 @@ public final class UpdateAlarmDetails
      * trigger rule condition has been met. The query must specify a metric, statistic, interval,
      * and trigger rule (threshold or absence). Supported values for interval depend on the
      * specified time range. More interval values are supported for smaller time ranges. You can
-     * optionally specify dimensions and grouping functions. Supported grouping functions: {@code
-     * grouping()}, {@code groupBy()}. For information about writing MQL expressions, see [Editing
-     * the MQL Expression for a
+     * optionally specify dimensions and grouping functions. Also, you can customize the [absence
+     * detection
+     * period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-edit-alarm-query-absence-detection-period.htm).
+     * Supported grouping functions: {@code grouping()}, {@code groupBy()}. For information about
+     * writing MQL expressions, see [Editing the MQL Expression for a
      * Query](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/query-metric-mql.htm). For
      * details about MQL, see [Monitoring Query Language (MQL)
      * Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm). For
@@ -999,6 +1131,12 @@ public final class UpdateAlarmDetails
      * <p>-----
      *
      * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent()
+     *
+     * <p>----- Example of absence alarm with custom absence detection period of 20 hours:
+     *
+     * <p>-----
+     *
+     * <p>CpuUtilization[1m]{availabilityDomain="cumS:PHX-AD-1"}.absent(20h)
      *
      * <p>-----
      *
@@ -1086,9 +1224,10 @@ public final class UpdateAlarmDetails
     }
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
+     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
+     * adding links to standard runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      */
@@ -1096,9 +1235,10 @@ public final class UpdateAlarmDetails
     private final String body;
 
     /**
-     * The human-readable content of the delivered alarm notification. Oracle recommends providing
-     * guidance to operators for resolving the alarm condition. Consider adding links to standard
-     * runbook practices. Avoid entering confidential information.
+     * The human-readable content of the delivered alarm notification. Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * Oracle recommends providing guidance to operators for resolving the alarm condition. Consider
+     * adding links to standard runbook practices. Avoid entering confidential information.
      *
      * <p>Example: {@code High CPU usage alert. Follow runbook instructions for resolution.}
      *
@@ -1335,9 +1475,7 @@ public final class UpdateAlarmDetails
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
-     * overrides. A valid ruleName value starts with an alphabetic character and includes only
-     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
-     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
      * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -1345,9 +1483,7 @@ public final class UpdateAlarmDetails
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains
-     * overrides. A valid ruleName value starts with an alphabetic character and includes only
-     * alphanumeric characters, underscores and square brackets. Minimum number of characters: 3.
-     * Default value is {@code BASE}. For information about alarm overrides, see {@link
+     * overrides. Default value is {@code BASE}. For information about alarm overrides, see {@link
      * #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      * @return the value
@@ -1371,6 +1507,83 @@ public final class UpdateAlarmDetails
      */
     public String getNotificationVersion() {
         return notificationVersion;
+    }
+
+    /**
+     * Customizable notification title ({@code title} [alarm message
+     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The notification title appears as the subject line in a formatted email message and as the
+     * title in a Slack message.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTitle")
+    private final String notificationTitle;
+
+    /**
+     * Customizable notification title ({@code title} [alarm message
+     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The notification title appears as the subject line in a formatted email message and as the
+     * title in a Slack message.
+     *
+     * @return the value
+     */
+    public String getNotificationTitle() {
+        return notificationTitle;
+    }
+
+    /**
+     * Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a
+     * string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for one hour).
+     * Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see
+     * [About the Internal Reset
+     * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
+    private final String evaluationSlackDuration;
+
+    /**
+     * Customizable slack period to wait for metric ingestion before evaluating the alarm. Specify a
+     * string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H} for one hour).
+     * Minimum: PT3M. Maximum: PT2H. Default: PT3M. For more information about the slack period, see
+     * [About the Internal Reset
+     * Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     *
+     * @return the value
+     */
+    public String getEvaluationSlackDuration() {
+        return evaluationSlackDuration;
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message
+     * parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic
+     * variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to {@link
+     * #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus} {@link
+     * #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and {@link
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     */
+    public String getAlarmSummary() {
+        return alarmSummary;
     }
 
     @Override
@@ -1413,6 +1626,10 @@ public final class UpdateAlarmDetails
         sb.append(", overrides=").append(String.valueOf(this.overrides));
         sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", notificationVersion=").append(String.valueOf(this.notificationVersion));
+        sb.append(", notificationTitle=").append(String.valueOf(this.notificationTitle));
+        sb.append(", evaluationSlackDuration=")
+                .append(String.valueOf(this.evaluationSlackDuration));
+        sb.append(", alarmSummary=").append(String.valueOf(this.alarmSummary));
         sb.append(")");
         return sb.toString();
     }
@@ -1453,6 +1670,10 @@ public final class UpdateAlarmDetails
                 && java.util.Objects.equals(this.overrides, other.overrides)
                 && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.notificationVersion, other.notificationVersion)
+                && java.util.Objects.equals(this.notificationTitle, other.notificationTitle)
+                && java.util.Objects.equals(
+                        this.evaluationSlackDuration, other.evaluationSlackDuration)
+                && java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
                 && super.equals(other);
     }
 
@@ -1510,6 +1731,15 @@ public final class UpdateAlarmDetails
                         + (this.notificationVersion == null
                                 ? 43
                                 : this.notificationVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTitle == null ? 43 : this.notificationTitle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.evaluationSlackDuration == null
+                                ? 43
+                                : this.evaluationSlackDuration.hashCode());
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -129,10 +129,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails(
-                        "RedisCluster",
-                        "CancelWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/CancelWorkRequest")
+                .serviceDetails("RedisCluster", "CancelWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -158,10 +155,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ChangeRedisClusterCompartmentResponse::builder)
                 .logger(LOG, "changeRedisClusterCompartment")
-                .serviceDetails(
-                        "RedisCluster",
-                        "ChangeRedisClusterCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/ChangeRedisClusterCompartment")
+                .serviceDetails("RedisCluster", "ChangeRedisClusterCompartment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeRedisClusterCompartmentRequest::builder)
                 .basePath("/20220315")
@@ -191,10 +185,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, CreateRedisClusterResponse::builder)
                 .logger(LOG, "createRedisCluster")
-                .serviceDetails(
-                        "RedisCluster",
-                        "CreateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/CreateRedisCluster")
+                .serviceDetails("RedisCluster", "CreateRedisCluster", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -222,10 +213,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, DeleteRedisClusterResponse::builder)
                 .logger(LOG, "deleteRedisCluster")
-                .serviceDetails(
-                        "RedisCluster",
-                        "DeleteRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/DeleteRedisCluster")
+                .serviceDetails("RedisCluster", "DeleteRedisCluster", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -249,10 +237,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetRedisClusterResponse::builder)
                 .logger(LOG, "getRedisCluster")
-                .serviceDetails(
-                        "RedisCluster",
-                        "GetRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/GetRedisCluster")
+                .serviceDetails("RedisCluster", "GetRedisCluster", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRedisClusterRequest::builder)
                 .basePath("/20220315")
@@ -277,10 +262,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "RedisCluster",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/GetWorkRequest")
+                .serviceDetails("RedisCluster", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20220315")
@@ -305,10 +287,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListRedisClustersResponse::builder)
                 .logger(LOG, "listRedisClusters")
-                .serviceDetails(
-                        "RedisCluster",
-                        "ListRedisClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisClusterSummary/ListRedisClusters")
+                .serviceDetails("RedisCluster", "ListRedisClusters", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRedisClustersRequest::builder)
                 .basePath("/20220315")
@@ -342,10 +321,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "RedisCluster",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("RedisCluster", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20220315")
@@ -376,10 +352,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "RedisCluster",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("RedisCluster", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20220315")
@@ -408,10 +381,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "RedisCluster",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/ListWorkRequests")
+                .serviceDetails("RedisCluster", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20220315")
@@ -446,10 +416,7 @@ public class RedisClusterClient extends com.oracle.bmc.http.internal.BaseSyncCli
 
         return clientCall(request, UpdateRedisClusterResponse::builder)
                 .logger(LOG, "updateRedisCluster")
-                .serviceDetails(
-                        "RedisCluster",
-                        "UpdateRedisCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/UpdateRedisCluster")
+                .serviceDetails("RedisCluster", "UpdateRedisCluster", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateRedisClusterRequest::builder)
                 .basePath("/20220315")

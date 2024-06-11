@@ -51,15 +51,15 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * If channelId is presented in GetStats call, the channel id will be returned in the
-         * GetStats response.
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
+         * response.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("channelId")
         private String channelId;
 
         /**
-         * If channelId is presented in GetStats call, the channel id will be returned in the
-         * GetStats response.
+         * If channelId is present in GetStats call, the channel id will be returned in the GetStats
+         * response.
          *
          * @param channelId the value to set
          * @return this builder
@@ -120,14 +120,14 @@ public final class QueueStats extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * If channelId is presented in GetStats call, the channel id will be returned in the GetStats
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
      * response.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("channelId")
     private final String channelId;
 
     /**
-     * If channelId is presented in GetStats call, the channel id will be returned in the GetStats
+     * If channelId is present in GetStats call, the channel id will be returned in the GetStats
      * response.
      *
      * @return the value
