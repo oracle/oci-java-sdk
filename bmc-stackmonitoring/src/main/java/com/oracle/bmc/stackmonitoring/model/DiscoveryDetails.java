@@ -224,6 +224,7 @@ public final class DiscoveryDetails
         OracleGoldengate("ORACLE_GOLDENGATE"),
         CustomResource("CUSTOM_RESOURCE"),
         OracleHttpServer("ORACLE_HTTP_SERVER"),
+        MicrosoftIis("MICROSOFT_IIS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

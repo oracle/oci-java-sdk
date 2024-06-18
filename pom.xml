@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.43.1</version>
+  <version>3.43.2</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -49,7 +49,7 @@
     <resilience4jVersion>1.7.1</resilience4jVersion>
     <io.vavr.version>0.10.4</io.vavr.version>
     <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
-    <bouncycastle.version>1.74</bouncycastle.version>
+    <bouncycastle.version>1.78.1</bouncycastle.version>
     <mockito.version>2.18.0</mockito.version>
     <powermock.version>2.0.2</powermock.version>
     <hk2.version>2.6.1</hk2.version>

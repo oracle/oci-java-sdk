@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.43.2 - 2024-06-18
+### Added
+- Support for public connection urls and public endpoints for autonomous databases in the Database service
+- Support for insurance claim document type in the AI Document service
+- Support for Microsoft IIS discovery and monitoring in the Stack Monitoring service
+
 ## 3.43.1 - 2024-06-11
 ### Added
 - Support for 23ai based databases in Globally Distributed Database service
