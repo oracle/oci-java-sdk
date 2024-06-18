@@ -68,6 +68,7 @@ public final class AutonomousDatabaseSummary
         "serviceConsoleUrl",
         "connectionStrings",
         "connectionUrls",
+        "publicConnectionUrls",
         "licenseModel",
         "usedDataStorageSizeInTBs",
         "freeformTags",
@@ -75,6 +76,7 @@ public final class AutonomousDatabaseSummary
         "subnetId",
         "nsgIds",
         "privateEndpoint",
+        "publicEndpoint",
         "privateEndpointLabel",
         "privateEndpointIp",
         "dbVersion",
@@ -183,6 +185,7 @@ public final class AutonomousDatabaseSummary
             String serviceConsoleUrl,
             AutonomousDatabaseConnectionStrings connectionStrings,
             AutonomousDatabaseConnectionUrls connectionUrls,
+            AutonomousDatabaseConnectionUrls publicConnectionUrls,
             LicenseModel licenseModel,
             Integer usedDataStorageSizeInTBs,
             java.util.Map<String, String> freeformTags,
@@ -190,6 +193,7 @@ public final class AutonomousDatabaseSummary
             String subnetId,
             java.util.List<String> nsgIds,
             String privateEndpoint,
+            String publicEndpoint,
             String privateEndpointLabel,
             String privateEndpointIp,
             String dbVersion,
@@ -297,6 +301,7 @@ public final class AutonomousDatabaseSummary
         this.serviceConsoleUrl = serviceConsoleUrl;
         this.connectionStrings = connectionStrings;
         this.connectionUrls = connectionUrls;
+        this.publicConnectionUrls = publicConnectionUrls;
         this.licenseModel = licenseModel;
         this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
         this.freeformTags = freeformTags;
@@ -304,6 +309,7 @@ public final class AutonomousDatabaseSummary
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.privateEndpoint = privateEndpoint;
+        this.publicEndpoint = publicEndpoint;
         this.privateEndpointLabel = privateEndpointLabel;
         this.privateEndpointIp = privateEndpointIp;
         this.dbVersion = dbVersion;
@@ -1190,6 +1196,27 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
+         * The Public URLs of Private Endpoint database for accessing Oracle Application Express
+         * (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or
+         * that has a direct connection to your VCN.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("publicConnectionUrls")
+        private AutonomousDatabaseConnectionUrls publicConnectionUrls;
+
+        /**
+         * The Public URLs of Private Endpoint database for accessing Oracle Application Express
+         * (APEX) and SQL Developer Web with a browser from a Compute instance within your VCN or
+         * that has a direct connection to your VCN.
+         *
+         * @param publicConnectionUrls the value to set
+         * @return this builder
+         */
+        public Builder publicConnectionUrls(AutonomousDatabaseConnectionUrls publicConnectionUrls) {
+            this.publicConnectionUrls = publicConnectionUrls;
+            this.__explicitlySet__.add("publicConnectionUrls");
+            return this;
+        }
+        /**
          * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
          * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
          * equivalent, highly automated Oracle services in the cloud. License Included allows you to
@@ -1381,6 +1408,21 @@ public final class AutonomousDatabaseSummary
         public Builder privateEndpoint(String privateEndpoint) {
             this.privateEndpoint = privateEndpoint;
             this.__explicitlySet__.add("privateEndpoint");
+            return this;
+        }
+        /** The public endpoint for the private endpoint enabled resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
+        private String publicEndpoint;
+
+        /**
+         * The public endpoint for the private endpoint enabled resource.
+         *
+         * @param publicEndpoint the value to set
+         * @return this builder
+         */
+        public Builder publicEndpoint(String publicEndpoint) {
+            this.publicEndpoint = publicEndpoint;
+            this.__explicitlySet__.add("publicEndpoint");
             return this;
         }
         /**
@@ -2877,6 +2919,7 @@ public final class AutonomousDatabaseSummary
                             this.serviceConsoleUrl,
                             this.connectionStrings,
                             this.connectionUrls,
+                            this.publicConnectionUrls,
                             this.licenseModel,
                             this.usedDataStorageSizeInTBs,
                             this.freeformTags,
@@ -2884,6 +2927,7 @@ public final class AutonomousDatabaseSummary
                             this.subnetId,
                             this.nsgIds,
                             this.privateEndpoint,
+                            this.publicEndpoint,
                             this.privateEndpointLabel,
                             this.privateEndpointIp,
                             this.dbVersion,
@@ -3083,6 +3127,9 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("connectionUrls")) {
                 this.connectionUrls(model.getConnectionUrls());
             }
+            if (model.wasPropertyExplicitlySet("publicConnectionUrls")) {
+                this.publicConnectionUrls(model.getPublicConnectionUrls());
+            }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
@@ -3103,6 +3150,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("privateEndpoint")) {
                 this.privateEndpoint(model.getPrivateEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("publicEndpoint")) {
+                this.publicEndpoint(model.getPublicEndpoint());
             }
             if (model.wasPropertyExplicitlySet("privateEndpointLabel")) {
                 this.privateEndpointLabel(model.getPrivateEndpointLabel());
@@ -4194,6 +4244,25 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX)
+     * and SQL Developer Web with a browser from a Compute instance within your VCN or that has a
+     * direct connection to your VCN.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("publicConnectionUrls")
+    private final AutonomousDatabaseConnectionUrls publicConnectionUrls;
+
+    /**
+     * The Public URLs of Private Endpoint database for accessing Oracle Application Express (APEX)
+     * and SQL Developer Web with a browser from a Compute instance within your VCN or that has a
+     * direct connection to your VCN.
+     *
+     * @return the value
+     */
+    public AutonomousDatabaseConnectionUrls getPublicConnectionUrls() {
+        return publicConnectionUrls;
+    }
+
+    /**
      * The Oracle license model that applies to the Oracle Autonomous Database. Bring your own
      * license (BYOL) allows you to apply your current on-premises Oracle software licenses to
      * equivalent, highly automated Oracle services in the cloud. License Included allows you to
@@ -4427,6 +4496,19 @@ public final class AutonomousDatabaseSummary
      */
     public String getPrivateEndpoint() {
         return privateEndpoint;
+    }
+
+    /** The public endpoint for the private endpoint enabled resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("publicEndpoint")
+    private final String publicEndpoint;
+
+    /**
+     * The public endpoint for the private endpoint enabled resource.
+     *
+     * @return the value
+     */
+    public String getPublicEndpoint() {
+        return publicEndpoint;
     }
 
     /**
@@ -6494,6 +6576,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
         sb.append(", connectionStrings=").append(String.valueOf(this.connectionStrings));
         sb.append(", connectionUrls=").append(String.valueOf(this.connectionUrls));
+        sb.append(", publicConnectionUrls=").append(String.valueOf(this.publicConnectionUrls));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", usedDataStorageSizeInTBs=")
                 .append(String.valueOf(this.usedDataStorageSizeInTBs));
@@ -6502,6 +6585,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
+        sb.append(", publicEndpoint=").append(String.valueOf(this.publicEndpoint));
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
@@ -6661,6 +6745,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
                 && java.util.Objects.equals(this.connectionStrings, other.connectionStrings)
                 && java.util.Objects.equals(this.connectionUrls, other.connectionUrls)
+                && java.util.Objects.equals(this.publicConnectionUrls, other.publicConnectionUrls)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(
                         this.usedDataStorageSizeInTBs, other.usedDataStorageSizeInTBs)
@@ -6669,6 +6754,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
+                && java.util.Objects.equals(this.publicEndpoint, other.publicEndpoint)
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
@@ -6894,6 +6980,11 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.connectionUrls == null ? 43 : this.connectionUrls.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicConnectionUrls == null
+                                ? 43
+                                : this.publicConnectionUrls.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
                 (result * PRIME)
@@ -6907,6 +6998,9 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.privateEndpoint == null ? 43 : this.privateEndpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.publicEndpoint == null ? 43 : this.publicEndpoint.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointLabel == null

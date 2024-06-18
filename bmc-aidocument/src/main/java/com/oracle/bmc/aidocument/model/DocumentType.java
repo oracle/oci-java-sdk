@@ -17,6 +17,7 @@ public enum DocumentType implements com.oracle.bmc.http.internal.BmcEnum {
     Check("CHECK"),
     Payslip("PAYSLIP"),
     Others("OTHERS"),
+    InsuranceClaim("INSURANCE_CLAIM"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
