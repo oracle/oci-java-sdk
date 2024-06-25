@@ -4,8 +4,8 @@
  */
 package com.oracle.bmc.databasemigration.model;
 
-/** exclude/include/ status. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+/** exclude/include status. */
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum ObjectStatus implements com.oracle.bmc.http.internal.BmcEnum {
     Exclude("EXCLUDE"),
     Include("INCLUDE"),

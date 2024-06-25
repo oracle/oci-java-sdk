@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Migration tablespace settings valid for ADB-D target type using auto create feature. <br>
+ * Auto create tablespace settings that are valid for Dedicated Autonomous Databases. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateADBDedicatedAutoCreateTablespaceDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
@@ -28,12 +28,16 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         extends CreateTargetTypeTablespaceDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** True to auto-create tablespace in the target Database. */
+        /**
+         * Set this property to true to auto-create tablespaces in the target Database. Note: This
+         * is not applicable for Autonomous Database Serverless databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
         private Boolean isAutoCreate;
 
         /**
-         * True to auto-create tablespace in the target Database.
+         * Set this property to true to auto-create tablespaces in the target Database. Note: This
+         * is not applicable for Autonomous Database Serverless databases.
          *
          * @param isAutoCreate the value to set
          * @return this builder
@@ -43,12 +47,12 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
             this.__explicitlySet__.add("isAutoCreate");
             return this;
         }
-        /** True set tablespace to big file. */
+        /** Set this property to true to enable tablespace of the type big file. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
         private Boolean isBigFile;
 
         /**
-         * True set tablespace to big file.
+         * Set this property to true to enable tablespace of the type big file.
          *
          * @param isBigFile the value to set
          * @return this builder
@@ -58,12 +62,16 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
             this.__explicitlySet__.add("isBigFile");
             return this;
         }
-        /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
+        /**
+         * Size to extend the tablespace in MB. Note: Only applicable if 'isBigFile' property is set
+         * to true.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
         private Integer extendSizeInMBs;
 
         /**
-         * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+         * Size to extend the tablespace in MB. Note: Only applicable if 'isBigFile' property is set
+         * to true.
          *
          * @param extendSizeInMBs the value to set
          * @return this builder
@@ -145,12 +153,16 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         this.blockSizeInKBs = blockSizeInKBs;
     }
 
-    /** True to auto-create tablespace in the target Database. */
+    /**
+     * Set this property to true to auto-create tablespaces in the target Database. Note: This is
+     * not applicable for Autonomous Database Serverless databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isAutoCreate")
     private final Boolean isAutoCreate;
 
     /**
-     * True to auto-create tablespace in the target Database.
+     * Set this property to true to auto-create tablespaces in the target Database. Note: This is
+     * not applicable for Autonomous Database Serverless databases.
      *
      * @return the value
      */
@@ -158,12 +170,12 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         return isAutoCreate;
     }
 
-    /** True set tablespace to big file. */
+    /** Set this property to true to enable tablespace of the type big file. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBigFile")
     private final Boolean isBigFile;
 
     /**
-     * True set tablespace to big file.
+     * Set this property to true to enable tablespace of the type big file.
      *
      * @return the value
      */
@@ -171,12 +183,16 @@ public final class CreateADBDedicatedAutoCreateTablespaceDetails
         return isBigFile;
     }
 
-    /** Size of extend in MB. Can only be specified if 'isBigFile' property is set to true. */
+    /**
+     * Size to extend the tablespace in MB. Note: Only applicable if 'isBigFile' property is set to
+     * true.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("extendSizeInMBs")
     private final Integer extendSizeInMBs;
 
     /**
-     * Size of extend in MB. Can only be specified if 'isBigFile' property is set to true.
+     * Size to extend the tablespace in MB. Note: Only applicable if 'isBigFile' property is set to
+     * true.
      *
      * @return the value
      */

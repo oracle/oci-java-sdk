@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Pre-Migration advisor report details. <br>
+ * Premigration Advisor report details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = AdvisorReport.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -56,12 +56,12 @@ public final class AdvisorReport extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("reportLocationDetails");
             return this;
         }
-        /** Pre-Migration advisor result. */
+        /** Premigration Advisor result. */
         @com.fasterxml.jackson.annotation.JsonProperty("result")
         private AdvisorResults result;
 
         /**
-         * Pre-Migration advisor result.
+         * Premigration Advisor result.
          *
          * @param result the value to set
          * @return this builder
@@ -190,12 +190,12 @@ public final class AdvisorReport extends com.oracle.bmc.http.client.internal.Exp
         return reportLocationDetails;
     }
 
-    /** Pre-Migration advisor result. */
+    /** Premigration Advisor result. */
     @com.fasterxml.jackson.annotation.JsonProperty("result")
     private final AdvisorResults result;
 
     /**
-     * Pre-Migration advisor result.
+     * Premigration Advisor result.
      *
      * @return the value
      */

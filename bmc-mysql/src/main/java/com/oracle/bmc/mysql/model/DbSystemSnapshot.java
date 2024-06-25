@@ -48,7 +48,8 @@ public final class DbSystemSnapshot
         "definedTags",
         "crashRecovery",
         "databaseManagement",
-        "secureConnections"
+        "secureConnections",
+        "region"
     })
     public DbSystemSnapshot(
             String id,
@@ -76,7 +77,8 @@ public final class DbSystemSnapshot
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
-            SecureConnectionDetails secureConnections) {
+            SecureConnectionDetails secureConnections,
+            String region) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -104,6 +106,7 @@ public final class DbSystemSnapshot
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.region = region;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -513,6 +516,27 @@ public final class DbSystemSnapshot
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+        /**
+         * The region identifier of the region where the DB system exists. For more information,
+         * please see [Regions and Availability
+         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("region")
+        private String region;
+
+        /**
+         * The region identifier of the region where the DB system exists. For more information,
+         * please see [Regions and Availability
+         * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+         *
+         * @param region the value to set
+         * @return this builder
+         */
+        public Builder region(String region) {
+            this.region = region;
+            this.__explicitlySet__.add("region");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -545,7 +569,8 @@ public final class DbSystemSnapshot
                             this.definedTags,
                             this.crashRecovery,
                             this.databaseManagement,
-                            this.secureConnections);
+                            this.secureConnections,
+                            this.region);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -631,6 +656,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("region")) {
+                this.region(model.getRegion());
             }
             return this;
         }
@@ -997,6 +1025,25 @@ public final class DbSystemSnapshot
         return secureConnections;
     }
 
+    /**
+     * The region identifier of the region where the DB system exists. For more information, please
+     * see [Regions and Availability
+     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("region")
+    private final String region;
+
+    /**
+     * The region identifier of the region where the DB system exists. For more information, please
+     * see [Regions and Availability
+     * Domains](https://docs.oracle.com/en-us/iaas/Content/General/Concepts/regions.htm).
+     *
+     * @return the value
+     */
+    public String getRegion() {
+        return region;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1038,6 +1085,7 @@ public final class DbSystemSnapshot
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", region=").append(String.valueOf(this.region));
         sb.append(")");
         return sb.toString();
     }
@@ -1078,6 +1126,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.region, other.region)
                 && super.equals(other);
     }
 
@@ -1139,6 +1188,7 @@ public final class DbSystemSnapshot
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

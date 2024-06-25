@@ -10,13 +10,13 @@ import com.oracle.bmc.databasemigration.model.*;
  * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteConnectionExample.java.html"
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use DeleteConnectionRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class DeleteConnectionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the database connection */
+    /** The OCID of the database connection. */
     private String connectionId;
 
-    /** The OCID of the database connection */
+    /** The OCID of the database connection. */
     public String getConnectionId() {
         return connectionId;
     }
@@ -57,11 +57,11 @@ public class DeleteConnectionRequest extends com.oracle.bmc.requests.BmcRequest<
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the database connection */
+        /** The OCID of the database connection. */
         private String connectionId = null;
 
         /**
-         * The OCID of the database connection
+         * The OCID of the database connection.
          *
          * @param connectionId the value to set
          * @return this builder instance

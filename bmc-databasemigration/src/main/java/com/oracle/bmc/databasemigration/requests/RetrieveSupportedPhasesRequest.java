@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemigration.model.*;
  * target="_blank" rel="noopener noreferrer">here</a> to see how to use
  * RetrieveSupportedPhasesRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class RetrieveSupportedPhasesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 

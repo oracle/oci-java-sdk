@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** GoldenGate Replicat performance profile */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum ReplicatPerformanceProfile implements com.oracle.bmc.http.internal.BmcEnum {
     Low("LOW"),
     High("HIGH"),

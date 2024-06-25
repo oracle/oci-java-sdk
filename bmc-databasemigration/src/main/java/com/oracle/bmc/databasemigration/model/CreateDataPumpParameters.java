@@ -5,10 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load
- * Advanced
- * Settings](https://docs.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
- * <br>
+ * Optional parameters for Data Pump Export and Import. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -18,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = CreateDataPumpParameters.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
