@@ -65,7 +65,7 @@ public class ListOccAvailabilitiesConverter {
                     target.queryParam(
                             "resourceType",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getResourceType().getValue()));
+                                    request.getResourceType()));
         }
 
         if (request.getWorkloadType() != null) {
@@ -73,7 +73,7 @@ public class ListOccAvailabilitiesConverter {
                     target.queryParam(
                             "workloadType",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getWorkloadType().getValue()));
+                                    request.getWorkloadType()));
         }
 
         if (request.getLimit() != null) {

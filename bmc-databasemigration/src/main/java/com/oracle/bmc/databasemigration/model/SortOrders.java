@@ -8,7 +8,7 @@ package com.oracle.bmc.databasemigration.model;
  * Sort orders.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum SortOrders {
     Asc("ASC"),
     Desc("DESC"),

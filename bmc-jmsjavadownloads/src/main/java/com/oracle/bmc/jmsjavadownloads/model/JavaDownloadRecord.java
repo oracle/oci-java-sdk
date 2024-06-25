@@ -140,13 +140,13 @@ public final class JavaDownloadRecord extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The package type(typically the file extension) of the artifact.
+         * The package type (typically the file extension) of the artifact.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("packageType")
         private String packageType;
 
         /**
-         * The package type(typically the file extension) of the artifact.
+         * The package type (typically the file extension) of the artifact.
          * @param packageType the value to set
          * @return this builder
          **/
@@ -360,13 +360,13 @@ public final class JavaDownloadRecord extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The package type(typically the file extension) of the artifact.
+     * The package type (typically the file extension) of the artifact.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("packageType")
     private final String packageType;
 
     /**
-     * The package type(typically the file extension) of the artifact.
+     * The package type (typically the file extension) of the artifact.
      * @return the value
      **/
     public String getPackageType() {

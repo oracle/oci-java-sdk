@@ -1440,6 +1440,27 @@ public interface DbManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a historical summary of the Database Guard performance metrics for Managed Databases.
+     * If the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the specified compartment.
+     * If the peerDatabaseCompartmentId is not specified, then the metrics are retrieved from the compartment of the Managed Database specified by the ManagedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetDataguardPerformanceMetricsResponse>
+            getDataguardPerformanceMetrics(
+                    GetDataguardPerformanceMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetDataguardPerformanceMetricsRequest,
+                                    GetDataguardPerformanceMetricsResponse>
+                            handler);
+
+    /**
      * Gets the details of a specific Database Management private endpoint.
      *
      * @param request The request object containing the details to send
@@ -1924,6 +1945,25 @@ public interface DbManagementAsync extends AutoCloseable {
     java.util.concurrent.Future<GetPdbMetricsResponse> getPdbMetrics(
             GetPdbMetricsRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetPdbMetricsRequest, GetPdbMetricsResponse>
+                    handler);
+
+    /**
+     * Gets a comparative summary of the baseline and target values of the Data Guard performance metrics for Managed Databases.
+     * If the peerDatabaseCompartmentId is specified, then the metrics are only retrieved from the specified compartment.
+     * If the peerDatabaseCompartmentId is not specified, then the metrics are retrieved from the compartment of the Managed Database specified by the ManagedDatabaseId.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPeerDatabaseMetricsResponse> getPeerDatabaseMetrics(
+            GetPeerDatabaseMetricsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>
                     handler);
 
     /**

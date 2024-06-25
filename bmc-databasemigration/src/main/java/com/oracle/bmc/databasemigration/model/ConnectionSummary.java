@@ -5,8 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Database Connection Summary.
- *
+ * Represents the parameters common for all connections in list operation.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,446 +14,88 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-    builder = ConnectionSummary.Builder.class
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
+@com.fasterxml.jackson.annotation.JsonTypeInfo(
+    use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
+    include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
+    property = "connectionType",
+    defaultImpl = ConnectionSummary.class
 )
+@com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OracleConnectionSummary.class,
+        name = "ORACLE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MysqlConnectionSummary.class,
+        name = "MYSQL"
+    )
+})
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
-public final class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
+public class ConnectionSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
-        "compartmentId",
-        "databaseType",
-        "manualDatabaseSubType",
-        "isDedicated",
         "displayName",
-        "databaseId",
-        "timeCreated",
-        "timeUpdated",
-        "lifecycleState",
-        "lifecycleDetails",
+        "description",
+        "compartmentId",
         "freeformTags",
         "definedTags",
         "systemTags",
+        "lifecycleState",
+        "lifecycleDetails",
+        "timeCreated",
+        "timeUpdated",
+        "vaultId",
+        "keyId",
+        "subnetId",
+        "ingressIps",
         "nsgIds"
     })
-    public ConnectionSummary(
+    protected ConnectionSummary(
             String id,
-            String compartmentId,
-            DatabaseConnectionTypes databaseType,
-            DatabaseManualConnectionSubTypes manualDatabaseSubType,
-            Boolean isDedicated,
             String displayName,
-            String databaseId,
-            java.util.Date timeCreated,
-            java.util.Date timeUpdated,
-            LifecycleStates lifecycleState,
-            String lifecycleDetails,
+            String description,
+            String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            Connection.LifecycleState lifecycleState,
+            String lifecycleDetails,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            String vaultId,
+            String keyId,
+            String subnetId,
+            java.util.List<IngressIpDetails> ingressIps,
             java.util.List<String> nsgIds) {
         super();
         this.id = id;
-        this.compartmentId = compartmentId;
-        this.databaseType = databaseType;
-        this.manualDatabaseSubType = manualDatabaseSubType;
-        this.isDedicated = isDedicated;
         this.displayName = displayName;
-        this.databaseId = databaseId;
-        this.timeCreated = timeCreated;
-        this.timeUpdated = timeUpdated;
-        this.lifecycleState = lifecycleState;
-        this.lifecycleDetails = lifecycleDetails;
+        this.description = description;
+        this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.vaultId = vaultId;
+        this.keyId = keyId;
+        this.subnetId = subnetId;
+        this.ingressIps = ingressIps;
         this.nsgIds = nsgIds;
     }
 
-    @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
-    public static class Builder {
-        /**
-         * The OCID of the resource
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("id")
-        private String id;
-
-        /**
-         * The OCID of the resource
-         *
-         * @param id the value to set
-         * @return this builder
-         **/
-        public Builder id(String id) {
-            this.id = id;
-            this.__explicitlySet__.add("id");
-            return this;
-        }
-        /**
-         * OCID of the compartment
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-        private String compartmentId;
-
-        /**
-         * OCID of the compartment
-         *
-         * @param compartmentId the value to set
-         * @return this builder
-         **/
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            this.__explicitlySet__.add("compartmentId");
-            return this;
-        }
-        /**
-         * Database connection type.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-        private DatabaseConnectionTypes databaseType;
-
-        /**
-         * Database connection type.
-         *
-         * @param databaseType the value to set
-         * @return this builder
-         **/
-        public Builder databaseType(DatabaseConnectionTypes databaseType) {
-            this.databaseType = databaseType;
-            this.__explicitlySet__.add("databaseType");
-            return this;
-        }
-        /**
-         * Database manual connection subtype. This value can only be specified for manual connections.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
-        private DatabaseManualConnectionSubTypes manualDatabaseSubType;
-
-        /**
-         * Database manual connection subtype. This value can only be specified for manual connections.
-         *
-         * @param manualDatabaseSubType the value to set
-         * @return this builder
-         **/
-        public Builder manualDatabaseSubType(
-                DatabaseManualConnectionSubTypes manualDatabaseSubType) {
-            this.manualDatabaseSubType = manualDatabaseSubType;
-            this.__explicitlySet__.add("manualDatabaseSubType");
-            return this;
-        }
-        /**
-         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
-        private Boolean isDedicated;
-
-        /**
-         * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-         *
-         * @param isDedicated the value to set
-         * @return this builder
-         **/
-        public Builder isDedicated(Boolean isDedicated) {
-            this.isDedicated = isDedicated;
-            this.__explicitlySet__.add("isDedicated");
-            return this;
-        }
-        /**
-         * Database Connection display name identifier.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
-        private String displayName;
-
-        /**
-         * Database Connection display name identifier.
-         *
-         * @param displayName the value to set
-         * @return this builder
-         **/
-        public Builder displayName(String displayName) {
-            this.displayName = displayName;
-            this.__explicitlySet__.add("displayName");
-            return this;
-        }
-        /**
-         * The OCID of the cloud database.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-        private String databaseId;
-
-        /**
-         * The OCID of the cloud database.
-         *
-         * @param databaseId the value to set
-         * @return this builder
-         **/
-        public Builder databaseId(String databaseId) {
-            this.databaseId = databaseId;
-            this.__explicitlySet__.add("databaseId");
-            return this;
-        }
-        /**
-         * The time the Connection resource was created. An RFC3339 formatted datetime string.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-        private java.util.Date timeCreated;
-
-        /**
-         * The time the Connection resource was created. An RFC3339 formatted datetime string.
-         *
-         * @param timeCreated the value to set
-         * @return this builder
-         **/
-        public Builder timeCreated(java.util.Date timeCreated) {
-            this.timeCreated = timeCreated;
-            this.__explicitlySet__.add("timeCreated");
-            return this;
-        }
-        /**
-         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-        private java.util.Date timeUpdated;
-
-        /**
-         * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-         *
-         * @param timeUpdated the value to set
-         * @return this builder
-         **/
-        public Builder timeUpdated(java.util.Date timeUpdated) {
-            this.timeUpdated = timeUpdated;
-            this.__explicitlySet__.add("timeUpdated");
-            return this;
-        }
-        /**
-         * The current state of the Connection resource.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-        private LifecycleStates lifecycleState;
-
-        /**
-         * The current state of the Connection resource.
-         *
-         * @param lifecycleState the value to set
-         * @return this builder
-         **/
-        public Builder lifecycleState(LifecycleStates lifecycleState) {
-            this.lifecycleState = lifecycleState;
-            this.__explicitlySet__.add("lifecycleState");
-            return this;
-        }
-        /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information
-         * for a resource in Failed state.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-        private String lifecycleDetails;
-
-        /**
-         * A message describing the current state in more detail. For example, can be used to provide actionable information
-         * for a resource in Failed state.
-         *
-         * @param lifecycleDetails the value to set
-         * @return this builder
-         **/
-        public Builder lifecycleDetails(String lifecycleDetails) {
-            this.lifecycleDetails = lifecycleDetails;
-            this.__explicitlySet__.add("lifecycleDetails");
-            return this;
-        }
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
-        private java.util.Map<String, String> freeformTags;
-
-        /**
-         * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-         * Example: {@code {"bar-key": "value"}}
-         *
-         * @param freeformTags the value to set
-         * @return this builder
-         **/
-        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
-            this.freeformTags = freeformTags;
-            this.__explicitlySet__.add("freeformTags");
-            return this;
-        }
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
-        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
-
-        /**
-         * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * Example: {@code {"foo-namespace": {"bar-key": "value"}}}
-         *
-         * @param definedTags the value to set
-         * @return this builder
-         **/
-        public Builder definedTags(
-                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
-            this.definedTags = definedTags;
-            this.__explicitlySet__.add("definedTags");
-            return this;
-        }
-        /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
-        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
-
-        /**
-         * Usage of system tag keys. These predefined keys are scoped to namespaces.
-         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
-         *
-         * @param systemTags the value to set
-         * @return this builder
-         **/
-        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
-            this.systemTags = systemTags;
-            this.__explicitlySet__.add("systemTags");
-            return this;
-        }
-        /**
-         * An array of Network Security Group OCIDs used to define network access for Connections.
-         *
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
-        private java.util.List<String> nsgIds;
-
-        /**
-         * An array of Network Security Group OCIDs used to define network access for Connections.
-         *
-         * @param nsgIds the value to set
-         * @return this builder
-         **/
-        public Builder nsgIds(java.util.List<String> nsgIds) {
-            this.nsgIds = nsgIds;
-            this.__explicitlySet__.add("nsgIds");
-            return this;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
-
-        public ConnectionSummary build() {
-            ConnectionSummary model =
-                    new ConnectionSummary(
-                            this.id,
-                            this.compartmentId,
-                            this.databaseType,
-                            this.manualDatabaseSubType,
-                            this.isDedicated,
-                            this.displayName,
-                            this.databaseId,
-                            this.timeCreated,
-                            this.timeUpdated,
-                            this.lifecycleState,
-                            this.lifecycleDetails,
-                            this.freeformTags,
-                            this.definedTags,
-                            this.systemTags,
-                            this.nsgIds);
-            for (String explicitlySetProperty : this.__explicitlySet__) {
-                model.markPropertyAsExplicitlySet(explicitlySetProperty);
-            }
-            return model;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ConnectionSummary model) {
-            if (model.wasPropertyExplicitlySet("id")) {
-                this.id(model.getId());
-            }
-            if (model.wasPropertyExplicitlySet("compartmentId")) {
-                this.compartmentId(model.getCompartmentId());
-            }
-            if (model.wasPropertyExplicitlySet("databaseType")) {
-                this.databaseType(model.getDatabaseType());
-            }
-            if (model.wasPropertyExplicitlySet("manualDatabaseSubType")) {
-                this.manualDatabaseSubType(model.getManualDatabaseSubType());
-            }
-            if (model.wasPropertyExplicitlySet("isDedicated")) {
-                this.isDedicated(model.getIsDedicated());
-            }
-            if (model.wasPropertyExplicitlySet("displayName")) {
-                this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("databaseId")) {
-                this.databaseId(model.getDatabaseId());
-            }
-            if (model.wasPropertyExplicitlySet("timeCreated")) {
-                this.timeCreated(model.getTimeCreated());
-            }
-            if (model.wasPropertyExplicitlySet("timeUpdated")) {
-                this.timeUpdated(model.getTimeUpdated());
-            }
-            if (model.wasPropertyExplicitlySet("lifecycleState")) {
-                this.lifecycleState(model.getLifecycleState());
-            }
-            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
-                this.lifecycleDetails(model.getLifecycleDetails());
-            }
-            if (model.wasPropertyExplicitlySet("freeformTags")) {
-                this.freeformTags(model.getFreeformTags());
-            }
-            if (model.wasPropertyExplicitlySet("definedTags")) {
-                this.definedTags(model.getDefinedTags());
-            }
-            if (model.wasPropertyExplicitlySet("systemTags")) {
-                this.systemTags(model.getSystemTags());
-            }
-            if (model.wasPropertyExplicitlySet("nsgIds")) {
-                this.nsgIds(model.getNsgIds());
-            }
-            return this;
-        }
-    }
-
     /**
-     * Create a new builder.
-     */
-    public static Builder builder() {
-        return new Builder();
-    }
-
-    public Builder toBuilder() {
-        return new Builder().copy(this);
-    }
-
-    /**
-     * The OCID of the resource
-     *
+     * The OCID of the connection being referenced.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the resource
-     *
+     * The OCID of the connection being referenced.
      * @return the value
      **/
     public String getId() {
@@ -462,78 +103,16 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * OCID of the compartment
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
-    private final String compartmentId;
-
-    /**
-     * OCID of the compartment
-     *
-     * @return the value
-     **/
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-
-    /**
-     * Database connection type.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
-    private final DatabaseConnectionTypes databaseType;
-
-    /**
-     * Database connection type.
-     *
-     * @return the value
-     **/
-    public DatabaseConnectionTypes getDatabaseType() {
-        return databaseType;
-    }
-
-    /**
-     * Database manual connection subtype. This value can only be specified for manual connections.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("manualDatabaseSubType")
-    private final DatabaseManualConnectionSubTypes manualDatabaseSubType;
-
-    /**
-     * Database manual connection subtype. This value can only be specified for manual connections.
-     *
-     * @return the value
-     **/
-    public DatabaseManualConnectionSubTypes getManualDatabaseSubType() {
-        return manualDatabaseSubType;
-    }
-
-    /**
-     * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("isDedicated")
-    private final Boolean isDedicated;
-
-    /**
-     * True if the Autonomous Connection is dedicated. Not provided for Non-Autonomous Connections.
-     *
-     * @return the value
-     **/
-    public Boolean getIsDedicated() {
-        return isDedicated;
-    }
-
-    /**
-     * Database Connection display name identifier.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * Database Connection display name identifier.
+     * A user-friendly name. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
      **/
@@ -542,98 +121,48 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The OCID of the cloud database.
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("databaseId")
-    private final String databaseId;
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
 
     /**
-     * The OCID of the cloud database.
-     *
-     * @return the value
-     **/
-    public String getDatabaseId() {
-        return databaseId;
-    }
-
-    /**
-     * The time the Connection resource was created. An RFC3339 formatted datetime string.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    private final java.util.Date timeCreated;
-
-    /**
-     * The time the Connection resource was created. An RFC3339 formatted datetime string.
+     * A user-friendly description. Does not have to be unique, and it's changeable.
+     * Avoid entering confidential information.
      *
      * @return the value
      **/
-    public java.util.Date getTimeCreated() {
-        return timeCreated;
+    public String getDescription() {
+        return description;
     }
 
     /**
-     * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-     *
+     * The OCID of the compartment.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
-    private final java.util.Date timeUpdated;
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
 
     /**
-     * The time of the last Connection resource details update. An RFC3339 formatted datetime string.
-     *
+     * The OCID of the compartment.
      * @return the value
      **/
-    public java.util.Date getTimeUpdated() {
-        return timeUpdated;
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
-     * The current state of the Connection resource.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
-    private final LifecycleStates lifecycleState;
-
-    /**
-     * The current state of the Connection resource.
-     *
-     * @return the value
-     **/
-    public LifecycleStates getLifecycleState() {
-        return lifecycleState;
-    }
-
-    /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information
-     * for a resource in Failed state.
-     *
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
-    private final String lifecycleDetails;
-
-    /**
-     * A message describing the current state in more detail. For example, can be used to provide actionable information
-     * for a resource in Failed state.
-     *
-     * @return the value
-     **/
-    public String getLifecycleDetails() {
-        return lifecycleDetails;
-    }
-
-    /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
     private final java.util.Map<String, String> freeformTags;
 
     /**
-     * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
-     * Example: {@code {"bar-key": "value"}}
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
+     * For more information, see Resource Tags. Example: {"Department": "Finance"}
      *
      * @return the value
      **/
@@ -678,6 +207,130 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Lifecycle state for connection.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final Connection.LifecycleState lifecycleState;
+
+    /**
+     * Lifecycle state for connection.
+     * @return the value
+     **/
+    public Connection.LifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * A message describing the current state in more detail. For example, can be used to provide actionable information
+     * for a resource in Failed state.
+     *
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
+     * The time when this resource was created.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * The time when this resource was created.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * The time when this resource was updated.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The time when this resource was updated.
+     * An RFC3339 formatted datetime string such as {@code 2016-08-25T21:10:29.600Z}.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /**
+     * OCI resource ID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
+    private final String vaultId;
+
+    /**
+     * OCI resource ID.
+     * @return the value
+     **/
+    public String getVaultId() {
+        return vaultId;
+    }
+
+    /**
+     * The OCID of the key used in cryptographic operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyId")
+    private final String keyId;
+
+    /**
+     * The OCID of the key used in cryptographic operations.
+     * @return the value
+     **/
+    public String getKeyId() {
+        return keyId;
+    }
+
+    /**
+     * OCI resource ID.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
+    private final String subnetId;
+
+    /**
+     * OCI resource ID.
+     * @return the value
+     **/
+    public String getSubnetId() {
+        return subnetId;
+    }
+
+    /**
+     * List of ingress IP addresses from where to connect to this connection's privateIp.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ingressIps")
+    private final java.util.List<IngressIpDetails> ingressIps;
+
+    /**
+     * List of ingress IP addresses from where to connect to this connection's privateIp.
+     * @return the value
+     **/
+    public java.util.List<IngressIpDetails> getIngressIps() {
+        return ingressIps;
+    }
+
+    /**
      * An array of Network Security Group OCIDs used to define network access for Connections.
      *
      **/
@@ -708,19 +361,20 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
         sb.append("ConnectionSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
-        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
-        sb.append(", manualDatabaseSubType=").append(String.valueOf(this.manualDatabaseSubType));
-        sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
-        sb.append(", databaseId=").append(String.valueOf(this.databaseId));
-        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
-        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
-        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", keyId=").append(String.valueOf(this.keyId));
+        sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", ingressIps=").append(String.valueOf(this.ingressIps));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(")");
         return sb.toString();
@@ -737,19 +391,20 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
 
         ConnectionSummary other = (ConnectionSummary) o;
         return java.util.Objects.equals(this.id, other.id)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.databaseType, other.databaseType)
-                && java.util.Objects.equals(this.manualDatabaseSubType, other.manualDatabaseSubType)
-                && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.databaseId, other.databaseId)
-                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
-                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
-                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.keyId, other.keyId)
+                && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.ingressIps, other.ingressIps)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && super.equals(other);
     }
@@ -759,29 +414,26 @@ public final class ConnectionSummary extends com.oracle.bmc.http.internal.Explic
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.manualDatabaseSubType == null
-                                ? 43
-                                : this.manualDatabaseSubType.hashCode());
-        result = (result * PRIME) + (this.isDedicated == null ? 43 : this.isDedicated.hashCode());
-        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
-        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
-        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
-        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
+        result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result = (result * PRIME) + (this.ingressIps == null ? 43 : this.ingressIps.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

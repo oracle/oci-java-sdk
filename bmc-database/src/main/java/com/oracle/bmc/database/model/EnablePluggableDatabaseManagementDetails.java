@@ -337,6 +337,7 @@ public final class EnablePluggableDatabaseManagementDetails
     public enum Role {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
         ;
 
         private final String value;

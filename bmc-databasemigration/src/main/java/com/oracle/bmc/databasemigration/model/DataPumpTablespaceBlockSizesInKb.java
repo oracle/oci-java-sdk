@@ -6,9 +6,8 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Size of Oracle database blocks in KB.
- *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum DataPumpTablespaceBlockSizesInKb {
     Size8K("SIZE_8K"),
     Size16K("SIZE_16K"),

@@ -6,9 +6,8 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Possible Migration Database Target types to specify.
- *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum MigrationDatabaseTargetTypesUpdate {
     AdbSRemap("ADB_S_REMAP"),
     AdbDRemap("ADB_D_REMAP"),

@@ -11,7 +11,14 @@ package com.oracle.bmc.jmsjavadownloads.model;
 public enum SortOrder {
     Asc("ASC"),
     Desc("DESC"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(SortOrder.class);
 
     private final String value;
     private static java.util.Map<String, SortOrder> map;
@@ -19,7 +26,9 @@ public enum SortOrder {
     static {
         map = new java.util.HashMap<>();
         for (SortOrder v : SortOrder.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -37,6 +46,9 @@ public enum SortOrder {
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid SortOrder: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'SortOrder', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

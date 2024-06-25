@@ -6,9 +6,8 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Possible Migration lifecycle states.
- *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum MigrationLifecycleStates {
     Creating("CREATING"),
     Updating("UPDATING"),

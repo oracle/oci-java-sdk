@@ -126,6 +126,15 @@ public final class RedisConnection extends Connection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
         private String vaultId;
 
@@ -273,6 +282,24 @@ public final class RedisConnection extends Connection {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+        private String redisClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         *
+         * @param redisClusterId the value to set
+         * @return this builder
+         **/
+        public Builder redisClusterId(String redisClusterId) {
+            this.redisClusterId = redisClusterId;
+            this.__explicitlySet__.add("redisClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -291,6 +318,7 @@ public final class RedisConnection extends Connection {
                             this.lifecycleDetails,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.locks,
                             this.vaultId,
                             this.keyId,
                             this.ingressIps,
@@ -301,7 +329,8 @@ public final class RedisConnection extends Connection {
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
-                            this.username);
+                            this.username,
+                            this.redisClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -343,6 +372,9 @@ public final class RedisConnection extends Connection {
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("vaultId")) {
                 this.vaultId(model.getVaultId());
             }
@@ -376,6 +408,9 @@ public final class RedisConnection extends Connection {
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
             }
+            if (model.wasPropertyExplicitlySet("redisClusterId")) {
+                this.redisClusterId(model.getRedisClusterId());
+            }
             return this;
         }
     }
@@ -404,6 +439,7 @@ public final class RedisConnection extends Connection {
             String lifecycleDetails,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            java.util.List<ResourceLock> locks,
             String vaultId,
             String keyId,
             java.util.List<IngressIpDetails> ingressIps,
@@ -414,7 +450,8 @@ public final class RedisConnection extends Connection {
             String servers,
             SecurityProtocol securityProtocol,
             AuthenticationType authenticationType,
-            String username) {
+            String username,
+            String redisClusterId) {
         super(
                 id,
                 displayName,
@@ -427,6 +464,7 @@ public final class RedisConnection extends Connection {
                 lifecycleDetails,
                 timeCreated,
                 timeUpdated,
+                locks,
                 vaultId,
                 keyId,
                 ingressIps,
@@ -438,6 +476,7 @@ public final class RedisConnection extends Connection {
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.redisClusterId = redisClusterId;
     }
 
     /**
@@ -445,6 +484,7 @@ public final class RedisConnection extends Connection {
      **/
     public enum TechnologyType {
         Redis("REDIS"),
+        OciCacheWithRedis("OCI_CACHE_WITH_REDIS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -668,6 +708,22 @@ public final class RedisConnection extends Connection {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+    private final String redisClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     *
+     * @return the value
+     **/
+    public String getRedisClusterId() {
+        return redisClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -687,6 +743,7 @@ public final class RedisConnection extends Connection {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", redisClusterId=").append(String.valueOf(this.redisClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -706,6 +763,7 @@ public final class RedisConnection extends Connection {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.redisClusterId, other.redisClusterId)
                 && super.equals(other);
     }
 
@@ -726,6 +784,9 @@ public final class RedisConnection extends Connection {
                                 ? 43
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redisClusterId == null ? 43 : this.redisClusterId.hashCode());
         return result;
     }
 }

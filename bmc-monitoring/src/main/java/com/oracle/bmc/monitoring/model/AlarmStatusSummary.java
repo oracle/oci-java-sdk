@@ -39,6 +39,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         "severity",
         "ruleName",
         "timestampTriggered",
+        "alarmSummary",
         "status",
         "suppression"
     })
@@ -48,6 +49,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             Severity severity,
             String ruleName,
             java.util.Date timestampTriggered,
+            String alarmSummary,
             Status status,
             Suppression suppression) {
         super();
@@ -56,6 +58,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         this.severity = severity;
         this.ruleName = ruleName;
         this.timestampTriggered = timestampTriggered;
+        this.alarmSummary = alarmSummary;
         this.status = status;
         this.suppression = suppression;
     }
@@ -126,8 +129,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         }
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -135,8 +137,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
 
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          * @param ruleName the value to set
          * @return this builder
@@ -168,6 +169,34 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         public Builder timestampTriggered(java.util.Date timestampTriggered) {
             this.timestampTriggered = timestampTriggered;
             this.__explicitlySet__.add("timestampTriggered");
+            return this;
+        }
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         **/
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
             return this;
         }
         /**
@@ -224,6 +253,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
                             this.severity,
                             this.ruleName,
                             this.timestampTriggered,
+                            this.alarmSummary,
                             this.status,
                             this.suppression);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -248,6 +278,9 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("timestampTriggered")) {
                 this.timestampTriggered(model.getTimestampTriggered());
+            }
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -381,8 +414,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -390,8 +422,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      * @return the value
      **/
@@ -419,6 +450,32 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public java.util.Date getTimestampTriggered() {
         return timestampTriggered;
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     **/
+    public String getAlarmSummary() {
+        return alarmSummary;
     }
 
     /**
@@ -530,6 +587,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", timestampTriggered=").append(String.valueOf(this.timestampTriggered));
+        sb.append(", alarmSummary=").append(String.valueOf(this.alarmSummary));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", suppression=").append(String.valueOf(this.suppression));
         sb.append(")");
@@ -551,6 +609,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.timestampTriggered, other.timestampTriggered)
+                && java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.suppression, other.suppression)
                 && super.equals(other);
@@ -569,6 +628,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.timestampTriggered == null
                                 ? 43
                                 : this.timestampTriggered.hashCode());
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.suppression == null ? 43 : this.suppression.hashCode());
         result = (result * PRIME) + super.hashCode();

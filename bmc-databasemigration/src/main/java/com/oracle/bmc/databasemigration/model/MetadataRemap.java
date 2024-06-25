@@ -16,7 +16,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = MetadataRemap.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class MetadataRemap extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
@@ -51,14 +51,12 @@ public final class MetadataRemap extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Specifies the value which needs to be reset.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("oldValue")
         private String oldValue;
 
         /**
          * Specifies the value which needs to be reset.
-         *
          * @param oldValue the value to set
          * @return this builder
          **/
@@ -69,14 +67,12 @@ public final class MetadataRemap extends com.oracle.bmc.http.internal.Explicitly
         }
         /**
          * Specifies the new value that oldValue should be translated into.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("newValue")
         private String newValue;
 
         /**
          * Specifies the new value that oldValue should be translated into.
-         *
          * @param newValue the value to set
          * @return this builder
          **/
@@ -190,14 +186,12 @@ public final class MetadataRemap extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Specifies the value which needs to be reset.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("oldValue")
     private final String oldValue;
 
     /**
      * Specifies the value which needs to be reset.
-     *
      * @return the value
      **/
     public String getOldValue() {
@@ -206,14 +200,12 @@ public final class MetadataRemap extends com.oracle.bmc.http.internal.Explicitly
 
     /**
      * Specifies the new value that oldValue should be translated into.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("newValue")
     private final String newValue;
 
     /**
      * Specifies the new value that oldValue should be translated into.
-     *
      * @return the value
      **/
     public String getNewValue() {

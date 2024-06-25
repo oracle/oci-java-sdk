@@ -8679,6 +8679,44 @@ public class DatabaseClient implements Database {
     }
 
     @Override
+    public ListAutonomousDatabasePeersResponse listAutonomousDatabasePeers(
+            ListAutonomousDatabasePeersRequest request) {
+        LOG.trace("Called listAutonomousDatabasePeers");
+        final ListAutonomousDatabasePeersRequest interceptedRequest =
+                ListAutonomousDatabasePeersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabasePeersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabasePeers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabasePeers");
+        java.util.function.Function<javax.ws.rs.core.Response, ListAutonomousDatabasePeersResponse>
+                transformer =
+                        ListAutonomousDatabasePeersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListAutonomousDatabaseRefreshableClonesResponse listAutonomousDatabaseRefreshableClones(
             ListAutonomousDatabaseRefreshableClonesRequest request) {
         LOG.trace("Called listAutonomousDatabaseRefreshableClones");

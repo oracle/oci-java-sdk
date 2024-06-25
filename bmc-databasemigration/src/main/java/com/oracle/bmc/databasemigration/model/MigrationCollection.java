@@ -6,7 +6,6 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Results of a Migration search. Contains MigrationSummary items.
- *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,7 +14,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = MigrationCollection.Builder.class
 )
@@ -32,14 +31,12 @@ public final class MigrationCollection extends com.oracle.bmc.http.internal.Expl
     public static class Builder {
         /**
          * Items in collection.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<MigrationSummary> items;
 
         /**
          * Items in collection.
-         *
          * @param items the value to set
          * @return this builder
          **/
@@ -82,14 +79,12 @@ public final class MigrationCollection extends com.oracle.bmc.http.internal.Expl
 
     /**
      * Items in collection.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<MigrationSummary> items;
 
     /**
      * Items in collection.
-     *
      * @return the value
      **/
     public java.util.List<MigrationSummary> getItems() {

@@ -80,6 +80,7 @@ public final class MetadataDetails extends com.oracle.bmc.http.internal.Explicit
      **/
     public enum FormatVersion {
         V1("V1"),
+        V2("V2"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

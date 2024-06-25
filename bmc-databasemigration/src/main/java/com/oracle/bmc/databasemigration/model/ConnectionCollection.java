@@ -5,8 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Results of a Database Connection search. Contains DatabaseConnectionSummary items.
- *
+ * Array of connection summary objects.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,7 +14,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ConnectionCollection.Builder.class
 )
@@ -31,15 +30,13 @@ public final class ConnectionCollection extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Items in collection.
-         *
+         * An array of Connection summaries.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<ConnectionSummary> items;
 
         /**
-         * Items in collection.
-         *
+         * An array of Connection summaries.
          * @param items the value to set
          * @return this builder
          **/
@@ -81,15 +78,13 @@ public final class ConnectionCollection extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * Items in collection.
-     *
+     * An array of Connection summaries.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<ConnectionSummary> items;
 
     /**
-     * Items in collection.
-     *
+     * An array of Connection summaries.
      * @return the value
      **/
     public java.util.List<ConnectionSummary> getItems() {

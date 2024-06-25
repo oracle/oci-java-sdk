@@ -23,13 +23,21 @@ package com.oracle.bmc.monitoring.model;
 public final class AlarmDimensionStatesEntry
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"dimensions", "status", "ruleName", "timestamp"})
+    @java.beans.ConstructorProperties({
+        "alarmSummary",
+        "dimensions",
+        "status",
+        "ruleName",
+        "timestamp"
+    })
     public AlarmDimensionStatesEntry(
+            String alarmSummary,
             java.util.Map<String, String> dimensions,
             Status status,
             String ruleName,
             java.util.Date timestamp) {
         super();
+        this.alarmSummary = alarmSummary;
         this.dimensions = dimensions;
         this.status = status;
         this.ruleName = ruleName;
@@ -38,6 +46,34 @@ public final class AlarmDimensionStatesEntry
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         **/
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
+            return this;
+        }
         /**
          * Indicator of the metric stream associated with the alarm state entry. Includes one or more dimension key-value pairs.
          *
@@ -80,8 +116,7 @@ public final class AlarmDimensionStatesEntry
         }
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -89,8 +124,7 @@ public final class AlarmDimensionStatesEntry
 
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          * @param ruleName the value to set
          * @return this builder
@@ -129,7 +163,11 @@ public final class AlarmDimensionStatesEntry
         public AlarmDimensionStatesEntry build() {
             AlarmDimensionStatesEntry model =
                     new AlarmDimensionStatesEntry(
-                            this.dimensions, this.status, this.ruleName, this.timestamp);
+                            this.alarmSummary,
+                            this.dimensions,
+                            this.status,
+                            this.ruleName,
+                            this.timestamp);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -138,6 +176,9 @@ public final class AlarmDimensionStatesEntry
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(AlarmDimensionStatesEntry model) {
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
+            }
             if (model.wasPropertyExplicitlySet("dimensions")) {
                 this.dimensions(model.getDimensions());
             }
@@ -163,6 +204,32 @@ public final class AlarmDimensionStatesEntry
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     **/
+    public String getAlarmSummary() {
+        return alarmSummary;
     }
 
     /**
@@ -253,8 +320,7 @@ public final class AlarmDimensionStatesEntry
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -262,8 +328,7 @@ public final class AlarmDimensionStatesEntry
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      * @return the value
      **/
@@ -305,7 +370,8 @@ public final class AlarmDimensionStatesEntry
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("AlarmDimensionStatesEntry(");
         sb.append("super=").append(super.toString());
-        sb.append("dimensions=").append(String.valueOf(this.dimensions));
+        sb.append("alarmSummary=").append(String.valueOf(this.alarmSummary));
+        sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", timestamp=").append(String.valueOf(this.timestamp));
@@ -323,7 +389,8 @@ public final class AlarmDimensionStatesEntry
         }
 
         AlarmDimensionStatesEntry other = (AlarmDimensionStatesEntry) o;
-        return java.util.Objects.equals(this.dimensions, other.dimensions)
+        return java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
+                && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.timestamp, other.timestamp)
@@ -334,6 +401,7 @@ public final class AlarmDimensionStatesEntry
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.ruleName == null ? 43 : this.ruleName.hashCode());

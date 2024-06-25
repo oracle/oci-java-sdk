@@ -181,6 +181,15 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * The Azure Data Lake Storage technology type.
          **/
@@ -319,6 +328,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
@@ -384,6 +394,9 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -436,6 +449,7 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             AzureDataLakeStorageConnection.TechnologyType technologyType,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
@@ -459,7 +473,8 @@ public final class AzureDataLakeStorageConnectionSummary extends ConnectionSumma
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;

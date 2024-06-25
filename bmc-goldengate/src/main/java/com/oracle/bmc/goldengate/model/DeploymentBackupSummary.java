@@ -26,6 +26,7 @@ public final class DeploymentBackupSummary
     @java.beans.ConstructorProperties({
         "id",
         "deploymentId",
+        "deploymentType",
         "compartmentId",
         "displayName",
         "isAutomatic",
@@ -43,11 +44,13 @@ public final class DeploymentBackupSummary
         "timeUpdated",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "locks"
     })
     public DeploymentBackupSummary(
             String id,
             String deploymentId,
+            DeploymentType deploymentType,
             String compartmentId,
             String displayName,
             Boolean isAutomatic,
@@ -65,10 +68,12 @@ public final class DeploymentBackupSummary
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.deploymentId = deploymentId;
+        this.deploymentType = deploymentType;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.isAutomatic = isAutomatic;
@@ -87,6 +92,7 @@ public final class DeploymentBackupSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -125,6 +131,28 @@ public final class DeploymentBackupSummary
         public Builder deploymentId(String deploymentId) {
             this.deploymentId = deploymentId;
             this.__explicitlySet__.add("deploymentId");
+            return this;
+        }
+        /**
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+        private DeploymentType deploymentType;
+
+        /**
+         * The type of deployment, which can be any one of the Allowed values.
+         * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+         *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+         *
+         * @param deploymentType the value to set
+         * @return this builder
+         **/
+        public Builder deploymentType(DeploymentType deploymentType) {
+            this.deploymentType = deploymentType;
+            this.__explicitlySet__.add("deploymentType");
             return this;
         }
         /**
@@ -474,6 +502,22 @@ public final class DeploymentBackupSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -483,6 +527,7 @@ public final class DeploymentBackupSummary
                     new DeploymentBackupSummary(
                             this.id,
                             this.deploymentId,
+                            this.deploymentType,
                             this.compartmentId,
                             this.displayName,
                             this.isAutomatic,
@@ -500,7 +545,8 @@ public final class DeploymentBackupSummary
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -514,6 +560,9 @@ public final class DeploymentBackupSummary
             }
             if (model.wasPropertyExplicitlySet("deploymentId")) {
                 this.deploymentId(model.getDeploymentId());
+            }
+            if (model.wasPropertyExplicitlySet("deploymentType")) {
+                this.deploymentType(model.getDeploymentType());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
@@ -569,6 +618,9 @@ public final class DeploymentBackupSummary
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             return this;
         }
     }
@@ -614,6 +666,26 @@ public final class DeploymentBackupSummary
      **/
     public String getDeploymentId() {
         return deploymentId;
+    }
+
+    /**
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("deploymentType")
+    private final DeploymentType deploymentType;
+
+    /**
+     * The type of deployment, which can be any one of the Allowed values.
+     * NOTE: Use of the value 'OGG' is maintained for backward compatibility purposes.
+     *     Its use is discouraged in favor of 'DATABASE_ORACLE'.
+     *
+     * @return the value
+     **/
+    public DeploymentType getDeploymentType() {
+        return deploymentType;
     }
 
     /**
@@ -926,6 +998,20 @@ public final class DeploymentBackupSummary
         return systemTags;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -942,6 +1028,7 @@ public final class DeploymentBackupSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", deploymentId=").append(String.valueOf(this.deploymentId));
+        sb.append(", deploymentType=").append(String.valueOf(this.deploymentType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", isAutomatic=").append(String.valueOf(this.isAutomatic));
@@ -960,6 +1047,7 @@ public final class DeploymentBackupSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -976,6 +1064,7 @@ public final class DeploymentBackupSummary
         DeploymentBackupSummary other = (DeploymentBackupSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
+                && java.util.Objects.equals(this.deploymentType, other.deploymentType)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.isAutomatic, other.isAutomatic)
@@ -994,6 +1083,7 @@ public final class DeploymentBackupSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -1003,6 +1093,9 @@ public final class DeploymentBackupSummary
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.deploymentId == null ? 43 : this.deploymentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentType == null ? 43 : this.deploymentType.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -1033,6 +1126,7 @@ public final class DeploymentBackupSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration operations.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public interface DatabaseMigration extends AutoCloseable {
 
     /**
@@ -84,19 +84,6 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMigrationObjects API.
      */
     AddMigrationObjectsResponse addMigrationObjects(AddMigrationObjectsRequest request);
-
-    /**
-     * Used to configure an ODMS Agent Compartment ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ChangeAgentCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAgentCompartment API.
-     */
-    ChangeAgentCompartmentResponse changeAgentCompartment(ChangeAgentCompartmentRequest request);
 
     /**
      * Used to change the Database Connection compartment.
@@ -182,19 +169,6 @@ public interface DatabaseMigration extends AutoCloseable {
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
     /**
-     * Delete the ODMS Agent represented by the specified ODMS Agent ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAgent API.
-     */
-    DeleteAgentResponse deleteAgent(DeleteAgentRequest request);
-
-    /**
      * Deletes the Database Connection represented by the specified connection ID.
      *
      * @param request The request object containing the details to send
@@ -260,19 +234,6 @@ public interface DatabaseMigration extends AutoCloseable {
     GetAdvisorReportResponse getAdvisorReport(GetAdvisorReportRequest request);
 
     /**
-     * Display the ODMS Agent configuration.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAgent API.
-     */
-    GetAgentResponse getAgent(GetAgentRequest request);
-
-    /**
      * Display Database Connection details.
      *
      * @param request The request object containing the details to send
@@ -336,32 +297,6 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
-
-    /**
-     * Get details of the ODMS Agent Images available to install on-premises.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListAgentImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgentImages API.
-     */
-    ListAgentImagesResponse listAgentImages(ListAgentImagesRequest request);
-
-    /**
-     * Display the name of all the existing ODMS Agents in the server.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListAgentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgents API.
-     */
-    ListAgentsResponse listAgents(ListAgentsRequest request);
 
     /**
      * List all Database Connections.
@@ -546,19 +481,6 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/StartMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartMigration API.
      */
     StartMigrationResponse startMigration(StartMigrationRequest request);
-
-    /**
-     * Modifies the ODMS Agent represented by the given ODMS Agent ID.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs.
-     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
-     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/UpdateAgentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAgent API.
-     */
-    UpdateAgentResponse updateAgent(UpdateAgentRequest request);
 
     /**
      * Update Database Connection resource details.

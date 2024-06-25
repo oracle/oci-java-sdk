@@ -6,6 +6,8 @@ package com.oracle.bmc.goldengate.model;
 
 /**
  * Possible operation types.
+ * <p>
+ * Deprecated value: GoldengateConnectionAssigmnentDelete
  *
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200407")
@@ -31,6 +33,7 @@ public enum OperationType {
     GoldengateConnectionDelete("GOLDENGATE_CONNECTION_DELETE"),
     GoldengateConnectionMove("GOLDENGATE_CONNECTION_MOVE"),
     GoldengateConnectionAssignmentCreate("GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE"),
+    GoldengateConnectionAssignmentDelete("GOLDENGATE_CONNECTION_ASSIGNMENT_DELETE"),
     GoldengateConnectionAssigmnentDelete("GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE"),
     GoldengateDeploymentDiagnosticCollect("GOLDENGATE_DEPLOYMENT_DIAGNOSTIC_COLLECT"),
     GoldengateDeploymentWalletExport("GOLDENGATE_DEPLOYMENT_WALLET_EXPORT"),

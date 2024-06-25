@@ -34,6 +34,133 @@ public class CapacityManagementPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listInternalNamespaceOccOverviews operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListInternalNamespaceOccOverviewsResponse>
+            listInternalNamespaceOccOverviewsResponseIterator(
+                    final ListInternalNamespaceOccOverviewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInternalNamespaceOccOverviewsRequest.Builder,
+                ListInternalNamespaceOccOverviewsRequest,
+                ListInternalNamespaceOccOverviewsResponse>(
+                new java.util.function.Supplier<
+                        ListInternalNamespaceOccOverviewsRequest.Builder>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsRequest.Builder get() {
+                        return ListInternalNamespaceOccOverviewsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInternalNamespaceOccOverviewsResponse, String>() {
+                    @Override
+                    public String apply(ListInternalNamespaceOccOverviewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInternalNamespaceOccOverviewsRequest.Builder>,
+                        ListInternalNamespaceOccOverviewsRequest>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInternalNamespaceOccOverviewsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInternalNamespaceOccOverviewsRequest,
+                        ListInternalNamespaceOccOverviewsResponse>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsResponse apply(
+                            ListInternalNamespaceOccOverviewsRequest request) {
+                        return client.listInternalNamespaceOccOverviews(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses from the listInternalNamespaceOccOverviews operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
+            listInternalNamespaceOccOverviewsRecordIterator(
+                    final ListInternalNamespaceOccOverviewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInternalNamespaceOccOverviewsRequest.Builder,
+                ListInternalNamespaceOccOverviewsRequest, ListInternalNamespaceOccOverviewsResponse,
+                com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>(
+                new java.util.function.Supplier<
+                        ListInternalNamespaceOccOverviewsRequest.Builder>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsRequest.Builder get() {
+                        return ListInternalNamespaceOccOverviewsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInternalNamespaceOccOverviewsResponse, String>() {
+                    @Override
+                    public String apply(ListInternalNamespaceOccOverviewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInternalNamespaceOccOverviewsRequest.Builder>,
+                        ListInternalNamespaceOccOverviewsRequest>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInternalNamespaceOccOverviewsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInternalNamespaceOccOverviewsRequest,
+                        ListInternalNamespaceOccOverviewsResponse>() {
+                    @Override
+                    public ListInternalNamespaceOccOverviewsResponse apply(
+                            ListInternalNamespaceOccOverviewsRequest request) {
+                        return client.listInternalNamespaceOccOverviews(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInternalNamespaceOccOverviewsResponse,
+                        java.util.List<
+                                com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
+                            apply(ListInternalNamespaceOccOverviewsResponse response) {
+                        return response.getOccOverviewCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listOccAvailabilities operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -762,6 +889,120 @@ public class CapacityManagementPaginators {
                                     com.oracle.bmc.capacitymanagement.model.OccCustomerGroupSummary>
                             apply(ListOccCustomerGroupsResponse response) {
                         return response.getOccCustomerGroupCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listOccOverviews operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListOccOverviewsResponse> listOccOverviewsResponseIterator(
+            final ListOccOverviewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListOccOverviewsRequest.Builder, ListOccOverviewsRequest, ListOccOverviewsResponse>(
+                new java.util.function.Supplier<ListOccOverviewsRequest.Builder>() {
+                    @Override
+                    public ListOccOverviewsRequest.Builder get() {
+                        return ListOccOverviewsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOccOverviewsResponse, String>() {
+                    @Override
+                    public String apply(ListOccOverviewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOccOverviewsRequest.Builder>,
+                        ListOccOverviewsRequest>() {
+                    @Override
+                    public ListOccOverviewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOccOverviewsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOccOverviewsRequest, ListOccOverviewsResponse>() {
+                    @Override
+                    public ListOccOverviewsResponse apply(ListOccOverviewsRequest request) {
+                        return client.listOccOverviews(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses from the listOccOverviews operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.capacitymanagement.model.OccOverviewSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
+            listOccOverviewsRecordIterator(final ListOccOverviewsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListOccOverviewsRequest.Builder, ListOccOverviewsRequest, ListOccOverviewsResponse,
+                com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>(
+                new java.util.function.Supplier<ListOccOverviewsRequest.Builder>() {
+                    @Override
+                    public ListOccOverviewsRequest.Builder get() {
+                        return ListOccOverviewsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListOccOverviewsResponse, String>() {
+                    @Override
+                    public String apply(ListOccOverviewsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListOccOverviewsRequest.Builder>,
+                        ListOccOverviewsRequest>() {
+                    @Override
+                    public ListOccOverviewsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListOccOverviewsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListOccOverviewsRequest, ListOccOverviewsResponse>() {
+                    @Override
+                    public ListOccOverviewsResponse apply(ListOccOverviewsRequest request) {
+                        return client.listOccOverviews(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListOccOverviewsResponse,
+                        java.util.List<
+                                com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.capacitymanagement.model.OccOverviewSummary>
+                            apply(ListOccOverviewsResponse response) {
+                        return response.getOccOverviewCollection().getItems();
                     }
                 });
     }

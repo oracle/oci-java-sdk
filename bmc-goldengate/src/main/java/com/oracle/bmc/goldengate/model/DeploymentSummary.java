@@ -50,7 +50,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         "timeUpgradeRequired",
         "deploymentType",
         "storageUtilizationInBytes",
-        "isStorageUtilizationLimitExceeded"
+        "isStorageUtilizationLimitExceeded",
+        "locks"
     })
     public DeploymentSummary(
             String id,
@@ -80,7 +81,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             java.util.Date timeUpgradeRequired,
             DeploymentType deploymentType,
             Long storageUtilizationInBytes,
-            Boolean isStorageUtilizationLimitExceeded) {
+            Boolean isStorageUtilizationLimitExceeded,
+            java.util.List<ResourceLock> locks) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -110,6 +112,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         this.deploymentType = deploymentType;
         this.storageUtilizationInBytes = storageUtilizationInBytes;
         this.isStorageUtilizationLimitExceeded = isStorageUtilizationLimitExceeded;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -331,6 +334,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -338,6 +343,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -350,7 +357,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
@@ -359,7 +366,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -668,6 +675,22 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("isStorageUtilizationLimitExceeded");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -702,7 +725,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                             this.timeUpgradeRequired,
                             this.deploymentType,
                             this.storageUtilizationInBytes,
-                            this.isStorageUtilizationLimitExceeded);
+                            this.isStorageUtilizationLimitExceeded,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -795,6 +819,9 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("isStorageUtilizationLimitExceeded")) {
                 this.isStorageUtilizationLimitExceeded(
                         model.getIsStorageUtilizationLimitExceeded());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -1005,6 +1032,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -1012,6 +1041,8 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
      *
      * @return the value
      **/
@@ -1022,7 +1053,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
@@ -1031,7 +1062,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
      * @return the value
      **/
@@ -1307,6 +1338,20 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
         return isStorageUtilizationLimitExceeded;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1351,6 +1396,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 .append(String.valueOf(this.storageUtilizationInBytes));
         sb.append(", isStorageUtilizationLimitExceeded=")
                 .append(String.valueOf(this.isStorageUtilizationLimitExceeded));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -1396,6 +1442,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(
                         this.isStorageUtilizationLimitExceeded,
                         other.isStorageUtilizationLimitExceeded)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -1471,6 +1518,7 @@ public final class DeploymentSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.isStorageUtilizationLimitExceeded == null
                                 ? 43
                                 : this.isStorageUtilizationLimitExceeded.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

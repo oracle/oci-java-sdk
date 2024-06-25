@@ -181,6 +181,15 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * The Redis technology type.
          **/
@@ -275,6 +284,24 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+        private String redisClusterId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+         *
+         * @param redisClusterId the value to set
+         * @return this builder
+         **/
+        public Builder redisClusterId(String redisClusterId) {
+            this.redisClusterId = redisClusterId;
+            this.__explicitlySet__.add("redisClusterId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -299,11 +326,13 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
-                            this.username);
+                            this.username,
+                            this.redisClusterId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -363,6 +392,9 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -377,6 +409,9 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("redisClusterId")) {
+                this.redisClusterId(model.getRedisClusterId());
             }
             return this;
         }
@@ -412,11 +447,13 @@ public final class RedisConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             RedisConnection.TechnologyType technologyType,
             String servers,
             RedisConnection.SecurityProtocol securityProtocol,
             RedisConnection.AuthenticationType authenticationType,
-            String username) {
+            String username,
+            String redisClusterId) {
         super(
                 id,
                 displayName,
@@ -434,12 +471,14 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.redisClusterId = redisClusterId;
     }
 
     /**
@@ -526,6 +565,22 @@ public final class RedisConnectionSummary extends ConnectionSummary {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("redisClusterId")
+    private final String redisClusterId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Redis cluster.
+     *
+     * @return the value
+     **/
+    public String getRedisClusterId() {
+        return redisClusterId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -545,6 +600,7 @@ public final class RedisConnectionSummary extends ConnectionSummary {
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", redisClusterId=").append(String.valueOf(this.redisClusterId));
         sb.append(")");
         return sb.toString();
     }
@@ -564,6 +620,7 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.redisClusterId, other.redisClusterId)
                 && super.equals(other);
     }
 
@@ -584,6 +641,9 @@ public final class RedisConnectionSummary extends ConnectionSummary {
                                 ? 43
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.redisClusterId == null ? 43 : this.redisClusterId.hashCode());
         return result;
     }
 }

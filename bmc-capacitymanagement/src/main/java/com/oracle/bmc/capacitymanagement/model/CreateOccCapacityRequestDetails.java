@@ -29,6 +29,7 @@ public final class CreateOccCapacityRequestDetails
         "namespace",
         "region",
         "displayName",
+        "requestType",
         "description",
         "freeformTags",
         "definedTags",
@@ -44,6 +45,7 @@ public final class CreateOccCapacityRequestDetails
             Namespace namespace,
             String region,
             String displayName,
+            OccCapacityRequest.RequestType requestType,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -58,6 +60,7 @@ public final class CreateOccCapacityRequestDetails
         this.namespace = namespace;
         this.region = region;
         this.displayName = displayName;
+        this.requestType = requestType;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -148,6 +151,22 @@ public final class CreateOccCapacityRequestDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Type of Capacity Request(New or Transfer)
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+        private OccCapacityRequest.RequestType requestType;
+
+        /**
+         * Type of Capacity Request(New or Transfer)
+         * @param requestType the value to set
+         * @return this builder
+         **/
+        public Builder requestType(OccCapacityRequest.RequestType requestType) {
+            this.requestType = requestType;
+            this.__explicitlySet__.add("requestType");
             return this;
         }
         /**
@@ -299,6 +318,7 @@ public final class CreateOccCapacityRequestDetails
                             this.namespace,
                             this.region,
                             this.displayName,
+                            this.requestType,
                             this.description,
                             this.freeformTags,
                             this.definedTags,
@@ -329,6 +349,9 @@ public final class CreateOccCapacityRequestDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("requestType")) {
+                this.requestType(model.getRequestType());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -437,6 +460,20 @@ public final class CreateOccCapacityRequestDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+    private final OccCapacityRequest.RequestType requestType;
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     * @return the value
+     **/
+    public OccCapacityRequest.RequestType getRequestType() {
+        return requestType;
     }
 
     /**
@@ -614,6 +651,7 @@ public final class CreateOccCapacityRequestDetails
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", requestType=").append(String.valueOf(this.requestType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -643,6 +681,7 @@ public final class CreateOccCapacityRequestDetails
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.requestType, other.requestType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -670,6 +709,7 @@ public final class CreateOccCapacityRequestDetails
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.requestType == null ? 43 : this.requestType.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

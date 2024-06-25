@@ -79,6 +79,14 @@ public class ListOccCapacityRequestsInternalConverter {
                                     request.getDisplayName()));
         }
 
+        if (request.getRequestType() != null) {
+            target =
+                    target.queryParam(
+                            "requestType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getRequestType().getValue()));
+        }
+
         if (request.getId() != null) {
             target =
                     target.queryParam(

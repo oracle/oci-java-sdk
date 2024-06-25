@@ -193,6 +193,25 @@ public interface CapacityManagementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists an overview of all resources in that namespace in a given time interval.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInternalNamespaceOccOverviewsResponse>
+            listInternalNamespaceOccOverviews(
+                    ListInternalNamespaceOccOverviewsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListInternalNamespaceOccOverviewsRequest,
+                                    ListInternalNamespaceOccOverviewsResponse>
+                            handler);
+
+    /**
      * Lists availabilities for a particular availability catalog.
      *
      * @param request The request object containing the details to send
@@ -292,6 +311,40 @@ public interface CapacityManagementAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListOccCustomerGroupsRequest, ListOccCustomerGroupsResponse>
                     handler);
+
+    /**
+     * Lists an overview of all resources in that namespace in a given time interval.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOccOverviewsResponse> listOccOverviews(
+            ListOccOverviewsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListOccOverviewsRequest, ListOccOverviewsResponse>
+                    handler);
+
+    /**
+     * Updates the OccCapacityRequest by evaluating a sequence of instructions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchInternalOccCapacityRequestResponse>
+            patchInternalOccCapacityRequest(
+                    PatchInternalOccCapacityRequestRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    PatchInternalOccCapacityRequestRequest,
+                                    PatchInternalOccCapacityRequestResponse>
+                            handler);
 
     /**
      * Updates the OccCapacityRequest by evaluating a sequence of instructions.

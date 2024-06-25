@@ -3673,6 +3673,23 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the Autonomous Database peers for the specified Autonomous Database.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAutonomousDatabasePeersResponse> listAutonomousDatabasePeers(
+            ListAutonomousDatabasePeersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>
+                    handler);
+
+    /**
      * Lists the OCIDs of the Autonomous Database local and connected remote refreshable clones with the region where they exist for the specified source database.
      *
      *

@@ -82,13 +82,13 @@ public final class SummarizeTextDetails extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+         * The OCID of compartment in which to call the Generative AI service to summarize text.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+         * The OCID of compartment in which to call the Generative AI service to summarize text.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -287,13 +287,13 @@ public final class SummarizeTextDetails extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+     * The OCID of compartment in which to call the Generative AI service to summarize text.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of compartment that the user is authorized to use to call into the Generative AI service.
+     * The OCID of compartment in which to call the Generative AI service to summarize text.
      * @return the value
      **/
     public String getCompartmentId() {
