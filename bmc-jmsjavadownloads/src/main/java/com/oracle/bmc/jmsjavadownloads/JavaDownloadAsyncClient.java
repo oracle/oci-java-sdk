@@ -476,10 +476,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "CancelWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/CancelWorkRequest");
+                        "JavaDownload", "CancelWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -526,7 +523,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "CreateJavaDownloadReport",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/CreateJavaDownloadReport");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateJavaDownloadReportResponse>
                 transformer =
@@ -580,7 +577,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "CreateJavaDownloadToken",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/CreateJavaDownloadToken");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateJavaDownloadTokenResponse>
                 transformer =
@@ -636,7 +633,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "CreateJavaLicenseAcceptanceRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/CreateJavaLicenseAcceptanceRecord");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateJavaLicenseAcceptanceRecordResponse>
                 transformer =
@@ -692,7 +689,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "DeleteJavaDownloadReport",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/DeleteJavaDownloadReport");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteJavaDownloadReportResponse>
                 transformer =
@@ -740,7 +737,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "DeleteJavaDownloadToken",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/DeleteJavaDownloadToken");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteJavaDownloadTokenResponse>
                 transformer =
@@ -790,7 +787,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "DeleteJavaLicenseAcceptanceRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/DeleteJavaLicenseAcceptanceRecord");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteJavaLicenseAcceptanceRecordResponse>
                 transformer =
@@ -843,7 +840,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "GenerateArtifactDownloadUrl",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateArtifactDownloadUrlResponse>
                 transformer =
@@ -894,10 +891,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 GetJavaDownloadReportConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadReport",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReport");
+                        "JavaDownload", "GetJavaDownloadReport", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetJavaDownloadReportResponse>
                 transformer =
                         GetJavaDownloadReportConverter.fromResponse(
@@ -946,7 +940,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "GetJavaDownloadReportContent",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/GetJavaDownloadReportContent");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetJavaDownloadReportContentResponse>
                 transformer =
@@ -992,10 +986,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 GetJavaDownloadTokenConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "GetJavaDownloadToken",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/GetJavaDownloadToken");
+                        "JavaDownload", "GetJavaDownloadToken", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetJavaDownloadTokenResponse>
                 transformer =
                         GetJavaDownloadTokenConverter.fromResponse(
@@ -1039,10 +1030,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 GetJavaLicenseConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "GetJavaLicense",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/GetJavaLicense");
+                        "JavaDownload", "GetJavaLicense", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetJavaLicenseResponse>
                 transformer =
                         GetJavaLicenseConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1089,7 +1077,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "GetJavaLicenseAcceptanceRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/GetJavaLicenseAcceptanceRecord");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetJavaLicenseAcceptanceRecordResponse>
                 transformer =
@@ -1136,10 +1124,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/GetWorkRequest");
+                        "JavaDownload", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -1184,7 +1169,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "ListJavaDownloadRecords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadRecord/ListJavaDownloadRecords");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListJavaDownloadRecordsResponse>
                 transformer =
@@ -1232,7 +1217,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "ListJavaDownloadReports",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadReport/ListJavaDownloadReports");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListJavaDownloadReportsResponse>
                 transformer =
@@ -1280,7 +1265,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "ListJavaDownloadTokens",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/ListJavaDownloadTokens");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListJavaDownloadTokensResponse>
                 transformer =
                         ListJavaDownloadTokensConverter.fromResponse(
@@ -1329,7 +1314,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "ListJavaLicenseAcceptanceRecords",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/ListJavaLicenseAcceptanceRecords");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListJavaLicenseAcceptanceRecordsResponse>
                 transformer =
@@ -1377,10 +1362,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 ListJavaLicensesConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "ListJavaLicenses",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicense/ListJavaLicenses");
+                        "JavaDownload", "ListJavaLicenses", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListJavaLicensesResponse>
                 transformer =
                         ListJavaLicensesConverter.fromResponse(
@@ -1423,10 +1405,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestError/ListWorkRequestErrors");
+                        "JavaDownload", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1470,10 +1449,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "JavaDownload", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1517,10 +1493,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaDownload",
-                        "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/WorkRequest/ListWorkRequests");
+                        "JavaDownload", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1569,7 +1542,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "RequestSummarizedJavaDownloadCounts",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadCountAggregation/RequestSummarizedJavaDownloadCounts");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, RequestSummarizedJavaDownloadCountsResponse>
                 transformer =
@@ -1625,7 +1598,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "UpdateJavaDownloadToken",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaDownloadToken/UpdateJavaDownloadToken");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateJavaDownloadTokenResponse>
                 transformer =
@@ -1680,7 +1653,7 @@ public class JavaDownloadAsyncClient implements JavaDownloadAsync {
                         "JavaDownload",
                         "UpdateJavaLicenseAcceptanceRecord",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/jms-java-download/20230601/JavaLicenseAcceptanceRecord/UpdateJavaLicenseAcceptanceRecord");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateJavaLicenseAcceptanceRecordResponse>
                 transformer =

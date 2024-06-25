@@ -38,6 +38,27 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         return metadata;
     }
     /**
+     * For conditional requests. In the GET call for a resource, set the
+     * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+     * POST or PUT) response for that resource. The server will return with
+     * either a 304 Not Modified response if the resource has not changed, or a
+     * 200 OK response with the updated representation.
+     *
+     */
+    private String ifNoneMatch;
+
+    /**
+     * For conditional requests. In the GET call for a resource, set the
+     * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+     * POST or PUT) response for that resource. The server will return with
+     * either a 304 Not Modified response if the resource has not changed, or a
+     * 200 OK response with the updated representation.
+     *
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -91,6 +112,31 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
+            return this;
+        }
+
+        /**
          * The client request ID for tracing.
          */
         private String opcRequestId = null;
@@ -135,6 +181,7 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(GetShardedDatabaseRequest o) {
             shardedDatabaseId(o.getShardedDatabaseId());
             metadata(o.getMetadata());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -170,9 +217,10 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
             GetShardedDatabaseRequest request = new GetShardedDatabaseRequest();
             request.shardedDatabaseId = shardedDatabaseId;
             request.metadata = metadata;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetShardedDatabaseRequest(shardedDatabaseId, metadata, opcRequestId);
+            // new GetShardedDatabaseRequest(shardedDatabaseId, metadata, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -184,6 +232,7 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         return new Builder()
                 .shardedDatabaseId(shardedDatabaseId)
                 .metadata(metadata)
+                .ifNoneMatch(ifNoneMatch)
                 .opcRequestId(opcRequestId);
     }
 
@@ -202,6 +251,7 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("super=").append(super.toString());
         sb.append(",shardedDatabaseId=").append(String.valueOf(this.shardedDatabaseId));
         sb.append(",metadata=").append(String.valueOf(this.metadata));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -220,6 +270,7 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
         return super.equals(o)
                 && java.util.Objects.equals(this.shardedDatabaseId, other.shardedDatabaseId)
                 && java.util.Objects.equals(this.metadata, other.metadata)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -231,6 +282,7 @@ public class GetShardedDatabaseRequest extends com.oracle.bmc.requests.BmcReques
                 (result * PRIME)
                         + (this.shardedDatabaseId == null ? 43 : this.shardedDatabaseId.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

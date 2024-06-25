@@ -6,7 +6,6 @@ package com.oracle.bmc.databasemigration.model;
 
 /**
  * Optional dump transfer details for OCI-CLI-based dump transfer in source or target host.
- *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -15,7 +14,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateOciCliDumpTransferDetails.Builder.class
 )
@@ -38,14 +37,12 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
         }
         /**
          * Path to the OCI CLI installation in the node.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
         private String ociHome;
 
         /**
          * Path to the OCI CLI installation in the node.
-         *
          * @param ociHome the value to set
          * @return this builder
          **/
@@ -98,14 +95,12 @@ public final class UpdateOciCliDumpTransferDetails extends UpdateHostDumpTransfe
 
     /**
      * Path to the OCI CLI installation in the node.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ociHome")
     private final String ociHome;
 
     /**
      * Path to the OCI CLI installation in the node.
-     *
      * @return the value
      **/
     public String getOciHome() {

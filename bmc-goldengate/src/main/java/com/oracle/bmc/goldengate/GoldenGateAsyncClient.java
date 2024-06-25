@@ -458,6 +458,161 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddConnectionLockResponse> addConnectionLock(
+            AddConnectionLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddConnectionLockRequest, AddConnectionLockResponse>
+                    handler) {
+        LOG.trace("Called async addConnectionLock");
+        final AddConnectionLockRequest interceptedRequest =
+                AddConnectionLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddConnectionLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "AddConnectionLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/AddConnectionLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddConnectionLockResponse>
+                transformer =
+                        AddConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddConnectionLockRequest, AddConnectionLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddConnectionLockRequest, AddConnectionLockResponse>,
+                        java.util.concurrent.Future<AddConnectionLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddConnectionLockRequest, AddConnectionLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDeploymentBackupLockResponse> addDeploymentBackupLock(
+            AddDeploymentBackupLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentBackupLockRequest, AddDeploymentBackupLockResponse>
+                    handler) {
+        LOG.trace("Called async addDeploymentBackupLock");
+        final AddDeploymentBackupLockRequest interceptedRequest =
+                AddDeploymentBackupLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDeploymentBackupLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "AddDeploymentBackupLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/AddDeploymentBackupLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddDeploymentBackupLockResponse>
+                transformer =
+                        AddDeploymentBackupLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddDeploymentBackupLockRequest, AddDeploymentBackupLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDeploymentBackupLockRequest, AddDeploymentBackupLockResponse>,
+                        java.util.concurrent.Future<AddDeploymentBackupLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDeploymentBackupLockRequest, AddDeploymentBackupLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddDeploymentLockResponse> addDeploymentLock(
+            AddDeploymentLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentLockRequest, AddDeploymentLockResponse>
+                    handler) {
+        LOG.trace("Called async addDeploymentLock");
+        final AddDeploymentLockRequest interceptedRequest =
+                AddDeploymentLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddDeploymentLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "AddDeploymentLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/AddDeploymentLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddDeploymentLockResponse>
+                transformer =
+                        AddDeploymentLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddDeploymentLockRequest, AddDeploymentLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddDeploymentLockRequest, AddDeploymentLockResponse>,
+                        java.util.concurrent.Future<AddDeploymentLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddDeploymentLockRequest, AddDeploymentLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelDeploymentBackupResponse> cancelDeploymentBackup(
             CancelDeploymentBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1681,6 +1836,58 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateLibraryUrlResponse> generateLibraryUrl(
+            GenerateLibraryUrlRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateLibraryUrlRequest, GenerateLibraryUrlResponse>
+                    handler) {
+        LOG.trace("Called async generateLibraryUrl");
+        final GenerateLibraryUrlRequest interceptedRequest =
+                GenerateLibraryUrlConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateLibraryUrlConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "GenerateLibraryUrl",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/GenerateLibraryUrl");
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateLibraryUrlResponse>
+                transformer =
+                        GenerateLibraryUrlConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GenerateLibraryUrlRequest, GenerateLibraryUrlResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateLibraryUrlRequest, GenerateLibraryUrlResponse>,
+                        java.util.concurrent.Future<GenerateLibraryUrlResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getGenerateLibraryUrlDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateLibraryUrlRequest, GenerateLibraryUrlResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCertificateResponse> getCertificate(
             GetCertificateRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2841,6 +3048,166 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveConnectionLockResponse> removeConnectionLock(
+            RemoveConnectionLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveConnectionLockRequest, RemoveConnectionLockResponse>
+                    handler) {
+        LOG.trace("Called async removeConnectionLock");
+        final RemoveConnectionLockRequest interceptedRequest =
+                RemoveConnectionLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveConnectionLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RemoveConnectionLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RemoveConnectionLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveConnectionLockResponse>
+                transformer =
+                        RemoveConnectionLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveConnectionLockRequest, RemoveConnectionLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveConnectionLockRequest, RemoveConnectionLockResponse>,
+                        java.util.concurrent.Future<RemoveConnectionLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveConnectionLockRequest, RemoveConnectionLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveDeploymentBackupLockResponse>
+            removeDeploymentBackupLock(
+                    RemoveDeploymentBackupLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveDeploymentBackupLockRequest,
+                                    RemoveDeploymentBackupLockResponse>
+                            handler) {
+        LOG.trace("Called async removeDeploymentBackupLock");
+        final RemoveDeploymentBackupLockRequest interceptedRequest =
+                RemoveDeploymentBackupLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDeploymentBackupLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentBackupLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentBackup/RemoveDeploymentBackupLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveDeploymentBackupLockResponse>
+                transformer =
+                        RemoveDeploymentBackupLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveDeploymentBackupLockRequest, RemoveDeploymentBackupLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDeploymentBackupLockRequest,
+                                RemoveDeploymentBackupLockResponse>,
+                        java.util.concurrent.Future<RemoveDeploymentBackupLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDeploymentBackupLockRequest, RemoveDeploymentBackupLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveDeploymentLockResponse> removeDeploymentLock(
+            RemoveDeploymentLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>
+                    handler) {
+        LOG.trace("Called async removeDeploymentLock");
+        final RemoveDeploymentLockRequest interceptedRequest =
+                RemoveDeploymentLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveDeploymentLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RemoveDeploymentLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Deployment/RemoveDeploymentLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveDeploymentLockResponse>
+                transformer =
+                        RemoveDeploymentLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>,
+                        java.util.concurrent.Future<RemoveDeploymentLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourceLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

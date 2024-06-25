@@ -30,6 +30,7 @@ public enum WorkRequestOperationType {
     ResumeChannel("RESUME_CHANNEL"),
     ResetChannel("RESET_CHANNEL"),
     DeleteChannel("DELETE_CHANNEL"),
+    CopyBackup("COPY_BACKUP"),
     CreateBackup("CREATE_BACKUP"),
     DeleteBackup("DELETE_BACKUP"),
 

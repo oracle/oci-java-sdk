@@ -37,6 +37,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "confidence",
         "timeFirstDetected",
         "timeLastDetected",
+        "timeFirstOccurred",
+        "timeLastOccurred",
         "regions",
         "additionalDetails",
         "locks"
@@ -59,6 +61,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
             Confidence confidence,
             java.util.Date timeFirstDetected,
             java.util.Date timeLastDetected,
+            java.util.Date timeFirstOccurred,
+            java.util.Date timeLastOccurred,
             java.util.List<String> regions,
             java.util.Map<String, String> additionalDetails,
             java.util.List<ResourceLock> locks) {
@@ -80,6 +84,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.confidence = confidence;
         this.timeFirstDetected = timeFirstDetected;
         this.timeLastDetected = timeLastDetected;
+        this.timeFirstOccurred = timeFirstOccurred;
+        this.timeLastOccurred = timeLastOccurred;
         this.regions = regions;
         this.additionalDetails = additionalDetails;
         this.locks = locks;
@@ -328,13 +334,13 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The date and time the sighting was first detected. Format defined by RFC3339.
+         * Time the activities were first detected. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
         private java.util.Date timeFirstDetected;
 
         /**
-         * The date and time the sighting was first detected. Format defined by RFC3339.
+         * Time the activities were first detected. Format defined by RFC3339.
          * @param timeFirstDetected the value to set
          * @return this builder
          **/
@@ -344,19 +350,51 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The date and time the sighting was last detected. Format defined by RFC3339.
+         * Time the activities were last detected. Format defined by RFC3339.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
         private java.util.Date timeLastDetected;
 
         /**
-         * The date and time the sighting was last detected. Format defined by RFC3339.
+         * Time the activities were last detected. Format defined by RFC3339.
          * @param timeLastDetected the value to set
          * @return this builder
          **/
         public Builder timeLastDetected(java.util.Date timeLastDetected) {
             this.timeLastDetected = timeLastDetected;
             this.__explicitlySet__.add("timeLastDetected");
+            return this;
+        }
+        /**
+         * Time the activities were first performed. Format defined by RFC3339.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+        private java.util.Date timeFirstOccurred;
+
+        /**
+         * Time the activities were first performed. Format defined by RFC3339.
+         * @param timeFirstOccurred the value to set
+         * @return this builder
+         **/
+        public Builder timeFirstOccurred(java.util.Date timeFirstOccurred) {
+            this.timeFirstOccurred = timeFirstOccurred;
+            this.__explicitlySet__.add("timeFirstOccurred");
+            return this;
+        }
+        /**
+         * Time the activities were last performed. Format defined by RFC3339.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+        private java.util.Date timeLastOccurred;
+
+        /**
+         * Time the activities were last performed. Format defined by RFC3339.
+         * @param timeLastOccurred the value to set
+         * @return this builder
+         **/
+        public Builder timeLastOccurred(java.util.Date timeLastOccurred) {
+            this.timeLastOccurred = timeLastOccurred;
+            this.__explicitlySet__.add("timeLastOccurred");
             return this;
         }
         /**
@@ -431,6 +469,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.confidence,
                             this.timeFirstDetected,
                             this.timeLastDetected,
+                            this.timeFirstOccurred,
+                            this.timeLastOccurred,
                             this.regions,
                             this.additionalDetails,
                             this.locks);
@@ -492,6 +532,12 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("timeLastDetected")) {
                 this.timeLastDetected(model.getTimeLastDetected());
+            }
+            if (model.wasPropertyExplicitlySet("timeFirstOccurred")) {
+                this.timeFirstOccurred(model.getTimeFirstOccurred());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastOccurred")) {
+                this.timeLastOccurred(model.getTimeLastOccurred());
             }
             if (model.wasPropertyExplicitlySet("regions")) {
                 this.regions(model.getRegions());
@@ -728,13 +774,13 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The date and time the sighting was first detected. Format defined by RFC3339.
+     * Time the activities were first detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeFirstDetected")
     private final java.util.Date timeFirstDetected;
 
     /**
-     * The date and time the sighting was first detected. Format defined by RFC3339.
+     * Time the activities were first detected. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeFirstDetected() {
@@ -742,17 +788,45 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The date and time the sighting was last detected. Format defined by RFC3339.
+     * Time the activities were last detected. Format defined by RFC3339.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastDetected")
     private final java.util.Date timeLastDetected;
 
     /**
-     * The date and time the sighting was last detected. Format defined by RFC3339.
+     * Time the activities were last detected. Format defined by RFC3339.
      * @return the value
      **/
     public java.util.Date getTimeLastDetected() {
         return timeLastDetected;
+    }
+
+    /**
+     * Time the activities were first performed. Format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeFirstOccurred")
+    private final java.util.Date timeFirstOccurred;
+
+    /**
+     * Time the activities were first performed. Format defined by RFC3339.
+     * @return the value
+     **/
+    public java.util.Date getTimeFirstOccurred() {
+        return timeFirstOccurred;
+    }
+
+    /**
+     * Time the activities were last performed. Format defined by RFC3339.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastOccurred")
+    private final java.util.Date timeLastOccurred;
+
+    /**
+     * Time the activities were last performed. Format defined by RFC3339.
+     * @return the value
+     **/
+    public java.util.Date getTimeLastOccurred() {
+        return timeLastOccurred;
     }
 
     /**
@@ -829,6 +903,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", confidence=").append(String.valueOf(this.confidence));
         sb.append(", timeFirstDetected=").append(String.valueOf(this.timeFirstDetected));
         sb.append(", timeLastDetected=").append(String.valueOf(this.timeLastDetected));
+        sb.append(", timeFirstOccurred=").append(String.valueOf(this.timeFirstOccurred));
+        sb.append(", timeLastOccurred=").append(String.valueOf(this.timeLastOccurred));
         sb.append(", regions=").append(String.valueOf(this.regions));
         sb.append(", additionalDetails=").append(String.valueOf(this.additionalDetails));
         sb.append(", locks=").append(String.valueOf(this.locks));
@@ -864,6 +940,8 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.confidence, other.confidence)
                 && java.util.Objects.equals(this.timeFirstDetected, other.timeFirstDetected)
                 && java.util.Objects.equals(this.timeLastDetected, other.timeLastDetected)
+                && java.util.Objects.equals(this.timeFirstOccurred, other.timeFirstOccurred)
+                && java.util.Objects.equals(this.timeLastOccurred, other.timeLastOccurred)
                 && java.util.Objects.equals(this.regions, other.regions)
                 && java.util.Objects.equals(this.additionalDetails, other.additionalDetails)
                 && java.util.Objects.equals(this.locks, other.locks)
@@ -919,6 +997,12 @@ public final class Sighting extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.timeLastDetected == null ? 43 : this.timeLastDetected.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeFirstOccurred == null ? 43 : this.timeFirstOccurred.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastOccurred == null ? 43 : this.timeLastOccurred.hashCode());
         result = (result * PRIME) + (this.regions == null ? 43 : this.regions.hashCode());
         result =
                 (result * PRIME)

@@ -28,6 +28,7 @@ public enum ConnectionType {
     Mongodb("MONGODB"),
     AmazonKinesis("AMAZON_KINESIS"),
     AmazonRedshift("AMAZON_REDSHIFT"),
+    Db2("DB2"),
     Redis("REDIS"),
     Elasticsearch("ELASTICSEARCH"),
     Generic("GENERIC"),

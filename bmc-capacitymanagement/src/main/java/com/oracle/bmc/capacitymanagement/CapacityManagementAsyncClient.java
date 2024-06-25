@@ -873,6 +873,59 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListInternalNamespaceOccOverviewsResponse>
+            listInternalNamespaceOccOverviews(
+                    ListInternalNamespaceOccOverviewsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListInternalNamespaceOccOverviewsRequest,
+                                    ListInternalNamespaceOccOverviewsResponse>
+                            handler) {
+        LOG.trace("Called async listInternalNamespaceOccOverviews");
+        final ListInternalNamespaceOccOverviewsRequest interceptedRequest =
+                ListInternalNamespaceOccOverviewsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalNamespaceOccOverviewsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListInternalNamespaceOccOverviews",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInternalNamespaceOccOverviewsResponse>
+                transformer =
+                        ListInternalNamespaceOccOverviewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInternalNamespaceOccOverviewsRequest,
+                        ListInternalNamespaceOccOverviewsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInternalNamespaceOccOverviewsRequest,
+                                ListInternalNamespaceOccOverviewsResponse>,
+                        java.util.concurrent.Future<ListInternalNamespaceOccOverviewsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInternalNamespaceOccOverviewsRequest,
+                    ListInternalNamespaceOccOverviewsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOccAvailabilitiesResponse> listOccAvailabilities(
             ListOccAvailabilitiesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1160,6 +1213,110 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListOccCustomerGroupsRequest, ListOccCustomerGroupsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOccOverviewsResponse> listOccOverviews(
+            ListOccOverviewsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListOccOverviewsRequest, ListOccOverviewsResponse>
+                    handler) {
+        LOG.trace("Called async listOccOverviews");
+        final ListOccOverviewsRequest interceptedRequest =
+                ListOccOverviewsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccOverviewsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListOccOverviews",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListOccOverviewsResponse>
+                transformer =
+                        ListOccOverviewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListOccOverviewsRequest, ListOccOverviewsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOccOverviewsRequest, ListOccOverviewsResponse>,
+                        java.util.concurrent.Future<ListOccOverviewsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOccOverviewsRequest, ListOccOverviewsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PatchInternalOccCapacityRequestResponse>
+            patchInternalOccCapacityRequest(
+                    PatchInternalOccCapacityRequestRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchInternalOccCapacityRequestRequest,
+                                    PatchInternalOccCapacityRequestResponse>
+                            handler) {
+        LOG.trace("Called async patchInternalOccCapacityRequest");
+        final PatchInternalOccCapacityRequestRequest interceptedRequest =
+                PatchInternalOccCapacityRequestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchInternalOccCapacityRequestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "PatchInternalOccCapacityRequest",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchInternalOccCapacityRequestResponse>
+                transformer =
+                        PatchInternalOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchInternalOccCapacityRequestRequest,
+                        PatchInternalOccCapacityRequestResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchInternalOccCapacityRequestRequest,
+                                PatchInternalOccCapacityRequestResponse>,
+                        java.util.concurrent.Future<PatchInternalOccCapacityRequestResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchOccCapacityRequestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchInternalOccCapacityRequestRequest,
+                    PatchInternalOccCapacityRequestResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

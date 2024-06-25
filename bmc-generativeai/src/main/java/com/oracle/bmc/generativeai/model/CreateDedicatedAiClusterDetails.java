@@ -149,9 +149,13 @@ public final class CreateDedicatedAiClusterDetails
          * <p>
          * Allowed values are:
          * - LARGE_COHERE
+         * - LARGE_COHERE_V2
          * - SMALL_COHERE
+         * - SMALL_COHERE_V2
          * - EMBED_COHERE
          * - LLAMA2_70
+         * - LARGE_GENERIC
+         * - LARGE_COHERE_V2_2
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -162,9 +166,13 @@ public final class CreateDedicatedAiClusterDetails
          * <p>
          * Allowed values are:
          * - LARGE_COHERE
+         * - LARGE_COHERE_V2
          * - SMALL_COHERE
+         * - SMALL_COHERE_V2
          * - EMBED_COHERE
          * - LLAMA2_70
+         * - LARGE_GENERIC
+         * - LARGE_COHERE_V2_2
          *
          * @param unitShape the value to set
          * @return this builder
@@ -370,9 +378,13 @@ public final class CreateDedicatedAiClusterDetails
      * <p>
      * Allowed values are:
      * - LARGE_COHERE
+     * - LARGE_COHERE_V2
      * - SMALL_COHERE
+     * - SMALL_COHERE_V2
      * - EMBED_COHERE
      * - LLAMA2_70
+     * - LARGE_GENERIC
+     * - LARGE_COHERE_V2_2
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
@@ -383,9 +395,13 @@ public final class CreateDedicatedAiClusterDetails
      * <p>
      * Allowed values are:
      * - LARGE_COHERE
+     * - LARGE_COHERE_V2
      * - SMALL_COHERE
+     * - SMALL_COHERE_V2
      * - EMBED_COHERE
      * - LLAMA2_70
+     * - LARGE_GENERIC
+     * - LARGE_COHERE_V2_2
      *
      * @return the value
      **/

@@ -30,6 +30,7 @@ public final class CreateDeploymentDetails
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "locks",
         "deploymentBackupId",
         "subnetId",
         "loadBalancerSubnetId",
@@ -50,6 +51,7 @@ public final class CreateDeploymentDetails
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String deploymentBackupId,
             String subnetId,
             String loadBalancerSubnetId,
@@ -69,6 +71,7 @@ public final class CreateDeploymentDetails
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.deploymentBackupId = deploymentBackupId;
         this.subnetId = subnetId;
         this.loadBalancerSubnetId = loadBalancerSubnetId;
@@ -205,6 +208,22 @@ public final class CreateDeploymentDetails
             return this;
         }
         /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<AddResourceLockDetails> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<AddResourceLockDetails> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
          *
          **/
@@ -224,6 +243,8 @@ public final class CreateDeploymentDetails
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -231,6 +252,8 @@ public final class CreateDeploymentDetails
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+         * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+         * after which the private subnet will be enforced.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -243,7 +266,7 @@ public final class CreateDeploymentDetails
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
@@ -252,7 +275,7 @@ public final class CreateDeploymentDetails
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
          * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-         * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+         * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
          *
          * @param loadBalancerSubnetId the value to set
          * @return this builder
@@ -415,6 +438,7 @@ public final class CreateDeploymentDetails
                             this.compartmentId,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.deploymentBackupId,
                             this.subnetId,
                             this.loadBalancerSubnetId,
@@ -452,6 +476,9 @@ public final class CreateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("deploymentBackupId")) {
                 this.deploymentBackupId(model.getDeploymentBackupId());
@@ -611,6 +638,20 @@ public final class CreateDeploymentDetails
     }
 
     /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the backup being referenced.
      *
      **/
@@ -628,6 +669,8 @@ public final class CreateDeploymentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
@@ -635,6 +678,8 @@ public final class CreateDeploymentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet of the deployment's private endpoint.
+     * The subnet must be a private subnet. For backward compatibility, public subnets are allowed until May 31 2025,
+     * after which the private subnet will be enforced.
      *
      * @return the value
      **/
@@ -645,7 +690,7 @@ public final class CreateDeploymentDetails
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("loadBalancerSubnetId")
@@ -654,7 +699,7 @@ public final class CreateDeploymentDetails
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a public subnet in the customer tenancy.
      * Can be provided only for public deployments. If provided, the loadbalancer will be created in this subnet instead of the service tenancy.
-     * For backward compatiblity this is an optional property for now, but it will become mandatory (for public deployments only) after October 1, 2024.
+     * For backward compatibility, this is an optional property. It will become mandatory for public deployments after October 1, 2024.
      *
      * @return the value
      **/
@@ -803,6 +848,7 @@ public final class CreateDeploymentDetails
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", deploymentBackupId=").append(String.valueOf(this.deploymentBackupId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
@@ -836,6 +882,7 @@ public final class CreateDeploymentDetails
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.deploymentBackupId, other.deploymentBackupId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
@@ -864,6 +911,7 @@ public final class CreateDeploymentDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)
                         + (this.deploymentBackupId == null

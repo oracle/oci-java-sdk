@@ -8,20 +8,18 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateMigrationExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use CreateMigrationRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class CreateMigrationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.CreateMigrationDetails> {
 
     /**
      * Migration properties.
-     *
      */
     private com.oracle.bmc.databasemigration.model.CreateMigrationDetails createMigrationDetails;
 
     /**
      * Migration properties.
-     *
      */
     public com.oracle.bmc.databasemigration.model.CreateMigrationDetails
             getCreateMigrationDetails() {
@@ -84,14 +82,12 @@ public class CreateMigrationRequest
 
         /**
          * Migration properties.
-         *
          */
         private com.oracle.bmc.databasemigration.model.CreateMigrationDetails
                 createMigrationDetails = null;
 
         /**
          * Migration properties.
-         *
          * @param createMigrationDetails the value to set
          * @return this builder instance
          */

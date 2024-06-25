@@ -31,18 +31,24 @@ public final class OccAvailabilitySummary
         "workloadType",
         "resourceName",
         "availableQuantity",
-        "unit"
+        "totalAvailableQuantity",
+        "demandedQuantity",
+        "unit",
+        "systemTags"
     })
     public OccAvailabilitySummary(
             String catalogId,
             Namespace namespace,
             java.util.Date dateFinalCustomerOrder,
             java.util.Date dateExpectedCapacityHandover,
-            ResourceType resourceType,
-            WorkloadType workloadType,
+            String resourceType,
+            String workloadType,
             String resourceName,
             Long availableQuantity,
-            String unit) {
+            Long totalAvailableQuantity,
+            Long demandedQuantity,
+            String unit,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.catalogId = catalogId;
         this.namespace = namespace;
@@ -52,7 +58,10 @@ public final class OccAvailabilitySummary
         this.workloadType = workloadType;
         this.resourceName = resourceName;
         this.availableQuantity = availableQuantity;
+        this.totalAvailableQuantity = totalAvailableQuantity;
+        this.demandedQuantity = demandedQuantity;
         this.unit = unit;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -127,14 +136,14 @@ public final class OccAvailabilitySummary
          * The different types of resources against which customers can place capacity requests.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-        private ResourceType resourceType;
+        private String resourceType;
 
         /**
          * The different types of resources against which customers can place capacity requests.
          * @param resourceType the value to set
          * @return this builder
          **/
-        public Builder resourceType(ResourceType resourceType) {
+        public Builder resourceType(String resourceType) {
             this.resourceType = resourceType;
             this.__explicitlySet__.add("resourceType");
             return this;
@@ -143,14 +152,14 @@ public final class OccAvailabilitySummary
          * The type of workload (Generic/ROW).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-        private WorkloadType workloadType;
+        private String workloadType;
 
         /**
          * The type of workload (Generic/ROW).
          * @param workloadType the value to set
          * @return this builder
          **/
-        public Builder workloadType(WorkloadType workloadType) {
+        public Builder workloadType(String workloadType) {
             this.workloadType = workloadType;
             this.__explicitlySet__.add("workloadType");
             return this;
@@ -172,19 +181,51 @@ public final class OccAvailabilitySummary
             return this;
         }
         /**
-         * The quantity of available resource that the customer can request.
+         * The quantity of resource currently available that the customer can request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("availableQuantity")
         private Long availableQuantity;
 
         /**
-         * The quantity of available resource that the customer can request.
+         * The quantity of resource currently available that the customer can request.
          * @param availableQuantity the value to set
          * @return this builder
          **/
         public Builder availableQuantity(Long availableQuantity) {
             this.availableQuantity = availableQuantity;
             this.__explicitlySet__.add("availableQuantity");
+            return this;
+        }
+        /**
+         * The total quantity of resource that the customer can request.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalAvailableQuantity")
+        private Long totalAvailableQuantity;
+
+        /**
+         * The total quantity of resource that the customer can request.
+         * @param totalAvailableQuantity the value to set
+         * @return this builder
+         **/
+        public Builder totalAvailableQuantity(Long totalAvailableQuantity) {
+            this.totalAvailableQuantity = totalAvailableQuantity;
+            this.__explicitlySet__.add("totalAvailableQuantity");
+            return this;
+        }
+        /**
+         * The quantity of resource currently demanded by the customer.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("demandedQuantity")
+        private Long demandedQuantity;
+
+        /**
+         * The quantity of resource currently demanded by the customer.
+         * @param demandedQuantity the value to set
+         * @return this builder
+         **/
+        public Builder demandedQuantity(Long demandedQuantity) {
+            this.demandedQuantity = demandedQuantity;
+            this.__explicitlySet__.add("demandedQuantity");
             return this;
         }
         /**
@@ -203,6 +244,26 @@ public final class OccAvailabilitySummary
             this.__explicitlySet__.add("unit");
             return this;
         }
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. Each key is predefined and scoped to a namespace.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -218,7 +279,10 @@ public final class OccAvailabilitySummary
                             this.workloadType,
                             this.resourceName,
                             this.availableQuantity,
-                            this.unit);
+                            this.totalAvailableQuantity,
+                            this.demandedQuantity,
+                            this.unit,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -251,8 +315,17 @@ public final class OccAvailabilitySummary
             if (model.wasPropertyExplicitlySet("availableQuantity")) {
                 this.availableQuantity(model.getAvailableQuantity());
             }
+            if (model.wasPropertyExplicitlySet("totalAvailableQuantity")) {
+                this.totalAvailableQuantity(model.getTotalAvailableQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("demandedQuantity")) {
+                this.demandedQuantity(model.getDemandedQuantity());
+            }
             if (model.wasPropertyExplicitlySet("unit")) {
                 this.unit(model.getUnit());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -330,125 +403,28 @@ public final class OccAvailabilitySummary
     /**
      * The different types of resources against which customers can place capacity requests.
      **/
-    public enum ResourceType {
-        ServerHw("SERVER_HW"),
-        CapacityConstraint("CAPACITY_CONSTRAINT"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(ResourceType.class);
-
-        private final String value;
-        private static java.util.Map<String, ResourceType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (ResourceType v : ResourceType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        ResourceType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static ResourceType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'ResourceType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The different types of resources against which customers can place capacity requests.
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
-    private final ResourceType resourceType;
+    private final String resourceType;
 
     /**
      * The different types of resources against which customers can place capacity requests.
      * @return the value
      **/
-    public ResourceType getResourceType() {
+    public String getResourceType() {
         return resourceType;
     }
 
     /**
      * The type of workload (Generic/ROW).
      **/
-    public enum WorkloadType {
-        Generic("GENERIC"),
-        Row("ROW"),
-        UsProd("US_PROD"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by this
-         * version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(WorkloadType.class);
-
-        private final String value;
-        private static java.util.Map<String, WorkloadType> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (WorkloadType v : WorkloadType.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        WorkloadType(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static WorkloadType create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'WorkloadType', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The type of workload (Generic/ROW).
-     **/
     @com.fasterxml.jackson.annotation.JsonProperty("workloadType")
-    private final WorkloadType workloadType;
+    private final String workloadType;
 
     /**
      * The type of workload (Generic/ROW).
      * @return the value
      **/
-    public WorkloadType getWorkloadType() {
+    public String getWorkloadType() {
         return workloadType;
     }
 
@@ -467,17 +443,45 @@ public final class OccAvailabilitySummary
     }
 
     /**
-     * The quantity of available resource that the customer can request.
+     * The quantity of resource currently available that the customer can request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("availableQuantity")
     private final Long availableQuantity;
 
     /**
-     * The quantity of available resource that the customer can request.
+     * The quantity of resource currently available that the customer can request.
      * @return the value
      **/
     public Long getAvailableQuantity() {
         return availableQuantity;
+    }
+
+    /**
+     * The total quantity of resource that the customer can request.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalAvailableQuantity")
+    private final Long totalAvailableQuantity;
+
+    /**
+     * The total quantity of resource that the customer can request.
+     * @return the value
+     **/
+    public Long getTotalAvailableQuantity() {
+        return totalAvailableQuantity;
+    }
+
+    /**
+     * The quantity of resource currently demanded by the customer.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("demandedQuantity")
+    private final Long demandedQuantity;
+
+    /**
+     * The quantity of resource currently demanded by the customer.
+     * @return the value
+     **/
+    public Long getDemandedQuantity() {
+        return demandedQuantity;
     }
 
     /**
@@ -492,6 +496,24 @@ public final class OccAvailabilitySummary
      **/
     public String getUnit() {
         return unit;
+    }
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. Each key is predefined and scoped to a namespace.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     @Override
@@ -517,7 +539,10 @@ public final class OccAvailabilitySummary
         sb.append(", workloadType=").append(String.valueOf(this.workloadType));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", availableQuantity=").append(String.valueOf(this.availableQuantity));
+        sb.append(", totalAvailableQuantity=").append(String.valueOf(this.totalAvailableQuantity));
+        sb.append(", demandedQuantity=").append(String.valueOf(this.demandedQuantity));
         sb.append(", unit=").append(String.valueOf(this.unit));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -542,7 +567,11 @@ public final class OccAvailabilitySummary
                 && java.util.Objects.equals(this.workloadType, other.workloadType)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.availableQuantity, other.availableQuantity)
+                && java.util.Objects.equals(
+                        this.totalAvailableQuantity, other.totalAvailableQuantity)
+                && java.util.Objects.equals(this.demandedQuantity, other.demandedQuantity)
                 && java.util.Objects.equals(this.unit, other.unit)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -568,7 +597,16 @@ public final class OccAvailabilitySummary
         result =
                 (result * PRIME)
                         + (this.availableQuantity == null ? 43 : this.availableQuantity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalAvailableQuantity == null
+                                ? 43
+                                : this.totalAvailableQuantity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.demandedQuantity == null ? 43 : this.demandedQuantity.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

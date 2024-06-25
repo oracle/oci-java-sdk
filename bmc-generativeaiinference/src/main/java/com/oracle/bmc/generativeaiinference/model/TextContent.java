@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Represents a single instance of text chat content.
+ * Represents a single instance of text in the chat content.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

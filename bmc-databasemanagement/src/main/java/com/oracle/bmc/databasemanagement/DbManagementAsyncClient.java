@@ -4380,6 +4380,58 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetDataguardPerformanceMetricsResponse>
+            getDataguardPerformanceMetrics(
+                    GetDataguardPerformanceMetricsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetDataguardPerformanceMetricsRequest,
+                                    GetDataguardPerformanceMetricsResponse>
+                            handler) {
+        LOG.trace("Called async getDataguardPerformanceMetrics");
+        final GetDataguardPerformanceMetricsRequest interceptedRequest =
+                GetDataguardPerformanceMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetDataguardPerformanceMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetDataguardPerformanceMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DataguardPerformanceMetrics/GetDataguardPerformanceMetrics");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetDataguardPerformanceMetricsResponse>
+                transformer =
+                        GetDataguardPerformanceMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetDataguardPerformanceMetricsRequest,
+                        GetDataguardPerformanceMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetDataguardPerformanceMetricsRequest,
+                                GetDataguardPerformanceMetricsResponse>,
+                        java.util.concurrent.Future<GetDataguardPerformanceMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetDataguardPerformanceMetricsRequest, GetDataguardPerformanceMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDbManagementPrivateEndpointResponse>
             getDbManagementPrivateEndpoint(
                     GetDbManagementPrivateEndpointRequest request,
@@ -5725,6 +5777,53 @@ public class DbManagementAsyncClient implements DbManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPdbMetricsRequest, GetPdbMetricsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPeerDatabaseMetricsResponse> getPeerDatabaseMetrics(
+            GetPeerDatabaseMetricsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>
+                    handler) {
+        LOG.trace("Called async getPeerDatabaseMetrics");
+        final GetPeerDatabaseMetricsRequest interceptedRequest =
+                GetPeerDatabaseMetricsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPeerDatabaseMetricsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "GetPeerDatabaseMetrics",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/PeerDatabaseMetrics/GetPeerDatabaseMetrics");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPeerDatabaseMetricsResponse>
+                transformer =
+                        GetPeerDatabaseMetricsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>,
+                        java.util.concurrent.Future<GetPeerDatabaseMetricsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPeerDatabaseMetricsRequest, GetPeerDatabaseMetricsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

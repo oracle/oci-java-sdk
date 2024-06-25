@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Base class for chat inference requests
+ * The base class to use for the chat inference request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -79,7 +79,7 @@ public class BaseChatRequest extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * The api format for the model's request
+     * The API format for the model's request.
      **/
     public enum ApiFormat {
         Cohere("COHERE"),

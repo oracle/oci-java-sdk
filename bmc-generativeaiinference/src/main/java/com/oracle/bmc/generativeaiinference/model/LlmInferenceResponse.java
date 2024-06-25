@@ -84,8 +84,6 @@ public class LlmInferenceResponse extends com.oracle.bmc.http.internal.Explicitl
     public enum RuntimeType {
         Cohere("COHERE"),
         Llama("LLAMA"),
-        Openai("OPENAI"),
-        Dalle3("DALLE3"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

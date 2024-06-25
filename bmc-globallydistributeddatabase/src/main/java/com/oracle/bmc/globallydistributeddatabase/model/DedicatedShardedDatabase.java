@@ -118,6 +118,60 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
             return this;
         }
         /**
+         * The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+         * DataGuard. If replicationMethod is not provided, it defaults to DG.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
+        private ReplicationMethod replicationMethod;
+
+        /**
+         * The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+         * DataGuard. If replicationMethod is not provided, it defaults to DG.
+         *
+         * @param replicationMethod the value to set
+         * @return this builder
+         **/
+        public Builder replicationMethod(ReplicationMethod replicationMethod) {
+            this.replicationMethod = replicationMethod;
+            this.__explicitlySet__.add("replicationMethod");
+            return this;
+        }
+        /**
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
+        private Integer replicationFactor;
+
+        /**
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+         *
+         * @param replicationFactor the value to set
+         * @return this builder
+         **/
+        public Builder replicationFactor(Integer replicationFactor) {
+            this.replicationFactor = replicationFactor;
+            this.__explicitlySet__.add("replicationFactor");
+            return this;
+        }
+        /**
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
+        private Integer replicationUnit;
+
+        /**
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+         * @param replicationUnit the value to set
+         * @return this builder
+         **/
+        public Builder replicationUnit(Integer replicationUnit) {
+            this.replicationUnit = replicationUnit;
+            this.__explicitlySet__.add("replicationUnit");
+            return this;
+        }
+        /**
          * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
          * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
          * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
@@ -425,6 +479,9 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.replicationMethod,
+                            this.replicationFactor,
+                            this.replicationUnit,
                             this.clusterCertificateCommonName,
                             this.characterSet,
                             this.ncharacterSet,
@@ -480,6 +537,15 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("replicationMethod")) {
+                this.replicationMethod(model.getReplicationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("replicationFactor")) {
+                this.replicationFactor(model.getReplicationFactor());
+            }
+            if (model.wasPropertyExplicitlySet("replicationUnit")) {
+                this.replicationUnit(model.getReplicationUnit());
             }
             if (model.wasPropertyExplicitlySet("clusterCertificateCommonName")) {
                 this.clusterCertificateCommonName(model.getClusterCertificateCommonName());
@@ -562,6 +628,9 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            ReplicationMethod replicationMethod,
+            Integer replicationFactor,
+            Integer replicationUnit,
             String clusterCertificateCommonName,
             String characterSet,
             String ncharacterSet,
@@ -591,6 +660,9 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.replicationMethod = replicationMethod;
+        this.replicationFactor = replicationFactor;
+        this.replicationUnit = replicationUnit;
         this.clusterCertificateCommonName = clusterCertificateCommonName;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
@@ -609,6 +681,104 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
         this.gsms = gsms;
         this.shardDetails = shardDetails;
         this.catalogDetails = catalogDetails;
+    }
+
+    /**
+     * The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     *
+     **/
+    public enum ReplicationMethod {
+        Raft("RAFT"),
+        Dg("DG"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ReplicationMethod.class);
+
+        private final String value;
+        private static java.util.Map<String, ReplicationMethod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ReplicationMethod v : ReplicationMethod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ReplicationMethod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ReplicationMethod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ReplicationMethod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
+    private final ReplicationMethod replicationMethod;
+
+    /**
+     * The Replication method for sharded database. Use RAFT for Raft replication, and DG for
+     * DataGuard. If replicationMethod is not provided, it defaults to DG.
+     *
+     * @return the value
+     **/
+    public ReplicationMethod getReplicationMethod() {
+        return replicationMethod;
+    }
+
+    /**
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
+    private final Integer replicationFactor;
+
+    /**
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+     *
+     * @return the value
+     **/
+    public Integer getReplicationFactor() {
+        return replicationFactor;
+    }
+
+    /**
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
+    private final Integer replicationUnit;
+
+    /**
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+     * @return the value
+     **/
+    public Integer getReplicationUnit() {
+        return replicationUnit;
     }
 
     /**
@@ -976,6 +1146,9 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DedicatedShardedDatabase(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
+        sb.append(", replicationFactor=").append(String.valueOf(this.replicationFactor));
+        sb.append(", replicationUnit=").append(String.valueOf(this.replicationUnit));
         sb.append(", clusterCertificateCommonName=")
                 .append(String.valueOf(this.clusterCertificateCommonName));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
@@ -1009,7 +1182,10 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
         }
 
         DedicatedShardedDatabase other = (DedicatedShardedDatabase) o;
-        return java.util.Objects.equals(
+        return java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
+                && java.util.Objects.equals(this.replicationFactor, other.replicationFactor)
+                && java.util.Objects.equals(this.replicationUnit, other.replicationUnit)
+                && java.util.Objects.equals(
                         this.clusterCertificateCommonName, other.clusterCertificateCommonName)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
@@ -1035,6 +1211,15 @@ public final class DedicatedShardedDatabase extends ShardedDatabase {
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.replicationMethod == null ? 43 : this.replicationMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationFactor == null ? 43 : this.replicationFactor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationUnit == null ? 43 : this.replicationUnit.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterCertificateCommonName == null

@@ -3,9 +3,78 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 2.73.0 - 2024-06-25
+### Added
+- Support for Demand Signal service
+- Support for external database connectors in the Database service
+- Support for monitoring standby databases in the Database Management service
+- Support for resource overviews in the Capacity Management service
+- Support for optional parameters in the download API in the Java Management Service Downloads service
+- Support for creating cross-region autonomous data guards in the Database service
+- Support for listing autonomous database peers in the Database service
+- Support for dedicated AI clusters in the Generative AI service
+- Support for Llama chat and Lora Fine-Tuning method in the Generative AI service
+- Support for adding and removing locks for connections, deployments, and deployment backups in the GoldenGate service
+- Support for additional connection types for deployments and connections in the GoldenGate service
+- Support for 23ai based databases in Globally Distributed Database service
+- Support for testing span enrichment groups in Application Performance Monitoring service
+- Support for subscription suspension and termination orders in Fusion Apps as a Service
+- Support for time first occurred and time last occurred for resource sightings in Cloud Guard service
+- Support for alarm summary, notification title, and slack duration on create and update operations in Monitoring service
+- Support for message creation timestamp in Queue service
+- Support for public connection urls and public endpoints for autonomous databases in the Database service
+- Support for insurance claim document type in the AI Document service
+- Support for Microsoft IIS discovery and monitoring in the Stack Monitoring service
+- Support for MySQL to MySQL homogeneous migrations in the Database Migration service
+- Support for manual cross-region backups in the MySQL Heatwave service
+- The SDK now uses Jackson-databind version `2.17.1`
+- The SDK has removed `nimbus-jose-jwt` from the list of dependencies
+  
+### Breaking Changes
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType` has been removed in the Capacity Management service
+- Added final modifier to class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in the model `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails` in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestBaseDetails$ResourceType` has been removed in the Capacity Management service
+- Class `com.oracle.bmc.capacitymanagement.model.OccCapacityRequestComputeDetails` has been removed in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$ResourceType getResourceType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+- Return type of method `public com.oracle.bmc.capacitymanagement.model.OccAvailabilitySummary$WorkloadType getWorkloadType()` has been changed to `java.lang.String` in `com.oracle.bmc.capacitymanagement.requests.ListOccAvailabilitiesRequest` in the Capacity Management service
+- Accessibility of method `public CohereMessage(com.oracle.bmc.generativeaiinference.model.CohereMessage$Role, java.lang.String)` has been decreased from public to protected in the model `om.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public java.lang.String getMessage()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Role getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.CohereMessage$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.CohereMessage` in the Generative AI service
+- Field `Dalle3` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Field `Openai` has been removed from the model `com.oracle.bmc.generativeaiinference.model.LlmInferenceResponse$RuntimeType` in the Generative AI service
+- Accessibility of method `public Message(java.lang.String, java.util.List)` has been decreased from public to protected in the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder builder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public java.lang.String getRole()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- Method `public com.oracle.bmc.generativeaiinference.model.Message$Builder toBuilder()` has been removed from the model `com.oracle.bmc.generativeaiinference.model.Message` in the Generative AI service
+- The models `AdvisorSettings`, `Agent`, `AgentCollection`, `AgentImageCollection`, `AgentImageSummary`, `AgentSummary`, `AwsS3DataTransferMediumDetails`, `AwsS3Details`, `ChangeAgentCompartmentDetails`, `ConnectDescriptor`, `CreateAdvisorSettings`, `CreateAwsS3Details`, `CreateConnectDescriptor`, `CreateDataPumpSettings`, `CreateDataTransferMediumDetails`, `CreateDatabaseLinkDetails`, `CreateDumpTransferDetails`, `CreateGoldenGateDetails`, `CreateGoldenGateHub`, `CreateGoldenGateServiceDetails`, `CreateGoldenGateServiceDetails`, `CreatePrivateEndpoint`, `CreateSshDetails`, `CreateVaultDetails`, `DataPumpJobMode`, `DataPumpSettings`, `DataTransferMediumDetails`, `DataTransferMediumDetailsV2`, `DatabaseConnectionTypes`, `DatabaseCredentials`, `DatabaseLinkDetails`, `DatabaseManualConnectionSubTypes`, `DatabaseObject`, `DbLinkDataTransferMediumDetails`, `DumpTransferDetails`, `GoldenGateDetails`, `GoldenGateHub`, `GoldenGateServiceDetails`, `GoldenGateSettings`, `MigrationObjectSummary`, `NfsDataTransferMediumDetails`, `ObjectStorageDataTransferMediumDetails`, `PrivateEndpointDetails`, `SshDetails`, `UpdateAdvisorSettings`, `UpdateAgentDetails`, `UpdateAwsS3Details`, `UpdateConnectDescriptor`, `UpdateDataPumpSettings`, `UpdateDataTransferMediumDetails`, `UpdateDatabaseLinkDetails`, `UpdateDumpTransferDetails`, `UpdateGoldenGateDetails`, `UpdateGoldenGateHub`, `UpdateGoldenGateServiceDetails`, `UpdateGoldenGateSettings`, `UpdatePrivateEndpoint`, `UpdateSshDetails`, `UpdateVaultDetails`, `VaultDetails`, `ChangeAgentCompartmentRequest`, `DeleteAgentRequest`, `GetAgentRequest`, `ListAgentImagesRequest`, `ListAgentsRequest`, `UpdateAgentRequest`, `ChangeAgentCompartmentResponse`, `DeleteAgentResponse`, `GetAgentResponse`, `ListAgentImagesResponse`, `ListAgentsResponse` and `UpdateAgentResponse` were removed in the Database Migration service
+- The operations `changeAgentCompartment`, `deleteAgent`, `getAgent`, `listAgentImages`, `listAgents`, and `updateAgent` were removed in the Database Migration service
+- The waiters `forAgent` were removed in the Database Migration service
+- The type of parameter `targetStates` was changed from an array of `LifecycleStates` to an array of `Connection.LifecycleState` in the waiters `forConnection` in the Database Migration service
+- The properties `agentId`, `sourceContainerDatabaseConnectionId`, `excludeObjects`, `includeObjects` and `vaultDetails` were removed from the model `CloneMigrationDetails` in the Database Migration service
+- The properties `adminCredentials`, `connectDescriptor`, `certificateTdn`, `credentialsSecretId`, `databaseId`, `databaseType`, `isDedicated`, `manualDatabaseSubType`, `privateEndpoint`, `replicationCredentials`, `sshDetails` and `vaultDetails` were removed in the model `Connection` in the Database Migration service
+- The properties `databaseId`, `databaseType`, `isDedicated`, and `manualDatabaseSubType` were removed in the model `ConnectionSummary` in the Database Migration service
+- The properties `adminCredentials`, `certificateTdn`, `connectDescriptor`, `databaseId`, `databaseType`, `manualDatabaseSubType`, `privateEndpoint`, `replicationCredential`, `sshDetails`, `tlsKeystore`, `tlsWallet` and `vaultDetails` were removed from the model CreateConnectionDetails in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `csvText`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId` and vaultDetails were removed in the model CreateMigrationDetails in the Database Migration service
+- The properties `mapParallelism`, `maxApplyParallelism`, and `minApplyParallelism` were removed in the models `Replicat`, `UpdateReplicat`, and `CreateReplicat` in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `credentialsSecretId`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId`, and `vaultDetails` were removed in the model `Migration` in the Database Migration service
+- The properties `csvText` and `items` were removed in the model `MigrationObjectCollection` in the Database Migration service
+- The properties `agentId`, `sourceContainerDatabaseConnectionId` and `vaultDetails` were removed in the model MigrationSummary in the Database Migration service
+- The properties `adminCredentials`, `certificateTdn`, `connectDescriptor`, `databaseId`, `privateEndpoint`, `replicationCredential`, `sshDetails`, `tlsKeystore`, `tlsWallet` and `vaultDetails` were removed from the model UpdateConnectionDetails in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId` and `vaultDetails` were removed in the model `UpdateMigrationDetails` in the Database Migration service
+- The enum value `UnknownEnumValue` was removed in the enum `LifecycleStates` in the model `LifecycleStates` in the Database Migration service
+- The enum values `OdmsInitializeGgs` and `OdmsValidateGgService` were removed in the enum `OdmsJobPhases` in the model `OdmsJobPhases` in the Database Migration service
+- The type of property `lifecycleState` was changed from `LifecycleStates` to `Connection.LifecycleState` in the models `Connection` and `ConnectionSummary` in the Database Migration service
+
 ## 2.72.0 - 2024-05-21
 ### Fixed
-- Fixed unnecessary buffering of streams when content length was set for a stream
+- Fixed unnecessary buffering of streams when content length was set for a stream (see the issue on [GitHub](https://github.com/oracle/oci-java-sdk/issues/601))
+
 ### Added
 - Support for enabling unified auditing for DBHome in the Database service
 - Support for listing minor Grid Infrastructure (GI) versions available for custom GI software image creation in the Database service
@@ -46,7 +115,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Return type of method `public java.lang.String getReproduced()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary$Reproduced` in the model `com.oracle.bmc.databasemanagement.model.SqlPlanBaselineSummary` in the Database Management service
 - Return type of method `public java.lang.String getAllSqlStatementsFetched()` has been changed to `com.oracle.bmc.databasemanagement.model.SqlTuningSet$AllSqlStatementsFetched` in the model `com.oracle.bmc.databasemanagement.model.SqlTuningSet` in the Database Management service
 
-## 2.71.0 - 2024-04-25 (not released publicly)
+## 2.71.0 - 2024-04-25
 ### Added
 - Support for the Cluster Placement Groups service
 - Support for new optional parameter for managing approval template in the Managed Access service
@@ -101,7 +170,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.email.model.Suppression$Reason` has been removed in the Email Delivery Service
 - Class `com.oracle.bmc.email.model.SuppressionSummary$Reason` has been removed in the Email Delivery Service
 
-## 2.70.0 - 2024-03-26 (not released publicly)
+## 2.70.0 - 2024-03-26
 ### Fixed
 - Fixed a thread leak in `IdleConnectionMonitor`
 ### Added
@@ -121,7 +190,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - The properties `displayName` and `description` have been made required in the model `CreateUnifiedAgentConfigurationDetails` in the Logging service
 - The property `recordInput` has been made required in the model `OperationalMetricsSource` in the Logging service
 
-## 2.69.1 - 2024-03-12 (not released publicly)
+## 2.69.1 - 2024-03-12
 ### Added
 - Support for new development license type on dedicated infrastructure in the Database service
 - Support for placement parameters on Autonomous Container Database create operation in the Database service
@@ -132,7 +201,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 - Preserve DuplicatableInputStream
 
-## 2.69.0 - 2024-03-05 (not released publicly)
+## 2.69.0 - 2024-03-05
 ### Added
 - Support for Linux capabilities configuration for the containers in the Container Instances service
 - Support for service platforms in the Oracle Store Platform Gateway service
@@ -143,7 +212,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Breaking Changes
 - The property `CapacityPlanningResources` has been made optional in the model `NewsContentTypes` in the Operations Insights service
 
-## 2.68.0 - 2024-02-27 (not released publicly)
+## 2.68.0 - 2024-02-27
 ### Added
 - Support for adding automatic backups during cross region operations and disaster recovery in the Autonomous Database service
 - Support for overlapping CIDR in network path analyzer in the Virtual Network Monitoring service
@@ -182,11 +251,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Field `PeerAutonomousDatabaseLifeCycleState` has been removed from the model `com.oracle.bmc.database.model.AutonomousDatabaseDataguardAssociation` in the Database service
 - Class `com.oracle.bmc.database.model.DatabaseConnectionCredentailsByName` has been removed from the Database service
 
-## 2.67.2 - 2024-02-13 (not released publicly)
+## 2.67.2 - 2024-02-13
 
 (internal changes only)
 
-## 2.67.1 - 2024-02-08 (not released publicly)
+## 2.67.1 - 2024-02-08
 ### Fixed
 - The thread `IdleConnectionMonitor` is terminated when the client is closed
 ### Added
@@ -216,7 +285,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - Class `com.oracle.bmc.managementagent.model.EditModes` has been removed from the Management Agent service
 - Return type of method `public com.oracle.bmc.managementagent.model.OperationTypes getType()` has been changed to `java.util.List` in `com.oracle.bmc.managementagent.requests.ListWorkRequestsRequest` in the Management Agent service
 
-## 2.67.0 - 2024-02-01 (not released publicly)
+## 2.67.0 - 2024-02-01
 ### Added
 - Support for calling Oracle Cloud Infrastructure services in the eu-dcc-zurich-1 and the sa-bogota-1 region
 - Support for managing certificates of target Servers in the Golden Gate service
@@ -379,7 +448,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Fixed
 - If `restClientFactoryBuilder` is set in a client's builder, it is now actually used for creating the `RestClientFactory` and the underlying `RestClient`.
 
-## 2.66.2 - 2023-12-01 (not released publicly)
+## 2.66.2 - 2023-12-01
 ### Added
 - Support for listing compute performances and storage performances in Database service
 - Support for private endpoints for external key managers in Key Management service
@@ -489,7 +558,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - `ProcessingException` is now caught and `BmcException` is thrown instead in order to fix timeout retries
 - Return type of method `public java.lang.String getStatus()` has been changed to `com.oracle.bmc.identitydomains.model.MyRequest$Status` in `com.oracle.bmc.identitydomains.model.MyRequest` in the Identity Domains service
 
-## 2.66.1 - 2023-09-13 (not released publicly)
+## 2.66.1 - 2023-09-13
 ### Added
 - Support for Duration class in `com.oracle.bmc.http.Serialization`
 - Support for specifying default snapshot enablement, verified response codes, client certificate details, and request authentication schemes when creating or updating synthetic monitors in the Application Performance Monitoring service

@@ -60,6 +60,54 @@ public interface GoldenGateAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a Connection resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddConnectionLockResponse> addConnectionLock(
+            AddConnectionLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddConnectionLockRequest, AddConnectionLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a DeploymentBackup resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDeploymentBackupLockResponse> addDeploymentBackupLock(
+            AddDeploymentBackupLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentBackupLockRequest, AddDeploymentBackupLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a Deployment resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddDeploymentLockResponse> addDeploymentLock(
+            AddDeploymentLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddDeploymentLockRequest, AddDeploymentLockResponse>
+                    handler);
+
+    /**
      * Cancels a Deployment Backup creation process.
      *
      * @param request The request object containing the details to send
@@ -463,6 +511,23 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Generates a Pre-Authenticated Request Object URL to a DB2 for z/OS library that needs to be uploaded to your DB2 for z/OS server in order to establish GoldenGate connections to it. For licensing reasons, the URL is accessible for 10 minutes only.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GenerateLibraryUrlResponse> generateLibraryUrl(
+            GenerateLibraryUrlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GenerateLibraryUrlRequest, GenerateLibraryUrlResponse>
+                    handler);
+
+    /**
      * Retrieves a Certificate.
      *
      *
@@ -797,7 +862,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the TrailFiles for a deployment.
+     * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      *
      *
      * @param request The request object containing the details to send
@@ -813,7 +878,7 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists the Trail Sequences for a TrailFile in a given deployment.
+     * Lists the Trail Sequences for a TrailFile in a given deployment. Deprecated: Please access trail file management functions directly on OGG console which are available since version Oracle GoldenGate 23c.
      *
      *
      * @param request The request object containing the details to send
@@ -877,6 +942,54 @@ public interface GoldenGateAsync extends AutoCloseable {
     java.util.concurrent.Future<ListWorkRequestsResponse> listWorkRequests(
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Connection resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveConnectionLockResponse> removeConnectionLock(
+            RemoveConnectionLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveConnectionLockRequest, RemoveConnectionLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a DeploymentBackup resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDeploymentBackupLockResponse> removeDeploymentBackupLock(
+            RemoveDeploymentBackupLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentBackupLockRequest, RemoveDeploymentBackupLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock from a Deployment resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveDeploymentLockResponse> removeDeploymentLock(
+            RemoveDeploymentLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveDeploymentLockRequest, RemoveDeploymentLockResponse>
                     handler);
 
     /**

@@ -327,13 +327,13 @@ public final class OccAvailabilityCatalog
             return this;
         }
         /**
-         * Details about capacity available for  different resources in catalog.
+         * Details about capacity available for different resources in catalog.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private java.util.List<OccAvailabilitySummary> details;
 
         /**
-         * Details about capacity available for  different resources in catalog.
+         * Details about capacity available for different resources in catalog.
          * @param details the value to set
          * @return this builder
          **/
@@ -758,13 +758,13 @@ public final class OccAvailabilityCatalog
     }
 
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final java.util.List<OccAvailabilitySummary> details;
 
     /**
-     * Details about capacity available for  different resources in catalog.
+     * Details about capacity available for different resources in catalog.
      * @return the value
      **/
     public java.util.List<OccAvailabilitySummary> getDetails() {

@@ -50,7 +50,8 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         "systemName",
         "environmentRole",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isSuspended"
     })
     public FusionEnvironment(
             String id,
@@ -81,7 +82,8 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             String systemName,
             EnvironmentRole environmentRole,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isSuspended) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -112,6 +114,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         this.environmentRole = environmentRole;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isSuspended = isSuspended;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -568,6 +571,22 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Environment suspended status
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSuspended")
+        private Boolean isSuspended;
+
+        /**
+         * Environment suspended status
+         * @param isSuspended the value to set
+         * @return this builder
+         **/
+        public Builder isSuspended(Boolean isSuspended) {
+            this.isSuspended = isSuspended;
+            this.__explicitlySet__.add("isSuspended");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -603,7 +622,8 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                             this.systemName,
                             this.environmentRole,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.isSuspended);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -698,6 +718,9 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isSuspended")) {
+                this.isSuspended(model.getIsSuspended());
             }
             return this;
         }
@@ -1209,6 +1232,20 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         return definedTags;
     }
 
+    /**
+     * Environment suspended status
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSuspended")
+    private final Boolean isSuspended;
+
+    /**
+     * Environment suspended status
+     * @return the value
+     **/
+    public Boolean getIsSuspended() {
+        return isSuspended;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1255,6 +1292,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
         sb.append(", environmentRole=").append(String.valueOf(this.environmentRole));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isSuspended=").append(String.valueOf(this.isSuspended));
         sb.append(")");
         return sb.toString();
     }
@@ -1301,6 +1339,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.environmentRole, other.environmentRole)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isSuspended, other.isSuspended)
                 && super.equals(other);
     }
 
@@ -1375,6 +1414,7 @@ public final class FusionEnvironment extends com.oracle.bmc.http.internal.Explic
                         + (this.environmentRole == null ? 43 : this.environmentRole.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.isSuspended == null ? 43 : this.isSuspended.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

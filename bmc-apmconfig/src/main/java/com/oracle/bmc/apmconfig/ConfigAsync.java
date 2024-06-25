@@ -151,6 +151,22 @@ public interface ConfigAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Tests a data processing operation on the provided input, returning the potentially modified
+     * input as output. Returns 200 on success, 422 when the input can not be processed.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestResponse> test(
+            TestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<TestRequest, TestResponse> handler);
+
+    /**
      * Updates the details of the configuration item identified by the OCID.
      *
      * @param request The request object containing the details to send

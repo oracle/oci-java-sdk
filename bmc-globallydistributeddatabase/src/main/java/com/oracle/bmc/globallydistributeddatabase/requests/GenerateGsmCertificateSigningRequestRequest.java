@@ -76,6 +76,17 @@ public class GenerateGsmCertificateSigningRequestRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /**
+     * The ID of the Ca Bundle.
+     */
+    private String caBundleId;
+
+    /**
+     * The ID of the Ca Bundle.
+     */
+    public String getCaBundleId() {
+        return caBundleId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -165,6 +176,21 @@ public class GenerateGsmCertificateSigningRequestRequest
         }
 
         /**
+         * The ID of the Ca Bundle.
+         */
+        private String caBundleId = null;
+
+        /**
+         * The ID of the Ca Bundle.
+         * @param caBundleId the value to set
+         * @return this builder instance
+         */
+        public Builder caBundleId(String caBundleId) {
+            this.caBundleId = caBundleId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -196,6 +222,7 @@ public class GenerateGsmCertificateSigningRequestRequest
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
+            caBundleId(o.getCaBundleId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -233,8 +260,9 @@ public class GenerateGsmCertificateSigningRequestRequest
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
+            request.caBundleId = caBundleId;
             return request;
-            // new GenerateGsmCertificateSigningRequestRequest(shardedDatabaseId, opcRequestId, ifMatch, opcRetryToken);
+            // new GenerateGsmCertificateSigningRequestRequest(shardedDatabaseId, opcRequestId, ifMatch, opcRetryToken, caBundleId);
         }
     }
 
@@ -247,7 +275,8 @@ public class GenerateGsmCertificateSigningRequestRequest
                 .shardedDatabaseId(shardedDatabaseId)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .caBundleId(caBundleId);
     }
 
     /**
@@ -267,6 +296,7 @@ public class GenerateGsmCertificateSigningRequestRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",caBundleId=").append(String.valueOf(this.caBundleId));
         sb.append(")");
         return sb.toString();
     }
@@ -286,7 +316,8 @@ public class GenerateGsmCertificateSigningRequestRequest
                 && java.util.Objects.equals(this.shardedDatabaseId, other.shardedDatabaseId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.caBundleId, other.caBundleId);
     }
 
     @Override
@@ -301,6 +332,7 @@ public class GenerateGsmCertificateSigningRequestRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.caBundleId == null ? 43 : this.caBundleId.hashCode());
         return result;
     }
 }

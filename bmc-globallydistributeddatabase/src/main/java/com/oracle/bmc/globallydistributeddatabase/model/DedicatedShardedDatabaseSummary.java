@@ -118,6 +118,57 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             return this;
         }
         /**
+         * The Replication method for sharded database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
+        private DedicatedShardedDatabase.ReplicationMethod replicationMethod;
+
+        /**
+         * The Replication method for sharded database.
+         * @param replicationMethod the value to set
+         * @return this builder
+         **/
+        public Builder replicationMethod(
+                DedicatedShardedDatabase.ReplicationMethod replicationMethod) {
+            this.replicationMethod = replicationMethod;
+            this.__explicitlySet__.add("replicationMethod");
+            return this;
+        }
+        /**
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
+        private Integer replicationFactor;
+
+        /**
+         * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+         *
+         * @param replicationFactor the value to set
+         * @return this builder
+         **/
+        public Builder replicationFactor(Integer replicationFactor) {
+            this.replicationFactor = replicationFactor;
+            this.__explicitlySet__.add("replicationFactor");
+            return this;
+        }
+        /**
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
+        private Integer replicationUnit;
+
+        /**
+         * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+         * @param replicationUnit the value to set
+         * @return this builder
+         **/
+        public Builder replicationUnit(Integer replicationUnit) {
+            this.replicationUnit = replicationUnit;
+            this.__explicitlySet__.add("replicationUnit");
+            return this;
+        }
+        /**
          * The certificate common name used in all cloudAutonomousVmClusters for the sharded database topology. Eg. Production.
          * All the clusters used in one sharded database topology shall have same CABundle setup. Valid characterset for
          * clusterCertificateCommonName include uppercase or lowercase letters, numbers, hyphens, underscores, and period.
@@ -368,6 +419,9 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
+                            this.replicationMethod,
+                            this.replicationFactor,
+                            this.replicationUnit,
                             this.clusterCertificateCommonName,
                             this.dbWorkload,
                             this.shardingMethod,
@@ -419,6 +473,15 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("replicationMethod")) {
+                this.replicationMethod(model.getReplicationMethod());
+            }
+            if (model.wasPropertyExplicitlySet("replicationFactor")) {
+                this.replicationFactor(model.getReplicationFactor());
+            }
+            if (model.wasPropertyExplicitlySet("replicationUnit")) {
+                this.replicationUnit(model.getReplicationUnit());
             }
             if (model.wasPropertyExplicitlySet("clusterCertificateCommonName")) {
                 this.clusterCertificateCommonName(model.getClusterCertificateCommonName());
@@ -489,6 +552,9 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            DedicatedShardedDatabase.ReplicationMethod replicationMethod,
+            Integer replicationFactor,
+            Integer replicationUnit,
             String clusterCertificateCommonName,
             DbWorkload dbWorkload,
             ShardingMethod shardingMethod,
@@ -514,6 +580,9 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
                 freeformTags,
                 definedTags,
                 systemTags);
+        this.replicationMethod = replicationMethod;
+        this.replicationFactor = replicationFactor;
+        this.replicationUnit = replicationUnit;
         this.clusterCertificateCommonName = clusterCertificateCommonName;
         this.dbWorkload = dbWorkload;
         this.shardingMethod = shardingMethod;
@@ -528,6 +597,50 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
         this.prefix = prefix;
         this.totalCpuCount = totalCpuCount;
         this.totalDataStorageSizeInGbs = totalDataStorageSizeInGbs;
+    }
+
+    /**
+     * The Replication method for sharded database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationMethod")
+    private final DedicatedShardedDatabase.ReplicationMethod replicationMethod;
+
+    /**
+     * The Replication method for sharded database.
+     * @return the value
+     **/
+    public DedicatedShardedDatabase.ReplicationMethod getReplicationMethod() {
+        return replicationMethod;
+    }
+
+    /**
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationFactor")
+    private final Integer replicationFactor;
+
+    /**
+     * The Replication factor for RAFT replication based sharded database. Currently supported values are 3, 5 and 7.
+     *
+     * @return the value
+     **/
+    public Integer getReplicationFactor() {
+        return replicationFactor;
+    }
+
+    /**
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("replicationUnit")
+    private final Integer replicationUnit;
+
+    /**
+     * For RAFT replication based sharded database, the value should be atleast twice the number of shards.
+     * @return the value
+     **/
+    public Integer getReplicationUnit() {
+        return replicationUnit;
     }
 
     /**
@@ -846,6 +959,9 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("DedicatedShardedDatabaseSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", replicationMethod=").append(String.valueOf(this.replicationMethod));
+        sb.append(", replicationFactor=").append(String.valueOf(this.replicationFactor));
+        sb.append(", replicationUnit=").append(String.valueOf(this.replicationUnit));
         sb.append(", clusterCertificateCommonName=")
                 .append(String.valueOf(this.clusterCertificateCommonName));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
@@ -876,7 +992,10 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
         }
 
         DedicatedShardedDatabaseSummary other = (DedicatedShardedDatabaseSummary) o;
-        return java.util.Objects.equals(
+        return java.util.Objects.equals(this.replicationMethod, other.replicationMethod)
+                && java.util.Objects.equals(this.replicationFactor, other.replicationFactor)
+                && java.util.Objects.equals(this.replicationUnit, other.replicationUnit)
+                && java.util.Objects.equals(
                         this.clusterCertificateCommonName, other.clusterCertificateCommonName)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.shardingMethod, other.shardingMethod)
@@ -899,6 +1018,15 @@ public final class DedicatedShardedDatabaseSummary extends ShardedDatabaseSummar
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.replicationMethod == null ? 43 : this.replicationMethod.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationFactor == null ? 43 : this.replicationFactor.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.replicationUnit == null ? 43 : this.replicationUnit.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterCertificateCommonName == null

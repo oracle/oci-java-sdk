@@ -48,7 +48,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "lifecycleState",
         "overrides",
         "ruleName",
-        "notificationVersion"
+        "notificationVersion",
+        "notificationTitle",
+        "evaluationSlackDuration",
+        "alarmSummary",
+        "resourceGroup"
     })
     public AlarmSummary(
             String id,
@@ -67,7 +71,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             Alarm.LifecycleState lifecycleState,
             java.util.List<AlarmOverride> overrides,
             String ruleName,
-            String notificationVersion) {
+            String notificationVersion,
+            String notificationTitle,
+            String evaluationSlackDuration,
+            String alarmSummary,
+            String resourceGroup) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -86,6 +94,10 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.overrides = overrides;
         this.ruleName = ruleName;
         this.notificationVersion = notificationVersion;
+        this.notificationTitle = notificationTitle;
+        this.evaluationSlackDuration = evaluationSlackDuration;
+        this.alarmSummary = alarmSummary;
+        this.resourceGroup = resourceGroup;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -469,8 +481,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         }
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -478,8 +489,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
         /**
          * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-         * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-         * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+         * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
          *
          * @param ruleName the value to set
          * @return this builder
@@ -509,6 +519,106 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             this.__explicitlySet__.add("notificationVersion");
             return this;
         }
+        /**
+         * Customizable notification title ({@code title} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationTitle")
+        private String notificationTitle;
+
+        /**
+         * Customizable notification title ({@code title} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+         *
+         * @param notificationTitle the value to set
+         * @return this builder
+         **/
+        public Builder notificationTitle(String notificationTitle) {
+            this.notificationTitle = notificationTitle;
+            this.__explicitlySet__.add("notificationTitle");
+            return this;
+        }
+        /**
+         * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+         * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+         * for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+         * For more information about the slack period, see
+         * [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
+        private String evaluationSlackDuration;
+
+        /**
+         * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+         * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+         * for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+         * For more information about the slack period, see
+         * [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+         *
+         * @param evaluationSlackDuration the value to set
+         * @return this builder
+         **/
+        public Builder evaluationSlackDuration(String evaluationSlackDuration) {
+            this.evaluationSlackDuration = evaluationSlackDuration;
+            this.__explicitlySet__.add("evaluationSlackDuration");
+            return this;
+        }
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+        private String alarmSummary;
+
+        /**
+         * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+         * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+         * The alarm summary appears within the body of the alarm message and in responses to
+         * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+         * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+         * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         *
+         * @param alarmSummary the value to set
+         * @return this builder
+         **/
+        public Builder alarmSummary(String alarmSummary) {
+            this.alarmSummary = alarmSummary;
+            this.__explicitlySet__.add("alarmSummary");
+            return this;
+        }
+        /**
+         * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+        private String resourceGroup;
+
+        /**
+         * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+         * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+         * <p>
+         * Example: {@code frontend-fleet}
+         *
+         * @param resourceGroup the value to set
+         * @return this builder
+         **/
+        public Builder resourceGroup(String resourceGroup) {
+            this.resourceGroup = resourceGroup;
+            this.__explicitlySet__.add("resourceGroup");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -532,7 +642,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.lifecycleState,
                             this.overrides,
                             this.ruleName,
-                            this.notificationVersion);
+                            this.notificationVersion,
+                            this.notificationTitle,
+                            this.evaluationSlackDuration,
+                            this.alarmSummary,
+                            this.resourceGroup);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -592,6 +706,18 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("notificationVersion")) {
                 this.notificationVersion(model.getNotificationVersion());
+            }
+            if (model.wasPropertyExplicitlySet("notificationTitle")) {
+                this.notificationTitle(model.getNotificationTitle());
+            }
+            if (model.wasPropertyExplicitlySet("evaluationSlackDuration")) {
+                this.evaluationSlackDuration(model.getEvaluationSlackDuration());
+            }
+            if (model.wasPropertyExplicitlySet("alarmSummary")) {
+                this.alarmSummary(model.getAlarmSummary());
+            }
+            if (model.wasPropertyExplicitlySet("resourceGroup")) {
+                this.resourceGroup(model.getResourceGroup());
             }
             return this;
         }
@@ -1007,8 +1133,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("ruleName")
@@ -1016,8 +1141,7 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
 
     /**
      * Identifier of the alarm's base values for alarm evaluation, for use when the alarm contains overrides.
-     * A valid ruleName value starts with an alphabetic character and includes only alphanumeric characters, underscores and square brackets.
-     * Minimum number of characters: 3. Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
+     * Default value is {@code BASE}. For information about alarm overrides, see {@link #alarmOverride(AlarmOverrideRequest) alarmOverride}.
      *
      * @return the value
      **/
@@ -1041,6 +1165,98 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public String getNotificationVersion() {
         return notificationVersion;
+    }
+
+    /**
+     * Customizable notification title ({@code title} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationTitle")
+    private final String notificationTitle;
+
+    /**
+     * Customizable notification title ({@code title} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The notification title appears as the subject line in a formatted email message and as the title in a Slack message.
+     *
+     * @return the value
+     **/
+    public String getNotificationTitle() {
+        return notificationTitle;
+    }
+
+    /**
+     * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+     * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+     * for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+     * For more information about the slack period, see
+     * [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("evaluationSlackDuration")
+    private final String evaluationSlackDuration;
+
+    /**
+     * Customizable slack period to wait for metric ingestion before evaluating the alarm.
+     * Specify a string in ISO 8601 format ({@code PT10M} for ten minutes or {@code PT1H}
+     * for one hour). Minimum: PT3M. Maximum: PT2H. Default: PT3M.
+     * For more information about the slack period, see
+     * [About the Internal Reset Period](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#reset).
+     *
+     * @return the value
+     **/
+    public String getEvaluationSlackDuration() {
+        return evaluationSlackDuration;
+    }
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alarmSummary")
+    private final String alarmSummary;
+
+    /**
+     * Customizable alarm summary ({@code alarmSummary} [alarm message parameter](https://docs.cloud.oracle.com/iaas/Content/Monitoring/alarm-message-format.htm)).
+     * Optionally include [dynamic variables](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/update-alarm-dynamic-variables.htm).
+     * The alarm summary appears within the body of the alarm message and in responses to
+     * {@link #listAlarmsStatus(ListAlarmsStatusRequest) listAlarmsStatus}
+     * {@link #getAlarmHistory(GetAlarmHistoryRequest) getAlarmHistory} and
+     * {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * @return the value
+     **/
+    public String getAlarmSummary() {
+        return alarmSummary;
+    }
+
+    /**
+     * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceGroup")
+    private final String resourceGroup;
+
+    /**
+     * Resource group that you want to match. A null value returns only metric data that has no resource groups. The specified resource group must exist in the definition of the posted metric. Only one resource group can be applied per metric.
+     * A valid resourceGroup value starts with an alphabetical character and includes only alphanumeric characters, periods (.), underscores (_), hyphens (-), and dollar signs ($).
+     * <p>
+     * Example: {@code frontend-fleet}
+     *
+     * @return the value
+     **/
+    public String getResourceGroup() {
+        return resourceGroup;
     }
 
     @Override
@@ -1075,6 +1291,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", overrides=").append(String.valueOf(this.overrides));
         sb.append(", ruleName=").append(String.valueOf(this.ruleName));
         sb.append(", notificationVersion=").append(String.valueOf(this.notificationVersion));
+        sb.append(", notificationTitle=").append(String.valueOf(this.notificationTitle));
+        sb.append(", evaluationSlackDuration=")
+                .append(String.valueOf(this.evaluationSlackDuration));
+        sb.append(", alarmSummary=").append(String.valueOf(this.alarmSummary));
+        sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
         sb.append(")");
         return sb.toString();
     }
@@ -1108,6 +1329,11 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.overrides, other.overrides)
                 && java.util.Objects.equals(this.ruleName, other.ruleName)
                 && java.util.Objects.equals(this.notificationVersion, other.notificationVersion)
+                && java.util.Objects.equals(this.notificationTitle, other.notificationTitle)
+                && java.util.Objects.equals(
+                        this.evaluationSlackDuration, other.evaluationSlackDuration)
+                && java.util.Objects.equals(this.alarmSummary, other.alarmSummary)
+                && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
                 && super.equals(other);
     }
 
@@ -1148,6 +1374,18 @@ public final class AlarmSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.notificationVersion == null
                                 ? 43
                                 : this.notificationVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationTitle == null ? 43 : this.notificationTitle.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.evaluationSlackDuration == null
+                                ? 43
+                                : this.evaluationSlackDuration.hashCode());
+        result = (result * PRIME) + (this.alarmSummary == null ? 43 : this.alarmSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

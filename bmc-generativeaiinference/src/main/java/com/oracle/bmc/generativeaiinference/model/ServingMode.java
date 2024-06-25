@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * The model's serving mode, which could be on-demand serving or dedicated serving.
+ * The model's serving mode, which is either on-demand serving or dedicated serving.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -79,7 +79,7 @@ public class ServingMode extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * The serving mode type, which could be on-demand serving or dedicated serving.
+     * The serving mode type, which is either on-demand serving or dedicated serving.
      **/
     public enum ServingType {
         OnDemand("ON_DEMAND"),

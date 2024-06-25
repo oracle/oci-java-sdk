@@ -47,6 +47,14 @@ public class GenerateGsmCertificateSigningRequestConverter {
                         .path("actions")
                         .path("generateGsmCertificateSigningRequest");
 
+        if (request.getCaBundleId() != null) {
+            target =
+                    target.queryParam(
+                            "caBundleId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCaBundleId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

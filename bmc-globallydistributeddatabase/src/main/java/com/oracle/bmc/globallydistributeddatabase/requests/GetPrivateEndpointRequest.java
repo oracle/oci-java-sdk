@@ -23,6 +23,27 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
         return privateEndpointId;
     }
     /**
+     * For conditional requests. In the GET call for a resource, set the
+     * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+     * POST or PUT) response for that resource. The server will return with
+     * either a 304 Not Modified response if the resource has not changed, or a
+     * 200 OK response with the updated representation.
+     *
+     */
+    private String ifNoneMatch;
+
+    /**
+     * For conditional requests. In the GET call for a resource, set the
+     * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+     * POST or PUT) response for that resource. The server will return with
+     * either a 304 Not Modified response if the resource has not changed, or a
+     * 200 OK response with the updated representation.
+     *
+     */
+    public String getIfNoneMatch() {
+        return ifNoneMatch;
+    }
+    /**
      * The client request ID for tracing.
      */
     private String opcRequestId;
@@ -53,6 +74,31 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder privateEndpointId(String privateEndpointId) {
             this.privateEndpointId = privateEndpointId;
+            return this;
+        }
+
+        /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         */
+        private String ifNoneMatch = null;
+
+        /**
+         * For conditional requests. In the GET call for a resource, set the
+         * {@code If-None-Match} header to the value of the ETag from a previous GET (or
+         * POST or PUT) response for that resource. The server will return with
+         * either a 304 Not Modified response if the resource has not changed, or a
+         * 200 OK response with the updated representation.
+         *
+         * @param ifNoneMatch the value to set
+         * @return this builder instance
+         */
+        public Builder ifNoneMatch(String ifNoneMatch) {
+            this.ifNoneMatch = ifNoneMatch;
             return this;
         }
 
@@ -100,6 +146,7 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
          */
         public Builder copy(GetPrivateEndpointRequest o) {
             privateEndpointId(o.getPrivateEndpointId());
+            ifNoneMatch(o.getIfNoneMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -134,9 +181,10 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
         public GetPrivateEndpointRequest buildWithoutInvocationCallback() {
             GetPrivateEndpointRequest request = new GetPrivateEndpointRequest();
             request.privateEndpointId = privateEndpointId;
+            request.ifNoneMatch = ifNoneMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetPrivateEndpointRequest(privateEndpointId, opcRequestId);
+            // new GetPrivateEndpointRequest(privateEndpointId, ifNoneMatch, opcRequestId);
         }
     }
 
@@ -145,7 +193,10 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().privateEndpointId(privateEndpointId).opcRequestId(opcRequestId);
+        return new Builder()
+                .privateEndpointId(privateEndpointId)
+                .ifNoneMatch(ifNoneMatch)
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -162,6 +213,7 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",privateEndpointId=").append(String.valueOf(this.privateEndpointId));
+        sb.append(",ifNoneMatch=").append(String.valueOf(this.ifNoneMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -179,6 +231,7 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
         GetPrivateEndpointRequest other = (GetPrivateEndpointRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
+                && java.util.Objects.equals(this.ifNoneMatch, other.ifNoneMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -189,6 +242,7 @@ public class GetPrivateEndpointRequest extends com.oracle.bmc.requests.BmcReques
         result =
                 (result * PRIME)
                         + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
+        result = (result * PRIME) + (this.ifNoneMatch == null ? 43 : this.ifNoneMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

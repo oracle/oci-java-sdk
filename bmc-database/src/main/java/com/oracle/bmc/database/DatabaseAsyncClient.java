@@ -10962,6 +10962,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListAutonomousDatabasePeersResponse>
+            listAutonomousDatabasePeers(
+                    ListAutonomousDatabasePeersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListAutonomousDatabasePeersRequest,
+                                    ListAutonomousDatabasePeersResponse>
+                            handler) {
+        LOG.trace("Called async listAutonomousDatabasePeers");
+        final ListAutonomousDatabasePeersRequest interceptedRequest =
+                ListAutonomousDatabasePeersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListAutonomousDatabasePeersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListAutonomousDatabasePeers",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ListAutonomousDatabasePeers");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListAutonomousDatabasePeersResponse>
+                transformer =
+                        ListAutonomousDatabasePeersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListAutonomousDatabasePeersRequest,
+                                ListAutonomousDatabasePeersResponse>,
+                        java.util.concurrent.Future<ListAutonomousDatabasePeersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListAutonomousDatabasePeersRequest, ListAutonomousDatabasePeersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAutonomousDatabaseRefreshableClonesResponse>
             listAutonomousDatabaseRefreshableClones(
                     ListAutonomousDatabaseRefreshableClonesRequest request,

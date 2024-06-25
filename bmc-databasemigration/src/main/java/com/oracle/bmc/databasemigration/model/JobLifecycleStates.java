@@ -8,7 +8,7 @@ package com.oracle.bmc.databasemigration.model;
  * Possible lifecycle states.
  *
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum JobLifecycleStates {
     Accepted("ACCEPTED"),
     InProgress("IN_PROGRESS"),
