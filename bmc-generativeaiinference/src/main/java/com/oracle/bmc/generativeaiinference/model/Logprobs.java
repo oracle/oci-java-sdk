@@ -5,7 +5,10 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Returns if the logarithmic probabilites is set.
+ * Includes the logarithmic probabilities for the most likely output tokens and the chosen tokens.
+ * <p>
+ * For example, if the log probability is 5, the API returns a list of the 5 most likely tokens. The API returns the log probability of the sampled token, so there might be up to logprobs+1 elements in the response.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in

@@ -232,6 +232,19 @@ public interface FusionApplications extends AutoCloseable {
     DeleteServiceAttachmentResponse deleteServiceAttachment(DeleteServiceAttachmentRequest request);
 
     /**
+     * Begin the process of showing the details about where to retrieve data extract for a Fusion environment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GenerateExtractDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateExtractDetails API.
+     */
+    GenerateExtractDetailsResponse generateExtractDetails(GenerateExtractDetailsRequest request);
+
+    /**
      * Gets a DataMaskingActivity by identifier
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -355,6 +368,19 @@ public interface FusionApplications extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Begin the process of generating the data extract for a Fusion environment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fusionapps/InitiateExtractExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InitiateExtract API.
+     */
+    InitiateExtractResponse initiateExtract(InitiateExtractRequest request);
 
     /**
      * List all FusionEnvironment admin users

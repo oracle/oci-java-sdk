@@ -108,6 +108,10 @@ package com.oracle.bmc.goldengate.model;
         name = "KAFKA"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDb2ConnectionDetails.class,
+        name = "DB2"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateGenericConnectionDetails.class,
         name = "GENERIC"
     ),

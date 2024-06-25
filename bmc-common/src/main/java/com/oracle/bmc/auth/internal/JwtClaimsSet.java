@@ -4,18 +4,25 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import java.io.IOException;
 import java.text.ParseException;
+import java.util.Collections;
 import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
-import com.nimbusds.jwt.JWTClaimsSet;
-import com.nimbusds.jwt.SignedJWT;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
  * JSON Web Token Claim Set.
  */
 public class JwtClaimsSet {
-    private final JWTClaimsSet jwt;
+    private static final ObjectMapper OBJECT_MAPPER =
+            com.oracle.bmc.http.Serialization.getObjectMapper();
+    private final Map<String, Object> header;
+    private final Map<String, Object> payload;
+    private final String signature;
 
     /**
      * Create a JWT claim set from a token string.
@@ -24,29 +31,79 @@ public class JwtClaimsSet {
      */
     public JwtClaimsSet(String token) {
         Validate.notBlank(token, "token must not be null or empty");
-        this.jwt = parse(token);
-    }
-
-    static JWTClaimsSet parse(String token) {
+        String[] parts = token.split("\\.");
+        if (parts.length != 3) {
+            throw new IllegalArgumentException(
+                    "Malformed JWT, only " + parts.length + " parts instead of 3");
+        }
         try {
-            SignedJWT signedJWT = SignedJWT.parse(token);
-            if (signedJWT.getSignature().toString().isEmpty()) {
+            Map h = OBJECT_MAPPER.readValue(AuthUtils.base64Decode(parts[0]), Map.class);
+            Map p = OBJECT_MAPPER.readValue(AuthUtils.base64Decode(parts[1]), Map.class);
+            this.signature = parts[2];
+            if (this.signature.isEmpty()) {
                 throw new IllegalArgumentException("The token doesn't have a signature");
             }
-            // check if payload is a valid JSON object and throws ParseException when it's not
-            return signedJWT.getJWTClaimsSet();
-        } catch (ParseException e) {
-            throw new IllegalArgumentException(
-                    "The token does not conform to signed JWT format. " + e.getMessage());
+            convertToDate(p, "exp");
+            convertToDate(p, "nbf");
+            convertToDate(p, "iat");
+            this.header = Collections.unmodifiableMap(h);
+            this.payload = Collections.unmodifiableMap(p);
+        } catch (IOException | ClassCastException e) {
+            throw new IllegalArgumentException("Malformed JWT", e);
         }
+    }
+
+    private static void convertToDate(Map<String, Object> m, String key) {
+        Object o = m.get(key);
+        if (o != null) {
+            m.put(key, new Date(TimeUnit.SECONDS.toMillis(Long.valueOf(o.toString()))));
+        }
+    }
+
+    public Map<String, Object> getHeader() {
+        return header;
+    }
+
+    public Map<String, Object> getPayload() {
+        return payload;
+    }
+
+    public String getSignature() {
+        return signature;
     }
 
     /**
      * Return the JWT expiration time
+     *
      * @return expiration time
      */
     public Date getExpirationTime() {
-        return jwt.getExpirationTime();
+        return (Date) getClaim("exp");
+    }
+
+    /**
+     * Return the string claim for the key.
+     *
+     * @param name key for the claim
+     * @return string claim
+     * @throws ParseException if not a string
+     */
+    public String getStringClaim(String name) throws ParseException {
+        Object claim = payload.get(name);
+        if (claim == null) {
+            return null;
+        }
+        if (claim instanceof String) {
+            return (String) claim;
+        } else {
+            throw new ParseException(
+                    "Malformed JWT, claim '"
+                            + name
+                            + "' is not a string, was '"
+                            + claim.getClass().getName()
+                            + "'",
+                    0);
+        }
     }
 
     /**
@@ -54,25 +111,16 @@ public class JwtClaimsSet {
      * @return issued time
      */
     public Date getIssueTime() {
-        return jwt.getIssueTime();
-    }
-
-    /**
-     * Return the string claim for the key.
-     * @param jwk key for the claim
-     * @return string claim
-     * @throws ParseException if not a string
-     */
-    public String getStringClaim(String jwk) throws ParseException {
-        return jwt.getStringClaim(jwk);
+        return (Date) getClaim("iat");
     }
 
     /**
      * Return the claim for the key.
-     * @param jwk key for the claim
+     *
+     * @param name key for the claim
      * @return string claim
      */
-    public Object getClaim(String jwk) {
-        return jwt.getClaim(jwk);
+    public Object getClaim(String name) {
+        return payload.get(name);
     }
 }

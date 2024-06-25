@@ -8,10 +8,21 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationObjectTypesExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMigrationObjectTypesRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class ListMigrationObjectTypesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
+    /**
+     * The connection type for migration objects.
+     */
+    private com.oracle.bmc.databasemigration.model.ConnectionType connectionType;
+
+    /**
+     * The connection type for migration objects.
+     */
+    public com.oracle.bmc.databasemigration.model.ConnectionType getConnectionType() {
+        return connectionType;
+    }
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -125,6 +136,22 @@ public class ListMigrationObjectTypesRequest
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
+
+        /**
+         * The connection type for migration objects.
+         */
+        private com.oracle.bmc.databasemigration.model.ConnectionType connectionType = null;
+
+        /**
+         * The connection type for migration objects.
+         * @param connectionType the value to set
+         * @return this builder instance
+         */
+        public Builder connectionType(
+                com.oracle.bmc.databasemigration.model.ConnectionType connectionType) {
+            this.connectionType = connectionType;
+            return this;
+        }
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
@@ -243,6 +270,7 @@ public class ListMigrationObjectTypesRequest
          * @return this builder instance
          */
         public Builder copy(ListMigrationObjectTypesRequest o) {
+            connectionType(o.getConnectionType());
             opcRequestId(o.getOpcRequestId());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
@@ -280,13 +308,14 @@ public class ListMigrationObjectTypesRequest
          */
         public ListMigrationObjectTypesRequest buildWithoutInvocationCallback() {
             ListMigrationObjectTypesRequest request = new ListMigrationObjectTypesRequest();
+            request.connectionType = connectionType;
             request.opcRequestId = opcRequestId;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListMigrationObjectTypesRequest(opcRequestId, sortBy, sortOrder, limit, page);
+            // new ListMigrationObjectTypesRequest(connectionType, opcRequestId, sortBy, sortOrder, limit, page);
         }
     }
 
@@ -296,6 +325,7 @@ public class ListMigrationObjectTypesRequest
      */
     public Builder toBuilder() {
         return new Builder()
+                .connectionType(connectionType)
                 .opcRequestId(opcRequestId)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
@@ -316,6 +346,7 @@ public class ListMigrationObjectTypesRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
+        sb.append(",connectionType=").append(String.valueOf(this.connectionType));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
@@ -336,6 +367,7 @@ public class ListMigrationObjectTypesRequest
 
         ListMigrationObjectTypesRequest other = (ListMigrationObjectTypesRequest) o;
         return super.equals(o)
+                && java.util.Objects.equals(this.connectionType, other.connectionType)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
@@ -347,6 +379,9 @@ public class ListMigrationObjectTypesRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.connectionType == null ? 43 : this.connectionType.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());

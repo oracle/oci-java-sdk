@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Change Database Connection compartment details.
+ * Details for changing the compartment for a Connection.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ChangeConnectionCompartmentDetails.Builder.class
 )
@@ -32,15 +32,13 @@ public final class ChangeConnectionCompartmentDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment to move the resource to.
-         *
+         * The OCID of the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment to move the resource to.
-         *
+         * The OCID of the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -83,15 +81,13 @@ public final class ChangeConnectionCompartmentDetails
     }
 
     /**
-     * The OCID of the compartment to move the resource to.
-     *
+     * The OCID of the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment to move the resource to.
-     *
+     * The OCID of the compartment.
      * @return the value
      **/
     public String getCompartmentId() {

@@ -18,7 +18,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDirectoryObject.Builder.class
 )
@@ -37,14 +37,12 @@ public final class UpdateDirectoryObject
     public static class Builder {
         /**
          * Name of directory object in database
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
          * Name of directory object in database
-         *
          * @param name the value to set
          * @return this builder
          **/
@@ -55,14 +53,12 @@ public final class UpdateDirectoryObject
         }
         /**
          * Absolute path of directory on database server
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("path")
         private String path;
 
         /**
          * Absolute path of directory on database server
-         *
          * @param path the value to set
          * @return this builder
          **/
@@ -108,14 +104,12 @@ public final class UpdateDirectoryObject
 
     /**
      * Name of directory object in database
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
      * Name of directory object in database
-     *
      * @return the value
      **/
     public String getName() {
@@ -124,14 +118,12 @@ public final class UpdateDirectoryObject
 
     /**
      * Absolute path of directory on database server
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("path")
     private final String path;
 
     /**
      * Absolute path of directory on database server
-     *
      * @return the value
      **/
     public String getPath() {

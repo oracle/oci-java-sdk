@@ -92,6 +92,17 @@ public class ImportDeploymentWalletRequest
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -212,6 +223,21 @@ public class ImportDeploymentWalletRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -244,6 +270,7 @@ public class ImportDeploymentWalletRequest
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             opcRetryToken(o.getOpcRetryToken());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -292,8 +319,9 @@ public class ImportDeploymentWalletRequest
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             request.opcRetryToken = opcRetryToken;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new ImportDeploymentWalletRequest(deploymentId, importDeploymentWalletDetails, ifMatch, opcRequestId, opcRetryToken);
+            // new ImportDeploymentWalletRequest(deploymentId, importDeploymentWalletDetails, ifMatch, opcRequestId, opcRetryToken, isLockOverride);
         }
     }
 
@@ -307,7 +335,8 @@ public class ImportDeploymentWalletRequest
                 .importDeploymentWalletDetails(importDeploymentWalletDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -329,6 +358,7 @@ public class ImportDeploymentWalletRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -349,7 +379,8 @@ public class ImportDeploymentWalletRequest
                         this.importDeploymentWalletDetails, other.importDeploymentWalletDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -367,6 +398,9 @@ public class ImportDeploymentWalletRequest
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

@@ -170,6 +170,26 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             return this;
         }
         /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+         * when a databaseId is provided. The default value is MTLS.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+        private OracleConnection.AuthenticationMode authenticationMode;
+
+        /**
+         * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+         * when a databaseId is provided. The default value is MTLS.
+         *
+         * @param authenticationMode the value to set
+         * @return this builder
+         **/
+        public Builder authenticationMode(OracleConnection.AuthenticationMode authenticationMode) {
+            this.authenticationMode = authenticationMode;
+            this.__explicitlySet__.add("authenticationMode");
+            return this;
+        }
+        /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
          * attribute is expected to be base64 encoded.
          *
@@ -282,6 +302,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
                             this.username,
                             this.password,
                             this.connectionString,
+                            this.authenticationMode,
                             this.wallet,
                             this.sessionMode,
                             this.privateIp,
@@ -330,6 +351,9 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             if (model.wasPropertyExplicitlySet("connectionString")) {
                 this.connectionString(model.getConnectionString());
             }
+            if (model.wasPropertyExplicitlySet("authenticationMode")) {
+                this.authenticationMode(model.getAuthenticationMode());
+            }
             if (model.wasPropertyExplicitlySet("wallet")) {
                 this.wallet(model.getWallet());
             }
@@ -371,6 +395,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
             String username,
             String password,
             String connectionString,
+            OracleConnection.AuthenticationMode authenticationMode,
             String wallet,
             OracleConnection.SessionMode sessionMode,
             String privateIp,
@@ -388,6 +413,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         this.username = username;
         this.password = password;
         this.connectionString = connectionString;
+        this.authenticationMode = authenticationMode;
         this.wallet = wallet;
         this.sessionMode = sessionMode;
         this.privateIp = privateIp;
@@ -446,6 +472,24 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
      **/
     public String getConnectionString() {
         return connectionString;
+    }
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+     * when a databaseId is provided. The default value is MTLS.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("authenticationMode")
+    private final OracleConnection.AuthenticationMode authenticationMode;
+
+    /**
+     * Authentication mode. It can be provided at creation of Oracle Autonomous Database Serverless connections,
+     * when a databaseId is provided. The default value is MTLS.
+     *
+     * @return the value
+     **/
+    public OracleConnection.AuthenticationMode getAuthenticationMode() {
+        return authenticationMode;
     }
 
     /**
@@ -551,6 +595,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
+        sb.append(", authenticationMode=").append(String.valueOf(this.authenticationMode));
         sb.append(", wallet=").append(String.valueOf(this.wallet));
         sb.append(", sessionMode=").append(String.valueOf(this.sessionMode));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
@@ -572,6 +617,7 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
+                && java.util.Objects.equals(this.authenticationMode, other.authenticationMode)
                 && java.util.Objects.equals(this.wallet, other.wallet)
                 && java.util.Objects.equals(this.sessionMode, other.sessionMode)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
@@ -588,6 +634,11 @@ public final class UpdateOracleConnectionDetails extends UpdateConnectionDetails
         result =
                 (result * PRIME)
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.authenticationMode == null
+                                ? 43
+                                : this.authenticationMode.hashCode());
         result = (result * PRIME) + (this.wallet == null ? 43 : this.wallet.hashCode());
         result = (result * PRIME) + (this.sessionMode == null ? 43 : this.sessionMode.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());

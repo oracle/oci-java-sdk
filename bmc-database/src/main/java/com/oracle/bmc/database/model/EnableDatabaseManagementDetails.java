@@ -409,6 +409,7 @@ public final class EnableDatabaseManagementDetails
     public enum Role {
         Sysdba("SYSDBA"),
         Normal("NORMAL"),
+        Sysdg("SYSDG"),
         ;
 
         private final String value;

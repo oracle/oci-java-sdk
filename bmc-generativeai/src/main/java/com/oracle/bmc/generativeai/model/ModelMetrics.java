@@ -25,6 +25,10 @@ package com.oracle.bmc.generativeai.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = TextGenerationModelMetrics.class,
         name = "TEXT_GENERATION_MODEL_METRICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ChatModelMetrics.class,
+        name = "CHAT_MODEL_METRICS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class ModelMetrics extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public enum ModelMetricsType {
         TextGenerationModelMetrics("TEXT_GENERATION_MODEL_METRICS"),
+        ChatModelMetrics("CHAT_MODEL_METRICS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

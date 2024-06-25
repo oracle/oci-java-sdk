@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details to access Pre-Migration Advisor report.
+ * Details to access Premigration Advisor report.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AdvisorReportLocationDetails.Builder.class
 )
@@ -43,14 +43,14 @@ public final class AdvisorReportLocationDetails
             return this;
         }
         /**
-         * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+         * File system path on the Source Database host where the Premigration Advisor report can be accessed.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("locationInSource")
         private String locationInSource;
 
         /**
-         * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+         * File system path on the Source Database host where the Premigration Advisor report can be accessed.
          *
          * @param locationInSource the value to set
          * @return this builder
@@ -105,14 +105,14 @@ public final class AdvisorReportLocationDetails
     }
 
     /**
-     * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+     * File system path on the Source Database host where the Premigration Advisor report can be accessed.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locationInSource")
     private final String locationInSource;
 
     /**
-     * Path in the Source Registered Connection where the Pre-Migration advisor report can be accessed.
+     * File system path on the Source Database host where the Premigration Advisor report can be accessed.
      *
      * @return the value
      **/

@@ -51,6 +51,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.datalabelingservicedataplane.SdkClientsMetadata",
     "com.oracle.bmc.datasafe.SdkClientsMetadata",
     "com.oracle.bmc.datascience.SdkClientsMetadata",
+    "com.oracle.bmc.demandsignal.SdkClientsMetadata",
     "com.oracle.bmc.desktops.SdkClientsMetadata",
     "com.oracle.bmc.devops.SdkClientsMetadata",
     "com.oracle.bmc.disasterrecovery.SdkClientsMetadata",

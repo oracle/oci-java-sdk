@@ -181,6 +181,15 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * The Elasticsearch technology type.
          **/
@@ -300,6 +309,7 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType,
                             this.servers,
                             this.securityProtocol,
@@ -364,6 +374,9 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -413,6 +426,7 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             ElasticsearchConnection.TechnologyType technologyType,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
@@ -435,7 +449,8 @@ public final class ElasticsearchConnectionSummary extends ConnectionSummary {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
         this.servers = servers;
         this.securityProtocol = securityProtocol;

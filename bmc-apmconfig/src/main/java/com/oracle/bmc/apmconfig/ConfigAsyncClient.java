@@ -737,6 +737,50 @@ public class ConfigAsyncClient implements ConfigAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<TestResponse> test(
+            TestRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<TestRequest, TestResponse> handler) {
+        LOG.trace("Called async test");
+        final TestRequest interceptedRequest = TestConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                TestConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Config",
+                        "Test",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/apm-config/20210201/TestOutput/Test");
+        final java.util.function.Function<javax.ws.rs.core.Response, TestResponse> transformer =
+                TestConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<TestRequest, TestResponse> handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<TestRequest, TestResponse>,
+                        java.util.concurrent.Future<TestResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getTestDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    TestRequest, TestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
             UpdateConfigRequest request,
             final com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>

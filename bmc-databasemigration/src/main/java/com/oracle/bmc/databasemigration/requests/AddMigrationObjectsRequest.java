@@ -8,7 +8,7 @@ import com.oracle.bmc.databasemigration.model.*;
 /**
  * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/AddMigrationObjectsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use AddMigrationObjectsRequest.
  */
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class AddMigrationObjectsRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.databasemigration.model.MigrationObjectCollection> {

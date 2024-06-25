@@ -72,6 +72,10 @@ package com.oracle.bmc.goldengate.model;
         name = "OCI_OBJECT_STORAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateDb2ConnectionDetails.class,
+        name = "DB2"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateElasticsearchConnectionDetails.class,
         name = "ELASTICSEARCH"
     ),
@@ -125,6 +129,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         "compartmentId",
         "freeformTags",
         "definedTags",
+        "locks",
         "vaultId",
         "keyId",
         "nsgIds",
@@ -137,6 +142,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
             String compartmentId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<AddResourceLockDetails> locks,
             String vaultId,
             String keyId,
             java.util.List<String> nsgIds,
@@ -148,6 +154,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         this.compartmentId = compartmentId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.vaultId = vaultId;
         this.keyId = keyId;
         this.nsgIds = nsgIds;
@@ -243,6 +250,20 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<AddResourceLockDetails> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<AddResourceLockDetails> getLocks() {
+        return locks;
     }
 
     /**
@@ -356,6 +377,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyId=").append(String.valueOf(this.keyId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -380,6 +402,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyId, other.keyId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -399,6 +422,7 @@ public class CreateConnectionDetails extends com.oracle.bmc.http.internal.Explic
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.keyId == null ? 43 : this.keyId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());

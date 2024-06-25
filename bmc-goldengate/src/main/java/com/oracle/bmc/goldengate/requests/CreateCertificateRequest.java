@@ -71,6 +71,17 @@ public class CreateCertificateRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -167,6 +178,21 @@ public class CreateCertificateRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -198,6 +224,7 @@ public class CreateCertificateRequest
             deploymentId(o.getDeploymentId());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -245,8 +272,9 @@ public class CreateCertificateRequest
             request.deploymentId = deploymentId;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new CreateCertificateRequest(createCertificateDetails, deploymentId, opcRetryToken, opcRequestId);
+            // new CreateCertificateRequest(createCertificateDetails, deploymentId, opcRetryToken, opcRequestId, isLockOverride);
         }
     }
 
@@ -259,7 +287,8 @@ public class CreateCertificateRequest
                 .createCertificateDetails(createCertificateDetails)
                 .deploymentId(deploymentId)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -280,6 +309,7 @@ public class CreateCertificateRequest
         sb.append(",deploymentId=").append(String.valueOf(this.deploymentId));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -299,7 +329,8 @@ public class CreateCertificateRequest
                         this.createCertificateDetails, other.createCertificateDetails)
                 && java.util.Objects.equals(this.deploymentId, other.deploymentId)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -316,6 +347,9 @@ public class CreateCertificateRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

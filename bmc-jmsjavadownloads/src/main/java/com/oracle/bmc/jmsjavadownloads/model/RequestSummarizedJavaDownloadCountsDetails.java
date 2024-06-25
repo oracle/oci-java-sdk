@@ -79,13 +79,13 @@ public final class RequestSummarizedJavaDownloadCountsDetails
             return this;
         }
         /**
-         * Group as property specifying the aggregation type for download counts.
+         * The property that specifies the aggregation type for the download counts.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("groupAs")
         private JavaDownloadCountAggregationType groupAs;
 
         /**
-         * Group as property specifying the aggregation type for download counts.
+         * The property that specifies the aggregation type for the download counts.
          * @param groupAs the value to set
          * @return this builder
          **/
@@ -315,13 +315,13 @@ public final class RequestSummarizedJavaDownloadCountsDetails
     }
 
     /**
-     * Group as property specifying the aggregation type for download counts.
+     * The property that specifies the aggregation type for the download counts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("groupAs")
     private final JavaDownloadCountAggregationType groupAs;
 
     /**
-     * Group as property specifying the aggregation type for download counts.
+     * The property that specifies the aggregation type for the download counts.
      * @return the value
      **/
     public JavaDownloadCountAggregationType getGroupAs() {

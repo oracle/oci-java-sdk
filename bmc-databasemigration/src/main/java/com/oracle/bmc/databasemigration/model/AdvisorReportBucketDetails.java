@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Details to access Pre-Migration Advisor report in the specified Object Storage bucket, if any.
+ * Details to access Premigration Advisor report in the specified Object Storage bucket.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -15,7 +15,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = AdvisorReportBucketDetails.Builder.class
 )
@@ -34,14 +34,14 @@ public final class AdvisorReportBucketDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Name of the bucket containing the Pre-Migration Advisor report.
+         * Name of the bucket containing the Premigration Advisor report.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
-         * Name of the bucket containing the Pre-Migration Advisor report.
+         * Name of the bucket containing the Premigration Advisor report.
          *
          * @param bucketName the value to set
          * @return this builder
@@ -70,14 +70,14 @@ public final class AdvisorReportBucketDetails
             return this;
         }
         /**
-         * Pre-Migration Advisor report object name.
+         * Premigration Advisor report object name.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("objectName")
         private String objectName;
 
         /**
-         * Pre-Migration Advisor report object name.
+         * Premigration Advisor report object name.
          *
          * @param objectName the value to set
          * @return this builder
@@ -128,14 +128,14 @@ public final class AdvisorReportBucketDetails
     }
 
     /**
-     * Name of the bucket containing the Pre-Migration Advisor report.
+     * Name of the bucket containing the Premigration Advisor report.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
-     * Name of the bucket containing the Pre-Migration Advisor report.
+     * Name of the bucket containing the Premigration Advisor report.
      *
      * @return the value
      **/
@@ -160,14 +160,14 @@ public final class AdvisorReportBucketDetails
     }
 
     /**
-     * Pre-Migration Advisor report object name.
+     * Premigration Advisor report object name.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("objectName")
     private final String objectName;
 
     /**
-     * Pre-Migration Advisor report object name.
+     * Premigration Advisor report object name.
      *
      * @return the value
      **/

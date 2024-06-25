@@ -470,10 +470,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 CancelWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "CancelWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/CancelWorkRequest");
+                        "RedisCluster", "CancelWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -522,7 +519,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                         "RedisCluster",
                         "ChangeRedisClusterCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/ChangeRedisClusterCompartment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeRedisClusterCompartmentResponse>
                 transformer =
@@ -574,10 +571,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
         com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "CreateRedisCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/CreateRedisCluster");
+                        "RedisCluster", "CreateRedisCluster", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateRedisClusterResponse>
                 transformer =
                         CreateRedisClusterConverter.fromResponse(
@@ -625,10 +619,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 DeleteRedisClusterConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "DeleteRedisCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/DeleteRedisCluster");
+                        "RedisCluster", "DeleteRedisCluster", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteRedisClusterResponse>
                 transformer =
                         DeleteRedisClusterConverter.fromResponse(
@@ -671,10 +662,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 GetRedisClusterConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "GetRedisCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/GetRedisCluster");
+                        "RedisCluster", "GetRedisCluster", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetRedisClusterResponse>
                 transformer =
                         GetRedisClusterConverter.fromResponse(
@@ -717,10 +705,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 GetWorkRequestConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "GetWorkRequest",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/GetWorkRequest");
+                        "RedisCluster", "GetWorkRequest", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse>
                 transformer =
                         GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -762,10 +747,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 ListRedisClustersConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "ListRedisClusters",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisClusterSummary/ListRedisClusters");
+                        "RedisCluster", "ListRedisClusters", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListRedisClustersResponse>
                 transformer =
                         ListRedisClustersConverter.fromResponse(
@@ -808,10 +790,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 ListWorkRequestErrorsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "ListWorkRequestErrors",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestError/ListWorkRequestErrors");
+                        "RedisCluster", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -855,10 +834,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 ListWorkRequestLogsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "ListWorkRequestLogs",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequestLogEntry/ListWorkRequestLogs");
+                        "RedisCluster", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -902,10 +878,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 ListWorkRequestsConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "ListWorkRequests",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/WorkRequest/ListWorkRequests");
+                        "RedisCluster", "ListWorkRequests", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -948,10 +921,7 @@ public class RedisClusterAsyncClient implements RedisClusterAsync {
                 UpdateRedisClusterConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "RedisCluster",
-                        "UpdateRedisCluster",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/redis/20220315/RedisCluster/UpdateRedisCluster");
+                        "RedisCluster", "UpdateRedisCluster", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateRedisClusterResponse>
                 transformer =
                         UpdateRedisClusterConverter.fromResponse(

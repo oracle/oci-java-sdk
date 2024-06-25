@@ -189,13 +189,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -205,13 +205,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -221,13 +221,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastUsed")
         private java.util.Date timeLastUsed;
 
         /**
-         * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+         * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * @param timeLastUsed the value to set
          * @return this builder
          **/
@@ -237,13 +237,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+         * The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
         private java.util.Date timeExpires;
 
         /**
-         * The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+         * The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          * @param timeExpires the value to set
          * @return this builder
          **/
@@ -594,13 +594,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the JavaDownloadToken was created. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was created, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeCreated() {
@@ -608,13 +608,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The time the JavaDownloadToken was updated. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was updated, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeUpdated() {
@@ -622,13 +622,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastUsed")
     private final java.util.Date timeLastUsed;
 
     /**
-     * The time the JavaDownloadToken was last used for download. An RFC3339 formatted datetime string.
+     * The time the JavaDownloadToken was last used for download, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeLastUsed() {
@@ -636,13 +636,13 @@ public final class JavaDownloadToken extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+     * The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeExpires")
     private final java.util.Date timeExpires;
 
     /**
-     * The expiry time of the JavaDownloadToken. An RFC3339 formatted datetime string.
+     * The expiry time of the JavaDownloadToken, displayed as an [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      * @return the value
      **/
     public java.util.Date getTimeExpires() {

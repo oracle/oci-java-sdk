@@ -16,7 +16,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = ObjectStoreBucket.Builder.class
 )
@@ -34,14 +34,12 @@ public final class ObjectStoreBucket extends com.oracle.bmc.http.internal.Explic
     public static class Builder {
         /**
          * Namespace name of the object store bucket.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
         private String namespaceName;
 
         /**
          * Namespace name of the object store bucket.
-         *
          * @param namespaceName the value to set
          * @return this builder
          **/
@@ -52,14 +50,12 @@ public final class ObjectStoreBucket extends com.oracle.bmc.http.internal.Explic
         }
         /**
          * Bucket name.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
         private String bucketName;
 
         /**
          * Bucket name.
-         *
          * @param bucketName the value to set
          * @return this builder
          **/
@@ -105,14 +101,12 @@ public final class ObjectStoreBucket extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Namespace name of the object store bucket.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespaceName")
     private final String namespaceName;
 
     /**
      * Namespace name of the object store bucket.
-     *
      * @return the value
      **/
     public String getNamespaceName() {
@@ -121,14 +115,12 @@ public final class ObjectStoreBucket extends com.oracle.bmc.http.internal.Explic
 
     /**
      * Bucket name.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("bucketName")
     private final String bucketName;
 
     /**
      * Bucket name.
-     *
      * @return the value
      **/
     public String getBucketName() {

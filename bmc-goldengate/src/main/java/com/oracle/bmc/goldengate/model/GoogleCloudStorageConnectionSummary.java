@@ -181,6 +181,15 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * The Google Cloud Storage technology type.
          **/
@@ -221,6 +230,7 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.locks,
                             this.technologyType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -281,6 +291,9 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -318,6 +331,7 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            java.util.List<ResourceLock> locks,
             GoogleCloudStorageConnection.TechnologyType technologyType) {
         super(
                 id,
@@ -336,7 +350,8 @@ public final class GoogleCloudStorageConnectionSummary extends ConnectionSummary
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                locks);
         this.technologyType = technologyType;
     }
 

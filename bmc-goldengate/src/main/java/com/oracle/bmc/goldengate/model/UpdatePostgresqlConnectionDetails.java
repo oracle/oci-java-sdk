@@ -363,6 +363,24 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
             this.__explicitlySet__.add("privateIp");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+        private String dbSystemId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+         *
+         * @param dbSystemId the value to set
+         * @return this builder
+         **/
+        public Builder dbSystemId(String dbSystemId) {
+            this.dbSystemId = dbSystemId;
+            this.__explicitlySet__.add("dbSystemId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -391,7 +409,8 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
                             this.sslCrl,
                             this.sslCert,
                             this.sslKey,
-                            this.privateIp);
+                            this.privateIp,
+                            this.dbSystemId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -466,6 +485,9 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("dbSystemId")) {
+                this.dbSystemId(model.getDbSystemId());
+            }
             return this;
         }
     }
@@ -504,7 +526,8 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
             String sslCrl,
             String sslCert,
             String sslKey,
-            String privateIp) {
+            String privateIp,
+            String dbSystemId) {
         super(
                 displayName,
                 description,
@@ -528,6 +551,7 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
         this.sslCert = sslCert;
         this.sslKey = sslKey;
         this.privateIp = privateIp;
+        this.dbSystemId = dbSystemId;
     }
 
     /**
@@ -758,6 +782,22 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
         return privateIp;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemId")
+    private final String dbSystemId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the database system being referenced.
+     *
+     * @return the value
+     **/
+    public String getDbSystemId() {
+        return dbSystemId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -785,6 +825,7 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
         sb.append(", sslCert=").append(String.valueOf(this.sslCert));
         sb.append(", sslKey=").append(String.valueOf(this.sslKey));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
         sb.append(")");
         return sb.toString();
     }
@@ -812,6 +853,7 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
                 && java.util.Objects.equals(this.sslCert, other.sslCert)
                 && java.util.Objects.equals(this.sslKey, other.sslKey)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
                 && super.equals(other);
     }
 
@@ -838,6 +880,7 @@ public final class UpdatePostgresqlConnectionDetails extends UpdateConnectionDet
         result = (result * PRIME) + (this.sslCert == null ? 43 : this.sslCert.hashCode());
         result = (result * PRIME) + (this.sslKey == null ? 43 : this.sslKey.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
         return result;
     }
 }

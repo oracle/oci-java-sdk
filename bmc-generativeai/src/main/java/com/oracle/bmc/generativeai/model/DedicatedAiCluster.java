@@ -684,10 +684,13 @@ public final class DedicatedAiCluster extends com.oracle.bmc.http.internal.Expli
      **/
     public enum UnitShape {
         LargeCohere("LARGE_COHERE"),
+        LargeCohereV2("LARGE_COHERE_V2"),
         SmallCohere("SMALL_COHERE"),
+        SmallCohereV2("SMALL_COHERE_V2"),
         EmbedCohere("EMBED_COHERE"),
         Llama270("LLAMA2_70"),
-        LargeCohereV2("LARGE_COHERE_V2"),
+        LargeGeneric("LARGE_GENERIC"),
+        LargeCohereV22("LARGE_COHERE_V2_2"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

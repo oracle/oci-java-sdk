@@ -563,7 +563,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ActivateSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ActivateSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/ActivateSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, ActivateScheduleResponse>
                 transformer =
                         ActivateScheduleConverter.fromResponse(
@@ -598,7 +601,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "CancelWorkRequest", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "CancelWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -634,7 +640,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "CreateSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "CreateSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/CreateSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, CreateScheduleResponse> transformer =
                 CreateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -671,7 +680,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "DeactivateSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "DeactivateSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/DeactivateSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, DeactivateScheduleResponse>
                 transformer =
                         DeactivateScheduleConverter.fromResponse(
@@ -706,7 +718,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "DeleteSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "DeleteSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/DeleteSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteScheduleResponse> transformer =
                 DeleteScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -739,7 +754,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "GetSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "GetSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/GetSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, GetScheduleResponse> transformer =
                 GetScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -771,7 +789,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -803,7 +824,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ListResourceTypes", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ListResourceTypes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/ResourceTypeCollection/ListResourceTypes");
         java.util.function.Function<javax.ws.rs.core.Response, ListResourceTypesResponse>
                 transformer =
                         ListResourceTypesConverter.fromResponse(
@@ -837,7 +861,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ListSchedules", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ListSchedules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/ListSchedules");
         java.util.function.Function<javax.ws.rs.core.Response, ListSchedulesResponse> transformer =
                 ListSchedulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -870,7 +897,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ListWorkRequestErrors", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ListWorkRequestErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -904,7 +934,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ListWorkRequestLogs", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ListWorkRequestLogs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -938,7 +971,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -972,7 +1008,10 @@ public class ScheduleClient implements Schedule {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "Schedule", "UpdateSchedule", ib.getRequestUri().toString(), "");
+                        "Schedule",
+                        "UpdateSchedule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/resource-scheduler/20240430/Schedule/UpdateSchedule");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateScheduleResponse> transformer =
                 UpdateScheduleConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(

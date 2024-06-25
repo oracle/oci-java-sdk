@@ -1640,6 +1640,54 @@ public class ShardedDatabaseServiceAsyncClient implements ShardedDatabaseService
     }
 
     @Override
+    public java.util.concurrent.Future<ReinstateProxyInstanceResponse> reinstateProxyInstance(
+            ReinstateProxyInstanceRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ReinstateProxyInstanceRequest, ReinstateProxyInstanceResponse>
+                    handler) {
+        LOG.trace("Called async reinstateProxyInstance");
+        final ReinstateProxyInstanceRequest interceptedRequest =
+                ReinstateProxyInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReinstateProxyInstanceConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ShardedDatabaseService",
+                        "ReinstateProxyInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/globally-distributed-autonomous-database/20230301/PrivateEndpoint/ReinstateProxyInstance");
+        final java.util.function.Function<javax.ws.rs.core.Response, ReinstateProxyInstanceResponse>
+                transformer =
+                        ReinstateProxyInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReinstateProxyInstanceRequest, ReinstateProxyInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReinstateProxyInstanceRequest, ReinstateProxyInstanceResponse>,
+                        java.util.concurrent.Future<ReinstateProxyInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReinstateProxyInstanceRequest, ReinstateProxyInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StartShardedDatabaseResponse> startShardedDatabase(
             StartShardedDatabaseRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

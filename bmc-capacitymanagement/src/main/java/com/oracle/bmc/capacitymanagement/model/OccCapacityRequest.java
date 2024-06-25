@@ -30,6 +30,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
         "description",
         "namespace",
         "occCustomerGroupId",
+        "requestType",
         "region",
         "availabilityDomain",
         "dateExpectedCapacityHandover",
@@ -51,6 +52,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
             String description,
             Namespace namespace,
             String occCustomerGroupId,
+            RequestType requestType,
             String region,
             String availabilityDomain,
             java.util.Date dateExpectedCapacityHandover,
@@ -71,6 +73,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
         this.description = description;
         this.namespace = namespace;
         this.occCustomerGroupId = occCustomerGroupId;
+        this.requestType = requestType;
         this.region = region;
         this.availabilityDomain = availabilityDomain;
         this.dateExpectedCapacityHandover = dateExpectedCapacityHandover;
@@ -199,6 +202,22 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
         public Builder occCustomerGroupId(String occCustomerGroupId) {
             this.occCustomerGroupId = occCustomerGroupId;
             this.__explicitlySet__.add("occCustomerGroupId");
+            return this;
+        }
+        /**
+         * Type of Capacity Request(New or Transfer)
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+        private RequestType requestType;
+
+        /**
+         * Type of Capacity Request(New or Transfer)
+         * @param requestType the value to set
+         * @return this builder
+         **/
+        public Builder requestType(RequestType requestType) {
+            this.requestType = requestType;
+            this.__explicitlySet__.add("requestType");
             return this;
         }
         /**
@@ -420,6 +439,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
                             this.description,
                             this.namespace,
                             this.occCustomerGroupId,
+                            this.requestType,
                             this.region,
                             this.availabilityDomain,
                             this.dateExpectedCapacityHandover,
@@ -460,6 +480,9 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("occCustomerGroupId")) {
                 this.occCustomerGroupId(model.getOccCustomerGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("requestType")) {
+                this.requestType(model.getRequestType());
             }
             if (model.wasPropertyExplicitlySet("region")) {
                 this.region(model.getRegion());
@@ -610,6 +633,68 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
      **/
     public String getOccCustomerGroupId() {
         return occCustomerGroupId;
+    }
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     **/
+    public enum RequestType {
+        New("NEW"),
+        Transfer("TRANSFER"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(RequestType.class);
+
+        private final String value;
+        private static java.util.Map<String, RequestType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (RequestType v : RequestType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        RequestType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static RequestType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'RequestType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Type of Capacity Request(New or Transfer)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestType")
+    private final RequestType requestType;
+
+    /**
+     * Type of Capacity Request(New or Transfer)
+     * @return the value
+     **/
+    public RequestType getRequestType() {
+        return requestType;
     }
 
     /**
@@ -920,6 +1005,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", occCustomerGroupId=").append(String.valueOf(this.occCustomerGroupId));
+        sb.append(", requestType=").append(String.valueOf(this.requestType));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dateExpectedCapacityHandover=")
@@ -955,6 +1041,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.occCustomerGroupId, other.occCustomerGroupId)
+                && java.util.Objects.equals(this.requestType, other.requestType)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(
@@ -992,6 +1079,7 @@ public final class OccCapacityRequest extends com.oracle.bmc.http.internal.Expli
                         + (this.occCustomerGroupId == null
                                 ? 43
                                 : this.occCustomerGroupId.hashCode());
+        result = (result * PRIME) + (this.requestType == null ? 43 : this.requestType.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result =
                 (result * PRIME)

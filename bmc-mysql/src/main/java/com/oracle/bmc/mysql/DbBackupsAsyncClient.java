@@ -512,6 +512,55 @@ public class DbBackupsAsyncClient implements DbBackupsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupResponse> copyBackup(
+            CopyBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CopyBackupRequest, CopyBackupResponse>
+                    handler) {
+        LOG.trace("Called async copyBackup");
+        final CopyBackupRequest interceptedRequest = CopyBackupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CopyBackupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbBackups",
+                        "CopyBackup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CopyBackup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CopyBackupResponse>
+                transformer =
+                        CopyBackupConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CopyBackupRequest, CopyBackupResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CopyBackupRequest, CopyBackupResponse>,
+                        java.util.concurrent.Future<CopyBackupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCopyBackupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CopyBackupRequest, CopyBackupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBackupResponse> createBackup(
             CreateBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>

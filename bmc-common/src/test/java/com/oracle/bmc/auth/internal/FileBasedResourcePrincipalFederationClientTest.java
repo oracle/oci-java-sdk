@@ -9,18 +9,8 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.security.KeyPair;
-import java.security.SecureRandom;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
-import java.util.Date;
-
-import com.nimbusds.jose.JOSEException;
-import com.nimbusds.jose.JWSAlgorithm;
-import com.nimbusds.jose.JWSHeader;
-import com.nimbusds.jose.JWSSigner;
-import com.nimbusds.jose.crypto.MACSigner;
-import com.nimbusds.jwt.JWTClaimsSet;
-import com.nimbusds.jwt.SignedJWT;
 
 import com.oracle.bmc.auth.SessionKeySupplier;
 import org.junit.Test;
@@ -28,7 +18,8 @@ import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
 public class FileBasedResourcePrincipalFederationClientTest {
-    private static final String fakeToken = generateToken();
+    private static final String fakeToken =
+            "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c";
 
     @Test
     public void testGetSecurityTokenFromFile() throws IOException {
@@ -63,35 +54,5 @@ public class FileBasedResourcePrincipalFederationClientTest {
 
         String securityToken = underTest.refreshAndGetSecurityToken();
         assertEquals(fakeToken, securityToken);
-    }
-
-    private static String generateToken() {
-        try {
-            // Generate random 256-bit (32-byte) shared secret
-            SecureRandom secureRandom = new SecureRandom();
-            byte[] sharedSecret = new byte[32];
-            secureRandom.nextBytes(sharedSecret);
-
-            // Create HMAC signer
-            JWSSigner signer = new MACSigner(sharedSecret);
-
-            // Prepare JWT with claims set
-            JWTClaimsSet claimsSet =
-                    new JWTClaimsSet.Builder()
-                            .subject("OCI")
-                            .issuer("https://oraclecloud.com/")
-                            .expirationTime(new Date(new Date().getTime() + 60 * 1000))
-                            .build();
-
-            SignedJWT signedJWT = new SignedJWT(new JWSHeader(JWSAlgorithm.HS256), claimsSet);
-
-            // Apply HMAC protection
-            signedJWT.sign(signer);
-
-            return signedJWT.serialize();
-        } catch (JOSEException e) {
-            e.printStackTrace();
-        }
-        return "";
     }
 }

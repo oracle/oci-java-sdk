@@ -10,7 +10,7 @@ import com.oracle.bmc.databasemigration.requests.*;
 import com.oracle.bmc.databasemigration.responses.*;
 import com.oracle.bmc.util.internal.Validate;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public class ListMigrationObjectTypesConverter {
     private static final com.oracle.bmc.http.internal.ResponseConversionFunctionFactoryV2
             RESPONSE_CONVERSION_FACTORY =
@@ -31,9 +31,10 @@ public class ListMigrationObjectTypesConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.databasemigration.requests.ListMigrationObjectTypesRequest request) {
         Validate.notNull(request, "request instance is required");
+        Validate.notNull(request.getConnectionType(), "connectionType is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
-                client.getBaseTarget().path("/20210929").path("migrationObjectTypes");
+                client.getBaseTarget().path("/20230518").path("migrationObjectTypes");
 
         if (request.getSortBy() != null) {
             target =
@@ -66,6 +67,12 @@ public class ListMigrationObjectTypesConverter {
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getPage()));
         }
+
+        target =
+                target.queryParam(
+                        "connectionType",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getConnectionType().getValue()));
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

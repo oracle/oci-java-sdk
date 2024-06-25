@@ -6,6 +6,6 @@ package com.oracle.bmc.databasemigration;
 
 import com.oracle.bmc.SdkClients;
 
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @SdkClients({DatabaseMigrationAsyncClient.class, DatabaseMigrationClient.class})
 public final class SdkClientsMetadata {}

@@ -26,6 +26,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         "deliveryCount",
         "visibleAfter",
         "expireAfter",
+        "createdAt",
         "metadata"
     })
     public GetMessage(
@@ -35,6 +36,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             Integer deliveryCount,
             java.util.Date visibleAfter,
             java.util.Date expireAfter,
+            java.util.Date createdAt,
             MessageMetadata metadata) {
         super();
         this.id = id;
@@ -43,6 +45,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         this.deliveryCount = deliveryCount;
         this.visibleAfter = visibleAfter;
         this.expireAfter = expireAfter;
+        this.createdAt = createdAt;
         this.metadata = metadata;
     }
 
@@ -160,6 +163,28 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             this.__explicitlySet__.add("expireAfter");
             return this;
         }
+        /**
+         * The time when message was created in queue.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("createdAt")
+        private java.util.Date createdAt;
+
+        /**
+         * The time when message was created in queue.
+         * <p>
+         * Example: {@code 2018-04-20T00:00:07.405Z}
+         *
+         * @param createdAt the value to set
+         * @return this builder
+         **/
+        public Builder createdAt(java.util.Date createdAt) {
+            this.createdAt = createdAt;
+            this.__explicitlySet__.add("createdAt");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("metadata")
         private MessageMetadata metadata;
@@ -182,6 +207,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.deliveryCount,
                             this.visibleAfter,
                             this.expireAfter,
+                            this.createdAt,
                             this.metadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -208,6 +234,9 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("expireAfter")) {
                 this.expireAfter(model.getExpireAfter());
+            }
+            if (model.wasPropertyExplicitlySet("createdAt")) {
+                this.createdAt(model.getCreatedAt());
             }
             if (model.wasPropertyExplicitlySet("metadata")) {
                 this.metadata(model.getMetadata());
@@ -327,6 +356,26 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         return expireAfter;
     }
 
+    /**
+     * The time when message was created in queue.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("createdAt")
+    private final java.util.Date createdAt;
+
+    /**
+     * The time when message was created in queue.
+     * <p>
+     * Example: {@code 2018-04-20T00:00:07.405Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getCreatedAt() {
+        return createdAt;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("metadata")
     private final MessageMetadata metadata;
 
@@ -354,6 +403,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", deliveryCount=").append(String.valueOf(this.deliveryCount));
         sb.append(", visibleAfter=").append(String.valueOf(this.visibleAfter));
         sb.append(", expireAfter=").append(String.valueOf(this.expireAfter));
+        sb.append(", createdAt=").append(String.valueOf(this.createdAt));
         sb.append(", metadata=").append(String.valueOf(this.metadata));
         sb.append(")");
         return sb.toString();
@@ -375,6 +425,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.deliveryCount, other.deliveryCount)
                 && java.util.Objects.equals(this.visibleAfter, other.visibleAfter)
                 && java.util.Objects.equals(this.expireAfter, other.expireAfter)
+                && java.util.Objects.equals(this.createdAt, other.createdAt)
                 && java.util.Objects.equals(this.metadata, other.metadata)
                 && super.equals(other);
     }
@@ -391,6 +442,7 @@ public final class GetMessage extends com.oracle.bmc.http.internal.ExplicitlySet
                         + (this.deliveryCount == null ? 43 : this.deliveryCount.hashCode());
         result = (result * PRIME) + (this.visibleAfter == null ? 43 : this.visibleAfter.hashCode());
         result = (result * PRIME) + (this.expireAfter == null ? 43 : this.expireAfter.hashCode());
+        result = (result * PRIME) + (this.createdAt == null ? 43 : this.createdAt.hashCode());
         result = (result * PRIME) + (this.metadata == null ? 43 : this.metadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -1159,6 +1159,53 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GenerateExtractDetailsResponse> generateExtractDetails(
+            GenerateExtractDetailsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>
+                    handler) {
+        LOG.trace("Called async generateExtractDetails");
+        final GenerateExtractDetailsRequest interceptedRequest =
+                GenerateExtractDetailsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GenerateExtractDetailsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "GenerateExtractDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/GenerateExtractDetails");
+        final java.util.function.Function<javax.ws.rs.core.Response, GenerateExtractDetailsResponse>
+                transformer =
+                        GenerateExtractDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>,
+                        java.util.concurrent.Future<GenerateExtractDetailsResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GenerateExtractDetailsRequest, GenerateExtractDetailsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetDataMaskingActivityResponse> getDataMaskingActivity(
             GetDataMaskingActivityRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1638,6 +1685,52 @@ public class FusionApplicationsAsyncClient implements FusionApplicationsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetWorkRequestRequest, GetWorkRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<InitiateExtractResponse> initiateExtract(
+            InitiateExtractRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            InitiateExtractRequest, InitiateExtractResponse>
+                    handler) {
+        LOG.trace("Called async initiateExtract");
+        final InitiateExtractRequest interceptedRequest =
+                InitiateExtractConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                InitiateExtractConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FusionApplications",
+                        "InitiateExtract",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/fusion-applications/20211201/FusionEnvironment/InitiateExtract");
+        final java.util.function.Function<javax.ws.rs.core.Response, InitiateExtractResponse>
+                transformer =
+                        InitiateExtractConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<InitiateExtractRequest, InitiateExtractResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                InitiateExtractRequest, InitiateExtractResponse>,
+                        java.util.concurrent.Future<InitiateExtractResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    InitiateExtractRequest, InitiateExtractResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

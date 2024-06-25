@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load Advanced Settings](https://docs-uat.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
+ * Optional parameters for Data Pump Export and Import.
  * If an empty object is specified, the stored Data Pump Parameter details will be removed.
  *
  * <br/>
@@ -16,7 +16,7 @@ package com.oracle.bmc.databasemigration.model;
  * {@link #__explicitlySet__} into account. The constructor, on the other hand, does not set {@link #__explicitlySet__}
  * (since the constructor cannot distinguish explicit {@code null} from unset {@code null}).
  **/
-@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
     builder = UpdateDataPumpParameters.Builder.class
 )
@@ -51,15 +51,13 @@ public final class UpdateDataPumpParameters
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Set to false to force Data Pump worker processes to run on one instance.
-         *
+         * Set to false to force Data Pump worker process to run on one instance.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
         /**
-         * Set to false to force Data Pump worker processes to run on one instance.
-         *
+         * Set to false to force Data Pump worker process to run on one instance.
          * @param isCluster the value to set
          * @return this builder
          **/
@@ -70,14 +68,12 @@ public final class UpdateDataPumpParameters
         }
         /**
          * Estimate size of dumps that will be generated.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("estimate")
         private DataPumpEstimate estimate;
 
         /**
          * Estimate size of dumps that will be generated.
-         *
          * @param estimate the value to set
          * @return this builder
          **/
@@ -105,15 +101,13 @@ public final class UpdateDataPumpParameters
             return this;
         }
         /**
-         * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
-         *
+         * Exclude paratemers for Export and Import.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
         private java.util.List<DataPumpExcludeParameters> excludeParameters;
 
         /**
-         * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
-         *
+         * Exclude paratemers for Export and Import.
          * @param excludeParameters the value to set
          * @return this builder
          **/
@@ -145,14 +139,12 @@ public final class UpdateDataPumpParameters
         }
         /**
          * Maximum number of worker processes that can be used for a Data Pump Export job.
-         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("exportParallelismDegree")
         private Integer exportParallelismDegree;
 
         /**
          * Maximum number of worker processes that can be used for a Data Pump Export job.
-         *
          * @param exportParallelismDegree the value to set
          * @return this builder
          **/
@@ -216,15 +208,13 @@ public final class UpdateDataPumpParameters
     }
 
     /**
-     * Set to false to force Data Pump worker processes to run on one instance.
-     *
+     * Set to false to force Data Pump worker process to run on one instance.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
     /**
-     * Set to false to force Data Pump worker processes to run on one instance.
-     *
+     * Set to false to force Data Pump worker process to run on one instance.
      * @return the value
      **/
     public Boolean getIsCluster() {
@@ -233,14 +223,12 @@ public final class UpdateDataPumpParameters
 
     /**
      * Estimate size of dumps that will be generated.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("estimate")
     private final DataPumpEstimate estimate;
 
     /**
      * Estimate size of dumps that will be generated.
-     *
      * @return the value
      **/
     public DataPumpEstimate getEstimate() {
@@ -264,15 +252,13 @@ public final class UpdateDataPumpParameters
     }
 
     /**
-     * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
-     *
+     * Exclude paratemers for Export and Import.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
     private final java.util.List<DataPumpExcludeParameters> excludeParameters;
 
     /**
-     * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
-     *
+     * Exclude paratemers for Export and Import.
      * @return the value
      **/
     public java.util.List<DataPumpExcludeParameters> getExcludeParameters() {
@@ -299,14 +285,12 @@ public final class UpdateDataPumpParameters
 
     /**
      * Maximum number of worker processes that can be used for a Data Pump Export job.
-     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("exportParallelismDegree")
     private final Integer exportParallelismDegree;
 
     /**
      * Maximum number of worker processes that can be used for a Data Pump Export job.
-     *
      * @return the value
      **/
     public Integer getExportParallelismDegree() {
