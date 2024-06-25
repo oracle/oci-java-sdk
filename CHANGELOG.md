@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.44.0 - 2024-06-25
+### Added
+- Support for MySQL to MySQL homogeneous migrations in the Database Migration service
+- Support for manual cross-region backups in the MySQL Heatwave service
+  
+### Breaking Changes
+- The models `AdvisorSettings`, `Agent`, `AgentCollection`, `AgentImageCollection`, `AgentImageSummary`, `AgentSummary`, `AwsS3DataTransferMediumDetails`, `AwsS3Details`, `ChangeAgentCompartmentDetails`, `ConnectDescriptor`, `CreateAdvisorSettings`, `CreateAwsS3Details`, `CreateConnectDescriptor`, `CreateDataPumpSettings`, `CreateDataTransferMediumDetails`, `CreateDatabaseLinkDetails`, `CreateDumpTransferDetails`, `CreateGoldenGateDetails`, `CreateGoldenGateHub`, `CreateGoldenGateServiceDetails`, `CreateGoldenGateServiceDetails`, `CreatePrivateEndpoint`, `CreateSshDetails`, `CreateVaultDetails`, `DataPumpJobMode`, `DataPumpSettings`, `DataTransferMediumDetails`, `DataTransferMediumDetailsV2`, `DatabaseConnectionTypes`, `DatabaseCredentials`, `DatabaseLinkDetails`, `DatabaseManualConnectionSubTypes`, `DatabaseObject`, `DbLinkDataTransferMediumDetails`, `DumpTransferDetails`, `GoldenGateDetails`, `GoldenGateHub`, `GoldenGateServiceDetails`, `GoldenGateSettings`, `MigrationObjectSummary`, `NfsDataTransferMediumDetails`, `ObjectStorageDataTransferMediumDetails`, `PrivateEndpointDetails`, `SshDetails`, `UpdateAdvisorSettings`, `UpdateAgentDetails`, `UpdateAwsS3Details`, `UpdateConnectDescriptor`, `UpdateDataPumpSettings`, `UpdateDataTransferMediumDetails`, `UpdateDatabaseLinkDetails`, `UpdateDumpTransferDetails`, `UpdateGoldenGateDetails`, `UpdateGoldenGateHub`, `UpdateGoldenGateServiceDetails`, `UpdateGoldenGateSettings`, `UpdatePrivateEndpoint`, `UpdateSshDetails`, `UpdateVaultDetails`, `VaultDetails`, `ChangeAgentCompartmentRequest`, `DeleteAgentRequest`, `GetAgentRequest`, `ListAgentImagesRequest`, `ListAgentsRequest`, `UpdateAgentRequest`, `ChangeAgentCompartmentResponse`, `DeleteAgentResponse`, `GetAgentResponse`, `ListAgentImagesResponse`, `ListAgentsResponse` and `UpdateAgentResponse` were removed in the Database Migration service
+- The operations `changeAgentCompartment`, `deleteAgent`, `getAgent`, `listAgentImages`, `listAgents`, and `updateAgent` were removed in the Database Migration service
+- The waiters `forAgent` were removed in the Database Migration service
+- The type of parameter `targetStates` was changed from an array of `LifecycleStates` to an array of `Connection.LifecycleState` in the waiters `forConnection` in the Database Migration service
+- The properties `agentId`, `sourceContainerDatabaseConnectionId`, `excludeObjects`, `includeObjects` and `vaultDetails` were removed from the model `CloneMigrationDetails` in the Database Migration service
+- The properties `adminCredentials`, `connectDescriptor`, `certificateTdn`, `credentialsSecretId`, `databaseId`, `databaseType`, `isDedicated`, `manualDatabaseSubType`, `privateEndpoint`, `replicationCredentials`, `sshDetails` and `vaultDetails` were removed in the model `Connection` in the Database Migration service
+- The properties `databaseId`, `databaseType`, `isDedicated`, and `manualDatabaseSubType` were removed in the model `ConnectionSummary` in the Database Migration service
+- The properties `adminCredentials`, `certificateTdn`, `connectDescriptor`, `databaseId`, `databaseType`, `manualDatabaseSubType`, `privateEndpoint`, `replicationCredential`, `sshDetails`, `tlsKeystore`, `tlsWallet` and `vaultDetails` were removed from the model CreateConnectionDetails in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `csvText`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId` and vaultDetails were removed in the model CreateMigrationDetails in the Database Migration service
+- The properties `mapParallelism`, `maxApplyParallelism`, and `minApplyParallelism` were removed in the models `Replicat`, `UpdateReplicat`, and `CreateReplicat` in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `credentialsSecretId`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId`, and `vaultDetails` were removed in the model `Migration` in the Database Migration service
+- The properties `csvText` and `items` were removed in the model `MigrationObjectCollection` in the Database Migration service
+- The properties `agentId`, `sourceContainerDatabaseConnectionId` and `vaultDetails` were removed in the model MigrationSummary in the Database Migration service
+- The properties `adminCredentials`, `certificateTdn`, `connectDescriptor`, `databaseId`, `privateEndpoint`, `replicationCredential`, `sshDetails`, `tlsKeystore`, `tlsWallet` and `vaultDetails` were removed from the model UpdateConnectionDetails in the Database Migration service
+- The properties `advisorSettings`, `agentId`, `dataTransferMediumDetails`, `dataTransferMediumDetailsV2`, `datapumpSettings`, `dumpTransferDetails`, `excludeObjects`, `goldenGateDetails`, `goldenGateServiceDetails`, `includeObjects`, `sourceContainerDatabaseConnectionId` and `vaultDetails` were removed in the model `UpdateMigrationDetails` in the Database Migration service
+- The enum value `UnknownEnumValue` was removed in the enum `LifecycleStates` in the model `LifecycleStates` in the Database Migration service
+- The enum values `OdmsInitializeGgs` and `OdmsValidateGgService` were removed in the enum `OdmsJobPhases` in the model `OdmsJobPhases` in the Database Migration service
+- The type of property `lifecycleState` was changed from `LifecycleStates` to `Connection.LifecycleState` in the models `Connection` and `ConnectionSummary` in the Database Migration service
+
 ## 3.43.2 - 2024-06-18
 ### Added
 - Support for public connection urls and public endpoints for autonomous databases in the Database service

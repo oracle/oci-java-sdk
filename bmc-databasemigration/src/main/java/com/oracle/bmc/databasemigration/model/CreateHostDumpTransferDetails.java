@@ -5,7 +5,7 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional additional properties for dump transfer in source or target host. Default kind is CURL
+ * Optional additional properties for dump transfer in source or target host. Default kind is CURL.
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -16,7 +16,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.annotation.JsonTypeInfo(
         use = com.fasterxml.jackson.annotation.JsonTypeInfo.Id.NAME,
         include = com.fasterxml.jackson.annotation.JsonTypeInfo.As.PROPERTY,
@@ -100,7 +100,7 @@ public class CreateHostDumpTransferDetails
     }
 
     /**
-     * Type of dump transfer to use during migration in source or target host. Default kind is CURL
+     * Type of dump transfer to use during migration in source or target host. Default kind is CURL.
      */
     public enum Kind implements com.oracle.bmc.http.internal.BmcEnum {
         Curl("CURL"),

@@ -5,10 +5,8 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Possible operation types. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
-    CreateAgent("CREATE_AGENT"),
-    DeleteAgent("DELETE_AGENT"),
     CreateMigration("CREATE_MIGRATION"),
     CloneMigration("CLONE_MIGRATION"),
     DeleteMigration("DELETE_MIGRATION"),

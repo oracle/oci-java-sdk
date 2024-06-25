@@ -5,23 +5,25 @@
 package com.oracle.bmc.databasemigration.model;
 
 /** Possible ODMS Job Phases. */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum OdmsJobPhases implements com.oracle.bmc.http.internal.BmcEnum {
     OdmsValidateTgt("ODMS_VALIDATE_TGT"),
     OdmsValidateSrc("ODMS_VALIDATE_SRC"),
     OdmsValidatePremigrationAdvisor("ODMS_VALIDATE_PREMIGRATION_ADVISOR"),
     OdmsValidateGgHub("ODMS_VALIDATE_GG_HUB"),
-    OdmsValidateGgService("ODMS_VALIDATE_GG_SERVICE"),
     OdmsValidateDatapumpSettings("ODMS_VALIDATE_DATAPUMP_SETTINGS"),
     OdmsValidateDatapumpSettingsSrc("ODMS_VALIDATE_DATAPUMP_SETTINGS_SRC"),
     OdmsValidateDatapumpSettingsTgt("ODMS_VALIDATE_DATAPUMP_SETTINGS_TGT"),
     OdmsValidateDatapumpSrc("ODMS_VALIDATE_DATAPUMP_SRC"),
     OdmsValidateDatapumpEstimateSrc("ODMS_VALIDATE_DATAPUMP_ESTIMATE_SRC"),
-    OdmsInitializeGgs("ODMS_INITIALIZE_GGS"),
+    OdmsFetchMetadataSrc("ODMS_FETCH_METADATA_SRC"),
+    OdmsFetchMetadataTgt("ODMS_FETCH_METADATA_TGT"),
     OdmsValidate("ODMS_VALIDATE"),
     OdmsPrepare("ODMS_PREPARE"),
+    OdmsInitializeReplicationInfrastructure("ODMS_INITIALIZE_REPLICATION_INFRASTRUCTURE"),
     OdmsInitialLoadExport("ODMS_INITIAL_LOAD_EXPORT"),
     OdmsDataUpload("ODMS_DATA_UPLOAD"),
+    OdmsInitialLoadExportDataUpload("ODMS_INITIAL_LOAD_EXPORT_DATA_UPLOAD"),
     OdmsInitialLoadImport("ODMS_INITIAL_LOAD_IMPORT"),
     OdmsPostInitialLoad("ODMS_POST_INITIAL_LOAD"),
     OdmsPrepareReplicationTarget("ODMS_PREPARE_REPLICATION_TARGET"),

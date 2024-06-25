@@ -5,10 +5,8 @@
 package com.oracle.bmc.databasemigration.model;
 
 /**
- * Optional parameters for Data Pump Export and Import. Refer to [Configuring Optional Initial Load
- * Advanced
- * Settings](https://docs-uat.us.oracle.com/en/cloud/paas/database-migration/dmsus/working-migration-resources.html#GUID-24BD3054-FDF8-48FF-8492-636C1D4B71ED)
- * If an empty object is specified, the stored Data Pump Parameter details will be removed. <br>
+ * Optional parameters for Data Pump Export and Import. If an empty object is specified, the stored
+ * Data Pump Parameter details will be removed. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -18,7 +16,7 @@ package com.oracle.bmc.databasemigration.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
         builder = UpdateDataPumpParameters.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
@@ -52,12 +50,12 @@ public final class UpdateDataPumpParameters
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Set to false to force Data Pump worker processes to run on one instance. */
+        /** Set to false to force Data Pump worker process to run on one instance. */
         @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
         private Boolean isCluster;
 
         /**
-         * Set to false to force Data Pump worker processes to run on one instance.
+         * Set to false to force Data Pump worker process to run on one instance.
          *
          * @param isCluster the value to set
          * @return this builder
@@ -101,14 +99,12 @@ public final class UpdateDataPumpParameters
             this.__explicitlySet__.add("tableExistsAction");
             return this;
         }
-        /**
-         * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
-         */
+        /** Exclude paratemers for Export and Import. */
         @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
         private java.util.List<DataPumpExcludeParameters> excludeParameters;
 
         /**
-         * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
+         * Exclude paratemers for Export and Import.
          *
          * @param excludeParameters the value to set
          * @return this builder
@@ -207,12 +203,12 @@ public final class UpdateDataPumpParameters
         return new Builder().copy(this);
     }
 
-    /** Set to false to force Data Pump worker processes to run on one instance. */
+    /** Set to false to force Data Pump worker process to run on one instance. */
     @com.fasterxml.jackson.annotation.JsonProperty("isCluster")
     private final Boolean isCluster;
 
     /**
-     * Set to false to force Data Pump worker processes to run on one instance.
+     * Set to false to force Data Pump worker process to run on one instance.
      *
      * @return the value
      */
@@ -248,12 +244,12 @@ public final class UpdateDataPumpParameters
         return tableExistsAction;
     }
 
-    /** Exclude paratemers for Export and Import. If specified, the stored list will be replaced. */
+    /** Exclude paratemers for Export and Import. */
     @com.fasterxml.jackson.annotation.JsonProperty("excludeParameters")
     private final java.util.List<DataPumpExcludeParameters> excludeParameters;
 
     /**
-     * Exclude paratemers for Export and Import. If specified, the stored list will be replaced.
+     * Exclude paratemers for Export and Import.
      *
      * @return the value
      */

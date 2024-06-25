@@ -133,6 +133,40 @@ public class DbBackupsAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<CopyBackupResponse> copyBackup(
+            CopyBackupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CopyBackupRequest, CopyBackupResponse>
+                    handler) {
+        Objects.requireNonNull(request.getCopyBackupDetails(), "copyBackupDetails is required");
+
+        return clientCall(request, CopyBackupResponse::builder)
+                .logger(LOG, "copyBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "CopyBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CopyBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam("actions")
+                .appendPathParam("copy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mysql.model.Backup.class, CopyBackupResponse.Builder::backup)
+                .handleResponseHeaderString("etag", CopyBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CopyBackupResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateBackupResponse> createBackup(
             CreateBackupRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateBackupRequest, CreateBackupResponse>

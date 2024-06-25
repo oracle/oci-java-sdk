@@ -158,6 +158,38 @@ public class DbBackupsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CopyBackupResponse copyBackup(CopyBackupRequest request) {
+        Objects.requireNonNull(request.getCopyBackupDetails(), "copyBackupDetails is required");
+
+        return clientCall(request, CopyBackupResponse::builder)
+                .logger(LOG, "copyBackup")
+                .serviceDetails(
+                        "DbBackups",
+                        "CopyBackup",
+                        "https://docs.oracle.com/iaas/api/#/en/mysql/20190415/Backup/CopyBackup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CopyBackupRequest::builder)
+                .basePath("/20190415")
+                .appendPathParam("backups")
+                .appendPathParam("actions")
+                .appendPathParam("copy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.mysql.model.Backup.class, CopyBackupResponse.Builder::backup)
+                .handleResponseHeaderString("etag", CopyBackupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CopyBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CopyBackupResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateBackupResponse createBackup(CreateBackupRequest request) {
         Objects.requireNonNull(request.getCreateBackupDetails(), "createBackupDetails is required");
 

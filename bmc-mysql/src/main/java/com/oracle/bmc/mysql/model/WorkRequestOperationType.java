@@ -28,6 +28,7 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     ResumeChannel("RESUME_CHANNEL"),
     ResetChannel("RESET_CHANNEL"),
     DeleteChannel("DELETE_CHANNEL"),
+    CopyBackup("COPY_BACKUP"),
     CreateBackup("CREATE_BACKUP"),
     DeleteBackup("DELETE_BACKUP"),
 

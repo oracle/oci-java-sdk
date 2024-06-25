@@ -11,7 +11,7 @@ import com.oracle.bmc.databasemigration.responses.*;
  * Use the Oracle Cloud Infrastructure Database Migration APIs to perform database migration
  * operations.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210929")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public interface DatabaseMigrationAsync extends AutoCloseable {
 
     /** Rebuilds the client from scratch. Useful to refresh certificates. */
@@ -90,22 +90,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             AddMigrationObjectsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             AddMigrationObjectsRequest, AddMigrationObjectsResponse>
-                    handler);
-
-    /**
-     * Used to configure an ODMS Agent Compartment ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ChangeAgentCompartmentResponse> changeAgentCompartment(
-            ChangeAgentCompartmentRequest request,
-            com.oracle.bmc.responses.AsyncHandler<
-                            ChangeAgentCompartmentRequest, ChangeAgentCompartmentResponse>
                     handler);
 
     /**
@@ -204,20 +188,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete the ODMS Agent represented by the specified ODMS Agent ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<DeleteAgentResponse> deleteAgent(
-            DeleteAgentRequest request,
-            com.oracle.bmc.responses.AsyncHandler<DeleteAgentRequest, DeleteAgentResponse> handler);
-
-    /**
      * Deletes the Database Connection represented by the specified connection ID.
      *
      * @param request The request object containing the details to send
@@ -293,20 +263,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Display the ODMS Agent configuration.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetAgentResponse> getAgent(
-            GetAgentRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetAgentRequest, GetAgentResponse> handler);
-
-    /**
      * Display Database Connection details.
      *
      * @param request The request object containing the details to send
@@ -380,35 +336,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
                     handler);
-
-    /**
-     * Get details of the ODMS Agent Images available to install on-premises.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListAgentImagesResponse> listAgentImages(
-            ListAgentImagesRequest request,
-            com.oracle.bmc.responses.AsyncHandler<ListAgentImagesRequest, ListAgentImagesResponse>
-                    handler);
-
-    /**
-     * Display the name of all the existing ODMS Agents in the server.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<ListAgentsResponse> listAgents(
-            ListAgentsRequest request,
-            com.oracle.bmc.responses.AsyncHandler<ListAgentsRequest, ListAgentsResponse> handler);
 
     /**
      * List all Database Connections.
@@ -624,20 +551,6 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             StartMigrationRequest request,
             com.oracle.bmc.responses.AsyncHandler<StartMigrationRequest, StartMigrationResponse>
                     handler);
-
-    /**
-     * Modifies the ODMS Agent represented by the given ODMS Agent ID.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<UpdateAgentResponse> updateAgent(
-            UpdateAgentRequest request,
-            com.oracle.bmc.responses.AsyncHandler<UpdateAgentRequest, UpdateAgentResponse> handler);
 
     /**
      * Update Database Connection resource details.
