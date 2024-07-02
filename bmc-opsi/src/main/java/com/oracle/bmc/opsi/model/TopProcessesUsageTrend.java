@@ -25,6 +25,7 @@ public final class TopProcessesUsageTrend
     @Deprecated
     @java.beans.ConstructorProperties({
         "endTimestamp",
+        "containerId",
         "cpuUsage",
         "cpuUtilization",
         "memoryUtilization",
@@ -34,6 +35,7 @@ public final class TopProcessesUsageTrend
     })
     public TopProcessesUsageTrend(
             java.util.Date endTimestamp,
+            String containerId,
             Double cpuUsage,
             Double cpuUtilization,
             Double memoryUtilization,
@@ -42,6 +44,7 @@ public final class TopProcessesUsageTrend
             Integer maxProcessCount) {
         super();
         this.endTimestamp = endTimestamp;
+        this.containerId = containerId;
         this.cpuUsage = cpuUsage;
         this.cpuUtilization = cpuUtilization;
         this.memoryUtilization = memoryUtilization;
@@ -65,6 +68,21 @@ public final class TopProcessesUsageTrend
         public Builder endTimestamp(java.util.Date endTimestamp) {
             this.endTimestamp = endTimestamp;
             this.__explicitlySet__.add("endTimestamp");
+            return this;
+        }
+        /** Container id if this process corresponds to a running container in the host. */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+        private String containerId;
+
+        /**
+         * Container id if this process corresponds to a running container in the host.
+         *
+         * @param containerId the value to set
+         * @return this builder
+         */
+        public Builder containerId(String containerId) {
+            this.containerId = containerId;
+            this.__explicitlySet__.add("containerId");
             return this;
         }
         /** Process CPU usage. */
@@ -165,6 +183,7 @@ public final class TopProcessesUsageTrend
             TopProcessesUsageTrend model =
                     new TopProcessesUsageTrend(
                             this.endTimestamp,
+                            this.containerId,
                             this.cpuUsage,
                             this.cpuUtilization,
                             this.memoryUtilization,
@@ -181,6 +200,9 @@ public final class TopProcessesUsageTrend
         public Builder copy(TopProcessesUsageTrend model) {
             if (model.wasPropertyExplicitlySet("endTimestamp")) {
                 this.endTimestamp(model.getEndTimestamp());
+            }
+            if (model.wasPropertyExplicitlySet("containerId")) {
+                this.containerId(model.getContainerId());
             }
             if (model.wasPropertyExplicitlySet("cpuUsage")) {
                 this.cpuUsage(model.getCpuUsage());
@@ -224,6 +246,19 @@ public final class TopProcessesUsageTrend
      */
     public java.util.Date getEndTimestamp() {
         return endTimestamp;
+    }
+
+    /** Container id if this process corresponds to a running container in the host. */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+    private final String containerId;
+
+    /**
+     * Container id if this process corresponds to a running container in the host.
+     *
+     * @return the value
+     */
+    public String getContainerId() {
+        return containerId;
     }
 
     /** Process CPU usage. */
@@ -320,6 +355,7 @@ public final class TopProcessesUsageTrend
         sb.append("TopProcessesUsageTrend(");
         sb.append("super=").append(super.toString());
         sb.append("endTimestamp=").append(String.valueOf(this.endTimestamp));
+        sb.append(", containerId=").append(String.valueOf(this.containerId));
         sb.append(", cpuUsage=").append(String.valueOf(this.cpuUsage));
         sb.append(", cpuUtilization=").append(String.valueOf(this.cpuUtilization));
         sb.append(", memoryUtilization=").append(String.valueOf(this.memoryUtilization));
@@ -341,6 +377,7 @@ public final class TopProcessesUsageTrend
 
         TopProcessesUsageTrend other = (TopProcessesUsageTrend) o;
         return java.util.Objects.equals(this.endTimestamp, other.endTimestamp)
+                && java.util.Objects.equals(this.containerId, other.containerId)
                 && java.util.Objects.equals(this.cpuUsage, other.cpuUsage)
                 && java.util.Objects.equals(this.cpuUtilization, other.cpuUtilization)
                 && java.util.Objects.equals(this.memoryUtilization, other.memoryUtilization)
@@ -355,6 +392,7 @@ public final class TopProcessesUsageTrend
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.endTimestamp == null ? 43 : this.endTimestamp.hashCode());
+        result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
         result = (result * PRIME) + (this.cpuUsage == null ? 43 : this.cpuUsage.hashCode());
         result =
                 (result * PRIME)

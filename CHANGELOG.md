@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.44.1 - 2024-07-02
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `ap-singapore-2` region
+- Support for additional parameters in list and delete operations in the File Storage service
+- Support for host capacity planning to analyze disabled and deleted resources in the Operations Insights service
+- Support for title and description updates in the Capacity Management service
+- Support for listing parameters for migrations in the Database Migration service
+- Support for Oracle exadata database service on exascale Infrastructure (ExaDB-XS) in the Database service
+
 ## 3.44.0 - 2024-06-25
 ### Added
 - Support for MySQL to MySQL homogeneous migrations in the Database Migration service

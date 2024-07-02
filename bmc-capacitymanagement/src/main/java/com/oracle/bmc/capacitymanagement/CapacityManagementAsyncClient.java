@@ -138,7 +138,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, CreateOccAvailabilityCatalogResponse::builder)
                 .logger(LOG, "createOccAvailabilityCatalog")
-                .serviceDetails("CapacityManagement", "CreateOccAvailabilityCatalog", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "CreateOccAvailabilityCatalog",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOccAvailabilityCatalogRequest::builder)
                 .basePath("/20231107")
@@ -172,7 +175,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, CreateOccCapacityRequestResponse::builder)
                 .logger(LOG, "createOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "CreateOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "CreateOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -207,7 +213,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, DeleteOccAvailabilityCatalogResponse::builder)
                 .logger(LOG, "deleteOccAvailabilityCatalog")
-                .serviceDetails("CapacityManagement", "DeleteOccAvailabilityCatalog", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "DeleteOccAvailabilityCatalog",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOccAvailabilityCatalogRequest::builder)
                 .basePath("/20231107")
@@ -236,7 +245,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, DeleteOccCapacityRequestResponse::builder)
                 .logger(LOG, "deleteOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "DeleteOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -265,7 +277,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOccAvailabilityCatalogResponse::builder)
                 .logger(LOG, "getOccAvailabilityCatalog")
-                .serviceDetails("CapacityManagement", "GetOccAvailabilityCatalog", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "GetOccAvailabilityCatalog",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOccAvailabilityCatalogRequest::builder)
                 .basePath("/20231107")
@@ -297,7 +312,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOccAvailabilityCatalogContentResponse::builder)
                 .logger(LOG, "getOccAvailabilityCatalogContent")
-                .serviceDetails("CapacityManagement", "GetOccAvailabilityCatalogContent", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "GetOccAvailabilityCatalogContent",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOccAvailabilityCatalogContentRequest::builder)
                 .basePath("/20231107")
@@ -329,7 +347,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOccCapacityRequestResponse::builder)
                 .logger(LOG, "getOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "GetOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "GetOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -357,7 +378,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, GetOccCustomerGroupResponse::builder)
                 .logger(LOG, "getOccCustomerGroup")
-                .serviceDetails("CapacityManagement", "GetOccCustomerGroup", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "GetOccCustomerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOccCustomerGroupRequest::builder)
                 .basePath("/20231107")
@@ -388,7 +412,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListInternalNamespaceOccOverviewsResponse::builder)
                 .logger(LOG, "listInternalNamespaceOccOverviews")
-                .serviceDetails("CapacityManagement", "ListInternalNamespaceOccOverviews", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListInternalNamespaceOccOverviews",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInternalNamespaceOccOverviewsRequest::builder)
                 .basePath("/20231107")
@@ -432,7 +459,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccAvailabilitiesResponse::builder)
                 .logger(LOG, "listOccAvailabilities")
-                .serviceDetails("CapacityManagement", "ListOccAvailabilities", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccAvailabilities",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccAvailabilitiesRequest::builder)
                 .basePath("/20231107")
@@ -472,7 +502,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccAvailabilityCatalogsResponse::builder)
                 .logger(LOG, "listOccAvailabilityCatalogs")
-                .serviceDetails("CapacityManagement", "ListOccAvailabilityCatalogs", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccAvailabilityCatalogs",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccAvailabilityCatalogsRequest::builder)
                 .basePath("/20231107")
@@ -512,7 +545,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccAvailabilityCatalogsInternalResponse::builder)
                 .logger(LOG, "listOccAvailabilityCatalogsInternal")
-                .serviceDetails("CapacityManagement", "ListOccAvailabilityCatalogsInternal", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccAvailabilityCatalogsInternal",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccAvailabilityCatalogsInternalRequest::builder)
                 .basePath("/20231107")
@@ -554,7 +590,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccCapacityRequestsResponse::builder)
                 .logger(LOG, "listOccCapacityRequests")
-                .serviceDetails("CapacityManagement", "ListOccCapacityRequests", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccCapacityRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccCapacityRequestsRequest::builder)
                 .basePath("/20231107")
@@ -593,7 +632,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccCapacityRequestsInternalResponse::builder)
                 .logger(LOG, "listOccCapacityRequestsInternal")
-                .serviceDetails("CapacityManagement", "ListOccCapacityRequestsInternal", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccCapacityRequestsInternal",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccCapacityRequestsInternalRequest::builder)
                 .basePath("/20231107")
@@ -635,7 +677,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccCustomerGroupsResponse::builder)
                 .logger(LOG, "listOccCustomerGroups")
-                .serviceDetails("CapacityManagement", "ListOccCustomerGroups", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccCustomerGroups",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccCustomerGroupsRequest::builder)
                 .basePath("/20231107")
@@ -672,7 +717,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, ListOccOverviewsResponse::builder)
                 .logger(LOG, "listOccOverviews")
-                .serviceDetails("CapacityManagement", "ListOccOverviews", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccOverviews",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOccOverviewsRequest::builder)
                 .basePath("/20231107")
@@ -716,7 +764,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, PatchInternalOccCapacityRequestResponse::builder)
                 .logger(LOG, "patchInternalOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "PatchInternalOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "PatchInternalOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchInternalOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -753,7 +804,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, PatchOccCapacityRequestResponse::builder)
                 .logger(LOG, "patchOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "PatchOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "PatchOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.PATCH)
                 .requestBuilder(PatchOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -787,7 +841,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, PublishOccAvailabilityCatalogResponse::builder)
                 .logger(LOG, "publishOccAvailabilityCatalog")
-                .serviceDetails("CapacityManagement", "PublishOccAvailabilityCatalog", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "PublishOccAvailabilityCatalog",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(PublishOccAvailabilityCatalogRequest::builder)
                 .basePath("/20231107")
@@ -822,7 +879,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateInternalOccCapacityRequestResponse::builder)
                 .logger(LOG, "updateInternalOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "UpdateInternalOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "UpdateInternalOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateInternalOccCapacityRequestRequest::builder)
                 .basePath("/20231107")
@@ -864,7 +924,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateOccAvailabilityCatalogResponse::builder)
                 .logger(LOG, "updateOccAvailabilityCatalog")
-                .serviceDetails("CapacityManagement", "UpdateOccAvailabilityCatalog", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "UpdateOccAvailabilityCatalog",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOccAvailabilityCatalogRequest::builder)
                 .basePath("/20231107")
@@ -902,7 +965,10 @@ public class CapacityManagementAsyncClient extends com.oracle.bmc.http.internal.
 
         return clientCall(request, UpdateOccCapacityRequestResponse::builder)
                 .logger(LOG, "updateOccCapacityRequest")
-                .serviceDetails("CapacityManagement", "UpdateOccCapacityRequest", "")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCapacityRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOccCapacityRequestRequest::builder)
                 .basePath("/20231107")

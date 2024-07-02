@@ -136,12 +136,20 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** The flag to identify if private endpoint is used for rac database or not */
+        /**
+         * This flag was previously used to create a private endpoint with scan proxy. Setting this
+         * to true will now create a private endpoint with a DNS proxy causing {@code
+         * isProxyEnabled} flag to be true; this is used exclusively for full feature support for
+         * dedicated Autonomous Databases.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
         private Boolean isUsedForRacDbs;
 
         /**
-         * The flag to identify if private endpoint is used for rac database or not
+         * This flag was previously used to create a private endpoint with scan proxy. Setting this
+         * to true will now create a private endpoint with a DNS proxy causing {@code
+         * isProxyEnabled} flag to be true; this is used exclusively for full feature support for
+         * dedicated Autonomous Databases.
          *
          * @param isUsedForRacDbs the value to set
          * @return this builder
@@ -356,12 +364,20 @@ public final class CreateOperationsInsightsPrivateEndpointDetails
         return subnetId;
     }
 
-    /** The flag to identify if private endpoint is used for rac database or not */
+    /**
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to
+     * true will now create a private endpoint with a DNS proxy causing {@code isProxyEnabled} flag
+     * to be true; this is used exclusively for full feature support for dedicated Autonomous
+     * Databases.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
     private final Boolean isUsedForRacDbs;
 
     /**
-     * The flag to identify if private endpoint is used for rac database or not
+     * This flag was previously used to create a private endpoint with scan proxy. Setting this to
+     * true will now create a private endpoint with a DNS proxy causing {@code isProxyEnabled} flag
+     * to be true; this is used exclusively for full feature support for dedicated Autonomous
+     * Databases.
      *
      * @return the value
      */

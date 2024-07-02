@@ -131,6 +131,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.filestorage.model.CreateFileSystemDetails$CloneAttachStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.filestorage.model.CreateFilesystemSnapshotPolicyDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -356,6 +362,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.filestorage.model.FileSystem$CloneAttachStatus",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.filestorage.model.FileSystemSummary",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,
@@ -371,6 +383,12 @@
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.filestorage.model.FileSystemSummary$LifecycleState",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.filestorage.model.FileSystemSummary$CloneAttachStatus",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
   },

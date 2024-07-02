@@ -7,13 +7,13 @@ package com.oracle.bmc.database.model;
 /**
  * Details to create an Oracle Autonomous Database.
  *
- * <p>*Notes:** - To specify OCPU core count, you must use either {@code ocpuCount} or {@code
+ * <p>**Notes:** - To specify OCPU core count, you must use either {@code ocpuCount} or {@code
  * cpuCoreCount}. You cannot use both parameters at the same time. For Autonomous Database
  * Serverless instances, {@code ocpuCount} is not used. - To specify a storage allocation, you must
  * use either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}. - See the individual
  * parameter discriptions for more information on the OCPU and storage value parameters.
  *
- * <p>*Warning:** Oracle recommends that you avoid using any confidential information when you
+ * <p>**Warning:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -44,11 +44,11 @@ package com.oracle.bmc.database.model;
             value = CreateCrossRegionDisasterRecoveryDetails.class,
             name = "CROSS_REGION_DISASTER_RECOVERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = CreateCrossTenancyDisasterRecoveryDetails.class,
-            name = "CROSS_TENANCY_DISASTER_RECOVERY"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousDatabaseFromBackupTimestampDetails.class,
             name = "BACKUP_FROM_TIMESTAMP"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateCrossTenancyDisasterRecoveryDetails.class,
+            name = "CROSS_TENANCY_DISASTER_RECOVERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateCrossRegionAutonomousDatabaseDataGuardDetails.class,
             name = "CROSS_REGION_DATAGUARD"),

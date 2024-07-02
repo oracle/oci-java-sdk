@@ -6,7 +6,7 @@ package com.oracle.bmc.opsi.model;
 
 /**
  * Basic configuration item summary. Value and defaultValue fields will contain the custom value
- * stored in the resource and default value from Operations Insights respectively. <br>
+ * stored in the resource and default value from Ops Insights respectively. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

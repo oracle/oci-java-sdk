@@ -184,6 +184,21 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("totalProcesses");
             return this;
         }
+        /** Container id if this process corresponds to a running container in the host */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+        private String containerId;
+
+        /**
+         * Container id if this process corresponds to a running container in the host
+         *
+         * @param containerId the value to set
+         * @return this builder
+         */
+        public Builder containerId(String containerId) {
+            this.containerId = containerId;
+            this.__explicitlySet__.add("containerId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -201,7 +216,8 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
                             this.virtualMemoryInMBs,
                             this.physicalMemoryInMBs,
                             this.startTime,
-                            this.totalProcesses);
+                            this.totalProcesses,
+                            this.containerId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -243,6 +259,9 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
             if (model.wasPropertyExplicitlySet("totalProcesses")) {
                 this.totalProcesses(model.getTotalProcesses());
             }
+            if (model.wasPropertyExplicitlySet("containerId")) {
+                this.containerId(model.getContainerId());
+            }
             return this;
         }
     }
@@ -268,7 +287,8 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
             Double virtualMemoryInMBs,
             Double physicalMemoryInMBs,
             java.util.Date startTime,
-            java.math.BigDecimal totalProcesses) {
+            java.math.BigDecimal totalProcesses,
+            String containerId) {
         super(timeCollected);
         this.pid = pid;
         this.userName = userName;
@@ -280,6 +300,7 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         this.physicalMemoryInMBs = physicalMemoryInMBs;
         this.startTime = startTime;
         this.totalProcesses = totalProcesses;
+        this.containerId = containerId;
     }
 
     /** process id */
@@ -412,6 +433,19 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         return totalProcesses;
     }
 
+    /** Container id if this process corresponds to a running container in the host */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerId")
+    private final String containerId;
+
+    /**
+     * Container id if this process corresponds to a running container in the host
+     *
+     * @return the value
+     */
+    public String getContainerId() {
+        return containerId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -438,6 +472,7 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         sb.append(", physicalMemoryInMBs=").append(String.valueOf(this.physicalMemoryInMBs));
         sb.append(", startTime=").append(String.valueOf(this.startTime));
         sb.append(", totalProcesses=").append(String.valueOf(this.totalProcesses));
+        sb.append(", containerId=").append(String.valueOf(this.containerId));
         sb.append(")");
         return sb.toString();
     }
@@ -463,6 +498,7 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
                 && java.util.Objects.equals(this.physicalMemoryInMBs, other.physicalMemoryInMBs)
                 && java.util.Objects.equals(this.startTime, other.startTime)
                 && java.util.Objects.equals(this.totalProcesses, other.totalProcesses)
+                && java.util.Objects.equals(this.containerId, other.containerId)
                 && super.equals(other);
     }
 
@@ -500,6 +536,7 @@ public final class HostTopProcesses extends HostPerformanceMetricGroup {
         result =
                 (result * PRIME)
                         + (this.totalProcesses == null ? 43 : this.totalProcesses.hashCode());
+        result = (result * PRIME) + (this.containerId == null ? 43 : this.containerId.hashCode());
         return result;
     }
 }

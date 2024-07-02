@@ -30,20 +30,23 @@ public final class ResourceFilters
         "freeformTagEquals",
         "definedTagExists",
         "freeformTagExists",
-        "compartmentIdInSubtree"
+        "compartmentIdInSubtree",
+        "resourceStatus"
     })
     public ResourceFilters(
             java.util.List<String> definedTagEquals,
             java.util.List<String> freeformTagEquals,
             java.util.List<String> definedTagExists,
             java.util.List<String> freeformTagExists,
-            Boolean compartmentIdInSubtree) {
+            Boolean compartmentIdInSubtree,
+            java.util.List<ResourceStatus> resourceStatus) {
         super();
         this.definedTagEquals = definedTagEquals;
         this.freeformTagEquals = freeformTagEquals;
         this.definedTagExists = definedTagExists;
         this.freeformTagExists = freeformTagExists;
         this.compartmentIdInSubtree = compartmentIdInSubtree;
+        this.resourceStatus = resourceStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -167,6 +170,25 @@ public final class ResourceFilters
             this.__explicitlySet__.add("compartmentIdInSubtree");
             return this;
         }
+        /**
+         * Filter resources by status, multiple options could be chosen to show authorized resources
+         * even if those are disabled or deleted.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceStatus")
+        private java.util.List<ResourceStatus> resourceStatus;
+
+        /**
+         * Filter resources by status, multiple options could be chosen to show authorized resources
+         * even if those are disabled or deleted.
+         *
+         * @param resourceStatus the value to set
+         * @return this builder
+         */
+        public Builder resourceStatus(java.util.List<ResourceStatus> resourceStatus) {
+            this.resourceStatus = resourceStatus;
+            this.__explicitlySet__.add("resourceStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -178,7 +200,8 @@ public final class ResourceFilters
                             this.freeformTagEquals,
                             this.definedTagExists,
                             this.freeformTagExists,
-                            this.compartmentIdInSubtree);
+                            this.compartmentIdInSubtree,
+                            this.resourceStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -201,6 +224,9 @@ public final class ResourceFilters
             }
             if (model.wasPropertyExplicitlySet("compartmentIdInSubtree")) {
                 this.compartmentIdInSubtree(model.getCompartmentIdInSubtree());
+            }
+            if (model.wasPropertyExplicitlySet("resourceStatus")) {
+                this.resourceStatus(model.getResourceStatus());
             }
             return this;
         }
@@ -322,6 +348,23 @@ public final class ResourceFilters
         return compartmentIdInSubtree;
     }
 
+    /**
+     * Filter resources by status, multiple options could be chosen to show authorized resources
+     * even if those are disabled or deleted.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceStatus")
+    private final java.util.List<ResourceStatus> resourceStatus;
+
+    /**
+     * Filter resources by status, multiple options could be chosen to show authorized resources
+     * even if those are disabled or deleted.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceStatus> getResourceStatus() {
+        return resourceStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -342,6 +385,7 @@ public final class ResourceFilters
         sb.append(", definedTagExists=").append(String.valueOf(this.definedTagExists));
         sb.append(", freeformTagExists=").append(String.valueOf(this.freeformTagExists));
         sb.append(", compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
+        sb.append(", resourceStatus=").append(String.valueOf(this.resourceStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -362,6 +406,7 @@ public final class ResourceFilters
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
+                && java.util.Objects.equals(this.resourceStatus, other.resourceStatus)
                 && super.equals(other);
     }
 
@@ -386,6 +431,9 @@ public final class ResourceFilters
                         + (this.compartmentIdInSubtree == null
                                 ? 43
                                 : this.compartmentIdInSubtree.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.resourceStatus == null ? 43 : this.resourceStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

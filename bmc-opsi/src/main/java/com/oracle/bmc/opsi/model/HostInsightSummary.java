@@ -154,16 +154,12 @@ public class HostInsightSummary extends com.oracle.bmc.http.client.internal.Expl
         return hostDisplayName;
     }
 
-    /**
-     * Operations Insights internal representation of the host type. Possible value is
-     * EXTERNAL-HOST.
-     */
+    /** Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST. */
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is
-     * EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      *
      * @return the value
      */
@@ -256,12 +252,12 @@ public class HostInsightSummary extends com.oracle.bmc.http.client.internal.Expl
         return opsiPrivateEndpointId;
     }
 
-    /** Indicates the status of a host insight in Operations Insights */
+    /** Indicates the status of a host insight in Ops Insights */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
-     * Indicates the status of a host insight in Operations Insights
+     * Indicates the status of a host insight in Ops Insights
      *
      * @return the value
      */

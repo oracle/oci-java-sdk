@@ -526,6 +526,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("fileSystems")
                 .appendPathParam(request.getFileSystemId())
+                .appendQueryParam("canDetachChildFileSystem", request.getCanDetachChildFileSystem())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -684,6 +685,32 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DetachCloneResponse detachClone(DetachCloneRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, DetachCloneResponse::builder)
+                .logger(LOG, "detachClone")
+                .serviceDetails(
+                        "FileStorage",
+                        "DetachClone",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DetachClone")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachCloneRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("detachClone")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachCloneResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -32,12 +32,12 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** User provided ADW wallet password for the Operations Insights Warehouse. */
+        /** User provided ADW wallet password for the Ops Insights Warehouse. */
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
         private String operationsInsightsWarehouseWalletPassword;
 
         /**
-         * User provided ADW wallet password for the Operations Insights Warehouse.
+         * User provided ADW wallet password for the Ops Insights Warehouse.
          *
          * @param operationsInsightsWarehouseWalletPassword the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class DownloadOperationsInsightsWarehouseWalletDetails
         return new Builder().copy(this);
     }
 
-    /** User provided ADW wallet password for the Operations Insights Warehouse. */
+    /** User provided ADW wallet password for the Ops Insights Warehouse. */
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouseWalletPassword")
     private final String operationsInsightsWarehouseWalletPassword;
 
     /**
-     * User provided ADW wallet password for the Operations Insights Warehouse.
+     * User provided ADW wallet password for the Ops Insights Warehouse.
      *
      * @return the value
      */

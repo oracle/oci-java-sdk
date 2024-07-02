@@ -31,6 +31,7 @@ public final class CreateFileSystemDetails
         "definedTags",
         "kmsKeyId",
         "sourceSnapshotId",
+        "cloneAttachStatus",
         "filesystemSnapshotPolicyId"
     })
     public CreateFileSystemDetails(
@@ -41,6 +42,7 @@ public final class CreateFileSystemDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String kmsKeyId,
             String sourceSnapshotId,
+            CloneAttachStatus cloneAttachStatus,
             String filesystemSnapshotPolicyId) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -50,6 +52,7 @@ public final class CreateFileSystemDetails
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
         this.sourceSnapshotId = sourceSnapshotId;
+        this.cloneAttachStatus = cloneAttachStatus;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
     }
 
@@ -206,6 +209,27 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
+         * Specifies whether the clone file system is attached to its parent file system. If the
+         * value is set to 'DETACH', then the file system will be created, which is deep copied from
+         * the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+        private CloneAttachStatus cloneAttachStatus;
+
+        /**
+         * Specifies whether the clone file system is attached to its parent file system. If the
+         * value is set to 'DETACH', then the file system will be created, which is deep copied from
+         * the snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+         *
+         * @param cloneAttachStatus the value to set
+         * @return this builder
+         */
+        public Builder cloneAttachStatus(CloneAttachStatus cloneAttachStatus) {
+            this.cloneAttachStatus = cloneAttachStatus;
+            this.__explicitlySet__.add("cloneAttachStatus");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * associated file system snapshot policy, which controls the frequency of snapshot creation
          * and retention period of the taken snapshots.
@@ -244,6 +268,7 @@ public final class CreateFileSystemDetails
                             this.definedTags,
                             this.kmsKeyId,
                             this.sourceSnapshotId,
+                            this.cloneAttachStatus,
                             this.filesystemSnapshotPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -273,6 +298,9 @@ public final class CreateFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("sourceSnapshotId")) {
                 this.sourceSnapshotId(model.getSourceSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
+                this.cloneAttachStatus(model.getCloneAttachStatus());
             }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
@@ -426,6 +454,62 @@ public final class CreateFileSystemDetails
     }
 
     /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    public enum CloneAttachStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Detach("DETACH"),
+        Attach("ATTACH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneAttachStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneAttachStatus v : CloneAttachStatus.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneAttachStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneAttachStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneAttachStatus: " + key);
+        }
+    };
+    /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+    private final CloneAttachStatus cloneAttachStatus;
+
+    /**
+     * Specifies whether the clone file system is attached to its parent file system. If the value
+     * is set to 'DETACH', then the file system will be created, which is deep copied from the
+     * snapshot specified by sourceSnapshotId, else will remain attached to its parent.
+     *
+     * @return the value
+     */
+    public CloneAttachStatus getCloneAttachStatus() {
+        return cloneAttachStatus;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * associated file system snapshot policy, which controls the frequency of snapshot creation and
      * retention period of the taken snapshots.
@@ -470,6 +554,7 @@ public final class CreateFileSystemDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
+        sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(")");
@@ -493,6 +578,7 @@ public final class CreateFileSystemDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
+                && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && super.equals(other);
@@ -517,6 +603,9 @@ public final class CreateFileSystemDetails
         result =
                 (result * PRIME)
                         + (this.sourceSnapshotId == null ? 43 : this.sourceSnapshotId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.filesystemSnapshotPolicyId == null

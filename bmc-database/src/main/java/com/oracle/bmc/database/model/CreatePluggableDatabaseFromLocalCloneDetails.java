@@ -43,6 +43,25 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
             this.__explicitlySet__.add("sourcePluggableDatabaseId");
             return this;
         }
+        /**
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
+         * to be thick cloned.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
+        private Boolean isThinClone;
+
+        /**
+         * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs
+         * to be thick cloned.
+         *
+         * @param isThinClone the value to set
+         * @return this builder
+         */
+        public Builder isThinClone(Boolean isThinClone) {
+            this.isThinClone = isThinClone;
+            this.__explicitlySet__.add("isThinClone");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -50,7 +69,7 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
         public CreatePluggableDatabaseFromLocalCloneDetails build() {
             CreatePluggableDatabaseFromLocalCloneDetails model =
                     new CreatePluggableDatabaseFromLocalCloneDetails(
-                            this.sourcePluggableDatabaseId);
+                            this.sourcePluggableDatabaseId, this.isThinClone);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +80,9 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
         public Builder copy(CreatePluggableDatabaseFromLocalCloneDetails model) {
             if (model.wasPropertyExplicitlySet("sourcePluggableDatabaseId")) {
                 this.sourcePluggableDatabaseId(model.getSourcePluggableDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("isThinClone")) {
+                this.isThinClone(model.getIsThinClone());
             }
             return this;
         }
@@ -76,9 +98,11 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
     }
 
     @Deprecated
-    public CreatePluggableDatabaseFromLocalCloneDetails(String sourcePluggableDatabaseId) {
+    public CreatePluggableDatabaseFromLocalCloneDetails(
+            String sourcePluggableDatabaseId, Boolean isThinClone) {
         super();
         this.sourcePluggableDatabaseId = sourcePluggableDatabaseId;
+        this.isThinClone = isThinClone;
     }
 
     /** The OCID of the Source Pluggable Database. */
@@ -92,6 +116,23 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
      */
     public String getSourcePluggableDatabaseId() {
         return sourcePluggableDatabaseId;
+    }
+
+    /**
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
+     * be thick cloned.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isThinClone")
+    private final Boolean isThinClone;
+
+    /**
+     * True if Pluggable Database needs to be thin cloned and false if Pluggable Database needs to
+     * be thick cloned.
+     *
+     * @return the value
+     */
+    public Boolean getIsThinClone() {
+        return isThinClone;
     }
 
     @Override
@@ -111,6 +152,7 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", sourcePluggableDatabaseId=")
                 .append(String.valueOf(this.sourcePluggableDatabaseId));
+        sb.append(", isThinClone=").append(String.valueOf(this.isThinClone));
         sb.append(")");
         return sb.toString();
     }
@@ -128,6 +170,7 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
                 (CreatePluggableDatabaseFromLocalCloneDetails) o;
         return java.util.Objects.equals(
                         this.sourcePluggableDatabaseId, other.sourcePluggableDatabaseId)
+                && java.util.Objects.equals(this.isThinClone, other.isThinClone)
                 && super.equals(other);
     }
 
@@ -140,6 +183,7 @@ public final class CreatePluggableDatabaseFromLocalCloneDetails
                         + (this.sourcePluggableDatabaseId == null
                                 ? 43
                                 : this.sourcePluggableDatabaseId.hashCode());
+        result = (result * PRIME) + (this.isThinClone == null ? 43 : this.isThinClone.hashCode());
         return result;
     }
 }

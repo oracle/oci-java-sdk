@@ -157,6 +157,13 @@ public class SummarizeHostInsightDiskStatisticsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -320,6 +327,30 @@ public class SummarizeHostInsightDiskStatisticsRequest
             return this;
         }
 
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -358,6 +389,7 @@ public class SummarizeHostInsightDiskStatisticsRequest
             hostId(o.getHostId());
             statistic(o.getStatistic());
             opcRequestId(o.getOpcRequestId());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -403,10 +435,11 @@ public class SummarizeHostInsightDiskStatisticsRequest
             request.hostId = hostId;
             request.statistic = statistic;
             request.opcRequestId = opcRequestId;
+            request.status = status;
             return request;
             // new SummarizeHostInsightDiskStatisticsRequest(compartmentId, id,
             // analysisTimeInterval, timeIntervalStart, timeIntervalEnd, hostId, statistic,
-            // opcRequestId);
+            // opcRequestId, status);
         }
     }
 
@@ -424,7 +457,8 @@ public class SummarizeHostInsightDiskStatisticsRequest
                 .timeIntervalEnd(timeIntervalEnd)
                 .hostId(hostId)
                 .statistic(statistic)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .status(status);
     }
 
     /**
@@ -449,6 +483,7 @@ public class SummarizeHostInsightDiskStatisticsRequest
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",statistic=").append(String.valueOf(this.statistic));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -472,7 +507,8 @@ public class SummarizeHostInsightDiskStatisticsRequest
                 && java.util.Objects.equals(this.timeIntervalEnd, other.timeIntervalEnd)
                 && java.util.Objects.equals(this.hostId, other.hostId)
                 && java.util.Objects.equals(this.statistic, other.statistic)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -497,6 +533,7 @@ public class SummarizeHostInsightDiskStatisticsRequest
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
         result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

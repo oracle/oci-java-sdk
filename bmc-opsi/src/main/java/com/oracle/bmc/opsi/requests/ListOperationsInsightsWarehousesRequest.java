@@ -35,10 +35,10 @@ public class ListOperationsInsightsWarehousesRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** Unique Operations Insights Warehouse identifier */
+    /** Unique Ops Insights Warehouse identifier */
     private String id;
 
-    /** Unique Operations Insights Warehouse identifier */
+    /** Unique Ops Insights Warehouse identifier */
     public String getId() {
         return id;
     }
@@ -195,11 +195,11 @@ public class ListOperationsInsightsWarehousesRequest
             return this;
         }
 
-        /** Unique Operations Insights Warehouse identifier */
+        /** Unique Ops Insights Warehouse identifier */
         private String id = null;
 
         /**
-         * Unique Operations Insights Warehouse identifier
+         * Unique Ops Insights Warehouse identifier
          *
          * @param id the value to set
          * @return this builder instance

@@ -16,17 +16,11 @@ public class CreateOperationsInsightsWarehouseRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails> {
 
-    /**
-     * Details using which an Operations Insights Warehouse resource will be created in Operations
-     * Insights.
-     */
+    /** Details using which an Ops Insights Warehouse resource will be created in Ops Insights. */
     private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             createOperationsInsightsWarehouseDetails;
 
-    /**
-     * Details using which an Operations Insights Warehouse resource will be created in Operations
-     * Insights.
-     */
+    /** Details using which an Ops Insights Warehouse resource will be created in Ops Insights. */
     public com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
             getCreateOperationsInsightsWarehouseDetails() {
         return createOperationsInsightsWarehouseDetails;
@@ -83,15 +77,13 @@ public class CreateOperationsInsightsWarehouseRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details using which an Operations Insights Warehouse resource will be created in
-         * Operations Insights.
+         * Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
          */
         private com.oracle.bmc.opsi.model.CreateOperationsInsightsWarehouseDetails
                 createOperationsInsightsWarehouseDetails = null;
 
         /**
-         * Details using which an Operations Insights Warehouse resource will be created in
-         * Operations Insights.
+         * Details using which an Ops Insights Warehouse resource will be created in Ops Insights.
          *
          * @param createOperationsInsightsWarehouseDetails the value to set
          * @return this builder instance

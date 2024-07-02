@@ -638,12 +638,12 @@ public final class AutonomousContainerDatabase
             this.__explicitlySet__.add("isDstFileUpdateEnabled");
             return this;
         }
-        /** DST Time-zone File version of the Autonomous Container Database. */
+        /** DST Time-Zone File version of the Autonomous Container Database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
         private String dstFileVersion;
 
         /**
-         * DST Time-zone File version of the Autonomous Container Database.
+         * DST Time-Zone File version of the Autonomous Container Database.
          *
          * @param dstFileVersion the value to set
          * @return this builder
@@ -1955,12 +1955,12 @@ public final class AutonomousContainerDatabase
         return isDstFileUpdateEnabled;
     }
 
-    /** DST Time-zone File version of the Autonomous Container Database. */
+    /** DST Time-Zone File version of the Autonomous Container Database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
     private final String dstFileVersion;
 
     /**
-     * DST Time-zone File version of the Autonomous Container Database.
+     * DST Time-Zone File version of the Autonomous Container Database.
      *
      * @return the value
      */

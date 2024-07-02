@@ -134,8 +134,8 @@ public class SummarizeAddmDbParametersRequest
      * Valid values include: TRUE, FALSE
      */
     public enum IsChanged implements com.oracle.bmc.http.internal.BmcEnum {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;
@@ -184,8 +184,8 @@ public class SummarizeAddmDbParametersRequest
      * or was specified in the parameter file (FALSE). Valid values include: TRUE, FALSE
      */
     public enum IsDefault implements com.oracle.bmc.http.internal.BmcEnum {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;
@@ -234,8 +234,8 @@ public class SummarizeAddmDbParametersRequest
      * period. Valid values include: TRUE, FALSE
      */
     public enum HasRecommendations implements com.oracle.bmc.http.internal.BmcEnum {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;

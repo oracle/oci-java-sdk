@@ -15,16 +15,10 @@ public class CreateHostInsightRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.CreateHostInsightDetails> {
 
-    /**
-     * Details for the host for which a Host Insight resource will be created in Operations
-     * Insights.
-     */
+    /** Details for the host for which a Host Insight resource will be created in Ops Insights. */
     private com.oracle.bmc.opsi.model.CreateHostInsightDetails createHostInsightDetails;
 
-    /**
-     * Details for the host for which a Host Insight resource will be created in Operations
-     * Insights.
-     */
+    /** Details for the host for which a Host Insight resource will be created in Ops Insights. */
     public com.oracle.bmc.opsi.model.CreateHostInsightDetails getCreateHostInsightDetails() {
         return createHostInsightDetails;
     }
@@ -79,14 +73,12 @@ public class CreateHostInsightRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the host for which a Host Insight resource will be created in Operations
-         * Insights.
+         * Details for the host for which a Host Insight resource will be created in Ops Insights.
          */
         private com.oracle.bmc.opsi.model.CreateHostInsightDetails createHostInsightDetails = null;
 
         /**
-         * Details for the host for which a Host Insight resource will be created in Operations
-         * Insights.
+         * Details for the host for which a Host Insight resource will be created in Ops Insights.
          *
          * @param createHostInsightDetails the value to set
          * @return this builder instance

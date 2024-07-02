@@ -177,12 +177,12 @@ public class DatabaseInsightSummary
         return databaseDisplayName;
     }
 
-    /** Operations Insights internal representation of the database type. */
+    /** Ops Insights internal representation of the database type. */
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      *
      * @return the value
      */

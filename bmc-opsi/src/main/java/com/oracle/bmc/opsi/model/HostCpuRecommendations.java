@@ -28,14 +28,14 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Show if OPSI recommend to convert an instance to a burstable instance and show
+         * Show if OPSI recommends to convert an instance to a burstable instance and show
          * recommended cpu baseline if positive recommendation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("burstable")
         private Burstable burstable;
 
         /**
-         * Show if OPSI recommend to convert an instance to a burstable instance and show
+         * Show if OPSI recommends to convert an instance to a burstable instance and show
          * recommended cpu baseline if positive recommendation.
          *
          * @param burstable the value to set
@@ -46,12 +46,66 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
             this.__explicitlySet__.add("burstable");
             return this;
         }
+        /**
+         * Show if OPSI recommends to change the shape of an instance and show recommended shape
+         * based on CPU utilization.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * Show if OPSI recommends to change the shape of an instance and show recommended shape
+         * based on CPU utilization.
+         *
+         * @param shape the value to set
+         * @return this builder
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+        /** Identify unused instances based on cpu, memory and network metrics. */
+        @com.fasterxml.jackson.annotation.JsonProperty("unusedInstance")
+        private UnusedInstance unusedInstance;
+
+        /**
+         * Identify unused instances based on cpu, memory and network metrics.
+         *
+         * @param unusedInstance the value to set
+         * @return this builder
+         */
+        public Builder unusedInstance(UnusedInstance unusedInstance) {
+            this.unusedInstance = unusedInstance;
+            this.__explicitlySet__.add("unusedInstance");
+            return this;
+        }
+        /** Identify if an instance is abandoned. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAbandonedInstance")
+        private Boolean isAbandonedInstance;
+
+        /**
+         * Identify if an instance is abandoned.
+         *
+         * @param isAbandonedInstance the value to set
+         * @return this builder
+         */
+        public Builder isAbandonedInstance(Boolean isAbandonedInstance) {
+            this.isAbandonedInstance = isAbandonedInstance;
+            this.__explicitlySet__.add("isAbandonedInstance");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public HostCpuRecommendations build() {
-            HostCpuRecommendations model = new HostCpuRecommendations(this.burstable);
+            HostCpuRecommendations model =
+                    new HostCpuRecommendations(
+                            this.burstable,
+                            this.shape,
+                            this.unusedInstance,
+                            this.isAbandonedInstance);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +116,15 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
         public Builder copy(HostCpuRecommendations model) {
             if (model.wasPropertyExplicitlySet("burstable")) {
                 this.burstable(model.getBurstable());
+            }
+            if (model.wasPropertyExplicitlySet("shape")) {
+                this.shape(model.getShape());
+            }
+            if (model.wasPropertyExplicitlySet("unusedInstance")) {
+                this.unusedInstance(model.getUnusedInstance());
+            }
+            if (model.wasPropertyExplicitlySet("isAbandonedInstance")) {
+                this.isAbandonedInstance(model.getIsAbandonedInstance());
             }
             return this;
         }
@@ -77,13 +140,20 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
     }
 
     @Deprecated
-    public HostCpuRecommendations(Burstable burstable) {
+    public HostCpuRecommendations(
+            Burstable burstable,
+            String shape,
+            UnusedInstance unusedInstance,
+            Boolean isAbandonedInstance) {
         super();
         this.burstable = burstable;
+        this.shape = shape;
+        this.unusedInstance = unusedInstance;
+        this.isAbandonedInstance = isAbandonedInstance;
     }
 
     /**
-     * Show if OPSI recommend to convert an instance to a burstable instance and show recommended
+     * Show if OPSI recommends to convert an instance to a burstable instance and show recommended
      * cpu baseline if positive recommendation.
      */
     public enum Burstable implements com.oracle.bmc.http.internal.BmcEnum {
@@ -134,20 +204,110 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
         }
     };
     /**
-     * Show if OPSI recommend to convert an instance to a burstable instance and show recommended
+     * Show if OPSI recommends to convert an instance to a burstable instance and show recommended
      * cpu baseline if positive recommendation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("burstable")
     private final Burstable burstable;
 
     /**
-     * Show if OPSI recommend to convert an instance to a burstable instance and show recommended
+     * Show if OPSI recommends to convert an instance to a burstable instance and show recommended
      * cpu baseline if positive recommendation.
      *
      * @return the value
      */
     public Burstable getBurstable() {
         return burstable;
+    }
+
+    /**
+     * Show if OPSI recommends to change the shape of an instance and show recommended shape based
+     * on CPU utilization.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * Show if OPSI recommends to change the shape of an instance and show recommended shape based
+     * on CPU utilization.
+     *
+     * @return the value
+     */
+    public String getShape() {
+        return shape;
+    }
+
+    /** Identify unused instances based on cpu, memory and network metrics. */
+    public enum UnusedInstance implements com.oracle.bmc.http.internal.BmcEnum {
+        InUse("IN_USE"),
+        NotInUse("NOT_IN_USE"),
+        IsNotDetermined("IS_NOT_DETERMINED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UnusedInstance.class);
+
+        private final String value;
+        private static java.util.Map<String, UnusedInstance> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UnusedInstance v : UnusedInstance.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UnusedInstance(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UnusedInstance create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UnusedInstance', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Identify unused instances based on cpu, memory and network metrics. */
+    @com.fasterxml.jackson.annotation.JsonProperty("unusedInstance")
+    private final UnusedInstance unusedInstance;
+
+    /**
+     * Identify unused instances based on cpu, memory and network metrics.
+     *
+     * @return the value
+     */
+    public UnusedInstance getUnusedInstance() {
+        return unusedInstance;
+    }
+
+    /** Identify if an instance is abandoned. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAbandonedInstance")
+    private final Boolean isAbandonedInstance;
+
+    /**
+     * Identify if an instance is abandoned.
+     *
+     * @return the value
+     */
+    public Boolean getIsAbandonedInstance() {
+        return isAbandonedInstance;
     }
 
     @Override
@@ -166,6 +326,9 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
         sb.append("HostCpuRecommendations(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", burstable=").append(String.valueOf(this.burstable));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", unusedInstance=").append(String.valueOf(this.unusedInstance));
+        sb.append(", isAbandonedInstance=").append(String.valueOf(this.isAbandonedInstance));
         sb.append(")");
         return sb.toString();
     }
@@ -180,7 +343,11 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
         }
 
         HostCpuRecommendations other = (HostCpuRecommendations) o;
-        return java.util.Objects.equals(this.burstable, other.burstable) && super.equals(other);
+        return java.util.Objects.equals(this.burstable, other.burstable)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.unusedInstance, other.unusedInstance)
+                && java.util.Objects.equals(this.isAbandonedInstance, other.isAbandonedInstance)
+                && super.equals(other);
     }
 
     @Override
@@ -188,6 +355,15 @@ public final class HostCpuRecommendations extends HostInsightHostRecommendations
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.burstable == null ? 43 : this.burstable.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unusedInstance == null ? 43 : this.unusedInstance.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAbandonedInstance == null
+                                ? 43
+                                : this.isAbandonedInstance.hashCode());
         return result;
     }
 }

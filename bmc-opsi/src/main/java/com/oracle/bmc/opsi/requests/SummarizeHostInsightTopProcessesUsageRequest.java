@@ -228,6 +228,13 @@ public class SummarizeHostInsightTopProcessesUsageRequest
     public Statistic getStatistic() {
         return statistic;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -498,6 +505,30 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             return this;
         }
 
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -541,6 +572,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             hostType(o.getHostType());
             hostId(o.getHostId());
             statistic(o.getStatistic());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -591,10 +623,11 @@ public class SummarizeHostInsightTopProcessesUsageRequest
             request.hostType = hostType;
             request.hostId = hostId;
             request.statistic = statistic;
+            request.status = status;
             return request;
             // new SummarizeHostInsightTopProcessesUsageRequest(compartmentId, id, resourceMetric,
             // timestamp, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId,
-            // analysisTimeInterval, hostType, hostId, statistic);
+            // analysisTimeInterval, hostType, hostId, statistic, status);
         }
     }
 
@@ -617,7 +650,8 @@ public class SummarizeHostInsightTopProcessesUsageRequest
                 .analysisTimeInterval(analysisTimeInterval)
                 .hostType(hostType)
                 .hostId(hostId)
-                .statistic(statistic);
+                .statistic(statistic)
+                .status(status);
     }
 
     /**
@@ -647,6 +681,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",statistic=").append(String.valueOf(this.statistic));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -675,7 +710,8 @@ public class SummarizeHostInsightTopProcessesUsageRequest
                 && java.util.Objects.equals(this.analysisTimeInterval, other.analysisTimeInterval)
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
-                && java.util.Objects.equals(this.statistic, other.statistic);
+                && java.util.Objects.equals(this.statistic, other.statistic)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -707,6 +743,7 @@ public class SummarizeHostInsightTopProcessesUsageRequest
         result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
         result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

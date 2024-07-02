@@ -944,6 +944,43 @@ public class DatabaseMigrationAsyncClient extends com.oracle.bmc.http.internal.B
     }
 
     @Override
+    public java.util.concurrent.Future<ListMigrationParametersResponse> listMigrationParameters(
+            ListMigrationParametersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListMigrationParametersRequest, ListMigrationParametersResponse>
+                    handler) {
+
+        return clientCall(request, ListMigrationParametersResponse::builder)
+                .logger(LOG, "listMigrationParameters")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListMigrationParameters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationParameterSummary/ListMigrationParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationParametersRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrationParameters")
+                .appendEnumQueryParam("migrationType", request.getMigrationType())
+                .appendEnumQueryParam("databaseCombination", request.getDatabaseCombination())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.MigrationParameterSummaryCollection
+                                .class,
+                        ListMigrationParametersResponse.Builder
+                                ::migrationParameterSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationParametersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationParametersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMigrationsResponse> listMigrations(
             ListMigrationsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
