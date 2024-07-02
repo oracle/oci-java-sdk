@@ -16,10 +16,10 @@ public class ChangeOperationsInsightsWarehouseCompartmentRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.opsi.model.ChangeOperationsInsightsWarehouseCompartmentDetails> {
 
-    /** Unique Operations Insights Warehouse identifier */
+    /** Unique Ops Insights Warehouse identifier */
     private String operationsInsightsWarehouseId;
 
-    /** Unique Operations Insights Warehouse identifier */
+    /** Unique Ops Insights Warehouse identifier */
     public String getOperationsInsightsWarehouseId() {
         return operationsInsightsWarehouseId;
     }
@@ -101,11 +101,11 @@ public class ChangeOperationsInsightsWarehouseCompartmentRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Operations Insights Warehouse identifier */
+        /** Unique Ops Insights Warehouse identifier */
         private String operationsInsightsWarehouseId = null;
 
         /**
-         * Unique Operations Insights Warehouse identifier
+         * Unique Ops Insights Warehouse identifier
          *
          * @param operationsInsightsWarehouseId the value to set
          * @return this builder instance

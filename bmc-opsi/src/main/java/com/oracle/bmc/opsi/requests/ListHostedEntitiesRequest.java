@@ -281,6 +281,13 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
     public String getHostId() {
         return hostId;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -582,6 +589,30 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -626,6 +657,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             opcRequestId(o.getOpcRequestId());
             hostType(o.getHostType());
             hostId(o.getHostId());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -674,10 +706,11 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
             request.opcRequestId = opcRequestId;
             request.hostType = hostType;
             request.hostId = hostId;
+            request.status = status;
             return request;
             // new ListHostedEntitiesRequest(compartmentId, id, analysisTimeInterval,
             // timeIntervalStart, timeIntervalEnd, platformType, exadataInsightId, limit, page,
-            // sortOrder, sortBy, opcRequestId, hostType, hostId);
+            // sortOrder, sortBy, opcRequestId, hostType, hostId, status);
         }
     }
 
@@ -701,7 +734,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
                 .sortBy(sortBy)
                 .opcRequestId(opcRequestId)
                 .hostType(hostType)
-                .hostId(hostId);
+                .hostId(hostId)
+                .status(status);
     }
 
     /**
@@ -732,6 +766,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -760,7 +795,8 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.hostType, other.hostType)
-                && java.util.Objects.equals(this.hostId, other.hostId);
+                && java.util.Objects.equals(this.hostId, other.hostId)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -793,6 +829,7 @@ public class ListHostedEntitiesRequest extends com.oracle.bmc.requests.BmcReques
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.hostType == null ? 43 : this.hostType.hashCode());
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

@@ -96,6 +96,7 @@ public class ListOutboundConnectorsRequest
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

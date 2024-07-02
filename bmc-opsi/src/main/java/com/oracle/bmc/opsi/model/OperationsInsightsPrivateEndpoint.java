@@ -264,12 +264,16 @@ public final class OperationsInsightsPrivateEndpoint
             this.__explicitlySet__.add("privateEndpointStatusDetails");
             return this;
         }
-        /** The flag is to identify if private endpoint is used for rac database or not */
+        /**
+         * The flag is to identify if private endpoint is used for rac database or not. This flag is
+         * deprecated and no longer is used.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
         private Boolean isUsedForRacDbs;
 
         /**
-         * The flag is to identify if private endpoint is used for rac database or not
+         * The flag is to identify if private endpoint is used for rac database or not. This flag is
+         * deprecated and no longer is used.
          *
          * @param isUsedForRacDbs the value to set
          * @return this builder
@@ -605,12 +609,16 @@ public final class OperationsInsightsPrivateEndpoint
         return privateEndpointStatusDetails;
     }
 
-    /** The flag is to identify if private endpoint is used for rac database or not */
+    /**
+     * The flag is to identify if private endpoint is used for rac database or not. This flag is
+     * deprecated and no longer is used.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isUsedForRacDbs")
     private final Boolean isUsedForRacDbs;
 
     /**
-     * The flag is to identify if private endpoint is used for rac database or not
+     * The flag is to identify if private endpoint is used for rac database or not. This flag is
+     * deprecated and no longer is used.
      *
      * @return the value
      */

@@ -389,6 +389,7 @@ public final class CreateDatabaseSoftwareImageDetails
         VmBmShape("VM_BM_SHAPE"),
         ExadataShape("EXADATA_SHAPE"),
         ExaccShape("EXACC_SHAPE"),
+        ExadbxsShape("EXADBXS_SHAPE"),
         ;
 
         private final String value;

@@ -1000,12 +1000,26 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("provisionableCpus");
             return this;
         }
-        /** The quantity of data in the database, in terabytes. */
+        /**
+         * The quantity of data in the database, in terabytes.
+         *
+         * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: -
+         * This is an integer field whose value remains null when the data size is in GBs and cannot
+         * be converted to TBs (by dividing the GB value by 1024) without rounding error. - To get
+         * the exact value of data storage size without rounding error, please see {@code
+         * dataStorageSizeInGBs} of Autonomous Database.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
         /**
          * The quantity of data in the database, in terabytes.
+         *
+         * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: -
+         * This is an integer field whose value remains null when the data size is in GBs and cannot
+         * be converted to TBs (by dividing the GB value by 1024) without rounding error. - To get
+         * the exact value of data storage size without rounding error, please see {@code
+         * dataStorageSizeInGBs} of Autonomous Database.
          *
          * @param dataStorageSizeInTBs the value to set
          * @return this builder
@@ -1030,12 +1044,22 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("memoryPerOracleComputeUnitInGBs");
             return this;
         }
-        /** The quantity of data in the database, in gigabytes. */
+        /**
+         * The quantity of data in the database, in gigabytes.
+         *
+         * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless
+         * Infrastructure, this value is always populated. In all the other cases, this value will
+         * be null and {@code dataStorageSizeInTBs} will be populated instead.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
          * The quantity of data in the database, in gigabytes.
+         *
+         * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless
+         * Infrastructure, this value is always populated. In all the other cases, this value will
+         * be null and {@code dataStorageSizeInTBs} will be populated instead.
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
@@ -1262,12 +1286,16 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
-        /** The amount of storage that has been used, in terabytes. */
+        /**
+         * The amount of storage that has been used for Autonomous Databases in dedicated
+         * infrastructure, in terabytes.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
         private Integer usedDataStorageSizeInTBs;
 
         /**
-         * The amount of storage that has been used, in terabytes.
+         * The amount of storage that has been used for Autonomous Databases in dedicated
+         * infrastructure, in terabytes.
          *
          * @param usedDataStorageSizeInTBs the value to set
          * @return this builder
@@ -4028,12 +4056,26 @@ public final class AutonomousDatabase
         return provisionableCpus;
     }
 
-    /** The quantity of data in the database, in terabytes. */
+    /**
+     * The quantity of data in the database, in terabytes.
+     *
+     * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: - This is
+     * an integer field whose value remains null when the data size is in GBs and cannot be
+     * converted to TBs (by dividing the GB value by 1024) without rounding error. - To get the
+     * exact value of data storage size without rounding error, please see {@code
+     * dataStorageSizeInGBs} of Autonomous Database.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     private final Integer dataStorageSizeInTBs;
 
     /**
      * The quantity of data in the database, in terabytes.
+     *
+     * <p>The following points apply to Autonomous Databases on Serverless Infrastructure: - This is
+     * an integer field whose value remains null when the data size is in GBs and cannot be
+     * converted to TBs (by dividing the GB value by 1024) without rounding error. - To get the
+     * exact value of data storage size without rounding error, please see {@code
+     * dataStorageSizeInGBs} of Autonomous Database.
      *
      * @return the value
      */
@@ -4054,12 +4096,22 @@ public final class AutonomousDatabase
         return memoryPerOracleComputeUnitInGBs;
     }
 
-    /** The quantity of data in the database, in gigabytes. */
+    /**
+     * The quantity of data in the database, in gigabytes.
+     *
+     * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure,
+     * this value is always populated. In all the other cases, this value will be null and {@code
+     * dataStorageSizeInTBs} will be populated instead.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
      * The quantity of data in the database, in gigabytes.
+     *
+     * <p>For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure,
+     * this value is always populated. In all the other cases, this value will be null and {@code
+     * dataStorageSizeInTBs} will be populated instead.
      *
      * @return the value
      */
@@ -4367,12 +4419,16 @@ public final class AutonomousDatabase
         return licenseModel;
     }
 
-    /** The amount of storage that has been used, in terabytes. */
+    /**
+     * The amount of storage that has been used for Autonomous Databases in dedicated
+     * infrastructure, in terabytes.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
     private final Integer usedDataStorageSizeInTBs;
 
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The amount of storage that has been used for Autonomous Databases in dedicated
+     * infrastructure, in terabytes.
      *
      * @return the value
      */

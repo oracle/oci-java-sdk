@@ -531,6 +531,13 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     public String getInterfaceName() {
         return interfaceName;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -1168,6 +1175,30 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             return this;
         }
 
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -1225,6 +1256,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             lowUtilizationThreshold(o.getLowUtilizationThreshold());
             mountPoint(o.getMountPoint());
             interfaceName(o.getInterfaceName());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1290,6 +1322,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             request.lowUtilizationThreshold = lowUtilizationThreshold;
             request.mountPoint = mountPoint;
             request.interfaceName = interfaceName;
+            request.status = status;
             return request;
             // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric,
             // analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id,
@@ -1297,7 +1330,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             // confidence, page, opcRequestId, definedTagEquals, freeformTagEquals,
             // definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId,
             // vmclusterName, highUtilizationThreshold, lowUtilizationThreshold, mountPoint,
-            // interfaceName);
+            // interfaceName, status);
         }
     }
 
@@ -1334,7 +1367,8 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 .highUtilizationThreshold(highUtilizationThreshold)
                 .lowUtilizationThreshold(lowUtilizationThreshold)
                 .mountPoint(mountPoint)
-                .interfaceName(interfaceName);
+                .interfaceName(interfaceName)
+                .status(status);
     }
 
     /**
@@ -1379,6 +1413,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         sb.append(",lowUtilizationThreshold=").append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(",mountPoint=").append(String.valueOf(this.mountPoint));
         sb.append(",interfaceName=").append(String.valueOf(this.interfaceName));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -1424,7 +1459,8 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 && java.util.Objects.equals(
                         this.lowUtilizationThreshold, other.lowUtilizationThreshold)
                 && java.util.Objects.equals(this.mountPoint, other.mountPoint)
-                && java.util.Objects.equals(this.interfaceName, other.interfaceName);
+                && java.util.Objects.equals(this.interfaceName, other.interfaceName)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -1500,6 +1536,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         result =
                 (result * PRIME)
                         + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

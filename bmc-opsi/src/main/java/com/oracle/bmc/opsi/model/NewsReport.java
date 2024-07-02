@@ -267,12 +267,12 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** Indicates the status of a news report in Operations Insights. */
+        /** Indicates the status of a news report in Ops Insights. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ResourceStatus status;
 
         /**
-         * Indicates the status of a news report in Operations Insights.
+         * Indicates the status of a news report in Ops Insights.
          *
          * @param status the value to set
          * @return this builder
@@ -639,12 +639,12 @@ public final class NewsReport extends com.oracle.bmc.http.client.internal.Explic
         return systemTags;
     }
 
-    /** Indicates the status of a news report in Operations Insights. */
+    /** Indicates the status of a news report in Ops Insights. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      *
      * @return the value
      */

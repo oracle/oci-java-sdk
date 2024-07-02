@@ -905,6 +905,41 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ListMigrationParametersResponse listMigrationParameters(
+            ListMigrationParametersRequest request) {
+
+        return clientCall(request, ListMigrationParametersResponse::builder)
+                .logger(LOG, "listMigrationParameters")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListMigrationParameters",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/MigrationParameterSummary/ListMigrationParameters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMigrationParametersRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("migrationParameters")
+                .appendEnumQueryParam("migrationType", request.getMigrationType())
+                .appendEnumQueryParam("databaseCombination", request.getDatabaseCombination())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.MigrationParameterSummaryCollection
+                                .class,
+                        ListMigrationParametersResponse.Builder
+                                ::migrationParameterSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMigrationParametersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMigrationParametersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListMigrationsResponse listMigrations(ListMigrationsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 

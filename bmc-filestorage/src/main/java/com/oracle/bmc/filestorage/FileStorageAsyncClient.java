@@ -556,6 +556,7 @@ public class FileStorageAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .basePath("/20171215")
                 .appendPathParam("fileSystems")
                 .appendPathParam(request.getFileSystemId())
+                .appendQueryParam("canDetachChildFileSystem", request.getCanDetachChildFileSystem())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -737,6 +738,35 @@ public class FileStorageAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSnapshotResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DetachCloneResponse> detachClone(
+            DetachCloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DetachCloneRequest, DetachCloneResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+
+        return clientCall(request, DetachCloneResponse::builder)
+                .logger(LOG, "detachClone")
+                .serviceDetails(
+                        "FileStorage",
+                        "DetachClone",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DetachClone")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DetachCloneRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("detachClone")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DetachCloneResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

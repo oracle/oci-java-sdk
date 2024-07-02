@@ -975,6 +975,80 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeExadbVmClusterCompartmentResponse changeExadbVmClusterCompartment(
+            ChangeExadbVmClusterCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeExadbVmClusterCompartmentDetails(),
+                "changeExadbVmClusterCompartmentDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ChangeExadbVmClusterCompartmentResponse::builder)
+                .logger(LOG, "changeExadbVmClusterCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExadbVmClusterCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ChangeExadbVmClusterCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExadbVmClusterCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExadbVmClusterCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExadbVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeExascaleDbStorageVaultCompartmentResponse changeExascaleDbStorageVaultCompartment(
+            ChangeExascaleDbStorageVaultCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeExascaleDbStorageVaultCompartmentDetails(),
+                "changeExascaleDbStorageVaultCompartmentDetails is required");
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, ChangeExascaleDbStorageVaultCompartmentResponse::builder)
+                .logger(LOG, "changeExascaleDbStorageVaultCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeExascaleDbStorageVaultCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ChangeExascaleDbStorageVaultCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExascaleDbStorageVaultCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExascaleDbStorageVaultCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExascaleDbStorageVaultCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeExternalContainerDatabaseCompartmentResponse
             changeExternalContainerDatabaseCompartment(
                     ChangeExternalContainerDatabaseCompartmentRequest request) {
@@ -2115,6 +2189,73 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateExadbVmClusterResponse createExadbVmCluster(CreateExadbVmClusterRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExadbVmClusterDetails(),
+                "createExadbVmClusterDetails is required");
+
+        return clientCall(request, CreateExadbVmClusterResponse::builder)
+                .logger(LOG, "createExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "CreateExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/CreateExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        CreateExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExadbVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateExascaleDbStorageVaultResponse createExascaleDbStorageVault(
+            CreateExascaleDbStorageVaultRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExascaleDbStorageVaultDetails(),
+                "createExascaleDbStorageVaultDetails is required");
+
+        return clientCall(request, CreateExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "createExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "CreateExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/CreateExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        CreateExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateExternalBackupJobResponse createExternalBackupJob(
             CreateExternalBackupJobRequest request) {
         Objects.requireNonNull(
@@ -2964,6 +3105,64 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         DeleteExadataInfrastructureResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteExadataInfrastructureResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExadbVmClusterResponse deleteExadbVmCluster(DeleteExadbVmClusterRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, DeleteExadbVmClusterResponse::builder)
+                .logger(LOG, "deleteExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/DeleteExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExadbVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExascaleDbStorageVaultResponse deleteExascaleDbStorageVault(
+            DeleteExascaleDbStorageVaultRequest request) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, DeleteExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "deleteExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/DeleteExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExascaleDbStorageVaultResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6001,6 +6200,130 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetExadbVmClusterResponse getExadbVmCluster(GetExadbVmClusterRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterResponse::builder)
+                .logger(LOG, "getExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/GetExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        GetExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString("etag", GetExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExadbVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExadbVmClusterUpdateResponse getExadbVmClusterUpdate(
+            GetExadbVmClusterUpdateRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        Validate.notBlank(request.getUpdateId(), "updateId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterUpdateResponse::builder)
+                .logger(LOG, "getExadbVmClusterUpdate")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdate",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/GetExadbVmClusterUpdate")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterUpdateRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updates")
+                .appendPathParam(request.getUpdateId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdate.class,
+                        GetExadbVmClusterUpdateResponse.Builder::exadbVmClusterUpdate)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExadbVmClusterUpdateResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExadbVmClusterUpdateHistoryEntryResponse getExadbVmClusterUpdateHistoryEntry(
+            GetExadbVmClusterUpdateHistoryEntryRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        Validate.notBlank(
+                request.getUpdateHistoryEntryId(), "updateHistoryEntryId must not be blank");
+
+        return clientCall(request, GetExadbVmClusterUpdateHistoryEntryResponse::builder)
+                .logger(LOG, "getExadbVmClusterUpdateHistoryEntry")
+                .serviceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdateHistoryEntry",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/GetExadbVmClusterUpdateHistoryEntry")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExadbVmClusterUpdateHistoryEntryRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendPathParam(request.getUpdateHistoryEntryId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntry.class,
+                        GetExadbVmClusterUpdateHistoryEntryResponse.Builder
+                                ::exadbVmClusterUpdateHistoryEntry)
+                .handleResponseHeaderString(
+                        "etag", GetExadbVmClusterUpdateHistoryEntryResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExadbVmClusterUpdateHistoryEntryResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExascaleDbStorageVaultResponse getExascaleDbStorageVault(
+            GetExascaleDbStorageVaultRequest request) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+
+        return clientCall(request, GetExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "getExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "GetExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/GetExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        GetExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString("etag", GetExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExascaleDbStorageVaultResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request) {
 
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");
@@ -7361,6 +7684,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("shapeFamily", request.getShapeFamily())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.BackupSummary.class,
@@ -8298,6 +8622,143 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListExadbVmClusterUpdateHistoryEntriesResponse listExadbVmClusterUpdateHistoryEntries(
+            ListExadbVmClusterUpdateHistoryEntriesRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ListExadbVmClusterUpdateHistoryEntriesResponse::builder)
+                .logger(LOG, "listExadbVmClusterUpdateHistoryEntries")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdateHistoryEntries",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/ListExadbVmClusterUpdateHistoryEntries")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClusterUpdateHistoryEntriesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updateHistoryEntries")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary.class,
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListExadbVmClusterUpdateHistoryEntriesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListExadbVmClusterUpdatesResponse listExadbVmClusterUpdates(
+            ListExadbVmClusterUpdatesRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, ListExadbVmClusterUpdatesResponse::builder)
+                .logger(LOG, "listExadbVmClusterUpdates")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdates",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/ListExadbVmClusterUpdates")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClusterUpdatesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("updates")
+                .appendEnumQueryParam("updateType", request.getUpdateType())
+                .appendQueryParam("version", request.getVersion())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary.class,
+                        ListExadbVmClusterUpdatesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExadbVmClusterUpdatesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExadbVmClusterUpdatesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListExadbVmClustersResponse listExadbVmClusters(ListExadbVmClustersRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExadbVmClustersResponse::builder)
+                .logger(LOG, "listExadbVmClusters")
+                .serviceDetails(
+                        "Database",
+                        "ListExadbVmClusters",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ListExadbVmClusters")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExadbVmClustersRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("exascaleDbStorageVaultId", request.getExascaleDbStorageVaultId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExadbVmClusterSummary.class,
+                        ListExadbVmClustersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExadbVmClustersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExadbVmClustersResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListExascaleDbStorageVaultsResponse listExascaleDbStorageVaults(
+            ListExascaleDbStorageVaultsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExascaleDbStorageVaultsResponse::builder)
+                .logger(LOG, "listExascaleDbStorageVaults")
+                .serviceDetails(
+                        "Database",
+                        "ListExascaleDbStorageVaults",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ListExascaleDbStorageVaults")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExascaleDbStorageVaultsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary.class,
+                        ListExascaleDbStorageVaultsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExascaleDbStorageVaultsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExascaleDbStorageVaultsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListExternalContainerDatabasesResponse listExternalContainerDatabases(
             ListExternalContainerDatabasesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -8479,6 +8940,46 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListGiVersionMinorVersionsResponse listGiVersionMinorVersions(
+            ListGiVersionMinorVersionsRequest request) {
+
+        Validate.notBlank(request.getVersion(), "version must not be blank");
+
+        return clientCall(request, ListGiVersionMinorVersionsResponse::builder)
+                .logger(LOG, "listGiVersionMinorVersions")
+                .serviceDetails(
+                        "Database",
+                        "ListGiVersionMinorVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiMinorVersionSummary/ListGiVersionMinorVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListGiVersionMinorVersionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("giVersions")
+                .appendPathParam(request.getVersion())
+                .appendPathParam("minorVersions")
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("shapeFamily", request.getShapeFamily())
+                .appendQueryParam(
+                        "isGiVersionForProvisioning", request.getIsGiVersionForProvisioning())
+                .appendQueryParam("shape", request.getShape())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.GiMinorVersionSummary.class,
+                        ListGiVersionMinorVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListGiVersionMinorVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListGiVersionMinorVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListGiVersionsResponse listGiVersions(ListGiVersionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -8497,6 +8998,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("shape", request.getShape())
+                .appendQueryParam("availabilityDomain", request.getAvailabilityDomain())
                 .accept("application/json")
                 .handleBodyList(
                         com.oracle.bmc.database.model.GiVersionSummary.class,
@@ -9396,6 +9898,47 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveVirtualMachineFromCloudVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveVirtualMachineFromExadbVmClusterResponse removeVirtualMachineFromExadbVmCluster(
+            RemoveVirtualMachineFromExadbVmClusterRequest request) {
+        Objects.requireNonNull(
+                request.getRemoveVirtualMachineFromExadbVmClusterDetails(),
+                "removeVirtualMachineFromExadbVmClusterDetails is required");
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+
+        return clientCall(request, RemoveVirtualMachineFromExadbVmClusterResponse::builder)
+                .logger(LOG, "removeVirtualMachineFromExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RemoveVirtualMachineFromExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveVirtualMachineFromExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("removeVirtualMachine")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", RemoveVirtualMachineFromExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveVirtualMachineFromExadbVmClusterResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -11378,6 +11921,81 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateExadataIormConfigResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateExadataIormConfigResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExadbVmClusterResponse updateExadbVmCluster(UpdateExadbVmClusterRequest request) {
+
+        Validate.notBlank(request.getExadbVmClusterId(), "exadbVmClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExadbVmClusterDetails(),
+                "updateExadbVmClusterDetails is required");
+
+        return clientCall(request, UpdateExadbVmClusterResponse::builder)
+                .logger(LOG, "updateExadbVmCluster")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExadbVmCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UpdateExadbVmCluster")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExadbVmClusterRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadbVmClusters")
+                .appendPathParam(request.getExadbVmClusterId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadbVmCluster.class,
+                        UpdateExadbVmClusterResponse.Builder::exadbVmCluster)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExadbVmClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExadbVmClusterResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExadbVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExascaleDbStorageVaultResponse updateExascaleDbStorageVault(
+            UpdateExascaleDbStorageVaultRequest request) {
+
+        Validate.notBlank(
+                request.getExascaleDbStorageVaultId(),
+                "exascaleDbStorageVaultId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExascaleDbStorageVaultDetails(),
+                "updateExascaleDbStorageVaultDetails is required");
+
+        return clientCall(request, UpdateExascaleDbStorageVaultResponse::builder)
+                .logger(LOG, "updateExascaleDbStorageVault")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExascaleDbStorageVault",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/UpdateExascaleDbStorageVault")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExascaleDbStorageVaultRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exascaleDbStorageVaults")
+                .appendPathParam(request.getExascaleDbStorageVaultId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExascaleDbStorageVault.class,
+                        UpdateExascaleDbStorageVaultResponse.Builder::exascaleDbStorageVault)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExascaleDbStorageVaultResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExascaleDbStorageVaultResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExascaleDbStorageVaultResponse.Builder::opcRequestId)
                 .callSync();
     }
 

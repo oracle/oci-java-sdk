@@ -631,6 +631,132 @@ public class DatabaseMigrationPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMigrationParameters operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMigrationParametersResponse> listMigrationParametersResponseIterator(
+            final ListMigrationParametersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMigrationParametersRequest.Builder,
+                ListMigrationParametersRequest,
+                ListMigrationParametersResponse>(
+                new java.util.function.Supplier<ListMigrationParametersRequest.Builder>() {
+                    @Override
+                    public ListMigrationParametersRequest.Builder get() {
+                        return ListMigrationParametersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMigrationParametersResponse, String>() {
+                    @Override
+                    public String apply(ListMigrationParametersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMigrationParametersRequest.Builder>,
+                        ListMigrationParametersRequest>() {
+                    @Override
+                    public ListMigrationParametersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMigrationParametersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMigrationParametersRequest, ListMigrationParametersResponse>() {
+                    @Override
+                    public ListMigrationParametersResponse apply(
+                            ListMigrationParametersRequest request) {
+                        return client.listMigrationParameters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.MigrationParameterSummary} objects contained in
+     * responses from the listMigrationParameters operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.MigrationParameterSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.MigrationParameterSummary>
+            listMigrationParametersRecordIterator(final ListMigrationParametersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMigrationParametersRequest.Builder,
+                ListMigrationParametersRequest,
+                ListMigrationParametersResponse,
+                com.oracle.bmc.databasemigration.model.MigrationParameterSummary>(
+                new java.util.function.Supplier<ListMigrationParametersRequest.Builder>() {
+                    @Override
+                    public ListMigrationParametersRequest.Builder get() {
+                        return ListMigrationParametersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMigrationParametersResponse, String>() {
+                    @Override
+                    public String apply(ListMigrationParametersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMigrationParametersRequest.Builder>,
+                        ListMigrationParametersRequest>() {
+                    @Override
+                    public ListMigrationParametersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMigrationParametersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMigrationParametersRequest, ListMigrationParametersResponse>() {
+                    @Override
+                    public ListMigrationParametersResponse apply(
+                            ListMigrationParametersRequest request) {
+                        return client.listMigrationParameters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMigrationParametersResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .MigrationParameterSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .MigrationParameterSummary>
+                            apply(ListMigrationParametersResponse response) {
+                        return response.getMigrationParameterSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMigrations
      * operation. This iterable will fetch more data from the server as needed.
      *

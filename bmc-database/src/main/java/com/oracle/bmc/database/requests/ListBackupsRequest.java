@@ -53,6 +53,60 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getPage() {
         return page;
     }
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the
+     * given shape family.
+     */
+    private ShapeFamily shapeFamily;
+
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the
+     * given shape family.
+     */
+    public enum ShapeFamily implements com.oracle.bmc.http.internal.BmcEnum {
+        Singlenode("SINGLENODE"),
+        Yoda("YODA"),
+        Virtualmachine("VIRTUALMACHINE"),
+        Exadata("EXADATA"),
+        Exacc("EXACC"),
+        ExadbXs("EXADB_XS"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ShapeFamily> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ShapeFamily v : ShapeFamily.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ShapeFamily(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ShapeFamily create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ShapeFamily: " + key);
+        }
+    };
+
+    /**
+     * If provided, filters the results to the set of database versions which are supported for the
+     * given shape family.
+     */
+    public ShapeFamily getShapeFamily() {
+        return shapeFamily;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -125,6 +179,24 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
+         * If provided, filters the results to the set of database versions which are supported for
+         * the given shape family.
+         */
+        private ShapeFamily shapeFamily = null;
+
+        /**
+         * If provided, filters the results to the set of database versions which are supported for
+         * the given shape family.
+         *
+         * @param shapeFamily the value to set
+         * @return this builder instance
+         */
+        public Builder shapeFamily(ShapeFamily shapeFamily) {
+            this.shapeFamily = shapeFamily;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -158,6 +230,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             compartmentId(o.getCompartmentId());
             limit(o.getLimit());
             page(o.getPage());
+            shapeFamily(o.getShapeFamily());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -196,8 +269,9 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.compartmentId = compartmentId;
             request.limit = limit;
             request.page = page;
+            request.shapeFamily = shapeFamily;
             return request;
-            // new ListBackupsRequest(databaseId, compartmentId, limit, page);
+            // new ListBackupsRequest(databaseId, compartmentId, limit, page, shapeFamily);
         }
     }
 
@@ -211,7 +285,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .databaseId(databaseId)
                 .compartmentId(compartmentId)
                 .limit(limit)
-                .page(page);
+                .page(page)
+                .shapeFamily(shapeFamily);
     }
 
     /**
@@ -232,6 +307,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",shapeFamily=").append(String.valueOf(this.shapeFamily));
         sb.append(")");
         return sb.toString();
     }
@@ -250,7 +326,8 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.page, other.page);
+                && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.shapeFamily, other.shapeFamily);
     }
 
     @Override
@@ -263,6 +340,7 @@ public class ListBackupsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.shapeFamily == null ? 43 : this.shapeFamily.hashCode());
         return result;
     }
 }

@@ -88,6 +88,13 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getShape() {
         return shape;
     }
+    /** The target availability domain. Only passed if the limit is AD-specific. */
+    private String availabilityDomain;
+
+    /** The target availability domain. Only passed if the limit is AD-specific. */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -169,6 +176,20 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /** The target availability domain. Only passed if the limit is AD-specific. */
+        private String availabilityDomain = null;
+
+        /**
+         * The target availability domain. Only passed if the limit is AD-specific.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder instance
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -204,6 +225,7 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             page(o.getPage());
             sortOrder(o.getSortOrder());
             shape(o.getShape());
+            availabilityDomain(o.getAvailabilityDomain());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -243,8 +265,10 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.page = page;
             request.sortOrder = sortOrder;
             request.shape = shape;
+            request.availabilityDomain = availabilityDomain;
             return request;
-            // new ListGiVersionsRequest(compartmentId, limit, page, sortOrder, shape);
+            // new ListGiVersionsRequest(compartmentId, limit, page, sortOrder, shape,
+            // availabilityDomain);
         }
     }
 
@@ -259,7 +283,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
-                .shape(shape);
+                .shape(shape)
+                .availabilityDomain(availabilityDomain);
     }
 
     /**
@@ -281,6 +306,7 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",shape=").append(String.valueOf(this.shape));
+        sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(")");
         return sb.toString();
     }
@@ -300,7 +326,8 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
-                && java.util.Objects.equals(this.shape, other.shape);
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain);
     }
 
     @Override
@@ -314,6 +341,11 @@ public class ListGiVersionsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         return result;
     }
 }

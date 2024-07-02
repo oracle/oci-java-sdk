@@ -42,6 +42,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         "sourceDetails",
         "isCloneParent",
         "isHydrated",
+        "cloneCount",
+        "cloneAttachStatus",
         "lifecycleDetails",
         "isTargetable",
         "replicationTargetId",
@@ -61,6 +63,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             SourceDetails sourceDetails,
             Boolean isCloneParent,
             Boolean isHydrated,
+            Integer cloneCount,
+            CloneAttachStatus cloneAttachStatus,
             String lifecycleDetails,
             Boolean isTargetable,
             String replicationTargetId,
@@ -79,6 +83,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         this.sourceDetails = sourceDetails;
         this.isCloneParent = isCloneParent;
         this.isHydrated = isHydrated;
+        this.cloneCount = cloneCount;
+        this.cloneAttachStatus = cloneAttachStatus;
         this.lifecycleDetails = lifecycleDetails;
         this.isTargetable = isTargetable;
         this.replicationTargetId = replicationTargetId;
@@ -349,6 +355,36 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("isHydrated");
             return this;
         }
+        /** Specifies the total number of children of a file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneCount")
+        private Integer cloneCount;
+
+        /**
+         * Specifies the total number of children of a file system.
+         *
+         * @param cloneCount the value to set
+         * @return this builder
+         */
+        public Builder cloneCount(Integer cloneCount) {
+            this.cloneCount = cloneCount;
+            this.__explicitlySet__.add("cloneCount");
+            return this;
+        }
+        /** Specifies whether the file system is attached to its parent file system. */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+        private CloneAttachStatus cloneAttachStatus;
+
+        /**
+         * Specifies whether the file system is attached to its parent file system.
+         *
+         * @param cloneAttachStatus the value to set
+         * @return this builder
+         */
+        public Builder cloneAttachStatus(CloneAttachStatus cloneAttachStatus) {
+            this.cloneAttachStatus = cloneAttachStatus;
+            this.__explicitlySet__.add("cloneAttachStatus");
+            return this;
+        }
         /** Additional information about the current 'lifecycleState'. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
@@ -455,6 +491,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                             this.sourceDetails,
                             this.isCloneParent,
                             this.isHydrated,
+                            this.cloneCount,
+                            this.cloneAttachStatus,
                             this.lifecycleDetails,
                             this.isTargetable,
                             this.replicationTargetId,
@@ -505,6 +543,12 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("isHydrated")) {
                 this.isHydrated(model.getIsHydrated());
+            }
+            if (model.wasPropertyExplicitlySet("cloneCount")) {
+                this.cloneCount(model.getCloneCount());
+            }
+            if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
+                this.cloneAttachStatus(model.getCloneAttachStatus());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -630,6 +674,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
@@ -815,6 +860,79 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         return isHydrated;
     }
 
+    /** Specifies the total number of children of a file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneCount")
+    private final Integer cloneCount;
+
+    /**
+     * Specifies the total number of children of a file system.
+     *
+     * @return the value
+     */
+    public Integer getCloneCount() {
+        return cloneCount;
+    }
+
+    /** Specifies whether the file system is attached to its parent file system. */
+    public enum CloneAttachStatus implements com.oracle.bmc.http.internal.BmcEnum {
+        Attached("ATTACHED"),
+        Detaching("DETACHING"),
+        Detached("DETACHED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CloneAttachStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, CloneAttachStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneAttachStatus v : CloneAttachStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CloneAttachStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneAttachStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CloneAttachStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Specifies whether the file system is attached to its parent file system. */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+    private final CloneAttachStatus cloneAttachStatus;
+
+    /**
+     * Specifies whether the file system is attached to its parent file system.
+     *
+     * @return the value
+     */
+    public CloneAttachStatus getCloneAttachStatus() {
+        return cloneAttachStatus;
+    }
+
     /** Additional information about the current 'lifecycleState'. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
@@ -921,6 +1039,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
+        sb.append(", cloneCount=").append(String.valueOf(this.cloneCount));
+        sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isTargetable=").append(String.valueOf(this.isTargetable));
         sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
@@ -953,6 +1073,8 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
+                && java.util.Objects.equals(this.cloneCount, other.cloneCount)
+                && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isTargetable, other.isTargetable)
                 && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
@@ -990,6 +1112,10 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 (result * PRIME)
                         + (this.isCloneParent == null ? 43 : this.isCloneParent.hashCode());
         result = (result * PRIME) + (this.isHydrated == null ? 43 : this.isHydrated.hashCode());
+        result = (result * PRIME) + (this.cloneCount == null ? 43 : this.cloneCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

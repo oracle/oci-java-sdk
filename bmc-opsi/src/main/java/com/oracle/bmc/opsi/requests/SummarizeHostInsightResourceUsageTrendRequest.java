@@ -372,6 +372,13 @@ public class SummarizeHostInsightResourceUsageTrendRequest
     public java.util.List<String> getVmclusterName() {
         return vmclusterName;
     }
+    /** Resource Status */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /** Resource Status */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -885,6 +892,30 @@ public class SummarizeHostInsightResourceUsageTrendRequest
             return this.vmclusterName(java.util.Arrays.asList(singularValue));
         }
 
+        /** Resource Status */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -935,6 +966,7 @@ public class SummarizeHostInsightResourceUsageTrendRequest
             hostType(o.getHostType());
             hostId(o.getHostId());
             vmclusterName(o.getVmclusterName());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -993,12 +1025,13 @@ public class SummarizeHostInsightResourceUsageTrendRequest
             request.hostType = hostType;
             request.hostId = hostId;
             request.vmclusterName = vmclusterName;
+            request.status = status;
             return request;
             // new SummarizeHostInsightResourceUsageTrendRequest(compartmentId, resourceMetric,
             // analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id,
             // exadataInsightId, page, sortOrder, sortBy, opcRequestId, definedTagEquals,
             // freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree,
-            // hostType, hostId, vmclusterName);
+            // hostType, hostId, vmclusterName, status);
         }
     }
 
@@ -1028,7 +1061,8 @@ public class SummarizeHostInsightResourceUsageTrendRequest
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .hostType(hostType)
                 .hostId(hostId)
-                .vmclusterName(vmclusterName);
+                .vmclusterName(vmclusterName)
+                .status(status);
     }
 
     /**
@@ -1065,6 +1099,7 @@ public class SummarizeHostInsightResourceUsageTrendRequest
         sb.append(",hostType=").append(String.valueOf(this.hostType));
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",vmclusterName=").append(String.valueOf(this.vmclusterName));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -1101,7 +1136,8 @@ public class SummarizeHostInsightResourceUsageTrendRequest
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
-                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName);
+                && java.util.Objects.equals(this.vmclusterName, other.vmclusterName)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -1156,6 +1192,7 @@ public class SummarizeHostInsightResourceUsageTrendRequest
         result =
                 (result * PRIME)
                         + (this.vmclusterName == null ? 43 : this.vmclusterName.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }
