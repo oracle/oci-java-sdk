@@ -47,24 +47,51 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
     public com.oracle.bmc.generativeaiinference.model.GenerateTextResult getGenerateTextResult() {
         return generateTextResult;
     }
+    /**
+     * Returns the event-stream for operations that support 'text/event-stream' media type. The
+     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
+     * try-with-resources or explicitly call eventStream.close() to close the stream. This is
+     * important to avoid the issue mentioned in the link below
+     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
+     *
+     * @return the event-stream
+     */
+    private java.io.InputStream eventStream;
+
+    /**
+     * Returns the event-stream for operations that support 'text/event-stream' media type. The
+     * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
+     * try-with-resources or explicitly call getEventStream().close() to close the stream. This is
+     * important to avoid the issue mentioned in the link below
+     * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
+     *
+     * @return the event-stream
+     */
+    public java.io.InputStream getEventStream() {
+        return eventStream;
+    }
 
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "etag",
         "opcRequestId",
-        "generateTextResult"
+        "generateTextResult",
+        "eventStream"
     })
     private GenerateTextResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String etag,
             String opcRequestId,
-            com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult) {
+            com.oracle.bmc.generativeaiinference.model.GenerateTextResult generateTextResult,
+            java.io.InputStream eventStream) {
         super(__httpStatusCode__, headers);
         this.etag = etag;
         this.opcRequestId = opcRequestId;
         this.generateTextResult = generateTextResult;
+
+        this.eventStream = eventStream;
     }
 
     public static class Builder
@@ -133,6 +160,30 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         }
 
         /**
+         * The event-stream for operations that support 'text/event-stream' media type. The value
+         * can be null in-case a non-streamed response is returned by the server. NOTE : Use
+         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
+         * important to avoid the issue mentioned in the link below
+         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
+         *
+         * @return the event-stream
+         */
+        private java.io.InputStream eventStream;
+
+        /**
+         * Returns the event-stream for operations that support 'text/event-stream' media type. The
+         * value can be null in-case a non-streamed response is returned by the server. NOTE : Use
+         * try-with-resources or explicitly call eventStream.close() to close the stream. This is
+         * important to avoid the issue mentioned in the link below
+         * https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
+         *
+         * @return the event-stream
+         */
+        public Builder eventStream(java.io.InputStream eventStream) {
+            this.eventStream = eventStream;
+            return this;
+        }
+        /**
          * Copy method to populate the builder with values from the given instance.
          *
          * @return this builder instance
@@ -145,6 +196,7 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
             opcRequestId(o.getOpcRequestId());
             generateTextResult(o.getGenerateTextResult());
 
+            eventStream(o.getEventStream());
             return this;
         }
 
@@ -156,7 +208,12 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         @Override
         public GenerateTextResponse build() {
             return new GenerateTextResponse(
-                    __httpStatusCode__, headers, etag, opcRequestId, generateTextResult);
+                    __httpStatusCode__,
+                    headers,
+                    etag,
+                    opcRequestId,
+                    generateTextResult,
+                    eventStream);
         }
     }
 
@@ -177,6 +234,7 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",etag=").append(String.valueOf(etag));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",generateTextResult=").append(String.valueOf(generateTextResult));
+        sb.append(",eventStream=").append(String.valueOf(eventStream));
         sb.append(")");
         return sb.toString();
     }
@@ -194,7 +252,8 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
         return super.equals(o)
                 && java.util.Objects.equals(this.etag, other.etag)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.generateTextResult, other.generateTextResult);
+                && java.util.Objects.equals(this.generateTextResult, other.generateTextResult)
+                && java.util.Objects.equals(this.eventStream, other.eventStream);
     }
 
     @Override
@@ -208,6 +267,7 @@ public class GenerateTextResponse extends com.oracle.bmc.responses.BmcResponse {
                         + (this.generateTextResult == null
                                 ? 43
                                 : this.generateTextResult.hashCode());
+        result = (result * PRIME) + (this.eventStream == null ? 43 : this.eventStream.hashCode());
         return result;
     }
 }

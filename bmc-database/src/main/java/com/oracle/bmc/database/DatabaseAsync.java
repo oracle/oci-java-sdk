@@ -737,6 +737,27 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * This is for user to confirm to DBaaS that the Oracle Key Valut (OKV) connection IPs, username
+     * and password are all correct. This operation will put the Key Store back into Active state.
+     * If details are incorrect, your OKV account may get locked after some unsuccessful attempts to
+     * connect.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>
+            confirmKeyStoreDetailsAreCorrect(
+                    ConfirmKeyStoreDetailsAreCorrectRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                                    ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send

@@ -1582,6 +1582,43 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>
+            confirmKeyStoreDetailsAreCorrect(
+                    ConfirmKeyStoreDetailsAreCorrectRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                                    ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler) {
+
+        Validate.notBlank(request.getKeyStoreId(), "keyStoreId must not be blank");
+
+        return clientCall(request, ConfirmKeyStoreDetailsAreCorrectResponse::builder)
+                .logger(LOG, "confirmKeyStoreDetailsAreCorrect")
+                .serviceDetails(
+                        "Database",
+                        "ConfirmKeyStoreDetailsAreCorrect",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ConfirmKeyStoreDetailsAreCorrect")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfirmKeyStoreDetailsAreCorrectRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("keyStores")
+                .appendPathParam(request.getKeyStoreId())
+                .appendPathParam("actions")
+                .appendPathParam("confirmDetailsAreCorrect")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfirmKeyStoreDetailsAreCorrectResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfirmKeyStoreDetailsAreCorrectResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ConvertToPdbResponse> convertToPdb(
             ConvertToPdbRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ConvertToPdbRequest, ConvertToPdbResponse>

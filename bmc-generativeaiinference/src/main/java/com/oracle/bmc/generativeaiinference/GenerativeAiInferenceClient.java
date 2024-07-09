@@ -109,6 +109,7 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleBody(
                         com.oracle.bmc.generativeaiinference.model.ChatResult.class,
                         ChatResponse.Builder::chatResult)
+                .handleEventStream(ChatResponse.Builder::eventStream)
                 .handleResponseHeaderString("etag", ChatResponse.Builder::etag)
                 .handleResponseHeaderString("opc-request-id", ChatResponse.Builder::opcRequestId)
                 .callSync();
@@ -166,6 +167,7 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
                 .handleBody(
                         com.oracle.bmc.generativeaiinference.model.GenerateTextResult.class,
                         GenerateTextResponse.Builder::generateTextResult)
+                .handleEventStream(GenerateTextResponse.Builder::eventStream)
                 .handleResponseHeaderString("etag", GenerateTextResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GenerateTextResponse.Builder::opcRequestId)

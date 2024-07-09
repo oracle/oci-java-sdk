@@ -726,6 +726,26 @@ public interface Database extends AutoCloseable {
     ConfigureSaasAdminUserResponse configureSaasAdminUser(ConfigureSaasAdminUserRequest request);
 
     /**
+     * This is for user to confirm to DBaaS that the Oracle Key Valut (OKV) connection IPs, username
+     * and password are all correct. This operation will put the Key Store back into Active state.
+     * If details are incorrect, your OKV account may get locked after some unsuccessful attempts to
+     * connect.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfirmKeyStoreDetailsAreCorrectExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ConfirmKeyStoreDetailsAreCorrect API.
+     */
+    ConfirmKeyStoreDetailsAreCorrectResponse confirmKeyStoreDetailsAreCorrect(
+            ConfirmKeyStoreDetailsAreCorrectRequest request);
+
+    /**
      * Converts a non-container database to a pluggable database.
      *
      * @param request The request object containing the details to send

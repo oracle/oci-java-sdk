@@ -14,12 +14,14 @@ import com.oracle.bmc.ConfigFileReader;
 import com.oracle.bmc.Region;
 import com.oracle.bmc.auth.SessionTokenAuthenticationDetailsProvider;
 import com.oracle.bmc.generativeaiinference.GenerativeAiInferenceClient;
-import com.oracle.bmc.generativeaiinference.GenerativeAiInferenceSseHelper;
 import com.oracle.bmc.generativeaiinference.model.*;
 import com.oracle.bmc.generativeaiinference.requests.GenerateTextRequest;
 import com.oracle.bmc.generativeaiinference.responses.GenerateTextResponse;
-import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.retrier.RetryConfiguration;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 
 /**
  * This class provides an example of how to use OCI Generative AI Service to generate text.
@@ -40,7 +42,7 @@ public class GenerateTextExample {
     // TODO: Please update config profile name and use the compartmentId that has policies grant
     // permissions for using Generative AI Service
     private static final String CONFIG_PROFILE = "DEFAULT";
-    private static final String COMPARTMENT_ID = "compartment_id";
+    private static final String COMPARTMENT_ID = "<compartment_id>";
 
     /**
      * The entry point for the example.
@@ -69,13 +71,9 @@ public class GenerateTextExample {
                         .build();
         // Create and add new additional client configurator for sse support by using appropriate
         // reader function
-        SseSupport sseSupport =
-                new SseSupport(GenerativeAiInferenceSseHelper.generateTextResultReader);
-        ClientConfigurator clientConfigurator = sseSupport.getClientConfigurator();
         final GenerativeAiInferenceClient generativeAiInferenceClient =
                 GenerativeAiInferenceClient.builder()
                         .configuration(clientConfiguration)
-                        .additionalClientConfigurator(clientConfigurator)
                         .build(provider);
         generativeAiInferenceClient.setEndpoint(ENDPOINT);
         generativeAiInferenceClient.setRegion(REGION);
@@ -110,13 +108,27 @@ public class GenerateTextExample {
 
         GenerateTextResponse generateTextResponse =
                 generativeAiInferenceClient.generateText(generateTextRequest);
-        CohereLlmInferenceResponse res =
-                (CohereLlmInferenceResponse)
-                        generateTextResponse.getGenerateTextResult().getInferenceResponse();
-        for (GeneratedText genText : res.getGeneratedTexts()) {
-            System.out.print(genText.getText());
+        InputStream is = generateTextResponse.getEventStream();
+        // NOTE : Use try-with-resources or explicitly call is.close() to close the stream. This is
+        // important to avoid the issue mentioned in the link below
+        // https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdktroubleshooting.htm#javasdktroubleshooting_topic_program_hangs_for_an_indefinite_time
+        if (is != null) {
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(is))) {
+                String line;
+                StringBuilder sb = new StringBuilder();
+                while ((line = reader.readLine()) != null) {
+                    sb.append(line);
+                    System.out.println(line);
+                }
+            }
+        } else {
+            CohereLlmInferenceResponse res =
+                    (CohereLlmInferenceResponse)
+                            generateTextResponse.getGenerateTextResult().getInferenceResponse();
+            for (GeneratedText genText : res.getGeneratedTexts()) {
+                System.out.print(genText.getText());
+            }
         }
-
         generativeAiInferenceClient.close();
     }
 }

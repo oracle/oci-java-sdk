@@ -68,6 +68,10 @@ public final class ClientCall<
         RESP_BUILDER extends BmcResponse.Builder<RESP>> {
     private static final String OPC_CLIENT_RETRIES_HEADER = "opc-client-retries";
     private static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
+    private static final String EVENT_STREAM_MEDIA_TYPE = "text/event-stream";
+    private static final String CONTENT_TYPE_HEADER = "Content-Type";
+    private static final String APPLICATION_OCTET_STREAM_TYPE = "application/octet-stream";
+    private static final String APPLICATION_JSON_TYPE = "application/json";
 
     private final HttpClient httpClient;
 
@@ -101,6 +105,7 @@ public final class ClientCall<
     private WaiterScheduler waiterScheduler = WaiterScheduler.UNSUPPORTED;
     private Executor offloadExecutor = null;
     private boolean firstAttempt = true;
+    private BiConsumer<RESP_BUILDER, Object> responseEventStreamHandler;
 
     private ClientCall(HttpClient httpClient) {
         this.httpClient = httpClient;
@@ -213,9 +218,9 @@ public final class ClientCall<
                 // However, it seems like this is only used for PutObjectRequest, which
                 // also sets these manually (they're `in: header` parameters), so we don't need to
                 // do this. These headers aren't overwritten by jax-rs.
-                appendHeader("Content-Type", "application/octet-stream");
+                appendHeader(CONTENT_TYPE_HEADER, APPLICATION_OCTET_STREAM_TYPE);
             } else {
-                appendHeader("Content-Type", "application/json");
+                appendHeader(CONTENT_TYPE_HEADER, APPLICATION_JSON_TYPE);
             }
         }
         if (request.supportsExpect100Continue() && !headers.contains("expect")) {
@@ -545,6 +550,12 @@ public final class ClientCall<
         return this;
     }
 
+    public <RESP_BODY> ClientCall<REQ, RESP, RESP_BUILDER> handleEventStream(
+            BiConsumer<RESP_BUILDER, RESP_BODY> handle) {
+        responseEventStreamHandler = (BiConsumer) handle;
+        return this;
+    }
+
     public <RESP_BODY> ClientCall<REQ, RESP, RESP_BUILDER> handleBody(
             Class<RESP_BODY> type, BiConsumer<RESP_BUILDER, RESP_BODY> handle) {
         responseBodyList = false;
@@ -681,11 +692,24 @@ public final class ClientCall<
         if (responseBodyList) {
             future = rawResponse.listBody(responseBodyUnwrappedType);
         } else {
+            // If the operation supports eventStreams and the returned content-type is
+            // text/event-stream
+            // then use the responseEventStreamHandler and return the response stream
+            if (responseEventStreamHandler != null
+                    && rawResponse.header(CONTENT_TYPE_HEADER).equals(EVENT_STREAM_MEDIA_TYPE)) {
+                future = rawResponse.streamBody();
+                return future.thenApply(
+                        deserialized -> {
+                            responseEventStreamHandler.accept(builder, deserialized);
+                            return finalizeResponse(builder);
+                        });
+            }
             if (responseBodyUnwrappedType == InputStream.class) {
                 future = rawResponse.streamBody();
             } else if (responseBodyUnwrappedType == String.class) {
                 future = rawResponse.textBody();
-                if ("application/json".equalsIgnoreCase(rawResponse.header("Content-Type"))) {
+                if (APPLICATION_JSON_TYPE.equalsIgnoreCase(
+                        rawResponse.header(CONTENT_TYPE_HEADER))) {
                     future =
                             thenApply(
                                     future,
@@ -748,7 +772,7 @@ public final class ClientCall<
         }
         String opcRequestId = response.header(OPC_REQUEST_ID_HEADER);
         String contentType = response.header("content-type");
-        if (contentType == null || !contentType.startsWith("application/json")) {
+        if (contentType == null || !contentType.startsWith(APPLICATION_JSON_TYPE)) {
             CompletionStage<String> responseBody =
                     response.textBody()
                             .exceptionally(
@@ -767,7 +791,7 @@ public final class ClientCall<
                                             "Unknown",
                                             String.format(
                                                     "Unexpected Content-Type: %s instead of %s. Response body: %s",
-                                                    contentType, "application/json", s),
+                                                    contentType, APPLICATION_JSON_TYPE, s),
                                             opcRequestId,
                                             buildServiceDetails())));
         }
