@@ -42,7 +42,8 @@ public final class CreateDatabaseDetails
         "kmsKeyId",
         "kmsKeyVersionId",
         "vaultId",
-        "sidPrefix"
+        "sidPrefix",
+        "keyStoreId"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -60,7 +61,8 @@ public final class CreateDatabaseDetails
             String kmsKeyId,
             String kmsKeyVersionId,
             String vaultId,
-            String sidPrefix) {
+            String sidPrefix,
+            String keyStoreId) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -78,6 +80,7 @@ public final class CreateDatabaseDetails
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.vaultId = vaultId;
         this.sidPrefix = sidPrefix;
+        this.keyStoreId = keyStoreId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -435,6 +438,25 @@ public final class CreateDatabaseDetails
             this.__explicitlySet__.add("sidPrefix");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+        private String keyStoreId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * key store of Oracle Vault.
+         *
+         * @param keyStoreId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreId(String keyStoreId) {
+            this.keyStoreId = keyStoreId;
+            this.__explicitlySet__.add("keyStoreId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -457,7 +479,8 @@ public final class CreateDatabaseDetails
                             this.kmsKeyId,
                             this.kmsKeyVersionId,
                             this.vaultId,
-                            this.sidPrefix);
+                            this.sidPrefix,
+                            this.keyStoreId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -513,6 +536,9 @@ public final class CreateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("sidPrefix")) {
                 this.sidPrefix(model.getSidPrefix());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreId")) {
+                this.keyStoreId(model.getKeyStoreId());
             }
             return this;
         }
@@ -886,6 +912,23 @@ public final class CreateDatabaseDetails
         return sidPrefix;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreId")
+    private final String keyStoreId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
+     * store of Oracle Vault.
+     *
+     * @return the value
+     */
+    public String getKeyStoreId() {
+        return keyStoreId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -918,6 +961,7 @@ public final class CreateDatabaseDetails
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
+        sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(")");
         return sb.toString();
     }
@@ -949,6 +993,7 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
+                && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && super.equals(other);
     }
 
@@ -986,6 +1031,7 @@ public final class CreateDatabaseDetails
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
+        result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

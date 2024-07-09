@@ -361,6 +361,7 @@ public final class KeyStore extends com.oracle.bmc.http.client.internal.Explicit
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Deleted("DELETED"),
+        NeedsAttention("NEEDS_ATTENTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

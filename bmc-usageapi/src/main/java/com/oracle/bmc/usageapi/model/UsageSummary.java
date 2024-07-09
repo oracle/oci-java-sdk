@@ -44,6 +44,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         "timeUsageEnded",
         "computedAmount",
         "computedQuantity",
+        "attributedCost",
+        "attributedUsage",
         "overagesFlag",
         "unitPrice",
         "currency",
@@ -75,6 +77,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
             java.util.Date timeUsageEnded,
             java.math.BigDecimal computedAmount,
             java.math.BigDecimal computedQuantity,
+            String attributedCost,
+            String attributedUsage,
             String overagesFlag,
             java.math.BigDecimal unitPrice,
             String currency,
@@ -105,6 +109,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         this.timeUsageEnded = timeUsageEnded;
         this.computedAmount = computedAmount;
         this.computedQuantity = computedQuantity;
+        this.attributedCost = attributedCost;
+        this.attributedUsage = attributedUsage;
         this.overagesFlag = overagesFlag;
         this.unitPrice = unitPrice;
         this.currency = currency;
@@ -446,6 +452,42 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("computedQuantity");
             return this;
         }
+        /**
+         * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("attributedCost")
+        private String attributedCost;
+
+        /**
+         * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+         *
+         * @param attributedCost the value to set
+         * @return this builder
+         */
+        public Builder attributedCost(String attributedCost) {
+            this.attributedCost = attributedCost;
+            this.__explicitlySet__.add("attributedCost");
+            return this;
+        }
+        /**
+         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of
+         * 0.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("attributedUsage")
+        private String attributedUsage;
+
+        /**
+         * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of
+         * 0.
+         *
+         * @param attributedUsage the value to set
+         * @return this builder
+         */
+        public Builder attributedUsage(String attributedUsage) {
+            this.attributedUsage = attributedUsage;
+            this.__explicitlySet__.add("attributedUsage");
+            return this;
+        }
         /** The SPM OverageFlag. */
         @com.fasterxml.jackson.annotation.JsonProperty("overagesFlag")
         private String overagesFlag;
@@ -580,6 +622,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
                             this.timeUsageEnded,
                             this.computedAmount,
                             this.computedQuantity,
+                            this.attributedCost,
+                            this.attributedUsage,
                             this.overagesFlag,
                             this.unitPrice,
                             this.currency,
@@ -660,6 +704,12 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("computedQuantity")) {
                 this.computedQuantity(model.getComputedQuantity());
+            }
+            if (model.wasPropertyExplicitlySet("attributedCost")) {
+                this.attributedCost(model.getAttributedCost());
+            }
+            if (model.wasPropertyExplicitlySet("attributedUsage")) {
+                this.attributedUsage(model.getAttributedUsage());
             }
             if (model.wasPropertyExplicitlySet("overagesFlag")) {
                 this.overagesFlag(model.getOveragesFlag());
@@ -981,6 +1031,34 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         return computedQuantity;
     }
 
+    /** The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0. */
+    @com.fasterxml.jackson.annotation.JsonProperty("attributedCost")
+    private final String attributedCost;
+
+    /**
+     * The attributed cost with a max value of 9999999999.999999999999 and a minimum value of 0.
+     *
+     * @return the value
+     */
+    public String getAttributedCost() {
+        return attributedCost;
+    }
+
+    /**
+     * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("attributedUsage")
+    private final String attributedUsage;
+
+    /**
+     * The attributed usage with a max value of 9999999999.999999999999 and a minimum value of 0.
+     *
+     * @return the value
+     */
+    public String getAttributedUsage() {
+        return attributedUsage;
+    }
+
     /** The SPM OverageFlag. */
     @com.fasterxml.jackson.annotation.JsonProperty("overagesFlag")
     private final String overagesFlag;
@@ -1109,6 +1187,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", timeUsageEnded=").append(String.valueOf(this.timeUsageEnded));
         sb.append(", computedAmount=").append(String.valueOf(this.computedAmount));
         sb.append(", computedQuantity=").append(String.valueOf(this.computedQuantity));
+        sb.append(", attributedCost=").append(String.valueOf(this.attributedCost));
+        sb.append(", attributedUsage=").append(String.valueOf(this.attributedUsage));
         sb.append(", overagesFlag=").append(String.valueOf(this.overagesFlag));
         sb.append(", unitPrice=").append(String.valueOf(this.unitPrice));
         sb.append(", currency=").append(String.valueOf(this.currency));
@@ -1152,6 +1232,8 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.timeUsageEnded, other.timeUsageEnded)
                 && java.util.Objects.equals(this.computedAmount, other.computedAmount)
                 && java.util.Objects.equals(this.computedQuantity, other.computedQuantity)
+                && java.util.Objects.equals(this.attributedCost, other.attributedCost)
+                && java.util.Objects.equals(this.attributedUsage, other.attributedUsage)
                 && java.util.Objects.equals(this.overagesFlag, other.overagesFlag)
                 && java.util.Objects.equals(this.unitPrice, other.unitPrice)
                 && java.util.Objects.equals(this.currency, other.currency)
@@ -1204,6 +1286,12 @@ public final class UsageSummary extends com.oracle.bmc.http.client.internal.Expl
         result =
                 (result * PRIME)
                         + (this.computedQuantity == null ? 43 : this.computedQuantity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributedCost == null ? 43 : this.attributedCost.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.attributedUsage == null ? 43 : this.attributedUsage.hashCode());
         result = (result * PRIME) + (this.overagesFlag == null ? 43 : this.overagesFlag.hashCode());
         result = (result * PRIME) + (this.unitPrice == null ? 43 : this.unitPrice.hashCode());
         result = (result * PRIME) + (this.currency == null ? 43 : this.currency.hashCode());
