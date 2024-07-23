@@ -29,6 +29,9 @@ package com.oracle.bmc.opsi.model;
             value = AutonomousDatabaseInsightSummary.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MdsMySqlDatabaseInsightSummary.class,
+            name = "MDS_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PeComanagedDatabaseInsightSummary.class,
             name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

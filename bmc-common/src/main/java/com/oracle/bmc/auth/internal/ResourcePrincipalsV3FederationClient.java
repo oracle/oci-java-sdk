@@ -21,6 +21,9 @@ import java.security.KeyPair;
 import java.security.interfaces.RSAPublicKey;
 import java.time.Duration;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -165,14 +168,15 @@ public class ResourcePrincipalsV3FederationClient extends AbstractFederationClie
         GetResourcePrincipalTokenResponse getResourcePrincipalTokenResponse =
                 getResourcePrincipalTokenResponseWrapper.body;
 
-        String opcParentUrlHeader =
-                getResourcePrincipalTokenResponseWrapper.getHeaders().get(OPC_PARENT_RPT_URL_HEADER)
-                                != null
-                        ? getResourcePrincipalTokenResponseWrapper
-                                .getHeaders()
-                                .get(OPC_PARENT_RPT_URL_HEADER)
-                                .get(0)
-                        : null;
+        Map<String, List<String>> headers = getResourcePrincipalTokenResponseWrapper.getHeaders();
+
+        String opcParentUrlHeader = null;
+        if (headers != null && !headers.isEmpty()) {
+            opcParentUrlHeader =
+                    headers.get(OPC_PARENT_RPT_URL_HEADER) != null
+                            ? headers.get(OPC_PARENT_RPT_URL_HEADER).get(0)
+                            : null;
+        }
 
         String servicePrincipalSessionToken =
                 getResourcePrincipalTokenResponse.getServicePrincipalSessionToken();
@@ -233,6 +237,15 @@ public class ResourcePrincipalsV3FederationClient extends AbstractFederationClie
                         new BmcRequest<>(),
                         GetResourcePrincipalTokenResponse.ResponseWrapper.Builder::new)
                 .handleBody(GetResourcePrincipalTokenResponse.class, (w, b) -> w.body = b)
+                .handleResponseHeaderString(
+                        OPC_PARENT_RPT_URL_HEADER,
+                        (responseBuilder, headerValue) -> {
+                            List<String> headerList = new ArrayList<>();
+                            headerList.add(headerValue);
+                            Map<String, List<String>> headersMap = new HashMap<>();
+                            headersMap.put(OPC_PARENT_RPT_URL_HEADER, headerList);
+                            responseBuilder.headers(headersMap);
+                        })
                 .clientConfigurator(clientConfigurator)
                 .circuitBreaker(circuitBreaker);
     }

@@ -3724,6 +3724,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveDataModelSensitiveTypesResponse>
+            listSensitiveDataModelSensitiveTypes(
+                    ListSensitiveDataModelSensitiveTypesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListSensitiveDataModelSensitiveTypesRequest,
+                                    ListSensitiveDataModelSensitiveTypesResponse>
+                            handler);
+
+    /**
      * Gets a list of sensitive data models based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -4675,9 +4693,11 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Removes the baseline setting for the saved security assessment. The saved security assessment
-     * is no longer considered a baseline. Sets the if-match parameter to the value of the etag from
-     * a previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved security assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved security assessments pertaining to the baseline assessment OCID provided in the path
+     * will be removed. Sets the if-match parameter to the value of the etag from a previous GET or
+     * POST response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4695,9 +4715,11 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Removes the baseline setting for the saved user assessment. The saved user assessment is no
-     * longer considered a baseline. Sets the if-match parameter to the value of the etag from a
-     * previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved user assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved user assessments pertaining to the baseline assessment OCID provided in the path will
+     * be removed. Sets the if-match parameter to the value of the etag from a previous GET or POST
+     * response for that resource.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

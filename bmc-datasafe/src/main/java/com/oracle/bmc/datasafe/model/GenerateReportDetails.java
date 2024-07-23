@@ -119,12 +119,12 @@ public final class GenerateReportDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Specifies the format of report to be .xls or .pdf */
+        /** Specifies the format of report to be .xls or .pdf or .json */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be .xls or .pdf
+         * Specifies the format of report to be .xls or .pdf or .json
          *
          * @param mimeType the value to set
          * @return this builder
@@ -295,7 +295,7 @@ public final class GenerateReportDetails
         return compartmentId;
     }
 
-    /** Specifies the format of report to be .xls or .pdf */
+    /** Specifies the format of report to be .xls or .pdf or .json */
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -328,12 +328,12 @@ public final class GenerateReportDetails
             throw new IllegalArgumentException("Invalid MimeType: " + key);
         }
     };
-    /** Specifies the format of report to be .xls or .pdf */
+    /** Specifies the format of report to be .xls or .pdf or .json */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be .xls or .pdf
+     * Specifies the format of report to be .xls or .pdf or .json
      *
      * @return the value
      */

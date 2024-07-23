@@ -1225,6 +1225,42 @@ public interface OperationsInsights extends AutoCloseable {
     IngestHostMetricsResponse ingestHostMetrics(IngestHostMetricsRequest request);
 
     /**
+     * The MySql SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest
+     * pipeline. Either databaseId or id must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestMySqlSqlStatsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestMySqlSqlStats
+     *     API.
+     */
+    IngestMySqlSqlStatsResponse ingestMySqlSqlStats(IngestMySqlSqlStatsRequest request);
+
+    /**
+     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest
+     * pipeline. Either databaseId or id must be specified. Disclaimer: SQL text being uploaded
+     * explicitly via APIs is already masked. All sensitive literals contained in the sqlFullText
+     * column are masked prior to ingestion.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/opsi/IngestMySqlSqlTextExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use IngestMySqlSqlText
+     *     API.
+     */
+    IngestMySqlSqlTextResponse ingestMySqlSqlText(IngestMySqlSqlTextRequest request);
+
+    /**
      * The sqlbucket endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *

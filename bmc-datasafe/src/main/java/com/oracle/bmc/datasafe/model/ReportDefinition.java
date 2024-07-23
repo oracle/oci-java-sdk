@@ -447,12 +447,12 @@ public final class ReportDefinition
             this.__explicitlySet__.add("schedule");
             return this;
         }
-        /** Specifies the format of the report ( either .xls or .pdf ) */
+        /** Specifies the format of the report ( either .xls or .pdf or .json) */
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of the report ( either .xls or .pdf )
+         * Specifies the format of the report ( either .xls or .pdf or .json)
          *
          * @param scheduledReportMimeType the value to set
          * @return this builder
@@ -1108,7 +1108,7 @@ public final class ReportDefinition
         return schedule;
     }
 
-    /** Specifies the format of the report ( either .xls or .pdf ) */
+    /** Specifies the format of the report ( either .xls or .pdf or .json) */
     public enum ScheduledReportMimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -1154,12 +1154,12 @@ public final class ReportDefinition
             return UnknownEnumValue;
         }
     };
-    /** Specifies the format of the report ( either .xls or .pdf ) */
+    /** Specifies the format of the report ( either .xls or .pdf or .json) */
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      *
      * @return the value
      */

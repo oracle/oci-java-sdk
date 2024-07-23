@@ -197,6 +197,13 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
     public AccessLevel getAccessLevel() {
         return accessLevel;
     }
+    /** A filter to return only items related to a specific target OCID. */
+    private String targetId;
+
+    /** A filter to return only items related to a specific target OCID. */
+    public String getTargetId() {
+        return targetId;
+    }
     /**
      * Each finding in security assessment has an associated key (think of key as a finding's name).
      * For a given finding, the key will be the same across targets. The user can use these keys to
@@ -389,6 +396,20 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
+        /** A filter to return only items related to a specific target OCID. */
+        private String targetId = null;
+
+        /**
+         * A filter to return only items related to a specific target OCID.
+         *
+         * @param targetId the value to set
+         * @return this builder instance
+         */
+        public Builder targetId(String targetId) {
+            this.targetId = targetId;
+            return this;
+        }
+
         /**
          * Each finding in security assessment has an associated key (think of key as a finding's
          * name). For a given finding, the key will be the same across targets. The user can use
@@ -449,6 +470,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             page(o.getPage());
             compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             accessLevel(o.getAccessLevel());
+            targetId(o.getTargetId());
             findingKey(o.getFindingKey());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -494,11 +516,12 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.page = page;
             request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.accessLevel = accessLevel;
+            request.targetId = targetId;
             request.findingKey = findingKey;
             return request;
             // new ListFindingsRequest(securityAssessmentId, opcRequestId, isTopFinding, severity,
             // lifecycleState, references, limit, page, compartmentIdInSubtree, accessLevel,
-            // findingKey);
+            // targetId, findingKey);
         }
     }
 
@@ -519,6 +542,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .page(page)
                 .compartmentIdInSubtree(compartmentIdInSubtree)
                 .accessLevel(accessLevel)
+                .targetId(targetId)
                 .findingKey(findingKey);
     }
 
@@ -546,6 +570,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",accessLevel=").append(String.valueOf(this.accessLevel));
+        sb.append(",targetId=").append(String.valueOf(this.targetId));
         sb.append(",findingKey=").append(String.valueOf(this.findingKey));
         sb.append(")");
         return sb.toString();
@@ -573,6 +598,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(
                         this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.accessLevel, other.accessLevel)
+                && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.findingKey, other.findingKey);
     }
 
@@ -600,6 +626,7 @@ public class ListFindingsRequest extends com.oracle.bmc.requests.BmcRequest<java
                                 ? 43
                                 : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.accessLevel == null ? 43 : this.accessLevel.hashCode());
+        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.findingKey == null ? 43 : this.findingKey.hashCode());
         return result;
     }

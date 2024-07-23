@@ -46,6 +46,7 @@ public final class SecurityAssessment
         "scheduleSecurityAssessmentId",
         "triggeredBy",
         "description",
+        "isAssessmentScheduled",
         "schedule",
         "link",
         "type",
@@ -73,6 +74,7 @@ public final class SecurityAssessment
             String scheduleSecurityAssessmentId,
             TriggeredBy triggeredBy,
             String description,
+            Boolean isAssessmentScheduled,
             String schedule,
             String link,
             Type type,
@@ -99,6 +101,7 @@ public final class SecurityAssessment
         this.scheduleSecurityAssessmentId = scheduleSecurityAssessmentId;
         this.triggeredBy = triggeredBy;
         this.description = description;
+        this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.link = link;
         this.type = type;
@@ -408,6 +411,21 @@ public final class SecurityAssessment
             this.__explicitlySet__.add("description");
             return this;
         }
+        /** Indicates whether the assessment is scheduled to run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+        private Boolean isAssessmentScheduled;
+
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         *
+         * @param isAssessmentScheduled the value to set
+         * @return this builder
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            this.__explicitlySet__.add("isAssessmentScheduled");
+            return this;
+        }
         /**
          * Schedule to save the assessment periodically in the specified format:
          * <version-string>;<version-specific-schedule>
@@ -607,6 +625,7 @@ public final class SecurityAssessment
                             this.scheduleSecurityAssessmentId,
                             this.triggeredBy,
                             this.description,
+                            this.isAssessmentScheduled,
                             this.schedule,
                             this.link,
                             this.type,
@@ -675,6 +694,9 @@ public final class SecurityAssessment
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
+                this.isAssessmentScheduled(model.getIsAssessmentScheduled());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -1014,6 +1036,19 @@ public final class SecurityAssessment
         return description;
     }
 
+    /** Indicates whether the assessment is scheduled to run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+    private final Boolean isAssessmentScheduled;
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     *
+     * @return the value
+     */
+    public Boolean getIsAssessmentScheduled() {
+        return isAssessmentScheduled;
+    }
+
     /**
      * Schedule to save the assessment periodically in the specified format:
      * <version-string>;<version-specific-schedule>
@@ -1263,6 +1298,7 @@ public final class SecurityAssessment
                 .append(String.valueOf(this.scheduleSecurityAssessmentId));
         sb.append(", triggeredBy=").append(String.valueOf(this.triggeredBy));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", link=").append(String.valueOf(this.link));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -1305,6 +1341,7 @@ public final class SecurityAssessment
                         this.scheduleSecurityAssessmentId, other.scheduleSecurityAssessmentId)
                 && java.util.Objects.equals(this.triggeredBy, other.triggeredBy)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.link, other.link)
                 && java.util.Objects.equals(this.type, other.type)
@@ -1365,6 +1402,11 @@ public final class SecurityAssessment
                                 : this.scheduleSecurityAssessmentId.hashCode());
         result = (result * PRIME) + (this.triggeredBy == null ? 43 : this.triggeredBy.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentScheduled == null
+                                ? 43
+                                : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.link == null ? 43 : this.link.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());

@@ -2598,6 +2598,75 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public IngestMySqlSqlStatsResponse ingestMySqlSqlStats(IngestMySqlSqlStatsRequest request) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlStatsDetails(), "ingestMySqlSqlStatsDetails is required");
+
+        return clientCall(request, IngestMySqlSqlStatsResponse::builder)
+                .logger(LOG, "ingestMySqlSqlStats")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlStats",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlStats")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlStatsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlStatsMetric")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlStatsResponseDetails.class,
+                        IngestMySqlSqlStatsResponse.Builder::ingestMySqlSqlStatsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlStatsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlStatsResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public IngestMySqlSqlTextResponse ingestMySqlSqlText(IngestMySqlSqlTextRequest request) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlTextDetails(), "ingestMySqlSqlTextDetails is required");
+
+        return clientCall(request, IngestMySqlSqlTextResponse::builder)
+                .logger(LOG, "ingestMySqlSqlText")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlText",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlText")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlTextRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlText")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlTextResponseDetails.class,
+                        IngestMySqlSqlTextResponse.Builder::ingestMySqlSqlTextResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlTextResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public IngestSqlBucketResponse ingestSqlBucket(IngestSqlBucketRequest request) {
         Objects.requireNonNull(
                 request.getIngestSqlBucketDetails(), "ingestSqlBucketDetails is required");
@@ -7252,6 +7321,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .appendQueryParam("mountPoint", request.getMountPoint())
                 .appendQueryParam("interfaceName", request.getInterfaceName())
+                .appendQueryParam("gpuId", request.getGpuId())
                 .appendListQueryParam(
                         "status",
                         request.getStatus(),

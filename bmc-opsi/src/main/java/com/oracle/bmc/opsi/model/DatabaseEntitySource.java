@@ -12,6 +12,7 @@ package com.oracle.bmc.opsi.model;
 public enum DatabaseEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     EmManagedExternalDatabase("EM_MANAGED_EXTERNAL_DATABASE"),
     PeComanagedDatabase("PE_COMANAGED_DATABASE"),
+    MdsMysqlDatabaseSystem("MDS_MYSQL_DATABASE_SYSTEM"),
     ;
 
     private final String value;

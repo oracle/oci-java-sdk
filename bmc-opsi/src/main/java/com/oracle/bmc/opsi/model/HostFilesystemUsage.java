@@ -69,6 +69,15 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("fileSystemAvailInGBs")
+        private Double fileSystemAvailInGBs;
+
+        public Builder fileSystemAvailInGBs(Double fileSystemAvailInGBs) {
+            this.fileSystemAvailInGBs = fileSystemAvailInGBs;
+            this.__explicitlySet__.add("fileSystemAvailInGBs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -78,7 +87,8 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
                             this.timeCollected,
                             this.mountPoint,
                             this.fileSystemUsageInGB,
-                            this.fileSystemAvailInPercent);
+                            this.fileSystemAvailInPercent,
+                            this.fileSystemAvailInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -99,6 +109,9 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
             if (model.wasPropertyExplicitlySet("fileSystemAvailInPercent")) {
                 this.fileSystemAvailInPercent(model.getFileSystemAvailInPercent());
             }
+            if (model.wasPropertyExplicitlySet("fileSystemAvailInGBs")) {
+                this.fileSystemAvailInGBs(model.getFileSystemAvailInGBs());
+            }
             return this;
         }
     }
@@ -117,11 +130,13 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
             java.util.Date timeCollected,
             String mountPoint,
             Double fileSystemUsageInGB,
-            Double fileSystemAvailInPercent) {
+            Double fileSystemAvailInPercent,
+            Double fileSystemAvailInGBs) {
         super(timeCollected);
         this.mountPoint = mountPoint;
         this.fileSystemUsageInGB = fileSystemUsageInGB;
         this.fileSystemAvailInPercent = fileSystemAvailInPercent;
+        this.fileSystemAvailInGBs = fileSystemAvailInGBs;
     }
 
     /** Mount points are specialized NTFS filesystem objects */
@@ -151,6 +166,13 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
         return fileSystemAvailInPercent;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("fileSystemAvailInGBs")
+    private final Double fileSystemAvailInGBs;
+
+    public Double getFileSystemAvailInGBs() {
+        return fileSystemAvailInGBs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -170,6 +192,7 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
         sb.append(", fileSystemUsageInGB=").append(String.valueOf(this.fileSystemUsageInGB));
         sb.append(", fileSystemAvailInPercent=")
                 .append(String.valueOf(this.fileSystemAvailInPercent));
+        sb.append(", fileSystemAvailInGBs=").append(String.valueOf(this.fileSystemAvailInGBs));
         sb.append(")");
         return sb.toString();
     }
@@ -188,6 +211,7 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
                 && java.util.Objects.equals(this.fileSystemUsageInGB, other.fileSystemUsageInGB)
                 && java.util.Objects.equals(
                         this.fileSystemAvailInPercent, other.fileSystemAvailInPercent)
+                && java.util.Objects.equals(this.fileSystemAvailInGBs, other.fileSystemAvailInGBs)
                 && super.equals(other);
     }
 
@@ -206,6 +230,11 @@ public final class HostFilesystemUsage extends HostPerformanceMetricGroup {
                         + (this.fileSystemAvailInPercent == null
                                 ? 43
                                 : this.fileSystemAvailInPercent.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fileSystemAvailInGBs == null
+                                ? 43
+                                : this.fileSystemAvailInGBs.hashCode());
         return result;
     }
 }

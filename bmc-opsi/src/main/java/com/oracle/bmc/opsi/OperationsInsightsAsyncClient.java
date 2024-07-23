@@ -2781,6 +2781,81 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<IngestMySqlSqlStatsResponse> ingestMySqlSqlStats(
+            IngestMySqlSqlStatsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlStatsRequest, IngestMySqlSqlStatsResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlStatsDetails(), "ingestMySqlSqlStatsDetails is required");
+
+        return clientCall(request, IngestMySqlSqlStatsResponse::builder)
+                .logger(LOG, "ingestMySqlSqlStats")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlStats",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlStats")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlStatsRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlStatsMetric")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlStatsResponseDetails.class,
+                        IngestMySqlSqlStatsResponse.Builder::ingestMySqlSqlStatsResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlStatsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlStatsResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<IngestMySqlSqlTextResponse> ingestMySqlSqlText(
+            IngestMySqlSqlTextRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlTextRequest, IngestMySqlSqlTextResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getIngestMySqlSqlTextDetails(), "ingestMySqlSqlTextDetails is required");
+
+        return clientCall(request, IngestMySqlSqlTextResponse::builder)
+                .logger(LOG, "ingestMySqlSqlText")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "IngestMySqlSqlText",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/IngestMySqlSqlText")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(IngestMySqlSqlTextRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("ingestMySqlSqlText")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.opsi.model.IngestMySqlSqlTextResponseDetails.class,
+                        IngestMySqlSqlTextResponse.Builder::ingestMySqlSqlTextResponseDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", IngestMySqlSqlTextResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", IngestMySqlSqlTextResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<IngestSqlBucketResponse> ingestSqlBucket(
             IngestSqlBucketRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -7704,6 +7779,7 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                 .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .appendQueryParam("mountPoint", request.getMountPoint())
                 .appendQueryParam("interfaceName", request.getInterfaceName())
+                .appendQueryParam("gpuId", request.getGpuId())
                 .appendListQueryParam(
                         "status",
                         request.getStatus(),

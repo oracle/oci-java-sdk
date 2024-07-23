@@ -338,6 +338,8 @@ public final class SummarizeHostInsightResourceForecastTrendAggregation
         LogicalMemory("LOGICAL_MEMORY"),
         Storage("STORAGE"),
         Network("NETWORK"),
+        GpuUtilization("GPU_UTILIZATION"),
+        GpuMemoryUsage("GPU_MEMORY_USAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

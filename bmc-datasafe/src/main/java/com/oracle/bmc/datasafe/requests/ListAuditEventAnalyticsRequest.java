@@ -153,7 +153,7 @@ public class ListAuditEventAnalyticsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+     * <p>*Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
      */
     private String scimQuery;
 
@@ -165,7 +165,7 @@ public class ListAuditEventAnalyticsRequest
      * date and time values using ISO-8601 format. (Numeric and boolean values should not be
      * quoted.)
      *
-     * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+     * <p>*Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
      */
     public String getScimQuery() {
         return scimQuery;
@@ -607,7 +607,7 @@ public class ListAuditEventAnalyticsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+         * <p>*Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
          */
         private String scimQuery = null;
 
@@ -619,7 +619,7 @@ public class ListAuditEventAnalyticsRequest
          * marks, with date and time values using ISO-8601 format. (Numeric and boolean values
          * should not be quoted.)
          *
-         * <p>*Example:** query=(operationTime ge '2021-06-04T01-00-26') and (eventName eq 'LOGON')
+         * <p>*Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
          *
          * @param scimQuery the value to set
          * @return this builder instance

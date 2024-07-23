@@ -5917,6 +5917,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("targetId", request.getTargetId())
                 .appendQueryParam("findingKey", request.getFindingKey())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -6755,6 +6756,10 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("reportDefinitionId", request.getReportDefinitionId())
+                .appendQueryParam(
+                        "timeGeneratedGreaterThanOrEqualTo",
+                        request.getTimeGeneratedGreaterThanOrEqualTo())
+                .appendQueryParam("timeGeneratedLessThan", request.getTimeGeneratedLessThan())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("type", request.getType())
                 .accept("application/json")
@@ -7330,6 +7335,50 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListSensitiveColumnsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListSensitiveColumnsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSensitiveDataModelSensitiveTypesResponse listSensitiveDataModelSensitiveTypes(
+            ListSensitiveDataModelSensitiveTypesRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListSensitiveDataModelSensitiveTypesResponse::builder)
+                .logger(LOG, "listSensitiveDataModelSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveDataModelSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveDataModelSensitiveTypeCollection/ListSensitiveDataModelSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveDataModelSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("sensitiveTypes")
+                .appendQueryParam("sensitiveTypeId", request.getSensitiveTypeId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeCollection
+                                .class,
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder
+                                ::sensitiveDataModelSensitiveTypeCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListSensitiveDataModelSensitiveTypesResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -9266,6 +9315,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UnsetSecurityAssessmentBaselineResponse.Builder::opcWorkRequestId)
@@ -9299,6 +9349,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
+                .hasBody()
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UnsetUserAssessmentBaselineResponse.Builder::opcWorkRequestId)
