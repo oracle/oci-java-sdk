@@ -38,6 +38,15 @@ package com.oracle.bmc.database.model;
 public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAutonomousDatabaseBase {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
@@ -197,6 +206,15 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
             return this;
         }
 
@@ -547,6 +565,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
         public CreateCrossTenancyDisasterRecoveryDetails build() {
             CreateCrossTenancyDisasterRecoveryDetails model =
                     new CreateCrossTenancyDisasterRecoveryDetails(
+                            this.subscriptionId,
                             this.compartmentId,
                             this.characterSet,
                             this.ncharacterSet,
@@ -565,6 +584,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                             this.adminPassword,
                             this.displayName,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isPreviewVersionWithServiceTermsAccepted,
                             this.isAutoScalingEnabled,
                             this.isDevTier,
@@ -606,6 +626,9 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateCrossTenancyDisasterRecoveryDetails model) {
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
+            }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
@@ -659,6 +682,9 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
             }
             if (model.wasPropertyExplicitlySet("isPreviewVersionWithServiceTermsAccepted")) {
                 this.isPreviewVersionWithServiceTermsAccepted(
@@ -776,6 +802,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
 
     @Deprecated
     public CreateCrossTenancyDisasterRecoveryDetails(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -794,6 +821,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
             Boolean isDevTier,
@@ -828,6 +856,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
             DisasterRecoveryConfiguration.DisasterRecoveryType disasterRecoveryType,
             Boolean isReplicateAutomaticBackups) {
         super(
+                subscriptionId,
                 compartmentId,
                 characterSet,
                 ncharacterSet,
@@ -846,6 +875,7 @@ public final class CreateCrossTenancyDisasterRecoveryDetails extends CreateAuton
                 adminPassword,
                 displayName,
                 licenseModel,
+                byolComputeCountLimit,
                 isPreviewVersionWithServiceTermsAccepted,
                 isAutoScalingEnabled,
                 isDevTier,

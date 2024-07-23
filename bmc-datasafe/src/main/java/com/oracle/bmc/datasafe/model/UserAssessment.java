@@ -36,6 +36,7 @@ public final class UserAssessment
         "lifecycleState",
         "lifecycleDetails",
         "scheduleAssessmentId",
+        "isAssessmentScheduled",
         "schedule",
         "statistics",
         "targetIds",
@@ -61,6 +62,7 @@ public final class UserAssessment
             UserAssessmentLifecycleState lifecycleState,
             String lifecycleDetails,
             String scheduleAssessmentId,
+            Boolean isAssessmentScheduled,
             String schedule,
             java.util.Map<String, java.util.Map<String, Object>> statistics,
             java.util.List<String> targetIds,
@@ -85,6 +87,7 @@ public final class UserAssessment
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.scheduleAssessmentId = scheduleAssessmentId;
+        this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.statistics = statistics;
         this.targetIds = targetIds;
@@ -298,6 +301,21 @@ public final class UserAssessment
         public Builder scheduleAssessmentId(String scheduleAssessmentId) {
             this.scheduleAssessmentId = scheduleAssessmentId;
             this.__explicitlySet__.add("scheduleAssessmentId");
+            return this;
+        }
+        /** Indicates whether the assessment is scheduled to run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+        private Boolean isAssessmentScheduled;
+
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         *
+         * @param isAssessmentScheduled the value to set
+         * @return this builder
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            this.__explicitlySet__.add("isAssessmentScheduled");
             return this;
         }
         /**
@@ -575,6 +593,7 @@ public final class UserAssessment
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.scheduleAssessmentId,
+                            this.isAssessmentScheduled,
                             this.schedule,
                             this.statistics,
                             this.targetIds,
@@ -629,6 +648,9 @@ public final class UserAssessment
             }
             if (model.wasPropertyExplicitlySet("scheduleAssessmentId")) {
                 this.scheduleAssessmentId(model.getScheduleAssessmentId());
+            }
+            if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
+                this.isAssessmentScheduled(model.getIsAssessmentScheduled());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -846,6 +868,19 @@ public final class UserAssessment
      */
     public String getScheduleAssessmentId() {
         return scheduleAssessmentId;
+    }
+
+    /** Indicates whether the assessment is scheduled to run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+    private final Boolean isAssessmentScheduled;
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     *
+     * @return the value
+     */
+    public Boolean getIsAssessmentScheduled() {
+        return isAssessmentScheduled;
     }
 
     /**
@@ -1209,6 +1244,7 @@ public final class UserAssessment
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", scheduleAssessmentId=").append(String.valueOf(this.scheduleAssessmentId));
+        sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", statistics=").append(String.valueOf(this.statistics));
         sb.append(", targetIds=").append(String.valueOf(this.targetIds));
@@ -1248,6 +1284,7 @@ public final class UserAssessment
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.scheduleAssessmentId, other.scheduleAssessmentId)
+                && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.statistics, other.statistics)
                 && java.util.Objects.equals(this.targetIds, other.targetIds)
@@ -1302,6 +1339,11 @@ public final class UserAssessment
                         + (this.scheduleAssessmentId == null
                                 ? 43
                                 : this.scheduleAssessmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentScheduled == null
+                                ? 43
+                                : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.statistics == null ? 43 : this.statistics.hashCode());
         result = (result * PRIME) + (this.targetIds == null ? 43 : this.targetIds.hashCode());

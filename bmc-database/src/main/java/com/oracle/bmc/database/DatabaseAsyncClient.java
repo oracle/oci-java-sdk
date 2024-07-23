@@ -567,6 +567,48 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>
+            changeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSubscriptionRequest,
+                                    ChangeAutonomousDatabaseSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseSubscriptionDetails(),
+                "changeAutonomousDatabaseSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ChangeAutonomousDatabaseSubscriptionResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAutonomousExadataInfrastructureCompartmentResponse>
             changeAutonomousExadataInfrastructureCompartment(
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request,
@@ -787,6 +829,50 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCloudExadataInfrastructureSubscriptionResponse>
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCloudExadataInfrastructureSubscriptionDetails(),
+                "changeCloudExadataInfrastructureSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+
+        return clientCall(request, ChangeCloudExadataInfrastructureSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudExadataInfrastructureSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudExadataInfrastructureSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudVmClusterCompartmentResponse>
             changeCloudVmClusterCompartment(
                     ChangeCloudVmClusterCompartmentRequest request,
@@ -824,6 +910,47 @@ public class DatabaseAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCloudVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>
+            changeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterSubscriptionRequest,
+                                    ChangeCloudVmClusterSubscriptionResponse>
+                            handler) {
+        Objects.requireNonNull(
+                request.getChangeCloudVmClusterSubscriptionDetails(),
+                "changeCloudVmClusterSubscriptionDetails is required");
+
+        Validate.notBlank(request.getCloudVmClusterId(), "cloudVmClusterId must not be blank");
+
+        return clientCall(request, ChangeCloudVmClusterSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudVmClusterSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudVmClusterSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudVmClusters")
+                .appendPathParam(request.getCloudVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

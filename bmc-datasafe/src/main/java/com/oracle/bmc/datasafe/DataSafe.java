@@ -3736,6 +3736,23 @@ public interface DataSafe extends AutoCloseable {
     ListSensitiveColumnsResponse listSensitiveColumns(ListSensitiveColumnsRequest request);
 
     /**
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveDataModelSensitiveTypesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSensitiveDataModelSensitiveTypes API.
+     */
+    ListSensitiveDataModelSensitiveTypesResponse listSensitiveDataModelSensitiveTypes(
+            ListSensitiveDataModelSensitiveTypesRequest request);
+
+    /**
      * Gets a list of sensitive data models based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -4691,9 +4708,11 @@ public interface DataSafe extends AutoCloseable {
     SuspendWorkRequestResponse suspendWorkRequest(SuspendWorkRequestRequest request);
 
     /**
-     * Removes the baseline setting for the saved security assessment. The saved security assessment
-     * is no longer considered a baseline. Sets the if-match parameter to the value of the etag from
-     * a previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved security assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved security assessments pertaining to the baseline assessment OCID provided in the path
+     * will be removed. Sets the if-match parameter to the value of the etag from a previous GET or
+     * POST response for that resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4710,9 +4729,11 @@ public interface DataSafe extends AutoCloseable {
             UnsetSecurityAssessmentBaselineRequest request);
 
     /**
-     * Removes the baseline setting for the saved user assessment. The saved user assessment is no
-     * longer considered a baseline. Sets the if-match parameter to the value of the etag from a
-     * previous GET or POST response for that resource.
+     * Removes the baseline setting for the saved user assessment associated with the targetId
+     * passed via body. If no body or empty body is passed then the baseline settings of all the
+     * saved user assessments pertaining to the baseline assessment OCID provided in the path will
+     * be removed. Sets the if-match parameter to the value of the etag from a previous GET or POST
+     * response for that resource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

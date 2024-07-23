@@ -43,13 +43,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
     /**
      * A filter to return only monitors that match the given monitor type. Supported values are
-     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      */
     private String monitorType;
 
     /**
      * A filter to return only monitors that match the given monitor type. Supported values are
-     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+     * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
      */
     public String getMonitorType() {
         return monitorType;
@@ -249,13 +249,13 @@ public class ListMonitorsRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * A filter to return only monitors that match the given monitor type. Supported values are
-         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
          */
         private String monitorType = null;
 
         /**
          * A filter to return only monitors that match the given monitor type. Supported values are
-         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST and NETWORK.
+         * SCRIPTED_BROWSER, BROWSER, SCRIPTED_REST, REST, NETWORK, DNS, FTP and SQL.
          *
          * @param monitorType the value to set
          * @return this builder instance

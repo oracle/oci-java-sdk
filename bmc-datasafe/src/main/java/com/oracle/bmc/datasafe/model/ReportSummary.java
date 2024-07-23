@@ -122,12 +122,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** Specifies the format of report to be .xls or .pdf. */
+        /** Specifies the format of report to be .xls or .pdf or .json. */
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies the format of report to be .xls or .pdf.
+         * Specifies the format of report to be .xls or .pdf or .json.
          *
          * @param mimeType the value to set
          * @return this builder
@@ -372,7 +372,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
         return description;
     }
 
-    /** Specifies the format of report to be .xls or .pdf. */
+    /** Specifies the format of report to be .xls or .pdf or .json. */
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
@@ -418,12 +418,12 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
             return UnknownEnumValue;
         }
     };
-    /** Specifies the format of report to be .xls or .pdf. */
+    /** Specifies the format of report to be .xls or .pdf or .json. */
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies the format of report to be .xls or .pdf.
+     * Specifies the format of report to be .xls or .pdf or .json.
      *
      * @return the value
      */

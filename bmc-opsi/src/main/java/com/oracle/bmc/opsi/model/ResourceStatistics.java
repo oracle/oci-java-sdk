@@ -31,7 +31,9 @@ public final class ResourceStatistics
         "utilizationPercent",
         "usageChangePercent",
         "instanceMetrics",
-        "totalHostCapacity"
+        "totalHostCapacity",
+        "isHeatWaveClusterAttached",
+        "isHighlyAvailable"
     })
     public ResourceStatistics(
             Double usage,
@@ -41,7 +43,9 @@ public final class ResourceStatistics
             Double utilizationPercent,
             Double usageChangePercent,
             java.util.List<InstanceMetrics> instanceMetrics,
-            Double totalHostCapacity) {
+            Double totalHostCapacity,
+            Boolean isHeatWaveClusterAttached,
+            Boolean isHighlyAvailable) {
         super();
         this.usage = usage;
         this.capacity = capacity;
@@ -51,6 +55,8 @@ public final class ResourceStatistics
         this.usageChangePercent = usageChangePercent;
         this.instanceMetrics = instanceMetrics;
         this.totalHostCapacity = totalHostCapacity;
+        this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+        this.isHighlyAvailable = isHighlyAvailable;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -191,6 +197,36 @@ public final class ResourceStatistics
             this.__explicitlySet__.add("totalHostCapacity");
             return this;
         }
+        /** Specifies if MYSQL DB System has heatwave cluster attached. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+        private Boolean isHeatWaveClusterAttached;
+
+        /**
+         * Specifies if MYSQL DB System has heatwave cluster attached.
+         *
+         * @param isHeatWaveClusterAttached the value to set
+         * @return this builder
+         */
+        public Builder isHeatWaveClusterAttached(Boolean isHeatWaveClusterAttached) {
+            this.isHeatWaveClusterAttached = isHeatWaveClusterAttached;
+            this.__explicitlySet__.add("isHeatWaveClusterAttached");
+            return this;
+        }
+        /** Specifies if MYSQL DB System is highly available. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+        private Boolean isHighlyAvailable;
+
+        /**
+         * Specifies if MYSQL DB System is highly available.
+         *
+         * @param isHighlyAvailable the value to set
+         * @return this builder
+         */
+        public Builder isHighlyAvailable(Boolean isHighlyAvailable) {
+            this.isHighlyAvailable = isHighlyAvailable;
+            this.__explicitlySet__.add("isHighlyAvailable");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -205,7 +241,9 @@ public final class ResourceStatistics
                             this.utilizationPercent,
                             this.usageChangePercent,
                             this.instanceMetrics,
-                            this.totalHostCapacity);
+                            this.totalHostCapacity,
+                            this.isHeatWaveClusterAttached,
+                            this.isHighlyAvailable);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -237,6 +275,12 @@ public final class ResourceStatistics
             }
             if (model.wasPropertyExplicitlySet("totalHostCapacity")) {
                 this.totalHostCapacity(model.getTotalHostCapacity());
+            }
+            if (model.wasPropertyExplicitlySet("isHeatWaveClusterAttached")) {
+                this.isHeatWaveClusterAttached(model.getIsHeatWaveClusterAttached());
+            }
+            if (model.wasPropertyExplicitlySet("isHighlyAvailable")) {
+                this.isHighlyAvailable(model.getIsHighlyAvailable());
             }
             return this;
         }
@@ -369,6 +413,32 @@ public final class ResourceStatistics
         return totalHostCapacity;
     }
 
+    /** Specifies if MYSQL DB System has heatwave cluster attached. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHeatWaveClusterAttached")
+    private final Boolean isHeatWaveClusterAttached;
+
+    /**
+     * Specifies if MYSQL DB System has heatwave cluster attached.
+     *
+     * @return the value
+     */
+    public Boolean getIsHeatWaveClusterAttached() {
+        return isHeatWaveClusterAttached;
+    }
+
+    /** Specifies if MYSQL DB System is highly available. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isHighlyAvailable")
+    private final Boolean isHighlyAvailable;
+
+    /**
+     * Specifies if MYSQL DB System is highly available.
+     *
+     * @return the value
+     */
+    public Boolean getIsHighlyAvailable() {
+        return isHighlyAvailable;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -392,6 +462,9 @@ public final class ResourceStatistics
         sb.append(", usageChangePercent=").append(String.valueOf(this.usageChangePercent));
         sb.append(", instanceMetrics=").append(String.valueOf(this.instanceMetrics));
         sb.append(", totalHostCapacity=").append(String.valueOf(this.totalHostCapacity));
+        sb.append(", isHeatWaveClusterAttached=")
+                .append(String.valueOf(this.isHeatWaveClusterAttached));
+        sb.append(", isHighlyAvailable=").append(String.valueOf(this.isHighlyAvailable));
         sb.append(")");
         return sb.toString();
     }
@@ -414,6 +487,9 @@ public final class ResourceStatistics
                 && java.util.Objects.equals(this.usageChangePercent, other.usageChangePercent)
                 && java.util.Objects.equals(this.instanceMetrics, other.instanceMetrics)
                 && java.util.Objects.equals(this.totalHostCapacity, other.totalHostCapacity)
+                && java.util.Objects.equals(
+                        this.isHeatWaveClusterAttached, other.isHeatWaveClusterAttached)
+                && java.util.Objects.equals(this.isHighlyAvailable, other.isHighlyAvailable)
                 && super.equals(other);
     }
 
@@ -445,6 +521,14 @@ public final class ResourceStatistics
         result =
                 (result * PRIME)
                         + (this.totalHostCapacity == null ? 43 : this.totalHostCapacity.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHeatWaveClusterAttached == null
+                                ? 43
+                                : this.isHeatWaveClusterAttached.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isHighlyAvailable == null ? 43 : this.isHighlyAvailable.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

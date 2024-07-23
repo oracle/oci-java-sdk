@@ -62,6 +62,7 @@ public class CreateAutonomousDatabaseBase
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "subscriptionId",
         "compartmentId",
         "characterSet",
         "ncharacterSet",
@@ -80,6 +81,7 @@ public class CreateAutonomousDatabaseBase
         "adminPassword",
         "displayName",
         "licenseModel",
+        "byolComputeCountLimit",
         "isPreviewVersionWithServiceTermsAccepted",
         "isAutoScalingEnabled",
         "isDevTier",
@@ -112,6 +114,7 @@ public class CreateAutonomousDatabaseBase
         "secretVersionNumber"
     })
     protected CreateAutonomousDatabaseBase(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -130,6 +133,7 @@ public class CreateAutonomousDatabaseBase
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
             Boolean isDevTier,
@@ -161,6 +165,7 @@ public class CreateAutonomousDatabaseBase
             String secretId,
             Integer secretVersionNumber) {
         super();
+        this.subscriptionId = subscriptionId;
         this.compartmentId = compartmentId;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
@@ -179,6 +184,7 @@ public class CreateAutonomousDatabaseBase
         this.adminPassword = adminPassword;
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.byolComputeCountLimit = byolComputeCountLimit;
         this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.isDevTier = isDevTier;
@@ -209,6 +215,23 @@ public class CreateAutonomousDatabaseBase
         this.dbToolsDetails = dbToolsDetails;
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -841,6 +864,25 @@ public class CreateAutonomousDatabaseBase
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+    private final Float byolComputeCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     *
+     * @return the value
+     */
+    public Float getByolComputeCountLimit() {
+        return byolComputeCountLimit;
     }
 
     /**
@@ -1623,7 +1665,8 @@ public class CreateAutonomousDatabaseBase
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousDatabaseBase(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -1642,6 +1685,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", isPreviewVersionWithServiceTermsAccepted=")
                 .append(String.valueOf(this.isPreviewVersionWithServiceTermsAccepted));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
@@ -1693,7 +1737,8 @@ public class CreateAutonomousDatabaseBase
         }
 
         CreateAutonomousDatabaseBase other = (CreateAutonomousDatabaseBase) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
@@ -1712,6 +1757,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
                         this.isPreviewVersionWithServiceTermsAccepted,
                         other.isPreviewVersionWithServiceTermsAccepted)
@@ -1761,6 +1807,9 @@ public class CreateAutonomousDatabaseBase
         int result = 1;
         result =
                 (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
         result =
@@ -1795,6 +1844,11 @@ public class CreateAutonomousDatabaseBase
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolComputeCountLimit == null
+                                ? 43
+                                : this.byolComputeCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPreviewVersionWithServiceTermsAccepted == null

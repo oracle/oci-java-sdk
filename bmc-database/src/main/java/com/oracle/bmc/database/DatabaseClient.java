@@ -551,6 +551,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeAutonomousDatabaseSubscriptionResponse changeAutonomousDatabaseSubscription(
+            ChangeAutonomousDatabaseSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeAutonomousDatabaseSubscriptionDetails(),
+                "changeAutonomousDatabaseSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+
+        return clientCall(request, ChangeAutonomousDatabaseSubscriptionResponse::builder)
+                .logger(LOG, "changeAutonomousDatabaseSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAutonomousDatabaseSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAutonomousDatabaseSubscriptionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeAutonomousExadataInfrastructureCompartmentResponse
             changeAutonomousExadataInfrastructureCompartment(
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request) {
@@ -749,6 +786,46 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeCloudExadataInfrastructureSubscriptionResponse
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeCloudExadataInfrastructureSubscriptionDetails(),
+                "changeCloudExadataInfrastructureSubscriptionDetails is required");
+
+        Validate.notBlank(
+                request.getCloudExadataInfrastructureId(),
+                "cloudExadataInfrastructureId must not be blank");
+
+        return clientCall(request, ChangeCloudExadataInfrastructureSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudExadataInfrastructureSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudExadataInfrastructureSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudExadataInfrastructures")
+                .appendPathParam(request.getCloudExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudExadataInfrastructureSubscriptionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeCloudVmClusterCompartmentResponse changeCloudVmClusterCompartment(
             ChangeCloudVmClusterCompartmentRequest request) {
         Objects.requireNonNull(
@@ -781,6 +858,42 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeCloudVmClusterCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeCloudVmClusterSubscriptionResponse changeCloudVmClusterSubscription(
+            ChangeCloudVmClusterSubscriptionRequest request) {
+        Objects.requireNonNull(
+                request.getChangeCloudVmClusterSubscriptionDetails(),
+                "changeCloudVmClusterSubscriptionDetails is required");
+
+        Validate.notBlank(request.getCloudVmClusterId(), "cloudVmClusterId must not be blank");
+
+        return clientCall(request, ChangeCloudVmClusterSubscriptionResponse::builder)
+                .logger(LOG, "changeCloudVmClusterSubscription")
+                .serviceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeCloudVmClusterSubscriptionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("cloudVmClusters")
+                .appendPathParam(request.getCloudVmClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeCloudVmClusterSubscriptionResponse.Builder::opcRequestId)
                 .callSync();
     }
 

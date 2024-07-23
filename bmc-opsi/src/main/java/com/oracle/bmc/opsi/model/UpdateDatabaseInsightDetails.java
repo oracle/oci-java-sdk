@@ -33,7 +33,10 @@ package com.oracle.bmc.opsi.model;
             name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateAutonomousDatabaseInsightDetails.class,
-            name = "AUTONOMOUS_DATABASE")
+            name = "AUTONOMOUS_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateMdsMySqlDatabaseInsight.class,
+            name = "MDS_MYSQL_DATABASE_SYSTEM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

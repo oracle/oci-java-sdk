@@ -29,6 +29,7 @@ public final class AutonomousDatabaseSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
         "lifecycleState",
         "lifecycleDetails",
         "kmsKeyId",
@@ -70,6 +71,7 @@ public final class AutonomousDatabaseSummary
         "connectionUrls",
         "publicConnectionUrls",
         "licenseModel",
+        "byolComputeCountLimit",
         "usedDataStorageSizeInTBs",
         "freeformTags",
         "definedTags",
@@ -146,6 +148,7 @@ public final class AutonomousDatabaseSummary
     public AutonomousDatabaseSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String kmsKeyId,
@@ -187,6 +190,7 @@ public final class AutonomousDatabaseSummary
             AutonomousDatabaseConnectionUrls connectionUrls,
             AutonomousDatabaseConnectionUrls publicConnectionUrls,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Integer usedDataStorageSizeInTBs,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -262,6 +266,7 @@ public final class AutonomousDatabaseSummary
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.kmsKeyId = kmsKeyId;
@@ -303,6 +308,7 @@ public final class AutonomousDatabaseSummary
         this.connectionUrls = connectionUrls;
         this.publicConnectionUrls = publicConnectionUrls;
         this.licenseModel = licenseModel;
+        this.byolComputeCountLimit = byolComputeCountLimit;
         this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -415,6 +421,25 @@ public final class AutonomousDatabaseSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /** The current state of the Autonomous Database. */
@@ -1287,6 +1312,27 @@ public final class AutonomousDatabaseSummary
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those
+         * used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is
+         * considered as License Included and billed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those
+         * used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is
+         * considered as License Included and billed.
+         *
+         * @param byolComputeCountLimit the value to set
+         * @return this builder
+         */
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
             return this;
         }
         /**
@@ -2908,6 +2954,7 @@ public final class AutonomousDatabaseSummary
                     new AutonomousDatabaseSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.kmsKeyId,
@@ -2949,6 +2996,7 @@ public final class AutonomousDatabaseSummary
                             this.connectionUrls,
                             this.publicConnectionUrls,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.usedDataStorageSizeInTBs,
                             this.freeformTags,
                             this.definedTags,
@@ -3034,6 +3082,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -3160,6 +3211,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
             }
             if (model.wasPropertyExplicitlySet("usedDataStorageSizeInTBs")) {
                 this.usedDataStorageSizeInTBs(model.getUsedDataStorageSizeInTBs());
@@ -3424,6 +3478,23 @@ public final class AutonomousDatabaseSummary
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /** The current state of the Autonomous Database. */
@@ -4420,6 +4491,25 @@ public final class AutonomousDatabaseSummary
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+    private final Float byolComputeCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     *
+     * @return the value
+     */
+    public Float getByolComputeCountLimit() {
+        return byolComputeCountLimit;
     }
 
     /**
@@ -6584,6 +6674,7 @@ public final class AutonomousDatabaseSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
@@ -6634,6 +6725,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", connectionUrls=").append(String.valueOf(this.connectionUrls));
         sb.append(", publicConnectionUrls=").append(String.valueOf(this.publicConnectionUrls));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", usedDataStorageSizeInTBs=")
                 .append(String.valueOf(this.usedDataStorageSizeInTBs));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -6748,6 +6840,7 @@ public final class AutonomousDatabaseSummary
         AutonomousDatabaseSummary other = (AutonomousDatabaseSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
@@ -6803,6 +6896,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.connectionUrls, other.connectionUrls)
                 && java.util.Objects.equals(this.publicConnectionUrls, other.publicConnectionUrls)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
                         this.usedDataStorageSizeInTBs, other.usedDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -6917,6 +7011,9 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -7042,6 +7139,11 @@ public final class AutonomousDatabaseSummary
                                 ? 43
                                 : this.publicConnectionUrls.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolComputeCountLimit == null
+                                ? 43
+                                : this.byolComputeCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.usedDataStorageSizeInTBs == null

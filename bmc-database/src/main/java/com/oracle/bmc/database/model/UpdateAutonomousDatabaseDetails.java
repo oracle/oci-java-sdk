@@ -51,6 +51,7 @@ public final class UpdateAutonomousDatabaseDetails
         "definedTags",
         "dbWorkload",
         "licenseModel",
+        "byolComputeCountLimit",
         "isAccessControlEnabled",
         "whitelistedIps",
         "arePrimaryWhitelistedIpsUsed",
@@ -102,6 +103,7 @@ public final class UpdateAutonomousDatabaseDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DbWorkload dbWorkload,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isAccessControlEnabled,
             java.util.List<String> whitelistedIps,
             Boolean arePrimaryWhitelistedIpsUsed,
@@ -152,6 +154,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.definedTags = definedTags;
         this.dbWorkload = dbWorkload;
         this.licenseModel = licenseModel;
+        this.byolComputeCountLimit = byolComputeCountLimit;
         this.isAccessControlEnabled = isAccessControlEnabled;
         this.whitelistedIps = whitelistedIps;
         this.arePrimaryWhitelistedIpsUsed = arePrimaryWhitelistedIpsUsed;
@@ -778,6 +781,27 @@ public final class UpdateAutonomousDatabaseDetails
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those
+         * used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is
+         * considered as License Included and billed.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those
+         * used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is
+         * considered as License Included and billed.
+         *
+         * @param byolComputeCountLimit the value to set
+         * @return this builder
+         */
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
             return this;
         }
         /**
@@ -1699,6 +1723,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.definedTags,
                             this.dbWorkload,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.isAccessControlEnabled,
                             this.whitelistedIps,
                             this.arePrimaryWhitelistedIpsUsed,
@@ -1794,6 +1819,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
             }
             if (model.wasPropertyExplicitlySet("isAccessControlEnabled")) {
                 this.isAccessControlEnabled(model.getIsAccessControlEnabled());
@@ -2569,6 +2597,25 @@ public final class UpdateAutonomousDatabaseDetails
      */
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+    private final Float byolComputeCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used
+     * for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered
+     * as License Included and billed.
+     *
+     * @return the value
+     */
+    public Float getByolComputeCountLimit() {
+        return byolComputeCountLimit;
     }
 
     /**
@@ -3528,6 +3575,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", isAccessControlEnabled=").append(String.valueOf(this.isAccessControlEnabled));
         sb.append(", whitelistedIps=").append(String.valueOf(this.whitelistedIps));
         sb.append(", arePrimaryWhitelistedIpsUsed=")
@@ -3601,6 +3649,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
                         this.isAccessControlEnabled, other.isAccessControlEnabled)
                 && java.util.Objects.equals(this.whitelistedIps, other.whitelistedIps)
@@ -3691,6 +3740,11 @@ public final class UpdateAutonomousDatabaseDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolComputeCountLimit == null
+                                ? 43
+                                : this.byolComputeCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.isAccessControlEnabled == null

@@ -531,6 +531,13 @@ public class SummarizeHostInsightResourceForecastTrendRequest
     public String getInterfaceName() {
         return interfaceName;
     }
+    /** GPU identifier. */
+    private Integer gpuId;
+
+    /** GPU identifier. */
+    public Integer getGpuId() {
+        return gpuId;
+    }
     /** Resource Status */
     private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
 
@@ -1175,6 +1182,20 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             return this;
         }
 
+        /** GPU identifier. */
+        private Integer gpuId = null;
+
+        /**
+         * GPU identifier.
+         *
+         * @param gpuId the value to set
+         * @return this builder instance
+         */
+        public Builder gpuId(Integer gpuId) {
+            this.gpuId = gpuId;
+            return this;
+        }
+
         /** Resource Status */
         private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
 
@@ -1256,6 +1277,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             lowUtilizationThreshold(o.getLowUtilizationThreshold());
             mountPoint(o.getMountPoint());
             interfaceName(o.getInterfaceName());
+            gpuId(o.getGpuId());
             status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -1322,6 +1344,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             request.lowUtilizationThreshold = lowUtilizationThreshold;
             request.mountPoint = mountPoint;
             request.interfaceName = interfaceName;
+            request.gpuId = gpuId;
             request.status = status;
             return request;
             // new SummarizeHostInsightResourceForecastTrendRequest(compartmentId, resourceMetric,
@@ -1330,7 +1353,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
             // confidence, page, opcRequestId, definedTagEquals, freeformTagEquals,
             // definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId,
             // vmclusterName, highUtilizationThreshold, lowUtilizationThreshold, mountPoint,
-            // interfaceName, status);
+            // interfaceName, gpuId, status);
         }
     }
 
@@ -1368,6 +1391,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                 .lowUtilizationThreshold(lowUtilizationThreshold)
                 .mountPoint(mountPoint)
                 .interfaceName(interfaceName)
+                .gpuId(gpuId)
                 .status(status);
     }
 
@@ -1413,6 +1437,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         sb.append(",lowUtilizationThreshold=").append(String.valueOf(this.lowUtilizationThreshold));
         sb.append(",mountPoint=").append(String.valueOf(this.mountPoint));
         sb.append(",interfaceName=").append(String.valueOf(this.interfaceName));
+        sb.append(",gpuId=").append(String.valueOf(this.gpuId));
         sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
@@ -1460,6 +1485,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
                         this.lowUtilizationThreshold, other.lowUtilizationThreshold)
                 && java.util.Objects.equals(this.mountPoint, other.mountPoint)
                 && java.util.Objects.equals(this.interfaceName, other.interfaceName)
+                && java.util.Objects.equals(this.gpuId, other.gpuId)
                 && java.util.Objects.equals(this.status, other.status);
     }
 
@@ -1536,6 +1562,7 @@ public class SummarizeHostInsightResourceForecastTrendRequest
         result =
                 (result * PRIME)
                         + (this.interfaceName == null ? 43 : this.interfaceName.hashCode());
+        result = (result * PRIME) + (this.gpuId == null ? 43 : this.gpuId.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }

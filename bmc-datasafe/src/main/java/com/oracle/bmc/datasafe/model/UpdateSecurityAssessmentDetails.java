@@ -26,6 +26,7 @@ public final class UpdateSecurityAssessmentDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "description",
+        "isAssessmentScheduled",
         "schedule",
         "freeformTags",
         "definedTags"
@@ -33,12 +34,14 @@ public final class UpdateSecurityAssessmentDetails
     public UpdateSecurityAssessmentDetails(
             String displayName,
             String description,
+            Boolean isAssessmentScheduled,
             String schedule,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.description = description;
+        this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -74,6 +77,21 @@ public final class UpdateSecurityAssessmentDetails
         public Builder description(String description) {
             this.description = description;
             this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** Indicates whether the assessment is scheduled to run. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+        private Boolean isAssessmentScheduled;
+
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         *
+         * @param isAssessmentScheduled the value to set
+         * @return this builder
+         */
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            this.__explicitlySet__.add("isAssessmentScheduled");
             return this;
         }
         /**
@@ -177,6 +195,7 @@ public final class UpdateSecurityAssessmentDetails
                     new UpdateSecurityAssessmentDetails(
                             this.displayName,
                             this.description,
+                            this.isAssessmentScheduled,
                             this.schedule,
                             this.freeformTags,
                             this.definedTags);
@@ -193,6 +212,9 @@ public final class UpdateSecurityAssessmentDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
+                this.isAssessmentScheduled(model.getIsAssessmentScheduled());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -240,6 +262,19 @@ public final class UpdateSecurityAssessmentDetails
      */
     public String getDescription() {
         return description;
+    }
+
+    /** Indicates whether the assessment is scheduled to run. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+    private final Boolean isAssessmentScheduled;
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     *
+     * @return the value
+     */
+    public Boolean getIsAssessmentScheduled() {
+        return isAssessmentScheduled;
     }
 
     /**
@@ -342,6 +377,7 @@ public final class UpdateSecurityAssessmentDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -361,6 +397,7 @@ public final class UpdateSecurityAssessmentDetails
         UpdateSecurityAssessmentDetails other = (UpdateSecurityAssessmentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -373,6 +410,11 @@ public final class UpdateSecurityAssessmentDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentScheduled == null
+                                ? 43
+                                : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

@@ -251,6 +251,23 @@ public interface Database extends AutoCloseable {
                     ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request);
 
     /**
+     * Associate an Autonomous Database with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeAutonomousDatabaseSubscription API.
+     */
+    ChangeAutonomousDatabaseSubscriptionResponse changeAutonomousDatabaseSubscription(
+            ChangeAutonomousDatabaseSubscriptionRequest request);
+
+    /**
      * **Deprecated.** Use the {@link
      * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest)
      * changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure
@@ -357,6 +374,24 @@ public interface Database extends AutoCloseable {
             ChangeCloudExadataInfrastructureCompartmentRequest request);
 
     /**
+     * Associate a cloud Exadata infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeCloudExadataInfrastructureSubscription API.
+     */
+    ChangeCloudExadataInfrastructureSubscriptionResponse
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request);
+
+    /**
      * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to
      * Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure
      * only.
@@ -374,6 +409,23 @@ public interface Database extends AutoCloseable {
      */
     ChangeCloudVmClusterCompartmentResponse changeCloudVmClusterCompartment(
             ChangeCloudVmClusterCompartmentRequest request);
+
+    /**
+     * Associate a cloud VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterSubscriptionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeCloudVmClusterSubscription API.
+     */
+    ChangeCloudVmClusterSubscriptionResponse changeCloudVmClusterSubscription(
+            ChangeCloudVmClusterSubscriptionRequest request);
 
     /**
      * Move the Database Software Image and its dependent resources to the specified compartment.

@@ -39,7 +39,7 @@ public class GetResourcePrincipalTokenResponse {
         final GetResourcePrincipalTokenResponse body;
 
         private ResponseWrapper(Builder builder) {
-            super(builder.__httpStatusCode__);
+            super(builder.__httpStatusCode__, builder.headers);
             this.body = builder.body;
         }
 

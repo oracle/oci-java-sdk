@@ -1230,6 +1230,42 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * The MySql SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest
+     * pipeline. Either databaseId or id must be specified.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestMySqlSqlStatsResponse> ingestMySqlSqlStats(
+            IngestMySqlSqlStatsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlStatsRequest, IngestMySqlSqlStatsResponse>
+                    handler);
+
+    /**
+     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest
+     * pipeline. Either databaseId or id must be specified. Disclaimer: SQL text being uploaded
+     * explicitly via APIs is already masked. All sensitive literals contained in the sqlFullText
+     * column are masked prior to ingestion.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestMySqlSqlTextResponse> ingestMySqlSqlText(
+            IngestMySqlSqlTextRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlTextRequest, IngestMySqlSqlTextResponse>
+                    handler);
+
+    /**
      * The sqlbucket endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *

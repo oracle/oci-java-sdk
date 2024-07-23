@@ -26,6 +26,7 @@ public final class CloudVmClusterSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
         "availabilityDomain",
         "subnetId",
         "backupSubnetId",
@@ -76,6 +77,7 @@ public final class CloudVmClusterSummary
     public CloudVmClusterSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
             String availabilityDomain,
             String subnetId,
             String backupSubnetId,
@@ -125,6 +127,7 @@ public final class CloudVmClusterSummary
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
@@ -211,6 +214,25 @@ public final class CloudVmClusterSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subscription with which resource needs to be associated with.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -1088,6 +1110,7 @@ public final class CloudVmClusterSummary
                     new CloudVmClusterSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
                             this.availabilityDomain,
                             this.subnetId,
                             this.backupSubnetId,
@@ -1147,6 +1170,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -1331,6 +1357,23 @@ public final class CloudVmClusterSummary
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subscription with which resource needs to be associated with.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -2263,6 +2306,7 @@ public final class CloudVmClusterSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
@@ -2329,6 +2373,7 @@ public final class CloudVmClusterSummary
         CloudVmClusterSummary other = (CloudVmClusterSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
@@ -2392,6 +2437,9 @@ public final class CloudVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null

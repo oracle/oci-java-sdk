@@ -9,6 +9,7 @@ package com.oracle.bmc.datasafe.model;
 public enum SqlFirewallAllowedSqlLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
     Deleted("DELETED"),
+    Failed("FAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

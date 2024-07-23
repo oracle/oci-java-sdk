@@ -253,6 +253,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate an Autonomous Database with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>
+            changeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSubscriptionRequest,
+                                    ChangeAutonomousDatabaseSubscriptionResponse>
+                            handler);
+
+    /**
      * **Deprecated.** Use the {@link
      * #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest,
      * Consumer, Consumer) changeCloudExadataInfrastructureCompartment} operation to move an Exadata
@@ -363,6 +381,24 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Associate a cloud Exadata infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudExadataInfrastructureSubscriptionResponse>
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+                            handler);
+
+    /**
      * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to
      * Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure
      * only.
@@ -380,6 +416,24 @@ public interface DatabaseAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     ChangeCloudVmClusterCompartmentRequest,
                                     ChangeCloudVmClusterCompartmentResponse>
+                            handler);
+
+    /**
+     * Associate a cloud VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>
+            changeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterSubscriptionRequest,
+                                    ChangeCloudVmClusterSubscriptionResponse>
                             handler);
 
     /**

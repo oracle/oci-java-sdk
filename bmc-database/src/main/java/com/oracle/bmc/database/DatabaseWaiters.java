@@ -699,6 +699,72 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeAutonomousDatabaseSubscriptionRequest,
+                    ChangeAutonomousDatabaseSubscriptionResponse>
+            forChangeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request) {
+        return forChangeAutonomousDatabaseSubscription(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeAutonomousDatabaseSubscriptionRequest,
+                    ChangeAutonomousDatabaseSubscriptionResponse>
+            forChangeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeAutonomousDatabaseSubscriptionResponse>() {
+                    @Override
+                    public ChangeAutonomousDatabaseSubscriptionResponse call() throws Exception {
+                        final ChangeAutonomousDatabaseSubscriptionResponse response =
+                                client.changeAutonomousDatabaseSubscription(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeAutonomousExadataInfrastructureCompartmentRequest,
                     ChangeAutonomousExadataInfrastructureCompartmentResponse>
             forChangeAutonomousExadataInfrastructureCompartment(
@@ -1035,6 +1101,74 @@ public class DatabaseWaiters {
      * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
      */
     public com.oracle.bmc.waiter.Waiter<
+                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+            forChangeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request) {
+        return forChangeCloudExadataInfrastructureSubscription(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+            forChangeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<
+                        ChangeCloudExadataInfrastructureSubscriptionResponse>() {
+                    @Override
+                    public ChangeCloudExadataInfrastructureSubscriptionResponse call()
+                            throws Exception {
+                        final ChangeCloudExadataInfrastructureSubscriptionResponse response =
+                                client.changeCloudExadataInfrastructureSubscription(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
                     ChangeCloudVmClusterCompartmentRequest, ChangeCloudVmClusterCompartmentResponse>
             forChangeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest request) {
         return forChangeCloudVmClusterCompartment(
@@ -1069,6 +1203,71 @@ public class DatabaseWaiters {
                     public ChangeCloudVmClusterCompartmentResponse call() throws Exception {
                         final ChangeCloudVmClusterCompartmentResponse response =
                                 client.changeCloudVmClusterCompartment(request);
+
+                        if (response.getOpcWorkRequestId() != null) {
+                            final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
+                                    getWorkRequestRequest =
+                                            com.oracle.bmc.workrequests.requests
+                                                    .GetWorkRequestRequest.builder()
+                                                    .workRequestId(response.getOpcWorkRequestId())
+                                                    .build();
+                            workRequestClient
+                                    .getWaiters()
+                                    .forWorkRequest(
+                                            getWorkRequestRequest,
+                                            terminationStrategy,
+                                            delayStrategy)
+                                    .execute();
+                        }
+                        return response;
+                    }
+                },
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeCloudVmClusterSubscriptionRequest,
+                    ChangeCloudVmClusterSubscriptionResponse>
+            forChangeCloudVmClusterSubscription(ChangeCloudVmClusterSubscriptionRequest request) {
+        return forChangeCloudVmClusterSubscription(
+                request,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_TERMINATION_STRATEGY,
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_DELAY_STRATEGY);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@link com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<
+                    ChangeCloudVmClusterSubscriptionRequest,
+                    ChangeCloudVmClusterSubscriptionResponse>
+            forChangeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        if (workRequestClient == null) {
+            throw new IllegalStateException(
+                    "A WorkRequestClient must be supplied to this waiter for this operation");
+        }
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                new java.util.concurrent.Callable<ChangeCloudVmClusterSubscriptionResponse>() {
+                    @Override
+                    public ChangeCloudVmClusterSubscriptionResponse call() throws Exception {
+                        final ChangeCloudVmClusterSubscriptionResponse response =
+                                client.changeCloudVmClusterSubscription(request);
 
                         if (response.getOpcWorkRequestId() != null) {
                             final com.oracle.bmc.workrequests.requests.GetWorkRequestRequest
