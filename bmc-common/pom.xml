@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,6 +12,21 @@
   <name>Oracle Cloud Infrastructure SDK - Common</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <!-- END: Delete Public GitHub -->
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>
@@ -21,6 +36,462 @@
       </resource>
     </resources>
     <plugins>
+      <!-- START: Delete Public GitHub -->
+      <plugin>
+        <groupId>com.oracle.oci.internal.sdk.bundling</groupId>
+        <artifactId>oci-bundling-tools-maven-plugin</artifactId>
+        <version>0.0.5</version>
+        <executions>
+          <execution>
+            <id>oci-java-sdk-update-sdk-properties</id>
+            <goals>
+              <goal>oci-java-sdk-update-sdk-properties</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.oracle.oci.sdk.utilities</groupId>
+        <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <textOutputFile>${project.build.directory}/clirr-${project.artifactId}.txt</textOutputFile>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <ignored>
+                <!-- Note: class names have to use '/' instead of '.', and the method and field names should *not* include the visibility
+                     modifier ('public', 'protected', etc.). Example: <method>java.security.interfaces.RSAPrivateKey getPrivateKey()</method> -->
+                <!-- Ignore 'internal' packages -->
+                <difference>
+                  <justification>Internal classes can always be modified</justification>
+                  <className>**/internal/**/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>UK_GOV_LONDON_2</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_GOV_BOYERS_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_GOV_FORTWORTH_3</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_GOV_PHOENIX_3</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_GOV_STERLING_3</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>AP_DCC_GAZIPUR_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_DCC_DUBLIN_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_DCC_DUBLIN_2</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_DCC_MILAN_2</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_DCC_RATING_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_DCC_RATING_2</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_JOVANOVAC_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>EU_KRAGUJEVAC_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>ME_NEOM_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>MX_MONTERREY_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>SA_VALPARAISO_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_CHICAGO_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_DCC_PHOENIX_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_DCC_PHOENIX_2</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_DCC_PHOENIX_3</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in MASTER</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_WESTJORDAN_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in PREVIEW</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC11</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <className>com/oracle/bmc/Service</className>
+                  <method>java.lang.String getServiceEndpointTemplate()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Version 1.3.1, moved into oci-java-sdk-addons-crosstenancy</justification>
+                  <className>com/oracle/bmc/http/CrossTenancyRequestConfigurator</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Version 1.3.1-preview1, backfilled from public SDK</justification>
+                  <className>com/oracle/bmc/auth/SessionKeySupplier</className>
+                  <method>java.security.interfaces.RSAPublicKey getPublicKey()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <className>com/oracle/bmc/auth/SessionKeySupplier</className>
+                  <method>java.security.interfaces.RSAPrivateKey getPrivateKey()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <className>com/oracle/bmc/auth/X509CertificateSupplier</className>
+                  <method>java.security.cert.X509Certificate getCertificate()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <className>com/oracle/bmc/auth/X509CertificateSupplier</className>
+                  <method>java.security.interfaces.RSAPrivateKey getPrivateKey()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <method>java.lang.String getSecondLevelDomain()</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <difference>
+                  <justification>Converting Region from enum to class</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <to>java/lang/Enum</to>
+                  <differenceType>5001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <differenceType>3003</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <method>Region(java.lang.String, com.oracle.bmc.Realm)</method>
+                  <differenceType>7009</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <method>Region(java.lang.String, com.google.common.base.Optional, com.oracle.bmc.Realm)</method>
+                  <differenceType>7009</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <method>boolean canEqual(java.lang.Object)</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <difference>
+                  <justification>Converting Realm from enum to class</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <to>java/lang/Enum</to>
+                  <differenceType>5001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <differenceType>3003</differenceType>
+                </difference>
+                <difference>
+                  <justification>Was never released to master</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <method>boolean canEqual(java.lang.Object)</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>AP_SAOPAOLO_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Cleaning up internal auth classes not in internal directories</justification>
+                  <className>com/oracle/bmc/auth/AbstractRequestingAuthenticationDetailsProvider$Builder</className>
+                  <method>void buildFederationClient(java.lang.String, java.lang.String, com.oracle.bmc.auth.X509CertificateSupplier)</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <difference>
+                  <justification>Cleaning up internal auth classes not in internal directories</justification>
+                  <className>com/oracle/bmc/auth/AbstractRequestingAuthenticationDetailsProvider$Builder</className>
+                  <method>com.oracle.bmc.auth.SessionKeySupplier getSessionKeySupplier()</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <difference>
+                  <justification>Cleaning up internal auth classes not in internal directories</justification>
+                  <className>com/oracle/bmc/auth/AbstractRequestingAuthenticationDetailsProvider$SessionKeySupplierImpl</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of region in PREVIEW</justification>
+                  <className>com/oracle/bmc/Region</className>
+                  <field>US_TACOMA_1</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of realm in PREVIEW</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC5</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removing superclass</justification>
+                  <className>com/oracle/bmc/http/DefaultConfigurator$NonBuffering</className>
+                  <to>com/oracle/bmc/http/DefaultConfigurator</to>
+                  <differenceType>5001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Moved public class to internal class to restrict scope</justification>
+                  <className>com/oracle/bmc/http/ApacheInputStreamEntity</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface, but has default method</justification>
+                  <className>com/oracle/bmc/http/ClientConfigurator</className>
+                  <method>void customizeRequest(com.oracle.bmc.requests.BmcRequest, com.oracle.bmc.http.internal.WrappedInvocationBuilder)</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <!-- While DEX-12605 is not done yet -->
+                <difference>
+                  <justification>DEX-12605 is not done yet</justification>
+                  <className>com/oracle/bmc/SdkClients</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <!-- Pluggable transport re-architecture -->
+                <difference>
+                  <justification>Pluggable transport re-architecture</justification>
+                  <differenceType>7006</differenceType>
+                  <className>com/oracle/bmc/requests/BmcRequest</className>
+                  <method>com.oracle.bmc.util.internal.Consumer getInvocationCallback()</method>
+                  <to>com.oracle.bmc.requests.RequestInterceptor</to>
+                </difference>
+                <difference>
+                  <justification>Pluggable transport re-architecture</justification>
+                  <differenceType>7005</differenceType>
+                  <className>com/oracle/bmc/requests/BmcRequest</className>
+                  <method>void setInvocationCallback(com.oracle.bmc.util.internal.Consumer)</method>
+                  <to>void setInvocationCallback(com.oracle.bmc.requests.RequestInterceptor)</to>
+                </difference>
+                <difference>
+                  <justification>Pluggable transport re-architecture</justification>
+                  <differenceType>7012</differenceType>
+                  <className>com/oracle/bmc/http/ClientConfigurator</className>
+                  <method>void customizeClient(com.oracle.bmc.http.client.HttpClientBuilder)</method>
+                </difference>
+                <difference>
+                  <justification>Changed return type to remove Apache commons dependency</justification>
+                  <className>com/oracle/bmc/http/ApacheConnectionPoolConfig</className>
+                  <method>org.apache.commons.lang3.tuple.Pair getTtl()</method>
+                  <to>java.util.Map$Entry</to>
+                  <differenceType>7006</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface</justification>
+                  <className>com/oracle/bmc/auth/ConfigurableRefreshOnNotAuthenticatedProvider</className>
+                  <method>java.lang.Object refreshIfExpiringWithin(java.time.Duration, boolean)</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface</justification>
+                  <className>com/oracle/bmc/auth/ProvidesConfigurableRefresh</className>
+                  <method>java.lang.String refreshAndGetSecurityTokenIfExpiringWithin(java.time.Duration, boolean)</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in MASTER</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC15</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in MASTER</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC16</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in MASTER</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC17</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in MASTER</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC18</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Removal of incorrect realm in MASTER</justification>
+                  <className>com/oracle/bmc/Realm</className>
+                  <field>OC20</field>
+                  <differenceType>6001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface</justification>
+                  <className>com/oracle/bmc/Service</className>
+                  <method>void addServiceEndpointTemplateForRealm(java.lang.String, java.lang.String)</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface</justification>
+                  <className>com/oracle/bmc/Service</className>
+                  <method>java.util.Map getServiceEndpointTemplateForRealmMap()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added parameter to com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary to deal with https://github.com/oracle/oci-java-sdk/issues/566</justification>
+                  <className>com/oracle/bmc/retrier/Retriers</className>
+                  <method>com.oracle.bmc.requests.BmcRequest wrapBodyInputStreamIfNecessary(com.oracle.bmc.requests.BmcRequest, com.oracle.bmc.requests.BmcRequest$Builder)</method>
+                  <differenceType>7004</differenceType>
+                </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>enforce-bytecode-version</id>
+            <phase>test</phase>
+            <goals>
+              <goal>enforce</goal>
+            </goals>
+            <configuration>
+              <rules>
+                <enforceBytecodeVersion>
+                  <!-- Java 8, not newer -->
+                  <maxJdkVersion>8</maxJdkVersion>
+                </enforceBytecodeVersion>
+              </rules>
+              <fail>true</fail>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${checkstyle-rules-file}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- END: Delete Public GitHub -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -38,6 +509,26 @@
           </execution>
         </executions>
       </plugin>
+      <!-- START: Delete Public GitHub -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>package-overlap-check</id>
+            <configuration>
+              <executable>${project.basedir}/../bin/package-overlap-check.sh</executable>
+              <workingDirectory>${project.basedir}/..</workingDirectory>
+              <skip>false</skip>
+            </configuration>
+            <phase>verify</phase>
+            <goals>
+              <goal>exec</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- END: Delete Public GitHub -->
     </plugins>
   </build>
 
@@ -67,18 +558,18 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
     <dependency>

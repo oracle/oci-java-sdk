@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -25,6 +25,14 @@
     <module>bmc-sasl-oke-workload-identity</module>
     <module>bmc-sse-support</module>
     <module>bmc-sse-support-jersey3</module>
+    <!-- START: Delete Public GitHub -->
+    <module>bmc-authextensions</module>
+    <module>bmc-internal</module>
+    <module>bmc-internal-examples</module>
+    <module>bmc-metadata</module>
+    <module>bmc-resource-principal</module>
+    <module>bmc-s2s</module>
+    <!-- END: Delete Public GitHub -->
   </modules>
 
 </project>

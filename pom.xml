@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.44.4</version>
+  <version>3.44.5-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -61,9 +61,29 @@
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
     <exec.skip>true</exec.skip>
     <exec.mainClass>com.acme.Undefined</exec.mainClass>
+    <!-- START: Delete Public GitHub -->
+    <clirr.version>2.9.2-oracle-SNAPSHOT</clirr.version>
+    <clirr.fail.on.error>false</clirr.fail.on.error>
+    <!-- This means "anything less than the project version" -->
+    <clirr.comparison.version>(,${project.version})</clirr.comparison.version>
+    <checkstyle-rules-filename>checkstyle-rules.xml</checkstyle-rules-filename>
+    <checkstyle-rules-file>${project.basedir}/../${checkstyle-rules-filename}</checkstyle-rules-file>
+    <codesign-maven-plugin.version>6.1</codesign-maven-plugin.version>
+    <!-- Version 4.4 does not support 'server_timeout' yet. -->
+    <codesign-maven-plugin.signingParameters />
+    <!-- <codesign-maven-plugin.signingParameters>server_timeout=15</codesign-maven-plugin.signingParameters> -->
+    <!-- END: Delete Public GitHub -->
     <oci.codegen.version>2.100</oci.codegen.version>
   </properties>
   <profiles>
+    <!-- START: Delete Public GitHub -->
+    <profile>
+      <id>sign</id>
+      <modules>
+        <module>bmc-dist</module>
+      </modules>
+    </profile>
+    <!-- END: Delete Public GitHub -->
     <profile>
       <id>ziponly</id>
       <modules>
@@ -255,6 +275,15 @@
                 <exclude>**/X509FederationClientTest.java</exclude>
                 <exclude>**/DefaultConfiguratorTest.java</exclude>
                 <exclude>**/RequestSignerImplTest.java</exclude>
+                <!-- START: Delete Public GitHub -->
+                <exclude>**/UploadManagerTest.java</exclude>
+                <exclude>**/S2SAuthenticationDetailsProviderTest.java</exclude>
+                <exclude>**/RpS2SAuthenticationDetailsProviderTest.java</exclude>
+                <exclude>**/OnBehalfOfClientTest.java</exclude>
+                <exclude>**/TlsConfigTest.java</exclude>
+                <exclude>**/JerseyVaultTest.java</exclude>
+                <exclude>**/Jersey3VaultTest.java</exclude>
+                <!-- END: Delete Public GitHub -->
               </excludes>
             </configuration>
           </plugin>
@@ -380,6 +409,16 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
+            <!-- START: Delete Public GitHub -->
+            <doclet>org.jdrupes.mdoclet.MDoclet</doclet>
+            <docletArtifact>
+              <groupId>org.jdrupes.mdoclet</groupId>
+              <artifactId>doclet</artifactId>
+              <version>1.0.10</version>
+            </docletArtifact>
+            <useStandardDocletOptions>true</useStandardDocletOptions>
+            <additionalparam>-disable-highlight</additionalparam>
+            <!-- END: Delete Public GitHub -->
             <aggregate>true</aggregate>
             <minmemory>2048m</minmemory>
             <maxmemory>6144m</maxmemory>
@@ -433,8 +472,85 @@
               <artifactId>extra-enforcer-rules</artifactId>
               <version>1.7.0</version>
             </dependency>
+            <!-- START: Delete Public GitHub -->
+            <dependency>
+              <groupId>com.oracle.oci.sdk</groupId>
+              <artifactId>oci-java-sdk-enforcer-rules</artifactId>
+              <version>3.44.5-SNAPSHOT</version>
+            </dependency>
+            <!-- END: Delete Public GitHub -->
           </dependencies>
+          <!-- START: Delete Public GitHub -->
+          <executions>
+            <execution>
+              <id>enforce</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <newObjectMapperDefinitionDeniedRule implementation="com.oracle.bmc.enforcer.rule.NewObjectMapperDefinitionDeniedRule">
+                    <!-- Exclude classes that are allowed to define new ObjectMapper object. -->
+                    <!-- Please add the class names as a comma separate value without any whitespace -->
+                    <!-- Example <excludeClasses>JacksonSerializer.java,NewFile.java</excludeClasses> -->
+                    <excludeClasses />
+                  </newObjectMapperDefinitionDeniedRule>
+                </rules>
+              </configuration>
+            </execution>
+          </executions>
+          <!-- END: Delete Public GitHub -->
         </plugin>
+        <!-- START: Delete Public GitHub -->
+        <plugin>
+          <groupId>com.oracle.oci.sdk.utilities</groupId>
+          <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
+          <version>1.0.18</version>
+          <executions>
+            <execution>
+              <id>add-files-to-jar-files</id>
+              <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+              <!-- That way, all jar files have been built already. -->
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>add</goal>
+              </goals>
+              <configuration>
+                <files>
+                  <file>LICENSE.txt</file>
+                  <file>THIRD_PARTY_LICENSES.txt</file>
+                  <file>NOTICE.txt</file>
+                </files>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+        <plugin>
+          <!-- https://csshub.us-phoenix-1.oci.oraclecorp.com/webcodesign/ -->
+          <groupId>com.oracle.ccss</groupId>
+          <artifactId>codesign-maven-plugin</artifactId>
+          <version>${codesign-maven-plugin.version}</version>
+          <executions>
+            <execution>
+              <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+              <!-- That way, all jar files have been built already. -->
+              <phase>pre-integration-test</phase>
+              <goals>
+                <goal>sign</goal>
+              </goals>
+            </execution>
+          </executions>
+          <configuration>
+            <user>dexsdk_grp</user>
+            <globalUID>joshunte</globalUID>
+            <fileToSign>${project.build.directory}/${project.artifactId}-${project.version}.jar</fileToSign>
+            <signLocation>${project.build.directory}</signLocation>
+            <signMethod>java2</signMethod>
+            <signingParameters>${codesign-maven-plugin.signingParameters}</signingParameters>
+          </configuration>
+        </plugin>
+        <!-- END: Delete Public GitHub -->
       </plugins>
     </pluginManagement>
     <plugins>
@@ -481,6 +597,12 @@
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
       </plugin>
+      <!-- START: Delete Public GitHub -->
+      <plugin>
+        <groupId>com.oracle.oci.sdk.utilities</groupId>
+        <artifactId>dex-add-files-to-jar-files-plugin</artifactId>
+      </plugin>
+      <!-- END: Delete Public GitHub -->
     </plugins>
   </build>
   <reporting>
@@ -788,5 +910,15 @@
     <module>bmc-marketplaceprivateoffer</module>
     <module>bmc-resourcescheduler</module>
     <module>bmc-demandsignal</module>
+    <!-- START: Delete Public GitHub -->
+    <!-- Everything below should be deleted for public github -->
+    <!-- These have no timeline for release to github -->
+    <module>bmc-codegen</module>
+    <module>bmc-testcommon</module>
+    <module>bmc-smoketests</module>
+    <module>bmc-integtests</module>
+    <module>bmc-other-smoketests</module>
+    <module>bmc-hand-written</module>
+    <!-- END: Delete Public GitHub -->
   </modules>
 </project>

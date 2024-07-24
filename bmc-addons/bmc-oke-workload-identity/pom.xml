@@ -4,7 +4,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.44.4</version>
+        <version>3.44.5-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
@@ -18,6 +18,139 @@
     <description>This project provides the oke workload identity auth add-ons for Oracle Cloud Infrastructure</description>
     <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
 
+    <!-- START: Delete Public GitHub -->
+    <profiles>
+        <profile>
+          <id>sign</id>
+          <properties>
+            <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}-signed.jar</source.jar.for.zip>
+          </properties>
+          <build>
+            <plugins>
+              <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <id>attach-sources</id>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>jar-no-fork</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+              <plugin>
+                <artifactId>maven-antrun-plugin</artifactId>
+                <executions>
+                  <!-- Copy jar for signing -->
+                  <execution>
+                    <id>copy-jar</id>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>run</goal>
+                    </goals>
+                    <configuration>
+                      <target name="copy-jar">
+                        <copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" tofile="${source.jar.for.zip}"/>
+                      </target>
+                    </configuration>
+                  </execution>
+                </executions>
+              </plugin>
+              <plugin>
+                <!-- https://csshub.us-phoenix-1.oci.oraclecorp.com/webcodesign/ -->
+                <groupId>com.oracle.ccss</groupId>
+                <artifactId>codesign-maven-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+                    <!-- That way, all jar files have been built already. -->
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                      <goal>sign</goal>
+                    </goals>
+                  </execution>
+                </executions>
+                <configuration>
+                  <user>dexsdk_grp</user>
+                  <globalUID>joshunte</globalUID>
+                  <fileToSign>${source.jar.for.zip}</fileToSign>
+                  <signLocation>${project.build.directory}</signLocation>
+                  <signMethod>java2</signMethod>
+                  <signingParameters>${codesign-maven-plugin.signingParameters}</signingParameters>
+                </configuration>
+              </plugin>
+              <!-- Assemble only during the 'sign' profile as we need to assemble the signed jar -->
+              <!-- Assemble the single jar, dependencies, docs, examples into a zip archive -->
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                  <appendAssemblyId>true</appendAssemblyId>
+                  <attach>true</attach>
+                  <descriptors>
+                    <descriptor>src/main/assembly/assembly.xml</descriptor>
+                  </descriptors>
+                </configuration>
+                <executions>
+                  <execution>
+                    <phase>pre-integration-test</phase>
+                    <goals>
+                      <goal>single</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+            </plugins>
+          </build>
+        </profile>
+        <!-- Just do assembly, no signing -->
+        <profile>
+          <id>ziponly</id>
+          <properties>
+            <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}.jar</source.jar.for.zip>
+          </properties>
+          <build>
+            <plugins>
+              <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+              <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <executions>
+                  <execution>
+                    <id>attach-sources</id>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>jar-no-fork</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+              <plugin>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <configuration>
+                  <appendAssemblyId>true</appendAssemblyId>
+                  <attach>true</attach>
+                  <descriptors>
+                    <descriptor>src/main/assembly/assembly.xml</descriptor>
+                  </descriptors>
+                </configuration>
+                <executions>
+                  <execution>
+                    <phase>package</phase>
+                    <goals>
+                      <goal>single</goal>
+                    </goals>
+                  </execution>
+                </executions>
+              </plugin>
+            </plugins>
+          </build>
+        </profile>
+    </profiles>
+    <!-- END: Delete Public GitHub -->
 
     <build>
         <plugins>
@@ -38,25 +171,25 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common</artifactId>
-            <version>3.44.4</version>
+            <version>3.44.5-SNAPSHOT</version>
             <scope>compile</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-core</artifactId>
-            <version>3.44.4</version>
+            <version>3.44.5-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-identity</artifactId>
-            <version>3.44.4</version>
+            <version>3.44.5-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-keymanagement</artifactId>
-            <version>3.44.4</version>
+            <version>3.44.5-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
         <dependency>

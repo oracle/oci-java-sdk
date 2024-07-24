@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-objectstorage-parent</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -13,22 +13,180 @@
   <name>Oracle Cloud Infrastructure SDK - Object Storage - Extensions</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Object Storage Service</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.codehaus.mojo</groupId>
+            <artifactId>exec-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>install-signing-plugin</id>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>mvn</executable>
+                  <arguments>
+                    <argument>install:install-file</argument>
+                    <argument>-DgroupId=com.oracle.ccss</argument>
+                    <argument>-DartifactId=codesign-maven-plugin</argument>
+                    <argument>-Dversion=${codesign-maven-plugin.version}</argument>
+                    <argument>-Dfile=../../bin/codesign-maven-plugin-${codesign-maven-plugin.version}.jar</argument>
+                    <argument>-Dpackaging=jar</argument>
+                  </arguments>
+                  <skip>false</skip>
+                </configuration>
+              </execution>
+              <execution>
+                <id>sign-tests</id>
+                <phase>integration-test</phase>
+                <goals>
+                  <goal>exec</goal>
+                </goals>
+                <configuration>
+                  <executable>mvn</executable>
+                  <workingDirectory>${project.build.directory}</workingDirectory>
+                  <arguments>
+                    <argument>com.oracle.ccss:codesign-maven-plugin:${codesign-maven-plugin.version}:sign</argument>
+                    <argument>-Dsign.user=dexsdk_grp</argument>
+                    <argument>-Dsign.guid=joshunte</argument>
+                    <argument>-Dsign.file_to_sign=${project.build.directory}/${project.artifactId}-${project.version}-tests.jar</argument>
+                    <argument>-Dsign.signed_location=${project.build.directory}</argument>
+                    <argument>-Dsign.sign_method=java2</argument>
+                    <argument>-Dsign.signing_parameters="${codesign-maven-plugin.signingParameters}"</argument>
+                  </arguments>
+                  <skip>false</skip>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <executions>
+          <execution>
+            <goals>
+              <goal>test-jar</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <textOutputFile>${project.build.directory}/clirr-${project.artifactId}.txt</textOutputFile>
+              <ignored>
+                <difference>
+                  <className>**/internal/**/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <justification>Added as a new feature request</justification>
+                  <method>java.util.List listFailedPartsDetails()</method>
+                  <className>com/oracle/bmc/objectstorage/transfer/MultipartManifest</className>
+                  <differenceType>7012</differenceType>
+                </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${project.basedir}/../../checkstyle-rules.xml</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
+        <executions>
+          <execution>
+            <id>check-dependencies</id>
+            <goals>
+              <goal>analyze-only</goal>
+            </goals>
+            <phase>verify</phase>
+            <configuration>
+              <failOnWarning>true</failOnWarning>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- END: Delete Public GitHub -->
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-objectstorage-generated</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.slf4j</groupId>

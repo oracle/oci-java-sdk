@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,6 +12,179 @@
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client - Jersey implementation</name>
   <description>This project contains the HTTP client jersey implementation of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <properties>
+        <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}-signed.jar</source.jar.for.zip>
+      </properties>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>copy-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target name="copy-jar">
+                    <copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" tofile="${source.jar.for.zip}" />
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <profile>
+      <id>sign</id>
+      <properties>
+        <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}-signed.jar</source.jar.for.zip>
+      </properties>
+      <build>
+        <plugins>
+          <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-antrun-plugin</artifactId>
+            <executions>
+              <!-- Copy jar for signing -->
+              <execution>
+                <id>copy-jar</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>run</goal>
+                </goals>
+                <configuration>
+                  <target name="copy-jar">
+                    <copy file="${project.build.directory}/${project.artifactId}-${project.version}.jar" tofile="${source.jar.for.zip}" />
+                  </target>
+                </configuration>
+              </execution>
+            </executions>
+          </plugin>
+          <!-- Assemble only during the 'sign' profile as we need to assemble the signed jar -->
+          <!-- Assemble the single jar, dependencies, docs, examples into a zip archive -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>pre-integration-test</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Just do assembly, no signing -->
+    <profile>
+      <id>ziponly</id>
+      <properties>
+        <source.jar.for.zip>${project.build.directory}/${project.artifactId}-${project.version}.jar</source.jar.for.zip>
+      </properties>
+      <build>
+        <plugins>
+          <!-- Explicitly generate the sources jar in the package phase so that it will be included in the bundle -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-source-plugin</artifactId>
+            <executions>
+              <execution>
+                <id>attach-sources</id>
+                <phase>package</phase>
+                <goals>
+                  <goal>jar-no-fork</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <!-- END: Delete Public GitHub -->
 
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
@@ -21,6 +194,124 @@
         <filtering>true</filtering>
       </resource>
     </resources>
+    <!-- START: Delete Public GitHub -->
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <textOutputFile>${project.build.directory}/clirr-${project.artifactId}.txt</textOutputFile>
+              <ignored>
+                  <!-- Note: class names have to use '/' instead of '.', and the method and field names should *not* include the visibility
+                       modifier ('public', 'protected', etc.). Example: <method>java.security.interfaces.RSAPrivateKey getPrivateKey()</method> -->
+                  <!-- Ignore 'internal' packages -->
+                  <difference>
+                    <justification>Internal classes can always be modified</justification>
+                    <className>**/internal/**/*</className>
+                    <field>*</field>
+                    <method>*</method>
+                  </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+            <execution>
+              <id>enforce-bytecode-version</id>
+              <phase>test</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <enforceBytecodeVersion>
+                    <!-- Java 8, not newer -->
+                    <maxJdkVersion>8</maxJdkVersion>
+                  </enforceBytecodeVersion>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+            <execution>
+              <id>enforce</id>
+              <phase>verify</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <newObjectMapperDefinitionDeniedRule implementation="com.oracle.bmc.enforcer.rule.NewObjectMapperDefinitionDeniedRule">
+                    <!-- Exclude classes that are allowed to define new ObjectMapper object. -->
+                    <!-- Please add the class names as a comma separate value without any whitespace -->
+                    <!-- Example <excludeClasses>JacksonSerializer.java,NewFile.java</excludeClasses> -->
+                    <excludeClasses>JacksonSerializer.java</excludeClasses>
+                  </newObjectMapperDefinitionDeniedRule>
+                </rules>
+              </configuration>
+            </execution>
+            <execution>
+              <id>enforce-banned-dependencies</id>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <bannedDependencies>
+                    <excludes>
+                      <!-- Ban anything lower than 2.x or higher than 3.x -->
+                      <exclude>org.glassfish.jersey.core:jersey-client:[,2),[3,)</exclude>
+                      <!-- Ban anything lower than 2.x.y or higher than 3.x.y -->
+                      <exclude>jakarta.ws.rs:jakarta.ws.rs-api:[,2),[3,)</exclude>
+                      <!-- Ban anything higher than 1.x.y -->
+                      <exclude>jakarta.ws.rs:jakarta.annotation-api:[2,)</exclude>
+                    </excludes>
+                  </bannedDependencies>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>../../${checkstyle-rules-filename}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+    <!-- END: Delete Public GitHub -->
   </build>
 
   <dependencyManagement>
@@ -68,7 +359,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey</artifactId>
-        <version>3.44.4</version>
+        <version>3.44.5-SNAPSHOT</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -77,7 +368,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>

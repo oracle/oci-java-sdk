@@ -4,19 +4,868 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-full</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Full SDK</name>
   <description>This project contains the complete SDK distribution used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign</id>
+      <build>
+        <plugins>
+          <plugin>
+            <!-- https://csshub.us-phoenix-1.oci.oraclecorp.com/webcodesign/ -->
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+            <configuration>
+              <user>dexsdk_grp</user>
+              <globalUID>joshunte</globalUID>
+              <fileToSign>${project.build.directory}/oci-java-sdk-full-${project.version}.jar</fileToSign>
+              <signLocation>${project.build.directory}</signLocation>
+              <signMethod>java2</signMethod>
+              <signingParameters>${codesign-maven-plugin.signingParameters}</signingParameters>
+            </configuration>
+          </plugin>
+          <!-- Assemble only during the 'sign' profile as we need to assemble the signed jar -->
+          <!-- Assemble the single jar, dependencies, docs, examples into a zip archive -->
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+    <!-- Just do assembly, no signing -->
+    <profile>
+      <id>ziponly</id>
+      <build>
+        <plugins>
+          <plugin>
+            <artifactId>maven-assembly-plugin</artifactId>
+            <configuration>
+              <appendAssemblyId>true</appendAssemblyId>
+              <attach>true</attach>
+              <descriptors>
+                <descriptor>src/main/assembly/assembly.xml</descriptor>
+              </descriptors>
+            </configuration>
+            <executions>
+              <execution>
+                <phase>package</phase>
+                <goals>
+                  <goal>single</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <!-- First create the single jar -->
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-shade-plugin</artifactId>
+        <version>${maven-shade-plugin.version}</version>
+        <executions>
+          <execution>
+            <phase>package</phase>
+            <goals>
+              <goal>shade</goal>
+            </goals>
+            <configuration>
+              <minimizeJar>false</minimizeJar>
+              <createDependencyReducedPom>false</createDependencyReducedPom>
+              <createSourcesJar>true</createSourcesJar>
+              <dependencyReducedPomLocation>
+                ${java.io.tmpdir}/dependency-reduced-pom.xml
+              </dependencyReducedPomLocation>
+              <artifactSet>
+                <includes>
+                  <include>com.oracle.oci.sdk:*</include>
+                </includes>
+              </artifactSet>
+              <filters>
+                <filter>
+                  <artifact>*:*</artifact>
+                  <excludes>
+                    <exclude>**/pom.xml</exclude>
+                    <exclude>**/pom.properties</exclude>
+                  </excludes>
+                </filter>
+              </filters>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- Second, create the aggregated javadocs -->
+      <!-- TODO: this method needs to be cleaned up -->
+      <plugin>
+        <artifactId>maven-javadoc-plugin</artifactId>
+        <configuration>
+          <includeDependencySources>true</includeDependencySources>
+          <windowtitle>Oracle Cloud Infrastructure Java SDK - ${project.version}</windowtitle>
+          <doctitle>Oracle Cloud Infrastructure Java SDK - ${project.version}</doctitle>
+          <packagesheader>OCI Java SDK</packagesheader>
+          <sourcepath>
+            ../bmc-audit/src/main/java;
+            ../bmc-common/src/main/java;
+            ../bmc-circuitbreaker/src/main/java;
+            ../bmc-core/src/main/java;
+            ../bmc-database/src/main/java;
+            ../bmc-dns/src/main/java;
+            ../bmc-email/src/main/java;
+            ../bmc-filestorage/src/main/java;
+            ../bmc-identity/src/main/java;
+            ../bmc-loadbalancer/src/main/java;
+            ../bmc-objectstorage/bmc-objectstorage-extensions/src/main/java;
+            ../bmc-objectstorage/bmc-objectstorage-generated/src/main/java;
+            ../bmc-containerengine/src/main/java;
+            ../bmc-resourcesearch/src/main/java;
+            ../bmc-keymanagement/src/main/java;
+            ../bmc-announcementsservice/src/main/java;
+            ../bmc-healthchecks/src/main/java;
+            ../bmc-waas/src/main/java;
+            ../bmc-streaming/src/main/java;
+            ../bmc-monitoring/src/main/java;
+            ../bmc-resourcemanager/src/main/java;
+            ../bmc-ons/src/main/java;
+            ../bmc-autoscaling/src/main/java;
+          
+            ../bmc-budget/src/main/java;
+            ../bmc-workrequests/src/main/java;
+            ../bmc-limits/src/main/java;
+            ../bmc-functions/src/main/java;
+            ../bmc-events/src/main/java;
+            ../bmc-dts/src/main/java;
+            ../bmc-oce/src/main/java;
+            ../bmc-oda/src/main/java;
+            ../bmc-analytics/src/main/java;
+            ../bmc-integration/src/main/java;
+            ../bmc-osmanagement/src/main/java;
+            ../bmc-marketplace/src/main/java;
+            ../bmc-apigateway/src/main/java;
+            ../bmc-datacatalog/src/main/java;
+            ../bmc-dataflow/src/main/java;
+            ../bmc-datascience/src/main/java;
+            ../bmc-nosql/src/main/java;
+            ../bmc-secrets/src/main/java;
+            ../bmc-vault/src/main/java;
+            ../bmc-bds/src/main/java;
+            ../bmc-encryption/src/main/java;
+          
+            ../bmc-cims/src/main/java;
+            ../bmc-datasafe/src/main/java;
+            ../bmc-mysql/src/main/java;
+            ../bmc-dataintegration/src/main/java;
+            ../bmc-ocvp/src/main/java;
+            ../bmc-usageapi/src/main/java;
+            ../bmc-blockchain/src/main/java;
+            ../bmc-loggingingestion/src/main/java;
+            ../bmc-logging/src/main/java;
+            ../bmc-loganalytics/src/main/java;
+            ../bmc-managementdashboard/src/main/java;
+            ../bmc-sch/src/main/java;
+            ../bmc-loggingsearch/src/main/java;
+            ../bmc-managementagent/src/main/java;
+            ../bmc-cloudguard/src/main/java;
+            ../bmc-opsi/src/main/java;
+            ../bmc-computeinstanceagent/src/main/java;
+            ../bmc-optimizer/src/main/java;
+            ../bmc-tenantmanagercontrolplane/src/main/java;
+            ../bmc-rover/src/main/java;
+            ../bmc-databasemanagement/src/main/java;
+            ../bmc-artifacts/src/main/java;
+            ../bmc-apmsynthetics/src/main/java;
+            ../bmc-goldengate/src/main/java;
+            ../bmc-apmcontrolplane/src/main/java;
+            ../bmc-apmtraces/src/main/java;
+            ../bmc-networkloadbalancer/src/main/java;
+            ../bmc-vulnerabilityscanning/src/main/java;
+            ../bmc-databasemigration/src/main/java;
+            ../bmc-servicecatalog/src/main/java;
+            ../bmc-ailanguage/src/main/java;
+            ../bmc-operatoraccesscontrol/src/main/java;
+            ../bmc-bastion/src/main/java;
+            ../bmc-genericartifactscontent/src/main/java;
+            ../bmc-jms/src/main/java;
+            ../bmc-devops/src/main/java;
+            ../bmc-aianomalydetection/src/main/java;
+            ../bmc-datalabelingservice/src/main/java;
+            ../bmc-datalabelingservicedataplane/src/main/java;
+            ../bmc-apmconfig/src/main/java;
+            ../bmc-waf/src/main/java;
+            ../bmc-certificates/src/main/java;
+            ../bmc-certificatesmanagement/src/main/java;
+            ../bmc-usage/src/main/java;
+            ../bmc-databasetools/src/main/java;
+            ../bmc-servicemanagerproxy/src/main/java;
+            ../bmc-appmgmtcontrol/src/main/java;
+            ../bmc-ospgateway/src/main/java;
+            ../bmc-identitydataplane/src/main/java;
+            ../bmc-visualbuilder/src/main/java;
+            ../bmc-osubusage/src/main/java;
+            ../bmc-osubsubscription/src/main/java;
+            ../bmc-osuborganizationsubscription/src/main/java;
+            ../bmc-osubbillingschedule/src/main/java;
+            ../bmc-dashboardservice/src/main/java;
+            ../bmc-threatintelligence/src/main/java;
+            ../bmc-aivision/src/main/java;
+            ../bmc-aispeech/src/main/java;
+            ../bmc-stackmonitoring/src/main/java;
+            ../bmc-servicemesh/src/main/java;
+            ../bmc-adm/src/main/java;
+            ../bmc-licensemanager/src/main/java;
+            ../bmc-onesubscription/src/main/java;
+            ../bmc-governancerulescontrolplane/src/main/java;
+            ../bmc-waa/src/main/java;
+            ../bmc-networkfirewall/src/main/java;
+            ../bmc-vnmonitoring/src/main/java;
+            ../bmc-emwarehouse/src/main/java;
+            ../bmc-lockbox/src/main/java;
+            ../bmc-fusionapps/src/main/java;
+            ../bmc-mediaservices/src/main/java;
+            ../bmc-opa/target/src/main/java;
+            ../bmc-opensearch/src/main/java;
+            ../bmc-cloudmigrations/src/main/java;
+            ../bmc-cloudbridge/src/main/java;
+            ../bmc-disasterrecovery/src/main/java;
+            ../bmc-containerinstances/src/main/java;
+            ../bmc-aidocument/src/main/java;
+            ../bmc-queue/src/main/java;
+            ../bmc-recovery/src/main/java;
+            ../bmc-vbsinst/src/main/java;
+            ../bmc-identitydomains/src/main/java;
+            ../bmc-accessgovernancecp/src/main/java;
+            ../bmc-ocicontrolcenter/src/main/java;
+            ../bmc-osmanagementhub/src/main/java;
+            ../bmc-fleetsoftwareupdate/src/main/java;
+            ../bmc-computecloudatcustomer/src/main/java;
+            ../bmc-marketplacepublisher/src/main/java;
+            ../bmc-redis/src/main/java;
+            ../bmc-jmsjavadownloads/src/main/java;
+            ../bmc-psql/src/main/java;
+            ../bmc-generativeai/src/main/java;
+            ../bmc-generativeaiinference/src/main/java;
+            ../bmc-capacitymanagement/src/main/java;
+            ../bmc-globallydistributeddatabase/src/main/java;
+            ../bmc-desktops/src/main/java;
+            ../bmc-emaildataplane/src/main/java;
+            ../bmc-clusterplacementgroups/src/main/java;
+            ../bmc-marketplaceprivateoffer/src/main/java;
+            ../bmc-resourcescheduler/src/main/java;
+            ../bmc-demandsignal/src/main/java;</sourcepath>
+          <groups>
+            <group>
+              <title>Oracle Cloud Infrastructure Audit Service</title>
+              <packages>com.oracle.bmc.audit*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Container Engine</title>
+              <packages>com.oracle.bmc.containerengine*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Core Services (Compute/Virtual Network/Block Storage)</title>
+              <packages>com.oracle.bmc.core*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Database Service</title>
+              <packages>com.oracle.bmc.database*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure DNS Service</title>
+              <packages>com.oracle.bmc.dns*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Email Service</title>
+              <packages>com.oracle.bmc.email*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure File Storage</title>
+              <packages>com.oracle.bmc.filestorage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Identity Service</title>
+              <packages>com.oracle.bmc.identity*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Load Balancer Service</title>
+              <packages>com.oracle.bmc.loadbalancer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Object Storage Service</title>
+              <packages>com.oracle.bmc.objectstorage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Common Runtime</title>
+              <packages>com.oracle.bmc*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Resource Search</title>
+              <packages>com.oracle.bmc.resourcesearch*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Key Management</title>
+              <packages>com.oracle.bmc.keymanagement*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Announcements Service</title>
+              <packages>com.oracle.bmc.announcementsservice*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Healthchecks</title>
+              <packages>com.oracle.bmc.healthchecks*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Waas</title>
+              <packages>com.oracle.bmc.waas*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Streaming</title>
+              <packages>com.oracle.bmc.streaming*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Monitoring</title>
+              <packages>com.oracle.bmc.monitoring*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Resource Manager</title>
+              <packages>com.oracle.bmc.resourcemanager*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ons</title>
+              <packages>com.oracle.bmc.ons*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Autoscaling</title>
+              <packages>com.oracle.bmc.autoscaling*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Budget</title>
+              <packages>com.oracle.bmc.budget*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Work Requests</title>
+              <packages>com.oracle.bmc.workrequests*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Limits</title>
+              <packages>com.oracle.bmc.limits*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Functions</title>
+              <packages>com.oracle.bmc.functions*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Events</title>
+              <packages>com.oracle.bmc.events*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Dts</title>
+              <packages>com.oracle.bmc.dts*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Oce</title>
+              <packages>com.oracle.bmc.oce*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Oda</title>
+              <packages>com.oracle.bmc.oda*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Analytics</title>
+              <packages>com.oracle.bmc.analytics*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Integration</title>
+              <packages>com.oracle.bmc.integration*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Os Management</title>
+              <packages>com.oracle.bmc.osmanagement*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Marketplace</title>
+              <packages>com.oracle.bmc.marketplace*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Apigateway</title>
+              <packages>com.oracle.bmc.apigateway*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Catalog</title>
+              <packages>com.oracle.bmc.datacatalog*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Flow</title>
+              <packages>com.oracle.bmc.dataflow*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Science</title>
+              <packages>com.oracle.bmc.datascience*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Nosql</title>
+              <packages>com.oracle.bmc.nosql*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Secrets</title>
+              <packages>com.oracle.bmc.secrets*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Vault</title>
+              <packages>com.oracle.bmc.vault*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Bds</title>
+              <packages>com.oracle.bmc.bds*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Cims</title>
+              <packages>com.oracle.bmc.cims*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Safe</title>
+              <packages>com.oracle.bmc.datasafe*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Mysql</title>
+              <packages>com.oracle.bmc.mysql*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Integration</title>
+              <packages>com.oracle.bmc.dataintegration*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ocvp</title>
+              <packages>com.oracle.bmc.ocvp*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Usage Api</title>
+              <packages>com.oracle.bmc.usageapi*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Blockchain</title>
+              <packages>com.oracle.bmc.blockchain*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Loggingingestion</title>
+              <packages>com.oracle.bmc.loggingingestion*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Logging</title>
+              <packages>com.oracle.bmc.logging*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Log Analytics</title>
+              <packages>com.oracle.bmc.loganalytics*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Management Dashboard</title>
+              <packages>com.oracle.bmc.managementdashboard*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Sch</title>
+              <packages>com.oracle.bmc.sch*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Loggingsearch</title>
+              <packages>com.oracle.bmc.loggingsearch*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Management Agent</title>
+              <packages>com.oracle.bmc.managementagent*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Cloud Guard</title>
+              <packages>com.oracle.bmc.cloudguard*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Opsi</title>
+              <packages>com.oracle.bmc.opsi*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Compute Instance Agent</title>
+              <packages>com.oracle.bmc.computeinstanceagent*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Optimizer</title>
+              <packages>com.oracle.bmc.optimizer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Tenant Manager Control Plane</title>
+              <packages>com.oracle.bmc.tenantmanagercontrolplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Rover</title>
+              <packages>com.oracle.bmc.rover*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Database Management</title>
+              <packages>com.oracle.bmc.databasemanagement*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Artifacts</title>
+              <packages>com.oracle.bmc.artifacts*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Apm Synthetics</title>
+              <packages>com.oracle.bmc.apmsynthetics*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Golden Gate</title>
+              <packages>com.oracle.bmc.goldengate*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Apm Control Plane</title>
+              <packages>com.oracle.bmc.apmcontrolplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Apm Traces</title>
+              <packages>com.oracle.bmc.apmtraces*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Network Load Balancer</title>
+              <packages>com.oracle.bmc.networkloadbalancer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Vulnerability Scanning</title>
+              <packages>com.oracle.bmc.vulnerabilityscanning*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Database Migration</title>
+              <packages>com.oracle.bmc.databasemigration*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Service Catalog</title>
+              <packages>com.oracle.bmc.servicecatalog*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ai Language</title>
+              <packages>com.oracle.bmc.ailanguage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Operator Access Control</title>
+              <packages>com.oracle.bmc.operatoraccesscontrol*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Bastion</title>
+              <packages>com.oracle.bmc.bastion*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Generic Artifacts Content</title>
+              <packages>com.oracle.bmc.genericartifactscontent*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Jms</title>
+              <packages>com.oracle.bmc.jms*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Devops</title>
+              <packages>com.oracle.bmc.devops*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ai Anomaly Detection</title>
+              <packages>com.oracle.bmc.aianomalydetection*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Labeling Service</title>
+              <packages>com.oracle.bmc.datalabelingservice*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Data Labeling Service Dataplane</title>
+              <packages>com.oracle.bmc.datalabelingservicedataplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Apm Config</title>
+              <packages>com.oracle.bmc.apmconfig*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Waf</title>
+              <packages>com.oracle.bmc.waf*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Certificates</title>
+              <packages>com.oracle.bmc.certificates*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Certificates Management</title>
+              <packages>com.oracle.bmc.certificatesmanagement*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Usage</title>
+              <packages>com.oracle.bmc.usage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Database Tools</title>
+              <packages>com.oracle.bmc.databasetools*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Service Manager Proxy</title>
+              <packages>com.oracle.bmc.servicemanagerproxy*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Appmgmt Control</title>
+              <packages>com.oracle.bmc.appmgmtcontrol*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Osp Gateway</title>
+              <packages>com.oracle.bmc.ospgateway*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Identity Data Plane</title>
+              <packages>com.oracle.bmc.identitydataplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Visual Builder</title>
+              <packages>com.oracle.bmc.visualbuilder*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Osub Usage</title>
+              <packages>com.oracle.bmc.osubusage*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Osub Subscription</title>
+              <packages>com.oracle.bmc.osubsubscription*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Osub Organization Subscription</title>
+              <packages>com.oracle.bmc.osuborganizationsubscription*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Osub Billing Schedule</title>
+              <packages>com.oracle.bmc.osubbillingschedule*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Dashboard Service</title>
+              <packages>com.oracle.bmc.dashboardservice*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Threat Intelligence</title>
+              <packages>com.oracle.bmc.threatintelligence*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ai Vision</title>
+              <packages>com.oracle.bmc.aivision*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ai Speech</title>
+              <packages>com.oracle.bmc.aispeech*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Stack Monitoring</title>
+              <packages>com.oracle.bmc.stackmonitoring*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Service Mesh</title>
+              <packages>com.oracle.bmc.servicemesh*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Adm</title>
+              <packages>com.oracle.bmc.adm*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure License Manager</title>
+              <packages>com.oracle.bmc.licensemanager*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Onesubscription</title>
+              <packages>com.oracle.bmc.onesubscription*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Governance Rules Control Plane</title>
+              <packages>com.oracle.bmc.governancerulescontrolplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Waa</title>
+              <packages>com.oracle.bmc.waa*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Network Firewall</title>
+              <packages>com.oracle.bmc.networkfirewall*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Vn Monitoring</title>
+              <packages>com.oracle.bmc.vnmonitoring*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Em Warehouse</title>
+              <packages>com.oracle.bmc.emwarehouse*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Lockbox</title>
+              <packages>com.oracle.bmc.lockbox*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Fusion Apps</title>
+              <packages>com.oracle.bmc.fusionapps*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Media Services</title>
+              <packages>com.oracle.bmc.mediaservices*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Opa</title>
+              <packages>com.oracle.bmc.opa*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Opensearch</title>
+              <packages>com.oracle.bmc.opensearch*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Cloud Migrations</title>
+              <packages>com.oracle.bmc.cloudmigrations*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Cloud Bridge</title>
+              <packages>com.oracle.bmc.cloudbridge*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Disaster Recovery</title>
+              <packages>com.oracle.bmc.disasterrecovery*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Container Instances</title>
+              <packages>com.oracle.bmc.containerinstances*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Ai Document</title>
+              <packages>com.oracle.bmc.aidocument*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Queue</title>
+              <packages>com.oracle.bmc.queue*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Recovery</title>
+              <packages>com.oracle.bmc.recovery*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Vbs Inst</title>
+              <packages>com.oracle.bmc.vbsinst*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Identity Domains</title>
+              <packages>com.oracle.bmc.identitydomains*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Access Governance Cp</title>
+              <packages>com.oracle.bmc.accessgovernancecp*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Oci Control Center</title>
+              <packages>com.oracle.bmc.ocicontrolcenter*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Os Management Hub</title>
+              <packages>com.oracle.bmc.osmanagementhub*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Fleet Software Update</title>
+              <packages>com.oracle.bmc.fleetsoftwareupdate*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Compute Cloud At Customer</title>
+              <packages>com.oracle.bmc.computecloudatcustomer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Marketplace Publisher</title>
+              <packages>com.oracle.bmc.marketplacepublisher*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Redis</title>
+              <packages>com.oracle.bmc.redis*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Jms Java Downloads</title>
+              <packages>com.oracle.bmc.jmsjavadownloads*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Psql</title>
+              <packages>com.oracle.bmc.psql*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Generative Ai</title>
+              <packages>com.oracle.bmc.generativeai*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Generative Ai Inference</title>
+              <packages>com.oracle.bmc.generativeaiinference*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Capacity Management</title>
+              <packages>com.oracle.bmc.capacitymanagement*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Globally Distributed Database</title>
+              <packages>com.oracle.bmc.globallydistributeddatabase*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Desktops</title>
+              <packages>com.oracle.bmc.desktops*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Email Data Plane</title>
+              <packages>com.oracle.bmc.emaildataplane*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Cluster Placement Groups</title>
+              <packages>com.oracle.bmc.clusterplacementgroups*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Marketplace Private Offer</title>
+              <packages>com.oracle.bmc.marketplaceprivateoffer*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Resource Scheduler</title>
+              <packages>com.oracle.bmc.resourcescheduler*</packages>
+            </group>
+            <group>
+              <title>Oracle Cloud Infrastructure Demand Signal</title>
+              <packages>com.oracle.bmc.demandsignal*</packages>
+            </group>
+          </groups>
+          <overview>src/main/java/overview.html</overview>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- END: Delete Public GitHub -->
   <dependencyManagement>
     <dependencies>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.44.4</version>
+        <version>3.44.5-SNAPSHOT</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -23,6 +23,11 @@
   <modules>
     <module>bmc-common-httpclient-jersey</module>
     <module>bmc-common-httpclient-jersey3</module>
+    <!-- START: Delete Public GitHub -->
+    <module>bmc-common-httpclient-tests</module>
+    <module>bmc-common-httpclient-jersey-tests</module>
+    <module>bmc-common-httpclient-jersey3-tests</module>
+    <!-- END: Delete Public GitHub -->
   </modules>
 
 </project>

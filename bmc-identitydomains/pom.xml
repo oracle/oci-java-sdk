@@ -4,18 +4,139 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-identitydomains</artifactId>
   <name>Oracle Cloud Infrastructure SDK - Identity Domains</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure Identity Domains</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>2.9.1-oracle-SNAPSHOT</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <failOnError>${clirr.fail.on.error}</failOnError>
+              <textOutputFile>${project.build.directory}/clirr-identitydomains.txt</textOutputFile>
+              <logResults>true</logResults>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <ignored>
+                <!-- Ignored differences by design -->
+                <difference>
+                  <!-- Ignore 'internal' packages -->
+                  <className>**/internal/**/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <!-- Ignore 'Async' and 'Client' classes, just look at the sync interface -->
+                  <className>com/oracle/bmc/identitydomains/*Async*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <!-- Ignore 'Async' and 'Client' classes, just look at the sync interface -->
+                  <className>com/oracle/bmc/identitydomains/*Client</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <!-- Ignore added methods to clients -->
+                  <className>com/oracle/bmc/identitydomains/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <!-- Ignore added parameters in models, requests, responses -->
+                  <className>com/oracle/bmc/identitydomains/*/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                  <differenceType>7004</differenceType>
+                </difference>
+                <difference>
+                  <!-- Ignore parameter type changes in models, requests, responses -->
+                  <!-- These will be caught by return type changes. -->
+                  <className>com/oracle/bmc/identitydomains/*/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                  <differenceType>7005</differenceType>
+                  <to>*</to>
+                </difference>
+                <difference>
+                  <!-- Ignore builders. -->
+                  <className>com/oracle/bmc/identitydomains/*/*Builder</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <!-- Ignore canEqual method. -->
+                  <className>com/oracle/bmc/identitydomains/*/*</className>
+                  <method>boolean canEqual(java.lang.Object)</method>
+                  <differenceType>7002</differenceType>
+                </difference>
+                <!-- Add backward-incompatible differences below -->
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${checkstyle-rules-file}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- END: Delete Public GitHub -->
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
   </dependencies>
 </project>

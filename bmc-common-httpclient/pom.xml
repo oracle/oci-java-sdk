@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,6 +12,21 @@
   <name>Oracle Cloud Infrastructure SDK - Common HTTP client</name>
   <description>This project contains the HTTP client API of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <!-- END: Delete Public GitHub -->
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>
@@ -21,6 +36,102 @@
       </resource>
     </resources>
     <plugins>
+      <!-- START: Delete Public GitHub -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <textOutputFile>${project.build.directory}/clirr-${project.artifactId}.txt</textOutputFile>
+              <ignored>
+                <difference>
+                  <justification>Added method to interface</justification>
+                  <className>com/oracle/bmc/http/client/HttpClientBuilder</className>
+                  <method>com.oracle.bmc.http.client.HttpClientBuilder baseUri(java.lang.String)</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Added method to interface; this interface is still fairly new, and we added the method to all our implementations</justification>
+                  <className>com/oracle/bmc/http/client/HttpProvider</className>
+                  <method>com.oracle.bmc.http.client.Serializer getSerializer()</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+                <difference>
+                  <justification>Serializer can ge requested using HttpProvider.getSerializer(); was marked internal before</justification>
+                  <className>com/oracle/bmc/http/client/Serialization</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Moved to HTTP client implementations; was marked internal before</justification>
+                  <className>com/oracle/bmc/http/client/internal/ExplicitlySetFilter</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+                <difference>
+                  <justification>Moved to HTTP client implementations; was marked internal before</justification>
+                  <className>com/oracle/bmc/http/client/internal/RFC3339DateFormat</className>
+                  <differenceType>8001</differenceType>
+                </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+            <execution>
+              <id>enforce-bytecode-version</id>
+              <phase>test</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <enforceBytecodeVersion>
+                    <!-- Java 8, not newer -->
+                    <maxJdkVersion>8</maxJdkVersion>
+                  </enforceBytecodeVersion>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${checkstyle-rules-file}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- END: Delete Public GitHub -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>
