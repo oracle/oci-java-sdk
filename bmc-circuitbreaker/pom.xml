@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-circuitbreaker</artifactId>
@@ -13,10 +13,132 @@
   <description>This project contains the Circuit Breaker module used for Oracle Cloud Infrastructure
     SDKs</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <!-- END: Delete Public GitHub -->
 
 
   <build>
     <plugins>
+      <!-- START: Delete Public GitHub -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+                <param>1.23.4.*stream.*</param>
+                <param>.*experimental.*</param>
+              </excludeVersionRegexes>
+              <textOutputFile>${project.build.directory}/clirr-circuitbreaker.txt</textOutputFile>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <ignored>
+                <!-- Note: class names have to use '/' instead of '.', and the method and field names should *not* include the visibility
+                     modifier ('public', 'protected', etc.). Example: <method>java.security.interfaces.RSAPrivateKey getPrivateKey()</method> -->
+                <!-- Ignore 'internal' packages -->
+                <difference>
+                  <justification>Internal classes can always be modified</justification>
+                  <className>**/internal/**/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <justification>Bad choice of classes in the interface level. https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/java-sdk/pull-requests/2830/overview</justification>
+                  <className>com/oracle/bmc/circuitbreaker/CircuitBreakerConfiguration</className>
+                  <method>com.google.common.collect.ImmutableList getRecordExceptions()</method>
+                  <to>java.util.List</to>
+                  <differenceType>7006</differenceType>
+                </difference>
+                <difference>
+                  <justification>Bad choice of classes in the interface level. https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/java-sdk/pull-requests/2830/overview</justification>
+                  <className>com/oracle/bmc/circuitbreaker/CircuitBreakerConfiguration</className>
+                  <method>com.google.common.collect.ImmutableSet getRecordHttpStatuses()</method>
+                  <to>java.util.Set</to>
+                  <differenceType>7006</differenceType>
+                </difference>
+                <difference>
+                  <!-- Ignore builder, this is already caught by the above getters. -->
+                  <justification>Bad choice of classes in the interface level. https://bitbucket.oci.oraclecorp.com/projects/SDK/repos/java-sdk/pull-requests/2830/overview</justification>
+                  <className>com/oracle/bmc/circuitbreaker/CircuitBreakerConfiguration$CircuitBreakerConfigurationBuilder</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <!-- Ignore added methods to circuit breaker interface [remove this option later] -->
+                  <justification>Adding new functionality to the circuit breaker interface</justification>
+                  <className>com/oracle/bmc/circuitbreaker/JaxRsCircuitBreaker</className>
+                  <field>*</field>
+                  <method>*</method>
+                  <differenceType>7012</differenceType>
+                </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+            <execution>
+              <id>enforce-bytecode-version</id>
+              <phase>test</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <enforceBytecodeVersion>
+                    <!-- Java 8, not newer -->
+                    <maxJdkVersion>8</maxJdkVersion>
+                  </enforceBytecodeVersion>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${checkstyle-rules-file}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <!-- END: Delete Public GitHub -->
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-dependency-plugin</artifactId>

@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.44.4</version>
+    <version>3.44.5-SNAPSHOT</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -13,22 +13,169 @@
   <name>Oracle Cloud Infrastructure SDK - Encryption</name>
   <description>This project contains the client-side encryption components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <!-- START: Delete Public GitHub -->
+  <profiles>
+    <profile>
+      <id>sign-individual</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>com.oracle.ccss</groupId>
+            <artifactId>codesign-maven-plugin</artifactId>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>clirr-maven-plugin</artifactId>
+        <version>${clirr.version}</version>
+        <executions>
+          <execution>
+            <id>clirr</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+            <configuration>
+              <excludeVersionRegexes>
+                <param>.*preview.*</param>
+              </excludeVersionRegexes>
+              <comparisonVersion>${clirr.comparison.version}</comparisonVersion>
+              <textOutputFile>${project.build.directory}/clirr-${project.artifactId}.txt</textOutputFile>
+              <ignored>
+                <difference>
+                  <justification>Internal classes can always be modified</justification>
+                  <className>**/internal/**/*</className>
+                  <field>*</field>
+                  <method>*</method>
+                </difference>
+                <difference>
+                  <justification>Breaking change</justification>
+                  <className>com/oracle/bmc/encryption/KmsMasterKey</className>
+                  <method>com.oracle.bmc.auth.AuthenticationDetailsProvider getProvider()</method>
+                  <differenceType>7006</differenceType>
+                  <field>*</field>
+                  <from>*</from>
+                  <to>*</to>
+                </difference>
+                <difference>
+                  <justification>Breaking change</justification>
+                  <className>com/oracle/bmc/encryption/KmsMasterKeyProvider</className>
+                  <method>com.oracle.bmc.auth.AuthenticationDetailsProvider getAuthenticationProvider()</method>
+                  <differenceType>7006</differenceType>
+                  <field>*</field>
+                  <from>*</from>
+                  <to>*</to>
+                </difference>
+                <difference>
+                  <justification>Breaking change</justification>
+                  <className>com/oracle/bmc/encryption/KmsMasterKey</className>
+                  <field>*</field>
+                  <method>*</method>
+                  <differenceType>7005</differenceType>
+                  <from>*</from>
+                  <to>*</to>
+                </difference>
+                <difference>
+                  <justification>Breaking change</justification>
+                  <className>com/oracle/bmc/encryption/KmsMasterKeyProvider</className>
+                  <method>*</method>
+                  <differenceType>7005</differenceType>
+                  <field>*</field>
+                  <from>*</from>
+                  <to>*</to>
+                </difference>
+              </ignored>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-enforcer-plugin</artifactId>
+        <executions>
+            <execution>
+              <id>enforce-bytecode-version</id>
+              <phase>test</phase>
+              <goals>
+                <goal>enforce</goal>
+              </goals>
+              <configuration>
+                <rules>
+                  <enforceBytecodeVersion>
+                    <!-- Java 8, not newer -->
+                    <maxJdkVersion>8</maxJdkVersion>
+                  </enforceBytecodeVersion>
+                </rules>
+                <fail>true</fail>
+              </configuration>
+            </execution>
+          </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.1</version>
+        <configuration>
+          <configLocation>${checkstyle-rules-file}</configLocation>
+          <encoding>UTF-8</encoding>
+          <consoleOutput>true</consoleOutput>
+          <failsOnError>true</failsOnError>
+          <linkXRef>false</linkXRef>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>verify</phase>
+            <goals>
+              <goal>check</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-dependency-plugin</artifactId>
+        <version>3.1.2</version>
+        <executions>
+          <execution>
+            <id>check-dependencies</id>
+            <goals>
+              <goal>analyze-only</goal>
+            </goals>
+            <phase>verify</phase>
+            <configuration>
+              <failOnWarning>true</failOnWarning>
+              <ignoredUnusedDeclaredDependencies>
+                <!-- jersey client is required for serialization to work correctly -->
+                <ignoredUnusedDeclaredDependency>com.oracle.oci.sdk:oci-java-sdk-common-httpclient-jersey</ignoredUnusedDeclaredDependency>
+              </ignoredUnusedDeclaredDependencies>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+  </build>
+  <!-- END: Delete Public GitHub -->
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-keymanagement</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -43,7 +190,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.44.4</version>
+      <version>3.44.5-SNAPSHOT</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

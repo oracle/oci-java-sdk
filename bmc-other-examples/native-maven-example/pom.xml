@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk-examples-native</artifactId>
-  <version>3.44.4</version>
+  <version>3.44.5-SNAPSHOT</version>
   <name>Oracle Cloud Infrastructure SDK - Native Example</name>
   <description>This project contains an example on how to use the SDK used for Oracle Cloud Infrastructure in a native executable</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
@@ -50,6 +50,39 @@
     </build>
 
     <profiles>
+        <!-- START: Delete Public GitHub -->
+        <profile>
+            <id>sign-individual</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <!-- https://csshub.us-phoenix-1.oci.oraclecorp.com/webcodesign/ -->
+                        <groupId>com.oracle.ccss</groupId>
+                        <artifactId>codesign-maven-plugin</artifactId>
+                        <executions>
+                            <execution>
+                                <!-- Run in pre-integration-test phase, which comes after the package phase. -->
+                                <!-- That way, all jar files have been built already. -->
+                                <phase>pre-integration-test</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <user>dexsdk_grp</user>
+                            <globalUID>joshunte</globalUID>
+                            <fileToSign>${project.build.directory}/${project.artifactId}-${project.version}.jar
+                            </fileToSign>
+                            <signLocation>${project.build.directory}</signLocation>
+                            <signMethod>java2</signMethod>
+                            <signingParameters>${codesign-maven-plugin.signingParameters}</signingParameters>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <!-- END: Delete Public GitHub -->
         <profile>
             <id>native</id>
             <build>
@@ -89,14 +122,14 @@
             <dependency>
                 <groupId>com.oracle.oci.sdk</groupId>
                 <artifactId>oci-java-sdk-bom</artifactId>
-                <version>3.44.4</version>
+                <version>3.44.5-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
             <dependency>
                 <groupId>com.oracle.oci.sdk</groupId>
                 <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-                <version>3.44.4</version>
+                <version>3.44.5-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
