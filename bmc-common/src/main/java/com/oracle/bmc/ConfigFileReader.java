@@ -1,13 +1,15 @@
 /**
  * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
+
+ * C.B 2024: copied from OCI SDK, copyright notice unchanged.  We will try to patch this change back into
+ *           OCI (https://github.com/oracle/oci-java-sdk).  This change exposes the profile names and key/value 
+ *           pairs that are already being parsed in. This is needed by tools (IntelliJ) and admin tools.
  */
 package com.oracle.bmc;
 
-import org.slf4j.Logger;
+import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
-import jakarta.annotation.Nonnull;
-import jakarta.annotation.Nullable;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,14 +18,18 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Optional;
+import java.util.Set;
+
+import org.slf4j.Logger;
+
+import com.oracle.bmc.util.internal.StringUtils;
 
 import jakarta.annotation.Nonnull;
 import jakarta.annotation.Nullable;
-
-import com.oracle.bmc.util.internal.StringUtils;
-import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 
 /**
  * Simple implementation to read OCI configuration files.
@@ -195,6 +201,22 @@ public final class ConfigFileReader {
             return accumulator.foundDefaultProfile
                     ? accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME).get(key)
                     : null;
+        }
+
+        public Set<String> getProfileNames() {
+          return Collections.unmodifiableSet(accumulator.configurationsByProfile.keySet());
+        }
+
+        public Map<String, String> getProfileKeys(String profileName) {
+          Map<String, String> keyValues = new HashMap<>();
+          if (accumulator.foundDefaultProfile) {
+            keyValues.putAll(accumulator.configurationsByProfile.get(DEFAULT_PROFILE_NAME));
+          }
+          Map<String, String> overrideKeyValues =
+            Optional.ofNullable(accumulator.configurationsByProfile.get(profileName))
+              .orElse(Collections.emptyMap());
+          keyValues.putAll(overrideKeyValues);
+          return Collections.unmodifiableMap(keyValues);
         }
 
         @Override
