@@ -16,7 +16,7 @@ import org.junit.Test;
 
 import com.oracle.bmc.ConfigFileReader.ConfigFile;
 
-public class ConfigFileReaderTest2 {
+public class ConfigFileReader2Test {
 
   private static File CONFIG_FILE;
   
