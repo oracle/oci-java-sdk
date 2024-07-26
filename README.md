@@ -214,9 +214,7 @@ See [CHANGELOG](https://github.com/oracle/oci-java-sdk/blob/master/CHANGELOG.md)
 
 ## Contributing
 
-oci-java-sdk is an open source project. See [CONTRIBUTING](https://github.com/oracle/oci-java-sdk/blob/master/CONTRIBUTING.md) for details.
-
-Oracle gratefully acknowledges the contributions to oci-java-sdk that have been made by the community.
+This project welcomes contributions from the community. Before submitting a pull request, please [review our contribution guide](./CONTRIBUTING.md)
 
 ## Known Issues
 
@@ -262,10 +260,13 @@ To resolve this problem, you can run Maven with the following parameter:
 `-Djdk.jar.maxSignatureFileSize=16000000`
 
 The low default value in Java will be addressed and resolved in upcoming minor Java version releases.
+## Security
+
+Please consult the [security guide](./SECURITY.md) for our responsible security vulnerability disclosure process
 
 ## License
 
-Copyright (c) 2016, 2020, Oracle and/or its affiliates.  All rights reserved.
+Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
 This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl
 or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
 
