@@ -515,6 +515,46 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public BulkUploadTunnelInspectionRulesResponse bulkUploadTunnelInspectionRules(
+            BulkUploadTunnelInspectionRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getBulkUploadTunnelInspectionRulesDetails(),
+                "bulkUploadTunnelInspectionRulesDetails is required");
+
+        return clientCall(request, BulkUploadTunnelInspectionRulesResponse::builder)
+                .logger(LOG, "bulkUploadTunnelInspectionRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadTunnelInspectionRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/BulkUploadTunnelInspectionRules")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkUploadTunnelInspectionRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam("actions")
+                .appendPathParam("bulkUpload")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkUploadTunnelInspectionRulesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkUploadTunnelInspectionRulesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public BulkUploadUrlListsResponse bulkUploadUrlLists(BulkUploadUrlListsRequest request) {
 
         Validate.notBlank(
@@ -1070,6 +1110,43 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateTunnelInspectionRuleResponse createTunnelInspectionRule(
+            CreateTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateTunnelInspectionRuleDetails(),
+                "createTunnelInspectionRuleDetails is required");
+
+        return clientCall(request, CreateTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "createTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "CreateTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/CreateTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        CreateTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString(
+                        "etag", CreateTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTunnelInspectionRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateUrlListResponse createUrlList(CreateUrlListRequest request) {
 
         Validate.notBlank(
@@ -1433,6 +1510,39 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteTunnelInspectionRuleResponse deleteTunnelInspectionRule(
+            DeleteTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+
+        return clientCall(request, DeleteTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "deleteTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "DeleteTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/DeleteTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1828,6 +1938,42 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetServiceListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetTunnelInspectionRuleResponse getTunnelInspectionRule(
+            GetTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+
+        return clientCall(request, GetTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "getTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "GetTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/GetTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        GetTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString("etag", GetTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2365,6 +2511,54 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-page-count", ListServicesResponse.Builder::opcPageCount)
                 .handleResponseHeaderInteger(
                         "opc-total-items", ListServicesResponse.Builder::opcTotalItems)
+                .callSync();
+    }
+
+    @Override
+    public ListTunnelInspectionRulesResponse listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        return clientCall(request, ListTunnelInspectionRulesResponse::builder)
+                .logger(LOG, "listTunnelInspectionRules")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "ListTunnelInspectionRules",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/ListTunnelInspectionRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListTunnelInspectionRulesRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "tunnelInspectionRulePriorityOrder",
+                        request.getTunnelInspectionRulePriorityOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummaryCollection
+                                .class,
+                        ListTunnelInspectionRulesResponse.Builder
+                                ::tunnelInspectionRuleSummaryCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListTunnelInspectionRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListTunnelInspectionRulesResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListTunnelInspectionRulesResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-page-count", ListTunnelInspectionRulesResponse.Builder::opcPageCount)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListTunnelInspectionRulesResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -2978,6 +3172,48 @@ public class NetworkFirewallClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateServiceListResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateServiceListResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateTunnelInspectionRuleResponse updateTunnelInspectionRule(
+            UpdateTunnelInspectionRuleRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkFirewallPolicyId(), "networkFirewallPolicyId must not be blank");
+
+        Validate.notBlank(
+                request.getTunnelInspectionRuleName(),
+                "tunnelInspectionRuleName must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTunnelInspectionRuleDetails(),
+                "updateTunnelInspectionRuleDetails is required");
+
+        return clientCall(request, UpdateTunnelInspectionRuleResponse::builder)
+                .logger(LOG, "updateTunnelInspectionRule")
+                .serviceDetails(
+                        "NetworkFirewall",
+                        "UpdateTunnelInspectionRule",
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/UpdateTunnelInspectionRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTunnelInspectionRuleRequest::builder)
+                .basePath("/20230501")
+                .appendPathParam("networkFirewallPolicies")
+                .appendPathParam(request.getNetworkFirewallPolicyId())
+                .appendPathParam("tunnelInspectionRules")
+                .appendPathParam(request.getTunnelInspectionRuleName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.networkfirewall.model.TunnelInspectionRule.class,
+                        UpdateTunnelInspectionRuleResponse.Builder::tunnelInspectionRule)
+                .handleResponseHeaderString(
+                        "etag", UpdateTunnelInspectionRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTunnelInspectionRuleResponse.Builder::opcRequestId)
                 .callSync();
     }
 

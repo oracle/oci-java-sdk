@@ -35,6 +35,7 @@ public class UpdateFsuCycleDetails
         "displayName",
         "goalVersionDetails",
         "batchingStrategy",
+        "diagnosticsCollection",
         "freeformTags",
         "definedTags"
     })
@@ -42,12 +43,14 @@ public class UpdateFsuCycleDetails
             String displayName,
             FsuGoalVersionDetails goalVersionDetails,
             UpdateBatchingStrategyDetails batchingStrategy,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.goalVersionDetails = goalVersionDetails;
         this.batchingStrategy = batchingStrategy;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -77,6 +80,13 @@ public class UpdateFsuCycleDetails
 
     public UpdateBatchingStrategyDetails getBatchingStrategy() {
         return batchingStrategy;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
     }
 
     /**
@@ -131,6 +141,7 @@ public class UpdateFsuCycleDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", goalVersionDetails=").append(String.valueOf(this.goalVersionDetails));
         sb.append(", batchingStrategy=").append(String.valueOf(this.batchingStrategy));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -150,6 +161,7 @@ public class UpdateFsuCycleDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.goalVersionDetails, other.goalVersionDetails)
                 && java.util.Objects.equals(this.batchingStrategy, other.batchingStrategy)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -168,6 +180,11 @@ public class UpdateFsuCycleDetails
         result =
                 (result * PRIME)
                         + (this.batchingStrategy == null ? 43 : this.batchingStrategy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

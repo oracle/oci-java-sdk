@@ -9,6 +9,8 @@ package com.oracle.bmc.datasafe.model;
 public enum ReportLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Updating("UPDATING"),
     Active("ACTIVE"),
+    Creating("CREATING"),
+    Failed("FAILED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

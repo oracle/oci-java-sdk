@@ -140,7 +140,8 @@ public final class AutonomousDatabase
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
         "remoteDisasterRecoveryConfiguration",
-        "netServicesArchitecture"
+        "netServicesArchitecture",
+        "clusterPlacementGroupId"
     })
     public AutonomousDatabase(
             String id,
@@ -259,7 +260,8 @@ public final class AutonomousDatabase
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
-            NetServicesArchitecture netServicesArchitecture) {
+            NetServicesArchitecture netServicesArchitecture,
+            String clusterPlacementGroupId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -378,6 +380,7 @@ public final class AutonomousDatabase
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
         this.netServicesArchitecture = netServicesArchitecture;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -2942,6 +2945,25 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Autonomous Serverless Database.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * cluster placement group of the Autonomous Serverless Database.
+         *
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         */
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -3065,7 +3087,8 @@ public final class AutonomousDatabase
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
                             this.remoteDisasterRecoveryConfiguration,
-                            this.netServicesArchitecture);
+                            this.netServicesArchitecture,
+                            this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3429,6 +3452,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
             }
             return this;
         }
@@ -6654,6 +6680,23 @@ public final class AutonomousDatabase
         return netServicesArchitecture;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Autonomous Serverless Database.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * cluster placement group of the Autonomous Serverless Database.
+     *
+     * @return the value
+     */
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -6821,6 +6864,8 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -6997,6 +7042,8 @@ public final class AutonomousDatabase
                         other.remoteDisasterRecoveryConfiguration)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
     }
 
@@ -7413,6 +7460,11 @@ public final class AutonomousDatabase
                         + (this.netServicesArchitecture == null
                                 ? 43
                                 : this.netServicesArchitecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

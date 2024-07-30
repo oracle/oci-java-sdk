@@ -139,6 +139,7 @@ public final class GiResourceIdFilter extends GiFleetDiscoveryFilter {
 
     /** Type of resource to match in the discovery. */
     public enum EntityType implements com.oracle.bmc.http.internal.BmcEnum {
+        Databasesoftwareimage("DATABASESOFTWAREIMAGE"),
         Exadatainfrastructure("EXADATAINFRASTRUCTURE"),
         Cloudexadatainfrastructure("CLOUDEXADATAINFRASTRUCTURE"),
         Vmcluster("VMCLUSTER"),

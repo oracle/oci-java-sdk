@@ -1697,6 +1697,37 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public GetInstanceMaintenanceEventResponse getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request) {
+
+        Validate.notBlank(
+                request.getInstanceMaintenanceEventId(),
+                "instanceMaintenanceEventId must not be blank");
+
+        return clientCall(request, GetInstanceMaintenanceEventResponse::builder)
+                .logger(LOG, "getInstanceMaintenanceEvent")
+                .serviceDetails(
+                        "Compute",
+                        "GetInstanceMaintenanceEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/GetInstanceMaintenanceEvent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetInstanceMaintenanceEventRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendPathParam(request.getInstanceMaintenanceEventId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.core.model.InstanceMaintenanceEvent.class,
+                        GetInstanceMaintenanceEventResponse.Builder::instanceMaintenanceEvent)
+                .handleResponseHeaderString(
+                        "etag", GetInstanceMaintenanceEventResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetInstanceMaintenanceEventResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetInstanceMaintenanceRebootResponse getInstanceMaintenanceReboot(
             GetInstanceMaintenanceRebootRequest request) {
 
@@ -2777,6 +2808,49 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
     }
 
     @Override
+    public ListInstanceMaintenanceEventsResponse listInstanceMaintenanceEvents(
+            ListInstanceMaintenanceEventsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListInstanceMaintenanceEventsResponse::builder)
+                .logger(LOG, "listInstanceMaintenanceEvents")
+                .serviceDetails(
+                        "Compute",
+                        "ListInstanceMaintenanceEvents",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEventSummary/ListInstanceMaintenanceEvents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInstanceMaintenanceEventsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("instanceId", request.getInstanceId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("correlationToken", request.getCorrelationToken())
+                .appendQueryParam("instanceAction", request.getInstanceAction())
+                .appendQueryParam(
+                        "timeWindowStartGreaterThanOrEqualTo",
+                        request.getTimeWindowStartGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeWindowStartLessThanOrEqualTo",
+                        request.getTimeWindowStartLessThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.core.model.InstanceMaintenanceEventSummary.class,
+                        ListInstanceMaintenanceEventsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListInstanceMaintenanceEventsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInstanceMaintenanceEventsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -3258,6 +3332,43 @@ public class ComputeClient extends com.oracle.bmc.http.internal.BaseSyncClient i
                 .handleResponseHeaderString(
                         "opc-request-id",
                         UpdateInstanceConsoleConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateInstanceMaintenanceEventResponse updateInstanceMaintenanceEvent(
+            UpdateInstanceMaintenanceEventRequest request) {
+
+        Validate.notBlank(
+                request.getInstanceMaintenanceEventId(),
+                "instanceMaintenanceEventId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateInstanceMaintenanceEventDetails(),
+                "updateInstanceMaintenanceEventDetails is required");
+
+        return clientCall(request, UpdateInstanceMaintenanceEventResponse::builder)
+                .logger(LOG, "updateInstanceMaintenanceEvent")
+                .serviceDetails(
+                        "Compute",
+                        "UpdateInstanceMaintenanceEvent",
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/UpdateInstanceMaintenanceEvent")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateInstanceMaintenanceEventRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("instanceMaintenanceEvents")
+                .appendPathParam(request.getInstanceMaintenanceEventId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateInstanceMaintenanceEventResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateInstanceMaintenanceEventResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

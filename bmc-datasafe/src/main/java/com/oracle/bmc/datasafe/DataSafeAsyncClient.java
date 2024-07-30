@@ -456,6 +456,47 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeAlertPolicyCompartmentResponse>
+            changeAlertPolicyCompartment(
+                    ChangeAlertPolicyCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAlertPolicyCompartmentRequest,
+                                    ChangeAlertPolicyCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeAlertPolicyCompartmentDetails(),
+                "changeAlertPolicyCompartmentDetails is required");
+
+        return clientCall(request, ChangeAlertPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeAlertPolicyCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeAlertPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/ChangeAlertPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeAlertPolicyCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeAlertPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeAlertPolicyCompartmentResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAuditArchiveRetrievalCompartmentResponse>
             changeAuditArchiveRetrievalCompartment(
                     ChangeAuditArchiveRetrievalCompartmentRequest request,
@@ -1489,6 +1530,83 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CreateAlertPolicyResponse> createAlertPolicy(
+            CreateAlertPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlertPolicyRequest, CreateAlertPolicyResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateAlertPolicyDetails(), "createAlertPolicyDetails is required");
+
+        return clientCall(request, CreateAlertPolicyResponse::builder)
+                .logger(LOG, "createAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/CreateAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicy.class,
+                        CreateAlertPolicyResponse.Builder::alertPolicy)
+                .handleResponseHeaderString("etag", CreateAlertPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateAlertPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlertPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("location", CreateAlertPolicyResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAlertPolicyRuleResponse> createAlertPolicyRule(
+            CreateAlertPolicyRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlertPolicyRuleRequest, CreateAlertPolicyRuleResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateAlertPolicyRuleDetails(),
+                "createAlertPolicyRuleDetails is required");
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        return clientCall(request, CreateAlertPolicyRuleResponse::builder)
+                .logger(LOG, "createAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/CreateAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicyRule.class,
+                        CreateAlertPolicyRuleResponse.Builder::alertPolicyRule)
+                .handleResponseHeaderString("etag", CreateAlertPolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateAlertPolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateAlertPolicyRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateAlertPolicyRuleResponse.Builder::location)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateAuditArchiveRetrievalResponse>
             createAuditArchiveRetrieval(
                     CreateAuditArchiveRetrievalRequest request,
@@ -2203,6 +2321,71 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         DeactivateTargetDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateTargetDatabaseResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertPolicyResponse> deleteAlertPolicy(
+            DeleteAlertPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlertPolicyRequest, DeleteAlertPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        return clientCall(request, DeleteAlertPolicyResponse::builder)
+                .logger(LOG, "deleteAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/DeleteAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteAlertPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlertPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAlertPolicyRuleResponse> deleteAlertPolicyRule(
+            DeleteAlertPolicyRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlertPolicyRuleRequest, DeleteAlertPolicyRuleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+
+        return clientCall(request, DeleteAlertPolicyRuleResponse::builder)
+                .logger(LOG, "deleteAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/DeleteAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteAlertPolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteAlertPolicyRuleResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -3761,6 +3944,41 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", GetAlertPolicyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetAlertPolicyResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAlertPolicyRuleResponse> getAlertPolicyRule(
+            GetAlertPolicyRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetAlertPolicyRuleRequest, GetAlertPolicyRuleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+
+        return clientCall(request, GetAlertPolicyRuleResponse::builder)
+                .logger(LOG, "getAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/GetAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.AlertPolicyRule.class,
+                        GetAlertPolicyRuleResponse.Builder::alertPolicyRule)
+                .handleResponseHeaderString("etag", GetAlertPolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAlertPolicyRuleResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -10110,6 +10328,78 @@ public class DataSafeAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                 .handleResponseHeaderString("etag", UpdateAlertResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateAlertResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlertPolicyResponse> updateAlertPolicy(
+            UpdateAlertPolicyRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlertPolicyRequest, UpdateAlertPolicyResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAlertPolicyDetails(), "updateAlertPolicyDetails is required");
+
+        return clientCall(request, UpdateAlertPolicyResponse::builder)
+                .logger(LOG, "updateAlertPolicy")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateAlertPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicy/UpdateAlertPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlertPolicyRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlertPolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateAlertPolicyResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAlertPolicyRuleResponse> updateAlertPolicyRule(
+            UpdateAlertPolicyRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlertPolicyRuleRequest, UpdateAlertPolicyRuleResponse>
+                    handler) {
+
+        Validate.notBlank(request.getAlertPolicyId(), "alertPolicyId must not be blank");
+
+        Validate.notBlank(request.getRuleKey(), "ruleKey must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateAlertPolicyRuleDetails(),
+                "updateAlertPolicyRuleDetails is required");
+
+        return clientCall(request, UpdateAlertPolicyRuleResponse::builder)
+                .logger(LOG, "updateAlertPolicyRule")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateAlertPolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/AlertPolicyRule/UpdateAlertPolicyRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateAlertPolicyRuleRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("alertPolicies")
+                .appendPathParam(request.getAlertPolicyId())
+                .appendPathParam("rules")
+                .appendPathParam(request.getRuleKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateAlertPolicyRuleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateAlertPolicyRuleResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 

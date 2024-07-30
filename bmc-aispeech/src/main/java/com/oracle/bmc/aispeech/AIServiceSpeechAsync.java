@@ -95,6 +95,24 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a Customization resource into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeCustomizationCompartmentResponse>
+            changeCustomizationCompartment(
+                    ChangeCustomizationCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCustomizationCompartmentRequest,
+                                    ChangeCustomizationCompartmentResponse>
+                            handler);
+
+    /**
      * Moves a transcription Job resource into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -113,6 +131,38 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Creates a new Customization.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCustomizationResponse> createCustomization(
+            CreateCustomizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCustomizationRequest, CreateCustomizationResponse>
+                    handler);
+
+    /**
+     * Returns an authentication token to the user.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRealtimeSessionTokenResponse> createRealtimeSessionToken(
+            CreateRealtimeSessionTokenRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateRealtimeSessionTokenRequest, CreateRealtimeSessionTokenResponse>
+                    handler);
+
+    /**
      * Creates a new Transcription Job.
      *
      * @param request The request object containing the details to send
@@ -126,6 +176,22 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
             CreateTranscriptionJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateTranscriptionJobRequest, CreateTranscriptionJobResponse>
+                    handler);
+
+    /**
+     * Delete Customization and its metadata from tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCustomizationResponse> deleteCustomization(
+            DeleteCustomizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCustomizationRequest, DeleteCustomizationResponse>
                     handler);
 
     /**
@@ -143,6 +209,21 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
             DeleteTranscriptionJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteTranscriptionJobRequest, DeleteTranscriptionJobResponse>
+                    handler);
+
+    /**
+     * Gets a Customization by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCustomizationResponse> getCustomization(
+            GetCustomizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetCustomizationRequest, GetCustomizationResponse>
                     handler);
 
     /**
@@ -178,6 +259,22 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of Customizations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCustomizationsResponse> listCustomizations(
+            ListCustomizationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCustomizationsRequest, ListCustomizationsResponse>
+                    handler);
+
+    /**
      * Returns a list of Transcription Jobs.
      *
      * @param request The request object containing the details to send
@@ -207,6 +304,22 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
             ListTranscriptionTasksRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListTranscriptionTasksRequest, ListTranscriptionTasksResponse>
+                    handler);
+
+    /**
+     * Updates a Customization by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCustomizationResponse> updateCustomization(
+            UpdateCustomizationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCustomizationRequest, UpdateCustomizationResponse>
                     handler);
 
     /**

@@ -297,6 +297,25 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Removes a target from an existing Exadata Fleet Update Collection. This operation can only be
+     * performed on Collections that do not have an Action executing under an active Fleet Software
+     * Update Cycle. Additionally, during an active Fleet Software Update Cycle, a target can be
+     * removed only prior to executing an Apply Action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteFsuCollectionTargetResponse> deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFsuCollectionTargetRequest, DeleteFsuCollectionTargetResponse>
+                    handler);
+
+    /**
      * Deletes a Exadata Fleet Update Cycle resource by identifier.
      *
      * @param request The request object containing the details to send
@@ -388,6 +407,22 @@ public interface FleetSoftwareUpdateAsync extends AutoCloseable {
     java.util.concurrent.Future<GetFsuCollectionResponse> getFsuCollection(
             GetFsuCollectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetFsuCollectionRequest, GetFsuCollectionResponse>
+                    handler);
+
+    /**
+     * Gets a Exadata Fleet Update Collection Target by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetFsuCollectionTargetResponse> getFsuCollectionTarget(
+            GetFsuCollectionTargetRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>
                     handler);
 
     /**

@@ -404,6 +404,13 @@ public final class WorkRequestSummary
         RemoveScheduleReport("REMOVE_SCHEDULE_REPORT"),
         UpdateAllAlert("UPDATE_ALL_ALERT"),
         PatchTargetAlertPolicyAssociation("PATCH_TARGET_ALERT_POLICY_ASSOCIATION"),
+        CreateAlertPolicy("CREATE_ALERT_POLICY"),
+        UpdateAlertPolicy("UPDATE_ALERT_POLICY"),
+        DeleteAlertPolicy("DELETE_ALERT_POLICY"),
+        CreateAlertPolicyRule("CREATE_ALERT_POLICY_RULE"),
+        UpdateAlertPolicyRule("UPDATE_ALERT_POLICY_RULE"),
+        DeleteAlertPolicyRule("DELETE_ALERT_POLICY_RULE"),
+        ChangeAlertPolicyCompartment("CHANGE_ALERT_POLICY_COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
