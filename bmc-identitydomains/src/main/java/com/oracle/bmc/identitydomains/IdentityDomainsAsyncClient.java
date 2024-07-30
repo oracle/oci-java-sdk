@@ -1506,6 +1506,41 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSocialIdentityProviderResponse>
+            createSocialIdentityProvider(
+                    CreateSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSocialIdentityProviderRequest,
+                                    CreateSocialIdentityProviderResponse>
+                            handler) {
+
+        return clientCall(request, CreateSocialIdentityProviderResponse::builder)
+                .logger(LOG, "createSocialIdentityProvider")
+                .serviceDetails("IdentityDomains", "CreateSocialIdentityProvider", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSocialIdentityProviderRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProvider.class,
+                        CreateSocialIdentityProviderResponse.Builder::socialIdentityProvider)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateSocialIdentityProviderResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateSocialIdentityProviderResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResponse> createUser(
             CreateUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse>
@@ -2835,6 +2870,45 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSmtpCredentialResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSocialIdentityProviderResponse>
+            deleteSocialIdentityProvider(
+                    DeleteSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSocialIdentityProviderRequest,
+                                    DeleteSocialIdentityProviderResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSocialIdentityProviderId(),
+                "socialIdentityProviderId must not be blank");
+
+        return clientCall(request, DeleteSocialIdentityProviderResponse::builder)
+                .logger(LOG, "deleteSocialIdentityProvider")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "DeleteSocialIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/DeleteSocialIdentityProvider")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSocialIdentityProviderRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendPathParam(request.getSocialIdentityProviderId())
+                .appendQueryParam("forceDelete", request.getForceDelete())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteSocialIdentityProviderResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -4860,6 +4934,43 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                         GetSmtpCredentialResponse.Builder::smtpCredential)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSmtpCredentialResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSocialIdentityProviderResponse> getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSocialIdentityProviderId(),
+                "socialIdentityProviderId must not be blank");
+
+        return clientCall(request, GetSocialIdentityProviderResponse::builder)
+                .logger(LOG, "getSocialIdentityProvider")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetSocialIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/GetSocialIdentityProvider")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSocialIdentityProviderRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendPathParam(request.getSocialIdentityProviderId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProvider.class,
+                        GetSocialIdentityProviderResponse.Builder::socialIdentityProvider)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSocialIdentityProviderResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -7330,6 +7441,49 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<ListSocialIdentityProvidersResponse>
+            listSocialIdentityProviders(
+                    ListSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSocialIdentityProvidersRequest,
+                                    ListSocialIdentityProvidersResponse>
+                            handler) {
+
+        return clientCall(request, ListSocialIdentityProvidersResponse::builder)
+                .logger(LOG, "listSocialIdentityProviders")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListSocialIdentityProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSocialIdentityProvidersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProviders.class,
+                        ListSocialIdentityProvidersResponse.Builder::socialIdentityProviders)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSocialIdentityProvidersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSocialIdentityProvidersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserAttributesSettingsResponse>
             listUserAttributesSettings(
                     ListUserAttributesSettingsRequest request,
@@ -7343,7 +7497,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "IdentityDomains",
                         "ListUserAttributesSettings",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/ListUserAttributesSettings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListUserAttributesSettingsRequest::builder)
                 .basePath("")
@@ -9126,6 +9280,49 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<PatchSocialIdentityProviderResponse>
+            patchSocialIdentityProvider(
+                    PatchSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchSocialIdentityProviderRequest,
+                                    PatchSocialIdentityProviderResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getSocialIdentityProviderId(),
+                "socialIdentityProviderId must not be blank");
+
+        return clientCall(request, PatchSocialIdentityProviderResponse::builder)
+                .logger(LOG, "patchSocialIdentityProvider")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PatchSocialIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PatchSocialIdentityProvider")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSocialIdentityProviderRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendPathParam(request.getSocialIdentityProviderId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProvider.class,
+                        PatchSocialIdentityProviderResponse.Builder::socialIdentityProvider)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSocialIdentityProviderResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", PatchSocialIdentityProviderResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchUserResponse> patchUser(
             PatchUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PatchUserRequest, PatchUserResponse>
@@ -10321,6 +10518,46 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .handleResponseHeaderString(
                         "opc-request-id", PutSettingResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", PutSettingResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSocialIdentityProviderResponse> putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getSocialIdentityProviderId(),
+                "socialIdentityProviderId must not be blank");
+
+        return clientCall(request, PutSocialIdentityProviderResponse::builder)
+                .logger(LOG, "putSocialIdentityProvider")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "PutSocialIdentityProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PutSocialIdentityProvider")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(PutSocialIdentityProviderRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendPathParam(request.getSocialIdentityProviderId())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProvider.class,
+                        PutSocialIdentityProviderResponse.Builder::socialIdentityProvider)
+                .handleResponseHeaderString(
+                        "opc-request-id", PutSocialIdentityProviderResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", PutSocialIdentityProviderResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -11923,6 +12160,47 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
     }
 
     @Override
+    public java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>
+            searchSocialIdentityProviders(
+                    SearchSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSocialIdentityProvidersRequest,
+                                    SearchSocialIdentityProvidersResponse>
+                            handler) {
+
+        return clientCall(request, SearchSocialIdentityProvidersResponse::builder)
+                .logger(LOG, "searchSocialIdentityProviders")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchSocialIdentityProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchSocialIdentityProvidersRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("SocialIdentityProviders")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.SocialIdentityProviders.class,
+                        SearchSocialIdentityProvidersResponse.Builder::socialIdentityProviders)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchSocialIdentityProvidersResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SearchSocialIdentityProvidersResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchUserAttributesSettingsResponse>
             searchUserAttributesSettings(
                     SearchUserAttributesSettingsRequest request,
@@ -11936,7 +12214,7 @@ public class IdentityDomainsAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .serviceDetails(
                         "IdentityDomains",
                         "SearchUserAttributesSettings",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/SearchUserAttributesSettings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchUserAttributesSettingsRequest::builder)
                 .basePath("")

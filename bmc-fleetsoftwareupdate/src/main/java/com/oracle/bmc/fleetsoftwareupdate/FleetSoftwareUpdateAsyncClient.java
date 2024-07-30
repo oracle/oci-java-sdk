@@ -612,6 +612,41 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFsuCollectionTargetResponse> deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFsuCollectionTargetRequest, DeleteFsuCollectionTargetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, DeleteFsuCollectionTargetResponse::builder)
+                .logger(LOG, "deleteFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteFsuCollectionTargetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFsuCollectionTargetResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFsuCycleResponse> deleteFsuCycle(
             DeleteFsuCycleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -788,6 +823,41 @@ public class FleetSoftwareUpdateAsyncClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString("etag", GetFsuCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuCollectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFsuCollectionTargetResponse> getFsuCollectionTarget(
+            GetFsuCollectionTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>
+                    handler) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, GetFsuCollectionTargetResponse::builder)
+                .logger(LOG, "getFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionTarget/GetFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionTarget.class,
+                        GetFsuCollectionTargetResponse.Builder::fsuCollectionTarget)
+                .handleResponseHeaderString("etag", GetFsuCollectionTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFsuCollectionTargetResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

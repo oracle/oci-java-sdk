@@ -35,6 +35,20 @@ public class ListBaselineableMetricsRequest
     public String getResourceGroup() {
         return resourceGroup;
     }
+    /** Resource Type */
+    private String resourceType;
+
+    /** Resource Type */
+    public String getResourceType() {
+        return resourceType;
+    }
+    /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+    private Boolean isOutOfBox;
+
+    /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+    public Boolean getIsOutOfBox() {
+        return isOutOfBox;
+    }
     /** Metric Name */
     private String name;
 
@@ -178,6 +192,34 @@ public class ListBaselineableMetricsRequest
          */
         public Builder resourceGroup(String resourceGroup) {
             this.resourceGroup = resourceGroup;
+            return this;
+        }
+
+        /** Resource Type */
+        private String resourceType = null;
+
+        /**
+         * Resource Type
+         *
+         * @param resourceType the value to set
+         * @return this builder instance
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            return this;
+        }
+
+        /** Is the baseline enabled metric defined out of box by Oracle or by end-user */
+        private Boolean isOutOfBox = null;
+
+        /**
+         * Is the baseline enabled metric defined out of box by Oracle or by end-user
+         *
+         * @param isOutOfBox the value to set
+         * @return this builder instance
+         */
+        public Builder isOutOfBox(Boolean isOutOfBox) {
+            this.isOutOfBox = isOutOfBox;
             return this;
         }
 
@@ -339,6 +381,8 @@ public class ListBaselineableMetricsRequest
         public Builder copy(ListBaselineableMetricsRequest o) {
             opcRequestId(o.getOpcRequestId());
             resourceGroup(o.getResourceGroup());
+            resourceType(o.getResourceType());
+            isOutOfBox(o.getIsOutOfBox());
             name(o.getName());
             metricNamespace(o.getMetricNamespace());
             limit(o.getLimit());
@@ -383,6 +427,8 @@ public class ListBaselineableMetricsRequest
             ListBaselineableMetricsRequest request = new ListBaselineableMetricsRequest();
             request.opcRequestId = opcRequestId;
             request.resourceGroup = resourceGroup;
+            request.resourceType = resourceType;
+            request.isOutOfBox = isOutOfBox;
             request.name = name;
             request.metricNamespace = metricNamespace;
             request.limit = limit;
@@ -392,9 +438,9 @@ public class ListBaselineableMetricsRequest
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListBaselineableMetricsRequest(opcRequestId, resourceGroup, name,
-            // metricNamespace, limit, page, compartmentId, baselineableMetricId, sortOrder,
-            // sortBy);
+            // new ListBaselineableMetricsRequest(opcRequestId, resourceGroup, resourceType,
+            // isOutOfBox, name, metricNamespace, limit, page, compartmentId, baselineableMetricId,
+            // sortOrder, sortBy);
         }
     }
 
@@ -407,6 +453,8 @@ public class ListBaselineableMetricsRequest
         return new Builder()
                 .opcRequestId(opcRequestId)
                 .resourceGroup(resourceGroup)
+                .resourceType(resourceType)
+                .isOutOfBox(isOutOfBox)
                 .name(name)
                 .metricNamespace(metricNamespace)
                 .limit(limit)
@@ -433,6 +481,8 @@ public class ListBaselineableMetricsRequest
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(",resourceType=").append(String.valueOf(this.resourceType));
+        sb.append(",isOutOfBox=").append(String.valueOf(this.isOutOfBox));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",metricNamespace=").append(String.valueOf(this.metricNamespace));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -458,6 +508,8 @@ public class ListBaselineableMetricsRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
+                && java.util.Objects.equals(this.isOutOfBox, other.isOutOfBox)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.metricNamespace, other.metricNamespace)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -476,6 +528,8 @@ public class ListBaselineableMetricsRequest
         result =
                 (result * PRIME)
                         + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
+        result = (result * PRIME) + (this.isOutOfBox == null ? 43 : this.isOutOfBox.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result =
                 (result * PRIME)

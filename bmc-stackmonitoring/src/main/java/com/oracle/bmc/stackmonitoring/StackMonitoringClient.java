@@ -1280,6 +1280,8 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .basePath("/20210330")
                 .appendPathParam("baselineableMetrics")
                 .appendQueryParam("resourceGroup", request.getResourceGroup())
+                .appendQueryParam("resourceType", request.getResourceType())
+                .appendQueryParam("isOutOfBox", request.getIsOutOfBox())
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("metricNamespace", request.getMetricNamespace())
                 .appendQueryParam("limit", request.getLimit())

@@ -597,6 +597,39 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public DeleteFsuCollectionTargetResponse deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, DeleteFsuCollectionTargetResponse::builder)
+                .logger(LOG, "deleteFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteFsuCollectionTargetResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteFsuCollectionTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteFsuCycleResponse deleteFsuCycle(DeleteFsuCycleRequest request) {
 
         Validate.notBlank(request.getFsuCycleId(), "fsuCycleId must not be blank");
@@ -758,6 +791,39 @@ public class FleetSoftwareUpdateClient extends com.oracle.bmc.http.internal.Base
                 .handleResponseHeaderString("etag", GetFsuCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetFsuCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetFsuCollectionTargetResponse getFsuCollectionTarget(
+            GetFsuCollectionTargetRequest request) {
+
+        Validate.notBlank(request.getFsuCollectionId(), "fsuCollectionId must not be blank");
+
+        Validate.notBlank(request.getTargetId(), "targetId must not be blank");
+
+        return clientCall(request, GetFsuCollectionTargetResponse::builder)
+                .logger(LOG, "getFsuCollectionTarget")
+                .serviceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCollectionTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionTarget/GetFsuCollectionTarget")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetFsuCollectionTargetRequest::builder)
+                .basePath("/20220528")
+                .appendPathParam("fsuCollections")
+                .appendPathParam(request.getFsuCollectionId())
+                .appendPathParam("targets")
+                .appendPathParam(request.getTargetId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetsoftwareupdate.model.FsuCollectionTarget.class,
+                        GetFsuCollectionTargetResponse.Builder::fsuCollectionTarget)
+                .handleResponseHeaderString("etag", GetFsuCollectionTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetFsuCollectionTargetResponse.Builder::opcRequestId)
                 .callSync();
     }
 

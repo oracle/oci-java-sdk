@@ -132,7 +132,11 @@ vavr
 * Source code: https://github.com/vavr-io/vavr
 * Project home: https://www.vavr.io
 
-
+websocket-server
+* Copyright © 1995 Mort Bay Consulting Pty Ltd and others.
+* License: Apache License 2.0
+* Source code: https://github.com/jetty/jetty.project
+* Project home: https://jetty.org/
 ======================= Fourth Party Components ========================
 
 com.fasterxml.jackson.jaxrs:jackson-jaxrs-json-provider

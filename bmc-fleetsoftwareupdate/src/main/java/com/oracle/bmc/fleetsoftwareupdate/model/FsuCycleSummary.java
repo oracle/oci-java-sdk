@@ -33,6 +33,7 @@ public final class FsuCycleSummary
         "nextActionToExecute",
         "lastCompletedAction",
         "goalVersionDetails",
+        "diagnosticsCollection",
         "timeCreated",
         "timeUpdated",
         "timeFinished",
@@ -53,6 +54,7 @@ public final class FsuCycleSummary
             java.util.List<NextActionToExecuteDetails> nextActionToExecute,
             DetailedActionTypes lastCompletedAction,
             FsuGoalVersionDetails goalVersionDetails,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -72,6 +74,7 @@ public final class FsuCycleSummary
         this.nextActionToExecute = nextActionToExecute;
         this.lastCompletedAction = lastCompletedAction;
         this.goalVersionDetails = goalVersionDetails;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeFinished = timeFinished;
@@ -235,6 +238,15 @@ public final class FsuCycleSummary
         public Builder goalVersionDetails(FsuGoalVersionDetails goalVersionDetails) {
             this.goalVersionDetails = goalVersionDetails;
             this.__explicitlySet__.add("goalVersionDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
             return this;
         }
         /**
@@ -403,6 +415,7 @@ public final class FsuCycleSummary
                             this.nextActionToExecute,
                             this.lastCompletedAction,
                             this.goalVersionDetails,
+                            this.diagnosticsCollection,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeFinished,
@@ -448,6 +461,9 @@ public final class FsuCycleSummary
             }
             if (model.wasPropertyExplicitlySet("goalVersionDetails")) {
                 this.goalVersionDetails(model.getGoalVersionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -618,6 +634,13 @@ public final class FsuCycleSummary
         return goalVersionDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
+    }
+
     /**
      * The date and time the Exadata Fleet Update Cycle was created, as described in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339), section 14.29.
@@ -775,6 +798,7 @@ public final class FsuCycleSummary
         sb.append(", nextActionToExecute=").append(String.valueOf(this.nextActionToExecute));
         sb.append(", lastCompletedAction=").append(String.valueOf(this.lastCompletedAction));
         sb.append(", goalVersionDetails=").append(String.valueOf(this.goalVersionDetails));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
@@ -807,6 +831,7 @@ public final class FsuCycleSummary
                 && java.util.Objects.equals(this.nextActionToExecute, other.nextActionToExecute)
                 && java.util.Objects.equals(this.lastCompletedAction, other.lastCompletedAction)
                 && java.util.Objects.equals(this.goalVersionDetails, other.goalVersionDetails)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
@@ -854,6 +879,11 @@ public final class FsuCycleSummary
                         + (this.goalVersionDetails == null
                                 ? 43
                                 : this.goalVersionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());

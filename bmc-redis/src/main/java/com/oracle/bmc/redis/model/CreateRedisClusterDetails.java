@@ -166,12 +166,20 @@ public final class CreateRedisClusterDetails
             this.__explicitlySet__.add("subnetId");
             return this;
         }
-        /** OCIDs of the NSGs to control access in the customer network */
+        /**
+         * A list of Network Security Group (NSG)
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information, see [Using an NSG for Redis
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * OCIDs of the NSGs to control access in the customer network
+         * A list of Network Security Group (NSG)
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information, see [Using an NSG for Redis
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -378,12 +386,20 @@ public final class CreateRedisClusterDetails
         return subnetId;
     }
 
-    /** OCIDs of the NSGs to control access in the customer network */
+    /**
+     * A list of Network Security Group (NSG)
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information, see [Using an NSG for Redis
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * OCIDs of the NSGs to control access in the customer network
+     * A list of Network Security Group (NSG)
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information, see [Using an NSG for Redis
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
      *
      * @return the value
      */

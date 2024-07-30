@@ -406,6 +406,41 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public CreateParameterFileVersionResponse createParameterFileVersion(
+            CreateParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateParameterFileVersionDetails(),
+                "createParameterFileVersionDetails is required");
+
+        return clientCall(request, CreateParameterFileVersionResponse::builder)
+                .logger(LOG, "createParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "CreateParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/CreateParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateParameterFileVersionResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteConnectionResponse deleteConnection(DeleteConnectionRequest request) {
 
         Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
@@ -481,6 +516,39 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-request-id", DeleteMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", DeleteMigrationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteParameterFileVersionResponse deleteParameterFileVersion(
+            DeleteParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        return clientCall(request, DeleteParameterFileVersionResponse::builder)
+                .logger(LOG, "deleteParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "DeleteParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/DeleteParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteParameterFileVersionResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -656,6 +724,39 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-request-id", GetMigrationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", GetMigrationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetParameterFileVersionResponse getParameterFileVersion(
+            GetParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, GetParameterFileVersionResponse::builder)
+                .logger(LOG, "getParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "GetParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/GetParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.ParameterFileVersion.class,
+                        GetParameterFileVersionResponse.Builder::parameterFileVersion)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetParameterFileVersionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -975,6 +1076,42 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
     }
 
     @Override
+    public ListParameterFileVersionsResponse listParameterFileVersions(
+            ListParameterFileVersionsRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, ListParameterFileVersionsResponse::builder)
+                .logger(LOG, "listParameterFileVersions")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "ListParameterFileVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/ListParameterFileVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListParameterFileVersionsRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.ParameterFileVersionCollection.class,
+                        ListParameterFileVersionsResponse.Builder::parameterFileVersionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListParameterFileVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListParameterFileVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 
@@ -1074,6 +1211,45 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public MakeCurrentParameterFileVersionResponse makeCurrentParameterFileVersion(
+            MakeCurrentParameterFileVersionRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        Validate.notBlank(request.getParameterFileName(), "parameterFileName must not be blank");
+
+        return clientCall(request, MakeCurrentParameterFileVersionResponse::builder)
+                .logger(LOG, "makeCurrentParameterFileVersion")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "MakeCurrentParameterFileVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/MakeCurrentParameterFileVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MakeCurrentParameterFileVersionRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("parameterFileVersions")
+                .appendPathParam(request.getParameterFileName())
+                .appendPathParam("actions")
+                .appendPathParam("makeCurrent")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.Job.class,
+                        MakeCurrentParameterFileVersionResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        MakeCurrentParameterFileVersionResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", MakeCurrentParameterFileVersionResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1204,6 +1380,38 @@ public class DatabaseMigrationClient extends com.oracle.bmc.http.internal.BaseSy
                 .handleResponseHeaderString(
                         "opc-work-request-id", StartMigrationResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString("etag", StartMigrationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public SuspendJobResponse suspendJob(SuspendJobRequest request) {
+
+        Validate.notBlank(request.getJobId(), "jobId must not be blank");
+
+        return clientCall(request, SuspendJobResponse::builder)
+                .logger(LOG, "suspendJob")
+                .serviceDetails(
+                        "DatabaseMigration",
+                        "SuspendJob",
+                        "https://docs.oracle.com/iaas/api/#/en/database-migration/20230518/Job/SuspendJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SuspendJobRequest::builder)
+                .basePath("/20230518")
+                .appendPathParam("jobs")
+                .appendPathParam(request.getJobId())
+                .appendPathParam("actions")
+                .appendPathParam("suspend")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemigration.model.Job.class,
+                        SuspendJobResponse.Builder::job)
+                .handleResponseHeaderString(
+                        "opc-request-id", SuspendJobResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", SuspendJobResponse.Builder::etag)
                 .callSync();
     }
 

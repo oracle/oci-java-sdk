@@ -28,20 +28,23 @@ public final class CreateBaselineableMetricDetails
         "name",
         "column",
         "namespace",
-        "resourceGroup"
+        "resourceGroup",
+        "resourceType"
     })
     public CreateBaselineableMetricDetails(
             String compartmentId,
             String name,
             String column,
             String namespace,
-            String resourceGroup) {
+            String resourceGroup,
+            String resourceType) {
         super();
         this.compartmentId = compartmentId;
         this.name = name;
         this.column = column;
         this.namespace = namespace;
         this.resourceGroup = resourceGroup;
+        this.resourceType = resourceType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -121,6 +124,21 @@ public final class CreateBaselineableMetricDetails
             this.__explicitlySet__.add("resourceGroup");
             return this;
         }
+        /** Resource type of the metric */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private String resourceType;
+
+        /**
+         * Resource type of the metric
+         *
+         * @param resourceType the value to set
+         * @return this builder
+         */
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -132,7 +150,8 @@ public final class CreateBaselineableMetricDetails
                             this.name,
                             this.column,
                             this.namespace,
-                            this.resourceGroup);
+                            this.resourceGroup,
+                            this.resourceType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -155,6 +174,9 @@ public final class CreateBaselineableMetricDetails
             }
             if (model.wasPropertyExplicitlySet("resourceGroup")) {
                 this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
             }
             return this;
         }
@@ -234,6 +256,19 @@ public final class CreateBaselineableMetricDetails
         return resourceGroup;
     }
 
+    /** Resource type of the metric */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final String resourceType;
+
+    /**
+     * Resource type of the metric
+     *
+     * @return the value
+     */
+    public String getResourceType() {
+        return resourceType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -254,6 +289,7 @@ public final class CreateBaselineableMetricDetails
         sb.append(", column=").append(String.valueOf(this.column));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(")");
         return sb.toString();
     }
@@ -273,6 +309,7 @@ public final class CreateBaselineableMetricDetails
                 && java.util.Objects.equals(this.column, other.column)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && super.equals(other);
     }
 
@@ -289,6 +326,7 @@ public final class CreateBaselineableMetricDetails
         result =
                 (result * PRIME)
                         + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

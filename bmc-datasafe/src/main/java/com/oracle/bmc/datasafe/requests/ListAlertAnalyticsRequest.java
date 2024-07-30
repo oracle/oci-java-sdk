@@ -335,6 +335,9 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
         Medium("medium"),
         Low("low"),
         Alertcount("alertcount"),
+        AlertPolicyRuleKey("alertPolicyRuleKey"),
+        AlertPolicyRuleName("alertPolicyRuleName"),
+        Throttled("throttled"),
         ;
 
         private final String value;
@@ -387,6 +390,8 @@ public class ListAlertAnalyticsRequest extends com.oracle.bmc.requests.BmcReques
         AlertStatus("alertStatus"),
         TimeCreated("timeCreated"),
         PolicyId("policyId"),
+        AlertPolicyRuleKey("alertPolicyRuleKey"),
+        AlertPolicyRuleName("alertPolicyRuleName"),
         ;
 
         private final String value;

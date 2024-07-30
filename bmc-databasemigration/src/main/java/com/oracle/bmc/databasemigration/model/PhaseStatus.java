@@ -30,7 +30,9 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         "action",
         "extract",
         "logLocation",
-        "progress"
+        "progress",
+        "isSuspendAvailable",
+        "editableParameterFiles"
     })
     public PhaseStatus(
             OdmsJobPhases name,
@@ -41,7 +43,9 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             String action,
             java.util.List<PhaseExtractEntry> extract,
             LogLocationBucketDetails logLocation,
-            Integer progress) {
+            Integer progress,
+            Boolean isSuspendAvailable,
+            java.util.List<JobParameterFileVersionKind> editableParameterFiles) {
         super();
         this.name = name;
         this.status = status;
@@ -52,6 +56,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         this.extract = extract;
         this.logLocation = logLocation;
         this.progress = progress;
+        this.isSuspendAvailable = isSuspendAvailable;
+        this.editableParameterFiles = editableParameterFiles;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -189,6 +195,41 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("progress");
             return this;
         }
+        /** This is returned as true if the current phase can be suspended. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSuspendAvailable")
+        private Boolean isSuspendAvailable;
+
+        /**
+         * This is returned as true if the current phase can be suspended.
+         *
+         * @param isSuspendAvailable the value to set
+         * @return this builder
+         */
+        public Builder isSuspendAvailable(Boolean isSuspendAvailable) {
+            this.isSuspendAvailable = isSuspendAvailable;
+            this.__explicitlySet__.add("isSuspendAvailable");
+            return this;
+        }
+        /**
+         * Attribute that returns an array of names and types of GoldenGate configuration files that
+         * are available for read or update.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("editableParameterFiles")
+        private java.util.List<JobParameterFileVersionKind> editableParameterFiles;
+
+        /**
+         * Attribute that returns an array of names and types of GoldenGate configuration files that
+         * are available for read or update.
+         *
+         * @param editableParameterFiles the value to set
+         * @return this builder
+         */
+        public Builder editableParameterFiles(
+                java.util.List<JobParameterFileVersionKind> editableParameterFiles) {
+            this.editableParameterFiles = editableParameterFiles;
+            this.__explicitlySet__.add("editableParameterFiles");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -204,7 +245,9 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
                             this.action,
                             this.extract,
                             this.logLocation,
-                            this.progress);
+                            this.progress,
+                            this.isSuspendAvailable,
+                            this.editableParameterFiles);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -239,6 +282,12 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("progress")) {
                 this.progress(model.getProgress());
+            }
+            if (model.wasPropertyExplicitlySet("isSuspendAvailable")) {
+                this.isSuspendAvailable(model.getIsSuspendAvailable());
+            }
+            if (model.wasPropertyExplicitlySet("editableParameterFiles")) {
+                this.editableParameterFiles(model.getEditableParameterFiles());
             }
             return this;
         }
@@ -368,6 +417,36 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         return progress;
     }
 
+    /** This is returned as true if the current phase can be suspended. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSuspendAvailable")
+    private final Boolean isSuspendAvailable;
+
+    /**
+     * This is returned as true if the current phase can be suspended.
+     *
+     * @return the value
+     */
+    public Boolean getIsSuspendAvailable() {
+        return isSuspendAvailable;
+    }
+
+    /**
+     * Attribute that returns an array of names and types of GoldenGate configuration files that are
+     * available for read or update.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("editableParameterFiles")
+    private final java.util.List<JobParameterFileVersionKind> editableParameterFiles;
+
+    /**
+     * Attribute that returns an array of names and types of GoldenGate configuration files that are
+     * available for read or update.
+     *
+     * @return the value
+     */
+    public java.util.List<JobParameterFileVersionKind> getEditableParameterFiles() {
+        return editableParameterFiles;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -393,6 +472,8 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", extract=").append(String.valueOf(this.extract));
         sb.append(", logLocation=").append(String.valueOf(this.logLocation));
         sb.append(", progress=").append(String.valueOf(this.progress));
+        sb.append(", isSuspendAvailable=").append(String.valueOf(this.isSuspendAvailable));
+        sb.append(", editableParameterFiles=").append(String.valueOf(this.editableParameterFiles));
         sb.append(")");
         return sb.toString();
     }
@@ -417,6 +498,9 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.extract, other.extract)
                 && java.util.Objects.equals(this.logLocation, other.logLocation)
                 && java.util.Objects.equals(this.progress, other.progress)
+                && java.util.Objects.equals(this.isSuspendAvailable, other.isSuspendAvailable)
+                && java.util.Objects.equals(
+                        this.editableParameterFiles, other.editableParameterFiles)
                 && super.equals(other);
     }
 
@@ -437,6 +521,16 @@ public final class PhaseStatus extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.extract == null ? 43 : this.extract.hashCode());
         result = (result * PRIME) + (this.logLocation == null ? 43 : this.logLocation.hashCode());
         result = (result * PRIME) + (this.progress == null ? 43 : this.progress.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSuspendAvailable == null
+                                ? 43
+                                : this.isSuspendAvailable.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.editableParameterFiles == null
+                                ? 43
+                                : this.editableParameterFiles.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

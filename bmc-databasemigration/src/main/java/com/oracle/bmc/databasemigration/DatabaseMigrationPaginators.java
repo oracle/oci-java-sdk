@@ -872,6 +872,133 @@ public class DatabaseMigrationPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listParameterFileVersions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListParameterFileVersionsResponse> listParameterFileVersionsResponseIterator(
+            final ListParameterFileVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListParameterFileVersionsRequest.Builder,
+                ListParameterFileVersionsRequest,
+                ListParameterFileVersionsResponse>(
+                new java.util.function.Supplier<ListParameterFileVersionsRequest.Builder>() {
+                    @Override
+                    public ListParameterFileVersionsRequest.Builder get() {
+                        return ListParameterFileVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListParameterFileVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListParameterFileVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListParameterFileVersionsRequest.Builder>,
+                        ListParameterFileVersionsRequest>() {
+                    @Override
+                    public ListParameterFileVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListParameterFileVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListParameterFileVersionsRequest, ListParameterFileVersionsResponse>() {
+                    @Override
+                    public ListParameterFileVersionsResponse apply(
+                            ListParameterFileVersionsRequest request) {
+                        return client.listParameterFileVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemigration.model.ParameterFileVersionSummary} objects contained in
+     * responses from the listParameterFileVersions operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemigration.model.ParameterFileVersionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemigration.model.ParameterFileVersionSummary>
+            listParameterFileVersionsRecordIterator(
+                    final ListParameterFileVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListParameterFileVersionsRequest.Builder,
+                ListParameterFileVersionsRequest,
+                ListParameterFileVersionsResponse,
+                com.oracle.bmc.databasemigration.model.ParameterFileVersionSummary>(
+                new java.util.function.Supplier<ListParameterFileVersionsRequest.Builder>() {
+                    @Override
+                    public ListParameterFileVersionsRequest.Builder get() {
+                        return ListParameterFileVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListParameterFileVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListParameterFileVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListParameterFileVersionsRequest.Builder>,
+                        ListParameterFileVersionsRequest>() {
+                    @Override
+                    public ListParameterFileVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListParameterFileVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListParameterFileVersionsRequest, ListParameterFileVersionsResponse>() {
+                    @Override
+                    public ListParameterFileVersionsResponse apply(
+                            ListParameterFileVersionsRequest request) {
+                        return client.listParameterFileVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListParameterFileVersionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemigration.model
+                                        .ParameterFileVersionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemigration.model
+                                            .ParameterFileVersionSummary>
+                            apply(ListParameterFileVersionsResponse response) {
+                        return response.getParameterFileVersionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *
