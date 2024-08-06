@@ -42,6 +42,73 @@ public class ListCryptoAnalysisResultsRequest
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
+    private String hostName;
+
+    /**
+     * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
+     * the managed instance.
+     */
+    public String getHostName() {
+        return hostName;
+    }
+    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    private Integer nonCompliantFindingCount;
+
+    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    public Integer getNonCompliantFindingCount() {
+        return nonCompliantFindingCount;
+    }
+    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    private Integer nonCompliantFindingCountGreaterThan;
+
+    /** Non Compliant Finding Count of CryptoAnalysis Report. */
+    public Integer getNonCompliantFindingCountGreaterThan() {
+        return nonCompliantFindingCountGreaterThan;
+    }
+    /** FindingCount of CryptoAnalysis Report. */
+    private Integer findingCount;
+
+    /** FindingCount of CryptoAnalysis Report. */
+    public Integer getFindingCount() {
+        return findingCount;
+    }
+    /** FindingCount of CryptoAnalysis Report. */
+    private Integer findingCountGreaterThan;
+
+    /** FindingCount of CryptoAnalysis Report. */
+    public Integer getFindingCountGreaterThan() {
+        return findingCountGreaterThan;
+    }
+    /**
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeStart;
+
+    /**
+     * The start of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeStart() {
+        return timeStart;
+    }
+    /**
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    private java.util.Date timeEnd;
+
+    /**
+     * The end of the time period during which resources are searched (formatted according to
+     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+     */
+    public java.util.Date getTimeEnd() {
+        return timeEnd;
+    }
     /** The maximum number of items to return. */
     private Integer limit;
 
@@ -92,32 +159,6 @@ public class ListCryptoAnalysisResultsRequest
     /** The client request ID for tracing. */
     public String getOpcRequestId() {
         return opcRequestId;
-    }
-    /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    private java.util.Date timeStart;
-
-    /**
-     * The start of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    public java.util.Date getTimeStart() {
-        return timeStart;
-    }
-    /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    private java.util.Date timeEnd;
-
-    /**
-     * The end of the time period during which resources are searched (formatted according to
-     * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-     */
-    public java.util.Date getTimeEnd() {
-        return timeEnd;
     }
 
     public static class Builder
@@ -170,6 +211,117 @@ public class ListCryptoAnalysisResultsRequest
          */
         public Builder managedInstanceId(String managedInstanceId) {
             this.managedInstanceId = managedInstanceId;
+            return this;
+        }
+
+        /**
+         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         */
+        private String hostName = null;
+
+        /**
+         * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * of the managed instance.
+         *
+         * @param hostName the value to set
+         * @return this builder instance
+         */
+        public Builder hostName(String hostName) {
+            this.hostName = hostName;
+            return this;
+        }
+
+        /** Non Compliant Finding Count of CryptoAnalysis Report. */
+        private Integer nonCompliantFindingCount = null;
+
+        /**
+         * Non Compliant Finding Count of CryptoAnalysis Report.
+         *
+         * @param nonCompliantFindingCount the value to set
+         * @return this builder instance
+         */
+        public Builder nonCompliantFindingCount(Integer nonCompliantFindingCount) {
+            this.nonCompliantFindingCount = nonCompliantFindingCount;
+            return this;
+        }
+
+        /** Non Compliant Finding Count of CryptoAnalysis Report. */
+        private Integer nonCompliantFindingCountGreaterThan = null;
+
+        /**
+         * Non Compliant Finding Count of CryptoAnalysis Report.
+         *
+         * @param nonCompliantFindingCountGreaterThan the value to set
+         * @return this builder instance
+         */
+        public Builder nonCompliantFindingCountGreaterThan(
+                Integer nonCompliantFindingCountGreaterThan) {
+            this.nonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
+            return this;
+        }
+
+        /** FindingCount of CryptoAnalysis Report. */
+        private Integer findingCount = null;
+
+        /**
+         * FindingCount of CryptoAnalysis Report.
+         *
+         * @param findingCount the value to set
+         * @return this builder instance
+         */
+        public Builder findingCount(Integer findingCount) {
+            this.findingCount = findingCount;
+            return this;
+        }
+
+        /** FindingCount of CryptoAnalysis Report. */
+        private Integer findingCountGreaterThan = null;
+
+        /**
+         * FindingCount of CryptoAnalysis Report.
+         *
+         * @param findingCountGreaterThan the value to set
+         * @return this builder instance
+         */
+        public Builder findingCountGreaterThan(Integer findingCountGreaterThan) {
+            this.findingCountGreaterThan = findingCountGreaterThan;
+            return this;
+        }
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeStart = null;
+
+        /**
+         * The start of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeStart the value to set
+         * @return this builder instance
+         */
+        public Builder timeStart(java.util.Date timeStart) {
+            this.timeStart = timeStart;
+            return this;
+        }
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         */
+        private java.util.Date timeEnd = null;
+
+        /**
+         * The end of the time period during which resources are searched (formatted according to
+         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
+         *
+         * @param timeEnd the value to set
+         * @return this builder instance
+         */
+        public Builder timeEnd(java.util.Date timeEnd) {
+            this.timeEnd = timeEnd;
             return this;
         }
 
@@ -256,42 +408,6 @@ public class ListCryptoAnalysisResultsRequest
         }
 
         /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
-        private java.util.Date timeStart = null;
-
-        /**
-         * The start of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
-         * @param timeStart the value to set
-         * @return this builder instance
-         */
-        public Builder timeStart(java.util.Date timeStart) {
-            this.timeStart = timeStart;
-            return this;
-        }
-
-        /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         */
-        private java.util.Date timeEnd = null;
-
-        /**
-         * The end of the time period during which resources are searched (formatted according to
-         * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
-         *
-         * @param timeEnd the value to set
-         * @return this builder instance
-         */
-        public Builder timeEnd(java.util.Date timeEnd) {
-            this.timeEnd = timeEnd;
-            return this;
-        }
-
-        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -324,13 +440,18 @@ public class ListCryptoAnalysisResultsRequest
             fleetId(o.getFleetId());
             aggregationMode(o.getAggregationMode());
             managedInstanceId(o.getManagedInstanceId());
+            hostName(o.getHostName());
+            nonCompliantFindingCount(o.getNonCompliantFindingCount());
+            nonCompliantFindingCountGreaterThan(o.getNonCompliantFindingCountGreaterThan());
+            findingCount(o.getFindingCount());
+            findingCountGreaterThan(o.getFindingCountGreaterThan());
+            timeStart(o.getTimeStart());
+            timeEnd(o.getTimeEnd());
             limit(o.getLimit());
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
-            timeStart(o.getTimeStart());
-            timeEnd(o.getTimeEnd());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -368,16 +489,23 @@ public class ListCryptoAnalysisResultsRequest
             request.fleetId = fleetId;
             request.aggregationMode = aggregationMode;
             request.managedInstanceId = managedInstanceId;
+            request.hostName = hostName;
+            request.nonCompliantFindingCount = nonCompliantFindingCount;
+            request.nonCompliantFindingCountGreaterThan = nonCompliantFindingCountGreaterThan;
+            request.findingCount = findingCount;
+            request.findingCountGreaterThan = findingCountGreaterThan;
+            request.timeStart = timeStart;
+            request.timeEnd = timeEnd;
             request.limit = limit;
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
-            request.timeStart = timeStart;
-            request.timeEnd = timeEnd;
             return request;
             // new ListCryptoAnalysisResultsRequest(fleetId, aggregationMode, managedInstanceId,
-            // limit, page, sortOrder, sortBy, opcRequestId, timeStart, timeEnd);
+            // hostName, nonCompliantFindingCount, nonCompliantFindingCountGreaterThan,
+            // findingCount, findingCountGreaterThan, timeStart, timeEnd, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -391,13 +519,18 @@ public class ListCryptoAnalysisResultsRequest
                 .fleetId(fleetId)
                 .aggregationMode(aggregationMode)
                 .managedInstanceId(managedInstanceId)
+                .hostName(hostName)
+                .nonCompliantFindingCount(nonCompliantFindingCount)
+                .nonCompliantFindingCountGreaterThan(nonCompliantFindingCountGreaterThan)
+                .findingCount(findingCount)
+                .findingCountGreaterThan(findingCountGreaterThan)
+                .timeStart(timeStart)
+                .timeEnd(timeEnd)
                 .limit(limit)
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId)
-                .timeStart(timeStart)
-                .timeEnd(timeEnd);
+                .opcRequestId(opcRequestId);
     }
 
     /**
@@ -417,13 +550,20 @@ public class ListCryptoAnalysisResultsRequest
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",aggregationMode=").append(String.valueOf(this.aggregationMode));
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",hostName=").append(String.valueOf(this.hostName));
+        sb.append(",nonCompliantFindingCount=")
+                .append(String.valueOf(this.nonCompliantFindingCount));
+        sb.append(",nonCompliantFindingCountGreaterThan=")
+                .append(String.valueOf(this.nonCompliantFindingCountGreaterThan));
+        sb.append(",findingCount=").append(String.valueOf(this.findingCount));
+        sb.append(",findingCountGreaterThan=").append(String.valueOf(this.findingCountGreaterThan));
+        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
+        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",timeStart=").append(String.valueOf(this.timeStart));
-        sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(")");
         return sb.toString();
     }
@@ -442,13 +582,22 @@ public class ListCryptoAnalysisResultsRequest
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.aggregationMode, other.aggregationMode)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.hostName, other.hostName)
+                && java.util.Objects.equals(
+                        this.nonCompliantFindingCount, other.nonCompliantFindingCount)
+                && java.util.Objects.equals(
+                        this.nonCompliantFindingCountGreaterThan,
+                        other.nonCompliantFindingCountGreaterThan)
+                && java.util.Objects.equals(this.findingCount, other.findingCount)
+                && java.util.Objects.equals(
+                        this.findingCountGreaterThan, other.findingCountGreaterThan)
+                && java.util.Objects.equals(this.timeStart, other.timeStart)
+                && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.timeStart, other.timeStart)
-                && java.util.Objects.equals(this.timeEnd, other.timeEnd);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
     @Override
@@ -462,13 +611,30 @@ public class ListCryptoAnalysisResultsRequest
         result =
                 (result * PRIME)
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonCompliantFindingCount == null
+                                ? 43
+                                : this.nonCompliantFindingCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.nonCompliantFindingCountGreaterThan == null
+                                ? 43
+                                : this.nonCompliantFindingCountGreaterThan.hashCode());
+        result = (result * PRIME) + (this.findingCount == null ? 43 : this.findingCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.findingCountGreaterThan == null
+                                ? 43
+                                : this.findingCountGreaterThan.hashCode());
+        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
+        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
-        result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         return result;
     }
 }

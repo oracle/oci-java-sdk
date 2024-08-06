@@ -23,6 +23,9 @@ package com.oracle.bmc.jms.model;
         defaultImpl = WorkItemDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DeployedApplicationWorkItemDetails.class,
+            name = "DEPLOYED_APPLICATION"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = LcmWorkItemDetails.class,
             name = "LCM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -103,6 +106,7 @@ public class WorkItemDetails extends com.oracle.bmc.http.client.internal.Explici
         Basic("BASIC"),
         Application("APPLICATION"),
         Lcm("LCM"),
+        DeployedApplication("DEPLOYED_APPLICATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

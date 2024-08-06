@@ -1240,6 +1240,138 @@ public class BdsPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listResourcePrincipalConfigurations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListResourcePrincipalConfigurationsResponse>
+            listResourcePrincipalConfigurationsResponseIterator(
+                    final ListResourcePrincipalConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourcePrincipalConfigurationsRequest.Builder,
+                ListResourcePrincipalConfigurationsRequest,
+                ListResourcePrincipalConfigurationsResponse>(
+                new java.util.function.Supplier<
+                        ListResourcePrincipalConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsRequest.Builder get() {
+                        return ListResourcePrincipalConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePrincipalConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListResourcePrincipalConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcePrincipalConfigurationsRequest.Builder>,
+                        ListResourcePrincipalConfigurationsRequest>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcePrincipalConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePrincipalConfigurationsRequest,
+                        ListResourcePrincipalConfigurationsResponse>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsResponse apply(
+                            ListResourcePrincipalConfigurationsRequest request) {
+                        return client.listResourcePrincipalConfigurations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects contained in
+     * responses from the listResourcePrincipalConfigurations operation. This iterable will fetch
+     * more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>
+            listResourcePrincipalConfigurationsRecordIterator(
+                    final ListResourcePrincipalConfigurationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourcePrincipalConfigurationsRequest.Builder,
+                ListResourcePrincipalConfigurationsRequest,
+                ListResourcePrincipalConfigurationsResponse,
+                com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>(
+                new java.util.function.Supplier<
+                        ListResourcePrincipalConfigurationsRequest.Builder>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsRequest.Builder get() {
+                        return ListResourcePrincipalConfigurationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePrincipalConfigurationsResponse, String>() {
+                    @Override
+                    public String apply(ListResourcePrincipalConfigurationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcePrincipalConfigurationsRequest.Builder>,
+                        ListResourcePrincipalConfigurationsRequest>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcePrincipalConfigurationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePrincipalConfigurationsRequest,
+                        ListResourcePrincipalConfigurationsResponse>() {
+                    @Override
+                    public ListResourcePrincipalConfigurationsResponse apply(
+                            ListResourcePrincipalConfigurationsRequest request) {
+                        return client.listResourcePrincipalConfigurations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcePrincipalConfigurationsResponse,
+                        java.util.List<
+                                com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.bds.model.ResourcePrincipalConfigurationSummary>
+                            apply(ListResourcePrincipalConfigurationsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listWorkRequestErrors operation. This iterable will fetch more data from the server as
      * needed.
      *

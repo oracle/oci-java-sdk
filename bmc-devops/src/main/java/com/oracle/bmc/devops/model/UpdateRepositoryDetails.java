@@ -97,12 +97,12 @@ public final class UpdateRepositoryDetails
             this.__explicitlySet__.add("defaultBranch");
             return this;
         }
-        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+        /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private Repository.RepositoryType repositoryType;
 
         /**
-         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+         * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -261,12 +261,12 @@ public final class UpdateRepositoryDetails
         return defaultBranch;
     }
 
-    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} */
+    /** Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED} */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final Repository.RepositoryType repositoryType;
 
     /**
-     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED}
+     * Type of repository. Allowed values: {@code MIRRORED} {@code HOSTED} {@code FORKED}
      *
      * @return the value
      */

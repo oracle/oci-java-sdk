@@ -52,6 +52,10 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     BackupNodes("BACKUP_NODES"),
     DeleteNodeBackup("DELETE_NODE_BACKUP"),
     ReplaceNode("REPLACE_NODE"),
+    CreateResourcePrincipalConfiguration("CREATE_RESOURCE_PRINCIPAL_CONFIGURATION"),
+    DeleteResourcePrincipalConfiguration("DELETE_RESOURCE_PRINCIPAL_CONFIGURATION"),
+    UpdateResourcePrincipalConfiguration("UPDATE_RESOURCE_PRINCIPAL_CONFIGURATION"),
+    RefreshResourcePrincipal("REFRESH_RESOURCE_PRINCIPAL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

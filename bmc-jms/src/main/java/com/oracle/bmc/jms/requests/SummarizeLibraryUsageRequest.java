@@ -70,6 +70,20 @@ public class SummarizeLibraryUsageRequest
     public String getLibraryName() {
         return libraryName;
     }
+    /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+    private Integer cvssScoreGreaterThan;
+
+    /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+    public Integer getCvssScoreGreaterThan() {
+        return cvssScoreGreaterThan;
+    }
+    /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+    private Integer cvssScoreLessThan;
+
+    /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+    public Integer getCvssScoreLessThan() {
+        return cvssScoreLessThan;
+    }
     /**
      * The start of the time period during which resources are searched (formatted according to
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -252,6 +266,34 @@ public class SummarizeLibraryUsageRequest
             return this;
         }
 
+        /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+        private Integer cvssScoreGreaterThan = null;
+
+        /**
+         * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
+         *
+         * @param cvssScoreGreaterThan the value to set
+         * @return this builder instance
+         */
+        public Builder cvssScoreGreaterThan(Integer cvssScoreGreaterThan) {
+            this.cvssScoreGreaterThan = cvssScoreGreaterThan;
+            return this;
+        }
+
+        /** Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis. */
+        private Integer cvssScoreLessThan = null;
+
+        /**
+         * Total Common Vulnerability Scoring System (CVSS) Score reported by the analysis.
+         *
+         * @param cvssScoreLessThan the value to set
+         * @return this builder instance
+         */
+        public Builder cvssScoreLessThan(Integer cvssScoreLessThan) {
+            this.cvssScoreLessThan = cvssScoreLessThan;
+            return this;
+        }
+
         /**
          * The start of the time period during which resources are searched (formatted according to
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -403,6 +445,8 @@ public class SummarizeLibraryUsageRequest
             libraryKey(o.getLibraryKey());
             libraryNameContains(o.getLibraryNameContains());
             libraryName(o.getLibraryName());
+            cvssScoreGreaterThan(o.getCvssScoreGreaterThan());
+            cvssScoreLessThan(o.getCvssScoreLessThan());
             timeStart(o.getTimeStart());
             timeEnd(o.getTimeEnd());
             limit(o.getLimit());
@@ -451,6 +495,8 @@ public class SummarizeLibraryUsageRequest
             request.libraryKey = libraryKey;
             request.libraryNameContains = libraryNameContains;
             request.libraryName = libraryName;
+            request.cvssScoreGreaterThan = cvssScoreGreaterThan;
+            request.cvssScoreLessThan = cvssScoreLessThan;
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
             request.limit = limit;
@@ -460,8 +506,8 @@ public class SummarizeLibraryUsageRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new SummarizeLibraryUsageRequest(fleetId, serverInstanceKey, managedInstanceId,
-            // applicationKey, libraryKey, libraryNameContains, libraryName, timeStart, timeEnd,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // applicationKey, libraryKey, libraryNameContains, libraryName, cvssScoreGreaterThan,
+            // cvssScoreLessThan, timeStart, timeEnd, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -479,6 +525,8 @@ public class SummarizeLibraryUsageRequest
                 .libraryKey(libraryKey)
                 .libraryNameContains(libraryNameContains)
                 .libraryName(libraryName)
+                .cvssScoreGreaterThan(cvssScoreGreaterThan)
+                .cvssScoreLessThan(cvssScoreLessThan)
                 .timeStart(timeStart)
                 .timeEnd(timeEnd)
                 .limit(limit)
@@ -509,6 +557,8 @@ public class SummarizeLibraryUsageRequest
         sb.append(",libraryKey=").append(String.valueOf(this.libraryKey));
         sb.append(",libraryNameContains=").append(String.valueOf(this.libraryNameContains));
         sb.append(",libraryName=").append(String.valueOf(this.libraryName));
+        sb.append(",cvssScoreGreaterThan=").append(String.valueOf(this.cvssScoreGreaterThan));
+        sb.append(",cvssScoreLessThan=").append(String.valueOf(this.cvssScoreLessThan));
         sb.append(",timeStart=").append(String.valueOf(this.timeStart));
         sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -538,6 +588,8 @@ public class SummarizeLibraryUsageRequest
                 && java.util.Objects.equals(this.libraryKey, other.libraryKey)
                 && java.util.Objects.equals(this.libraryNameContains, other.libraryNameContains)
                 && java.util.Objects.equals(this.libraryName, other.libraryName)
+                && java.util.Objects.equals(this.cvssScoreGreaterThan, other.cvssScoreGreaterThan)
+                && java.util.Objects.equals(this.cvssScoreLessThan, other.cvssScoreLessThan)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -568,6 +620,14 @@ public class SummarizeLibraryUsageRequest
                                 ? 43
                                 : this.libraryNameContains.hashCode());
         result = (result * PRIME) + (this.libraryName == null ? 43 : this.libraryName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cvssScoreGreaterThan == null
+                                ? 43
+                                : this.cvssScoreGreaterThan.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cvssScoreLessThan == null ? 43 : this.cvssScoreLessThan.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());

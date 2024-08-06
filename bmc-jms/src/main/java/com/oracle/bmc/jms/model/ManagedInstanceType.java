@@ -8,6 +8,7 @@ package com.oracle.bmc.jms.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum ManagedInstanceType implements com.oracle.bmc.http.internal.BmcEnum {
     OracleManagementAgent("ORACLE_MANAGEMENT_AGENT"),
+    OracleCloudAgent("ORACLE_CLOUD_AGENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

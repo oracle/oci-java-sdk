@@ -12,6 +12,8 @@ public enum DeployedApplicationInstallationSortBy implements com.oracle.bmc.http
     ApplicationSourcePath("applicationSourcePath"),
     IsClustered("isClustered"),
     JavaServerInstanceCount("javaServerInstanceCount"),
+    ApproximateJavaServerInstanceCount("approximateJavaServerInstanceCount"),
+    ApproximateLibraryCount("approximateLibraryCount"),
     TimeFirstSeen("timeFirstSeen"),
     TimeLastSeen("timeLastSeen"),
     ;

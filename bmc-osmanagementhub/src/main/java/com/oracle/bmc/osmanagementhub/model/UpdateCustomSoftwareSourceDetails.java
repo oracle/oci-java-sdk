@@ -141,6 +141,45 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
             this.__explicitlySet__.add("isAutoResolveDependencies");
             return this;
         }
+        /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+        private Boolean isLatestContentOnly;
+
+        /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         *
+         * @param isLatestContentOnly the value to set
+         * @return this builder
+         */
+        public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
+            this.isLatestContentOnly = isLatestContentOnly;
+            this.__explicitlySet__.add("isLatestContentOnly");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -156,7 +195,8 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
                             this.vendorSoftwareSources,
                             this.customSoftwareSourceFilter,
                             this.isAutomaticallyUpdated,
-                            this.isAutoResolveDependencies);
+                            this.isAutoResolveDependencies,
+                            this.isLatestContentOnly);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -192,6 +232,9 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
             if (model.wasPropertyExplicitlySet("isAutoResolveDependencies")) {
                 this.isAutoResolveDependencies(model.getIsAutoResolveDependencies());
             }
+            if (model.wasPropertyExplicitlySet("isLatestContentOnly")) {
+                this.isLatestContentOnly(model.getIsLatestContentOnly());
+            }
             return this;
         }
     }
@@ -215,12 +258,14 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
             java.util.List<Id> vendorSoftwareSources,
             CustomSoftwareSourceFilter customSoftwareSourceFilter,
             Boolean isAutomaticallyUpdated,
-            Boolean isAutoResolveDependencies) {
+            Boolean isAutoResolveDependencies,
+            Boolean isLatestContentOnly) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
         this.customSoftwareSourceFilter = customSoftwareSourceFilter;
         this.isAutomaticallyUpdated = isAutomaticallyUpdated;
         this.isAutoResolveDependencies = isAutoResolveDependencies;
+        this.isLatestContentOnly = isLatestContentOnly;
     }
 
     /**
@@ -279,6 +324,41 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
         return isAutoResolveDependencies;
     }
 
+    /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+    private final Boolean isLatestContentOnly;
+
+    /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     *
+     * @return the value
+     */
+    public Boolean getIsLatestContentOnly() {
+        return isLatestContentOnly;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -300,6 +380,7 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
         sb.append(", isAutomaticallyUpdated=").append(String.valueOf(this.isAutomaticallyUpdated));
         sb.append(", isAutoResolveDependencies=")
                 .append(String.valueOf(this.isAutoResolveDependencies));
+        sb.append(", isLatestContentOnly=").append(String.valueOf(this.isLatestContentOnly));
         sb.append(")");
         return sb.toString();
     }
@@ -321,6 +402,7 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
                         this.isAutomaticallyUpdated, other.isAutomaticallyUpdated)
                 && java.util.Objects.equals(
                         this.isAutoResolveDependencies, other.isAutoResolveDependencies)
+                && java.util.Objects.equals(this.isLatestContentOnly, other.isLatestContentOnly)
                 && super.equals(other);
     }
 
@@ -348,6 +430,11 @@ public final class UpdateCustomSoftwareSourceDetails extends UpdateSoftwareSourc
                         + (this.isAutoResolveDependencies == null
                                 ? 43
                                 : this.isAutoResolveDependencies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestContentOnly == null
+                                ? 43
+                                : this.isLatestContentOnly.hashCode());
         return result;
     }
 }

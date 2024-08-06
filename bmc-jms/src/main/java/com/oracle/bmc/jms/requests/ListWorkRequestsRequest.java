@@ -80,6 +80,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getManagedInstanceId() {
         return managedInstanceId;
     }
+    /** The operation type of the work request. */
+    private com.oracle.bmc.jms.model.OperationType operationType;
+
+    /** The operation type of the work request. */
+    public com.oracle.bmc.jms.model.OperationType getOperationType() {
+        return operationType;
+    }
+    /** The status of the work request. */
+    private java.util.List<com.oracle.bmc.jms.model.OperationStatus> status;
+
+    /** The status of the work request. */
+    public java.util.List<com.oracle.bmc.jms.model.OperationStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -197,6 +211,44 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** The operation type of the work request. */
+        private com.oracle.bmc.jms.model.OperationType operationType = null;
+
+        /**
+         * The operation type of the work request.
+         *
+         * @param operationType the value to set
+         * @return this builder instance
+         */
+        public Builder operationType(com.oracle.bmc.jms.model.OperationType operationType) {
+            this.operationType = operationType;
+            return this;
+        }
+
+        /** The status of the work request. */
+        private java.util.List<com.oracle.bmc.jms.model.OperationStatus> status = null;
+
+        /**
+         * The status of the work request.
+         *
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.jms.model.OperationStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. The status of the work request.
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(OperationStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -234,6 +286,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             page(o.getPage());
             limit(o.getLimit());
             managedInstanceId(o.getManagedInstanceId());
+            operationType(o.getOperationType());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -275,9 +329,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
             request.page = page;
             request.limit = limit;
             request.managedInstanceId = managedInstanceId;
+            request.operationType = operationType;
+            request.status = status;
             return request;
             // new ListWorkRequestsRequest(compartmentId, id, fleetId, opcRequestId, page, limit,
-            // managedInstanceId);
+            // managedInstanceId, operationType, status);
         }
     }
 
@@ -294,7 +350,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 .opcRequestId(opcRequestId)
                 .page(page)
                 .limit(limit)
-                .managedInstanceId(managedInstanceId);
+                .managedInstanceId(managedInstanceId)
+                .operationType(operationType)
+                .status(status);
     }
 
     /**
@@ -318,6 +376,8 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
+        sb.append(",operationType=").append(String.valueOf(this.operationType));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -339,7 +399,9 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
-                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId);
+                && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
+                && java.util.Objects.equals(this.operationType, other.operationType)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -357,6 +419,10 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.managedInstanceId == null ? 43 : this.managedInstanceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operationType == null ? 43 : this.operationType.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

@@ -13,6 +13,7 @@ public enum ApplicationSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     ApproximateJreCount("approximateJreCount"),
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
+    ApproximateLibraryCount("approximateLibraryCount"),
     OsName("osName"),
     ;
 

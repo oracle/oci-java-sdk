@@ -27,8 +27,9 @@ public final class CreateConfigurationDetails
         "displayName",
         "compartmentId",
         "description",
-        "shape",
         "dbVersion",
+        "shape",
+        "isFlexible",
         "instanceOcpuCount",
         "instanceMemorySizeInGBs",
         "dbConfigurationOverrides",
@@ -40,8 +41,9 @@ public final class CreateConfigurationDetails
             String displayName,
             String compartmentId,
             String description,
-            String shape,
             String dbVersion,
+            String shape,
+            Boolean isFlexible,
             Integer instanceOcpuCount,
             Integer instanceMemorySizeInGBs,
             DbConfigurationOverrideCollection dbConfigurationOverrides,
@@ -52,8 +54,9 @@ public final class CreateConfigurationDetails
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.description = description;
-        this.shape = shape;
         this.dbVersion = dbVersion;
+        this.shape = shape;
+        this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
         this.dbConfigurationOverrides = dbConfigurationOverrides;
@@ -117,21 +120,6 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
-        @com.fasterxml.jackson.annotation.JsonProperty("shape")
-        private String shape;
-
-        /**
-         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
-         *
-         * @param shape the value to set
-         * @return this builder
-         */
-        public Builder shape(String shape) {
-            this.shape = shape;
-            this.__explicitlySet__.add("shape");
-            return this;
-        }
         /** Version of the PostgreSQL database. */
         @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
         private String dbVersion;
@@ -147,12 +135,48 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("dbVersion");
             return this;
         }
-        /** CPU core count. */
+        /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+        @com.fasterxml.jackson.annotation.JsonProperty("shape")
+        private String shape;
+
+        /**
+         * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+         *
+         * @param shape the value to set
+         * @return this builder
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            this.__explicitlySet__.add("shape");
+            return this;
+        }
+        /** Whether the configuration supports flexible shapes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+        private Boolean isFlexible;
+
+        /**
+         * Whether the configuration supports flexible shapes.
+         *
+         * @param isFlexible the value to set
+         * @return this builder
+         */
+        public Builder isFlexible(Boolean isFlexible) {
+            this.isFlexible = isFlexible;
+            this.__explicitlySet__.add("isFlexible");
+            return this;
+        }
+        /**
+         * CPU core count.
+         *
+         * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
          * CPU core count.
+         *
+         * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -162,12 +186,18 @@ public final class CreateConfigurationDetails
             this.__explicitlySet__.add("instanceOcpuCount");
             return this;
         }
-        /** Memory size in gigabytes with 1GB increment. */
+        /**
+         * Memory size in gigabytes with 1GB increment.
+         *
+         * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
         private Integer instanceMemorySizeInGBs;
 
         /**
          * Memory size in gigabytes with 1GB increment.
+         *
+         * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -255,8 +285,9 @@ public final class CreateConfigurationDetails
                             this.displayName,
                             this.compartmentId,
                             this.description,
-                            this.shape,
                             this.dbVersion,
+                            this.shape,
+                            this.isFlexible,
                             this.instanceOcpuCount,
                             this.instanceMemorySizeInGBs,
                             this.dbConfigurationOverrides,
@@ -280,11 +311,14 @@ public final class CreateConfigurationDetails
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
             }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
             }
-            if (model.wasPropertyExplicitlySet("dbVersion")) {
-                this.dbVersion(model.getDbVersion());
+            if (model.wasPropertyExplicitlySet("isFlexible")) {
+                this.isFlexible(model.getIsFlexible());
             }
             if (model.wasPropertyExplicitlySet("instanceOcpuCount")) {
                 this.instanceOcpuCount(model.getInstanceOcpuCount());
@@ -362,19 +396,6 @@ public final class CreateConfigurationDetails
         return description;
     }
 
-    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
-    @com.fasterxml.jackson.annotation.JsonProperty("shape")
-    private final String shape;
-
-    /**
-     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
-     *
-     * @return the value
-     */
-    public String getShape() {
-        return shape;
-    }
-
     /** Version of the PostgreSQL database. */
     @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
     private final String dbVersion;
@@ -388,12 +409,44 @@ public final class CreateConfigurationDetails
         return dbVersion;
     }
 
-    /** CPU core count. */
+    /** The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex} */
+    @com.fasterxml.jackson.annotation.JsonProperty("shape")
+    private final String shape;
+
+    /**
+     * The name of the shape for the configuration. Example: {@code VM.Standard.E4.Flex}
+     *
+     * @return the value
+     */
+    public String getShape() {
+        return shape;
+    }
+
+    /** Whether the configuration supports flexible shapes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+    private final Boolean isFlexible;
+
+    /**
+     * Whether the configuration supports flexible shapes.
+     *
+     * @return the value
+     */
+    public Boolean getIsFlexible() {
+        return isFlexible;
+    }
+
+    /**
+     * CPU core count.
+     *
+     * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
      * CPU core count.
+     *
+     * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
      *
      * @return the value
      */
@@ -401,12 +454,18 @@ public final class CreateConfigurationDetails
         return instanceOcpuCount;
     }
 
-    /** Memory size in gigabytes with 1GB increment. */
+    /**
+     * Memory size in gigabytes with 1GB increment.
+     *
+     * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
     private final Integer instanceMemorySizeInGBs;
 
     /**
      * Memory size in gigabytes with 1GB increment.
+     *
+     * <p>Skip or set it's value to 0 if configuration is for a flexible shape.
      *
      * @return the value
      */
@@ -490,8 +549,9 @@ public final class CreateConfigurationDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
-        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", isFlexible=").append(String.valueOf(this.isFlexible));
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
@@ -517,8 +577,9 @@ public final class CreateConfigurationDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
-                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.isFlexible, other.isFlexible)
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
@@ -539,8 +600,9 @@ public final class CreateConfigurationDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
-        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.isFlexible == null ? 43 : this.isFlexible.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceOcpuCount == null ? 43 : this.instanceOcpuCount.hashCode());

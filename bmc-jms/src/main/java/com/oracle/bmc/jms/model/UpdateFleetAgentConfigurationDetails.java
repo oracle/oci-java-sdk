@@ -28,6 +28,8 @@ public final class UpdateFleetAgentConfigurationDetails
         "javaUsageTrackerProcessingFrequencyInMinutes",
         "workRequestValidityPeriodInDays",
         "agentPollingIntervalInMinutes",
+        "isCollectingManagedInstanceMetricsEnabled",
+        "isCollectingUsernamesEnabled",
         "linuxConfiguration",
         "windowsConfiguration",
         "macOsConfiguration"
@@ -37,6 +39,8 @@ public final class UpdateFleetAgentConfigurationDetails
             Integer javaUsageTrackerProcessingFrequencyInMinutes,
             Integer workRequestValidityPeriodInDays,
             Integer agentPollingIntervalInMinutes,
+            Boolean isCollectingManagedInstanceMetricsEnabled,
+            Boolean isCollectingUsernamesEnabled,
             FleetAgentOsConfiguration linuxConfiguration,
             FleetAgentOsConfiguration windowsConfiguration,
             FleetAgentOsConfiguration macOsConfiguration) {
@@ -46,6 +50,8 @@ public final class UpdateFleetAgentConfigurationDetails
                 javaUsageTrackerProcessingFrequencyInMinutes;
         this.workRequestValidityPeriodInDays = workRequestValidityPeriodInDays;
         this.agentPollingIntervalInMinutes = agentPollingIntervalInMinutes;
+        this.isCollectingManagedInstanceMetricsEnabled = isCollectingManagedInstanceMetricsEnabled;
+        this.isCollectingUsernamesEnabled = isCollectingUsernamesEnabled;
         this.linuxConfiguration = linuxConfiguration;
         this.windowsConfiguration = windowsConfiguration;
         this.macOsConfiguration = macOsConfiguration;
@@ -124,6 +130,38 @@ public final class UpdateFleetAgentConfigurationDetails
             this.__explicitlySet__.add("agentPollingIntervalInMinutes");
             return this;
         }
+        /** Collect JMS agent metrics on all managed instances in the fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCollectingManagedInstanceMetricsEnabled")
+        private Boolean isCollectingManagedInstanceMetricsEnabled;
+
+        /**
+         * Collect JMS agent metrics on all managed instances in the fleet.
+         *
+         * @param isCollectingManagedInstanceMetricsEnabled the value to set
+         * @return this builder
+         */
+        public Builder isCollectingManagedInstanceMetricsEnabled(
+                Boolean isCollectingManagedInstanceMetricsEnabled) {
+            this.isCollectingManagedInstanceMetricsEnabled =
+                    isCollectingManagedInstanceMetricsEnabled;
+            this.__explicitlySet__.add("isCollectingManagedInstanceMetricsEnabled");
+            return this;
+        }
+        /** Collect username for application invocations for all managed instances in the fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCollectingUsernamesEnabled")
+        private Boolean isCollectingUsernamesEnabled;
+
+        /**
+         * Collect username for application invocations for all managed instances in the fleet.
+         *
+         * @param isCollectingUsernamesEnabled the value to set
+         * @return this builder
+         */
+        public Builder isCollectingUsernamesEnabled(Boolean isCollectingUsernamesEnabled) {
+            this.isCollectingUsernamesEnabled = isCollectingUsernamesEnabled;
+            this.__explicitlySet__.add("isCollectingUsernamesEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
         private FleetAgentOsConfiguration linuxConfiguration;
@@ -162,6 +200,8 @@ public final class UpdateFleetAgentConfigurationDetails
                             this.javaUsageTrackerProcessingFrequencyInMinutes,
                             this.workRequestValidityPeriodInDays,
                             this.agentPollingIntervalInMinutes,
+                            this.isCollectingManagedInstanceMetricsEnabled,
+                            this.isCollectingUsernamesEnabled,
                             this.linuxConfiguration,
                             this.windowsConfiguration,
                             this.macOsConfiguration);
@@ -185,6 +225,13 @@ public final class UpdateFleetAgentConfigurationDetails
             }
             if (model.wasPropertyExplicitlySet("agentPollingIntervalInMinutes")) {
                 this.agentPollingIntervalInMinutes(model.getAgentPollingIntervalInMinutes());
+            }
+            if (model.wasPropertyExplicitlySet("isCollectingManagedInstanceMetricsEnabled")) {
+                this.isCollectingManagedInstanceMetricsEnabled(
+                        model.getIsCollectingManagedInstanceMetricsEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isCollectingUsernamesEnabled")) {
+                this.isCollectingUsernamesEnabled(model.getIsCollectingUsernamesEnabled());
             }
             if (model.wasPropertyExplicitlySet("linuxConfiguration")) {
                 this.linuxConfiguration(model.getLinuxConfiguration());
@@ -268,6 +315,32 @@ public final class UpdateFleetAgentConfigurationDetails
         return agentPollingIntervalInMinutes;
     }
 
+    /** Collect JMS agent metrics on all managed instances in the fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCollectingManagedInstanceMetricsEnabled")
+    private final Boolean isCollectingManagedInstanceMetricsEnabled;
+
+    /**
+     * Collect JMS agent metrics on all managed instances in the fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsCollectingManagedInstanceMetricsEnabled() {
+        return isCollectingManagedInstanceMetricsEnabled;
+    }
+
+    /** Collect username for application invocations for all managed instances in the fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCollectingUsernamesEnabled")
+    private final Boolean isCollectingUsernamesEnabled;
+
+    /**
+     * Collect username for application invocations for all managed instances in the fleet.
+     *
+     * @return the value
+     */
+    public Boolean getIsCollectingUsernamesEnabled() {
+        return isCollectingUsernamesEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("linuxConfiguration")
     private final FleetAgentOsConfiguration linuxConfiguration;
 
@@ -312,6 +385,10 @@ public final class UpdateFleetAgentConfigurationDetails
                 .append(String.valueOf(this.workRequestValidityPeriodInDays));
         sb.append(", agentPollingIntervalInMinutes=")
                 .append(String.valueOf(this.agentPollingIntervalInMinutes));
+        sb.append(", isCollectingManagedInstanceMetricsEnabled=")
+                .append(String.valueOf(this.isCollectingManagedInstanceMetricsEnabled));
+        sb.append(", isCollectingUsernamesEnabled=")
+                .append(String.valueOf(this.isCollectingUsernamesEnabled));
         sb.append(", linuxConfiguration=").append(String.valueOf(this.linuxConfiguration));
         sb.append(", windowsConfiguration=").append(String.valueOf(this.windowsConfiguration));
         sb.append(", macOsConfiguration=").append(String.valueOf(this.macOsConfiguration));
@@ -338,6 +415,11 @@ public final class UpdateFleetAgentConfigurationDetails
                         this.workRequestValidityPeriodInDays, other.workRequestValidityPeriodInDays)
                 && java.util.Objects.equals(
                         this.agentPollingIntervalInMinutes, other.agentPollingIntervalInMinutes)
+                && java.util.Objects.equals(
+                        this.isCollectingManagedInstanceMetricsEnabled,
+                        other.isCollectingManagedInstanceMetricsEnabled)
+                && java.util.Objects.equals(
+                        this.isCollectingUsernamesEnabled, other.isCollectingUsernamesEnabled)
                 && java.util.Objects.equals(this.linuxConfiguration, other.linuxConfiguration)
                 && java.util.Objects.equals(this.windowsConfiguration, other.windowsConfiguration)
                 && java.util.Objects.equals(this.macOsConfiguration, other.macOsConfiguration)
@@ -368,6 +450,16 @@ public final class UpdateFleetAgentConfigurationDetails
                         + (this.agentPollingIntervalInMinutes == null
                                 ? 43
                                 : this.agentPollingIntervalInMinutes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCollectingManagedInstanceMetricsEnabled == null
+                                ? 43
+                                : this.isCollectingManagedInstanceMetricsEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isCollectingUsernamesEnabled == null
+                                ? 43
+                                : this.isCollectingUsernamesEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.linuxConfiguration == null
