@@ -123,7 +123,7 @@ public interface SoftwareSource extends AutoCloseable {
             ChangeSoftwareSourceCompartmentRequest request);
 
     /**
-     * Registers the necessary entitlement credentials for OS vendor software sources.
+     * Registers the necessary entitlement credentials for OS vendor software sources for a tenancy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

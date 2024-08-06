@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Patching configurations which allows patch the nodes batch by batch. <br>
+ * Configuration that applies the patch in batches, the batch size is a user defined parameter. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

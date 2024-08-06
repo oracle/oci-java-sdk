@@ -23,11 +23,13 @@ package com.oracle.bmc.bds.model;
 public final class InstallPatchDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"version", "clusterAdminPassword"})
-    public InstallPatchDetails(String version, String clusterAdminPassword) {
+    @java.beans.ConstructorProperties({"version", "clusterAdminPassword", "patchingConfig"})
+    public InstallPatchDetails(
+            String version, String clusterAdminPassword, OdhPatchingConfig patchingConfig) {
         super();
         this.version = version;
         this.clusterAdminPassword = clusterAdminPassword;
+        this.patchingConfig = patchingConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -63,12 +65,22 @@ public final class InstallPatchDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("patchingConfig")
+        private OdhPatchingConfig patchingConfig;
+
+        public Builder patchingConfig(OdhPatchingConfig patchingConfig) {
+            this.patchingConfig = patchingConfig;
+            this.__explicitlySet__.add("patchingConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallPatchDetails build() {
             InstallPatchDetails model =
-                    new InstallPatchDetails(this.version, this.clusterAdminPassword);
+                    new InstallPatchDetails(
+                            this.version, this.clusterAdminPassword, this.patchingConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -82,6 +94,9 @@ public final class InstallPatchDetails
             }
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("patchingConfig")) {
+                this.patchingConfig(model.getPatchingConfig());
             }
             return this;
         }
@@ -122,6 +137,13 @@ public final class InstallPatchDetails
         return clusterAdminPassword;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("patchingConfig")
+    private final OdhPatchingConfig patchingConfig;
+
+    public OdhPatchingConfig getPatchingConfig() {
+        return patchingConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +161,7 @@ public final class InstallPatchDetails
         sb.append("super=").append(super.toString());
         sb.append("version=").append(String.valueOf(this.version));
         sb.append(", clusterAdminPassword=").append("<redacted>");
+        sb.append(", patchingConfig=").append(String.valueOf(this.patchingConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +178,7 @@ public final class InstallPatchDetails
         InstallPatchDetails other = (InstallPatchDetails) o;
         return java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(this.patchingConfig, other.patchingConfig)
                 && super.equals(other);
     }
 
@@ -168,6 +192,9 @@ public final class InstallPatchDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.patchingConfig == null ? 43 : this.patchingConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

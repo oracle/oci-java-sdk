@@ -27,6 +27,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         "compartmentId",
         "namespace",
         "projectId",
+        "parentRepositoryId",
         "projectName",
         "sshUrl",
         "httpUrl",
@@ -52,6 +53,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             String compartmentId,
             String namespace,
             String projectId,
+            String parentRepositoryId,
             String projectName,
             String sshUrl,
             String httpUrl,
@@ -76,6 +78,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         this.compartmentId = compartmentId;
         this.namespace = namespace;
         this.projectId = projectId;
+        this.parentRepositoryId = parentRepositoryId;
         this.projectName = projectName;
         this.sshUrl = sshUrl;
         this.httpUrl = httpUrl;
@@ -173,6 +176,21 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("projectId");
             return this;
         }
+        /** The OCID of the parent repository. */
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+        private String parentRepositoryId;
+
+        /**
+         * The OCID of the parent repository.
+         *
+         * @param parentRepositoryId the value to set
+         * @return this builder
+         */
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            this.parentRepositoryId = parentRepositoryId;
+            this.__explicitlySet__.add("parentRepositoryId");
+            return this;
+        }
         /** Unique project name in a namespace. */
         @com.fasterxml.jackson.annotation.JsonProperty("projectName")
         private String projectName;
@@ -250,14 +268,16 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         }
         /**
          * Type of repository: MIRRORED - Repository created by mirroring an existing repository.
-         * HOSTED - Repository created and hosted using OCI DevOps code repository.
+         * HOSTED - Repository created and hosted using OCI DevOps code repository. FORKED -
+         * Repository created by forking an existing repository.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
         private RepositoryType repositoryType;
 
         /**
          * Type of repository: MIRRORED - Repository created by mirroring an existing repository.
-         * HOSTED - Repository created and hosted using OCI DevOps code repository.
+         * HOSTED - Repository created and hosted using OCI DevOps code repository. FORKED -
+         * Repository created by forking an existing repository.
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -496,6 +516,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
                             this.compartmentId,
                             this.namespace,
                             this.projectId,
+                            this.parentRepositoryId,
                             this.projectName,
                             this.sshUrl,
                             this.httpUrl,
@@ -536,6 +557,9 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("projectId")) {
                 this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("parentRepositoryId")) {
+                this.parentRepositoryId(model.getParentRepositoryId());
             }
             if (model.wasPropertyExplicitlySet("projectName")) {
                 this.projectName(model.getProjectName());
@@ -669,6 +693,19 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         return projectId;
     }
 
+    /** The OCID of the parent repository. */
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+    private final String parentRepositoryId;
+
+    /**
+     * The OCID of the parent repository.
+     *
+     * @return the value
+     */
+    public String getParentRepositoryId() {
+        return parentRepositoryId;
+    }
+
     /** Unique project name in a namespace. */
     @com.fasterxml.jackson.annotation.JsonProperty("projectName")
     private final String projectName;
@@ -736,11 +773,13 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
 
     /**
      * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository.
+     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
+     * by forking an existing repository.
      */
     public enum RepositoryType implements com.oracle.bmc.http.internal.BmcEnum {
         Mirrored("MIRRORED"),
         Hosted("HOSTED"),
+        Forked("FORKED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -785,14 +824,16 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
     };
     /**
      * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository.
+     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
+     * by forking an existing repository.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
     private final RepositoryType repositoryType;
 
     /**
      * Type of repository: MIRRORED - Repository created by mirroring an existing repository. HOSTED
-     * - Repository created and hosted using OCI DevOps code repository.
+     * - Repository created and hosted using OCI DevOps code repository. FORKED - Repository created
+     * by forking an existing repository.
      *
      * @return the value
      */
@@ -846,6 +887,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         Active("ACTIVE"),
         Creating("CREATING"),
         Deleted("DELETED"),
+        Failed("FAILED"),
         Deleting("DELETING"),
 
         /**
@@ -1108,6 +1150,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", parentRepositoryId=").append(String.valueOf(this.parentRepositoryId));
         sb.append(", projectName=").append(String.valueOf(this.projectName));
         sb.append(", sshUrl=").append(String.valueOf(this.sshUrl));
         sb.append(", httpUrl=").append(String.valueOf(this.httpUrl));
@@ -1145,6 +1188,7 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.parentRepositoryId, other.parentRepositoryId)
                 && java.util.Objects.equals(this.projectName, other.projectName)
                 && java.util.Objects.equals(this.sshUrl, other.sshUrl)
                 && java.util.Objects.equals(this.httpUrl, other.httpUrl)
@@ -1178,6 +1222,11 @@ public final class Repository extends com.oracle.bmc.http.client.internal.Explic
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentRepositoryId == null
+                                ? 43
+                                : this.parentRepositoryId.hashCode());
         result = (result * PRIME) + (this.projectName == null ? 43 : this.projectName.hashCode());
         result = (result * PRIME) + (this.sshUrl == null ? 43 : this.sshUrl.hashCode());
         result = (result * PRIME) + (this.httpUrl == null ? 43 : this.httpUrl.hashCode());

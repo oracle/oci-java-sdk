@@ -11,13 +11,13 @@ public class ListPerformanceTuningAnalysisResultsResponse
         extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * particular request, provide the request ID.
      */
     private String opcRequestId;
 
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-     * particular request, please provide the request ID.
+     * particular request, provide the request ID.
      *
      * @return the value
      */
@@ -26,7 +26,7 @@ public class ListPerformanceTuningAnalysisResultsResponse
     }
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
+     * For list pagination, when this header appears in the response, additional pages of results
      * remain. Include this value as the {@code page} parameter for the subsequent GET request to
      * get the next batch of items. For important details about how pagination works, see [List
      * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -34,7 +34,7 @@ public class ListPerformanceTuningAnalysisResultsResponse
     private String opcNextPage;
 
     /**
-     * For list pagination. When this header appears in the response, additional pages of results
+     * For list pagination, when this header appears in the response, additional pages of results
      * remain. Include this value as the {@code page} parameter for the subsequent GET request to
      * get the next batch of items. For important details about how pagination works, see [List
      * Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
@@ -100,13 +100,13 @@ public class ListPerformanceTuningAnalysisResultsResponse
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * particular request, provide the request ID.
          */
         private String opcRequestId;
 
         /**
          * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
-         * particular request, please provide the request ID.
+         * particular request, provide the request ID.
          *
          * @param opcRequestId the value to set
          * @return this builder
@@ -117,7 +117,7 @@ public class ListPerformanceTuningAnalysisResultsResponse
         }
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
+         * For list pagination, when this header appears in the response, additional pages of
          * results remain. Include this value as the {@code page} parameter for the subsequent GET
          * request to get the next batch of items. For important details about how pagination works,
          * see [List
@@ -126,7 +126,7 @@ public class ListPerformanceTuningAnalysisResultsResponse
         private String opcNextPage;
 
         /**
-         * For list pagination. When this header appears in the response, additional pages of
+         * For list pagination, when this header appears in the response, additional pages of
          * results remain. Include this value as the {@code page} parameter for the subsequent GET
          * request to get the next batch of items. For important details about how pagination works,
          * see [List

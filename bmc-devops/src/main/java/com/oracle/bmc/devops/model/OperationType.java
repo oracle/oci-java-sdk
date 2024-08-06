@@ -43,8 +43,15 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateRepository("UPDATE_REPOSITORY"),
     DeleteRepository("DELETE_REPOSITORY"),
     MirrorRepository("MIRROR_REPOSITORY"),
+    ForkRepository("FORK_REPOSITORY"),
+    SyncForkRepository("SYNC_FORK_REPOSITORY"),
     ScheduleCascadingProjectDeletion("SCHEDULE_CASCADING_PROJECT_DELETION"),
     CancelScheduledCascadingProjectDeletion("CANCEL_SCHEDULED_CASCADING_PROJECT_DELETION"),
+    CreatePullRequest("CREATE_PULL_REQUEST"),
+    UpdatePullRequest("UPDATE_PULL_REQUEST"),
+    DeletePullRequest("DELETE_PULL_REQUEST"),
+    MovePullRequest("MOVE_PULL_REQUEST"),
+    MergePullRequest("MERGE_PULL_REQUEST"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -45,12 +45,12 @@ public final class OperatingSystem
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The operating system type, such as Windows or Linux */
+        /** The operating system type, such as Windows, Linux or macOS */
         @com.fasterxml.jackson.annotation.JsonProperty("family")
         private OsFamily family;
 
         /**
-         * The operating system type, such as Windows or Linux
+         * The operating system type, such as Windows, Linux or macOS
          *
          * @param family the value to set
          * @return this builder
@@ -172,12 +172,12 @@ public final class OperatingSystem
         return new Builder().copy(this);
     }
 
-    /** The operating system type, such as Windows or Linux */
+    /** The operating system type, such as Windows, Linux or macOS */
     @com.fasterxml.jackson.annotation.JsonProperty("family")
     private final OsFamily family;
 
     /**
-     * The operating system type, such as Windows or Linux
+     * The operating system type, such as Windows, Linux or macOS
      *
      * @return the value
      */

@@ -10,6 +10,7 @@ public enum PerformanceTuningAnalysisResultSortBy implements com.oracle.bmc.http
     TimeCreated("timeCreated"),
     ManagedInstanceId("managedInstanceId"),
     WorkRequestId("workRequestId"),
+    WarningCount("warningCount"),
     ;
 
     private final String value;

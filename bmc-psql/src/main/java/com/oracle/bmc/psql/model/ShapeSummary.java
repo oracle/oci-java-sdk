@@ -21,13 +21,31 @@ package com.oracle.bmc.psql.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class ShapeSummary extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "shape", "ocpuCount", "memorySizeInGBs"})
-    public ShapeSummary(String id, String shape, Integer ocpuCount, Integer memorySizeInGBs) {
+    @java.beans.ConstructorProperties({
+        "id",
+        "shape",
+        "isFlexible",
+        "ocpuCount",
+        "memorySizeInGBs",
+        "shapeOcpuOptions",
+        "shapeMemoryOptions"
+    })
+    public ShapeSummary(
+            String id,
+            String shape,
+            Boolean isFlexible,
+            Integer ocpuCount,
+            Integer memorySizeInGBs,
+            ShapeOcpuOptions shapeOcpuOptions,
+            ShapeMemoryOptions shapeMemoryOptions) {
         super();
         this.id = id;
         this.shape = shape;
+        this.isFlexible = isFlexible;
         this.ocpuCount = ocpuCount;
         this.memorySizeInGBs = memorySizeInGBs;
+        this.shapeOcpuOptions = shapeOcpuOptions;
+        this.shapeMemoryOptions = shapeMemoryOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,6 +80,21 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("shape");
             return this;
         }
+        /** Indicates if the shape is a flex shape. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+        private Boolean isFlexible;
+
+        /**
+         * Indicates if the shape is a flex shape.
+         *
+         * @param isFlexible the value to set
+         * @return this builder
+         */
+        public Builder isFlexible(Boolean isFlexible) {
+            this.isFlexible = isFlexible;
+            this.__explicitlySet__.add("isFlexible");
+            return this;
+        }
         /** The number of OCPUs. */
         @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
         private Integer ocpuCount;
@@ -93,12 +126,37 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeOcpuOptions")
+        private ShapeOcpuOptions shapeOcpuOptions;
+
+        public Builder shapeOcpuOptions(ShapeOcpuOptions shapeOcpuOptions) {
+            this.shapeOcpuOptions = shapeOcpuOptions;
+            this.__explicitlySet__.add("shapeOcpuOptions");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeMemoryOptions")
+        private ShapeMemoryOptions shapeMemoryOptions;
+
+        public Builder shapeMemoryOptions(ShapeMemoryOptions shapeMemoryOptions) {
+            this.shapeMemoryOptions = shapeMemoryOptions;
+            this.__explicitlySet__.add("shapeMemoryOptions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ShapeSummary build() {
             ShapeSummary model =
-                    new ShapeSummary(this.id, this.shape, this.ocpuCount, this.memorySizeInGBs);
+                    new ShapeSummary(
+                            this.id,
+                            this.shape,
+                            this.isFlexible,
+                            this.ocpuCount,
+                            this.memorySizeInGBs,
+                            this.shapeOcpuOptions,
+                            this.shapeMemoryOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -113,11 +171,20 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
             }
+            if (model.wasPropertyExplicitlySet("isFlexible")) {
+                this.isFlexible(model.getIsFlexible());
+            }
             if (model.wasPropertyExplicitlySet("ocpuCount")) {
                 this.ocpuCount(model.getOcpuCount());
             }
             if (model.wasPropertyExplicitlySet("memorySizeInGBs")) {
                 this.memorySizeInGBs(model.getMemorySizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("shapeOcpuOptions")) {
+                this.shapeOcpuOptions(model.getShapeOcpuOptions());
+            }
+            if (model.wasPropertyExplicitlySet("shapeMemoryOptions")) {
+                this.shapeMemoryOptions(model.getShapeMemoryOptions());
             }
             return this;
         }
@@ -158,6 +225,19 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return shape;
     }
 
+    /** Indicates if the shape is a flex shape. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+    private final Boolean isFlexible;
+
+    /**
+     * Indicates if the shape is a flex shape.
+     *
+     * @return the value
+     */
+    public Boolean getIsFlexible() {
+        return isFlexible;
+    }
+
     /** The number of OCPUs. */
     @com.fasterxml.jackson.annotation.JsonProperty("ocpuCount")
     private final Integer ocpuCount;
@@ -184,6 +264,20 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         return memorySizeInGBs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeOcpuOptions")
+    private final ShapeOcpuOptions shapeOcpuOptions;
+
+    public ShapeOcpuOptions getShapeOcpuOptions() {
+        return shapeOcpuOptions;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeMemoryOptions")
+    private final ShapeMemoryOptions shapeMemoryOptions;
+
+    public ShapeMemoryOptions getShapeMemoryOptions() {
+        return shapeMemoryOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -201,8 +295,11 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", isFlexible=").append(String.valueOf(this.isFlexible));
         sb.append(", ocpuCount=").append(String.valueOf(this.ocpuCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
+        sb.append(", shapeOcpuOptions=").append(String.valueOf(this.shapeOcpuOptions));
+        sb.append(", shapeMemoryOptions=").append(String.valueOf(this.shapeMemoryOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -219,8 +316,11 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         ShapeSummary other = (ShapeSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.isFlexible, other.isFlexible)
                 && java.util.Objects.equals(this.ocpuCount, other.ocpuCount)
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
+                && java.util.Objects.equals(this.shapeOcpuOptions, other.shapeOcpuOptions)
+                && java.util.Objects.equals(this.shapeMemoryOptions, other.shapeMemoryOptions)
                 && super.equals(other);
     }
 
@@ -230,10 +330,19 @@ public final class ShapeSummary extends com.oracle.bmc.http.client.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.isFlexible == null ? 43 : this.isFlexible.hashCode());
         result = (result * PRIME) + (this.ocpuCount == null ? 43 : this.ocpuCount.hashCode());
         result =
                 (result * PRIME)
                         + (this.memorySizeInGBs == null ? 43 : this.memorySizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeOcpuOptions == null ? 43 : this.shapeOcpuOptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shapeMemoryOptions == null
+                                ? 43
+                                : this.shapeMemoryOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

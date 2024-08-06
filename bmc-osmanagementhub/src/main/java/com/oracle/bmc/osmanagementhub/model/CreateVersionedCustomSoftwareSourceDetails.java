@@ -151,6 +151,45 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             return this;
         }
         /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+        private Boolean isLatestContentOnly;
+
+        /**
+         * Indicates whether the software source will include only the latest versions of content
+         * from vendor software sources, while accounting for other constraints set in the custom or
+         * versioned custom software source (such as a package list or filters). * For a module
+         * filter that does not specify a stream, this will include all available streams, and
+         * within each stream only the latest version of packages. * For a module filter that does
+         * specify a stream, this will include only the latest version of packages for the specified
+         * stream. * For a package filter that does not specify a version, this will include only
+         * the latest available version of the package. * For a package filter that does specify a
+         * version, this will include only the specified version of the package (the
+         * isLatestContentOnly attribute is ignored). * For a package list, this will include only
+         * the specified version of packages and modules in the list (the isLatestContentOnly
+         * attribute is ignored).
+         *
+         * @param isLatestContentOnly the value to set
+         * @return this builder
+         */
+        public Builder isLatestContentOnly(Boolean isLatestContentOnly) {
+            this.isLatestContentOnly = isLatestContentOnly;
+            this.__explicitlySet__.add("isLatestContentOnly");
+            return this;
+        }
+        /**
          * A property used for compatibility only. It doesn't provide a complete list of packages.
          * See {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
          * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
@@ -190,6 +229,7 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                             this.softwareSourceVersion,
                             this.isAutoResolveDependencies,
                             this.isCreatedFromPackageList,
+                            this.isLatestContentOnly,
                             this.packages);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -229,6 +269,9 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             if (model.wasPropertyExplicitlySet("isCreatedFromPackageList")) {
                 this.isCreatedFromPackageList(model.getIsCreatedFromPackageList());
             }
+            if (model.wasPropertyExplicitlySet("isLatestContentOnly")) {
+                this.isLatestContentOnly(model.getIsLatestContentOnly());
+            }
             if (model.wasPropertyExplicitlySet("packages")) {
                 this.packages(model.getPackages());
             }
@@ -257,6 +300,7 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
             String softwareSourceVersion,
             Boolean isAutoResolveDependencies,
             Boolean isCreatedFromPackageList,
+            Boolean isLatestContentOnly,
             java.util.List<String> packages) {
         super(compartmentId, displayName, description, freeformTags, definedTags);
         this.vendorSoftwareSources = vendorSoftwareSources;
@@ -264,6 +308,7 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
         this.softwareSourceVersion = softwareSourceVersion;
         this.isAutoResolveDependencies = isAutoResolveDependencies;
         this.isCreatedFromPackageList = isCreatedFromPackageList;
+        this.isLatestContentOnly = isLatestContentOnly;
         this.packages = packages;
     }
 
@@ -335,6 +380,41 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
     }
 
     /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLatestContentOnly")
+    private final Boolean isLatestContentOnly;
+
+    /**
+     * Indicates whether the software source will include only the latest versions of content from
+     * vendor software sources, while accounting for other constraints set in the custom or
+     * versioned custom software source (such as a package list or filters). * For a module filter
+     * that does not specify a stream, this will include all available streams, and within each
+     * stream only the latest version of packages. * For a module filter that does specify a stream,
+     * this will include only the latest version of packages for the specified stream. * For a
+     * package filter that does not specify a version, this will include only the latest available
+     * version of the package. * For a package filter that does specify a version, this will include
+     * only the specified version of the package (the isLatestContentOnly attribute is ignored). *
+     * For a package list, this will include only the specified version of packages and modules in
+     * the list (the isLatestContentOnly attribute is ignored).
+     *
+     * @return the value
+     */
+    public Boolean getIsLatestContentOnly() {
+        return isLatestContentOnly;
+    }
+
+    /**
      * A property used for compatibility only. It doesn't provide a complete list of packages. See
      * {@link #addPackagesToSoftwareSourceDetails(AddPackagesToSoftwareSourceDetailsRequest)
      * addPackagesToSoftwareSourceDetails} for providing the list of packages used to create the
@@ -378,6 +458,7 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                 .append(String.valueOf(this.isAutoResolveDependencies));
         sb.append(", isCreatedFromPackageList=")
                 .append(String.valueOf(this.isCreatedFromPackageList));
+        sb.append(", isLatestContentOnly=").append(String.valueOf(this.isLatestContentOnly));
         sb.append(", packages=").append(String.valueOf(this.packages));
         sb.append(")");
         return sb.toString();
@@ -402,6 +483,7 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                         this.isAutoResolveDependencies, other.isAutoResolveDependencies)
                 && java.util.Objects.equals(
                         this.isCreatedFromPackageList, other.isCreatedFromPackageList)
+                && java.util.Objects.equals(this.isLatestContentOnly, other.isLatestContentOnly)
                 && java.util.Objects.equals(this.packages, other.packages)
                 && super.equals(other);
     }
@@ -435,6 +517,11 @@ public final class CreateVersionedCustomSoftwareSourceDetails extends CreateSoft
                         + (this.isCreatedFromPackageList == null
                                 ? 43
                                 : this.isCreatedFromPackageList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLatestContentOnly == null
+                                ? 43
+                                : this.isLatestContentOnly.hashCode());
         result = (result * PRIME) + (this.packages == null ? 43 : this.packages.hashCode());
         return result;
     }

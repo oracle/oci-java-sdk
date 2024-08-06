@@ -200,12 +200,16 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Specifies whether the backup was created manually, or by a management policy. */
+        /**
+         * Specifies whether the backup was created manually, taken on schedule defined in the a
+         * backup policy, or copied from the remote location.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
         private Backup.SourceType sourceType;
 
         /**
-         * Specifies whether the backup was created manually, or by a management policy.
+         * Specifies whether the backup was created manually, taken on schedule defined in the a
+         * backup policy, or copied from the remote location.
          *
          * @param sourceType the value to set
          * @return this builder
@@ -521,12 +525,16 @@ public final class BackupSummary extends com.oracle.bmc.http.client.internal.Exp
         return lifecycleDetails;
     }
 
-    /** Specifies whether the backup was created manually, or by a management policy. */
+    /**
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
+     * policy, or copied from the remote location.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("sourceType")
     private final Backup.SourceType sourceType;
 
     /**
-     * Specifies whether the backup was created manually, or by a management policy.
+     * Specifies whether the backup was created manually, taken on schedule defined in the a backup
+     * policy, or copied from the remote location.
      *
      * @return the value
      */

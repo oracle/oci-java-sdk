@@ -35,10 +35,10 @@ public class ListDefaultConfigurationsRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** Verison of the PostgreSQL database, such as 14.9. */
+    /** Version of the PostgreSQL database, such as 14.9. */
     private String dbVersion;
 
-    /** Verison of the PostgreSQL database, such as 14.9. */
+    /** Version of the PostgreSQL database, such as 14.9. */
     public String getDbVersion() {
         return dbVersion;
     }
@@ -180,11 +180,11 @@ public class ListDefaultConfigurationsRequest
             return this;
         }
 
-        /** Verison of the PostgreSQL database, such as 14.9. */
+        /** Version of the PostgreSQL database, such as 14.9. */
         private String dbVersion = null;
 
         /**
-         * Verison of the PostgreSQL database, such as 14.9.
+         * Version of the PostgreSQL database, such as 14.9.
          *
          * @param dbVersion the value to set
          * @return this builder instance

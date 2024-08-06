@@ -37,6 +37,7 @@ public final class ManagedInstanceUsage
         "approximateInstallationCount",
         "approximateJreCount",
         "drsFileStatus",
+        "applicationInvokedBy",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -53,6 +54,7 @@ public final class ManagedInstanceUsage
             Integer approximateInstallationCount,
             Integer approximateJreCount,
             DrsFileStatus drsFileStatus,
+            String applicationInvokedBy,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -68,6 +70,7 @@ public final class ManagedInstanceUsage
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
         this.drsFileStatus = drsFileStatus;
+        this.applicationInvokedBy = applicationInvokedBy;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -223,6 +226,25 @@ public final class ManagedInstanceUsage
             return this;
         }
         /**
+         * Comma separated list of user names that invoked applications within this managed
+         * instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+        private String applicationInvokedBy;
+
+        /**
+         * Comma separated list of user names that invoked applications within this managed
+         * instance.
+         *
+         * @param applicationInvokedBy the value to set
+         * @return this builder
+         */
+        public Builder applicationInvokedBy(String applicationInvokedBy) {
+            this.applicationInvokedBy = applicationInvokedBy;
+            this.__explicitlySet__.add("applicationInvokedBy");
+            return this;
+        }
+        /**
          * Lower bound of the specified time period filter. JMS provides a view of the data that is
          * _per day_. The query uses only the date element of the parameter.
          */
@@ -323,6 +345,7 @@ public final class ManagedInstanceUsage
                             this.approximateInstallationCount,
                             this.approximateJreCount,
                             this.drsFileStatus,
+                            this.applicationInvokedBy,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -364,6 +387,9 @@ public final class ManagedInstanceUsage
             }
             if (model.wasPropertyExplicitlySet("drsFileStatus")) {
                 this.drsFileStatus(model.getDrsFileStatus());
+            }
+            if (model.wasPropertyExplicitlySet("applicationInvokedBy")) {
+                this.applicationInvokedBy(model.getApplicationInvokedBy());
             }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
@@ -517,6 +543,21 @@ public final class ManagedInstanceUsage
     }
 
     /**
+     * Comma separated list of user names that invoked applications within this managed instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+    private final String applicationInvokedBy;
+
+    /**
+     * Comma separated list of user names that invoked applications within this managed instance.
+     *
+     * @return the value
+     */
+    public String getApplicationInvokedBy() {
+        return applicationInvokedBy;
+    }
+
+    /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per
      * day_. The query uses only the date element of the parameter.
      */
@@ -619,6 +660,7 @@ public final class ManagedInstanceUsage
                 .append(String.valueOf(this.approximateInstallationCount));
         sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
         sb.append(", drsFileStatus=").append(String.valueOf(this.drsFileStatus));
+        sb.append(", applicationInvokedBy=").append(String.valueOf(this.applicationInvokedBy));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -649,6 +691,7 @@ public final class ManagedInstanceUsage
                         this.approximateInstallationCount, other.approximateInstallationCount)
                 && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
                 && java.util.Objects.equals(this.drsFileStatus, other.drsFileStatus)
+                && java.util.Objects.equals(this.applicationInvokedBy, other.applicationInvokedBy)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -692,6 +735,11 @@ public final class ManagedInstanceUsage
         result =
                 (result * PRIME)
                         + (this.drsFileStatus == null ? 43 : this.drsFileStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationInvokedBy == null
+                                ? 43
+                                : this.applicationInvokedBy.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

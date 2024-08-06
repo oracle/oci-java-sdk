@@ -111,6 +111,8 @@ public final class DevopsCodeRepositoryFilter extends Filter {
     /** */
     public enum Events implements com.oracle.bmc.http.internal.BmcEnum {
         Push("PUSH"),
+        PullRequestCreated("PULL_REQUEST_CREATED"),
+        PullRequestUpdated("PULL_REQUEST_UPDATED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

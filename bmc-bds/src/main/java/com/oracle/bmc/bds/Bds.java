@@ -353,6 +353,23 @@ public interface Bds extends AutoCloseable {
             CreateNodeReplaceConfigurationRequest request);
 
     /**
+     * Create a resource principal session token configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateResourcePrincipalConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateResourcePrincipalConfiguration API.
+     */
+    CreateResourcePrincipalConfigurationResponse createResourcePrincipalConfiguration(
+            CreateResourcePrincipalConfigurationRequest request);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -483,6 +500,23 @@ public interface Bds extends AutoCloseable {
     ExecuteBootstrapScriptResponse executeBootstrapScript(ExecuteBootstrapScriptRequest request);
 
     /**
+     * Force Refresh Resource Principal for the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ForceRefreshResourcePrincipalExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ForceRefreshResourcePrincipal API.
+     */
+    ForceRefreshResourcePrincipalResponse forceRefreshResourcePrincipal(
+            ForceRefreshResourcePrincipalRequest request);
+
+    /**
      * Returns details of the autoscale configuration identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -610,6 +644,23 @@ public interface Bds extends AutoCloseable {
      *     API.
      */
     GetOsPatchDetailsResponse getOsPatchDetails(GetOsPatchDetailsRequest request);
+
+    /**
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetResourcePrincipalConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetResourcePrincipalConfiguration API.
+     */
+    GetResourcePrincipalConfigurationResponse getResourcePrincipalConfiguration(
+            GetResourcePrincipalConfigurationRequest request);
 
     /**
      * Returns the status of the work request identified by the given ID.
@@ -818,6 +869,23 @@ public interface Bds extends AutoCloseable {
     ListPatchesResponse listPatches(ListPatchesRequest request);
 
     /**
+     * Returns information about the ResourcePrincipalConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListResourcePrincipalConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListResourcePrincipalConfigurations API.
+     */
+    ListResourcePrincipalConfigurationsResponse listResourcePrincipalConfigurations(
+            ListResourcePrincipalConfigurationsRequest request);
+
+    /**
      * Returns a paginated list of errors for a work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -943,6 +1011,23 @@ public interface Bds extends AutoCloseable {
      */
     RemoveNodeReplaceConfigurationResponse removeNodeReplaceConfiguration(
             RemoveNodeReplaceConfigurationRequest request);
+
+    /**
+     * Delete the resource principal configuration for the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RemoveResourcePrincipalConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveResourcePrincipalConfiguration API.
+     */
+    RemoveResourcePrincipalConfigurationResponse removeResourcePrincipalConfiguration(
+            RemoveResourcePrincipalConfigurationRequest request);
 
     /**
      * Renewing TLS/SSL for various ODH services running on the BDS cluster.
@@ -1140,6 +1225,24 @@ public interface Bds extends AutoCloseable {
      */
     UpdateNodeReplaceConfigurationResponse updateNodeReplaceConfiguration(
             UpdateNodeReplaceConfigurationRequest request);
+
+    /**
+     * Updates fields on resourcePrincipalConfiguration, including the name, the lifeSpanInHours of
+     * the token.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateResourcePrincipalConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateResourcePrincipalConfiguration API.
+     */
+    UpdateResourcePrincipalConfigurationResponse updateResourcePrincipalConfiguration(
+            UpdateResourcePrincipalConfigurationRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

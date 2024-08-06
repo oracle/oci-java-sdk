@@ -26,10 +26,10 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** The ID of the Fleet. */
+    /** The ID. */
     private String id;
 
-    /** The ID of the Fleet. */
+    /** The ID. */
     public String getId() {
         return id;
     }
@@ -132,11 +132,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** The ID of the Fleet. */
+        /** The ID. */
         private String id = null;
 
         /**
-         * The ID of the Fleet.
+         * The ID.
          *
          * @param id the value to set
          * @return this builder instance

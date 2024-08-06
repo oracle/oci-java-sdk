@@ -94,6 +94,7 @@ public class DeployArtifactSource
         Ocir("OCIR"),
         GenericArtifact("GENERIC_ARTIFACT"),
         HelmChart("HELM_CHART"),
+        HelmCommandSpec("HELM_COMMAND_SPEC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

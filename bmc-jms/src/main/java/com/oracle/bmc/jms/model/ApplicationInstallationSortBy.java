@@ -15,6 +15,7 @@ public enum ApplicationInstallationSortBy implements com.oracle.bmc.http.interna
     ApproximateJreCount("approximateJreCount"),
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
+    ApproximateLibraryCount("approximateLibraryCount"),
     ;
 
     private final String value;

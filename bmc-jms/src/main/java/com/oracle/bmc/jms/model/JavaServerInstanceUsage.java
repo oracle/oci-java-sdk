@@ -27,6 +27,7 @@ public final class JavaServerInstanceUsage
         "serverInstanceKey",
         "fleetId",
         "serverInstanceName",
+        "serverInstancePort",
         "serverKey",
         "serverName",
         "serverVersion",
@@ -47,6 +48,7 @@ public final class JavaServerInstanceUsage
             String serverInstanceKey,
             String fleetId,
             String serverInstanceName,
+            Integer serverInstancePort,
             String serverKey,
             String serverName,
             String serverVersion,
@@ -66,6 +68,7 @@ public final class JavaServerInstanceUsage
         this.serverInstanceKey = serverInstanceKey;
         this.fleetId = fleetId;
         this.serverInstanceName = serverInstanceName;
+        this.serverInstancePort = serverInstancePort;
         this.serverKey = serverKey;
         this.serverName = serverName;
         this.serverVersion = serverVersion;
@@ -132,6 +135,21 @@ public final class JavaServerInstanceUsage
         public Builder serverInstanceName(String serverInstanceName) {
             this.serverInstanceName = serverInstanceName;
             this.__explicitlySet__.add("serverInstanceName");
+            return this;
+        }
+        /** The port of the Java Server instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("serverInstancePort")
+        private Integer serverInstancePort;
+
+        /**
+         * The port of the Java Server instance.
+         *
+         * @param serverInstancePort the value to set
+         * @return this builder
+         */
+        public Builder serverInstancePort(Integer serverInstancePort) {
+            this.serverInstancePort = serverInstancePort;
+            this.__explicitlySet__.add("serverInstancePort");
             return this;
         }
         /** The internal identifier of the related Java Server. */
@@ -398,6 +416,7 @@ public final class JavaServerInstanceUsage
                             this.serverInstanceKey,
                             this.fleetId,
                             this.serverInstanceName,
+                            this.serverInstancePort,
                             this.serverKey,
                             this.serverName,
                             this.serverVersion,
@@ -429,6 +448,9 @@ public final class JavaServerInstanceUsage
             }
             if (model.wasPropertyExplicitlySet("serverInstanceName")) {
                 this.serverInstanceName(model.getServerInstanceName());
+            }
+            if (model.wasPropertyExplicitlySet("serverInstancePort")) {
+                this.serverInstancePort(model.getServerInstancePort());
             }
             if (model.wasPropertyExplicitlySet("serverKey")) {
                 this.serverKey(model.getServerKey());
@@ -530,6 +552,19 @@ public final class JavaServerInstanceUsage
      */
     public String getServerInstanceName() {
         return serverInstanceName;
+    }
+
+    /** The port of the Java Server instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("serverInstancePort")
+    private final Integer serverInstancePort;
+
+    /**
+     * The port of the Java Server instance.
+     *
+     * @return the value
+     */
+    public Integer getServerInstancePort() {
+        return serverInstancePort;
     }
 
     /** The internal identifier of the related Java Server. */
@@ -773,6 +808,7 @@ public final class JavaServerInstanceUsage
         sb.append("serverInstanceKey=").append(String.valueOf(this.serverInstanceKey));
         sb.append(", fleetId=").append(String.valueOf(this.fleetId));
         sb.append(", serverInstanceName=").append(String.valueOf(this.serverInstanceName));
+        sb.append(", serverInstancePort=").append(String.valueOf(this.serverInstancePort));
         sb.append(", serverKey=").append(String.valueOf(this.serverKey));
         sb.append(", serverName=").append(String.valueOf(this.serverName));
         sb.append(", serverVersion=").append(String.valueOf(this.serverVersion));
@@ -806,6 +842,7 @@ public final class JavaServerInstanceUsage
         return java.util.Objects.equals(this.serverInstanceKey, other.serverInstanceKey)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.serverInstanceName, other.serverInstanceName)
+                && java.util.Objects.equals(this.serverInstancePort, other.serverInstancePort)
                 && java.util.Objects.equals(this.serverKey, other.serverKey)
                 && java.util.Objects.equals(this.serverName, other.serverName)
                 && java.util.Objects.equals(this.serverVersion, other.serverVersion)
@@ -839,6 +876,11 @@ public final class JavaServerInstanceUsage
                         + (this.serverInstanceName == null
                                 ? 43
                                 : this.serverInstanceName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serverInstancePort == null
+                                ? 43
+                                : this.serverInstancePort.hashCode());
         result = (result * PRIME) + (this.serverKey == null ? 43 : this.serverKey.hashCode());
         result = (result * PRIME) + (this.serverName == null ? 43 : this.serverName.hashCode());
         result =

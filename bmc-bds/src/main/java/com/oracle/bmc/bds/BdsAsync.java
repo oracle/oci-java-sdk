@@ -346,6 +346,24 @@ public interface BdsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create a resource principal session token configuration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateResourcePrincipalConfigurationResponse>
+            createResourcePrincipalConfiguration(
+                    CreateResourcePrincipalConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateResourcePrincipalConfigurationRequest,
+                                    CreateResourcePrincipalConfigurationResponse>
+                            handler);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -476,6 +494,24 @@ public interface BdsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Force Refresh Resource Principal for the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ForceRefreshResourcePrincipalResponse>
+            forceRefreshResourcePrincipal(
+                    ForceRefreshResourcePrincipalRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ForceRefreshResourcePrincipalRequest,
+                                    ForceRefreshResourcePrincipalResponse>
+                            handler);
+
+    /**
      * Returns details of the autoscale configuration identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -600,6 +636,24 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetOsPatchDetailsRequest, GetOsPatchDetailsResponse>
                     handler);
+
+    /**
+     * Returns details of the resourcePrincipalConfiguration identified by the given ID.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetResourcePrincipalConfigurationResponse>
+            getResourcePrincipalConfiguration(
+                    GetResourcePrincipalConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetResourcePrincipalConfigurationRequest,
+                                    GetResourcePrincipalConfigurationResponse>
+                            handler);
 
     /**
      * Returns the status of the work request identified by the given ID.
@@ -808,6 +862,24 @@ public interface BdsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse> handler);
 
     /**
+     * Returns information about the ResourcePrincipalConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcePrincipalConfigurationsResponse>
+            listResourcePrincipalConfigurations(
+                    ListResourcePrincipalConfigurationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourcePrincipalConfigurationsRequest,
+                                    ListResourcePrincipalConfigurationsResponse>
+                            handler);
+
+    /**
      * Returns a paginated list of errors for a work request identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -931,6 +1003,24 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RemoveNodeReplaceConfigurationRequest,
                                     RemoveNodeReplaceConfigurationResponse>
+                            handler);
+
+    /**
+     * Delete the resource principal configuration for the cluster.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveResourcePrincipalConfigurationResponse>
+            removeResourcePrincipalConfiguration(
+                    RemoveResourcePrincipalConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveResourcePrincipalConfigurationRequest,
+                                    RemoveResourcePrincipalConfigurationResponse>
                             handler);
 
     /**
@@ -1129,5 +1219,24 @@ public interface BdsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateNodeReplaceConfigurationRequest,
                                     UpdateNodeReplaceConfigurationResponse>
+                            handler);
+
+    /**
+     * Updates fields on resourcePrincipalConfiguration, including the name, the lifeSpanInHours of
+     * the token.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateResourcePrincipalConfigurationResponse>
+            updateResourcePrincipalConfiguration(
+                    UpdateResourcePrincipalConfigurationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateResourcePrincipalConfigurationRequest,
+                                    UpdateResourcePrincipalConfigurationResponse>
                             handler);
 }
