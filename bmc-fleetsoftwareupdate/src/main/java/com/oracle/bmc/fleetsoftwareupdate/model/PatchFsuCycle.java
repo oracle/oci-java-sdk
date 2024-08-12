@@ -135,6 +135,15 @@ public final class PatchFsuCycle extends FsuCycle {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
@@ -300,6 +309,7 @@ public final class PatchFsuCycle extends FsuCycle {
                             this.batchingStrategy,
                             this.stageActionSchedule,
                             this.applyActionSchedule,
+                            this.diagnosticsCollection,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeFinished,
@@ -355,6 +365,9 @@ public final class PatchFsuCycle extends FsuCycle {
             }
             if (model.wasPropertyExplicitlySet("applyActionSchedule")) {
                 this.applyActionSchedule(model.getApplyActionSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -421,6 +434,7 @@ public final class PatchFsuCycle extends FsuCycle {
             BatchingStrategyDetails batchingStrategy,
             ScheduleDetails stageActionSchedule,
             ScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -446,6 +460,7 @@ public final class PatchFsuCycle extends FsuCycle {
                 batchingStrategy,
                 stageActionSchedule,
                 applyActionSchedule,
+                diagnosticsCollection,
                 timeCreated,
                 timeUpdated,
                 timeFinished,

@@ -17,6 +17,7 @@ public enum ApplicationInstallationSortBy {
     ApproximateJreCount("approximateJreCount"),
     ApproximateInstallationCount("approximateInstallationCount"),
     ApproximateManagedInstanceCount("approximateManagedInstanceCount"),
+    ApproximateLibraryCount("approximateLibraryCount"),
     ;
 
     private final String value;

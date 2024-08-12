@@ -35,6 +35,8 @@ public final class ApplicationInstallationUsageSummary
         "approximateInstallationCount",
         "approximateJreCount",
         "approximateManagedInstanceCount",
+        "approximateLibraryCount",
+        "applicationInvokedBy",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -51,6 +53,8 @@ public final class ApplicationInstallationUsageSummary
             Integer approximateInstallationCount,
             Integer approximateJreCount,
             Integer approximateManagedInstanceCount,
+            Integer approximateLibraryCount,
+            String applicationInvokedBy,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -66,6 +70,8 @@ public final class ApplicationInstallationUsageSummary
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
+        this.approximateLibraryCount = approximateLibraryCount;
+        this.applicationInvokedBy = applicationInvokedBy;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -245,6 +251,38 @@ public final class ApplicationInstallationUsageSummary
             return this;
         }
         /**
+         * The approximate count of libraries in this application.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+        private Integer approximateLibraryCount;
+
+        /**
+         * The approximate count of libraries in this application.
+         * @param approximateLibraryCount the value to set
+         * @return this builder
+         **/
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            this.approximateLibraryCount = approximateLibraryCount;
+            this.__explicitlySet__.add("approximateLibraryCount");
+            return this;
+        }
+        /**
+         * Comma separated list of user names that invoked application installations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+        private String applicationInvokedBy;
+
+        /**
+         * Comma separated list of user names that invoked application installations.
+         * @param applicationInvokedBy the value to set
+         * @return this builder
+         **/
+        public Builder applicationInvokedBy(String applicationInvokedBy) {
+            this.applicationInvokedBy = applicationInvokedBy;
+            this.__explicitlySet__.add("applicationInvokedBy");
+            return this;
+        }
+        /**
          * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
@@ -341,6 +379,8 @@ public final class ApplicationInstallationUsageSummary
                             this.approximateInstallationCount,
                             this.approximateJreCount,
                             this.approximateManagedInstanceCount,
+                            this.approximateLibraryCount,
+                            this.applicationInvokedBy,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -382,6 +422,12 @@ public final class ApplicationInstallationUsageSummary
             }
             if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
                 this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateLibraryCount")) {
+                this.approximateLibraryCount(model.getApproximateLibraryCount());
+            }
+            if (model.wasPropertyExplicitlySet("applicationInvokedBy")) {
+                this.applicationInvokedBy(model.getApplicationInvokedBy());
             }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
@@ -561,6 +607,34 @@ public final class ApplicationInstallationUsageSummary
     }
 
     /**
+     * The approximate count of libraries in this application.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+    private final Integer approximateLibraryCount;
+
+    /**
+     * The approximate count of libraries in this application.
+     * @return the value
+     **/
+    public Integer getApproximateLibraryCount() {
+        return approximateLibraryCount;
+    }
+
+    /**
+     * Comma separated list of user names that invoked application installations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationInvokedBy")
+    private final String applicationInvokedBy;
+
+    /**
+     * Comma separated list of user names that invoked application installations.
+     * @return the value
+     **/
+    public String getApplicationInvokedBy() {
+        return applicationInvokedBy;
+    }
+
+    /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
@@ -659,6 +733,9 @@ public final class ApplicationInstallationUsageSummary
         sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
         sb.append(", approximateManagedInstanceCount=")
                 .append(String.valueOf(this.approximateManagedInstanceCount));
+        sb.append(", approximateLibraryCount=")
+                .append(String.valueOf(this.approximateLibraryCount));
+        sb.append(", applicationInvokedBy=").append(String.valueOf(this.applicationInvokedBy));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -690,6 +767,9 @@ public final class ApplicationInstallationUsageSummary
                 && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
                 && java.util.Objects.equals(
                         this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
+                && java.util.Objects.equals(
+                        this.approximateLibraryCount, other.approximateLibraryCount)
+                && java.util.Objects.equals(this.applicationInvokedBy, other.applicationInvokedBy)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -737,6 +817,16 @@ public final class ApplicationInstallationUsageSummary
                         + (this.approximateManagedInstanceCount == null
                                 ? 43
                                 : this.approximateManagedInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateLibraryCount == null
+                                ? 43
+                                : this.approximateLibraryCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationInvokedBy == null
+                                ? 43
+                                : this.applicationInvokedBy.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

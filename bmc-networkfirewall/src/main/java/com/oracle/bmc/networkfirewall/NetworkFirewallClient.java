@@ -1279,6 +1279,84 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public BulkUploadTunnelInspectionRulesResponse bulkUploadTunnelInspectionRules(
+            BulkUploadTunnelInspectionRulesRequest request) {
+        LOG.trace("Called bulkUploadTunnelInspectionRules");
+        try {
+            final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                    com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                            request.getRetryConfiguration(), retryConfiguration, true);
+            if (request.getRetryConfiguration() != null
+                    || retryConfiguration != null
+                    || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                    || authenticationDetailsProvider
+                            instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+                request =
+                        com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                                request, BulkUploadTunnelInspectionRulesRequest.builder());
+            }
+            final BulkUploadTunnelInspectionRulesRequest interceptedRequest =
+                    BulkUploadTunnelInspectionRulesConverter.interceptRequest(request);
+            com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                    BulkUploadTunnelInspectionRulesConverter.fromRequest(
+                            client, interceptedRequest);
+            com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+            com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+            com.oracle.bmc.ServiceDetails serviceDetails =
+                    new com.oracle.bmc.ServiceDetails(
+                            "NetworkFirewall",
+                            "BulkUploadTunnelInspectionRules",
+                            ib.getRequestUri().toString(),
+                            "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/BulkUploadTunnelInspectionRules");
+            java.util.function.Function<
+                            javax.ws.rs.core.Response, BulkUploadTunnelInspectionRulesResponse>
+                    transformer =
+                            BulkUploadTunnelInspectionRulesConverter.fromResponse(
+                                    java.util.Optional.of(serviceDetails));
+            return retrier.execute(
+                    interceptedRequest,
+                    retryRequest -> {
+                        final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                                new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                        authenticationDetailsProvider);
+                        return tokenRefreshRetrier.execute(
+                                retryRequest,
+                                retriedRequest -> {
+                                    try {
+                                        javax.ws.rs.core.Response response =
+                                                client.post(
+                                                        ib,
+                                                        retriedRequest
+                                                                .getBulkUploadTunnelInspectionRulesDetails(),
+                                                        retriedRequest);
+                                        return transformer.apply(response);
+                                    } catch (RuntimeException e) {
+                                        if (interceptedRequest.getRetryConfiguration() != null
+                                                || retryConfiguration != null
+                                                || shouldRetryBecauseOfWaiterConfiguration(retrier)
+                                                || (e instanceof com.oracle.bmc.model.BmcException
+                                                        && tokenRefreshRetrier
+                                                                .getRetryCondition()
+                                                                .shouldBeRetried(
+                                                                        (com.oracle.bmc.model
+                                                                                        .BmcException)
+                                                                                e))) {
+                                            com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                                                    interceptedRequest
+                                                            .getBulkUploadTunnelInspectionRulesDetails(),
+                                                    true);
+                                        }
+                                        throw e; // rethrow
+                                    }
+                                });
+                    });
+        } finally {
+            com.oracle.bmc.io.internal.KeepOpenInputStream.closeStream(
+                    request.getBulkUploadTunnelInspectionRulesDetails());
+        }
+    }
+
+    @Override
     public BulkUploadUrlListsResponse bulkUploadUrlLists(BulkUploadUrlListsRequest request) {
         LOG.trace("Called bulkUploadUrlLists");
         try {
@@ -1992,6 +2070,50 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public CreateTunnelInspectionRuleResponse createTunnelInspectionRule(
+            CreateTunnelInspectionRuleRequest request) {
+        LOG.trace("Called createTunnelInspectionRule");
+        final CreateTunnelInspectionRuleRequest interceptedRequest =
+                CreateTunnelInspectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/CreateTunnelInspectionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateTunnelInspectionRuleResponse>
+                transformer =
+                        CreateTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateTunnelInspectionRuleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateUrlListResponse createUrlList(CreateUrlListRequest request) {
         LOG.trace("Called createUrlList");
         final CreateUrlListRequest interceptedRequest =
@@ -2452,6 +2574,45 @@ public class NetworkFirewallClient implements NetworkFirewall {
     }
 
     @Override
+    public DeleteTunnelInspectionRuleResponse deleteTunnelInspectionRule(
+            DeleteTunnelInspectionRuleRequest request) {
+        LOG.trace("Called deleteTunnelInspectionRule");
+        final DeleteTunnelInspectionRuleRequest interceptedRequest =
+                DeleteTunnelInspectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/DeleteTunnelInspectionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteTunnelInspectionRuleResponse>
+                transformer =
+                        DeleteTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteUrlListResponse deleteUrlList(DeleteUrlListRequest request) {
         LOG.trace("Called deleteUrlList");
         final DeleteUrlListRequest interceptedRequest =
@@ -2871,6 +3032,44 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/ServiceList/GetServiceList");
         java.util.function.Function<javax.ws.rs.core.Response, GetServiceListResponse> transformer =
                 GetServiceListConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetTunnelInspectionRuleResponse getTunnelInspectionRule(
+            GetTunnelInspectionRuleRequest request) {
+        LOG.trace("Called getTunnelInspectionRule");
+        final GetTunnelInspectionRuleRequest interceptedRequest =
+                GetTunnelInspectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/GetTunnelInspectionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, GetTunnelInspectionRuleResponse>
+                transformer =
+                        GetTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3348,6 +3547,44 @@ public class NetworkFirewallClient implements NetworkFirewall {
                         "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/Service/ListServices");
         java.util.function.Function<javax.ws.rs.core.Response, ListServicesResponse> transformer =
                 ListServicesConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListTunnelInspectionRulesResponse listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request) {
+        LOG.trace("Called listTunnelInspectionRules");
+        final ListTunnelInspectionRulesRequest interceptedRequest =
+                ListTunnelInspectionRulesConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTunnelInspectionRulesConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListTunnelInspectionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/ListTunnelInspectionRules");
+        java.util.function.Function<javax.ws.rs.core.Response, ListTunnelInspectionRulesResponse>
+                transformer =
+                        ListTunnelInspectionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {
@@ -3998,6 +4235,49 @@ public class NetworkFirewallClient implements NetworkFirewall {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateServiceListDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateTunnelInspectionRuleResponse updateTunnelInspectionRule(
+            UpdateTunnelInspectionRuleRequest request) {
+        LOG.trace("Called updateTunnelInspectionRule");
+        final UpdateTunnelInspectionRuleRequest interceptedRequest =
+                UpdateTunnelInspectionRuleConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/UpdateTunnelInspectionRule");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateTunnelInspectionRuleResponse>
+                transformer =
+                        UpdateTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateTunnelInspectionRuleDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

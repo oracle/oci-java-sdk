@@ -130,6 +130,7 @@ public class ListMountTargetsRequest extends com.oracle.bmc.requests.BmcRequest<
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

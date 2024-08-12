@@ -107,6 +107,7 @@ public class ListExportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

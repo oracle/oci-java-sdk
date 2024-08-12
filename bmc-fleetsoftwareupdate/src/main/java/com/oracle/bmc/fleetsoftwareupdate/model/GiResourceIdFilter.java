@@ -152,6 +152,7 @@ public final class GiResourceIdFilter extends GiFleetDiscoveryFilter {
      *
      **/
     public enum EntityType {
+        Databasesoftwareimage("DATABASESOFTWAREIMAGE"),
         Exadatainfrastructure("EXADATAINFRASTRUCTURE"),
         Cloudexadatainfrastructure("CLOUDEXADATAINFRASTRUCTURE"),
         Vmcluster("VMCLUSTER"),

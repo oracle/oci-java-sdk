@@ -8,7 +8,8 @@ import com.oracle.bmc.identitydomains.requests.*;
 import com.oracle.bmc.identitydomains.responses.*;
 
 /**
- * Use the Identity Domains API to manage resources within an identity domain, for example, users, dynamic resource groups, groups, and identity providers. For information about managing resources within identity domains, see [Identity and Access Management (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm). This REST API is SCIM compliant.
+ * Use the Identity Domains API to manage resources within an identity domain, for example, users, dynamic resource groups, groups, and identity providers. For information about managing resources within identity domains, see [Identity and Access Management (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm).
+ * Use this pattern to construct endpoints for identity domains: {@code https://<domainURL>/admin/v1/}. See [Finding an Identity Domain URL](https://docs.oracle.com/en-us/iaas/Content/Identity/api-getstarted/locate-identity-domain-url.htm) to locate the domain URL you need.
  * Use the table of contents and search tool to explore the Identity Domains API.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
@@ -674,6 +675,23 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Create a Social Identity Provider
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSocialIdentityProviderResponse> createSocialIdentityProvider(
+            CreateSocialIdentityProviderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSocialIdentityProviderRequest,
+                            CreateSocialIdentityProviderResponse>
+                    handler);
+
+    /**
      * Create a user.
      *
      * @param request The request object containing the details to send
@@ -1273,6 +1291,23 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             DeleteSmtpCredentialRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>
+                    handler);
+
+    /**
+     * Delete a Social Identity Provider
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSocialIdentityProviderResponse> deleteSocialIdentityProvider(
+            DeleteSocialIdentityProviderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSocialIdentityProviderRequest,
+                            DeleteSocialIdentityProviderResponse>
                     handler);
 
     /**
@@ -2077,6 +2112,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             GetSmtpCredentialRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetSmtpCredentialRequest, GetSmtpCredentialResponse>
+                    handler);
+
+    /**
+     * Get a Social Identity Provider
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSocialIdentityProviderResponse> getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
                     handler);
 
     /**
@@ -2961,6 +3012,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search Social Identity Providers
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSocialIdentityProvidersResponse> listSocialIdentityProviders(
+            ListSocialIdentityProvidersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSocialIdentityProvidersRequest, ListSocialIdentityProvidersResponse>
+                    handler);
+
+    /**
      * Search User Schema Attribute Settings
      *
      * @param request The request object containing the details to send
@@ -3611,6 +3678,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update a Social Identity Provider
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSocialIdentityProviderResponse> patchSocialIdentityProvider(
+            PatchSocialIdentityProviderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchSocialIdentityProviderRequest, PatchSocialIdentityProviderResponse>
+                    handler);
+
+    /**
      * Update a user.
      *
      * @param request The request object containing the details to send
@@ -4040,6 +4123,22 @@ public interface IdentityDomainsAsync extends AutoCloseable {
     java.util.concurrent.Future<PutSettingResponse> putSetting(
             PutSettingRequest request,
             com.oracle.bmc.responses.AsyncHandler<PutSettingRequest, PutSettingResponse> handler);
+
+    /**
+     * Replace a Social Identity Provider
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PutSocialIdentityProviderResponse> putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                    handler);
 
     /**
      * Replace a user.
@@ -4691,6 +4790,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             SearchSmtpCredentialsRequest, SearchSmtpCredentialsResponse>
                     handler);
+
+    /**
+     * Search Social Identity Providers Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>
+            searchSocialIdentityProviders(
+                    SearchSocialIdentityProvidersRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSocialIdentityProvidersRequest,
+                                    SearchSocialIdentityProvidersResponse>
+                            handler);
 
     /**
      * Search User Schema Attribute Settings Using POST

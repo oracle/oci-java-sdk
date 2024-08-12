@@ -8,7 +8,7 @@ import com.oracle.bmc.capacitymanagement.requests.*;
 import com.oracle.bmc.capacitymanagement.responses.*;
 
 /**
- * A description of the OciControlCenterCp API
+ * OCI Control Center (OCC) Capacity Management enables you to manage capacity requests in realms where OCI Control Center Capacity Management is available. For more information, see [OCI Control Center](https://docs.cloud.oracle.com/iaas/Content/control-center/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
 public interface CapacityManagementAsync extends AutoCloseable {

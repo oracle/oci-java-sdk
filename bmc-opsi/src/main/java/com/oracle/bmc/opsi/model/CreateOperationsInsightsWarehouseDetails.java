@@ -65,13 +65,13 @@ public final class CreateOperationsInsightsWarehouseDetails
             return this;
         }
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -226,13 +226,13 @@ public final class CreateOperationsInsightsWarehouseDetails
     }
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * @return the value
      **/
     public String getDisplayName() {

@@ -27,6 +27,7 @@ public final class CloudExadataInfrastructure
         "id",
         "compartmentId",
         "clusterPlacementGroupId",
+        "subscriptionId",
         "lifecycleState",
         "displayName",
         "shape",
@@ -64,6 +65,7 @@ public final class CloudExadataInfrastructure
             String id,
             String compartmentId,
             String clusterPlacementGroupId,
+            String subscriptionId,
             LifecycleState lifecycleState,
             String displayName,
             String shape,
@@ -100,6 +102,7 @@ public final class CloudExadataInfrastructure
         this.id = id;
         this.compartmentId = compartmentId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.lifecycleState = lifecycleState;
         this.displayName = displayName;
         this.shape = shape;
@@ -182,6 +185,22 @@ public final class CloudExadataInfrastructure
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -743,6 +762,7 @@ public final class CloudExadataInfrastructure
                             this.id,
                             this.compartmentId,
                             this.clusterPlacementGroupId,
+                            this.subscriptionId,
                             this.lifecycleState,
                             this.displayName,
                             this.shape,
@@ -791,6 +811,9 @@ public final class CloudExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -943,6 +966,20 @@ public final class CloudExadataInfrastructure
      **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1499,6 +1536,7 @@ public final class CloudExadataInfrastructure
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", shape=").append(String.valueOf(this.shape));
@@ -1552,6 +1590,7 @@ public final class CloudExadataInfrastructure
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -1606,6 +1645,9 @@ public final class CloudExadataInfrastructure
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

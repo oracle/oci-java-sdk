@@ -189,6 +189,19 @@ public interface DataSafe extends AutoCloseable {
     ChangeAlertCompartmentResponse changeAlertCompartment(ChangeAlertCompartmentRequest request);
 
     /**
+     * Moves the specified alert policy into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeAlertPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAlertPolicyCompartment API.
+     */
+    ChangeAlertPolicyCompartmentResponse changeAlertPolicyCompartment(
+            ChangeAlertPolicyCompartmentRequest request);
+
+    /**
      * Moves the archive retreival to the specified compartment. When provided, if-Match is checked against ETag value of the resource.
      *
      * @param request The request object containing the details to send
@@ -540,6 +553,32 @@ public interface DataSafe extends AutoCloseable {
     CompareUserAssessmentResponse compareUserAssessment(CompareUserAssessmentRequest request);
 
     /**
+     * Creates a new user-defined alert policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateAlertPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAlertPolicy API.
+     */
+    CreateAlertPolicyResponse createAlertPolicy(CreateAlertPolicyRequest request);
+
+    /**
+     * Creates a new rule for the alert policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateAlertPolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAlertPolicyRule API.
+     */
+    CreateAlertPolicyRuleResponse createAlertPolicyRule(CreateAlertPolicyRuleRequest request);
+
+    /**
      * Creates a work request to retrieve archived audit data. This asynchronous process will usually take over an hour to complete.
      * Save the id from the response of this operation. Call GetAuditArchiveRetrieval operation after an hour, passing the id to know the status of
      * this operation.
@@ -850,6 +889,30 @@ public interface DataSafe extends AutoCloseable {
      */
     DeactivateTargetDatabaseResponse deactivateTargetDatabase(
             DeactivateTargetDatabaseRequest request);
+
+    /**
+     * Deletes the specified user-defined alert policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteAlertPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlertPolicy API.
+     */
+    DeleteAlertPolicyResponse deleteAlertPolicy(DeleteAlertPolicyRequest request);
+
+    /**
+     * Deletes the specified user-defined alert policy rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteAlertPolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAlertPolicyRule API.
+     */
+    DeleteAlertPolicyRuleResponse deleteAlertPolicyRule(DeleteAlertPolicyRuleRequest request);
 
     /**
      * To unload retrieved archive data, call the operation ListAuditArchiveRetrieval first.
@@ -1458,6 +1521,18 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetAlertPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlertPolicy API.
      */
     GetAlertPolicyResponse getAlertPolicy(GetAlertPolicyRequest request);
+
+    /**
+     * Gets the details of a policy rule by its key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetAlertPolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlertPolicyRule API.
+     */
+    GetAlertPolicyRuleResponse getAlertPolicyRule(GetAlertPolicyRuleRequest request);
 
     /**
      * Gets the details of the specified archive retreival.
@@ -2354,7 +2429,7 @@ public interface DataSafe extends AutoCloseable {
 
     /**
      * Retrieves a list of all database table access entries in Data Safe.
-     *
+     * <p>
      * The ListDatabaseTableAccessEntries operation returns only the database table access reports for the specified security policy report.
      *
      * @param request The request object containing the details to send
@@ -2961,6 +3036,20 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveColumnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSensitiveColumns API.
      */
     ListSensitiveColumnsResponse listSensitiveColumns(ListSensitiveColumnsRequest request);
+
+    /**
+     * Gets a list of sensitive type Ids present in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveDataModelSensitiveTypesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSensitiveDataModelSensitiveTypes API.
+     */
+    ListSensitiveDataModelSensitiveTypesResponse listSensitiveDataModelSensitiveTypes(
+            ListSensitiveDataModelSensitiveTypesRequest request);
 
     /**
      * Gets a list of sensitive data models based on the specified query parameters.
@@ -3729,7 +3818,8 @@ public interface DataSafe extends AutoCloseable {
     SuspendWorkRequestResponse suspendWorkRequest(SuspendWorkRequestRequest request);
 
     /**
-     * Removes the baseline setting for the saved security assessment. The saved security assessment is no longer considered a baseline.
+     * Removes the baseline setting for the saved security assessment associated with the targetId passed via body.
+     * If no body or empty body is passed then the baseline settings of all the saved security assessments pertaining to the baseline assessment OCID provided in the path will be removed.
      * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
      *
      * @param request The request object containing the details to send
@@ -3744,7 +3834,8 @@ public interface DataSafe extends AutoCloseable {
             UnsetSecurityAssessmentBaselineRequest request);
 
     /**
-     * Removes the baseline setting for the saved user assessment. The saved user assessment is no longer considered a baseline.
+     * Removes the baseline setting for the saved user assessment associated with the targetId passed via body.
+     * If no body or empty body is passed then the baseline settings of all the saved user assessments pertaining to the baseline assessment OCID provided in the path will be removed.
      * Sets the if-match parameter to the value of the etag from a previous GET or POST response for that resource.
      *
      * @param request The request object containing the details to send
@@ -3769,6 +3860,30 @@ public interface DataSafe extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAlertExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlert API.
      */
     UpdateAlertResponse updateAlert(UpdateAlertRequest request);
+
+    /**
+     * Updates the specified alert policy .
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAlertPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlertPolicy API.
+     */
+    UpdateAlertPolicyResponse updateAlertPolicy(UpdateAlertPolicyRequest request);
+
+    /**
+     * Updates the specified alert policy rule.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateAlertPolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAlertPolicyRule API.
+     */
+    UpdateAlertPolicyRuleResponse updateAlertPolicyRule(UpdateAlertPolicyRuleRequest request);
 
     /**
      * Updates the audit archive retrieval.

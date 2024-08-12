@@ -41,6 +41,7 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         "batchingStrategy",
         "stageActionSchedule",
         "applyActionSchedule",
+        "diagnosticsCollection",
         "timeCreated",
         "timeUpdated",
         "timeFinished",
@@ -63,6 +64,7 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
             BatchingStrategyDetails batchingStrategy,
             ScheduleDetails stageActionSchedule,
             ScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -84,6 +86,7 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         this.batchingStrategy = batchingStrategy;
         this.stageActionSchedule = stageActionSchedule;
         this.applyActionSchedule = applyActionSchedule;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeFinished = timeFinished;
@@ -250,6 +253,13 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
 
     public ScheduleDetails getApplyActionSchedule() {
         return applyActionSchedule;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
     }
 
     /**
@@ -420,6 +430,7 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
         sb.append(", batchingStrategy=").append(String.valueOf(this.batchingStrategy));
         sb.append(", stageActionSchedule=").append(String.valueOf(this.stageActionSchedule));
         sb.append(", applyActionSchedule=").append(String.valueOf(this.applyActionSchedule));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
@@ -454,6 +465,7 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                 && java.util.Objects.equals(this.batchingStrategy, other.batchingStrategy)
                 && java.util.Objects.equals(this.stageActionSchedule, other.stageActionSchedule)
                 && java.util.Objects.equals(this.applyActionSchedule, other.applyActionSchedule)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
@@ -513,6 +525,11 @@ public class FsuCycle extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel
                         + (this.applyActionSchedule == null
                                 ? 43
                                 : this.applyActionSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());

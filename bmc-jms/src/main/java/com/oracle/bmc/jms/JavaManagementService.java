@@ -8,7 +8,7 @@ import com.oracle.bmc.jms.requests.*;
 import com.oracle.bmc.jms.responses.*;
 
 /**
- * API for the Java Management Service. Use this API to view, create, and manage Fleets.
+ * The APIs for the [Fleet Management](https://docs.oracle.com/en-us/iaas/jms/doc/fleet-management.html) feature of Java Management Service to monitor and manage the usage of Java in your enterprise. Use these APIs to manage fleets, configure managed instances to report to fleets, and gain insights into the Java workloads running on these instances by carrying out basic and advanced features.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
@@ -111,7 +111,7 @@ public interface JavaManagementService extends AutoCloseable {
     CreateBlocklistResponse createBlocklist(CreateBlocklistRequest request);
 
     /**
-     * Request to perform validaition of the DRS file and create the file to the Object Storage.
+     * Request to perform validation of the DRS file and create the file to the Object Storage.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -141,6 +141,21 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleet API.
      */
     CreateFleetResponse createFleet(CreateFleetRequest request);
+
+    /**
+     * Registers an agent's JmsPlugin, optionally attaching to an existing fleet of the tenancy.
+     * JmsPlugins registered fleet-less are created with lifecycle state INACTIVE.
+     * For the operation to be authorized, the agent must exist, and the authorized user requires JMS_PLUGIN_CREATE permission for the agent's compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/CreateJmsPluginExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateJmsPlugin API.
+     */
+    CreateJmsPluginResponse createJmsPlugin(CreateJmsPluginRequest request);
 
     /**
      * Deletes the blocklist record specified by an identifier.
@@ -206,6 +221,20 @@ public interface JavaManagementService extends AutoCloseable {
             DeleteJavaMigrationAnalysisResultRequest request);
 
     /**
+     * Deletes a JmsPlugin. The JmsPlugin may be visible for some time with state DELETED.
+     * Deleted plugins will not be able to communicate with the JMS service.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/DeleteJmsPluginExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteJmsPlugin API.
+     */
+    DeleteJmsPluginResponse deleteJmsPlugin(DeleteJmsPluginRequest request);
+
+    /**
      * Deletes only the metadata of the Performance Tuning Analysis result, but the file remains in the object storage.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -259,6 +288,34 @@ public interface JavaManagementService extends AutoCloseable {
             GenerateAgentDeployScriptRequest request);
 
     /**
+     * Generates the agent installer configuration using the information provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateAgentInstallerConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateAgentInstallerConfiguration API.
+     */
+    GenerateAgentInstallerConfigurationResponse generateAgentInstallerConfiguration(
+            GenerateAgentInstallerConfigurationRequest request);
+
+    /**
+     * Generates Load Pipeline Script
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GenerateLoadPipelineScriptExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateLoadPipelineScript API.
+     */
+    GenerateLoadPipelineScriptResponse generateLoadPipelineScript(
+            GenerateLoadPipelineScriptRequest request);
+
+    /**
      * Retrieve the metadata for the result of a Crypto event analysis.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -283,7 +340,7 @@ public interface JavaManagementService extends AutoCloseable {
     GetDrsFileResponse getDrsFile(GetDrsFileRequest request);
 
     /**
-     * Returns export setting for the specified Fleet.
+     * Returns export setting for the specified fleet.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -295,7 +352,7 @@ public interface JavaManagementService extends AutoCloseable {
     GetExportSettingResponse getExportSetting(GetExportSettingRequest request);
 
     /**
-     * Returns last export status for the specified Fleet.
+     * Returns last export status for the specified fleet.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -384,6 +441,18 @@ public interface JavaManagementService extends AutoCloseable {
     GetJavaReleaseResponse getJavaRelease(GetJavaReleaseRequest request);
 
     /**
+     * Returns the JmsPlugin.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetJmsPluginExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetJmsPlugin API.
+     */
+    GetJmsPluginResponse getJmsPlugin(GetJmsPluginRequest request);
+
+    /**
      * Retrieve metadata of the Performance Tuning Analysis result.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -407,6 +476,19 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of the agent installer information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListAgentInstallersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAgentInstallers API.
+     */
+    ListAgentInstallersResponse listAgentInstallers(ListAgentInstallersRequest request);
 
     /**
      * Return a list of AnnouncementSummary items
@@ -538,6 +620,18 @@ public interface JavaManagementService extends AutoCloseable {
     ListJavaReleasesResponse listJavaReleases(ListJavaReleasesRequest request);
 
     /**
+     * Lists the JmsPlugins.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListJmsPluginsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListJmsPlugins API.
+     */
+    ListJmsPluginsResponse listJmsPlugins(ListJmsPluginsRequest request);
+
+    /**
      * List Java Runtime usage in a specified host filtered by query parameters.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -639,6 +733,21 @@ public interface JavaManagementService extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestCryptoAnalysesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestCryptoAnalyses API.
      */
     RequestCryptoAnalysesResponse requestCryptoAnalyses(RequestCryptoAnalysesRequest request);
+
+    /**
+     * Request to perform a deployed Java migration analyses. The results of the deployed Java migration analyses will be uploaded to the
+     * Object Storage bucket that you designate when you enable the Java Migration Analyses feature.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/RequestDeployedApplicationMigrationAnalysesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestDeployedApplicationMigrationAnalyses API.
+     */
+    RequestDeployedApplicationMigrationAnalysesResponse requestDeployedApplicationMigrationAnalyses(
+            RequestDeployedApplicationMigrationAnalysesRequest request);
 
     /**
      * Request to perform a Java migration analysis. The results of the Java migration analysis will be uploaded to the
@@ -857,7 +966,7 @@ public interface JavaManagementService extends AutoCloseable {
             SummarizeResourceInventoryRequest request);
 
     /**
-     * Request to perform validaition of the DRS file and update the existing file in the Object Storage.
+     * Request to perform validation of the DRS file and update the existing file in the Object Storage.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -870,7 +979,7 @@ public interface JavaManagementService extends AutoCloseable {
     UpdateDrsFileResponse updateDrsFile(UpdateDrsFileRequest request);
 
     /**
-     * Updates existing export setting for the specified Fleet.
+     * Updates existing export setting for the specified fleet.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
      * @throws BmcException when an error occurs.
@@ -920,6 +1029,18 @@ public interface JavaManagementService extends AutoCloseable {
      */
     UpdateFleetAgentConfigurationResponse updateFleetAgentConfiguration(
             UpdateFleetAgentConfigurationRequest request);
+
+    /**
+     * Updates the Fleet of a JmsPlugin.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/UpdateJmsPluginExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateJmsPlugin API.
+     */
+    UpdateJmsPluginResponse updateJmsPlugin(UpdateJmsPluginRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

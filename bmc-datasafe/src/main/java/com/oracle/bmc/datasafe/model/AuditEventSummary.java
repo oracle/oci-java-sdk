@@ -57,6 +57,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
         "peerTargetDatabaseKey",
         "trailSource",
         "databaseUniqueName",
+        "applicationContexts",
+        "fgaPolicyName",
         "freeformTags",
         "definedTags"
     })
@@ -96,6 +98,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             Integer peerTargetDatabaseKey,
             AuditTrailSource trailSource,
             String databaseUniqueName,
+            String applicationContexts,
+            String fgaPolicyName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -134,6 +138,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
         this.peerTargetDatabaseKey = peerTargetDatabaseKey;
         this.trailSource = trailSource;
         this.databaseUniqueName = databaseUniqueName;
+        this.applicationContexts = applicationContexts;
+        this.fgaPolicyName = fgaPolicyName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -709,6 +715,38 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("applicationContexts")
+        private String applicationContexts;
+
+        /**
+         * Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+         * @param applicationContexts the value to set
+         * @return this builder
+         **/
+        public Builder applicationContexts(String applicationContexts) {
+            this.applicationContexts = applicationContexts;
+            this.__explicitlySet__.add("applicationContexts");
+            return this;
+        }
+        /**
+         * Fine-grained auditing (FGA) policy name that generated this audit record.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("fgaPolicyName")
+        private String fgaPolicyName;
+
+        /**
+         * Fine-grained auditing (FGA) policy name that generated this audit record.
+         * @param fgaPolicyName the value to set
+         * @return this builder
+         **/
+        public Builder fgaPolicyName(String fgaPolicyName) {
+            this.fgaPolicyName = fgaPolicyName;
+            this.__explicitlySet__.add("fgaPolicyName");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -795,6 +833,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
                             this.peerTargetDatabaseKey,
                             this.trailSource,
                             this.databaseUniqueName,
+                            this.applicationContexts,
+                            this.fgaPolicyName,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -909,6 +949,12 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("databaseUniqueName")) {
                 this.databaseUniqueName(model.getDatabaseUniqueName());
+            }
+            if (model.wasPropertyExplicitlySet("applicationContexts")) {
+                this.applicationContexts(model.getApplicationContexts());
+            }
+            if (model.wasPropertyExplicitlySet("fgaPolicyName")) {
+                this.fgaPolicyName(model.getFgaPolicyName());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1679,6 +1725,34 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("applicationContexts")
+    private final String applicationContexts;
+
+    /**
+     * Semicolon-seperated list of application context namespace, attribute, value information in (APPCTX_NSPACE,APPCTX_ATTRIBUTE=<value>) format.
+     * @return the value
+     **/
+    public String getApplicationContexts() {
+        return applicationContexts;
+    }
+
+    /**
+     * Fine-grained auditing (FGA) policy name that generated this audit record.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("fgaPolicyName")
+    private final String fgaPolicyName;
+
+    /**
+     * Fine-grained auditing (FGA) policy name that generated this audit record.
+     * @return the value
+     **/
+    public String getFgaPolicyName() {
+        return fgaPolicyName;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -1768,6 +1842,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", peerTargetDatabaseKey=").append(String.valueOf(this.peerTargetDatabaseKey));
         sb.append(", trailSource=").append(String.valueOf(this.trailSource));
         sb.append(", databaseUniqueName=").append(String.valueOf(this.databaseUniqueName));
+        sb.append(", applicationContexts=").append(String.valueOf(this.applicationContexts));
+        sb.append(", fgaPolicyName=").append(String.valueOf(this.fgaPolicyName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1820,6 +1896,8 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.peerTargetDatabaseKey, other.peerTargetDatabaseKey)
                 && java.util.Objects.equals(this.trailSource, other.trailSource)
                 && java.util.Objects.equals(this.databaseUniqueName, other.databaseUniqueName)
+                && java.util.Objects.equals(this.applicationContexts, other.applicationContexts)
+                && java.util.Objects.equals(this.fgaPolicyName, other.fgaPolicyName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1892,6 +1970,14 @@ public final class AuditEventSummary extends com.oracle.bmc.http.internal.Explic
                         + (this.databaseUniqueName == null
                                 ? 43
                                 : this.databaseUniqueName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationContexts == null
+                                ? 43
+                                : this.applicationContexts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.fgaPolicyName == null ? 43 : this.fgaPolicyName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

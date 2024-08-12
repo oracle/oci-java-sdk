@@ -484,7 +484,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "CreateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOccAvailabilityCatalogResponse>
                 transformer =
@@ -539,7 +539,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "CreateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOccCapacityRequestResponse>
                 transformer =
@@ -594,7 +594,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "DeleteOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOccAvailabilityCatalogResponse>
                 transformer =
@@ -643,7 +643,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "DeleteOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOccCapacityRequestResponse>
                 transformer =
@@ -691,7 +691,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOccAvailabilityCatalogResponse>
                 transformer =
@@ -743,7 +743,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalogContent",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOccAvailabilityCatalogContentResponse>
                 transformer =
@@ -794,7 +794,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOccCapacityRequestResponse>
                 transformer =
                         GetOccCapacityRequestConverter.fromResponse(
@@ -841,7 +841,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccCustomerGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOccCustomerGroupResponse>
                 transformer =
                         GetOccCustomerGroupConverter.fromResponse(
@@ -890,7 +890,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListInternalNamespaceOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInternalNamespaceOccOverviewsResponse>
                 transformer =
@@ -941,7 +941,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilities",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilitiesResponse>
                 transformer =
                         ListOccAvailabilitiesConverter.fromResponse(
@@ -990,7 +990,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccAvailabilityCatalogsResponse>
                 transformer =
@@ -1042,7 +1042,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccAvailabilityCatalogsInternalResponse>
                 transformer =
@@ -1093,7 +1093,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCapacityRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccCapacityRequestsResponse>
                 transformer =
@@ -1143,7 +1143,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCapacityRequestsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccCapacityRequestsInternalResponse>
                 transformer =
@@ -1194,7 +1194,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCustomerGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccCustomerGroupsResponse>
                 transformer =
                         ListOccCustomerGroupsConverter.fromResponse(
@@ -1241,7 +1241,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccOverviewsResponse>
                 transformer =
                         ListOccOverviewsConverter.fromResponse(
@@ -1289,7 +1289,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PatchInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchInternalOccCapacityRequestResponse>
                 transformer =
@@ -1345,7 +1345,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PatchOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchOccCapacityRequestResponse>
                 transformer =
@@ -1401,7 +1401,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PublishOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PublishOccAvailabilityCatalogResponse>
                 transformer =
@@ -1452,7 +1452,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateInternalOccCapacityRequestResponse>
                 transformer =
@@ -1510,7 +1510,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOccAvailabilityCatalogResponse>
                 transformer =
@@ -1564,7 +1564,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOccCapacityRequestResponse>
                 transformer =

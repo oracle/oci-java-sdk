@@ -3154,6 +3154,57 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetInstanceMaintenanceEventResponse>
+            getInstanceMaintenanceEvent(
+                    GetInstanceMaintenanceEventRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetInstanceMaintenanceEventRequest,
+                                    GetInstanceMaintenanceEventResponse>
+                            handler) {
+        LOG.trace("Called async getInstanceMaintenanceEvent");
+        final GetInstanceMaintenanceEventRequest interceptedRequest =
+                GetInstanceMaintenanceEventConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetInstanceMaintenanceEventConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetInstanceMaintenanceEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/GetInstanceMaintenanceEvent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetInstanceMaintenanceEventResponse>
+                transformer =
+                        GetInstanceMaintenanceEventConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetInstanceMaintenanceEventRequest, GetInstanceMaintenanceEventResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetInstanceMaintenanceEventRequest,
+                                GetInstanceMaintenanceEventResponse>,
+                        java.util.concurrent.Future<GetInstanceMaintenanceEventResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetInstanceMaintenanceEventRequest, GetInstanceMaintenanceEventResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetInstanceMaintenanceRebootResponse>
             getInstanceMaintenanceReboot(
                     GetInstanceMaintenanceRebootRequest request,
@@ -4738,6 +4789,57 @@ public class ComputeAsyncClient implements ComputeAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListInstanceMaintenanceEventsResponse>
+            listInstanceMaintenanceEvents(
+                    ListInstanceMaintenanceEventsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListInstanceMaintenanceEventsRequest,
+                                    ListInstanceMaintenanceEventsResponse>
+                            handler) {
+        LOG.trace("Called async listInstanceMaintenanceEvents");
+        final ListInstanceMaintenanceEventsRequest interceptedRequest =
+                ListInstanceMaintenanceEventsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInstanceMaintenanceEventsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListInstanceMaintenanceEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEventSummary/ListInstanceMaintenanceEvents");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInstanceMaintenanceEventsResponse>
+                transformer =
+                        ListInstanceMaintenanceEventsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInstanceMaintenanceEventsRequest, ListInstanceMaintenanceEventsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInstanceMaintenanceEventsRequest,
+                                ListInstanceMaintenanceEventsResponse>,
+                        java.util.concurrent.Future<ListInstanceMaintenanceEventsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInstanceMaintenanceEventsRequest, ListInstanceMaintenanceEventsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListInstancesResponse> listInstances(
             ListInstancesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListInstancesRequest, ListInstancesResponse>
@@ -5491,6 +5593,64 @@ public class ComputeAsyncClient implements ComputeAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateInstanceConsoleConnectionRequest,
                     UpdateInstanceConsoleConnectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateInstanceMaintenanceEventResponse>
+            updateInstanceMaintenanceEvent(
+                    UpdateInstanceMaintenanceEventRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateInstanceMaintenanceEventRequest,
+                                    UpdateInstanceMaintenanceEventResponse>
+                            handler) {
+        LOG.trace("Called async updateInstanceMaintenanceEvent");
+        final UpdateInstanceMaintenanceEventRequest interceptedRequest =
+                UpdateInstanceMaintenanceEventConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateInstanceMaintenanceEventConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateInstanceMaintenanceEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/UpdateInstanceMaintenanceEvent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateInstanceMaintenanceEventResponse>
+                transformer =
+                        UpdateInstanceMaintenanceEventConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateInstanceMaintenanceEventRequest,
+                        UpdateInstanceMaintenanceEventResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateInstanceMaintenanceEventRequest,
+                                UpdateInstanceMaintenanceEventResponse>,
+                        java.util.concurrent.Future<UpdateInstanceMaintenanceEventResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateInstanceMaintenanceEventDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateInstanceMaintenanceEventRequest, UpdateInstanceMaintenanceEventResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

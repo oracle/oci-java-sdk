@@ -26,6 +26,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
         "name",
         "compartmentId",
         "projectId",
+        "parentRepositoryId",
         "namespace",
         "projectName",
         "description",
@@ -47,6 +48,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
             String name,
             String compartmentId,
             String projectId,
+            String parentRepositoryId,
             String namespace,
             String projectName,
             String description,
@@ -67,6 +69,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
         this.name = name;
         this.compartmentId = compartmentId;
         this.projectId = projectId;
+        this.parentRepositoryId = parentRepositoryId;
         this.namespace = namespace;
         this.projectName = projectName;
         this.description = description;
@@ -151,6 +154,22 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
+         * The OCID of the parent repository.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+        private String parentRepositoryId;
+
+        /**
+         * The OCID of the parent repository.
+         * @param parentRepositoryId the value to set
+         * @return this builder
+         **/
+        public Builder parentRepositoryId(String parentRepositoryId) {
+            this.parentRepositoryId = parentRepositoryId;
+            this.__explicitlySet__.add("parentRepositoryId");
+            return this;
+        }
+        /**
          * Tenancy unique namespace.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -218,6 +237,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
          * Type of repository. Allowed values:
          * {@code MIRRORED}
          * {@code HOSTED}
+         * {@code FORKED}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
@@ -227,6 +247,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
          * Type of repository. Allowed values:
          * {@code MIRRORED}
          * {@code HOSTED}
+         * {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -401,6 +422,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
                             this.name,
                             this.compartmentId,
                             this.projectId,
+                            this.parentRepositoryId,
                             this.namespace,
                             this.projectName,
                             this.description,
@@ -435,6 +457,9 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("projectId")) {
                 this.projectId(model.getProjectId());
+            }
+            if (model.wasPropertyExplicitlySet("parentRepositoryId")) {
+                this.parentRepositoryId(model.getParentRepositoryId());
             }
             if (model.wasPropertyExplicitlySet("namespace")) {
                 this.namespace(model.getNamespace());
@@ -553,6 +578,20 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
+     * The OCID of the parent repository.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("parentRepositoryId")
+    private final String parentRepositoryId;
+
+    /**
+     * The OCID of the parent repository.
+     * @return the value
+     **/
+    public String getParentRepositoryId() {
+        return parentRepositoryId;
+    }
+
+    /**
      * Tenancy unique namespace.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("namespace")
@@ -612,6 +651,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
      * Type of repository. Allowed values:
      * {@code MIRRORED}
      * {@code HOSTED}
+     * {@code FORKED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
@@ -621,6 +661,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
      * Type of repository. Allowed values:
      * {@code MIRRORED}
      * {@code HOSTED}
+     * {@code FORKED}
      *
      * @return the value
      **/
@@ -779,6 +820,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
+        sb.append(", parentRepositoryId=").append(String.valueOf(this.parentRepositoryId));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", projectName=").append(String.valueOf(this.projectName));
         sb.append(", description=").append(String.valueOf(this.description));
@@ -812,6 +854,7 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.projectId, other.projectId)
+                && java.util.Objects.equals(this.parentRepositoryId, other.parentRepositoryId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.projectName, other.projectName)
                 && java.util.Objects.equals(this.description, other.description)
@@ -841,6 +884,11 @@ public final class RepositorySummary extends com.oracle.bmc.http.internal.Explic
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.projectId == null ? 43 : this.projectId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.parentRepositoryId == null
+                                ? 43
+                                : this.parentRepositoryId.hashCode());
         result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
         result = (result * PRIME) + (this.projectName == null ? 43 : this.projectName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());

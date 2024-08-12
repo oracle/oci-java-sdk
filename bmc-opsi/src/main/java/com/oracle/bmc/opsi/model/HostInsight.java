@@ -147,13 +147,13 @@ public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * @return the value
      **/
     public String getHostType() {

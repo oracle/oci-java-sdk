@@ -39,6 +39,7 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
         "batchingStrategy",
         "stageActionSchedule",
         "applyActionSchedule",
+        "diagnosticsCollection",
         "freeformTags",
         "definedTags"
     })
@@ -50,6 +51,7 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
             CreateBatchingStrategyDetails batchingStrategy,
             CreateScheduleDetails stageActionSchedule,
             CreateScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -60,6 +62,7 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
         this.batchingStrategy = batchingStrategy;
         this.stageActionSchedule = stageActionSchedule;
         this.applyActionSchedule = applyActionSchedule;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -140,6 +143,13 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
         return applyActionSchedule;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
+    }
+
     /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
@@ -197,6 +207,7 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
         sb.append(", batchingStrategy=").append(String.valueOf(this.batchingStrategy));
         sb.append(", stageActionSchedule=").append(String.valueOf(this.stageActionSchedule));
         sb.append(", applyActionSchedule=").append(String.valueOf(this.applyActionSchedule));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -220,6 +231,7 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.batchingStrategy, other.batchingStrategy)
                 && java.util.Objects.equals(this.stageActionSchedule, other.stageActionSchedule)
                 && java.util.Objects.equals(this.applyActionSchedule, other.applyActionSchedule)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -254,6 +266,11 @@ public class CreateFsuCycleDetails extends com.oracle.bmc.http.internal.Explicit
                         + (this.applyActionSchedule == null
                                 ? 43
                                 : this.applyActionSchedule.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

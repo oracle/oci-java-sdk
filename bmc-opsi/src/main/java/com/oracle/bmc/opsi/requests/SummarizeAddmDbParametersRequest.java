@@ -145,8 +145,8 @@ public class SummarizeAddmDbParametersRequest
      *
      **/
     public enum IsChanged {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;
@@ -198,8 +198,8 @@ public class SummarizeAddmDbParametersRequest
      *
      **/
     public enum IsDefault {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;
@@ -251,8 +251,8 @@ public class SummarizeAddmDbParametersRequest
      *
      **/
     public enum HasRecommendations {
-        True("true"),
-        False("false"),
+        True("TRUE"),
+        False("FALSE"),
         ;
 
         private final String value;

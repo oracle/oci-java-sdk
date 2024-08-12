@@ -881,6 +881,20 @@ public interface Compute extends AutoCloseable {
             GetInstanceConsoleConnectionRequest request);
 
     /**
+     * Gets the maintenance event for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceEvent API.
+     */
+    GetInstanceMaintenanceEventResponse getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request);
+
+    /**
      * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
@@ -1405,6 +1419,20 @@ public interface Compute extends AutoCloseable {
     ListInstanceDevicesResponse listInstanceDevices(ListInstanceDevicesRequest request);
 
     /**
+     * Gets a list of all the maintenance events for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceMaintenanceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceMaintenanceEvents API.
+     */
+    ListInstanceMaintenanceEventsResponse listInstanceMaintenanceEvents(
+            ListInstanceMaintenanceEventsRequest request);
+
+    /**
      * Lists the instances in the specified compartment and the specified availability domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
@@ -1639,6 +1667,20 @@ public interface Compute extends AutoCloseable {
      */
     UpdateInstanceConsoleConnectionResponse updateInstanceConsoleConnection(
             UpdateInstanceConsoleConnectionRequest request);
+
+    /**
+     * Updates the maintenance event for the given instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceMaintenanceEvent API.
+     */
+    UpdateInstanceMaintenanceEventResponse updateInstanceMaintenanceEvent(
+            UpdateInstanceMaintenanceEventRequest request);
 
     /**
      * Updates information about the specified volume attachment.

@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * Logical grouping used for Operations Insights Warehouse operations.
+ * Logical grouping used for Ops Insights Warehouse operations.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -31,13 +31,13 @@ public final class OperationsInsightsWarehouses
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Operations Insights Warehouse Object.
+         * Ops Insights Warehouse Object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
         private Object operationsInsightsWarehouses;
 
         /**
-         * Operations Insights Warehouse Object.
+         * Ops Insights Warehouse Object.
          * @param operationsInsightsWarehouses the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class OperationsInsightsWarehouses
     }
 
     /**
-     * Operations Insights Warehouse Object.
+     * Ops Insights Warehouse Object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsWarehouses")
     private final Object operationsInsightsWarehouses;
 
     /**
-     * Operations Insights Warehouse Object.
+     * Ops Insights Warehouse Object.
      * @return the value
      **/
     public Object getOperationsInsightsWarehouses() {

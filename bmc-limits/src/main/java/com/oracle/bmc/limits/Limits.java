@@ -63,7 +63,8 @@ public interface Limits extends AutoCloseable {
      * For a given compartmentId, resource limit name, and scope, returns the following:
      *   * The number of available resources associated with the given limit.
      *   * The usage in the selected compartment for the given limit.
-     *   Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
+     * If Subscription Id is provided, then usage for resource created in that subscription will be returned
+     * Note that not all resource limits support this API. If the value is not available, the API returns a 404 response.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -76,7 +77,7 @@ public interface Limits extends AutoCloseable {
     GetResourceAvailabilityResponse getResourceAvailability(GetResourceAvailabilityRequest request);
 
     /**
-     * Includes a list of resource limits that are currently supported.
+     * Includes a list of resource limits that are currently supported. If subscription Id is provided, then only resource limits supported by subscription will be returned
      * If the 'areQuotasSupported' property is true, you can create quota policies on top of this limit at the
      * compartment level.
      *
@@ -91,7 +92,7 @@ public interface Limits extends AutoCloseable {
     ListLimitDefinitionsResponse listLimitDefinitions(ListLimitDefinitionsRequest request);
 
     /**
-     * Includes a full list of resource limits belonging to a given service.
+     * Includes a full list of resource limits belonging to a given service. If subscription Id is provided, limit value for subscription will be returned.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -104,7 +105,7 @@ public interface Limits extends AutoCloseable {
     ListLimitValuesResponse listLimitValues(ListLimitValuesRequest request);
 
     /**
-     * Returns the list of supported services.
+     * Returns the list of supported services. If subscription ID is provided then only services supported by subscription will be returned.
      * This includes the programmatic service name, along with the friendly service name.
      *
      * @param request The request object containing the details to send

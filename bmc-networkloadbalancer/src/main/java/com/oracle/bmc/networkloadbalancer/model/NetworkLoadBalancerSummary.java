@@ -265,7 +265,7 @@ public final class NetworkLoadBalancerSummary
          * A public network load balancer is accessible from the internet, depending the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -284,7 +284,7 @@ public final class NetworkLoadBalancerSummary
          * A public network load balancer is accessible from the internet, depending the
          * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
          * private network load balancers,
-         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
+         * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
          * This value is true by default.
          * <p>
          * Example: {@code true}
@@ -338,13 +338,13 @@ public final class NetworkLoadBalancerSummary
             return this;
         }
         /**
-         * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -762,7 +762,7 @@ public final class NetworkLoadBalancerSummary
      * A public network load balancer is accessible from the internet, depending the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -781,7 +781,7 @@ public final class NetworkLoadBalancerSummary
      * A public network load balancer is accessible from the internet, depending the
      * [security list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your virtual cloudn network. For more information about public and
      * private network load balancers,
-     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm).
+     * see [How Network Load Balancing Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
      * This value is true by default.
      * <p>
      * Example: {@code true}
@@ -829,13 +829,13 @@ public final class NetworkLoadBalancerSummary
     }
 
     /**
-     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * The subnet in which the network load balancer is spawned [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getSubnetId() {

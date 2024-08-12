@@ -25,6 +25,7 @@ public final class CreateCloudVmClusterDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
+        "subscriptionId",
         "subnetId",
         "backupSubnetId",
         "cpuCoreCount",
@@ -58,6 +59,7 @@ public final class CreateCloudVmClusterDetails
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
+            String subscriptionId,
             String subnetId,
             String backupSubnetId,
             Integer cpuCoreCount,
@@ -90,6 +92,7 @@ public final class CreateCloudVmClusterDetails
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
         this.cpuCoreCount = cpuCoreCount;
@@ -138,6 +141,22 @@ public final class CreateCloudVmClusterDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -701,6 +720,7 @@ public final class CreateCloudVmClusterDetails
             CreateCloudVmClusterDetails model =
                     new CreateCloudVmClusterDetails(
                             this.compartmentId,
+                            this.subscriptionId,
                             this.subnetId,
                             this.backupSubnetId,
                             this.cpuCoreCount,
@@ -741,6 +761,9 @@ public final class CreateCloudVmClusterDetails
         public Builder copy(CreateCloudVmClusterDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -859,6 +882,20 @@ public final class CreateCloudVmClusterDetails
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1403,6 +1440,7 @@ public final class CreateCloudVmClusterDetails
         sb.append("CreateCloudVmClusterDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -1451,6 +1489,7 @@ public final class CreateCloudVmClusterDetails
 
         CreateCloudVmClusterDetails other = (CreateCloudVmClusterDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -1496,6 +1535,9 @@ public final class CreateCloudVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)

@@ -49,13 +49,13 @@ public final class UpdateOperationsInsightsWarehouseUserDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
         private String connectionPassword;
 
         /**
-         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * @param connectionPassword the value to set
          * @return this builder
          **/
@@ -208,13 +208,13 @@ public final class UpdateOperationsInsightsWarehouseUserDetails
     }
 
     /**
-     * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
     private final String connectionPassword;
 
     /**
-     * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * @return the value
      **/
     public String getConnectionPassword() {

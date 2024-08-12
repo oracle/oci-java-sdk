@@ -21,7 +21,6 @@ import com.oracle.bmc.util.internal.Validate;
 public class Services {
     private static final Map<String, Service> SERVICE_CACHE = new HashMap<>();
     private static final Logger LOG = org.slf4j.LoggerFactory.getLogger(Services.class);
-    private static final Map<String, String> REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP = new HashMap<>();
 
     /**
      * Create a new service definition.  If the service has already been registered
@@ -55,7 +54,8 @@ public class Services {
             final String serviceName,
             final String serviceEndpointPrefix,
             final String serviceEndpointTemplate,
-            final String endpointServiceName) {
+            final String endpointServiceName,
+            final Map<String, String> serviceEndpointTemplatesForRealms) {
         Validate.notBlank(serviceName, "serviceName must be set to a non-empty string");
 
         final Service newInstance =
@@ -63,7 +63,8 @@ public class Services {
                         serviceName,
                         serviceEndpointPrefix,
                         serviceEndpointTemplate,
-                        endpointServiceName);
+                        endpointServiceName,
+                        serviceEndpointTemplatesForRealms);
         if (SERVICE_CACHE.containsKey(serviceName)) {
             Service existing = SERVICE_CACHE.get(serviceName);
             if (existing.equals(newInstance)) {
@@ -90,22 +91,26 @@ public class Services {
         private final String serviceEndpointPrefix;
         private final String serviceEndpointTemplate;
         private final String endpointServiceName;
+        private final Map<String, String> serviceEndpointTemplatesForRealms;
 
         @java.beans.ConstructorProperties({
             "serviceName",
             "serviceEndpointPrefix",
             "serviceEndpointTemplate",
-            "endpointServiceName"
+            "endpointServiceName",
+            "serviceEndpointTemplatesForRealms"
         })
         public BasicService(
                 String serviceName,
                 String serviceEndpointPrefix,
                 String serviceEndpointTemplate,
-                String endpointServiceName) {
+                String endpointServiceName,
+                Map<String, String> serviceEndpointTemplatesForRealms) {
             this.serviceName = serviceName;
             this.serviceEndpointPrefix = serviceEndpointPrefix;
             this.serviceEndpointTemplate = serviceEndpointTemplate;
             this.endpointServiceName = endpointServiceName;
+            this.serviceEndpointTemplatesForRealms = serviceEndpointTemplatesForRealms;
         }
 
         public String getServiceName() {
@@ -120,12 +125,8 @@ public class Services {
             return this.serviceEndpointTemplate;
         }
 
-        public void addServiceEndpointTemplateForRealm(String realmId, String endpoint) {
-            REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP.put(realmId, endpoint);
-        }
-
         public Map<String, String> getServiceEndpointTemplateForRealmMap() {
-            return Collections.unmodifiableMap(REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP);
+            return Collections.unmodifiableMap(serviceEndpointTemplatesForRealms);
         }
 
         public String getEndpointServiceName() {
@@ -157,6 +158,14 @@ public class Services {
             if (this$endpointServiceName == null
                     ? other$endpointServiceName != null
                     : !this$endpointServiceName.equals(other$endpointServiceName)) return false;
+            final Object this$serviceEndpointTemplatesForRealms =
+                    this.getServiceEndpointTemplateForRealmMap();
+            final Object other$serviceEndpointTemplatesForRealms =
+                    other.getServiceEndpointTemplateForRealmMap();
+            if (this$serviceEndpointTemplatesForRealms == null
+                    ? other$serviceEndpointTemplatesForRealms != null
+                    : !this$serviceEndpointTemplatesForRealms.equals(
+                            other$serviceEndpointTemplatesForRealms)) return false;
             return true;
         }
 
@@ -181,6 +190,13 @@ public class Services {
             result =
                     result * PRIME
                             + ($endpointServiceName == null ? 43 : $endpointServiceName.hashCode());
+            final Object $serviceEndpointTemplatesForRealms =
+                    this.getServiceEndpointTemplateForRealmMap();
+            result =
+                    result * PRIME
+                            + ($serviceEndpointTemplatesForRealms == null
+                                    ? 43
+                                    : $serviceEndpointTemplatesForRealms.hashCode());
             return result;
         }
 
@@ -193,6 +209,8 @@ public class Services {
                     + this.getServiceEndpointTemplate()
                     + ", endpointServiceName="
                     + this.getEndpointServiceName()
+                    + ", serviceEndpointTemplatesForRealms="
+                    + this.getServiceEndpointTemplateForRealmMap()
                     + ")";
         }
     }
@@ -202,6 +220,7 @@ public class Services {
         private String serviceEndpointPrefix;
         private String serviceEndpointTemplate;
         private String endpointServiceName;
+        private Map<String, String> serviceEndpointTemplatesForRealms = new HashMap<>();
 
         ServiceBuilder() {}
 
@@ -220,8 +239,11 @@ public class Services {
             return this;
         }
 
+        /**
+         * This method is called only when a service defines realm-specific endpoint templates
+         */
         public ServiceBuilder addServiceEndpointTemplateForRealm(String realmId, String endpoint) {
-            REALM_SPECIFIC_ENDPOINT_TEMPLATE_MAP.put(realmId, endpoint);
+            serviceEndpointTemplatesForRealms.put(realmId, endpoint);
             return this;
         }
 
@@ -235,7 +257,8 @@ public class Services {
                     serviceName,
                     serviceEndpointPrefix,
                     serviceEndpointTemplate,
-                    endpointServiceName);
+                    endpointServiceName,
+                    serviceEndpointTemplatesForRealms);
         }
 
         public String toString() {
@@ -247,6 +270,8 @@ public class Services {
                     + this.serviceEndpointTemplate
                     + ", endpointServiceName="
                     + this.endpointServiceName
+                    + ", serviceEndpointTemplatesForRealms="
+                    + this.serviceEndpointTemplatesForRealms
                     + ")";
         }
     }

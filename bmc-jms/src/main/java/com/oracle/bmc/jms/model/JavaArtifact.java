@@ -229,7 +229,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * The endpoint that returns a short-lived artifact download URL in the response payload.
          * This download url can then be used for downloading the artifact.
-         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
@@ -238,7 +238,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
         /**
          * The endpoint that returns a short-lived artifact download URL in the response payload.
          * This download url can then be used for downloading the artifact.
-         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+         * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
          *
          * @param downloadUrl the value to set
          * @return this builder
@@ -513,7 +513,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The endpoint that returns a short-lived artifact download URL in the response payload.
      * This download url can then be used for downloading the artifact.
-     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("downloadUrl")
@@ -522,7 +522,7 @@ public final class JavaArtifact extends com.oracle.bmc.http.internal.ExplicitlyS
     /**
      * The endpoint that returns a short-lived artifact download URL in the response payload.
      * This download url can then be used for downloading the artifact.
-     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms/20230601/JavaArtifact/GenerateArtifactDownloadUrl) for more details.
+     * See this [API](https://docs.oracle.com/en-us/iaas/api/#/en/jms-java-download/20230601/DownloadUrl/GenerateArtifactDownloadUrl) for more details.
      *
      * @return the value
      **/

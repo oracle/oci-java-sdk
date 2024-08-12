@@ -14,13 +14,15 @@ public class CreateFsuCycleRequest
                 com.oracle.bmc.fleetsoftwareupdate.model.CreateFsuCycleDetails> {
 
     /**
-     * Details for the new Exadata Fleet Update Cycle.
+     * Details for the new Exadata Fleet Update Maintenance Cycle.
+     * Targets can only exist in one active Fleet Software Update Maintenance Cycle.
      *
      */
     private com.oracle.bmc.fleetsoftwareupdate.model.CreateFsuCycleDetails createFsuCycleDetails;
 
     /**
-     * Details for the new Exadata Fleet Update Cycle.
+     * Details for the new Exadata Fleet Update Maintenance Cycle.
+     * Targets can only exist in one active Fleet Software Update Maintenance Cycle.
      *
      */
     public com.oracle.bmc.fleetsoftwareupdate.model.CreateFsuCycleDetails
@@ -81,14 +83,16 @@ public class CreateFsuCycleRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the new Exadata Fleet Update Cycle.
+         * Details for the new Exadata Fleet Update Maintenance Cycle.
+         * Targets can only exist in one active Fleet Software Update Maintenance Cycle.
          *
          */
         private com.oracle.bmc.fleetsoftwareupdate.model.CreateFsuCycleDetails
                 createFsuCycleDetails = null;
 
         /**
-         * Details for the new Exadata Fleet Update Cycle.
+         * Details for the new Exadata Fleet Update Maintenance Cycle.
+         * Targets can only exist in one active Fleet Software Update Maintenance Cycle.
          *
          * @param createFsuCycleDetails the value to set
          * @return this builder instance

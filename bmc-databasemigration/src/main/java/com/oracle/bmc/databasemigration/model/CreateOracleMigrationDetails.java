@@ -146,6 +146,23 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             return this;
         }
         /**
+         * List of Migration Parameter objects.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
+        private java.util.List<MigrationParameterDetails> advancedParameters;
+
+        /**
+         * List of Migration Parameter objects.
+         * @param advancedParameters the value to set
+         * @return this builder
+         **/
+        public Builder advancedParameters(
+                java.util.List<MigrationParameterDetails> advancedParameters) {
+            this.advancedParameters = advancedParameters;
+            this.__explicitlySet__.add("advancedParameters");
+            return this;
+        }
+        /**
          * The OCID of the resource being referenced.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceContainerDatabaseConnectionId")
@@ -238,6 +255,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                             this.advisorSettings,
                             this.hubDetails,
                             this.ggsDetails,
+                            this.advancedParameters,
                             this.sourceContainerDatabaseConnectionId,
                             this.excludeObjects,
                             this.includeObjects,
@@ -289,6 +307,9 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             if (model.wasPropertyExplicitlySet("ggsDetails")) {
                 this.ggsDetails(model.getGgsDetails());
             }
+            if (model.wasPropertyExplicitlySet("advancedParameters")) {
+                this.advancedParameters(model.getAdvancedParameters());
+            }
             if (model.wasPropertyExplicitlySet("sourceContainerDatabaseConnectionId")) {
                 this.sourceContainerDatabaseConnectionId(
                         model.getSourceContainerDatabaseConnectionId());
@@ -332,6 +353,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
             CreateOracleAdvisorSettings advisorSettings,
             CreateGoldenGateHubDetails hubDetails,
             CreateOracleGgsDeploymentDetails ggsDetails,
+            java.util.List<MigrationParameterDetails> advancedParameters,
             String sourceContainerDatabaseConnectionId,
             java.util.List<OracleDatabaseObject> excludeObjects,
             java.util.List<OracleDatabaseObject> includeObjects,
@@ -350,6 +372,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         this.advisorSettings = advisorSettings;
         this.hubDetails = hubDetails;
         this.ggsDetails = ggsDetails;
+        this.advancedParameters = advancedParameters;
         this.sourceContainerDatabaseConnectionId = sourceContainerDatabaseConnectionId;
         this.excludeObjects = excludeObjects;
         this.includeObjects = includeObjects;
@@ -389,6 +412,20 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
 
     public CreateOracleGgsDeploymentDetails getGgsDetails() {
         return ggsDetails;
+    }
+
+    /**
+     * List of Migration Parameter objects.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("advancedParameters")
+    private final java.util.List<MigrationParameterDetails> advancedParameters;
+
+    /**
+     * List of Migration Parameter objects.
+     * @return the value
+     **/
+    public java.util.List<MigrationParameterDetails> getAdvancedParameters() {
+        return advancedParameters;
     }
 
     /**
@@ -475,6 +512,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
         sb.append(", advisorSettings=").append(String.valueOf(this.advisorSettings));
         sb.append(", hubDetails=").append(String.valueOf(this.hubDetails));
         sb.append(", ggsDetails=").append(String.valueOf(this.ggsDetails));
+        sb.append(", advancedParameters=").append(String.valueOf(this.advancedParameters));
         sb.append(", sourceContainerDatabaseConnectionId=")
                 .append(String.valueOf(this.sourceContainerDatabaseConnectionId));
         sb.append(", excludeObjects=").append(String.valueOf(this.excludeObjects));
@@ -500,6 +538,7 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                 && java.util.Objects.equals(this.advisorSettings, other.advisorSettings)
                 && java.util.Objects.equals(this.hubDetails, other.hubDetails)
                 && java.util.Objects.equals(this.ggsDetails, other.ggsDetails)
+                && java.util.Objects.equals(this.advancedParameters, other.advancedParameters)
                 && java.util.Objects.equals(
                         this.sourceContainerDatabaseConnectionId,
                         other.sourceContainerDatabaseConnectionId)
@@ -529,6 +568,11 @@ public final class CreateOracleMigrationDetails extends CreateMigrationDetails {
                         + (this.advisorSettings == null ? 43 : this.advisorSettings.hashCode());
         result = (result * PRIME) + (this.hubDetails == null ? 43 : this.hubDetails.hashCode());
         result = (result * PRIME) + (this.ggsDetails == null ? 43 : this.ggsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.advancedParameters == null
+                                ? 43
+                                : this.advancedParameters.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceContainerDatabaseConnectionId == null

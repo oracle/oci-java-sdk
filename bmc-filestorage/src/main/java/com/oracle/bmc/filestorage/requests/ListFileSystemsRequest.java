@@ -119,6 +119,7 @@ public class ListFileSystemsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),

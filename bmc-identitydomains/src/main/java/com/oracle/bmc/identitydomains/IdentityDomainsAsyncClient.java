@@ -2496,6 +2496,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateSocialIdentityProviderResponse>
+            createSocialIdentityProvider(
+                    CreateSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSocialIdentityProviderRequest,
+                                    CreateSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async createSocialIdentityProvider");
+        final CreateSocialIdentityProviderRequest interceptedRequest =
+                CreateSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateSocialIdentityProviderResponse>
+                transformer =
+                        CreateSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSocialIdentityProviderRequest, CreateSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSocialIdentityProviderRequest,
+                                CreateSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<CreateSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProvider(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSocialIdentityProviderRequest, CreateSocialIdentityProviderResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUserResponse> createUser(
             CreateUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateUserRequest, CreateUserResponse>
@@ -4320,6 +4377,58 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSocialIdentityProviderResponse>
+            deleteSocialIdentityProvider(
+                    DeleteSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSocialIdentityProviderRequest,
+                                    DeleteSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async deleteSocialIdentityProvider");
+        final DeleteSocialIdentityProviderRequest interceptedRequest =
+                DeleteSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "DeleteSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/DeleteSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSocialIdentityProviderResponse>
+                transformer =
+                        DeleteSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSocialIdentityProviderRequest, DeleteSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSocialIdentityProviderRequest,
+                                DeleteSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<DeleteSocialIdentityProviderResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSocialIdentityProviderRequest, DeleteSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6763,6 +6872,56 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetSmtpCredentialRequest, GetSmtpCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSocialIdentityProviderResponse> getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
+                    handler) {
+        LOG.trace("Called async getSocialIdentityProvider");
+        final GetSocialIdentityProviderRequest interceptedRequest =
+                GetSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/GetSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSocialIdentityProviderResponse>
+                transformer =
+                        GetSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSocialIdentityProviderRequest,
+                                GetSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<GetSocialIdentityProviderResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9461,6 +9620,58 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSocialIdentityProvidersResponse>
+            listSocialIdentityProviders(
+                    ListSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSocialIdentityProvidersRequest,
+                                    ListSocialIdentityProvidersResponse>
+                            handler) {
+        LOG.trace("Called async listSocialIdentityProviders");
+        final ListSocialIdentityProvidersRequest interceptedRequest =
+                ListSocialIdentityProvidersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSocialIdentityProvidersResponse>
+                transformer =
+                        ListSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSocialIdentityProvidersRequest, ListSocialIdentityProvidersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSocialIdentityProvidersRequest,
+                                ListSocialIdentityProvidersResponse>,
+                        java.util.concurrent.Future<ListSocialIdentityProvidersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSocialIdentityProvidersRequest, ListSocialIdentityProvidersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserAttributesSettingsResponse>
             listUserAttributesSettings(
                     ListUserAttributesSettingsRequest request,
@@ -9479,7 +9690,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "ListUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/ListUserAttributesSettings");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListUserAttributesSettingsResponse>
                 transformer =
@@ -11643,6 +11854,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PatchSocialIdentityProviderResponse>
+            patchSocialIdentityProvider(
+                    PatchSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchSocialIdentityProviderRequest,
+                                    PatchSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async patchSocialIdentityProvider");
+        final PatchSocialIdentityProviderRequest interceptedRequest =
+                PatchSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PatchSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchSocialIdentityProviderResponse>
+                transformer =
+                        PatchSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchSocialIdentityProviderRequest, PatchSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchSocialIdentityProviderRequest,
+                                PatchSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<PatchSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchOp(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchSocialIdentityProviderRequest, PatchSocialIdentityProviderResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchUserResponse> patchUser(
             PatchUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PatchUserRequest, PatchUserResponse>
@@ -13067,6 +13335,61 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     PutSettingRequest, PutSettingResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSocialIdentityProviderResponse> putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                    handler) {
+        LOG.trace("Called async putSocialIdentityProvider");
+        final PutSocialIdentityProviderRequest interceptedRequest =
+                PutSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PutSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PutSocialIdentityProviderResponse>
+                transformer =
+                        PutSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutSocialIdentityProviderRequest,
+                                PutSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<PutSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProvider(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -15263,6 +15586,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>
+            searchSocialIdentityProviders(
+                    SearchSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSocialIdentityProvidersRequest,
+                                    SearchSocialIdentityProvidersResponse>
+                            handler) {
+        LOG.trace("Called async searchSocialIdentityProviders");
+        final SearchSocialIdentityProvidersRequest interceptedRequest =
+                SearchSocialIdentityProvidersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchSocialIdentityProvidersResponse>
+                transformer =
+                        SearchSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SearchSocialIdentityProvidersRequest, SearchSocialIdentityProvidersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SearchSocialIdentityProvidersRequest,
+                                SearchSocialIdentityProvidersResponse>,
+                        java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProviderSearchRequest(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SearchSocialIdentityProvidersRequest, SearchSocialIdentityProvidersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchUserAttributesSettingsResponse>
             searchUserAttributesSettings(
                     SearchUserAttributesSettingsRequest request,
@@ -15281,7 +15661,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "SearchUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/SearchUserAttributesSettings");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SearchUserAttributesSettingsResponse>
                 transformer =
