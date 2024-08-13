@@ -54,12 +54,10 @@ public class DownloadManager {
      */
     public GetObjectResponse getObject(GetObjectRequest request) {
         // The retries in the download manager are smarter than the retries built into the client:
-        // The download
-        // manager modifies the request to only retry the parts that haven't been read yet. The
-        // client would retry
-        // the entire request, and re-download parts that have already been downloaded.
-        // We need to make sure we don't get (download manager) retries on top of (client) retries,
-        // though.
+        // The download manager modifies the request to only retry the parts that haven't been
+        // read yet. The client would retry the entire request, and re-download parts that have
+        // already been downloaded. We need to make sure we don't get (download manager) retries
+        // on top of (client) retries, though.
         request =
                 GetObjectRequest.builder()
                         .copy(request)
@@ -146,11 +144,9 @@ public class DownloadManager {
             assert numThreads > 0;
 
             // In cache, some requests set if-none-match to get an unchanged response back if the
-            // object hasn't changed.
-            // For parallel downloads, the download manager adds the if-match header to ensure all
-            // parts are from the same
-            // object version. But it is illegal to have both if-match and if-none-match in the same
-            // request. Therefore,
+            // object hasn't changed. For parallel downloads, the download manager adds the
+            // if-match header to ensure all parts are from the same object version. But it is
+            // illegal to have both if-match and if-none-match in the same request. Therefore,
             // we need to set if-none-match to null for the following parts to allow downloads using
             // download manager.
             if (request.getIfNoneMatch() != null) {

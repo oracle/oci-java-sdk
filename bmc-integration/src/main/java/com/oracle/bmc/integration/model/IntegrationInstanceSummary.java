@@ -43,6 +43,7 @@ public final class IntegrationInstanceSummary
         "networkEndpointDetails",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "shape",
         "privateEndpointOutboundConnection"
     })
@@ -66,6 +67,7 @@ public final class IntegrationInstanceSummary
             NetworkEndpointDetails networkEndpointDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Shape shape,
             OutboundConnection privateEndpointOutboundConnection) {
         super();
@@ -88,6 +90,7 @@ public final class IntegrationInstanceSummary
         this.networkEndpointDetails = networkEndpointDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
     }
@@ -387,6 +390,25 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Shape */
         @com.fasterxml.jackson.annotation.JsonProperty("shape")
         private Shape shape;
@@ -438,6 +460,7 @@ public final class IntegrationInstanceSummary
                             this.networkEndpointDetails,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.shape,
                             this.privateEndpointOutboundConnection);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -504,6 +527,9 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
@@ -573,6 +599,7 @@ public final class IntegrationInstanceSummary
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -925,6 +952,23 @@ public final class IntegrationInstanceSummary
         return definedTags;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     /** Shape */
     public enum Shape implements com.oracle.bmc.http.internal.BmcEnum {
         Development("DEVELOPMENT"),
@@ -1026,6 +1070,7 @@ public final class IntegrationInstanceSummary
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
                 .append(String.valueOf(this.privateEndpointOutboundConnection));
@@ -1066,6 +1111,7 @@ public final class IntegrationInstanceSummary
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(
                         this.privateEndpointOutboundConnection,
@@ -1124,6 +1170,7 @@ public final class IntegrationInstanceSummary
                                 : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result =
                 (result * PRIME)

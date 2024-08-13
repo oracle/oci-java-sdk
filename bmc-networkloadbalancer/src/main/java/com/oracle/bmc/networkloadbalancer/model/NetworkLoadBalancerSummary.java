@@ -267,8 +267,8 @@ public final class NetworkLoadBalancerSummary
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
          * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This
-         * value is true by default.
+         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * This value is true by default.
          *
          * <p>Example: {@code true}
          */
@@ -287,8 +287,8 @@ public final class NetworkLoadBalancerSummary
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
          * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This
-         * value is true by default.
+         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * This value is true by default.
          *
          * <p>Example: {@code true}
          *
@@ -344,14 +344,14 @@ public final class NetworkLoadBalancerSummary
         }
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
          * The subnet in which the network load balancer is spawned
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          *
          * @param subnetId the value to set
          * @return this builder
@@ -772,8 +772,8 @@ public final class NetworkLoadBalancerSummary
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloudn network. For more information about public and private network load
      * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This value is
-     * true by default.
+     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * This value is true by default.
      *
      * <p>Example: {@code true}
      */
@@ -791,8 +791,8 @@ public final class NetworkLoadBalancerSummary
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloudn network. For more information about public and private network load
      * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/overview.htm). This value is
-     * true by default.
+     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * This value is true by default.
      *
      * <p>Example: {@code true}
      *
@@ -842,14 +842,14 @@ public final class NetworkLoadBalancerSummary
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
      * The subnet in which the network load balancer is spawned
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)."
+     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      */

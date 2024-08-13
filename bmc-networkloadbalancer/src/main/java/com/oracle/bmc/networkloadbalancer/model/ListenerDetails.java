@@ -5,10 +5,9 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The listener's configuration. For more information about listener configuration, see [Managing
+ * The listener's configuration. For more information about backend set configuration, see [Managing
  * Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
- * <br>
+ * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,7 +30,9 @@ public final class ListenerDetails
         "ipVersion",
         "port",
         "protocol",
-        "isPpv2Enabled"
+        "isPpv2Enabled",
+        "tcpIdleTimeout",
+        "udpIdleTimeout"
     })
     public ListenerDetails(
             String name,
@@ -39,7 +40,9 @@ public final class ListenerDetails
             IpVersion ipVersion,
             Integer port,
             ListenerProtocols protocol,
-            Boolean isPpv2Enabled) {
+            Boolean isPpv2Enabled,
+            Integer tcpIdleTimeout,
+            Integer udpIdleTimeout) {
         super();
         this.name = name;
         this.defaultBackendSetName = defaultBackendSetName;
@@ -47,6 +50,8 @@ public final class ListenerDetails
         this.port = port;
         this.protocol = protocol;
         this.isPpv2Enabled = isPpv2Enabled;
+        this.tcpIdleTimeout = tcpIdleTimeout;
+        this.udpIdleTimeout = udpIdleTimeout;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +180,36 @@ public final class ListenerDetails
             this.__explicitlySet__.add("isPpv2Enabled");
             return this;
         }
+        /** The duration for TCP idle timeout in seconds. Example: {@code 300} */
+        @com.fasterxml.jackson.annotation.JsonProperty("tcpIdleTimeout")
+        private Integer tcpIdleTimeout;
+
+        /**
+         * The duration for TCP idle timeout in seconds. Example: {@code 300}
+         *
+         * @param tcpIdleTimeout the value to set
+         * @return this builder
+         */
+        public Builder tcpIdleTimeout(Integer tcpIdleTimeout) {
+            this.tcpIdleTimeout = tcpIdleTimeout;
+            this.__explicitlySet__.add("tcpIdleTimeout");
+            return this;
+        }
+        /** The duration for UDP idle timeout in seconds. Example: {@code 120} */
+        @com.fasterxml.jackson.annotation.JsonProperty("udpIdleTimeout")
+        private Integer udpIdleTimeout;
+
+        /**
+         * The duration for UDP idle timeout in seconds. Example: {@code 120}
+         *
+         * @param udpIdleTimeout the value to set
+         * @return this builder
+         */
+        public Builder udpIdleTimeout(Integer udpIdleTimeout) {
+            this.udpIdleTimeout = udpIdleTimeout;
+            this.__explicitlySet__.add("udpIdleTimeout");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -187,7 +222,9 @@ public final class ListenerDetails
                             this.ipVersion,
                             this.port,
                             this.protocol,
-                            this.isPpv2Enabled);
+                            this.isPpv2Enabled,
+                            this.tcpIdleTimeout,
+                            this.udpIdleTimeout);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -213,6 +250,12 @@ public final class ListenerDetails
             }
             if (model.wasPropertyExplicitlySet("isPpv2Enabled")) {
                 this.isPpv2Enabled(model.getIsPpv2Enabled());
+            }
+            if (model.wasPropertyExplicitlySet("tcpIdleTimeout")) {
+                this.tcpIdleTimeout(model.getTcpIdleTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("udpIdleTimeout")) {
+                this.udpIdleTimeout(model.getUdpIdleTimeout());
             }
             return this;
         }
@@ -339,6 +382,32 @@ public final class ListenerDetails
         return isPpv2Enabled;
     }
 
+    /** The duration for TCP idle timeout in seconds. Example: {@code 300} */
+    @com.fasterxml.jackson.annotation.JsonProperty("tcpIdleTimeout")
+    private final Integer tcpIdleTimeout;
+
+    /**
+     * The duration for TCP idle timeout in seconds. Example: {@code 300}
+     *
+     * @return the value
+     */
+    public Integer getTcpIdleTimeout() {
+        return tcpIdleTimeout;
+    }
+
+    /** The duration for UDP idle timeout in seconds. Example: {@code 120} */
+    @com.fasterxml.jackson.annotation.JsonProperty("udpIdleTimeout")
+    private final Integer udpIdleTimeout;
+
+    /**
+     * The duration for UDP idle timeout in seconds. Example: {@code 120}
+     *
+     * @return the value
+     */
+    public Integer getUdpIdleTimeout() {
+        return udpIdleTimeout;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -360,6 +429,8 @@ public final class ListenerDetails
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", protocol=").append(String.valueOf(this.protocol));
         sb.append(", isPpv2Enabled=").append(String.valueOf(this.isPpv2Enabled));
+        sb.append(", tcpIdleTimeout=").append(String.valueOf(this.tcpIdleTimeout));
+        sb.append(", udpIdleTimeout=").append(String.valueOf(this.udpIdleTimeout));
         sb.append(")");
         return sb.toString();
     }
@@ -380,6 +451,8 @@ public final class ListenerDetails
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.protocol, other.protocol)
                 && java.util.Objects.equals(this.isPpv2Enabled, other.isPpv2Enabled)
+                && java.util.Objects.equals(this.tcpIdleTimeout, other.tcpIdleTimeout)
+                && java.util.Objects.equals(this.udpIdleTimeout, other.udpIdleTimeout)
                 && super.equals(other);
     }
 
@@ -399,6 +472,12 @@ public final class ListenerDetails
         result =
                 (result * PRIME)
                         + (this.isPpv2Enabled == null ? 43 : this.isPpv2Enabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tcpIdleTimeout == null ? 43 : this.tcpIdleTimeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.udpIdleTimeout == null ? 43 : this.udpIdleTimeout.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

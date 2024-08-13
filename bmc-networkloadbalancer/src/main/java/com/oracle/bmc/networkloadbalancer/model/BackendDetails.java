@@ -145,8 +145,7 @@ public final class BackendDetails
          * higher weight receive a larger proportion of incoming traffic. For example, a server
          * weighted '3' receives three times the number of new connections as a server weighted '1'.
          * For more information about load balancing policies, see [How Network Load Balancing
-         * Policies
-         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          */
@@ -158,8 +157,7 @@ public final class BackendDetails
          * higher weight receive a larger proportion of incoming traffic. For example, a server
          * weighted '3' receives three times the number of new connections as a server weighted '1'.
          * For more information about load balancing policies, see [How Network Load Balancing
-         * Policies
-         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          *
@@ -385,7 +383,7 @@ public final class BackendDetails
      * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
      * '3' receives three times the number of new connections as a server weighted '1'. For more
      * information about load balancing policies, see [How Network Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      */
@@ -397,7 +395,7 @@ public final class BackendDetails
      * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
      * '3' receives three times the number of new connections as a server weighted '1'. For more
      * information about load balancing policies, see [How Network Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      *
