@@ -34,6 +34,7 @@ public final class IntegrationInstance
         "stateMessage",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "isByol",
         "instanceUrl",
         "messagePacks",
@@ -59,6 +60,7 @@ public final class IntegrationInstance
             String stateMessage,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isByol,
             String instanceUrl,
             Integer messagePacks,
@@ -83,6 +85,7 @@ public final class IntegrationInstance
         this.stateMessage = stateMessage;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
         this.messagePacks = messagePacks;
@@ -267,6 +270,25 @@ public final class IntegrationInstance
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /** Bring your own license. */
@@ -459,6 +481,7 @@ public final class IntegrationInstance
                             this.stateMessage,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.isByol,
                             this.instanceUrl,
                             this.messagePacks,
@@ -509,6 +532,9 @@ public final class IntegrationInstance
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("isByol")) {
                 this.isByol(model.getIsByol());
@@ -611,6 +637,7 @@ public final class IntegrationInstance
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -809,6 +836,23 @@ public final class IntegrationInstance
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
     }
 
     /** Bring your own license. */
@@ -1074,6 +1118,7 @@ public final class IntegrationInstance
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
         sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
@@ -1114,6 +1159,7 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
                 && java.util.Objects.equals(this.messagePacks, other.messagePacks)
@@ -1157,6 +1203,7 @@ public final class IntegrationInstance
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
         result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());

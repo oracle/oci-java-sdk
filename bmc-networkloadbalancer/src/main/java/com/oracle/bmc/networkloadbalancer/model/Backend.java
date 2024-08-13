@@ -7,8 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration of a backend server that is a member of a network load balancer backend set.
  * For more information, see [Managing Backend
- * Servers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendServers/backend-server-management.htm).
- * <br>
+ * Servers](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendservers.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -141,8 +140,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
          * higher weight receive a larger proportion of incoming traffic. For example, a server
          * weighted '3' receives three times the number of new connections as a server weighted '1'.
          * For more information about load balancing policies, see [How Network Load Balancing
-         * Policies
-         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          */
@@ -154,8 +152,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
          * higher weight receive a larger proportion of incoming traffic. For example, a server
          * weighted '3' receives three times the number of new connections as a server weighted '1'.
          * For more information about load balancing policies, see [How Network Load Balancing
-         * Policies
-         * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+         * Policies Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
          *
          * <p>Example: {@code 3}
          *
@@ -375,7 +372,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
      * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
      * '3' receives three times the number of new connections as a server weighted '1'. For more
      * information about load balancing policies, see [How Network Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      */
@@ -387,7 +384,7 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
      * higher weight receive a larger proportion of incoming traffic. For example, a server weighted
      * '3' receives three times the number of new connections as a server weighted '1'. For more
      * information about load balancing policies, see [How Network Load Balancing Policies
-     * Work](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introducton.htm#Policies).
+     * Work](https://docs.cloud.oracle.com/Content/Balance/Reference/lbpolicies.htm).
      *
      * <p>Example: {@code 3}
      *

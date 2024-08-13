@@ -27,6 +27,13 @@ public class ListLimitDefinitionsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** The OCID of the subscription assigned to tenant */
+    private String subscriptionId;
+
+    /** The OCID of the subscription assigned to tenant */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
     /** The target service name. */
     private String serviceName;
 
@@ -175,6 +182,20 @@ public class ListLimitDefinitionsRequest
             return this;
         }
 
+        /** The OCID of the subscription assigned to tenant */
+        private String subscriptionId = null;
+
+        /**
+         * The OCID of the subscription assigned to tenant
+         *
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
         /** The target service name. */
         private String serviceName = null;
 
@@ -308,6 +329,7 @@ public class ListLimitDefinitionsRequest
          */
         public Builder copy(ListLimitDefinitionsRequest o) {
             compartmentId(o.getCompartmentId());
+            subscriptionId(o.getSubscriptionId());
             serviceName(o.getServiceName());
             name(o.getName());
             sortBy(o.getSortBy());
@@ -350,6 +372,7 @@ public class ListLimitDefinitionsRequest
         public ListLimitDefinitionsRequest buildWithoutInvocationCallback() {
             ListLimitDefinitionsRequest request = new ListLimitDefinitionsRequest();
             request.compartmentId = compartmentId;
+            request.subscriptionId = subscriptionId;
             request.serviceName = serviceName;
             request.name = name;
             request.sortBy = sortBy;
@@ -358,8 +381,8 @@ public class ListLimitDefinitionsRequest
             request.page = page;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListLimitDefinitionsRequest(compartmentId, serviceName, name, sortBy, sortOrder,
-            // limit, page, opcRequestId);
+            // new ListLimitDefinitionsRequest(compartmentId, subscriptionId, serviceName, name,
+            // sortBy, sortOrder, limit, page, opcRequestId);
         }
     }
 
@@ -371,6 +394,7 @@ public class ListLimitDefinitionsRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .subscriptionId(subscriptionId)
                 .serviceName(serviceName)
                 .name(name)
                 .sortBy(sortBy)
@@ -395,6 +419,7 @@ public class ListLimitDefinitionsRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(",serviceName=").append(String.valueOf(this.serviceName));
         sb.append(",name=").append(String.valueOf(this.name));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
@@ -418,6 +443,7 @@ public class ListLimitDefinitionsRequest
         ListLimitDefinitionsRequest other = (ListLimitDefinitionsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.serviceName, other.serviceName)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
@@ -434,6 +460,9 @@ public class ListLimitDefinitionsRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.serviceName == null ? 43 : this.serviceName.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());

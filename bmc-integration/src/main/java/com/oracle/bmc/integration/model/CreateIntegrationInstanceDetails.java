@@ -469,6 +469,7 @@ public final class CreateIntegrationInstanceDetails
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
         ;
 
         private final String value;
