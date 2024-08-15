@@ -51,6 +51,7 @@ public class SummarizeSqlInsightsRequest
         ComanagedExacsCdb("COMANAGED-EXACS-CDB"),
         ComanagedExacsPdb("COMANAGED-EXACS-PDB"),
         ComanagedExacsNoncdb("COMANAGED-EXACS-NONCDB"),
+        MdsMysql("MDS-MYSQL"),
         ;
 
         private final String value;

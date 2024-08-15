@@ -6379,6 +6379,136 @@ public class DataSafePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listSensitiveDataModelSensitiveTypes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSensitiveDataModelSensitiveTypesResponse>
+            listSensitiveDataModelSensitiveTypesResponseIterator(
+                    final ListSensitiveDataModelSensitiveTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSensitiveDataModelSensitiveTypesRequest.Builder,
+                ListSensitiveDataModelSensitiveTypesRequest,
+                ListSensitiveDataModelSensitiveTypesResponse>(
+                new java.util.function.Supplier<
+                        ListSensitiveDataModelSensitiveTypesRequest.Builder>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesRequest.Builder get() {
+                        return ListSensitiveDataModelSensitiveTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveDataModelSensitiveTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveDataModelSensitiveTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveDataModelSensitiveTypesRequest.Builder>,
+                        ListSensitiveDataModelSensitiveTypesRequest>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveDataModelSensitiveTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveDataModelSensitiveTypesRequest,
+                        ListSensitiveDataModelSensitiveTypesResponse>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesResponse apply(
+                            ListSensitiveDataModelSensitiveTypesRequest request) {
+                        return client.listSensitiveDataModelSensitiveTypes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects
+     * contained in responses from the listSensitiveDataModelSensitiveTypes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary>
+            listSensitiveDataModelSensitiveTypesRecordIterator(
+                    final ListSensitiveDataModelSensitiveTypesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSensitiveDataModelSensitiveTypesRequest.Builder,
+                ListSensitiveDataModelSensitiveTypesRequest,
+                ListSensitiveDataModelSensitiveTypesResponse,
+                com.oracle.bmc.datasafe.model.SensitiveDataModelSensitiveTypeSummary>(
+                new java.util.function.Supplier<
+                        ListSensitiveDataModelSensitiveTypesRequest.Builder>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesRequest.Builder get() {
+                        return ListSensitiveDataModelSensitiveTypesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveDataModelSensitiveTypesResponse, String>() {
+                    @Override
+                    public String apply(ListSensitiveDataModelSensitiveTypesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSensitiveDataModelSensitiveTypesRequest.Builder>,
+                        ListSensitiveDataModelSensitiveTypesRequest>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSensitiveDataModelSensitiveTypesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveDataModelSensitiveTypesRequest,
+                        ListSensitiveDataModelSensitiveTypesResponse>() {
+                    @Override
+                    public ListSensitiveDataModelSensitiveTypesResponse apply(
+                            ListSensitiveDataModelSensitiveTypesRequest request) {
+                        return client.listSensitiveDataModelSensitiveTypes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSensitiveDataModelSensitiveTypesResponse,
+                        java.util.List<
+                                com.oracle.bmc.datasafe.model
+                                        .SensitiveDataModelSensitiveTypeSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.datasafe.model
+                                            .SensitiveDataModelSensitiveTypeSummary>
+                            apply(ListSensitiveDataModelSensitiveTypesResponse response) {
+                        return response.getSensitiveDataModelSensitiveTypeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listSensitiveDataModels operation. This iterable
      * will fetch more data from the server as needed.
      *

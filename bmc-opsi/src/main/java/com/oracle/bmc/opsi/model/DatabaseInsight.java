@@ -37,6 +37,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AutonomousDatabaseInsight.class,
         name = "AUTONOMOUS_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MdsMySqlDatabaseInsight.class,
+        name = "MDS_MYSQL_DATABASE_SYSTEM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -133,13 +137,13 @@ public class DatabaseInsight extends com.oracle.bmc.http.internal.ExplicitlySetB
     }
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      * @return the value
      **/
     public String getDatabaseType() {

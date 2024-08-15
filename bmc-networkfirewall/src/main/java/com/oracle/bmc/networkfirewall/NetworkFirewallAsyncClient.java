@@ -1113,6 +1113,77 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<BulkUploadTunnelInspectionRulesResponse>
+            bulkUploadTunnelInspectionRules(
+                    BulkUploadTunnelInspectionRulesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    BulkUploadTunnelInspectionRulesRequest,
+                                    BulkUploadTunnelInspectionRulesResponse>
+                            handler) {
+        LOG.trace("Called async bulkUploadTunnelInspectionRules");
+        if (request.getRetryConfiguration() != null
+                || authenticationDetailsProvider
+                        instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            request =
+                    com.oracle.bmc.retrier.Retriers.wrapBodyInputStreamIfNecessary(
+                            request, BulkUploadTunnelInspectionRulesRequest.builder());
+        }
+        final BulkUploadTunnelInspectionRulesRequest interceptedRequest =
+                BulkUploadTunnelInspectionRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                BulkUploadTunnelInspectionRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "BulkUploadTunnelInspectionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/BulkUploadTunnelInspectionRules");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, BulkUploadTunnelInspectionRulesResponse>
+                transformer =
+                        BulkUploadTunnelInspectionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        BulkUploadTunnelInspectionRulesRequest,
+                        BulkUploadTunnelInspectionRulesResponse>
+                handlerToUse =
+                        new com.oracle.bmc.responses.internal.StreamClosingAsyncHandler<>(handler);
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                BulkUploadTunnelInspectionRulesRequest,
+                                BulkUploadTunnelInspectionRulesResponse>,
+                        java.util.concurrent.Future<BulkUploadTunnelInspectionRulesResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getBulkUploadTunnelInspectionRulesDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    BulkUploadTunnelInspectionRulesRequest,
+                    BulkUploadTunnelInspectionRulesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {
+                    LOG.debug("Resetting stream");
+                    com.oracle.bmc.retrier.Retriers.tryResetStreamForRetry(
+                            interceptedRequest.getBulkUploadTunnelInspectionRulesDetails(), true);
+                }
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<BulkUploadUrlListsResponse> bulkUploadUrlLists(
             BulkUploadUrlListsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1980,6 +2051,63 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateTunnelInspectionRuleResponse>
+            createTunnelInspectionRule(
+                    CreateTunnelInspectionRuleRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateTunnelInspectionRuleRequest,
+                                    CreateTunnelInspectionRuleResponse>
+                            handler) {
+        LOG.trace("Called async createTunnelInspectionRule");
+        final CreateTunnelInspectionRuleRequest interceptedRequest =
+                CreateTunnelInspectionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "CreateTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/CreateTunnelInspectionRule");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateTunnelInspectionRuleResponse>
+                transformer =
+                        CreateTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateTunnelInspectionRuleRequest, CreateTunnelInspectionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateTunnelInspectionRuleRequest,
+                                CreateTunnelInspectionRuleResponse>,
+                        java.util.concurrent.Future<CreateTunnelInspectionRuleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateTunnelInspectionRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateTunnelInspectionRuleRequest, CreateTunnelInspectionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateUrlListResponse> createUrlList(
             CreateUrlListRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateUrlListRequest, CreateUrlListResponse>
@@ -2544,6 +2672,57 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteTunnelInspectionRuleResponse>
+            deleteTunnelInspectionRule(
+                    DeleteTunnelInspectionRuleRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteTunnelInspectionRuleRequest,
+                                    DeleteTunnelInspectionRuleResponse>
+                            handler) {
+        LOG.trace("Called async deleteTunnelInspectionRule");
+        final DeleteTunnelInspectionRuleRequest interceptedRequest =
+                DeleteTunnelInspectionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "DeleteTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/DeleteTunnelInspectionRule");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteTunnelInspectionRuleResponse>
+                transformer =
+                        DeleteTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteTunnelInspectionRuleRequest, DeleteTunnelInspectionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteTunnelInspectionRuleRequest,
+                                DeleteTunnelInspectionRuleResponse>,
+                        java.util.concurrent.Future<DeleteTunnelInspectionRuleResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteTunnelInspectionRuleRequest, DeleteTunnelInspectionRuleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUrlListResponse> deleteUrlList(
             DeleteUrlListRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteUrlListRequest, DeleteUrlListResponse>
@@ -3079,6 +3258,54 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetServiceListRequest, GetServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTunnelInspectionRuleResponse> getTunnelInspectionRule(
+            GetTunnelInspectionRuleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetTunnelInspectionRuleRequest, GetTunnelInspectionRuleResponse>
+                    handler) {
+        LOG.trace("Called async getTunnelInspectionRule");
+        final GetTunnelInspectionRuleRequest interceptedRequest =
+                GetTunnelInspectionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "GetTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/GetTunnelInspectionRule");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetTunnelInspectionRuleResponse>
+                transformer =
+                        GetTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetTunnelInspectionRuleRequest, GetTunnelInspectionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetTunnelInspectionRuleRequest, GetTunnelInspectionRuleResponse>,
+                        java.util.concurrent.Future<GetTunnelInspectionRuleResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetTunnelInspectionRuleRequest, GetTunnelInspectionRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3680,6 +3907,55 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListServicesRequest, ListServicesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTunnelInspectionRulesResponse> listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>
+                    handler) {
+        LOG.trace("Called async listTunnelInspectionRules");
+        final ListTunnelInspectionRulesRequest interceptedRequest =
+                ListTunnelInspectionRulesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListTunnelInspectionRulesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "ListTunnelInspectionRules",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/ListTunnelInspectionRules");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListTunnelInspectionRulesResponse>
+                transformer =
+                        ListTunnelInspectionRulesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListTunnelInspectionRulesRequest,
+                                ListTunnelInspectionRulesResponse>,
+                        java.util.concurrent.Future<ListTunnelInspectionRulesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4485,6 +4761,62 @@ public class NetworkFirewallAsyncClient implements NetworkFirewallAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateServiceListRequest, UpdateServiceListResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTunnelInspectionRuleResponse>
+            updateTunnelInspectionRule(
+                    UpdateTunnelInspectionRuleRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateTunnelInspectionRuleRequest,
+                                    UpdateTunnelInspectionRuleResponse>
+                            handler) {
+        LOG.trace("Called async updateTunnelInspectionRule");
+        final UpdateTunnelInspectionRuleRequest interceptedRequest =
+                UpdateTunnelInspectionRuleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateTunnelInspectionRuleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkFirewall",
+                        "UpdateTunnelInspectionRule",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/network-firewall/20230501/TunnelInspectionRule/UpdateTunnelInspectionRule");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateTunnelInspectionRuleResponse>
+                transformer =
+                        UpdateTunnelInspectionRuleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateTunnelInspectionRuleRequest, UpdateTunnelInspectionRuleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateTunnelInspectionRuleRequest,
+                                UpdateTunnelInspectionRuleResponse>,
+                        java.util.concurrent.Future<UpdateTunnelInspectionRuleResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateTunnelInspectionRuleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateTunnelInspectionRuleRequest, UpdateTunnelInspectionRuleResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

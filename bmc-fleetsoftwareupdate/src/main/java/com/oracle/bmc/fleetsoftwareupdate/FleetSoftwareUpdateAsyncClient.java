@@ -1189,6 +1189,55 @@ public class FleetSoftwareUpdateAsyncClient implements FleetSoftwareUpdateAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteFsuCollectionTargetResponse> deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteFsuCollectionTargetRequest, DeleteFsuCollectionTargetResponse>
+                    handler) {
+        LOG.trace("Called async deleteFsuCollectionTarget");
+        final DeleteFsuCollectionTargetRequest interceptedRequest =
+                DeleteFsuCollectionTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteFsuCollectionTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetSoftwareUpdate",
+                        "DeleteFsuCollectionTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollection/DeleteFsuCollectionTarget");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteFsuCollectionTargetResponse>
+                transformer =
+                        DeleteFsuCollectionTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteFsuCollectionTargetRequest, DeleteFsuCollectionTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteFsuCollectionTargetRequest,
+                                DeleteFsuCollectionTargetResponse>,
+                        java.util.concurrent.Future<DeleteFsuCollectionTargetResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteFsuCollectionTargetRequest, DeleteFsuCollectionTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFsuCycleResponse> deleteFsuCycle(
             DeleteFsuCycleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1450,6 +1499,53 @@ public class FleetSoftwareUpdateAsyncClient implements FleetSoftwareUpdateAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetFsuCollectionRequest, GetFsuCollectionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFsuCollectionTargetResponse> getFsuCollectionTarget(
+            GetFsuCollectionTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>
+                    handler) {
+        LOG.trace("Called async getFsuCollectionTarget");
+        final GetFsuCollectionTargetRequest interceptedRequest =
+                GetFsuCollectionTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetFsuCollectionTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FleetSoftwareUpdate",
+                        "GetFsuCollectionTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/edsfu/20220528/FsuCollectionTarget/GetFsuCollectionTarget");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetFsuCollectionTargetResponse>
+                transformer =
+                        GetFsuCollectionTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>,
+                        java.util.concurrent.Future<GetFsuCollectionTargetResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetFsuCollectionTargetRequest, GetFsuCollectionTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

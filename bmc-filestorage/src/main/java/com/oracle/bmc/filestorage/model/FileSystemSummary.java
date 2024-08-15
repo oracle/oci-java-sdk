@@ -36,7 +36,8 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         "sourceDetails",
         "isCloneParent",
         "isHydrated",
-        "lifecycleDetails"
+        "lifecycleDetails",
+        "cloneAttachStatus"
     })
     public FileSystemSummary(
             String availabilityDomain,
@@ -52,7 +53,8 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             SourceDetails sourceDetails,
             Boolean isCloneParent,
             Boolean isHydrated,
-            String lifecycleDetails) {
+            String lifecycleDetails,
+            CloneAttachStatus cloneAttachStatus) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.meteredBytes = meteredBytes;
@@ -68,6 +70,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         this.isCloneParent = isCloneParent;
         this.isHydrated = isHydrated;
         this.lifecycleDetails = lifecycleDetails;
+        this.cloneAttachStatus = cloneAttachStatus;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -350,6 +353,22 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
+        /**
+         * Specifies whether the file system is attached to its parent file system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+        private CloneAttachStatus cloneAttachStatus;
+
+        /**
+         * Specifies whether the file system is attached to its parent file system.
+         * @param cloneAttachStatus the value to set
+         * @return this builder
+         **/
+        public Builder cloneAttachStatus(CloneAttachStatus cloneAttachStatus) {
+            this.cloneAttachStatus = cloneAttachStatus;
+            this.__explicitlySet__.add("cloneAttachStatus");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -370,7 +389,8 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                             this.sourceDetails,
                             this.isCloneParent,
                             this.isHydrated,
-                            this.lifecycleDetails);
+                            this.lifecycleDetails,
+                            this.cloneAttachStatus);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -420,6 +440,9 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
+                this.cloneAttachStatus(model.getCloneAttachStatus());
             }
             return this;
         }
@@ -536,6 +559,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
@@ -736,6 +760,69 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         return lifecycleDetails;
     }
 
+    /**
+     * Specifies whether the file system is attached to its parent file system.
+     **/
+    public enum CloneAttachStatus {
+        Attached("ATTACHED"),
+        Detaching("DETACHING"),
+        Detached("DETACHED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(CloneAttachStatus.class);
+
+        private final String value;
+        private static java.util.Map<String, CloneAttachStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneAttachStatus v : CloneAttachStatus.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        CloneAttachStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneAttachStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'CloneAttachStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Specifies whether the file system is attached to its parent file system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+    private final CloneAttachStatus cloneAttachStatus;
+
+    /**
+     * Specifies whether the file system is attached to its parent file system.
+     * @return the value
+     **/
+    public CloneAttachStatus getCloneAttachStatus() {
+        return cloneAttachStatus;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -764,6 +851,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(")");
         return sb.toString();
     }
@@ -792,6 +880,7 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && super.equals(other);
     }
 
@@ -827,6 +916,9 @@ public final class FileSystemSummary extends com.oracle.bmc.http.internal.Explic
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

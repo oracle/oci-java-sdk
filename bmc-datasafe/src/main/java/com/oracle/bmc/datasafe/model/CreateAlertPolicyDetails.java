@@ -29,6 +29,7 @@ public final class CreateAlertPolicyDetails
         "description",
         "severity",
         "compartmentId",
+        "alertPolicyRuleDetails",
         "freeformTags",
         "definedTags"
     })
@@ -38,6 +39,7 @@ public final class CreateAlertPolicyDetails
             String description,
             AlertSeverity severity,
             String compartmentId,
+            java.util.List<CreateAlertPolicyRuleDetails> alertPolicyRuleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -46,6 +48,7 @@ public final class CreateAlertPolicyDetails
         this.description = description;
         this.severity = severity;
         this.compartmentId = compartmentId;
+        this.alertPolicyRuleDetails = alertPolicyRuleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -133,6 +136,23 @@ public final class CreateAlertPolicyDetails
             return this;
         }
         /**
+         * The details of the alert policy rule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleDetails")
+        private java.util.List<CreateAlertPolicyRuleDetails> alertPolicyRuleDetails;
+
+        /**
+         * The details of the alert policy rule.
+         * @param alertPolicyRuleDetails the value to set
+         * @return this builder
+         **/
+        public Builder alertPolicyRuleDetails(
+                java.util.List<CreateAlertPolicyRuleDetails> alertPolicyRuleDetails) {
+            this.alertPolicyRuleDetails = alertPolicyRuleDetails;
+            this.__explicitlySet__.add("alertPolicyRuleDetails");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -189,6 +209,7 @@ public final class CreateAlertPolicyDetails
                             this.description,
                             this.severity,
                             this.compartmentId,
+                            this.alertPolicyRuleDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -213,6 +234,9 @@ public final class CreateAlertPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("alertPolicyRuleDetails")) {
+                this.alertPolicyRuleDetails(model.getAlertPolicyRuleDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -306,6 +330,20 @@ public final class CreateAlertPolicyDetails
     }
 
     /**
+     * The details of the alert policy rule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleDetails")
+    private final java.util.List<CreateAlertPolicyRuleDetails> alertPolicyRuleDetails;
+
+    /**
+     * The details of the alert policy rule.
+     * @return the value
+     **/
+    public java.util.List<CreateAlertPolicyRuleDetails> getAlertPolicyRuleDetails() {
+        return alertPolicyRuleDetails;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -364,6 +402,7 @@ public final class CreateAlertPolicyDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", severity=").append(String.valueOf(this.severity));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", alertPolicyRuleDetails=").append(String.valueOf(this.alertPolicyRuleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -385,6 +424,8 @@ public final class CreateAlertPolicyDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.severity, other.severity)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.alertPolicyRuleDetails, other.alertPolicyRuleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -403,6 +444,11 @@ public final class CreateAlertPolicyDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alertPolicyRuleDetails == null
+                                ? 43
+                                : this.alertPolicyRuleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

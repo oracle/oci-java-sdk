@@ -98,6 +98,7 @@ public class DeployArtifactSource extends com.oracle.bmc.http.internal.Explicitl
         Ocir("OCIR"),
         GenericArtifact("GENERIC_ARTIFACT"),
         HelmChart("HELM_CHART"),
+        HelmCommandSpec("HELM_COMMAND_SPEC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

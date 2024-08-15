@@ -1490,6 +1490,50 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachCloneResponse> detachClone(
+            DetachCloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DetachCloneRequest, DetachCloneResponse>
+                    handler) {
+        LOG.trace("Called async detachClone");
+        final DetachCloneRequest interceptedRequest =
+                DetachCloneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachCloneConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DetachClone",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DetachClone");
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachCloneResponse>
+                transformer =
+                        DetachCloneConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DetachCloneRequest, DetachCloneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachCloneRequest, DetachCloneResponse>,
+                        java.util.concurrent.Future<DetachCloneResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachCloneRequest, DetachCloneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<EstimateReplicationResponse> estimateReplication(
             EstimateReplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

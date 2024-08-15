@@ -251,6 +251,17 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
     public Statistic getStatistic() {
         return statistic;
     }
+    /**
+     * Resource Status
+     */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /**
+     * Resource Status
+     */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -526,6 +537,30 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         }
 
         /**
+         * Resource Status
+         */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -566,6 +601,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             hostId(o.getHostId());
             processHash(o.getProcessHash());
             statistic(o.getStatistic());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -613,8 +649,9 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
             request.hostId = hostId;
             request.processHash = processHash;
             request.statistic = statistic;
+            request.status = status;
             return request;
-            // new SummarizeHostInsightTopProcessesUsageTrendRequest(compartmentId, id, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId, hostType, hostId, processHash, statistic);
+            // new SummarizeHostInsightTopProcessesUsageTrendRequest(compartmentId, id, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, page, limit, opcRequestId, hostType, hostId, processHash, statistic, status);
         }
     }
 
@@ -636,7 +673,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 .hostType(hostType)
                 .hostId(hostId)
                 .processHash(processHash)
-                .statistic(statistic);
+                .statistic(statistic)
+                .status(status);
     }
 
     /**
@@ -665,6 +703,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         sb.append(",hostId=").append(String.valueOf(this.hostId));
         sb.append(",processHash=").append(String.valueOf(this.processHash));
         sb.append(",statistic=").append(String.valueOf(this.statistic));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -693,7 +732,8 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
                 && java.util.Objects.equals(this.hostType, other.hostType)
                 && java.util.Objects.equals(this.hostId, other.hostId)
                 && java.util.Objects.equals(this.processHash, other.processHash)
-                && java.util.Objects.equals(this.statistic, other.statistic);
+                && java.util.Objects.equals(this.statistic, other.statistic)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -725,6 +765,7 @@ public class SummarizeHostInsightTopProcessesUsageTrendRequest
         result = (result * PRIME) + (this.hostId == null ? 43 : this.hostId.hashCode());
         result = (result * PRIME) + (this.processHash == null ? 43 : this.processHash.hashCode());
         result = (result * PRIME) + (this.statistic == null ? 43 : this.statistic.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

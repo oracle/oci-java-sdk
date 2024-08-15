@@ -255,6 +255,22 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
     DeleteFsuCollectionResponse deleteFsuCollection(DeleteFsuCollectionRequest request);
 
     /**
+     * Removes a target from an existing Exadata Fleet Update Collection.
+     * This operation can only be performed on Collections that do not have an Action executing under an active Fleet Software Update Cycle.
+     * Additionally, during an active Fleet Software Update Cycle, a target can be removed only prior to executing an Apply Action.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCollectionTarget API.
+     */
+    DeleteFsuCollectionTargetResponse deleteFsuCollectionTarget(
+            DeleteFsuCollectionTargetRequest request);
+
+    /**
      * Deletes a Exadata Fleet Update Cycle resource by identifier.
      *
      * @param request The request object containing the details to send
@@ -333,6 +349,19 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollection API.
      */
     GetFsuCollectionResponse getFsuCollection(GetFsuCollectionRequest request);
+
+    /**
+     * Gets a Exadata Fleet Update Collection Target by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollectionTarget API.
+     */
+    GetFsuCollectionTargetResponse getFsuCollectionTarget(GetFsuCollectionTargetRequest request);
 
     /**
      * Gets a Exadata Fleet Update Cycle by identifier.

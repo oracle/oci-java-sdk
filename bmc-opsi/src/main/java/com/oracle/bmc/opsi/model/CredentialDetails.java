@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * User credential details to connect to the database. This is supplied via the External Database Service.
+ * User credential details to connect to the database.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -103,6 +103,7 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Credential type.
+     *
      **/
     public enum CredentialType {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),

@@ -1039,6 +1039,66 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>
+            changeAutonomousDatabaseSubscription(
+                    ChangeAutonomousDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeAutonomousDatabaseSubscriptionRequest,
+                                    ChangeAutonomousDatabaseSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async changeAutonomousDatabaseSubscription");
+        final ChangeAutonomousDatabaseSubscriptionRequest interceptedRequest =
+                ChangeAutonomousDatabaseSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeAutonomousDatabaseSubscriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeAutonomousDatabaseSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/AutonomousDatabase/ChangeAutonomousDatabaseSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeAutonomousDatabaseSubscriptionResponse>
+                transformer =
+                        ChangeAutonomousDatabaseSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeAutonomousDatabaseSubscriptionRequest,
+                        ChangeAutonomousDatabaseSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeAutonomousDatabaseSubscriptionRequest,
+                                ChangeAutonomousDatabaseSubscriptionResponse>,
+                        java.util.concurrent.Future<ChangeAutonomousDatabaseSubscriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeAutonomousDatabaseSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeAutonomousDatabaseSubscriptionRequest,
+                    ChangeAutonomousDatabaseSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeAutonomousExadataInfrastructureCompartmentResponse>
             changeAutonomousExadataInfrastructureCompartment(
                     ChangeAutonomousExadataInfrastructureCompartmentRequest request,
@@ -1346,6 +1406,69 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeCloudExadataInfrastructureSubscriptionResponse>
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                    ChangeCloudExadataInfrastructureSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async changeCloudExadataInfrastructureSubscription");
+        final ChangeCloudExadataInfrastructureSubscriptionRequest interceptedRequest =
+                ChangeCloudExadataInfrastructureSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCloudExadataInfrastructureSubscriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudExadataInfrastructureSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudExadataInfrastructure/ChangeCloudExadataInfrastructureSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ChangeCloudExadataInfrastructureSubscriptionResponse>
+                transformer =
+                        ChangeCloudExadataInfrastructureSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCloudExadataInfrastructureSubscriptionRequest,
+                        ChangeCloudExadataInfrastructureSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCloudExadataInfrastructureSubscriptionRequest,
+                                ChangeCloudExadataInfrastructureSubscriptionResponse>,
+                        java.util.concurrent.Future<
+                                ChangeCloudExadataInfrastructureSubscriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeCloudExadataInfrastructureSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCloudExadataInfrastructureSubscriptionRequest,
+                    ChangeCloudExadataInfrastructureSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeCloudVmClusterCompartmentResponse>
             changeCloudVmClusterCompartment(
                     ChangeCloudVmClusterCompartmentRequest request,
@@ -1392,6 +1515,65 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeCloudVmClusterCompartmentRequest,
                     ChangeCloudVmClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>
+            changeCloudVmClusterSubscription(
+                    ChangeCloudVmClusterSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeCloudVmClusterSubscriptionRequest,
+                                    ChangeCloudVmClusterSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async changeCloudVmClusterSubscription");
+        final ChangeCloudVmClusterSubscriptionRequest interceptedRequest =
+                ChangeCloudVmClusterSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeCloudVmClusterSubscriptionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeCloudVmClusterSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/CloudVmCluster/ChangeCloudVmClusterSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeCloudVmClusterSubscriptionResponse>
+                transformer =
+                        ChangeCloudVmClusterSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeCloudVmClusterSubscriptionRequest,
+                        ChangeCloudVmClusterSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeCloudVmClusterSubscriptionRequest,
+                                ChangeCloudVmClusterSubscriptionResponse>,
+                        java.util.concurrent.Future<ChangeCloudVmClusterSubscriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeCloudVmClusterSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeCloudVmClusterSubscriptionRequest,
+                    ChangeCloudVmClusterSubscriptionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1680,6 +1862,127 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ChangeExadataInfrastructureCompartmentRequest,
                     ChangeExadataInfrastructureCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExadbVmClusterCompartmentResponse>
+            changeExadbVmClusterCompartment(
+                    ChangeExadbVmClusterCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExadbVmClusterCompartmentRequest,
+                                    ChangeExadbVmClusterCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeExadbVmClusterCompartment");
+        final ChangeExadbVmClusterCompartmentRequest interceptedRequest =
+                ChangeExadbVmClusterCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExadbVmClusterCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExadbVmClusterCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ChangeExadbVmClusterCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeExadbVmClusterCompartmentResponse>
+                transformer =
+                        ChangeExadbVmClusterCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeExadbVmClusterCompartmentRequest,
+                        ChangeExadbVmClusterCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeExadbVmClusterCompartmentRequest,
+                                ChangeExadbVmClusterCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeExadbVmClusterCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeExadbVmClusterCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeExadbVmClusterCompartmentRequest,
+                    ChangeExadbVmClusterCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeExascaleDbStorageVaultCompartmentResponse>
+            changeExascaleDbStorageVaultCompartment(
+                    ChangeExascaleDbStorageVaultCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExascaleDbStorageVaultCompartmentRequest,
+                                    ChangeExascaleDbStorageVaultCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async changeExascaleDbStorageVaultCompartment");
+        final ChangeExascaleDbStorageVaultCompartmentRequest interceptedRequest =
+                ChangeExascaleDbStorageVaultCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeExascaleDbStorageVaultCompartmentConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ChangeExascaleDbStorageVaultCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ChangeExascaleDbStorageVaultCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeExascaleDbStorageVaultCompartmentResponse>
+                transformer =
+                        ChangeExascaleDbStorageVaultCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeExascaleDbStorageVaultCompartmentRequest,
+                        ChangeExascaleDbStorageVaultCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeExascaleDbStorageVaultCompartmentRequest,
+                                ChangeExascaleDbStorageVaultCompartmentResponse>,
+                        java.util.concurrent.Future<
+                                ChangeExascaleDbStorageVaultCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getChangeExascaleDbStorageVaultCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeExascaleDbStorageVaultCompartmentRequest,
+                    ChangeExascaleDbStorageVaultCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2311,6 +2614,60 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ConfigureSaasAdminUserRequest, ConfigureSaasAdminUserResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>
+            confirmKeyStoreDetailsAreCorrect(
+                    ConfirmKeyStoreDetailsAreCorrectRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                                    ConfirmKeyStoreDetailsAreCorrectResponse>
+                            handler) {
+        LOG.trace("Called async confirmKeyStoreDetailsAreCorrect");
+        final ConfirmKeyStoreDetailsAreCorrectRequest interceptedRequest =
+                ConfirmKeyStoreDetailsAreCorrectConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfirmKeyStoreDetailsAreCorrectConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ConfirmKeyStoreDetailsAreCorrect",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/KeyStore/ConfirmKeyStoreDetailsAreCorrect");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ConfirmKeyStoreDetailsAreCorrectResponse>
+                transformer =
+                        ConfirmKeyStoreDetailsAreCorrectConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConfirmKeyStoreDetailsAreCorrectRequest,
+                        ConfirmKeyStoreDetailsAreCorrectResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConfirmKeyStoreDetailsAreCorrectRequest,
+                                ConfirmKeyStoreDetailsAreCorrectResponse>,
+                        java.util.concurrent.Future<ConfirmKeyStoreDetailsAreCorrectResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConfirmKeyStoreDetailsAreCorrectRequest,
+                    ConfirmKeyStoreDetailsAreCorrectResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3477,6 +3834,116 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateExadataInfrastructureRequest, CreateExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExadbVmClusterResponse> createExadbVmCluster(
+            CreateExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>
+                    handler) {
+        LOG.trace("Called async createExadbVmCluster");
+        final CreateExadbVmClusterRequest interceptedRequest =
+                CreateExadbVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExadbVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExadbVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/CreateExadbVmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateExadbVmClusterResponse>
+                transformer =
+                        CreateExadbVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>,
+                        java.util.concurrent.Future<CreateExadbVmClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExadbVmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExadbVmClusterRequest, CreateExadbVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateExascaleDbStorageVaultResponse>
+            createExascaleDbStorageVault(
+                    CreateExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateExascaleDbStorageVaultRequest,
+                                    CreateExascaleDbStorageVaultResponse>
+                            handler) {
+        LOG.trace("Called async createExascaleDbStorageVault");
+        final CreateExascaleDbStorageVaultRequest interceptedRequest =
+                CreateExascaleDbStorageVaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateExascaleDbStorageVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "CreateExascaleDbStorageVault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/CreateExascaleDbStorageVault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateExascaleDbStorageVaultResponse>
+                transformer =
+                        CreateExascaleDbStorageVaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateExascaleDbStorageVaultRequest, CreateExascaleDbStorageVaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateExascaleDbStorageVaultRequest,
+                                CreateExascaleDbStorageVaultResponse>,
+                        java.util.concurrent.Future<CreateExascaleDbStorageVaultResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateExascaleDbStorageVaultDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateExascaleDbStorageVaultRequest, CreateExascaleDbStorageVaultResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4907,6 +5374,104 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteExadataInfrastructureRequest, DeleteExadataInfrastructureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExadbVmClusterResponse> deleteExadbVmCluster(
+            DeleteExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>
+                    handler) {
+        LOG.trace("Called async deleteExadbVmCluster");
+        final DeleteExadbVmClusterRequest interceptedRequest =
+                DeleteExadbVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExadbVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExadbVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/DeleteExadbVmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteExadbVmClusterResponse>
+                transformer =
+                        DeleteExadbVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>,
+                        java.util.concurrent.Future<DeleteExadbVmClusterResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExadbVmClusterRequest, DeleteExadbVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteExascaleDbStorageVaultResponse>
+            deleteExascaleDbStorageVault(
+                    DeleteExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteExascaleDbStorageVaultRequest,
+                                    DeleteExascaleDbStorageVaultResponse>
+                            handler) {
+        LOG.trace("Called async deleteExascaleDbStorageVault");
+        final DeleteExascaleDbStorageVaultRequest interceptedRequest =
+                DeleteExascaleDbStorageVaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteExascaleDbStorageVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "DeleteExascaleDbStorageVault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/DeleteExascaleDbStorageVault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteExascaleDbStorageVaultResponse>
+                transformer =
+                        DeleteExascaleDbStorageVaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteExascaleDbStorageVaultRequest, DeleteExascaleDbStorageVaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteExascaleDbStorageVaultRequest,
+                                DeleteExascaleDbStorageVaultResponse>,
+                        java.util.concurrent.Future<DeleteExascaleDbStorageVaultResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteExascaleDbStorageVaultRequest, DeleteExascaleDbStorageVaultResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -9553,6 +10118,203 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetExadbVmClusterResponse> getExadbVmCluster(
+            GetExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterRequest, GetExadbVmClusterResponse>
+                    handler) {
+        LOG.trace("Called async getExadbVmCluster");
+        final GetExadbVmClusterRequest interceptedRequest =
+                GetExadbVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadbVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadbVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/GetExadbVmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetExadbVmClusterResponse>
+                transformer =
+                        GetExadbVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetExadbVmClusterRequest, GetExadbVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExadbVmClusterRequest, GetExadbVmClusterResponse>,
+                        java.util.concurrent.Future<GetExadbVmClusterResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExadbVmClusterRequest, GetExadbVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadbVmClusterUpdateResponse> getExadbVmClusterUpdate(
+            GetExadbVmClusterUpdateRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>
+                    handler) {
+        LOG.trace("Called async getExadbVmClusterUpdate");
+        final GetExadbVmClusterUpdateRequest interceptedRequest =
+                GetExadbVmClusterUpdateConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadbVmClusterUpdateConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdate",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/GetExadbVmClusterUpdate");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExadbVmClusterUpdateResponse>
+                transformer =
+                        GetExadbVmClusterUpdateConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>,
+                        java.util.concurrent.Future<GetExadbVmClusterUpdateResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExadbVmClusterUpdateRequest, GetExadbVmClusterUpdateResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExadbVmClusterUpdateHistoryEntryResponse>
+            getExadbVmClusterUpdateHistoryEntry(
+                    GetExadbVmClusterUpdateHistoryEntryRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetExadbVmClusterUpdateHistoryEntryRequest,
+                                    GetExadbVmClusterUpdateHistoryEntryResponse>
+                            handler) {
+        LOG.trace("Called async getExadbVmClusterUpdateHistoryEntry");
+        final GetExadbVmClusterUpdateHistoryEntryRequest interceptedRequest =
+                GetExadbVmClusterUpdateHistoryEntryConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExadbVmClusterUpdateHistoryEntryConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExadbVmClusterUpdateHistoryEntry",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/GetExadbVmClusterUpdateHistoryEntry");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExadbVmClusterUpdateHistoryEntryResponse>
+                transformer =
+                        GetExadbVmClusterUpdateHistoryEntryConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExadbVmClusterUpdateHistoryEntryRequest,
+                        GetExadbVmClusterUpdateHistoryEntryResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExadbVmClusterUpdateHistoryEntryRequest,
+                                GetExadbVmClusterUpdateHistoryEntryResponse>,
+                        java.util.concurrent.Future<GetExadbVmClusterUpdateHistoryEntryResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExadbVmClusterUpdateHistoryEntryRequest,
+                    GetExadbVmClusterUpdateHistoryEntryResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetExascaleDbStorageVaultResponse> getExascaleDbStorageVault(
+            GetExascaleDbStorageVaultRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetExascaleDbStorageVaultRequest, GetExascaleDbStorageVaultResponse>
+                    handler) {
+        LOG.trace("Called async getExascaleDbStorageVault");
+        final GetExascaleDbStorageVaultRequest interceptedRequest =
+                GetExascaleDbStorageVaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetExascaleDbStorageVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "GetExascaleDbStorageVault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/GetExascaleDbStorageVault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetExascaleDbStorageVaultResponse>
+                transformer =
+                        GetExascaleDbStorageVaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetExascaleDbStorageVaultRequest, GetExascaleDbStorageVaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetExascaleDbStorageVaultRequest,
+                                GetExascaleDbStorageVaultResponse>,
+                        java.util.concurrent.Future<GetExascaleDbStorageVaultResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetExascaleDbStorageVaultRequest, GetExascaleDbStorageVaultResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetExternalBackupJobResponse> getExternalBackupJob(
             GetExternalBackupJobRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -12952,6 +13714,207 @@ public class DatabaseAsyncClient implements DatabaseAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListExadbVmClusterUpdateHistoryEntriesResponse>
+            listExadbVmClusterUpdateHistoryEntries(
+                    ListExadbVmClusterUpdateHistoryEntriesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExadbVmClusterUpdateHistoryEntriesRequest,
+                                    ListExadbVmClusterUpdateHistoryEntriesResponse>
+                            handler) {
+        LOG.trace("Called async listExadbVmClusterUpdateHistoryEntries");
+        final ListExadbVmClusterUpdateHistoryEntriesRequest interceptedRequest =
+                ListExadbVmClusterUpdateHistoryEntriesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadbVmClusterUpdateHistoryEntriesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdateHistoryEntries",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdateHistoryEntry/ListExadbVmClusterUpdateHistoryEntries");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExadbVmClusterUpdateHistoryEntriesResponse>
+                transformer =
+                        ListExadbVmClusterUpdateHistoryEntriesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExadbVmClusterUpdateHistoryEntriesRequest,
+                        ListExadbVmClusterUpdateHistoryEntriesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExadbVmClusterUpdateHistoryEntriesRequest,
+                                ListExadbVmClusterUpdateHistoryEntriesResponse>,
+                        java.util.concurrent.Future<ListExadbVmClusterUpdateHistoryEntriesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExadbVmClusterUpdateHistoryEntriesRequest,
+                    ListExadbVmClusterUpdateHistoryEntriesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadbVmClusterUpdatesResponse> listExadbVmClusterUpdates(
+            ListExadbVmClusterUpdatesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>
+                    handler) {
+        LOG.trace("Called async listExadbVmClusterUpdates");
+        final ListExadbVmClusterUpdatesRequest interceptedRequest =
+                ListExadbVmClusterUpdatesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadbVmClusterUpdatesConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExadbVmClusterUpdates",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmClusterUpdate/ListExadbVmClusterUpdates");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExadbVmClusterUpdatesResponse>
+                transformer =
+                        ListExadbVmClusterUpdatesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExadbVmClusterUpdatesRequest,
+                                ListExadbVmClusterUpdatesResponse>,
+                        java.util.concurrent.Future<ListExadbVmClusterUpdatesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExadbVmClustersResponse> listExadbVmClusters(
+            ListExadbVmClustersRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+                    handler) {
+        LOG.trace("Called async listExadbVmClusters");
+        final ListExadbVmClustersRequest interceptedRequest =
+                ListExadbVmClustersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExadbVmClustersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExadbVmClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/ListExadbVmClusters");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListExadbVmClustersResponse>
+                transformer =
+                        ListExadbVmClustersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExadbVmClustersRequest, ListExadbVmClustersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExadbVmClustersRequest, ListExadbVmClustersResponse>,
+                        java.util.concurrent.Future<ListExadbVmClustersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExadbVmClustersRequest, ListExadbVmClustersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListExascaleDbStorageVaultsResponse>
+            listExascaleDbStorageVaults(
+                    ListExascaleDbStorageVaultsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListExascaleDbStorageVaultsRequest,
+                                    ListExascaleDbStorageVaultsResponse>
+                            handler) {
+        LOG.trace("Called async listExascaleDbStorageVaults");
+        final ListExascaleDbStorageVaultsRequest interceptedRequest =
+                ListExascaleDbStorageVaultsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListExascaleDbStorageVaultsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListExascaleDbStorageVaults",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/ListExascaleDbStorageVaults");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListExascaleDbStorageVaultsResponse>
+                transformer =
+                        ListExascaleDbStorageVaultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListExascaleDbStorageVaultsRequest,
+                                ListExascaleDbStorageVaultsResponse>,
+                        java.util.concurrent.Future<ListExascaleDbStorageVaultsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListExternalContainerDatabasesResponse>
             listExternalContainerDatabases(
                     ListExternalContainerDatabasesRequest request,
@@ -13194,6 +14157,57 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListFlexComponentsRequest, ListFlexComponentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGiVersionMinorVersionsResponse>
+            listGiVersionMinorVersions(
+                    ListGiVersionMinorVersionsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListGiVersionMinorVersionsRequest,
+                                    ListGiVersionMinorVersionsResponse>
+                            handler) {
+        LOG.trace("Called async listGiVersionMinorVersions");
+        final ListGiVersionMinorVersionsRequest interceptedRequest =
+                ListGiVersionMinorVersionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListGiVersionMinorVersionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "ListGiVersionMinorVersions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/GiMinorVersionSummary/ListGiVersionMinorVersions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListGiVersionMinorVersionsResponse>
+                transformer =
+                        ListGiVersionMinorVersionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListGiVersionMinorVersionsRequest, ListGiVersionMinorVersionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListGiVersionMinorVersionsRequest,
+                                ListGiVersionMinorVersionsResponse>,
+                        java.util.concurrent.Future<ListGiVersionMinorVersionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListGiVersionMinorVersionsRequest, ListGiVersionMinorVersionsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -14479,6 +15493,67 @@ public class DatabaseAsyncClient implements DatabaseAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveVirtualMachineFromCloudVmClusterRequest,
                     RemoveVirtualMachineFromCloudVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveVirtualMachineFromExadbVmClusterResponse>
+            removeVirtualMachineFromExadbVmCluster(
+                    RemoveVirtualMachineFromExadbVmClusterRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveVirtualMachineFromExadbVmClusterRequest,
+                                    RemoveVirtualMachineFromExadbVmClusterResponse>
+                            handler) {
+        LOG.trace("Called async removeVirtualMachineFromExadbVmCluster");
+        final RemoveVirtualMachineFromExadbVmClusterRequest interceptedRequest =
+                RemoveVirtualMachineFromExadbVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveVirtualMachineFromExadbVmClusterConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "RemoveVirtualMachineFromExadbVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/RemoveVirtualMachineFromExadbVmCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveVirtualMachineFromExadbVmClusterResponse>
+                transformer =
+                        RemoveVirtualMachineFromExadbVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveVirtualMachineFromExadbVmClusterRequest,
+                        RemoveVirtualMachineFromExadbVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveVirtualMachineFromExadbVmClusterRequest,
+                                RemoveVirtualMachineFromExadbVmClusterResponse>,
+                        java.util.concurrent.Future<RemoveVirtualMachineFromExadbVmClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getRemoveVirtualMachineFromExadbVmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveVirtualMachineFromExadbVmClusterRequest,
+                    RemoveVirtualMachineFromExadbVmClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -17380,6 +18455,114 @@ public class DatabaseAsyncClient implements DatabaseAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateExadataIormConfigRequest, UpdateExadataIormConfigResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExadbVmClusterResponse> updateExadbVmCluster(
+            UpdateExadbVmClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>
+                    handler) {
+        LOG.trace("Called async updateExadbVmCluster");
+        final UpdateExadbVmClusterRequest interceptedRequest =
+                UpdateExadbVmClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExadbVmClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExadbVmCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadbVmCluster/UpdateExadbVmCluster");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateExadbVmClusterResponse>
+                transformer =
+                        UpdateExadbVmClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>,
+                        java.util.concurrent.Future<UpdateExadbVmClusterResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExadbVmClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExadbVmClusterRequest, UpdateExadbVmClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateExascaleDbStorageVaultResponse>
+            updateExascaleDbStorageVault(
+                    UpdateExascaleDbStorageVaultRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateExascaleDbStorageVaultRequest,
+                                    UpdateExascaleDbStorageVaultResponse>
+                            handler) {
+        LOG.trace("Called async updateExascaleDbStorageVault");
+        final UpdateExascaleDbStorageVaultRequest interceptedRequest =
+                UpdateExascaleDbStorageVaultConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateExascaleDbStorageVaultConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Database",
+                        "UpdateExascaleDbStorageVault",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExascaleDbStorageVault/UpdateExascaleDbStorageVault");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateExascaleDbStorageVaultResponse>
+                transformer =
+                        UpdateExascaleDbStorageVaultConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateExascaleDbStorageVaultRequest, UpdateExascaleDbStorageVaultResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateExascaleDbStorageVaultRequest,
+                                UpdateExascaleDbStorageVaultResponse>,
+                        java.util.concurrent.Future<UpdateExascaleDbStorageVaultResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateExascaleDbStorageVaultDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateExascaleDbStorageVaultRequest, UpdateExascaleDbStorageVaultResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

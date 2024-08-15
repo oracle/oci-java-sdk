@@ -193,6 +193,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new version of the current parameter file contents to the specified value.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateParameterFileVersionResponse> createParameterFileVersion(
+            CreateParameterFileVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateParameterFileVersionRequest, CreateParameterFileVersionResponse>
+                    handler);
+
+    /**
      * Deletes the Database Connection represented by the specified connection ID.
      *
      *
@@ -237,6 +254,23 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteMigrationResponse> deleteMigration(
             DeleteMigrationRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteMigrationRequest, DeleteMigrationResponse>
+                    handler);
+
+    /**
+     * Deletes the given parameter file version
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteParameterFileVersionResponse> deleteParameterFileVersion(
+            DeleteParameterFileVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteParameterFileVersionRequest, DeleteParameterFileVersionResponse>
                     handler);
 
     /**
@@ -334,6 +368,24 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
     java.util.concurrent.Future<GetMigrationResponse> getMigration(
             GetMigrationRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetMigrationRequest, GetMigrationResponse>
+                    handler);
+
+    /**
+     * Obtain the parameter file version contents for the specified parameter file name and the associated job. This operation will
+     * be allowed only if the job is certain acceptable lifecycle states.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetParameterFileVersionResponse> getParameterFileVersion(
+            GetParameterFileVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetParameterFileVersionRequest, GetParameterFileVersionResponse>
                     handler);
 
     /**
@@ -452,6 +504,22 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List of parameters that can be used to customize migrations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMigrationParametersResponse> listMigrationParameters(
+            ListMigrationParametersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMigrationParametersRequest, ListMigrationParametersResponse>
+                    handler);
+
+    /**
      * List all Migrations.
      *
      *
@@ -465,6 +533,25 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
     java.util.concurrent.Future<ListMigrationsResponse> listMigrations(
             ListMigrationsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListMigrationsRequest, ListMigrationsResponse>
+                    handler);
+
+    /**
+     * Return a list of the parameter file metadata of the migration execution of the specified job.  This will
+     * only be acceptable if the job is in particular state. It will be accessible if the job is in
+     * the FAILED, PAUSED or SUSPENDED state.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListParameterFileVersionsResponse> listParameterFileVersions(
+            ListParameterFileVersionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListParameterFileVersionsRequest, ListParameterFileVersionsResponse>
                     handler);
 
     /**
@@ -516,6 +603,25 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             ListWorkRequestsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListWorkRequestsRequest, ListWorkRequestsResponse>
                     handler);
+
+    /**
+     * Make current the given parameter file version
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MakeCurrentParameterFileVersionResponse>
+            makeCurrentParameterFileVersion(
+                    MakeCurrentParameterFileVersionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    MakeCurrentParameterFileVersionRequest,
+                                    MakeCurrentParameterFileVersionResponse>
+                            handler);
 
     /**
      * Remove excluded/included objects.
@@ -581,6 +687,21 @@ public interface DatabaseMigrationAsync extends AutoCloseable {
             StartMigrationRequest request,
             com.oracle.bmc.responses.AsyncHandler<StartMigrationRequest, StartMigrationResponse>
                     handler);
+
+    /**
+     * Place the currently executing migration Job in a Suspended State.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SuspendJobResponse> suspendJob(
+            SuspendJobRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SuspendJobRequest, SuspendJobResponse> handler);
 
     /**
      * Update Database Connection resource details.

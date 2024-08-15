@@ -84,6 +84,19 @@ public interface AIServiceSpeech extends AutoCloseable {
     CancelTranscriptionTaskResponse cancelTranscriptionTask(CancelTranscriptionTaskRequest request);
 
     /**
+     * Moves a Customization resource into a different compartment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ChangeCustomizationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCustomizationCompartment API.
+     */
+    ChangeCustomizationCompartmentResponse changeCustomizationCompartment(
+            ChangeCustomizationCompartmentRequest request);
+
+    /**
      * Moves a transcription Job resource into a different compartment.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -95,6 +108,33 @@ public interface AIServiceSpeech extends AutoCloseable {
      */
     ChangeTranscriptionJobCompartmentResponse changeTranscriptionJobCompartment(
             ChangeTranscriptionJobCompartmentRequest request);
+
+    /**
+     * Creates a new Customization.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomization API.
+     */
+    CreateCustomizationResponse createCustomization(CreateCustomizationRequest request);
+
+    /**
+     * Returns an authentication token to the user.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateRealtimeSessionTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRealtimeSessionToken API.
+     */
+    CreateRealtimeSessionTokenResponse createRealtimeSessionToken(
+            CreateRealtimeSessionTokenRequest request);
 
     /**
      * Creates a new Transcription Job.
@@ -110,6 +150,18 @@ public interface AIServiceSpeech extends AutoCloseable {
     CreateTranscriptionJobResponse createTranscriptionJob(CreateTranscriptionJobRequest request);
 
     /**
+     * Delete Customization and its metadata from tenancy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomization API.
+     */
+    DeleteCustomizationResponse deleteCustomization(DeleteCustomizationRequest request);
+
+    /**
      * Delete API cleans job, tasks and the related metadata. However the generated transcriptions in customer tenancy will not be deleted.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -120,6 +172,18 @@ public interface AIServiceSpeech extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTranscriptionJob API.
      */
     DeleteTranscriptionJobResponse deleteTranscriptionJob(DeleteTranscriptionJobRequest request);
+
+    /**
+     * Gets a Customization by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomization API.
+     */
+    GetCustomizationResponse getCustomization(GetCustomizationRequest request);
 
     /**
      * Gets a Transcription Job by identifier
@@ -146,6 +210,19 @@ public interface AIServiceSpeech extends AutoCloseable {
     GetTranscriptionTaskResponse getTranscriptionTask(GetTranscriptionTaskRequest request);
 
     /**
+     * Returns a list of Customizations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListCustomizationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomizations API.
+     */
+    ListCustomizationsResponse listCustomizations(ListCustomizationsRequest request);
+
+    /**
      * Returns a list of Transcription Jobs.
      *
      * @param request The request object containing the details to send
@@ -170,6 +247,18 @@ public interface AIServiceSpeech extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListTranscriptionTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranscriptionTasks API.
      */
     ListTranscriptionTasksResponse listTranscriptionTasks(ListTranscriptionTasksRequest request);
+
+    /**
+     * Updates a Customization by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomization API.
+     */
+    UpdateCustomizationResponse updateCustomization(UpdateCustomizationRequest request);
 
     /**
      * Updates the Transcription Job

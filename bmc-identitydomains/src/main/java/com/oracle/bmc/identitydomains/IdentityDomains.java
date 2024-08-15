@@ -8,7 +8,8 @@ import com.oracle.bmc.identitydomains.requests.*;
 import com.oracle.bmc.identitydomains.responses.*;
 
 /**
- * Use the Identity Domains API to manage resources within an identity domain, for example, users, dynamic resource groups, groups, and identity providers. For information about managing resources within identity domains, see [Identity and Access Management (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm). This REST API is SCIM compliant.
+ * Use the Identity Domains API to manage resources within an identity domain, for example, users, dynamic resource groups, groups, and identity providers. For information about managing resources within identity domains, see [Identity and Access Management (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm).
+ * Use this pattern to construct endpoints for identity domains: {@code https://<domainURL>/admin/v1/}. See [Finding an Identity Domain URL](https://docs.oracle.com/en-us/iaas/Content/Identity/api-getstarted/locate-identity-domain-url.htm) to locate the domain URL you need.
  * Use the table of contents and search tool to explore the Identity Domains API.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -528,6 +529,19 @@ public interface IdentityDomains extends AutoCloseable {
     CreateSmtpCredentialResponse createSmtpCredential(CreateSmtpCredentialRequest request);
 
     /**
+     * Create a Social Identity Provider
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateSocialIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSocialIdentityProvider API.
+     */
+    CreateSocialIdentityProviderResponse createSocialIdentityProvider(
+            CreateSocialIdentityProviderRequest request);
+
+    /**
      * Create a user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -994,6 +1008,19 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteSmtpCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSmtpCredential API.
      */
     DeleteSmtpCredentialResponse deleteSmtpCredential(DeleteSmtpCredentialRequest request);
+
+    /**
+     * Delete a Social Identity Provider
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/DeleteSocialIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSocialIdentityProvider API.
+     */
+    DeleteSocialIdentityProviderResponse deleteSocialIdentityProvider(
+            DeleteSocialIdentityProviderRequest request);
 
     /**
      * Delete a user.
@@ -1628,6 +1655,19 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetSmtpCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSmtpCredential API.
      */
     GetSmtpCredentialResponse getSmtpCredential(GetSmtpCredentialRequest request);
+
+    /**
+     * Get a Social Identity Provider
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetSocialIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSocialIdentityProvider API.
+     */
+    GetSocialIdentityProviderResponse getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request);
 
     /**
      * Get a user.
@@ -2319,6 +2359,19 @@ public interface IdentityDomains extends AutoCloseable {
     ListSmtpCredentialsResponse listSmtpCredentials(ListSmtpCredentialsRequest request);
 
     /**
+     * Search Social Identity Providers
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListSocialIdentityProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSocialIdentityProviders API.
+     */
+    ListSocialIdentityProvidersResponse listSocialIdentityProviders(
+            ListSocialIdentityProvidersRequest request);
+
+    /**
      * Search User Schema Attribute Settings
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2833,6 +2886,19 @@ public interface IdentityDomains extends AutoCloseable {
     PatchSmtpCredentialResponse patchSmtpCredential(PatchSmtpCredentialRequest request);
 
     /**
+     * Update a Social Identity Provider
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PatchSocialIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchSocialIdentityProvider API.
+     */
+    PatchSocialIdentityProviderResponse patchSocialIdentityProvider(
+            PatchSocialIdentityProviderRequest request);
+
+    /**
      * Update a user.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3173,6 +3239,19 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutSettingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutSetting API.
      */
     PutSettingResponse putSetting(PutSettingRequest request);
+
+    /**
+     * Replace a Social Identity Provider
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/PutSocialIdentityProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutSocialIdentityProvider API.
+     */
+    PutSocialIdentityProviderResponse putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request);
 
     /**
      * Replace a user.
@@ -3677,6 +3756,19 @@ public interface IdentityDomains extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchSmtpCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSmtpCredentials API.
      */
     SearchSmtpCredentialsResponse searchSmtpCredentials(SearchSmtpCredentialsRequest request);
+
+    /**
+     * Search Social Identity Providers Using POST
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchSocialIdentityProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SearchSocialIdentityProviders API.
+     */
+    SearchSocialIdentityProvidersResponse searchSocialIdentityProviders(
+            SearchSocialIdentityProvidersRequest request);
 
     /**
      * Search User Schema Attribute Settings Using POST

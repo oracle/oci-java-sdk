@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.73.0</version>
+  <version>3.46.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -92,6 +92,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.6.0</version>
             <executions>
               <execution>
                 <id>timestamp-property</id>
@@ -172,6 +173,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>${dev.profile.skip.javadoc}</skip>
             </configuration>
@@ -214,6 +216,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
@@ -246,6 +249,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
@@ -319,7 +323,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.12</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <groupId>com.mycila</groupId>
@@ -358,7 +362,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.7.0</version>
           <goals>
             <goal>jar</goal>
           </goals>
@@ -374,7 +378,6 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
-            <aggregate>true</aggregate>
             <minmemory>2048</minmemory>
             <maxmemory>6144m</maxmemory>
             <doclint>none</doclint>
@@ -416,13 +419,13 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>1.6.0</version>
+          <version>3.3.0</version>
           <inherited>true</inherited>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.5.0</version>
           <dependencies>
             <dependency>
               <groupId>org.codehaus.mojo</groupId>
@@ -430,6 +433,11 @@
               <version>1.7.0</version>
             </dependency>
           </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
         </plugin>
       </plugins>
     </pluginManagement>

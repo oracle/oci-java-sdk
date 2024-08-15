@@ -15,6 +15,8 @@ public enum DeployedApplicationInstallationSortBy {
     ApplicationSourcePath("applicationSourcePath"),
     IsClustered("isClustered"),
     JavaServerInstanceCount("javaServerInstanceCount"),
+    ApproximateJavaServerInstanceCount("approximateJavaServerInstanceCount"),
+    ApproximateLibraryCount("approximateLibraryCount"),
     TimeFirstSeen("timeFirstSeen"),
     TimeLastSeen("timeLastSeen"),
     ;

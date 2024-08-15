@@ -28,8 +28,9 @@ public final class DefaultConfigurationSummary
         "timeCreated",
         "lifecycleState",
         "lifecycleDetails",
-        "shape",
         "dbVersion",
+        "shape",
+        "isFlexible",
         "instanceOcpuCount",
         "instanceMemorySizeInGBs"
     })
@@ -39,8 +40,9 @@ public final class DefaultConfigurationSummary
             java.util.Date timeCreated,
             DefaultConfiguration.LifecycleState lifecycleState,
             String lifecycleDetails,
-            String shape,
             String dbVersion,
+            String shape,
+            Boolean isFlexible,
             Integer instanceOcpuCount,
             Integer instanceMemorySizeInGBs) {
         super();
@@ -49,8 +51,9 @@ public final class DefaultConfigurationSummary
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
-        this.shape = shape;
         this.dbVersion = dbVersion;
+        this.shape = shape;
+        this.isFlexible = isFlexible;
         this.instanceOcpuCount = instanceOcpuCount;
         this.instanceMemorySizeInGBs = instanceMemorySizeInGBs;
     }
@@ -146,6 +149,22 @@ public final class DefaultConfigurationSummary
             return this;
         }
         /**
+         * Version of the PostgreSQL database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+        private String dbVersion;
+
+        /**
+         * Version of the PostgreSQL database.
+         * @param dbVersion the value to set
+         * @return this builder
+         **/
+        public Builder dbVersion(String dbVersion) {
+            this.dbVersion = dbVersion;
+            this.__explicitlySet__.add("dbVersion");
+            return this;
+        }
+        /**
          * The name of the shape for the configuration.
          * Example: {@code VM.Standard.E4.Flex}
          *
@@ -166,30 +185,34 @@ public final class DefaultConfigurationSummary
             return this;
         }
         /**
-         * Version of the PostgreSQL database.
+         * True if the configuration supports flexible shapes, false otherwise.
          **/
-        @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-        private String dbVersion;
+        @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+        private Boolean isFlexible;
 
         /**
-         * Version of the PostgreSQL database.
-         * @param dbVersion the value to set
+         * True if the configuration supports flexible shapes, false otherwise.
+         * @param isFlexible the value to set
          * @return this builder
          **/
-        public Builder dbVersion(String dbVersion) {
-            this.dbVersion = dbVersion;
-            this.__explicitlySet__.add("dbVersion");
+        public Builder isFlexible(Boolean isFlexible) {
+            this.isFlexible = isFlexible;
+            this.__explicitlySet__.add("isFlexible");
             return this;
         }
         /**
-         * CPU core count. Minimum value is 1.
+         * CPU core count.
+         * <p>
+         * It's value is set to 0 if configuration is for a flexible shape.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
         private Integer instanceOcpuCount;
 
         /**
-         * CPU core count. Minimum value is 1.
+         * CPU core count.
+         * <p>
+         * It's value is set to 0 if configuration is for a flexible shape.
          *
          * @param instanceOcpuCount the value to set
          * @return this builder
@@ -201,6 +224,8 @@ public final class DefaultConfigurationSummary
         }
         /**
          * Memory size in gigabytes with 1GB increment.
+         * <p>
+         * It's value is set to 0 if configuration is for a flexible shape.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
@@ -208,6 +233,8 @@ public final class DefaultConfigurationSummary
 
         /**
          * Memory size in gigabytes with 1GB increment.
+         * <p>
+         * It's value is set to 0 if configuration is for a flexible shape.
          *
          * @param instanceMemorySizeInGBs the value to set
          * @return this builder
@@ -229,8 +256,9 @@ public final class DefaultConfigurationSummary
                             this.timeCreated,
                             this.lifecycleState,
                             this.lifecycleDetails,
-                            this.shape,
                             this.dbVersion,
+                            this.shape,
+                            this.isFlexible,
                             this.instanceOcpuCount,
                             this.instanceMemorySizeInGBs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -256,11 +284,14 @@ public final class DefaultConfigurationSummary
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("dbVersion")) {
+                this.dbVersion(model.getDbVersion());
+            }
             if (model.wasPropertyExplicitlySet("shape")) {
                 this.shape(model.getShape());
             }
-            if (model.wasPropertyExplicitlySet("dbVersion")) {
-                this.dbVersion(model.getDbVersion());
+            if (model.wasPropertyExplicitlySet("isFlexible")) {
+                this.isFlexible(model.getIsFlexible());
             }
             if (model.wasPropertyExplicitlySet("instanceOcpuCount")) {
                 this.instanceOcpuCount(model.getInstanceOcpuCount());
@@ -362,6 +393,20 @@ public final class DefaultConfigurationSummary
     }
 
     /**
+     * Version of the PostgreSQL database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
+    private final String dbVersion;
+
+    /**
+     * Version of the PostgreSQL database.
+     * @return the value
+     **/
+    public String getDbVersion() {
+        return dbVersion;
+    }
+
+    /**
      * The name of the shape for the configuration.
      * Example: {@code VM.Standard.E4.Flex}
      *
@@ -380,28 +425,32 @@ public final class DefaultConfigurationSummary
     }
 
     /**
-     * Version of the PostgreSQL database.
+     * True if the configuration supports flexible shapes, false otherwise.
      **/
-    @com.fasterxml.jackson.annotation.JsonProperty("dbVersion")
-    private final String dbVersion;
+    @com.fasterxml.jackson.annotation.JsonProperty("isFlexible")
+    private final Boolean isFlexible;
 
     /**
-     * Version of the PostgreSQL database.
+     * True if the configuration supports flexible shapes, false otherwise.
      * @return the value
      **/
-    public String getDbVersion() {
-        return dbVersion;
+    public Boolean getIsFlexible() {
+        return isFlexible;
     }
 
     /**
-     * CPU core count. Minimum value is 1.
+     * CPU core count.
+     * <p>
+     * It's value is set to 0 if configuration is for a flexible shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceOcpuCount")
     private final Integer instanceOcpuCount;
 
     /**
-     * CPU core count. Minimum value is 1.
+     * CPU core count.
+     * <p>
+     * It's value is set to 0 if configuration is for a flexible shape.
      *
      * @return the value
      **/
@@ -411,6 +460,8 @@ public final class DefaultConfigurationSummary
 
     /**
      * Memory size in gigabytes with 1GB increment.
+     * <p>
+     * It's value is set to 0 if configuration is for a flexible shape.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("instanceMemorySizeInGBs")
@@ -418,6 +469,8 @@ public final class DefaultConfigurationSummary
 
     /**
      * Memory size in gigabytes with 1GB increment.
+     * <p>
+     * It's value is set to 0 if configuration is for a flexible shape.
      *
      * @return the value
      **/
@@ -444,8 +497,9 @@ public final class DefaultConfigurationSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
-        sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
+        sb.append(", shape=").append(String.valueOf(this.shape));
+        sb.append(", isFlexible=").append(String.valueOf(this.isFlexible));
         sb.append(", instanceOcpuCount=").append(String.valueOf(this.instanceOcpuCount));
         sb.append(", instanceMemorySizeInGBs=")
                 .append(String.valueOf(this.instanceMemorySizeInGBs));
@@ -468,8 +522,9 @@ public final class DefaultConfigurationSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
-                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
+                && java.util.Objects.equals(this.shape, other.shape)
+                && java.util.Objects.equals(this.isFlexible, other.isFlexible)
                 && java.util.Objects.equals(this.instanceOcpuCount, other.instanceOcpuCount)
                 && java.util.Objects.equals(
                         this.instanceMemorySizeInGBs, other.instanceMemorySizeInGBs)
@@ -489,8 +544,9 @@ public final class DefaultConfigurationSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
-        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
+        result = (result * PRIME) + (this.isFlexible == null ? 43 : this.isFlexible.hashCode());
         result =
                 (result * PRIME)
                         + (this.instanceOcpuCount == null ? 43 : this.instanceOcpuCount.hashCode());

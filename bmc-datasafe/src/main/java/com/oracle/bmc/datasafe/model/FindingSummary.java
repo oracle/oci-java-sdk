@@ -29,6 +29,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
         "remarks",
         "details",
         "summary",
+        "oneline",
         "references",
         "oracleDefinedSeverity",
         "isRiskModified",
@@ -49,6 +50,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
             String remarks,
             Object details,
             String summary,
+            String oneline,
             References references,
             Finding.Severity oracleDefinedSeverity,
             Boolean isRiskModified,
@@ -68,6 +70,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
         this.remarks = remarks;
         this.details = details;
         this.summary = summary;
+        this.oneline = oneline;
         this.references = references;
         this.oracleDefinedSeverity = oracleDefinedSeverity;
         this.isRiskModified = isRiskModified;
@@ -223,6 +226,22 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
         public Builder summary(String summary) {
             this.summary = summary;
             this.__explicitlySet__.add("summary");
+            return this;
+        }
+        /**
+         * Provides a recommended approach to take to remediate the finding reported.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("oneline")
+        private String oneline;
+
+        /**
+         * Provides a recommended approach to take to remediate the finding reported.
+         * @param oneline the value to set
+         * @return this builder
+         **/
+        public Builder oneline(String oneline) {
+            this.oneline = oneline;
+            this.__explicitlySet__.add("oneline");
             return this;
         }
         /**
@@ -387,6 +406,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
                             this.remarks,
                             this.details,
                             this.summary,
+                            this.oneline,
                             this.references,
                             this.oracleDefinedSeverity,
                             this.isRiskModified,
@@ -430,6 +450,9 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("summary")) {
                 this.summary(model.getSummary());
+            }
+            if (model.wasPropertyExplicitlySet("oneline")) {
+                this.oneline(model.getOneline());
             }
             if (model.wasPropertyExplicitlySet("references")) {
                 this.references(model.getReferences());
@@ -653,6 +676,20 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
     }
 
     /**
+     * Provides a recommended approach to take to remediate the finding reported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("oneline")
+    private final String oneline;
+
+    /**
+     * Provides a recommended approach to take to remediate the finding reported.
+     * @return the value
+     **/
+    public String getOneline() {
+        return oneline;
+    }
+
+    /**
      * Provides information on whether the finding is related to a CIS Oracle Database Benchmark recommendation, a STIG rule, or a GDPR Article/Recital.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("references")
@@ -803,6 +840,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", remarks=").append(String.valueOf(this.remarks));
         sb.append(", details=").append(String.valueOf(this.details));
         sb.append(", summary=").append(String.valueOf(this.summary));
+        sb.append(", oneline=").append(String.valueOf(this.oneline));
         sb.append(", references=").append(String.valueOf(this.references));
         sb.append(", oracleDefinedSeverity=").append(String.valueOf(this.oracleDefinedSeverity));
         sb.append(", isRiskModified=").append(String.valueOf(this.isRiskModified));
@@ -836,6 +874,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.remarks, other.remarks)
                 && java.util.Objects.equals(this.details, other.details)
                 && java.util.Objects.equals(this.summary, other.summary)
+                && java.util.Objects.equals(this.oneline, other.oneline)
                 && java.util.Objects.equals(this.references, other.references)
                 && java.util.Objects.equals(this.oracleDefinedSeverity, other.oracleDefinedSeverity)
                 && java.util.Objects.equals(this.isRiskModified, other.isRiskModified)
@@ -862,6 +901,7 @@ public final class FindingSummary extends com.oracle.bmc.http.internal.Explicitl
         result = (result * PRIME) + (this.remarks == null ? 43 : this.remarks.hashCode());
         result = (result * PRIME) + (this.details == null ? 43 : this.details.hashCode());
         result = (result * PRIME) + (this.summary == null ? 43 : this.summary.hashCode());
+        result = (result * PRIME) + (this.oneline == null ? 43 : this.oneline.hashCode());
         result = (result * PRIME) + (this.references == null ? 43 : this.references.hashCode());
         result =
                 (result * PRIME)

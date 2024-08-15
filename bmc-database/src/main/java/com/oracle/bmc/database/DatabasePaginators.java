@@ -5346,6 +5346,489 @@ public class DatabasePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listExadbVmClusterUpdateHistoryEntries operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadbVmClusterUpdateHistoryEntriesResponse>
+            listExadbVmClusterUpdateHistoryEntriesResponseIterator(
+                    final ListExadbVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadbVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListExadbVmClusterUpdateHistoryEntriesRequest,
+                ListExadbVmClusterUpdateHistoryEntriesResponse>(
+                new java.util.function.Supplier<
+                        ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListExadbVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListExadbVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdateHistoryEntriesRequest,
+                        ListExadbVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesResponse apply(
+                            ListExadbVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listExadbVmClusterUpdateHistoryEntries(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary} objects
+     * contained in responses from the listExadbVmClusterUpdateHistoryEntries operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary>
+            listExadbVmClusterUpdateHistoryEntriesRecordIterator(
+                    final ListExadbVmClusterUpdateHistoryEntriesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadbVmClusterUpdateHistoryEntriesRequest.Builder,
+                ListExadbVmClusterUpdateHistoryEntriesRequest,
+                ListExadbVmClusterUpdateHistoryEntriesResponse,
+                com.oracle.bmc.database.model.ExadbVmClusterUpdateHistoryEntrySummary>(
+                new java.util.function.Supplier<
+                        ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesRequest.Builder get() {
+                        return ListExadbVmClusterUpdateHistoryEntriesRequest.builder()
+                                .copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdateHistoryEntriesResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>,
+                        ListExadbVmClusterUpdateHistoryEntriesRequest>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClusterUpdateHistoryEntriesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdateHistoryEntriesRequest,
+                        ListExadbVmClusterUpdateHistoryEntriesResponse>() {
+                    @Override
+                    public ListExadbVmClusterUpdateHistoryEntriesResponse apply(
+                            ListExadbVmClusterUpdateHistoryEntriesRequest request) {
+                        return client.listExadbVmClusterUpdateHistoryEntries(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdateHistoryEntriesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model
+                                        .ExadbVmClusterUpdateHistoryEntrySummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model
+                                            .ExadbVmClusterUpdateHistoryEntrySummary>
+                            apply(ListExadbVmClusterUpdateHistoryEntriesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExadbVmClusterUpdates operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadbVmClusterUpdatesResponse> listExadbVmClusterUpdatesResponseIterator(
+            final ListExadbVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadbVmClusterUpdatesRequest.Builder, ListExadbVmClusterUpdatesRequest,
+                ListExadbVmClusterUpdatesResponse>(
+                new java.util.function.Supplier<ListExadbVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesRequest.Builder get() {
+                        return ListExadbVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExadbVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClusterUpdatesRequest.Builder>,
+                        ListExadbVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesResponse apply(
+                            ListExadbVmClusterUpdatesRequest request) {
+                        return client.listExadbVmClusterUpdates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary} objects
+     * contained in responses from the listExadbVmClusterUpdates operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary>
+            listExadbVmClusterUpdatesRecordIterator(
+                    final ListExadbVmClusterUpdatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadbVmClusterUpdatesRequest.Builder, ListExadbVmClusterUpdatesRequest,
+                ListExadbVmClusterUpdatesResponse,
+                com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary>(
+                new java.util.function.Supplier<ListExadbVmClusterUpdatesRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesRequest.Builder get() {
+                        return ListExadbVmClusterUpdatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExadbVmClusterUpdatesResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClusterUpdatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClusterUpdatesRequest.Builder>,
+                        ListExadbVmClusterUpdatesRequest>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClusterUpdatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdatesRequest, ListExadbVmClusterUpdatesResponse>() {
+                    @Override
+                    public ListExadbVmClusterUpdatesResponse apply(
+                            ListExadbVmClusterUpdatesRequest request) {
+                        return client.listExadbVmClusterUpdates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClusterUpdatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.ExadbVmClusterUpdateSummary>
+                            apply(ListExadbVmClusterUpdatesResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExadbVmClusters operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExadbVmClustersResponse> listExadbVmClustersResponseIterator(
+            final ListExadbVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExadbVmClustersRequest.Builder, ListExadbVmClustersRequest,
+                ListExadbVmClustersResponse>(
+                new java.util.function.Supplier<ListExadbVmClustersRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClustersRequest.Builder get() {
+                        return ListExadbVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExadbVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClustersRequest.Builder>,
+                        ListExadbVmClustersRequest>() {
+                    @Override
+                    public ListExadbVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClustersRequest, ListExadbVmClustersResponse>() {
+                    @Override
+                    public ListExadbVmClustersResponse apply(ListExadbVmClustersRequest request) {
+                        return client.listExadbVmClusters(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterSummary} objects
+     * contained in responses from the listExadbVmClusters operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExadbVmClusterSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExadbVmClusterSummary>
+            listExadbVmClustersRecordIterator(final ListExadbVmClustersRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExadbVmClustersRequest.Builder, ListExadbVmClustersRequest,
+                ListExadbVmClustersResponse, com.oracle.bmc.database.model.ExadbVmClusterSummary>(
+                new java.util.function.Supplier<ListExadbVmClustersRequest.Builder>() {
+                    @Override
+                    public ListExadbVmClustersRequest.Builder get() {
+                        return ListExadbVmClustersRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExadbVmClustersResponse, String>() {
+                    @Override
+                    public String apply(ListExadbVmClustersResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExadbVmClustersRequest.Builder>,
+                        ListExadbVmClustersRequest>() {
+                    @Override
+                    public ListExadbVmClustersRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExadbVmClustersRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClustersRequest, ListExadbVmClustersResponse>() {
+                    @Override
+                    public ListExadbVmClustersResponse apply(ListExadbVmClustersRequest request) {
+                        return client.listExadbVmClusters(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExadbVmClustersResponse,
+                        java.util.List<com.oracle.bmc.database.model.ExadbVmClusterSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.ExadbVmClusterSummary>
+                            apply(ListExadbVmClustersResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listExascaleDbStorageVaults operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListExascaleDbStorageVaultsResponse>
+            listExascaleDbStorageVaultsResponseIterator(
+                    final ListExascaleDbStorageVaultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExascaleDbStorageVaultsRequest.Builder, ListExascaleDbStorageVaultsRequest,
+                ListExascaleDbStorageVaultsResponse>(
+                new java.util.function.Supplier<ListExascaleDbStorageVaultsRequest.Builder>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsRequest.Builder get() {
+                        return ListExascaleDbStorageVaultsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExascaleDbStorageVaultsResponse, String>() {
+                    @Override
+                    public String apply(ListExascaleDbStorageVaultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExascaleDbStorageVaultsRequest.Builder>,
+                        ListExascaleDbStorageVaultsRequest>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExascaleDbStorageVaultsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsResponse apply(
+                            ListExascaleDbStorageVaultsRequest request) {
+                        return client.listExascaleDbStorageVaults(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary} objects
+     * contained in responses from the listExascaleDbStorageVaults operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary>
+            listExascaleDbStorageVaultsRecordIterator(
+                    final ListExascaleDbStorageVaultsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExascaleDbStorageVaultsRequest.Builder, ListExascaleDbStorageVaultsRequest,
+                ListExascaleDbStorageVaultsResponse,
+                com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary>(
+                new java.util.function.Supplier<ListExascaleDbStorageVaultsRequest.Builder>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsRequest.Builder get() {
+                        return ListExascaleDbStorageVaultsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExascaleDbStorageVaultsResponse, String>() {
+                    @Override
+                    public String apply(ListExascaleDbStorageVaultsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExascaleDbStorageVaultsRequest.Builder>,
+                        ListExascaleDbStorageVaultsRequest>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExascaleDbStorageVaultsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExascaleDbStorageVaultsRequest, ListExascaleDbStorageVaultsResponse>() {
+                    @Override
+                    public ListExascaleDbStorageVaultsResponse apply(
+                            ListExascaleDbStorageVaultsRequest request) {
+                        return client.listExascaleDbStorageVaults(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExascaleDbStorageVaultsResponse,
+                        java.util.List<
+                                com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.database.model.ExascaleDbStorageVaultSummary>
+                            apply(ListExascaleDbStorageVaultsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listExternalContainerDatabases operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -5949,6 +6432,123 @@ public class DatabasePaginators {
                     public java.util.List<com.oracle.bmc.database.model.FlexComponentSummary> apply(
                             ListFlexComponentsResponse response) {
                         return response.getFlexComponentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listGiVersionMinorVersions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListGiVersionMinorVersionsResponse> listGiVersionMinorVersionsResponseIterator(
+            final ListGiVersionMinorVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListGiVersionMinorVersionsRequest.Builder, ListGiVersionMinorVersionsRequest,
+                ListGiVersionMinorVersionsResponse>(
+                new java.util.function.Supplier<ListGiVersionMinorVersionsRequest.Builder>() {
+                    @Override
+                    public ListGiVersionMinorVersionsRequest.Builder get() {
+                        return ListGiVersionMinorVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGiVersionMinorVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListGiVersionMinorVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiVersionMinorVersionsRequest.Builder>,
+                        ListGiVersionMinorVersionsRequest>() {
+                    @Override
+                    public ListGiVersionMinorVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiVersionMinorVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGiVersionMinorVersionsRequest, ListGiVersionMinorVersionsResponse>() {
+                    @Override
+                    public ListGiVersionMinorVersionsResponse apply(
+                            ListGiVersionMinorVersionsRequest request) {
+                        return client.listGiVersionMinorVersions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.database.model.GiMinorVersionSummary} objects
+     * contained in responses from the listGiVersionMinorVersions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.database.model.GiMinorVersionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.database.model.GiMinorVersionSummary>
+            listGiVersionMinorVersionsRecordIterator(
+                    final ListGiVersionMinorVersionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListGiVersionMinorVersionsRequest.Builder, ListGiVersionMinorVersionsRequest,
+                ListGiVersionMinorVersionsResponse,
+                com.oracle.bmc.database.model.GiMinorVersionSummary>(
+                new java.util.function.Supplier<ListGiVersionMinorVersionsRequest.Builder>() {
+                    @Override
+                    public ListGiVersionMinorVersionsRequest.Builder get() {
+                        return ListGiVersionMinorVersionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListGiVersionMinorVersionsResponse, String>() {
+                    @Override
+                    public String apply(ListGiVersionMinorVersionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListGiVersionMinorVersionsRequest.Builder>,
+                        ListGiVersionMinorVersionsRequest>() {
+                    @Override
+                    public ListGiVersionMinorVersionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListGiVersionMinorVersionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListGiVersionMinorVersionsRequest, ListGiVersionMinorVersionsResponse>() {
+                    @Override
+                    public ListGiVersionMinorVersionsResponse apply(
+                            ListGiVersionMinorVersionsRequest request) {
+                        return client.listGiVersionMinorVersions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListGiVersionMinorVersionsResponse,
+                        java.util.List<com.oracle.bmc.database.model.GiMinorVersionSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.database.model.GiMinorVersionSummary>
+                            apply(ListGiVersionMinorVersionsResponse response) {
+                        return response.getItems();
                     }
                 });
     }

@@ -284,6 +284,41 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new reference or updates an existing one.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOrUpdateGitRefResponse> createOrUpdateGitRef(
+            CreateOrUpdateGitRefRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateOrUpdateGitRefRequest, CreateOrUpdateGitRefResponse>
+                    handler);
+
+    /**
+     * Creates a restriction on a branch that prevents certain actions on it.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateOrUpdateProtectedBranchResponse>
+            createOrUpdateProtectedBranch(
+                    CreateOrUpdateProtectedBranchRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateOrUpdateProtectedBranchRequest,
+                                    CreateOrUpdateProtectedBranchResponse>
+                            handler);
+
+    /**
      * Creates a new project.
      *
      * @param request The request object containing the details to send
@@ -296,6 +331,57 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateProjectResponse> createProject(
             CreateProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateProjectRequest, CreateProjectResponse>
+                    handler);
+
+    /**
+     * Creates a new PullRequest.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePullRequestResponse> createPullRequest(
+            CreatePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePullRequestRequest, CreatePullRequestResponse>
+                    handler);
+
+    /**
+     * Creates PullRequest attachment
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePullRequestAttachmentResponse> createPullRequestAttachment(
+            CreatePullRequestAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePullRequestAttachmentRequest, CreatePullRequestAttachmentResponse>
+                    handler);
+
+    /**
+     * Creates a new PullRequest comment.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePullRequestCommentResponse> createPullRequestComment(
+            CreatePullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePullRequestCommentRequest, CreatePullRequestCommentResponse>
                     handler);
 
     /**
@@ -328,6 +414,23 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateTriggerResponse> createTrigger(
             CreateTriggerRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateTriggerRequest, CreateTriggerResponse>
+                    handler);
+
+    /**
+     * Decline a PullRequest
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeclinePullRequestResponse> declinePullRequest(
+            DeclinePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeclinePullRequestRequest, DeclinePullRequestResponse>
                     handler);
 
     /**
@@ -442,6 +545,21 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes a Repository's Ref by its name. Returns an error if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteGitRefResponse> deleteGitRef(
+            DeleteGitRefRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteGitRefRequest, DeleteGitRefResponse>
+                    handler);
+
+    /**
      * Deletes a project resource by identifier
      *
      * @param request The request object containing the details to send
@@ -454,6 +572,88 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteProjectResponse> deleteProject(
             DeleteProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
+                    handler);
+
+    /**
+     * Removes the custom repository settings configured for a project.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteProjectRepositorySettingsResponse>
+            deleteProjectRepositorySettings(
+                    DeleteProjectRepositorySettingsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteProjectRepositorySettingsRequest,
+                                    DeleteProjectRepositorySettingsResponse>
+                            handler);
+
+    /**
+     * Removes the protection from a branch
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteProtectedBranchResponse> deleteProtectedBranch(
+            DeleteProtectedBranchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteProtectedBranchRequest, DeleteProtectedBranchResponse>
+                    handler);
+
+    /**
+     * Deletes a PullRequest resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePullRequestResponse> deletePullRequest(
+            DeletePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePullRequestRequest, DeletePullRequestResponse>
+                    handler);
+
+    /**
+     * Deletes a PullRequest attachment metadata by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePullRequestAttachmentResponse> deletePullRequestAttachment(
+            DeletePullRequestAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePullRequestAttachmentRequest, DeletePullRequestAttachmentResponse>
+                    handler);
+
+    /**
+     * Deletes a PullRequest comment by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePullRequestCommentResponse> deletePullRequestComment(
+            DeletePullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePullRequestCommentRequest, DeletePullRequestCommentResponse>
                     handler);
 
     /**
@@ -483,6 +683,22 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteRepositoryResponse> deleteRepository(
             DeleteRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteRepositoryRequest, DeleteRepositoryResponse>
+                    handler);
+
+    /**
+     * Removes the custom settings configured for a repository
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRepositorySettingsResponse> deleteRepositorySettings(
+            DeleteRepositorySettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteRepositorySettingsRequest, DeleteRepositorySettingsResponse>
                     handler);
 
     /**
@@ -746,6 +962,142 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
 
     /**
+     * Get the project notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProjectNotificationPreferenceResponse>
+            getProjectNotificationPreference(
+                    GetProjectNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetProjectNotificationPreferenceRequest,
+                                    GetProjectNotificationPreferenceResponse>
+                            handler);
+
+    /**
+     * Retrieves a project's repository settings details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetProjectRepositorySettingsResponse> getProjectRepositorySettings(
+            GetProjectRepositorySettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetProjectRepositorySettingsRequest,
+                            GetProjectRepositorySettingsResponse>
+                    handler);
+
+    /**
+     * Gets a PullRequest by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestResponse> getPullRequest(
+            GetPullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPullRequestRequest, GetPullRequestResponse>
+                    handler);
+
+    /**
+     * Get PullRequest attachment metadata by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestAttachmentResponse> getPullRequestAttachment(
+            GetPullRequestAttachmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPullRequestAttachmentRequest, GetPullRequestAttachmentResponse>
+                    handler);
+
+    /**
+     * Gets the content of the attachment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestAttachmentContentResponse>
+            getPullRequestAttachmentContent(
+                    GetPullRequestAttachmentContentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetPullRequestAttachmentContentRequest,
+                                    GetPullRequestAttachmentContentResponse>
+                            handler);
+
+    /**
+     * Get pull request diff summary metric
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestChangeSummaryMetricsResponse>
+            getPullRequestChangeSummaryMetrics(
+                    GetPullRequestChangeSummaryMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetPullRequestChangeSummaryMetricsRequest,
+                                    GetPullRequestChangeSummaryMetricsResponse>
+                            handler);
+
+    /**
+     * Get PullRequest comment by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestCommentResponse> getPullRequestComment(
+            GetPullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPullRequestCommentRequest, GetPullRequestCommentResponse>
+                    handler);
+
+    /**
+     * Get the pull request notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPullRequestNotificationPreferenceResponse>
+            getPullRequestNotificationPreference(
+                    GetPullRequestNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetPullRequestNotificationPreferenceRequest,
+                                    GetPullRequestNotificationPreferenceResponse>
+                            handler);
+
+    /**
      * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/refs\". Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
      *
      * @param request The request object containing the details to send
@@ -841,6 +1193,40 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get the repository notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRepositoryNotificationPreferenceResponse>
+            getRepositoryNotificationPreference(
+                    GetRepositoryNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetRepositoryNotificationPreferenceRequest,
+                                    GetRepositoryNotificationPreferenceResponse>
+                            handler);
+
+    /**
+     * Retrieves a repository's settings details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetRepositorySettingsResponse> getRepositorySettings(
+            GetRepositorySettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetRepositorySettingsRequest, GetRepositorySettingsResponse>
+                    handler);
+
+    /**
      * Retrieves a trigger by identifier.
      *
      * @param request The request object containing the details to send
@@ -867,6 +1253,23 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Like a PullRequest comment
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<LikePullRequestCommentResponse> likePullRequestComment(
+            LikePullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            LikePullRequestCommentRequest, LikePullRequestCommentResponse>
                     handler);
 
     /**
@@ -916,6 +1319,23 @@ public interface DevopsAsync extends AutoCloseable {
             ListBuildPipelinesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListBuildPipelinesRequest, ListBuildPipelinesResponse>
+                    handler);
+
+    /**
+     * Returns a list of build run snapshots for a given commit or the latest commit on a pull request if no commit is provided.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListBuildRunSnapshotsResponse> listBuildRunSnapshots(
+            ListBuildRunSnapshotsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListBuildRunSnapshotsRequest, ListBuildRunSnapshotsResponse>
                     handler);
 
     /**
@@ -1060,6 +1480,22 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * LIST operation that returns a collection of fork sync status objects.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListForkSyncStatusesResponse> listForkSyncStatuses(
+            ListForkSyncStatusesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListForkSyncStatusesRequest, ListForkSyncStatusesResponse>
+                    handler);
+
+    /**
      * Returns a list of mirror entry in history within 30 days.
      *
      *
@@ -1092,6 +1528,25 @@ public interface DevopsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListPathsRequest, ListPathsResponse> handler);
 
     /**
+     * Retrieve a list of all the Commit Analytics authors.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProjectCommitAnalyticsAuthorsResponse>
+            listProjectCommitAnalyticsAuthors(
+                    ListProjectCommitAnalyticsAuthorsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListProjectCommitAnalyticsAuthorsRequest,
+                                    ListProjectCommitAnalyticsAuthorsResponse>
+                            handler);
+
+    /**
      * Returns a list of projects.
      *
      * @param request The request object containing the details to send
@@ -1104,6 +1559,136 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<ListProjectsResponse> listProjects(
             ListProjectsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
+                    handler);
+
+    /**
+     * Returns a list of Protected Branches.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListProtectedBranchesResponse> listProtectedBranches(
+            ListProtectedBranchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListProtectedBranchesRequest, ListProtectedBranchesResponse>
+                    handler);
+
+    /**
+     * List actions that have been taken on a pull request
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestActivitiesResponse> listPullRequestActivities(
+            ListPullRequestActivitiesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestActivitiesRequest, ListPullRequestActivitiesResponse>
+                    handler);
+
+    /**
+     * List PullRequest level attachments by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestAttachmentsResponse> listPullRequestAttachments(
+            ListPullRequestAttachmentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestAttachmentsRequest, ListPullRequestAttachmentsResponse>
+                    handler);
+
+    /**
+     * Retrieve a list of all the PR authors.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestAuthorsResponse> listPullRequestAuthors(
+            ListPullRequestAuthorsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestAuthorsRequest, ListPullRequestAuthorsResponse>
+                    handler);
+
+    /**
+     * List PullRequest level comments by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestCommentsResponse> listPullRequestComments(
+            ListPullRequestCommentsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>
+                    handler);
+
+    /**
+     * List pull request commits
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestCommitsResponse> listPullRequestCommits(
+            ListPullRequestCommitsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>
+                    handler);
+
+    /**
+     * List pull request file changes
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestFileChangesResponse> listPullRequestFileChanges(
+            ListPullRequestFileChangesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPullRequestFileChangesRequest, ListPullRequestFileChangesResponse>
+                    handler);
+
+    /**
+     * Returns a list of PullRequests.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPullRequestsResponse> listPullRequests(
+            ListPullRequestsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPullRequestsRequest, ListPullRequestsResponse>
                     handler);
 
     /**
@@ -1136,6 +1721,25 @@ public interface DevopsAsync extends AutoCloseable {
             ListRepositoriesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListRepositoriesRequest, ListRepositoriesResponse>
                     handler);
+
+    /**
+     * Retrieve a list of all the Commit Analytics authors.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRepositoryCommitAnalyticsAuthorsResponse>
+            listRepositoryCommitAnalyticsAuthors(
+                    ListRepositoryCommitAnalyticsAuthorsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListRepositoryCommitAnalyticsAuthorsRequest,
+                                    ListRepositoryCommitAnalyticsAuthorsResponse>
+                            handler);
 
     /**
      * Returns a list of triggers.
@@ -1201,6 +1805,21 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Merge the PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<MergePullRequestResponse> mergePullRequest(
+            MergePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<MergePullRequestRequest, MergePullRequestResponse>
+                    handler);
+
+    /**
      * Synchronize a mirrored repository to the latest version from external providers.
      *
      *
@@ -1214,6 +1833,22 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<MirrorRepositoryResponse> mirrorRepository(
             MirrorRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<MirrorRepositoryRequest, MirrorRepositoryResponse>
+                    handler);
+
+    /**
+     * Updates the reviewer list of a pull request
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchPullRequestResponse> patchPullRequest(
+            PatchPullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PatchPullRequestRequest, PatchPullRequestResponse>
                     handler);
 
     /**
@@ -1233,6 +1868,40 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Reopen a PullRequest
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReopenPullRequestResponse> reopenPullRequest(
+            ReopenPullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReopenPullRequestRequest, ReopenPullRequestResponse>
+                    handler);
+
+    /**
+     * Review a PullRequest
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ReviewPullRequestResponse> reviewPullRequest(
+            ReviewPullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReviewPullRequestRequest, ReviewPullRequestResponse>
+                    handler);
+
+    /**
      * Cascading operation that marks Project and child DevOps resources in a DELETING state for a retention period
      *
      * @param request The request object containing the details to send
@@ -1249,6 +1918,90 @@ public interface DevopsAsync extends AutoCloseable {
                                     ScheduleCascadingProjectDeletionRequest,
                                     ScheduleCascadingProjectDeletionResponse>
                             handler);
+
+    /**
+     * Retrieves repository analytics for a given project.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeProjectRepositoryAnalyticsResponse>
+            summarizeProjectRepositoryAnalytics(
+                    SummarizeProjectRepositoryAnalyticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeProjectRepositoryAnalyticsRequest,
+                                    SummarizeProjectRepositoryAnalyticsResponse>
+                            handler);
+
+    /**
+     * Retrieves repository analytics for a given repository.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeRepositoryAnalyticsResponse> summarizeRepositoryAnalytics(
+            SummarizeRepositoryAnalyticsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeRepositoryAnalyticsRequest,
+                            SummarizeRepositoryAnalyticsResponse>
+                    handler);
+
+    /**
+     * Synchronize a forked repository to the latest version
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SyncRepositoryResponse> syncRepository(
+            SyncRepositoryRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SyncRepositoryRequest, SyncRepositoryResponse>
+                    handler);
+
+    /**
+     * Unlike a PullRequest comment
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnlikePullRequestCommentResponse> unlikePullRequestComment(
+            UnlikePullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnlikePullRequestCommentRequest, UnlikePullRequestCommentResponse>
+                    handler);
+
+    /**
+     * unsubscribe the PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UnsubscribePullRequestResponse> unsubscribePullRequest(
+            UnsubscribePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnsubscribePullRequestRequest, UnsubscribePullRequestResponse>
+                    handler);
 
     /**
      * Updates the build pipeline.
@@ -1407,6 +2160,92 @@ public interface DevopsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update the project notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProjectNotificationPreferenceResponse>
+            updateProjectNotificationPreference(
+                    UpdateProjectNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateProjectNotificationPreferenceRequest,
+                                    UpdateProjectNotificationPreferenceResponse>
+                            handler);
+
+    /**
+     * Updates the repository settings for a project.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateProjectRepositorySettingsResponse>
+            updateProjectRepositorySettings(
+                    UpdateProjectRepositorySettingsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateProjectRepositorySettingsRequest,
+                                    UpdateProjectRepositorySettingsResponse>
+                            handler);
+
+    /**
+     * Updates the PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePullRequestResponse> updatePullRequest(
+            UpdatePullRequestRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePullRequestRequest, UpdatePullRequestResponse>
+                    handler);
+
+    /**
+     * Updates the PullRequest comment
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePullRequestCommentResponse> updatePullRequestComment(
+            UpdatePullRequestCommentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePullRequestCommentRequest, UpdatePullRequestCommentResponse>
+                    handler);
+
+    /**
+     * Update the pull request notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePullRequestNotificationPreferenceResponse>
+            updatePullRequestNotificationPreference(
+                    UpdatePullRequestNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdatePullRequestNotificationPreferenceRequest,
+                                    UpdatePullRequestNotificationPreferenceResponse>
+                            handler);
+
+    /**
      * Updates the repository.
      *
      * @param request The request object containing the details to send
@@ -1419,6 +2258,40 @@ public interface DevopsAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateRepositoryResponse> updateRepository(
             UpdateRepositoryRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateRepositoryRequest, UpdateRepositoryResponse>
+                    handler);
+
+    /**
+     * Update the repository notification preference for the user passed as path param
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRepositoryNotificationPreferenceResponse>
+            updateRepositoryNotificationPreference(
+                    UpdateRepositoryNotificationPreferenceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateRepositoryNotificationPreferenceRequest,
+                                    UpdateRepositoryNotificationPreferenceResponse>
+                            handler);
+
+    /**
+     * Updates the settings for a repository.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRepositorySettingsResponse> updateRepositorySettings(
+            UpdateRepositorySettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateRepositorySettingsRequest, UpdateRepositorySettingsResponse>
                     handler);
 
     /**

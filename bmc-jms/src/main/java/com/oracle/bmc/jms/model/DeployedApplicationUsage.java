@@ -30,6 +30,7 @@ public final class DeployedApplicationUsage
         "applicationType",
         "isClustered",
         "approximateJavaServerInstanceCount",
+        "approximateLibraryCount",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -42,6 +43,7 @@ public final class DeployedApplicationUsage
             String applicationType,
             Boolean isClustered,
             Integer approximateJavaServerInstanceCount,
+            Integer approximateLibraryCount,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -53,6 +55,7 @@ public final class DeployedApplicationUsage
         this.applicationType = applicationType;
         this.isClustered = isClustered;
         this.approximateJavaServerInstanceCount = approximateJavaServerInstanceCount;
+        this.approximateLibraryCount = approximateLibraryCount;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -171,6 +174,24 @@ public final class DeployedApplicationUsage
             return this;
         }
         /**
+         * The approximate count of libraries in the deployed application.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+        private Integer approximateLibraryCount;
+
+        /**
+         * The approximate count of libraries in the deployed application.
+         *
+         * @param approximateLibraryCount the value to set
+         * @return this builder
+         **/
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            this.approximateLibraryCount = approximateLibraryCount;
+            this.__explicitlySet__.add("approximateLibraryCount");
+            return this;
+        }
+        /**
          * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
@@ -263,6 +284,7 @@ public final class DeployedApplicationUsage
                             this.applicationType,
                             this.isClustered,
                             this.approximateJavaServerInstanceCount,
+                            this.approximateLibraryCount,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -293,6 +315,9 @@ public final class DeployedApplicationUsage
             if (model.wasPropertyExplicitlySet("approximateJavaServerInstanceCount")) {
                 this.approximateJavaServerInstanceCount(
                         model.getApproximateJavaServerInstanceCount());
+            }
+            if (model.wasPropertyExplicitlySet("approximateLibraryCount")) {
+                this.approximateLibraryCount(model.getApproximateLibraryCount());
             }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
@@ -418,6 +443,22 @@ public final class DeployedApplicationUsage
     }
 
     /**
+     * The approximate count of libraries in the deployed application.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+    private final Integer approximateLibraryCount;
+
+    /**
+     * The approximate count of libraries in the deployed application.
+     *
+     * @return the value
+     **/
+    public Integer getApproximateLibraryCount() {
+        return approximateLibraryCount;
+    }
+
+    /**
      * Lower bound of the specified time period filter. JMS provides a view of the data that is _per day_. The query uses only the date element of the parameter.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeStart")
@@ -510,6 +551,8 @@ public final class DeployedApplicationUsage
         sb.append(", isClustered=").append(String.valueOf(this.isClustered));
         sb.append(", approximateJavaServerInstanceCount=")
                 .append(String.valueOf(this.approximateJavaServerInstanceCount));
+        sb.append(", approximateLibraryCount=")
+                .append(String.valueOf(this.approximateLibraryCount));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -536,6 +579,8 @@ public final class DeployedApplicationUsage
                 && java.util.Objects.equals(
                         this.approximateJavaServerInstanceCount,
                         other.approximateJavaServerInstanceCount)
+                && java.util.Objects.equals(
+                        this.approximateLibraryCount, other.approximateLibraryCount)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -563,6 +608,11 @@ public final class DeployedApplicationUsage
                         + (this.approximateJavaServerInstanceCount == null
                                 ? 43
                                 : this.approximateJavaServerInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateLibraryCount == null
+                                ? 43
+                                : this.approximateLibraryCount.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

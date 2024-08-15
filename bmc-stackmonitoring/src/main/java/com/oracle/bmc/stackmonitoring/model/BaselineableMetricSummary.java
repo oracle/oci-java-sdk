@@ -31,6 +31,7 @@ public final class BaselineableMetricSummary
         "column",
         "namespace",
         "resourceGroup",
+        "resourceType",
         "isOutOfBox",
         "freeformTags",
         "definedTags",
@@ -45,6 +46,7 @@ public final class BaselineableMetricSummary
             String column,
             String namespace,
             String resourceGroup,
+            String resourceType,
             Boolean isOutOfBox,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -58,6 +60,7 @@ public final class BaselineableMetricSummary
         this.column = column;
         this.namespace = namespace;
         this.resourceGroup = resourceGroup;
+        this.resourceType = resourceType;
         this.isOutOfBox = isOutOfBox;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -195,6 +198,22 @@ public final class BaselineableMetricSummary
             return this;
         }
         /**
+         * Resource type of the metric
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private String resourceType;
+
+        /**
+         * Resource type of the metric
+         * @param resourceType the value to set
+         * @return this builder
+         **/
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /**
          * Is the metric created out of box, default false
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
@@ -286,6 +305,7 @@ public final class BaselineableMetricSummary
                             this.column,
                             this.namespace,
                             this.resourceGroup,
+                            this.resourceType,
                             this.isOutOfBox,
                             this.freeformTags,
                             this.definedTags,
@@ -321,6 +341,9 @@ public final class BaselineableMetricSummary
             }
             if (model.wasPropertyExplicitlySet("resourceGroup")) {
                 this.resourceGroup(model.getResourceGroup());
+            }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
             }
             if (model.wasPropertyExplicitlySet("isOutOfBox")) {
                 this.isOutOfBox(model.getIsOutOfBox());
@@ -462,6 +485,20 @@ public final class BaselineableMetricSummary
     }
 
     /**
+     * Resource type of the metric
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final String resourceType;
+
+    /**
+     * Resource type of the metric
+     * @return the value
+     **/
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    /**
      * Is the metric created out of box, default false
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
@@ -551,6 +588,7 @@ public final class BaselineableMetricSummary
         sb.append(", column=").append(String.valueOf(this.column));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", isOutOfBox=").append(String.valueOf(this.isOutOfBox));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -577,6 +615,7 @@ public final class BaselineableMetricSummary
                 && java.util.Objects.equals(this.column, other.column)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.isOutOfBox, other.isOutOfBox)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -602,6 +641,7 @@ public final class BaselineableMetricSummary
         result =
                 (result * PRIME)
                         + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.isOutOfBox == null ? 43 : this.isOutOfBox.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

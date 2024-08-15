@@ -106,13 +106,13 @@ public final class ScheduleReportDetails
             return this;
         }
         /**
-         * Specifies if the report will be in .xls or .pdf format
+         * Specifies if the report will be in .xls or .pdf or .json format
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
         private MimeType mimeType;
 
         /**
-         * Specifies if the report will be in .xls or .pdf format
+         * Specifies if the report will be in .xls or .pdf or .json format
          * @param mimeType the value to set
          * @return this builder
          **/
@@ -257,7 +257,7 @@ public final class ScheduleReportDetails
     }
 
     /**
-     * Specifies if the report will be in .xls or .pdf format
+     * Specifies if the report will be in .xls or .pdf or .json format
      **/
     public enum MimeType {
         Pdf("PDF"),
@@ -292,13 +292,13 @@ public final class ScheduleReportDetails
         }
     };
     /**
-     * Specifies if the report will be in .xls or .pdf format
+     * Specifies if the report will be in .xls or .pdf or .json format
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("mimeType")
     private final MimeType mimeType;
 
     /**
-     * Specifies if the report will be in .xls or .pdf format
+     * Specifies if the report will be in .xls or .pdf or .json format
      * @return the value
      **/
     public MimeType getMimeType() {

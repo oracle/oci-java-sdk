@@ -27,6 +27,10 @@ package com.oracle.bmc.opsi.model;
         name = "EM_MANAGED_EXTERNAL_DATABASE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = EnableMdsMySqlDatabaseInsightDetails.class,
+        name = "MDS_MYSQL_DATABASE_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EnablePeComanagedDatabaseInsightDetails.class,
         name = "PE_COMANAGED_DATABASE"
     )

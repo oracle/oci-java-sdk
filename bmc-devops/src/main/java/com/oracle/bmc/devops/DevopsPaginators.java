@@ -373,6 +373,121 @@ public class DevopsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listBuildRunSnapshots operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListBuildRunSnapshotsResponse> listBuildRunSnapshotsResponseIterator(
+            final ListBuildRunSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListBuildRunSnapshotsRequest.Builder, ListBuildRunSnapshotsRequest,
+                ListBuildRunSnapshotsResponse>(
+                new java.util.function.Supplier<ListBuildRunSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListBuildRunSnapshotsRequest.Builder get() {
+                        return ListBuildRunSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBuildRunSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListBuildRunSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBuildRunSnapshotsRequest.Builder>,
+                        ListBuildRunSnapshotsRequest>() {
+                    @Override
+                    public ListBuildRunSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBuildRunSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBuildRunSnapshotsRequest, ListBuildRunSnapshotsResponse>() {
+                    @Override
+                    public ListBuildRunSnapshotsResponse apply(
+                            ListBuildRunSnapshotsRequest request) {
+                        return client.listBuildRunSnapshots(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.BuildRunSnapshotSummary} objects
+     * contained in responses from the listBuildRunSnapshots operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.BuildRunSnapshotSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.BuildRunSnapshotSummary>
+            listBuildRunSnapshotsRecordIterator(final ListBuildRunSnapshotsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListBuildRunSnapshotsRequest.Builder, ListBuildRunSnapshotsRequest,
+                ListBuildRunSnapshotsResponse, com.oracle.bmc.devops.model.BuildRunSnapshotSummary>(
+                new java.util.function.Supplier<ListBuildRunSnapshotsRequest.Builder>() {
+                    @Override
+                    public ListBuildRunSnapshotsRequest.Builder get() {
+                        return ListBuildRunSnapshotsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListBuildRunSnapshotsResponse, String>() {
+                    @Override
+                    public String apply(ListBuildRunSnapshotsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListBuildRunSnapshotsRequest.Builder>,
+                        ListBuildRunSnapshotsRequest>() {
+                    @Override
+                    public ListBuildRunSnapshotsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListBuildRunSnapshotsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListBuildRunSnapshotsRequest, ListBuildRunSnapshotsResponse>() {
+                    @Override
+                    public ListBuildRunSnapshotsResponse apply(
+                            ListBuildRunSnapshotsRequest request) {
+                        return client.listBuildRunSnapshots(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListBuildRunSnapshotsResponse,
+                        java.util.List<com.oracle.bmc.devops.model.BuildRunSnapshotSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.BuildRunSnapshotSummary>
+                            apply(ListBuildRunSnapshotsResponse response) {
+                        return response.getBuildRunSnapshotCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listBuildRuns operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1601,6 +1716,132 @@ public class DevopsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listProjectCommitAnalyticsAuthors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProjectCommitAnalyticsAuthorsResponse>
+            listProjectCommitAnalyticsAuthorsResponseIterator(
+                    final ListProjectCommitAnalyticsAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProjectCommitAnalyticsAuthorsRequest.Builder,
+                ListProjectCommitAnalyticsAuthorsRequest,
+                ListProjectCommitAnalyticsAuthorsResponse>(
+                new java.util.function.Supplier<
+                        ListProjectCommitAnalyticsAuthorsRequest.Builder>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsRequest.Builder get() {
+                        return ListProjectCommitAnalyticsAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProjectCommitAnalyticsAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListProjectCommitAnalyticsAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProjectCommitAnalyticsAuthorsRequest.Builder>,
+                        ListProjectCommitAnalyticsAuthorsRequest>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProjectCommitAnalyticsAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProjectCommitAnalyticsAuthorsRequest,
+                        ListProjectCommitAnalyticsAuthorsResponse>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsResponse apply(
+                            ListProjectCommitAnalyticsAuthorsRequest request) {
+                        return client.listProjectCommitAnalyticsAuthors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary} objects
+     * contained in responses from the listProjectCommitAnalyticsAuthors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>
+            listProjectCommitAnalyticsAuthorsRecordIterator(
+                    final ListProjectCommitAnalyticsAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProjectCommitAnalyticsAuthorsRequest.Builder,
+                ListProjectCommitAnalyticsAuthorsRequest, ListProjectCommitAnalyticsAuthorsResponse,
+                com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>(
+                new java.util.function.Supplier<
+                        ListProjectCommitAnalyticsAuthorsRequest.Builder>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsRequest.Builder get() {
+                        return ListProjectCommitAnalyticsAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProjectCommitAnalyticsAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListProjectCommitAnalyticsAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProjectCommitAnalyticsAuthorsRequest.Builder>,
+                        ListProjectCommitAnalyticsAuthorsRequest>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProjectCommitAnalyticsAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProjectCommitAnalyticsAuthorsRequest,
+                        ListProjectCommitAnalyticsAuthorsResponse>() {
+                    @Override
+                    public ListProjectCommitAnalyticsAuthorsResponse apply(
+                            ListProjectCommitAnalyticsAuthorsRequest request) {
+                        return client.listProjectCommitAnalyticsAuthors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProjectCommitAnalyticsAuthorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>
+                            apply(ListProjectCommitAnalyticsAuthorsResponse response) {
+                        return response.getCommitAnalyticsAuthorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listProjects operation. This iterable
      * will fetch more data from the server as needed.
      *
@@ -1706,6 +1947,934 @@ public class DevopsPaginators {
                     public java.util.List<com.oracle.bmc.devops.model.ProjectSummary> apply(
                             ListProjectsResponse response) {
                         return response.getProjectCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listProtectedBranches operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListProtectedBranchesResponse> listProtectedBranchesResponseIterator(
+            final ListProtectedBranchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListProtectedBranchesRequest.Builder, ListProtectedBranchesRequest,
+                ListProtectedBranchesResponse>(
+                new java.util.function.Supplier<ListProtectedBranchesRequest.Builder>() {
+                    @Override
+                    public ListProtectedBranchesRequest.Builder get() {
+                        return ListProtectedBranchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProtectedBranchesResponse, String>() {
+                    @Override
+                    public String apply(ListProtectedBranchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProtectedBranchesRequest.Builder>,
+                        ListProtectedBranchesRequest>() {
+                    @Override
+                    public ListProtectedBranchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProtectedBranchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProtectedBranchesRequest, ListProtectedBranchesResponse>() {
+                    @Override
+                    public ListProtectedBranchesResponse apply(
+                            ListProtectedBranchesRequest request) {
+                        return client.listProtectedBranches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.ProtectedBranchSummary} objects
+     * contained in responses from the listProtectedBranches operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.ProtectedBranchSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.ProtectedBranchSummary>
+            listProtectedBranchesRecordIterator(final ListProtectedBranchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListProtectedBranchesRequest.Builder, ListProtectedBranchesRequest,
+                ListProtectedBranchesResponse, com.oracle.bmc.devops.model.ProtectedBranchSummary>(
+                new java.util.function.Supplier<ListProtectedBranchesRequest.Builder>() {
+                    @Override
+                    public ListProtectedBranchesRequest.Builder get() {
+                        return ListProtectedBranchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListProtectedBranchesResponse, String>() {
+                    @Override
+                    public String apply(ListProtectedBranchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListProtectedBranchesRequest.Builder>,
+                        ListProtectedBranchesRequest>() {
+                    @Override
+                    public ListProtectedBranchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListProtectedBranchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListProtectedBranchesRequest, ListProtectedBranchesResponse>() {
+                    @Override
+                    public ListProtectedBranchesResponse apply(
+                            ListProtectedBranchesRequest request) {
+                        return client.listProtectedBranches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListProtectedBranchesResponse,
+                        java.util.List<com.oracle.bmc.devops.model.ProtectedBranchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.ProtectedBranchSummary> apply(
+                            ListProtectedBranchesResponse response) {
+                        return response.getProtectedBranchCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestActivities operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestActivitiesResponse> listPullRequestActivitiesResponseIterator(
+            final ListPullRequestActivitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestActivitiesRequest.Builder, ListPullRequestActivitiesRequest,
+                ListPullRequestActivitiesResponse>(
+                new java.util.function.Supplier<ListPullRequestActivitiesRequest.Builder>() {
+                    @Override
+                    public ListPullRequestActivitiesRequest.Builder get() {
+                        return ListPullRequestActivitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestActivitiesResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestActivitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestActivitiesRequest.Builder>,
+                        ListPullRequestActivitiesRequest>() {
+                    @Override
+                    public ListPullRequestActivitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestActivitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestActivitiesRequest, ListPullRequestActivitiesResponse>() {
+                    @Override
+                    public ListPullRequestActivitiesResponse apply(
+                            ListPullRequestActivitiesRequest request) {
+                        return client.listPullRequestActivities(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestActivitySummary} objects
+     * contained in responses from the listPullRequestActivities operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestActivitySummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestActivitySummary>
+            listPullRequestActivitiesRecordIterator(
+                    final ListPullRequestActivitiesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestActivitiesRequest.Builder, ListPullRequestActivitiesRequest,
+                ListPullRequestActivitiesResponse,
+                com.oracle.bmc.devops.model.PullRequestActivitySummary>(
+                new java.util.function.Supplier<ListPullRequestActivitiesRequest.Builder>() {
+                    @Override
+                    public ListPullRequestActivitiesRequest.Builder get() {
+                        return ListPullRequestActivitiesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestActivitiesResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestActivitiesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestActivitiesRequest.Builder>,
+                        ListPullRequestActivitiesRequest>() {
+                    @Override
+                    public ListPullRequestActivitiesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestActivitiesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestActivitiesRequest, ListPullRequestActivitiesResponse>() {
+                    @Override
+                    public ListPullRequestActivitiesResponse apply(
+                            ListPullRequestActivitiesRequest request) {
+                        return client.listPullRequestActivities(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestActivitiesResponse,
+                        java.util.List<com.oracle.bmc.devops.model.PullRequestActivitySummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestActivitySummary>
+                            apply(ListPullRequestActivitiesResponse response) {
+                        return response.getPullRequestActivityCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestAttachments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestAttachmentsResponse> listPullRequestAttachmentsResponseIterator(
+            final ListPullRequestAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestAttachmentsRequest.Builder, ListPullRequestAttachmentsRequest,
+                ListPullRequestAttachmentsResponse>(
+                new java.util.function.Supplier<ListPullRequestAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestAttachmentsRequest.Builder get() {
+                        return ListPullRequestAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestAttachmentsRequest.Builder>,
+                        ListPullRequestAttachmentsRequest>() {
+                    @Override
+                    public ListPullRequestAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAttachmentsRequest, ListPullRequestAttachmentsResponse>() {
+                    @Override
+                    public ListPullRequestAttachmentsResponse apply(
+                            ListPullRequestAttachmentsRequest request) {
+                        return client.listPullRequestAttachments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestAttachmentSummary} objects
+     * contained in responses from the listPullRequestAttachments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestAttachmentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestAttachmentSummary>
+            listPullRequestAttachmentsRecordIterator(
+                    final ListPullRequestAttachmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestAttachmentsRequest.Builder, ListPullRequestAttachmentsRequest,
+                ListPullRequestAttachmentsResponse,
+                com.oracle.bmc.devops.model.PullRequestAttachmentSummary>(
+                new java.util.function.Supplier<ListPullRequestAttachmentsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestAttachmentsRequest.Builder get() {
+                        return ListPullRequestAttachmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestAttachmentsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestAttachmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestAttachmentsRequest.Builder>,
+                        ListPullRequestAttachmentsRequest>() {
+                    @Override
+                    public ListPullRequestAttachmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestAttachmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAttachmentsRequest, ListPullRequestAttachmentsResponse>() {
+                    @Override
+                    public ListPullRequestAttachmentsResponse apply(
+                            ListPullRequestAttachmentsRequest request) {
+                        return client.listPullRequestAttachments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAttachmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.devops.model.PullRequestAttachmentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestAttachmentSummary>
+                            apply(ListPullRequestAttachmentsResponse response) {
+                        return response.getPullRequestAttachmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestAuthors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestAuthorsResponse> listPullRequestAuthorsResponseIterator(
+            final ListPullRequestAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestAuthorsRequest.Builder, ListPullRequestAuthorsRequest,
+                ListPullRequestAuthorsResponse>(
+                new java.util.function.Supplier<ListPullRequestAuthorsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestAuthorsRequest.Builder get() {
+                        return ListPullRequestAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestAuthorsRequest.Builder>,
+                        ListPullRequestAuthorsRequest>() {
+                    @Override
+                    public ListPullRequestAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAuthorsRequest, ListPullRequestAuthorsResponse>() {
+                    @Override
+                    public ListPullRequestAuthorsResponse apply(
+                            ListPullRequestAuthorsRequest request) {
+                        return client.listPullRequestAuthors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestAuthorSummary} objects
+     * contained in responses from the listPullRequestAuthors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestAuthorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestAuthorSummary>
+            listPullRequestAuthorsRecordIterator(final ListPullRequestAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestAuthorsRequest.Builder, ListPullRequestAuthorsRequest,
+                ListPullRequestAuthorsResponse,
+                com.oracle.bmc.devops.model.PullRequestAuthorSummary>(
+                new java.util.function.Supplier<ListPullRequestAuthorsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestAuthorsRequest.Builder get() {
+                        return ListPullRequestAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestAuthorsRequest.Builder>,
+                        ListPullRequestAuthorsRequest>() {
+                    @Override
+                    public ListPullRequestAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAuthorsRequest, ListPullRequestAuthorsResponse>() {
+                    @Override
+                    public ListPullRequestAuthorsResponse apply(
+                            ListPullRequestAuthorsRequest request) {
+                        return client.listPullRequestAuthors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestAuthorsResponse,
+                        java.util.List<com.oracle.bmc.devops.model.PullRequestAuthorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestAuthorSummary>
+                            apply(ListPullRequestAuthorsResponse response) {
+                        return response.getPullRequestAuthorCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestComments operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestCommentsResponse> listPullRequestCommentsResponseIterator(
+            final ListPullRequestCommentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestCommentsRequest.Builder, ListPullRequestCommentsRequest,
+                ListPullRequestCommentsResponse>(
+                new java.util.function.Supplier<ListPullRequestCommentsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestCommentsRequest.Builder get() {
+                        return ListPullRequestCommentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestCommentsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestCommentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestCommentsRequest.Builder>,
+                        ListPullRequestCommentsRequest>() {
+                    @Override
+                    public ListPullRequestCommentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestCommentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>() {
+                    @Override
+                    public ListPullRequestCommentsResponse apply(
+                            ListPullRequestCommentsRequest request) {
+                        return client.listPullRequestComments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestCommentSummary} objects
+     * contained in responses from the listPullRequestComments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestCommentSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestCommentSummary>
+            listPullRequestCommentsRecordIterator(final ListPullRequestCommentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestCommentsRequest.Builder, ListPullRequestCommentsRequest,
+                ListPullRequestCommentsResponse,
+                com.oracle.bmc.devops.model.PullRequestCommentSummary>(
+                new java.util.function.Supplier<ListPullRequestCommentsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestCommentsRequest.Builder get() {
+                        return ListPullRequestCommentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestCommentsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestCommentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestCommentsRequest.Builder>,
+                        ListPullRequestCommentsRequest>() {
+                    @Override
+                    public ListPullRequestCommentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestCommentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommentsRequest, ListPullRequestCommentsResponse>() {
+                    @Override
+                    public ListPullRequestCommentsResponse apply(
+                            ListPullRequestCommentsRequest request) {
+                        return client.listPullRequestComments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommentsResponse,
+                        java.util.List<com.oracle.bmc.devops.model.PullRequestCommentSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestCommentSummary>
+                            apply(ListPullRequestCommentsResponse response) {
+                        return response.getPullRequestCommentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestCommits operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestCommitsResponse> listPullRequestCommitsResponseIterator(
+            final ListPullRequestCommitsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestCommitsRequest.Builder, ListPullRequestCommitsRequest,
+                ListPullRequestCommitsResponse>(
+                new java.util.function.Supplier<ListPullRequestCommitsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestCommitsRequest.Builder get() {
+                        return ListPullRequestCommitsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestCommitsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestCommitsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestCommitsRequest.Builder>,
+                        ListPullRequestCommitsRequest>() {
+                    @Override
+                    public ListPullRequestCommitsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestCommitsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>() {
+                    @Override
+                    public ListPullRequestCommitsResponse apply(
+                            ListPullRequestCommitsRequest request) {
+                        return client.listPullRequestCommits(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.RepositoryCommitSummary} objects
+     * contained in responses from the listPullRequestCommits operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.RepositoryCommitSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.RepositoryCommitSummary>
+            listPullRequestCommitsRecordIterator(final ListPullRequestCommitsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestCommitsRequest.Builder, ListPullRequestCommitsRequest,
+                ListPullRequestCommitsResponse,
+                com.oracle.bmc.devops.model.RepositoryCommitSummary>(
+                new java.util.function.Supplier<ListPullRequestCommitsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestCommitsRequest.Builder get() {
+                        return ListPullRequestCommitsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestCommitsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestCommitsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestCommitsRequest.Builder>,
+                        ListPullRequestCommitsRequest>() {
+                    @Override
+                    public ListPullRequestCommitsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestCommitsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommitsRequest, ListPullRequestCommitsResponse>() {
+                    @Override
+                    public ListPullRequestCommitsResponse apply(
+                            ListPullRequestCommitsRequest request) {
+                        return client.listPullRequestCommits(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestCommitsResponse,
+                        java.util.List<com.oracle.bmc.devops.model.RepositoryCommitSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.RepositoryCommitSummary>
+                            apply(ListPullRequestCommitsResponse response) {
+                        return response.getRepositoryCommitCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequestFileChanges operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestFileChangesResponse> listPullRequestFileChangesResponseIterator(
+            final ListPullRequestFileChangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestFileChangesRequest.Builder, ListPullRequestFileChangesRequest,
+                ListPullRequestFileChangesResponse>(
+                new java.util.function.Supplier<ListPullRequestFileChangesRequest.Builder>() {
+                    @Override
+                    public ListPullRequestFileChangesRequest.Builder get() {
+                        return ListPullRequestFileChangesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestFileChangesResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestFileChangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestFileChangesRequest.Builder>,
+                        ListPullRequestFileChangesRequest>() {
+                    @Override
+                    public ListPullRequestFileChangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestFileChangesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestFileChangesRequest, ListPullRequestFileChangesResponse>() {
+                    @Override
+                    public ListPullRequestFileChangesResponse apply(
+                            ListPullRequestFileChangesRequest request) {
+                        return client.listPullRequestFileChanges(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestFileChangeSummary} objects
+     * contained in responses from the listPullRequestFileChanges operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestFileChangeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestFileChangeSummary>
+            listPullRequestFileChangesRecordIterator(
+                    final ListPullRequestFileChangesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestFileChangesRequest.Builder, ListPullRequestFileChangesRequest,
+                ListPullRequestFileChangesResponse,
+                com.oracle.bmc.devops.model.PullRequestFileChangeSummary>(
+                new java.util.function.Supplier<ListPullRequestFileChangesRequest.Builder>() {
+                    @Override
+                    public ListPullRequestFileChangesRequest.Builder get() {
+                        return ListPullRequestFileChangesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestFileChangesResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestFileChangesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestFileChangesRequest.Builder>,
+                        ListPullRequestFileChangesRequest>() {
+                    @Override
+                    public ListPullRequestFileChangesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestFileChangesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestFileChangesRequest, ListPullRequestFileChangesResponse>() {
+                    @Override
+                    public ListPullRequestFileChangesResponse apply(
+                            ListPullRequestFileChangesRequest request) {
+                        return client.listPullRequestFileChanges(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestFileChangesResponse,
+                        java.util.List<
+                                com.oracle.bmc.devops.model.PullRequestFileChangeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestFileChangeSummary>
+                            apply(ListPullRequestFileChangesResponse response) {
+                        return response.getPullRequestFileChangeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPullRequests operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListPullRequestsResponse> listPullRequestsResponseIterator(
+            final ListPullRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPullRequestsRequest.Builder, ListPullRequestsRequest, ListPullRequestsResponse>(
+                new java.util.function.Supplier<ListPullRequestsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestsRequest.Builder get() {
+                        return ListPullRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestsRequest.Builder>,
+                        ListPullRequestsRequest>() {
+                    @Override
+                    public ListPullRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestsRequest, ListPullRequestsResponse>() {
+                    @Override
+                    public ListPullRequestsResponse apply(ListPullRequestsRequest request) {
+                        return client.listPullRequests(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.PullRequestSummary} objects
+     * contained in responses from the listPullRequests operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.PullRequestSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.PullRequestSummary> listPullRequestsRecordIterator(
+            final ListPullRequestsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPullRequestsRequest.Builder, ListPullRequestsRequest, ListPullRequestsResponse,
+                com.oracle.bmc.devops.model.PullRequestSummary>(
+                new java.util.function.Supplier<ListPullRequestsRequest.Builder>() {
+                    @Override
+                    public ListPullRequestsRequest.Builder get() {
+                        return ListPullRequestsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPullRequestsResponse, String>() {
+                    @Override
+                    public String apply(ListPullRequestsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPullRequestsRequest.Builder>,
+                        ListPullRequestsRequest>() {
+                    @Override
+                    public ListPullRequestsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPullRequestsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestsRequest, ListPullRequestsResponse>() {
+                    @Override
+                    public ListPullRequestsResponse apply(ListPullRequestsRequest request) {
+                        return client.listPullRequests(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPullRequestsResponse,
+                        java.util.List<com.oracle.bmc.devops.model.PullRequestSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.PullRequestSummary> apply(
+                            ListPullRequestsResponse response) {
+                        return response.getPullRequestCollection().getItems();
                     }
                 });
     }
@@ -1927,6 +3096,133 @@ public class DevopsPaginators {
                     public java.util.List<com.oracle.bmc.devops.model.RepositorySummary> apply(
                             ListRepositoriesResponse response) {
                         return response.getRepositoryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listRepositoryCommitAnalyticsAuthors operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRepositoryCommitAnalyticsAuthorsResponse>
+            listRepositoryCommitAnalyticsAuthorsResponseIterator(
+                    final ListRepositoryCommitAnalyticsAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRepositoryCommitAnalyticsAuthorsRequest.Builder,
+                ListRepositoryCommitAnalyticsAuthorsRequest,
+                ListRepositoryCommitAnalyticsAuthorsResponse>(
+                new java.util.function.Supplier<
+                        ListRepositoryCommitAnalyticsAuthorsRequest.Builder>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsRequest.Builder get() {
+                        return ListRepositoryCommitAnalyticsAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRepositoryCommitAnalyticsAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListRepositoryCommitAnalyticsAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRepositoryCommitAnalyticsAuthorsRequest.Builder>,
+                        ListRepositoryCommitAnalyticsAuthorsRequest>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRepositoryCommitAnalyticsAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRepositoryCommitAnalyticsAuthorsRequest,
+                        ListRepositoryCommitAnalyticsAuthorsResponse>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsResponse apply(
+                            ListRepositoryCommitAnalyticsAuthorsRequest request) {
+                        return client.listRepositoryCommitAnalyticsAuthors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary} objects
+     * contained in responses from the listRepositoryCommitAnalyticsAuthors operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>
+            listRepositoryCommitAnalyticsAuthorsRecordIterator(
+                    final ListRepositoryCommitAnalyticsAuthorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRepositoryCommitAnalyticsAuthorsRequest.Builder,
+                ListRepositoryCommitAnalyticsAuthorsRequest,
+                ListRepositoryCommitAnalyticsAuthorsResponse,
+                com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>(
+                new java.util.function.Supplier<
+                        ListRepositoryCommitAnalyticsAuthorsRequest.Builder>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsRequest.Builder get() {
+                        return ListRepositoryCommitAnalyticsAuthorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRepositoryCommitAnalyticsAuthorsResponse, String>() {
+                    @Override
+                    public String apply(ListRepositoryCommitAnalyticsAuthorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRepositoryCommitAnalyticsAuthorsRequest.Builder>,
+                        ListRepositoryCommitAnalyticsAuthorsRequest>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRepositoryCommitAnalyticsAuthorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRepositoryCommitAnalyticsAuthorsRequest,
+                        ListRepositoryCommitAnalyticsAuthorsResponse>() {
+                    @Override
+                    public ListRepositoryCommitAnalyticsAuthorsResponse apply(
+                            ListRepositoryCommitAnalyticsAuthorsRequest request) {
+                        return client.listRepositoryCommitAnalyticsAuthors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRepositoryCommitAnalyticsAuthorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.devops.model.CommitAnalyticsAuthorSummary>
+                            apply(ListRepositoryCommitAnalyticsAuthorsResponse response) {
+                        return response.getCommitAnalyticsAuthorCollection().getItems();
                     }
                 });
     }

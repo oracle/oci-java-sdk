@@ -23,6 +23,10 @@ package com.oracle.bmc.opsi.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateMdsMySqlDatabaseInsightDetails.class,
+        name = "MDS_MYSQL_DATABASE_SYSTEM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateEmManagedExternalDatabaseInsightDetails.class,
         name = "EM_MANAGED_EXTERNAL_DATABASE"
     ),

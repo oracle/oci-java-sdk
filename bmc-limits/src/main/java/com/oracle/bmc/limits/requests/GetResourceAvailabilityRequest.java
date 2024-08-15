@@ -77,6 +77,19 @@ public class GetResourceAvailabilityRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
+    private String subscriptionId;
+
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -171,6 +184,23 @@ public class GetResourceAvailabilityRequest
         }
 
         /**
+         * The OCID of the subscription assigned to tenant
+         *
+         */
+        private String subscriptionId = null;
+
+        /**
+         * The OCID of the subscription assigned to tenant
+         *
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -203,6 +233,7 @@ public class GetResourceAvailabilityRequest
             compartmentId(o.getCompartmentId());
             availabilityDomain(o.getAvailabilityDomain());
             opcRequestId(o.getOpcRequestId());
+            subscriptionId(o.getSubscriptionId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -240,8 +271,9 @@ public class GetResourceAvailabilityRequest
             request.compartmentId = compartmentId;
             request.availabilityDomain = availabilityDomain;
             request.opcRequestId = opcRequestId;
+            request.subscriptionId = subscriptionId;
             return request;
-            // new GetResourceAvailabilityRequest(serviceName, limitName, compartmentId, availabilityDomain, opcRequestId);
+            // new GetResourceAvailabilityRequest(serviceName, limitName, compartmentId, availabilityDomain, opcRequestId, subscriptionId);
         }
     }
 
@@ -255,7 +287,8 @@ public class GetResourceAvailabilityRequest
                 .limitName(limitName)
                 .compartmentId(compartmentId)
                 .availabilityDomain(availabilityDomain)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .subscriptionId(subscriptionId);
     }
 
     /**
@@ -276,6 +309,7 @@ public class GetResourceAvailabilityRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -295,7 +329,8 @@ public class GetResourceAvailabilityRequest
                 && java.util.Objects.equals(this.limitName, other.limitName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId);
     }
 
     @Override
@@ -313,6 +348,9 @@ public class GetResourceAvailabilityRequest
                                 ? 43
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         return result;
     }
 }

@@ -19,11 +19,13 @@ package com.oracle.bmc.limits.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ServiceSummary extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "description"})
-    public ServiceSummary(String name, String description) {
+    @java.beans.ConstructorProperties({"name", "description", "supportedSubscriptions"})
+    public ServiceSummary(
+            String name, String description, java.util.List<String> supportedSubscriptions) {
         super();
         this.name = name;
         this.description = description;
+        this.supportedSubscriptions = supportedSubscriptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +62,31 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+        private java.util.List<String> supportedSubscriptions;
+
+        /**
+         * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         * @param supportedSubscriptions the value to set
+         * @return this builder
+         **/
+        public Builder supportedSubscriptions(java.util.List<String> supportedSubscriptions) {
+            this.supportedSubscriptions = supportedSubscriptions;
+            this.__explicitlySet__.add("supportedSubscriptions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ServiceSummary build() {
-            ServiceSummary model = new ServiceSummary(this.name, this.description);
+            ServiceSummary model =
+                    new ServiceSummary(this.name, this.description, this.supportedSubscriptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +100,9 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("supportedSubscriptions")) {
+                this.supportedSubscriptions(model.getSupportedSubscriptions());
             }
             return this;
         }
@@ -123,6 +147,22 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         return description;
     }
 
+    /**
+     * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+    private final java.util.List<String> supportedSubscriptions;
+
+    /**
+     * An array of subscription types supported by the service. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getSupportedSubscriptions() {
+        return supportedSubscriptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +179,7 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", supportedSubscriptions=").append(String.valueOf(this.supportedSubscriptions));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +196,8 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         ServiceSummary other = (ServiceSummary) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(
+                        this.supportedSubscriptions, other.supportedSubscriptions)
                 && super.equals(other);
     }
 
@@ -164,6 +207,11 @@ public final class ServiceSummary extends com.oracle.bmc.http.internal.Explicitl
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedSubscriptions == null
+                                ? 43
+                                : this.supportedSubscriptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

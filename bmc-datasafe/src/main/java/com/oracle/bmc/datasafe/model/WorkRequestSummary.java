@@ -345,6 +345,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         RefreshSqlCollectionLogInsights("REFRESH_SQL_COLLECTION_LOG_INSIGHTS"),
         PurgeSqlCollectionLogs("PURGE_SQL_COLLECTION_LOGS"),
         RefreshViolations("REFRESH_VIOLATIONS"),
+        CreateArchival("CREATE_ARCHIVAL"),
         UpdateSecurityPolicy("UPDATE_SECURITY_POLICY"),
         ChangeSecurityPolicyCompartment("CHANGE_SECURITY_POLICY_COMPARTMENT"),
         UpdateSecurityPolicyDeployment("UPDATE_SECURITY_POLICY_DEPLOYMENT"),
@@ -401,6 +402,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         PatchDifference("PATCH_DIFFERENCE"),
         ApplyDifference("APPLY_DIFFERENCE"),
         MaskPolicyGenerateHealthReport("MASK_POLICY_GENERATE_HEALTH_REPORT"),
+        MaskPolicyDeleteHealthReport("MASK_POLICY_DELETE_HEALTH_REPORT"),
         AbortMasking("ABORT_MASKING"),
         CreateSecurityPolicyReport("CREATE_SECURITY_POLICY_REPORT"),
         RefreshSecurityPolicyCache("REFRESH_SECURITY_POLICY_CACHE"),
@@ -409,6 +411,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         RemoveScheduleReport("REMOVE_SCHEDULE_REPORT"),
         UpdateAllAlert("UPDATE_ALL_ALERT"),
         PatchTargetAlertPolicyAssociation("PATCH_TARGET_ALERT_POLICY_ASSOCIATION"),
+        CreateAlertPolicy("CREATE_ALERT_POLICY"),
+        UpdateAlertPolicy("UPDATE_ALERT_POLICY"),
+        DeleteAlertPolicy("DELETE_ALERT_POLICY"),
+        CreateAlertPolicyRule("CREATE_ALERT_POLICY_RULE"),
+        UpdateAlertPolicyRule("UPDATE_ALERT_POLICY_RULE"),
+        DeleteAlertPolicyRule("DELETE_ALERT_POLICY_RULE"),
+        ChangeAlertPolicyCompartment("CHANGE_ALERT_POLICY_COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -45,6 +45,17 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         return baseVersion;
     }
     /**
+     * The target repository identifier
+     */
+    private String targetRepositoryId;
+
+    /**
+     * The target repository identifier
+     */
+    public String getTargetRepositoryId() {
+        return targetRepositoryId;
+    }
+    /**
      * Boolean value to indicate whether to use merge base or most recent revision.
      */
     private Boolean isComparisonFromMergeBase;
@@ -120,6 +131,21 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         }
 
         /**
+         * The target repository identifier
+         */
+        private String targetRepositoryId = null;
+
+        /**
+         * The target repository identifier
+         * @param targetRepositoryId the value to set
+         * @return this builder instance
+         */
+        public Builder targetRepositoryId(String targetRepositoryId) {
+            this.targetRepositoryId = targetRepositoryId;
+            return this;
+        }
+
+        /**
          * Boolean value to indicate whether to use merge base or most recent revision.
          */
         private Boolean isComparisonFromMergeBase = null;
@@ -180,6 +206,7 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
             repositoryId(o.getRepositoryId());
             targetVersion(o.getTargetVersion());
             baseVersion(o.getBaseVersion());
+            targetRepositoryId(o.getTargetRepositoryId());
             isComparisonFromMergeBase(o.getIsComparisonFromMergeBase());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -217,10 +244,11 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
             request.repositoryId = repositoryId;
             request.targetVersion = targetVersion;
             request.baseVersion = baseVersion;
+            request.targetRepositoryId = targetRepositoryId;
             request.isComparisonFromMergeBase = isComparisonFromMergeBase;
             request.opcRequestId = opcRequestId;
             return request;
-            // new GetCommitDiffRequest(repositoryId, targetVersion, baseVersion, isComparisonFromMergeBase, opcRequestId);
+            // new GetCommitDiffRequest(repositoryId, targetVersion, baseVersion, targetRepositoryId, isComparisonFromMergeBase, opcRequestId);
         }
     }
 
@@ -233,6 +261,7 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 .repositoryId(repositoryId)
                 .targetVersion(targetVersion)
                 .baseVersion(baseVersion)
+                .targetRepositoryId(targetRepositoryId)
                 .isComparisonFromMergeBase(isComparisonFromMergeBase)
                 .opcRequestId(opcRequestId);
     }
@@ -253,6 +282,7 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
         sb.append(",repositoryId=").append(String.valueOf(this.repositoryId));
         sb.append(",targetVersion=").append(String.valueOf(this.targetVersion));
         sb.append(",baseVersion=").append(String.valueOf(this.baseVersion));
+        sb.append(",targetRepositoryId=").append(String.valueOf(this.targetRepositoryId));
         sb.append(",isComparisonFromMergeBase=")
                 .append(String.valueOf(this.isComparisonFromMergeBase));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -274,6 +304,7 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 && java.util.Objects.equals(this.repositoryId, other.repositoryId)
                 && java.util.Objects.equals(this.targetVersion, other.targetVersion)
                 && java.util.Objects.equals(this.baseVersion, other.baseVersion)
+                && java.util.Objects.equals(this.targetRepositoryId, other.targetRepositoryId)
                 && java.util.Objects.equals(
                         this.isComparisonFromMergeBase, other.isComparisonFromMergeBase)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
@@ -288,6 +319,11 @@ public class GetCommitDiffRequest extends com.oracle.bmc.requests.BmcRequest<jav
                 (result * PRIME)
                         + (this.targetVersion == null ? 43 : this.targetVersion.hashCode());
         result = (result * PRIME) + (this.baseVersion == null ? 43 : this.baseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.targetRepositoryId == null
+                                ? 43
+                                : this.targetRepositoryId.hashCode());
         result =
                 (result * PRIME)
                         + (this.isComparisonFromMergeBase == null

@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration of a network load balancer backend set.
  * For more information about backend set configuration, see
- * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
+ * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
  * <p>
  **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -171,10 +171,19 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("backends");
             return this;
         }
-
+        /**
+         * The health check policy configuration.
+         *
+         **/
         @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthChecker healthChecker;
 
+        /**
+         * The health check policy configuration.
+         *
+         * @param healthChecker the value to set
+         * @return this builder
+         **/
         public Builder healthChecker(HealthChecker healthChecker) {
             this.healthChecker = healthChecker;
             this.__explicitlySet__.add("healthChecker");
@@ -342,9 +351,18 @@ public final class BackendSetDetails extends com.oracle.bmc.http.internal.Explic
         return backends;
     }
 
+    /**
+     * The health check policy configuration.
+     *
+     **/
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
     private final HealthChecker healthChecker;
 
+    /**
+     * The health check policy configuration.
+     *
+     * @return the value
+     **/
     public HealthChecker getHealthChecker() {
         return healthChecker;
     }

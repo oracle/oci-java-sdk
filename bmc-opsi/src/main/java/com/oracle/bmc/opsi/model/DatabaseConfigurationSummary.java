@@ -37,6 +37,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PeComanagedManagedExternalDatabaseConfigurationSummary.class,
         name = "PE_COMANAGED_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MdsMysqlDatabaseConfigurationSummary.class,
+        name = "MDS_MYSQL_DATABASE_SYSTEM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -136,13 +140,13 @@ public class DatabaseConfigurationSummary
     }
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      * @return the value
      **/
     public String getDatabaseType() {

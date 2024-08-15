@@ -696,6 +696,7 @@ public final class DatabaseSoftwareImageSummary
         VmBmShape("VM_BM_SHAPE"),
         ExadataShape("EXADATA_SHAPE"),
         ExaccShape("EXACC_SHAPE"),
+        ExadbxsShape("EXADBXS_SHAPE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

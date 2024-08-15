@@ -3,6 +3,34 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.46.1 - 2024-08-13
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `me-abudhabi-4` region 
+- Support for viewing subscription limits in the Limits service 
+- Support for TCP idle timeout on network load balancer create and update operations in the Network Load Balancing service 
+- Support for creating integration instances of type Healthcare in the Integration Cloud service
+
+## 2.73.2 - 2024-07-23
+### Added
+- Support for subscription id attribute in Cloud Exadata Infrastructure and Cloud VM Clusters in the Database service
+- Support for SQL and FTP monitors on create and update operations in the Application Performance Monitoring service
+- Support for MySQL Heatwave database systems in the Operations Insights service
+- Support for creating and updating schedules for user assessments and security assessments in the Data Safe service
+- Support for creating and updating sensitive data models of the tables for discovery in the Data Safe service
+- Support for additional optional parameters on autonomous database create and update operations in the Database service
+
+## 2.73.1 - 2024-07-16
+### Added
+- Support for calling Oracle Cloud Infrastructure services in the `ap-singapore-2` and `me-abudhabi-2` regions
+- Support for additional parameters in list and delete operations in the File Storage service
+- Support for host capacity planning to analyze disabled and deleted resources in the Operations Insights service
+- Support for title and description updates in the Capacity Management service
+- Support for listing parameters for migrations in the Database Migration service
+- Support for Oracle exadata database service on exascale Infrastructure (ExaDB-XS) in the Database service
+
+### Fixed
+Fixed endpoint templates for multiple service parameters
+
 ## 2.73.0 - 2024-06-25
 ### Added
 - Support for Demand Signal service

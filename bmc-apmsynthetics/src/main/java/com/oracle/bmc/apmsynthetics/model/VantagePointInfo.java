@@ -19,11 +19,12 @@ package com.oracle.bmc.apmsynthetics.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class VantagePointInfo extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"name", "displayName"})
-    public VantagePointInfo(String name, String displayName) {
+    @java.beans.ConstructorProperties({"name", "displayName", "workerList"})
+    public VantagePointInfo(String name, String displayName, java.util.List<String> workerList) {
         super();
         this.name = name;
         this.displayName = displayName;
+        this.workerList = workerList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,29 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("displayName");
             return this;
         }
+        /**
+         * List of workers running the assigned monitor.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("workerList")
+        private java.util.List<String> workerList;
+
+        /**
+         * List of workers running the assigned monitor.
+         * @param workerList the value to set
+         * @return this builder
+         **/
+        public Builder workerList(java.util.List<String> workerList) {
+            this.workerList = workerList;
+            this.__explicitlySet__.add("workerList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VantagePointInfo build() {
-            VantagePointInfo model = new VantagePointInfo(this.name, this.displayName);
+            VantagePointInfo model =
+                    new VantagePointInfo(this.name, this.displayName, this.workerList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +97,9 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("workerList")) {
+                this.workerList(model.getWorkerList());
             }
             return this;
         }
@@ -123,6 +144,20 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
         return displayName;
     }
 
+    /**
+     * List of workers running the assigned monitor.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("workerList")
+    private final java.util.List<String> workerList;
+
+    /**
+     * List of workers running the assigned monitor.
+     * @return the value
+     **/
+    public java.util.List<String> getWorkerList() {
+        return workerList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -139,6 +174,7 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
         sb.append("super=").append(super.toString());
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", workerList=").append(String.valueOf(this.workerList));
         sb.append(")");
         return sb.toString();
     }
@@ -155,6 +191,7 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
         VantagePointInfo other = (VantagePointInfo) o;
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.workerList, other.workerList)
                 && super.equals(other);
     }
 
@@ -164,6 +201,7 @@ public final class VantagePointInfo extends com.oracle.bmc.http.internal.Explici
         int result = 1;
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.workerList == null ? 43 : this.workerList.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

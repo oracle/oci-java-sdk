@@ -32,13 +32,13 @@ public final class AutoScalePolicyMetricRule
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Allowed value is CPU_UTILIZATION.
+         * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("metricType")
         private MetricType metricType;
 
         /**
-         * Allowed value is CPU_UTILIZATION.
+         * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
          * @param metricType the value to set
          * @return this builder
          **/
@@ -93,10 +93,11 @@ public final class AutoScalePolicyMetricRule
     }
 
     /**
-     * Allowed value is CPU_UTILIZATION.
+     * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      **/
     public enum MetricType {
         CpuUtilization("CPU_UTILIZATION"),
+        MemoryUtilization("MEMORY_UTILIZATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -140,13 +141,13 @@ public final class AutoScalePolicyMetricRule
         }
     };
     /**
-     * Allowed value is CPU_UTILIZATION.
+     * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metricType")
     private final MetricType metricType;
 
     /**
-     * Allowed value is CPU_UTILIZATION.
+     * Allowed values are CPU_UTILIZATION and MEMORY_UTILIZATION.
      * @return the value
      **/
     public MetricType getMetricType() {

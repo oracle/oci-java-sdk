@@ -12,6 +12,7 @@ public enum PerformanceTuningAnalysisResultSortBy {
     TimeCreated("timeCreated"),
     ManagedInstanceId("managedInstanceId"),
     WorkRequestId("workRequestId"),
+    WarningCount("warningCount"),
     ;
 
     private final String value;

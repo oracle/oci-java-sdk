@@ -503,6 +503,17 @@ public class SummarizeHostInsightResourceStatisticsRequest
     public Integer getLowUtilizationThreshold() {
         return lowUtilizationThreshold;
     }
+    /**
+     * Resource Status
+     */
+    private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status;
+
+    /**
+     * Resource Status
+     */
+    public java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> getStatus() {
+        return status;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -1129,6 +1140,30 @@ public class SummarizeHostInsightResourceStatisticsRequest
         }
 
         /**
+         * Resource Status
+         */
+        private java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status = null;
+
+        /**
+         * Resource Status
+         * @param status the value to set
+         * @return this builder instance
+         */
+        public Builder status(java.util.List<com.oracle.bmc.opsi.model.ResourceStatus> status) {
+            this.status = status;
+            return this;
+        }
+
+        /**
+         * Singular setter. Resource Status
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder status(ResourceStatus singularValue) {
+            return this.status(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -1182,6 +1217,7 @@ public class SummarizeHostInsightResourceStatisticsRequest
             vmclusterName(o.getVmclusterName());
             highUtilizationThreshold(o.getHighUtilizationThreshold());
             lowUtilizationThreshold(o.getLowUtilizationThreshold());
+            status(o.getStatus());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -1242,8 +1278,9 @@ public class SummarizeHostInsightResourceStatisticsRequest
             request.vmclusterName = vmclusterName;
             request.highUtilizationThreshold = highUtilizationThreshold;
             request.lowUtilizationThreshold = lowUtilizationThreshold;
+            request.status = status;
             return request;
-            // new SummarizeHostInsightResourceStatisticsRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, percentile, insightBy, forecastDays, limit, page, sortOrder, sortBy, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId, vmclusterName, highUtilizationThreshold, lowUtilizationThreshold);
+            // new SummarizeHostInsightResourceStatisticsRequest(compartmentId, resourceMetric, analysisTimeInterval, timeIntervalStart, timeIntervalEnd, platformType, id, exadataInsightId, percentile, insightBy, forecastDays, limit, page, sortOrder, sortBy, opcRequestId, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, hostType, hostId, vmclusterName, highUtilizationThreshold, lowUtilizationThreshold, status);
         }
     }
 
@@ -1278,7 +1315,8 @@ public class SummarizeHostInsightResourceStatisticsRequest
                 .hostId(hostId)
                 .vmclusterName(vmclusterName)
                 .highUtilizationThreshold(highUtilizationThreshold)
-                .lowUtilizationThreshold(lowUtilizationThreshold);
+                .lowUtilizationThreshold(lowUtilizationThreshold)
+                .status(status);
     }
 
     /**
@@ -1321,6 +1359,7 @@ public class SummarizeHostInsightResourceStatisticsRequest
         sb.append(",highUtilizationThreshold=")
                 .append(String.valueOf(this.highUtilizationThreshold));
         sb.append(",lowUtilizationThreshold=").append(String.valueOf(this.lowUtilizationThreshold));
+        sb.append(",status=").append(String.valueOf(this.status));
         sb.append(")");
         return sb.toString();
     }
@@ -1365,7 +1404,8 @@ public class SummarizeHostInsightResourceStatisticsRequest
                 && java.util.Objects.equals(
                         this.highUtilizationThreshold, other.highUtilizationThreshold)
                 && java.util.Objects.equals(
-                        this.lowUtilizationThreshold, other.lowUtilizationThreshold);
+                        this.lowUtilizationThreshold, other.lowUtilizationThreshold)
+                && java.util.Objects.equals(this.status, other.status);
     }
 
     @Override
@@ -1434,6 +1474,7 @@ public class SummarizeHostInsightResourceStatisticsRequest
                         + (this.lowUtilizationThreshold == null
                                 ? 43
                                 : this.lowUtilizationThreshold.hashCode());
+        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         return result;
     }
 }

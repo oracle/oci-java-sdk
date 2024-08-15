@@ -74,6 +74,7 @@ public class ListSnapshotsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     public enum LifecycleState {
         Creating("CREATING"),
         Active("ACTIVE"),
+        Updating("UPDATING"),
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
