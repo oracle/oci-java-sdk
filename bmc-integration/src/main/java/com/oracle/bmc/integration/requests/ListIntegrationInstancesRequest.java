@@ -49,6 +49,7 @@ public class ListIntegrationInstancesRequest
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Standby("STANDBY"),
         ;
 
         private final String value;

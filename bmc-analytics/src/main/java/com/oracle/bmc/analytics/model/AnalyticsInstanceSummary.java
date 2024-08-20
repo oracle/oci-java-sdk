@@ -35,6 +35,9 @@ public final class AnalyticsInstanceSummary
         "emailNotification",
         "networkEndpointDetails",
         "serviceUrl",
+        "definedTags",
+        "freeformTags",
+        "systemTags",
         "timeCreated",
         "timeUpdated"
     })
@@ -50,6 +53,9 @@ public final class AnalyticsInstanceSummary
             String emailNotification,
             NetworkEndpointDetails networkEndpointDetails,
             String serviceUrl,
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Date timeCreated,
             java.util.Date timeUpdated) {
         super();
@@ -64,6 +70,9 @@ public final class AnalyticsInstanceSummary
         this.emailNotification = emailNotification;
         this.networkEndpointDetails = networkEndpointDetails;
         this.serviceUrl = serviceUrl;
+        this.definedTags = definedTags;
+        this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
     }
@@ -228,6 +237,76 @@ public final class AnalyticsInstanceSummary
             return this;
         }
         /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+        private java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+        /**
+         * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
+         * more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         *
+         * @param definedTags the value to set
+         * @return this builder
+         */
+        public Builder definedTags(
+                java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            this.definedTags = definedTags;
+            this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+        private java.util.Map<String, String> freeformTags;
+
+        /**
+         * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+         * name, type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"Department": "Finance"}}
+         *
+         * @param freeformTags the value to set
+         * @return this builder
+         */
+        public Builder freeformTags(java.util.Map<String, String> freeformTags) {
+            this.freeformTags = freeformTags;
+            this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+         * {@code {"orcl-cloud": {"key": "value"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+         * {@code {"orcl-cloud": {"key": "value"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * The date and time the instance was created, in the format defined by RFC3339.
          *
          * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -285,6 +364,9 @@ public final class AnalyticsInstanceSummary
                             this.emailNotification,
                             this.networkEndpointDetails,
                             this.serviceUrl,
+                            this.definedTags,
+                            this.freeformTags,
+                            this.systemTags,
                             this.timeCreated,
                             this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -327,6 +409,15 @@ public final class AnalyticsInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("serviceUrl")) {
                 this.serviceUrl(model.getServiceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("definedTags")) {
+                this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("freeformTags")) {
+                this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -483,6 +574,69 @@ public final class AnalyticsInstanceSummary
     }
 
     /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
+
+    /**
+     * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
+     * information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
+        return definedTags;
+    }
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
+    private final java.util.Map<String, String> freeformTags;
+
+    /**
+     * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
+     * name, type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"Department": "Finance"}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, String> getFreeformTags() {
+        return freeformTags;
+    }
+
+    /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+     * {@code {"orcl-cloud": {"key": "value"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+     * {@code {"orcl-cloud": {"key": "value"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The date and time the instance was created, in the format defined by RFC3339.
      *
      * <p>Example: {@code 2016-08-25T21:10:29.600Z}
@@ -544,6 +698,9 @@ public final class AnalyticsInstanceSummary
         sb.append(", emailNotification=").append(String.valueOf(this.emailNotification));
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", serviceUrl=").append(String.valueOf(this.serviceUrl));
+        sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
@@ -572,6 +729,9 @@ public final class AnalyticsInstanceSummary
                 && java.util.Objects.equals(
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.serviceUrl, other.serviceUrl)
+                && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
@@ -602,6 +762,9 @@ public final class AnalyticsInstanceSummary
                                 ? 43
                                 : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + (this.serviceUrl == null ? 43 : this.serviceUrl.hashCode());
+        result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -79,7 +79,15 @@ public class DatabaseConnectionStringDetails
     /** The list of supported connection types: - BASIC: Basic connection details */
     public enum ConnectionType implements com.oracle.bmc.http.internal.BmcEnum {
         Basic("BASIC"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConnectionType.class);
 
         private final String value;
         private static java.util.Map<String, ConnectionType> map;
@@ -87,7 +95,9 @@ public class DatabaseConnectionStringDetails
         static {
             map = new java.util.HashMap<>();
             for (ConnectionType v : ConnectionType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -105,7 +115,10 @@ public class DatabaseConnectionStringDetails
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ConnectionType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ConnectionType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

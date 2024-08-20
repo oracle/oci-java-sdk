@@ -5,7 +5,7 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * The details of each node in the Redis cluster. <br>
+ * The details of each node in the cluster. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -65,12 +65,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("privateEndpointIpAddress");
             return this;
         }
-        /** A user-friendly name of a Redis cluster node. */
+        /** A user-friendly name of a cluster node. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name of a Redis cluster node.
+         * A user-friendly name of a cluster node.
          *
          * @param displayName the value to set
          * @return this builder
@@ -146,12 +146,12 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return privateEndpointIpAddress;
     }
 
-    /** A user-friendly name of a Redis cluster node. */
+    /** A user-friendly name of a cluster node. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name of a Redis cluster node.
+     * A user-friendly name of a cluster node.
      *
      * @return the value
      */

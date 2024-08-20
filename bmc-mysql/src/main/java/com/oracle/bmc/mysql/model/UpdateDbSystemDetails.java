@@ -36,6 +36,7 @@ public final class UpdateDbSystemDetails
         "adminUsername",
         "adminPassword",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -62,6 +63,7 @@ public final class UpdateDbSystemDetails
             String adminUsername,
             String adminPassword,
             Integer dataStorageSizeInGBs,
+            DataStorageDetails dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -87,6 +89,7 @@ public final class UpdateDbSystemDetails
         this.adminUsername = adminUsername;
         this.adminPassword = adminPassword;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -369,6 +372,15 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("dataStorageSizeInGBs");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorageDetails dataStorage;
+
+        public Builder dataStorage(DataStorageDetails dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
+            return this;
+        }
         /**
          * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
          * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for
@@ -577,6 +589,7 @@ public final class UpdateDbSystemDetails
                             this.adminUsername,
                             this.adminPassword,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -632,6 +645,9 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -924,6 +940,13 @@ public final class UpdateDbSystemDetails
         return dataStorageSizeInGBs;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorageDetails dataStorage;
+
+    public DataStorageDetails getDataStorage() {
+        return dataStorage;
+    }
+
     /**
      * The hostname for the primary endpoint of the DB System. Used for DNS. The value is the
      * hostname portion of the primary private IP's fully qualified domain name (FQDN) (for example,
@@ -1115,6 +1138,7 @@ public final class UpdateDbSystemDetails
         sb.append(", adminUsername=").append(String.valueOf(this.adminUsername));
         sb.append(", adminPassword=").append("<redacted>");
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1153,6 +1177,7 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.adminUsername, other.adminUsername)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1200,6 +1225,7 @@ public final class UpdateDbSystemDetails
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

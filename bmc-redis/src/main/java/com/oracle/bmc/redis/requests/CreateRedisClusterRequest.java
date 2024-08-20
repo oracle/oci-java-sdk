@@ -15,10 +15,10 @@ public class CreateRedisClusterRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.redis.model.CreateRedisClusterDetails> {
 
-    /** Details for the new RedisCluster. */
+    /** Details for the new cluster. */
     private com.oracle.bmc.redis.model.CreateRedisClusterDetails createRedisClusterDetails;
 
-    /** Details for the new RedisCluster. */
+    /** Details for the new cluster. */
     public com.oracle.bmc.redis.model.CreateRedisClusterDetails getCreateRedisClusterDetails() {
         return createRedisClusterDetails;
     }
@@ -67,12 +67,12 @@ public class CreateRedisClusterRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for the new RedisCluster. */
+        /** Details for the new cluster. */
         private com.oracle.bmc.redis.model.CreateRedisClusterDetails createRedisClusterDetails =
                 null;
 
         /**
-         * Details for the new RedisCluster.
+         * Details for the new cluster.
          *
          * @param createRedisClusterDetails the value to set
          * @return this builder instance

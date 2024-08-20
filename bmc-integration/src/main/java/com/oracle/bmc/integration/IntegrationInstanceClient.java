@@ -328,6 +328,41 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public ExtendDataRetentionResponse extendDataRetention(ExtendDataRetentionRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getExtendDataRetentionDetails(), "extendDataRetentionDetails is required");
+
+        return clientCall(request, ExtendDataRetentionResponse::builder)
+                .logger(LOG, "extendDataRetention")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "ExtendDataRetention",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ExtendDataRetention")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ExtendDataRetentionRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("extendDataRetention")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ExtendDataRetentionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ExtendDataRetentionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetIntegrationInstanceResponse getIntegrationInstance(
             GetIntegrationInstanceRequest request) {
 

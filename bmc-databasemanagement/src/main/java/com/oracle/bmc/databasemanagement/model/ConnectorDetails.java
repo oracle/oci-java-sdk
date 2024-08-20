@@ -89,7 +89,15 @@ public class ConnectorDetails extends com.oracle.bmc.http.client.internal.Explic
         Pe("PE"),
         Macs("MACS"),
         External("EXTERNAL"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConnectorType.class);
 
         private final String value;
         private static java.util.Map<String, ConnectorType> map;
@@ -97,7 +105,9 @@ public class ConnectorDetails extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (ConnectorType v : ConnectorType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -115,7 +125,10 @@ public class ConnectorDetails extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ConnectorType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ConnectorType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

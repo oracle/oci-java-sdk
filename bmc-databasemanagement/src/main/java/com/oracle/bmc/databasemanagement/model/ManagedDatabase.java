@@ -48,7 +48,9 @@ public final class ManagedDatabase
         "additionalDetails",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "dbmgmtFeatureConfigs",
+        "databasePlatformName"
     })
     public ManagedDatabase(
             String id,
@@ -76,7 +78,9 @@ public final class ManagedDatabase
             java.util.Map<String, String> additionalDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs,
+            String databasePlatformName) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -104,6 +108,8 @@ public final class ManagedDatabase
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+        this.databasePlatformName = databasePlatformName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -567,6 +573,37 @@ public final class ManagedDatabase
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** The list of feature configurations */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+        private java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+        /**
+         * The list of feature configurations
+         *
+         * @param dbmgmtFeatureConfigs the value to set
+         * @return this builder
+         */
+        public Builder dbmgmtFeatureConfigs(
+                java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs) {
+            this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            this.__explicitlySet__.add("dbmgmtFeatureConfigs");
+            return this;
+        }
+        /** The operating system of database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+        private String databasePlatformName;
+
+        /**
+         * The operating system of database.
+         *
+         * @param databasePlatformName the value to set
+         * @return this builder
+         */
+        public Builder databasePlatformName(String databasePlatformName) {
+            this.databasePlatformName = databasePlatformName;
+            this.__explicitlySet__.add("databasePlatformName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -599,7 +636,9 @@ public final class ManagedDatabase
                             this.additionalDetails,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.dbmgmtFeatureConfigs,
+                            this.databasePlatformName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -685,6 +724,12 @@ public final class ManagedDatabase
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbmgmtFeatureConfigs")) {
+                this.dbmgmtFeatureConfigs(model.getDbmgmtFeatureConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("databasePlatformName")) {
+                this.databasePlatformName(model.getDatabasePlatformName());
             }
             return this;
         }
@@ -1105,6 +1150,32 @@ public final class ManagedDatabase
         return systemTags;
     }
 
+    /** The list of feature configurations */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+    private final java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+    /**
+     * The list of feature configurations
+     *
+     * @return the value
+     */
+    public java.util.List<DatabaseFeatureConfiguration> getDbmgmtFeatureConfigs() {
+        return dbmgmtFeatureConfigs;
+    }
+
+    /** The operating system of database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+    private final String databasePlatformName;
+
+    /**
+     * The operating system of database.
+     *
+     * @return the value
+     */
+    public String getDatabasePlatformName() {
+        return databasePlatformName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1147,6 +1218,8 @@ public final class ManagedDatabase
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", dbmgmtFeatureConfigs=").append(String.valueOf(this.dbmgmtFeatureConfigs));
+        sb.append(", databasePlatformName=").append(String.valueOf(this.databasePlatformName));
         sb.append(")");
         return sb.toString();
     }
@@ -1188,6 +1261,8 @@ public final class ManagedDatabase
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.dbmgmtFeatureConfigs, other.dbmgmtFeatureConfigs)
+                && java.util.Objects.equals(this.databasePlatformName, other.databasePlatformName)
                 && super.equals(other);
     }
 
@@ -1255,6 +1330,16 @@ public final class ManagedDatabase
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmgmtFeatureConfigs == null
+                                ? 43
+                                : this.dbmgmtFeatureConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databasePlatformName == null
+                                ? 43
+                                : this.databasePlatformName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

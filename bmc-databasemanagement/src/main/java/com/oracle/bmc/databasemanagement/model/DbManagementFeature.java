@@ -12,7 +12,17 @@ package com.oracle.bmc.databasemanagement.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20201101")
 public enum DbManagementFeature implements com.oracle.bmc.http.internal.BmcEnum {
     DiagnosticsAndManagement("DIAGNOSTICS_AND_MANAGEMENT"),
-    ;
+    DbLifecycleManagement("DB_LIFECYCLE_MANAGEMENT"),
+    Sqlwatch("SQLWATCH"),
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(DbManagementFeature.class);
 
     private final String value;
     private static java.util.Map<String, DbManagementFeature> map;
@@ -20,7 +30,9 @@ public enum DbManagementFeature implements com.oracle.bmc.http.internal.BmcEnum 
     static {
         map = new java.util.HashMap<>();
         for (DbManagementFeature v : DbManagementFeature.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -38,6 +50,9 @@ public enum DbManagementFeature implements com.oracle.bmc.http.internal.BmcEnum 
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid DbManagementFeature: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'DbManagementFeature', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

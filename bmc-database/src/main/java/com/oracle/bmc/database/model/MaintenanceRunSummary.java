@@ -52,7 +52,8 @@ public final class MaintenanceRunSummary
         "patchingEndTime",
         "estimatedPatchingTime",
         "currentPatchingComponent",
-        "estimatedComponentPatchingStartTime"
+        "estimatedComponentPatchingStartTime",
+        "databaseSoftwareImageId"
     })
     public MaintenanceRunSummary(
             String id,
@@ -83,7 +84,8 @@ public final class MaintenanceRunSummary
             java.util.Date patchingEndTime,
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
-            java.util.Date estimatedComponentPatchingStartTime) {
+            java.util.Date estimatedComponentPatchingStartTime,
+            String databaseSoftwareImageId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -114,6 +116,7 @@ public final class MaintenanceRunSummary
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -596,6 +599,25 @@ public final class MaintenanceRunSummary
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -631,7 +653,8 @@ public final class MaintenanceRunSummary
                             this.patchingEndTime,
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
-                            this.estimatedComponentPatchingStartTime);
+                            this.estimatedComponentPatchingStartTime,
+                            this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -727,6 +750,9 @@ public final class MaintenanceRunSummary
             if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             return this;
         }
@@ -1086,6 +1112,7 @@ public final class MaintenanceRunSummary
         Oneoff("ONEOFF"),
         SecurityMonthly("SECURITY_MONTHLY"),
         Timezone("TIMEZONE"),
+        CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1467,6 +1494,23 @@ public final class MaintenanceRunSummary
         return estimatedComponentPatchingStartTime;
     }
 
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
+     * @return the value
+     */
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1517,6 +1561,8 @@ public final class MaintenanceRunSummary
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -1569,6 +1615,8 @@ public final class MaintenanceRunSummary
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -1673,6 +1721,11 @@ public final class MaintenanceRunSummary
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

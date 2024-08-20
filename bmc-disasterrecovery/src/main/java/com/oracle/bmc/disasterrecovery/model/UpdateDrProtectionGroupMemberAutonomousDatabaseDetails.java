@@ -36,13 +36,68 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
             this.__explicitlySet__.add("memberId");
             return this;
         }
+        /**
+         * This specifies the mechanism used to create a temporary Autonomous Database instance for
+         * DR Drills. See
+         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
+         * for information about these clone types. See
+         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
+         * for information about snapshot standby.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseStandbyTypeForDrDrills")
+        private AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills;
+
+        /**
+         * This specifies the mechanism used to create a temporary Autonomous Database instance for
+         * DR Drills. See
+         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
+         * for information about these clone types. See
+         * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
+         * for information about snapshot standby.
+         *
+         * @param autonomousDatabaseStandbyTypeForDrDrills the value to set
+         * @return this builder
+         */
+        public Builder autonomousDatabaseStandbyTypeForDrDrills(
+                AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills) {
+            this.autonomousDatabaseStandbyTypeForDrDrills =
+                    autonomousDatabaseStandbyTypeForDrDrills;
+            this.__explicitlySet__.add("autonomousDatabaseStandbyTypeForDrDrills");
+            return this;
+        }
+        /**
+         * The OCID of the vault secret where the database SYSDBA password is stored. This password
+         * is required and used for performing database DR Drill operations when using full clone.
+         *
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
+        private String passwordVaultSecretId;
+
+        /**
+         * The OCID of the vault secret where the database SYSDBA password is stored. This password
+         * is required and used for performing database DR Drill operations when using full clone.
+         *
+         * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+         *
+         * @param passwordVaultSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordVaultSecretId(String passwordVaultSecretId) {
+            this.passwordVaultSecretId = passwordVaultSecretId;
+            this.__explicitlySet__.add("passwordVaultSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateDrProtectionGroupMemberAutonomousDatabaseDetails build() {
             UpdateDrProtectionGroupMemberAutonomousDatabaseDetails model =
-                    new UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(this.memberId);
+                    new UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(
+                            this.memberId,
+                            this.autonomousDatabaseStandbyTypeForDrDrills,
+                            this.passwordVaultSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -53,6 +108,13 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         public Builder copy(UpdateDrProtectionGroupMemberAutonomousDatabaseDetails model) {
             if (model.wasPropertyExplicitlySet("memberId")) {
                 this.memberId(model.getMemberId());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousDatabaseStandbyTypeForDrDrills")) {
+                this.autonomousDatabaseStandbyTypeForDrDrills(
+                        model.getAutonomousDatabaseStandbyTypeForDrDrills());
+            }
+            if (model.wasPropertyExplicitlySet("passwordVaultSecretId")) {
+                this.passwordVaultSecretId(model.getPasswordVaultSecretId());
             }
             return this;
         }
@@ -68,8 +130,59 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
     }
 
     @Deprecated
-    public UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(String memberId) {
+    public UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(
+            String memberId,
+            AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills,
+            String passwordVaultSecretId) {
         super(memberId);
+        this.autonomousDatabaseStandbyTypeForDrDrills = autonomousDatabaseStandbyTypeForDrDrills;
+        this.passwordVaultSecretId = passwordVaultSecretId;
+    }
+
+    /**
+     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR
+     * Drills. See
+     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
+     * for information about these clone types. See
+     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
+     * for information about snapshot standby.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousDatabaseStandbyTypeForDrDrills")
+    private final AutonomousDatabaseStandbyTypeForDrDrills autonomousDatabaseStandbyTypeForDrDrills;
+
+    /**
+     * This specifies the mechanism used to create a temporary Autonomous Database instance for DR
+     * Drills. See
+     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-clone-about.html
+     * for information about these clone types. See
+     * https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/adbsb/autonomous-data-guard-snapshot-standby.html
+     * for information about snapshot standby.
+     *
+     * @return the value
+     */
+    public AutonomousDatabaseStandbyTypeForDrDrills getAutonomousDatabaseStandbyTypeForDrDrills() {
+        return autonomousDatabaseStandbyTypeForDrDrills;
+    }
+
+    /**
+     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
+     * required and used for performing database DR Drill operations when using full clone.
+     *
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordVaultSecretId")
+    private final String passwordVaultSecretId;
+
+    /**
+     * The OCID of the vault secret where the database SYSDBA password is stored. This password is
+     * required and used for performing database DR Drill operations when using full clone.
+     *
+     * <p>Example: {@code ocid1.vaultsecret.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getPasswordVaultSecretId() {
+        return passwordVaultSecretId;
     }
 
     @Override
@@ -87,6 +200,9 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateDrProtectionGroupMemberAutonomousDatabaseDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
+        sb.append(", autonomousDatabaseStandbyTypeForDrDrills=")
+                .append(String.valueOf(this.autonomousDatabaseStandbyTypeForDrDrills));
+        sb.append(", passwordVaultSecretId=").append(String.valueOf(this.passwordVaultSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -102,13 +218,27 @@ public final class UpdateDrProtectionGroupMemberAutonomousDatabaseDetails
 
         UpdateDrProtectionGroupMemberAutonomousDatabaseDetails other =
                 (UpdateDrProtectionGroupMemberAutonomousDatabaseDetails) o;
-        return super.equals(other);
+        return java.util.Objects.equals(
+                        this.autonomousDatabaseStandbyTypeForDrDrills,
+                        other.autonomousDatabaseStandbyTypeForDrDrills)
+                && java.util.Objects.equals(this.passwordVaultSecretId, other.passwordVaultSecretId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
+        result =
+                (result * PRIME)
+                        + (this.autonomousDatabaseStandbyTypeForDrDrills == null
+                                ? 43
+                                : this.autonomousDatabaseStandbyTypeForDrDrills.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordVaultSecretId == null
+                                ? 43
+                                : this.passwordVaultSecretId.hashCode());
         return result;
     }
 }
