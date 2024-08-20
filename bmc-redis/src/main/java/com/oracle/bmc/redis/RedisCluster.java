@@ -8,9 +8,9 @@ import com.oracle.bmc.redis.requests.*;
 import com.oracle.bmc.redis.responses.*;
 
 /**
- * Use the Redis Service API to create and manage Redis clusters. A Redis cluster is a memory-based
- * storage solution. For more information, see [OCI Caching Service with
- * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm). This service client uses
+ * Use the OCI Cache API to create and manage clusters. A cluster is a memory-based storage
+ * solution. For more information, see [OCI
+ * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm). This service client uses
  * CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit
  * breaker configuration is defined by the user.
  */
@@ -82,9 +82,9 @@ public interface RedisCluster extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * Moves a Redis cluster into a different compartment within the same tenancy. A Redis cluster
-     * is a memory-based storage solution. For more information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Moves an OCI Cache cluster into a different compartment within the same tenancy. A cluster is
+     * a memory-based storage solution. For more information, see [OCI
+     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -101,9 +101,8 @@ public interface RedisCluster extends AutoCloseable {
             ChangeRedisClusterCompartmentRequest request);
 
     /**
-     * Creates a new Redis cluster. A Redis cluster is a memory-based storage solution. For more
-     * information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Creates a new OCI Cache cluster. A cluster is a memory-based storage solution. For more
+     * information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -119,9 +118,9 @@ public interface RedisCluster extends AutoCloseable {
     CreateRedisClusterResponse createRedisCluster(CreateRedisClusterRequest request);
 
     /**
-     * Deletes the specified Redis cluster. A Redis cluster is a memory-based storage solution. For
-     * more information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Deletes the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
+     * more information, see [OCI
+     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -137,9 +136,9 @@ public interface RedisCluster extends AutoCloseable {
     DeleteRedisClusterResponse deleteRedisCluster(DeleteRedisClusterRequest request);
 
     /**
-     * Retrieves the specified Redis cluster. A Redis cluster is a memory-based storage solution.
-     * For more information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Retrieves the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
+     * more information, see [OCI
+     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -170,9 +169,25 @@ public interface RedisCluster extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Lists the Redis clusters in the specified compartment. A Redis cluster is a memory-based
-     * storage solution. For more information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Gets the list of all nodes in a cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/redis/ListRedisClusterNodesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListRedisClusterNodes API.
+     */
+    ListRedisClusterNodesResponse listRedisClusterNodes(ListRedisClusterNodesRequest request);
+
+    /**
+     * Lists the OCI Cache clusters in the specified compartment. A cluster is a memory-based
+     * storage solution. For more information, see [OCI
+     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -236,9 +251,9 @@ public interface RedisCluster extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Updates the specified Redis cluster. A Redis cluster is a memory-based storage solution. For
-     * more information, see [OCI Caching Service with
-     * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+     * Updates the specified OCI Cache cluster. A cluster is a memory-based storage solution. For
+     * more information, see [OCI
+     * Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

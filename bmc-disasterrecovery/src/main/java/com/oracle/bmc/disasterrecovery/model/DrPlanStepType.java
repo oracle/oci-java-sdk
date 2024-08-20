@@ -17,6 +17,35 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     DatabaseFailoverPrecheck("DATABASE_FAILOVER_PRECHECK"),
     AutonomousDatabaseSwitchoverPrecheck("AUTONOMOUS_DATABASE_SWITCHOVER_PRECHECK"),
     AutonomousDatabaseFailoverPrecheck("AUTONOMOUS_DATABASE_FAILOVER_PRECHECK"),
+    AutonomousContainerDatabaseSwitchoverPrecheck(
+            "AUTONOMOUS_CONTAINER_DATABASE_SWITCHOVER_PRECHECK"),
+    AutonomousContainerDatabaseFailoverPrecheck("AUTONOMOUS_CONTAINER_DATABASE_FAILOVER_PRECHECK"),
+    AutonomousContainerDatabaseStartDrillConvertToSnapshotStandbyPrecheck(
+            "AUTONOMOUS_CONTAINER_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK"),
+    AutonomousContainerDatabaseStopDrillConvertToPhysicalStandbyPrecheck(
+            "AUTONOMOUS_CONTAINER_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK"),
+    AutonomousContainerDatabaseSwitchover("AUTONOMOUS_CONTAINER_DATABASE_SWITCHOVER"),
+    AutonomousContainerDatabaseFailover("AUTONOMOUS_CONTAINER_DATABASE_FAILOVER"),
+    AutonomousContainerDatabaseStartDrillConvertToSnapshotStandby(
+            "AUTONOMOUS_CONTAINER_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
+    AutonomousContainerDatabaseStopDrillConvertToPhysicalStandby(
+            "AUTONOMOUS_CONTAINER_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
+    AutonomousDatabaseStartDrillCreateCloneStandbyPrecheck(
+            "AUTONOMOUS_DATABASE_START_DRILL_CREATE_CLONE_STANDBY_PRECHECK"),
+    AutonomousDatabaseStopDrillDeleteCloneStandbyPrecheck(
+            "AUTONOMOUS_DATABASE_STOP_DRILL_DELETE_CLONE_STANDBY_PRECHECK"),
+    AutonomousDatabaseStartDrillConvertToSnapshotStandbyPrecheck(
+            "AUTONOMOUS_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY_PRECHECK"),
+    AutonomousDatabaseStopDrillConvertToPhysicalStandbyPrecheck(
+            "AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY_PRECHECK"),
+    AutonomousDatabaseStartDrillCreateCloneStandby(
+            "AUTONOMOUS_DATABASE_START_DRILL_CREATE_CLONE_STANDBY"),
+    AutonomousDatabaseStopDrillDeleteCloneStandby(
+            "AUTONOMOUS_DATABASE_STOP_DRILL_DELETE_CLONE_STANDBY"),
+    AutonomousDatabaseStartDrillConvertToSnapshotStandby(
+            "AUTONOMOUS_DATABASE_START_DRILL_CONVERT_TO_SNAPSHOT_STANDBY"),
+    AutonomousDatabaseStopDrillConvertToPhysicalStandby(
+            "AUTONOMOUS_DATABASE_STOP_DRILL_CONVERT_TO_PHYSICAL_STANDBY"),
     UserDefinedPrecheck("USER_DEFINED_PRECHECK"),
     ComputeInstanceLaunch("COMPUTE_INSTANCE_LAUNCH"),
     ComputeInstanceStop("COMPUTE_INSTANCE_STOP"),
@@ -82,6 +111,22 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     ComputeCapacityAvailabilitySwitchoverPrecheck(
             "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK"),
     ComputeCapacityAvailabilityFailoverPrecheck("COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK"),
+    ObjectStorageBucketSwitchoverDeleteReplicationPrimaryPrecheck(
+            "OBJECT_STORAGE_BUCKET_SWITCHOVER_DELETE_REPLICATION_PRIMARY_PRECHECK"),
+    ObjectStorageBucketSwitchoverSetupReverseReplicationStandbyPrecheck(
+            "OBJECT_STORAGE_BUCKET_SWITCHOVER_SETUP_REVERSE_REPLICATION_STANDBY_PRECHECK"),
+    ObjectStorageBucketFailoverDeleteReplicationStandbyPrecheck(
+            "OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY_PRECHECK"),
+    ObjectStorageBucketFailoverSetupReverseReplicationStandbyPrecheck(
+            "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY_PRECHECK"),
+    ObjectStorageBucketSwitchoverDeleteReplicationPrimary(
+            "OBJECT_STORAGE_BUCKET_SWITCHOVER_DELETE_REPLICATION_PRIMARY"),
+    ObjectStorageBucketSwitchoverSetupReverseReplicationStandby(
+            "OBJECT_STORAGE_BUCKET_SWITCHOVER_SETUP_REVERSE_REPLICATION_STANDBY"),
+    ObjectStorageBucketFailoverDeleteReplicationStandby(
+            "OBJECT_STORAGE_BUCKET_FAILOVER_DELETE_REPLICATION_STANDBY"),
+    ObjectStorageBucketFailoverSetupReverseReplicationStandby(
+            "OBJECT_STORAGE_BUCKET_FAILOVER_SETUP_REVERSE_REPLICATION_STANDBY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

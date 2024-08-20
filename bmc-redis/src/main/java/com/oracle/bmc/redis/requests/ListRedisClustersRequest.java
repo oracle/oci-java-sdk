@@ -37,14 +37,14 @@ public class ListRedisClustersRequest extends com.oracle.bmc.requests.BmcRequest
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      */
     private String id;
 
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      */
     public String getId() {
         return id;
@@ -188,14 +188,14 @@ public class ListRedisClustersRequest extends com.oracle.bmc.requests.BmcRequest
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          */
         private String id = null;
 
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          *
          * @param id the value to set
          * @return this builder instance

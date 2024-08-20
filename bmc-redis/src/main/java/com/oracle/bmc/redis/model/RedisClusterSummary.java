@@ -5,9 +5,8 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * Summary of information about a Redis cluster. A Redis cluster is a memory-based storage solution.
- * For more information, see [OCI Caching Service with
- * Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm). <br>
+ * Summary of information about a cluster. A cluster is a memory-based storage solution. For more
+ * information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm). <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -41,6 +40,8 @@ public final class RedisClusterSummary
         "subnetId",
         "timeCreated",
         "timeUpdated",
+        "clusterMode",
+        "shardCount",
         "nsgIds",
         "freeformTags",
         "definedTags",
@@ -62,6 +63,8 @@ public final class RedisClusterSummary
             String subnetId,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            RedisCluster.ClusterMode clusterMode,
+            Integer shardCount,
             java.util.List<String> nsgIds,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -82,6 +85,8 @@ public final class RedisClusterSummary
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.clusterMode = clusterMode;
+        this.shardCount = shardCount;
         this.nsgIds = nsgIds;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -93,7 +98,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
@@ -101,7 +106,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          *
          * @param id the value to set
          * @return this builder
@@ -133,7 +138,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the Redis cluster.
+         * of the compartment that contains the cluster.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
@@ -141,7 +146,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the compartment that contains the Redis cluster.
+         * of the compartment that contains the cluster.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -151,12 +156,12 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The current state of the Redis cluster. */
+        /** The current state of the cluster. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private RedisCluster.LifecycleState lifecycleState;
 
         /**
-         * The current state of the Redis cluster.
+         * The current state of the cluster.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -185,12 +190,16 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** The number of nodes in the Redis cluster. */
+        /**
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * The number of nodes in the Redis cluster.
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
          *
          * @param nodeCount the value to set
          * @return this builder
@@ -200,12 +209,12 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+        /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
         private Float nodeMemoryInGBs;
 
         /**
-         * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
          *
          * @param nodeMemoryInGBs the value to set
          * @return this builder
@@ -216,15 +225,15 @@ public final class RedisClusterSummary
             return this;
         }
         /**
-         * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's
-         * primary node.
+         * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary
+         * node.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("primaryFqdn")
         private String primaryFqdn;
 
         /**
-         * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's
-         * primary node.
+         * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary
+         * node.
          *
          * @param primaryFqdn the value to set
          * @return this builder
@@ -234,12 +243,12 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("primaryFqdn");
             return this;
         }
-        /** The private IP address of the API endpoint for the Redis cluster's primary node. */
+        /** The private IP address of the API endpoint for the cluster's primary node. */
         @com.fasterxml.jackson.annotation.JsonProperty("primaryEndpointIpAddress")
         private String primaryEndpointIpAddress;
 
         /**
-         * The private IP address of the API endpoint for the Redis cluster's primary node.
+         * The private IP address of the API endpoint for the cluster's primary node.
          *
          * @param primaryEndpointIpAddress the value to set
          * @return this builder
@@ -250,15 +259,15 @@ public final class RedisClusterSummary
             return this;
         }
         /**
-         * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's
-         * replica nodes.
+         * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica
+         * nodes.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replicasFqdn")
         private String replicasFqdn;
 
         /**
-         * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's
-         * replica nodes.
+         * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica
+         * nodes.
          *
          * @param replicasFqdn the value to set
          * @return this builder
@@ -268,12 +277,12 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("replicasFqdn");
             return this;
         }
-        /** The private IP address of the API endpoint for the Redis cluster's replica nodes. */
+        /** The private IP address of the API endpoint for the cluster's replica nodes. */
         @com.fasterxml.jackson.annotation.JsonProperty("replicasEndpointIpAddress")
         private String replicasEndpointIpAddress;
 
         /**
-         * The private IP address of the API endpoint for the Redis cluster's replica nodes.
+         * The private IP address of the API endpoint for the cluster's replica nodes.
          *
          * @param replicasEndpointIpAddress the value to set
          * @return this builder
@@ -283,12 +292,12 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("replicasEndpointIpAddress");
             return this;
         }
-        /** The Redis version that the cluster is running. */
+        /** The OCI Cache engine version that the cluster is running. */
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private RedisCluster.SoftwareVersion softwareVersion;
 
         /**
-         * The Redis version that the cluster is running.
+         * The OCI Cache engine version that the cluster is running.
          *
          * @param softwareVersion the value to set
          * @return this builder
@@ -301,7 +310,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster's subnet.
+         * of the cluster's subnet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
@@ -309,7 +318,7 @@ public final class RedisClusterSummary
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster's subnet.
+         * of the cluster's subnet.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -320,14 +329,14 @@ public final class RedisClusterSummary
             return this;
         }
         /**
-         * The date and time the Redis cluster was created. An
+         * The date and time the cluster was created. An
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The date and time the Redis cluster was created. An
+         * The date and time the cluster was created. An
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          *
          * @param timeCreated the value to set
@@ -339,14 +348,14 @@ public final class RedisClusterSummary
             return this;
         }
         /**
-         * The date and time the Redis cluster was updated. An
+         * The date and time the cluster was updated. An
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private java.util.Date timeUpdated;
 
         /**
-         * The date and time the Redis cluster was updated. An
+         * The date and time the cluster was updated. An
          * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
          *
          * @param timeUpdated the value to set
@@ -357,11 +366,43 @@ public final class RedisClusterSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** Specifies whether the cluster is sharded or non-sharded. */
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+        private RedisCluster.ClusterMode clusterMode;
+
+        /**
+         * Specifies whether the cluster is sharded or non-sharded.
+         *
+         * @param clusterMode the value to set
+         * @return this builder
+         */
+        public Builder clusterMode(RedisCluster.ClusterMode clusterMode) {
+            this.clusterMode = clusterMode;
+            this.__explicitlySet__.add("clusterMode");
+            return this;
+        }
+        /**
+         * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+        private Integer shardCount;
+
+        /**
+         * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+         *
+         * @param shardCount the value to set
+         * @return this builder
+         */
+        public Builder shardCount(Integer shardCount) {
+            this.shardCount = shardCount;
+            this.__explicitlySet__.add("shardCount");
+            return this;
+        }
         /**
          * A list of Network Security Group (NSG)
          * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for Redis
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * associated with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
@@ -369,8 +410,8 @@ public final class RedisClusterSummary
         /**
          * A list of Network Security Group (NSG)
          * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for Redis
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * associated with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -460,6 +501,8 @@ public final class RedisClusterSummary
                             this.subnetId,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.clusterMode,
+                            this.shardCount,
                             this.nsgIds,
                             this.freeformTags,
                             this.definedTags,
@@ -517,6 +560,12 @@ public final class RedisClusterSummary
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
             }
+            if (model.wasPropertyExplicitlySet("clusterMode")) {
+                this.clusterMode(model.getClusterMode());
+            }
+            if (model.wasPropertyExplicitlySet("shardCount")) {
+                this.shardCount(model.getShardCount());
+            }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
@@ -545,7 +594,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
@@ -553,7 +602,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      *
      * @return the value
      */
@@ -581,7 +630,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the Redis cluster.
+     * the compartment that contains the cluster.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
@@ -589,7 +638,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the compartment that contains the Redis cluster.
+     * the compartment that contains the cluster.
      *
      * @return the value
      */
@@ -597,12 +646,12 @@ public final class RedisClusterSummary
         return compartmentId;
     }
 
-    /** The current state of the Redis cluster. */
+    /** The current state of the cluster. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final RedisCluster.LifecycleState lifecycleState;
 
     /**
-     * The current state of the Redis cluster.
+     * The current state of the cluster.
      *
      * @return the value
      */
@@ -627,12 +676,16 @@ public final class RedisClusterSummary
         return lifecycleDetails;
     }
 
-    /** The number of nodes in the Redis cluster. */
+    /**
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
      *
      * @return the value
      */
@@ -640,12 +693,12 @@ public final class RedisClusterSummary
         return nodeCount;
     }
 
-    /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+    /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
     private final Float nodeMemoryInGBs;
 
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      *
      * @return the value
      */
@@ -654,15 +707,13 @@ public final class RedisClusterSummary
     }
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary
-     * node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryFqdn")
     private final String primaryFqdn;
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's primary
-     * node.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's primary node.
      *
      * @return the value
      */
@@ -670,12 +721,12 @@ public final class RedisClusterSummary
         return primaryFqdn;
     }
 
-    /** The private IP address of the API endpoint for the Redis cluster's primary node. */
+    /** The private IP address of the API endpoint for the cluster's primary node. */
     @com.fasterxml.jackson.annotation.JsonProperty("primaryEndpointIpAddress")
     private final String primaryEndpointIpAddress;
 
     /**
-     * The private IP address of the API endpoint for the Redis cluster's primary node.
+     * The private IP address of the API endpoint for the cluster's primary node.
      *
      * @return the value
      */
@@ -684,15 +735,13 @@ public final class RedisClusterSummary
     }
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica
-     * nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replicasFqdn")
     private final String replicasFqdn;
 
     /**
-     * The fully qualified domain name (FQDN) of the API endpoint for the Redis cluster's replica
-     * nodes.
+     * The fully qualified domain name (FQDN) of the API endpoint for the cluster's replica nodes.
      *
      * @return the value
      */
@@ -700,12 +749,12 @@ public final class RedisClusterSummary
         return replicasFqdn;
     }
 
-    /** The private IP address of the API endpoint for the Redis cluster's replica nodes. */
+    /** The private IP address of the API endpoint for the cluster's replica nodes. */
     @com.fasterxml.jackson.annotation.JsonProperty("replicasEndpointIpAddress")
     private final String replicasEndpointIpAddress;
 
     /**
-     * The private IP address of the API endpoint for the Redis cluster's replica nodes.
+     * The private IP address of the API endpoint for the cluster's replica nodes.
      *
      * @return the value
      */
@@ -713,12 +762,12 @@ public final class RedisClusterSummary
         return replicasEndpointIpAddress;
     }
 
-    /** The Redis version that the cluster is running. */
+    /** The OCI Cache engine version that the cluster is running. */
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final RedisCluster.SoftwareVersion softwareVersion;
 
     /**
-     * The Redis version that the cluster is running.
+     * The OCI Cache engine version that the cluster is running.
      *
      * @return the value
      */
@@ -729,7 +778,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster's subnet.
+     * the cluster's subnet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
@@ -737,7 +786,7 @@ public final class RedisClusterSummary
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster's subnet.
+     * the cluster's subnet.
      *
      * @return the value
      */
@@ -746,14 +795,14 @@ public final class RedisClusterSummary
     }
 
     /**
-     * The date and time the Redis cluster was created. An
+     * The date and time the cluster was created. An
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The date and time the Redis cluster was created. An
+     * The date and time the cluster was created. An
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      *
      * @return the value
@@ -763,14 +812,14 @@ public final class RedisClusterSummary
     }
 
     /**
-     * The date and time the Redis cluster was updated. An
+     * The date and time the cluster was updated. An
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final java.util.Date timeUpdated;
 
     /**
-     * The date and time the Redis cluster was updated. An
+     * The date and time the cluster was updated. An
      * [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339) formatted datetime string.
      *
      * @return the value
@@ -779,11 +828,37 @@ public final class RedisClusterSummary
         return timeUpdated;
     }
 
+    /** Specifies whether the cluster is sharded or non-sharded. */
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+    private final RedisCluster.ClusterMode clusterMode;
+
+    /**
+     * Specifies whether the cluster is sharded or non-sharded.
+     *
+     * @return the value
+     */
+    public RedisCluster.ClusterMode getClusterMode() {
+        return clusterMode;
+    }
+
+    /** The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+    private final Integer shardCount;
+
+    /**
+     * The number of shards in a sharded cluster. Only applicable when clusterMode is SHARDED.
+     *
+     * @return the value
+     */
+    public Integer getShardCount() {
+        return shardCount;
+    }
+
     /**
      * A list of Network Security Group (NSG)
      * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for Redis
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * associated with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
@@ -791,8 +866,8 @@ public final class RedisClusterSummary
     /**
      * A list of Network Security Group (NSG)
      * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for Redis
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * associated with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      *
      * @return the value
      */
@@ -883,6 +958,8 @@ public final class RedisClusterSummary
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", clusterMode=").append(String.valueOf(this.clusterMode));
+        sb.append(", shardCount=").append(String.valueOf(this.shardCount));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -918,6 +995,8 @@ public final class RedisClusterSummary
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.clusterMode, other.clusterMode)
+                && java.util.Objects.equals(this.shardCount, other.shardCount)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -962,6 +1041,8 @@ public final class RedisClusterSummary
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
+        result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

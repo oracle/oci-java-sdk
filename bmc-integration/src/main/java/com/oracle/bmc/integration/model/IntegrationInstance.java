@@ -47,7 +47,8 @@ public final class IntegrationInstance
         "idcsInfo",
         "attachments",
         "shape",
-        "privateEndpointOutboundConnection"
+        "privateEndpointOutboundConnection",
+        "dataRetentionPeriod"
     })
     public IntegrationInstance(
             String id,
@@ -73,7 +74,8 @@ public final class IntegrationInstance
             IdcsInfoDetails idcsInfo,
             java.util.List<AttachmentDetails> attachments,
             Shape shape,
-            OutboundConnection privateEndpointOutboundConnection) {
+            OutboundConnection privateEndpointOutboundConnection,
+            DataRetentionPeriod dataRetentionPeriod) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -99,6 +101,7 @@ public final class IntegrationInstance
         this.attachments = attachments;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+        this.dataRetentionPeriod = dataRetentionPeriod;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -464,6 +467,21 @@ public final class IntegrationInstance
             this.__explicitlySet__.add("privateEndpointOutboundConnection");
             return this;
         }
+        /** Data retention period set for given integration instance */
+        @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+        private DataRetentionPeriod dataRetentionPeriod;
+
+        /**
+         * Data retention period set for given integration instance
+         *
+         * @param dataRetentionPeriod the value to set
+         * @return this builder
+         */
+        public Builder dataRetentionPeriod(DataRetentionPeriod dataRetentionPeriod) {
+            this.dataRetentionPeriod = dataRetentionPeriod;
+            this.__explicitlySet__.add("dataRetentionPeriod");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -494,7 +512,8 @@ public final class IntegrationInstance
                             this.idcsInfo,
                             this.attachments,
                             this.shape,
-                            this.privateEndpointOutboundConnection);
+                            this.privateEndpointOutboundConnection,
+                            this.dataRetentionPeriod);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -575,6 +594,9 @@ public final class IntegrationInstance
             if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
                 this.privateEndpointOutboundConnection(
                         model.getPrivateEndpointOutboundConnection());
+            }
+            if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
+                this.dataRetentionPeriod(model.getDataRetentionPeriod());
             }
             return this;
         }
@@ -732,6 +754,7 @@ public final class IntegrationInstance
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -1092,6 +1115,66 @@ public final class IntegrationInstance
         return privateEndpointOutboundConnection;
     }
 
+    /** Data retention period set for given integration instance */
+    public enum DataRetentionPeriod implements com.oracle.bmc.http.internal.BmcEnum {
+        Months1("MONTHS_1"),
+        Months3("MONTHS_3"),
+        Months6("MONTHS_6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataRetentionPeriod.class);
+
+        private final String value;
+        private static java.util.Map<String, DataRetentionPeriod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataRetentionPeriod v : DataRetentionPeriod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataRetentionPeriod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataRetentionPeriod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataRetentionPeriod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Data retention period set for given integration instance */
+    @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+    private final DataRetentionPeriod dataRetentionPeriod;
+
+    /**
+     * Data retention period set for given integration instance
+     *
+     * @return the value
+     */
+    public DataRetentionPeriod getDataRetentionPeriod() {
+        return dataRetentionPeriod;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1134,6 +1217,7 @@ public final class IntegrationInstance
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
                 .append(String.valueOf(this.privateEndpointOutboundConnection));
+        sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
         sb.append(")");
         return sb.toString();
     }
@@ -1178,6 +1262,7 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(
                         this.privateEndpointOutboundConnection,
                         other.privateEndpointOutboundConnection)
+                && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
                 && super.equals(other);
     }
 
@@ -1241,6 +1326,11 @@ public final class IntegrationInstance
                         + (this.privateEndpointOutboundConnection == null
                                 ? 43
                                 : this.privateEndpointOutboundConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataRetentionPeriod == null
+                                ? 43
+                                : this.dataRetentionPeriod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

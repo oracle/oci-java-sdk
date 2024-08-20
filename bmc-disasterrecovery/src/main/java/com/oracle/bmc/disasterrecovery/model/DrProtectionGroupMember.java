@@ -29,6 +29,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = DrProtectionGroupMemberNetworkLoadBalancer.class,
             name = "NETWORK_LOAD_BALANCER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberObjectStorageBucket.class,
+            name = "OBJECT_STORAGE_BUCKET"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberFileSystem.class,
             name = "FILE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -46,6 +49,9 @@ package com.oracle.bmc.disasterrecovery.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberComputeInstanceNonMovable.class,
             name = "COMPUTE_INSTANCE_NON_MOVABLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberAutonomousContainerDatabase.class,
+            name = "AUTONOMOUS_CONTAINER_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberDatabase.class,
             name = "DATABASE")

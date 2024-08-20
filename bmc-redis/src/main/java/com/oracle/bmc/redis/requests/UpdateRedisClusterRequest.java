@@ -18,14 +18,14 @@ public class UpdateRedisClusterRequest
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      */
     private String redisClusterId;
 
     /**
      * The
      * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of
-     * the Redis cluster.
+     * the cluster.
      */
     public String getRedisClusterId() {
         return redisClusterId;
@@ -83,14 +83,14 @@ public class UpdateRedisClusterRequest
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          */
         private String redisClusterId = null;
 
         /**
          * The
          * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle)
-         * of the Redis cluster.
+         * of the cluster.
          *
          * @param redisClusterId the value to set
          * @return this builder instance

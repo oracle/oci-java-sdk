@@ -24,7 +24,13 @@ package com.oracle.bmc.databasemanagement.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExternalPluggableDatabaseDiagnosticsAndManagementFeatureDetails.class,
-            name = "DIAGNOSTICS_AND_MANAGEMENT")
+            name = "DIAGNOSTICS_AND_MANAGEMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExternalPluggableDatabaseLifecycleManagementFeatureDetails.class,
+            name = "DB_LIFECYCLE_MANAGEMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExternalPluggableDatabaseSqlWatchFeatureDetails.class,
+            name = "SQLWATCH")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

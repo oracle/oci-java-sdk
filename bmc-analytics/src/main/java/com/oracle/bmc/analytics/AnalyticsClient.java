@@ -693,6 +693,40 @@ public class AnalyticsClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public SetFeatureBundleResponse setFeatureBundle(SetFeatureBundleRequest request) {
+
+        Validate.notBlank(
+                request.getAnalyticsInstanceId(), "analyticsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getSetFeatureBundleDetails(), "setFeatureBundleDetails is required");
+
+        return clientCall(request, SetFeatureBundleResponse::builder)
+                .logger(LOG, "setFeatureBundle")
+                .serviceDetails(
+                        "Analytics",
+                        "SetFeatureBundle",
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetFeatureBundle")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetFeatureBundleRequest::builder)
+                .basePath("/20190331")
+                .appendPathParam("analyticsInstances")
+                .appendPathParam(request.getAnalyticsInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("setFeatureBundle")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", SetFeatureBundleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetFeatureBundleResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public SetKmsKeyResponse setKmsKey(SetKmsKeyRequest request) {
 
         Validate.notBlank(

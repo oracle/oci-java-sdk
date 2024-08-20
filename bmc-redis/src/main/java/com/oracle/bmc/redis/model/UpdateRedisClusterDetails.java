@@ -5,7 +5,7 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * The configuration to update for an existing Redis cluster. <br>
+ * The configuration to update for an existing cluster. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -24,6 +24,7 @@ public final class UpdateRedisClusterDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "shardCount",
         "displayName",
         "nodeCount",
         "nodeMemoryInGBs",
@@ -32,6 +33,7 @@ public final class UpdateRedisClusterDetails
         "definedTags"
     })
     public UpdateRedisClusterDetails(
+            Integer shardCount,
             String displayName,
             Integer nodeCount,
             Float nodeMemoryInGBs,
@@ -39,6 +41,7 @@ public final class UpdateRedisClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.shardCount = shardCount;
         this.displayName = displayName;
         this.nodeCount = nodeCount;
         this.nodeMemoryInGBs = nodeMemoryInGBs;
@@ -49,6 +52,21 @@ public final class UpdateRedisClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+        @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+        private Integer shardCount;
+
+        /**
+         * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         *
+         * @param shardCount the value to set
+         * @return this builder
+         */
+        public Builder shardCount(Integer shardCount) {
+            this.shardCount = shardCount;
+            this.__explicitlySet__.add("shardCount");
+            return this;
+        }
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
          * confidential information.
@@ -68,12 +86,16 @@ public final class UpdateRedisClusterDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The number of nodes in the Redis cluster. */
+        /**
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * The number of nodes in the Redis cluster.
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the
+         * total number of nodes when clusterMode is NONSHARDED.
          *
          * @param nodeCount the value to set
          * @return this builder
@@ -83,12 +105,12 @@ public final class UpdateRedisClusterDetails
             this.__explicitlySet__.add("nodeCount");
             return this;
         }
-        /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+        /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
         private Float nodeMemoryInGBs;
 
         /**
-         * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
          *
          * @param nodeMemoryInGBs the value to set
          * @return this builder
@@ -101,8 +123,8 @@ public final class UpdateRedisClusterDetails
         /**
          * A list of Network Security Group (NSG)
          * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for Redis
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * associated with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
@@ -110,8 +132,8 @@ public final class UpdateRedisClusterDetails
         /**
          * A list of Network Security Group (NSG)
          * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * associated with this cluster. For more information, see [Using an NSG for Redis
-         * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+         * associated with this cluster. For more information, see [Using an NSG for
+         * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
          *
          * @param nsgIds the value to set
          * @return this builder
@@ -167,6 +189,7 @@ public final class UpdateRedisClusterDetails
         public UpdateRedisClusterDetails build() {
             UpdateRedisClusterDetails model =
                     new UpdateRedisClusterDetails(
+                            this.shardCount,
                             this.displayName,
                             this.nodeCount,
                             this.nodeMemoryInGBs,
@@ -181,6 +204,9 @@ public final class UpdateRedisClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(UpdateRedisClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("shardCount")) {
+                this.shardCount(model.getShardCount());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -212,6 +238,19 @@ public final class UpdateRedisClusterDetails
         return new Builder().copy(this);
     }
 
+    /** The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+    private final Integer shardCount;
+
+    /**
+     * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     *
+     * @return the value
+     */
+    public Integer getShardCount() {
+        return shardCount;
+    }
+
     /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
      * confidential information.
@@ -229,12 +268,16 @@ public final class UpdateRedisClusterDetails
         return displayName;
     }
 
-    /** The number of nodes in the Redis cluster. */
+    /**
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total
+     * number of nodes when clusterMode is NONSHARDED.
      *
      * @return the value
      */
@@ -242,12 +285,12 @@ public final class UpdateRedisClusterDetails
         return nodeCount;
     }
 
-    /** The amount of memory allocated to the Redis cluster's nodes, in gigabytes. */
+    /** The amount of memory allocated to the cluster's nodes, in gigabytes. */
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
     private final Float nodeMemoryInGBs;
 
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      *
      * @return the value
      */
@@ -258,8 +301,8 @@ public final class UpdateRedisClusterDetails
     /**
      * A list of Network Security Group (NSG)
      * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for Redis
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * associated with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
@@ -267,8 +310,8 @@ public final class UpdateRedisClusterDetails
     /**
      * A list of Network Security Group (NSG)
      * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-     * associated with this cluster. For more information, see [Using an NSG for Redis
-     * Clusters](https://docs.cloud.oracle.com/iaas/Content/redis/connecttorediscluster.htm#connecttorediscluster__networksecuritygroup).
+     * associated with this cluster. For more information, see [Using an NSG for
+     * Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
      *
      * @return the value
      */
@@ -325,7 +368,8 @@ public final class UpdateRedisClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("UpdateRedisClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("shardCount=").append(String.valueOf(this.shardCount));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", nodeMemoryInGBs=").append(String.valueOf(this.nodeMemoryInGBs));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -345,7 +389,8 @@ public final class UpdateRedisClusterDetails
         }
 
         UpdateRedisClusterDetails other = (UpdateRedisClusterDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.shardCount, other.shardCount)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.nodeMemoryInGBs, other.nodeMemoryInGBs)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -358,6 +403,7 @@ public final class UpdateRedisClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result =

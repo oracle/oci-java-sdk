@@ -51,13 +51,6 @@ public class ListDrPlanExecutionsRequest
     public String getDrPlanExecutionId() {
         return drPlanExecutionId;
     }
-    /** The DR plan execution type. */
-    private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType drPlanExecutionType;
-
-    /** The DR plan execution type. */
-    public com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType getDrPlanExecutionType() {
-        return drPlanExecutionType;
-    }
     /**
      * A filter to return only resources that match the given display name.
      *
@@ -252,22 +245,6 @@ public class ListDrPlanExecutionsRequest
             return this;
         }
 
-        /** The DR plan execution type. */
-        private com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType drPlanExecutionType =
-                null;
-
-        /**
-         * The DR plan execution type.
-         *
-         * @param drPlanExecutionType the value to set
-         * @return this builder instance
-         */
-        public Builder drPlanExecutionType(
-                com.oracle.bmc.disasterrecovery.model.DrPlanExecutionType drPlanExecutionType) {
-            this.drPlanExecutionType = drPlanExecutionType;
-            return this;
-        }
-
         /**
          * A filter to return only resources that match the given display name.
          *
@@ -425,7 +402,6 @@ public class ListDrPlanExecutionsRequest
             drProtectionGroupId(o.getDrProtectionGroupId());
             lifecycleState(o.getLifecycleState());
             drPlanExecutionId(o.getDrPlanExecutionId());
-            drPlanExecutionType(o.getDrPlanExecutionType());
             displayName(o.getDisplayName());
             limit(o.getLimit());
             page(o.getPage());
@@ -469,7 +445,6 @@ public class ListDrPlanExecutionsRequest
             request.drProtectionGroupId = drProtectionGroupId;
             request.lifecycleState = lifecycleState;
             request.drPlanExecutionId = drPlanExecutionId;
-            request.drPlanExecutionType = drPlanExecutionType;
             request.displayName = displayName;
             request.limit = limit;
             request.page = page;
@@ -478,8 +453,7 @@ public class ListDrPlanExecutionsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListDrPlanExecutionsRequest(drProtectionGroupId, lifecycleState,
-            // drPlanExecutionId, drPlanExecutionType, displayName, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // drPlanExecutionId, displayName, limit, page, sortOrder, sortBy, opcRequestId);
         }
     }
 
@@ -493,7 +467,6 @@ public class ListDrPlanExecutionsRequest
                 .drProtectionGroupId(drProtectionGroupId)
                 .lifecycleState(lifecycleState)
                 .drPlanExecutionId(drPlanExecutionId)
-                .drPlanExecutionType(drPlanExecutionType)
                 .displayName(displayName)
                 .limit(limit)
                 .page(page)
@@ -519,7 +492,6 @@ public class ListDrPlanExecutionsRequest
         sb.append(",drProtectionGroupId=").append(String.valueOf(this.drProtectionGroupId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",drPlanExecutionId=").append(String.valueOf(this.drPlanExecutionId));
-        sb.append(",drPlanExecutionType=").append(String.valueOf(this.drPlanExecutionType));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -544,7 +516,6 @@ public class ListDrPlanExecutionsRequest
                 && java.util.Objects.equals(this.drProtectionGroupId, other.drProtectionGroupId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.drPlanExecutionId, other.drPlanExecutionId)
-                && java.util.Objects.equals(this.drPlanExecutionType, other.drPlanExecutionType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -568,11 +539,6 @@ public class ListDrPlanExecutionsRequest
         result =
                 (result * PRIME)
                         + (this.drPlanExecutionId == null ? 43 : this.drPlanExecutionId.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.drPlanExecutionType == null
-                                ? 43
-                                : this.drPlanExecutionType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

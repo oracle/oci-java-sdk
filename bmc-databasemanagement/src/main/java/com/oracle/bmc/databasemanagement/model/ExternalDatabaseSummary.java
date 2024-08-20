@@ -39,7 +39,10 @@ public final class ExternalDatabaseSummary
         "timeCreated",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "dbmgmtFeatureConfigs",
+        "databaseVersion",
+        "databasePlatformName"
     })
     public ExternalDatabaseSummary(
             String id,
@@ -57,7 +60,10 @@ public final class ExternalDatabaseSummary
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs,
+            String databaseVersion,
+            String databasePlatformName) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -75,6 +81,9 @@ public final class ExternalDatabaseSummary
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+        this.databaseVersion = databaseVersion;
+        this.databasePlatformName = databasePlatformName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -356,6 +365,52 @@ public final class ExternalDatabaseSummary
             this.__explicitlySet__.add("systemTags");
             return this;
         }
+        /** The list of feature configurations */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+        private java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+        /**
+         * The list of feature configurations
+         *
+         * @param dbmgmtFeatureConfigs the value to set
+         * @return this builder
+         */
+        public Builder dbmgmtFeatureConfigs(
+                java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs) {
+            this.dbmgmtFeatureConfigs = dbmgmtFeatureConfigs;
+            this.__explicitlySet__.add("dbmgmtFeatureConfigs");
+            return this;
+        }
+        /** The Oracle database version. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+        private String databaseVersion;
+
+        /**
+         * The Oracle database version.
+         *
+         * @param databaseVersion the value to set
+         * @return this builder
+         */
+        public Builder databaseVersion(String databaseVersion) {
+            this.databaseVersion = databaseVersion;
+            this.__explicitlySet__.add("databaseVersion");
+            return this;
+        }
+        /** The operating system of database. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+        private String databasePlatformName;
+
+        /**
+         * The operating system of database.
+         *
+         * @param databasePlatformName the value to set
+         * @return this builder
+         */
+        public Builder databasePlatformName(String databasePlatformName) {
+            this.databasePlatformName = databasePlatformName;
+            this.__explicitlySet__.add("databasePlatformName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -378,7 +433,10 @@ public final class ExternalDatabaseSummary
                             this.timeCreated,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.dbmgmtFeatureConfigs,
+                            this.databaseVersion,
+                            this.databasePlatformName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -434,6 +492,15 @@ public final class ExternalDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbmgmtFeatureConfigs")) {
+                this.dbmgmtFeatureConfigs(model.getDbmgmtFeatureConfigs());
+            }
+            if (model.wasPropertyExplicitlySet("databaseVersion")) {
+                this.databaseVersion(model.getDatabaseVersion());
+            }
+            if (model.wasPropertyExplicitlySet("databasePlatformName")) {
+                this.databasePlatformName(model.getDatabasePlatformName());
             }
             return this;
         }
@@ -743,6 +810,45 @@ public final class ExternalDatabaseSummary
         return systemTags;
     }
 
+    /** The list of feature configurations */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbmgmtFeatureConfigs")
+    private final java.util.List<DatabaseFeatureConfiguration> dbmgmtFeatureConfigs;
+
+    /**
+     * The list of feature configurations
+     *
+     * @return the value
+     */
+    public java.util.List<DatabaseFeatureConfiguration> getDbmgmtFeatureConfigs() {
+        return dbmgmtFeatureConfigs;
+    }
+
+    /** The Oracle database version. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseVersion")
+    private final String databaseVersion;
+
+    /**
+     * The Oracle database version.
+     *
+     * @return the value
+     */
+    public String getDatabaseVersion() {
+        return databaseVersion;
+    }
+
+    /** The operating system of database. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databasePlatformName")
+    private final String databasePlatformName;
+
+    /**
+     * The operating system of database.
+     *
+     * @return the value
+     */
+    public String getDatabasePlatformName() {
+        return databasePlatformName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -775,6 +881,9 @@ public final class ExternalDatabaseSummary
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", dbmgmtFeatureConfigs=").append(String.valueOf(this.dbmgmtFeatureConfigs));
+        sb.append(", databaseVersion=").append(String.valueOf(this.databaseVersion));
+        sb.append(", databasePlatformName=").append(String.valueOf(this.databasePlatformName));
         sb.append(")");
         return sb.toString();
     }
@@ -806,6 +915,9 @@ public final class ExternalDatabaseSummary
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(this.dbmgmtFeatureConfigs, other.dbmgmtFeatureConfigs)
+                && java.util.Objects.equals(this.databaseVersion, other.databaseVersion)
+                && java.util.Objects.equals(this.databasePlatformName, other.databasePlatformName)
                 && super.equals(other);
     }
 
@@ -847,6 +959,19 @@ public final class ExternalDatabaseSummary
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbmgmtFeatureConfigs == null
+                                ? 43
+                                : this.dbmgmtFeatureConfigs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseVersion == null ? 43 : this.databaseVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databasePlatformName == null
+                                ? 43
+                                : this.databasePlatformName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

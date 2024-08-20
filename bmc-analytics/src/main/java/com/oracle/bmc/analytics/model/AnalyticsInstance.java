@@ -39,9 +39,12 @@ public final class AnalyticsInstance
         "serviceUrl",
         "definedTags",
         "freeformTags",
+        "systemTags",
         "kmsKeyId",
         "timeCreated",
-        "timeUpdated"
+        "timeUpdated",
+        "featureBundle",
+        "domainId"
     })
     public AnalyticsInstance(
             String id,
@@ -59,9 +62,12 @@ public final class AnalyticsInstance
             String serviceUrl,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String kmsKeyId,
             java.util.Date timeCreated,
-            java.util.Date timeUpdated) {
+            java.util.Date timeUpdated,
+            FeatureBundle featureBundle,
+            String domainId) {
         super();
         this.id = id;
         this.name = name;
@@ -78,9 +84,12 @@ public final class AnalyticsInstance
         this.serviceUrl = serviceUrl;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.systemTags = systemTags;
         this.kmsKeyId = kmsKeyId;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.featureBundle = featureBundle;
+        this.domainId = domainId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -329,17 +338,34 @@ public final class AnalyticsInstance
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * OCI Vault Key encrypting the customer data stored in this Analytics instance. A null
-         * value indicates Oracle managed default encryption.
+         * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+         * {@code {"orcl-cloud": {"key": "value"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+         * {@code {"orcl-cloud": {"key": "value"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance.
+         * A null value indicates Oracle managed default encryption.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * OCI Vault Key encrypting the customer data stored in this Analytics instance. A null
-         * value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance.
+         * A null value indicates Oracle managed default encryption.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -389,6 +415,36 @@ public final class AnalyticsInstance
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** The feature set of an Analytics instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
+        private FeatureBundle featureBundle;
+
+        /**
+         * The feature set of an Analytics instance.
+         *
+         * @param featureBundle the value to set
+         * @return this builder
+         */
+        public Builder featureBundle(FeatureBundle featureBundle) {
+            this.featureBundle = featureBundle;
+            this.__explicitlySet__.add("featureBundle");
+            return this;
+        }
+        /** Identity domain OCID. */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+        private String domainId;
+
+        /**
+         * Identity domain OCID.
+         *
+         * @param domainId the value to set
+         * @return this builder
+         */
+        public Builder domainId(String domainId) {
+            this.domainId = domainId;
+            this.__explicitlySet__.add("domainId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -411,9 +467,12 @@ public final class AnalyticsInstance
                             this.serviceUrl,
                             this.definedTags,
                             this.freeformTags,
+                            this.systemTags,
                             this.kmsKeyId,
                             this.timeCreated,
-                            this.timeUpdated);
+                            this.timeUpdated,
+                            this.featureBundle,
+                            this.domainId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -467,6 +526,9 @@ public final class AnalyticsInstance
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
             }
@@ -475,6 +537,12 @@ public final class AnalyticsInstance
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("featureBundle")) {
+                this.featureBundle(model.getFeatureBundle());
+            }
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
             }
             return this;
         }
@@ -701,17 +769,32 @@ public final class AnalyticsInstance
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
-     * Vault Key encrypting the customer data stored in this Analytics instance. A null value
-     * indicates Oracle managed default encryption.
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+     * {@code {"orcl-cloud": {"key": "value"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. These predefined keys are scoped to namespaces. Example:
+     * {@code {"orcl-cloud": {"key": "value"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A
+     * null value indicates Oracle managed default encryption.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
-     * Vault Key encrypting the customer data stored in this Analytics instance. A null value
-     * indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A
+     * null value indicates Oracle managed default encryption.
      *
      * @return the value
      */
@@ -755,6 +838,32 @@ public final class AnalyticsInstance
         return timeUpdated;
     }
 
+    /** The feature set of an Analytics instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
+    private final FeatureBundle featureBundle;
+
+    /**
+     * The feature set of an Analytics instance.
+     *
+     * @return the value
+     */
+    public FeatureBundle getFeatureBundle() {
+        return featureBundle;
+    }
+
+    /** Identity domain OCID. */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+    private final String domainId;
+
+    /**
+     * Identity domain OCID.
+     *
+     * @return the value
+     */
+    public String getDomainId() {
+        return domainId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -785,9 +894,12 @@ public final class AnalyticsInstance
         sb.append(", serviceUrl=").append(String.valueOf(this.serviceUrl));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", featureBundle=").append(String.valueOf(this.featureBundle));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
         sb.append(")");
         return sb.toString();
     }
@@ -818,9 +930,12 @@ public final class AnalyticsInstance
                 && java.util.Objects.equals(this.serviceUrl, other.serviceUrl)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.featureBundle, other.featureBundle)
+                && java.util.Objects.equals(this.domainId, other.domainId)
                 && super.equals(other);
     }
 
@@ -859,9 +974,14 @@ public final class AnalyticsInstance
         result = (result * PRIME) + (this.serviceUrl == null ? 43 : this.serviceUrl.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featureBundle == null ? 43 : this.featureBundle.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

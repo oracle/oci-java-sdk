@@ -671,7 +671,6 @@ public class DisasterRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
                 .appendQueryParam("drProtectionGroupId", request.getDrProtectionGroupId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("drPlanExecutionId", request.getDrPlanExecutionId())
-                .appendEnumQueryParam("drPlanExecutionType", request.getDrPlanExecutionType())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())

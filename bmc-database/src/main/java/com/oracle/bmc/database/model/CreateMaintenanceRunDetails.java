@@ -30,7 +30,8 @@ public final class CreateMaintenanceRunDetails
         "timeScheduled",
         "patchingMode",
         "patchType",
-        "compartmentId"
+        "compartmentId",
+        "databaseSoftwareImageId"
     })
     public CreateMaintenanceRunDetails(
             String targetResourceId,
@@ -38,7 +39,8 @@ public final class CreateMaintenanceRunDetails
             java.util.Date timeScheduled,
             PatchingMode patchingMode,
             PatchType patchType,
-            String compartmentId) {
+            String compartmentId,
+            String databaseSoftwareImageId) {
         super();
         this.targetResourceId = targetResourceId;
         this.isDstFileUpdateEnabled = isDstFileUpdateEnabled;
@@ -46,6 +48,7 @@ public final class CreateMaintenanceRunDetails
         this.patchingMode = patchingMode;
         this.patchType = patchType;
         this.compartmentId = compartmentId;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -130,12 +133,12 @@ public final class CreateMaintenanceRunDetails
             this.__explicitlySet__.add("patchingMode");
             return this;
         }
-        /** Patch type, either "QUARTERLY" or "TIMEZONE". */
+        /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
         @com.fasterxml.jackson.annotation.JsonProperty("patchType")
         private PatchType patchType;
 
         /**
-         * Patch type, either "QUARTERLY" or "TIMEZONE".
+         * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
          *
          * @param patchType the value to set
          * @return this builder
@@ -164,6 +167,25 @@ public final class CreateMaintenanceRunDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image
+         * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         *
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         */
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -176,7 +198,8 @@ public final class CreateMaintenanceRunDetails
                             this.timeScheduled,
                             this.patchingMode,
                             this.patchType,
-                            this.compartmentId);
+                            this.compartmentId,
+                            this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -202,6 +225,9 @@ public final class CreateMaintenanceRunDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             return this;
         }
@@ -329,10 +355,11 @@ public final class CreateMaintenanceRunDetails
         return patchingMode;
     }
 
-    /** Patch type, either "QUARTERLY" or "TIMEZONE". */
+    /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
     public enum PatchType implements com.oracle.bmc.http.internal.BmcEnum {
         Quarterly("QUARTERLY"),
         Timezone("TIMEZONE"),
+        CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
         ;
 
         private final String value;
@@ -362,12 +389,12 @@ public final class CreateMaintenanceRunDetails
             throw new IllegalArgumentException("Invalid PatchType: " + key);
         }
     };
-    /** Patch type, either "QUARTERLY" or "TIMEZONE". */
+    /** Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE". */
     @com.fasterxml.jackson.annotation.JsonProperty("patchType")
     private final PatchType patchType;
 
     /**
-     * Patch type, either "QUARTERLY" or "TIMEZONE".
+     * Patch type, either "QUARTERLY", "TIMEZONE" or "CUSTOM_DATABASE_SOFTWARE_IMAGE".
      *
      * @return the value
      */
@@ -392,6 +419,23 @@ public final class CreateMaintenanceRunDetails
         return compartmentId;
     }
 
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     *
+     * @return the value
+     */
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -413,6 +457,8 @@ public final class CreateMaintenanceRunDetails
         sb.append(", patchingMode=").append(String.valueOf(this.patchingMode));
         sb.append(", patchType=").append(String.valueOf(this.patchType));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -434,6 +480,8 @@ public final class CreateMaintenanceRunDetails
                 && java.util.Objects.equals(this.patchingMode, other.patchingMode)
                 && java.util.Objects.equals(this.patchType, other.patchType)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -457,6 +505,11 @@ public final class CreateMaintenanceRunDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

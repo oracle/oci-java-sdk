@@ -23,6 +23,12 @@ package com.oracle.bmc.databasemanagement.model;
         defaultImpl = ExternalDatabaseFeatureDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExternalDatabaseLifecycleManagementFeatureDetails.class,
+            name = "DB_LIFECYCLE_MANAGEMENT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ExternalDatabaseSqlWatchFeatureDetails.class,
+            name = "SQLWATCH"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExternalDatabaseDiagnosticsAndManagementFeatureDetails.class,
             name = "DIAGNOSTICS_AND_MANAGEMENT")
 })

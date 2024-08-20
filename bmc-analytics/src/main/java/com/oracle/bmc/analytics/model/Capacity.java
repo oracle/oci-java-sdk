@@ -30,12 +30,12 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The capacity model to use. */
+        /** The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
         private CapacityType capacityType;
 
         /**
-         * The capacity model to use.
+         * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
          *
          * @param capacityType the value to set
          * @return this builder
@@ -46,17 +46,17 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
-         * The capacity value selected (OLPU count, number of users, ...etc...). This parameter
-         * affects the number of CPUs, amount of memory or other resources allocated to the
-         * instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
+         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
+         * other resources allocated to the instance.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
         private Integer capacityValue;
 
         /**
-         * The capacity value selected (OLPU count, number of users, ...etc...). This parameter
-         * affects the number of CPUs, amount of memory or other resources allocated to the
-         * instance.
+         * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of
+         * users (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and
+         * other resources allocated to the instance.
          *
          * @param capacityValue the value to set
          * @return this builder
@@ -99,12 +99,12 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The capacity model to use. */
+    /** The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityType")
     private final CapacityType capacityType;
 
     /**
-     * The capacity model to use.
+     * The capacity model to use. Accepted values are: OLPU_COUNT, USER_COUNT
      *
      * @return the value
      */
@@ -113,15 +113,17 @@ public final class Capacity extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
-     * The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects
-     * the number of CPUs, amount of memory or other resources allocated to the instance.
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
+     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
+     * resources allocated to the instance.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("capacityValue")
     private final Integer capacityValue;
 
     /**
-     * The capacity value selected (OLPU count, number of users, ...etc...). This parameter affects
-     * the number of CPUs, amount of memory or other resources allocated to the instance.
+     * The capacity value selected, either the number of OCPUs (OLPU_COUNT) or the number of users
+     * (USER_COUNT). This parameter affects the number of OCPUs, amount of memory, and other
+     * resources allocated to the instance.
      *
      * @return the value
      */
