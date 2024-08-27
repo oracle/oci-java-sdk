@@ -82,6 +82,22 @@ public interface AnnouncementAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the compartment details of an announcement.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAnnouncementCompartmentResponse> getAnnouncementCompartment(
+            GetAnnouncementCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAnnouncementCompartmentRequest, GetAnnouncementCompartmentResponse>
+                    handler);
+
+    /**
      * Gets information about whether a specific announcement was acknowledged by a user.
      *
      * <p>This call is subject to an Announcements limit that applies to the total number of

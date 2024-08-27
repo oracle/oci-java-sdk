@@ -5,7 +5,9 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the port. <br>
+ * Details of a single portInformation item include the PortNumber (an integer used as an
+ * identifier) and the PortType (this refers to either an enum value of Management Utility, Client
+ * Utility, or null) <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +33,16 @@ public final class PortInformation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The port number of the cavium server. */
+        /**
+         * The port number is a unique identifier which is typically used as the loadbalancer
+         * listener.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portNumber")
         private Integer portNumber;
 
         /**
-         * The port number of the cavium server.
+         * The port number is a unique identifier which is typically used as the loadbalancer
+         * listener.
          *
          * @param portNumber the value to set
          * @return this builder
@@ -46,12 +52,20 @@ public final class PortInformation
             this.__explicitlySet__.add("portNumber");
             return this;
         }
-        /** Port type associated for the port number. */
+        /**
+         * Port type associated for the port number. The two port type enums are {@code
+         * CLIENTUTILITY} and {@code MANAGEMENTUTILITY}. The CLIENTUTILITY enum corresponds to a
+         * port which is used by the client daemon. The MANAGEMENTUTILITY enum corresponds to a port
+         * used by user management utility.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portType")
         private PortType portType;
 
         /**
-         * Port type associated for the port number.
+         * Port type associated for the port number. The two port type enums are {@code
+         * CLIENTUTILITY} and {@code MANAGEMENTUTILITY}. The CLIENTUTILITY enum corresponds to a
+         * port which is used by the client daemon. The MANAGEMENTUTILITY enum corresponds to a port
+         * used by user management utility.
          *
          * @param portType the value to set
          * @return this builder
@@ -94,12 +108,14 @@ public final class PortInformation
         return new Builder().copy(this);
     }
 
-    /** The port number of the cavium server. */
+    /**
+     * The port number is a unique identifier which is typically used as the loadbalancer listener.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portNumber")
     private final Integer portNumber;
 
     /**
-     * The port number of the cavium server.
+     * The port number is a unique identifier which is typically used as the loadbalancer listener.
      *
      * @return the value
      */
@@ -107,7 +123,12 @@ public final class PortInformation
         return portNumber;
     }
 
-    /** Port type associated for the port number. */
+    /**
+     * Port type associated for the port number. The two port type enums are {@code CLIENTUTILITY}
+     * and {@code MANAGEMENTUTILITY}. The CLIENTUTILITY enum corresponds to a port which is used by
+     * the client daemon. The MANAGEMENTUTILITY enum corresponds to a port used by user management
+     * utility.
+     */
     public enum PortType implements com.oracle.bmc.http.internal.BmcEnum {
         Clientutility("CLIENTUTILITY"),
         Managementutility("MANAGEMENTUTILITY"),
@@ -153,12 +174,20 @@ public final class PortInformation
             return UnknownEnumValue;
         }
     };
-    /** Port type associated for the port number. */
+    /**
+     * Port type associated for the port number. The two port type enums are {@code CLIENTUTILITY}
+     * and {@code MANAGEMENTUTILITY}. The CLIENTUTILITY enum corresponds to a port which is used by
+     * the client daemon. The MANAGEMENTUTILITY enum corresponds to a port used by user management
+     * utility.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portType")
     private final PortType portType;
 
     /**
-     * Port type associated for the port number.
+     * Port type associated for the port number. The two port type enums are {@code CLIENTUTILITY}
+     * and {@code MANAGEMENTUTILITY}. The CLIENTUTILITY enum corresponds to a port which is used by
+     * the client daemon. The MANAGEMENTUTILITY enum corresponds to a port used by user management
+     * utility.
      *
      * @return the value
      */

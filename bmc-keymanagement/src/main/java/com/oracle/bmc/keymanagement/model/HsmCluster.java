@@ -90,15 +90,15 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
         /**
-         * A user-friendly name for the HSMCluster resource. It does not have to be unique, and it
-         * is changeable. Avoid entering confidential information.
+         * A user-friendly display name for the HSMCluster resource. It does not have to be unique,
+         * and it is changeable. Avoid entering confidential information.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * A user-friendly name for the HSMCluster resource. It does not have to be unique, and it
-         * is changeable. Avoid entering confidential information.
+         * A user-friendly display name for the HSMCluster resource. It does not have to be unique,
+         * and it is changeable. Avoid entering confidential information.
          *
          * @param displayName the value to set
          * @return this builder
@@ -175,12 +175,14 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** DNS name for the Hsm Cluster. */
+        /**
+         * DNS name for the HSM Cluster -- this will contain information about the region as well.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
         private String dnsName;
 
         /**
-         * DNS name for the Hsm Cluster.
+         * DNS name for the HSM Cluster -- this will contain information about the region as well.
          *
          * @param dnsName the value to set
          * @return this builder
@@ -353,15 +355,15 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
-     * A user-friendly name for the HSMCluster resource. It does not have to be unique, and it is
-     * changeable. Avoid entering confidential information.
+     * A user-friendly display name for the HSMCluster resource. It does not have to be unique, and
+     * it is changeable. Avoid entering confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name for the HSMCluster resource. It does not have to be unique, and it is
-     * changeable. Avoid entering confidential information.
+     * A user-friendly display name for the HSMCluster resource. It does not have to be unique, and
+     * it is changeable. Avoid entering confidential information.
      *
      * @return the value
      */
@@ -489,12 +491,12 @@ public final class HsmCluster extends com.oracle.bmc.http.client.internal.Explic
         return lifecycleState;
     }
 
-    /** DNS name for the Hsm Cluster. */
+    /** DNS name for the HSM Cluster -- this will contain information about the region as well. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
     private final String dnsName;
 
     /**
-     * DNS name for the Hsm Cluster.
+     * DNS name for the HSM Cluster -- this will contain information about the region as well.
      *
      * @return the value
      */

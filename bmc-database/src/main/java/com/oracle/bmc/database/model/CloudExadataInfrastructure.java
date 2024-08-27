@@ -60,7 +60,8 @@ public final class CloudExadataInfrastructure
         "dbServerVersion",
         "monthlyStorageServerVersion",
         "monthlyDbServerVersion",
-        "definedFileSystemConfigurations"
+        "definedFileSystemConfigurations",
+        "isSchedulingPolicyAssociated"
     })
     public CloudExadataInfrastructure(
             String id,
@@ -98,7 +99,8 @@ public final class CloudExadataInfrastructure
             String dbServerVersion,
             String monthlyStorageServerVersion,
             String monthlyDbServerVersion,
-            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
+            Boolean isSchedulingPolicyAssociated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -136,6 +138,7 @@ public final class CloudExadataInfrastructure
         this.monthlyStorageServerVersion = monthlyStorageServerVersion;
         this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+        this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -768,6 +771,21 @@ public final class CloudExadataInfrastructure
             this.__explicitlySet__.add("definedFileSystemConfigurations");
             return this;
         }
+        /** If true, the infrastructure is using granular maintenance scheduling preference. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+        private Boolean isSchedulingPolicyAssociated;
+
+        /**
+         * If true, the infrastructure is using granular maintenance scheduling preference.
+         *
+         * @param isSchedulingPolicyAssociated the value to set
+         * @return this builder
+         */
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            this.__explicitlySet__.add("isSchedulingPolicyAssociated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -810,7 +828,8 @@ public final class CloudExadataInfrastructure
                             this.dbServerVersion,
                             this.monthlyStorageServerVersion,
                             this.monthlyDbServerVersion,
-                            this.definedFileSystemConfigurations);
+                            this.definedFileSystemConfigurations,
+                            this.isSchedulingPolicyAssociated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -926,6 +945,9 @@ public final class CloudExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("definedFileSystemConfigurations")) {
                 this.definedFileSystemConfigurations(model.getDefinedFileSystemConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
+                this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
             }
             return this;
         }
@@ -1541,6 +1563,19 @@ public final class CloudExadataInfrastructure
         return definedFileSystemConfigurations;
     }
 
+    /** If true, the infrastructure is using granular maintenance scheduling preference. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+    private final Boolean isSchedulingPolicyAssociated;
+
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     *
+     * @return the value
+     */
+    public Boolean getIsSchedulingPolicyAssociated() {
+        return isSchedulingPolicyAssociated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1596,6 +1631,8 @@ public final class CloudExadataInfrastructure
         sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
         sb.append(", definedFileSystemConfigurations=")
                 .append(String.valueOf(this.definedFileSystemConfigurations));
+        sb.append(", isSchedulingPolicyAssociated=")
+                .append(String.valueOf(this.isSchedulingPolicyAssociated));
         sb.append(")");
         return sb.toString();
     }
@@ -1653,6 +1690,8 @@ public final class CloudExadataInfrastructure
                         this.monthlyDbServerVersion, other.monthlyDbServerVersion)
                 && java.util.Objects.equals(
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
+                && java.util.Objects.equals(
+                        this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
                 && super.equals(other);
     }
 
@@ -1778,6 +1817,11 @@ public final class CloudExadataInfrastructure
                         + (this.definedFileSystemConfigurations == null
                                 ? 43
                                 : this.definedFileSystemConfigurations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSchedulingPolicyAssociated == null
+                                ? 43
+                                : this.isSchedulingPolicyAssociated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

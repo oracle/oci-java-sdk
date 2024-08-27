@@ -325,6 +325,27 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is
+         * enabled for the specified subnet, the domain name for the subnet is used (do not provide
+         * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("domain")
+        private String domain;
+
+        /**
+         * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is
+         * enabled for the specified subnet, the domain name for the subnet is used (do not provide
+         * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         *
+         * @param domain the value to set
+         * @return this builder
+         */
+        public Builder domain(String domain) {
+            this.domain = domain;
+            this.__explicitlySet__.add("domain");
+            return this;
+        }
+        /**
          * The time zone of the dataguard standby DB system. For details, see [DB System Time
          * Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
          */
@@ -561,6 +582,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.nsgIds,
                             this.backupNetworkNsgIds,
                             this.hostname,
+                            this.domain,
                             this.timeZone,
                             this.faultDomains,
                             this.privateIp,
@@ -629,6 +651,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
             }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
             if (model.wasPropertyExplicitlySet("timeZone")) {
                 this.timeZone(model.getTimeZone());
             }
@@ -688,6 +713,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             String hostname,
+            String domain,
             String timeZone,
             java.util.List<String> faultDomains,
             String privateIp,
@@ -715,6 +741,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.hostname = hostname;
+        this.domain = domain;
         this.timeZone = timeZone;
         this.faultDomains = faultDomains;
         this.privateIp = privateIp;
@@ -964,6 +991,25 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
      */
     public String getHostname() {
         return hostname;
+    }
+
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is
+     * enabled for the specified subnet, the domain name for the subnet is used (do not provide
+     * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("domain")
+    private final String domain;
+
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN Resolver is
+     * enabled for the specified subnet, the domain name for the subnet is used (do not provide
+     * one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     *
+     * @return the value
+     */
+    public String getDomain() {
+        return domain;
     }
 
     /**
@@ -1220,6 +1266,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
@@ -1255,6 +1302,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
                 && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
@@ -1293,6 +1341,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
         result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());

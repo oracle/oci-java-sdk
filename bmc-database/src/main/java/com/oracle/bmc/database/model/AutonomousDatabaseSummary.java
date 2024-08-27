@@ -144,6 +144,7 @@ public final class AutonomousDatabaseSummary
         "timeDisasterRecoveryRoleChanged",
         "remoteDisasterRecoveryConfiguration",
         "netServicesArchitecture",
+        "availabilityDomain",
         "clusterPlacementGroupId"
     })
     public AutonomousDatabaseSummary(
@@ -264,6 +265,7 @@ public final class AutonomousDatabaseSummary
             java.util.Date timeDisasterRecoveryRoleChanged,
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
             NetServicesArchitecture netServicesArchitecture,
+            String availabilityDomain,
             String clusterPlacementGroupId) {
         super();
         this.id = id;
@@ -383,6 +385,7 @@ public final class AutonomousDatabaseSummary
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
         this.netServicesArchitecture = netServicesArchitecture;
+        this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
@@ -1622,29 +1625,23 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * Autonomous Database for Developers are free Autonomous Databases that developers can use
-         * to build and test new applications.With Autonomous these database instancess instances,
-         * you can try new Autonomous Database features for free and apply them to ongoing or new
-         * development projects. Developer database comes with limited resources and is, therefore,
-         * not suitable for large-scale testing and production deployments. When you need more
-         * compute or storage resources, you can transition to a paid database licensing by cloning
-         * your developer database into a regular Autonomous Database. See [Autonomous Database
-         * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
-         * for more details.
+         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers
+         * can use to build and test new applications. On Serverless, these are low-cost and billed
+         * per instance, on Dedicated and Cloud@Customer there is no additional cost to create
+         * Developer databases. Developer databases come with limited resources and is not intended
+         * for large-scale testing and production deployments. When you need more compute or storage
+         * resources, you may upgrade to a full paid production database.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
         private Boolean isDevTier;
 
         /**
-         * Autonomous Database for Developers are free Autonomous Databases that developers can use
-         * to build and test new applications.With Autonomous these database instancess instances,
-         * you can try new Autonomous Database features for free and apply them to ongoing or new
-         * development projects. Developer database comes with limited resources and is, therefore,
-         * not suitable for large-scale testing and production deployments. When you need more
-         * compute or storage resources, you can transition to a paid database licensing by cloning
-         * your developer database into a regular Autonomous Database. See [Autonomous Database
-         * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
-         * for more details.
+         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers
+         * can use to build and test new applications. On Serverless, these are low-cost and billed
+         * per instance, on Dedicated and Cloud@Customer there is no additional cost to create
+         * Developer databases. Developer databases come with limited resources and is not intended
+         * for large-scale testing and production deployments. When you need more compute or storage
+         * resources, you may upgrade to a full paid production database.
          *
          * @param isDevTier the value to set
          * @return this builder
@@ -2948,6 +2945,21 @@ public final class AutonomousDatabaseSummary
             this.__explicitlySet__.add("netServicesArchitecture");
             return this;
         }
+        /** The availability domain where the Autonomous Database Serverless instance is located. */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain where the Autonomous Database Serverless instance is located.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * cluster placement group of the Autonomous Serverless Database.
@@ -3091,6 +3103,7 @@ public final class AutonomousDatabaseSummary
                             this.timeDisasterRecoveryRoleChanged,
                             this.remoteDisasterRecoveryConfiguration,
                             this.netServicesArchitecture,
+                            this.availabilityDomain,
                             this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -3455,6 +3468,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
@@ -4848,29 +4864,23 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to
-     * build and test new applications.With Autonomous these database instancess instances, you can
-     * try new Autonomous Database features for free and apply them to ongoing or new development
-     * projects. Developer database comes with limited resources and is, therefore, not suitable for
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
+     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
+     * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
-     * resources, you can transition to a paid database licensing by cloning your developer database
-     * into a regular Autonomous Database. See [Autonomous Database
-     * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
-     * for more details.
+     * resources, you may upgrade to a full paid production database.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
     private final Boolean isDevTier;
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to
-     * build and test new applications.With Autonomous these database instancess instances, you can
-     * try new Autonomous Database features for free and apply them to ongoing or new development
-     * projects. Developer database comes with limited resources and is, therefore, not suitable for
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can
+     * use to build and test new applications. On Serverless, these are low-cost and billed per
+     * instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer
+     * databases. Developer databases come with limited resources and is not intended for
      * large-scale testing and production deployments. When you need more compute or storage
-     * resources, you can transition to a paid database licensing by cloning your developer database
-     * into a regular Autonomous Database. See [Autonomous Database
-     * documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html)
-     * for more details.
+     * resources, you may upgrade to a full paid production database.
      *
      * @return the value
      */
@@ -6683,6 +6693,19 @@ public final class AutonomousDatabaseSummary
         return netServicesArchitecture;
     }
 
+    /** The availability domain where the Autonomous Database Serverless instance is located. */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain where the Autonomous Database Serverless instance is located.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
      * cluster placement group of the Autonomous Serverless Database.
@@ -6867,6 +6890,7 @@ public final class AutonomousDatabaseSummary
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
@@ -7045,6 +7069,7 @@ public final class AutonomousDatabaseSummary
                         other.remoteDisasterRecoveryConfiguration)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
@@ -7463,6 +7488,11 @@ public final class AutonomousDatabaseSummary
                         + (this.netServicesArchitecture == null
                                 ? 43
                                 : this.netServicesArchitecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         result =
                 (result * PRIME)
                         + (this.clusterPlacementGroupId == null

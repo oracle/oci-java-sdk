@@ -20,6 +20,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** The name of the privateEndpoint for which to list work requests. */
+    private String privateEndpointName;
+
+    /** The name of the privateEndpoint for which to list work requests. */
+    public String getPrivateEndpointName() {
+        return privateEndpointName;
+    }
     /** The client request ID for tracing. */
     private String opcClientRequestId;
 
@@ -75,6 +82,20 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /** The name of the privateEndpoint for which to list work requests. */
+        private String privateEndpointName = null;
+
+        /**
+         * The name of the privateEndpoint for which to list work requests.
+         *
+         * @param privateEndpointName the value to set
+         * @return this builder instance
+         */
+        public Builder privateEndpointName(String privateEndpointName) {
+            this.privateEndpointName = privateEndpointName;
             return this;
         }
 
@@ -163,6 +184,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
          */
         public Builder copy(ListWorkRequestsRequest o) {
             compartmentId(o.getCompartmentId());
+            privateEndpointName(o.getPrivateEndpointName());
             opcClientRequestId(o.getOpcClientRequestId());
             page(o.getPage());
             limit(o.getLimit());
@@ -201,11 +223,13 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         public ListWorkRequestsRequest buildWithoutInvocationCallback() {
             ListWorkRequestsRequest request = new ListWorkRequestsRequest();
             request.compartmentId = compartmentId;
+            request.privateEndpointName = privateEndpointName;
             request.opcClientRequestId = opcClientRequestId;
             request.page = page;
             request.limit = limit;
             return request;
-            // new ListWorkRequestsRequest(compartmentId, opcClientRequestId, page, limit);
+            // new ListWorkRequestsRequest(compartmentId, privateEndpointName, opcClientRequestId,
+            // page, limit);
         }
     }
 
@@ -217,6 +241,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .privateEndpointName(privateEndpointName)
                 .opcClientRequestId(opcClientRequestId)
                 .page(page)
                 .limit(limit);
@@ -237,6 +262,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",privateEndpointName=").append(String.valueOf(this.privateEndpointName));
         sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -256,6 +282,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         ListWorkRequestsRequest other = (ListWorkRequestsRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.privateEndpointName, other.privateEndpointName)
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit);
@@ -268,6 +295,11 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointName == null
+                                ? 43
+                                : this.privateEndpointName.hashCode());
         result =
                 (result * PRIME)
                         + (this.opcClientRequestId == null

@@ -198,6 +198,47 @@ public class DatabaseRecoveryAsyncClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProtectedDatabaseSubscriptionResponse>
+            changeProtectedDatabaseSubscription(
+                    ChangeProtectedDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProtectedDatabaseSubscriptionRequest,
+                                    ChangeProtectedDatabaseSubscriptionResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getProtectedDatabaseId(), "protectedDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeProtectedDatabaseSubscriptionDetails(),
+                "changeProtectedDatabaseSubscriptionDetails is required");
+
+        return clientCall(request, ChangeProtectedDatabaseSubscriptionResponse::builder)
+                .logger(LOG, "changeProtectedDatabaseSubscription")
+                .serviceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectedDatabaseSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseSubscription")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeProtectedDatabaseSubscriptionRequest::builder)
+                .basePath("/20210216")
+                .appendPathParam("protectedDatabases")
+                .appendPathParam(request.getProtectedDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeSubscription")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeProtectedDatabaseSubscriptionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeProtectedDatabaseSubscriptionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProtectionPolicyCompartmentResponse>
             changeProtectionPolicyCompartment(
                     ChangeProtectionPolicyCompartmentRequest request,

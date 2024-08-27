@@ -427,6 +427,77 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CancelExecutionWindowResponse cancelExecutionWindow(
+            CancelExecutionWindowRequest request) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getCancelExecutionWindowDetails(),
+                "cancelExecutionWindowDetails is required");
+
+        return clientCall(request, CancelExecutionWindowResponse::builder)
+                .logger(LOG, "cancelExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "CancelExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/CancelExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        CancelExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CancelExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CancelExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelExecutionWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CascadingDeleteSchedulingPlanResponse cascadingDeleteSchedulingPlan(
+            CascadingDeleteSchedulingPlanRequest request) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, CascadingDeleteSchedulingPlanResponse::builder)
+                .logger(LOG, "cascadingDeleteSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "CascadingDeleteSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/CascadingDeleteSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteSchedulingPlan")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CascadingDeleteSchedulingPlanResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeAutonomousContainerDatabaseCompartmentResponse
             changeAutonomousContainerDatabaseCompartment(
                     ChangeAutonomousContainerDatabaseCompartmentRequest request) {
@@ -1383,6 +1454,78 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ChangeOneoffPatchCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSchedulingPlanCompartmentResponse changeSchedulingPlanCompartment(
+            ChangeSchedulingPlanCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeSchedulingPlanCompartmentDetails(),
+                "changeSchedulingPlanCompartmentDetails is required");
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, ChangeSchedulingPlanCompartmentResponse::builder)
+                .logger(LOG, "changeSchedulingPlanCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeSchedulingPlanCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ChangeSchedulingPlanCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSchedulingPlanCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSchedulingPlanCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSchedulingPlanCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeSchedulingPolicyCompartmentResponse changeSchedulingPolicyCompartment(
+            ChangeSchedulingPolicyCompartmentRequest request) {
+        Objects.requireNonNull(
+                request.getChangeSchedulingPolicyCompartmentDetails(),
+                "changeSchedulingPolicyCompartmentDetails is required");
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, ChangeSchedulingPolicyCompartmentResponse::builder)
+                .logger(LOG, "changeSchedulingPolicyCompartment")
+                .serviceDetails(
+                        "Database",
+                        "ChangeSchedulingPolicyCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/ChangeSchedulingPolicyCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSchedulingPolicyCompartmentRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeSchedulingPolicyCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSchedulingPolicyCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2401,6 +2544,72 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateExecutionActionResponse createExecutionAction(
+            CreateExecutionActionRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExecutionActionDetails(),
+                "createExecutionActionDetails is required");
+
+        return clientCall(request, CreateExecutionActionResponse::builder)
+                .logger(LOG, "createExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "CreateExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/CreateExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        CreateExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExecutionActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateExecutionWindowResponse createExecutionWindow(
+            CreateExecutionWindowRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExecutionWindowDetails(),
+                "createExecutionWindowDetails is required");
+
+        return clientCall(request, CreateExecutionWindowResponse::builder)
+                .logger(LOG, "createExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "CreateExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/CreateExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        CreateExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExecutionWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateExternalBackupJobResponse createExternalBackupJob(
             CreateExternalBackupJobRequest request) {
         Objects.requireNonNull(
@@ -2690,6 +2899,135 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", CreatePluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", CreatePluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateScheduledActionResponse createScheduledAction(
+            CreateScheduledActionRequest request) {
+        Objects.requireNonNull(
+                request.getCreateScheduledActionDetails(),
+                "createScheduledActionDetails is required");
+
+        return clientCall(request, CreateScheduledActionResponse::builder)
+                .logger(LOG, "createScheduledAction")
+                .serviceDetails("Database", "CreateScheduledAction", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        CreateScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduledActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSchedulingPlanResponse createSchedulingPlan(CreateSchedulingPlanRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSchedulingPlanDetails(),
+                "createSchedulingPlanDetails is required");
+
+        return clientCall(request, CreateSchedulingPlanResponse::builder)
+                .logger(LOG, "createSchedulingPlan")
+                .serviceDetails("Database", "CreateSchedulingPlan", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        CreateSchedulingPlanResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingPlanResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSchedulingPolicyResponse createSchedulingPolicy(
+            CreateSchedulingPolicyRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSchedulingPolicyDetails(),
+                "createSchedulingPolicyDetails is required");
+
+        return clientCall(request, CreateSchedulingPolicyResponse::builder)
+                .logger(LOG, "createSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "CreateSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/CreateSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        CreateSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public CreateSchedulingWindowResponse createSchedulingWindow(
+            CreateSchedulingWindowRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateSchedulingWindowDetails(),
+                "createSchedulingWindowDetails is required");
+
+        return clientCall(request, CreateSchedulingWindowResponse::builder)
+                .logger(LOG, "createSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "CreateSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/CreateSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        CreateSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSchedulingWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", CreateSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSchedulingWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3312,6 +3650,59 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteExecutionActionResponse deleteExecutionAction(
+            DeleteExecutionActionRequest request) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+
+        return clientCall(request, DeleteExecutionActionResponse::builder)
+                .logger(LOG, "deleteExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/DeleteExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExecutionActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExecutionWindowResponse deleteExecutionWindow(
+            DeleteExecutionWindowRequest request) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+
+        return clientCall(request, DeleteExecutionWindowResponse::builder)
+                .logger(LOG, "deleteExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "DeleteExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/DeleteExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExecutionWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteExternalContainerDatabaseResponse deleteExternalContainerDatabase(
             DeleteExternalContainerDatabaseRequest request) {
 
@@ -3511,6 +3902,115 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         DeletePluggableDatabaseResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteScheduledActionResponse deleteScheduledAction(
+            DeleteScheduledActionRequest request) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+
+        return clientCall(request, DeleteScheduledActionResponse::builder)
+                .logger(LOG, "deleteScheduledAction")
+                .serviceDetails(
+                        "Database",
+                        "DeleteScheduledAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/DeleteScheduledAction")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduledActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSchedulingPlanResponse deleteSchedulingPlan(DeleteSchedulingPlanRequest request) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, DeleteSchedulingPlanResponse::builder)
+                .logger(LOG, "deleteSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/DeleteSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSchedulingPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingPlanResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSchedulingPolicyResponse deleteSchedulingPolicy(
+            DeleteSchedulingPolicyRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, DeleteSchedulingPolicyResponse::builder)
+                .logger(LOG, "deleteSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/DeleteSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSchedulingWindowResponse deleteSchedulingWindow(
+            DeleteSchedulingWindowRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+
+        return clientCall(request, DeleteSchedulingWindowResponse::builder)
+                .logger(LOG, "deleteSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "DeleteSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/DeleteSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSchedulingWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6469,6 +6969,60 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetExecutionActionResponse getExecutionAction(GetExecutionActionRequest request) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+
+        return clientCall(request, GetExecutionActionResponse::builder)
+                .logger(LOG, "getExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "GetExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/GetExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        GetExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString("etag", GetExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExecutionActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExecutionWindowResponse getExecutionWindow(GetExecutionWindowRequest request) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+
+        return clientCall(request, GetExecutionWindowResponse::builder)
+                .logger(LOG, "getExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "GetExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/GetExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        GetExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString("etag", GetExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExecutionWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetExternalBackupJobResponse getExternalBackupJob(GetExternalBackupJobRequest request) {
 
         Validate.notBlank(request.getBackupId(), "backupId must not be blank");
@@ -6822,6 +7376,118 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetPluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetScheduledActionResponse getScheduledAction(GetScheduledActionRequest request) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+
+        return clientCall(request, GetScheduledActionResponse::builder)
+                .logger(LOG, "getScheduledAction")
+                .serviceDetails(
+                        "Database",
+                        "GetScheduledAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/GetScheduledAction")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        GetScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString("etag", GetScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduledActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSchedulingPlanResponse getSchedulingPlan(GetSchedulingPlanRequest request) {
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, GetSchedulingPlanResponse::builder)
+                .logger(LOG, "getSchedulingPlan")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/GetSchedulingPlan")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingPlanRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        GetSchedulingPlanResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString("etag", GetSchedulingPlanResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingPlanResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSchedulingPolicyResponse getSchedulingPolicy(GetSchedulingPolicyRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, GetSchedulingPolicyResponse::builder)
+                .logger(LOG, "getSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/GetSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        GetSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString("etag", GetSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSchedulingWindowResponse getSchedulingWindow(GetSchedulingWindowRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+
+        return clientCall(request, GetSchedulingWindowResponse::builder)
+                .logger(LOG, "getSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "GetSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/GetSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        GetSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString("etag", GetSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSchedulingWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -8904,6 +9570,74 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListExecutionActionsResponse listExecutionActions(ListExecutionActionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExecutionActionsResponse::builder)
+                .logger(LOG, "listExecutionActions")
+                .serviceDetails(
+                        "Database",
+                        "ListExecutionActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/ListExecutionActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExecutionActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("executionWindowId", request.getExecutionWindowId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExecutionActionSummary.class,
+                        ListExecutionActionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExecutionActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExecutionActionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListExecutionWindowsResponse listExecutionWindows(ListExecutionWindowsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExecutionWindowsResponse::builder)
+                .logger(LOG, "listExecutionWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListExecutionWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/ListExecutionWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExecutionWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("executionResourceId", request.getExecutionResourceId())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.ExecutionWindowSummary.class,
+                        ListExecutionWindowsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExecutionWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExecutionWindowsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListExternalContainerDatabasesResponse listExternalContainerDatabases(
             ListExternalContainerDatabasesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -9291,6 +10025,36 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListParamsForActionTypeResponse listParamsForActionType(
+            ListParamsForActionTypeRequest request) {
+        Objects.requireNonNull(request.getType(), "type is required");
+
+        return clientCall(request, ListParamsForActionTypeResponse::builder)
+                .logger(LOG, "listParamsForActionType")
+                .serviceDetails(
+                        "Database",
+                        "ListParamsForActionType",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ActionParamValuesSummary/ListParamsForActionType")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListParamsForActionTypeRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActionParams")
+                .appendEnumQueryParam("type", request.getType())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ActionParamValuesCollection.class,
+                        ListParamsForActionTypeResponse.Builder::actionParamValuesCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListParamsForActionTypeResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListParamsForActionTypeResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListPdbConversionHistoryEntriesResponse listPdbConversionHistoryEntries(
             ListPdbConversionHistoryEntriesRequest request) {
 
@@ -9358,6 +10122,193 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListPluggableDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPluggableDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListRecommendedScheduledActionsResponse listRecommendedScheduledActions(
+            ListRecommendedScheduledActionsRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getSchedulingPolicyTargetResourceId(),
+                "schedulingPolicyTargetResourceId is required");
+
+        Objects.requireNonNull(request.getPlanIntent(), "planIntent is required");
+
+        return clientCall(request, ListRecommendedScheduledActionsResponse::builder)
+                .logger(LOG, "listRecommendedScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ListRecommendedScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/RecommendedScheduledActionSummary/ListRecommendedScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListRecommendedScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("recommendedScheduledActions")
+                .appendQueryParam(
+                        "schedulingPolicyTargetResourceId",
+                        request.getSchedulingPolicyTargetResourceId())
+                .appendEnumQueryParam("planIntent", request.getPlanIntent())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.RecommendedScheduledActionsCollection.class,
+                        ListRecommendedScheduledActionsResponse.Builder
+                                ::recommendedScheduledActionsCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListRecommendedScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListRecommendedScheduledActionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListScheduledActionsResponse listScheduledActions(ListScheduledActionsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListScheduledActionsResponse::builder)
+                .logger(LOG, "listScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ListScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ScheduledAction/ListScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("serviceType", request.getServiceType())
+                .appendQueryParam("schedulingPlanId", request.getSchedulingPlanId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledActionCollection.class,
+                        ListScheduledActionsResponse.Builder::scheduledActionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListScheduledActionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSchedulingPlansResponse listSchedulingPlans(ListSchedulingPlansRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulingPlansResponse::builder)
+                .logger(LOG, "listSchedulingPlans")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingPlans",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ListSchedulingPlans")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingPlansRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("schedulingPolicyId", request.getSchedulingPolicyId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlanCollection.class,
+                        ListSchedulingPlansResponse.Builder::schedulingPlanCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingPlansResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingPlansResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSchedulingPoliciesResponse listSchedulingPolicies(
+            ListSchedulingPoliciesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulingPoliciesResponse::builder)
+                .logger(LOG, "listSchedulingPolicies")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/ListSchedulingPolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingPoliciesRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.SchedulingPolicySummary.class,
+                        ListSchedulingPoliciesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingPoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingPoliciesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListSchedulingWindowsResponse listSchedulingWindows(
+            ListSchedulingWindowsRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        return clientCall(request, ListSchedulingWindowsResponse::builder)
+                .logger(LOG, "listSchedulingWindows")
+                .serviceDetails(
+                        "Database",
+                        "ListSchedulingWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/ListSchedulingWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulingWindowsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.database.model.SchedulingWindowSummary.class,
+                        ListSchedulingWindowsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulingWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulingWindowsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -9799,6 +10750,45 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public MoveExecutionActionMemberResponse moveExecutionActionMember(
+            MoveExecutionActionMemberRequest request) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+        Objects.requireNonNull(
+                request.getMoveExecutionActionMemberDetails(),
+                "moveExecutionActionMemberDetails is required");
+
+        return clientCall(request, MoveExecutionActionMemberResponse::builder)
+                .logger(LOG, "moveExecutionActionMember")
+                .serviceDetails(
+                        "Database",
+                        "MoveExecutionActionMember",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/MoveExecutionActionMember")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MoveExecutionActionMemberRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .appendPathParam("actions")
+                .appendPathParam("moveActionMember")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        MoveExecutionActionMemberResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MoveExecutionActionMemberResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", MoveExecutionActionMemberResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", MoveExecutionActionMemberResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RefreshPluggableDatabaseResponse refreshPluggableDatabase(
             RefreshPluggableDatabaseRequest request) {
 
@@ -10125,6 +11115,86 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         RemoveVirtualMachineFromVmClusterResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReorderExecutionActionsResponse reorderExecutionActions(
+            ReorderExecutionActionsRequest request) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getReorderExecutionActionDetails(),
+                "reorderExecutionActionDetails is required");
+
+        return clientCall(request, ReorderExecutionActionsResponse::builder)
+                .logger(LOG, "reorderExecutionActions")
+                .serviceDetails(
+                        "Database",
+                        "ReorderExecutionActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/ReorderExecutionActions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReorderExecutionActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("reorder")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        ReorderExecutionActionsResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReorderExecutionActionsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ReorderExecutionActionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReorderExecutionActionsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReorderScheduledActionsResponse reorderScheduledActions(
+            ReorderScheduledActionsRequest request) {
+        Objects.requireNonNull(
+                request.getReorderScheduledActionsDetails(),
+                "reorderScheduledActionsDetails is required");
+
+        Validate.notBlank(request.getSchedulingPlanId(), "schedulingPlanId must not be blank");
+
+        return clientCall(request, ReorderScheduledActionsResponse::builder)
+                .logger(LOG, "reorderScheduledActions")
+                .serviceDetails(
+                        "Database",
+                        "ReorderScheduledActions",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPlan/ReorderScheduledActions")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReorderScheduledActionsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPlans")
+                .appendPathParam(request.getSchedulingPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("reorder")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPlan.class,
+                        ReorderScheduledActionsResponse.Builder::schedulingPlan)
+                .handleResponseHeaderString("etag", ReorderScheduledActionsResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReorderScheduledActionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ReorderScheduledActionsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReorderScheduledActionsResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -12145,6 +13215,78 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public UpdateExecutionActionResponse updateExecutionAction(
+            UpdateExecutionActionRequest request) {
+
+        Validate.notBlank(request.getExecutionActionId(), "executionActionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExecutionActionDetails(),
+                "updateExecutionActionDetails is required");
+
+        return clientCall(request, UpdateExecutionActionResponse::builder)
+                .logger(LOG, "updateExecutionAction")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExecutionAction",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionAction/UpdateExecutionAction")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExecutionActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionActions")
+                .appendPathParam(request.getExecutionActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionAction.class,
+                        UpdateExecutionActionResponse.Builder::executionAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExecutionActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExecutionActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExecutionActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExecutionWindowResponse updateExecutionWindow(
+            UpdateExecutionWindowRequest request) {
+
+        Validate.notBlank(request.getExecutionWindowId(), "executionWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExecutionWindowDetails(),
+                "updateExecutionWindowDetails is required");
+
+        return clientCall(request, UpdateExecutionWindowResponse::builder)
+                .logger(LOG, "updateExecutionWindow")
+                .serviceDetails(
+                        "Database",
+                        "UpdateExecutionWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExecutionWindow/UpdateExecutionWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExecutionWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("executionWindows")
+                .appendPathParam(request.getExecutionWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExecutionWindow.class,
+                        UpdateExecutionWindowResponse.Builder::executionWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExecutionWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateExecutionWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExecutionWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateExternalContainerDatabaseResponse updateExternalContainerDatabase(
             UpdateExternalContainerDatabaseRequest request) {
 
@@ -12431,6 +13573,115 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", UpdatePluggableDatabaseResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdatePluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateScheduledActionResponse updateScheduledAction(
+            UpdateScheduledActionRequest request) {
+
+        Validate.notBlank(request.getScheduledActionId(), "scheduledActionId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateScheduledActionDetails(),
+                "updateScheduledActionDetails is required");
+
+        return clientCall(request, UpdateScheduledActionResponse::builder)
+                .logger(LOG, "updateScheduledAction")
+                .serviceDetails("Database", "UpdateScheduledAction", "")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduledActionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("scheduledActions")
+                .appendPathParam(request.getScheduledActionId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ScheduledAction.class,
+                        UpdateScheduledActionResponse.Builder::scheduledAction)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateScheduledActionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateScheduledActionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduledActionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSchedulingPolicyResponse updateSchedulingPolicy(
+            UpdateSchedulingPolicyRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSchedulingPolicyDetails(),
+                "updateSchedulingPolicyDetails is required");
+
+        return clientCall(request, UpdateSchedulingPolicyResponse::builder)
+                .logger(LOG, "updateSchedulingPolicy")
+                .serviceDetails(
+                        "Database",
+                        "UpdateSchedulingPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingPolicy/UpdateSchedulingPolicy")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSchedulingPolicyRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingPolicy.class,
+                        UpdateSchedulingPolicyResponse.Builder::schedulingPolicy)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSchedulingPolicyResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateSchedulingPolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSchedulingPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSchedulingWindowResponse updateSchedulingWindow(
+            UpdateSchedulingWindowRequest request) {
+
+        Validate.notBlank(request.getSchedulingPolicyId(), "schedulingPolicyId must not be blank");
+
+        Validate.notBlank(request.getSchedulingWindowId(), "schedulingWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSchedulingWindowDetails(),
+                "updateSchedulingWindowDetails is required");
+
+        return clientCall(request, UpdateSchedulingWindowResponse::builder)
+                .logger(LOG, "updateSchedulingWindow")
+                .serviceDetails(
+                        "Database",
+                        "UpdateSchedulingWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/SchedulingWindow/UpdateSchedulingWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSchedulingWindowRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("schedulingPolicies")
+                .appendPathParam(request.getSchedulingPolicyId())
+                .appendPathParam("schedulingWindows")
+                .appendPathParam(request.getSchedulingWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.SchedulingWindow.class,
+                        UpdateSchedulingWindowResponse.Builder::schedulingWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSchedulingWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateSchedulingWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSchedulingWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 

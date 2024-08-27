@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the partition certificates. <br>
+ * An object that encapsulates the necessary partition certificates. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,16 @@ public final class UploadPartitionCertificatesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Base64 encoded (StandardCharsets.UTF_8) Partition Certificate. */
+        /**
+         * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when
+         * the CSR is signed.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("partitionCertificate")
         private String partitionCertificate;
 
         /**
-         * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate.
+         * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when
+         * the CSR is signed.
          *
          * @param partitionCertificate the value to set
          * @return this builder
@@ -48,12 +52,16 @@ public final class UploadPartitionCertificatesDetails
             this.__explicitlySet__.add("partitionCertificate");
             return this;
         }
-        /** Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate. */
+        /**
+         * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to
+         * help sign the CSR.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("partitionOwnerCertificate")
         private String partitionOwnerCertificate;
 
         /**
-         * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate.
+         * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to
+         * help sign the CSR.
          *
          * @param partitionOwnerCertificate the value to set
          * @return this builder
@@ -98,12 +106,16 @@ public final class UploadPartitionCertificatesDetails
         return new Builder().copy(this);
     }
 
-    /** Base64 encoded (StandardCharsets.UTF_8) Partition Certificate. */
+    /**
+     * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when the
+     * CSR is signed.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("partitionCertificate")
     private final String partitionCertificate;
 
     /**
-     * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate.
+     * Base64 encoded (StandardCharsets.UTF_8) Partition Certificate, which gets created when the
+     * CSR is signed.
      *
      * @return the value
      */
@@ -111,12 +123,16 @@ public final class UploadPartitionCertificatesDetails
         return partitionCertificate;
     }
 
-    /** Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate. */
+    /**
+     * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to help
+     * sign the CSR.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("partitionOwnerCertificate")
     private final String partitionOwnerCertificate;
 
     /**
-     * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate.
+     * Base64 encoded (StandardCharsets.UTF_8) Partition Owner Certificate, which is used to help
+     * sign the CSR.
      *
      * @return the value
      */

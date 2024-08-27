@@ -26,6 +26,9 @@ package com.oracle.bmc.databasemanagement.model;
             value = ExternalConnectorDetails.class,
             name = "EXTERNAL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DirectConnectorDetails.class,
+            name = "DIRECT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MacsConnectorDetails.class,
             name = "MACS"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -84,11 +87,14 @@ public class ConnectorDetails extends com.oracle.bmc.http.client.internal.Explic
     /**
      * The list of supported connection types: - PE: Private endpoint - MACS: Management agent -
      * EXTERNAL: External database connector
+     *
+     * <p>- DIRECT: Direct connection
      */
     public enum ConnectorType implements com.oracle.bmc.http.internal.BmcEnum {
         Pe("PE"),
         Macs("MACS"),
         External("EXTERNAL"),
+        Direct("DIRECT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

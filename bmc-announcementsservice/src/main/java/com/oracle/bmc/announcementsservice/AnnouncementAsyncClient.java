@@ -126,6 +126,41 @@ public class AnnouncementAsyncClient extends com.oracle.bmc.http.internal.BaseAs
     }
 
     @Override
+    public java.util.concurrent.Future<GetAnnouncementCompartmentResponse>
+            getAnnouncementCompartment(
+                    GetAnnouncementCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAnnouncementCompartmentRequest,
+                                    GetAnnouncementCompartmentResponse>
+                            handler) {
+
+        Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
+
+        return clientCall(request, GetAnnouncementCompartmentResponse::builder)
+                .logger(LOG, "getAnnouncementCompartment")
+                .serviceDetails(
+                        "Announcement",
+                        "GetAnnouncementCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAnnouncementCompartmentRequest::builder)
+                .basePath("/20180904")
+                .appendPathParam("announcements")
+                .appendPathParam(request.getAnnouncementId())
+                .appendPathParam("compartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.announcementsservice.model.AnnouncementCompartment.class,
+                        GetAnnouncementCompartmentResponse.Builder::announcementCompartment)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAnnouncementCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetAnnouncementCompartmentResponse.Builder::etag)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnnouncementUserStatusResponse> getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

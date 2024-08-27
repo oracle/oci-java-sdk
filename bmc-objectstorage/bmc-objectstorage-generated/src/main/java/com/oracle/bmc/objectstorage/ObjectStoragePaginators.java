@@ -762,6 +762,126 @@ public class ObjectStoragePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listPrivateEndpoints operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPrivateEndpointsResponse> listPrivateEndpointsResponseIterator(
+            final ListPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPrivateEndpointsRequest.Builder,
+                ListPrivateEndpointsRequest,
+                ListPrivateEndpointsResponse>(
+                new java.util.function.Supplier<ListPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListPrivateEndpointsRequest.Builder get() {
+                        return ListPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPrivateEndpointsRequest.Builder>,
+                        ListPrivateEndpointsRequest>() {
+                    @Override
+                    public ListPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>() {
+                    @Override
+                    public ListPrivateEndpointsResponse apply(ListPrivateEndpointsRequest request) {
+                        return client.listPrivateEndpoints(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} objects contained in responses
+     * from the listPrivateEndpoints operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.objectstorage.model.PrivateEndpointSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.objectstorage.model.PrivateEndpointSummary>
+            listPrivateEndpointsRecordIterator(final ListPrivateEndpointsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPrivateEndpointsRequest.Builder,
+                ListPrivateEndpointsRequest,
+                ListPrivateEndpointsResponse,
+                com.oracle.bmc.objectstorage.model.PrivateEndpointSummary>(
+                new java.util.function.Supplier<ListPrivateEndpointsRequest.Builder>() {
+                    @Override
+                    public ListPrivateEndpointsRequest.Builder get() {
+                        return ListPrivateEndpointsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPrivateEndpointsResponse, String>() {
+                    @Override
+                    public String apply(ListPrivateEndpointsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPrivateEndpointsRequest.Builder>,
+                        ListPrivateEndpointsRequest>() {
+                    @Override
+                    public ListPrivateEndpointsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPrivateEndpointsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>() {
+                    @Override
+                    public ListPrivateEndpointsResponse apply(ListPrivateEndpointsRequest request) {
+                        return client.listPrivateEndpoints(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPrivateEndpointsResponse,
+                        java.util.List<
+                                com.oracle.bmc.objectstorage.model.PrivateEndpointSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.objectstorage.model.PrivateEndpointSummary>
+                            apply(ListPrivateEndpointsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listReplicationPolicies operation. This iterable will fetch more data from the server as
      * needed.
      *

@@ -40,11 +40,11 @@ public class PutObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The base-64 encoded MD5 hash of the request body as computed by the server. */
+    /** The base64-encoded MD5 hash of the request body as computed by the server. */
     private String opcContentMd5;
 
     /**
-     * The base-64 encoded MD5 hash of the request body as computed by the server.
+     * The base64-encoded MD5 hash of the request body as computed by the server.
      *
      * @return the value
      */
@@ -174,11 +174,11 @@ public class PutObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The base-64 encoded MD5 hash of the request body as computed by the server. */
+        /** The base64-encoded MD5 hash of the request body as computed by the server. */
         private String opcContentMd5;
 
         /**
-         * The base-64 encoded MD5 hash of the request body as computed by the server.
+         * The base64-encoded MD5 hash of the request body as computed by the server.
          *
          * @param opcContentMd5 the value to set
          * @return this builder

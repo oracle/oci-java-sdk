@@ -72,7 +72,8 @@ public final class ExadataInfrastructure
         "availabilityDomain",
         "definedFileSystemConfigurations",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isSchedulingPolicyAssociated"
     })
     public ExadataInfrastructure(
             String id,
@@ -123,7 +124,8 @@ public final class ExadataInfrastructure
             String availabilityDomain,
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isSchedulingPolicyAssociated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -174,6 +176,7 @@ public final class ExadataInfrastructure
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -983,6 +986,21 @@ public final class ExadataInfrastructure
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** If true, the infrastructure is using granular maintenance scheduling preference. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+        private Boolean isSchedulingPolicyAssociated;
+
+        /**
+         * If true, the infrastructure is using granular maintenance scheduling preference.
+         *
+         * @param isSchedulingPolicyAssociated the value to set
+         * @return this builder
+         */
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            this.__explicitlySet__.add("isSchedulingPolicyAssociated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1038,7 +1056,8 @@ public final class ExadataInfrastructure
                             this.availabilityDomain,
                             this.definedFileSystemConfigurations,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.isSchedulingPolicyAssociated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1193,6 +1212,9 @@ public final class ExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
+                this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
             }
             return this;
         }
@@ -2066,6 +2088,19 @@ public final class ExadataInfrastructure
         return definedTags;
     }
 
+    /** If true, the infrastructure is using granular maintenance scheduling preference. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+    private final Boolean isSchedulingPolicyAssociated;
+
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     *
+     * @return the value
+     */
+    public Boolean getIsSchedulingPolicyAssociated() {
+        return isSchedulingPolicyAssociated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2145,6 +2180,8 @@ public final class ExadataInfrastructure
                 .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isSchedulingPolicyAssociated=")
+                .append(String.valueOf(this.isSchedulingPolicyAssociated));
         sb.append(")");
         return sb.toString();
     }
@@ -2219,6 +2256,8 @@ public final class ExadataInfrastructure
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
                 && super.equals(other);
     }
 
@@ -2379,6 +2418,11 @@ public final class ExadataInfrastructure
                                 : this.definedFileSystemConfigurations.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSchedulingPolicyAssociated == null
+                                ? 43
+                                : this.isSchedulingPolicyAssociated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

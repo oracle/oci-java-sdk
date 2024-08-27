@@ -38,6 +38,7 @@ public final class ProtectionPolicySummary
         "backupRetentionPeriodInDays",
         "isPredefinedPolicy",
         "policyLockedDateTime",
+        "mustEnforceCloudLocality",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -53,6 +54,7 @@ public final class ProtectionPolicySummary
             Integer backupRetentionPeriodInDays,
             Boolean isPredefinedPolicy,
             String policyLockedDateTime,
+            Boolean mustEnforceCloudLocality,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -67,6 +69,7 @@ public final class ProtectionPolicySummary
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.isPredefinedPolicy = isPredefinedPolicy;
         this.policyLockedDateTime = policyLockedDateTime;
+        this.mustEnforceCloudLocality = mustEnforceCloudLocality;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -176,6 +179,25 @@ public final class ProtectionPolicySummary
         public Builder policyLockedDateTime(String policyLockedDateTime) {
             this.policyLockedDateTime = policyLockedDateTime;
             this.__explicitlySet__.add("policyLockedDateTime");
+            return this;
+        }
+        /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+        private Boolean mustEnforceCloudLocality;
+
+        /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned.
+         *
+         * @param mustEnforceCloudLocality the value to set
+         * @return this builder
+         */
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            this.__explicitlySet__.add("mustEnforceCloudLocality");
             return this;
         }
         /** The time the Protection Policy was created. An RFC3339 formatted datetime string */
@@ -321,6 +343,7 @@ public final class ProtectionPolicySummary
                             this.backupRetentionPeriodInDays,
                             this.isPredefinedPolicy,
                             this.policyLockedDateTime,
+                            this.mustEnforceCloudLocality,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -353,6 +376,9 @@ public final class ProtectionPolicySummary
             }
             if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
                 this.policyLockedDateTime(model.getPolicyLockedDateTime());
+            }
+            if (model.wasPropertyExplicitlySet("mustEnforceCloudLocality")) {
+                this.mustEnforceCloudLocality(model.getMustEnforceCloudLocality());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -472,6 +498,23 @@ public final class ProtectionPolicySummary
      */
     public String getPolicyLockedDateTime() {
         return policyLockedDateTime;
+    }
+
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+    private final Boolean mustEnforceCloudLocality;
+
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned.
+     *
+     * @return the value
+     */
+    public Boolean getMustEnforceCloudLocality() {
+        return mustEnforceCloudLocality;
     }
 
     /** The time the Protection Policy was created. An RFC3339 formatted datetime string */
@@ -607,6 +650,8 @@ public final class ProtectionPolicySummary
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", isPredefinedPolicy=").append(String.valueOf(this.isPredefinedPolicy));
         sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
+        sb.append(", mustEnforceCloudLocality=")
+                .append(String.valueOf(this.mustEnforceCloudLocality));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -635,6 +680,8 @@ public final class ProtectionPolicySummary
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.isPredefinedPolicy, other.isPredefinedPolicy)
                 && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
+                && java.util.Objects.equals(
+                        this.mustEnforceCloudLocality, other.mustEnforceCloudLocality)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -669,6 +716,11 @@ public final class ProtectionPolicySummary
                         + (this.policyLockedDateTime == null
                                 ? 43
                                 : this.policyLockedDateTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustEnforceCloudLocality == null
+                                ? 43
+                                : this.mustEnforceCloudLocality.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the Hsm. <br>
+ * An object which encapsulates the details of a given HSM. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -52,12 +52,12 @@ public final class HsmPartitionSummary
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the HSM resource. */
+        /** The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the HSM resource.
+         * The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier.
          *
          * @param id the value to set
          * @return this builder
@@ -82,12 +82,18 @@ public final class HsmPartitionSummary
             this.__explicitlySet__.add("hsmClusterId");
             return this;
         }
-        /** The Hsm's current lifecycle state. */
+        /**
+         * A HSMCluster resource's current lifecycle state.
+         *
+         * <p>Example: {@code ACTIVE}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private HsmPartition.LifecycleState lifecycleState;
 
         /**
-         * The Hsm's current lifecycle state.
+         * A HSMCluster resource's current lifecycle state.
+         *
+         * <p>Example: {@code ACTIVE}
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -112,12 +118,18 @@ public final class HsmPartitionSummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Port summary. */
+        /**
+         * Details of a single portInformation item include the PortNumber (an integer used as an
+         * identifier) and the PortType (refers to either an enum value of
+         * Managementutility,Clientutility, or null)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portInformation")
         private java.util.List<PortInformation> portInformation;
 
         /**
-         * Port summary.
+         * Details of a single portInformation item include the PortNumber (an integer used as an
+         * identifier) and the PortType (refers to either an enum value of
+         * Managementutility,Clientutility, or null)
          *
          * @param portInformation the value to set
          * @return this builder
@@ -229,12 +241,12 @@ public final class HsmPartitionSummary
         return new Builder().copy(this);
     }
 
-    /** The OCID of the HSM resource. */
+    /** The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the HSM resource.
+     * The OCID of the HSM resource. Each HSM resource will have a unique OCID identifier.
      *
      * @return the value
      */
@@ -255,12 +267,18 @@ public final class HsmPartitionSummary
         return hsmClusterId;
     }
 
-    /** The Hsm's current lifecycle state. */
+    /**
+     * A HSMCluster resource's current lifecycle state.
+     *
+     * <p>Example: {@code ACTIVE}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final HsmPartition.LifecycleState lifecycleState;
 
     /**
-     * The Hsm's current lifecycle state.
+     * A HSMCluster resource's current lifecycle state.
+     *
+     * <p>Example: {@code ACTIVE}
      *
      * @return the value
      */
@@ -281,12 +299,18 @@ public final class HsmPartitionSummary
         return compartmentId;
     }
 
-    /** Port summary. */
+    /**
+     * Details of a single portInformation item include the PortNumber (an integer used as an
+     * identifier) and the PortType (refers to either an enum value of
+     * Managementutility,Clientutility, or null)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portInformation")
     private final java.util.List<PortInformation> portInformation;
 
     /**
-     * Port summary.
+     * Details of a single portInformation item include the PortNumber (an integer used as an
+     * identifier) and the PortType (refers to either an enum value of
+     * Managementutility,Clientutility, or null)
      *
      * @return the value
      */

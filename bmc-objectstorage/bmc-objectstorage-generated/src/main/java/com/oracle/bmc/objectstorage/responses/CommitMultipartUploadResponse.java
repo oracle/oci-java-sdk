@@ -41,20 +41,20 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
     }
 
     /**
-     * Base-64 representation of the multipart object hash. The multipart object hash is calculated
-     * by taking the MD5 hashes of the parts passed to this call, concatenating the binary
-     * representation of those hashes in order of their part numbers, and then calculating the MD5
-     * hash of the concatenated values. The multipart object hash is followed by a hyphen and the
-     * total number of parts (for example, '-6').
+     * Base-64 representation of the multipart object MD5 hash. The multipart object hash is
+     * calculated by taking the MD5 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the MD5 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
      */
     private String opcMultipartMd5;
 
     /**
-     * Base-64 representation of the multipart object hash. The multipart object hash is calculated
-     * by taking the MD5 hashes of the parts passed to this call, concatenating the binary
-     * representation of those hashes in order of their part numbers, and then calculating the MD5
-     * hash of the concatenated values. The multipart object hash is followed by a hyphen and the
-     * total number of parts (for example, '-6').
+     * Base-64 representation of the multipart object MD5 hash. The multipart object hash is
+     * calculated by taking the MD5 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the MD5 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
      *
      * @return the value
      */
@@ -185,7 +185,7 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         }
 
         /**
-         * Base-64 representation of the multipart object hash. The multipart object hash is
+         * Base-64 representation of the multipart object MD5 hash. The multipart object hash is
          * calculated by taking the MD5 hashes of the parts passed to this call, concatenating the
          * binary representation of those hashes in order of their part numbers, and then
          * calculating the MD5 hash of the concatenated values. The multipart object hash is
@@ -194,7 +194,7 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         private String opcMultipartMd5;
 
         /**
-         * Base-64 representation of the multipart object hash. The multipart object hash is
+         * Base-64 representation of the multipart object MD5 hash. The multipart object hash is
          * calculated by taking the MD5 hashes of the parts passed to this call, concatenating the
          * binary representation of those hashes in order of their part numbers, and then
          * calculating the MD5 hash of the concatenated values. The multipart object hash is

@@ -16,10 +16,10 @@ public class UploadPartitionCertificatesRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.keymanagement.model.UploadPartitionCertificatesDetails> {
 
-    /** The OCID of the HSM Cluster. */
+    /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
     private String hsmClusterId;
 
-    /** The OCID of the HSM Cluster. */
+    /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
     public String getHsmClusterId() {
         return hsmClusterId;
     }
@@ -100,11 +100,11 @@ public class UploadPartitionCertificatesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the HSM Cluster. */
+        /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
         private String hsmClusterId = null;
 
         /**
-         * The OCID of the HSM Cluster.
+         * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
          *
          * @param hsmClusterId the value to set
          * @return this builder instance

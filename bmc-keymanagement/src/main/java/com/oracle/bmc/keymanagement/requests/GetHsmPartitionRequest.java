@@ -13,17 +13,21 @@ import com.oracle.bmc.keymanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: release")
 public class GetHsmPartitionRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The OCID of the HSM Cluster. */
+    /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
     private String hsmClusterId;
 
-    /** The OCID of the HSM Cluster. */
+    /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
     public String getHsmClusterId() {
         return hsmClusterId;
     }
-    /** The OCID of the HSM Partition. */
+    /**
+     * The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will have.
+     */
     private String hsmPartitionId;
 
-    /** The OCID of the HSM Partition. */
+    /**
+     * The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will have.
+     */
     public String getHsmPartitionId() {
         return hsmPartitionId;
     }
@@ -66,11 +70,11 @@ public class GetHsmPartitionRequest extends com.oracle.bmc.requests.BmcRequest<j
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The OCID of the HSM Cluster. */
+        /** The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster. */
         private String hsmClusterId = null;
 
         /**
-         * The OCID of the HSM Cluster.
+         * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
          *
          * @param hsmClusterId the value to set
          * @return this builder instance
@@ -80,11 +84,15 @@ public class GetHsmPartitionRequest extends com.oracle.bmc.requests.BmcRequest<j
             return this;
         }
 
-        /** The OCID of the HSM Partition. */
+        /**
+         * The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will
+         * have.
+         */
         private String hsmPartitionId = null;
 
         /**
-         * The OCID of the HSM Partition.
+         * The OCID of the HSM Partition. This is a unique identifier which each hsmPartition will
+         * have.
          *
          * @param hsmPartitionId the value to set
          * @return this builder instance

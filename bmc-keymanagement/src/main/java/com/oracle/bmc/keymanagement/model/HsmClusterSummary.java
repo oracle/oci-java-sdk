@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the HSM resource. <br>
+ * An object which encapsulates the details of a given HSM Cluster. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -131,12 +131,14 @@ public final class HsmClusterSummary
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
-        /** DNS name for the HSMCluster. */
+        /**
+         * DNS name for the HSMCluster -- this will contain information about the region as well.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
         private String dnsName;
 
         /**
-         * DNS name for the HSMCluster.
+         * DNS name for the HSMCluster -- this will contain information about the region as well.
          *
          * @param dnsName the value to set
          * @return this builder
@@ -390,12 +392,12 @@ public final class HsmClusterSummary
         return lifecycleState;
     }
 
-    /** DNS name for the HSMCluster. */
+    /** DNS name for the HSMCluster -- this will contain information about the region as well. */
     @com.fasterxml.jackson.annotation.JsonProperty("dnsName")
     private final String dnsName;
 
     /**
-     * DNS name for the HSMCluster.
+     * DNS name for the HSMCluster -- this will contain information about the region as well.
      *
      * @return the value
      */

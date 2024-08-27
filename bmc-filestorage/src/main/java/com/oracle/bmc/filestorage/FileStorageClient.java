@@ -123,6 +123,39 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public CancelDowngradeShapeMountTargetResponse cancelDowngradeShapeMountTarget(
+            CancelDowngradeShapeMountTargetRequest request) {
+
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+
+        return clientCall(request, CancelDowngradeShapeMountTargetResponse::builder)
+                .logger(LOG, "cancelDowngradeShapeMountTarget")
+                .serviceDetails(
+                        "FileStorage",
+                        "CancelDowngradeShapeMountTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CancelDowngradeShapeMountTarget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelDowngradeShapeMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("cancelShapeDowngrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        CancelDowngradeShapeMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString(
+                        "etag", CancelDowngradeShapeMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CancelDowngradeShapeMountTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeFileSystemCompartmentResponse changeFileSystemCompartment(
             ChangeFileSystemCompartmentRequest request) {
 
@@ -1368,6 +1401,43 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ScheduleDowngradeShapeMountTargetResponse scheduleDowngradeShapeMountTarget(
+            ScheduleDowngradeShapeMountTargetRequest request) {
+
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getScheduleDowngradeShapeMountTargetDetails(),
+                "scheduleDowngradeShapeMountTargetDetails is required");
+
+        return clientCall(request, ScheduleDowngradeShapeMountTargetResponse::builder)
+                .logger(LOG, "scheduleDowngradeShapeMountTarget")
+                .serviceDetails(
+                        "FileStorage",
+                        "ScheduleDowngradeShapeMountTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ScheduleDowngradeShapeMountTarget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ScheduleDowngradeShapeMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("scheduleShapeDowngrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        ScheduleDowngradeShapeMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString(
+                        "etag", ScheduleDowngradeShapeMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ScheduleDowngradeShapeMountTargetResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UnpauseFilesystemSnapshotPolicyResponse unpauseFilesystemSnapshotPolicy(
             UnpauseFilesystemSnapshotPolicyRequest request) {
 
@@ -1655,6 +1725,41 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateSnapshotResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSnapshotResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpgradeShapeMountTargetResponse upgradeShapeMountTarget(
+            UpgradeShapeMountTargetRequest request) {
+
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getUpgradeShapeMountTargetDetails(),
+                "upgradeShapeMountTargetDetails is required");
+
+        return clientCall(request, UpgradeShapeMountTargetResponse::builder)
+                .logger(LOG, "upgradeShapeMountTarget")
+                .serviceDetails(
+                        "FileStorage",
+                        "UpgradeShapeMountTarget",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpgradeShapeMountTarget")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeShapeMountTargetRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("upgradeShape")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        UpgradeShapeMountTargetResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", UpgradeShapeMountTargetResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeShapeMountTargetResponse.Builder::opcRequestId)
                 .callSync();
     }
 

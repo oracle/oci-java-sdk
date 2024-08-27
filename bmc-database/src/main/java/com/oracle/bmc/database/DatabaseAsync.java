@@ -192,6 +192,41 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Cancels the in progress maintenance activity under this execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CancelExecutionWindowResponse> cancelExecutionWindow(
+            CancelExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CancelExecutionWindowRequest, CancelExecutionWindowResponse>
+                    handler);
+
+    /**
+     * Delete the scheduling plan resource along with all the scheduled actions associated with this
+     * resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteSchedulingPlanResponse>
+            cascadingDeleteSchedulingPlan(
+                    CascadingDeleteSchedulingPlanRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteSchedulingPlanRequest,
+                                    CascadingDeleteSchedulingPlanResponse>
+                            handler);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified
      * compartment. For more information about moving Autonomous Container Databases, see [Moving
      * Database Resources to a Different
@@ -691,6 +726,42 @@ public interface DatabaseAsync extends AutoCloseable {
                             ChangeOneoffPatchCompartmentRequest,
                             ChangeOneoffPatchCompartmentResponse>
                     handler);
+
+    /**
+     * Moves an scheduling plan resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSchedulingPlanCompartmentResponse>
+            changeSchedulingPlanCompartment(
+                    ChangeSchedulingPlanCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPlanCompartmentRequest,
+                                    ChangeSchedulingPlanCompartmentResponse>
+                            handler);
+
+    /**
+     * Moves an scheduling policy resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSchedulingPolicyCompartmentResponse>
+            changeSchedulingPolicyCompartment(
+                    ChangeSchedulingPolicyCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSchedulingPolicyCompartmentRequest,
+                                    ChangeSchedulingPolicyCompartmentResponse>
+                            handler);
 
     /**
      * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata
@@ -1235,6 +1306,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates an execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExecutionActionResponse> createExecutionAction(
+            CreateExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionActionRequest, CreateExecutionActionResponse>
+                    handler);
+
+    /**
+     * Creates an execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateExecutionWindowResponse> createExecutionWindow(
+            CreateExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateExecutionWindowRequest, CreateExecutionWindowResponse>
+                    handler);
+
+    /**
      * Creates a new backup resource and returns the information the caller needs to back up an
      * on-premises Oracle Database to Oracle Cloud Infrastructure.
      *
@@ -1401,6 +1504,70 @@ public interface DatabaseAsync extends AutoCloseable {
             CreatePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreatePluggableDatabaseRequest, CreatePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateScheduledActionResponse> createScheduledAction(
+            CreateScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateScheduledActionRequest, CreateScheduledActionResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingPlanResponse> createSchedulingPlan(
+            CreateSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPlanRequest, CreateSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingPolicyResponse> createSchedulingPolicy(
+            CreateSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingPolicyRequest, CreateSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Creates a Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSchedulingWindowResponse> createSchedulingWindow(
+            CreateSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSchedulingWindowRequest, CreateSchedulingWindowResponse>
                     handler);
 
     /**
@@ -1778,6 +1945,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the execution action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExecutionActionResponse> deleteExecutionAction(
+            DeleteExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionActionRequest, DeleteExecutionActionResponse>
+                    handler);
+
+    /**
+     * Deletes the execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteExecutionWindowResponse> deleteExecutionWindow(
+            DeleteExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteExecutionWindowRequest, DeleteExecutionWindowResponse>
+                    handler);
+
+    /**
      * Deletes the {@link
      * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
      * Consumer, Consumer) createExternalContainerDatabaseDetails} resource. Any external pluggable
@@ -1902,6 +2101,70 @@ public interface DatabaseAsync extends AutoCloseable {
             DeletePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeletePluggableDatabaseRequest, DeletePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduled action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteScheduledActionResponse> deleteScheduledAction(
+            DeleteScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteScheduledActionRequest, DeleteScheduledActionResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling plan.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingPlanResponse> deleteSchedulingPlan(
+            DeleteSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPlanRequest, DeleteSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingPolicyResponse> deleteSchedulingPolicy(
+            DeleteSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingPolicyRequest, DeleteSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Deletes the scheduling window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSchedulingWindowResponse> deleteSchedulingWindow(
+            DeleteSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSchedulingWindowRequest, DeleteSchedulingWindowResponse>
                     handler);
 
     /**
@@ -3429,6 +3692,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets information about the specified execution action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExecutionActionResponse> getExecutionAction(
+            GetExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionActionRequest, GetExecutionActionResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified execution window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetExecutionWindowResponse> getExecutionWindow(
+            GetExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetExecutionWindowRequest, GetExecutionWindowResponse>
+                    handler);
+
+    /**
      * Gets information about the specified external backup job.
      *
      * <p>*Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged
@@ -3635,6 +3930,70 @@ public interface DatabaseAsync extends AutoCloseable {
             GetPluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPluggableDatabaseRequest, GetPluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduled Action.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduledActionResponse> getScheduledAction(
+            GetScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetScheduledActionRequest, GetScheduledActionResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Plan.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingPlanResponse> getSchedulingPlan(
+            GetSchedulingPlanRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPlanRequest, GetSchedulingPlanResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingPolicyResponse> getSchedulingPolicy(
+            GetSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingPolicyRequest, GetSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Gets information about the specified Scheduling Window.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSchedulingWindowResponse> getSchedulingWindow(
+            GetSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSchedulingWindowRequest, GetSchedulingWindowResponse>
                     handler);
 
     /**
@@ -4722,6 +5081,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Lists the execution action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExecutionActionsResponse> listExecutionActions(
+            ListExecutionActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionActionsRequest, ListExecutionActionsResponse>
+                    handler);
+
+    /**
+     * Lists the execution window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListExecutionWindowsResponse> listExecutionWindows(
+            ListExecutionWindowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListExecutionWindowsRequest, ListExecutionWindowsResponse>
+                    handler);
+
+    /**
      * Gets a list of the external container databases in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -4910,6 +5301,22 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * List all the action params and their possible values for a given action type
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListParamsForActionTypeResponse> listParamsForActionType(
+            ListParamsForActionTypeRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListParamsForActionTypeRequest, ListParamsForActionTypeResponse>
+                    handler);
+
+    /**
      * Gets the pluggable database conversion history for a specified database in a bare metal or
      * virtual machine DB system.
      *
@@ -4943,6 +5350,89 @@ public interface DatabaseAsync extends AutoCloseable {
             ListPluggableDatabasesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListPluggableDatabasesRequest, ListPluggableDatabasesResponse>
+                    handler);
+
+    /**
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and
+     * scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRecommendedScheduledActionsResponse>
+            listRecommendedScheduledActions(
+                    ListRecommendedScheduledActionsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListRecommendedScheduledActionsRequest,
+                                    ListRecommendedScheduledActionsResponse>
+                            handler);
+
+    /**
+     * Lists the Scheduled Action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListScheduledActionsResponse> listScheduledActions(
+            ListScheduledActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListScheduledActionsRequest, ListScheduledActionsResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Plan resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingPlansResponse> listSchedulingPlans(
+            ListSchedulingPlansRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPlansRequest, ListSchedulingPlansResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Policy resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingPoliciesResponse> listSchedulingPolicies(
+            ListSchedulingPoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingPoliciesRequest, ListSchedulingPoliciesResponse>
+                    handler);
+
+    /**
+     * Lists the Scheduling Window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulingWindowsResponse> listSchedulingWindows(
+            ListSchedulingWindowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSchedulingWindowsRequest, ListSchedulingWindowsResponse>
                     handler);
 
     /**
@@ -5158,6 +5648,22 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves an execution action member to this execution action resource from another.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<MoveExecutionActionMemberResponse> moveExecutionActionMember(
+            MoveExecutionActionMemberRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            MoveExecutionActionMemberRequest, MoveExecutionActionMemberResponse>
+                    handler);
+
+    /**
      * Refreshes a pluggable database (PDB) Refreshable clone.
      *
      * @param request The request object containing the details to send
@@ -5307,6 +5813,38 @@ public interface DatabaseAsync extends AutoCloseable {
                                     RemoveVirtualMachineFromVmClusterRequest,
                                     RemoveVirtualMachineFromVmClusterResponse>
                             handler);
+
+    /**
+     * Reorders the execution actions under this execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReorderExecutionActionsResponse> reorderExecutionActions(
+            ReorderExecutionActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReorderExecutionActionsRequest, ReorderExecutionActionsResponse>
+                    handler);
+
+    /**
+     * Re-order the scheduled actions under this scheduling plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ReorderScheduledActionsResponse> reorderScheduledActions(
+            ReorderScheduledActionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ReorderScheduledActionsRequest, ReorderScheduledActionsResponse>
+                    handler);
 
     /**
      * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network.
@@ -6331,6 +6869,38 @@ public interface DatabaseAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Updates the execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExecutionActionResponse> updateExecutionAction(
+            UpdateExecutionActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionActionRequest, UpdateExecutionActionResponse>
+                    handler);
+
+    /**
+     * Updates the execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateExecutionWindowResponse> updateExecutionWindow(
+            UpdateExecutionWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateExecutionWindowRequest, UpdateExecutionWindowResponse>
+                    handler);
+
+    /**
      * Updates the properties of an {@link
      * #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest,
      * Consumer, Consumer) createExternalContainerDatabaseDetails} resource, such as the display
@@ -6469,6 +7039,54 @@ public interface DatabaseAsync extends AutoCloseable {
             UpdatePluggableDatabaseRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdatePluggableDatabaseRequest, UpdatePluggableDatabaseResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateScheduledActionResponse> updateScheduledAction(
+            UpdateScheduledActionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateScheduledActionRequest, UpdateScheduledActionResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSchedulingPolicyResponse> updateSchedulingPolicy(
+            UpdateSchedulingPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingPolicyRequest, UpdateSchedulingPolicyResponse>
+                    handler);
+
+    /**
+     * Updates the Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSchedulingWindowResponse> updateSchedulingWindow(
+            UpdateSchedulingWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSchedulingWindowRequest, UpdateSchedulingWindowResponse>
                     handler);
 
     /**

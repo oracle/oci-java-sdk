@@ -413,6 +413,7 @@ public class SddcAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClien
                 .appendQueryParam("page", request.getPage())
                 .appendQueryParam("version", request.getVersion())
                 .appendQueryParam("hostShapeName", request.getHostShapeName())
+                .appendQueryParam("versionToUpgrade", request.getVersionToUpgrade())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

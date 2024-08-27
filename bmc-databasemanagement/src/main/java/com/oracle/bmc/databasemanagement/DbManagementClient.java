@@ -1397,6 +1397,46 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public DisableAutonomousDatabaseManagementFeatureResponse
+            disableAutonomousDatabaseManagementFeature(
+                    DisableAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getDisableAutonomousDatabaseManagementFeatureDetails(),
+                "disableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, DisableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "disableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableAutonomousDatabaseManagementFeatureResponse.Builder
+                                ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DisableDatabaseManagementFeatureResponse disableDatabaseManagementFeature(
             DisableDatabaseManagementFeatureRequest request) {
 
@@ -1940,6 +1980,45 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         EnableAutomaticSpmEvolveAdvisorTaskResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableAutonomousDatabaseManagementFeatureResponse
+            enableAutonomousDatabaseManagementFeature(
+                    EnableAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableAutonomousDatabaseManagementFeatureDetails(),
+                "enableAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, EnableAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "enableAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -4097,6 +4176,7 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .appendQueryParam("name", request.getName())
                 .appendQueryParam("vcnId", request.getVcnId())
                 .appendQueryParam("isCluster", request.getIsCluster())
+                .appendQueryParam("isDnsResolutionEnabled", request.getIsDnsResolutionEnabled())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
@@ -5659,6 +5739,45 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         LoadSqlPlanBaselinesFromCursorCacheResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ModifyAutonomousDatabaseManagementFeatureResponse
+            modifyAutonomousDatabaseManagementFeature(
+                    ModifyAutonomousDatabaseManagementFeatureRequest request) {
+
+        Validate.notBlank(
+                request.getAutonomousDatabaseId(), "autonomousDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getModifyAutonomousDatabaseManagementFeatureDetails(),
+                "modifyAutonomousDatabaseManagementFeatureDetails is required");
+
+        return clientCall(request, ModifyAutonomousDatabaseManagementFeatureResponse::builder)
+                .logger(LOG, "modifyAutonomousDatabaseManagementFeature")
+                .serviceDetails(
+                        "DbManagement",
+                        "ModifyAutonomousDatabaseManagementFeature",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyAutonomousDatabaseManagementFeature")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ModifyAutonomousDatabaseManagementFeatureRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("autonomousDatabases")
+                .appendPathParam(request.getAutonomousDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("modifyDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ModifyAutonomousDatabaseManagementFeatureResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

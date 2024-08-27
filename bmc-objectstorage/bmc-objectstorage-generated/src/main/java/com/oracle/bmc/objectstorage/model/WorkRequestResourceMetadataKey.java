@@ -11,6 +11,7 @@ public enum WorkRequestResourceMetadataKey implements com.oracle.bmc.http.intern
     Namespace("NAMESPACE"),
     Bucket("BUCKET"),
     Object("OBJECT"),
+    PrivateEndpointName("PRIVATE_ENDPOINT_NAME"),
     ;
 
     private final String value;

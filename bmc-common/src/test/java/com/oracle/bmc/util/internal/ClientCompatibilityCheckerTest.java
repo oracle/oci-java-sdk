@@ -17,6 +17,7 @@ import java.util.Properties;
 import static com.oracle.bmc.util.internal.ClientCompatibilityChecker.JAVA_CLIENT_CODEGEN_VERSION_PROPERTY_NAME;
 import static com.oracle.bmc.util.internal.ClientCompatibilityChecker.JAVA_MAXIMUM_CLIENT_CODEGEN_VERSION_PROPERTY_NAME;
 import static com.oracle.bmc.util.internal.ClientCompatibilityChecker.JAVA_MINIMUM_CLIENT_CODEGEN_VERSION_PROPERTY_NAME;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.Mockito.mock;
@@ -371,7 +372,7 @@ public class ClientCompatibilityCheckerTest {
     }
 
     @Test
-    public void testclientCodegenVersionNotSet() {
+    public void testClientCodegenVersionNotSet() {
         final String min = "2.5.0";
         final String clientCodegenVer = null;
         final String minFromClient = "3.7.0";
@@ -454,5 +455,100 @@ public class ClientCompatibilityCheckerTest {
                         "this oci-java-sdk-common version is only backward-compatible down to codegen version '"
                                 + min
                                 + "'"));
+    }
+
+    @Test
+    public void testClientCompatible_withExtendedCodegenVersion() {
+        final String min = "2.100";
+        final String max = "2.100";
+        final String minFromClient = "2.26";
+        final String clientCodegenVer = "2.100-3.46.1";
+        final Optional<String> javaMinFromClient = Optional.of(minFromClient);
+        ClientCompatibilityChecker checker = getChecker(min, max);
+
+        assertTrue(
+                checker.isClientCodegenVersionCompatible(
+                        CLIENT_CLASS_NAME, clientCodegenVer, javaMinFromClient, log));
+
+        ArgumentCaptor<String> captor = ArgumentCaptor.forClass(String.class);
+        verify(log).info(captor.capture());
+
+        String message = captor.getValue();
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "The client is compatible with the oci-java-sdk-common version '"
+                                + SDK_VERSION
+                                + "'"));
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "since the client was generated using codegen version '"
+                                + clientCodegenVer
+                                + "'"));
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "which is in the compatible codegen version range '"
+                                + min
+                                + "' to '"
+                                + max
+                                + "'"));
+    }
+
+    @Test
+    public void testClientTooNew_withExtendedCodegenVersion() {
+        final String min = "2.100";
+        final String max = "2.100";
+        final String minFromClient = "2.26";
+        final String clientCodegenVer = "2.101-3.46.1";
+        final Optional<String> javaMinFromClient = Optional.of(minFromClient);
+        ClientCompatibilityChecker checker = getChecker(min, max);
+        assertFalse(
+                checker.isClientCodegenVersionCompatible(
+                        CLIENT_CLASS_NAME, clientCodegenVer, javaMinFromClient, log));
+
+        ArgumentCaptor<String> messageCaptor = ArgumentCaptor.forClass(String.class);
+        verify(log).warn(messageCaptor.capture());
+
+        String message = messageCaptor.getValue();
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "The client is too new for the oci-java-sdk-common version '"
+                                + SDK_VERSION
+                                + "'"));
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "The client was generated using codegen version '"
+                                + clientCodegenVer
+                                + "'"));
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "which is backward-compatible down to codegen version '"
+                                + minFromClient
+                                + "'"));
+        assertTrue(
+                "Message didn't match: " + message,
+                message.contains(
+                        "but this version of oci-java-sdk-common requires codegen version '"
+                                + max
+                                + "' or older"));
+    }
+
+    @Test
+    public void testGetCodegenVersionWithoutSdkVersion() {
+        assertEquals(
+                "2.100", ClientCompatibilityChecker.getCodegenVersionWithoutSdkVersion("2.100"));
+        assertEquals(
+                "2.100",
+                ClientCompatibilityChecker.getCodegenVersionWithoutSdkVersion("2.100-3.46.1"));
+        assertEquals(
+                "1.196",
+                ClientCompatibilityChecker.getCodegenVersionWithoutSdkVersion(
+                        "1.196-2.41.0-fixed"));
+        assertEquals(null, ClientCompatibilityChecker.getCodegenVersionWithoutSdkVersion(null));
     }
 }

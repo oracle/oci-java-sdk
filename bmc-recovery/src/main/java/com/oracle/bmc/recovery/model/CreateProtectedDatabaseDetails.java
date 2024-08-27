@@ -36,6 +36,7 @@ public final class CreateProtectedDatabaseDetails
         "changeRate",
         "compressionRatio",
         "isRedoLogsShipped",
+        "subscriptionId",
         "freeformTags",
         "definedTags"
     })
@@ -52,6 +53,7 @@ public final class CreateProtectedDatabaseDetails
             Double changeRate,
             Double compressionRatio,
             Boolean isRedoLogsShipped,
+            String subscriptionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -67,6 +69,7 @@ public final class CreateProtectedDatabaseDetails
         this.changeRate = changeRate;
         this.compressionRatio = compressionRatio;
         this.isRedoLogsShipped = isRedoLogsShipped;
+        this.subscriptionId = subscriptionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -291,6 +294,27 @@ public final class CreateProtectedDatabaseDetails
             return this;
         }
         /**
+         * The OCID of the cloud service subscription to which you want to link the protected
+         * database. For example, specify the Microsoft Azure subscription ID if you want to
+         * provision the protected database in Azure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The OCID of the cloud service subscription to which you want to link the protected
+         * database. For example, specify the Microsoft Azure subscription ID if you want to
+         * provision the protected database in Azure.
+         *
+         * @param subscriptionId the value to set
+         * @return this builder
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only. Example: {@code {"bar-key": "value"}}
          */
@@ -352,6 +376,7 @@ public final class CreateProtectedDatabaseDetails
                             this.changeRate,
                             this.compressionRatio,
                             this.isRedoLogsShipped,
+                            this.subscriptionId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -397,6 +422,9 @@ public final class CreateProtectedDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("isRedoLogsShipped")) {
                 this.isRedoLogsShipped(model.getIsRedoLogsShipped());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -610,6 +638,25 @@ public final class CreateProtectedDatabaseDetails
     }
 
     /**
+     * The OCID of the cloud service subscription to which you want to link the protected database.
+     * For example, specify the Microsoft Azure subscription ID if you want to provision the
+     * protected database in Azure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The OCID of the cloud service subscription to which you want to link the protected database.
+     * For example, specify the Microsoft Azure subscription ID if you want to provision the
+     * protected database in Azure.
+     *
+     * @return the value
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only. Example: {@code {"bar-key": "value"}}
      */
@@ -672,6 +719,7 @@ public final class CreateProtectedDatabaseDetails
         sb.append(", changeRate=").append(String.valueOf(this.changeRate));
         sb.append(", compressionRatio=").append(String.valueOf(this.compressionRatio));
         sb.append(", isRedoLogsShipped=").append(String.valueOf(this.isRedoLogsShipped));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -701,6 +749,7 @@ public final class CreateProtectedDatabaseDetails
                 && java.util.Objects.equals(this.changeRate, other.changeRate)
                 && java.util.Objects.equals(this.compressionRatio, other.compressionRatio)
                 && java.util.Objects.equals(this.isRedoLogsShipped, other.isRedoLogsShipped)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -738,6 +787,9 @@ public final class CreateProtectedDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.isRedoLogsShipped == null ? 43 : this.isRedoLogsShipped.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

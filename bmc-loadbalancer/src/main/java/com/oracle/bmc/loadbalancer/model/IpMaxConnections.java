@@ -51,12 +51,20 @@ public final class IpMaxConnections
             this.__explicitlySet__.add("ipAddresses");
             return this;
         }
-        /** The max number of connections that the specified IPs can make to the Listener. */
+        /**
+         * The maximum number of simultaneous connections that the specified IPs can make to the
+         * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+         * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+         * unlimited number of simultaneous connections to a listener.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
         private Integer maxConnections;
 
         /**
-         * The max number of connections that the specified IPs can make to the Listener.
+         * The maximum number of simultaneous connections that the specified IPs can make to the
+         * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+         * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+         * unlimited number of simultaneous connections to a listener.
          *
          * @param maxConnections the value to set
          * @return this builder
@@ -116,12 +124,20 @@ public final class IpMaxConnections
         return ipAddresses;
     }
 
-    /** The max number of connections that the specified IPs can make to the Listener. */
+    /**
+     * The maximum number of simultaneous connections that the specified IPs can make to the
+     * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+     * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+     * unlimited number of simultaneous connections to a listener.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("maxConnections")
     private final Integer maxConnections;
 
     /**
-     * The max number of connections that the specified IPs can make to the Listener.
+     * The maximum number of simultaneous connections that the specified IPs can make to the
+     * Listener. IPs without a maxConnections setting can make either defaultMaxConnections
+     * simultaneous connections to a listener or, if no defaultMaxConnections is specified, an
+     * unlimited number of simultaneous connections to a listener.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the compartment you wish to move the Hsm. <br>
+ * The details of the compartment you wish to move the hsm cluster to. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class ChangeHsmClusterCompartmentDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The [OCID] of the compartment to move the hsm to. */
+        /** The [OCID] of the compartment to move the hsm cluster to. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID] of the compartment to move the hsm to.
+         * The [OCID] of the compartment to move the hsm cluster to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class ChangeHsmClusterCompartmentDetails
         return new Builder().copy(this);
     }
 
-    /** The [OCID] of the compartment to move the hsm to. */
+    /** The [OCID] of the compartment to move the hsm cluster to. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID] of the compartment to move the hsm to.
+     * The [OCID] of the compartment to move the hsm cluster to.
      *
      * @return the value
      */

@@ -127,6 +127,8 @@ public final class CreateBackendDetails
         }
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
+         * If this is not set then number of simultaneous connections the load balancer can make to
+         * the backend is unlimited.
          *
          * <p>Example: {@code 300}
          */
@@ -135,6 +137,8 @@ public final class CreateBackendDetails
 
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
+         * If this is not set then number of simultaneous connections the load balancer can make to
+         * the backend is unlimited.
          *
          * <p>Example: {@code 300}
          *
@@ -345,7 +349,9 @@ public final class CreateBackendDetails
     }
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     * The maximum number of simultaneous connections the load balancer can make to the backend. If
+     * this is not set then number of simultaneous connections the load balancer can make to the
+     * backend is unlimited.
      *
      * <p>Example: {@code 300}
      */
@@ -353,7 +359,9 @@ public final class CreateBackendDetails
     private final Integer maxConnections;
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     * The maximum number of simultaneous connections the load balancer can make to the backend. If
+     * this is not set then number of simultaneous connections the load balancer can make to the
+     * backend is unlimited.
      *
      * <p>Example: {@code 300}
      *

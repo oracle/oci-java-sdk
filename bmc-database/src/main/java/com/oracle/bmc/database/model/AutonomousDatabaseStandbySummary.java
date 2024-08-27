@@ -28,20 +28,23 @@ public final class AutonomousDatabaseStandbySummary
         "lifecycleState",
         "lifecycleDetails",
         "timeDataGuardRoleChanged",
-        "timeDisasterRecoveryRoleChanged"
+        "timeDisasterRecoveryRoleChanged",
+        "availabilityDomain"
     })
     public AutonomousDatabaseStandbySummary(
             Integer lagTimeInSeconds,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             java.util.Date timeDataGuardRoleChanged,
-            java.util.Date timeDisasterRecoveryRoleChanged) {
+            java.util.Date timeDisasterRecoveryRoleChanged,
+            String availabilityDomain) {
         super();
         this.lagTimeInSeconds = lagTimeInSeconds;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+        this.availabilityDomain = availabilityDomain;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -136,6 +139,25 @@ public final class AutonomousDatabaseStandbySummary
             this.__explicitlySet__.add("timeDisasterRecoveryRoleChanged");
             return this;
         }
+        /**
+         * The availability domain of a local Autonomous Data Guard standby database of an
+         * Autonomous Database Serverless instance.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain of a local Autonomous Data Guard standby database of an
+         * Autonomous Database Serverless instance.
+         *
+         * @param availabilityDomain the value to set
+         * @return this builder
+         */
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -147,7 +169,8 @@ public final class AutonomousDatabaseStandbySummary
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.timeDataGuardRoleChanged,
-                            this.timeDisasterRecoveryRoleChanged);
+                            this.timeDisasterRecoveryRoleChanged,
+                            this.availabilityDomain);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -170,6 +193,9 @@ public final class AutonomousDatabaseStandbySummary
             }
             if (model.wasPropertyExplicitlySet("timeDisasterRecoveryRoleChanged")) {
                 this.timeDisasterRecoveryRoleChanged(model.getTimeDisasterRecoveryRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
             }
             return this;
         }
@@ -328,6 +354,23 @@ public final class AutonomousDatabaseStandbySummary
         return timeDisasterRecoveryRoleChanged;
     }
 
+    /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous
+     * Database Serverless instance.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain of a local Autonomous Data Guard standby database of an Autonomous
+     * Database Serverless instance.
+     *
+     * @return the value
+     */
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -350,6 +393,7 @@ public final class AutonomousDatabaseStandbySummary
                 .append(String.valueOf(this.timeDataGuardRoleChanged));
         sb.append(", timeDisasterRecoveryRoleChanged=")
                 .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(")");
         return sb.toString();
     }
@@ -371,6 +415,7 @@ public final class AutonomousDatabaseStandbySummary
                         this.timeDataGuardRoleChanged, other.timeDataGuardRoleChanged)
                 && java.util.Objects.equals(
                         this.timeDisasterRecoveryRoleChanged, other.timeDisasterRecoveryRoleChanged)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && super.equals(other);
     }
 
@@ -397,6 +442,11 @@ public final class AutonomousDatabaseStandbySummary
                         + (this.timeDisasterRecoveryRoleChanged == null
                                 ? 43
                                 : this.timeDisasterRecoveryRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
