@@ -27,6 +27,7 @@ public final class CreateProtectionPolicyDetails
         "displayName",
         "backupRetentionPeriodInDays",
         "compartmentId",
+        "mustEnforceCloudLocality",
         "policyLockedDateTime",
         "freeformTags",
         "definedTags"
@@ -35,6 +36,7 @@ public final class CreateProtectionPolicyDetails
             String displayName,
             Integer backupRetentionPeriodInDays,
             String compartmentId,
+            Boolean mustEnforceCloudLocality,
             String policyLockedDateTime,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -42,6 +44,7 @@ public final class CreateProtectionPolicyDetails
         this.displayName = displayName;
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.compartmentId = compartmentId;
+        this.mustEnforceCloudLocality = mustEnforceCloudLocality;
         this.policyLockedDateTime = policyLockedDateTime;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -96,6 +99,39 @@ public final class CreateProtectionPolicyDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned. This
+         * parameter is applicable if your Oracle Database runs in a different cloud service
+         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
+         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
+         * service environment where the database resides. For example, if your Oracle Database is
+         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
+         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
+         * policy after you create it.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+        private Boolean mustEnforceCloudLocality;
+
+        /**
+         * Indicates whether the protection policy enforces Recovery Service to retain backups in
+         * the same cloud service environment where your Oracle Database is provisioned. This
+         * parameter is applicable if your Oracle Database runs in a different cloud service
+         * environment, such as Microsoft Azure. If you set the mustEnforceCloudLocality parameter
+         * to TRUE, then Recovery Service stores the database backups locally in the same cloud
+         * service environment where the database resides. For example, if your Oracle Database is
+         * provisioned on Microsoft Azure, then Recovery Service stores the database backups in
+         * Azure. Note: You cannot change the mustEnforceCloudLocality setting for a protection
+         * policy after you create it.
+         *
+         * @param mustEnforceCloudLocality the value to set
+         * @return this builder
+         */
+        public Builder mustEnforceCloudLocality(Boolean mustEnforceCloudLocality) {
+            this.mustEnforceCloudLocality = mustEnforceCloudLocality;
+            this.__explicitlySet__.add("mustEnforceCloudLocality");
             return this;
         }
         /**
@@ -196,6 +232,7 @@ public final class CreateProtectionPolicyDetails
                             this.displayName,
                             this.backupRetentionPeriodInDays,
                             this.compartmentId,
+                            this.mustEnforceCloudLocality,
                             this.policyLockedDateTime,
                             this.freeformTags,
                             this.definedTags);
@@ -215,6 +252,9 @@ public final class CreateProtectionPolicyDetails
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("mustEnforceCloudLocality")) {
+                this.mustEnforceCloudLocality(model.getMustEnforceCloudLocality());
             }
             if (model.wasPropertyExplicitlySet("policyLockedDateTime")) {
                 this.policyLockedDateTime(model.getPolicyLockedDateTime());
@@ -279,6 +319,35 @@ public final class CreateProtectionPolicyDetails
      */
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned. This parameter is
+     * applicable if your Oracle Database runs in a different cloud service environment, such as
+     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
+     * Service stores the database backups locally in the same cloud service environment where the
+     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
+     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
+     * mustEnforceCloudLocality setting for a protection policy after you create it.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("mustEnforceCloudLocality")
+    private final Boolean mustEnforceCloudLocality;
+
+    /**
+     * Indicates whether the protection policy enforces Recovery Service to retain backups in the
+     * same cloud service environment where your Oracle Database is provisioned. This parameter is
+     * applicable if your Oracle Database runs in a different cloud service environment, such as
+     * Microsoft Azure. If you set the mustEnforceCloudLocality parameter to TRUE, then Recovery
+     * Service stores the database backups locally in the same cloud service environment where the
+     * database resides. For example, if your Oracle Database is provisioned on Microsoft Azure,
+     * then Recovery Service stores the database backups in Azure. Note: You cannot change the
+     * mustEnforceCloudLocality setting for a protection policy after you create it.
+     *
+     * @return the value
+     */
+    public Boolean getMustEnforceCloudLocality() {
+        return mustEnforceCloudLocality;
     }
 
     /**
@@ -377,6 +446,8 @@ public final class CreateProtectionPolicyDetails
         sb.append(", backupRetentionPeriodInDays=")
                 .append(String.valueOf(this.backupRetentionPeriodInDays));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", mustEnforceCloudLocality=")
+                .append(String.valueOf(this.mustEnforceCloudLocality));
         sb.append(", policyLockedDateTime=").append(String.valueOf(this.policyLockedDateTime));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -398,6 +469,8 @@ public final class CreateProtectionPolicyDetails
                 && java.util.Objects.equals(
                         this.backupRetentionPeriodInDays, other.backupRetentionPeriodInDays)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(
+                        this.mustEnforceCloudLocality, other.mustEnforceCloudLocality)
                 && java.util.Objects.equals(this.policyLockedDateTime, other.policyLockedDateTime)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -417,6 +490,11 @@ public final class CreateProtectionPolicyDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.mustEnforceCloudLocality == null
+                                ? 43
+                                : this.mustEnforceCloudLocality.hashCode());
         result =
                 (result * PRIME)
                         + (this.policyLockedDateTime == null

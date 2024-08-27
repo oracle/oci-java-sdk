@@ -283,6 +283,9 @@ public final class WorkRequestSummary
     public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
         CopyObject("COPY_OBJECT"),
         Reencrypt("REENCRYPT"),
+        PrivateEndpointCreate("PRIVATE_ENDPOINT_CREATE"),
+        PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
+        PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

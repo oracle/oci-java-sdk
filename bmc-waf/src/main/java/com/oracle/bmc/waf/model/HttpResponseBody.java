@@ -23,6 +23,9 @@ package com.oracle.bmc.waf.model;
         defaultImpl = HttpResponseBody.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DynamicHttpResponseBody.class,
+            name = "DYNAMIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = StaticTextHttpResponseBody.class,
             name = "STATIC_TEXT")
 })
@@ -78,6 +81,7 @@ public class HttpResponseBody extends com.oracle.bmc.http.client.internal.Explic
     /** Type of HttpResponseBody. */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         StaticText("STATIC_TEXT"),
+        Dynamic("DYNAMIC"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

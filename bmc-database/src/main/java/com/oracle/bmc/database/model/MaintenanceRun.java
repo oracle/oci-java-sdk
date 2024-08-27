@@ -52,6 +52,8 @@ public final class MaintenanceRun
         "estimatedPatchingTime",
         "currentPatchingComponent",
         "estimatedComponentPatchingStartTime",
+        "isMaintenanceRunGranular",
+        "totalTimeTakenInMins",
         "databaseSoftwareImageId"
     })
     public MaintenanceRun(
@@ -84,6 +86,8 @@ public final class MaintenanceRun
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
             java.util.Date estimatedComponentPatchingStartTime,
+            Boolean isMaintenanceRunGranular,
+            Integer totalTimeTakenInMins,
             String databaseSoftwareImageId) {
         super();
         this.id = id;
@@ -115,6 +119,8 @@ public final class MaintenanceRun
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+        this.totalTimeTakenInMins = totalTimeTakenInMins;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 
@@ -598,6 +604,36 @@ public final class MaintenanceRun
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
+        /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+        private Boolean isMaintenanceRunGranular;
+
+        /**
+         * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+         *
+         * @param isMaintenanceRunGranular the value to set
+         * @return this builder
+         */
+        public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
+            this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+            this.__explicitlySet__.add("isMaintenanceRunGranular");
+            return this;
+        }
+        /** The total time taken by corresponding resource activity in minutes. */
+        @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+        private Integer totalTimeTakenInMins;
+
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         *
+         * @param totalTimeTakenInMins the value to set
+         * @return this builder
+         */
+        public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
+            this.totalTimeTakenInMins = totalTimeTakenInMins;
+            this.__explicitlySet__.add("totalTimeTakenInMins");
+            return this;
+        }
         /**
          * The Autonomous Database Software Image
          * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
@@ -653,6 +689,8 @@ public final class MaintenanceRun
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
                             this.estimatedComponentPatchingStartTime,
+                            this.isMaintenanceRunGranular,
+                            this.totalTimeTakenInMins,
                             this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -749,6 +787,12 @@ public final class MaintenanceRun
             if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("isMaintenanceRunGranular")) {
+                this.isMaintenanceRunGranular(model.getIsMaintenanceRunGranular());
+            }
+            if (model.wasPropertyExplicitlySet("totalTimeTakenInMins")) {
+                this.totalTimeTakenInMins(model.getTotalTimeTakenInMins());
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
@@ -1493,6 +1537,32 @@ public final class MaintenanceRun
         return estimatedComponentPatchingStartTime;
     }
 
+    /** If {@code FALSE}, the maintenance run doesn't support granular maintenance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+    private final Boolean isMaintenanceRunGranular;
+
+    /**
+     * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+     *
+     * @return the value
+     */
+    public Boolean getIsMaintenanceRunGranular() {
+        return isMaintenanceRunGranular;
+    }
+
+    /** The total time taken by corresponding resource activity in minutes. */
+    @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+    private final Integer totalTimeTakenInMins;
+
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     *
+     * @return the value
+     */
+    public Integer getTotalTimeTakenInMins() {
+        return totalTimeTakenInMins;
+    }
+
     /**
      * The Autonomous Database Software Image
      * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
@@ -1560,6 +1630,9 @@ public final class MaintenanceRun
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", isMaintenanceRunGranular=")
+                .append(String.valueOf(this.isMaintenanceRunGranular));
+        sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(")");
@@ -1614,6 +1687,9 @@ public final class MaintenanceRun
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(
+                        this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
+                && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
                 && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && super.equals(other);
@@ -1720,6 +1796,16 @@ public final class MaintenanceRun
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceRunGranular == null
+                                ? 43
+                                : this.isMaintenanceRunGranular.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalTimeTakenInMins == null
+                                ? 43
+                                : this.totalTimeTakenInMins.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseSoftwareImageId == null

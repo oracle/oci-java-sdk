@@ -317,12 +317,30 @@ public final class UpdateExadbVmClusterDetails
             this.__explicitlySet__.add("systemVersion");
             return this;
         }
-        /** Grid Setup will be done using this grid image id */
+        /**
+         * Grid Setup will be done using this grid image id.
+         *
+         * <p>The grid image id can be extracted from 1. Obtain the supported major versions using
+         * API
+         * /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD
+         * name> 2. Replace {version} with one of the supported major versions and obtain the
+         * supported minor versions using API
+         * /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
+         * name>
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
         private String gridImageId;
 
         /**
-         * Grid Setup will be done using this grid image id
+         * Grid Setup will be done using this grid image id.
+         *
+         * <p>The grid image id can be extracted from 1. Obtain the supported major versions using
+         * API
+         * /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD
+         * name> 2. Replace {version} with one of the supported major versions and obtain the
+         * supported minor versions using API
+         * /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
+         * name>
          *
          * @param gridImageId the value to set
          * @return this builder
@@ -680,12 +698,28 @@ public final class UpdateExadbVmClusterDetails
         return systemVersion;
     }
 
-    /** Grid Setup will be done using this grid image id */
+    /**
+     * Grid Setup will be done using this grid image id.
+     *
+     * <p>The grid image id can be extracted from 1. Obtain the supported major versions using API
+     * /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD
+     * name> 2. Replace {version} with one of the supported major versions and obtain the supported
+     * minor versions using API
+     * /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
+     * name>
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("gridImageId")
     private final String gridImageId;
 
     /**
-     * Grid Setup will be done using this grid image id
+     * Grid Setup will be done using this grid image id.
+     *
+     * <p>The grid image id can be extracted from 1. Obtain the supported major versions using API
+     * /20160918/giVersions?compartmentId=<compartmentId>&shape=EXADB_XS&availabilityDomain=<AD
+     * name> 2. Replace {version} with one of the supported major versions and obtain the supported
+     * minor versions using API
+     * /20160918/giVersions/{version}/minorVersions?compartmentId=<compartmentId>&shapeFamily=EXADB_XS&availabilityDomain=<AD
+     * name>
      *
      * @return the value
      */

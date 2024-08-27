@@ -31,12 +31,12 @@ public final class HsmClusterCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of Hsm Clusters. */
+        /** List of HSM Cluster Summary Objects. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<HsmClusterSummary> items;
 
         /**
-         * List of Hsm Clusters.
+         * List of HSM Cluster Summary Objects.
          *
          * @param items the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class HsmClusterCollection
         return new Builder().copy(this);
     }
 
-    /** List of Hsm Clusters. */
+    /** List of HSM Cluster Summary Objects. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<HsmClusterSummary> items;
 
     /**
-     * List of Hsm Clusters.
+     * List of HSM Cluster Summary Objects.
      *
      * @return the value
      */

@@ -15,13 +15,13 @@ public class DeleteClusterRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Cluster.
+     * SDDC Cluster.
      */
     private String clusterId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Cluster.
+     * SDDC Cluster.
      */
     public String getClusterId() {
         return clusterId;
@@ -65,13 +65,13 @@ public class DeleteClusterRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Cluster.
+         * SDDC Cluster.
          */
         private String clusterId = null;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Cluster.
+         * SDDC Cluster.
          *
          * @param clusterId the value to set
          * @return this builder instance

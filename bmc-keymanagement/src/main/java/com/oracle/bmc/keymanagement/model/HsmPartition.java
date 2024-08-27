@@ -47,12 +47,12 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the HSM resource. */
+        /** The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The OCID of the HSM resource.
+         * The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier.
          *
          * @param id the value to set
          * @return this builder
@@ -77,12 +77,18 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Details of PortNumber and PortType. */
+        /**
+         * Details of a single portInformation item include the PortNumber (an integer used as an
+         * identifier) and the PortType (refers to either an enum value of
+         * Managementutility,Clientutility, or null)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("portInformation")
         private java.util.List<PortInformation> portInformation;
 
         /**
-         * Details of PortNumber and PortType.
+         * Details of a single portInformation item include the PortNumber (an integer used as an
+         * identifier) and the PortType (refers to either an enum value of
+         * Managementutility,Clientutility, or null)
          *
          * @param portInformation the value to set
          * @return this builder
@@ -138,12 +144,18 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** The HSMPartition's current lifecycle state. */
+        /**
+         * A HSMCluster resource's current lifecycle state.
+         *
+         * <p>Example: {@code ACTIVE}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The HSMPartition's current lifecycle state.
+         * A HSMCluster resource's current lifecycle state.
+         *
+         * <p>Example: {@code ACTIVE}
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -205,12 +217,12 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** The OCID of the HSM resource. */
+    /** The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The OCID of the HSM resource.
+     * The OCID of the HSM resource. Each HSM resource has a unique OCID as an identifier.
      *
      * @return the value
      */
@@ -231,12 +243,18 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
         return compartmentId;
     }
 
-    /** Details of PortNumber and PortType. */
+    /**
+     * Details of a single portInformation item include the PortNumber (an integer used as an
+     * identifier) and the PortType (refers to either an enum value of
+     * Managementutility,Clientutility, or null)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("portInformation")
     private final java.util.List<PortInformation> portInformation;
 
     /**
-     * Details of PortNumber and PortType.
+     * Details of a single portInformation item include the PortNumber (an integer used as an
+     * identifier) and the PortType (refers to either an enum value of
+     * Managementutility,Clientutility, or null)
      *
      * @return the value
      */
@@ -286,12 +304,20 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
         return timeUpdated;
     }
 
-    /** The HSMPartition's current lifecycle state. */
+    /**
+     * A HSMCluster resource's current lifecycle state.
+     *
+     * <p>Example: {@code ACTIVE}
+     */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
         Activating("ACTIVATING"),
         ActivationRequired("ACTIVATION_REQUIRED"),
+        SchedulingDeletion("SCHEDULING_DELETION"),
+        PendingDeletion("PENDING_DELETION"),
+        Deleting("DELETING"),
+        Deleted("DELETED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -334,12 +360,18 @@ public final class HsmPartition extends com.oracle.bmc.http.client.internal.Expl
             return UnknownEnumValue;
         }
     };
-    /** The HSMPartition's current lifecycle state. */
+    /**
+     * A HSMCluster resource's current lifecycle state.
+     *
+     * <p>Example: {@code ACTIVE}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The HSMPartition's current lifecycle state.
+     * A HSMCluster resource's current lifecycle state.
+     *
+     * <p>Example: {@code ACTIVE}
      *
      * @return the value
      */

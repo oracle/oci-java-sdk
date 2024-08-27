@@ -145,12 +145,13 @@ public class ClientCompatibilityChecker {
                 ComparableVersion.buildComparableVersion(minimumClientCodegenVersion);
         if (!maybeMinimumVerObj.isPresent()) {
             // Not returning here, waiting for the check on clientCodegenVersion below to run as
-            // well
-            // We can thus be giving out all the errors in a single run
+            // well. We can thus be giving out all the errors in a single run
             minVersionHasError = true;
         }
+
         Optional<ComparableVersion> maybeClientVerObj =
-                ComparableVersion.buildComparableVersion(clientCodegenVersion);
+                ComparableVersion.buildComparableVersion(
+                        getCodegenVersionWithoutSdkVersion(clientCodegenVersion));
         if (!maybeClientVerObj.isPresent()) {
             clientVersionHasError = true;
         }
@@ -174,8 +175,7 @@ public class ClientCompatibilityChecker {
                     return versionCompatibilityCheckMode.setPreviousResult(clientClassName, true);
                 }
                 // or if a minimum from the client is provided, if the common library's version is
-                // between the
-                // minimum from the client and the client version, that's compatible too
+                // between the minimum from the client and the client version, that's compatible too
                 if (javaMinimumClientCodegenVersionFromClient.isPresent()) {
                     ComparableVersion minimumVerFromClientObj =
                             new ComparableVersion(javaMinimumClientCodegenVersionFromClient.get());
@@ -321,6 +321,17 @@ public class ClientCompatibilityChecker {
             }
         }
         return versionCompatibilityCheckMode.setPreviousResult(clientClassName, true);
+    }
+
+    static String getCodegenVersionWithoutSdkVersion(String clientCodegenVersion) {
+        if (clientCodegenVersion == null) {
+            return null;
+        }
+        int pos = clientCodegenVersion.indexOf('-');
+        if (pos >= 0) {
+            clientCodegenVersion = clientCodegenVersion.substring(0, pos);
+        }
+        return clientCodegenVersion;
     }
 
     interface VersionCompatibilityCheckModeImpl {

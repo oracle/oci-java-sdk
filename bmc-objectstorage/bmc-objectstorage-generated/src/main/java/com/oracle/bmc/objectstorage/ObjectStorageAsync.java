@@ -188,6 +188,22 @@ public interface ObjectStorageAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Create a PrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            CreatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler);
+
+    /**
      * Creates a replication policy for the specified bucket.
      *
      * @param request The request object containing the details to send
@@ -286,6 +302,22 @@ public interface ObjectStorageAsync extends AutoCloseable {
                                     DeletePreauthenticatedRequestRequest,
                                     DeletePreauthenticatedRequestResponse>
                             handler);
+
+    /**
+     * Deletes a Private Endpoint if it exists in the given namespace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                    handler);
 
     /**
      * Deletes the replication policy associated with the source bucket.
@@ -421,6 +453,23 @@ public interface ObjectStorageAsync extends AutoCloseable {
             GetPreauthenticatedRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>
+                    handler);
+
+    /**
+     * Gets the current representation of the given Private Endpoint in the given Object Storage
+     * namespace.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            GetPrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
                     handler);
 
     /**
@@ -618,6 +667,26 @@ public interface ObjectStorageAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListPreauthenticatedRequestsRequest,
                             ListPreauthenticatedRequestsResponse>
+                    handler);
+
+    /**
+     * Gets a list of all PrivateEndpointSummary in a compartment associated with a namespace. To
+     * use this and other API operations, you must be authorized in an IAM policy. If you are not
+     * authorized, talk to an administrator. If you are an administrator who needs to write policies
+     * to give users access, see [Getting Started with
+     * Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            ListPrivateEndpointsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
                     handler);
 
     /**
@@ -853,8 +922,8 @@ public interface ObjectStorageAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Restores one or more objects specified by the objectName parameter. By default objects will
-     * be restored for 24 hours. Duration can be configured using the hours parameter.
+     * Restores the object specified by the objectName parameter. By default object will be restored
+     * for 24 hours. Duration can be configured using the hours parameter.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -924,6 +993,34 @@ public interface ObjectStorageAsync extends AutoCloseable {
             UpdateObjectStorageTierRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateObjectStorageTierRequest, UpdateObjectStorageTierResponse>
+                    handler);
+
+    /**
+     * Performs a partial or full update of a user-defined data associated with the Private
+     * Endpoint.
+     *
+     * <p>Use UpdatePrivateEndpoint to move a Private Endpoint from one compartment to another
+     * within the same tenancy. Supply the compartmentID of the compartment that you want to move
+     * the Private Endpoint to. Or use it to update the name, subnetId, endpointFqdn or
+     * privateEndpointIp or accessTargets of the Private Endpoint. For more information about moving
+     * resources between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * <p>This API follows replace semantics (rather than merge semantics). That means if the body
+     * provides values for parameters and the resource has exisiting ones, this operation will
+     * replace those existing values.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
                     handler);
 
     /**

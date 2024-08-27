@@ -10,9 +10,10 @@ import com.oracle.bmc.aispeech.model.RealtimeMessageResult;
 import com.oracle.bmc.aispeech.model.RealtimeParameters;
 import com.oracle.bmc.auth.SessionTokenAuthenticationDetailsProvider;
 import org.eclipse.jetty.websocket.client.WebSocketClient;
-import realtimespeech.RealtimeSpeechClient;
-import realtimespeech.RealtimeSpeechClientListener;
-import realtimespeech.RealtimeSpeechConnectException;
+import com.oracle.bmc.aispeech.realtimespeech.RealtimeSpeechClient;
+
+import com.oracle.bmc.aispeech.realtimespeech.RealtimeSpeechClientListener;
+import com.oracle.bmc.aispeech.realtimespeech.RealtimeSpeechConnectException;
 
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -209,14 +210,17 @@ public class RealtimeSpeechExampleClient implements RealtimeSpeechClientListener
             ConfigFileReader.ConfigFile configFile,
             WebSocketClient client) {
         try {
+            // All these parameters are mandatory, otherwise you may see an IllegalStateException
             realtimeTestClient.realtimeClient =
-                    new RealtimeSpeechClient(
-                            realtimeTestClient,
-                            new SessionTokenAuthenticationDetailsProvider(configFile),
+                    RealtimeSpeechClient.builder()
+                            .listener(realtimeTestClient)
+                            .authenticationDetailsProvider(
+                                    new SessionTokenAuthenticationDetailsProvider(configFile))
                             // for API keys use
                             // new ConfigFileAuthenticationDetailsProvider(configFile)
-                            realtimeTestClient.compartmentId,
-                            client);
+                            .compartmentId(realtimeTestClient.compartmentId)
+                            .webSocketClient(client)
+                            .build();
 
             // Map<String, String> freeformTags = new HashMap<String, String>();
             // freeformTags.put("sampleTag", "sampleTagValue");

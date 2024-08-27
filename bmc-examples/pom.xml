@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.47.0</version>
+    <version>3.48.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
   <artifactId>oci-java-sdk-examples</artifactId>
@@ -71,14 +71,14 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-bom</artifactId>
-        <version>3.47.0</version>
+        <version>3.48.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-        <version>3.47.0</version>
+        <version>3.48.0</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -180,6 +180,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-addons-resteasy-client-configurator</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-addons-aispeech-realtime</artifactId>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
@@ -713,6 +717,10 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-fleetappsmanagement</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>com.oracle.oci.sdk</groupId>
+      <artifactId>oci-java-sdk-delegateaccesscontrol</artifactId>
     </dependency>
   </dependencies>
 </project>

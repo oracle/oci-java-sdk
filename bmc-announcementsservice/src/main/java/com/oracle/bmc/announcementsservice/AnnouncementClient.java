@@ -116,6 +116,36 @@ public class AnnouncementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetAnnouncementCompartmentResponse getAnnouncementCompartment(
+            GetAnnouncementCompartmentRequest request) {
+
+        Validate.notBlank(request.getAnnouncementId(), "announcementId must not be blank");
+
+        return clientCall(request, GetAnnouncementCompartmentResponse::builder)
+                .logger(LOG, "getAnnouncementCompartment")
+                .serviceDetails(
+                        "Announcement",
+                        "GetAnnouncementCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetAnnouncementCompartmentRequest::builder)
+                .basePath("/20180904")
+                .appendPathParam("announcements")
+                .appendPathParam(request.getAnnouncementId())
+                .appendPathParam("compartment")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.announcementsservice.model.AnnouncementCompartment.class,
+                        GetAnnouncementCompartmentResponse.Builder::announcementCompartment)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetAnnouncementCompartmentResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetAnnouncementCompartmentResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public GetAnnouncementUserStatusResponse getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request) {
 

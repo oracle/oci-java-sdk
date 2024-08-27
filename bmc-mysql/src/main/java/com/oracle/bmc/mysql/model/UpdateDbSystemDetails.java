@@ -48,7 +48,8 @@ public final class UpdateDbSystemDetails
         "deletionPolicy",
         "crashRecovery",
         "databaseManagement",
-        "secureConnections"
+        "secureConnections",
+        "customerContacts"
     })
     public UpdateDbSystemDetails(
             String displayName,
@@ -75,7 +76,8 @@ public final class UpdateDbSystemDetails
             UpdateDeletionPolicyDetails deletionPolicy,
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
-            SecureConnectionDetails secureConnections) {
+            SecureConnectionDetails secureConnections,
+            java.util.List<CustomerContact> customerContacts) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -102,6 +104,7 @@ public final class UpdateDbSystemDetails
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.customerContacts = customerContacts;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -570,6 +573,31 @@ public final class UpdateDbSystemDetails
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        /**
+         * The list of customer email addresses that receive information from Oracle about the
+         * specified OCI DB System resource. Oracle uses these email addresses to send notifications
+         * about planned and unplanned software maintenance updates, information about system
+         * hardware, and other information needed by administrators. Up to 10 email addresses can be
+         * added to the customer contacts for a DB System.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         */
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -601,7 +629,8 @@ public final class UpdateDbSystemDetails
                             this.deletionPolicy,
                             this.crashRecovery,
                             this.databaseManagement,
-                            this.secureConnections);
+                            this.secureConnections,
+                            this.customerContacts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -684,6 +713,9 @@ public final class UpdateDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
             }
             return this;
         }
@@ -1111,6 +1143,29 @@ public final class UpdateDbSystemDetails
         return secureConnections;
     }
 
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    private final java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified
+     * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
+     * and unplanned software maintenance updates, information about system hardware, and other
+     * information needed by administrators. Up to 10 email addresses can be added to the customer
+     * contacts for a DB System.
+     *
+     * @return the value
+     */
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1151,6 +1206,7 @@ public final class UpdateDbSystemDetails
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(")");
         return sb.toString();
     }
@@ -1190,6 +1246,7 @@ public final class UpdateDbSystemDetails
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && super.equals(other);
     }
 
@@ -1250,6 +1307,9 @@ public final class UpdateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -151,6 +151,8 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
         }
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
+         * If this is not set then the maximum number of simultaneous connections the load balancer
+         * can make to the backend is unlimited.
          *
          * <p>Example: {@code 300}
          */
@@ -159,6 +161,8 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
 
         /**
          * The maximum number of simultaneous connections the load balancer can make to the backend.
+         * If this is not set then the maximum number of simultaneous connections the load balancer
+         * can make to the backend is unlimited.
          *
          * <p>Example: {@code 300}
          *
@@ -394,7 +398,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
     }
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     * The maximum number of simultaneous connections the load balancer can make to the backend. If
+     * this is not set then the maximum number of simultaneous connections the load balancer can
+     * make to the backend is unlimited.
      *
      * <p>Example: {@code 300}
      */
@@ -402,7 +408,9 @@ public final class Backend extends com.oracle.bmc.http.client.internal.Explicitl
     private final Integer maxConnections;
 
     /**
-     * The maximum number of simultaneous connections the load balancer can make to the backend.
+     * The maximum number of simultaneous connections the load balancer can make to the backend. If
+     * this is not set then the maximum number of simultaneous connections the load balancer can
+     * make to the backend is unlimited.
      *
      * <p>Example: {@code 300}
      *

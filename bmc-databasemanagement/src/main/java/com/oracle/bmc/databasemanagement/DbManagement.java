@@ -751,6 +751,23 @@ public interface DbManagement extends AutoCloseable {
             DisableAutomaticSpmEvolveAdvisorTaskRequest request);
 
     /**
+     * Disables a Database Management feature for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableAutonomousDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableAutonomousDatabaseManagementFeature API.
+     */
+    DisableAutonomousDatabaseManagementFeatureResponse disableAutonomousDatabaseManagementFeature(
+            DisableAutonomousDatabaseManagementFeatureRequest request);
+
+    /**
      * Disables a Database Management feature for the specified Oracle cloud database.
      *
      * @param request The request object containing the details to send
@@ -1057,6 +1074,23 @@ public interface DbManagement extends AutoCloseable {
      */
     EnableAutomaticSpmEvolveAdvisorTaskResponse enableAutomaticSpmEvolveAdvisorTask(
             EnableAutomaticSpmEvolveAdvisorTaskRequest request);
+
+    /**
+     * Enables a Database Management feature for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableAutonomousDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableAutonomousDatabaseManagementFeature API.
+     */
+    EnableAutonomousDatabaseManagementFeatureResponse enableAutonomousDatabaseManagementFeature(
+            EnableAutonomousDatabaseManagementFeatureRequest request);
 
     /**
      * Enables a Database Management feature for the specified cloud database.
@@ -2869,6 +2903,23 @@ public interface DbManagement extends AutoCloseable {
      */
     LoadSqlPlanBaselinesFromCursorCacheResponse loadSqlPlanBaselinesFromCursorCache(
             LoadSqlPlanBaselinesFromCursorCacheRequest request);
+
+    /**
+     * Modifies the Database Management feature for the specified Autonomous Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ModifyAutonomousDatabaseManagementFeatureExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ModifyAutonomousDatabaseManagementFeature API.
+     */
+    ModifyAutonomousDatabaseManagementFeatureResponse modifyAutonomousDatabaseManagementFeature(
+            ModifyAutonomousDatabaseManagementFeatureRequest request);
 
     /**
      * Modifies a Database Management feature for the specified Oracle cloud database.

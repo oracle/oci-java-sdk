@@ -229,6 +229,7 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Iaas("IAAS"),
         Saas("SAAS"),
+        Paas("PAAS"),
         ;
 
         private final String value;

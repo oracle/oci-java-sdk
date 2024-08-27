@@ -67,6 +67,23 @@ public interface FileStorage extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Cancel scheduled downgrade shape request for mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CancelDowngradeShapeMountTargetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CancelDowngradeShapeMountTarget API.
+     */
+    CancelDowngradeShapeMountTargetResponse cancelDowngradeShapeMountTarget(
+            CancelDowngradeShapeMountTargetRequest request);
+
+    /**
      * Moves a file system and its associated snapshots into a different compartment within the same
      * tenancy. For information about moving resources between compartments, see [Moving Resources
      * to a Different
@@ -846,6 +863,23 @@ public interface FileStorage extends AutoCloseable {
             PauseFilesystemSnapshotPolicyRequest request);
 
     /**
+     * Schedule a downgrade shape of the mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ScheduleDowngradeShapeMountTargetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ScheduleDowngradeShapeMountTarget API.
+     */
+    ScheduleDowngradeShapeMountTargetResponse scheduleDowngradeShapeMountTarget(
+            ScheduleDowngradeShapeMountTargetRequest request);
+
+    /**
      * This operation unpauses a paused file system snapshot policy and updates the lifecycle state
      * of the file system snapshot policy from INACTIVE to ACTIVE. By default, file system snapshot
      * policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the
@@ -997,6 +1031,22 @@ public interface FileStorage extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSnapshot API.
      */
     UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
+
+    /**
+     * Upgrade shape request for mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpgradeShapeMountTargetExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpgradeShapeMountTarget API.
+     */
+    UpgradeShapeMountTargetResponse upgradeShapeMountTarget(UpgradeShapeMountTargetRequest request);
 
     /**
      * Validates keytab contents for the secret details passed on the request or validte keytab

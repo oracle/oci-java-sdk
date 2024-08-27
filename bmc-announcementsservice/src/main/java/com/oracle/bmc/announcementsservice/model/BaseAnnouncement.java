@@ -519,6 +519,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
     public enum PlatformType implements com.oracle.bmc.http.internal.BmcEnum {
         Iaas("IAAS"),
         Saas("SAAS"),
+        Paas("PAAS"),
         ;
 
         private final String value;

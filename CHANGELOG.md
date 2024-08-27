@@ -3,6 +3,31 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.48.0 - 2024-08-27
+### Added 
+- Support for Delegate Access Control service 
+- Support for upgrade and downgrade of shapes of high performance mount targets in the File Storage service 
+- Support for private endpoints in the Object Storage service 
+- Support for create, update, list and delete operations on scheduling policies and scheduling windows in the Database service 
+- Support for specifying domains while creating data guard associations in the Database service 
+- Support for provision of developer autonomous databases in the Database service 
+- Support for upgrade of developer autonomous databases to paid autonomous databases in the Database service 
+- Support for scheduling plans, actions, execution windows and execution actions for maintenance scheduling in the Database service 
+- Support for cross-region replication of virtual vaults in the Key Management service 
+- Support for listing all active service summaries in the Announcements service 
+- Support for VMware major and minor version upgrades in VMware Solution service 
+- Support for updating protected database subscriptions in the Autonomous Recovery service 
+- Support for health insurance id as an allowed document type in the Document Understanding service 
+- Support for advanced database management features for autonomous databases in the Database Management service 
+- Support for propagating request ids to load balancer servers in the Load balancer service 
+- Support for automatic update orders in Fusion Application as a Service    
+
+### Breaking Changes 
+- Method `public java.lang.String getDocumentId()` has been removed from the model `com.oracle.bmc.aidocument.model.DetectedDocumentType` in the Document Understanding service  
+- Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentClassificationFeature` in the Document Understanding service  
+- Method `public java.lang.String getTenancyId()` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentKeyValueExtractionFeature` in the Document Understanding service  
+- Field `InsuranceClaim` has been removed from the model `com.oracle.bmc.aidocument.model.DocumentType` in the Document Understanding service
+
 ## 3.47.0 - 2024-08-20
 ### Added 
 - Support for Fleet Application Management service 
