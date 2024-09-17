@@ -111,7 +111,9 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
         return clientCall(request, CreateMaintenanceWindowResponse::builder)
                 .logger(LOG, "createMaintenanceWindow")
                 .serviceDetails(
-                        "FleetAppsManagementMaintenanceWindow", "CreateMaintenanceWindow", "")
+                        "FleetAppsManagementMaintenanceWindow",
+                        "CreateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/CreateMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateMaintenanceWindowRequest::builder)
                 .basePath("/20230831")
@@ -142,7 +144,9 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
         return clientCall(request, DeleteMaintenanceWindowResponse::builder)
                 .logger(LOG, "deleteMaintenanceWindow")
                 .serviceDetails(
-                        "FleetAppsManagementMaintenanceWindow", "DeleteMaintenanceWindow", "")
+                        "FleetAppsManagementMaintenanceWindow",
+                        "DeleteMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/DeleteMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteMaintenanceWindowRequest::builder)
                 .basePath("/20230831")
@@ -171,7 +175,10 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
 
         return clientCall(request, GetMaintenanceWindowResponse::builder)
                 .logger(LOG, "getMaintenanceWindow")
-                .serviceDetails("FleetAppsManagementMaintenanceWindow", "GetMaintenanceWindow", "")
+                .serviceDetails(
+                        "FleetAppsManagementMaintenanceWindow",
+                        "GetMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/GetMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetMaintenanceWindowRequest::builder)
                 .basePath("/20230831")
@@ -198,7 +205,9 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
         return clientCall(request, ListMaintenanceWindowsResponse::builder)
                 .logger(LOG, "listMaintenanceWindows")
                 .serviceDetails(
-                        "FleetAppsManagementMaintenanceWindow", "ListMaintenanceWindows", "")
+                        "FleetAppsManagementMaintenanceWindow",
+                        "ListMaintenanceWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindowCollection/ListMaintenanceWindows")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListMaintenanceWindowsRequest::builder)
                 .basePath("/20230831")
@@ -241,7 +250,9 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
         return clientCall(request, UpdateMaintenanceWindowResponse::builder)
                 .logger(LOG, "updateMaintenanceWindow")
                 .serviceDetails(
-                        "FleetAppsManagementMaintenanceWindow", "UpdateMaintenanceWindow", "")
+                        "FleetAppsManagementMaintenanceWindow",
+                        "UpdateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/MaintenanceWindow/UpdateMaintenanceWindow")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateMaintenanceWindowRequest::builder)
                 .basePath("/20230831")

@@ -614,7 +614,15 @@ public final class ExternalDatabaseBase
         Terminating("TERMINATING"),
         Terminated("TERMINATED"),
         Failed("FAILED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -622,7 +630,9 @@ public final class ExternalDatabaseBase
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -640,7 +650,10 @@ public final class ExternalDatabaseBase
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The current state of the Oracle Cloud Infrastructure external database resource. */
@@ -716,7 +729,15 @@ public final class ExternalDatabaseBase
         EnterpriseEdition("ENTERPRISE_EDITION"),
         EnterpriseEditionHighPerformance("ENTERPRISE_EDITION_HIGH_PERFORMANCE"),
         EnterpriseEditionExtremePerformance("ENTERPRISE_EDITION_EXTREME_PERFORMANCE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseEdition.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseEdition> map;
@@ -724,7 +745,9 @@ public final class ExternalDatabaseBase
         static {
             map = new java.util.HashMap<>();
             for (DatabaseEdition v : DatabaseEdition.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -742,7 +765,10 @@ public final class ExternalDatabaseBase
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DatabaseEdition: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseEdition', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The Oracle Database edition. */
@@ -820,7 +846,15 @@ public final class ExternalDatabaseBase
     public enum DatabaseConfiguration implements com.oracle.bmc.http.internal.BmcEnum {
         Rac("RAC"),
         SingleInstance("SINGLE_INSTANCE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseConfiguration.class);
 
         private final String value;
         private static java.util.Map<String, DatabaseConfiguration> map;
@@ -828,7 +862,9 @@ public final class ExternalDatabaseBase
         static {
             map = new java.util.HashMap<>();
             for (DatabaseConfiguration v : DatabaseConfiguration.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -846,7 +882,10 @@ public final class ExternalDatabaseBase
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DatabaseConfiguration: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseConfiguration', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The Oracle Database configuration */

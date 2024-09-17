@@ -247,15 +247,17 @@ public final class CreateOccCapacityRequestDetails
             return this;
         }
         /**
-         * The availability domain (AD) for which the capacity request is made. If this is specified
-         * then the capacity will be validated and fulfilled within the scope of this AD.
+         * The availability domain (AD) in which the new resource is to be placed. If this is
+         * specified then the capacity will be validated and fulfilled within the scope of this AD.
+         * Note that this field is NOT required for Capacity request Transfer requests.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * The availability domain (AD) for which the capacity request is made. If this is specified
-         * then the capacity will be validated and fulfilled within the scope of this AD.
+         * The availability domain (AD) in which the new resource is to be placed. If this is
+         * specified then the capacity will be validated and fulfilled within the scope of this AD.
+         * Note that this field is NOT required for Capacity request Transfer requests.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -549,15 +551,17 @@ public final class CreateOccCapacityRequestDetails
     }
 
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified
-     * then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified
+     * then the capacity will be validated and fulfilled within the scope of this AD. Note that this
+     * field is NOT required for Capacity request Transfer requests.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * The availability domain (AD) for which the capacity request is made. If this is specified
-     * then the capacity will be validated and fulfilled within the scope of this AD.
+     * The availability domain (AD) in which the new resource is to be placed. If this is specified
+     * then the capacity will be validated and fulfilled within the scope of this AD. Note that this
+     * field is NOT required for Capacity request Transfer requests.
      *
      * @return the value
      */

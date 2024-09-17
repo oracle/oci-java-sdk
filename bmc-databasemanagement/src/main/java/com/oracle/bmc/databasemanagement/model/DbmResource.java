@@ -168,7 +168,15 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -176,7 +184,9 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -194,7 +204,10 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The current lifecycle state of the database resource. */
@@ -354,7 +367,15 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         StorageConnector("STORAGE_CONNECTOR"),
         DatabaseSystemSummary("DATABASE_SYSTEM_SUMMARY"),
         DatabaseSummary("DATABASE_SUMMARY"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ResourceType.class);
 
         private final String value;
         private static java.util.Map<String, ResourceType> map;
@@ -362,7 +383,9 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
         static {
             map = new java.util.HashMap<>();
             for (ResourceType v : ResourceType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -380,7 +403,10 @@ public class DbmResource extends com.oracle.bmc.http.client.internal.ExplicitlyS
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ResourceType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ResourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

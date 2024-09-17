@@ -197,7 +197,15 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         Standard("STANDARD"),
         Infrequentaccess("INFREQUENTACCESS"),
         Archive("ARCHIVE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageTier.class);
 
         private final String value;
         private static java.util.Map<String, StorageTier> map;
@@ -205,7 +213,9 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         static {
             map = new java.util.HashMap<>();
             for (StorageTier v : StorageTier.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -223,7 +233,10 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid StorageTier: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageTier', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 
@@ -251,7 +264,15 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         Archived("ARCHIVED"),
         Restoring("RESTORING"),
         Restored("RESTORED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ArchivalState.class);
 
         private final String value;
         private static java.util.Map<String, ArchivalState> map;
@@ -259,7 +280,9 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
         static {
             map = new java.util.HashMap<>();
             for (ArchivalState v : ArchivalState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -277,7 +300,10 @@ public class GetAwrHubObjectResponse extends com.oracle.bmc.responses.BmcRespons
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ArchivalState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ArchivalState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 

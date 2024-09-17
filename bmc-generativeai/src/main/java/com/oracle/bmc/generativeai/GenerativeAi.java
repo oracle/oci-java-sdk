@@ -20,7 +20,7 @@ import com.oracle.bmc.generativeai.responses.*;
  *
  * <p>To access your custom model endpoints, or to try the out-of-the-box models to generate text,
  * summarize, and create text embeddings see the [Generative AI Inference
- * API](https://docs.cloud.oracle.com/#/en/generative-ai-inference/latest/).
+ * API](https://docs.cloud.oracle.com/iaas/api/#/en/generative-ai-inference/latest/).
  *
  * <p>To learn more about the service, see the [Generative AI
  * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).

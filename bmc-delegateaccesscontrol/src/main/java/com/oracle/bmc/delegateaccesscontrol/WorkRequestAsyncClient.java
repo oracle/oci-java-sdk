@@ -106,7 +106,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("WorkRequest", "GetWorkRequest", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20230801")
@@ -136,7 +139,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("WorkRequest", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20230801")
@@ -170,7 +176,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("WorkRequest", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20230801")
@@ -204,7 +213,10 @@ public class WorkRequestAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("WorkRequest", "ListWorkRequests", "")
+                .serviceDetails(
+                        "WorkRequest",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20230801")

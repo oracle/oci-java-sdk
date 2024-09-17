@@ -100,12 +100,12 @@ public final class CreateEndpointDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The ID of the model that's used to create this endpoint. */
+        /** The OCID of the model that's used to create this endpoint. */
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The ID of the model that's used to create this endpoint.
+         * The OCID of the model that's used to create this endpoint.
          *
          * @param modelId the value to set
          * @return this builder
@@ -289,12 +289,12 @@ public final class CreateEndpointDetails
         return compartmentId;
     }
 
-    /** The ID of the model that's used to create this endpoint. */
+    /** The OCID of the model that's used to create this endpoint. */
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The ID of the model that's used to create this endpoint.
+     * The OCID of the model that's used to create this endpoint.
      *
      * @return the value
      */

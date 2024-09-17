@@ -99,7 +99,15 @@ public class UnifiedAgentMonitoringFilter
     public enum FilterType implements com.oracle.bmc.http.internal.BmcEnum {
         KubernetesFilter("KUBERNETES_FILTER"),
         UrlFilter("URL_FILTER"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FilterType.class);
 
         private final String value;
         private static java.util.Map<String, FilterType> map;
@@ -107,7 +115,9 @@ public class UnifiedAgentMonitoringFilter
         static {
             map = new java.util.HashMap<>();
             for (FilterType v : FilterType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -125,7 +135,10 @@ public class UnifiedAgentMonitoringFilter
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid FilterType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FilterType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

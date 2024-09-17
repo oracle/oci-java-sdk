@@ -98,7 +98,15 @@ public class BaseCreateAnnouncementsPreferencesDetails
         OptInTenantAnnouncements("OPT_IN_TENANT_ANNOUNCEMENTS"),
         OptInTenantAndInformationalAnnouncements("OPT_IN_TENANT_AND_INFORMATIONAL_ANNOUNCEMENTS"),
         OptOutAllAnnouncements("OPT_OUT_ALL_ANNOUNCEMENTS"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PreferenceType.class);
 
         private final String value;
         private static java.util.Map<String, PreferenceType> map;
@@ -106,7 +114,9 @@ public class BaseCreateAnnouncementsPreferencesDetails
         static {
             map = new java.util.HashMap<>();
             for (PreferenceType v : PreferenceType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -124,7 +134,10 @@ public class BaseCreateAnnouncementsPreferencesDetails
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid PreferenceType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PreferenceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

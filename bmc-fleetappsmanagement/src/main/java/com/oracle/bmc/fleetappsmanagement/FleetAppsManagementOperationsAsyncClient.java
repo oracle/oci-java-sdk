@@ -109,7 +109,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, CreateSchedulerDefinitionResponse::builder)
                 .logger(LOG, "createSchedulerDefinition")
-                .serviceDetails("FleetAppsManagementOperations", "CreateSchedulerDefinition", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "CreateSchedulerDefinition",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/CreateSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSchedulerDefinitionRequest::builder)
                 .basePath("/20230831")
@@ -147,7 +150,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, DeleteSchedulerDefinitionResponse::builder)
                 .logger(LOG, "deleteSchedulerDefinition")
-                .serviceDetails("FleetAppsManagementOperations", "DeleteSchedulerDefinition", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "DeleteSchedulerDefinition",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/DeleteSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSchedulerDefinitionRequest::builder)
                 .basePath("/20230831")
@@ -172,7 +178,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, DeleteSchedulerJobResponse::builder)
                 .logger(LOG, "deleteSchedulerJob")
-                .serviceDetails("FleetAppsManagementOperations", "DeleteSchedulerJob", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "DeleteSchedulerJob",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/DeleteSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSchedulerJobRequest::builder)
                 .basePath("/20230831")
@@ -202,7 +211,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, GetExecutionResponse::builder)
                 .logger(LOG, "getExecution")
-                .serviceDetails("FleetAppsManagementOperations", "GetExecution", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "GetExecution",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Execution/GetExecution")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExecutionRequest::builder)
                 .basePath("/20230831")
@@ -238,7 +250,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, GetJobActivityResponse::builder)
                 .logger(LOG, "getJobActivity")
-                .serviceDetails("FleetAppsManagementOperations", "GetJobActivity", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "GetJobActivity",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/JobActivity/GetJobActivity")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJobActivityRequest::builder)
                 .basePath("/20230831")
@@ -269,7 +284,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, GetSchedulerDefinitionResponse::builder)
                 .logger(LOG, "getSchedulerDefinition")
-                .serviceDetails("FleetAppsManagementOperations", "GetSchedulerDefinition", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "GetSchedulerDefinition",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/GetSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSchedulerDefinitionRequest::builder)
                 .basePath("/20230831")
@@ -297,7 +315,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, GetSchedulerJobResponse::builder)
                 .logger(LOG, "getSchedulerJob")
-                .serviceDetails("FleetAppsManagementOperations", "GetSchedulerJob", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "GetSchedulerJob",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/GetSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSchedulerJobRequest::builder)
                 .basePath("/20230831")
@@ -329,7 +350,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, ListExecutionsResponse::builder)
                 .logger(LOG, "listExecutions")
-                .serviceDetails("FleetAppsManagementOperations", "ListExecutions", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListExecutions",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ExecutionCollection/ListExecutions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListExecutionsRequest::builder)
                 .basePath("/20230831")
@@ -372,7 +396,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, ListScheduledFleetsResponse::builder)
                 .logger(LOG, "listScheduledFleets")
-                .serviceDetails("FleetAppsManagementOperations", "ListScheduledFleets", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListScheduledFleets",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ScheduledFleetCollection/ListScheduledFleets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListScheduledFleetsRequest::builder)
                 .basePath("/20230831")
@@ -406,7 +433,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, ListSchedulerDefinitionsResponse::builder)
                 .logger(LOG, "listSchedulerDefinitions")
-                .serviceDetails("FleetAppsManagementOperations", "ListSchedulerDefinitions", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListSchedulerDefinitions",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinitionCollection/ListSchedulerDefinitions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchedulerDefinitionsRequest::builder)
                 .basePath("/20230831")
@@ -446,7 +476,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, ListSchedulerJobsResponse::builder)
                 .logger(LOG, "listSchedulerJobs")
-                .serviceDetails("FleetAppsManagementOperations", "ListSchedulerJobs", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "ListSchedulerJobs",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJobCollection/ListSchedulerJobs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSchedulerJobsRequest::builder)
                 .basePath("/20230831")
@@ -493,7 +526,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, UpdateSchedulerDefinitionResponse::builder)
                 .logger(LOG, "updateSchedulerDefinition")
-                .serviceDetails("FleetAppsManagementOperations", "UpdateSchedulerDefinition", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "UpdateSchedulerDefinition",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerDefinition/UpdateSchedulerDefinition")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSchedulerDefinitionRequest::builder)
                 .basePath("/20230831")
@@ -524,7 +560,10 @@ public class FleetAppsManagementOperationsAsyncClient
 
         return clientCall(request, UpdateSchedulerJobResponse::builder)
                 .logger(LOG, "updateSchedulerJob")
-                .serviceDetails("FleetAppsManagementOperations", "UpdateSchedulerJob", "")
+                .serviceDetails(
+                        "FleetAppsManagementOperations",
+                        "UpdateSchedulerJob",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/SchedulerJob/UpdateSchedulerJob")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSchedulerJobRequest::builder)
                 .basePath("/20230831")

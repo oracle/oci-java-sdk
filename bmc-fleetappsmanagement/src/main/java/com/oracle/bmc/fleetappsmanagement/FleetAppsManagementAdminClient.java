@@ -131,7 +131,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CreateOnboardingResponse::builder)
                 .logger(LOG, "createOnboarding")
-                .serviceDetails("FleetAppsManagementAdmin", "CreateOnboarding", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "CreateOnboarding",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/CreateOnboarding")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOnboardingRequest::builder)
                 .basePath("/20230831")
@@ -162,7 +165,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, CreatePropertyResponse::builder)
                 .logger(LOG, "createProperty")
-                .serviceDetails("FleetAppsManagementAdmin", "CreateProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "CreateProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/CreateProperty")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreatePropertyRequest::builder)
                 .basePath("/20230831")
@@ -188,7 +194,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, DeletePropertyResponse::builder)
                 .logger(LOG, "deleteProperty")
-                .serviceDetails("FleetAppsManagementAdmin", "DeleteProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "DeleteProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/DeleteProperty")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePropertyRequest::builder)
                 .basePath("/20230831")
@@ -210,7 +219,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, GetPropertyResponse::builder)
                 .logger(LOG, "getProperty")
-                .serviceDetails("FleetAppsManagementAdmin", "GetProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "GetProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/GetProperty")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPropertyRequest::builder)
                 .basePath("/20230831")
@@ -234,7 +246,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListOnboardingPoliciesResponse::builder)
                 .logger(LOG, "listOnboardingPolicies")
-                .serviceDetails("FleetAppsManagementAdmin", "ListOnboardingPolicies", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListOnboardingPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingPolicyCollection/ListOnboardingPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOnboardingPoliciesRequest::builder)
                 .basePath("/20230831")
@@ -261,7 +276,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListOnboardingsResponse::builder)
                 .logger(LOG, "listOnboardings")
-                .serviceDetails("FleetAppsManagementAdmin", "ListOnboardings", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListOnboardings",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/OnboardingCollection/ListOnboardings")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOnboardingsRequest::builder)
                 .basePath("/20230831")
@@ -291,7 +309,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, ListPropertiesResponse::builder)
                 .logger(LOG, "listProperties")
-                .serviceDetails("FleetAppsManagementAdmin", "ListProperties", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListProperties",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PropertyCollection/ListProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPropertiesRequest::builder)
                 .basePath("/20230831")
@@ -327,7 +348,10 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
 
         return clientCall(request, UpdatePropertyResponse::builder)
                 .logger(LOG, "updateProperty")
-                .serviceDetails("FleetAppsManagementAdmin", "UpdateProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "UpdateProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Property/UpdateProperty")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdatePropertyRequest::builder)
                 .basePath("/20230831")

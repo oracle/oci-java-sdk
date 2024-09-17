@@ -81,7 +81,14 @@ public final class AvailabilityDomain
         Ad1("AD1"),
         Ad2("AD2"),
         Ad3("AD3"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Ads.class);
 
         private final String value;
         private static java.util.Map<String, Ads> map;
@@ -89,7 +96,9 @@ public final class AvailabilityDomain
         static {
             map = new java.util.HashMap<>();
             for (Ads v : Ads.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -107,7 +116,8 @@ public final class AvailabilityDomain
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Ads: " + key);
+            LOG.warn("Received unknown value '{}' for enum 'Ads', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
         }
     };
     /** Availability Domain Identifiers */

@@ -307,6 +307,37 @@ public interface AIServiceSpeechAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of speakers available to the user to choose from based on language code and
+     * voice type provided.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListVoicesResponse> listVoices(
+            ListVoicesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListVoicesRequest, ListVoicesResponse> handler);
+
+    /**
+     * Creates an audio for the given input text based on other input parameters like language,
+     * voice type, etc.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SynthesizeSpeechResponse> synthesizeSpeech(
+            SynthesizeSpeechRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SynthesizeSpeechRequest, SynthesizeSpeechResponse>
+                    handler);
+
+    /**
      * Updates a Customization by identifier
      *
      * @param request The request object containing the details to send

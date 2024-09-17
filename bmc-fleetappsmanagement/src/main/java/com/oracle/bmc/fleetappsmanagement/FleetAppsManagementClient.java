@@ -132,7 +132,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CheckResourceTaggingResponse::builder)
                 .logger(LOG, "checkResourceTagging")
-                .serviceDetails("FleetAppsManagement", "CheckResourceTagging", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "CheckResourceTagging",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CheckResourceTagging")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CheckResourceTaggingRequest::builder)
                 .basePath("/20230831")
@@ -162,7 +165,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ConfirmTargetsResponse::builder)
                 .logger(LOG, "confirmTargets")
-                .serviceDetails("FleetAppsManagement", "ConfirmTargets", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ConfirmTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/ConfirmTargets")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ConfirmTargetsRequest::builder)
                 .basePath("/20230831")
@@ -188,7 +194,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateFleetResponse::builder)
                 .logger(LOG, "createFleet")
-                .serviceDetails("FleetAppsManagement", "CreateFleet", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "CreateFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/CreateFleet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetRequest::builder)
                 .basePath("/20230831")
@@ -223,7 +232,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateFleetCredentialResponse::builder)
                 .logger(LOG, "createFleetCredential")
-                .serviceDetails("FleetAppsManagement", "CreateFleetCredential", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "CreateFleetCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/CreateFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetCredentialRequest::builder)
                 .basePath("/20230831")
@@ -260,7 +272,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateFleetPropertyResponse::builder)
                 .logger(LOG, "createFleetProperty")
-                .serviceDetails("FleetAppsManagement", "CreateFleetProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "CreateFleetProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/CreateFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetPropertyRequest::builder)
                 .basePath("/20230831")
@@ -290,7 +305,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, CreateFleetResourceResponse::builder)
                 .logger(LOG, "createFleetResource")
-                .serviceDetails("FleetAppsManagement", "CreateFleetResource", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "CreateFleetResource",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/CreateFleetResource")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetResourceRequest::builder)
                 .basePath("/20230831")
@@ -325,7 +343,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, DeleteFleetResponse::builder)
                 .logger(LOG, "deleteFleet")
-                .serviceDetails("FleetAppsManagement", "DeleteFleet", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "DeleteFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/DeleteFleet")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetRequest::builder)
                 .basePath("/20230831")
@@ -352,7 +373,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, DeleteFleetCredentialResponse::builder)
                 .logger(LOG, "deleteFleetCredential")
-                .serviceDetails("FleetAppsManagement", "DeleteFleetCredential", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "DeleteFleetCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/DeleteFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetCredentialRequest::builder)
                 .basePath("/20230831")
@@ -381,7 +405,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, DeleteFleetPropertyResponse::builder)
                 .logger(LOG, "deleteFleetProperty")
-                .serviceDetails("FleetAppsManagement", "DeleteFleetProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "DeleteFleetProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/DeleteFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetPropertyRequest::builder)
                 .basePath("/20230831")
@@ -407,7 +434,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, DeleteFleetResourceResponse::builder)
                 .logger(LOG, "deleteFleetResource")
-                .serviceDetails("FleetAppsManagement", "DeleteFleetResource", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "DeleteFleetResource",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/DeleteFleetResource")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetResourceRequest::builder)
                 .basePath("/20230831")
@@ -438,7 +468,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GenerateComplianceReportResponse::builder)
                 .logger(LOG, "generateComplianceReport")
-                .serviceDetails("FleetAppsManagement", "GenerateComplianceReport", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GenerateComplianceReport",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GenerateComplianceReport")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateComplianceReportRequest::builder)
                 .basePath("/20230831")
@@ -468,7 +501,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetComplianceReportResponse::builder)
                 .logger(LOG, "getComplianceReport")
-                .serviceDetails("FleetAppsManagement", "GetComplianceReport", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetComplianceReport",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/ComplianceReport/GetComplianceReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetComplianceReportRequest::builder)
                 .basePath("/20230831")
@@ -495,7 +531,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetFleetResponse::builder)
                 .logger(LOG, "getFleet")
-                .serviceDetails("FleetAppsManagement", "GetFleet", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/GetFleet")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetRequest::builder)
                 .basePath("/20230831")
@@ -522,7 +561,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetFleetCredentialResponse::builder)
                 .logger(LOG, "getFleetCredential")
-                .serviceDetails("FleetAppsManagement", "GetFleetCredential", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetFleetCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/GetFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetCredentialRequest::builder)
                 .basePath("/20230831")
@@ -551,7 +593,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetFleetPropertyResponse::builder)
                 .logger(LOG, "getFleetProperty")
-                .serviceDetails("FleetAppsManagement", "GetFleetProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetFleetProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/GetFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetPropertyRequest::builder)
                 .basePath("/20230831")
@@ -580,7 +625,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetFleetResourceResponse::builder)
                 .logger(LOG, "getFleetResource")
-                .serviceDetails("FleetAppsManagement", "GetFleetResource", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetFleetResource",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/GetFleetResource")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetResourceRequest::builder)
                 .basePath("/20230831")
@@ -607,7 +655,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("FleetAppsManagement", "GetWorkRequest", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20230831")
@@ -632,7 +683,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListAnnouncementsResponse::builder)
                 .logger(LOG, "listAnnouncements")
-                .serviceDetails("FleetAppsManagement", "ListAnnouncements", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListAnnouncements",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/AnnouncementCollection/ListAnnouncements")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAnnouncementsRequest::builder)
                 .basePath("/20230831")
@@ -663,7 +717,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetCredentialsResponse::builder)
                 .logger(LOG, "listFleetCredentials")
-                .serviceDetails("FleetAppsManagement", "ListFleetCredentials", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleetCredentials",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredentialCollection/ListFleetCredentials")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetCredentialsRequest::builder)
                 .basePath("/20230831")
@@ -699,7 +756,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetProductsResponse::builder)
                 .logger(LOG, "listFleetProducts")
-                .serviceDetails("FleetAppsManagement", "ListFleetProducts", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleetProducts",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProductCollection/ListFleetProducts")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetProductsRequest::builder)
                 .basePath("/20230831")
@@ -734,7 +794,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetPropertiesResponse::builder)
                 .logger(LOG, "listFleetProperties")
-                .serviceDetails("FleetAppsManagement", "ListFleetProperties", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleetProperties",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetPropertyCollection/ListFleetProperties")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetPropertiesRequest::builder)
                 .basePath("/20230831")
@@ -769,7 +832,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetResourcesResponse::builder)
                 .logger(LOG, "listFleetResources")
-                .serviceDetails("FleetAppsManagement", "ListFleetResources", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleetResources",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResourceCollection/ListFleetResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetResourcesRequest::builder)
                 .basePath("/20230831")
@@ -805,7 +871,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetTargetsResponse::builder)
                 .logger(LOG, "listFleetTargets")
-                .serviceDetails("FleetAppsManagement", "ListFleetTargets", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleetTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListFleetTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetTargetsRequest::builder)
                 .basePath("/20230831")
@@ -838,7 +907,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListFleetsResponse::builder)
                 .logger(LOG, "listFleets")
-                .serviceDetails("FleetAppsManagement", "ListFleets", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListFleets",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCollection/ListFleets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetsRequest::builder)
                 .basePath("/20230831")
@@ -880,7 +952,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListInventoryResourcesResponse::builder)
                 .logger(LOG, "listInventoryResources")
-                .serviceDetails("FleetAppsManagement", "ListInventoryResources", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListInventoryResources",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/InventoryResourceCollection/ListInventoryResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInventoryResourcesRequest::builder)
                 .basePath("/20230831")
@@ -927,7 +1002,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListTargetsResponse::builder)
                 .logger(LOG, "listTargets")
-                .serviceDetails("FleetAppsManagement", "ListTargets", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListTargets",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetTargetCollection/ListTargets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTargetsRequest::builder)
                 .basePath("/20230831")
@@ -960,7 +1038,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("FleetAppsManagement", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20230831")
@@ -991,7 +1072,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("FleetAppsManagement", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20230831")
@@ -1021,7 +1105,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("FleetAppsManagement", "ListWorkRequests", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20230831")
@@ -1058,7 +1145,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, RequestResourceValidationResponse::builder)
                 .logger(LOG, "requestResourceValidation")
-                .serviceDetails("FleetAppsManagement", "RequestResourceValidation", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "RequestResourceValidation",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestResourceValidation")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestResourceValidationRequest::builder)
                 .basePath("/20230831")
@@ -1090,7 +1180,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, RequestTargetDiscoveryResponse::builder)
                 .logger(LOG, "requestTargetDiscovery")
-                .serviceDetails("FleetAppsManagement", "RequestTargetDiscovery", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "RequestTargetDiscovery",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/RequestTargetDiscovery")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestTargetDiscoveryRequest::builder)
                 .basePath("/20230831")
@@ -1119,7 +1212,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, UpdateFleetResponse::builder)
                 .logger(LOG, "updateFleet")
-                .serviceDetails("FleetAppsManagement", "UpdateFleet", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "UpdateFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Fleet/UpdateFleet")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetRequest::builder)
                 .basePath("/20230831")
@@ -1152,7 +1248,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, UpdateFleetCredentialResponse::builder)
                 .logger(LOG, "updateFleetCredential")
-                .serviceDetails("FleetAppsManagement", "UpdateFleetCredential", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "UpdateFleetCredential",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetCredential/UpdateFleetCredential")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetCredentialRequest::builder)
                 .basePath("/20230831")
@@ -1184,7 +1283,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, UpdateFleetPropertyResponse::builder)
                 .logger(LOG, "updateFleetProperty")
-                .serviceDetails("FleetAppsManagement", "UpdateFleetProperty", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "UpdateFleetProperty",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetProperty/UpdateFleetProperty")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetPropertyRequest::builder)
                 .basePath("/20230831")
@@ -1217,7 +1319,10 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
 
         return clientCall(request, UpdateFleetResourceResponse::builder)
                 .logger(LOG, "updateFleetResource")
-                .serviceDetails("FleetAppsManagement", "UpdateFleetResource", "")
+                .serviceDetails(
+                        "FleetAppsManagement",
+                        "UpdateFleetResource",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/FleetResource/UpdateFleetResource")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetResourceRequest::builder)
                 .basePath("/20230831")
