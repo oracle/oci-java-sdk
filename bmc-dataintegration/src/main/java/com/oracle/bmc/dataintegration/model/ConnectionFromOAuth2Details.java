@@ -388,7 +388,15 @@ public final class ConnectionFromOAuth2Details extends ConnectionDetails {
     /** Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc. */
     public enum GrantType implements com.oracle.bmc.http.internal.BmcEnum {
         ClientCredentials("CLIENT_CREDENTIALS"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(GrantType.class);
 
         private final String value;
         private static java.util.Map<String, GrantType> map;
@@ -396,7 +404,9 @@ public final class ConnectionFromOAuth2Details extends ConnectionDetails {
         static {
             map = new java.util.HashMap<>();
             for (GrantType v : GrantType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -414,7 +424,10 @@ public final class ConnectionFromOAuth2Details extends ConnectionDetails {
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid GrantType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'GrantType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** Specifies the OAuth2 grant mechanism. Example CLIENT_CREDENTIALS, Implicit Flow etc. */

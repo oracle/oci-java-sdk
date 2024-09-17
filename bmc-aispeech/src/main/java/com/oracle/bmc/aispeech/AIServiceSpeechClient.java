@@ -35,6 +35,14 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
             java.util.concurrent.ExecutorService executorService) {
+        this(builder, authenticationDetailsProvider, executorService, true);
+    }
+
+    AIServiceSpeechClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            java.util.concurrent.ExecutorService executorService,
+            boolean isStreamWarningEnabled) {
         super(
                 builder,
                 authenticationDetailsProvider,
@@ -60,6 +68,11 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
         this.waiters = new AIServiceSpeechWaiters(executorService, this);
 
         this.paginators = new AIServiceSpeechPaginators(this);
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "AIServiceSpeechClient", "synthesizeSpeech"));
+        }
     }
 
     /**
@@ -77,6 +90,7 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
      */
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<Builder, AIServiceSpeechClient> {
+        private boolean isStreamWarningEnabled = true;
         private java.util.concurrent.ExecutorService executorService;
 
         private Builder(com.oracle.bmc.Service service) {
@@ -100,6 +114,17 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
         }
 
         /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
+        }
+
+        /**
          * Build the client.
          *
          * @param authenticationDetailsProvider authentication details provider
@@ -109,7 +134,8 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new AIServiceSpeechClient(this, authenticationDetailsProvider, executorService);
+            return new AIServiceSpeechClient(
+                    this, authenticationDetailsProvider, executorService, isStreamWarningEnabled);
         }
     }
 
@@ -584,6 +610,58 @@ public class AIServiceSpeechClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListTranscriptionTasksResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListTranscriptionTasksResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListVoicesResponse listVoices(ListVoicesRequest request) {
+
+        return clientCall(request, ListVoicesResponse::builder)
+                .logger(LOG, "listVoices")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "ListVoices",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Voice/ListVoices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVoicesRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("voices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("modelName", request.getModelName())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.VoiceCollection.class,
+                        ListVoicesResponse.Builder::voiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVoicesResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SynthesizeSpeechResponse synthesizeSpeech(SynthesizeSpeechRequest request) {
+        Objects.requireNonNull(
+                request.getSynthesizeSpeechDetails(), "synthesizeSpeechDetails is required");
+
+        return clientCall(request, SynthesizeSpeechResponse::builder)
+                .logger(LOG, "synthesizeSpeech")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "SynthesizeSpeech",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/SynthesizeSpeech/SynthesizeSpeech")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SynthesizeSpeechRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("actions")
+                .appendPathParam("synthesizeSpeech")
+                .accept("audio/mpeg", "audio/ogg", "audio/pcm", "audio/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class, SynthesizeSpeechResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", SynthesizeSpeechResponse.Builder::opcRequestId)
                 .callSync();
     }
 

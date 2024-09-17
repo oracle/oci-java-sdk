@@ -115,7 +115,9 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, ApproveDelegatedResourceAccessRequestResponse::builder)
                 .logger(LOG, "approveDelegatedResourceAccessRequest")
                 .serviceDetails(
-                        "DelegateAccessControl", "ApproveDelegatedResourceAccessRequest", "")
+                        "DelegateAccessControl",
+                        "ApproveDelegatedResourceAccessRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ApproveDelegatedResourceAccessRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ApproveDelegatedResourceAccessRequestRequest::builder)
                 .basePath("/20230801")
@@ -154,7 +156,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ChangeDelegationControlCompartmentResponse::builder)
                 .logger(LOG, "changeDelegationControlCompartment")
-                .serviceDetails("DelegateAccessControl", "ChangeDelegationControlCompartment", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ChangeDelegationControlCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ChangeDelegationControlCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDelegationControlCompartmentRequest::builder)
                 .basePath("/20230801")
@@ -195,7 +200,9 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, ChangeDelegationSubscriptionCompartmentResponse::builder)
                 .logger(LOG, "changeDelegationSubscriptionCompartment")
                 .serviceDetails(
-                        "DelegateAccessControl", "ChangeDelegationSubscriptionCompartment", "")
+                        "DelegateAccessControl",
+                        "ChangeDelegationSubscriptionCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ChangeDelegationSubscriptionCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeDelegationSubscriptionCompartmentRequest::builder)
                 .basePath("/20230801")
@@ -229,7 +236,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateDelegationControlResponse::builder)
                 .logger(LOG, "createDelegationControl")
-                .serviceDetails("DelegateAccessControl", "CreateDelegationControl", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "CreateDelegationControl",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/CreateDelegationControl")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDelegationControlRequest::builder)
                 .basePath("/20230801")
@@ -269,7 +279,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateDelegationSubscriptionResponse::builder)
                 .logger(LOG, "createDelegationSubscription")
-                .serviceDetails("DelegateAccessControl", "CreateDelegationSubscription", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "CreateDelegationSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/CreateDelegationSubscription")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDelegationSubscriptionRequest::builder)
                 .basePath("/20230801")
@@ -309,7 +322,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteDelegationControlResponse::builder)
                 .logger(LOG, "deleteDelegationControl")
-                .serviceDetails("DelegateAccessControl", "DeleteDelegationControl", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "DeleteDelegationControl",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/DeleteDelegationControl")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDelegationControlRequest::builder)
                 .basePath("/20230801")
@@ -342,7 +358,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteDelegationSubscriptionResponse::builder)
                 .logger(LOG, "deleteDelegationSubscription")
-                .serviceDetails("DelegateAccessControl", "DeleteDelegationSubscription", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "DeleteDelegationSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/DeleteDelegationSubscription")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDelegationSubscriptionRequest::builder)
                 .basePath("/20230801")
@@ -375,7 +394,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetDelegatedResourceAccessRequestResponse::builder)
                 .logger(LOG, "getDelegatedResourceAccessRequest")
-                .serviceDetails("DelegateAccessControl", "GetDelegatedResourceAccessRequest", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "GetDelegatedResourceAccessRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/GetDelegatedResourceAccessRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDelegatedResourceAccessRequestRequest::builder)
                 .basePath("/20230801")
@@ -414,7 +436,7 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
                 .serviceDetails(
                         "DelegateAccessControl",
                         "GetDelegatedResourceAccessRequestAuditLogReport",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequestAuditLogReport/GetDelegatedResourceAccessRequestAuditLogReport")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDelegatedResourceAccessRequestAuditLogReportRequest::builder)
                 .basePath("/20230801")
@@ -448,7 +470,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetDelegationControlResponse::builder)
                 .logger(LOG, "getDelegationControl")
-                .serviceDetails("DelegateAccessControl", "GetDelegationControl", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "GetDelegationControl",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/GetDelegationControl")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDelegationControlRequest::builder)
                 .basePath("/20230801")
@@ -478,7 +503,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetDelegationSubscriptionResponse::builder)
                 .logger(LOG, "getDelegationSubscription")
-                .serviceDetails("DelegateAccessControl", "GetDelegationSubscription", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "GetDelegationSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/GetDelegationSubscription")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDelegationSubscriptionRequest::builder)
                 .basePath("/20230801")
@@ -506,7 +534,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetServiceProviderResponse::builder)
                 .logger(LOG, "getServiceProvider")
-                .serviceDetails("DelegateAccessControl", "GetServiceProvider", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "GetServiceProvider",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/GetServiceProvider")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetServiceProviderRequest::builder)
                 .basePath("/20230801")
@@ -535,7 +566,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetServiceProviderActionResponse::builder)
                 .logger(LOG, "getServiceProviderAction")
-                .serviceDetails("DelegateAccessControl", "GetServiceProviderAction", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "GetServiceProviderAction",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/GetServiceProviderAction")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetServiceProviderActionRequest::builder)
                 .basePath("/20230801")
@@ -568,7 +602,9 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, ListDelegatedResourceAccessRequestHistoriesResponse::builder)
                 .logger(LOG, "listDelegatedResourceAccessRequestHistories")
                 .serviceDetails(
-                        "DelegateAccessControl", "ListDelegatedResourceAccessRequestHistories", "")
+                        "DelegateAccessControl",
+                        "ListDelegatedResourceAccessRequestHistories",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequestHistories")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDelegatedResourceAccessRequestHistoriesRequest::builder)
                 .basePath("/20230801")
@@ -607,7 +643,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListDelegatedResourceAccessRequestsResponse::builder)
                 .logger(LOG, "listDelegatedResourceAccessRequests")
-                .serviceDetails("DelegateAccessControl", "ListDelegatedResourceAccessRequests", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListDelegatedResourceAccessRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListDelegatedResourceAccessRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDelegatedResourceAccessRequestsRequest::builder)
                 .basePath("/20230801")
@@ -653,7 +692,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListDelegationControlResourcesResponse::builder)
                 .logger(LOG, "listDelegationControlResources")
-                .serviceDetails("DelegateAccessControl", "ListDelegationControlResources", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListDelegationControlResources",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControlResources")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDelegationControlResourcesRequest::builder)
                 .basePath("/20230801")
@@ -688,7 +730,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListDelegationControlsResponse::builder)
                 .logger(LOG, "listDelegationControls")
-                .serviceDetails("DelegateAccessControl", "ListDelegationControls", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListDelegationControls",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/ListDelegationControls")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDelegationControlsRequest::builder)
                 .basePath("/20230801")
@@ -727,7 +772,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListDelegationSubscriptionsResponse::builder)
                 .logger(LOG, "listDelegationSubscriptions")
-                .serviceDetails("DelegateAccessControl", "ListDelegationSubscriptions", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListDelegationSubscriptions",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/ListDelegationSubscriptions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDelegationSubscriptionsRequest::builder)
                 .basePath("/20230801")
@@ -765,7 +813,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListServiceProviderActionsResponse::builder)
                 .logger(LOG, "listServiceProviderActions")
-                .serviceDetails("DelegateAccessControl", "ListServiceProviderActions", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListServiceProviderActions",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProviderAction/ListServiceProviderActions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServiceProviderActionsRequest::builder)
                 .basePath("/20230801")
@@ -811,7 +862,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListServiceProviderInteractionsResponse::builder)
                 .logger(LOG, "listServiceProviderInteractions")
-                .serviceDetails("DelegateAccessControl", "ListServiceProviderInteractions", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListServiceProviderInteractions",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ListServiceProviderInteractions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServiceProviderInteractionsRequest::builder)
                 .basePath("/20230801")
@@ -846,7 +900,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListServiceProvidersResponse::builder)
                 .logger(LOG, "listServiceProviders")
-                .serviceDetails("DelegateAccessControl", "ListServiceProviders", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ListServiceProviders",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/ServiceProvider/ListServiceProviders")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListServiceProvidersRequest::builder)
                 .basePath("/20230801")
@@ -891,7 +948,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RejectDelegatedResourceAccessRequestResponse::builder)
                 .logger(LOG, "rejectDelegatedResourceAccessRequest")
-                .serviceDetails("DelegateAccessControl", "RejectDelegatedResourceAccessRequest", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "RejectDelegatedResourceAccessRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RejectDelegatedResourceAccessRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RejectDelegatedResourceAccessRequestRequest::builder)
                 .basePath("/20230801")
@@ -931,7 +991,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RevokeDelegatedResourceAccessRequestResponse::builder)
                 .logger(LOG, "revokeDelegatedResourceAccessRequest")
-                .serviceDetails("DelegateAccessControl", "RevokeDelegatedResourceAccessRequest", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "RevokeDelegatedResourceAccessRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/RevokeDelegatedResourceAccessRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RevokeDelegatedResourceAccessRequestRequest::builder)
                 .basePath("/20230801")
@@ -971,7 +1034,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ServiceProviderInteractionRequestResponse::builder)
                 .logger(LOG, "serviceProviderInteractionRequest")
-                .serviceDetails("DelegateAccessControl", "ServiceProviderInteractionRequest", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "ServiceProviderInteractionRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegatedResourceAccessRequest/ServiceProviderInteractionRequest")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ServiceProviderInteractionRequestRequest::builder)
                 .basePath("/20230801")
@@ -1005,7 +1071,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateDelegationControlResponse::builder)
                 .logger(LOG, "updateDelegationControl")
-                .serviceDetails("DelegateAccessControl", "UpdateDelegationControl", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "UpdateDelegationControl",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationControl/UpdateDelegationControl")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDelegationControlRequest::builder)
                 .basePath("/20230801")
@@ -1048,7 +1117,10 @@ public class DelegateAccessControlAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateDelegationSubscriptionResponse::builder)
                 .logger(LOG, "updateDelegationSubscription")
-                .serviceDetails("DelegateAccessControl", "UpdateDelegationSubscription", "")
+                .serviceDetails(
+                        "DelegateAccessControl",
+                        "UpdateDelegationSubscription",
+                        "https://docs.oracle.com/iaas/api/#/en/delegate-access-control/20230801/DelegationSubscription/UpdateDelegationSubscription")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDelegationSubscriptionRequest::builder)
                 .basePath("/20230801")

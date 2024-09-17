@@ -184,6 +184,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC24
     public static final Region EU_DCC_ZURICH_1 = register("eu-dcc-zurich-1", Realm.OC24, "avz");
+    public static final Region EU_CRISSIER_1 = register("eu-crissier-1", Realm.OC24, "avf");
 
     // OC21
     public static final Region ME_DCC_DOHA_1 = register("me-dcc-doha-1", Realm.OC21, "doh");

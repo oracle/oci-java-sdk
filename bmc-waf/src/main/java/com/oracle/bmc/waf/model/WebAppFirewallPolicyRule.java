@@ -67,7 +67,15 @@ public class WebAppFirewallPolicyRule
      */
     public enum ConditionLanguage implements com.oracle.bmc.http.internal.BmcEnum {
         Jmespath("JMESPATH"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConditionLanguage.class);
 
         private final String value;
         private static java.util.Map<String, ConditionLanguage> map;
@@ -75,7 +83,9 @@ public class WebAppFirewallPolicyRule
         static {
             map = new java.util.HashMap<>();
             for (ConditionLanguage v : ConditionLanguage.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -93,7 +103,10 @@ public class WebAppFirewallPolicyRule
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ConditionLanguage: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ConditionLanguage', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -200,7 +213,14 @@ public class WebAppFirewallPolicyRule
         AccessControl("ACCESS_CONTROL"),
         Protection("PROTECTION"),
         RequestRateLimiting("REQUEST_RATE_LIMITING"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(Type.class);
 
         private final String value;
         private static java.util.Map<String, Type> map;
@@ -208,7 +228,9 @@ public class WebAppFirewallPolicyRule
         static {
             map = new java.util.HashMap<>();
             for (Type v : Type.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -226,7 +248,9 @@ public class WebAppFirewallPolicyRule
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Type: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Type', returning UnknownEnumValue", key);
+            return UnknownEnumValue;
         }
     };
 }

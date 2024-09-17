@@ -213,7 +213,15 @@ public final class InfrastructureTargetVersionSummary
         ExadataDbSystem("EXADATA_DB_SYSTEM"),
         CloudExadataInfrastructure("CLOUD_EXADATA_INFRASTRUCTURE"),
         ExaccInfrastructure("EXACC_INFRASTRUCTURE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TargetResourceType.class);
 
         private final String value;
         private static java.util.Map<String, TargetResourceType> map;
@@ -221,7 +229,9 @@ public final class InfrastructureTargetVersionSummary
         static {
             map = new java.util.HashMap<>();
             for (TargetResourceType v : TargetResourceType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -239,7 +249,10 @@ public final class InfrastructureTargetVersionSummary
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid TargetResourceType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TargetResourceType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

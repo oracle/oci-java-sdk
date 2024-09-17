@@ -3,6 +3,21 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.49.0 - 2024-09-17
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the eu-crissier-1 region 
+- Support for dedicated AI cluster unit shapes in the Generative AI service 
+- Support for ticket numbers when creating access requests in the Managed Access service 
+- Support for 23ai database, cloud VM clusters and VM cluster patching in the Exadata Fleet Update service 
+- Support for text to speech feature in the AI Speech service 
+- Support for notifications and transfer of capacity requests in the OCI Control Center service   
+
+### Changed
+- A new value called `UnknownEnumValue` has been added to the enums of the parent class when a subclass is in the responses returned from services. If a service returns a value that cannot be recognized by the version of the SDK, then the enum will be set to this value. Previously this would throw an exception.
+
+### Breaking Changes 
+- The field `occCustomerGroupId` was made mandatory for the `ListOccAvailabilityCatalogsInternalRequest` call in the OCI Control Center service
+
 ## 3.48.0 - 2024-08-27
 ### Added 
 - Support for Delegate Access Control service 

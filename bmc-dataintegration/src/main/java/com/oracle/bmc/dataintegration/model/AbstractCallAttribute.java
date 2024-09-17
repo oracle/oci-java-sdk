@@ -99,7 +99,15 @@ public class AbstractCallAttribute
     public enum ModelType implements com.oracle.bmc.http.internal.BmcEnum {
         BipCallAttribute("BIP_CALL_ATTRIBUTE"),
         GenericRestCallAttribute("GENERIC_REST_CALL_ATTRIBUTE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ModelType.class);
 
         private final String value;
         private static java.util.Map<String, ModelType> map;
@@ -107,7 +115,9 @@ public class AbstractCallAttribute
         static {
             map = new java.util.HashMap<>();
             for (ModelType v : ModelType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -125,7 +135,10 @@ public class AbstractCallAttribute
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ModelType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ModelType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

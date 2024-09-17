@@ -309,6 +309,39 @@ public interface AIServiceSpeech extends AutoCloseable {
     ListTranscriptionTasksResponse listTranscriptionTasks(ListTranscriptionTasksRequest request);
 
     /**
+     * Returns a list of speakers available to the user to choose from based on language code and
+     * voice type provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListVoicesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVoices API.
+     */
+    ListVoicesResponse listVoices(ListVoicesRequest request);
+
+    /**
+     * Creates an audio for the given input text based on other input parameters like language,
+     * voice type, etc.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/SynthesizeSpeechExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynthesizeSpeech
+     *     API.
+     */
+    SynthesizeSpeechResponse synthesizeSpeech(SynthesizeSpeechRequest request);
+
+    /**
      * Updates a Customization by identifier
      *
      * @param request The request object containing the details to send

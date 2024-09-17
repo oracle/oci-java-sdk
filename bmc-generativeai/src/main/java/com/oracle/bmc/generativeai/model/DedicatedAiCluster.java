@@ -706,6 +706,7 @@ public final class DedicatedAiCluster
         Llama270("LLAMA2_70"),
         LargeGeneric("LARGE_GENERIC"),
         LargeCohereV22("LARGE_COHERE_V2_2"),
+        LargeGeneric4("LARGE_GENERIC_4"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

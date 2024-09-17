@@ -28,6 +28,13 @@ public class ListOccAvailabilityCatalogsInternalRequest
     public String getCompartmentId() {
         return compartmentId;
     }
+    /** The customer group ocid by which we would filter the list. */
+    private String occCustomerGroupId;
+
+    /** The customer group ocid by which we would filter the list. */
+    public String getOccCustomerGroupId() {
+        return occCustomerGroupId;
+    }
     /** The namespace by which we would filter the list. */
     private com.oracle.bmc.capacitymanagement.model.Namespace namespace;
 
@@ -63,13 +70,6 @@ public class ListOccAvailabilityCatalogsInternalRequest
     public com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.CatalogState
             getCatalogState() {
         return catalogState;
-    }
-    /** The customer group ocid by which we would filter the list. */
-    private String occCustomerGroupId;
-
-    /** The customer group ocid by which we would filter the list. */
-    public String getOccCustomerGroupId() {
-        return occCustomerGroupId;
     }
     /** The maximum number of items to return. */
     private Integer limit;
@@ -186,6 +186,20 @@ public class ListOccAvailabilityCatalogsInternalRequest
             return this;
         }
 
+        /** The customer group ocid by which we would filter the list. */
+        private String occCustomerGroupId = null;
+
+        /**
+         * The customer group ocid by which we would filter the list.
+         *
+         * @param occCustomerGroupId the value to set
+         * @return this builder instance
+         */
+        public Builder occCustomerGroupId(String occCustomerGroupId) {
+            this.occCustomerGroupId = occCustomerGroupId;
+            return this;
+        }
+
         /** The namespace by which we would filter the list. */
         private com.oracle.bmc.capacitymanagement.model.Namespace namespace = null;
 
@@ -246,20 +260,6 @@ public class ListOccAvailabilityCatalogsInternalRequest
                 com.oracle.bmc.capacitymanagement.model.OccAvailabilityCatalog.CatalogState
                         catalogState) {
             this.catalogState = catalogState;
-            return this;
-        }
-
-        /** The customer group ocid by which we would filter the list. */
-        private String occCustomerGroupId = null;
-
-        /**
-         * The customer group ocid by which we would filter the list.
-         *
-         * @param occCustomerGroupId the value to set
-         * @return this builder instance
-         */
-        public Builder occCustomerGroupId(String occCustomerGroupId) {
-            this.occCustomerGroupId = occCustomerGroupId;
             return this;
         }
 
@@ -376,11 +376,11 @@ public class ListOccAvailabilityCatalogsInternalRequest
          */
         public Builder copy(ListOccAvailabilityCatalogsInternalRequest o) {
             compartmentId(o.getCompartmentId());
+            occCustomerGroupId(o.getOccCustomerGroupId());
             namespace(o.getNamespace());
             id(o.getId());
             displayName(o.getDisplayName());
             catalogState(o.getCatalogState());
-            occCustomerGroupId(o.getOccCustomerGroupId());
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
@@ -424,19 +424,19 @@ public class ListOccAvailabilityCatalogsInternalRequest
             ListOccAvailabilityCatalogsInternalRequest request =
                     new ListOccAvailabilityCatalogsInternalRequest();
             request.compartmentId = compartmentId;
+            request.occCustomerGroupId = occCustomerGroupId;
             request.namespace = namespace;
             request.id = id;
             request.displayName = displayName;
             request.catalogState = catalogState;
-            request.occCustomerGroupId = occCustomerGroupId;
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             return request;
-            // new ListOccAvailabilityCatalogsInternalRequest(compartmentId, namespace, id,
-            // displayName, catalogState, occCustomerGroupId, limit, page, opcRequestId, sortOrder,
+            // new ListOccAvailabilityCatalogsInternalRequest(compartmentId, occCustomerGroupId,
+            // namespace, id, displayName, catalogState, limit, page, opcRequestId, sortOrder,
             // sortBy);
         }
     }
@@ -449,11 +449,11 @@ public class ListOccAvailabilityCatalogsInternalRequest
     public Builder toBuilder() {
         return new Builder()
                 .compartmentId(compartmentId)
+                .occCustomerGroupId(occCustomerGroupId)
                 .namespace(namespace)
                 .id(id)
                 .displayName(displayName)
                 .catalogState(catalogState)
-                .occCustomerGroupId(occCustomerGroupId)
                 .limit(limit)
                 .page(page)
                 .opcRequestId(opcRequestId)
@@ -476,11 +476,11 @@ public class ListOccAvailabilityCatalogsInternalRequest
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(",occCustomerGroupId=").append(String.valueOf(this.occCustomerGroupId));
         sb.append(",namespace=").append(String.valueOf(this.namespace));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",catalogState=").append(String.valueOf(this.catalogState));
-        sb.append(",occCustomerGroupId=").append(String.valueOf(this.occCustomerGroupId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
@@ -503,11 +503,11 @@ public class ListOccAvailabilityCatalogsInternalRequest
                 (ListOccAvailabilityCatalogsInternalRequest) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.occCustomerGroupId, other.occCustomerGroupId)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.catalogState, other.catalogState)
-                && java.util.Objects.equals(this.occCustomerGroupId, other.occCustomerGroupId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
@@ -522,15 +522,15 @@ public class ListOccAvailabilityCatalogsInternalRequest
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
-        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
-        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.catalogState == null ? 43 : this.catalogState.hashCode());
         result =
                 (result * PRIME)
                         + (this.occCustomerGroupId == null
                                 ? 43
                                 : this.occCustomerGroupId.hashCode());
+        result = (result * PRIME) + (this.namespace == null ? 43 : this.namespace.hashCode());
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.catalogState == null ? 43 : this.catalogState.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());

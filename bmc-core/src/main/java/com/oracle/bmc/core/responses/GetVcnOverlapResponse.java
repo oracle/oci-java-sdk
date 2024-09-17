@@ -84,7 +84,15 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         InProgress("IN_PROGRESS"),
         Done("DONE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -92,7 +100,9 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -110,7 +120,10 @@ public class GetVcnOverlapResponse extends com.oracle.bmc.responses.BmcResponse 
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 

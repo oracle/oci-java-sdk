@@ -44,7 +44,20 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
             com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
             com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                     authenticationDetailsProvider) {
+        this(builder, authenticationDetailsProvider, true);
+    }
+
+    AIServiceSpeechAsyncClient(
+            com.oracle.bmc.common.ClientBuilderBase<?, ?> builder,
+            com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider authenticationDetailsProvider,
+            boolean isStreamWarningEnabled) {
         super(builder, authenticationDetailsProvider);
+
+        if (isStreamWarningEnabled && com.oracle.bmc.util.StreamUtils.isExtraStreamLogsEnabled()) {
+            LOG.warn(
+                    com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
+                            "AIServiceSpeechAsyncClient", "synthesizeSpeech"));
+        }
     }
 
     /**
@@ -63,6 +76,8 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
     public static class Builder
             extends com.oracle.bmc.common.RegionalClientBuilder<
                     Builder, AIServiceSpeechAsyncClient> {
+        private boolean isStreamWarningEnabled = true;
+
         private Builder(com.oracle.bmc.Service service) {
             super(service);
             final String packageName = "aispeech";
@@ -70,6 +85,17 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
             requestSignerFactory =
                     new com.oracle.bmc.http.signing.internal.DefaultRequestSignerFactory(
                             com.oracle.bmc.http.signing.SigningStrategy.STANDARD);
+        }
+
+        /**
+         * Enable/disable the stream warnings for the client
+         *
+         * @param isStreamWarningEnabled executorService
+         * @return this builder
+         */
+        public Builder isStreamWarningEnabled(boolean isStreamWarningEnabled) {
+            this.isStreamWarningEnabled = isStreamWarningEnabled;
+            return this;
         }
 
         /**
@@ -82,7 +108,8 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
                 @jakarta.annotation.Nonnull
                         com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
                                 authenticationDetailsProvider) {
-            return new AIServiceSpeechAsyncClient(this, authenticationDetailsProvider);
+            return new AIServiceSpeechAsyncClient(
+                    this, authenticationDetailsProvider, isStreamWarningEnabled);
         }
     }
 
@@ -614,6 +641,65 @@ public class AIServiceSpeechAsyncClient extends com.oracle.bmc.http.internal.Bas
                         "opc-next-page", ListTranscriptionTasksResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListTranscriptionTasksResponse.Builder::opcPrevPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVoicesResponse> listVoices(
+            ListVoicesRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListVoicesRequest, ListVoicesResponse>
+                    handler) {
+
+        return clientCall(request, ListVoicesResponse::builder)
+                .logger(LOG, "listVoices")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "ListVoices",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/Voice/ListVoices")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListVoicesRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("voices")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("modelName", request.getModelName())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aispeech.model.VoiceCollection.class,
+                        ListVoicesResponse.Builder::voiceCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListVoicesResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SynthesizeSpeechResponse> synthesizeSpeech(
+            SynthesizeSpeechRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SynthesizeSpeechRequest, SynthesizeSpeechResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getSynthesizeSpeechDetails(), "synthesizeSpeechDetails is required");
+
+        return clientCall(request, SynthesizeSpeechResponse::builder)
+                .logger(LOG, "synthesizeSpeech")
+                .serviceDetails(
+                        "AIServiceSpeech",
+                        "SynthesizeSpeech",
+                        "https://docs.oracle.com/iaas/api/#/en/speech/20220101/SynthesizeSpeech/SynthesizeSpeech")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SynthesizeSpeechRequest::builder)
+                .basePath("/20220101")
+                .appendPathParam("actions")
+                .appendPathParam("synthesizeSpeech")
+                .accept("audio/mpeg", "audio/ogg", "audio/pcm", "audio/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class, SynthesizeSpeechResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id", SynthesizeSpeechResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

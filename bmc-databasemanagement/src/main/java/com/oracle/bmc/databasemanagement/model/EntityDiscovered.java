@@ -187,7 +187,15 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         NewDiscovered("NEW_DISCOVERED"),
         NotFound("NOT_FOUND"),
         Discovering("DISCOVERING"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DiscoverStatus.class);
 
         private final String value;
         private static java.util.Map<String, DiscoverStatus> map;
@@ -195,7 +203,9 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (DiscoverStatus v : DiscoverStatus.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -213,7 +223,10 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid DiscoverStatus: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DiscoverStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The status of the entity discovery. */
@@ -338,7 +351,15 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         DatabaseSystemDiscoverSummary("DATABASE_SYSTEM_DISCOVER_SUMMARY"),
         InfrastructureDiscoverSummary("INFRASTRUCTURE_DISCOVER_SUMMARY"),
         InfrastructureDiscover("INFRASTRUCTURE_DISCOVER"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(EntityType.class);
 
         private final String value;
         private static java.util.Map<String, EntityType> map;
@@ -346,7 +367,9 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (EntityType v : EntityType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -364,7 +387,10 @@ public class EntityDiscovered extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid EntityType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'EntityType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

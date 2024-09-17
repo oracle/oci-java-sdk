@@ -138,7 +138,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, AddFleetInstallationSitesResponse::builder)
                 .logger(LOG, "addFleetInstallationSites")
-                .serviceDetails("JavaManagementService", "AddFleetInstallationSites", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "AddFleetInstallationSites",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/AddFleetInstallationSites")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(AddFleetInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -170,7 +173,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CancelWorkRequestResponse::builder)
                 .logger(LOG, "cancelWorkRequest")
-                .serviceDetails("JavaManagementService", "CancelWorkRequest", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CancelWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(CancelWorkRequestRequest::builder)
                 .basePath("/20210610")
@@ -198,7 +204,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ChangeFleetCompartmentResponse::builder)
                 .logger(LOG, "changeFleetCompartment")
-                .serviceDetails("JavaManagementService", "ChangeFleetCompartment", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ChangeFleetCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeFleetCompartmentRequest::builder)
                 .basePath("/20210610")
@@ -232,7 +241,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateBlocklistResponse::builder)
                 .logger(LOG, "createBlocklist")
-                .serviceDetails("JavaManagementService", "CreateBlocklist", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateBlocklist",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateBlocklistRequest::builder)
                 .basePath("/20210610")
@@ -264,7 +276,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateDrsFileResponse::builder)
                 .logger(LOG, "createDrsFile")
-                .serviceDetails("JavaManagementService", "CreateDrsFile", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -292,7 +307,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateFleetResponse::builder)
                 .logger(LOG, "createFleet")
-                .serviceDetails("JavaManagementService", "CreateFleet", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateFleetRequest::builder)
                 .basePath("/20210610")
@@ -319,7 +337,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, CreateJmsPluginResponse::builder)
                 .logger(LOG, "createJmsPlugin")
-                .serviceDetails("JavaManagementService", "CreateJmsPlugin", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "CreateJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/CreateJmsPlugin")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -350,7 +371,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteBlocklistResponse::builder)
                 .logger(LOG, "deleteBlocklist")
-                .serviceDetails("JavaManagementService", "DeleteBlocklist", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteBlocklist",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteBlocklistRequest::builder)
                 .basePath("/20210610")
@@ -382,7 +406,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteCryptoAnalysisResultResponse::builder)
                 .logger(LOG, "deleteCryptoAnalysisResult")
-                .serviceDetails("JavaManagementService", "DeleteCryptoAnalysisResult", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteCryptoAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/DeleteCryptoAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteCryptoAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -413,7 +440,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteDrsFileResponse::builder)
                 .logger(LOG, "deleteDrsFile")
-                .serviceDetails("JavaManagementService", "DeleteDrsFile", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -441,7 +471,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteFleetResponse::builder)
                 .logger(LOG, "deleteFleet")
-                .serviceDetails("JavaManagementService", "DeleteFleet", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteFleetRequest::builder)
                 .basePath("/20210610")
@@ -474,7 +507,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteJavaMigrationAnalysisResultResponse::builder)
                 .logger(LOG, "deleteJavaMigrationAnalysisResult")
-                .serviceDetails("JavaManagementService", "DeleteJavaMigrationAnalysisResult", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteJavaMigrationAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/DeleteJavaMigrationAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJavaMigrationAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -505,7 +541,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DeleteJmsPluginResponse::builder)
                 .logger(LOG, "deleteJmsPlugin")
-                .serviceDetails("JavaManagementService", "DeleteJmsPlugin", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DeleteJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/DeleteJmsPlugin")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -537,7 +576,9 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, DeletePerformanceTuningAnalysisResultResponse::builder)
                 .logger(LOG, "deletePerformanceTuningAnalysisResult")
                 .serviceDetails(
-                        "JavaManagementService", "DeletePerformanceTuningAnalysisResult", "")
+                        "JavaManagementService",
+                        "DeletePerformanceTuningAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/DeletePerformanceTuningAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeletePerformanceTuningAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -568,7 +609,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, DisableDrsResponse::builder)
                 .logger(LOG, "disableDrs")
-                .serviceDetails("JavaManagementService", "DisableDrs", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "DisableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(DisableDrsRequest::builder)
                 .basePath("/20210610")
@@ -599,7 +643,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, EnableDrsResponse::builder)
                 .logger(LOG, "enableDrs")
-                .serviceDetails("JavaManagementService", "EnableDrs", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "EnableDrs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(EnableDrsRequest::builder)
                 .basePath("/20210610")
@@ -633,7 +680,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GenerateAgentDeployScriptResponse::builder)
                 .logger(LOG, "generateAgentDeployScript")
-                .serviceDetails("JavaManagementService", "GenerateAgentDeployScript", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GenerateAgentDeployScript",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateAgentDeployScript")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateAgentDeployScriptRequest::builder)
                 .basePath("/20210610")
@@ -670,7 +720,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GenerateAgentInstallerConfigurationResponse::builder)
                 .logger(LOG, "generateAgentInstallerConfiguration")
-                .serviceDetails("JavaManagementService", "GenerateAgentInstallerConfiguration", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GenerateAgentInstallerConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/GenerateAgentInstallerConfiguration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateAgentInstallerConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -711,7 +764,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GenerateLoadPipelineScriptResponse::builder)
                 .logger(LOG, "generateLoadPipelineScript")
-                .serviceDetails("JavaManagementService", "GenerateLoadPipelineScript", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GenerateLoadPipelineScript",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateLoadPipelineScript")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(GenerateLoadPipelineScriptRequest::builder)
                 .basePath("/20210610")
@@ -748,7 +804,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetCryptoAnalysisResultResponse::builder)
                 .logger(LOG, "getCryptoAnalysisResult")
-                .serviceDetails("JavaManagementService", "GetCryptoAnalysisResult", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetCryptoAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/GetCryptoAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCryptoAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -779,7 +838,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetDrsFileResponse::builder)
                 .logger(LOG, "getDrsFile")
-                .serviceDetails("JavaManagementService", "GetDrsFile", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -809,7 +871,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetExportSettingResponse::builder)
                 .logger(LOG, "getExportSetting")
-                .serviceDetails("JavaManagementService", "GetExportSetting", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportSettingRequest::builder)
                 .basePath("/20210610")
@@ -838,7 +903,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetExportStatusResponse::builder)
                 .logger(LOG, "getExportStatus")
-                .serviceDetails("JavaManagementService", "GetExportStatus", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetExportStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetExportStatusRequest::builder)
                 .basePath("/20210610")
@@ -866,7 +934,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetFleetResponse::builder)
                 .logger(LOG, "getFleet")
-                .serviceDetails("JavaManagementService", "GetFleet", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetRequest::builder)
                 .basePath("/20210610")
@@ -894,7 +965,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetFleetAdvancedFeatureConfigurationResponse::builder)
                 .logger(LOG, "getFleetAdvancedFeatureConfiguration")
-                .serviceDetails("JavaManagementService", "GetFleetAdvancedFeatureConfiguration", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetFleetAdvancedFeatureConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/GetFleetAdvancedFeatureConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetAdvancedFeatureConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -929,7 +1003,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetFleetAgentConfigurationResponse::builder)
                 .logger(LOG, "getFleetAgentConfiguration")
-                .serviceDetails("JavaManagementService", "GetFleetAgentConfiguration", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetFleetAgentConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetFleetAgentConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -958,7 +1035,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetJavaFamilyResponse::builder)
                 .logger(LOG, "getJavaFamily")
-                .serviceDetails("JavaManagementService", "GetJavaFamily", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetJavaFamily",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/GetJavaFamily")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaFamilyRequest::builder)
                 .basePath("/20210610")
@@ -991,7 +1071,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetJavaMigrationAnalysisResultResponse::builder)
                 .logger(LOG, "getJavaMigrationAnalysisResult")
-                .serviceDetails("JavaManagementService", "GetJavaMigrationAnalysisResult", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetJavaMigrationAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/GetJavaMigrationAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaMigrationAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -1023,7 +1106,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetJavaReleaseResponse::builder)
                 .logger(LOG, "getJavaRelease")
-                .serviceDetails("JavaManagementService", "GetJavaRelease", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetJavaRelease",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/GetJavaRelease")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJavaReleaseRequest::builder)
                 .basePath("/20210610")
@@ -1049,7 +1135,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetJmsPluginResponse::builder)
                 .logger(LOG, "getJmsPlugin")
-                .serviceDetails("JavaManagementService", "GetJmsPlugin", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/GetJmsPlugin")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetJmsPluginRequest::builder)
                 .basePath("/20210610")
@@ -1084,7 +1173,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetPerformanceTuningAnalysisResultResponse::builder)
                 .logger(LOG, "getPerformanceTuningAnalysisResult")
-                .serviceDetails("JavaManagementService", "GetPerformanceTuningAnalysisResult", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetPerformanceTuningAnalysisResult",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/GetPerformanceTuningAnalysisResult")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetPerformanceTuningAnalysisResultRequest::builder)
                 .basePath("/20210610")
@@ -1117,7 +1209,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails("JavaManagementService", "GetWorkRequest", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "GetWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20210610")
@@ -1145,7 +1240,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListAgentInstallersResponse::builder)
                 .logger(LOG, "listAgentInstallers")
-                .serviceDetails("JavaManagementService", "ListAgentInstallers", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListAgentInstallers",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/ListAgentInstallers")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAgentInstallersRequest::builder)
                 .basePath("/20210610")
@@ -1179,7 +1277,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListAnnouncementsResponse::builder)
                 .logger(LOG, "listAnnouncements")
-                .serviceDetails("JavaManagementService", "ListAnnouncements", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListAnnouncements",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AnnouncementCollection/ListAnnouncements")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAnnouncementsRequest::builder)
                 .basePath("/20210610")
@@ -1214,7 +1315,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListBlocklistsResponse::builder)
                 .logger(LOG, "listBlocklists")
-                .serviceDetails("JavaManagementService", "ListBlocklists", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListBlocklists",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListBlocklistsRequest::builder)
                 .basePath("/20210610")
@@ -1250,7 +1354,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListCryptoAnalysisResultsResponse::builder)
                 .logger(LOG, "listCryptoAnalysisResults")
-                .serviceDetails("JavaManagementService", "ListCryptoAnalysisResults", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListCryptoAnalysisResults",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/ListCryptoAnalysisResults")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListCryptoAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1294,7 +1401,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListDrsFilesResponse::builder)
                 .logger(LOG, "listDrsFiles")
-                .serviceDetails("JavaManagementService", "ListDrsFiles", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListDrsFiles",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListDrsFilesRequest::builder)
                 .basePath("/20210610")
@@ -1328,7 +1438,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListFleetDiagnosesResponse::builder)
                 .logger(LOG, "listFleetDiagnoses")
-                .serviceDetails("JavaManagementService", "ListFleetDiagnoses", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListFleetDiagnoses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetDiagnosisSummary/ListFleetDiagnoses")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetDiagnosesRequest::builder)
                 .basePath("/20210610")
@@ -1357,7 +1470,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListFleetsResponse::builder)
                 .logger(LOG, "listFleets")
-                .serviceDetails("JavaManagementService", "ListFleets", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListFleets",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListFleetsRequest::builder)
                 .basePath("/20210610")
@@ -1394,7 +1510,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListInstallationSitesResponse::builder)
                 .logger(LOG, "listInstallationSites")
-                .serviceDetails("JavaManagementService", "ListInstallationSites", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListInstallationSites",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -1440,7 +1559,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListJavaFamiliesResponse::builder)
                 .logger(LOG, "listJavaFamilies")
-                .serviceDetails("JavaManagementService", "ListJavaFamilies", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJavaFamilies",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/ListJavaFamilies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaFamiliesRequest::builder)
                 .basePath("/20210610")
@@ -1477,7 +1599,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListJavaMigrationAnalysisResultsResponse::builder)
                 .logger(LOG, "listJavaMigrationAnalysisResults")
-                .serviceDetails("JavaManagementService", "ListJavaMigrationAnalysisResults", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJavaMigrationAnalysisResults",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/ListJavaMigrationAnalysisResults")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaMigrationAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1517,7 +1642,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListJavaReleasesResponse::builder)
                 .logger(LOG, "listJavaReleases")
-                .serviceDetails("JavaManagementService", "ListJavaReleases", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJavaReleases",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJavaReleasesRequest::builder)
                 .basePath("/20210610")
@@ -1552,7 +1680,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListJmsPluginsResponse::builder)
                 .logger(LOG, "listJmsPlugins")
-                .serviceDetails("JavaManagementService", "ListJmsPlugins", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJmsPlugins",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/ListJmsPlugins")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJmsPluginsRequest::builder)
                 .basePath("/20210610")
@@ -1594,7 +1725,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListJreUsageResponse::builder)
                 .logger(LOG, "listJreUsage")
-                .serviceDetails("JavaManagementService", "ListJreUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListJreUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListJreUsageRequest::builder)
                 .basePath("/20210610")
@@ -1634,7 +1768,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListPerformanceTuningAnalysisResultsResponse::builder)
                 .logger(LOG, "listPerformanceTuningAnalysisResults")
-                .serviceDetails("JavaManagementService", "ListPerformanceTuningAnalysisResults", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListPerformanceTuningAnalysisResults",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/ListPerformanceTuningAnalysisResults")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPerformanceTuningAnalysisResultsRequest::builder)
                 .basePath("/20210610")
@@ -1675,7 +1812,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListWorkItemsResponse::builder)
                 .logger(LOG, "listWorkItems")
-                .serviceDetails("JavaManagementService", "ListWorkItems", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListWorkItems",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkItemsRequest::builder)
                 .basePath("/20210610")
@@ -1707,7 +1847,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails("JavaManagementService", "ListWorkRequestErrors", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20210610")
@@ -1739,7 +1882,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails("JavaManagementService", "ListWorkRequestLogs", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20210610")
@@ -1769,7 +1915,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails("JavaManagementService", "ListWorkRequests", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20210610")
@@ -1813,7 +1962,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RemoveFleetInstallationSitesResponse::builder)
                 .logger(LOG, "removeFleetInstallationSites")
-                .serviceDetails("JavaManagementService", "RemoveFleetInstallationSites", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RemoveFleetInstallationSites",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RemoveFleetInstallationSitesRequest::builder)
                 .basePath("/20210610")
@@ -1849,7 +2001,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RequestCryptoAnalysesResponse::builder)
                 .logger(LOG, "requestCryptoAnalyses")
-                .serviceDetails("JavaManagementService", "RequestCryptoAnalyses", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestCryptoAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestCryptoAnalyses")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestCryptoAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -1885,7 +2040,9 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, RequestDeployedApplicationMigrationAnalysesResponse::builder)
                 .logger(LOG, "requestDeployedApplicationMigrationAnalyses")
                 .serviceDetails(
-                        "JavaManagementService", "RequestDeployedApplicationMigrationAnalyses", "")
+                        "JavaManagementService",
+                        "RequestDeployedApplicationMigrationAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestDeployedApplicationMigrationAnalyses")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestDeployedApplicationMigrationAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -1922,7 +2079,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RequestJavaMigrationAnalysesResponse::builder)
                 .logger(LOG, "requestJavaMigrationAnalyses")
-                .serviceDetails("JavaManagementService", "RequestJavaMigrationAnalyses", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestJavaMigrationAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJavaMigrationAnalyses")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJavaMigrationAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -1956,7 +2116,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RequestJfrRecordingsResponse::builder)
                 .logger(LOG, "requestJfrRecordings")
-                .serviceDetails("JavaManagementService", "RequestJfrRecordings", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestJfrRecordings",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJfrRecordings")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestJfrRecordingsRequest::builder)
                 .basePath("/20210610")
@@ -1991,7 +2154,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, RequestPerformanceTuningAnalysesResponse::builder)
                 .logger(LOG, "requestPerformanceTuningAnalyses")
-                .serviceDetails("JavaManagementService", "RequestPerformanceTuningAnalyses", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "RequestPerformanceTuningAnalyses",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestPerformanceTuningAnalyses")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(RequestPerformanceTuningAnalysesRequest::builder)
                 .basePath("/20210610")
@@ -2024,7 +2190,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ScanJavaServerUsageResponse::builder)
                 .logger(LOG, "scanJavaServerUsage")
-                .serviceDetails("JavaManagementService", "ScanJavaServerUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ScanJavaServerUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/ScanJavaServerUsage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanJavaServerUsageRequest::builder)
                 .basePath("/20210610")
@@ -2058,7 +2227,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, ScanLibraryUsageResponse::builder)
                 .logger(LOG, "scanLibraryUsage")
-                .serviceDetails("JavaManagementService", "ScanLibraryUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ScanLibraryUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/ScanLibraryUsage")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ScanLibraryUsageRequest::builder)
                 .basePath("/20210610")
@@ -2092,7 +2264,9 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, SummarizeApplicationInstallationUsageResponse::builder)
                 .logger(LOG, "summarizeApplicationInstallationUsage")
                 .serviceDetails(
-                        "JavaManagementService", "SummarizeApplicationInstallationUsage", "")
+                        "JavaManagementService",
+                        "SummarizeApplicationInstallationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationInstallationUsageSummary/SummarizeApplicationInstallationUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeApplicationInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2151,7 +2325,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeApplicationUsageResponse::builder)
                 .logger(LOG, "summarizeApplicationUsage")
-                .serviceDetails("JavaManagementService", "SummarizeApplicationUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeApplicationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2211,7 +2388,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .serviceDetails(
                         "JavaManagementService",
                         "SummarizeDeployedApplicationInstallationUsage",
-                        "")
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationInstallationUsageSummary/SummarizeDeployedApplicationInstallationUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDeployedApplicationInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2265,7 +2442,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeDeployedApplicationUsageResponse::builder)
                 .logger(LOG, "summarizeDeployedApplicationUsage")
-                .serviceDetails("JavaManagementService", "SummarizeDeployedApplicationUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeDeployedApplicationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationUsage/SummarizeDeployedApplicationUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeDeployedApplicationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2314,7 +2494,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeInstallationUsageResponse::builder)
                 .logger(LOG, "summarizeInstallationUsage")
-                .serviceDetails("JavaManagementService", "SummarizeInstallationUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeInstallationUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeInstallationUsageRequest::builder)
                 .basePath("/20210610")
@@ -2368,7 +2551,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeJavaServerInstanceUsageResponse::builder)
                 .logger(LOG, "summarizeJavaServerInstanceUsage")
-                .serviceDetails("JavaManagementService", "SummarizeJavaServerInstanceUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeJavaServerInstanceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerInstanceUsage/SummarizeJavaServerInstanceUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJavaServerInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -2416,7 +2602,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeJavaServerUsageResponse::builder)
                 .logger(LOG, "summarizeJavaServerUsage")
-                .serviceDetails("JavaManagementService", "SummarizeJavaServerUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeJavaServerUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/SummarizeJavaServerUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJavaServerUsageRequest::builder)
                 .basePath("/20210610")
@@ -2457,7 +2646,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeJreUsageResponse::builder)
                 .logger(LOG, "summarizeJreUsage")
-                .serviceDetails("JavaManagementService", "SummarizeJreUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeJreUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeJreUsageRequest::builder)
                 .basePath("/20210610")
@@ -2509,7 +2701,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeLibraryUsageResponse::builder)
                 .logger(LOG, "summarizeLibraryUsage")
-                .serviceDetails("JavaManagementService", "SummarizeLibraryUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeLibraryUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/SummarizeLibraryUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeLibraryUsageRequest::builder)
                 .basePath("/20210610")
@@ -2556,7 +2751,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeManagedInstanceUsageResponse::builder)
                 .logger(LOG, "summarizeManagedInstanceUsage")
-                .serviceDetails("JavaManagementService", "SummarizeManagedInstanceUsage", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeManagedInstanceUsage",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeManagedInstanceUsageRequest::builder)
                 .basePath("/20210610")
@@ -2612,7 +2810,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, SummarizeResourceInventoryResponse::builder)
                 .logger(LOG, "summarizeResourceInventory")
-                .serviceDetails("JavaManagementService", "SummarizeResourceInventory", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeResourceInventory",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(SummarizeResourceInventoryRequest::builder)
                 .basePath("/20210610")
@@ -2644,7 +2845,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateDrsFileResponse::builder)
                 .logger(LOG, "updateDrsFile")
-                .serviceDetails("JavaManagementService", "UpdateDrsFile", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateDrsFile",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateDrsFileRequest::builder)
                 .basePath("/20210610")
@@ -2677,7 +2881,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateExportSettingResponse::builder)
                 .logger(LOG, "updateExportSetting")
-                .serviceDetails("JavaManagementService", "UpdateExportSetting", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateExportSetting",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateExportSettingRequest::builder)
                 .basePath("/20210610")
@@ -2708,7 +2915,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateFleetResponse::builder)
                 .logger(LOG, "updateFleet")
-                .serviceDetails("JavaManagementService", "UpdateFleet", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateFleet",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetRequest::builder)
                 .basePath("/20210610")
@@ -2742,7 +2952,9 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
         return clientCall(request, UpdateFleetAdvancedFeatureConfigurationResponse::builder)
                 .logger(LOG, "updateFleetAdvancedFeatureConfiguration")
                 .serviceDetails(
-                        "JavaManagementService", "UpdateFleetAdvancedFeatureConfiguration", "")
+                        "JavaManagementService",
+                        "UpdateFleetAdvancedFeatureConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/UpdateFleetAdvancedFeatureConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetAdvancedFeatureConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -2782,7 +2994,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateFleetAgentConfigurationResponse::builder)
                 .logger(LOG, "updateFleetAgentConfiguration")
-                .serviceDetails("JavaManagementService", "UpdateFleetAgentConfiguration", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateFleetAgentConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateFleetAgentConfigurationRequest::builder)
                 .basePath("/20210610")
@@ -2815,7 +3030,10 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
 
         return clientCall(request, UpdateJmsPluginResponse::builder)
                 .logger(LOG, "updateJmsPlugin")
-                .serviceDetails("JavaManagementService", "UpdateJmsPlugin", "")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "UpdateJmsPlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/UpdateJmsPlugin")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateJmsPluginRequest::builder)
                 .basePath("/20210610")

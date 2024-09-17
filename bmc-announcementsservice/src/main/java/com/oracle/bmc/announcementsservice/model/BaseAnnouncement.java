@@ -165,7 +165,15 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         ReportDate("REPORT_DATE"),
         StartTime("START_TIME"),
         TimeDetected("TIME_DETECTED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TimeOneType.class);
 
         private final String value;
         private static java.util.Map<String, TimeOneType> map;
@@ -173,7 +181,9 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (TimeOneType v : TimeOneType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -191,7 +201,10 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid TimeOneType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TimeOneType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -254,7 +267,15 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         EndTime("END_TIME"),
         NewEndTime("NEW_END_TIME"),
         EstimatedEndTime("ESTIMATED_END_TIME"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(TimeTwoType.class);
 
         private final String value;
         private static java.util.Map<String, TimeTwoType> map;
@@ -262,7 +283,9 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (TimeTwoType v : TimeTwoType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -280,7 +303,10 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid TimeTwoType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'TimeTwoType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**
@@ -363,7 +389,15 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         PlannedChangeRescheduled("PLANNED_CHANGE_RESCHEDULED"),
         ProductionEventNotification("PRODUCTION_EVENT_NOTIFICATION"),
         ScheduledMaintenance("SCHEDULED_MAINTENANCE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AnnouncementType.class);
 
         private final String value;
         private static java.util.Map<String, AnnouncementType> map;
@@ -371,7 +405,9 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (AnnouncementType v : AnnouncementType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -389,7 +425,10 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid AnnouncementType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AnnouncementType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The type of announcement. An announcement's type signals its severity. */
@@ -409,7 +448,15 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Active("ACTIVE"),
         Inactive("INACTIVE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LifecycleState.class);
 
         private final String value;
         private static java.util.Map<String, LifecycleState> map;
@@ -417,7 +464,9 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (LifecycleState v : LifecycleState.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -435,7 +484,10 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LifecycleState: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LifecycleState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The current lifecycle state of the announcement. */
@@ -520,7 +572,15 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         Iaas("IAAS"),
         Saas("SAAS"),
         Paas("PAAS"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(PlatformType.class);
 
         private final String value;
         private static java.util.Map<String, PlatformType> map;
@@ -528,7 +588,9 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
         static {
             map = new java.util.HashMap<>();
             for (PlatformType v : PlatformType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -546,7 +608,10 @@ public class BaseAnnouncement extends com.oracle.bmc.http.client.internal.Explic
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid PlatformType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'PlatformType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /** The platform type that this announcement pertains to. */

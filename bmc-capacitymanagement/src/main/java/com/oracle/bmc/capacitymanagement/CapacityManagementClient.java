@@ -219,6 +219,74 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public CreateOccCustomerResponse createOccCustomer(CreateOccCustomerRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOccCustomerDetails(), "createOccCustomerDetails is required");
+
+        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
+
+        return clientCall(request, CreateOccCustomerResponse::builder)
+                .logger(LOG, "createOccCustomer")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomer",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOccCustomerRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .appendPathParam(request.getOccCustomerGroupId())
+                .appendPathParam("occCustomers")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccCustomer.class,
+                        CreateOccCustomerResponse.Builder::occCustomer)
+                .handleResponseHeaderString("etag", CreateOccCustomerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOccCustomerResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", CreateOccCustomerResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public CreateOccCustomerGroupResponse createOccCustomerGroup(
+            CreateOccCustomerGroupRequest request) {
+        Objects.requireNonNull(
+                request.getCreateOccCustomerGroupDetails(),
+                "createOccCustomerGroupDetails is required");
+
+        return clientCall(request, CreateOccCustomerGroupResponse::builder)
+                .logger(LOG, "createOccCustomerGroup")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateOccCustomerGroupRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroup.class,
+                        CreateOccCustomerGroupResponse.Builder::occCustomerGroup)
+                .handleResponseHeaderString("etag", CreateOccCustomerGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateOccCustomerGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", CreateOccCustomerGroupResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
     public DeleteOccAvailabilityCatalogResponse deleteOccAvailabilityCatalog(
             DeleteOccAvailabilityCatalogRequest request) {
 
@@ -275,6 +343,65 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", DeleteOccCapacityRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", DeleteOccCapacityRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public DeleteOccCustomerResponse deleteOccCustomer(DeleteOccCustomerRequest request) {
+
+        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
+
+        Validate.notBlank(request.getOccCustomerId(), "occCustomerId must not be blank");
+
+        return clientCall(request, DeleteOccCustomerResponse::builder)
+                .logger(LOG, "deleteOccCustomer")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomer",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOccCustomerRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .appendPathParam(request.getOccCustomerGroupId())
+                .appendPathParam("occCustomers")
+                .appendPathParam(request.getOccCustomerId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOccCustomerResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", DeleteOccCustomerResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public DeleteOccCustomerGroupResponse deleteOccCustomerGroup(
+            DeleteOccCustomerGroupRequest request) {
+
+        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
+
+        return clientCall(request, DeleteOccCustomerGroupResponse::builder)
+                .logger(LOG, "deleteOccCustomerGroup")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOccCustomerGroupRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .appendPathParam(request.getOccCustomerGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOccCustomerGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", DeleteOccCustomerGroupResponse.Builder::retryAfter)
                 .callSync();
     }
 
@@ -408,6 +535,8 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
         Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
+
         return clientCall(request, ListInternalNamespaceOccOverviewsResponse::builder)
                 .logger(LOG, "listInternalNamespaceOccOverviews")
                 .serviceDetails(
@@ -442,6 +571,100 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListInternalNamespaceOccOverviewsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListInternalOccHandoverResourceBlockDetailsResponse
+            listInternalOccHandoverResourceBlockDetails(
+                    ListInternalOccHandoverResourceBlockDetailsRequest request) {
+        Objects.requireNonNull(
+                request.getOccHandoverResourceBlockId(), "occHandoverResourceBlockId is required");
+
+        return clientCall(request, ListInternalOccHandoverResourceBlockDetailsResponse::builder)
+                .logger(LOG, "listInternalOccHandoverResourceBlockDetails")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlockDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInternalOccHandoverResourceBlockDetailsRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("internal")
+                .appendPathParam("occHandoverResourceBlockDetails")
+                .appendQueryParam(
+                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model
+                                .OccHandoverResourceBlockDetailCollection.class,
+                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder
+                                ::occHandoverResourceBlockDetailCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListInternalOccHandoverResourceBlockDetailsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListInternalOccHandoverResourceBlocksResponse listInternalOccHandoverResourceBlocks(
+            ListInternalOccHandoverResourceBlocksRequest request) {
+        Objects.requireNonNull(request.getNamespace(), "namespace is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
+
+        return clientCall(request, ListInternalOccHandoverResourceBlocksResponse::builder)
+                .logger(LOG, "listInternalOccHandoverResourceBlocks")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlocks",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListInternalOccHandoverResourceBlocksRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("internal")
+                .appendPathParam("occHandoverResourceBlocks")
+                .appendEnumQueryParam("namespace", request.getNamespace())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("occCustomerGroupId", request.getOccCustomerGroupId())
+                .appendQueryParam("handoverResourceName", request.getHandoverResourceName())
+                .appendQueryParam(
+                        "handoverDateGreaterThanOrEqualTo",
+                        request.getHandoverDateGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "handoverDateLessThanOrEqualTo", request.getHandoverDateLessThanOrEqualTo())
+                .appendQueryParam(
+                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockCollection
+                                .class,
+                        ListInternalOccHandoverResourceBlocksResponse.Builder
+                                ::occHandoverResourceBlockCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListInternalOccHandoverResourceBlocksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListInternalOccHandoverResourceBlocksResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -531,6 +754,8 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
             ListOccAvailabilityCatalogsInternalRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
+
         return clientCall(request, ListOccAvailabilityCatalogsInternalResponse::builder)
                 .logger(LOG, "listOccAvailabilityCatalogsInternal")
                 .serviceDetails(
@@ -612,6 +837,8 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
             ListOccCapacityRequestsInternalRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
+        Objects.requireNonNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
+
         return clientCall(request, ListOccCapacityRequestsInternalResponse::builder)
                 .logger(LOG, "listOccCapacityRequestsInternal")
                 .serviceDetails(
@@ -683,6 +910,90 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", ListOccCustomerGroupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOccCustomerGroupsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOccHandoverResourceBlockDetailsResponse listOccHandoverResourceBlockDetails(
+            ListOccHandoverResourceBlockDetailsRequest request) {
+        Objects.requireNonNull(
+                request.getOccHandoverResourceBlockId(), "occHandoverResourceBlockId is required");
+
+        return clientCall(request, ListOccHandoverResourceBlockDetailsResponse::builder)
+                .logger(LOG, "listOccHandoverResourceBlockDetails")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlockDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOccHandoverResourceBlockDetailsRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occHandoverResourceBlockDetails")
+                .appendQueryParam(
+                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model
+                                .OccHandoverResourceBlockDetailCollection.class,
+                        ListOccHandoverResourceBlockDetailsResponse.Builder
+                                ::occHandoverResourceBlockDetailCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOccHandoverResourceBlockDetailsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOccHandoverResourceBlockDetailsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListOccHandoverResourceBlocksResponse listOccHandoverResourceBlocks(
+            ListOccHandoverResourceBlocksRequest request) {
+
+        return clientCall(request, ListOccHandoverResourceBlocksResponse::builder)
+                .logger(LOG, "listOccHandoverResourceBlocks")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlocks",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOccHandoverResourceBlocksRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occHandoverResourceBlocks")
+                .appendEnumQueryParam("namespace", request.getNamespace())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("handoverResourceName", request.getHandoverResourceName())
+                .appendQueryParam(
+                        "handoverDateGreaterThanOrEqualTo",
+                        request.getHandoverDateGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "handoverDateLessThanOrEqualTo", request.getHandoverDateLessThanOrEqualTo())
+                .appendQueryParam(
+                        "occHandoverResourceBlockId", request.getOccHandoverResourceBlockId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccHandoverResourceBlockCollection
+                                .class,
+                        ListOccHandoverResourceBlocksResponse.Builder
+                                ::occHandoverResourceBlockCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOccHandoverResourceBlocksResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListOccHandoverResourceBlocksResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -944,6 +1255,80 @@ public class CapacityManagementClient extends com.oracle.bmc.http.internal.BaseS
                         "opc-request-id", UpdateOccCapacityRequestResponse.Builder::opcRequestId)
                 .handleResponseHeaderInteger(
                         "retry-after", UpdateOccCapacityRequestResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public UpdateOccCustomerResponse updateOccCustomer(UpdateOccCustomerRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateOccCustomerDetails(), "updateOccCustomerDetails is required");
+
+        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
+
+        Validate.notBlank(request.getOccCustomerId(), "occCustomerId must not be blank");
+
+        return clientCall(request, UpdateOccCustomerResponse::builder)
+                .logger(LOG, "updateOccCustomer")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomer",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOccCustomerRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .appendPathParam(request.getOccCustomerGroupId())
+                .appendPathParam("occCustomers")
+                .appendPathParam(request.getOccCustomerId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccCustomer.class,
+                        UpdateOccCustomerResponse.Builder::occCustomer)
+                .handleResponseHeaderString("etag", UpdateOccCustomerResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOccCustomerResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", UpdateOccCustomerResponse.Builder::retryAfter)
+                .callSync();
+    }
+
+    @Override
+    public UpdateOccCustomerGroupResponse updateOccCustomerGroup(
+            UpdateOccCustomerGroupRequest request) {
+        Objects.requireNonNull(
+                request.getUpdateOccCustomerGroupDetails(),
+                "updateOccCustomerGroupDetails is required");
+
+        Validate.notBlank(request.getOccCustomerGroupId(), "occCustomerGroupId must not be blank");
+
+        return clientCall(request, UpdateOccCustomerGroupResponse::builder)
+                .logger(LOG, "updateOccCustomerGroup")
+                .serviceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomerGroup",
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOccCustomerGroupRequest::builder)
+                .basePath("/20231107")
+                .appendPathParam("occCustomerGroups")
+                .appendPathParam(request.getOccCustomerGroupId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.capacitymanagement.model.OccCustomerGroup.class,
+                        UpdateOccCustomerGroupResponse.Builder::occCustomerGroup)
+                .handleResponseHeaderString("etag", UpdateOccCustomerGroupResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOccCustomerGroupResponse.Builder::opcRequestId)
+                .handleResponseHeaderInteger(
+                        "retry-after", UpdateOccCustomerGroupResponse.Builder::retryAfter)
                 .callSync();
     }
 

@@ -131,7 +131,15 @@ public final class HeaderValidationRequestPolicy
         Enforcing("ENFORCING"),
         Permissive("PERMISSIVE"),
         Disabled("DISABLED"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ValidationMode.class);
 
         private final String value;
         private static java.util.Map<String, ValidationMode> map;
@@ -139,7 +147,9 @@ public final class HeaderValidationRequestPolicy
         static {
             map = new java.util.HashMap<>();
             for (ValidationMode v : ValidationMode.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -157,7 +167,10 @@ public final class HeaderValidationRequestPolicy
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ValidationMode: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ValidationMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

@@ -106,7 +106,10 @@ public class FleetAppsManagementRunbooksAsyncClient
 
         return clientCall(request, GetRunbookResponse::builder)
                 .logger(LOG, "getRunbook")
-                .serviceDetails("FleetAppsManagementRunbooks", "GetRunbook", "")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/GetRunbook")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetRunbookRequest::builder)
                 .basePath("/20230831")
@@ -133,7 +136,10 @@ public class FleetAppsManagementRunbooksAsyncClient
 
         return clientCall(request, GetTaskRecordResponse::builder)
                 .logger(LOG, "getTaskRecord")
-                .serviceDetails("FleetAppsManagementRunbooks", "GetTaskRecord", "")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "GetTaskRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/GetTaskRecord")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetTaskRecordRequest::builder)
                 .basePath("/20230831")
@@ -158,7 +164,10 @@ public class FleetAppsManagementRunbooksAsyncClient
 
         return clientCall(request, ListRunbooksResponse::builder)
                 .logger(LOG, "listRunbooks")
-                .serviceDetails("FleetAppsManagementRunbooks", "ListRunbooks", "")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListRunbooks",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/RunbookCollection/ListRunbooks")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRunbooksRequest::builder)
                 .basePath("/20230831")
@@ -196,7 +205,10 @@ public class FleetAppsManagementRunbooksAsyncClient
 
         return clientCall(request, ListTaskRecordsResponse::builder)
                 .logger(LOG, "listTaskRecords")
-                .serviceDetails("FleetAppsManagementRunbooks", "ListTaskRecords", "")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "ListTaskRecords",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecordCollection/ListTaskRecords")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListTaskRecordsRequest::builder)
                 .basePath("/20230831")
