@@ -125,6 +125,44 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public AddOracleManagedCustomEndpointResponse addOracleManagedCustomEndpoint(
+            AddOracleManagedCustomEndpointRequest request) {
+        Objects.requireNonNull(
+                request.getAddOracleManagedCustomEndpointDetails(),
+                "addOracleManagedCustomEndpointDetails is required");
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, AddOracleManagedCustomEndpointResponse::builder)
+                .logger(LOG, "addOracleManagedCustomEndpoint")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "AddOracleManagedCustomEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddOracleManagedCustomEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddOracleManagedCustomEndpointRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("addOracleManagedCustomEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AddOracleManagedCustomEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddOracleManagedCustomEndpointResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeIntegrationInstanceCompartmentResponse changeIntegrationInstanceCompartment(
             ChangeIntegrationInstanceCompartmentRequest request) {
 
@@ -557,6 +595,40 @@ public class IntegrationInstanceClient extends com.oracle.bmc.http.internal.Base
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-previous-page", ListWorkRequestsResponse.Builder::opcPreviousPage)
+                .callSync();
+    }
+
+    @Override
+    public RemoveOracleManagedCustomEndpointResponse removeOracleManagedCustomEndpoint(
+            RemoveOracleManagedCustomEndpointRequest request) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, RemoveOracleManagedCustomEndpointResponse::builder)
+                .logger(LOG, "removeOracleManagedCustomEndpoint")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "RemoveOracleManagedCustomEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveOracleManagedCustomEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveOracleManagedCustomEndpointRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("removeOracleManagedCustomEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RemoveOracleManagedCustomEndpointResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveOracleManagedCustomEndpointResponse.Builder::opcRequestId)
                 .callSync();
     }
 

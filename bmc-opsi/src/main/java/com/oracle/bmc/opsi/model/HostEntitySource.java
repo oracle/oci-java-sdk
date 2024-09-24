@@ -11,6 +11,7 @@ public enum HostEntitySource implements com.oracle.bmc.http.internal.BmcEnum {
     EmManagedExternalHost("EM_MANAGED_EXTERNAL_HOST"),
     MacsManagedCloudHost("MACS_MANAGED_CLOUD_HOST"),
     PeComanagedHost("PE_COMANAGED_HOST"),
+    MacsManagedCloudDbHost("MACS_MANAGED_CLOUD_DB_HOST"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

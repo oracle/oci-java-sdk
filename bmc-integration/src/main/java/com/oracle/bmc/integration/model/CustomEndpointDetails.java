@@ -25,17 +25,26 @@ public final class CustomEndpointDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "hostname",
+        "managedType",
+        "dnsZoneName",
+        "dnsType",
         "certificateSecretId",
         "certificateSecretVersion",
         "alias"
     })
     public CustomEndpointDetails(
             String hostname,
+            ManagedType managedType,
+            String dnsZoneName,
+            DnsType dnsType,
             String certificateSecretId,
             Integer certificateSecretVersion,
             String alias) {
         super();
         this.hostname = hostname;
+        this.managedType = managedType;
+        this.dnsZoneName = dnsZoneName;
+        this.dnsType = dnsType;
         this.certificateSecretId = certificateSecretId;
         this.certificateSecretVersion = certificateSecretVersion;
         this.alias = alias;
@@ -56,6 +65,51 @@ public final class CustomEndpointDetails
         public Builder hostname(String hostname) {
             this.hostname = hostname;
             this.__explicitlySet__.add("hostname");
+            return this;
+        }
+        /** Indicates if custom endpoint is managed by oracle or customer. */
+        @com.fasterxml.jackson.annotation.JsonProperty("managedType")
+        private ManagedType managedType;
+
+        /**
+         * Indicates if custom endpoint is managed by oracle or customer.
+         *
+         * @param managedType the value to set
+         * @return this builder
+         */
+        public Builder managedType(ManagedType managedType) {
+            this.managedType = managedType;
+            this.__explicitlySet__.add("managedType");
+            return this;
+        }
+        /** DNS Zone name */
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
+        private String dnsZoneName;
+
+        /**
+         * DNS Zone name
+         *
+         * @param dnsZoneName the value to set
+         * @return this builder
+         */
+        public Builder dnsZoneName(String dnsZoneName) {
+            this.dnsZoneName = dnsZoneName;
+            this.__explicitlySet__.add("dnsZoneName");
+            return this;
+        }
+        /** Type of DNS. */
+        @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
+        private DnsType dnsType;
+
+        /**
+         * Type of DNS.
+         *
+         * @param dnsType the value to set
+         * @return this builder
+         */
+        public Builder dnsType(DnsType dnsType) {
+            this.dnsType = dnsType;
+            this.__explicitlySet__.add("dnsType");
             return this;
         }
         /**
@@ -123,6 +177,9 @@ public final class CustomEndpointDetails
             CustomEndpointDetails model =
                     new CustomEndpointDetails(
                             this.hostname,
+                            this.managedType,
+                            this.dnsZoneName,
+                            this.dnsType,
                             this.certificateSecretId,
                             this.certificateSecretVersion,
                             this.alias);
@@ -136,6 +193,15 @@ public final class CustomEndpointDetails
         public Builder copy(CustomEndpointDetails model) {
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("managedType")) {
+                this.managedType(model.getManagedType());
+            }
+            if (model.wasPropertyExplicitlySet("dnsZoneName")) {
+                this.dnsZoneName(model.getDnsZoneName());
+            }
+            if (model.wasPropertyExplicitlySet("dnsType")) {
+                this.dnsType(model.getDnsType());
             }
             if (model.wasPropertyExplicitlySet("certificateSecretId")) {
                 this.certificateSecretId(model.getCertificateSecretId());
@@ -170,6 +236,136 @@ public final class CustomEndpointDetails
      */
     public String getHostname() {
         return hostname;
+    }
+
+    /** Indicates if custom endpoint is managed by oracle or customer. */
+    public enum ManagedType implements com.oracle.bmc.http.internal.BmcEnum {
+        OracleManaged("ORACLE_MANAGED"),
+        CustomerManaged("CUSTOMER_MANAGED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ManagedType.class);
+
+        private final String value;
+        private static java.util.Map<String, ManagedType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ManagedType v : ManagedType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ManagedType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ManagedType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ManagedType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Indicates if custom endpoint is managed by oracle or customer. */
+    @com.fasterxml.jackson.annotation.JsonProperty("managedType")
+    private final ManagedType managedType;
+
+    /**
+     * Indicates if custom endpoint is managed by oracle or customer.
+     *
+     * @return the value
+     */
+    public ManagedType getManagedType() {
+        return managedType;
+    }
+
+    /** DNS Zone name */
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsZoneName")
+    private final String dnsZoneName;
+
+    /**
+     * DNS Zone name
+     *
+     * @return the value
+     */
+    public String getDnsZoneName() {
+        return dnsZoneName;
+    }
+
+    /** Type of DNS. */
+    public enum DnsType implements com.oracle.bmc.http.internal.BmcEnum {
+        Oci("OCI"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DnsType.class);
+
+        private final String value;
+        private static java.util.Map<String, DnsType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DnsType v : DnsType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DnsType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DnsType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DnsType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Type of DNS. */
+    @com.fasterxml.jackson.annotation.JsonProperty("dnsType")
+    private final DnsType dnsType;
+
+    /**
+     * Type of DNS.
+     *
+     * @return the value
+     */
+    public DnsType getDnsType() {
+        return dnsType;
     }
 
     /**
@@ -239,6 +435,9 @@ public final class CustomEndpointDetails
         sb.append("CustomEndpointDetails(");
         sb.append("super=").append(super.toString());
         sb.append("hostname=").append(String.valueOf(this.hostname));
+        sb.append(", managedType=").append(String.valueOf(this.managedType));
+        sb.append(", dnsZoneName=").append(String.valueOf(this.dnsZoneName));
+        sb.append(", dnsType=").append(String.valueOf(this.dnsType));
         sb.append(", certificateSecretId=").append(String.valueOf(this.certificateSecretId));
         sb.append(", certificateSecretVersion=")
                 .append(String.valueOf(this.certificateSecretVersion));
@@ -258,6 +457,9 @@ public final class CustomEndpointDetails
 
         CustomEndpointDetails other = (CustomEndpointDetails) o;
         return java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.managedType, other.managedType)
+                && java.util.Objects.equals(this.dnsZoneName, other.dnsZoneName)
+                && java.util.Objects.equals(this.dnsType, other.dnsType)
                 && java.util.Objects.equals(this.certificateSecretId, other.certificateSecretId)
                 && java.util.Objects.equals(
                         this.certificateSecretVersion, other.certificateSecretVersion)
@@ -270,6 +472,9 @@ public final class CustomEndpointDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.managedType == null ? 43 : this.managedType.hashCode());
+        result = (result * PRIME) + (this.dnsZoneName == null ? 43 : this.dnsZoneName.hashCode());
+        result = (result * PRIME) + (this.dnsType == null ? 43 : this.dnsType.hashCode());
         result =
                 (result * PRIME)
                         + (this.certificateSecretId == null

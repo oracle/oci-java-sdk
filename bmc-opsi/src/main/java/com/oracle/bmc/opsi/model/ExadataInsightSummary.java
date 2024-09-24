@@ -23,6 +23,9 @@ package com.oracle.bmc.opsi.model;
         defaultImpl = ExadataInsightSummary.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudExadataInsightSummary.class,
+            name = "MACS_MANAGED_CLOUD_EXADATA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalExadataInsightSummary.class,
             name = "EM_MANAGED_EXTERNAL_EXADATA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

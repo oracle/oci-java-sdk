@@ -299,6 +299,7 @@ public final class GenerateReportDetails
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
+        Json("JSON"),
         ;
 
         private final String value;

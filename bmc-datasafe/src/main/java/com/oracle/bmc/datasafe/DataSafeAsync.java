@@ -156,6 +156,42 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Appends the allowedSqls with entries from the logs.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateSqlFirewallAllowedSqlsResponse>
+            bulkCreateSqlFirewallAllowedSqls(
+                    BulkCreateSqlFirewallAllowedSqlsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkCreateSqlFirewallAllowedSqlsRequest,
+                                    BulkCreateSqlFirewallAllowedSqlsResponse>
+                            handler);
+
+    /**
+     * Delete multiple allowed sqls from the SQL firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkDeleteSqlFirewallAllowedSqlsResponse>
+            bulkDeleteSqlFirewallAllowedSqls(
+                    BulkDeleteSqlFirewallAllowedSqlsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    BulkDeleteSqlFirewallAllowedSqlsRequest,
+                                    BulkDeleteSqlFirewallAllowedSqlsResponse>
+                            handler);
+
+    /**
      * Calculates the volume of audit events available on the target database to be collected.
      * Measurable up to the defined retention period of the audit target resource.
      *
@@ -1467,6 +1503,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified allowed sql.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSqlFirewallAllowedSqlResponse> deleteSqlFirewallAllowedSql(
+            DeleteSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSqlFirewallAllowedSqlRequest, DeleteSqlFirewallAllowedSqlResponse>
+                    handler);
+
+    /**
      * Deletes the SQL Firewall policy resource.
      *
      * @param request The request object containing the details to send
@@ -2539,6 +2591,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSqlCollectionResponse> getSqlCollection(
             GetSqlCollectionRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSqlCollectionRequest, GetSqlCollectionResponse>
+                    handler);
+
+    /**
+     * Gets a SQL firewall allowed SQL by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSqlFirewallAllowedSqlResponse> getSqlFirewallAllowedSql(
+            GetSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSqlFirewallAllowedSqlRequest, GetSqlFirewallAllowedSqlResponse>
                     handler);
 
     /**
@@ -4453,6 +4521,23 @@ public interface DataSafeAsync extends AutoCloseable {
             PatchSensitiveColumnsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             PatchSensitiveColumnsRequest, PatchSensitiveColumnsResponse>
+                    handler);
+
+    /**
+     * Delete multiple allowed sqls. You can use this operation to delete one or more allowed sqls.
+     * Create and update of multiple allowed sqls is not supported.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PatchSqlFirewallAllowedSqlResponse> patchSqlFirewallAllowedSql(
+            PatchSqlFirewallAllowedSqlRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PatchSqlFirewallAllowedSqlRequest, PatchSqlFirewallAllowedSqlResponse>
                     handler);
 
     /**

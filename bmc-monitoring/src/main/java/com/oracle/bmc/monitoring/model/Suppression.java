@@ -6,7 +6,9 @@ package com.oracle.bmc.monitoring.model;
 
 /**
  * The configuration details for an alarm-wide suppression. For dimension-specific suppressions, see
- * {@link AlarmSuppression}. For information about alarms, see [Alarms
+ * {@link AlarmSuppression}.
+ *
+ * <p>For information about alarms, see [Alarms
  * Overview](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#AlarmsOverview).
  * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model

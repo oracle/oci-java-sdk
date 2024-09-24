@@ -26,6 +26,9 @@ package com.oracle.bmc.opsi.model;
             value = CreateEmManagedExternalExadataInsightDetails.class,
             name = "EM_MANAGED_EXTERNAL_EXADATA"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateMacsManagedCloudExadataInsightDetails.class,
+            name = "MACS_MANAGED_CLOUD_EXADATA"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreatePeComanagedExadataInsightDetails.class,
             name = "PE_COMANAGED_EXADATA")
 })

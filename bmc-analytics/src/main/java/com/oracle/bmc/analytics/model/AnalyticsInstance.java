@@ -33,6 +33,7 @@ public final class AnalyticsInstance
         "capacity",
         "licenseType",
         "emailNotification",
+        "updateChannel",
         "networkEndpointDetails",
         "privateAccessChannels",
         "vanityUrlDetails",
@@ -56,6 +57,7 @@ public final class AnalyticsInstance
             Capacity capacity,
             LicenseType licenseType,
             String emailNotification,
+            UpdateChannel updateChannel,
             NetworkEndpointDetails networkEndpointDetails,
             java.util.Map<String, PrivateAccessChannel> privateAccessChannels,
             java.util.Map<String, VanityUrlDetails> vanityUrlDetails,
@@ -78,6 +80,7 @@ public final class AnalyticsInstance
         this.capacity = capacity;
         this.licenseType = licenseType;
         this.emailNotification = emailNotification;
+        this.updateChannel = updateChannel;
         this.networkEndpointDetails = networkEndpointDetails;
         this.privateAccessChannels = privateAccessChannels;
         this.vanityUrlDetails = vanityUrlDetails;
@@ -225,6 +228,21 @@ public final class AnalyticsInstance
         public Builder emailNotification(String emailNotification) {
             this.emailNotification = emailNotification;
             this.__explicitlySet__.add("emailNotification");
+            return this;
+        }
+        /** Analytics instance update channel. */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+        private UpdateChannel updateChannel;
+
+        /**
+         * Analytics instance update channel.
+         *
+         * @param updateChannel the value to set
+         * @return this builder
+         */
+        public Builder updateChannel(UpdateChannel updateChannel) {
+            this.updateChannel = updateChannel;
+            this.__explicitlySet__.add("updateChannel");
             return this;
         }
 
@@ -461,6 +479,7 @@ public final class AnalyticsInstance
                             this.capacity,
                             this.licenseType,
                             this.emailNotification,
+                            this.updateChannel,
                             this.networkEndpointDetails,
                             this.privateAccessChannels,
                             this.vanityUrlDetails,
@@ -507,6 +526,9 @@ public final class AnalyticsInstance
             }
             if (model.wasPropertyExplicitlySet("emailNotification")) {
                 this.emailNotification(model.getEmailNotification());
+            }
+            if (model.wasPropertyExplicitlySet("updateChannel")) {
+                this.updateChannel(model.getUpdateChannel());
             }
             if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
                 this.networkEndpointDetails(model.getNetworkEndpointDetails());
@@ -670,6 +692,19 @@ public final class AnalyticsInstance
      */
     public String getEmailNotification() {
         return emailNotification;
+    }
+
+    /** Analytics instance update channel. */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+    private final UpdateChannel updateChannel;
+
+    /**
+     * Analytics instance update channel.
+     *
+     * @return the value
+     */
+    public UpdateChannel getUpdateChannel() {
+        return updateChannel;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
@@ -888,6 +923,7 @@ public final class AnalyticsInstance
         sb.append(", capacity=").append(String.valueOf(this.capacity));
         sb.append(", licenseType=").append(String.valueOf(this.licenseType));
         sb.append(", emailNotification=").append(String.valueOf(this.emailNotification));
+        sb.append(", updateChannel=").append(String.valueOf(this.updateChannel));
         sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(", privateAccessChannels=").append(String.valueOf(this.privateAccessChannels));
         sb.append(", vanityUrlDetails=").append(String.valueOf(this.vanityUrlDetails));
@@ -923,6 +959,7 @@ public final class AnalyticsInstance
                 && java.util.Objects.equals(this.capacity, other.capacity)
                 && java.util.Objects.equals(this.licenseType, other.licenseType)
                 && java.util.Objects.equals(this.emailNotification, other.emailNotification)
+                && java.util.Objects.equals(this.updateChannel, other.updateChannel)
                 && java.util.Objects.equals(
                         this.networkEndpointDetails, other.networkEndpointDetails)
                 && java.util.Objects.equals(this.privateAccessChannels, other.privateAccessChannels)
@@ -958,6 +995,9 @@ public final class AnalyticsInstance
         result =
                 (result * PRIME)
                         + (this.emailNotification == null ? 43 : this.emailNotification.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateChannel == null ? 43 : this.updateChannel.hashCode());
         result =
                 (result * PRIME)
                         + (this.networkEndpointDetails == null

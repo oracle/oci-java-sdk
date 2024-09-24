@@ -175,6 +175,15 @@ public class ListAutonomousDatabasesRequest
             getLifecycleState() {
         return lifecycleState;
     }
+    /** A filter to return only resources that not match the given lifecycle state. */
+    private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+            lifecycleStateNotEqualTo;
+
+    /** A filter to return only resources that not match the given lifecycle state. */
+    public com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+            getLifecycleStateNotEqualTo() {
+        return lifecycleStateNotEqualTo;
+    }
     /**
      * A filter to return only autonomous database resources that match the specified workload type.
      */
@@ -423,6 +432,23 @@ public class ListAutonomousDatabasesRequest
             return this;
         }
 
+        /** A filter to return only resources that not match the given lifecycle state. */
+        private com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+                lifecycleStateNotEqualTo = null;
+
+        /**
+         * A filter to return only resources that not match the given lifecycle state.
+         *
+         * @param lifecycleStateNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleStateNotEqualTo(
+                com.oracle.bmc.database.model.AutonomousDatabaseSummary.LifecycleState
+                        lifecycleStateNotEqualTo) {
+            this.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
+            return this;
+        }
+
         /**
          * A filter to return only autonomous database resources that match the specified workload
          * type.
@@ -625,6 +651,7 @@ public class ListAutonomousDatabasesRequest
             sortOrder(o.getSortOrder());
             infrastructureType(o.getInfrastructureType());
             lifecycleState(o.getLifecycleState());
+            lifecycleStateNotEqualTo(o.getLifecycleStateNotEqualTo());
             dbWorkload(o.getDbWorkload());
             dbVersion(o.getDbVersion());
             isFreeTier(o.getIsFreeTier());
@@ -676,6 +703,7 @@ public class ListAutonomousDatabasesRequest
             request.sortOrder = sortOrder;
             request.infrastructureType = infrastructureType;
             request.lifecycleState = lifecycleState;
+            request.lifecycleStateNotEqualTo = lifecycleStateNotEqualTo;
             request.dbWorkload = dbWorkload;
             request.dbVersion = dbVersion;
             request.isFreeTier = isFreeTier;
@@ -687,9 +715,10 @@ public class ListAutonomousDatabasesRequest
             request.resourcePoolLeaderId = resourcePoolLeaderId;
             return request;
             // new ListAutonomousDatabasesRequest(compartmentId, autonomousContainerDatabaseId,
-            // limit, page, sortBy, sortOrder, infrastructureType, lifecycleState, dbWorkload,
-            // dbVersion, isFreeTier, displayName, opcRequestId, isRefreshableClone,
-            // isDataGuardEnabled, isResourcePoolLeader, resourcePoolLeaderId);
+            // limit, page, sortBy, sortOrder, infrastructureType, lifecycleState,
+            // lifecycleStateNotEqualTo, dbWorkload, dbVersion, isFreeTier, displayName,
+            // opcRequestId, isRefreshableClone, isDataGuardEnabled, isResourcePoolLeader,
+            // resourcePoolLeaderId);
         }
     }
 
@@ -708,6 +737,7 @@ public class ListAutonomousDatabasesRequest
                 .sortOrder(sortOrder)
                 .infrastructureType(infrastructureType)
                 .lifecycleState(lifecycleState)
+                .lifecycleStateNotEqualTo(lifecycleStateNotEqualTo)
                 .dbWorkload(dbWorkload)
                 .dbVersion(dbVersion)
                 .isFreeTier(isFreeTier)
@@ -742,6 +772,8 @@ public class ListAutonomousDatabasesRequest
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",infrastructureType=").append(String.valueOf(this.infrastructureType));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(",lifecycleStateNotEqualTo=")
+                .append(String.valueOf(this.lifecycleStateNotEqualTo));
         sb.append(",dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(",dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(",isFreeTier=").append(String.valueOf(this.isFreeTier));
@@ -775,6 +807,8 @@ public class ListAutonomousDatabasesRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.infrastructureType, other.infrastructureType)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(
+                        this.lifecycleStateNotEqualTo, other.lifecycleStateNotEqualTo)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
@@ -810,6 +844,11 @@ public class ListAutonomousDatabasesRequest
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleStateNotEqualTo == null
+                                ? 43
+                                : this.lifecycleStateNotEqualTo.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());

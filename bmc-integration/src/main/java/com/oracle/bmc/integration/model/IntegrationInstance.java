@@ -37,6 +37,7 @@ public final class IntegrationInstance
         "systemTags",
         "isByol",
         "instanceUrl",
+        "instanceDesignTimeUrl",
         "messagePacks",
         "isFileServerEnabled",
         "isVisualBuilderEnabled",
@@ -64,6 +65,7 @@ public final class IntegrationInstance
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isByol,
             String instanceUrl,
+            String instanceDesignTimeUrl,
             Integer messagePacks,
             Boolean isFileServerEnabled,
             Boolean isVisualBuilderEnabled,
@@ -90,6 +92,7 @@ public final class IntegrationInstance
         this.systemTags = systemTags;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
+        this.instanceDesignTimeUrl = instanceDesignTimeUrl;
         this.messagePacks = messagePacks;
         this.isFileServerEnabled = isFileServerEnabled;
         this.isVisualBuilderEnabled = isVisualBuilderEnabled;
@@ -324,6 +327,21 @@ public final class IntegrationInstance
             this.__explicitlySet__.add("instanceUrl");
             return this;
         }
+        /** The Integration Instance Design Time URL */
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+        private String instanceDesignTimeUrl;
+
+        /**
+         * The Integration Instance Design Time URL
+         *
+         * @param instanceDesignTimeUrl the value to set
+         * @return this builder
+         */
+        public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
+            this.instanceDesignTimeUrl = instanceDesignTimeUrl;
+            this.__explicitlySet__.add("instanceDesignTimeUrl");
+            return this;
+        }
         /** The number of configured message packs (if any) */
         @com.fasterxml.jackson.annotation.JsonProperty("messagePacks")
         private Integer messagePacks;
@@ -502,6 +520,7 @@ public final class IntegrationInstance
                             this.systemTags,
                             this.isByol,
                             this.instanceUrl,
+                            this.instanceDesignTimeUrl,
                             this.messagePacks,
                             this.isFileServerEnabled,
                             this.isVisualBuilderEnabled,
@@ -560,6 +579,9 @@ public final class IntegrationInstance
             }
             if (model.wasPropertyExplicitlySet("instanceUrl")) {
                 this.instanceUrl(model.getInstanceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDesignTimeUrl")) {
+                this.instanceDesignTimeUrl(model.getInstanceDesignTimeUrl());
             }
             if (model.wasPropertyExplicitlySet("messagePacks")) {
                 this.messagePacks(model.getMessagePacks());
@@ -754,7 +776,6 @@ public final class IntegrationInstance
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
-        Standby("STANDBY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -902,6 +923,19 @@ public final class IntegrationInstance
      */
     public String getInstanceUrl() {
         return instanceUrl;
+    }
+
+    /** The Integration Instance Design Time URL */
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+    private final String instanceDesignTimeUrl;
+
+    /**
+     * The Integration Instance Design Time URL
+     *
+     * @return the value
+     */
+    public String getInstanceDesignTimeUrl() {
+        return instanceDesignTimeUrl;
     }
 
     /** The number of configured message packs (if any) */
@@ -1204,6 +1238,7 @@ public final class IntegrationInstance
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
+        sb.append(", instanceDesignTimeUrl=").append(String.valueOf(this.instanceDesignTimeUrl));
         sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
         sb.append(", isVisualBuilderEnabled=").append(String.valueOf(this.isVisualBuilderEnabled));
@@ -1246,6 +1281,7 @@ public final class IntegrationInstance
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
+                && java.util.Objects.equals(this.instanceDesignTimeUrl, other.instanceDesignTimeUrl)
                 && java.util.Objects.equals(this.messagePacks, other.messagePacks)
                 && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
                 && java.util.Objects.equals(
@@ -1291,6 +1327,11 @@ public final class IntegrationInstance
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDesignTimeUrl == null
+                                ? 43
+                                : this.instanceDesignTimeUrl.hashCode());
         result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());
         result =
                 (result * PRIME)

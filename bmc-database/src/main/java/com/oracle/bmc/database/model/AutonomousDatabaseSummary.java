@@ -64,6 +64,7 @@ public final class AutonomousDatabaseSummary
         "infrastructureType",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "timeUndeleted",
         "timeCreated",
         "displayName",
         "serviceConsoleUrl",
@@ -185,6 +186,7 @@ public final class AutonomousDatabaseSummary
             InfrastructureType infrastructureType,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            java.util.Date timeUndeleted,
             java.util.Date timeCreated,
             String displayName,
             String serviceConsoleUrl,
@@ -305,6 +307,7 @@ public final class AutonomousDatabaseSummary
         this.infrastructureType = infrastructureType;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.timeUndeleted = timeUndeleted;
         this.timeCreated = timeCreated;
         this.displayName = displayName;
         this.serviceConsoleUrl = serviceConsoleUrl;
@@ -1171,6 +1174,21 @@ public final class AutonomousDatabaseSummary
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+        /** The date and time the Autonomous Database was most recently undeleted. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
+        private java.util.Date timeUndeleted;
+
+        /**
+         * The date and time the Autonomous Database was most recently undeleted.
+         *
+         * @param timeUndeleted the value to set
+         * @return this builder
+         */
+        public Builder timeUndeleted(java.util.Date timeUndeleted) {
+            this.timeUndeleted = timeUndeleted;
+            this.__explicitlySet__.add("timeUndeleted");
             return this;
         }
         /** The date and time the Autonomous Database was created. */
@@ -3023,6 +3041,7 @@ public final class AutonomousDatabaseSummary
                             this.infrastructureType,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.timeUndeleted,
                             this.timeCreated,
                             this.displayName,
                             this.serviceConsoleUrl,
@@ -3226,6 +3245,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("timeUndeleted")) {
+                this.timeUndeleted(model.getTimeUndeleted());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -4341,6 +4363,19 @@ public final class AutonomousDatabaseSummary
      */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
+    }
+
+    /** The date and time the Autonomous Database was most recently undeleted. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
+    private final java.util.Date timeUndeleted;
+
+    /**
+     * The date and time the Autonomous Database was most recently undeleted.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUndeleted() {
+        return timeUndeleted;
     }
 
     /** The date and time the Autonomous Database was created. */
@@ -6784,6 +6819,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", timeUndeleted=").append(String.valueOf(this.timeUndeleted));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
@@ -6958,6 +6994,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.timeUndeleted, other.timeUndeleted)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
@@ -7194,6 +7231,9 @@ public final class AutonomousDatabaseSummary
                         + (this.autonomousContainerDatabaseId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUndeleted == null ? 43 : this.timeUndeleted.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =

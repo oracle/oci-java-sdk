@@ -376,6 +376,7 @@ public final class ReportSummary extends com.oracle.bmc.http.client.internal.Exp
     public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
+        Json("JSON"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

@@ -289,6 +289,8 @@ public final class WorkRequestSummary
         ChangePrivateEndpointOutboundConnection("CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION"),
         EnableProcessAutomation("ENABLE_PROCESS_AUTOMATION"),
         ExtendDataRetention("EXTEND_DATA_RETENTION"),
+        CreateCustomEndpoint("CREATE_CUSTOM_ENDPOINT"),
+        DeleteCustomEndpoint("DELETE_CUSTOM_ENDPOINT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

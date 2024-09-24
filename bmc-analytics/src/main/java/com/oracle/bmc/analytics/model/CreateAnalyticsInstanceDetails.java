@@ -35,6 +35,7 @@ public final class CreateAnalyticsInstanceDetails
         "idcsAccessToken",
         "definedTags",
         "freeformTags",
+        "updateChannel",
         "kmsKeyId",
         "domainId",
         "adminUser",
@@ -52,6 +53,7 @@ public final class CreateAnalyticsInstanceDetails
             String idcsAccessToken,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
+            UpdateChannel updateChannel,
             String kmsKeyId,
             String domainId,
             String adminUser,
@@ -68,6 +70,7 @@ public final class CreateAnalyticsInstanceDetails
         this.idcsAccessToken = idcsAccessToken;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.updateChannel = updateChannel;
         this.kmsKeyId = kmsKeyId;
         this.domainId = domainId;
         this.adminUser = adminUser;
@@ -254,6 +257,21 @@ public final class CreateAnalyticsInstanceDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /** Analytics instance update channel. */
+        @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+        private UpdateChannel updateChannel;
+
+        /**
+         * Analytics instance update channel.
+         *
+         * @param updateChannel the value to set
+         * @return this builder
+         */
+        public Builder updateChannel(UpdateChannel updateChannel) {
+            this.updateChannel = updateChannel;
+            this.__explicitlySet__.add("updateChannel");
+            return this;
+        }
         /**
          * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance.
          * A null value indicates Oracle managed default encryption.
@@ -336,6 +354,7 @@ public final class CreateAnalyticsInstanceDetails
                             this.idcsAccessToken,
                             this.definedTags,
                             this.freeformTags,
+                            this.updateChannel,
                             this.kmsKeyId,
                             this.domainId,
                             this.adminUser,
@@ -380,6 +399,9 @@ public final class CreateAnalyticsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("updateChannel")) {
+                this.updateChannel(model.getUpdateChannel());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -561,6 +583,19 @@ public final class CreateAnalyticsInstanceDetails
         return freeformTags;
     }
 
+    /** Analytics instance update channel. */
+    @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+    private final UpdateChannel updateChannel;
+
+    /**
+     * Analytics instance update channel.
+     *
+     * @return the value
+     */
+    public UpdateChannel getUpdateChannel() {
+        return updateChannel;
+    }
+
     /**
      * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A
      * null value indicates Oracle managed default encryption.
@@ -643,6 +678,7 @@ public final class CreateAnalyticsInstanceDetails
         sb.append(", idcsAccessToken=").append(String.valueOf(this.idcsAccessToken));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", updateChannel=").append(String.valueOf(this.updateChannel));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", domainId=").append(String.valueOf(this.domainId));
         sb.append(", adminUser=").append(String.valueOf(this.adminUser));
@@ -673,6 +709,7 @@ public final class CreateAnalyticsInstanceDetails
                 && java.util.Objects.equals(this.idcsAccessToken, other.idcsAccessToken)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.updateChannel, other.updateChannel)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.domainId, other.domainId)
                 && java.util.Objects.equals(this.adminUser, other.adminUser)
@@ -705,6 +742,9 @@ public final class CreateAnalyticsInstanceDetails
                         + (this.idcsAccessToken == null ? 43 : this.idcsAccessToken.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateChannel == null ? 43 : this.updateChannel.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
         result = (result * PRIME) + (this.adminUser == null ? 43 : this.adminUser.hashCode());
