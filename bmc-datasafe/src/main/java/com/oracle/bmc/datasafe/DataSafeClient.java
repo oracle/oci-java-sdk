@@ -323,6 +323,71 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public BulkCreateSqlFirewallAllowedSqlsResponse bulkCreateSqlFirewallAllowedSqls(
+            BulkCreateSqlFirewallAllowedSqlsRequest request) {
+        Objects.requireNonNull(
+                request.getBulkCreateSqlFirewallAllowedSqlsDetails(),
+                "bulkCreateSqlFirewallAllowedSqlsDetails is required");
+
+        return clientCall(request, BulkCreateSqlFirewallAllowedSqlsResponse::builder)
+                .logger(LOG, "bulkCreateSqlFirewallAllowedSqls")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkCreateSqlFirewallAllowedSqls",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/BulkCreateSqlFirewallAllowedSqls")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSqlFirewallAllowedSqlsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSqlFirewallAllowedSqlsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkCreateSqlFirewallAllowedSqlsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkDeleteSqlFirewallAllowedSqlsResponse bulkDeleteSqlFirewallAllowedSqls(
+            BulkDeleteSqlFirewallAllowedSqlsRequest request) {
+        Objects.requireNonNull(
+                request.getBulkDeleteSqlFirewallAllowedSqlsDetails(),
+                "bulkDeleteSqlFirewallAllowedSqlsDetails is required");
+
+        return clientCall(request, BulkDeleteSqlFirewallAllowedSqlsResponse::builder)
+                .logger(LOG, "bulkDeleteSqlFirewallAllowedSqls")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkDeleteSqlFirewallAllowedSqls",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/BulkDeleteSqlFirewallAllowedSqls")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkDeleteSqlFirewallAllowedSqlsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam("actions")
+                .appendPathParam("bulkDelete")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkDeleteSqlFirewallAllowedSqlsResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        BulkDeleteSqlFirewallAllowedSqlsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CalculateAuditVolumeAvailableResponse calculateAuditVolumeAvailable(
             CalculateAuditVolumeAvailableRequest request) {
 
@@ -2758,6 +2823,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteSqlFirewallAllowedSqlResponse deleteSqlFirewallAllowedSql(
+            DeleteSqlFirewallAllowedSqlRequest request) {
+
+        Validate.notBlank(
+                request.getSqlFirewallAllowedSqlId(), "sqlFirewallAllowedSqlId must not be blank");
+
+        return clientCall(request, DeleteSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "deleteSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/DeleteSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam(request.getSqlFirewallAllowedSqlId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteSqlFirewallAllowedSqlResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteSqlFirewallPolicyResponse deleteSqlFirewallPolicy(
             DeleteSqlFirewallPolicyRequest request) {
 
@@ -4813,6 +4908,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetSqlCollectionResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSqlCollectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSqlFirewallAllowedSqlResponse getSqlFirewallAllowedSql(
+            GetSqlFirewallAllowedSqlRequest request) {
+
+        Validate.notBlank(
+                request.getSqlFirewallAllowedSqlId(), "sqlFirewallAllowedSqlId must not be blank");
+
+        return clientCall(request, GetSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "getSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/GetSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .appendPathParam(request.getSqlFirewallAllowedSqlId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SqlFirewallAllowedSql.class,
+                        GetSqlFirewallAllowedSqlResponse.Builder::sqlFirewallAllowedSql)
+                .handleResponseHeaderString("etag", GetSqlFirewallAllowedSqlResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6956,6 +7081,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("mimeType", request.getMimeType())
                 .appendQueryParam("reportDefinitionId", request.getReportDefinitionId())
                 .appendQueryParam(
                         "timeGeneratedGreaterThanOrEqualTo",
@@ -8843,6 +8969,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         PatchSensitiveColumnsResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PatchSensitiveColumnsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public PatchSqlFirewallAllowedSqlResponse patchSqlFirewallAllowedSql(
+            PatchSqlFirewallAllowedSqlRequest request) {
+        Objects.requireNonNull(
+                request.getPatchSqlFirewallAllowedSqlDetails(),
+                "patchSqlFirewallAllowedSqlDetails is required");
+
+        return clientCall(request, PatchSqlFirewallAllowedSqlResponse::builder)
+                .logger(LOG, "patchSqlFirewallAllowedSql")
+                .serviceDetails(
+                        "DataSafe",
+                        "PatchSqlFirewallAllowedSql",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SqlFirewallAllowedSql/PatchSqlFirewallAllowedSql")
+                .method(com.oracle.bmc.http.client.Method.PATCH)
+                .requestBuilder(PatchSqlFirewallAllowedSqlRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sqlFirewallAllowedSqls")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        PatchSqlFirewallAllowedSqlResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PatchSqlFirewallAllowedSqlResponse.Builder::opcRequestId)
                 .callSync();
     }
 

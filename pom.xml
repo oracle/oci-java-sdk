@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.49.0</version>
+  <version>3.50.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -797,5 +797,7 @@
     <module>bmc-demandsignal</module>
     <module>bmc-fleetappsmanagement</module>
     <module>bmc-delegateaccesscontrol</module>
+    <module>bmc-generativeaiagent</module>
+    <module>bmc-generativeaiagentruntime</module>
   </modules>
 </project>

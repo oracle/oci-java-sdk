@@ -32,6 +32,9 @@ package com.oracle.bmc.database.model;
         defaultImpl = CreateAutonomousDatabaseBase.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UndeleteAutonomousDatabaseDetails.class,
+            name = "UNDELETE_ADB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousDatabaseCloneDetails.class,
             name = "DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -1974,6 +1977,7 @@ public class CreateAutonomousDatabaseBase
         Database("DATABASE"),
         BackupFromId("BACKUP_FROM_ID"),
         BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
+        UndeleteAdb("UNDELETE_ADB"),
         CloneToRefreshable("CLONE_TO_REFRESHABLE"),
         CrossRegionDataguard("CROSS_REGION_DATAGUARD"),
         CrossRegionDisasterRecovery("CROSS_REGION_DISASTER_RECOVERY"),

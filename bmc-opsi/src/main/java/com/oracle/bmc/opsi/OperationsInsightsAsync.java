@@ -194,6 +194,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Change the connection details of a Cloud MACS-managed database insight. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMacsManagedCloudDatabaseInsightConnectionResponse>
+            changeMacsManagedCloudDatabaseInsightConnection(
+                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest,
+                                    ChangeMacsManagedCloudDatabaseInsightConnectionResponse>
+                            handler);
+
+    /**
      * Moves a news report resource from one compartment identifier to another. When provided,
      * If-Match is checked against ETag values of the resource.
      *
@@ -3084,6 +3103,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     SummarizeSqlStatisticsTimeSeriesByPlanRequest,
                                     SummarizeSqlStatisticsTimeSeriesByPlanResponse>
+                            handler);
+
+    /**
+     * Test the connection details of a Cloud MACS-managed database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TestMacsManagedCloudDatabaseInsightConnectionResponse>
+            testMacsManagedCloudDatabaseInsightConnection(
+                    TestMacsManagedCloudDatabaseInsightConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TestMacsManagedCloudDatabaseInsightConnectionRequest,
+                                    TestMacsManagedCloudDatabaseInsightConnectionResponse>
                             handler);
 
     /**

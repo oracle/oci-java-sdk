@@ -352,7 +352,6 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
     @Override
     public ListAlarmSuppressionsResponse listAlarmSuppressions(
             ListAlarmSuppressionsRequest request) {
-        Objects.requireNonNull(request.getAlarmId(), "alarmId is required");
 
         return clientCall(request, ListAlarmSuppressionsResponse::builder)
                 .logger(LOG, "listAlarmSuppressions")
@@ -367,6 +366,11 @@ public class MonitoringClient extends com.oracle.bmc.http.internal.BaseSyncClien
                 .appendQueryParam("alarmId", request.getAlarmId())
                 .appendQueryParam("displayName", request.getDisplayName())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("level", request.getLevel())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("targetType", request.getTargetType())
+                .appendQueryParam("isAllSuppressions", request.getIsAllSuppressions())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendQueryParam("page", request.getPage())

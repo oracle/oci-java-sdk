@@ -35,6 +35,9 @@ package com.oracle.bmc.opsi.model;
             value = PeComanagedManagedExternalDatabaseConfigurationSummary.class,
             name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDatabaseConfigurationSummary.class,
+            name = "MACS_MANAGED_CLOUD_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = MdsMysqlDatabaseConfigurationSummary.class,
             name = "MDS_MYSQL_DATABASE_SYSTEM")
 })

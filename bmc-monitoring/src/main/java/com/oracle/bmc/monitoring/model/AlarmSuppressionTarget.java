@@ -24,7 +24,10 @@ package com.oracle.bmc.monitoring.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AlarmSuppressionAlarmTarget.class,
-            name = "ALARM")
+            name = "ALARM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AlarmSuppressionCompartmentTarget.class,
+            name = "COMPARTMENT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -79,6 +82,7 @@ public class AlarmSuppressionTarget
     /** The type of the alarm suppression target. */
     public enum TargetType implements com.oracle.bmc.http.internal.BmcEnum {
         Alarm("ALARM"),
+        Compartment("COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

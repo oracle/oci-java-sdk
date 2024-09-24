@@ -6165,6 +6165,40 @@ public interface DatabaseAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Sets a new version of an existing [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetDbKeyVersionResponse> setDbKeyVersion(
+            SetDbKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetDbKeyVersionRequest, SetDbKeyVersionResponse>
+                    handler);
+
+    /**
+     * Sets a new version of an existing [Vault
+     * service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm)
+     * key.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetPdbKeyVersionResponse> setPdbKeyVersion(
+            SetPdbKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetPdbKeyVersionRequest, SetPdbKeyVersionResponse>
+                    handler);
+
+    /**
      * This operation shrinks the current allocated storage down to the current actual used data
      * storage (actualUsedDataStorageSizeInTBs). The if the base storage value for the database
      * (dataStorageSizeInTBs) is larger than the actualUsedDataStorageSizeInTBs value, you are

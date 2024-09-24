@@ -5,7 +5,7 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * A summary of properties for the specified dimension-specific alarm suppression. <br>
+ * A summary of properties for the specified alarm suppression. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,6 +27,8 @@ public final class AlarmSuppressionSummary
         "id",
         "compartmentId",
         "alarmSuppressionTarget",
+        "level",
+        "suppressionConditions",
         "displayName",
         "description",
         "dimensions",
@@ -42,6 +44,8 @@ public final class AlarmSuppressionSummary
             String id,
             String compartmentId,
             AlarmSuppressionTarget alarmSuppressionTarget,
+            AlarmSuppression.Level level,
+            java.util.List<SuppressionCondition> suppressionConditions,
             String displayName,
             String description,
             java.util.Map<String, String> dimensions,
@@ -56,6 +60,8 @@ public final class AlarmSuppressionSummary
         this.id = id;
         this.compartmentId = compartmentId;
         this.alarmSuppressionTarget = alarmSuppressionTarget;
+        this.level = level;
+        this.suppressionConditions = suppressionConditions;
         this.displayName = displayName;
         this.description = description;
         this.dimensions = dimensions;
@@ -115,6 +121,49 @@ public final class AlarmSuppressionSummary
         public Builder alarmSuppressionTarget(AlarmSuppressionTarget alarmSuppressionTarget) {
             this.alarmSuppressionTarget = alarmSuppressionTarget;
             this.__explicitlySet__.add("alarmSuppressionTarget");
+            return this;
+        }
+        /**
+         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+         * specified dimensions.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("level")
+        private AlarmSuppression.Level level;
+
+        /**
+         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+         * specified dimensions.
+         *
+         * @param level the value to set
+         * @return this builder
+         */
+        public Builder level(AlarmSuppression.Level level) {
+            this.level = level;
+            this.__explicitlySet__.add("level");
+            return this;
+        }
+        /**
+         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * }]}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+        private java.util.List<SuppressionCondition> suppressionConditions;
+
+        /**
+         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * }]}
+         *
+         * @param suppressionConditions the value to set
+         * @return this builder
+         */
+        public Builder suppressionConditions(
+                java.util.List<SuppressionCondition> suppressionConditions) {
+            this.suppressionConditions = suppressionConditions;
+            this.__explicitlySet__.add("suppressionConditions");
             return this;
         }
         /**
@@ -348,6 +397,8 @@ public final class AlarmSuppressionSummary
                             this.id,
                             this.compartmentId,
                             this.alarmSuppressionTarget,
+                            this.level,
+                            this.suppressionConditions,
                             this.displayName,
                             this.description,
                             this.dimensions,
@@ -374,6 +425,12 @@ public final class AlarmSuppressionSummary
             }
             if (model.wasPropertyExplicitlySet("alarmSuppressionTarget")) {
                 this.alarmSuppressionTarget(model.getAlarmSuppressionTarget());
+            }
+            if (model.wasPropertyExplicitlySet("level")) {
+                this.level(model.getLevel());
+            }
+            if (model.wasPropertyExplicitlySet("suppressionConditions")) {
+                this.suppressionConditions(model.getSuppressionConditions());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -457,6 +514,42 @@ public final class AlarmSuppressionSummary
 
     public AlarmSuppressionTarget getAlarmSuppressionTarget() {
         return alarmSuppressionTarget;
+    }
+
+    /**
+     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+     * specified dimensions.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("level")
+    private final AlarmSuppression.Level level;
+
+    /**
+     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+     * specified dimensions.
+     *
+     * @return the value
+     */
+    public AlarmSuppression.Level getLevel() {
+        return level;
+    }
+
+    /**
+     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+    private final java.util.List<SuppressionCondition> suppressionConditions;
+
+    /**
+     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
+     *
+     * @return the value
+     */
+    public java.util.List<SuppressionCondition> getSuppressionConditions() {
+        return suppressionConditions;
     }
 
     /**
@@ -677,6 +770,8 @@ public final class AlarmSuppressionSummary
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", alarmSuppressionTarget=").append(String.valueOf(this.alarmSuppressionTarget));
+        sb.append(", level=").append(String.valueOf(this.level));
+        sb.append(", suppressionConditions=").append(String.valueOf(this.suppressionConditions));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
@@ -705,6 +800,8 @@ public final class AlarmSuppressionSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.alarmSuppressionTarget, other.alarmSuppressionTarget)
+                && java.util.Objects.equals(this.level, other.level)
+                && java.util.Objects.equals(this.suppressionConditions, other.suppressionConditions)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
@@ -731,6 +828,12 @@ public final class AlarmSuppressionSummary
                         + (this.alarmSuppressionTarget == null
                                 ? 43
                                 : this.alarmSuppressionTarget.hashCode());
+        result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.suppressionConditions == null
+                                ? 43
+                                : this.suppressionConditions.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());

@@ -110,7 +110,11 @@ public interface Monitoring extends AutoCloseable {
     CreateAlarmResponse createAlarm(CreateAlarmRequest request);
 
     /**
-     * Creates a dimension-specific suppression for an alarm.
+     * Creates a new alarm suppression at the specified level (alarm-wide or dimension-specific).
+     * For more information, see [Adding an Alarm-wide
+     * Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/add-alarm-suppression.htm)
+     * and [Adding a Dimension-Specific Alarm
+     * Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/create-alarm-suppression.htm).
      *
      * <p>For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -157,7 +161,10 @@ public interface Monitoring extends AutoCloseable {
     DeleteAlarmResponse deleteAlarm(DeleteAlarmRequest request);
 
     /**
-     * Deletes the specified alarm suppression.
+     * Deletes the specified alarm suppression. For more information, see [Removing an Alarm-wide
+     * Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/remove-alarm-suppression.htm)
+     * and [Removing a Dimension-Specific Alarm
+     * Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/delete-alarm-suppression.htm).
      *
      * <p>For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -228,7 +235,8 @@ public interface Monitoring extends AutoCloseable {
     GetAlarmHistoryResponse getAlarmHistory(GetAlarmHistoryRequest request);
 
     /**
-     * Gets the specified alarm suppression.
+     * Gets the specified alarm suppression. For more information, see [Getting an Alarm-wide
+     * Suppression](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/get-alarm-suppression.htm).
      *
      * <p>For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -252,8 +260,8 @@ public interface Monitoring extends AutoCloseable {
     GetAlarmSuppressionResponse getAlarmSuppression(GetAlarmSuppressionRequest request);
 
     /**
-     * Lists alarm suppressions for the specified alarm. Only dimension-level suppressions are
-     * listed. Alarm-level suppressions are not listed.
+     * Lists alarm suppressions for the specified alarm. For more information, see [Listing Alarm
+     * Suppressions](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-suppression.htm).
      *
      * <p>For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -303,7 +311,9 @@ public interface Monitoring extends AutoCloseable {
      * List the status of each alarm in the specified compartment. Status is collective, across all
      * metric streams in the alarm. To list alarm status for each metric stream, use {@link
      * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. Optionally
-     * filter by resource or status value. For more information, see [Listing Alarm
+     * filter by resource or status value.
+     *
+     * <p>For more information, see [Listing Alarm
      * Statuses](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status.htm).
      * For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).
@@ -422,7 +432,9 @@ public interface Monitoring extends AutoCloseable {
     /**
      * Lists the current alarm status of each metric stream, where status is derived from the metric
      * stream's last associated transition. Optionally filter by status value and one or more
-     * dimension key-value pairs. For more information, see [Listing Metric Stream Status in an
+     * dimension key-value pairs.
+     *
+     * <p>For more information, see [Listing Metric Stream Status in an
      * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/list-alarm-status-metric-stream.htm).
      *
      * <p>For important limits information, see [Limits on
@@ -448,7 +460,9 @@ public interface Monitoring extends AutoCloseable {
 
     /**
      * Returns history of suppressions for the specified alarm, including both dimension-specific
-     * and and alarm-wide suppressions.
+     * and and alarm-wide suppressions. For more information, see [Getting Suppression History for
+     * an
+     * Alarm](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Tasks/summarize-alarm-suppression-history.htm).
      *
      * <p>For important limits information, see [Limits on
      * Monitoring](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#limits).

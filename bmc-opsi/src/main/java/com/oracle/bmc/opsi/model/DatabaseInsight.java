@@ -32,6 +32,9 @@ package com.oracle.bmc.opsi.model;
             value = PeComanagedDatabaseInsight.class,
             name = "PE_COMANAGED_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDatabaseInsight.class,
+            name = "MACS_MANAGED_CLOUD_DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AutonomousDatabaseInsight.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

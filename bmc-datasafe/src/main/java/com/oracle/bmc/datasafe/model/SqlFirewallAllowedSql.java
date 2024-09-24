@@ -590,7 +590,15 @@ public final class SqlFirewallAllowedSql
     public enum SqlLevel implements com.oracle.bmc.http.internal.BmcEnum {
         UserIssuedSql("USER_ISSUED_SQL"),
         AllSql("ALL_SQL"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SqlLevel.class);
 
         private final String value;
         private static java.util.Map<String, SqlLevel> map;
@@ -598,7 +606,9 @@ public final class SqlFirewallAllowedSql
         static {
             map = new java.util.HashMap<>();
             for (SqlLevel v : SqlLevel.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -616,7 +626,10 @@ public final class SqlFirewallAllowedSql
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid SqlLevel: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SqlLevel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

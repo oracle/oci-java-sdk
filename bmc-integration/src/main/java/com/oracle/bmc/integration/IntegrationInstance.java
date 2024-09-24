@@ -63,6 +63,23 @@ public interface IntegrationInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Enable Oracle Managed Custom Endpoint for given integration instance.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/AddOracleManagedCustomEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AddOracleManagedCustomEndpoint API.
+     */
+    AddOracleManagedCustomEndpointResponse addOracleManagedCustomEndpoint(
+            AddOracleManagedCustomEndpointRequest request);
+
+    /**
      * Change the compartment for an integration instance
      *
      * @param request The request object containing the details to send
@@ -276,6 +293,24 @@ public interface IntegrationInstance extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Remove Oracle Managed Custom Endpoint for given integration instance that was previously
+     * enabled.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/RemoveOracleManagedCustomEndpointExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RemoveOracleManagedCustomEndpoint API.
+     */
+    RemoveOracleManagedCustomEndpointResponse removeOracleManagedCustomEndpoint(
+            RemoveOracleManagedCustomEndpointRequest request);
 
     /**
      * Start an integration instance that was previously in an INACTIVE state

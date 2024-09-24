@@ -64,12 +64,12 @@ public final class HostContainers extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("containerName");
             return this;
         }
-        /** Container Image (may include tag version) */
+        /** Container Image */
         @com.fasterxml.jackson.annotation.JsonProperty("containerImage")
         private String containerImage;
 
         /**
-         * Container Image (may include tag version)
+         * Container Image
          *
          * @param containerImage the value to set
          * @return this builder
@@ -182,12 +182,12 @@ public final class HostContainers extends HostPerformanceMetricGroup {
         return containerName;
     }
 
-    /** Container Image (may include tag version) */
+    /** Container Image */
     @com.fasterxml.jackson.annotation.JsonProperty("containerImage")
     private final String containerImage;
 
     /**
-     * Container Image (may include tag version)
+     * Container Image
      *
      * @return the value
      */

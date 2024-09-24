@@ -209,7 +209,8 @@ public final class AlarmStatusSummary
          * The status of this alarm. Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link
          * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * Example: {@code FIRING}
+         *
+         * <p>Example: {@code FIRING}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private Status status;
@@ -218,7 +219,8 @@ public final class AlarmStatusSummary
          * The status of this alarm. Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link
          * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
-         * Example: {@code FIRING}
+         *
+         * <p>Example: {@code FIRING}
          *
          * @param status the value to set
          * @return this builder
@@ -484,8 +486,9 @@ public final class AlarmStatusSummary
     /**
      * The status of this alarm. Status is collective, across all metric streams in the alarm. To
      * list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. Example:
-     * {@code FIRING}
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * <p>Example: {@code FIRING}
      */
     public enum Status implements com.oracle.bmc.http.internal.BmcEnum {
         Firing("FIRING"),
@@ -535,8 +538,9 @@ public final class AlarmStatusSummary
     /**
      * The status of this alarm. Status is collective, across all metric streams in the alarm. To
      * list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. Example:
-     * {@code FIRING}
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * <p>Example: {@code FIRING}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final Status status;
@@ -544,8 +548,9 @@ public final class AlarmStatusSummary
     /**
      * The status of this alarm. Status is collective, across all metric streams in the alarm. To
      * list alarm status for each metric stream, use {@link
-     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}. Example:
-     * {@code FIRING}
+     * #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     *
+     * <p>Example: {@code FIRING}
      *
      * @return the value
      */

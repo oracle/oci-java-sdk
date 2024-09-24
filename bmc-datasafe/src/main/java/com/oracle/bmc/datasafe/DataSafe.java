@@ -161,6 +161,40 @@ public interface DataSafe extends AutoCloseable {
             ApplySdmMaskingPolicyDifferenceRequest request);
 
     /**
+     * Appends the allowedSqls with entries from the logs.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/BulkCreateSqlFirewallAllowedSqlsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BulkCreateSqlFirewallAllowedSqls API.
+     */
+    BulkCreateSqlFirewallAllowedSqlsResponse bulkCreateSqlFirewallAllowedSqls(
+            BulkCreateSqlFirewallAllowedSqlsRequest request);
+
+    /**
+     * Delete multiple allowed sqls from the SQL firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/BulkDeleteSqlFirewallAllowedSqlsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BulkDeleteSqlFirewallAllowedSqls API.
+     */
+    BulkDeleteSqlFirewallAllowedSqlsResponse bulkDeleteSqlFirewallAllowedSqls(
+            BulkDeleteSqlFirewallAllowedSqlsRequest request);
+
+    /**
      * Calculates the volume of audit events available on the target database to be collected.
      * Measurable up to the defined retention period of the audit target resource.
      *
@@ -1459,6 +1493,23 @@ public interface DataSafe extends AutoCloseable {
     DeleteSqlCollectionResponse deleteSqlCollection(DeleteSqlCollectionRequest request);
 
     /**
+     * Deletes the specified allowed sql.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSqlFirewallAllowedSqlExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSqlFirewallAllowedSql API.
+     */
+    DeleteSqlFirewallAllowedSqlResponse deleteSqlFirewallAllowedSql(
+            DeleteSqlFirewallAllowedSqlRequest request);
+
+    /**
      * Deletes the SQL Firewall policy resource.
      *
      * @param request The request object containing the details to send
@@ -2542,6 +2593,23 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     GetSqlCollectionResponse getSqlCollection(GetSqlCollectionRequest request);
+
+    /**
+     * Gets a SQL firewall allowed SQL by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSqlFirewallAllowedSqlExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSqlFirewallAllowedSql API.
+     */
+    GetSqlFirewallAllowedSqlResponse getSqlFirewallAllowedSql(
+            GetSqlFirewallAllowedSqlRequest request);
 
     /**
      * Gets a SQL Firewall policy by identifier.
@@ -4469,6 +4537,24 @@ public interface DataSafe extends AutoCloseable {
      *     PatchSensitiveColumns API.
      */
     PatchSensitiveColumnsResponse patchSensitiveColumns(PatchSensitiveColumnsRequest request);
+
+    /**
+     * Delete multiple allowed sqls. You can use this operation to delete one or more allowed sqls.
+     * Create and update of multiple allowed sqls is not supported.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/PatchSqlFirewallAllowedSqlExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     PatchSqlFirewallAllowedSql API.
+     */
+    PatchSqlFirewallAllowedSqlResponse patchSqlFirewallAllowedSql(
+            PatchSqlFirewallAllowedSqlRequest request);
 
     /**
      * Creates new target-alert policy associations that will be applied on the target database.

@@ -414,6 +414,46 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
     }
 
     @Override
+    public ChangeMacsManagedCloudDatabaseInsightConnectionResponse
+            changeMacsManagedCloudDatabaseInsightConnection(
+                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest request) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeMacsManagedCloudDatabaseInsightConnectionDetails(),
+                "changeMacsManagedCloudDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, ChangeMacsManagedCloudDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "changeMacsManagedCloudDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeMacsManagedCloudDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeMacsManagedCloudDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeMacsManagedCloudDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeMacsManagedCloudDatabaseInsightConnectionDetails")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeNewsReportCompartmentResponse changeNewsReportCompartment(
             ChangeNewsReportCompartmentRequest request) {
 
@@ -3671,6 +3711,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -6487,6 +6528,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -6649,6 +6691,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -6796,6 +6839,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -6874,6 +6918,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -6956,6 +7001,7 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                         "freeformTagExists",
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -8262,6 +8308,43 @@ public class OperationsInsightsClient extends com.oracle.bmc.http.internal.BaseS
                 .handleResponseHeaderString(
                         "opc-next-page",
                         SummarizeSqlStatisticsTimeSeriesByPlanResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public TestMacsManagedCloudDatabaseInsightConnectionResponse
+            testMacsManagedCloudDatabaseInsightConnection(
+                    TestMacsManagedCloudDatabaseInsightConnectionRequest request) {
+        Objects.requireNonNull(
+                request.getTestMacsManagedCloudDatabaseInsightConnectionDetails(),
+                "testMacsManagedCloudDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, TestMacsManagedCloudDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "testMacsManagedCloudDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "TestMacsManagedCloudDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/TestMacsManagedCloudDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(TestMacsManagedCloudDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam("actions")
+                .appendPathParam("testMacsManagedCloudDatabaseInsightConnectionDetails")
+                .appendQueryParam("databaseId", request.getDatabaseId())
+                .appendQueryParam("id", request.getId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        TestMacsManagedCloudDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        TestMacsManagedCloudDatabaseInsightConnectionResponse.Builder::opcRequestId)
                 .callSync();
     }
 

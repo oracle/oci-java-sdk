@@ -5,7 +5,7 @@
 package com.oracle.bmc.monitoring.model;
 
 /**
- * The configuration details for creating a dimension-specific alarm suppression. <br>
+ * The configuration details for creating an alarm suppression. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -25,25 +25,30 @@ public final class CreateAlarmSuppressionDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "alarmSuppressionTarget",
+        "level",
         "displayName",
         "description",
         "dimensions",
         "timeSuppressFrom",
         "timeSuppressUntil",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "suppressionConditions"
     })
     public CreateAlarmSuppressionDetails(
             AlarmSuppressionTarget alarmSuppressionTarget,
+            AlarmSuppression.Level level,
             String displayName,
             String description,
             java.util.Map<String, String> dimensions,
             java.util.Date timeSuppressFrom,
             java.util.Date timeSuppressUntil,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<SuppressionCondition> suppressionConditions) {
         super();
         this.alarmSuppressionTarget = alarmSuppressionTarget;
+        this.level = level;
         this.displayName = displayName;
         this.description = description;
         this.dimensions = dimensions;
@@ -51,6 +56,7 @@ public final class CreateAlarmSuppressionDetails
         this.timeSuppressUntil = timeSuppressUntil;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.suppressionConditions = suppressionConditions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -62,6 +68,31 @@ public final class CreateAlarmSuppressionDetails
         public Builder alarmSuppressionTarget(AlarmSuppressionTarget alarmSuppressionTarget) {
             this.alarmSuppressionTarget = alarmSuppressionTarget;
             this.__explicitlySet__.add("alarmSuppressionTarget");
+            return this;
+        }
+        /**
+         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+         * specified dimensions.
+         *
+         * <p>Defaut: {@code DIMENSION}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("level")
+        private AlarmSuppression.Level level;
+
+        /**
+         * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+         * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+         * specified dimensions.
+         *
+         * <p>Defaut: {@code DIMENSION}
+         *
+         * @param level the value to set
+         * @return this builder
+         */
+        public Builder level(AlarmSuppression.Level level) {
+            this.level = level;
+            this.__explicitlySet__.add("level");
             return this;
         }
         /**
@@ -119,10 +150,11 @@ public final class CreateAlarmSuppressionDetails
          * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
          * suppression.
          *
-         * <p>The value cannot be an empty object. Only a single value is allowed per key. No
-         * grouping of multiple values is allowed under the same key. Maximum characters (after
-         * serialization): 4000. This maximum satisfies typical use cases. The response for an
-         * exceeded maximum is {@code HTTP 400} with an "dimensions values are too long" message.
+         * <p>This is required only when the value of level is {@code DIMENSION}. If required, the
+         * value cannot be an empty object. Only a single value is allowed per key. No grouping of
+         * multiple values is allowed under the same key. Maximum characters (after serialization):
+         * 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is
+         * {@code HTTP 400} with an "dimensions values are too long" message.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
         private java.util.Map<String, String> dimensions;
@@ -134,10 +166,11 @@ public final class CreateAlarmSuppressionDetails
          * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
          * suppression.
          *
-         * <p>The value cannot be an empty object. Only a single value is allowed per key. No
-         * grouping of multiple values is allowed under the same key. Maximum characters (after
-         * serialization): 4000. This maximum satisfies typical use cases. The response for an
-         * exceeded maximum is {@code HTTP 400} with an "dimensions values are too long" message.
+         * <p>This is required only when the value of level is {@code DIMENSION}. If required, the
+         * value cannot be an empty object. Only a single value is allowed per key. No grouping of
+         * multiple values is allowed under the same key. Maximum characters (after serialization):
+         * 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is
+         * {@code HTTP 400} with an "dimensions values are too long" message.
          *
          * @param dimensions the value to set
          * @return this builder
@@ -232,6 +265,28 @@ public final class CreateAlarmSuppressionDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * }]}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+        private java.util.List<SuppressionCondition> suppressionConditions;
+
+        /**
+         * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+         * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H"
+         * }]}
+         *
+         * @param suppressionConditions the value to set
+         * @return this builder
+         */
+        public Builder suppressionConditions(
+                java.util.List<SuppressionCondition> suppressionConditions) {
+            this.suppressionConditions = suppressionConditions;
+            this.__explicitlySet__.add("suppressionConditions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -240,13 +295,15 @@ public final class CreateAlarmSuppressionDetails
             CreateAlarmSuppressionDetails model =
                     new CreateAlarmSuppressionDetails(
                             this.alarmSuppressionTarget,
+                            this.level,
                             this.displayName,
                             this.description,
                             this.dimensions,
                             this.timeSuppressFrom,
                             this.timeSuppressUntil,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.suppressionConditions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -257,6 +314,9 @@ public final class CreateAlarmSuppressionDetails
         public Builder copy(CreateAlarmSuppressionDetails model) {
             if (model.wasPropertyExplicitlySet("alarmSuppressionTarget")) {
                 this.alarmSuppressionTarget(model.getAlarmSuppressionTarget());
+            }
+            if (model.wasPropertyExplicitlySet("level")) {
+                this.level(model.getLevel());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -279,6 +339,9 @@ public final class CreateAlarmSuppressionDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("suppressionConditions")) {
+                this.suppressionConditions(model.getSuppressionConditions());
+            }
             return this;
         }
     }
@@ -297,6 +360,29 @@ public final class CreateAlarmSuppressionDetails
 
     public AlarmSuppressionTarget getAlarmSuppressionTarget() {
         return alarmSuppressionTarget;
+    }
+
+    /**
+     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+     * specified dimensions.
+     *
+     * <p>Defaut: {@code DIMENSION}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("level")
+    private final AlarmSuppression.Level level;
+
+    /**
+     * The level of this alarm suppression. {@code ALARM} indicates a suppression of the entire
+     * alarm, regardless of dimension. {@code DIMENSION} indicates a suppression configured for
+     * specified dimensions.
+     *
+     * <p>Defaut: {@code DIMENSION}
+     *
+     * @return the value
+     */
+    public AlarmSuppression.Level getLevel() {
+        return level;
     }
 
     /**
@@ -350,10 +436,11 @@ public final class CreateAlarmSuppressionDetails
      * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
      * suppression.
      *
-     * <p>The value cannot be an empty object. Only a single value is allowed per key. No grouping
-     * of multiple values is allowed under the same key. Maximum characters (after serialization):
-     * 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is
-     * {@code HTTP 400} with an "dimensions values are too long" message.
+     * <p>This is required only when the value of level is {@code DIMENSION}. If required, the value
+     * cannot be an empty object. Only a single value is allowed per key. No grouping of multiple
+     * values is allowed under the same key. Maximum characters (after serialization): 4000. This
+     * maximum satisfies typical use cases. The response for an exceeded maximum is {@code HTTP 400}
+     * with an "dimensions values are too long" message.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("dimensions")
     private final java.util.Map<String, String> dimensions;
@@ -365,10 +452,11 @@ public final class CreateAlarmSuppressionDetails
      * "ocid1.instance.region1.phx.exampleuniqueID"}, then this alarm will be included for
      * suppression.
      *
-     * <p>The value cannot be an empty object. Only a single value is allowed per key. No grouping
-     * of multiple values is allowed under the same key. Maximum characters (after serialization):
-     * 4000. This maximum satisfies typical use cases. The response for an exceeded maximum is
-     * {@code HTTP 400} with an "dimensions values are too long" message.
+     * <p>This is required only when the value of level is {@code DIMENSION}. If required, the value
+     * cannot be an empty object. Only a single value is allowed per key. No grouping of multiple
+     * values is allowed under the same key. Maximum characters (after serialization): 4000. This
+     * maximum satisfies typical use cases. The response for an exceeded maximum is {@code HTTP 400}
+     * with an "dimensions values are too long" message.
      *
      * @return the value
      */
@@ -452,6 +540,23 @@ public final class CreateAlarmSuppressionDetails
         return definedTags;
     }
 
+    /**
+     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+    private final java.util.List<SuppressionCondition> suppressionConditions;
+
+    /**
+     * Array of all preconditions for alarm suppression. Example: {@code [{ conditionType:
+     * "RECURRENCE", suppressionRecurrence: "FRQ=DAILY;BYHOUR=10", suppressionDuration: "PT1H" }]}
+     *
+     * @return the value
+     */
+    public java.util.List<SuppressionCondition> getSuppressionConditions() {
+        return suppressionConditions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -468,6 +573,7 @@ public final class CreateAlarmSuppressionDetails
         sb.append("CreateAlarmSuppressionDetails(");
         sb.append("super=").append(super.toString());
         sb.append("alarmSuppressionTarget=").append(String.valueOf(this.alarmSuppressionTarget));
+        sb.append(", level=").append(String.valueOf(this.level));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
@@ -475,6 +581,7 @@ public final class CreateAlarmSuppressionDetails
         sb.append(", timeSuppressUntil=").append(String.valueOf(this.timeSuppressUntil));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", suppressionConditions=").append(String.valueOf(this.suppressionConditions));
         sb.append(")");
         return sb.toString();
     }
@@ -490,6 +597,7 @@ public final class CreateAlarmSuppressionDetails
 
         CreateAlarmSuppressionDetails other = (CreateAlarmSuppressionDetails) o;
         return java.util.Objects.equals(this.alarmSuppressionTarget, other.alarmSuppressionTarget)
+                && java.util.Objects.equals(this.level, other.level)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
@@ -497,6 +605,7 @@ public final class CreateAlarmSuppressionDetails
                 && java.util.Objects.equals(this.timeSuppressUntil, other.timeSuppressUntil)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.suppressionConditions, other.suppressionConditions)
                 && super.equals(other);
     }
 
@@ -509,6 +618,7 @@ public final class CreateAlarmSuppressionDetails
                         + (this.alarmSuppressionTarget == null
                                 ? 43
                                 : this.alarmSuppressionTarget.hashCode());
+        result = (result * PRIME) + (this.level == null ? 43 : this.level.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.dimensions == null ? 43 : this.dimensions.hashCode());
@@ -520,6 +630,11 @@ public final class CreateAlarmSuppressionDetails
                         + (this.timeSuppressUntil == null ? 43 : this.timeSuppressUntil.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.suppressionConditions == null
+                                ? 43
+                                : this.suppressionConditions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

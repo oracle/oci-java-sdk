@@ -300,6 +300,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.analytics.model.UpdateChannel",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.analytics.model.UpdatePrivateAccessChannelDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

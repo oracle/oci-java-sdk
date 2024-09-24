@@ -224,6 +224,48 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public SortBy getSortBy() {
         return sortBy;
     }
+    /** An optional filter to return only resources that match the specified mime type. */
+    private MimeType mimeType;
+
+    /** An optional filter to return only resources that match the specified mime type. */
+    public enum MimeType implements com.oracle.bmc.http.internal.BmcEnum {
+        Pdf("PDF"),
+        Xls("XLS"),
+        Json("JSON"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, MimeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (MimeType v : MimeType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        MimeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static MimeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid MimeType: " + key);
+        }
+    };
+
+    /** An optional filter to return only resources that match the specified mime type. */
+    public MimeType getMimeType() {
+        return mimeType;
+    }
     /** The ID of the report definition to filter the list of reports */
     private String reportDefinitionId;
 
@@ -447,6 +489,20 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** An optional filter to return only resources that match the specified mime type. */
+        private MimeType mimeType = null;
+
+        /**
+         * An optional filter to return only resources that match the specified mime type.
+         *
+         * @param mimeType the value to set
+         * @return this builder instance
+         */
+        public Builder mimeType(MimeType mimeType) {
+            this.mimeType = mimeType;
+            return this;
+        }
+
         /** The ID of the report definition to filter the list of reports */
         private String reportDefinitionId = null;
 
@@ -595,6 +651,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             page(o.getPage());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
+            mimeType(o.getMimeType());
             reportDefinitionId(o.getReportDefinitionId());
             timeGeneratedGreaterThanOrEqualTo(o.getTimeGeneratedGreaterThanOrEqualTo());
             timeGeneratedLessThan(o.getTimeGeneratedLessThan());
@@ -643,6 +700,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.page = page;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
+            request.mimeType = mimeType;
             request.reportDefinitionId = reportDefinitionId;
             request.timeGeneratedGreaterThanOrEqualTo = timeGeneratedGreaterThanOrEqualTo;
             request.timeGeneratedLessThan = timeGeneratedLessThan;
@@ -651,7 +709,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.type = type;
             return request;
             // new ListReportsRequest(compartmentId, compartmentIdInSubtree, accessLevel,
-            // displayName, limit, page, sortOrder, sortBy, reportDefinitionId,
+            // displayName, limit, page, sortOrder, sortBy, mimeType, reportDefinitionId,
             // timeGeneratedGreaterThanOrEqualTo, timeGeneratedLessThan, opcRequestId,
             // lifecycleState, type);
         }
@@ -672,6 +730,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
+                .mimeType(mimeType)
                 .reportDefinitionId(reportDefinitionId)
                 .timeGeneratedGreaterThanOrEqualTo(timeGeneratedGreaterThanOrEqualTo)
                 .timeGeneratedLessThan(timeGeneratedLessThan)
@@ -702,6 +761,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
+        sb.append(",mimeType=").append(String.valueOf(this.mimeType));
         sb.append(",reportDefinitionId=").append(String.valueOf(this.reportDefinitionId));
         sb.append(",timeGeneratedGreaterThanOrEqualTo=")
                 .append(String.valueOf(this.timeGeneratedGreaterThanOrEqualTo));
@@ -733,6 +793,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
+                && java.util.Objects.equals(this.mimeType, other.mimeType)
                 && java.util.Objects.equals(this.reportDefinitionId, other.reportDefinitionId)
                 && java.util.Objects.equals(
                         this.timeGeneratedGreaterThanOrEqualTo,
@@ -761,6 +822,7 @@ public class ListReportsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
+        result = (result * PRIME) + (this.mimeType == null ? 43 : this.mimeType.hashCode());
         result =
                 (result * PRIME)
                         + (this.reportDefinitionId == null

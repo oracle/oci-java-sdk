@@ -1134,6 +1134,7 @@ public final class ReportDefinition
     public enum ScheduledReportMimeType implements com.oracle.bmc.http.internal.BmcEnum {
         Pdf("PDF"),
         Xls("XLS"),
+        Json("JSON"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

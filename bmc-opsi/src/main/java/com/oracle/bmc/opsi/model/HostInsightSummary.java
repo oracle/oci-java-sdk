@@ -26,6 +26,9 @@ package com.oracle.bmc.opsi.model;
             value = MacsManagedExternalHostInsightSummary.class,
             name = "MACS_MANAGED_EXTERNAL_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MacsManagedCloudDatabaseHostInsightSummary.class,
+            name = "MACS_MANAGED_CLOUD_DB_HOST"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EmManagedExternalHostInsightSummary.class,
             name = "EM_MANAGED_EXTERNAL_HOST"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

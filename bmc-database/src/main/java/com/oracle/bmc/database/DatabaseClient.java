@@ -8179,6 +8179,8 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("infrastructureType", request.getInfrastructureType())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam(
+                        "lifecycleStateNotEqualTo", request.getLifecycleStateNotEqualTo())
                 .appendEnumQueryParam("dbWorkload", request.getDbWorkload())
                 .appendQueryParam("dbVersion", request.getDbVersion())
                 .appendQueryParam("isFreeTier", request.getIsFreeTier())
@@ -11841,6 +11843,79 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id",
                         ScanExternalContainerDatabasePluggableDatabasesResponse.Builder
                                 ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SetDbKeyVersionResponse setDbKeyVersion(SetDbKeyVersionRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSetKeyVersionDetails(), "setKeyVersionDetails is required");
+
+        return clientCall(request, SetDbKeyVersionResponse::builder)
+                .logger(LOG, "setDbKeyVersion")
+                .serviceDetails(
+                        "Database",
+                        "SetDbKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/SetDbKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetDbKeyVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("setKeyVersion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        SetDbKeyVersionResponse.Builder::database)
+                .handleResponseHeaderString("etag", SetDbKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetDbKeyVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetDbKeyVersionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public SetPdbKeyVersionResponse setPdbKeyVersion(SetPdbKeyVersionRequest request) {
+
+        Validate.notBlank(
+                request.getPluggableDatabaseId(), "pluggableDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSetKeyVersionDetails(), "setKeyVersionDetails is required");
+
+        return clientCall(request, SetPdbKeyVersionResponse::builder)
+                .logger(LOG, "setPdbKeyVersion")
+                .serviceDetails(
+                        "Database",
+                        "SetPdbKeyVersion",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/PluggableDatabase/SetPdbKeyVersion")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetPdbKeyVersionRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("pluggableDatabases")
+                .appendPathParam(request.getPluggableDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("setKeyVersion")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.PluggableDatabase.class,
+                        SetPdbKeyVersionResponse.Builder::pluggableDatabase)
+                .handleResponseHeaderString("etag", SetPdbKeyVersionResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", SetPdbKeyVersionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetPdbKeyVersionResponse.Builder::opcRequestId)
                 .callSync();
     }
 
