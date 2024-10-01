@@ -31,6 +31,7 @@ public final class IntegrationInstanceSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleDetails",
         "stateMessage",
         "isByol",
         "instanceUrl",
@@ -47,6 +48,7 @@ public final class IntegrationInstanceSummary
         "systemTags",
         "shape",
         "privateEndpointOutboundConnection",
+        "isDisasterRecoveryEnabled",
         "dataRetentionPeriod"
     })
     public IntegrationInstanceSummary(
@@ -57,6 +59,7 @@ public final class IntegrationInstanceSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             String stateMessage,
             Boolean isByol,
             String instanceUrl,
@@ -73,6 +76,7 @@ public final class IntegrationInstanceSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Shape shape,
             OutboundConnection privateEndpointOutboundConnection,
+            Boolean isDisasterRecoveryEnabled,
             DataRetentionPeriod dataRetentionPeriod) {
         super();
         this.id = id;
@@ -82,6 +86,7 @@ public final class IntegrationInstanceSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.stateMessage = stateMessage;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
@@ -98,6 +103,7 @@ public final class IntegrationInstanceSummary
         this.systemTags = systemTags;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+        this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
         this.dataRetentionPeriod = dataRetentionPeriod;
     }
 
@@ -212,6 +218,21 @@ public final class IntegrationInstanceSummary
         public Builder lifecycleState(LifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** Additional details of lifecycleState or substates */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional details of lifecycleState or substates
+         *
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         */
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -455,6 +476,21 @@ public final class IntegrationInstanceSummary
             this.__explicitlySet__.add("privateEndpointOutboundConnection");
             return this;
         }
+        /** Is Disaster Recovery enabled for the integrationInstance */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+        private Boolean isDisasterRecoveryEnabled;
+
+        /**
+         * Is Disaster Recovery enabled for the integrationInstance
+         *
+         * @param isDisasterRecoveryEnabled the value to set
+         * @return this builder
+         */
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            this.__explicitlySet__.add("isDisasterRecoveryEnabled");
+            return this;
+        }
         /** Data retention period set for given integration instance */
         @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
         private DataRetentionPeriod dataRetentionPeriod;
@@ -484,6 +520,7 @@ public final class IntegrationInstanceSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.stateMessage,
                             this.isByol,
                             this.instanceUrl,
@@ -500,6 +537,7 @@ public final class IntegrationInstanceSummary
                             this.systemTags,
                             this.shape,
                             this.privateEndpointOutboundConnection,
+                            this.isDisasterRecoveryEnabled,
                             this.dataRetentionPeriod);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -529,6 +567,9 @@ public final class IntegrationInstanceSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("stateMessage")) {
                 this.stateMessage(model.getStateMessage());
@@ -578,6 +619,9 @@ public final class IntegrationInstanceSummary
             if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
                 this.privateEndpointOutboundConnection(
                         model.getPrivateEndpointOutboundConnection());
+            }
+            if (model.wasPropertyExplicitlySet("isDisasterRecoveryEnabled")) {
+                this.isDisasterRecoveryEnabled(model.getIsDisasterRecoveryEnabled());
             }
             if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
                 this.dataRetentionPeriod(model.getDataRetentionPeriod());
@@ -791,6 +835,19 @@ public final class IntegrationInstanceSummary
      */
     public LifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /** Additional details of lifecycleState or substates */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional details of lifecycleState or substates
+     *
+     * @return the value
+     */
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1091,6 +1148,19 @@ public final class IntegrationInstanceSummary
         return privateEndpointOutboundConnection;
     }
 
+    /** Is Disaster Recovery enabled for the integrationInstance */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+    private final Boolean isDisasterRecoveryEnabled;
+
+    /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     *
+     * @return the value
+     */
+    public Boolean getIsDisasterRecoveryEnabled() {
+        return isDisasterRecoveryEnabled;
+    }
+
     /** Data retention period set for given integration instance */
     public enum DataRetentionPeriod implements com.oracle.bmc.http.internal.BmcEnum {
         Months1("MONTHS_1"),
@@ -1174,6 +1244,7 @@ public final class IntegrationInstanceSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
@@ -1192,6 +1263,8 @@ public final class IntegrationInstanceSummary
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
                 .append(String.valueOf(this.privateEndpointOutboundConnection));
+        sb.append(", isDisasterRecoveryEnabled=")
+                .append(String.valueOf(this.isDisasterRecoveryEnabled));
         sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
         sb.append(")");
         return sb.toString();
@@ -1215,6 +1288,7 @@ public final class IntegrationInstanceSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
@@ -1236,6 +1310,8 @@ public final class IntegrationInstanceSummary
                 && java.util.Objects.equals(
                         this.privateEndpointOutboundConnection,
                         other.privateEndpointOutboundConnection)
+                && java.util.Objects.equals(
+                        this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
                 && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
                 && super.equals(other);
     }
@@ -1259,6 +1335,9 @@ public final class IntegrationInstanceSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
@@ -1303,6 +1382,11 @@ public final class IntegrationInstanceSummary
                         + (this.privateEndpointOutboundConnection == null
                                 ? 43
                                 : this.privateEndpointOutboundConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisasterRecoveryEnabled == null
+                                ? 43
+                                : this.isDisasterRecoveryEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataRetentionPeriod == null

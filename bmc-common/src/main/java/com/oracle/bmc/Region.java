@@ -199,6 +199,10 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region ME_ABUDHABI_2 = register("me-abudhabi-2", Realm.OC29, "rkt");
     public static final Region ME_ABUDHABI_4 = register("me-abudhabi-4", Realm.OC29, "shj");
 
+    // OC23
+    public static final Region US_SOMERSET_1 = register("us-somerset-1", Realm.OC23, "ebb");
+    public static final Region US_THAMES_1 = register("us-thames-1", Realm.OC23, "ebl");
+
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 

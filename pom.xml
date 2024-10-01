@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>3.50.0</version>
+  <version>3.50.1</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -49,14 +49,13 @@
     <resilience4jVersion>1.7.1</resilience4jVersion>
     <io.vavr.version>0.10.4</io.vavr.version>
     <maven-shade-plugin.version>3.5.0</maven-shade-plugin.version>
-    <bouncycastle.version>1.78.1</bouncycastle.version>
     <mockito.version>2.18.0</mockito.version>
     <powermock.version>2.0.2</powermock.version>
     <hk2.version>2.6.1</hk2.version>
     <net.jodah.failsafe.version>0.9.2</net.jodah.failsafe.version>
     <hamcrest.core.version>1.3</hamcrest.core.version>
     <hamcrest.junit.version>2.0.0.0</hamcrest.junit.version>
-    <native.maven.plugin.version>0.9.28</native.maven.plugin.version>
+    <native.maven.plugin.version>0.10.2</native.maven.plugin.version>
     <excluded.testcases>**/*IntegrationAutoTest.java</excluded.testcases>
     <dev.profile.skip.javadoc>true</dev.profile.skip.javadoc>
     <exec.skip>true</exec.skip>
@@ -512,16 +511,6 @@
         <version>${apache-httpcomponents.httpcore.version}</version>
       </dependency>
       <dependency>
-        <groupId>org.bouncycastle</groupId>
-        <artifactId>bcpkix-jdk15to18</artifactId>
-        <version>${bouncycastle.version}</version>
-      </dependency>
-      <dependency>
-        <groupId>org.bouncycastle</groupId>
-        <artifactId>bcprov-jdk15to18</artifactId>
-        <version>${bouncycastle.version}</version>
-      </dependency>
-      <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
         <version>${hamcrest.core.version}</version>
@@ -799,5 +788,7 @@
     <module>bmc-delegateaccesscontrol</module>
     <module>bmc-generativeaiagent</module>
     <module>bmc-generativeaiagentruntime</module>
+    <module>bmc-securityattribute</module>
+    <module>bmc-zpr</module>
   </modules>
 </project>

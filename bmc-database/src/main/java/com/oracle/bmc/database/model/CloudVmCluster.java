@@ -65,6 +65,7 @@ public final class CloudVmCluster
         "scanDnsRecordId",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "systemTags",
         "scanDnsName",
         "zoneId",
@@ -117,6 +118,7 @@ public final class CloudVmCluster
             String scanDnsRecordId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String scanDnsName,
             String zoneId,
@@ -168,6 +170,7 @@ public final class CloudVmCluster
         this.scanDnsRecordId = scanDnsRecordId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.systemTags = systemTags;
         this.scanDnsName = scanDnsName;
         this.zoneId = zoneId;
@@ -982,6 +985,30 @@ public final class CloudVmCluster
             return this;
         }
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -1161,6 +1188,7 @@ public final class CloudVmCluster
                             this.scanDnsRecordId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.systemTags,
                             this.scanDnsName,
                             this.zoneId,
@@ -1302,6 +1330,9 @@ public final class CloudVmCluster
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -2198,6 +2229,27 @@ public final class CloudVmCluster
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -2371,6 +2423,7 @@ public final class CloudVmCluster
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
@@ -2440,6 +2493,7 @@ public final class CloudVmCluster
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
                 && java.util.Objects.equals(this.zoneId, other.zoneId)
@@ -2559,6 +2613,11 @@ public final class CloudVmCluster
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.scanDnsName == null ? 43 : this.scanDnsName.hashCode());
         result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());

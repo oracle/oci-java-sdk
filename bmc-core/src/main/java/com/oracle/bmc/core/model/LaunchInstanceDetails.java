@@ -31,6 +31,7 @@ public final class LaunchInstanceDetails
         "createVnicDetails",
         "dedicatedVmHostId",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "extendedMetadata",
         "faultDomain",
@@ -62,6 +63,7 @@ public final class LaunchInstanceDetails
             CreateVnicDetails createVnicDetails,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
@@ -92,6 +94,7 @@ public final class LaunchInstanceDetails
         this.createVnicDetails = createVnicDetails;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
@@ -226,6 +229,32 @@ public final class LaunchInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -785,6 +814,7 @@ public final class LaunchInstanceDetails
                             this.createVnicDetails,
                             this.dedicatedVmHostId,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
@@ -833,6 +863,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -1010,6 +1043,29 @@ public final class LaunchInstanceDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1520,6 +1576,7 @@ public final class LaunchInstanceDetails
         sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1568,6 +1625,7 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1623,6 +1681,11 @@ public final class LaunchInstanceDetails
                 (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
