@@ -328,6 +328,41 @@ public class IntegrationInstanceAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<DisasterRecoveryFailoverResponse> disasterRecoveryFailover(
+            DisasterRecoveryFailoverRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisasterRecoveryFailoverRequest, DisasterRecoveryFailoverResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getIntegrationInstanceId(), "integrationInstanceId must not be blank");
+
+        return clientCall(request, DisasterRecoveryFailoverResponse::builder)
+                .logger(LOG, "disasterRecoveryFailover")
+                .serviceDetails(
+                        "IntegrationInstance",
+                        "DisasterRecoveryFailover",
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisasterRecoveryFailover")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisasterRecoveryFailoverRequest::builder)
+                .basePath("/20190131")
+                .appendPathParam("integrationInstances")
+                .appendPathParam(request.getIntegrationInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("failover")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisasterRecoveryFailoverResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DisasterRecoveryFailoverResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableProcessAutomationResponse> enableProcessAutomation(
             EnableProcessAutomationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

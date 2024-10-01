@@ -5,15 +5,19 @@
 package com.oracle.bmc.auth.internal;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
+import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.X509EncodedKeySpec;
 import java.util.Base64;
 import java.util.Optional;
 
+import com.oracle.bmc.http.client.pki.Pem;
 import com.oracle.bmc.util.StreamUtils;
 import org.junit.Test;
 
@@ -107,5 +111,37 @@ public class AuthUtilsTest {
     public void testUrlSafeBase64Decode() {
         assertArrayEquals(AuthUtils.base64Decode("++//"), AuthUtils.base64Decode("--__"));
         assertEquals(null, AuthUtils.base64Decode(null));
+    }
+
+    @Test
+    public void testGetTenantIdFromCertificate() throws FileNotFoundException {
+        final String certificate =
+                StreamUtils.toString(
+                        new FileInputStream("src/test/resources/x509_cert.pem"),
+                        StandardCharsets.UTF_8);
+        final String expected =
+                "ocid1.tenancy.oc1..aaaaaaaak7qsj6ltfwek5cxl6xptznanr2kt7fxrbho7di3vchaf6m5apxeq";
+
+        final X509Certificate x509Certificate =
+                (X509Certificate) Pem.decoder().decodeCertificate(certificate);
+        final String tenantId = AuthUtils.getTenantIdFromCertificate(x509Certificate);
+        assertEquals(expected, tenantId);
+    }
+
+    @Test
+    public void testToByteArrayFromRSAPrivateKey() throws Exception {
+        final String privateKeyText =
+                StreamUtils.toString(
+                        new FileInputStream("src/test/resources/pkcs1_private_key.pem"),
+                        StandardCharsets.UTF_8);
+
+        final RSAPrivateKey privateKey =
+                (RSAPrivateKey)
+                        Pem.decoder()
+                                .decodePrivateKey(privateKeyText.getBytes(StandardCharsets.UTF_8));
+
+        final byte[] bytes = AuthUtils.toByteArrayFromRSAPrivateKey(privateKey);
+        final String text = new String(bytes, StandardCharsets.UTF_8).trim();
+        assertEquals(privateKeyText, text);
     }
 }

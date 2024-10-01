@@ -39,6 +39,7 @@ public final class UpdateCloudVmClusterDetails
         "storageSizeInGBs",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "dataCollectionOptions",
         "fileSystemConfigurationDetails"
     })
@@ -58,6 +59,7 @@ public final class UpdateCloudVmClusterDetails
             Integer storageSizeInGBs,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DataCollectionOptions dataCollectionOptions,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
         super();
@@ -76,6 +78,7 @@ public final class UpdateCloudVmClusterDetails
         this.storageSizeInGBs = storageSizeInGBs;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
     }
@@ -358,6 +361,30 @@ public final class UpdateCloudVmClusterDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
@@ -405,6 +432,7 @@ public final class UpdateCloudVmClusterDetails
                             this.storageSizeInGBs,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.dataCollectionOptions,
                             this.fileSystemConfigurationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -459,6 +487,9 @@ public final class UpdateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
@@ -754,6 +785,27 @@ public final class UpdateCloudVmClusterDetails
         return definedTags;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
@@ -804,6 +856,7 @@ public final class UpdateCloudVmClusterDetails
         sb.append(", storageSizeInGBs=").append(String.valueOf(this.storageSizeInGBs));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
@@ -837,6 +890,7 @@ public final class UpdateCloudVmClusterDetails
                 && java.util.Objects.equals(this.storageSizeInGBs, other.storageSizeInGBs)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
@@ -882,6 +936,11 @@ public final class UpdateCloudVmClusterDetails
                         + (this.storageSizeInGBs == null ? 43 : this.storageSizeInGBs.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataCollectionOptions == null

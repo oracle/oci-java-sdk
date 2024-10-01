@@ -49,6 +49,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "clusterPlacementGroupId",
         "dedicatedVmHostId",
         "definedTags",
+        "securityAttributes",
+        "securityAttributesState",
         "displayName",
         "extendedMetadata",
         "faultDomain",
@@ -82,6 +84,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             String clusterPlacementGroupId,
             String dedicatedVmHostId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
+            SecurityAttributesState securityAttributesState,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             String faultDomain,
@@ -114,6 +118,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
+        this.securityAttributesState = securityAttributesState;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.faultDomain = faultDomain;
@@ -256,6 +262,47 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /** The lifecycle state of the {@code securityAttributes} */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributesState")
+        private SecurityAttributesState securityAttributesState;
+
+        /**
+         * The lifecycle state of the {@code securityAttributes}
+         *
+         * @param securityAttributesState the value to set
+         * @return this builder
+         */
+        public Builder securityAttributesState(SecurityAttributesState securityAttributesState) {
+            this.securityAttributesState = securityAttributesState;
+            this.__explicitlySet__.add("securityAttributesState");
             return this;
         }
         /**
@@ -755,6 +802,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.clusterPlacementGroupId,
                             this.dedicatedVmHostId,
                             this.definedTags,
+                            this.securityAttributes,
+                            this.securityAttributesState,
                             this.displayName,
                             this.extendedMetadata,
                             this.faultDomain,
@@ -805,6 +854,12 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributesState")) {
+                this.securityAttributesState(model.getSecurityAttributesState());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -994,6 +1049,88 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /** The lifecycle state of the {@code securityAttributes} */
+    public enum SecurityAttributesState implements com.oracle.bmc.http.internal.BmcEnum {
+        Stable("STABLE"),
+        Updating("UPDATING"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(SecurityAttributesState.class);
+
+        private final String value;
+        private static java.util.Map<String, SecurityAttributesState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (SecurityAttributesState v : SecurityAttributesState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        SecurityAttributesState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static SecurityAttributesState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'SecurityAttributesState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** The lifecycle state of the {@code securityAttributes} */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributesState")
+    private final SecurityAttributesState securityAttributesState;
+
+    /**
+     * The lifecycle state of the {@code securityAttributes}
+     *
+     * @return the value
+     */
+    public SecurityAttributesState getSecurityAttributesState() {
+        return securityAttributesState;
     }
 
     /**
@@ -1556,6 +1693,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
+        sb.append(", securityAttributesState=")
+                .append(String.valueOf(this.securityAttributesState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", faultDomain=").append(String.valueOf(this.faultDomain));
@@ -1605,6 +1745,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
+                && java.util.Objects.equals(
+                        this.securityAttributesState, other.securityAttributesState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.faultDomain, other.faultDomain)
@@ -1662,6 +1805,16 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 (result * PRIME)
                         + (this.dedicatedVmHostId == null ? 43 : this.dedicatedVmHostId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributesState == null
+                                ? 43
+                                : this.securityAttributesState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

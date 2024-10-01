@@ -68,6 +68,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "nodeCount",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "privateIp",
         "dataCollectionOptions"
     })
@@ -97,6 +98,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             DataCollectionOptions dataCollectionOptions) {
         super();
@@ -125,6 +127,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.nodeCount = nodeCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.privateIp = privateIp;
         this.dataCollectionOptions = dataCollectionOptions;
     }
@@ -721,6 +724,27 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * A private IP address of your choice. Must be an available IP address within the subnet's
      * CIDR. If you don't specify a value, Oracle automatically assigns a private IP address from
      * the subnet.
@@ -788,6 +812,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
@@ -831,6 +856,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
@@ -897,6 +923,11 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         result = (result * PRIME) + (this.nodeCount == null ? 43 : this.nodeCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result =
                 (result * PRIME)

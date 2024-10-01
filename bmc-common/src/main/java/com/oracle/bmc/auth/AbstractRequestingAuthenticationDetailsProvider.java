@@ -121,7 +121,6 @@ public class AbstractRequestingAuthenticationDetailsProvider
 
         protected CachingSessionKeySupplier(final SessionKeySupplier delegate) {
             this.delegate = delegate;
-            this.setPrivateKeyBytes((RSAPrivateKey) delegate.getKeyPair().getPrivate());
         }
 
         @Override

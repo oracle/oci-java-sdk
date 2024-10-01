@@ -485,6 +485,9 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
      *
      * <p>The thread safety of this class is ensured through the Caching class above which
      * synchronizes on all methods.
+     *
+     * <p>The class is implemented in a lazy way to avoid generating the key if it is not needed or
+     * if refresh is immediately called.
      */
     static class SessionKeySupplierImpl implements SessionKeySupplier {
         private static final KeyPairGenerator GENERATOR;
@@ -499,12 +502,13 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
             }
         }
 
-        SessionKeySupplierImpl() {
-            this.keyPair = GENERATOR.generateKeyPair();
-        }
+        SessionKeySupplierImpl() {}
 
         @Override
         public KeyPair getKeyPair() {
+            if (this.keyPair == null) {
+                this.keyPair = GENERATOR.generateKeyPair();
+            }
             return keyPair;
         }
 

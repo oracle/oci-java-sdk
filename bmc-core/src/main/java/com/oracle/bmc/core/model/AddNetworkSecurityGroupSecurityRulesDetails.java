@@ -32,12 +32,18 @@ public final class AddNetworkSecurityGroupSecurityRulesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The NSG security rules to add. */
+        /**
+         * An array of security rules to add to the NSG. You can add up to 25 rules in a single
+         * {@code AddNetworkSecurityGroupSecurityRules} operation. Adding more than 25 rules
+         * requires multiple operations.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
         private java.util.List<AddSecurityRuleDetails> securityRules;
 
         /**
-         * The NSG security rules to add.
+         * An array of security rules to add to the NSG. You can add up to 25 rules in a single
+         * {@code AddNetworkSecurityGroupSecurityRules} operation. Adding more than 25 rules
+         * requires multiple operations.
          *
          * @param securityRules the value to set
          * @return this builder
@@ -78,12 +84,18 @@ public final class AddNetworkSecurityGroupSecurityRulesDetails
         return new Builder().copy(this);
     }
 
-    /** The NSG security rules to add. */
+    /**
+     * An array of security rules to add to the NSG. You can add up to 25 rules in a single {@code
+     * AddNetworkSecurityGroupSecurityRules} operation. Adding more than 25 rules requires multiple
+     * operations.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("securityRules")
     private final java.util.List<AddSecurityRuleDetails> securityRules;
 
     /**
-     * The NSG security rules to add.
+     * An array of security rules to add to the NSG. You can add up to 25 rules in a single {@code
+     * AddNetworkSecurityGroupSecurityRules} operation. Adding more than 25 rules requires multiple
+     * operations.
      *
      * @return the value
      */

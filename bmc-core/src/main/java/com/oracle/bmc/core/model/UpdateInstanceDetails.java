@@ -26,6 +26,7 @@ public final class UpdateInstanceDetails
     @java.beans.ConstructorProperties({
         "capacityReservationId",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "freeformTags",
         "agentConfig",
@@ -46,6 +47,7 @@ public final class UpdateInstanceDetails
     public UpdateInstanceDetails(
             String capacityReservationId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, String> freeformTags,
             UpdateInstanceAgentConfigDetails agentConfig,
@@ -65,6 +67,7 @@ public final class UpdateInstanceDetails
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.agentConfig = agentConfig;
@@ -132,6 +135,32 @@ public final class UpdateInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -529,6 +558,7 @@ public final class UpdateInstanceDetails
                     new UpdateInstanceDetails(
                             this.capacityReservationId,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.freeformTags,
                             this.agentConfig,
@@ -558,6 +588,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -662,6 +695,29 @@ public final class UpdateInstanceDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1069,6 +1125,7 @@ public final class UpdateInstanceDetails
         sb.append("super=").append(super.toString());
         sb.append("capacityReservationId=").append(String.valueOf(this.capacityReservationId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", agentConfig=").append(String.valueOf(this.agentConfig));
@@ -1103,6 +1160,7 @@ public final class UpdateInstanceDetails
         UpdateInstanceDetails other = (UpdateInstanceDetails) o;
         return java.util.Objects.equals(this.capacityReservationId, other.capacityReservationId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.agentConfig, other.agentConfig)
@@ -1134,6 +1192,11 @@ public final class UpdateInstanceDetails
                                 ? 43
                                 : this.capacityReservationId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.agentConfig == null ? 43 : this.agentConfig.hashCode());

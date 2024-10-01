@@ -7,18 +7,12 @@ package com.oracle.bmc.auth.internal;
 import com.oracle.bmc.InternalSdk;
 import com.oracle.bmc.auth.exception.InstancePrincipalUnavailableException;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.client.pki.Pem;
 import com.oracle.bmc.util.internal.Validate;
-import org.bouncycastle.asn1.ASN1ObjectIdentifier;
-import org.bouncycastle.asn1.x500.AttributeTypeAndValue;
-import org.bouncycastle.asn1.x500.RDN;
-import org.bouncycastle.asn1.x500.X500Name;
-import org.bouncycastle.asn1.x500.style.BCStyle;
-import org.bouncycastle.openssl.jcajce.JcaPEMWriter;
+
 import org.slf4j.Logger;
 
-import java.io.ByteArrayOutputStream;
 import java.io.IOException;
-import java.io.OutputStreamWriter;
 import java.math.BigInteger;
 import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
@@ -31,6 +25,13 @@ import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 import java.util.Base64;
 import java.util.Optional;
+
+import javax.naming.NamingEnumeration;
+import javax.naming.NamingException;
+import javax.naming.directory.Attribute;
+import javax.naming.ldap.LdapName;
+import javax.naming.ldap.Rdn;
+import javax.security.auth.x500.X500Principal;
 
 /** Utilities dealing with authorization. */
 public class AuthUtils {
@@ -167,16 +168,7 @@ public class AuthUtils {
      */
     @InternalSdk(backwardCompatibilityRequired = true)
     public static byte[] toByteArrayFromRSAPrivateKey(RSAPrivateKey key) {
-        ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        try (JcaPEMWriter writer =
-                new JcaPEMWriter(new OutputStreamWriter(baos, StandardCharsets.UTF_8))) {
-            writer.writeObject(key);
-            writer.flush();
-        } catch (IOException e) {
-            throw new IllegalStateException("Unable to write PEM object", e);
-        }
-
-        return baos.toByteArray();
+        return Pem.encoder().with(Pem.Format.LEGACY).encode(key);
     }
 
     /**
@@ -250,11 +242,11 @@ public class AuthUtils {
     public static String getTenantIdFromCertificate(X509Certificate certificate) {
         Validate.notNull(certificate, "certificate may not be null");
 
-        X500Name name = new X500Name(certificate.getSubjectX500Principal().getName());
-
-        Optional<String> tenancyId = getValue(name, BCStyle.OU, "opc-tenant"); // IP
+        final X500Principal principal = certificate.getSubjectX500Principal();
+        final String name = principal.getName();
+        Optional<String> tenancyId = getValue(name, "OU", "opc-tenant"); // IP
         if (!tenancyId.isPresent()) {
-            tenancyId = getValue(name, BCStyle.O, "opc-identity"); // SP
+            tenancyId = getValue(name, "OU", "opc-identity"); // SP
         }
         if (tenancyId.isPresent()) {
             return tenancyId.get();
@@ -263,16 +255,33 @@ public class AuthUtils {
                 "The certificate does not contain tenant id.");
     }
 
-    private static Optional<String> getValue(X500Name name, ASN1ObjectIdentifier id, String key) {
-        String prefix = key + ":";
-        for (RDN rdn : name.getRDNs(id)) {
-            for (AttributeTypeAndValue typeAndValue : rdn.getTypesAndValues()) {
-                String value = typeAndValue.getValue().toString();
-                if (value.startsWith(prefix)) {
-                    return Optional.of(value.substring(prefix.length()));
+    private static Optional<String> getValue(String name, String type, String key) {
+        try {
+            final LdapName ldapName = new LdapName(name);
+            final String prefix = key + ":";
+
+            for (Rdn rdn : ldapName.getRdns()) {
+                final String rdnType = rdn.getType();
+                if (type.equalsIgnoreCase(rdnType)) {
+                    final Attribute attribute = rdn.toAttributes().get(type);
+                    if (attribute != null) {
+                        final NamingEnumeration<?> values = attribute.getAll();
+                        while (values.hasMore()) {
+                            final Object value = values.next();
+                            if (value != null) {
+                                final String text = value.toString().trim();
+                                if (text.startsWith(prefix)) {
+                                    return Optional.of(text.substring(prefix.length()));
+                                }
+                            }
+                        }
+                    }
                 }
             }
+            return Optional.empty();
+        } catch (NamingException e) {
+            throw new InstancePrincipalUnavailableException(
+                    "Error parsing the certificate name", e);
         }
-        return Optional.empty();
     }
 }

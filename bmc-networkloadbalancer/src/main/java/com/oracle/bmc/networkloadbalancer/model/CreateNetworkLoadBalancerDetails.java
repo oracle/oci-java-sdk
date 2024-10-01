@@ -50,7 +50,8 @@ public final class CreateNetworkLoadBalancerDetails
         "listeners",
         "backendSets",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "securityAttributes"
     })
     public CreateNetworkLoadBalancerDetails(
             String compartmentId,
@@ -68,7 +69,8 @@ public final class CreateNetworkLoadBalancerDetails
             java.util.Map<String, ListenerDetails> listeners,
             java.util.Map<String, BackendSetDetails> backendSets,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -86,6 +88,7 @@ public final class CreateNetworkLoadBalancerDetails
         this.backendSets = backendSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -439,6 +442,32 @@ public final class CreateNetworkLoadBalancerDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -461,7 +490,8 @@ public final class CreateNetworkLoadBalancerDetails
                             this.listeners,
                             this.backendSets,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.securityAttributes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -517,6 +547,9 @@ public final class CreateNetworkLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             return this;
         }
@@ -845,6 +878,29 @@ public final class CreateNetworkLoadBalancerDetails
         return definedTags;
     }
 
+    /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code {"oracle-zpr": {"td": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -878,6 +934,7 @@ public final class CreateNetworkLoadBalancerDetails
         sb.append(", backendSets=").append(String.valueOf(this.backendSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(")");
         return sb.toString();
     }
@@ -911,6 +968,7 @@ public final class CreateNetworkLoadBalancerDetails
                 && java.util.Objects.equals(this.backendSets, other.backendSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && super.equals(other);
     }
 
@@ -954,6 +1012,11 @@ public final class CreateNetworkLoadBalancerDetails
         result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

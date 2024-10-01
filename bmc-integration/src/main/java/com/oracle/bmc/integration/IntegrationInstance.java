@@ -167,6 +167,26 @@ public interface IntegrationInstance extends AutoCloseable {
             DeleteIntegrationInstanceRequest request);
 
     /**
+     * Allows failover for disaster recovery. Called in the context of integration instance in that
+     * region. Upon calling the failover api in the region where given instance was created, the
+     * intigration instance if primary will be switched to standby and crossRegion integration
+     * instance will be switched to primary and vice-versa.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/integration/DisasterRecoveryFailoverExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisasterRecoveryFailover API.
+     */
+    DisasterRecoveryFailoverResponse disasterRecoveryFailover(
+            DisasterRecoveryFailoverRequest request);
+
+    /**
      * Enable Process Automation for given Integration Instance
      *
      * @param request The request object containing the details to send

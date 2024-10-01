@@ -1287,6 +1287,11 @@ public interface ComputeAsync extends AutoCloseable {
      * #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer,
      * Consumer) getAppCatalogListingResourceVersion}.
      *
+     * <p>When launching an instance, you may provide the `securityAttributes` parameter in {@link
+     * LaunchInstanceDetails} to manage security attributes via the instance, or in the embedded
+     * {@link CreateVnicDetails} to manage security attributes via the VNIC directly, but not both.
+     * Providing `securityAttributes` in both locations will return a 400 Bad Request response.
+     *
      * <p>To determine whether capacity is available for a specific shape before you create an
      * instance, use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest,
      * Consumer, Consumer) createComputeCapacityReport} operation.

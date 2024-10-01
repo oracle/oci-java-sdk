@@ -102,6 +102,7 @@ public class CreateAutonomousDatabaseBase
         "privateEndpointLabel",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "privateEndpointIp",
         "dbVersion",
         "customerContacts",
@@ -154,6 +155,7 @@ public class CreateAutonomousDatabaseBase
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -205,6 +207,7 @@ public class CreateAutonomousDatabaseBase
         this.privateEndpointLabel = privateEndpointLabel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.privateEndpointIp = privateEndpointIp;
         this.dbVersion = dbVersion;
         this.customerContacts = customerContacts;
@@ -1357,6 +1360,27 @@ public class CreateAutonomousDatabaseBase
         return definedTags;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The private endpoint Ip address for the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
     private final String privateEndpointIp;
@@ -1704,6 +1728,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
@@ -1778,6 +1803,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
@@ -1905,6 +1931,11 @@ public class CreateAutonomousDatabaseBase
                                 : this.privateEndpointLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());

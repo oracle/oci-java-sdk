@@ -58,6 +58,7 @@ public final class CloudAutonomousVmClusterSummary
         "scanListenerPortNonTls",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "timeDatabaseSslCertificateExpires",
         "timeOrdsCertificateExpires",
         "availableCpus",
@@ -117,6 +118,7 @@ public final class CloudAutonomousVmClusterSummary
             Integer scanListenerPortNonTls,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Date timeDatabaseSslCertificateExpires,
             java.util.Date timeOrdsCertificateExpires,
             Float availableCpus,
@@ -175,6 +177,7 @@ public final class CloudAutonomousVmClusterSummary
         this.scanListenerPortNonTls = scanListenerPortNonTls;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.timeDatabaseSslCertificateExpires = timeDatabaseSslCertificateExpires;
         this.timeOrdsCertificateExpires = timeOrdsCertificateExpires;
         this.availableCpus = availableCpus;
@@ -838,6 +841,30 @@ public final class CloudAutonomousVmClusterSummary
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
         /** The date and time of Database SSL certificate expiration. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
         private java.util.Date timeDatabaseSslCertificateExpires;
@@ -1265,6 +1292,7 @@ public final class CloudAutonomousVmClusterSummary
                             this.scanListenerPortNonTls,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.timeDatabaseSslCertificateExpires,
                             this.timeOrdsCertificateExpires,
                             this.availableCpus,
@@ -1397,6 +1425,9 @@ public final class CloudAutonomousVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("timeDatabaseSslCertificateExpires")) {
                 this.timeDatabaseSslCertificateExpires(
@@ -2212,6 +2243,27 @@ public final class CloudAutonomousVmClusterSummary
         return definedTags;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     /** The date and time of Database SSL certificate expiration. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeDatabaseSslCertificateExpires")
     private final java.util.Date timeDatabaseSslCertificateExpires;
@@ -2588,6 +2640,7 @@ public final class CloudAutonomousVmClusterSummary
         sb.append(", scanListenerPortNonTls=").append(String.valueOf(this.scanListenerPortNonTls));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", timeDatabaseSslCertificateExpires=")
                 .append(String.valueOf(this.timeDatabaseSslCertificateExpires));
         sb.append(", timeOrdsCertificateExpires=")
@@ -2677,6 +2730,7 @@ public final class CloudAutonomousVmClusterSummary
                         this.scanListenerPortNonTls, other.scanListenerPortNonTls)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(
                         this.timeDatabaseSslCertificateExpires,
                         other.timeDatabaseSslCertificateExpires)
@@ -2819,6 +2873,11 @@ public final class CloudAutonomousVmClusterSummary
                                 : this.scanListenerPortNonTls.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeDatabaseSslCertificateExpires == null

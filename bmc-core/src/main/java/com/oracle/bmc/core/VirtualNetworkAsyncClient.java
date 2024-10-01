@@ -5848,7 +5848,7 @@ public class VirtualNetworkAsyncClient extends com.oracle.bmc.http.internal.Base
                 .serviceDetails(
                         "VirtualNetwork",
                         "ListIpInventory",
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory")
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/ListIpInventory")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ListIpInventoryRequest::builder)
                 .basePath("/20160918")

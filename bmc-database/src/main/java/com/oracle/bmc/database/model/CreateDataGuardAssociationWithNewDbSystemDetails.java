@@ -503,6 +503,30 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param dbSystemSecurityAttributes the value to set
+         * @return this builder
+         */
+        public Builder dbSystemSecurityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes) {
+            this.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
+            this.__explicitlySet__.add("dbSystemSecurityAttributes");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -589,6 +613,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.licenseModel,
                             this.dbSystemFreeformTags,
                             this.dbSystemDefinedTags,
+                            this.dbSystemSecurityAttributes,
                             this.databaseFreeformTags,
                             this.databaseDefinedTags,
                             this.dataCollectionOptions);
@@ -672,6 +697,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("dbSystemDefinedTags")) {
                 this.dbSystemDefinedTags(model.getDbSystemDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("dbSystemSecurityAttributes")) {
+                this.dbSystemSecurityAttributes(model.getDbSystemSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("databaseFreeformTags")) {
                 this.databaseFreeformTags(model.getDatabaseFreeformTags());
             }
@@ -720,6 +748,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             LicenseModel licenseModel,
             java.util.Map<String, String> dbSystemFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags,
+            java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes,
             java.util.Map<String, String> databaseFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags,
             DataCollectionOptions dataCollectionOptions) {
@@ -748,6 +777,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.licenseModel = licenseModel;
         this.dbSystemFreeformTags = dbSystemFreeformTags;
         this.dbSystemDefinedTags = dbSystemDefinedTags;
+        this.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
         this.databaseFreeformTags = databaseFreeformTags;
         this.databaseDefinedTags = databaseDefinedTags;
         this.dataCollectionOptions = dataCollectionOptions;
@@ -1192,6 +1222,27 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getDbSystemSecurityAttributes() {
+        return dbSystemSecurityAttributes;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -1273,6 +1324,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", dbSystemFreeformTags=").append(String.valueOf(this.dbSystemFreeformTags));
         sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
+        sb.append(", dbSystemSecurityAttributes=")
+                .append(String.valueOf(this.dbSystemSecurityAttributes));
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
@@ -1309,6 +1362,8 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.dbSystemFreeformTags, other.dbSystemFreeformTags)
                 && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
+                && java.util.Objects.equals(
+                        this.dbSystemSecurityAttributes, other.dbSystemSecurityAttributes)
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
@@ -1356,6 +1411,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.dbSystemDefinedTags == null
                                 ? 43
                                 : this.dbSystemDefinedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemSecurityAttributes == null
+                                ? 43
+                                : this.dbSystemSecurityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseFreeformTags == null

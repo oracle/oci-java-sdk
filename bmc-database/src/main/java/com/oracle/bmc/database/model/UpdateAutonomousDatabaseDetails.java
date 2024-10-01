@@ -49,6 +49,7 @@ public final class UpdateAutonomousDatabaseDetails
         "dbName",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "dbWorkload",
         "licenseModel",
         "byolComputeCountLimit",
@@ -101,6 +102,7 @@ public final class UpdateAutonomousDatabaseDetails
             String dbName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DbWorkload dbWorkload,
             LicenseModel licenseModel,
             Float byolComputeCountLimit,
@@ -152,6 +154,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.dbName = dbName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.dbWorkload = dbWorkload;
         this.licenseModel = licenseModel;
         this.byolComputeCountLimit = byolComputeCountLimit;
@@ -689,6 +692,30 @@ public final class UpdateAutonomousDatabaseDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -1715,6 +1742,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.dbName,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.dbWorkload,
                             this.licenseModel,
                             this.byolComputeCountLimit,
@@ -1807,6 +1835,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("dbWorkload")) {
                 this.dbWorkload(model.getDbWorkload());
@@ -2411,6 +2442,27 @@ public final class UpdateAutonomousDatabaseDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace. For
+     * more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm). Example:
+     * {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -3561,6 +3613,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dbWorkload=").append(String.valueOf(this.dbWorkload));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
@@ -3635,6 +3688,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dbWorkload, other.dbWorkload)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
@@ -3726,6 +3780,11 @@ public final class UpdateAutonomousDatabaseDetails
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.dbWorkload == null ? 43 : this.dbWorkload.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =

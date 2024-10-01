@@ -41,6 +41,7 @@ public final class NetworkLoadBalancerSummary
         "listeners",
         "backendSets",
         "freeformTags",
+        "securityAttributes",
         "definedTags",
         "systemTags"
     })
@@ -62,6 +63,7 @@ public final class NetworkLoadBalancerSummary
             java.util.Map<String, Listener> listeners,
             java.util.Map<String, BackendSet> backendSets,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
@@ -82,6 +84,7 @@ public final class NetworkLoadBalancerSummary
         this.listeners = listeners;
         this.backendSets = backendSets;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
     }
@@ -466,6 +469,32 @@ public final class NetworkLoadBalancerSummary
             return this;
         }
         /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+         * type, or namespace. For more information, see [Resource
+         * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         *
+         * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -534,6 +563,7 @@ public final class NetworkLoadBalancerSummary
                             this.listeners,
                             this.backendSets,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.definedTags,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -594,6 +624,9 @@ public final class NetworkLoadBalancerSummary
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
@@ -954,6 +987,29 @@ public final class NetworkLoadBalancerSummary
     }
 
     /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * ZPR tags for this resource. Each tag is a simple key-value pair with no predefined name,
+     * type, or namespace. For more information, see [Resource
+     * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     *
+     * <p>Example: {@code { "oracle-zpr": { "td": { "value": "42", "mode": "audit" } } }}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -1027,6 +1083,7 @@ public final class NetworkLoadBalancerSummary
         sb.append(", listeners=").append(String.valueOf(this.listeners));
         sb.append(", backendSets=").append(String.valueOf(this.backendSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
@@ -1063,6 +1120,7 @@ public final class NetworkLoadBalancerSummary
                 && java.util.Objects.equals(this.listeners, other.listeners)
                 && java.util.Objects.equals(this.backendSets, other.backendSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
@@ -1107,6 +1165,11 @@ public final class NetworkLoadBalancerSummary
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
         result = (result * PRIME) + (this.backendSets == null ? 43 : this.backendSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();

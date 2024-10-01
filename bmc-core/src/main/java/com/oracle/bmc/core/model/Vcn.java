@@ -41,6 +41,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         "displayName",
         "dnsLabel",
         "freeformTags",
+        "securityAttributes",
         "id",
         "ipv6CidrBlocks",
         "lifecycleState",
@@ -60,6 +61,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             String displayName,
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String id,
             java.util.List<String> ipv6CidrBlocks,
             LifecycleState lifecycleState,
@@ -78,6 +80,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         this.displayName = displayName;
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.id = id;
         this.ipv6CidrBlocks = ipv6CidrBlocks;
         this.lifecycleState = lifecycleState;
@@ -343,6 +346,32 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             return this;
         }
         /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+         * resources are allowed to be accessed by what permission controls.
+         *
+         * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+         * {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         */
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The VCN's Oracle ID
          * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          */
@@ -466,6 +495,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                             this.displayName,
                             this.dnsLabel,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.id,
                             this.ipv6CidrBlocks,
                             this.lifecycleState,
@@ -514,6 +544,9 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -774,6 +807,29 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
     }
 
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
+     * resources are allowed to be accessed by what permission controls.
+     *
+     * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
+     * {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The VCN's Oracle ID
      * ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      */
@@ -944,6 +1000,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipv6CidrBlocks=").append(String.valueOf(this.ipv6CidrBlocks));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -975,6 +1032,7 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipv6CidrBlocks, other.ipv6CidrBlocks)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -1019,6 +1077,11 @@ public final class Vcn extends com.oracle.bmc.http.client.internal.ExplicitlySet
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dnsLabel == null ? 43 : this.dnsLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
