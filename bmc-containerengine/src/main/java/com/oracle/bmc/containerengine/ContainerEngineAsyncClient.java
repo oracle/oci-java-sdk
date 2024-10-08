@@ -137,10 +137,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ClusterMigrateToNativeVcnResponse::builder)
                 .logger(LOG, "clusterMigrateToNativeVcn")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ClusterMigrateToNativeVcn",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn")
+                .serviceDetails("ContainerEngine", "ClusterMigrateToNativeVcn", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ClusterMigrateToNativeVcnRequest::builder)
                 .basePath("/20180222")
@@ -173,10 +170,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CompleteCredentialRotationResponse::builder)
                 .logger(LOG, "completeCredentialRotation")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CompleteCredentialRotation",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CompleteCredentialRotation")
+                .serviceDetails("ContainerEngine", "CompleteCredentialRotation", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CompleteCredentialRotationRequest::builder)
                 .basePath("/20180222")
@@ -206,10 +200,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateClusterResponse::builder)
                 .logger(LOG, "createCluster")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CreateCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster")
+                .serviceDetails("ContainerEngine", "CreateCluster", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateClusterRequest::builder)
                 .basePath("/20180222")
@@ -236,10 +227,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateKubeconfigResponse::builder)
                 .logger(LOG, "createKubeconfig")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CreateKubeconfig",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig")
+                .serviceDetails("ContainerEngine", "CreateKubeconfig", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateKubeconfigRequest::builder)
                 .basePath("/20180222")
@@ -268,10 +256,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateNodePoolResponse::builder)
                 .logger(LOG, "createNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CreateNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool")
+                .serviceDetails("ContainerEngine", "CreateNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -299,10 +284,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateVirtualNodePoolResponse::builder)
                 .logger(LOG, "createVirtualNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CreateVirtualNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/CreateVirtualNodePool")
+                .serviceDetails("ContainerEngine", "CreateVirtualNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateVirtualNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -333,10 +315,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, CreateWorkloadMappingResponse::builder)
                 .logger(LOG, "createWorkloadMapping")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "CreateWorkloadMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/CreateWorkloadMapping")
+                .serviceDetails("ContainerEngine", "CreateWorkloadMapping", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateWorkloadMappingRequest::builder)
                 .basePath("/20180222")
@@ -366,10 +345,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteClusterResponse::builder)
                 .logger(LOG, "deleteCluster")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster")
+                .serviceDetails("ContainerEngine", "DeleteCluster", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteClusterRequest::builder)
                 .basePath("/20180222")
@@ -397,10 +373,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteNodeResponse::builder)
                 .logger(LOG, "deleteNode")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteNode",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode")
+                .serviceDetails("ContainerEngine", "DeleteNode", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNodeRequest::builder)
                 .basePath("/20180222")
@@ -435,10 +408,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteNodePoolResponse::builder)
                 .logger(LOG, "deleteNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool")
+                .serviceDetails("ContainerEngine", "DeleteNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -470,10 +440,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteVirtualNodePoolResponse::builder)
                 .logger(LOG, "deleteVirtualNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteVirtualNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/DeleteVirtualNodePool")
+                .serviceDetails("ContainerEngine", "DeleteVirtualNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteVirtualNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -507,10 +474,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteWorkRequestResponse::builder)
                 .logger(LOG, "deleteWorkRequest")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest")
+                .serviceDetails("ContainerEngine", "DeleteWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWorkRequestRequest::builder)
                 .basePath("/20180222")
@@ -537,10 +501,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DeleteWorkloadMappingResponse::builder)
                 .logger(LOG, "deleteWorkloadMapping")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DeleteWorkloadMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/DeleteWorkloadMapping")
+                .serviceDetails("ContainerEngine", "DeleteWorkloadMapping", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteWorkloadMappingRequest::builder)
                 .basePath("/20180222")
@@ -570,10 +531,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, DisableAddonResponse::builder)
                 .logger(LOG, "disableAddon")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "DisableAddon",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DisableAddon")
+                .serviceDetails("ContainerEngine", "DisableAddon", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DisableAddonRequest::builder)
                 .basePath("/20180222")
@@ -604,10 +562,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetAddonResponse::builder)
                 .logger(LOG, "getAddon")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetAddon",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetAddon")
+                .serviceDetails("ContainerEngine", "GetAddon", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAddonRequest::builder)
                 .basePath("/20180222")
@@ -636,10 +591,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetClusterResponse::builder)
                 .logger(LOG, "getCluster")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster")
+                .serviceDetails("ContainerEngine", "GetCluster", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetClusterRequest::builder)
                 .basePath("/20180222")
@@ -669,10 +621,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetClusterMigrateToNativeVcnStatusResponse::builder)
                 .logger(LOG, "getClusterMigrateToNativeVcnStatus")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetClusterMigrateToNativeVcnStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus")
+                .serviceDetails("ContainerEngine", "GetClusterMigrateToNativeVcnStatus", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetClusterMigrateToNativeVcnStatusRequest::builder)
                 .basePath("/20180222")
@@ -704,10 +653,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetClusterOptionsResponse::builder)
                 .logger(LOG, "getClusterOptions")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetClusterOptions",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions")
+                .serviceDetails("ContainerEngine", "GetClusterOptions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetClusterOptionsRequest::builder)
                 .basePath("/20180222")
@@ -737,10 +683,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetCredentialRotationStatusResponse::builder)
                 .logger(LOG, "getCredentialRotationStatus")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetCredentialRotationStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/CredentialRotationStatus/GetCredentialRotationStatus")
+                .serviceDetails("ContainerEngine", "GetCredentialRotationStatus", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetCredentialRotationStatusRequest::builder)
                 .basePath("/20180222")
@@ -769,10 +712,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetNodePoolResponse::builder)
                 .logger(LOG, "getNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool")
+                .serviceDetails("ContainerEngine", "GetNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -800,10 +740,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetNodePoolOptionsResponse::builder)
                 .logger(LOG, "getNodePoolOptions")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetNodePoolOptions",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions")
+                .serviceDetails("ContainerEngine", "GetNodePoolOptions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetNodePoolOptionsRequest::builder)
                 .basePath("/20180222")
@@ -833,10 +770,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetVirtualNodeResponse::builder)
                 .logger(LOG, "getVirtualNode")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetVirtualNode",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNode")
+                .serviceDetails("ContainerEngine", "GetVirtualNode", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualNodeRequest::builder)
                 .basePath("/20180222")
@@ -866,10 +800,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetVirtualNodePoolResponse::builder)
                 .logger(LOG, "getVirtualNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetVirtualNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNodePool")
+                .serviceDetails("ContainerEngine", "GetVirtualNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetVirtualNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -897,10 +828,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetWorkRequestResponse::builder)
                 .logger(LOG, "getWorkRequest")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetWorkRequest",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest")
+                .serviceDetails("ContainerEngine", "GetWorkRequest", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkRequestRequest::builder)
                 .basePath("/20180222")
@@ -932,10 +860,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, GetWorkloadMappingResponse::builder)
                 .logger(LOG, "getWorkloadMapping")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "GetWorkloadMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/GetWorkloadMapping")
+                .serviceDetails("ContainerEngine", "GetWorkloadMapping", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetWorkloadMappingRequest::builder)
                 .basePath("/20180222")
@@ -965,10 +890,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, InstallAddonResponse::builder)
                 .logger(LOG, "installAddon")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "InstallAddon",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/InstallAddon")
+                .serviceDetails("ContainerEngine", "InstallAddon", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(InstallAddonRequest::builder)
                 .basePath("/20180222")
@@ -997,10 +919,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListAddonOptionsResponse::builder)
                 .logger(LOG, "listAddonOptions")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListAddonOptions",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/AddonOptionSummary/ListAddonOptions")
+                .serviceDetails("ContainerEngine", "ListAddonOptions", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddonOptionsRequest::builder)
                 .basePath("/20180222")
@@ -1033,10 +952,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListAddonsResponse::builder)
                 .logger(LOG, "listAddons")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListAddons",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ListAddons")
+                .serviceDetails("ContainerEngine", "ListAddons", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListAddonsRequest::builder)
                 .basePath("/20180222")
@@ -1068,10 +984,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListClustersResponse::builder)
                 .logger(LOG, "listClusters")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListClusters",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters")
+                .serviceDetails("ContainerEngine", "ListClusters", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListClustersRequest::builder)
                 .basePath("/20180222")
@@ -1107,10 +1020,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListNodePoolsResponse::builder)
                 .logger(LOG, "listNodePools")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListNodePools",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools")
+                .serviceDetails("ContainerEngine", "ListNodePools", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListNodePoolsRequest::builder)
                 .basePath("/20180222")
@@ -1147,10 +1057,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListPodShapesResponse::builder)
                 .logger(LOG, "listPodShapes")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListPodShapes",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/PodShapeSummary/ListPodShapes")
+                .serviceDetails("ContainerEngine", "ListPodShapes", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPodShapesRequest::builder)
                 .basePath("/20180222")
@@ -1184,10 +1091,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListVirtualNodePoolsResponse::builder)
                 .logger(LOG, "listVirtualNodePools")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListVirtualNodePools",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePoolSummary/ListVirtualNodePools")
+                .serviceDetails("ContainerEngine", "ListVirtualNodePools", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualNodePoolsRequest::builder)
                 .basePath("/20180222")
@@ -1226,10 +1130,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListVirtualNodesResponse::builder)
                 .logger(LOG, "listVirtualNodes")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListVirtualNodes",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/ListVirtualNodes")
+                .serviceDetails("ContainerEngine", "ListVirtualNodes", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListVirtualNodesRequest::builder)
                 .basePath("/20180222")
@@ -1265,10 +1166,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listWorkRequestErrors")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListWorkRequestErrors",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors")
+                .serviceDetails("ContainerEngine", "ListWorkRequestErrors", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestErrorsRequest::builder)
                 .basePath("/20180222")
@@ -1298,10 +1196,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestLogsResponse::builder)
                 .logger(LOG, "listWorkRequestLogs")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListWorkRequestLogs",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs")
+                .serviceDetails("ContainerEngine", "ListWorkRequestLogs", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestLogsRequest::builder)
                 .basePath("/20180222")
@@ -1329,10 +1224,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkRequestsResponse::builder)
                 .logger(LOG, "listWorkRequests")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListWorkRequests",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests")
+                .serviceDetails("ContainerEngine", "ListWorkRequests", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkRequestsRequest::builder)
                 .basePath("/20180222")
@@ -1372,10 +1264,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, ListWorkloadMappingsResponse::builder)
                 .logger(LOG, "listWorkloadMappings")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "ListWorkloadMappings",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMappingSummary/ListWorkloadMappings")
+                .serviceDetails("ContainerEngine", "ListWorkloadMappings", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListWorkloadMappingsRequest::builder)
                 .basePath("/20180222")
@@ -1412,10 +1301,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, StartCredentialRotationResponse::builder)
                 .logger(LOG, "startCredentialRotation")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "StartCredentialRotation",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartCredentialRotation")
+                .serviceDetails("ContainerEngine", "StartCredentialRotation", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(StartCredentialRotationRequest::builder)
                 .basePath("/20180222")
@@ -1449,10 +1335,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateAddonResponse::builder)
                 .logger(LOG, "updateAddon")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateAddon",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateAddon")
+                .serviceDetails("ContainerEngine", "UpdateAddon", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateAddonRequest::builder)
                 .basePath("/20180222")
@@ -1483,10 +1366,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateClusterResponse::builder)
                 .logger(LOG, "updateCluster")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateCluster",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster")
+                .serviceDetails("ContainerEngine", "UpdateCluster", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateClusterRequest::builder)
                 .basePath("/20180222")
@@ -1519,10 +1399,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateClusterEndpointConfigResponse::builder)
                 .logger(LOG, "updateClusterEndpointConfig")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateClusterEndpointConfig",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig")
+                .serviceDetails("ContainerEngine", "UpdateClusterEndpointConfig", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(UpdateClusterEndpointConfigRequest::builder)
                 .basePath("/20180222")
@@ -1555,10 +1432,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateNodePoolResponse::builder)
                 .logger(LOG, "updateNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool")
+                .serviceDetails("ContainerEngine", "UpdateNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -1594,10 +1468,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateVirtualNodePoolResponse::builder)
                 .logger(LOG, "updateVirtualNodePool")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateVirtualNodePool",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/UpdateVirtualNodePool")
+                .serviceDetails("ContainerEngine", "UpdateVirtualNodePool", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateVirtualNodePoolRequest::builder)
                 .basePath("/20180222")
@@ -1631,10 +1502,7 @@ public class ContainerEngineAsyncClient extends com.oracle.bmc.http.internal.Bas
 
         return clientCall(request, UpdateWorkloadMappingResponse::builder)
                 .logger(LOG, "updateWorkloadMapping")
-                .serviceDetails(
-                        "ContainerEngine",
-                        "UpdateWorkloadMapping",
-                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/UpdateWorkloadMapping")
+                .serviceDetails("ContainerEngine", "UpdateWorkloadMapping", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateWorkloadMappingRequest::builder)
                 .basePath("/20180222")

@@ -20,11 +20,19 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+    /**
+     * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more
+     * information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             lifecycleState;
 
-    /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+    /**
+     * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For more
+     * information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     public java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
             getLifecycleState() {
         return lifecycleState;
@@ -151,12 +159,18 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** A cluster lifecycle state to filter on. Can have multiple parameters of this name. */
+        /**
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For
+         * more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+         */
         private java.util.List<com.oracle.bmc.containerengine.model.ClusterLifecycleState>
                 lifecycleState = null;
 
         /**
-         * A cluster lifecycle state to filter on. Can have multiple parameters of this name.
+         * A cluster lifecycle state to filter on. Can have multiple parameters of this name. For
+         * more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -170,7 +184,8 @@ public class ListClustersRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * Singular setter. A cluster lifecycle state to filter on. Can have multiple parameters of
-         * this name.
+         * this name. For more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param singularValue the singular value to set
          * @return this builder instance

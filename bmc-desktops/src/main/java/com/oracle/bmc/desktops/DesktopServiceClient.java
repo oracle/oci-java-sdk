@@ -695,6 +695,7 @@ public class DesktopServiceClient extends com.oracle.bmc.http.internal.BaseSyncC
                 .appendPathParam(request.getDesktopId())
                 .appendPathParam("actions")
                 .appendPathParam("stop")
+                .appendQueryParam("isSoftStop", request.getIsSoftStop())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())

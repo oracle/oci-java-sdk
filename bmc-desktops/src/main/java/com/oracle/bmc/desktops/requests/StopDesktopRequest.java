@@ -41,6 +41,13 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOpcRetryToken() {
         return opcRetryToken;
     }
+    /** Force a STOP(power off) of the desktop if set to false */
+    private Boolean isSoftStop;
+
+    /** Force a STOP(power off) of the desktop if set to false */
+    public Boolean getIsSoftStop() {
+        return isSoftStop;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -104,6 +111,20 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** Force a STOP(power off) of the desktop if set to false */
+        private Boolean isSoftStop = null;
+
+        /**
+         * Force a STOP(power off) of the desktop if set to false
+         *
+         * @param isSoftStop the value to set
+         * @return this builder instance
+         */
+        public Builder isSoftStop(Boolean isSoftStop) {
+            this.isSoftStop = isSoftStop;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -138,6 +159,7 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
             opcRequestId(o.getOpcRequestId());
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
+            isSoftStop(o.getIsSoftStop());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -176,8 +198,9 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.opcRequestId = opcRequestId;
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
+            request.isSoftStop = isSoftStop;
             return request;
-            // new StopDesktopRequest(desktopId, opcRequestId, ifMatch, opcRetryToken);
+            // new StopDesktopRequest(desktopId, opcRequestId, ifMatch, opcRetryToken, isSoftStop);
         }
     }
 
@@ -191,7 +214,8 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .desktopId(desktopId)
                 .opcRequestId(opcRequestId)
                 .ifMatch(ifMatch)
-                .opcRetryToken(opcRetryToken);
+                .opcRetryToken(opcRetryToken)
+                .isSoftStop(isSoftStop);
     }
 
     /**
@@ -212,6 +236,7 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
+        sb.append(",isSoftStop=").append(String.valueOf(this.isSoftStop));
         sb.append(")");
         return sb.toString();
     }
@@ -230,7 +255,8 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.desktopId, other.desktopId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken);
+                && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
+                && java.util.Objects.equals(this.isSoftStop, other.isSoftStop);
     }
 
     @Override
@@ -243,6 +269,7 @@ public class StopDesktopRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result =
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
+        result = (result * PRIME) + (this.isSoftStop == null ? 43 : this.isSoftStop.hashCode());
         return result;
     }
 }

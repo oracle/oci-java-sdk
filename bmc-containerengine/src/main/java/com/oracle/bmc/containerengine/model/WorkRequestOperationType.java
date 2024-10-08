@@ -10,6 +10,7 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     ClusterCreate("CLUSTER_CREATE"),
     ClusterUpdate("CLUSTER_UPDATE"),
     ClusterDelete("CLUSTER_DELETE"),
+    CreateNamespace("CREATE_NAMESPACE"),
     NodepoolCreate("NODEPOOL_CREATE"),
     NodepoolUpdate("NODEPOOL_UPDATE"),
     NodepoolDelete("NODEPOOL_DELETE"),

@@ -21,6 +21,10 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     BulkDeleteResources("BULK_DELETE_RESOURCES"),
     UpdateAndPropagateTags("UPDATE_AND_PROPAGATE_TAGS"),
     ImportResources("IMPORT_RESOURCES"),
+    CreateMaintenanceWindow("CREATE_MAINTENANCE_WINDOW"),
+    UpdateMaintenanceWindow("UPDATE_MAINTENANCE_WINDOW"),
+    DeleteMaintenanceWindow("DELETE_MAINTENANCE_WINDOW"),
+    StopMaintenanceWindow("STOP_MAINTENANCE_WINDOW"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

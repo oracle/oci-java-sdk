@@ -716,6 +716,7 @@ public class DesktopServiceAsyncClient extends com.oracle.bmc.http.internal.Base
                 .appendPathParam(request.getDesktopId())
                 .appendPathParam("actions")
                 .appendPathParam("stop")
+                .appendQueryParam("isSoftStop", request.getIsSoftStop())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .appendHeader("if-match", request.getIfMatch())

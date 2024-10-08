@@ -233,6 +233,23 @@ public interface StackMonitoring extends AutoCloseable {
     CreateDiscoveryJobResponse createDiscoveryJob(CreateDiscoveryJobRequest request);
 
     /**
+     * Creates a new Maintenance Window for the given resources. It will create also the Alarms
+     * Suppression for each alarm that the resource migth trigger.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/CreateMaintenanceWindowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateMaintenanceWindow API.
+     */
+    CreateMaintenanceWindowResponse createMaintenanceWindow(CreateMaintenanceWindowRequest request);
+
+    /**
      * Creates a new metric extension resource for a given compartment
      *
      * @param request The request object containing the details to send
@@ -363,6 +380,22 @@ public interface StackMonitoring extends AutoCloseable {
      *     API.
      */
     DeleteDiscoveryJobResponse deleteDiscoveryJob(DeleteDiscoveryJobRequest request);
+
+    /**
+     * Deletes a maintenance window by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteMaintenanceWindowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteMaintenanceWindow API.
+     */
+    DeleteMaintenanceWindowResponse deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request);
 
     /**
      * Deletes a metric extension by identifier
@@ -583,6 +616,23 @@ public interface StackMonitoring extends AutoCloseable {
     GetDiscoveryJobResponse getDiscoveryJob(GetDiscoveryJobRequest request);
 
     /**
+     * Get maintenance window for the given identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/GetMaintenanceWindowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMaintenanceWindow API.
+     */
+    GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request);
+
+    /**
      * Gets a Metric Extension by identifier
      *
      * @param request The request object containing the details to send
@@ -743,6 +793,22 @@ public interface StackMonitoring extends AutoCloseable {
      *     API.
      */
     ListDiscoveryJobsResponse listDiscoveryJobs(ListDiscoveryJobsRequest request);
+
+    /**
+     * Returns a list of maintenance windows.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMaintenanceWindowsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMaintenanceWindows API.
+     */
+    ListMaintenanceWindowsResponse listMaintenanceWindows(ListMaintenanceWindowsRequest request);
 
     /**
      * Returns a list of metric extensions
@@ -930,6 +996,24 @@ public interface StackMonitoring extends AutoCloseable {
             RequestMonitoredResourcesSummarizedCountRequest request);
 
     /**
+     * Retry the last failed operation. The operation failed will be the most recent one. It won't
+     * apply for previous failed operations.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/RetryFailedMaintenanceWindowOperationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RetryFailedMaintenanceWindowOperation API.
+     */
+    RetryFailedMaintenanceWindowOperationResponse retryFailedMaintenanceWindowOperation(
+            RetryFailedMaintenanceWindowOperationRequest request);
+
+    /**
      * List all associated resources recursively up-to a specified level, for the monitored
      * resources of type specified.
      *
@@ -1000,6 +1084,22 @@ public interface StackMonitoring extends AutoCloseable {
             SearchMonitoredResourcesRequest request);
 
     /**
+     * Stop a maintenance window before the end time is reached.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/StopMaintenanceWindowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     StopMaintenanceWindow API.
+     */
+    StopMaintenanceWindowResponse stopMaintenanceWindow(StopMaintenanceWindowRequest request);
+
+    /**
      * Performs test of Metric Extension on a specific resource Id
      *
      * @param request The request object containing the details to send
@@ -1066,6 +1166,23 @@ public interface StackMonitoring extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConfig API.
      */
     UpdateConfigResponse updateConfig(UpdateConfigRequest request);
+
+    /**
+     * Update maintenance window by the given identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMaintenanceWindowExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMaintenanceWindow API.
+     */
+    UpdateMaintenanceWindowResponse updateMaintenanceWindow(UpdateMaintenanceWindowRequest request);
 
     /**
      * Updates the Metric Extension
