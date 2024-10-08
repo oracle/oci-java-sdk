@@ -661,7 +661,9 @@ public interface FusionApplicationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Resets the password of the Fusion Environment Administrator.
+     * Reset FusionEnvironment admin password. This API will be deprecated on Mon, 15 Jan 2024
+     * 01:00:00 GMT. Users can reset password themselves, FAaaS will no longer provide an API for
+     * this.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

@@ -8,9 +8,10 @@ import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
 
 /**
- * API for the Container Engine for Kubernetes service. Use this API to build, deploy, and manage
- * cloud-native applications. For more information, see [Overview of Container Engine for
- * Kubernetes](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
+ * API for the Kubernetes Engine service (also known as the Container Engine for Kubernetes
+ * service). Use this API to build, deploy, and manage cloud-native applications. For more
+ * information, see [Overview of Kubernetes
+ * Engine](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.

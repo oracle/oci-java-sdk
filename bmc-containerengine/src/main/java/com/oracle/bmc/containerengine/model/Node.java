@@ -290,12 +290,16 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("systemTags");
             return this;
         }
-        /** The state of the node. */
+        /**
+         * The state of the node. For more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private LifecycleState lifecycleState;
 
         /**
-         * The state of the node.
+         * The state of the node. For more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -597,7 +601,10 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return systemTags;
     }
 
-    /** The state of the node. */
+    /**
+     * The state of the node. For more information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     public enum LifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
         Creating("CREATING"),
         Active("ACTIVE"),
@@ -648,12 +655,16 @@ public final class Node extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return UnknownEnumValue;
         }
     };
-    /** The state of the node. */
+    /**
+     * The state of the node. For more information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final LifecycleState lifecycleState;
 
     /**
-     * The state of the node.
+     * The state of the node. For more information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      *
      * @return the value
      */

@@ -47,6 +47,7 @@ public final class CreateLoadBalancerDetails
         "pathRouteSets",
         "freeformTags",
         "definedTags",
+        "zprTags",
         "ruleSets"
     })
     public CreateLoadBalancerDetails(
@@ -70,6 +71,7 @@ public final class CreateLoadBalancerDetails
             java.util.Map<String, PathRouteSetDetails> pathRouteSets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> zprTags,
             java.util.Map<String, RuleSetDetails> ruleSets) {
         super();
         this.compartmentId = compartmentId;
@@ -92,6 +94,7 @@ public final class CreateLoadBalancerDetails
         this.pathRouteSets = pathRouteSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.zprTags = zprTags;
         this.ruleSets = ruleSets;
     }
 
@@ -569,6 +572,31 @@ public final class CreateLoadBalancerDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+         * namespace.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+         * "usagetype" : "zpr"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+         * namespace.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+         * "usagetype" : "zpr"}}}}
+         *
+         * @param zprTags the value to set
+         * @return this builder
+         */
+        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
+            this.zprTags = zprTags;
+            this.__explicitlySet__.add("zprTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
         private java.util.Map<String, RuleSetDetails> ruleSets;
@@ -605,6 +633,7 @@ public final class CreateLoadBalancerDetails
                             this.pathRouteSets,
                             this.freeformTags,
                             this.definedTags,
+                            this.zprTags,
                             this.ruleSets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -673,6 +702,9 @@ public final class CreateLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("zprTags")) {
+                this.zprTags(model.getZprTags());
             }
             if (model.wasPropertyExplicitlySet("ruleSets")) {
                 this.ruleSets(model.getRuleSets());
@@ -1157,6 +1189,29 @@ public final class CreateLoadBalancerDetails
         return definedTags;
     }
 
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+     * namespace.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+     * "usagetype" : "zpr"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+     * namespace.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+     * "usagetype" : "zpr"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
+        return zprTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
     private final java.util.Map<String, RuleSetDetails> ruleSets;
 
@@ -1201,6 +1256,7 @@ public final class CreateLoadBalancerDetails
         sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(")");
         return sb.toString();
@@ -1238,6 +1294,7 @@ public final class CreateLoadBalancerDetails
                 && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.zprTags, other.zprTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && super.equals(other);
     }
@@ -1286,6 +1343,7 @@ public final class CreateLoadBalancerDetails
                         + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
         result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

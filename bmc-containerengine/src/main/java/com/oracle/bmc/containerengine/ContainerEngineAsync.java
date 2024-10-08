@@ -8,9 +8,10 @@ import com.oracle.bmc.containerengine.requests.*;
 import com.oracle.bmc.containerengine.responses.*;
 
 /**
- * API for the Container Engine for Kubernetes service. Use this API to build, deploy, and manage
- * cloud-native applications. For more information, see [Overview of Container Engine for
- * Kubernetes](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
+ * API for the Kubernetes Engine service (also known as the Container Engine for Kubernetes
+ * service). Use this API to build, deploy, and manage cloud-native applications. For more
+ * information, see [Overview of Kubernetes
+ * Engine](https://docs.cloud.oracle.com/iaas/Content/ContEng/Concepts/contengoverview.htm).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public interface ContainerEngineAsync extends AutoCloseable {

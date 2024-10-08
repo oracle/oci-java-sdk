@@ -33,8 +33,7 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ZPR")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://{service}.{region}.oci.{secondLevelDomain}")
-                    .endpointServiceName("${endpoint-template-prefix}")
+                    .serviceEndpointTemplate("https://zpr.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG =
@@ -104,9 +103,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         Objects.requireNonNull(
                 request.getCreateConfigurationDetails(), "createConfigurationDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateConfigurationResponse::builder)
                 .logger(LOG, "createConfiguration")
                 .serviceDetails("Zpr", "CreateConfiguration", "")
@@ -135,9 +131,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                     handler) {
         Objects.requireNonNull(
                 request.getCreateZprPolicyDetails(), "createZprPolicyDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateZprPolicyResponse::builder)
                 .logger(LOG, "createZprPolicy")
@@ -173,10 +166,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
 
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteZprPolicyResponse::builder)
                 .logger(LOG, "deleteZprPolicy")
                 .serviceDetails("Zpr", "DeleteZprPolicy", "")
@@ -202,9 +191,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             final com.oracle.bmc.responses.AsyncHandler<
                             GetConfigurationRequest, GetConfigurationResponse>
                     handler) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetConfigurationResponse::builder)
                 .logger(LOG, "getConfiguration")
@@ -235,10 +221,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                             handler) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetZprConfigurationWorkRequestResponse::builder)
                 .logger(LOG, "getZprConfigurationWorkRequest")
@@ -271,10 +253,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
 
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetZprPolicyResponse::builder)
                 .logger(LOG, "getZprPolicy")
                 .serviceDetails("Zpr", "GetZprPolicy", "")
@@ -302,10 +280,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                     handler) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetZprPolicyWorkRequestResponse::builder)
                 .logger(LOG, "getZprPolicyWorkRequest")
@@ -338,10 +312,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                             handler) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprConfigurationWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestErrors")
@@ -382,10 +352,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprConfigurationWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestLogs")
                 .serviceDetails("Zpr", "ListZprConfigurationWorkRequestLogs", "")
@@ -423,9 +389,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
                                     ListZprConfigurationWorkRequestsResponse>
                             handler) {
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprConfigurationWorkRequestsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequests")
                 .serviceDetails("Zpr", "ListZprConfigurationWorkRequests", "")
@@ -462,9 +425,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             final com.oracle.bmc.responses.AsyncHandler<
                             ListZprPoliciesRequest, ListZprPoliciesResponse>
                     handler) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprPoliciesResponse::builder)
                 .logger(LOG, "listZprPolicies")
@@ -504,10 +464,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprPolicyWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestErrors")
                 .serviceDetails("Zpr", "ListZprPolicyWorkRequestErrors", "")
@@ -546,10 +502,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprPolicyWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestLogs")
                 .serviceDetails("Zpr", "ListZprPolicyWorkRequestLogs", "")
@@ -582,9 +534,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
             final com.oracle.bmc.responses.AsyncHandler<
                             ListZprPolicyWorkRequestsRequest, ListZprPolicyWorkRequestsResponse>
                     handler) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprPolicyWorkRequestsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequests")
@@ -623,10 +572,6 @@ public class ZprAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncClient
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateZprPolicyDetails(), "updateZprPolicyDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateZprPolicyResponse::builder)
                 .logger(LOG, "updateZprPolicy")

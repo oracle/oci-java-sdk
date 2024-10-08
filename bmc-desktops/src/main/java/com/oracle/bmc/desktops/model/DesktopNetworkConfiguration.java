@@ -32,12 +32,16 @@ public final class DesktopNetworkConfiguration
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID of the VCN used by the desktop pool. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * customer VCN.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
         private String vcnId;
 
         /**
-         * The OCID of the VCN used by the desktop pool.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * customer VCN.
          *
          * @param vcnId the value to set
          * @return this builder
@@ -47,12 +51,16 @@ public final class DesktopNetworkConfiguration
             this.__explicitlySet__.add("vcnId");
             return this;
         }
-        /** The OCID of the subnet to use for the desktop pool. */
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet in the customer VCN where the connectivity will be established.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The OCID of the subnet to use for the desktop pool.
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * subnet in the customer VCN where the connectivity will be established.
          *
          * @param subnetId the value to set
          * @return this builder
@@ -96,12 +104,16 @@ public final class DesktopNetworkConfiguration
         return new Builder().copy(this);
     }
 
-    /** The OCID of the VCN used by the desktop pool. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * customer VCN.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("vcnId")
     private final String vcnId;
 
     /**
-     * The OCID of the VCN used by the desktop pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * customer VCN.
      *
      * @return the value
      */
@@ -109,12 +121,16 @@ public final class DesktopNetworkConfiguration
         return vcnId;
     }
 
-    /** The OCID of the subnet to use for the desktop pool. */
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet in the customer VCN where the connectivity will be established.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The OCID of the subnet to use for the desktop pool.
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * subnet in the customer VCN where the connectivity will be established.
      *
      * @return the value
      */

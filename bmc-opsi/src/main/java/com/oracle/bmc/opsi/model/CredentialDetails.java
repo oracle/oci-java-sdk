@@ -27,7 +27,10 @@ package com.oracle.bmc.opsi.model;
             name = "CREDENTIALS_BY_SOURCE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CredentialByVault.class,
-            name = "CREDENTIALS_BY_VAULT")
+            name = "CREDENTIALS_BY_VAULT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CredentialByIam.class,
+            name = "CREDENTIALS_BY_IAM")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -103,10 +106,15 @@ public class CredentialDetails extends com.oracle.bmc.http.client.internal.Expli
         return result;
     }
 
-    /** Credential type. */
+    /**
+     * CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is
+     * supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well.
+     * CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     */
     public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
+        CredentialsByIam("CREDENTIALS_BY_IAM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

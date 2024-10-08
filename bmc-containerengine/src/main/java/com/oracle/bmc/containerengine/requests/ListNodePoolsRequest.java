@@ -130,14 +130,16 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
     }
     /**
      * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR
-     * logic). eg. [ACTIVE, DELETING]
+     * logic). eg. [ACTIVE, DELETING]. For more information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      */
     private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
             lifecycleState;
 
     /**
      * A list of nodepool lifecycle states on which to filter on, matching any of the list items (OR
-     * logic). eg. [ACTIVE, DELETING]
+     * logic). eg. [ACTIVE, DELETING]. For more information, see [Monitoring
+     * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      */
     public java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
             getLifecycleState() {
@@ -282,14 +284,16 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * A list of nodepool lifecycle states on which to filter on, matching any of the list items
-         * (OR logic). eg. [ACTIVE, DELETING]
+         * (OR logic). eg. [ACTIVE, DELETING]. For more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          */
         private java.util.List<com.oracle.bmc.containerengine.model.NodePoolLifecycleState>
                 lifecycleState = null;
 
         /**
          * A list of nodepool lifecycle states on which to filter on, matching any of the list items
-         * (OR logic). eg. [ACTIVE, DELETING]
+         * (OR logic). eg. [ACTIVE, DELETING]. For more information, see [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -303,7 +307,9 @@ public class ListNodePoolsRequest extends com.oracle.bmc.requests.BmcRequest<jav
 
         /**
          * Singular setter. A list of nodepool lifecycle states on which to filter on, matching any
-         * of the list items (OR logic). eg. [ACTIVE, DELETING]
+         * of the list items (OR logic). eg. [ACTIVE, DELETING]. For more information, see
+         * [Monitoring
+         * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          *
          * @param singularValue the singular value to set
          * @return this builder instance

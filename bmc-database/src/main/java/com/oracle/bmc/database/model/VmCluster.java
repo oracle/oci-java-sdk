@@ -51,7 +51,8 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         "definedTags",
         "dataCollectionOptions",
         "giSoftwareImageId",
-        "fileSystemConfigurationDetails"
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails"
     })
     public VmCluster(
             String id,
@@ -83,7 +84,8 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DataCollectionOptions dataCollectionOptions,
             String giSoftwareImageId,
-            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -115,6 +117,7 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         this.dataCollectionOptions = dataCollectionOptions;
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -632,6 +635,16 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -667,7 +680,8 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                             this.definedTags,
                             this.dataCollectionOptions,
                             this.giSoftwareImageId,
-                            this.fileSystemConfigurationDetails);
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -765,6 +779,9 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
             return this;
         }
@@ -1322,6 +1339,13 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         return fileSystemConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1371,6 +1395,8 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1420,6 +1446,8 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && super.equals(other);
     }
 
@@ -1515,6 +1543,11 @@ public final class VmCluster extends com.oracle.bmc.http.client.internal.Explici
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

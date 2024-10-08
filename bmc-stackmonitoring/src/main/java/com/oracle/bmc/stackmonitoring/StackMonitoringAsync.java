@@ -230,6 +230,23 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Maintenance Window for the given resources. It will create also the Alarms
+     * Suppression for each alarm that the resource migth trigger.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMaintenanceWindowResponse> createMaintenanceWindow(
+            CreateMaintenanceWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMaintenanceWindowRequest, CreateMaintenanceWindowResponse>
+                    handler);
+
+    /**
      * Creates a new metric extension resource for a given compartment
      *
      * @param request The request object containing the details to send
@@ -355,6 +372,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
             DeleteDiscoveryJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDiscoveryJobRequest, DeleteDiscoveryJobResponse>
+                    handler);
+
+    /**
+     * Deletes a maintenance window by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMaintenanceWindowResponse> deleteMaintenanceWindow(
+            DeleteMaintenanceWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResponse>
                     handler);
 
     /**
@@ -572,6 +605,23 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get maintenance window for the given identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMaintenanceWindowResponse> getMaintenanceWindow(
+            GetMaintenanceWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMaintenanceWindowRequest, GetMaintenanceWindowResponse>
+                    handler);
+
+    /**
      * Gets a Metric Extension by identifier
      *
      * @param request The request object containing the details to send
@@ -728,6 +778,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
             ListDiscoveryJobsRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListDiscoveryJobsRequest, ListDiscoveryJobsResponse>
+                    handler);
+
+    /**
+     * Returns a list of maintenance windows.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaintenanceWindowsResponse> listMaintenanceWindows(
+            ListMaintenanceWindowsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>
                     handler);
 
     /**
@@ -913,6 +979,25 @@ public interface StackMonitoringAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Retry the last failed operation. The operation failed will be the most recent one. It won't
+     * apply for previous failed operations.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RetryFailedMaintenanceWindowOperationResponse>
+            retryFailedMaintenanceWindowOperation(
+                    RetryFailedMaintenanceWindowOperationRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RetryFailedMaintenanceWindowOperationRequest,
+                                    RetryFailedMaintenanceWindowOperationResponse>
+                            handler);
+
+    /**
      * List all associated resources recursively up-to a specified level, for the monitored
      * resources of type specified.
      *
@@ -983,6 +1068,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Stop a maintenance window before the end time is reached.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopMaintenanceWindowResponse> stopMaintenanceWindow(
+            StopMaintenanceWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StopMaintenanceWindowRequest, StopMaintenanceWindowResponse>
+                    handler);
+
+    /**
      * Performs test of Metric Extension on a specific resource Id
      *
      * @param request The request object containing the details to send
@@ -1047,6 +1148,23 @@ public interface StackMonitoringAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateConfigResponse> updateConfig(
             UpdateConfigRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateConfigRequest, UpdateConfigResponse>
+                    handler);
+
+    /**
+     * Update maintenance window by the given identifier
+     * [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMaintenanceWindowResponse> updateMaintenanceWindow(
+            UpdateMaintenanceWindowRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMaintenanceWindowRequest, UpdateMaintenanceWindowResponse>
                     handler);
 
     /**

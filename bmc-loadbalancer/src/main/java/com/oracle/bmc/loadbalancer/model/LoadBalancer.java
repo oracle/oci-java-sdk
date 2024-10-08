@@ -55,6 +55,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         "pathRouteSets",
         "freeformTags",
         "definedTags",
+        "zprTags",
         "systemTags",
         "ruleSets",
         "routingPolicies"
@@ -82,6 +83,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             java.util.Map<String, PathRouteSet> pathRouteSets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> zprTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, RuleSet> ruleSets,
             java.util.Map<String, RoutingPolicy> routingPolicies) {
@@ -108,6 +110,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         this.pathRouteSets = pathRouteSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.zprTags = zprTags;
         this.systemTags = systemTags;
         this.ruleSets = ruleSets;
         this.routingPolicies = routingPolicies;
@@ -579,6 +582,31 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             return this;
         }
         /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+         * namespace.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+         * "usagetype" : "zpr"}}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+         * namespace.
+         *
+         * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+         * "usagetype" : "zpr"}}}}
+         *
+         * @param zprTags the value to set
+         * @return this builder
+         */
+        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
+            this.zprTags = zprTags;
+            this.__explicitlySet__.add("zprTags");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System
@@ -652,6 +680,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                             this.pathRouteSets,
                             this.freeformTags,
                             this.definedTags,
+                            this.zprTags,
                             this.systemTags,
                             this.ruleSets,
                             this.routingPolicies);
@@ -728,6 +757,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("zprTags")) {
+                this.zprTags(model.getZprTags());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -1213,6 +1245,29 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
     }
 
     /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+     * namespace.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+     * "usagetype" : "zpr"}}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a
+     * namespace.
+     *
+     * <p>Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit",
+     * "usagetype" : "zpr"}}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
+        return zprTags;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm). System tags
@@ -1290,6 +1345,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(", routingPolicies=").append(String.valueOf(this.routingPolicies));
@@ -1331,6 +1387,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.zprTags, other.zprTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && java.util.Objects.equals(this.routingPolicies, other.routingPolicies)
@@ -1385,6 +1442,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.client.internal.Expl
                         + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
         result =

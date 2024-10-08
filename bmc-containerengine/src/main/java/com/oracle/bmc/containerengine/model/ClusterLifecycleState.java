@@ -4,7 +4,10 @@
  */
 package com.oracle.bmc.containerengine.model;
 
-/** The lifecycle state of a cluster. */
+/**
+ * The lifecycle state of a cluster. For more information, see [Monitoring
+ * Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
+ */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180222")
 public enum ClusterLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Creating("CREATING"),

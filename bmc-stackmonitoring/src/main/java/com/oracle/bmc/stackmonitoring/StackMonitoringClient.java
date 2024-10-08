@@ -444,6 +444,40 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateMaintenanceWindowResponse createMaintenanceWindow(
+            CreateMaintenanceWindowRequest request) {
+        Objects.requireNonNull(
+                request.getCreateMaintenanceWindowDetails(),
+                "createMaintenanceWindowDetails is required");
+
+        return clientCall(request, CreateMaintenanceWindowResponse::builder)
+                .logger(LOG, "createMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "CreateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/CreateMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindow.class,
+                        CreateMaintenanceWindowResponse.Builder::maintenanceWindow)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateMaintenanceWindowResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateMaintenanceWindowResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateMetricExtensionResponse createMetricExtension(
             CreateMetricExtensionRequest request) {
         Objects.requireNonNull(
@@ -689,6 +723,35 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteDiscoveryJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteMaintenanceWindowResponse deleteMaintenanceWindow(
+            DeleteMaintenanceWindowRequest request) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, DeleteMaintenanceWindowResponse::builder)
+                .logger(LOG, "deleteMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "DeleteMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/DeleteMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteMaintenanceWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1092,6 +1155,35 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, GetMaintenanceWindowResponse::builder)
+                .logger(LOG, "getMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "GetMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/GetMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindow.class,
+                        GetMaintenanceWindowResponse.Builder::maintenanceWindow)
+                .handleResponseHeaderString("etag", GetMaintenanceWindowResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetMaintenanceWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetMetricExtensionResponse getMetricExtension(GetMetricExtensionRequest request) {
 
         Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
@@ -1407,6 +1499,44 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-next-page", ListDiscoveryJobsResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-request-id", ListDiscoveryJobsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListMaintenanceWindowsResponse listMaintenanceWindows(
+            ListMaintenanceWindowsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMaintenanceWindowsResponse::builder)
+                .logger(LOG, "listMaintenanceWindows")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "ListMaintenanceWindows",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/ListMaintenanceWindows")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaintenanceWindowsRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendEnumQueryParam("lifecycleDetails", request.getLifecycleDetails())
+                .appendEnumQueryParam("status", request.getStatus())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.stackmonitoring.model.MaintenanceWindowCollection.class,
+                        ListMaintenanceWindowsResponse.Builder::maintenanceWindowCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMaintenanceWindowsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMaintenanceWindowsResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListMaintenanceWindowsResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -1822,6 +1952,38 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public RetryFailedMaintenanceWindowOperationResponse retryFailedMaintenanceWindowOperation(
+            RetryFailedMaintenanceWindowOperationRequest request) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, RetryFailedMaintenanceWindowOperationResponse::builder)
+                .logger(LOG, "retryFailedMaintenanceWindowOperation")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "RetryFailedMaintenanceWindowOperation",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/RetryFailedMaintenanceWindowOperation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RetryFailedMaintenanceWindowOperationRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("retryFailedOperation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RetryFailedMaintenanceWindowOperationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RetryFailedMaintenanceWindowOperationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SearchAssociatedResourcesResponse searchAssociatedResources(
             SearchAssociatedResourcesRequest request) {
         Objects.requireNonNull(
@@ -2010,6 +2172,37 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public StopMaintenanceWindowResponse stopMaintenanceWindow(
+            StopMaintenanceWindowRequest request) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+
+        return clientCall(request, StopMaintenanceWindowResponse::builder)
+                .logger(LOG, "stopMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "StopMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/StopMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        StopMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", StopMaintenanceWindowResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public TestMetricExtensionResponse testMetricExtension(TestMetricExtensionRequest request) {
 
         Validate.notBlank(request.getMetricExtensionId(), "metricExtensionId must not be blank");
@@ -2148,6 +2341,39 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", UpdateConfigResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConfigResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateMaintenanceWindowResponse updateMaintenanceWindow(
+            UpdateMaintenanceWindowRequest request) {
+
+        Validate.notBlank(
+                request.getMaintenanceWindowId(), "maintenanceWindowId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateMaintenanceWindowDetails(),
+                "updateMaintenanceWindowDetails is required");
+
+        return clientCall(request, UpdateMaintenanceWindowResponse::builder)
+                .logger(LOG, "updateMaintenanceWindow")
+                .serviceDetails(
+                        "StackMonitoring",
+                        "UpdateMaintenanceWindow",
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/UpdateMaintenanceWindow")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateMaintenanceWindowRequest::builder)
+                .basePath("/20210330")
+                .appendPathParam("maintenanceWindows")
+                .appendPathParam(request.getMaintenanceWindowId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateMaintenanceWindowResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateMaintenanceWindowResponse.Builder::opcRequestId)
                 .callSync();
     }
 

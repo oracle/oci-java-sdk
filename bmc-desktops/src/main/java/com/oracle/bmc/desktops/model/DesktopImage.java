@@ -21,11 +21,12 @@ package com.oracle.bmc.desktops.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class DesktopImage extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"imageId", "imageName"})
-    public DesktopImage(String imageId, String imageName) {
+    @java.beans.ConstructorProperties({"imageId", "imageName", "operatingSystem"})
+    public DesktopImage(String imageId, String imageName, String operatingSystem) {
         super();
         this.imageId = imageId;
         this.imageName = imageName;
+        this.operatingSystem = operatingSystem;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -60,12 +61,28 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("imageName");
             return this;
         }
+        /** The operating system of the desktop image, e.g. "Oracle Linux", "Windows". */
+        @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+        private String operatingSystem;
+
+        /**
+         * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+         *
+         * @param operatingSystem the value to set
+         * @return this builder
+         */
+        public Builder operatingSystem(String operatingSystem) {
+            this.operatingSystem = operatingSystem;
+            this.__explicitlySet__.add("operatingSystem");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DesktopImage build() {
-            DesktopImage model = new DesktopImage(this.imageId, this.imageName);
+            DesktopImage model =
+                    new DesktopImage(this.imageId, this.imageName, this.operatingSystem);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -79,6 +96,9 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("imageName")) {
                 this.imageName(model.getImageName());
+            }
+            if (model.wasPropertyExplicitlySet("operatingSystem")) {
+                this.operatingSystem(model.getOperatingSystem());
             }
             return this;
         }
@@ -119,6 +139,19 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         return imageName;
     }
 
+    /** The operating system of the desktop image, e.g. "Oracle Linux", "Windows". */
+    @com.fasterxml.jackson.annotation.JsonProperty("operatingSystem")
+    private final String operatingSystem;
+
+    /**
+     * The operating system of the desktop image, e.g. "Oracle Linux", "Windows".
+     *
+     * @return the value
+     */
+    public String getOperatingSystem() {
+        return operatingSystem;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -136,6 +169,7 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         sb.append("super=").append(super.toString());
         sb.append("imageId=").append(String.valueOf(this.imageId));
         sb.append(", imageName=").append(String.valueOf(this.imageName));
+        sb.append(", operatingSystem=").append(String.valueOf(this.operatingSystem));
         sb.append(")");
         return sb.toString();
     }
@@ -152,6 +186,7 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         DesktopImage other = (DesktopImage) o;
         return java.util.Objects.equals(this.imageId, other.imageId)
                 && java.util.Objects.equals(this.imageName, other.imageName)
+                && java.util.Objects.equals(this.operatingSystem, other.operatingSystem)
                 && super.equals(other);
     }
 
@@ -161,6 +196,9 @@ public final class DesktopImage extends com.oracle.bmc.http.client.internal.Expl
         int result = 1;
         result = (result * PRIME) + (this.imageId == null ? 43 : this.imageId.hashCode());
         result = (result * PRIME) + (this.imageName == null ? 43 : this.imageName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.operatingSystem == null ? 43 : this.operatingSystem.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

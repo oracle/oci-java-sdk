@@ -19,8 +19,7 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             com.oracle.bmc.Services.serviceBuilder()
                     .serviceName("ZPR")
                     .serviceEndpointPrefix("")
-                    .serviceEndpointTemplate("https://{service}.{region}.oci.{secondLevelDomain}")
-                    .endpointServiceName("${endpoint-template-prefix}")
+                    .serviceEndpointTemplate("https://zpr.{region}.oci.{secondLevelDomain}")
                     .build();
 
     private static final org.slf4j.Logger LOG = org.slf4j.LoggerFactory.getLogger(ZprClient.class);
@@ -126,9 +125,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
         Objects.requireNonNull(
                 request.getCreateConfigurationDetails(), "createConfigurationDetails is required");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, CreateConfigurationResponse::builder)
                 .logger(LOG, "createConfiguration")
                 .serviceDetails("Zpr", "CreateConfiguration", "")
@@ -154,9 +150,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     public CreateZprPolicyResponse createZprPolicy(CreateZprPolicyRequest request) {
         Objects.requireNonNull(
                 request.getCreateZprPolicyDetails(), "createZprPolicyDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, CreateZprPolicyResponse::builder)
                 .logger(LOG, "createZprPolicy")
@@ -189,10 +182,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, DeleteZprPolicyResponse::builder)
                 .logger(LOG, "deleteZprPolicy")
                 .serviceDetails("Zpr", "DeleteZprPolicy", "")
@@ -215,9 +204,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
     @Override
     public GetConfigurationResponse getConfiguration(GetConfigurationRequest request) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetConfigurationResponse::builder)
                 .logger(LOG, "getConfiguration")
@@ -244,10 +230,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             GetZprConfigurationWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetZprConfigurationWorkRequestResponse::builder)
                 .logger(LOG, "getZprConfigurationWorkRequest")
@@ -278,10 +260,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, GetZprPolicyResponse::builder)
                 .logger(LOG, "getZprPolicy")
                 .serviceDetails("Zpr", "GetZprPolicy", "")
@@ -307,10 +285,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             GetZprPolicyWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, GetZprPolicyWorkRequestResponse::builder)
                 .logger(LOG, "getZprPolicyWorkRequest")
@@ -339,10 +313,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             ListZprConfigurationWorkRequestErrorsRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprConfigurationWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestErrors")
@@ -379,10 +349,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprConfigurationWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestLogs")
                 .serviceDetails("Zpr", "ListZprConfigurationWorkRequestLogs", "")
@@ -415,9 +381,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     @Override
     public ListZprConfigurationWorkRequestsResponse listZprConfigurationWorkRequests(
             ListZprConfigurationWorkRequestsRequest request) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprConfigurationWorkRequestsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequests")
@@ -453,9 +416,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     @Override
     public ListZprPoliciesResponse listZprPolicies(ListZprPoliciesRequest request) {
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprPoliciesResponse::builder)
                 .logger(LOG, "listZprPolicies")
                 .serviceDetails("Zpr", "ListZprPolicies", "")
@@ -489,10 +449,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
             ListZprPolicyWorkRequestErrorsRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprPolicyWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestErrors")
@@ -528,10 +484,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
 
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("workRequestId", request.getWorkRequestId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
-
         return clientCall(request, ListZprPolicyWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestLogs")
                 .serviceDetails("Zpr", "ListZprPolicyWorkRequestLogs", "")
@@ -562,9 +514,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     @Override
     public ListZprPolicyWorkRequestsResponse listZprPolicyWorkRequests(
             ListZprPolicyWorkRequestsRequest request) {
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, ListZprPolicyWorkRequestsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequests")
@@ -600,10 +549,6 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
         Validate.notBlank(request.getZprPolicyId(), "zprPolicyId must not be blank");
         Objects.requireNonNull(
                 request.getUpdateZprPolicyDetails(), "updateZprPolicyDetails is required");
-
-        java.util.Map<String, Object> requiredParametersMap = new java.util.HashMap<>();
-        requiredParametersMap.put("zprPolicyId", request.getZprPolicyId());
-        this.populateServiceParametersInEndpoint(this.getEndpoint(), requiredParametersMap);
 
         return clientCall(request, UpdateZprPolicyResponse::builder)
                 .logger(LOG, "updateZprPolicy")
