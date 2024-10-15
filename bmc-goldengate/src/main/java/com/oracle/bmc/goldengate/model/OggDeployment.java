@@ -28,7 +28,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         "certificate",
         "credentialStore",
         "identityDomainId",
-        "passwordSecretId"
+        "passwordSecretId",
+        "groupToRolesMapping"
     })
     public OggDeployment(
             String deploymentName,
@@ -37,7 +38,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             String certificate,
             CredentialStore credentialStore,
             String identityDomainId,
-            String passwordSecretId) {
+            String passwordSecretId,
+            GroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.deploymentName = deploymentName;
         this.adminUsername = adminUsername;
@@ -46,6 +48,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         this.credentialStore = credentialStore;
         this.identityDomainId = identityDomainId;
         this.passwordSecretId = passwordSecretId;
+        this.groupToRolesMapping = groupToRolesMapping;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -168,6 +171,15 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+        private GroupToRolesMappingDetails groupToRolesMapping;
+
+        public Builder groupToRolesMapping(GroupToRolesMappingDetails groupToRolesMapping) {
+            this.groupToRolesMapping = groupToRolesMapping;
+            this.__explicitlySet__.add("groupToRolesMapping");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -180,7 +192,8 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                             this.certificate,
                             this.credentialStore,
                             this.identityDomainId,
-                            this.passwordSecretId);
+                            this.passwordSecretId,
+                            this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -209,6 +222,9 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("passwordSecretId")) {
                 this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
+                this.groupToRolesMapping(model.getGroupToRolesMapping());
             }
             return this;
         }
@@ -326,6 +342,13 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         return passwordSecretId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+    private final GroupToRolesMappingDetails groupToRolesMapping;
+
+    public GroupToRolesMappingDetails getGroupToRolesMapping() {
+        return groupToRolesMapping;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -348,6 +371,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", credentialStore=").append(String.valueOf(this.credentialStore));
         sb.append(", identityDomainId=").append(String.valueOf(this.identityDomainId));
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
     }
@@ -369,6 +393,7 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.credentialStore, other.credentialStore)
                 && java.util.Objects.equals(this.identityDomainId, other.identityDomainId)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
 
@@ -393,6 +418,11 @@ public final class OggDeployment extends com.oracle.bmc.http.client.internal.Exp
         result =
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupToRolesMapping == null
+                                ? 43
+                                : this.groupToRolesMapping.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

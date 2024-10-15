@@ -557,11 +557,15 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        CopyDeploymentBackupResponse.Builder::deploymentBackup)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CopyDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CopyDeploymentBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CopyDeploymentBackupResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -773,11 +777,15 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .hasBody()
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentBackup.class,
+                        CreateDeploymentBackupResponse.Builder::deploymentBackup)
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         CreateDeploymentBackupResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", CreateDeploymentBackupResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", CreateDeploymentBackupResponse.Builder::etag)
                 .callAsync(handler);
     }
 
@@ -1592,6 +1600,43 @@ public class GoldenGateAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
                         "opc-request-id", ListDeploymentBackupsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListDeploymentBackupsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListDeploymentEnvironmentsResponse>
+            listDeploymentEnvironments(
+                    ListDeploymentEnvironmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDeploymentEnvironmentsRequest,
+                                    ListDeploymentEnvironmentsResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListDeploymentEnvironmentsResponse::builder)
+                .logger(LOG, "listDeploymentEnvironments")
+                .serviceDetails(
+                        "GoldenGate",
+                        "ListDeploymentEnvironments",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentEnvironmentCollection/ListDeploymentEnvironments")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListDeploymentEnvironmentsRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("deploymentEnvironments")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.goldengate.model.DeploymentEnvironmentCollection.class,
+                        ListDeploymentEnvironmentsResponse.Builder::deploymentEnvironmentCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListDeploymentEnvironmentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListDeploymentEnvironmentsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 

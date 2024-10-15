@@ -6,7 +6,8 @@ package com.oracle.bmc.goldengate.model;
 
 /**
  * The result of the connectivity test performed between the GoldenGate deployment and the
- * associated database / service. <br>
+ * associated database / service. The 'error' property is deprecated and will not contain values in
+ * the future. So, the error(s) will be returned in just the 'errors' property. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -24,12 +25,15 @@ package com.oracle.bmc.goldengate.model;
 public final class TestConnectionAssignmentResult
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"resultType", "error"})
+    @java.beans.ConstructorProperties({"resultType", "error", "errors"})
     public TestConnectionAssignmentResult(
-            ResultType resultType, TestConnectionAssignmentError error) {
+            ResultType resultType,
+            TestConnectionAssignmentError error,
+            java.util.List<TestConnectionAssignmentError> errors) {
         super();
         this.resultType = resultType;
         this.error = error;
+        this.errors = errors;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -58,13 +62,28 @@ public final class TestConnectionAssignmentResult
             this.__explicitlySet__.add("error");
             return this;
         }
+        /** List of test connection assignment error objects. */
+        @com.fasterxml.jackson.annotation.JsonProperty("errors")
+        private java.util.List<TestConnectionAssignmentError> errors;
+
+        /**
+         * List of test connection assignment error objects.
+         *
+         * @param errors the value to set
+         * @return this builder
+         */
+        public Builder errors(java.util.List<TestConnectionAssignmentError> errors) {
+            this.errors = errors;
+            this.__explicitlySet__.add("errors");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public TestConnectionAssignmentResult build() {
             TestConnectionAssignmentResult model =
-                    new TestConnectionAssignmentResult(this.resultType, this.error);
+                    new TestConnectionAssignmentResult(this.resultType, this.error, this.errors);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -78,6 +97,9 @@ public final class TestConnectionAssignmentResult
             }
             if (model.wasPropertyExplicitlySet("error")) {
                 this.error(model.getError());
+            }
+            if (model.wasPropertyExplicitlySet("errors")) {
+                this.errors(model.getErrors());
             }
             return this;
         }
@@ -159,6 +181,19 @@ public final class TestConnectionAssignmentResult
         return error;
     }
 
+    /** List of test connection assignment error objects. */
+    @com.fasterxml.jackson.annotation.JsonProperty("errors")
+    private final java.util.List<TestConnectionAssignmentError> errors;
+
+    /**
+     * List of test connection assignment error objects.
+     *
+     * @return the value
+     */
+    public java.util.List<TestConnectionAssignmentError> getErrors() {
+        return errors;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -176,6 +211,7 @@ public final class TestConnectionAssignmentResult
         sb.append("super=").append(super.toString());
         sb.append("resultType=").append(String.valueOf(this.resultType));
         sb.append(", error=").append(String.valueOf(this.error));
+        sb.append(", errors=").append(String.valueOf(this.errors));
         sb.append(")");
         return sb.toString();
     }
@@ -192,6 +228,7 @@ public final class TestConnectionAssignmentResult
         TestConnectionAssignmentResult other = (TestConnectionAssignmentResult) o;
         return java.util.Objects.equals(this.resultType, other.resultType)
                 && java.util.Objects.equals(this.error, other.error)
+                && java.util.Objects.equals(this.errors, other.errors)
                 && super.equals(other);
     }
 
@@ -201,6 +238,7 @@ public final class TestConnectionAssignmentResult
         int result = 1;
         result = (result * PRIME) + (this.resultType == null ? 43 : this.resultType.hashCode());
         result = (result * PRIME) + (this.error == null ? 43 : this.error.hashCode());
+        result = (result * PRIME) + (this.errors == null ? 43 : this.errors.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

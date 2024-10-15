@@ -5,7 +5,12 @@
 package com.oracle.bmc.goldengate.model;
 
 /**
- * The meta-data specific on particular deployment type represented by deploymentType field. <br>
+ * The meta-data specific on particular deployment type represented by deploymentType field.
+ *
+ * <p>Deprecated properties: {@code sourceTechnologies} and {@code targetTechnologies} are not
+ * populated. They will be removed after September 15 2025. The list of supported source and target
+ * technologies can be accessed using the url provided in {@code supportedTechnologiesUrl} property.
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -35,7 +40,7 @@ public final class DeploymentTypeSummary
         "defaultUsername"
     })
     public DeploymentTypeSummary(
-            Category category,
+            DeploymentCategory category,
             String displayName,
             DeploymentType deploymentType,
             java.util.List<ConnectionType> connectionTypes,
@@ -64,7 +69,7 @@ public final class DeploymentTypeSummary
          * 'DATA_TRANSFORMS'.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
-        private Category category;
+        private DeploymentCategory category;
 
         /**
          * The deployment category defines the broad separation of the deployment type into three
@@ -74,7 +79,7 @@ public final class DeploymentTypeSummary
          * @param category the value to set
          * @return this builder
          */
-        public Builder category(Category category) {
+        public Builder category(DeploymentCategory category) {
             this.category = category;
             this.__explicitlySet__.add("category");
             return this;
@@ -290,59 +295,8 @@ public final class DeploymentTypeSummary
      * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
      * 'DATA_TRANSFORMS'.
      */
-    public enum Category implements com.oracle.bmc.http.internal.BmcEnum {
-        DataReplication("DATA_REPLICATION"),
-        StreamAnalytics("STREAM_ANALYTICS"),
-        DataTransforms("DATA_TRANSFORMS"),
-
-        /**
-         * This value is used if a service returns a value for this enum that is not recognized by
-         * this version of the SDK.
-         */
-        UnknownEnumValue(null);
-
-        private static final org.slf4j.Logger LOG =
-                org.slf4j.LoggerFactory.getLogger(Category.class);
-
-        private final String value;
-        private static java.util.Map<String, Category> map;
-
-        static {
-            map = new java.util.HashMap<>();
-            for (Category v : Category.values()) {
-                if (v != UnknownEnumValue) {
-                    map.put(v.getValue(), v);
-                }
-            }
-        }
-
-        Category(String value) {
-            this.value = value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonValue
-        public String getValue() {
-            return value;
-        }
-
-        @com.fasterxml.jackson.annotation.JsonCreator
-        public static Category create(String key) {
-            if (map.containsKey(key)) {
-                return map.get(key);
-            }
-            LOG.warn(
-                    "Received unknown value '{}' for enum 'Category', returning UnknownEnumValue",
-                    key);
-            return UnknownEnumValue;
-        }
-    };
-    /**
-     * The deployment category defines the broad separation of the deployment type into three
-     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
-     * 'DATA_TRANSFORMS'.
-     */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
-    private final Category category;
+    private final DeploymentCategory category;
 
     /**
      * The deployment category defines the broad separation of the deployment type into three
@@ -351,7 +305,7 @@ public final class DeploymentTypeSummary
      *
      * @return the value
      */
-    public Category getCategory() {
+    public DeploymentCategory getCategory() {
         return category;
     }
 

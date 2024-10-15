@@ -30,7 +30,10 @@ package com.oracle.bmc.core.model;
             name = "bootVolume"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = BootVolumeSourceFromBootVolumeReplicaDetails.class,
-            name = "bootVolumeReplica")
+            name = "bootVolumeReplica"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = BootVolumeSourceFromBootVolumeBackupDeltaDetails.class,
+            name = "bootVolumeBackupDelta")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
