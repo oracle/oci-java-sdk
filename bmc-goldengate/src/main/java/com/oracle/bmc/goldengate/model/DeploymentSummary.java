@@ -39,6 +39,8 @@ public final class DeploymentSummary
         "loadBalancerSubnetId",
         "loadBalancerId",
         "licenseModel",
+        "environmentType",
+        "category",
         "fqdn",
         "cpuCoreCount",
         "isAutoScalingEnabled",
@@ -70,6 +72,8 @@ public final class DeploymentSummary
             String loadBalancerSubnetId,
             String loadBalancerId,
             LicenseModel licenseModel,
+            EnvironmentType environmentType,
+            DeploymentCategory category,
             String fqdn,
             Integer cpuCoreCount,
             Boolean isAutoScalingEnabled,
@@ -100,6 +104,8 @@ public final class DeploymentSummary
         this.loadBalancerSubnetId = loadBalancerSubnetId;
         this.loadBalancerId = loadBalancerId;
         this.licenseModel = licenseModel;
+        this.environmentType = environmentType;
+        this.category = category;
         this.fqdn = fqdn;
         this.cpuCoreCount = cpuCoreCount;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
@@ -402,6 +408,46 @@ public final class DeploymentSummary
             this.__explicitlySet__.add("licenseModel");
             return this;
         }
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        /**
+         * Specifies whether the deployment is used in a production or development/testing
+         * environment.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         */
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
+            return this;
+        }
+        /**
+         * The deployment category defines the broad separation of the deployment type into three
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+         * 'DATA_TRANSFORMS'.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("category")
+        private DeploymentCategory category;
+
+        /**
+         * The deployment category defines the broad separation of the deployment type into three
+         * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+         * 'DATA_TRANSFORMS'.
+         *
+         * @param category the value to set
+         * @return this builder
+         */
+        public Builder category(DeploymentCategory category) {
+            this.category = category;
+            this.__explicitlySet__.add("category");
+            return this;
+        }
         /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
         private String fqdn;
@@ -617,17 +663,23 @@ public final class DeploymentSummary
             return this;
         }
         /**
-         * Indicator will be true if the amount of storage being utilized exceeds the allowable
-         * storage utilization limit. Exceeding the limit may be an indication of a misconfiguration
-         * of the deployment's GoldenGate service.
+         * Deprecated: This field is not updated and will be removed in future versions. If storage
+         * utilization exceeds the limit, the respective warning message will appear in deployment
+         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
+         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
+         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
+         * GoldenGate service.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
         private Boolean isStorageUtilizationLimitExceeded;
 
         /**
-         * Indicator will be true if the amount of storage being utilized exceeds the allowable
-         * storage utilization limit. Exceeding the limit may be an indication of a misconfiguration
-         * of the deployment's GoldenGate service.
+         * Deprecated: This field is not updated and will be removed in future versions. If storage
+         * utilization exceeds the limit, the respective warning message will appear in deployment
+         * messages, which can be accessed through /messages?deploymentId=. Indicator will be true
+         * if the amount of storage being utilized exceeds the allowable storage utilization limit.
+         * Exceeding the limit may be an indication of a misconfiguration of the deployment's
+         * GoldenGate service.
          *
          * @param isStorageUtilizationLimitExceeded the value to set
          * @return this builder
@@ -675,6 +727,8 @@ public final class DeploymentSummary
                             this.loadBalancerSubnetId,
                             this.loadBalancerId,
                             this.licenseModel,
+                            this.environmentType,
+                            this.category,
                             this.fqdn,
                             this.cpuCoreCount,
                             this.isAutoScalingEnabled,
@@ -741,6 +795,12 @@ public final class DeploymentSummary
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
+            }
+            if (model.wasPropertyExplicitlySet("category")) {
+                this.category(model.getCategory());
             }
             if (model.wasPropertyExplicitlySet("fqdn")) {
                 this.fqdn(model.getFqdn());
@@ -1051,6 +1111,40 @@ public final class DeploymentSummary
         return licenseModel;
     }
 
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     *
+     * @return the value
+     */
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
+    }
+
+    /**
+     * The deployment category defines the broad separation of the deployment type into three
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+     * 'DATA_TRANSFORMS'.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("category")
+    private final DeploymentCategory category;
+
+    /**
+     * The deployment category defines the broad separation of the deployment type into three
+     * categories. Currently the separation is 'DATA_REPLICATION', 'STREAM_ANALYTICS' and
+     * 'DATA_TRANSFORMS'.
+     *
+     * @return the value
+     */
+    public DeploymentCategory getCategory() {
+        return category;
+    }
+
     /** A three-label Fully Qualified Domain Name (FQDN) for a resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("fqdn")
     private final String fqdn;
@@ -1242,17 +1336,23 @@ public final class DeploymentSummary
     }
 
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage
-     * utilization limit. Exceeding the limit may be an indication of a misconfiguration of the
-     * deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage
+     * utilization exceeds the limit, the respective warning message will appear in deployment
+     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
+     * the amount of storage being utilized exceeds the allowable storage utilization limit.
+     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
+     * service.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isStorageUtilizationLimitExceeded")
     private final Boolean isStorageUtilizationLimitExceeded;
 
     /**
-     * Indicator will be true if the amount of storage being utilized exceeds the allowable storage
-     * utilization limit. Exceeding the limit may be an indication of a misconfiguration of the
-     * deployment's GoldenGate service.
+     * Deprecated: This field is not updated and will be removed in future versions. If storage
+     * utilization exceeds the limit, the respective warning message will appear in deployment
+     * messages, which can be accessed through /messages?deploymentId=. Indicator will be true if
+     * the amount of storage being utilized exceeds the allowable storage utilization limit.
+     * Exceeding the limit may be an indication of a misconfiguration of the deployment's GoldenGate
+     * service.
      *
      * @return the value
      */
@@ -1303,6 +1403,8 @@ public final class DeploymentSummary
         sb.append(", loadBalancerSubnetId=").append(String.valueOf(this.loadBalancerSubnetId));
         sb.append(", loadBalancerId=").append(String.valueOf(this.loadBalancerId));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
+        sb.append(", category=").append(String.valueOf(this.category));
         sb.append(", fqdn=").append(String.valueOf(this.fqdn));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
@@ -1348,6 +1450,8 @@ public final class DeploymentSummary
                 && java.util.Objects.equals(this.loadBalancerSubnetId, other.loadBalancerSubnetId)
                 && java.util.Objects.equals(this.loadBalancerId, other.loadBalancerId)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
+                && java.util.Objects.equals(this.category, other.category)
                 && java.util.Objects.equals(this.fqdn, other.fqdn)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(this.isAutoScalingEnabled, other.isAutoScalingEnabled)
@@ -1401,6 +1505,10 @@ public final class DeploymentSummary
                 (result * PRIME)
                         + (this.loadBalancerId == null ? 43 : this.loadBalancerId.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
+        result = (result * PRIME) + (this.category == null ? 43 : this.category.hashCode());
         result = (result * PRIME) + (this.fqdn == null ? 43 : this.fqdn.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =

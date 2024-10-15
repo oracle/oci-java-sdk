@@ -40,20 +40,50 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
         return opcRequestId;
     }
 
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
+
+    /**
+     * For optimistic concurrency control. See {@code if-match}.
+     *
+     * @return the value
+     */
+    public String getEtag() {
+        return etag;
+    }
+
+    /** The returned {@code DeploymentBackup} instance. */
+    private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
+
+    /**
+     * The returned {@code DeploymentBackup} instance.
+     *
+     * @return the value
+     */
+    public com.oracle.bmc.goldengate.model.DeploymentBackup getDeploymentBackup() {
+        return deploymentBackup;
+    }
+
     @java.beans.ConstructorProperties({
         "__httpStatusCode__",
         "headers",
         "opcWorkRequestId",
-        "opcRequestId"
+        "opcRequestId",
+        "etag",
+        "deploymentBackup"
     })
     private CopyDeploymentBackupResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcWorkRequestId,
-            String opcRequestId) {
+            String opcRequestId,
+            String etag,
+            com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
         super(__httpStatusCode__, headers);
         this.opcWorkRequestId = opcWorkRequestId;
         this.opcRequestId = opcRequestId;
+        this.etag = etag;
+        this.deploymentBackup = deploymentBackup;
     }
 
     public static class Builder
@@ -110,6 +140,35 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
             return this;
         }
 
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
+
+        /**
+         * For optimistic concurrency control. See {@code if-match}.
+         *
+         * @param etag the value to set
+         * @return this builder
+         */
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        /** The returned {@code DeploymentBackup} instance. */
+        private com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup;
+
+        /**
+         * The returned {@code DeploymentBackup} instance.
+         *
+         * @param deploymentBackup the value to set
+         * @return this builder
+         */
+        public Builder deploymentBackup(
+                com.oracle.bmc.goldengate.model.DeploymentBackup deploymentBackup) {
+            this.deploymentBackup = deploymentBackup;
+            return this;
+        }
+
         /**
          * Copy method to populate the builder with values from the given instance.
          *
@@ -121,6 +180,8 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
             headers(o.getHeaders());
             opcWorkRequestId(o.getOpcWorkRequestId());
             opcRequestId(o.getOpcRequestId());
+            etag(o.getEtag());
+            deploymentBackup(o.getDeploymentBackup());
 
             return this;
         }
@@ -133,7 +194,12 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
         @Override
         public CopyDeploymentBackupResponse build() {
             return new CopyDeploymentBackupResponse(
-                    __httpStatusCode__, headers, opcWorkRequestId, opcRequestId);
+                    __httpStatusCode__,
+                    headers,
+                    opcWorkRequestId,
+                    opcRequestId,
+                    etag,
+                    deploymentBackup);
         }
     }
 
@@ -153,6 +219,8 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
         sb.append("super=").append(super.toString());
         sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",deploymentBackup=").append(String.valueOf(deploymentBackup));
         sb.append(")");
         return sb.toString();
     }
@@ -169,7 +237,9 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
         CopyDeploymentBackupResponse other = (CopyDeploymentBackupResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(this.deploymentBackup, other.deploymentBackup);
     }
 
     @Override
@@ -180,6 +250,10 @@ public class CopyDeploymentBackupResponse extends com.oracle.bmc.responses.BmcRe
                 (result * PRIME)
                         + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.deploymentBackup == null ? 43 : this.deploymentBackup.hashCode());
         return result;
     }
 }

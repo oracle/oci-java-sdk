@@ -645,6 +645,131 @@ public class GoldenGatePaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listDeploymentEnvironments operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDeploymentEnvironmentsResponse> listDeploymentEnvironmentsResponseIterator(
+            final ListDeploymentEnvironmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDeploymentEnvironmentsRequest.Builder,
+                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsResponse>(
+                new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest.Builder get() {
+                        return ListDeploymentEnvironmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentEnvironmentsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentEnvironmentsRequest.Builder>,
+                        ListDeploymentEnvironmentsRequest>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentEnvironmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>() {
+                    @Override
+                    public ListDeploymentEnvironmentsResponse apply(
+                            ListDeploymentEnvironmentsRequest request) {
+                        return client.listDeploymentEnvironments(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in responses
+     * from the listDeploymentEnvironments operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>
+            listDeploymentEnvironmentsRecordIterator(
+                    final ListDeploymentEnvironmentsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDeploymentEnvironmentsRequest.Builder,
+                ListDeploymentEnvironmentsRequest,
+                ListDeploymentEnvironmentsResponse,
+                com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>(
+                new java.util.function.Supplier<ListDeploymentEnvironmentsRequest.Builder>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest.Builder get() {
+                        return ListDeploymentEnvironmentsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDeploymentEnvironmentsResponse, String>() {
+                    @Override
+                    public String apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDeploymentEnvironmentsRequest.Builder>,
+                        ListDeploymentEnvironmentsRequest>() {
+                    @Override
+                    public ListDeploymentEnvironmentsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDeploymentEnvironmentsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>() {
+                    @Override
+                    public ListDeploymentEnvironmentsResponse apply(
+                            ListDeploymentEnvironmentsRequest request) {
+                        return client.listDeploymentEnvironments(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDeploymentEnvironmentsResponse,
+                        java.util.List<
+                                com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.goldengate.model.DeploymentEnvironmentSummary>
+                            apply(ListDeploymentEnvironmentsResponse response) {
+                        return response.getDeploymentEnvironmentCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listDeploymentTypes operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation

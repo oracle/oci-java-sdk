@@ -9,7 +9,7 @@ Example:
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-enforcer-plugin</artifactId>
-        <version>3.4.1</version>
+        <version>3.5.0</version>
         <dependencies>
           <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
