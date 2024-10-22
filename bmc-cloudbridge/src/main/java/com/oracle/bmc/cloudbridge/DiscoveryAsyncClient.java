@@ -476,6 +476,41 @@ public class DiscoveryAsyncClient extends com.oracle.bmc.http.internal.BaseAsync
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedCloudRegionsResponse> listSupportedCloudRegions(
+            ListSupportedCloudRegionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>
+                    handler) {
+
+        return clientCall(request, ListSupportedCloudRegionsResponse::builder)
+                .logger(LOG, "listSupportedCloudRegions")
+                .serviceDetails(
+                        "Discovery",
+                        "ListSupportedCloudRegions",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/SupportedCloudRegionSummary/ListSupportedCloudRegions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedCloudRegionsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("supportedCloudRegions")
+                .appendEnumQueryParam("assetSourceType", request.getAssetSourceType())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.SupportedCloudRegionCollection.class,
+                        ListSupportedCloudRegionsResponse.Builder::supportedCloudRegionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedCloudRegionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedCloudRegionsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshAssetSourceResponse> refreshAssetSource(
             RefreshAssetSourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

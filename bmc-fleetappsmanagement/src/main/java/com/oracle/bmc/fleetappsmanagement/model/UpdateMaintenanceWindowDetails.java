@@ -121,12 +121,18 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("maintenanceWindowType");
             return this;
         }
-        /** Does the maintenenace window cause outage? */
+        /**
+         * Does the maintenenace window cause outage? An outage indicates whether a maintenance
+         * window can consider operations that require downtime. It means a period when the
+         * application is not accessible.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isOutage")
         private Boolean isOutage;
 
         /**
-         * Does the maintenenace window cause outage?
+         * Does the maintenenace window cause outage? An outage indicates whether a maintenance
+         * window can consider operations that require downtime. It means a period when the
+         * application is not accessible.
          *
          * @param isOutage the value to set
          * @return this builder
@@ -136,12 +142,12 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("isOutage");
             return this;
         }
-        /** Start time of schedule */
+        /** Specify the date and time of the day that the maintenance window starts. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleStart")
         private java.util.Date timeScheduleStart;
 
         /**
-         * Start time of schedule
+         * Specify the date and time of the day that the maintenance window starts.
          *
          * @param timeScheduleStart the value to set
          * @return this builder
@@ -151,12 +157,14 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("timeScheduleStart");
             return this;
         }
-        /** Duration if schedule type is Custom */
+        /**
+         * Duration of the maintenance window. Specify how long the maintenance window remains open.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("duration")
         private String duration;
 
         /**
-         * Duration if schedule type is Custom
+         * Duration of the maintenance window. Specify how long the maintenance window remains open.
          *
          * @param duration the value to set
          * @return this builder
@@ -166,12 +174,12 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("duration");
             return this;
         }
-        /** Is this is a recurring maintenance window */
+        /** Is this a recurring maintenance window? */
         @com.fasterxml.jackson.annotation.JsonProperty("isRecurring")
         private Boolean isRecurring;
 
         /**
-         * Is this is a recurring maintenance window
+         * Is this a recurring maintenance window?
          *
          * @param isRecurring the value to set
          * @return this builder
@@ -181,12 +189,16 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("isRecurring");
             return this;
         }
-        /** Recurrence rule specification if recurring */
+        /**
+         * Recurrence rule specification if maintenance window recurring. Specify the frequency of
+         * running the maintenance window.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("recurrences")
         private String recurrences;
 
         /**
-         * Recurrence rule specification if recurring
+         * Recurrence rule specification if maintenance window recurring. Specify the frequency of
+         * running the maintenance window.
          *
          * @param recurrences the value to set
          * @return this builder
@@ -196,12 +208,12 @@ public final class UpdateMaintenanceWindowDetails
             this.__explicitlySet__.add("recurrences");
             return this;
         }
-        /** Task initiation cutoff */
+        /** Task initiation cutoff time for the maintenance window. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
         private Integer taskInitiationCutoff;
 
         /**
-         * Task initiation cutoff
+         * Task initiation cutoff time for the maintenance window.
          *
          * @param taskInitiationCutoff the value to set
          * @return this builder
@@ -373,12 +385,18 @@ public final class UpdateMaintenanceWindowDetails
         return maintenanceWindowType;
     }
 
-    /** Does the maintenenace window cause outage? */
+    /**
+     * Does the maintenenace window cause outage? An outage indicates whether a maintenance window
+     * can consider operations that require downtime. It means a period when the application is not
+     * accessible.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isOutage")
     private final Boolean isOutage;
 
     /**
-     * Does the maintenenace window cause outage?
+     * Does the maintenenace window cause outage? An outage indicates whether a maintenance window
+     * can consider operations that require downtime. It means a period when the application is not
+     * accessible.
      *
      * @return the value
      */
@@ -386,12 +404,12 @@ public final class UpdateMaintenanceWindowDetails
         return isOutage;
     }
 
-    /** Start time of schedule */
+    /** Specify the date and time of the day that the maintenance window starts. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduleStart")
     private final java.util.Date timeScheduleStart;
 
     /**
-     * Start time of schedule
+     * Specify the date and time of the day that the maintenance window starts.
      *
      * @return the value
      */
@@ -399,12 +417,12 @@ public final class UpdateMaintenanceWindowDetails
         return timeScheduleStart;
     }
 
-    /** Duration if schedule type is Custom */
+    /** Duration of the maintenance window. Specify how long the maintenance window remains open. */
     @com.fasterxml.jackson.annotation.JsonProperty("duration")
     private final String duration;
 
     /**
-     * Duration if schedule type is Custom
+     * Duration of the maintenance window. Specify how long the maintenance window remains open.
      *
      * @return the value
      */
@@ -412,12 +430,12 @@ public final class UpdateMaintenanceWindowDetails
         return duration;
     }
 
-    /** Is this is a recurring maintenance window */
+    /** Is this a recurring maintenance window? */
     @com.fasterxml.jackson.annotation.JsonProperty("isRecurring")
     private final Boolean isRecurring;
 
     /**
-     * Is this is a recurring maintenance window
+     * Is this a recurring maintenance window?
      *
      * @return the value
      */
@@ -425,12 +443,16 @@ public final class UpdateMaintenanceWindowDetails
         return isRecurring;
     }
 
-    /** Recurrence rule specification if recurring */
+    /**
+     * Recurrence rule specification if maintenance window recurring. Specify the frequency of
+     * running the maintenance window.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("recurrences")
     private final String recurrences;
 
     /**
-     * Recurrence rule specification if recurring
+     * Recurrence rule specification if maintenance window recurring. Specify the frequency of
+     * running the maintenance window.
      *
      * @return the value
      */
@@ -438,12 +460,12 @@ public final class UpdateMaintenanceWindowDetails
         return recurrences;
     }
 
-    /** Task initiation cutoff */
+    /** Task initiation cutoff time for the maintenance window. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskInitiationCutoff")
     private final Integer taskInitiationCutoff;
 
     /**
-     * Task initiation cutoff
+     * Task initiation cutoff time for the maintenance window.
      *
      * @return the value
      */

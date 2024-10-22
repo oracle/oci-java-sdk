@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of the FleetAppManagementService Onboarding. <br>
+ * Summary of the Fleet Application Management Onboarding. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,6 +32,8 @@ public final class OnboardingSummary
         "isFamsTagEnabled",
         "version",
         "isCostTrackingTagEnabled",
+        "appliedPolicies",
+        "discoveryFrequency",
         "lifecycleState",
         "systemTags"
     })
@@ -44,6 +46,8 @@ public final class OnboardingSummary
             Boolean isFamsTagEnabled,
             String version,
             Boolean isCostTrackingTagEnabled,
+            OnboardingPolicySummary appliedPolicies,
+            String discoveryFrequency,
             Onboarding.LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
@@ -55,6 +59,8 @@ public final class OnboardingSummary
         this.isFamsTagEnabled = isFamsTagEnabled;
         this.version = version;
         this.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
+        this.appliedPolicies = appliedPolicies;
+        this.discoveryFrequency = discoveryFrequency;
         this.lifecycleState = lifecycleState;
         this.systemTags = systemTags;
     }
@@ -136,12 +142,18 @@ public final class OnboardingSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** A value determining FAMS tag is enabled or not */
+        /**
+         * A value determining if the Fleet Application Management tagging is enabled or not. Allow
+         * Fleet Application Management to tag resources with fleet name using
+         * "Oracle$FAMS-Tags.FleetName" tag.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
         private Boolean isFamsTagEnabled;
 
         /**
-         * A value determining FAMS tag is enabled or not
+         * A value determining if the Fleet Application Management tagging is enabled or not. Allow
+         * Fleet Application Management to tag resources with fleet name using
+         * "Oracle$FAMS-Tags.FleetName" tag.
          *
          * @param isFamsTagEnabled the value to set
          * @return this builder
@@ -151,12 +163,12 @@ public final class OnboardingSummary
             this.__explicitlySet__.add("isFamsTagEnabled");
             return this;
         }
-        /** Version of FAMS the tenant is onboarded to. */
+        /** The version of Fleet Application Management that the tenant is onboarded to. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Version of FAMS the tenant is onboarded to.
+         * The version of Fleet Application Management that the tenant is onboarded to.
          *
          * @param version the value to set
          * @return this builder
@@ -166,12 +178,18 @@ public final class OnboardingSummary
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** A value determining if cost tracking tag is enabled or not */
+        /**
+         * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
+         * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged"
+         * tag.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
         private Boolean isCostTrackingTagEnabled;
 
         /**
-         * A value determining if cost tracking tag is enabled or not
+         * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
+         * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged"
+         * tag.
          *
          * @param isCostTrackingTagEnabled the value to set
          * @return this builder
@@ -179,6 +197,30 @@ public final class OnboardingSummary
         public Builder isCostTrackingTagEnabled(Boolean isCostTrackingTagEnabled) {
             this.isCostTrackingTagEnabled = isCostTrackingTagEnabled;
             this.__explicitlySet__.add("isCostTrackingTagEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("appliedPolicies")
+        private OnboardingPolicySummary appliedPolicies;
+
+        public Builder appliedPolicies(OnboardingPolicySummary appliedPolicies) {
+            this.appliedPolicies = appliedPolicies;
+            this.__explicitlySet__.add("appliedPolicies");
+            return this;
+        }
+        /** Provide discovery frequency. */
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryFrequency")
+        private String discoveryFrequency;
+
+        /**
+         * Provide discovery frequency.
+         *
+         * @param discoveryFrequency the value to set
+         * @return this builder
+         */
+        public Builder discoveryFrequency(String discoveryFrequency) {
+            this.discoveryFrequency = discoveryFrequency;
+            this.__explicitlySet__.add("discoveryFrequency");
             return this;
         }
         /** The current state of the Onboarding. */
@@ -230,6 +272,8 @@ public final class OnboardingSummary
                             this.isFamsTagEnabled,
                             this.version,
                             this.isCostTrackingTagEnabled,
+                            this.appliedPolicies,
+                            this.discoveryFrequency,
                             this.lifecycleState,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -263,6 +307,12 @@ public final class OnboardingSummary
             }
             if (model.wasPropertyExplicitlySet("isCostTrackingTagEnabled")) {
                 this.isCostTrackingTagEnabled(model.getIsCostTrackingTagEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("appliedPolicies")) {
+                this.appliedPolicies(model.getAppliedPolicies());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryFrequency")) {
+                this.discoveryFrequency(model.getDiscoveryFrequency());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -348,12 +398,18 @@ public final class OnboardingSummary
         return timeUpdated;
     }
 
-    /** A value determining FAMS tag is enabled or not */
+    /**
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow
+     * Fleet Application Management to tag resources with fleet name using
+     * "Oracle$FAMS-Tags.FleetName" tag.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isFamsTagEnabled")
     private final Boolean isFamsTagEnabled;
 
     /**
-     * A value determining FAMS tag is enabled or not
+     * A value determining if the Fleet Application Management tagging is enabled or not. Allow
+     * Fleet Application Management to tag resources with fleet name using
+     * "Oracle$FAMS-Tags.FleetName" tag.
      *
      * @return the value
      */
@@ -361,12 +417,12 @@ public final class OnboardingSummary
         return isFamsTagEnabled;
     }
 
-    /** Version of FAMS the tenant is onboarded to. */
+    /** The version of Fleet Application Management that the tenant is onboarded to. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Version of FAMS the tenant is onboarded to.
+     * The version of Fleet Application Management that the tenant is onboarded to.
      *
      * @return the value
      */
@@ -374,17 +430,41 @@ public final class OnboardingSummary
         return version;
     }
 
-    /** A value determining if cost tracking tag is enabled or not */
+    /**
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
+     * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isCostTrackingTagEnabled")
     private final Boolean isCostTrackingTagEnabled;
 
     /**
-     * A value determining if cost tracking tag is enabled or not
+     * A value determining if the cost tracking tag is enabled or not. Allow Fleet Application
+     * Management to tag resources with cost tracking tag using "Oracle$FAMS-Tags.FAMSManaged" tag.
      *
      * @return the value
      */
     public Boolean getIsCostTrackingTagEnabled() {
         return isCostTrackingTagEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("appliedPolicies")
+    private final OnboardingPolicySummary appliedPolicies;
+
+    public OnboardingPolicySummary getAppliedPolicies() {
+        return appliedPolicies;
+    }
+
+    /** Provide discovery frequency. */
+    @com.fasterxml.jackson.annotation.JsonProperty("discoveryFrequency")
+    private final String discoveryFrequency;
+
+    /**
+     * Provide discovery frequency.
+     *
+     * @return the value
+     */
+    public String getDiscoveryFrequency() {
+        return discoveryFrequency;
     }
 
     /** The current state of the Onboarding. */
@@ -441,6 +521,8 @@ public final class OnboardingSummary
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", isCostTrackingTagEnabled=")
                 .append(String.valueOf(this.isCostTrackingTagEnabled));
+        sb.append(", appliedPolicies=").append(String.valueOf(this.appliedPolicies));
+        sb.append(", discoveryFrequency=").append(String.valueOf(this.discoveryFrequency));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
@@ -466,6 +548,8 @@ public final class OnboardingSummary
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(
                         this.isCostTrackingTagEnabled, other.isCostTrackingTagEnabled)
+                && java.util.Objects.equals(this.appliedPolicies, other.appliedPolicies)
+                && java.util.Objects.equals(this.discoveryFrequency, other.discoveryFrequency)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
@@ -493,6 +577,14 @@ public final class OnboardingSummary
                         + (this.isCostTrackingTagEnabled == null
                                 ? 43
                                 : this.isCostTrackingTagEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.appliedPolicies == null ? 43 : this.appliedPolicies.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.discoveryFrequency == null
+                                ? 43
+                                : this.discoveryFrequency.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

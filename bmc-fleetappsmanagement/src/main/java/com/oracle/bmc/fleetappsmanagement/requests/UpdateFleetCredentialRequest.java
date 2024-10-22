@@ -23,18 +23,18 @@ public class UpdateFleetCredentialRequest
     public String getFleetCredentialId() {
         return fleetCredentialId;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
-    /** The information to be updated. */
+    /** The credential information to be updated. */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
             updateFleetCredentialDetails;
 
-    /** The information to be updated. */
+    /** The credential information to be updated. */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
             getUpdateFleetCredentialDetails() {
         return updateFleetCredentialDetails;
@@ -96,11 +96,11 @@ public class UpdateFleetCredentialRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance
@@ -110,12 +110,12 @@ public class UpdateFleetCredentialRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** The credential information to be updated. */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateFleetCredentialDetails
                 updateFleetCredentialDetails = null;
 
         /**
-         * The information to be updated.
+         * The credential information to be updated.
          *
          * @param updateFleetCredentialDetails the value to set
          * @return this builder instance

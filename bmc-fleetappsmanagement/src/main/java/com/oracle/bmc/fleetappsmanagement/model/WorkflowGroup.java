@@ -31,12 +31,12 @@ public final class WorkflowGroup extends com.oracle.bmc.http.client.internal.Exp
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Provide the name of the group. */
+        /** Name of the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
-         * Provide the name of the group.
+         * Name of the group.
          *
          * @param groupName the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class WorkflowGroup extends com.oracle.bmc.http.client.internal.Exp
         return new Builder().copy(this);
     }
 
-    /** Provide the name of the group. */
+    /** Name of the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
-     * Provide the name of the group.
+     * Name of the group.
      *
      * @return the value
      */

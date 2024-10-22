@@ -39,6 +39,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
         "lifecycleState",
         "displayName",
         "timeCreated",
+        "locks",
         "freeformTags",
         "definedTags"
     })
@@ -49,6 +50,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
             LifecycleState lifecycleState,
             String displayName,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -58,6 +60,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
         this.lifecycleState = lifecycleState;
         this.displayName = displayName;
         this.timeCreated = timeCreated;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -218,6 +221,19 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
         return timeCreated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -281,6 +297,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -303,6 +320,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -326,6 +344,7 @@ public class OutboundConnector extends com.oracle.bmc.http.client.internal.Expli
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

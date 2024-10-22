@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The properties of the task. <br>
+ * The properties of the component. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -23,22 +23,43 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class ComponentProperties
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"runOn", "condition", "actionOnFailure"})
-    public ComponentProperties(String runOn, String condition, ActionOnFailure actionOnFailure) {
+    @java.beans.ConstructorProperties({
+        "runOn",
+        "condition",
+        "actionOnFailure",
+        "pauseDetails",
+        "notificationPreferences"
+    })
+    public ComponentProperties(
+            String runOn,
+            String condition,
+            ActionOnFailure actionOnFailure,
+            PauseDetails pauseDetails,
+            TaskNotificationPreferences notificationPreferences) {
         super();
         this.runOn = runOn;
         this.condition = condition;
         this.actionOnFailure = actionOnFailure;
+        this.pauseDetails = pauseDetails;
+        this.notificationPreferences = notificationPreferences;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The hosts to execute on. */
+        /**
+         * The runOn condition for the task/group/container. Build task execution conditions if
+         * applicable to product and product-specific components. This condition is relevant when
+         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
+         * OR target.product.name = Oracle HTTP Server
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("runOn")
         private String runOn;
 
         /**
-         * The hosts to execute on.
+         * The runOn condition for the task/group/container. Build task execution conditions if
+         * applicable to product and product-specific components. This condition is relevant when
+         * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server
+         * OR target.product.name = Oracle HTTP Server
          *
          * @param runOn the value to set
          * @return this builder
@@ -48,12 +69,12 @@ public final class ComponentProperties
             this.__explicitlySet__.add("runOn");
             return this;
         }
-        /** The condition in which the task is to be executed. */
+        /** Build control flow conditions that determine the relevance of the task execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("condition")
         private String condition;
 
         /**
-         * The condition in which the task is to be executed.
+         * Build control flow conditions that determine the relevance of the task execution.
          *
          * @param condition the value to set
          * @return this builder
@@ -63,12 +84,12 @@ public final class ComponentProperties
             this.__explicitlySet__.add("condition");
             return this;
         }
-        /** The action to be taken in case of task failure. */
+        /** The action to be taken in case of a failure. */
         @com.fasterxml.jackson.annotation.JsonProperty("actionOnFailure")
         private ActionOnFailure actionOnFailure;
 
         /**
-         * The action to be taken in case of task failure.
+         * The action to be taken in case of a failure.
          *
          * @param actionOnFailure the value to set
          * @return this builder
@@ -79,12 +100,36 @@ public final class ComponentProperties
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("pauseDetails")
+        private PauseDetails pauseDetails;
+
+        public Builder pauseDetails(PauseDetails pauseDetails) {
+            this.pauseDetails = pauseDetails;
+            this.__explicitlySet__.add("pauseDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
+        private TaskNotificationPreferences notificationPreferences;
+
+        public Builder notificationPreferences(
+                TaskNotificationPreferences notificationPreferences) {
+            this.notificationPreferences = notificationPreferences;
+            this.__explicitlySet__.add("notificationPreferences");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ComponentProperties build() {
             ComponentProperties model =
-                    new ComponentProperties(this.runOn, this.condition, this.actionOnFailure);
+                    new ComponentProperties(
+                            this.runOn,
+                            this.condition,
+                            this.actionOnFailure,
+                            this.pauseDetails,
+                            this.notificationPreferences);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +147,12 @@ public final class ComponentProperties
             if (model.wasPropertyExplicitlySet("actionOnFailure")) {
                 this.actionOnFailure(model.getActionOnFailure());
             }
+            if (model.wasPropertyExplicitlySet("pauseDetails")) {
+                this.pauseDetails(model.getPauseDetails());
+            }
+            if (model.wasPropertyExplicitlySet("notificationPreferences")) {
+                this.notificationPreferences(model.getNotificationPreferences());
+            }
             return this;
         }
     }
@@ -115,12 +166,20 @@ public final class ComponentProperties
         return new Builder().copy(this);
     }
 
-    /** The hosts to execute on. */
+    /**
+     * The runOn condition for the task/group/container. Build task execution conditions if
+     * applicable to product and product-specific components. This condition is relevant when
+     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
+     * target.product.name = Oracle HTTP Server
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("runOn")
     private final String runOn;
 
     /**
-     * The hosts to execute on.
+     * The runOn condition for the task/group/container. Build task execution conditions if
+     * applicable to product and product-specific components. This condition is relevant when
+     * handling product stack workflows. Example: target.product.name = Oracle WebLogic Server OR
+     * target.product.name = Oracle HTTP Server
      *
      * @return the value
      */
@@ -128,12 +187,12 @@ public final class ComponentProperties
         return runOn;
     }
 
-    /** The condition in which the task is to be executed. */
+    /** Build control flow conditions that determine the relevance of the task execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("condition")
     private final String condition;
 
     /**
-     * The condition in which the task is to be executed.
+     * Build control flow conditions that determine the relevance of the task execution.
      *
      * @return the value
      */
@@ -141,7 +200,7 @@ public final class ComponentProperties
         return condition;
     }
 
-    /** The action to be taken in case of task failure. */
+    /** The action to be taken in case of a failure. */
     public enum ActionOnFailure implements com.oracle.bmc.http.internal.BmcEnum {
         Abort("ABORT"),
         Continue("CONTINUE"),
@@ -188,17 +247,31 @@ public final class ComponentProperties
             return UnknownEnumValue;
         }
     };
-    /** The action to be taken in case of task failure. */
+    /** The action to be taken in case of a failure. */
     @com.fasterxml.jackson.annotation.JsonProperty("actionOnFailure")
     private final ActionOnFailure actionOnFailure;
 
     /**
-     * The action to be taken in case of task failure.
+     * The action to be taken in case of a failure.
      *
      * @return the value
      */
     public ActionOnFailure getActionOnFailure() {
         return actionOnFailure;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("pauseDetails")
+    private final PauseDetails pauseDetails;
+
+    public PauseDetails getPauseDetails() {
+        return pauseDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("notificationPreferences")
+    private final TaskNotificationPreferences notificationPreferences;
+
+    public TaskNotificationPreferences getNotificationPreferences() {
+        return notificationPreferences;
     }
 
     @Override
@@ -219,6 +292,9 @@ public final class ComponentProperties
         sb.append("runOn=").append(String.valueOf(this.runOn));
         sb.append(", condition=").append(String.valueOf(this.condition));
         sb.append(", actionOnFailure=").append(String.valueOf(this.actionOnFailure));
+        sb.append(", pauseDetails=").append(String.valueOf(this.pauseDetails));
+        sb.append(", notificationPreferences=")
+                .append(String.valueOf(this.notificationPreferences));
         sb.append(")");
         return sb.toString();
     }
@@ -236,6 +312,9 @@ public final class ComponentProperties
         return java.util.Objects.equals(this.runOn, other.runOn)
                 && java.util.Objects.equals(this.condition, other.condition)
                 && java.util.Objects.equals(this.actionOnFailure, other.actionOnFailure)
+                && java.util.Objects.equals(this.pauseDetails, other.pauseDetails)
+                && java.util.Objects.equals(
+                        this.notificationPreferences, other.notificationPreferences)
                 && super.equals(other);
     }
 
@@ -248,6 +327,12 @@ public final class ComponentProperties
         result =
                 (result * PRIME)
                         + (this.actionOnFailure == null ? 43 : this.actionOnFailure.hashCode());
+        result = (result * PRIME) + (this.pauseDetails == null ? 43 : this.pauseDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.notificationPreferences == null
+                                ? 43
+                                : this.notificationPreferences.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

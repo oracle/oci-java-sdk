@@ -32,6 +32,9 @@ package com.oracle.bmc.opsi.model;
             value = HostFilesystemConfiguration.class,
             name = "HOST_FILESYSTEM_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HostContainers.class,
+            name = "HOST_CONTAINERS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostNetworkConfiguration.class,
             name = "HOST_NETWORK_CONFIGURATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -130,6 +133,7 @@ public class HostConfigurationMetricGroup
         HostEntites("HOST_ENTITES"),
         HostFilesystemConfiguration("HOST_FILESYSTEM_CONFIGURATION"),
         HostGpuConfiguration("HOST_GPU_CONFIGURATION"),
+        HostContainers("HOST_CONTAINERS"),
         ;
 
         private final String value;

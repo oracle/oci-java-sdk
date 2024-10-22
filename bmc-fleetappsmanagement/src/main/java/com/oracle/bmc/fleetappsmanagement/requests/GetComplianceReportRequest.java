@@ -13,17 +13,17 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class GetComplianceReportRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
-    /** compliance report identifier */
+    /** compliance report identifier. */
     private String complianceReportId;
 
-    /** compliance report identifier */
+    /** compliance report identifier. */
     public String getComplianceReportId() {
         return complianceReportId;
     }
@@ -41,11 +41,11 @@ public class GetComplianceReportRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance
@@ -55,11 +55,11 @@ public class GetComplianceReportRequest extends com.oracle.bmc.requests.BmcReque
             return this;
         }
 
-        /** compliance report identifier */
+        /** compliance report identifier. */
         private String complianceReportId = null;
 
         /**
-         * compliance report identifier
+         * compliance report identifier.
          *
          * @param complianceReportId the value to set
          * @return this builder instance

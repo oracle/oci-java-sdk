@@ -16,19 +16,19 @@ public class RequestTargetDiscoveryRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.RequestTargetDiscoveryDetails> {
 
-    /** Details for requesting target discovery */
+    /** Details for requesting target discovery. */
     private com.oracle.bmc.fleetappsmanagement.model.RequestTargetDiscoveryDetails
             requestTargetDiscoveryDetails;
 
-    /** Details for requesting target discovery */
+    /** Details for requesting target discovery. */
     public com.oracle.bmc.fleetappsmanagement.model.RequestTargetDiscoveryDetails
             getRequestTargetDiscoveryDetails() {
         return requestTargetDiscoveryDetails;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -77,12 +77,12 @@ public class RequestTargetDiscoveryRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for requesting target discovery */
+        /** Details for requesting target discovery. */
         private com.oracle.bmc.fleetappsmanagement.model.RequestTargetDiscoveryDetails
                 requestTargetDiscoveryDetails = null;
 
         /**
-         * Details for requesting target discovery
+         * Details for requesting target discovery.
          *
          * @param requestTargetDiscoveryDetails the value to set
          * @return this builder instance
@@ -94,11 +94,11 @@ public class RequestTargetDiscoveryRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

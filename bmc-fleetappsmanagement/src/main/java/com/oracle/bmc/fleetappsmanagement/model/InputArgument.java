@@ -40,12 +40,12 @@ public class InputArgument extends com.oracle.bmc.http.client.internal.Explicitl
         this.description = description;
     }
 
-    /** The name of the argument */
+    /** The name of the argument. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the argument
+     * The name of the argument.
      *
      * @return the value
      */

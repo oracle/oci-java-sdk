@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about new FleetProperty. <br>
+ * The information about associated FleetProperty. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -99,12 +99,12 @@ public final class AssociatedFleetPropertyDetails
             this.__explicitlySet__.add("fleetPropertyType");
             return this;
         }
-        /** Value of the Property */
+        /** Value of the Property. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the Property
+         * Value of the Property.
          *
          * @param value the value to set
          * @return this builder
@@ -114,12 +114,12 @@ public final class AssociatedFleetPropertyDetails
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Property is required or not */
+        /** Property is required or not. */
         @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
         private Boolean isRequired;
 
         /**
-         * Property is required or not
+         * Property is required or not.
          *
          * @param isRequired the value to set
          * @return this builder
@@ -270,12 +270,12 @@ public final class AssociatedFleetPropertyDetails
         return fleetPropertyType;
     }
 
-    /** Value of the Property */
+    /** Value of the Property. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the Property
+     * Value of the Property.
      *
      * @return the value
      */
@@ -283,12 +283,12 @@ public final class AssociatedFleetPropertyDetails
         return value;
     }
 
-    /** Property is required or not */
+    /** Property is required or not. */
     @com.fasterxml.jackson.annotation.JsonProperty("isRequired")
     private final Boolean isRequired;
 
     /**
-     * Property is required or not
+     * Property is required or not.
      *
      * @return the value
      */

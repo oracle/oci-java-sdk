@@ -123,6 +123,246 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public AddExportLockResponse addExportLock(AddExportLockRequest request) {
+
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+        Objects.requireNonNull(
+                request.getAddExportLockDetails(), "addExportLockDetails is required");
+
+        return clientCall(request, AddExportLockResponse::builder)
+                .logger(LOG, "addExportLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddExportLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/AddExportLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddExportLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Export.class,
+                        AddExportLockResponse.Builder::export)
+                .handleResponseHeaderString("etag", AddExportLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddExportLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddFileSystemLockResponse addFileSystemLock(AddFileSystemLockRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getAddFileSystemLockDetails(), "addFileSystemLockDetails is required");
+
+        return clientCall(request, AddFileSystemLockResponse::builder)
+                .logger(LOG, "addFileSystemLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddFileSystemLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/AddFileSystemLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddFileSystemLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FileSystem.class,
+                        AddFileSystemLockResponse.Builder::fileSystem)
+                .handleResponseHeaderString("etag", AddFileSystemLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddFileSystemLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddFilesystemSnapshotPolicyLockResponse addFilesystemSnapshotPolicyLock(
+            AddFilesystemSnapshotPolicyLockRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getAddFilesystemSnapshotPolicyLockDetails(),
+                "addFilesystemSnapshotPolicyLockDetails is required");
+
+        return clientCall(request, AddFilesystemSnapshotPolicyLockResponse::builder)
+                .logger(LOG, "addFilesystemSnapshotPolicyLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddFilesystemSnapshotPolicyLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/AddFilesystemSnapshotPolicyLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddFilesystemSnapshotPolicyLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        AddFilesystemSnapshotPolicyLockResponse.Builder::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "etag", AddFilesystemSnapshotPolicyLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AddFilesystemSnapshotPolicyLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddMountTargetLockResponse addMountTargetLock(AddMountTargetLockRequest request) {
+
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getAddMountTargetLockDetails(), "addMountTargetLockDetails is required");
+
+        return clientCall(request, AddMountTargetLockResponse::builder)
+                .logger(LOG, "addMountTargetLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddMountTargetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/AddMountTargetLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddMountTargetLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        AddMountTargetLockResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", AddMountTargetLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddMountTargetLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddOutboundConnectorLockResponse addOutboundConnectorLock(
+            AddOutboundConnectorLockRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getAddOutboundConnectorLockDetails(),
+                "addOutboundConnectorLockDetails is required");
+
+        return clientCall(request, AddOutboundConnectorLockResponse::builder)
+                .logger(LOG, "addOutboundConnectorLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddOutboundConnectorLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/AddOutboundConnectorLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddOutboundConnectorLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.OutboundConnector.class,
+                        AddOutboundConnectorLockResponse.Builder::outboundConnector)
+                .handleResponseHeaderString("etag", AddOutboundConnectorLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddOutboundConnectorLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddReplicationLockResponse addReplicationLock(AddReplicationLockRequest request) {
+
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+        Objects.requireNonNull(
+                request.getAddReplicationLockDetails(), "addReplicationLockDetails is required");
+
+        return clientCall(request, AddReplicationLockResponse::builder)
+                .logger(LOG, "addReplicationLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddReplicationLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/AddReplicationLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddReplicationLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Replication.class,
+                        AddReplicationLockResponse.Builder::replication)
+                .handleResponseHeaderString("etag", AddReplicationLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddReplicationLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public AddSnapshotLockResponse addSnapshotLock(AddSnapshotLockRequest request) {
+
+        Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
+        Objects.requireNonNull(
+                request.getAddSnapshotLockDetails(), "addSnapshotLockDetails is required");
+
+        return clientCall(request, AddSnapshotLockResponse::builder)
+                .logger(LOG, "addSnapshotLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "AddSnapshotLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/AddSnapshotLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AddSnapshotLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendPathParam(request.getSnapshotId())
+                .appendPathParam("actions")
+                .appendPathParam("addLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Snapshot.class,
+                        AddSnapshotLockResponse.Builder::snapshot)
+                .handleResponseHeaderString("etag", AddSnapshotLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", AddSnapshotLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelDowngradeShapeMountTargetResponse cancelDowngradeShapeMountTarget(
             CancelDowngradeShapeMountTargetRequest request) {
 
@@ -177,6 +417,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getFileSystemId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -211,6 +452,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getFilesystemSnapshotPolicyId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -243,6 +485,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getMountTargetId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -276,6 +519,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getOutboundConnectorId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -308,6 +552,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getReplicationId())
                 .appendPathParam("actions")
                 .appendPathParam("changeCompartment")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -420,6 +665,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .requestBuilder(CreateMountTargetRequest::builder)
                 .basePath("/20171215")
                 .appendPathParam("mountTargets")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -535,6 +781,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("exports")
                 .appendPathParam(request.getExportId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -559,6 +806,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("fileSystems")
                 .appendPathParam(request.getFileSystemId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .appendQueryParam("canDetachChildFileSystem", request.getCanDetachChildFileSystem())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
@@ -587,6 +835,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("filesystemSnapshotPolicies")
                 .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -612,6 +861,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("mountTargets")
                 .appendPathParam(request.getMountTargetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -638,6 +888,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("outboundConnectors")
                 .appendPathParam(request.getOutboundConnectorId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -663,6 +914,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam("replications")
                 .appendPathParam(request.getReplicationId())
                 .appendEnumQueryParam("deleteMode", request.getDeleteMode())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -689,6 +941,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("replicationTargets")
                 .appendPathParam(request.getReplicationTargetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -713,6 +966,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("snapshots")
                 .appendPathParam(request.getSnapshotId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1386,6 +1640,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getFilesystemSnapshotPolicyId())
                 .appendPathParam("actions")
                 .appendPathParam("pause")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1397,6 +1652,253 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         PauseFilesystemSnapshotPolicyResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", PauseFilesystemSnapshotPolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public RemoveExportLockResponse removeExportLock(RemoveExportLockRequest request) {
+
+        Validate.notBlank(request.getExportId(), "exportId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveExportLockDetails(), "removeExportLockDetails is required");
+
+        return clientCall(request, RemoveExportLockResponse::builder)
+                .logger(LOG, "removeExportLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveExportLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/RemoveExportLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveExportLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("exports")
+                .appendPathParam(request.getExportId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Export.class,
+                        RemoveExportLockResponse.Builder::export)
+                .handleResponseHeaderString("etag", RemoveExportLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveExportLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveFileSystemLockResponse removeFileSystemLock(RemoveFileSystemLockRequest request) {
+
+        Validate.notBlank(request.getFileSystemId(), "fileSystemId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveFileSystemLockDetails(),
+                "removeFileSystemLockDetails is required");
+
+        return clientCall(request, RemoveFileSystemLockResponse::builder)
+                .logger(LOG, "removeFileSystemLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveFileSystemLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/RemoveFileSystemLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveFileSystemLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("fileSystems")
+                .appendPathParam(request.getFileSystemId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FileSystem.class,
+                        RemoveFileSystemLockResponse.Builder::fileSystem)
+                .handleResponseHeaderString("etag", RemoveFileSystemLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveFileSystemLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveFilesystemSnapshotPolicyLockResponse removeFilesystemSnapshotPolicyLock(
+            RemoveFilesystemSnapshotPolicyLockRequest request) {
+
+        Validate.notBlank(
+                request.getFilesystemSnapshotPolicyId(),
+                "filesystemSnapshotPolicyId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveFilesystemSnapshotPolicyLockDetails(),
+                "removeFilesystemSnapshotPolicyLockDetails is required");
+
+        return clientCall(request, RemoveFilesystemSnapshotPolicyLockResponse::builder)
+                .logger(LOG, "removeFilesystemSnapshotPolicyLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveFilesystemSnapshotPolicyLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/RemoveFilesystemSnapshotPolicyLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveFilesystemSnapshotPolicyLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("filesystemSnapshotPolicies")
+                .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.FilesystemSnapshotPolicy.class,
+                        RemoveFilesystemSnapshotPolicyLockResponse.Builder
+                                ::filesystemSnapshotPolicy)
+                .handleResponseHeaderString(
+                        "etag", RemoveFilesystemSnapshotPolicyLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RemoveFilesystemSnapshotPolicyLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveMountTargetLockResponse removeMountTargetLock(
+            RemoveMountTargetLockRequest request) {
+
+        Validate.notBlank(request.getMountTargetId(), "mountTargetId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveMountTargetLockDetails(),
+                "removeMountTargetLockDetails is required");
+
+        return clientCall(request, RemoveMountTargetLockResponse::builder)
+                .logger(LOG, "removeMountTargetLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveMountTargetLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/RemoveMountTargetLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveMountTargetLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("mountTargets")
+                .appendPathParam(request.getMountTargetId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.MountTarget.class,
+                        RemoveMountTargetLockResponse.Builder::mountTarget)
+                .handleResponseHeaderString("etag", RemoveMountTargetLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveMountTargetLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveOutboundConnectorLockResponse removeOutboundConnectorLock(
+            RemoveOutboundConnectorLockRequest request) {
+
+        Validate.notBlank(
+                request.getOutboundConnectorId(), "outboundConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveOutboundConnectorLockDetails(),
+                "removeOutboundConnectorLockDetails is required");
+
+        return clientCall(request, RemoveOutboundConnectorLockResponse::builder)
+                .logger(LOG, "removeOutboundConnectorLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveOutboundConnectorLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/RemoveOutboundConnectorLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveOutboundConnectorLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("outboundConnectors")
+                .appendPathParam(request.getOutboundConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.OutboundConnector.class,
+                        RemoveOutboundConnectorLockResponse.Builder::outboundConnector)
+                .handleResponseHeaderString(
+                        "etag", RemoveOutboundConnectorLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveOutboundConnectorLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveReplicationLockResponse removeReplicationLock(
+            RemoveReplicationLockRequest request) {
+
+        Validate.notBlank(request.getReplicationId(), "replicationId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveReplicationLockDetails(),
+                "removeReplicationLockDetails is required");
+
+        return clientCall(request, RemoveReplicationLockResponse::builder)
+                .logger(LOG, "removeReplicationLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveReplicationLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/RemoveReplicationLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveReplicationLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("replications")
+                .appendPathParam(request.getReplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Replication.class,
+                        RemoveReplicationLockResponse.Builder::replication)
+                .handleResponseHeaderString("etag", RemoveReplicationLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveReplicationLockResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RemoveSnapshotLockResponse removeSnapshotLock(RemoveSnapshotLockRequest request) {
+
+        Validate.notBlank(request.getSnapshotId(), "snapshotId must not be blank");
+        Objects.requireNonNull(
+                request.getRemoveSnapshotLockDetails(), "removeSnapshotLockDetails is required");
+
+        return clientCall(request, RemoveSnapshotLockResponse::builder)
+                .logger(LOG, "removeSnapshotLock")
+                .serviceDetails(
+                        "FileStorage",
+                        "RemoveSnapshotLock",
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/RemoveSnapshotLock")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RemoveSnapshotLockRequest::builder)
+                .basePath("/20171215")
+                .appendPathParam("snapshots")
+                .appendPathParam(request.getSnapshotId())
+                .appendPathParam("actions")
+                .appendPathParam("removeLock")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.filestorage.model.Snapshot.class,
+                        RemoveSnapshotLockResponse.Builder::snapshot)
+                .handleResponseHeaderString("etag", RemoveSnapshotLockResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RemoveSnapshotLockResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1458,6 +1960,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .appendPathParam(request.getFilesystemSnapshotPolicyId())
                 .appendPathParam("actions")
                 .appendPathParam("unpause")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1489,6 +1992,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("exports")
                 .appendPathParam(request.getExportId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1551,6 +2055,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("fileSystems")
                 .appendPathParam(request.getFileSystemId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1586,6 +2091,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("filesystemSnapshotPolicies")
                 .appendPathParam(request.getFilesystemSnapshotPolicyId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1619,6 +2125,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("mountTargets")
                 .appendPathParam(request.getMountTargetId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1653,6 +2160,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("outboundConnectors")
                 .appendPathParam(request.getOutboundConnectorId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1684,6 +2192,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("replications")
                 .appendPathParam(request.getReplicationId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
@@ -1715,6 +2224,7 @@ public class FileStorageClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .basePath("/20171215")
                 .appendPathParam("snapshots")
                 .appendPathParam(request.getSnapshotId())
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
                 .appendHeader("opc-request-id", request.getOpcRequestId())

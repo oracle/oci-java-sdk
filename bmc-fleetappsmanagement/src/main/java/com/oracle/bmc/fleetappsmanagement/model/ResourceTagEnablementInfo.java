@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Resource tag enablement Information <br>
+ * Resource tag enablement Information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -47,12 +47,12 @@ public final class ResourceTagEnablementInfo
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** A value which represents if resource can be tagged with Fleet name */
+        /** A value that represents if the resource can be tagged with a Fleet name. */
         @com.fasterxml.jackson.annotation.JsonProperty("isTaggingPossible")
         private Boolean isTaggingPossible;
 
         /**
-         * A value which represents if resource can be tagged with Fleet name
+         * A value that represents if the resource can be tagged with a Fleet name.
          *
          * @param isTaggingPossible the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class ResourceTagEnablementInfo
         return resourceId;
     }
 
-    /** A value which represents if resource can be tagged with Fleet name */
+    /** A value that represents if the resource can be tagged with a Fleet name. */
     @com.fasterxml.jackson.annotation.JsonProperty("isTaggingPossible")
     private final Boolean isTaggingPossible;
 
     /**
-     * A value which represents if resource can be tagged with Fleet name
+     * A value that represents if the resource can be tagged with a Fleet name.
      *
      * @return the value
      */

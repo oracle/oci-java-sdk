@@ -14,10 +14,10 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 public class ListFleetCredentialsRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -28,10 +28,10 @@ public class ListFleetCredentialsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.FleetCredential.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.FleetCredential.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -43,19 +43,41 @@ public class ListFleetCredentialsRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** Credential Level. */
+    /** Resource Identifier */
+    private String resourceId;
+
+    /** Resource Identifier */
+    public String getResourceId() {
+        return resourceId;
+    }
+    /** A filter to return only resources whose target matches the given target name. */
+    private String target;
+
+    /** A filter to return only resources whose target matches the given target name. */
+    public String getTarget() {
+        return target;
+    }
+    /**
+     * A filter to return only resources whose credentialLevel matches the given credentialLevel.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.CredentialEntitySpecificDetails.CredentialLevel
             credentialLevel;
 
-    /** Credential Level. */
+    /**
+     * A filter to return only resources whose credentialLevel matches the given credentialLevel.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.CredentialEntitySpecificDetails.CredentialLevel
             getCredentialLevel() {
         return credentialLevel;
     }
-    /** unique FleetCredential identifier */
+    /**
+     * A filter to return only resources whose credential identifier matches the given identifier.
+     */
     private String id;
 
-    /** unique FleetCredential identifier */
+    /**
+     * A filter to return only resources whose credential identifier matches the given identifier.
+     */
     public String getId() {
         return id;
     }
@@ -150,11 +172,11 @@ public class ListFleetCredentialsRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance
@@ -179,13 +201,13 @@ public class ListFleetCredentialsRequest
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.FleetCredential.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -211,13 +233,45 @@ public class ListFleetCredentialsRequest
             return this;
         }
 
-        /** Credential Level. */
+        /** Resource Identifier */
+        private String resourceId = null;
+
+        /**
+         * Resource Identifier
+         *
+         * @param resourceId the value to set
+         * @return this builder instance
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            return this;
+        }
+
+        /** A filter to return only resources whose target matches the given target name. */
+        private String target = null;
+
+        /**
+         * A filter to return only resources whose target matches the given target name.
+         *
+         * @param target the value to set
+         * @return this builder instance
+         */
+        public Builder target(String target) {
+            this.target = target;
+            return this;
+        }
+
+        /**
+         * A filter to return only resources whose credentialLevel matches the given
+         * credentialLevel.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.CredentialEntitySpecificDetails
                         .CredentialLevel
                 credentialLevel = null;
 
         /**
-         * Credential Level.
+         * A filter to return only resources whose credentialLevel matches the given
+         * credentialLevel.
          *
          * @param credentialLevel the value to set
          * @return this builder instance
@@ -230,11 +284,15 @@ public class ListFleetCredentialsRequest
             return this;
         }
 
-        /** unique FleetCredential identifier */
+        /**
+         * A filter to return only resources whose credential identifier matches the given
+         * identifier.
+         */
         private String id = null;
 
         /**
-         * unique FleetCredential identifier
+         * A filter to return only resources whose credential identifier matches the given
+         * identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -356,6 +414,8 @@ public class ListFleetCredentialsRequest
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            resourceId(o.getResourceId());
+            target(o.getTarget());
             credentialLevel(o.getCredentialLevel());
             id(o.getId());
             limit(o.getLimit());
@@ -401,6 +461,8 @@ public class ListFleetCredentialsRequest
             request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.resourceId = resourceId;
+            request.target = target;
             request.credentialLevel = credentialLevel;
             request.id = id;
             request.limit = limit;
@@ -410,7 +472,8 @@ public class ListFleetCredentialsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListFleetCredentialsRequest(fleetId, compartmentId, lifecycleState, displayName,
-            // credentialLevel, id, limit, page, sortOrder, sortBy, opcRequestId);
+            // resourceId, target, credentialLevel, id, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -425,6 +488,8 @@ public class ListFleetCredentialsRequest
                 .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
+                .resourceId(resourceId)
+                .target(target)
                 .credentialLevel(credentialLevel)
                 .id(id)
                 .limit(limit)
@@ -452,6 +517,8 @@ public class ListFleetCredentialsRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",resourceId=").append(String.valueOf(this.resourceId));
+        sb.append(",target=").append(String.valueOf(this.target));
         sb.append(",credentialLevel=").append(String.valueOf(this.credentialLevel));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -478,6 +545,8 @@ public class ListFleetCredentialsRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
+                && java.util.Objects.equals(this.target, other.target)
                 && java.util.Objects.equals(this.credentialLevel, other.credentialLevel)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -499,6 +568,8 @@ public class ListFleetCredentialsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
+        result = (result * PRIME) + (this.target == null ? 43 : this.target.hashCode());
         result =
                 (result * PRIME)
                         + (this.credentialLevel == null ? 43 : this.credentialLevel.hashCode());

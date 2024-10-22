@@ -215,6 +215,9 @@ public class FleetAppsManagementMaintenanceWindowAsyncClient
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam(
+                        "timeScheduleStartGreaterThanOrEqualTo",
+                        request.getTimeScheduleStartGreaterThanOrEqualTo())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())

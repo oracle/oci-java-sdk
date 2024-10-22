@@ -112,12 +112,16 @@ public final class UpdateFleetDetails
             this.__explicitlySet__.add("ruleSelectionCriteria");
             return this;
         }
-        /** A value which represents if auto confirming of the targets can be enabled */
+        /**
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
         private Boolean isTargetAutoConfirm;
 
         /**
-         * A value which represents if auto confirming of the targets can be enabled
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
          *
          * @param isTargetAutoConfirm the value to set
          * @return this builder
@@ -274,12 +278,16 @@ public final class UpdateFleetDetails
         return ruleSelectionCriteria;
     }
 
-    /** A value which represents if auto confirming of the targets can be enabled */
+    /**
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
     private final Boolean isTargetAutoConfirm;
 
     /**
-     * A value which represents if auto confirming of the targets can be enabled
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
      *
      * @return the value
      */

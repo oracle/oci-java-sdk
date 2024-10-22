@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Resource added to a Fleet. <br>
+ * Resource added to a fleet in Fleet Application Management. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -217,12 +217,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Resource Compartment */
+        /** Resource Compartment name. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartment")
         private String compartment;
 
         /**
-         * Resource Compartment
+         * Resource Compartment name.
          *
          * @param compartment the value to set
          * @return this builder
@@ -232,12 +232,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("compartment");
             return this;
         }
-        /** Compliance State of the Resource */
+        /** Compliance State of the Resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
-         * Compliance State of the Resource
+         * Compliance State of the Resource.
          *
          * @param complianceState the value to set
          * @return this builder
@@ -247,12 +247,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("complianceState");
             return this;
         }
-        /** Resource Tenancy Name */
+        /** Resource Tenancy Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
         private String tenancyName;
 
         /**
-         * Resource Tenancy Name
+         * Resource Tenancy Name.
          *
          * @param tenancyName the value to set
          * @return this builder
@@ -308,15 +308,15 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Product associated with the resource when resource type is fleet.Will only be returned
-         * for PRODUCT fleets that are part of a GROUP Fleet
+         * Product associated with the resource when the resource type is fleet. Will only be
+         * returned for PRODUCT fleets that are part of a GROUP Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("product")
         private String product;
 
         /**
-         * Product associated with the resource when resource type is fleet.Will only be returned
-         * for PRODUCT fleets that are part of a GROUP Fleet
+         * Product associated with the resource when the resource type is fleet. Will only be
+         * returned for PRODUCT fleets that are part of a GROUP Fleet.
          *
          * @param product the value to set
          * @return this builder
@@ -327,15 +327,15 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Application Type associated with the resource when resource type is fleet.Will only be
-         * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * Application Type associated with the resource when the resource type is fleet. Will only
+         * be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Application Type associated with the resource when resource type is fleet.Will only be
-         * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
+         * Application Type associated with the resource when the resource type is fleet. Will only
+         * be returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          *
          * @param applicationType the value to set
          * @return this builder
@@ -346,14 +346,14 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /**
-         * Environment Type associated with the Fleet when resource type is fleet.Will only be
+         * Environment Type associated with the Fleet when the resource type is fleet. Will only be
          * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
 
         /**
-         * Environment Type associated with the Fleet when resource type is fleet.Will only be
+         * Environment Type associated with the Fleet when the resource type is fleet. Will only be
          * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
          *
          * @param environmentType the value to set
@@ -637,12 +637,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         return resourceId;
     }
 
-    /** Resource Compartment */
+    /** Resource Compartment name. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartment")
     private final String compartment;
 
     /**
-     * Resource Compartment
+     * Resource Compartment name.
      *
      * @return the value
      */
@@ -650,12 +650,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         return compartment;
     }
 
-    /** Compliance State of the Resource */
+    /** Compliance State of the Resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
-     * Compliance State of the Resource
+     * Compliance State of the Resource.
      *
      * @return the value
      */
@@ -663,12 +663,12 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
         return complianceState;
     }
 
-    /** Resource Tenancy Name */
+    /** Resource Tenancy Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyName")
     private final String tenancyName;
 
     /**
-     * Resource Tenancy Name
+     * Resource Tenancy Name.
      *
      * @return the value
      */
@@ -716,15 +716,15 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for
-     * PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned
+     * for PRODUCT fleets that are part of a GROUP Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("product")
     private final String product;
 
     /**
-     * Product associated with the resource when resource type is fleet.Will only be returned for
-     * PRODUCT fleets that are part of a GROUP Fleet
+     * Product associated with the resource when the resource type is fleet. Will only be returned
+     * for PRODUCT fleets that are part of a GROUP Fleet.
      *
      * @return the value
      */
@@ -733,14 +733,14 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be
+     * Application Type associated with the resource when the resource type is fleet. Will only be
      * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Application Type associated with the resource when resource type is fleet.Will only be
+     * Application Type associated with the resource when the resource type is fleet. Will only be
      * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      *
      * @return the value
@@ -750,15 +750,15 @@ public final class FleetResource extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned
-     * for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be
+     * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
 
     /**
-     * Environment Type associated with the Fleet when resource type is fleet.Will only be returned
-     * for ENVIRONMENT fleets that are part of a GROUP Fleet.
+     * Environment Type associated with the Fleet when the resource type is fleet. Will only be
+     * returned for ENVIRONMENT fleets that are part of a GROUP Fleet.
      *
      * @return the value
      */

@@ -24,10 +24,10 @@ public class CreateFleetResourceRequest
             getCreateFleetResourceDetails() {
         return createFleetResourceDetails;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -93,11 +93,11 @@ public class CreateFleetResourceRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

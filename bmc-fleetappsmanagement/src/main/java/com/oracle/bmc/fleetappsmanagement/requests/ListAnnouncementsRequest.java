@@ -13,10 +13,10 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** Filter the list with summary contains the given value. */
+    /** Filter the list of announcements that contains the given summary value. */
     private String summaryContains;
 
-    /** Filter the list with summary contains the given value. */
+    /** Filter the list of announcements that contains the given summary value. */
     public String getSummaryContains() {
         return summaryContains;
     }
@@ -56,13 +56,13 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
     }
     /**
      * The field to sort AnnouncementSummary by. Only one sort order may be provided. If no value is
-     * specified _timeReleased_ is default.
+     * specified timeReleased is default.
      */
     private com.oracle.bmc.fleetappsmanagement.model.AnnouncementSortBy sortBy;
 
     /**
      * The field to sort AnnouncementSummary by. Only one sort order may be provided. If no value is
-     * specified _timeReleased_ is default.
+     * specified timeReleased is default.
      */
     public com.oracle.bmc.fleetappsmanagement.model.AnnouncementSortBy getSortBy() {
         return sortBy;
@@ -81,11 +81,11 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Filter the list with summary contains the given value. */
+        /** Filter the list of announcements that contains the given summary value. */
         private String summaryContains = null;
 
         /**
-         * Filter the list with summary contains the given value.
+         * Filter the list of announcements that contains the given summary value.
          *
          * @param summaryContains the value to set
          * @return this builder instance
@@ -157,13 +157,13 @@ public class ListAnnouncementsRequest extends com.oracle.bmc.requests.BmcRequest
 
         /**
          * The field to sort AnnouncementSummary by. Only one sort order may be provided. If no
-         * value is specified _timeReleased_ is default.
+         * value is specified timeReleased is default.
          */
         private com.oracle.bmc.fleetappsmanagement.model.AnnouncementSortBy sortBy = null;
 
         /**
          * The field to sort AnnouncementSummary by. Only one sort order may be provided. If no
-         * value is specified _timeReleased_ is default.
+         * value is specified timeReleased is default.
          *
          * @param sortBy the value to set
          * @return this builder instance

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Request to initiate resource validation <br>
+ * Request to initiate resource validation. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,15 +34,15 @@ public final class RequestResourceValidationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A boolean flag which decides if all resources within the fleet should be part of
-         * vaidation.
+         * A boolean flag that decides if all resources within the fleet should be part of the
+         * validation.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isApplicableToAllResources")
         private Boolean isApplicableToAllResources;
 
         /**
-         * A boolean flag which decides if all resources within the fleet should be part of
-         * vaidation.
+         * A boolean flag that decides if all resources within the fleet should be part of the
+         * validation.
          *
          * @param isApplicableToAllResources the value to set
          * @return this builder
@@ -52,12 +52,12 @@ public final class RequestResourceValidationDetails
             this.__explicitlySet__.add("isApplicableToAllResources");
             return this;
         }
-        /** Resource OCIDS that need to be included for validation. */
+        /** Resource OCIDS to be included for validation. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
         private java.util.List<String> resourceIds;
 
         /**
-         * Resource OCIDS that need to be included for validation.
+         * Resource OCIDS to be included for validation.
          *
          * @param resourceIds the value to set
          * @return this builder
@@ -103,13 +103,15 @@ public final class RequestResourceValidationDetails
     }
 
     /**
-     * A boolean flag which decides if all resources within the fleet should be part of vaidation.
+     * A boolean flag that decides if all resources within the fleet should be part of the
+     * validation.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isApplicableToAllResources")
     private final Boolean isApplicableToAllResources;
 
     /**
-     * A boolean flag which decides if all resources within the fleet should be part of vaidation.
+     * A boolean flag that decides if all resources within the fleet should be part of the
+     * validation.
      *
      * @return the value
      */
@@ -117,12 +119,12 @@ public final class RequestResourceValidationDetails
         return isApplicableToAllResources;
     }
 
-    /** Resource OCIDS that need to be included for validation. */
+    /** Resource OCIDS to be included for validation. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
     private final java.util.List<String> resourceIds;
 
     /**
-     * Resource OCIDS that need to be included for validation.
+     * Resource OCIDS to be included for validation.
      *
      * @return the value
      */

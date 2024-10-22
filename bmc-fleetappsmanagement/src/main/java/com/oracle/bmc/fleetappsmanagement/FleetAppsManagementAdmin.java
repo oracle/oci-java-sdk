@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -66,7 +67,26 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Onboard a tenant to Fleet Application Management Service
+     * Creates a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateCompliancePolicyRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateCompliancePolicyRule API.
+     */
+    CreateCompliancePolicyRuleResponse createCompliancePolicyRule(
+            CreateCompliancePolicyRuleRequest request);
+
+    /**
+     * Onboard a tenant to Fleet Application Management. The onboarding process lets Fleet
+     * Application Management create a few required policies that you need to start using it and its
+     * features.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,7 +102,25 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     CreateOnboardingResponse createOnboarding(CreateOnboardingRequest request);
 
     /**
-     * Creates a new Property.
+     * Creates a new PlatformConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePlatformConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreatePlatformConfiguration API.
+     */
+    CreatePlatformConfigurationResponse createPlatformConfiguration(
+            CreatePlatformConfigurationRequest request);
+
+    /**
+     * Create a business-specific metadata property in Fleet Application Management and capture the
+     * business metadata classifications.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -97,7 +135,57 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     CreatePropertyResponse createProperty(CreatePropertyRequest request);
 
     /**
-     * Deletes a Property resource by identifier
+     * Deletes a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteCompliancePolicyRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteCompliancePolicyRule API.
+     */
+    DeleteCompliancePolicyRuleResponse deleteCompliancePolicyRule(
+            DeleteCompliancePolicyRuleRequest request);
+
+    /**
+     * Deletes Fleet Application Management onboarding resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteOnboardingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOnboarding
+     *     API.
+     */
+    DeleteOnboardingResponse deleteOnboarding(DeleteOnboardingRequest request);
+
+    /**
+     * Deletes a PlatformConfiguration resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePlatformConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeletePlatformConfiguration API.
+     */
+    DeletePlatformConfigurationResponse deletePlatformConfiguration(
+            DeletePlatformConfigurationRequest request);
+
+    /**
+     * Delete a property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -110,6 +198,86 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProperty API.
      */
     DeletePropertyResponse deleteProperty(DeletePropertyRequest request);
+
+    /**
+     * Enable Policies for a newer version of Fleet Application Management
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/EnableLatestPolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableLatestPolicy
+     *     API.
+     */
+    EnableLatestPolicyResponse enableLatestPolicy(EnableLatestPolicyRequest request);
+
+    /**
+     * Gets information about a CompliancePolicy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompliancePolicy
+     *     API.
+     */
+    GetCompliancePolicyResponse getCompliancePolicy(GetCompliancePolicyRequest request);
+
+    /**
+     * Gets information about a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetCompliancePolicyRule API.
+     */
+    GetCompliancePolicyRuleResponse getCompliancePolicyRule(GetCompliancePolicyRuleRequest request);
+
+    /**
+     * Gets a Fleet Application Management Onboarding by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetOnboardingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOnboarding API.
+     */
+    GetOnboardingResponse getOnboarding(GetOnboardingRequest request);
+
+    /**
+     * Gets a PlatformConfiguration by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPlatformConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetPlatformConfiguration API.
+     */
+    GetPlatformConfigurationResponse getPlatformConfiguration(
+            GetPlatformConfigurationRequest request);
 
     /**
      * Gets a Property by identifier
@@ -127,7 +295,40 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     GetPropertyResponse getProperty(GetPropertyRequest request);
 
     /**
-     * Returns a list of onboarding policy information for FAMS.
+     * Gets a list of compliancePolicies.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePoliciesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCompliancePolicies API.
+     */
+    ListCompliancePoliciesResponse listCompliancePolicies(ListCompliancePoliciesRequest request);
+
+    /**
+     * Gets a list of CompliancePolicyRules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePolicyRulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListCompliancePolicyRules API.
+     */
+    ListCompliancePolicyRulesResponse listCompliancePolicyRules(
+            ListCompliancePolicyRulesRequest request);
+
+    /**
+     * Returns a list of onboarding policy information for Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -159,7 +360,24 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ListOnboardingsResponse listOnboardings(ListOnboardingsRequest request);
 
     /**
-     * Returns a list of Properties for Tenancy.
+     * Returns a list of PlatformConfiguration for Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPlatformConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPlatformConfigurations API.
+     */
+    ListPlatformConfigurationsResponse listPlatformConfigurations(
+            ListPlatformConfigurationsRequest request);
+
+    /**
+     * List properties and their values for a tenancy in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -174,7 +392,72 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
     ListPropertiesResponse listProperties(ListPropertiesRequest request);
 
     /**
-     * Updates the Property
+     * Updates the Onboarding setting
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageSettingsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageSettings API.
+     */
+    ManageSettingsResponse manageSettings(ManageSettingsRequest request);
+
+    /**
+     * Updates a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateCompliancePolicyRuleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateCompliancePolicyRule API.
+     */
+    UpdateCompliancePolicyRuleResponse updateCompliancePolicyRule(
+            UpdateCompliancePolicyRuleRequest request);
+
+    /**
+     * Updates the Onboarding
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateOnboardingExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOnboarding
+     *     API.
+     */
+    UpdateOnboardingResponse updateOnboarding(UpdateOnboardingRequest request);
+
+    /**
+     * Updates the PlatformConfiguration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePlatformConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdatePlatformConfiguration API.
+     */
+    UpdatePlatformConfigurationResponse updatePlatformConfiguration(
+            UpdatePlatformConfigurationRequest request);
+
+    /**
+     * Update a property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

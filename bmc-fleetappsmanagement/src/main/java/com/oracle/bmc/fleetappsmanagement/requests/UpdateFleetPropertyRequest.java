@@ -15,17 +15,17 @@ public class UpdateFleetPropertyRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateFleetPropertyDetails> {
 
-    /** unique FleetProperty identifier */
+    /** unique FleetProperty identifier. */
     private String fleetPropertyId;
 
-    /** unique FleetProperty identifier */
+    /** unique FleetProperty identifier. */
     public String getFleetPropertyId() {
         return fleetPropertyId;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -81,11 +81,11 @@ public class UpdateFleetPropertyRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique FleetProperty identifier */
+        /** unique FleetProperty identifier. */
         private String fleetPropertyId = null;
 
         /**
-         * unique FleetProperty identifier
+         * unique FleetProperty identifier.
          *
          * @param fleetPropertyId the value to set
          * @return this builder instance
@@ -95,11 +95,11 @@ public class UpdateFleetPropertyRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

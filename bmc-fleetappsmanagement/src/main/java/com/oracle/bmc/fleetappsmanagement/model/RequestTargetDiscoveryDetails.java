@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Request to initiate target discovery <br>
+ * Request to initiate target discovery. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -34,14 +34,14 @@ public final class RequestTargetDiscoveryDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * A boolean flag which decides if all resources within the fleet should be part of
+         * A boolean flag that decides if all resources within the fleet should be part of
          * discovery.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("isApplicableToAllResources")
         private Boolean isApplicableToAllResources;
 
         /**
-         * A boolean flag which decides if all resources within the fleet should be part of
+         * A boolean flag that decides if all resources within the fleet should be part of
          * discovery.
          *
          * @param isApplicableToAllResources the value to set
@@ -52,12 +52,12 @@ public final class RequestTargetDiscoveryDetails
             this.__explicitlySet__.add("isApplicableToAllResources");
             return this;
         }
-        /** Resource OCIDS that need to be included for discovery. */
+        /** Resource OCIDS to be included for discovery. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
         private java.util.List<String> resourceIds;
 
         /**
-         * Resource OCIDS that need to be included for discovery.
+         * Resource OCIDS to be included for discovery.
          *
          * @param resourceIds the value to set
          * @return this builder
@@ -103,13 +103,13 @@ public final class RequestTargetDiscoveryDetails
     }
 
     /**
-     * A boolean flag which decides if all resources within the fleet should be part of discovery.
+     * A boolean flag that decides if all resources within the fleet should be part of discovery.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("isApplicableToAllResources")
     private final Boolean isApplicableToAllResources;
 
     /**
-     * A boolean flag which decides if all resources within the fleet should be part of discovery.
+     * A boolean flag that decides if all resources within the fleet should be part of discovery.
      *
      * @return the value
      */
@@ -117,12 +117,12 @@ public final class RequestTargetDiscoveryDetails
         return isApplicableToAllResources;
     }
 
-    /** Resource OCIDS that need to be included for discovery. */
+    /** Resource OCIDS to be included for discovery. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceIds")
     private final java.util.List<String> resourceIds;
 
     /**
-     * Resource OCIDS that need to be included for discovery.
+     * Resource OCIDS to be included for discovery.
      *
      * @return the value
      */

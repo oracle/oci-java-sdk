@@ -16,19 +16,19 @@ public class RequestResourceValidationRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.RequestResourceValidationDetails> {
 
-    /** Details for requesting resource validation */
+    /** Details for requesting resource validation. */
     private com.oracle.bmc.fleetappsmanagement.model.RequestResourceValidationDetails
             requestResourceValidationDetails;
 
-    /** Details for requesting resource validation */
+    /** Details for requesting resource validation. */
     public com.oracle.bmc.fleetappsmanagement.model.RequestResourceValidationDetails
             getRequestResourceValidationDetails() {
         return requestResourceValidationDetails;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -77,12 +77,12 @@ public class RequestResourceValidationRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for requesting resource validation */
+        /** Details for requesting resource validation. */
         private com.oracle.bmc.fleetappsmanagement.model.RequestResourceValidationDetails
                 requestResourceValidationDetails = null;
 
         /**
-         * Details for requesting resource validation
+         * Details for requesting resource validation.
          *
          * @param requestResourceValidationDetails the value to set
          * @return this builder instance
@@ -94,11 +94,11 @@ public class RequestResourceValidationRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

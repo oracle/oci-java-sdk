@@ -15,11 +15,11 @@ public class CheckResourceTaggingRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CheckResourceTaggingDetails> {
 
-    /** Details for Checking if FAMS tags can be added for the resources */
+    /** Details for checking if Fleet Application Management tags can be added to the resources. */
     private com.oracle.bmc.fleetappsmanagement.model.CheckResourceTaggingDetails
             checkResourceTaggingDetails;
 
-    /** Details for Checking if FAMS tags can be added for the resources */
+    /** Details for checking if Fleet Application Management tags can be added to the resources. */
     public com.oracle.bmc.fleetappsmanagement.model.CheckResourceTaggingDetails
             getCheckResourceTaggingDetails() {
         return checkResourceTaggingDetails;
@@ -69,12 +69,14 @@ public class CheckResourceTaggingRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for Checking if FAMS tags can be added for the resources */
+        /**
+         * Details for checking if Fleet Application Management tags can be added to the resources.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.CheckResourceTaggingDetails
                 checkResourceTaggingDetails = null;
 
         /**
-         * Details for Checking if FAMS tags can be added for the resources
+         * Details for checking if Fleet Application Management tags can be added to the resources.
          *
          * @param checkResourceTaggingDetails the value to set
          * @return this builder instance

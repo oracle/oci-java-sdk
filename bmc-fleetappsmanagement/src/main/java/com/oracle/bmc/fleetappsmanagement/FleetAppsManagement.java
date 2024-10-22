@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -66,7 +67,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Check if FAMS tags can be added for the resources
+     * Check if Fleet Application Management tags can be added to the resources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,8 +83,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     CheckResourceTaggingResponse checkResourceTagging(CheckResourceTaggingRequest request);
 
     /**
-     * Confirm targets to be managed for a Fleet.Only targets that are confirmed will be managed by
-     * FAMS
+     * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
+     * Fleet Application Management
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,8 +99,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     ConfirmTargetsResponse confirmTargets(ConfirmTargetsRequest request);
 
     /**
-     * Creates a new fleet instance that includes fleet resources and properties. For more
-     * information, please see the documentation.
+     * Create a product, environment, group, or generic type of fleet in Fleet Application
+     * Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -114,7 +115,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     CreateFleetResponse createFleet(CreateFleetRequest request);
 
     /**
-     * Creates a new FleetCredential.
+     * Add credentials to a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -130,7 +131,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     CreateFleetCredentialResponse createFleetCredential(CreateFleetCredentialRequest request);
 
     /**
-     * Creates a new FleetProperty.
+     * Add an existing global property to a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -146,7 +147,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     CreateFleetPropertyResponse createFleetProperty(CreateFleetPropertyRequest request);
 
     /**
-     * Creates a new FleetResource.
+     * Add resource to a fleet in\u00A0Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +163,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     CreateFleetResourceResponse createFleetResource(CreateFleetResourceRequest request);
 
     /**
-     * Deletes a Fleet resource by identifier
+     * Delete a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -177,7 +178,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetResponse deleteFleet(DeleteFleetRequest request);
 
     /**
-     * Deletes a FleetCredential resource by identifier
+     * Delete a credential associated with a fleet product or application in\u00A0Fleet Application
+     * Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -193,7 +195,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetCredentialResponse deleteFleetCredential(DeleteFleetCredentialRequest request);
 
     /**
-     * Deletes a FleetProperty resource by identifier
+     * Delete a property associated with a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -209,7 +211,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetPropertyResponse deleteFleetProperty(DeleteFleetPropertyRequest request);
 
     /**
-     * Deletes a FleetResource resource by identifier
+     * Removes a resource from the fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -225,7 +227,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     DeleteFleetResourceResponse deleteFleetResource(DeleteFleetResourceRequest request);
 
     /**
-     * Request to generate compliance report for a Fleet
+     * Generate compliance reports for a Fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -242,7 +244,7 @@ public interface FleetAppsManagement extends AutoCloseable {
             GenerateComplianceReportRequest request);
 
     /**
-     * Retrieve compiane report for a Fleet
+     * Retrieve compliance report for a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -258,7 +260,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetComplianceReportResponse getComplianceReport(GetComplianceReportRequest request);
 
     /**
-     * Gets a Fleet by identifier
+     * Get the details of a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -273,7 +275,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetResponse getFleet(GetFleetRequest request);
 
     /**
-     * Gets a FleetCredential by identifier
+     * Gets a FleetCredential by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -289,7 +291,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetCredentialResponse getFleetCredential(GetFleetCredentialRequest request);
 
     /**
-     * Gets a FleetProperty by identifier
+     * Gets a Fleet Property by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -305,7 +307,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetFleetPropertyResponse getFleetProperty(GetFleetPropertyRequest request);
 
     /**
-     * Gets a FleetResource by identifier
+     * Gets a Fleet Resource by identifier.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -336,7 +338,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * Return a list of AnnouncementSummary items
+     * Return a list of AnnouncementSummary items.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -352,7 +354,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request);
 
     /**
-     * Returns a list of FleetCredentials.
+     * List credentials in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -368,7 +370,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetCredentialsResponse listFleetCredentials(ListFleetCredentialsRequest request);
 
     /**
-     * Returns a list of FleetProducts.
+     * Returns a list of products associated with the confirmed targets.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -384,7 +386,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetProductsResponse listFleetProducts(ListFleetProductsRequest request);
 
     /**
-     * Returns a list of FleetProperties.
+     * List fleet properties in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -400,7 +402,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetPropertiesResponse listFleetProperties(ListFleetPropertiesRequest request);
 
     /**
-     * Returns a list of FleetResources.
+     * List resources for a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -416,7 +418,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListFleetResourcesResponse listFleetResources(ListFleetResourcesRequest request);
 
     /**
-     * Returns a list of FleetTargets.
+     * Returns the list of all confirmed targets within a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -463,7 +465,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListInventoryResourcesResponse listInventoryResources(ListInventoryResourcesRequest request);
 
     /**
-     * Returns a list of FleetTargets.
+     * Return all targets belonging to the resources within a fleet. It will include both confirmed
+     * and unconfirmed targets.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -526,7 +529,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * Request validation for resources with in a fleet
+     * Request validation for resources within a fleet.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -543,8 +546,8 @@ public interface FleetAppsManagement extends AutoCloseable {
             RequestResourceValidationRequest request);
 
     /**
-     * Confirm targets to be managed for a Fleet.Only targets that are confirmed will be managed by
-     * FAMS
+     * Confirm targets to be managed for a Fleet. Only targets that are confirmed will be managed by
+     * Fleet Application Management
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -560,7 +563,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     RequestTargetDiscoveryResponse requestTargetDiscovery(RequestTargetDiscoveryRequest request);
 
     /**
-     * Updates the Fleet
+     * Update fleet information in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -575,7 +578,8 @@ public interface FleetAppsManagement extends AutoCloseable {
     UpdateFleetResponse updateFleet(UpdateFleetRequest request);
 
     /**
-     * Updates the FleetCredential
+     * Edit credentials associated with a product or application in\u00A0Fleet Application
+     * Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -591,7 +595,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     UpdateFleetCredentialResponse updateFleetCredential(UpdateFleetCredentialRequest request);
 
     /**
-     * Updates the FleetProperty
+     * Edit a property associated with a fleet in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -607,7 +611,7 @@ public interface FleetAppsManagement extends AutoCloseable {
     UpdateFleetPropertyResponse updateFleetProperty(UpdateFleetPropertyRequest request);
 
     /**
-     * Updates the FleetResource
+     * Updates the FleetResource.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

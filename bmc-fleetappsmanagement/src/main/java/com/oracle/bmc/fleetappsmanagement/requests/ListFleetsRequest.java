@@ -13,10 +13,10 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.Fleet.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.Fleet.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -27,31 +27,31 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their fleetType matches the given fleetType. */
+    /** A filter to return fleets whose fleetType matches the given fleetType. */
     private com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType fleetType;
 
-    /** A filter to return only resources their fleetType matches the given fleetType. */
+    /** A filter to return fleets whose fleetType matches the given fleetType. */
     public com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType getFleetType() {
         return fleetType;
     }
-    /** A filter to return only resources that match the Application Type given. */
+    /** A filter to return resources that match the Application Type/Product Stack given.. */
     private String applicationType;
 
-    /** A filter to return only resources that match the Application Type given. */
+    /** A filter to return resources that match the Application Type/Product Stack given.. */
     public String getApplicationType() {
         return applicationType;
     }
-    /** A filter to return only resources that match the Product Type given. */
+    /** A filter to return resources that match the Product given. */
     private String product;
 
-    /** A filter to return only resources that match the Product Type given. */
+    /** A filter to return resources that match the Product given. */
     public String getProduct() {
         return product;
     }
-    /** A filter to return only resources that match the Environment Type given. */
+    /** A filter to return resources that match the Environment Type given. */
     private String environmentType;
 
-    /** A filter to return only resources that match the Environment Type given. */
+    /** A filter to return resources that match the Environment Type given. */
     public String getEnvironmentType() {
         return environmentType;
     }
@@ -62,10 +62,10 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
     public String getDisplayName() {
         return displayName;
     }
-    /** unique Fleet identifier */
+    /** A filter to return fleets whose id matches the given Fleet identifier */
     private String id;
 
-    /** unique Fleet identifier */
+    /** A filter to return fleets whose id matches the given Fleet identifier */
     public String getId() {
         return id;
     }
@@ -160,13 +160,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
-         */
+        /** A filter to return fleets whose lifecycleState matches the given lifecycleState. */
         private com.oracle.bmc.fleetappsmanagement.model.Fleet.LifecycleState lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return fleets whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -191,11 +189,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only resources their fleetType matches the given fleetType. */
+        /** A filter to return fleets whose fleetType matches the given fleetType. */
         private com.oracle.bmc.fleetappsmanagement.model.Fleet.FleetType fleetType = null;
 
         /**
-         * A filter to return only resources their fleetType matches the given fleetType.
+         * A filter to return fleets whose fleetType matches the given fleetType.
          *
          * @param fleetType the value to set
          * @return this builder instance
@@ -206,11 +204,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only resources that match the Application Type given. */
+        /** A filter to return resources that match the Application Type/Product Stack given.. */
         private String applicationType = null;
 
         /**
-         * A filter to return only resources that match the Application Type given.
+         * A filter to return resources that match the Application Type/Product Stack given..
          *
          * @param applicationType the value to set
          * @return this builder instance
@@ -220,11 +218,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only resources that match the Product Type given. */
+        /** A filter to return resources that match the Product given. */
         private String product = null;
 
         /**
-         * A filter to return only resources that match the Product Type given.
+         * A filter to return resources that match the Product given.
          *
          * @param product the value to set
          * @return this builder instance
@@ -234,11 +232,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** A filter to return only resources that match the Environment Type given. */
+        /** A filter to return resources that match the Environment Type given. */
         private String environmentType = null;
 
         /**
-         * A filter to return only resources that match the Environment Type given.
+         * A filter to return resources that match the Environment Type given.
          *
          * @param environmentType the value to set
          * @return this builder instance
@@ -262,11 +260,11 @@ public class ListFleetsRequest extends com.oracle.bmc.requests.BmcRequest<java.l
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** A filter to return fleets whose id matches the given Fleet identifier */
         private String id = null;
 
         /**
-         * unique Fleet identifier
+         * A filter to return fleets whose id matches the given Fleet identifier
          *
          * @param id the value to set
          * @return this builder instance

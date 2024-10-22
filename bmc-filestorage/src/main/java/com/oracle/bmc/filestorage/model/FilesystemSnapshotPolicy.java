@@ -43,6 +43,7 @@ public final class FilesystemSnapshotPolicy
         "displayName",
         "policyPrefix",
         "schedules",
+        "locks",
         "freeformTags",
         "definedTags"
     })
@@ -55,6 +56,7 @@ public final class FilesystemSnapshotPolicy
             String displayName,
             String policyPrefix,
             java.util.List<SnapshotSchedule> schedules,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -66,6 +68,7 @@ public final class FilesystemSnapshotPolicy
         this.displayName = displayName;
         this.policyPrefix = policyPrefix;
         this.schedules = schedules;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -234,6 +237,21 @@ public final class FilesystemSnapshotPolicy
             this.__explicitlySet__.add("schedules");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -296,6 +314,7 @@ public final class FilesystemSnapshotPolicy
                             this.displayName,
                             this.policyPrefix,
                             this.schedules,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -329,6 +348,9 @@ public final class FilesystemSnapshotPolicy
             }
             if (model.wasPropertyExplicitlySet("schedules")) {
                 this.schedules(model.getSchedules());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -545,6 +567,19 @@ public final class FilesystemSnapshotPolicy
         return schedules;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -610,6 +645,7 @@ public final class FilesystemSnapshotPolicy
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", policyPrefix=").append(String.valueOf(this.policyPrefix));
         sb.append(", schedules=").append(String.valueOf(this.schedules));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -634,6 +670,7 @@ public final class FilesystemSnapshotPolicy
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.policyPrefix, other.policyPrefix)
                 && java.util.Objects.equals(this.schedules, other.schedules)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -659,6 +696,7 @@ public final class FilesystemSnapshotPolicy
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.policyPrefix == null ? 43 : this.policyPrefix.hashCode());
         result = (result * PRIME) + (this.schedules == null ? 43 : this.schedules.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

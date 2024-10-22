@@ -853,43 +853,6 @@ public class OcbAgentSvcAsyncClient extends com.oracle.bmc.http.internal.BaseAsy
                 .callAsync(handler);
     }
 
-    @Override
-    public java.util.concurrent.Future<UpdatePluginResponse> updatePlugin(
-            UpdatePluginRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<UpdatePluginRequest, UpdatePluginResponse>
-                    handler) {
-
-        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
-
-        Validate.notBlank(request.getPluginName(), "pluginName must not be blank");
-        Objects.requireNonNull(request.getUpdatePluginDetails(), "updatePluginDetails is required");
-
-        return clientCall(request, UpdatePluginResponse::builder)
-                .logger(LOG, "updatePlugin")
-                .serviceDetails(
-                        "OcbAgentSvc",
-                        "UpdatePlugin",
-                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/UpdatePlugin")
-                .method(com.oracle.bmc.http.client.Method.PUT)
-                .requestBuilder(UpdatePluginRequest::builder)
-                .basePath("/20220509")
-                .appendPathParam("agents")
-                .appendPathParam(request.getAgentId())
-                .appendPathParam("plugins")
-                .appendPathParam(request.getPluginName())
-                .accept("application/json")
-                .appendHeader("if-match", request.getIfMatch())
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .hasBody()
-                .handleBody(
-                        com.oracle.bmc.cloudbridge.model.Plugin.class,
-                        UpdatePluginResponse.Builder::plugin)
-                .handleResponseHeaderString("etag", UpdatePluginResponse.Builder::etag)
-                .handleResponseHeaderString(
-                        "opc-request-id", UpdatePluginResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
     /**
      * Create a new client instance.
      *

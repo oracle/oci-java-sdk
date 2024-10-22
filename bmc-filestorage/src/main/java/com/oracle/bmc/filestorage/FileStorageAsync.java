@@ -64,6 +64,118 @@ public interface FileStorageAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddExportLockResponse> addExportLock(
+            AddExportLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddExportLockRequest, AddExportLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddFileSystemLockResponse> addFileSystemLock(
+            AddFileSystemLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddFileSystemLockRequest, AddFileSystemLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddFilesystemSnapshotPolicyLockResponse>
+            addFilesystemSnapshotPolicyLock(
+                    AddFilesystemSnapshotPolicyLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    AddFilesystemSnapshotPolicyLockRequest,
+                                    AddFilesystemSnapshotPolicyLockResponse>
+                            handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddMountTargetLockResponse> addMountTargetLock(
+            AddMountTargetLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddMountTargetLockRequest, AddMountTargetLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddOutboundConnectorLockResponse> addOutboundConnectorLock(
+            AddOutboundConnectorLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddOutboundConnectorLockRequest, AddOutboundConnectorLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddReplicationLockResponse> addReplicationLock(
+            AddReplicationLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            AddReplicationLockRequest, AddReplicationLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<AddSnapshotLockResponse> addSnapshotLock(
+            AddSnapshotLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddSnapshotLockRequest, AddSnapshotLockResponse>
+                    handler);
+
+    /**
      * Cancel scheduled downgrade shape request for mount target.
      *
      * @param request The request object containing the details to send
@@ -854,6 +966,119 @@ public interface FileStorageAsync extends AutoCloseable {
                                     PauseFilesystemSnapshotPolicyRequest,
                                     PauseFilesystemSnapshotPolicyResponse>
                             handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveExportLockResponse> removeExportLock(
+            RemoveExportLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveExportLockRequest, RemoveExportLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveFileSystemLockResponse> removeFileSystemLock(
+            RemoveFileSystemLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveFileSystemLockRequest, RemoveFileSystemLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveFilesystemSnapshotPolicyLockResponse>
+            removeFilesystemSnapshotPolicyLock(
+                    RemoveFilesystemSnapshotPolicyLockRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveFilesystemSnapshotPolicyLockRequest,
+                                    RemoveFilesystemSnapshotPolicyLockResponse>
+                            handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveMountTargetLockResponse> removeMountTargetLock(
+            RemoveMountTargetLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMountTargetLockRequest, RemoveMountTargetLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveOutboundConnectorLockResponse> removeOutboundConnectorLock(
+            RemoveOutboundConnectorLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveOutboundConnectorLockRequest, RemoveOutboundConnectorLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveReplicationLockResponse> removeReplicationLock(
+            RemoveReplicationLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveReplicationLockRequest, RemoveReplicationLockResponse>
+                    handler);
+
+    /**
+     * Removes a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveSnapshotLockResponse> removeSnapshotLock(
+            RemoveSnapshotLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveSnapshotLockRequest, RemoveSnapshotLockResponse>
+                    handler);
 
     /**
      * Schedule a downgrade shape of the mount target.

@@ -40,12 +40,12 @@ public final class AssociatedFleetResourceDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the reosurce. */
+        /** OCID of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * OCID of the reosurce.
+         * OCID of the resource.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -70,12 +70,12 @@ public final class AssociatedFleetResourceDetails
             this.__explicitlySet__.add("fleetResourceType");
             return this;
         }
-        /** Compartment Identifier. */
+        /** Compartment Identifier[OCID]. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier.
+         * Compartment Identifier[OCID].
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -85,12 +85,12 @@ public final class AssociatedFleetResourceDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Tenancy Identifier. */
+        /** Tenancy Identifier[OCID]. */
         @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
         private String tenancyId;
 
         /**
-         * Tenancy Identifier.
+         * Tenancy Identifier[OCID].
          *
          * @param tenancyId the value to set
          * @return this builder
@@ -144,12 +144,12 @@ public final class AssociatedFleetResourceDetails
         return new Builder().copy(this);
     }
 
-    /** OCID of the reosurce. */
+    /** OCID of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * OCID of the reosurce.
+     * OCID of the resource.
      *
      * @return the value
      */
@@ -170,12 +170,12 @@ public final class AssociatedFleetResourceDetails
         return fleetResourceType;
     }
 
-    /** Compartment Identifier. */
+    /** Compartment Identifier[OCID]. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier.
+     * Compartment Identifier[OCID].
      *
      * @return the value
      */
@@ -183,12 +183,12 @@ public final class AssociatedFleetResourceDetails
         return compartmentId;
     }
 
-    /** Tenancy Identifier. */
+    /** Tenancy Identifier[OCID]. */
     @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
     private final String tenancyId;
 
     /**
-     * Tenancy Identifier.
+     * Tenancy Identifier[OCID].
      *
      * @return the value
      */

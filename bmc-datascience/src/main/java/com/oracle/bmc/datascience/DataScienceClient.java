@@ -2745,6 +2745,38 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public RestoreArchivedModelArtifactResponse restoreArchivedModelArtifact(
+            RestoreArchivedModelArtifactRequest request) {
+
+        Validate.notBlank(request.getModelId(), "modelId must not be blank");
+
+        return clientCall(request, RestoreArchivedModelArtifactResponse::builder)
+                .logger(LOG, "restoreArchivedModelArtifact")
+                .serviceDetails(
+                        "DataScience",
+                        "RestoreArchivedModelArtifact",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/RestoreArchivedModelArtifact")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RestoreArchivedModelArtifactRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("models")
+                .appendPathParam(request.getModelId())
+                .appendPathParam("actions")
+                .appendPathParam("restore")
+                .appendQueryParam(
+                        "restoreModelForHoursSpecified", request.getRestoreModelForHoursSpecified())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RestoreArchivedModelArtifactResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public UpdateDataSciencePrivateEndpointResponse updateDataSciencePrivateEndpoint(
             UpdateDataSciencePrivateEndpointRequest request) {
 

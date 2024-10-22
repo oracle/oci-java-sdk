@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * An summary of announcements for Fleet Application Management Service <br>
+ * A summary of announcements for Fleet Application Management. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -199,12 +199,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Type of announcement */
+        /** Type of announcement. */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private String type;
 
         /**
-         * Type of announcement
+         * Type of announcement.
          *
          * @param type the value to set
          * @return this builder
@@ -214,12 +214,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Summary of the announcement */
+        /** Summary of the announcement. */
         @com.fasterxml.jackson.annotation.JsonProperty("summary")
         private String summary;
 
         /**
-         * Summary of the announcement
+         * Summary of the announcement.
          *
          * @param summary the value to set
          * @return this builder
@@ -229,12 +229,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("summary");
             return this;
         }
-        /** Details of the announcement */
+        /** Announcement Details. */
         @com.fasterxml.jackson.annotation.JsonProperty("details")
         private String details;
 
         /**
-         * Details of the announcement
+         * Announcement Details.
          *
          * @param details the value to set
          * @return this builder
@@ -244,12 +244,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("details");
             return this;
         }
-        /** URL to the announcement */
+        /** URL to the announcement. */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
-         * URL to the announcement
+         * URL to the announcement.
          *
          * @param url the value to set
          * @return this builder
@@ -259,12 +259,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** Date to start displaying announcement to user */
+        /** Announcement start date. */
         @com.fasterxml.jackson.annotation.JsonProperty("announcementStart")
         private java.util.Date announcementStart;
 
         /**
-         * Date to start displaying announcement to user
+         * Announcement start date.
          *
          * @param announcementStart the value to set
          * @return this builder
@@ -274,12 +274,12 @@ public final class AnnouncementSummary
             this.__explicitlySet__.add("announcementStart");
             return this;
         }
-        /** Date to end displaying annonucement to user */
+        /** Announcement end date */
         @com.fasterxml.jackson.annotation.JsonProperty("announcementEnd")
         private java.util.Date announcementEnd;
 
         /**
-         * Date to end displaying annonucement to user
+         * Announcement end date
          *
          * @param announcementEnd the value to set
          * @return this builder
@@ -561,12 +561,12 @@ public final class AnnouncementSummary
         return timeUpdated;
     }
 
-    /** Type of announcement */
+    /** Type of announcement. */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final String type;
 
     /**
-     * Type of announcement
+     * Type of announcement.
      *
      * @return the value
      */
@@ -574,12 +574,12 @@ public final class AnnouncementSummary
         return type;
     }
 
-    /** Summary of the announcement */
+    /** Summary of the announcement. */
     @com.fasterxml.jackson.annotation.JsonProperty("summary")
     private final String summary;
 
     /**
-     * Summary of the announcement
+     * Summary of the announcement.
      *
      * @return the value
      */
@@ -587,12 +587,12 @@ public final class AnnouncementSummary
         return summary;
     }
 
-    /** Details of the announcement */
+    /** Announcement Details. */
     @com.fasterxml.jackson.annotation.JsonProperty("details")
     private final String details;
 
     /**
-     * Details of the announcement
+     * Announcement Details.
      *
      * @return the value
      */
@@ -600,12 +600,12 @@ public final class AnnouncementSummary
         return details;
     }
 
-    /** URL to the announcement */
+    /** URL to the announcement. */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * URL to the announcement
+     * URL to the announcement.
      *
      * @return the value
      */
@@ -613,12 +613,12 @@ public final class AnnouncementSummary
         return url;
     }
 
-    /** Date to start displaying announcement to user */
+    /** Announcement start date. */
     @com.fasterxml.jackson.annotation.JsonProperty("announcementStart")
     private final java.util.Date announcementStart;
 
     /**
-     * Date to start displaying announcement to user
+     * Announcement start date.
      *
      * @return the value
      */
@@ -626,12 +626,12 @@ public final class AnnouncementSummary
         return announcementStart;
     }
 
-    /** Date to end displaying annonucement to user */
+    /** Announcement end date */
     @com.fasterxml.jackson.annotation.JsonProperty("announcementEnd")
     private final java.util.Date announcementEnd;
 
     /**
-     * Date to end displaying annonucement to user
+     * Announcement end date
      *
      * @return the value
      */

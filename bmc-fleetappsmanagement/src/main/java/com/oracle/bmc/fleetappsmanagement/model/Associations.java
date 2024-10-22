@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * JSON content with required associations <br>
+ * Associations for the runbook. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -21,27 +21,35 @@ package com.oracle.bmc.fleetappsmanagement.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Associations extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"tasks", "groups", "executionWorkflowDetails", "version"})
+    @java.beans.ConstructorProperties({
+        "tasks",
+        "groups",
+        "executionWorkflowDetails",
+        "rollbackWorkflowDetails",
+        "version"
+    })
     public Associations(
             java.util.List<Task> tasks,
             java.util.List<Group> groups,
             ExecutionWorkflowDetails executionWorkflowDetails,
+            RollbackWorkflowDetails rollbackWorkflowDetails,
             String version) {
         super();
         this.tasks = tasks;
         this.groups = groups;
         this.executionWorkflowDetails = executionWorkflowDetails;
+        this.rollbackWorkflowDetails = rollbackWorkflowDetails;
         this.version = version;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A set of tasks to execute in the runbook */
+        /** A set of tasks to execute in the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("tasks")
         private java.util.List<Task> tasks;
 
         /**
-         * A set of tasks to execute in the runbook
+         * A set of tasks to execute in the runbook.
          *
          * @param tasks the value to set
          * @return this builder
@@ -51,12 +59,12 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("tasks");
             return this;
         }
-        /** The groups of the runbook */
+        /** The groups of the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("groups")
         private java.util.List<Group> groups;
 
         /**
-         * The groups of the runbook
+         * The groups of the runbook.
          *
          * @param groups the value to set
          * @return this builder
@@ -73,6 +81,15 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         public Builder executionWorkflowDetails(ExecutionWorkflowDetails executionWorkflowDetails) {
             this.executionWorkflowDetails = executionWorkflowDetails;
             this.__explicitlySet__.add("executionWorkflowDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rollbackWorkflowDetails")
+        private RollbackWorkflowDetails rollbackWorkflowDetails;
+
+        public Builder rollbackWorkflowDetails(RollbackWorkflowDetails rollbackWorkflowDetails) {
+            this.rollbackWorkflowDetails = rollbackWorkflowDetails;
+            this.__explicitlySet__.add("rollbackWorkflowDetails");
             return this;
         }
         /** The version of the runbook. */
@@ -97,7 +114,11 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         public Associations build() {
             Associations model =
                     new Associations(
-                            this.tasks, this.groups, this.executionWorkflowDetails, this.version);
+                            this.tasks,
+                            this.groups,
+                            this.executionWorkflowDetails,
+                            this.rollbackWorkflowDetails,
+                            this.version);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -115,6 +136,9 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
             if (model.wasPropertyExplicitlySet("executionWorkflowDetails")) {
                 this.executionWorkflowDetails(model.getExecutionWorkflowDetails());
             }
+            if (model.wasPropertyExplicitlySet("rollbackWorkflowDetails")) {
+                this.rollbackWorkflowDetails(model.getRollbackWorkflowDetails());
+            }
             if (model.wasPropertyExplicitlySet("version")) {
                 this.version(model.getVersion());
             }
@@ -131,12 +155,12 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         return new Builder().copy(this);
     }
 
-    /** A set of tasks to execute in the runbook */
+    /** A set of tasks to execute in the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("tasks")
     private final java.util.List<Task> tasks;
 
     /**
-     * A set of tasks to execute in the runbook
+     * A set of tasks to execute in the runbook.
      *
      * @return the value
      */
@@ -144,12 +168,12 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         return tasks;
     }
 
-    /** The groups of the runbook */
+    /** The groups of the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("groups")
     private final java.util.List<Group> groups;
 
     /**
-     * The groups of the runbook
+     * The groups of the runbook.
      *
      * @return the value
      */
@@ -162,6 +186,13 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
 
     public ExecutionWorkflowDetails getExecutionWorkflowDetails() {
         return executionWorkflowDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("rollbackWorkflowDetails")
+    private final RollbackWorkflowDetails rollbackWorkflowDetails;
+
+    public RollbackWorkflowDetails getRollbackWorkflowDetails() {
+        return rollbackWorkflowDetails;
     }
 
     /** The version of the runbook. */
@@ -196,6 +227,8 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", groups=").append(String.valueOf(this.groups));
         sb.append(", executionWorkflowDetails=")
                 .append(String.valueOf(this.executionWorkflowDetails));
+        sb.append(", rollbackWorkflowDetails=")
+                .append(String.valueOf(this.rollbackWorkflowDetails));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(")");
         return sb.toString();
@@ -215,6 +248,8 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.groups, other.groups)
                 && java.util.Objects.equals(
                         this.executionWorkflowDetails, other.executionWorkflowDetails)
+                && java.util.Objects.equals(
+                        this.rollbackWorkflowDetails, other.rollbackWorkflowDetails)
                 && java.util.Objects.equals(this.version, other.version)
                 && super.equals(other);
     }
@@ -230,6 +265,11 @@ public final class Associations extends com.oracle.bmc.http.client.internal.Expl
                         + (this.executionWorkflowDetails == null
                                 ? 43
                                 : this.executionWorkflowDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackWorkflowDetails == null
+                                ? 43
+                                : this.rollbackWorkflowDetails.hashCode());
         result = (result * PRIME) + (this.version == null ? 43 : this.version.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

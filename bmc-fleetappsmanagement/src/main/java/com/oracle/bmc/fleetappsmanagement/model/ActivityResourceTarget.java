@@ -23,11 +23,12 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class ActivityResourceTarget
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"targetName", "status"})
-    public ActivityResourceTarget(String targetName, JobStatus status) {
+    @java.beans.ConstructorProperties({"targetName", "status", "description"})
+    public ActivityResourceTarget(String targetName, JobStatus status, String description) {
         super();
         this.targetName = targetName;
         this.status = status;
+        this.description = description;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,12 +48,12 @@ public final class ActivityResourceTarget
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /** Status of the Job at Resource Target Level. */
+        /** Status of the Job at target Level. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Job at Resource Target Level.
+         * Status of the Job at target Level.
          *
          * @param status the value to set
          * @return this builder
@@ -62,12 +63,32 @@ public final class ActivityResourceTarget
             this.__explicitlySet__.add("status");
             return this;
         }
+        /**
+         * Description of the Execution status. If there are any errors, this can also include a
+         * short error message.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Description of the Execution status. If there are any errors, this can also include a
+         * short error message.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ActivityResourceTarget build() {
-            ActivityResourceTarget model = new ActivityResourceTarget(this.targetName, this.status);
+            ActivityResourceTarget model =
+                    new ActivityResourceTarget(this.targetName, this.status, this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -81,6 +102,9 @@ public final class ActivityResourceTarget
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             return this;
         }
@@ -108,17 +132,34 @@ public final class ActivityResourceTarget
         return targetName;
     }
 
-    /** Status of the Job at Resource Target Level. */
+    /** Status of the Job at target Level. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Job at Resource Target Level.
+     * Status of the Job at target Level.
      *
      * @return the value
      */
     public JobStatus getStatus() {
         return status;
+    }
+
+    /**
+     * Description of the Execution status. If there are any errors, this can also include a short
+     * error message.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description of the Execution status. If there are any errors, this can also include a short
+     * error message.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
     }
 
     @Override
@@ -138,6 +179,7 @@ public final class ActivityResourceTarget
         sb.append("super=").append(super.toString());
         sb.append("targetName=").append(String.valueOf(this.targetName));
         sb.append(", status=").append(String.valueOf(this.status));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
     }
@@ -154,6 +196,7 @@ public final class ActivityResourceTarget
         ActivityResourceTarget other = (ActivityResourceTarget) o;
         return java.util.Objects.equals(this.targetName, other.targetName)
                 && java.util.Objects.equals(this.status, other.status)
+                && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
 
@@ -163,6 +206,7 @@ public final class ActivityResourceTarget
         int result = 1;
         result = (result * PRIME) + (this.targetName == null ? 43 : this.targetName.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

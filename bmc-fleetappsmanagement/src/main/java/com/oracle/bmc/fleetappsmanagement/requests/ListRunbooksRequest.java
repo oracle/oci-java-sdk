@@ -20,10 +20,10 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.Runbook.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.Runbook.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -34,38 +34,38 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getDisplayName() {
         return displayName;
     }
-    /** unique Runbook identifier */
+    /** A filter to return runbooks whose identifier matches the given identifier. */
     private String id;
 
-    /** unique Runbook identifier */
+    /** A filter to return runbooks whose identifier matches the given identifier. */
     public String getId() {
         return id;
     }
-    /** The ID of the runbook type. */
+    /** A filter to return runbooks whose type matches the given type. */
     private com.oracle.bmc.fleetappsmanagement.model.Runbook.Type type;
 
-    /** The ID of the runbook type. */
+    /** A filter to return runbooks whose type matches the given type. */
     public com.oracle.bmc.fleetappsmanagement.model.Runbook.Type getType() {
         return type;
     }
-    /** The runbook relevance of product or full-stack. */
+    /** A filter to return runbooks whose runbookRelevance matches the given runbookRelevance. */
     private com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance runbookRelevance;
 
-    /** The runbook relevance of product or full-stack. */
+    /** A filter to return runbooks whose runbookRelevance matches the given runbookRelevance. */
     public com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance getRunbookRelevance() {
         return runbookRelevance;
     }
-    /** The ID of the runbook platform. */
+    /** A filter to return runbooks whose platform matches the given platform. */
     private String platform;
 
-    /** The ID of the runbook platform. */
+    /** A filter to return runbooks whose platform matches the given platform. */
     public String getPlatform() {
         return platform;
     }
-    /** The runbook lifecycle. */
+    /** A filter to return runbooks whose operation matches the given lifecycle operation. */
     private String operation;
 
-    /** The runbook lifecycle. */
+    /** A filter to return runbooks whose operation matches the given lifecycle operation. */
     public String getOperation() {
         return operation;
     }
@@ -175,13 +175,13 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.Runbook.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -206,11 +206,11 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** unique Runbook identifier */
+        /** A filter to return runbooks whose identifier matches the given identifier. */
         private String id = null;
 
         /**
-         * unique Runbook identifier
+         * A filter to return runbooks whose identifier matches the given identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -220,11 +220,11 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The ID of the runbook type. */
+        /** A filter to return runbooks whose type matches the given type. */
         private com.oracle.bmc.fleetappsmanagement.model.Runbook.Type type = null;
 
         /**
-         * The ID of the runbook type.
+         * A filter to return runbooks whose type matches the given type.
          *
          * @param type the value to set
          * @return this builder instance
@@ -234,12 +234,14 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The runbook relevance of product or full-stack. */
+        /**
+         * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
+         */
         private com.oracle.bmc.fleetappsmanagement.model.Runbook.RunbookRelevance runbookRelevance =
                 null;
 
         /**
-         * The runbook relevance of product or full-stack.
+         * A filter to return runbooks whose runbookRelevance matches the given runbookRelevance.
          *
          * @param runbookRelevance the value to set
          * @return this builder instance
@@ -251,11 +253,11 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The ID of the runbook platform. */
+        /** A filter to return runbooks whose platform matches the given platform. */
         private String platform = null;
 
         /**
-         * The ID of the runbook platform.
+         * A filter to return runbooks whose platform matches the given platform.
          *
          * @param platform the value to set
          * @return this builder instance
@@ -265,11 +267,11 @@ public class ListRunbooksRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The runbook lifecycle. */
+        /** A filter to return runbooks whose operation matches the given lifecycle operation. */
         private String operation = null;
 
         /**
-         * The runbook lifecycle.
+         * A filter to return runbooks whose operation matches the given lifecycle operation.
          *
          * @param operation the value to set
          * @return this builder instance

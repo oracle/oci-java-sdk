@@ -26,20 +26,26 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         "platform",
         "osType",
         "scope",
-        "properties"
+        "properties",
+        "isDiscoveryOutputTask",
+        "isApplySubjectTask"
     })
     public Details(
             ExecutionDetails executionDetails,
             String platform,
             OsType osType,
             TaskScope scope,
-            Properties properties) {
+            Properties properties,
+            Boolean isDiscoveryOutputTask,
+            Boolean isApplySubjectTask) {
         super();
         this.executionDetails = executionDetails;
         this.platform = platform;
         this.osType = osType;
         this.scope = scope;
         this.properties = properties;
+        this.isDiscoveryOutputTask = isDiscoveryOutputTask;
+        this.isApplySubjectTask = isApplySubjectTask;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -107,6 +113,40 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("properties");
             return this;
         }
+        /** Is this a discovery output task? */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
+        private Boolean isDiscoveryOutputTask;
+
+        /**
+         * Is this a discovery output task?
+         *
+         * @param isDiscoveryOutputTask the value to set
+         * @return this builder
+         */
+        public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
+            this.isDiscoveryOutputTask = isDiscoveryOutputTask;
+            this.__explicitlySet__.add("isDiscoveryOutputTask");
+            return this;
+        }
+        /**
+         * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
+         * patches(subjects) on a target.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
+        private Boolean isApplySubjectTask;
+
+        /**
+         * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
+         * patches(subjects) on a target.
+         *
+         * @param isApplySubjectTask the value to set
+         * @return this builder
+         */
+        public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
+            this.isApplySubjectTask = isApplySubjectTask;
+            this.__explicitlySet__.add("isApplySubjectTask");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -118,7 +158,9 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
                             this.platform,
                             this.osType,
                             this.scope,
-                            this.properties);
+                            this.properties,
+                            this.isDiscoveryOutputTask,
+                            this.isApplySubjectTask);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -141,6 +183,12 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
+            }
+            if (model.wasPropertyExplicitlySet("isDiscoveryOutputTask")) {
+                this.isDiscoveryOutputTask(model.getIsDiscoveryOutputTask());
+            }
+            if (model.wasPropertyExplicitlySet("isApplySubjectTask")) {
+                this.isApplySubjectTask(model.getIsApplySubjectTask());
             }
             return this;
         }
@@ -208,6 +256,36 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         return properties;
     }
 
+    /** Is this a discovery output task? */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
+    private final Boolean isDiscoveryOutputTask;
+
+    /**
+     * Is this a discovery output task?
+     *
+     * @return the value
+     */
+    public Boolean getIsDiscoveryOutputTask() {
+        return isDiscoveryOutputTask;
+    }
+
+    /**
+     * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
+     * patches(subjects) on a target.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
+    private final Boolean isApplySubjectTask;
+
+    /**
+     * Is this an Apply Subject Task? Set this to true for a Patch Execution Task which applies
+     * patches(subjects) on a target.
+     *
+     * @return the value
+     */
+    public Boolean getIsApplySubjectTask() {
+        return isApplySubjectTask;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -228,6 +306,8 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         sb.append(", osType=").append(String.valueOf(this.osType));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", isDiscoveryOutputTask=").append(String.valueOf(this.isDiscoveryOutputTask));
+        sb.append(", isApplySubjectTask=").append(String.valueOf(this.isApplySubjectTask));
         sb.append(")");
         return sb.toString();
     }
@@ -247,6 +327,8 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
                 && java.util.Objects.equals(this.osType, other.osType)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.isDiscoveryOutputTask, other.isDiscoveryOutputTask)
+                && java.util.Objects.equals(this.isApplySubjectTask, other.isApplySubjectTask)
                 && super.equals(other);
     }
 
@@ -261,6 +343,16 @@ public final class Details extends com.oracle.bmc.http.client.internal.Explicitl
         result = (result * PRIME) + (this.osType == null ? 43 : this.osType.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDiscoveryOutputTask == null
+                                ? 43
+                                : this.isDiscoveryOutputTask.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isApplySubjectTask == null
+                                ? 43
+                                : this.isApplySubjectTask.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

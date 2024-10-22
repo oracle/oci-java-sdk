@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -66,7 +67,22 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a new SchedulerDefinition.
+     * Creates a new Patch.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePatch API.
+     */
+    CreatePatchResponse createPatch(CreatePatchRequest request);
+
+    /**
+     * Create a SchedulerDefinition to perform lifecycle operations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,6 +97,21 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      */
     CreateSchedulerDefinitionResponse createSchedulerDefinition(
             CreateSchedulerDefinitionRequest request);
+
+    /**
+     * Deletes a Patch resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePatch API.
+     */
+    DeletePatchResponse deletePatch(DeletePatchRequest request);
 
     /**
      * Deletes a SchedulerDefinition resource by identifier
@@ -100,7 +131,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             DeleteSchedulerDefinitionRequest request);
 
     /**
-     * Deletes a SchedulerJob resource by identifier
+     * Delete a lifecycle operation schedule in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,7 +147,23 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     DeleteSchedulerJobResponse deleteSchedulerJob(DeleteSchedulerJobRequest request);
 
     /**
-     * Gets a JobActivity by identifier
+     * Generate Compliance Report
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ExportComplianceReportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ExportComplianceReport API.
+     */
+    ExportComplianceReportResponse exportComplianceReport(ExportComplianceReportRequest request);
+
+    /**
+     * Get Task Execution by Identifier for a Resource within an action group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -131,7 +178,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     GetExecutionResponse getExecution(GetExecutionRequest request);
 
     /**
-     * Gets a JobActivity by identifier
+     * Gets activity details by identifier for a job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -146,7 +193,22 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     GetJobActivityResponse getJobActivity(GetJobActivityRequest request);
 
     /**
-     * Gets a SchedulerDefinition by identifier
+     * Gets a Patch by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPatch API.
+     */
+    GetPatchResponse getPatch(GetPatchRequest request);
+
+    /**
+     * Get the details of a SchedulerDefinition that performs lifecycle management operations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -162,7 +224,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     GetSchedulerDefinitionResponse getSchedulerDefinition(GetSchedulerDefinitionRequest request);
 
     /**
-     * Gets a SchedulerJob by identifier
+     * Get the details of a lifecycle management operations job in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -176,6 +238,22 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
      *     API.
      */
     GetSchedulerJobResponse getSchedulerJob(GetSchedulerJobRequest request);
+
+    /**
+     * Gets a list of complianceDetails.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListComplianceRecordsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListComplianceRecords API.
+     */
+    ListComplianceRecordsResponse listComplianceRecords(ListComplianceRecordsRequest request);
 
     /**
      * Returns a list of Task Executions for a Resource.
@@ -193,7 +271,37 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListExecutionsResponse listExecutions(ListExecutionsRequest request);
 
     /**
-     * Returns a list of ScheduledFleets
+     * Returns a list of Patches.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPatchesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPatches API.
+     */
+    ListPatchesResponse listPatches(ListPatchesRequest request);
+
+    /**
+     * Returns a list of resources for an Activity Execution.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListResourcesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListResources API.
+     */
+    ListResourcesResponse listResources(ListResourcesRequest request);
+
+    /**
+     * Returns a list of ScheduledFleets.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -209,7 +317,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListScheduledFleetsResponse listScheduledFleets(ListScheduledFleetsRequest request);
 
     /**
-     * Returns a list of SchedulerDefinitions.
+     * List all lifecycle management schedules in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -226,7 +334,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             ListSchedulerDefinitionsRequest request);
 
     /**
-     * Returns a list of SchedulerJobs.
+     * List scheduled lifecycle operation jobs in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -242,7 +350,104 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
     ListSchedulerJobsResponse listSchedulerJobs(ListSchedulerJobsRequest request);
 
     /**
-     * Updates the SchedulerDefinition
+     * Returns a list of Steps for an Activity Execution.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListStepsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSteps API.
+     */
+    ListStepsResponse listSteps(ListStepsRequest request);
+
+    /**
+     * Manage execution actions for a Job like retrying or pausing a task.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageJobExecutionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageJobExecution
+     *     API.
+     */
+    ManageJobExecutionResponse manageJobExecution(ManageJobExecutionRequest request);
+
+    /**
+     * Retrieve aggregated summary information of ComplianceRecords within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeComplianceRecordCountsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeComplianceRecordCounts API.
+     */
+    SummarizeComplianceRecordCountsResponse summarizeComplianceRecordCounts(
+            SummarizeComplianceRecordCountsRequest request);
+
+    /**
+     * Retrieve aggregated summary information of Managed Entities within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeManagedEntityCountsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeManagedEntityCounts API.
+     */
+    SummarizeManagedEntityCountsResponse summarizeManagedEntityCounts(
+            SummarizeManagedEntityCountsRequest request);
+
+    /**
+     * Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SummarizeSchedulerJobCountsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeSchedulerJobCounts API.
+     */
+    SummarizeSchedulerJobCountsResponse summarizeSchedulerJobCounts(
+            SummarizeSchedulerJobCountsRequest request);
+
+    /**
+     * Updates the Patch
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePatchExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePatch API.
+     */
+    UpdatePatchResponse updatePatch(UpdatePatchRequest request);
+
+    /**
+     * Update the details of a SchedulerDefinition that performs lifecycle management operations.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -259,7 +464,7 @@ public interface FleetAppsManagementOperations extends AutoCloseable {
             UpdateSchedulerDefinitionRequest request);
 
     /**
-     * Updates the SchedulerJob
+     * Update a lifecycle operation job schedule in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

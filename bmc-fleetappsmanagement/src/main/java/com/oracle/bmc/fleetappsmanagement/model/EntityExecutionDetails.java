@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Activity Resource and execution details including outcome. <br>
+ * Resource level execution status and target associations. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -55,12 +55,12 @@ public final class EntityExecutionDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Resource Identifier associated with the Work Request */
+        /** Resource Identifier associated with the Work Request. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Resource Identifier associated with the Work Request
+         * Resource Identifier associated with the Work Request.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -70,12 +70,12 @@ public final class EntityExecutionDetails
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Resource Display Name */
+        /** Resource Display Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
         private String resourceDisplayName;
 
         /**
-         * Resource Display Name
+         * Resource Display Name.
          *
          * @param resourceDisplayName the value to set
          * @return this builder
@@ -85,12 +85,16 @@ public final class EntityExecutionDetails
             this.__explicitlySet__.add("resourceDisplayName");
             return this;
         }
-        /** Description of the Work Request */
+        /**
+         * Description of the Resource Execution status. If there are any errors, this can also
+         * include a short error message.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
 
         /**
-         * Description of the Work Request
+         * Description of the Resource Execution status. If there are any errors, this can also
+         * include a short error message.
          *
          * @param description the value to set
          * @return this builder
@@ -100,12 +104,12 @@ public final class EntityExecutionDetails
             this.__explicitlySet__.add("description");
             return this;
         }
-        /** The sequence of the Resource */
+        /** The sequence of the Resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("sequence")
         private String sequence;
 
         /**
-         * The sequence of the Resource
+         * The sequence of the Resource.
          *
          * @param sequence the value to set
          * @return this builder
@@ -115,12 +119,12 @@ public final class EntityExecutionDetails
             this.__explicitlySet__.add("sequence");
             return this;
         }
-        /** Targets associated. */
+        /** Targets associated with the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("targets")
         private java.util.List<ActivityResourceTarget> targets;
 
         /**
-         * Targets associated.
+         * Targets associated with the resource.
          *
          * @param targets the value to set
          * @return this builder
@@ -130,12 +134,12 @@ public final class EntityExecutionDetails
             this.__explicitlySet__.add("targets");
             return this;
         }
-        /** Status of the Job at Resource Level */
+        /** Status of the Job at Resource Level. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Job at Resource Level
+         * Status of the Job at Resource Level.
          *
          * @param status the value to set
          * @return this builder
@@ -235,12 +239,12 @@ public final class EntityExecutionDetails
         return new Builder().copy(this);
     }
 
-    /** Resource Identifier associated with the Work Request */
+    /** Resource Identifier associated with the Work Request. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Resource Identifier associated with the Work Request
+     * Resource Identifier associated with the Work Request.
      *
      * @return the value
      */
@@ -248,12 +252,12 @@ public final class EntityExecutionDetails
         return resourceId;
     }
 
-    /** Resource Display Name */
+    /** Resource Display Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceDisplayName")
     private final String resourceDisplayName;
 
     /**
-     * Resource Display Name
+     * Resource Display Name.
      *
      * @return the value
      */
@@ -261,12 +265,16 @@ public final class EntityExecutionDetails
         return resourceDisplayName;
     }
 
-    /** Description of the Work Request */
+    /**
+     * Description of the Resource Execution status. If there are any errors, this can also include
+     * a short error message.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
 
     /**
-     * Description of the Work Request
+     * Description of the Resource Execution status. If there are any errors, this can also include
+     * a short error message.
      *
      * @return the value
      */
@@ -274,12 +282,12 @@ public final class EntityExecutionDetails
         return description;
     }
 
-    /** The sequence of the Resource */
+    /** The sequence of the Resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("sequence")
     private final String sequence;
 
     /**
-     * The sequence of the Resource
+     * The sequence of the Resource.
      *
      * @return the value
      */
@@ -287,12 +295,12 @@ public final class EntityExecutionDetails
         return sequence;
     }
 
-    /** Targets associated. */
+    /** Targets associated with the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("targets")
     private final java.util.List<ActivityResourceTarget> targets;
 
     /**
-     * Targets associated.
+     * Targets associated with the resource.
      *
      * @return the value
      */
@@ -300,12 +308,12 @@ public final class EntityExecutionDetails
         return targets;
     }
 
-    /** Status of the Job at Resource Level */
+    /** Status of the Job at Resource Level. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Job at Resource Level
+     * Status of the Job at Resource Level.
      *
      * @return the value
      */

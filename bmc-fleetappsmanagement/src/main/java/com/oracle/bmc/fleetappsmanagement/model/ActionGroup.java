@@ -53,12 +53,12 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Provide the ID of the resource; Ex- fleetId. */
+        /** Provide the ID of the resource. Example fleet ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Provide the ID of the resource; Ex- fleetId.
+         * Provide the ID of the resource. Example fleet ID.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -233,12 +233,12 @@ public final class ActionGroup extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Provide the ID of the resource; Ex- fleetId. */
+    /** Provide the ID of the resource. Example fleet ID. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Provide the ID of the resource; Ex- fleetId.
+     * Provide the ID of the resource. Example fleet ID.
      *
      * @return the value
      */

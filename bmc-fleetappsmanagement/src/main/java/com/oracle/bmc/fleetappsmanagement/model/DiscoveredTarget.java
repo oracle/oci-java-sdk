@@ -41,12 +41,12 @@ public final class DiscoveredTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the Target. */
+        /** ID of the Target. Can be the target name if a separate ID is not available. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * OCID of the Target.
+         * ID of the Target. Can be the target name if a separate ID is not available.
          *
          * @param targetId the value to set
          * @return this builder
@@ -86,12 +86,12 @@ public final class DiscoveredTarget
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** Unique key that identify the resource that target belongs to. */
+        /** Unique key that identifies the resource that the target belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * Unique key that identify the resource that target belongs to.
+         * Unique key that identifies the resource that the target belongs to.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -101,12 +101,12 @@ public final class DiscoveredTarget
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Current version of Target */
+        /** Current version of the target. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Current version of Target
+         * Current version of the target.
          *
          * @param version the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class DiscoveredTarget
         return new Builder().copy(this);
     }
 
-    /** OCID of the Target. */
+    /** ID of the Target. Can be the target name if a separate ID is not available. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * OCID of the Target.
+     * ID of the Target. Can be the target name if a separate ID is not available.
      *
      * @return the value
      */
@@ -203,12 +203,12 @@ public final class DiscoveredTarget
         return product;
     }
 
-    /** Unique key that identify the resource that target belongs to. */
+    /** Unique key that identifies the resource that the target belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * Unique key that identify the resource that target belongs to.
+     * Unique key that identifies the resource that the target belongs to.
      *
      * @return the value
      */
@@ -216,12 +216,12 @@ public final class DiscoveredTarget
         return resourceId;
     }
 
-    /** Current version of Target */
+    /** Current version of the target. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Current version of Target
+     * Current version of the target.
      *
      * @return the value
      */

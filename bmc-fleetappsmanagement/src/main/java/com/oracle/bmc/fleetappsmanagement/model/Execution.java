@@ -33,6 +33,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         "targetId",
         "timeStarted",
         "timeEnded",
+        "isRollbackTask",
+        "description",
+        "resourceId",
         "systemTags"
     })
     public Execution(
@@ -47,6 +50,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             String targetId,
             java.util.Date timeStarted,
             java.util.Date timeEnded,
+            Boolean isRollbackTask,
+            String description,
+            String resourceId,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
@@ -60,17 +66,20 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         this.targetId = targetId;
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
+        this.isRollbackTask = isRollbackTask;
+        this.description = description;
+        this.resourceId = resourceId;
         this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique Id assocaited with the Task Execution */
+        /** Unique Id associated with the task execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique Id assocaited with the Task Execution
+         * Unique Id associated with the task execution.
          *
          * @param id the value to set
          * @return this builder
@@ -80,12 +89,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** The OCID of taskRecord */
+        /** The OCID of taskRecord. */
         @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
         private String taskRecordId;
 
         /**
-         * The OCID of taskRecord
+         * The OCID of taskRecord.
          *
          * @param taskRecordId the value to set
          * @return this builder
@@ -95,12 +104,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("taskRecordId");
             return this;
         }
-        /** Name of the step */
+        /** Name of the step. */
         @com.fasterxml.jackson.annotation.JsonProperty("stepName")
         private String stepName;
 
         /**
-         * Name of the step
+         * Name of the step.
          *
          * @param stepName the value to set
          * @return this builder
@@ -110,12 +119,16 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** Unique process reference identifier returned by the execution client */
+        /**
+         * Unique process-reference identifier returned by the execution client. In some cases, this
+         * can be a runcommand OCID.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("processReferenceId")
         private String processReferenceId;
 
         /**
-         * Unique process reference identifier returned by the execution client
+         * Unique process-reference identifier returned by the execution client. In some cases, this
+         * can be a runcommand OCID.
          *
          * @param processReferenceId the value to set
          * @return this builder
@@ -125,12 +138,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("processReferenceId");
             return this;
         }
-        /** The sequence of the task */
+        /** The sequence of the task. */
         @com.fasterxml.jackson.annotation.JsonProperty("sequence")
         private String sequence;
 
         /**
-         * The sequence of the task
+         * The sequence of the task.
          *
          * @param sequence the value to set
          * @return this builder
@@ -140,12 +153,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("sequence");
             return this;
         }
-        /** Subjects which are tied to the task */
+        /** Subjects that are tied to the task. */
         @com.fasterxml.jackson.annotation.JsonProperty("subjects")
         private java.util.List<String> subjects;
 
         /**
-         * Subjects which are tied to the task
+         * Subjects that are tied to the task.
          *
          * @param subjects the value to set
          * @return this builder
@@ -179,12 +192,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("outcome");
             return this;
         }
-        /** Target associated with the execution */
+        /** Target associated with the execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * Target associated with the execution
+         * Target associated with the execution.
          *
          * @param targetId the value to set
          * @return this builder
@@ -194,12 +207,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The time the task started. An RFC3339 formatted datetime string */
+        /** The time the task started. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the task started. An RFC3339 formatted datetime string
+         * The time the task started. An RFC3339 formatted datetime string.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -209,12 +222,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the task ended. An RFC3339 formatted datetime string */
+        /** The time the task ended. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * The time the task ended. An RFC3339 formatted datetime string
+         * The time the task ended. An RFC3339 formatted datetime string.
          *
          * @param timeEnded the value to set
          * @return this builder
@@ -222,6 +235,55 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         public Builder timeEnded(java.util.Date timeEnded) {
             this.timeEnded = timeEnded;
             this.__explicitlySet__.add("timeEnded");
+            return this;
+        }
+        /** Is this a rollback task? */
+        @com.fasterxml.jackson.annotation.JsonProperty("isRollbackTask")
+        private Boolean isRollbackTask;
+
+        /**
+         * Is this a rollback task?
+         *
+         * @param isRollbackTask the value to set
+         * @return this builder
+         */
+        public Builder isRollbackTask(Boolean isRollbackTask) {
+            this.isRollbackTask = isRollbackTask;
+            this.__explicitlySet__.add("isRollbackTask");
+            return this;
+        }
+        /**
+         * Description of the Execution status. If there are any errors, this can also include a
+         * short error message.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * Description of the Execution status. If there are any errors, this can also include a
+         * short error message.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** Resource Identifier associated with the Work Request. */
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+        private String resourceId;
+
+        /**
+         * Resource Identifier associated with the Work Request.
+         *
+         * @param resourceId the value to set
+         * @return this builder
+         */
+        public Builder resourceId(String resourceId) {
+            this.resourceId = resourceId;
+            this.__explicitlySet__.add("resourceId");
             return this;
         }
         /**
@@ -261,6 +323,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
                             this.targetId,
                             this.timeStarted,
                             this.timeEnded,
+                            this.isRollbackTask,
+                            this.description,
+                            this.resourceId,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -303,6 +368,15 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
             if (model.wasPropertyExplicitlySet("timeEnded")) {
                 this.timeEnded(model.getTimeEnded());
             }
+            if (model.wasPropertyExplicitlySet("isRollbackTask")) {
+                this.isRollbackTask(model.getIsRollbackTask());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("resourceId")) {
+                this.resourceId(model.getResourceId());
+            }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
@@ -319,12 +393,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Unique Id assocaited with the Task Execution */
+    /** Unique Id associated with the task execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique Id assocaited with the Task Execution
+     * Unique Id associated with the task execution.
      *
      * @return the value
      */
@@ -332,12 +406,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return id;
     }
 
-    /** The OCID of taskRecord */
+    /** The OCID of taskRecord. */
     @com.fasterxml.jackson.annotation.JsonProperty("taskRecordId")
     private final String taskRecordId;
 
     /**
-     * The OCID of taskRecord
+     * The OCID of taskRecord.
      *
      * @return the value
      */
@@ -345,12 +419,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return taskRecordId;
     }
 
-    /** Name of the step */
+    /** Name of the step. */
     @com.fasterxml.jackson.annotation.JsonProperty("stepName")
     private final String stepName;
 
     /**
-     * Name of the step
+     * Name of the step.
      *
      * @return the value
      */
@@ -358,12 +432,16 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return stepName;
     }
 
-    /** Unique process reference identifier returned by the execution client */
+    /**
+     * Unique process-reference identifier returned by the execution client. In some cases, this can
+     * be a runcommand OCID.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("processReferenceId")
     private final String processReferenceId;
 
     /**
-     * Unique process reference identifier returned by the execution client
+     * Unique process-reference identifier returned by the execution client. In some cases, this can
+     * be a runcommand OCID.
      *
      * @return the value
      */
@@ -371,12 +449,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return processReferenceId;
     }
 
-    /** The sequence of the task */
+    /** The sequence of the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("sequence")
     private final String sequence;
 
     /**
-     * The sequence of the task
+     * The sequence of the task.
      *
      * @return the value
      */
@@ -384,12 +462,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return sequence;
     }
 
-    /** Subjects which are tied to the task */
+    /** Subjects that are tied to the task. */
     @com.fasterxml.jackson.annotation.JsonProperty("subjects")
     private final java.util.List<String> subjects;
 
     /**
-     * Subjects which are tied to the task
+     * Subjects that are tied to the task.
      *
      * @return the value
      */
@@ -417,12 +495,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return outcome;
     }
 
-    /** Target associated with the execution */
+    /** Target associated with the execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * Target associated with the execution
+     * Target associated with the execution.
      *
      * @return the value
      */
@@ -430,12 +508,12 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return targetId;
     }
 
-    /** The time the task started. An RFC3339 formatted datetime string */
+    /** The time the task started. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the task started. An RFC3339 formatted datetime string
+     * The time the task started. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -443,17 +521,60 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         return timeStarted;
     }
 
-    /** The time the task ended. An RFC3339 formatted datetime string */
+    /** The time the task ended. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * The time the task ended. An RFC3339 formatted datetime string
+     * The time the task ended. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
     public java.util.Date getTimeEnded() {
         return timeEnded;
+    }
+
+    /** Is this a rollback task? */
+    @com.fasterxml.jackson.annotation.JsonProperty("isRollbackTask")
+    private final Boolean isRollbackTask;
+
+    /**
+     * Is this a rollback task?
+     *
+     * @return the value
+     */
+    public Boolean getIsRollbackTask() {
+        return isRollbackTask;
+    }
+
+    /**
+     * Description of the Execution status. If there are any errors, this can also include a short
+     * error message.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * Description of the Execution status. If there are any errors, this can also include a short
+     * error message.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /** Resource Identifier associated with the Work Request. */
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
+    private final String resourceId;
+
+    /**
+     * Resource Identifier associated with the Work Request.
+     *
+     * @return the value
+     */
+    public String getResourceId() {
+        return resourceId;
     }
 
     /**
@@ -499,6 +620,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", isRollbackTask=").append(String.valueOf(this.isRollbackTask));
+        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", resourceId=").append(String.valueOf(this.resourceId));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
@@ -525,6 +649,9 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.isRollbackTask, other.isRollbackTask)
+                && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.resourceId, other.resourceId)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
@@ -548,6 +675,11 @@ public final class Execution extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRollbackTask == null ? 43 : this.isRollbackTask.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.resourceId == null ? 43 : this.resourceId.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

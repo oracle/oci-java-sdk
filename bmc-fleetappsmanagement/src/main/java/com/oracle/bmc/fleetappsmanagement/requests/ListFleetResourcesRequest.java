@@ -13,10 +13,10 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -27,10 +27,10 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     public String getTenancyId() {
         return tenancyId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -42,17 +42,17 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
     public String getDisplayName() {
         return displayName;
     }
-    /** unique FleetResource identifier */
+    /** A filter to return only resources whose identifier matches the given identifier. */
     private String id;
 
-    /** unique FleetResource identifier */
+    /** A filter to return only resources whose identifier matches the given identifier. */
     public String getId() {
         return id;
     }
-    /** A filter to return resources that match the Type */
+    /** A filter to return only resources whose resourceType matches the given resourceType. */
     private String fleetResourceType;
 
-    /** A filter to return resources that match the Type */
+    /** A filter to return only resources whose resourceType matches the given resourceType. */
     public String getFleetResourceType() {
         return fleetResourceType;
     }
@@ -147,11 +147,11 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance
@@ -176,13 +176,13 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.FleetResource.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -208,11 +208,11 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** unique FleetResource identifier */
+        /** A filter to return only resources whose identifier matches the given identifier. */
         private String id = null;
 
         /**
-         * unique FleetResource identifier
+         * A filter to return only resources whose identifier matches the given identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -222,11 +222,11 @@ public class ListFleetResourcesRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
-        /** A filter to return resources that match the Type */
+        /** A filter to return only resources whose resourceType matches the given resourceType. */
         private String fleetResourceType = null;
 
         /**
-         * A filter to return resources that match the Type
+         * A filter to return only resources whose resourceType matches the given resourceType.
          *
          * @param fleetResourceType the value to set
          * @return this builder instance

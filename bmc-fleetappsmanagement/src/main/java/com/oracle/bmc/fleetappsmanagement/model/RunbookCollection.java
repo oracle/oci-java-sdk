@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Results of a runbook search. Contains boh RunbookSummary items and other information, such as
+ * Results of a runbook search. Contains RunbookSummary items and other information, such as
  * metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

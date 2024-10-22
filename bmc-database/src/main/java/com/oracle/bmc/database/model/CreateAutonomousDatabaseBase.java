@@ -81,6 +81,7 @@ public class CreateAutonomousDatabaseBase
         "isFreeTier",
         "kmsKeyId",
         "vaultId",
+        "encryptionKey",
         "adminPassword",
         "displayName",
         "licenseModel",
@@ -134,6 +135,7 @@ public class CreateAutonomousDatabaseBase
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
@@ -186,6 +188,7 @@ public class CreateAutonomousDatabaseBase
         this.isFreeTier = isFreeTier;
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
+        this.encryptionKey = encryptionKey;
         this.adminPassword = adminPassword;
         this.displayName = displayName;
         this.licenseModel = licenseModel;
@@ -737,6 +740,13 @@ public class CreateAutonomousDatabaseBase
      */
     public String getVaultId() {
         return vaultId;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+    private final AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+    public AutonomousDatabaseEncryptionKeyDetails getEncryptionKey() {
+        return encryptionKey;
     }
 
     /**
@@ -1703,6 +1713,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
@@ -1776,6 +1787,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
@@ -1862,6 +1874,9 @@ public class CreateAutonomousDatabaseBase
         result = (result * PRIME) + (this.isFreeTier == null ? 43 : this.isFreeTier.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());

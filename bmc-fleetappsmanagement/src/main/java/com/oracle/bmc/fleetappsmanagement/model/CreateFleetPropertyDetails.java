@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information about new FleetProperty. <br>
+ * The information about new Property to manage fleet metadata details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -48,12 +48,12 @@ public final class CreateFleetPropertyDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Value of the Property */
+        /** Value of the Property. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the Property
+         * Value of the Property.
          *
          * @param value the value to set
          * @return this builder
@@ -63,12 +63,12 @@ public final class CreateFleetPropertyDetails
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Property Id. */
+        /** OCID referring to global level metadata property. */
         @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
         private String propertyId;
 
         /**
-         * Property Id.
+         * OCID referring to global level metadata property.
          *
          * @param propertyId the value to set
          * @return this builder
@@ -128,12 +128,12 @@ public final class CreateFleetPropertyDetails
         return compartmentId;
     }
 
-    /** Value of the Property */
+    /** Value of the Property. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the Property
+     * Value of the Property.
      *
      * @return the value
      */
@@ -141,12 +141,12 @@ public final class CreateFleetPropertyDetails
         return value;
     }
 
-    /** Property Id. */
+    /** OCID referring to global level metadata property. */
     @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
     private final String propertyId;
 
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      *
      * @return the value
      */

@@ -20,10 +20,10 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.Property.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.Property.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -34,17 +34,17 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public String getDisplayName() {
         return displayName;
     }
-    /** unique Property identifier */
+    /** A filter to return only resources whose Property identifier matches the given identifier. */
     private String id;
 
-    /** unique Property identifier */
+    /** A filter to return only resources whose Property identifier matches the given identifier. */
     public String getId() {
         return id;
     }
-    /** A filter to return only resources their scope matches the given lifecycleState. */
+    /** A filter to return only resources their scope matches the given scope. */
     private com.oracle.bmc.fleetappsmanagement.model.Scope scope;
 
-    /** A filter to return only resources their scope matches the given lifecycleState. */
+    /** A filter to return only resources their scope matches the given scope. */
     public com.oracle.bmc.fleetappsmanagement.model.Scope getScope() {
         return scope;
     }
@@ -154,13 +154,13 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.Property.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -185,11 +185,13 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** unique Property identifier */
+        /**
+         * A filter to return only resources whose Property identifier matches the given identifier.
+         */
         private String id = null;
 
         /**
-         * unique Property identifier
+         * A filter to return only resources whose Property identifier matches the given identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -199,11 +201,11 @@ public class ListPropertiesRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
-        /** A filter to return only resources their scope matches the given lifecycleState. */
+        /** A filter to return only resources their scope matches the given scope. */
         private com.oracle.bmc.fleetappsmanagement.model.Scope scope = null;
 
         /**
-         * A filter to return only resources their scope matches the given lifecycleState.
+         * A filter to return only resources their scope matches the given scope.
          *
          * @param scope the value to set
          * @return this builder instance

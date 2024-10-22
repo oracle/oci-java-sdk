@@ -471,6 +471,39 @@ public class DiscoveryClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListSupportedCloudRegionsResponse listSupportedCloudRegions(
+            ListSupportedCloudRegionsRequest request) {
+
+        return clientCall(request, ListSupportedCloudRegionsResponse::builder)
+                .logger(LOG, "listSupportedCloudRegions")
+                .serviceDetails(
+                        "Discovery",
+                        "ListSupportedCloudRegions",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/SupportedCloudRegionSummary/ListSupportedCloudRegions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSupportedCloudRegionsRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("supportedCloudRegions")
+                .appendEnumQueryParam("assetSourceType", request.getAssetSourceType())
+                .appendQueryParam("nameContains", request.getNameContains())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.cloudbridge.model.SupportedCloudRegionCollection.class,
+                        ListSupportedCloudRegionsResponse.Builder::supportedCloudRegionCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSupportedCloudRegionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSupportedCloudRegionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public RefreshAssetSourceResponse refreshAssetSource(RefreshAssetSourceRequest request) {
 
         Validate.notBlank(request.getAssetSourceId(), "assetSourceId must not be blank");

@@ -7608,6 +7608,58 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeHostInsightIoUsageTrendResponse>
+            summarizeHostInsightIoUsageTrend(
+                    SummarizeHostInsightIoUsageTrendRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightIoUsageTrendRequest,
+                                    SummarizeHostInsightIoUsageTrendResponse>
+                            handler) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        Objects.requireNonNull(request.getId(), "id is required");
+
+        return clientCall(request, SummarizeHostInsightIoUsageTrendResponse::builder)
+                .logger(LOG, "summarizeHostInsightIoUsageTrend")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "SummarizeHostInsightIoUsageTrend",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/HostInsights/SummarizeHostInsightIoUsageTrend")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeHostInsightIoUsageTrendRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("hostInsights")
+                .appendPathParam("ioUsageTrend")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("analysisTimeInterval", request.getAnalysisTimeInterval())
+                .appendQueryParam("timeIntervalStart", request.getTimeIntervalStart())
+                .appendQueryParam("timeIntervalEnd", request.getTimeIntervalEnd())
+                .appendQueryParam("hostId", request.getHostId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("statistic", request.getStatistic())
+                .appendListQueryParam(
+                        "status",
+                        request.getStatus(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.opsi.model
+                                .SummarizeHostInsightIoUsageTrendAggregationCollection.class,
+                        SummarizeHostInsightIoUsageTrendResponse.Builder
+                                ::summarizeHostInsightIoUsageTrendAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SummarizeHostInsightIoUsageTrendResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SummarizeHostInsightIoUsageTrendResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeHostInsightNetworkUsageTrendResponse>
             summarizeHostInsightNetworkUsageTrend(
                     SummarizeHostInsightNetworkUsageTrendRequest request,

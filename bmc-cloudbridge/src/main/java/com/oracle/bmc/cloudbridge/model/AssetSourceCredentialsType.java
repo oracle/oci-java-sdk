@@ -8,6 +8,7 @@ package com.oracle.bmc.cloudbridge.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public enum AssetSourceCredentialsType implements com.oracle.bmc.http.internal.BmcEnum {
     Basic("BASIC"),
+    ApiKey("API_KEY"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

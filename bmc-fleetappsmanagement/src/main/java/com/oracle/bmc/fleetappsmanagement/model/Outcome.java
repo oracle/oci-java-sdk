@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Execution Outcome <br>
+ * Execution Outcome. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** A shortened version of Execution Output */
+        /** A shortened version of Execution output. */
         @com.fasterxml.jackson.annotation.JsonProperty("output")
         private String output;
 
         /**
-         * A shortened version of Execution Output
+         * A shortened version of Execution output.
          *
          * @param output the value to set
          * @return this builder
@@ -46,12 +46,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("output");
             return this;
         }
-        /** Errors if any associated with the execution */
+        /** Errors if any, associated with the execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("error")
         private String error;
 
         /**
-         * Errors if any associated with the execution
+         * Errors if any, associated with the execution.
          *
          * @param error the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("error");
             return this;
         }
-        /** Exit Code */
+        /** Exit Code. */
         @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
         private String exitCode;
 
         /**
-         * Exit Code
+         * Exit Code.
          *
          * @param exitCode the value to set
          * @return this builder
@@ -112,12 +112,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
         return new Builder().copy(this);
     }
 
-    /** A shortened version of Execution Output */
+    /** A shortened version of Execution output. */
     @com.fasterxml.jackson.annotation.JsonProperty("output")
     private final String output;
 
     /**
-     * A shortened version of Execution Output
+     * A shortened version of Execution output.
      *
      * @return the value
      */
@@ -125,12 +125,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
         return output;
     }
 
-    /** Errors if any associated with the execution */
+    /** Errors if any, associated with the execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("error")
     private final String error;
 
     /**
-     * Errors if any associated with the execution
+     * Errors if any, associated with the execution.
      *
      * @return the value
      */
@@ -138,12 +138,12 @@ public final class Outcome extends com.oracle.bmc.http.client.internal.Explicitl
         return error;
     }
 
-    /** Exit Code */
+    /** Exit Code. */
     @com.fasterxml.jackson.annotation.JsonProperty("exitCode")
     private final String exitCode;
 
     /**
-     * Exit Code
+     * Exit Code.
      *
      * @return the value
      */

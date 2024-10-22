@@ -23,11 +23,11 @@ public class UpdateMaintenanceWindowRequest
     public String getMaintenanceWindowId() {
         return maintenanceWindowId;
     }
-    /** The information to be updated. */
+    /** The information to be updated for the maintenance window. */
     private com.oracle.bmc.fleetappsmanagement.model.UpdateMaintenanceWindowDetails
             updateMaintenanceWindowDetails;
 
-    /** The information to be updated. */
+    /** The information to be updated for the maintenance window. */
     public com.oracle.bmc.fleetappsmanagement.model.UpdateMaintenanceWindowDetails
             getUpdateMaintenanceWindowDetails() {
         return updateMaintenanceWindowDetails;
@@ -89,12 +89,12 @@ public class UpdateMaintenanceWindowRequest
             return this;
         }
 
-        /** The information to be updated. */
+        /** The information to be updated for the maintenance window. */
         private com.oracle.bmc.fleetappsmanagement.model.UpdateMaintenanceWindowDetails
                 updateMaintenanceWindowDetails = null;
 
         /**
-         * The information to be updated.
+         * The information to be updated for the maintenance window.
          *
          * @param updateMaintenanceWindowDetails the value to set
          * @return this builder instance

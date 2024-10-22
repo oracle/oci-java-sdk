@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Description of Fleet. <br>
+ * A fleet is a collection or grouping of resources based on criteria. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -218,12 +218,20 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Type of the Fleet. */
+        /**
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
         private FleetType fleetType;
 
         /**
-         * Type of the Fleet.
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
          *
          * @param fleetType the value to set
          * @return this builder
@@ -233,12 +241,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("fleetType");
             return this;
         }
-        /** Products associated with the Fleet */
+        /** Products associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * Products associated with the Fleet
+         * Products associated with the Fleet.
          *
          * @param products the value to set
          * @return this builder
@@ -248,12 +256,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+        /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+         * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          *
          * @param applicationType the value to set
          * @return this builder
@@ -263,12 +271,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-        /** Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+        /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
 
         /**
-         * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+         * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          *
          * @param environmentType the value to set
          * @return this builder
@@ -278,12 +286,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** Group Type associated with Group Fleet.Applicable for GROUP fleet types. */
+        /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupType")
         private GroupType groupType;
 
         /**
-         * Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+         * Group Type associated with Group Fleet. Applicable for GROUP fleet types.
          *
          * @param groupType the value to set
          * @return this builder
@@ -293,12 +301,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("groupType");
             return this;
         }
-        /** Type of resource selection in a fleet. */
+        /**
+         * Type of resource selection in a Fleet. Select resources manually or select resources
+         * based on rules.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
         private ResourceSelectionType resourceSelectionType;
 
         /**
-         * Type of resource selection in a fleet.
+         * Type of resource selection in a Fleet. Select resources manually or select resources
+         * based on rules.
          *
          * @param resourceSelectionType the value to set
          * @return this builder
@@ -326,12 +338,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("notificationPreferences");
             return this;
         }
-        /** Resources to be added during fleet creation when Resource selection type is Manual. */
+        /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<AssociatedFleetResourceDetails> resources;
 
         /**
-         * Resources to be added during fleet creation when Resource selection type is Manual.
+         * Resources associated with the Fleet if resourceSelectionType is MANUAL.
          *
          * @param resources the value to set
          * @return this builder
@@ -341,12 +353,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** Properties to be added during fleet creation. */
+        /** Properties associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("properties")
         private java.util.List<AssociatedFleetPropertyDetails> properties;
 
         /**
-         * Properties to be added during fleet creation.
+         * Properties associated with the Fleet.
          *
          * @param properties the value to set
          * @return this builder
@@ -356,12 +368,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("properties");
             return this;
         }
-        /** Credentials to be added during fleet creation. */
+        /** Credentials associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("credentials")
         private java.util.List<AssociatedFleetCredentialDetails> credentials;
 
         /**
-         * Credentials to be added during fleet creation.
+         * Credentials associated with the Fleet.
          *
          * @param credentials the value to set
          * @return this builder
@@ -371,12 +383,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("credentials");
             return this;
         }
-        /** A value which represents if auto confirming of the targets can be enabled */
+        /**
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
         private Boolean isTargetAutoConfirm;
 
         /**
-         * A value which represents if auto confirming of the targets can be enabled
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
          *
          * @param isTargetAutoConfirm the value to set
          * @return this builder
@@ -705,7 +721,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return timeUpdated;
     }
 
-    /** Type of the Fleet. */
+    /**
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
+     */
     public enum FleetType implements com.oracle.bmc.http.internal.BmcEnum {
         Product("PRODUCT"),
         Environment("ENVIRONMENT"),
@@ -753,12 +774,20 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** Type of the Fleet. */
+    /**
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     private final FleetType fleetType;
 
     /**
-     * Type of the Fleet.
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
      *
      * @return the value
      */
@@ -766,12 +795,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return fleetType;
     }
 
-    /** Products associated with the Fleet */
+    /** Products associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      *
      * @return the value
      */
@@ -779,12 +808,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return products;
     }
 
-    /** Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+    /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Application Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
      */
@@ -792,12 +821,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return applicationType;
     }
 
-    /** Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+    /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
 
     /**
-     * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
      */
@@ -805,7 +834,7 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return environmentType;
     }
 
-    /** Group Type associated with Group Fleet.Applicable for GROUP fleet types. */
+    /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
     public enum GroupType implements com.oracle.bmc.http.internal.BmcEnum {
         Environment("ENVIRONMENT"),
         Product("PRODUCT"),
@@ -851,12 +880,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** Group Type associated with Group Fleet.Applicable for GROUP fleet types. */
+    /** Group Type associated with Group Fleet. Applicable for GROUP fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupType")
     private final GroupType groupType;
 
     /**
-     * Group Type associated with Group Fleet.Applicable for GROUP fleet types.
+     * Group Type associated with Group Fleet. Applicable for GROUP fleet types.
      *
      * @return the value
      */
@@ -864,7 +893,10 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return groupType;
     }
 
-    /** Type of resource selection in a fleet. */
+    /**
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on
+     * rules.
+     */
     public enum ResourceSelectionType implements com.oracle.bmc.http.internal.BmcEnum {
         Dynamic("DYNAMIC"),
         Manual("MANUAL"),
@@ -910,12 +942,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** Type of resource selection in a fleet. */
+    /**
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on
+     * rules.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
     private final ResourceSelectionType resourceSelectionType;
 
     /**
-     * Type of resource selection in a fleet.
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on
+     * rules.
      *
      * @return the value
      */
@@ -937,12 +973,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return notificationPreferences;
     }
 
-    /** Resources to be added during fleet creation when Resource selection type is Manual. */
+    /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<AssociatedFleetResourceDetails> resources;
 
     /**
-     * Resources to be added during fleet creation when Resource selection type is Manual.
+     * Resources associated with the Fleet if resourceSelectionType is MANUAL.
      *
      * @return the value
      */
@@ -950,12 +986,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return resources;
     }
 
-    /** Properties to be added during fleet creation. */
+    /** Properties associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("properties")
     private final java.util.List<AssociatedFleetPropertyDetails> properties;
 
     /**
-     * Properties to be added during fleet creation.
+     * Properties associated with the Fleet.
      *
      * @return the value
      */
@@ -963,12 +999,12 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return properties;
     }
 
-    /** Credentials to be added during fleet creation. */
+    /** Credentials associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("credentials")
     private final java.util.List<AssociatedFleetCredentialDetails> credentials;
 
     /**
-     * Credentials to be added during fleet creation.
+     * Credentials associated with the Fleet.
      *
      * @return the value
      */
@@ -976,12 +1012,16 @@ public final class Fleet extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return credentials;
     }
 
-    /** A value which represents if auto confirming of the targets can be enabled */
+    /**
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
     private final Boolean isTargetAutoConfirm;
 
     /**
-     * A value which represents if auto confirming of the targets can be enabled
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
      *
      * @return the value
      */

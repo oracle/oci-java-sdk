@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details for script based execution <br>
+ * Details for script-based execution. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -45,12 +45,16 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("content");
             return this;
         }
-        /** Optional Command to execute the content. */
+        /**
+         * Optional command to execute the content. You can provide any commands/arguments that
+         * can't be part of the script.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("command")
         private String command;
 
         /**
-         * Optional Command to execute the content.
+         * Optional command to execute the content. You can provide any commands/arguments that
+         * can't be part of the script.
          *
          * @param command the value to set
          * @return this builder
@@ -60,13 +64,29 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             this.__explicitlySet__.add("command");
             return this;
         }
+        /** Credentials required for executing the task. */
+        @com.fasterxml.jackson.annotation.JsonProperty("credentials")
+        private java.util.List<ConfigAssociationDetails> credentials;
+
+        /**
+         * Credentials required for executing the task.
+         *
+         * @param credentials the value to set
+         * @return this builder
+         */
+        public Builder credentials(java.util.List<ConfigAssociationDetails> credentials) {
+            this.credentials = credentials;
+            this.__explicitlySet__.add("credentials");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ScriptBasedExecutionDetails build() {
             ScriptBasedExecutionDetails model =
-                    new ScriptBasedExecutionDetails(this.variables, this.content, this.command);
+                    new ScriptBasedExecutionDetails(
+                            this.variables, this.content, this.command, this.credentials);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +104,9 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
             if (model.wasPropertyExplicitlySet("command")) {
                 this.command(model.getCommand());
             }
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
+            }
             return this;
         }
     }
@@ -99,11 +122,15 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
 
     @Deprecated
     public ScriptBasedExecutionDetails(
-            TaskVariable variables, ContentDetails content, String command) {
+            TaskVariable variables,
+            ContentDetails content,
+            String command,
+            java.util.List<ConfigAssociationDetails> credentials) {
         super();
         this.variables = variables;
         this.content = content;
         this.command = command;
+        this.credentials = credentials;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("variables")
@@ -120,17 +147,34 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         return content;
     }
 
-    /** Optional Command to execute the content. */
+    /**
+     * Optional command to execute the content. You can provide any commands/arguments that can't be
+     * part of the script.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("command")
     private final String command;
 
     /**
-     * Optional Command to execute the content.
+     * Optional command to execute the content. You can provide any commands/arguments that can't be
+     * part of the script.
      *
      * @return the value
      */
     public String getCommand() {
         return command;
+    }
+
+    /** Credentials required for executing the task. */
+    @com.fasterxml.jackson.annotation.JsonProperty("credentials")
+    private final java.util.List<ConfigAssociationDetails> credentials;
+
+    /**
+     * Credentials required for executing the task.
+     *
+     * @return the value
+     */
+    public java.util.List<ConfigAssociationDetails> getCredentials() {
+        return credentials;
     }
 
     @Override
@@ -151,6 +195,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         sb.append(", variables=").append(String.valueOf(this.variables));
         sb.append(", content=").append(String.valueOf(this.content));
         sb.append(", command=").append(String.valueOf(this.command));
+        sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(")");
         return sb.toString();
     }
@@ -168,6 +213,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         return java.util.Objects.equals(this.variables, other.variables)
                 && java.util.Objects.equals(this.content, other.content)
                 && java.util.Objects.equals(this.command, other.command)
+                && java.util.Objects.equals(this.credentials, other.credentials)
                 && super.equals(other);
     }
 
@@ -178,6 +224,7 @@ public final class ScriptBasedExecutionDetails extends ExecutionDetails {
         result = (result * PRIME) + (this.variables == null ? 43 : this.variables.hashCode());
         result = (result * PRIME) + (this.content == null ? 43 : this.content.hashCode());
         result = (result * PRIME) + (this.command == null ? 43 : this.command.hashCode());
+        result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         return result;
     }
 }

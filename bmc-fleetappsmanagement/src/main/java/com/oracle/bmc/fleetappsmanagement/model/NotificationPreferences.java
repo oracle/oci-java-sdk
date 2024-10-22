@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Conditions when met to send notifications on the fleet activities <br>
+ * Notification information to get notified when the fleet status changes. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,16 @@ public final class NotificationPreferences
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Topic Id where the notifications will be directed */
+        /**
+         * Topic Id where the notifications will be directed. A topic is a communication channel for
+         * sending messages on chosen events to subscriptions.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("topicId")
         private String topicId;
 
         /**
-         * Topic Id where the notifications will be directed
+         * Topic Id where the notifications will be directed. A topic is a communication channel for
+         * sending messages on chosen events to subscriptions.
          *
          * @param topicId the value to set
          * @return this builder
@@ -48,12 +52,12 @@ public final class NotificationPreferences
             this.__explicitlySet__.add("topicId");
             return this;
         }
-        /** Copartment Id of the topic where the notifications will be directed */
+        /** Compartment ID the topic belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Copartment Id of the topic where the notifications will be directed
+         * Compartment ID the topic belongs to.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -109,12 +113,16 @@ public final class NotificationPreferences
         return new Builder().copy(this);
     }
 
-    /** Topic Id where the notifications will be directed */
+    /**
+     * Topic Id where the notifications will be directed. A topic is a communication channel for
+     * sending messages on chosen events to subscriptions.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("topicId")
     private final String topicId;
 
     /**
-     * Topic Id where the notifications will be directed
+     * Topic Id where the notifications will be directed. A topic is a communication channel for
+     * sending messages on chosen events to subscriptions.
      *
      * @return the value
      */
@@ -122,12 +130,12 @@ public final class NotificationPreferences
         return topicId;
     }
 
-    /** Copartment Id of the topic where the notifications will be directed */
+    /** Compartment ID the topic belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Copartment Id of the topic where the notifications will be directed
+     * Compartment ID the topic belongs to.
      *
      * @return the value
      */

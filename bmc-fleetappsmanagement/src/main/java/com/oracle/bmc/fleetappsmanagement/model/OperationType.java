@@ -25,6 +25,22 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     UpdateFleetResource("UPDATE_FLEET_RESOURCE"),
     DeleteFleetResource("DELETE_FLEET_RESOURCE"),
     CreateFamsOnboarding("CREATE_FAMS_ONBOARDING"),
+    CreateRunbook("CREATE_RUNBOOK"),
+    UpdateRunbook("UPDATE_RUNBOOK"),
+    DeleteRunbook("DELETE_RUNBOOK"),
+    PublishRunbook("PUBLISH_RUNBOOK"),
+    UpdateTask("UPDATE_TASK"),
+    DeleteTask("DELETE_TASK"),
+    UpdateFamsOnboarding("UPDATE_FAMS_ONBOARDING"),
+    DeleteFamsOnboarding("DELETE_FAMS_ONBOARDING"),
+    CreateCompliancePolicyRule("CREATE_COMPLIANCE_POLICY_RULE"),
+    UpdateCompliancePolicyRule("UPDATE_COMPLIANCE_POLICY_RULE"),
+    DeleteCompliancePolicyRule("DELETE_COMPLIANCE_POLICY_RULE"),
+    UpdatePatch("UPDATE_PATCH"),
+    DeletePatch("DELETE_PATCH"),
+    ManageJobExecution("MANAGE_JOB_EXECUTION"),
+    DeletePlatformConfiguration("DELETE_PLATFORM_CONFIGURATION"),
+    UpdatePlatformConfiguration("UPDATE_PLATFORM_CONFIGURATION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

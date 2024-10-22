@@ -22,11 +22,11 @@ public class ListMaintenanceWindowsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindow.LifecycleState
             lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindow.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -38,10 +38,29 @@ public class ListMaintenanceWindowsRequest
     public String getDisplayName() {
         return displayName;
     }
-    /** unique MaintenanceWindow identifier */
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the
+     * provided date and time.
+     */
+    private java.util.Date timeScheduleStartGreaterThanOrEqualTo;
+
+    /**
+     * A filter to return only resources whose timeScheduleStart is greater than or equal to the
+     * provided date and time.
+     */
+    public java.util.Date getTimeScheduleStartGreaterThanOrEqualTo() {
+        return timeScheduleStartGreaterThanOrEqualTo;
+    }
+    /**
+     * A filter to return only the Maintenance Windows whose identifier matches the given
+     * identifier.
+     */
     private String id;
 
-    /** unique MaintenanceWindow identifier */
+    /**
+     * A filter to return only the Maintenance Windows whose identifier matches the given
+     * identifier.
+     */
     public String getId() {
         return id;
     }
@@ -151,13 +170,13 @@ public class ListMaintenanceWindowsRequest
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.MaintenanceWindow.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -183,11 +202,34 @@ public class ListMaintenanceWindowsRequest
             return this;
         }
 
-        /** unique MaintenanceWindow identifier */
+        /**
+         * A filter to return only resources whose timeScheduleStart is greater than or equal to the
+         * provided date and time.
+         */
+        private java.util.Date timeScheduleStartGreaterThanOrEqualTo = null;
+
+        /**
+         * A filter to return only resources whose timeScheduleStart is greater than or equal to the
+         * provided date and time.
+         *
+         * @param timeScheduleStartGreaterThanOrEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder timeScheduleStartGreaterThanOrEqualTo(
+                java.util.Date timeScheduleStartGreaterThanOrEqualTo) {
+            this.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
+            return this;
+        }
+
+        /**
+         * A filter to return only the Maintenance Windows whose identifier matches the given
+         * identifier.
+         */
         private String id = null;
 
         /**
-         * unique MaintenanceWindow identifier
+         * A filter to return only the Maintenance Windows whose identifier matches the given
+         * identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -308,6 +350,7 @@ public class ListMaintenanceWindowsRequest
             compartmentId(o.getCompartmentId());
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
+            timeScheduleStartGreaterThanOrEqualTo(o.getTimeScheduleStartGreaterThanOrEqualTo());
             id(o.getId());
             limit(o.getLimit());
             page(o.getPage());
@@ -351,6 +394,7 @@ public class ListMaintenanceWindowsRequest
             request.compartmentId = compartmentId;
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
+            request.timeScheduleStartGreaterThanOrEqualTo = timeScheduleStartGreaterThanOrEqualTo;
             request.id = id;
             request.limit = limit;
             request.page = page;
@@ -358,8 +402,9 @@ public class ListMaintenanceWindowsRequest
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListMaintenanceWindowsRequest(compartmentId, lifecycleState, displayName, id,
-            // limit, page, sortOrder, sortBy, opcRequestId);
+            // new ListMaintenanceWindowsRequest(compartmentId, lifecycleState, displayName,
+            // timeScheduleStartGreaterThanOrEqualTo, id, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -373,6 +418,7 @@ public class ListMaintenanceWindowsRequest
                 .compartmentId(compartmentId)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
+                .timeScheduleStartGreaterThanOrEqualTo(timeScheduleStartGreaterThanOrEqualTo)
                 .id(id)
                 .limit(limit)
                 .page(page)
@@ -398,6 +444,8 @@ public class ListMaintenanceWindowsRequest
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
+        sb.append(",timeScheduleStartGreaterThanOrEqualTo=")
+                .append(String.valueOf(this.timeScheduleStartGreaterThanOrEqualTo));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -422,6 +470,9 @@ public class ListMaintenanceWindowsRequest
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(
+                        this.timeScheduleStartGreaterThanOrEqualTo,
+                        other.timeScheduleStartGreaterThanOrEqualTo)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -441,6 +492,11 @@ public class ListMaintenanceWindowsRequest
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeScheduleStartGreaterThanOrEqualTo == null
+                                ? 43
+                                : this.timeScheduleStartGreaterThanOrEqualTo.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

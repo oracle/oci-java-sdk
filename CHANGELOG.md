@@ -3,6 +3,30 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.52.0 - 2024-10-22
+### Added 
+- Support for resource locking in the File storage service 
+- Support for customer managed keys via Azure key vault and Amazon Web Services key vault in the Database service 
+- Support for generated tokens on create secret operations in the Identity Domains service 
+- Support for creating and updating Amazon Web Services asset-sources, EC2 and EBS assets in the Cloud Bridge service 
+- Support for listing Amazon Web Services regions which are available for discovery and migration in the Cloud Bridge service 
+- Support for model backup retention and restore in the Data Science service 
+- Support for host capacity planning for host IO metrics in the Operations Insight service 
+- Support for FastConnect redundancy in the Compute service 
+- Support for create, publish, clone and delete operations on runbooks in the Fleet Application Management service 
+- Support for platform configurations and metadata management in the Fleet Application Management service 
+- Support for management of compliance policy rules in the Fleet Application Management service 
+- Support for compliance report details based on compliance policy in the Fleet Application Management service 
+- Support for administrative settings like auto discovery frequency in the Fleet Application Management service    
+
+### Breaking Changes 
+- Model `com.oracle.bmc.opsi.model.HostPerformanceMetricGroup` has been removed from the list of superclasses from `com.oracle.bmc.opsi.model.HostContainers` in the Operations Insight service 
+- Field `HostContainers` has been removed from the model `com.oracle.bmc.opsi.model.HostPerformanceMetricGroup$MetricName` in the Operations Insight service 
+- Method `public com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse updatePlugin(com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest)` has been removed from `com.oracle.bmc.cloudbridge.OcbAgentSvc` in the Cloud Bridge service 
+- Class `com.oracle.bmc.cloudbridge.model.UpdatePluginDetails` has been removed from the model `com.oracle.bmc.cloudbridge.model.UpdatePluginDetails` in the Cloud Bridge service 
+- Class `com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest` has been removed from `com.oracle.bmc.cloudbridge.requests.UpdatePluginRequest` in the Cloud Bridge service 
+- Class `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` has been removed from `com.oracle.bmc.cloudbridge.responses.UpdatePluginResponse` in the Cloud Bridge service
+
 ## 3.51.0 - 2024-10-15
 ### Added 
 - Support for open id connect discovery in the Oracle Kubernetes Engine service 

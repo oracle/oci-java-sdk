@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
@@ -63,7 +64,21 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a new SchedulerDefinition.
+     * Creates a new Patch.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePatchResponse> createPatch(
+            CreatePatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePatchRequest, CreatePatchResponse> handler);
+
+    /**
+     * Create a SchedulerDefinition to perform lifecycle operations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -77,6 +92,20 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             CreateSchedulerDefinitionRequest, CreateSchedulerDefinitionResponse>
                     handler);
+
+    /**
+     * Deletes a Patch resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePatchResponse> deletePatch(
+            DeletePatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePatchRequest, DeletePatchResponse> handler);
 
     /**
      * Deletes a SchedulerDefinition resource by identifier
@@ -95,7 +124,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a SchedulerJob resource by identifier
+     * Delete a lifecycle operation schedule in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -111,7 +140,23 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a JobActivity by identifier
+     * Generate Compliance Report
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportComplianceReportResponse> exportComplianceReport(
+            ExportComplianceReportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportComplianceReportRequest, ExportComplianceReportResponse>
+                    handler);
+
+    /**
+     * Get Task Execution by Identifier for a Resource within an action group.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -126,7 +171,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a JobActivity by identifier
+     * Gets activity details by identifier for a job.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -141,7 +186,21 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a SchedulerDefinition by identifier
+     * Gets a Patch by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPatchResponse> getPatch(
+            GetPatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPatchRequest, GetPatchResponse> handler);
+
+    /**
+     * Get the details of a SchedulerDefinition that performs lifecycle management operations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -157,7 +216,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a SchedulerJob by identifier
+     * Get the details of a lifecycle management operations job in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -169,6 +228,22 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSchedulerJobResponse> getSchedulerJob(
             GetSchedulerJobRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSchedulerJobRequest, GetSchedulerJobResponse>
+                    handler);
+
+    /**
+     * Gets a list of complianceDetails.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListComplianceRecordsResponse> listComplianceRecords(
+            ListComplianceRecordsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListComplianceRecordsRequest, ListComplianceRecordsResponse>
                     handler);
 
     /**
@@ -187,7 +262,36 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of ScheduledFleets
+     * Returns a list of Patches.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPatchesResponse> listPatches(
+            ListPatchesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPatchesRequest, ListPatchesResponse> handler);
+
+    /**
+     * Returns a list of resources for an Activity Execution.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListResourcesResponse> listResources(
+            ListResourcesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListResourcesRequest, ListResourcesResponse>
+                    handler);
+
+    /**
+     * Returns a list of ScheduledFleets.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -203,7 +307,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of SchedulerDefinitions.
+     * List all lifecycle management schedules in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -219,7 +323,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of SchedulerJobs.
+     * List scheduled lifecycle operation jobs in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -235,7 +339,102 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the SchedulerDefinition
+     * Returns a list of Steps for an Activity Execution.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListStepsResponse> listSteps(
+            ListStepsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListStepsRequest, ListStepsResponse> handler);
+
+    /**
+     * Manage execution actions for a Job like retrying or pausing a task.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ManageJobExecutionResponse> manageJobExecution(
+            ManageJobExecutionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ManageJobExecutionRequest, ManageJobExecutionResponse>
+                    handler);
+
+    /**
+     * Retrieve aggregated summary information of ComplianceRecords within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeComplianceRecordCountsResponse>
+            summarizeComplianceRecordCounts(
+                    SummarizeComplianceRecordCountsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeComplianceRecordCountsRequest,
+                                    SummarizeComplianceRecordCountsResponse>
+                            handler);
+
+    /**
+     * Retrieve aggregated summary information of Managed Entities within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeManagedEntityCountsResponse> summarizeManagedEntityCounts(
+            SummarizeManagedEntityCountsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeManagedEntityCountsRequest,
+                            SummarizeManagedEntityCountsResponse>
+                    handler);
+
+    /**
+     * Retrieve aggregated summary information of Scheduler Jobs within a Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeSchedulerJobCountsResponse> summarizeSchedulerJobCounts(
+            SummarizeSchedulerJobCountsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeSchedulerJobCountsRequest, SummarizeSchedulerJobCountsResponse>
+                    handler);
+
+    /**
+     * Updates the Patch
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePatchResponse> updatePatch(
+            UpdatePatchRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePatchRequest, UpdatePatchResponse> handler);
+
+    /**
+     * Update the details of a SchedulerDefinition that performs lifecycle management operations.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -251,7 +450,7 @@ public interface FleetAppsManagementOperationsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the SchedulerJob
+     * Update a lifecycle operation job schedule in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

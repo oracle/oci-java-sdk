@@ -23,7 +23,7 @@ package com.oracle.bmc.opsi.model;
         property = "metricName")
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class HostContainers extends HostPerformanceMetricGroup {
+public final class HostContainers extends HostConfigurationMetricGroup {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         @com.fasterxml.jackson.annotation.JsonProperty("timeCollected")
@@ -79,6 +79,36 @@ public final class HostContainers extends HostPerformanceMetricGroup {
             this.__explicitlySet__.add("containerImage");
             return this;
         }
+        /** Container Image Tag (version) */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerImageTag")
+        private String containerImageTag;
+
+        /**
+         * Container Image Tag (version)
+         *
+         * @param containerImageTag the value to set
+         * @return this builder
+         */
+        public Builder containerImageTag(String containerImageTag) {
+            this.containerImageTag = containerImageTag;
+            this.__explicitlySet__.add("containerImageTag");
+            return this;
+        }
+        /** Container Image Digest */
+        @com.fasterxml.jackson.annotation.JsonProperty("containerImageDigest")
+        private String containerImageDigest;
+
+        /**
+         * Container Image Digest
+         *
+         * @param containerImageDigest the value to set
+         * @return this builder
+         */
+        public Builder containerImageDigest(String containerImageDigest) {
+            this.containerImageDigest = containerImageDigest;
+            this.__explicitlySet__.add("containerImageDigest");
+            return this;
+        }
         /** Container open ports */
         @com.fasterxml.jackson.annotation.JsonProperty("containerPorts")
         private String containerPorts;
@@ -105,6 +135,8 @@ public final class HostContainers extends HostPerformanceMetricGroup {
                             this.containerId,
                             this.containerName,
                             this.containerImage,
+                            this.containerImageTag,
+                            this.containerImageDigest,
                             this.containerPorts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -125,6 +157,12 @@ public final class HostContainers extends HostPerformanceMetricGroup {
             }
             if (model.wasPropertyExplicitlySet("containerImage")) {
                 this.containerImage(model.getContainerImage());
+            }
+            if (model.wasPropertyExplicitlySet("containerImageTag")) {
+                this.containerImageTag(model.getContainerImageTag());
+            }
+            if (model.wasPropertyExplicitlySet("containerImageDigest")) {
+                this.containerImageDigest(model.getContainerImageDigest());
             }
             if (model.wasPropertyExplicitlySet("containerPorts")) {
                 this.containerPorts(model.getContainerPorts());
@@ -148,11 +186,15 @@ public final class HostContainers extends HostPerformanceMetricGroup {
             String containerId,
             String containerName,
             String containerImage,
+            String containerImageTag,
+            String containerImageDigest,
             String containerPorts) {
         super(timeCollected);
         this.containerId = containerId;
         this.containerName = containerName;
         this.containerImage = containerImage;
+        this.containerImageTag = containerImageTag;
+        this.containerImageDigest = containerImageDigest;
         this.containerPorts = containerPorts;
     }
 
@@ -195,6 +237,32 @@ public final class HostContainers extends HostPerformanceMetricGroup {
         return containerImage;
     }
 
+    /** Container Image Tag (version) */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerImageTag")
+    private final String containerImageTag;
+
+    /**
+     * Container Image Tag (version)
+     *
+     * @return the value
+     */
+    public String getContainerImageTag() {
+        return containerImageTag;
+    }
+
+    /** Container Image Digest */
+    @com.fasterxml.jackson.annotation.JsonProperty("containerImageDigest")
+    private final String containerImageDigest;
+
+    /**
+     * Container Image Digest
+     *
+     * @return the value
+     */
+    public String getContainerImageDigest() {
+        return containerImageDigest;
+    }
+
     /** Container open ports */
     @com.fasterxml.jackson.annotation.JsonProperty("containerPorts")
     private final String containerPorts;
@@ -226,6 +294,8 @@ public final class HostContainers extends HostPerformanceMetricGroup {
         sb.append(", containerId=").append(String.valueOf(this.containerId));
         sb.append(", containerName=").append(String.valueOf(this.containerName));
         sb.append(", containerImage=").append(String.valueOf(this.containerImage));
+        sb.append(", containerImageTag=").append(String.valueOf(this.containerImageTag));
+        sb.append(", containerImageDigest=").append(String.valueOf(this.containerImageDigest));
         sb.append(", containerPorts=").append(String.valueOf(this.containerPorts));
         sb.append(")");
         return sb.toString();
@@ -244,6 +314,8 @@ public final class HostContainers extends HostPerformanceMetricGroup {
         return java.util.Objects.equals(this.containerId, other.containerId)
                 && java.util.Objects.equals(this.containerName, other.containerName)
                 && java.util.Objects.equals(this.containerImage, other.containerImage)
+                && java.util.Objects.equals(this.containerImageTag, other.containerImageTag)
+                && java.util.Objects.equals(this.containerImageDigest, other.containerImageDigest)
                 && java.util.Objects.equals(this.containerPorts, other.containerPorts)
                 && super.equals(other);
     }
@@ -259,6 +331,14 @@ public final class HostContainers extends HostPerformanceMetricGroup {
         result =
                 (result * PRIME)
                         + (this.containerImage == null ? 43 : this.containerImage.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerImageTag == null ? 43 : this.containerImageTag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.containerImageDigest == null
+                                ? 43
+                                : this.containerImageDigest.hashCode());
         result =
                 (result * PRIME)
                         + (this.containerPorts == null ? 43 : this.containerPorts.hashCode());

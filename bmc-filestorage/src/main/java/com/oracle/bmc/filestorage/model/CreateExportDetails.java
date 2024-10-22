@@ -28,6 +28,7 @@ public final class CreateExportDetails
         "exportSetId",
         "fileSystemId",
         "path",
+        "locks",
         "isIdmapGroupsForSysAuth"
     })
     public CreateExportDetails(
@@ -35,12 +36,14 @@ public final class CreateExportDetails
             String exportSetId,
             String fileSystemId,
             String path,
+            java.util.List<ResourceLock> locks,
             Boolean isIdmapGroupsForSysAuth) {
         super();
         this.exportOptions = exportOptions;
         this.exportSetId = exportSetId;
         this.fileSystemId = fileSystemId;
         this.path = path;
+        this.locks = locks;
         this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
     }
 
@@ -162,6 +165,21 @@ public final class CreateExportDetails
             this.__explicitlySet__.add("path");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Whether or not the export should use ID mapping for Unix groups rather than the group
          * list provided within an NFS request's RPC header. When this flag is true the Unix UID
@@ -204,6 +222,7 @@ public final class CreateExportDetails
                             this.exportSetId,
                             this.fileSystemId,
                             this.path,
+                            this.locks,
                             this.isIdmapGroupsForSysAuth);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -224,6 +243,9 @@ public final class CreateExportDetails
             }
             if (model.wasPropertyExplicitlySet("path")) {
                 this.path(model.getPath());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("isIdmapGroupsForSysAuth")) {
                 this.isIdmapGroupsForSysAuth(model.getIsIdmapGroupsForSysAuth());
@@ -347,6 +369,19 @@ public final class CreateExportDetails
         return path;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Whether or not the export should use ID mapping for Unix groups rather than the group list
      * provided within an NFS request's RPC header. When this flag is true the Unix UID from the RPC
@@ -393,6 +428,7 @@ public final class CreateExportDetails
         sb.append(", exportSetId=").append(String.valueOf(this.exportSetId));
         sb.append(", fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(", path=").append(String.valueOf(this.path));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", isIdmapGroupsForSysAuth=")
                 .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(")");
@@ -413,6 +449,7 @@ public final class CreateExportDetails
                 && java.util.Objects.equals(this.exportSetId, other.exportSetId)
                 && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.path, other.path)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(
                         this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && super.equals(other);
@@ -428,6 +465,7 @@ public final class CreateExportDetails
         result = (result * PRIME) + (this.exportSetId == null ? 43 : this.exportSetId.hashCode());
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.path == null ? 43 : this.path.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)
                         + (this.isIdmapGroupsForSysAuth == null

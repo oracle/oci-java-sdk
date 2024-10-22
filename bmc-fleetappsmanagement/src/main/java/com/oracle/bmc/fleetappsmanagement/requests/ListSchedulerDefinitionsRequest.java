@@ -22,11 +22,17 @@ public class ListSchedulerDefinitionsRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only scheduleDefinitions whose lifecycleState matches the given
+     * lifecycleState.
+     */
     private com.oracle.bmc.fleetappsmanagement.model.SchedulerDefinition.LifecycleState
             lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /**
+     * A filter to return only scheduleDefinitions whose lifecycleState matches the given
+     * lifecycleState.
+     */
     public com.oracle.bmc.fleetappsmanagement.model.SchedulerDefinition.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -39,31 +45,54 @@ public class ListSchedulerDefinitionsRequest
         return displayName;
     }
     /**
-     * A filter to return only Scheduler Definitions whose assocaited product matches the given
+     * A filter to return only dchedule definitions whose assocaited product matches the given
      * product
      */
     private String product;
 
     /**
-     * A filter to return only Scheduler Definitions whose assocaited product matches the given
+     * A filter to return only dchedule definitions whose assocaited product matches the given
      * product
      */
     public String getProduct() {
         return product;
     }
-    /** unique SchedulerDefinition identifier */
+    /**
+     * A filter to return only schedule definitions whose identifier matches the given identifier.
+     */
     private String id;
 
-    /** unique SchedulerDefinition identifier */
+    /**
+     * A filter to return only schedule definitions whose identifier matches the given identifier.
+     */
     public String getId() {
         return id;
     }
-    /** unique MaintenanceWindow identifier */
+    /**
+     * A filter to return only schedule definitions whose associated maintenanceWindowId matches the
+     * given maintenanceWindowId.
+     */
     private String maintenanceWindowId;
 
-    /** unique MaintenanceWindow identifier */
+    /**
+     * A filter to return only schedule definitions whose associated maintenanceWindowId matches the
+     * given maintenanceWindowId.
+     */
     public String getMaintenanceWindowId() {
         return maintenanceWindowId;
+    }
+    /**
+     * A filter to return only schedule definitions whose associated runbookId matches the given
+     * runbookId.
+     */
+    private String runbookId;
+
+    /**
+     * A filter to return only schedule definitions whose associated runbookId matches the given
+     * runbookId.
+     */
+    public String getRunbookId() {
+        return runbookId;
     }
     /** unique Fleet identifier */
     private String fleetId;
@@ -179,13 +208,15 @@ public class ListSchedulerDefinitionsRequest
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only scheduleDefinitions whose lifecycleState matches the given
+         * lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.SchedulerDefinition.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only scheduleDefinitions whose lifecycleState matches the given
+         * lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -212,13 +243,13 @@ public class ListSchedulerDefinitionsRequest
         }
 
         /**
-         * A filter to return only Scheduler Definitions whose assocaited product matches the given
+         * A filter to return only dchedule definitions whose assocaited product matches the given
          * product
          */
         private String product = null;
 
         /**
-         * A filter to return only Scheduler Definitions whose assocaited product matches the given
+         * A filter to return only dchedule definitions whose assocaited product matches the given
          * product
          *
          * @param product the value to set
@@ -229,11 +260,15 @@ public class ListSchedulerDefinitionsRequest
             return this;
         }
 
-        /** unique SchedulerDefinition identifier */
+        /**
+         * A filter to return only schedule definitions whose identifier matches the given
+         * identifier.
+         */
         private String id = null;
 
         /**
-         * unique SchedulerDefinition identifier
+         * A filter to return only schedule definitions whose identifier matches the given
+         * identifier.
          *
          * @param id the value to set
          * @return this builder instance
@@ -243,17 +278,39 @@ public class ListSchedulerDefinitionsRequest
             return this;
         }
 
-        /** unique MaintenanceWindow identifier */
+        /**
+         * A filter to return only schedule definitions whose associated maintenanceWindowId matches
+         * the given maintenanceWindowId.
+         */
         private String maintenanceWindowId = null;
 
         /**
-         * unique MaintenanceWindow identifier
+         * A filter to return only schedule definitions whose associated maintenanceWindowId matches
+         * the given maintenanceWindowId.
          *
          * @param maintenanceWindowId the value to set
          * @return this builder instance
          */
         public Builder maintenanceWindowId(String maintenanceWindowId) {
             this.maintenanceWindowId = maintenanceWindowId;
+            return this;
+        }
+
+        /**
+         * A filter to return only schedule definitions whose associated runbookId matches the given
+         * runbookId.
+         */
+        private String runbookId = null;
+
+        /**
+         * A filter to return only schedule definitions whose associated runbookId matches the given
+         * runbookId.
+         *
+         * @param runbookId the value to set
+         * @return this builder instance
+         */
+        public Builder runbookId(String runbookId) {
+            this.runbookId = runbookId;
             return this;
         }
 
@@ -385,6 +442,7 @@ public class ListSchedulerDefinitionsRequest
             product(o.getProduct());
             id(o.getId());
             maintenanceWindowId(o.getMaintenanceWindowId());
+            runbookId(o.getRunbookId());
             fleetId(o.getFleetId());
             limit(o.getLimit());
             page(o.getPage());
@@ -431,6 +489,7 @@ public class ListSchedulerDefinitionsRequest
             request.product = product;
             request.id = id;
             request.maintenanceWindowId = maintenanceWindowId;
+            request.runbookId = runbookId;
             request.fleetId = fleetId;
             request.limit = limit;
             request.page = page;
@@ -439,7 +498,7 @@ public class ListSchedulerDefinitionsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListSchedulerDefinitionsRequest(compartmentId, lifecycleState, displayName,
-            // product, id, maintenanceWindowId, fleetId, limit, page, sortOrder, sortBy,
+            // product, id, maintenanceWindowId, runbookId, fleetId, limit, page, sortOrder, sortBy,
             // opcRequestId);
         }
     }
@@ -457,6 +516,7 @@ public class ListSchedulerDefinitionsRequest
                 .product(product)
                 .id(id)
                 .maintenanceWindowId(maintenanceWindowId)
+                .runbookId(runbookId)
                 .fleetId(fleetId)
                 .limit(limit)
                 .page(page)
@@ -485,6 +545,7 @@ public class ListSchedulerDefinitionsRequest
         sb.append(",product=").append(String.valueOf(this.product));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",maintenanceWindowId=").append(String.valueOf(this.maintenanceWindowId));
+        sb.append(",runbookId=").append(String.valueOf(this.runbookId));
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -512,6 +573,7 @@ public class ListSchedulerDefinitionsRequest
                 && java.util.Objects.equals(this.product, other.product)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.maintenanceWindowId, other.maintenanceWindowId)
+                && java.util.Objects.equals(this.runbookId, other.runbookId)
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -538,6 +600,7 @@ public class ListSchedulerDefinitionsRequest
                         + (this.maintenanceWindowId == null
                                 ? 43
                                 : this.maintenanceWindowId.hashCode());
+        result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
         result = (result * PRIME) + (this.fleetId == null ? 43 : this.fleetId.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

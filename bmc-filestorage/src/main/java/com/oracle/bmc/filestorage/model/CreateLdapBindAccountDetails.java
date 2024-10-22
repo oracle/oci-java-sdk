@@ -73,6 +73,15 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** Array of server endpoints to use when connecting with the LDAP bind account. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<Endpoint> endpoints;
@@ -149,6 +158,7 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
                             this.displayName,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.endpoints,
                             this.bindDistinguishedName,
                             this.passwordSecretId,
@@ -175,6 +185,9 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("endpoints")) {
                 this.endpoints(model.getEndpoints());
@@ -208,11 +221,12 @@ public final class CreateLdapBindAccountDetails extends CreateOutboundConnectorD
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             java.util.List<Endpoint> endpoints,
             String bindDistinguishedName,
             String passwordSecretId,
             Integer passwordSecretVersion) {
-        super(availabilityDomain, compartmentId, displayName, freeformTags, definedTags);
+        super(availabilityDomain, compartmentId, displayName, freeformTags, definedTags, locks);
         this.endpoints = endpoints;
         this.bindDistinguishedName = bindDistinguishedName;
         this.passwordSecretId = passwordSecretId;

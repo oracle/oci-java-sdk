@@ -42,6 +42,7 @@ public final class CustomerSecretKey
         "status",
         "expiresOn",
         "accessKey",
+        "secretKey",
         "user",
         "urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser"
     })
@@ -64,6 +65,7 @@ public final class CustomerSecretKey
             Status status,
             String expiresOn,
             String accessKey,
+            String secretKey,
             CustomerSecretKeyUser user,
             ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
         super();
@@ -85,6 +87,7 @@ public final class CustomerSecretKey
         this.status = status;
         this.expiresOn = expiresOn;
         this.accessKey = accessKey;
+        this.secretKey = secretKey;
         this.user = user;
         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser =
                 urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser;
@@ -523,6 +526,29 @@ public final class CustomerSecretKey
             this.__explicitlySet__.add("accessKey");
             return this;
         }
+        /**
+         * The secret key.
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
+         * required: false - returned: default
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
+        private String secretKey;
+
+        /**
+         * The secret key.
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
+         * required: false - returned: default
+         *
+         * @param secretKey the value to set
+         * @return this builder
+         */
+        public Builder secretKey(String secretKey) {
+            this.secretKey = secretKey;
+            this.__explicitlySet__.add("secretKey");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private CustomerSecretKeyUser user;
@@ -569,6 +595,7 @@ public final class CustomerSecretKey
                             this.status,
                             this.expiresOn,
                             this.accessKey,
+                            this.secretKey,
                             this.user,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -632,6 +659,9 @@ public final class CustomerSecretKey
             }
             if (model.wasPropertyExplicitlySet("accessKey")) {
                 this.accessKey(model.getAccessKey());
+            }
+            if (model.wasPropertyExplicitlySet("secretKey")) {
+                this.secretKey(model.getSecretKey());
             }
             if (model.wasPropertyExplicitlySet("user")) {
                 this.user(model.getUser());
@@ -1084,6 +1114,27 @@ public final class CustomerSecretKey
         return accessKey;
     }
 
+    /**
+     * The secret key.
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
+     * false - returned: default
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretKey")
+    private final String secretKey;
+
+    /**
+     * The secret key.
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
+     * false - returned: default
+     *
+     * @return the value
+     */
+    public String getSecretKey() {
+        return secretKey;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final CustomerSecretKeyUser user;
 
@@ -1134,6 +1185,7 @@ public final class CustomerSecretKey
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
         sb.append(", accessKey=").append(String.valueOf(this.accessKey));
+        sb.append(", secretKey=").append(String.valueOf(this.secretKey));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser=")
                 .append(
@@ -1173,6 +1225,7 @@ public final class CustomerSecretKey
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.expiresOn, other.expiresOn)
                 && java.util.Objects.equals(this.accessKey, other.accessKey)
+                && java.util.Objects.equals(this.secretKey, other.secretKey)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(
                         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser,
@@ -1220,6 +1273,7 @@ public final class CustomerSecretKey
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.expiresOn == null ? 43 : this.expiresOn.hashCode());
         result = (result * PRIME) + (this.accessKey == null ? 43 : this.accessKey.hashCode());
+        result = (result * PRIME) + (this.secretKey == null ? 43 : this.secretKey.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
         result =
                 (result * PRIME)

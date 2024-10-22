@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Patch <br>
+ * Details of the Patch. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -46,12 +46,12 @@ public final class ComplianceReportPatchDetail
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The OCID to identify this analysis results. */
+        /** Patch name. */
         @com.fasterxml.jackson.annotation.JsonProperty("patchName")
         private String patchName;
 
         /**
-         * The OCID to identify this analysis results.
+         * Patch name.
          *
          * @param patchName the value to set
          * @return this builder
@@ -61,12 +61,12 @@ public final class ComplianceReportPatchDetail
             this.__explicitlySet__.add("patchName");
             return this;
         }
-        /** The OCID of the work request to start the analysis. */
+        /** Patch description. */
         @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
         private String patchDescription;
 
         /**
-         * The OCID of the work request to start the analysis.
+         * Patch description.
          *
          * @param patchDescription the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class ComplianceReportPatchDetail
             this.__explicitlySet__.add("patchDescription");
             return this;
         }
-        /** Time the patch was applied */
+        /** Time the patch was applied. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeApplied")
         private java.util.Date timeApplied;
 
         /**
-         * Time the patch was applied
+         * Time the patch was applied.
          *
          * @param timeApplied the value to set
          * @return this builder
@@ -91,12 +91,12 @@ public final class ComplianceReportPatchDetail
             this.__explicitlySet__.add("timeApplied");
             return this;
         }
-        /** Date on which patch was released. */
+        /** The date on which patch was released. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
         private java.util.Date timeReleased;
 
         /**
-         * Date on which patch was released.
+         * The date on which patch was released.
          *
          * @param timeReleased the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ComplianceReportPatchDetail
         return new Builder().copy(this);
     }
 
-    /** The OCID to identify this analysis results. */
+    /** Patch name. */
     @com.fasterxml.jackson.annotation.JsonProperty("patchName")
     private final String patchName;
 
     /**
-     * The OCID to identify this analysis results.
+     * Patch name.
      *
      * @return the value
      */
@@ -182,12 +182,12 @@ public final class ComplianceReportPatchDetail
         return patchName;
     }
 
-    /** The OCID of the work request to start the analysis. */
+    /** Patch description. */
     @com.fasterxml.jackson.annotation.JsonProperty("patchDescription")
     private final String patchDescription;
 
     /**
-     * The OCID of the work request to start the analysis.
+     * Patch description.
      *
      * @return the value
      */
@@ -195,12 +195,12 @@ public final class ComplianceReportPatchDetail
         return patchDescription;
     }
 
-    /** Time the patch was applied */
+    /** Time the patch was applied. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeApplied")
     private final java.util.Date timeApplied;
 
     /**
-     * Time the patch was applied
+     * Time the patch was applied.
      *
      * @return the value
      */
@@ -208,12 +208,12 @@ public final class ComplianceReportPatchDetail
         return timeApplied;
     }
 
-    /** Date on which patch was released. */
+    /** The date on which patch was released. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeReleased")
     private final java.util.Date timeReleased;
 
     /**
-     * Date on which patch was released.
+     * The date on which patch was released.
      *
      * @return the value
      */
