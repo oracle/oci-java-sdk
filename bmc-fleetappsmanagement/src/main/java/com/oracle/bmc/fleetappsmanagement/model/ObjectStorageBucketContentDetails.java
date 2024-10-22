@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details about Object Storage Bucket source. Restricted to the region this is called <br>
+ * Details about Object Storage Bucket source. Restricted to the region this is called. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -72,12 +72,12 @@ public final class ObjectStorageBucketContentDetails extends ContentDetails {
             this.__explicitlySet__.add("objectName");
             return this;
         }
-        /** SHA256 checksum of the artifact. */
+        /** md5 checksum of the artifact. */
         @com.fasterxml.jackson.annotation.JsonProperty("checksum")
         private String checksum;
 
         /**
-         * SHA256 checksum of the artifact.
+         * md5 checksum of the artifact.
          *
          * @param checksum the value to set
          * @return this builder
@@ -177,12 +177,12 @@ public final class ObjectStorageBucketContentDetails extends ContentDetails {
         return objectName;
     }
 
-    /** SHA256 checksum of the artifact. */
+    /** md5 checksum of the artifact. */
     @com.fasterxml.jackson.annotation.JsonProperty("checksum")
     private final String checksum;
 
     /**
-     * SHA256 checksum of the artifact.
+     * md5 checksum of the artifact.
      *
      * @return the value
      */

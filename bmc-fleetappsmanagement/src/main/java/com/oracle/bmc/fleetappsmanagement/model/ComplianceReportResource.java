@@ -148,12 +148,12 @@ public final class ComplianceReportResource
             this.__explicitlySet__.add("compartment");
             return this;
         }
-        /** Region the resource belongs to. */
+        /** The region the resource belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
         private String resourceRegion;
 
         /**
-         * Region the resource belongs to.
+         * The region the resource belongs to.
          *
          * @param resourceRegion the value to set
          * @return this builder
@@ -163,12 +163,12 @@ public final class ComplianceReportResource
             this.__explicitlySet__.add("resourceRegion");
             return this;
         }
-        /** Last known compliance state of fleet. */
+        /** The last known compliance state of the fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
-         * Last known compliance state of fleet.
+         * The last known compliance state of the fleet.
          *
          * @param complianceState the value to set
          * @return this builder
@@ -179,15 +179,15 @@ public final class ComplianceReportResource
             return this;
         }
         /**
-         * Products assocaited with the Fleet.Only products belonging to managed targets will be
-         * shown.
+         * Products associated with the Fleet. Only the products belonging to managed targets will
+         * be shown.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<ComplianceReportProduct> products;
 
         /**
-         * Products assocaited with the Fleet.Only products belonging to managed targets will be
-         * shown.
+         * Products associated with the Fleet. Only the products belonging to managed targets will
+         * be shown.
          *
          * @param products the value to set
          * @return this builder
@@ -339,12 +339,12 @@ public final class ComplianceReportResource
         return compartment;
     }
 
-    /** Region the resource belongs to. */
+    /** The region the resource belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
     private final String resourceRegion;
 
     /**
-     * Region the resource belongs to.
+     * The region the resource belongs to.
      *
      * @return the value
      */
@@ -352,12 +352,12 @@ public final class ComplianceReportResource
         return resourceRegion;
     }
 
-    /** Last known compliance state of fleet. */
+    /** The last known compliance state of the fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
-     * Last known compliance state of fleet.
+     * The last known compliance state of the fleet.
      *
      * @return the value
      */
@@ -366,13 +366,15 @@ public final class ComplianceReportResource
     }
 
     /**
-     * Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+     * Products associated with the Fleet. Only the products belonging to managed targets will be
+     * shown.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<ComplianceReportProduct> products;
 
     /**
-     * Products assocaited with the Fleet.Only products belonging to managed targets will be shown.
+     * Products associated with the Fleet. Only the products belonging to managed targets will be
+     * shown.
      *
      * @return the value
      */

@@ -125,6 +125,46 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public CreateCompliancePolicyRuleResponse createCompliancePolicyRule(
+            CreateCompliancePolicyRuleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateCompliancePolicyRuleDetails(),
+                "createCompliancePolicyRuleDetails is required");
+
+        return clientCall(request, CreateCompliancePolicyRuleResponse::builder)
+                .logger(LOG, "createCompliancePolicyRule")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "CreateCompliancePolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/CreateCompliancePolicyRule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateCompliancePolicyRuleRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicyRules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule.class,
+                        CreateCompliancePolicyRuleResponse.Builder::compliancePolicyRule)
+                .handleResponseHeaderString(
+                        "location", CreateCompliancePolicyRuleResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateCompliancePolicyRuleResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateCompliancePolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateCompliancePolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateCompliancePolicyRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateOnboardingResponse createOnboarding(CreateOnboardingRequest request) {
         Objects.requireNonNull(
                 request.getCreateOnboardingDetails(), "createOnboardingDetails is required");
@@ -159,6 +199,38 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public CreatePlatformConfigurationResponse createPlatformConfiguration(
+            CreatePlatformConfigurationRequest request) {
+        Objects.requireNonNull(
+                request.getCreatePlatformConfigurationDetails(),
+                "createPlatformConfigurationDetails is required");
+
+        return clientCall(request, CreatePlatformConfigurationResponse::builder)
+                .logger(LOG, "createPlatformConfiguration")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "CreatePlatformConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/CreatePlatformConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreatePlatformConfigurationRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("platformConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.class,
+                        CreatePlatformConfigurationResponse.Builder::platformConfiguration)
+                .handleResponseHeaderString(
+                        "etag", CreatePlatformConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreatePlatformConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreatePropertyResponse createProperty(CreatePropertyRequest request) {
         Objects.requireNonNull(
                 request.getCreatePropertyDetails(), "createPropertyDetails is required");
@@ -188,6 +260,93 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public DeleteCompliancePolicyRuleResponse deleteCompliancePolicyRule(
+            DeleteCompliancePolicyRuleRequest request) {
+
+        Validate.notBlank(
+                request.getCompliancePolicyRuleId(), "compliancePolicyRuleId must not be blank");
+
+        return clientCall(request, DeleteCompliancePolicyRuleResponse::builder)
+                .logger(LOG, "deleteCompliancePolicyRule")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "DeleteCompliancePolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/DeleteCompliancePolicyRule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteCompliancePolicyRuleRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicyRules")
+                .appendPathParam(request.getCompliancePolicyRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteCompliancePolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteCompliancePolicyRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteOnboardingResponse deleteOnboarding(DeleteOnboardingRequest request) {
+
+        Validate.notBlank(request.getOnboardingId(), "onboardingId must not be blank");
+
+        return clientCall(request, DeleteOnboardingResponse::builder)
+                .logger(LOG, "deleteOnboarding")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "DeleteOnboarding",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/DeleteOnboarding")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteOnboardingRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("Onboardings")
+                .appendPathParam(request.getOnboardingId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteOnboardingResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteOnboardingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeletePlatformConfigurationResponse deletePlatformConfiguration(
+            DeletePlatformConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getPlatformConfigurationId(), "platformConfigurationId must not be blank");
+
+        return clientCall(request, DeletePlatformConfigurationResponse::builder)
+                .logger(LOG, "deletePlatformConfiguration")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "DeletePlatformConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/DeletePlatformConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeletePlatformConfigurationRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("platformConfigurations")
+                .appendPathParam(request.getPlatformConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeletePlatformConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeletePlatformConfigurationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeletePropertyResponse deleteProperty(DeletePropertyRequest request) {
 
         Validate.notBlank(request.getPropertyId(), "propertyId must not be blank");
@@ -209,6 +368,153 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeletePropertyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public EnableLatestPolicyResponse enableLatestPolicy(EnableLatestPolicyRequest request) {
+
+        Validate.notBlank(request.getOnboardingId(), "onboardingId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableLatestPolicyDetails(), "enableLatestPolicyDetails is required");
+
+        return clientCall(request, EnableLatestPolicyResponse::builder)
+                .logger(LOG, "enableLatestPolicy")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "EnableLatestPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/EnableLatestPolicy")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableLatestPolicyRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("Onboardings")
+                .appendPathParam(request.getOnboardingId())
+                .appendPathParam("actions")
+                .appendPathParam("enableLatestPolicy")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", EnableLatestPolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCompliancePolicyResponse getCompliancePolicy(GetCompliancePolicyRequest request) {
+
+        Validate.notBlank(request.getCompliancePolicyId(), "compliancePolicyId must not be blank");
+
+        return clientCall(request, GetCompliancePolicyResponse::builder)
+                .logger(LOG, "getCompliancePolicy")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "GetCompliancePolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicy/GetCompliancePolicy")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCompliancePolicyRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicies")
+                .appendPathParam(request.getCompliancePolicyId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CompliancePolicy.class,
+                        GetCompliancePolicyResponse.Builder::compliancePolicy)
+                .handleResponseHeaderString("etag", GetCompliancePolicyResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCompliancePolicyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetCompliancePolicyRuleResponse getCompliancePolicyRule(
+            GetCompliancePolicyRuleRequest request) {
+
+        Validate.notBlank(
+                request.getCompliancePolicyRuleId(), "compliancePolicyRuleId must not be blank");
+
+        return clientCall(request, GetCompliancePolicyRuleResponse::builder)
+                .logger(LOG, "getCompliancePolicyRule")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "GetCompliancePolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/GetCompliancePolicyRule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetCompliancePolicyRuleRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicyRules")
+                .appendPathParam(request.getCompliancePolicyRuleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRule.class,
+                        GetCompliancePolicyRuleResponse.Builder::compliancePolicyRule)
+                .handleResponseHeaderString("etag", GetCompliancePolicyRuleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetCompliancePolicyRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetOnboardingResponse getOnboarding(GetOnboardingRequest request) {
+
+        Validate.notBlank(request.getOnboardingId(), "onboardingId must not be blank");
+
+        return clientCall(request, GetOnboardingResponse::builder)
+                .logger(LOG, "getOnboarding")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "GetOnboarding",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/GetOnboarding")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOnboardingRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("Onboardings")
+                .appendPathParam(request.getOnboardingId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.Onboarding.class,
+                        GetOnboardingResponse.Builder::onboarding)
+                .handleResponseHeaderString("etag", GetOnboardingResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetOnboardingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetPlatformConfigurationResponse getPlatformConfiguration(
+            GetPlatformConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getPlatformConfigurationId(), "platformConfigurationId must not be blank");
+
+        return clientCall(request, GetPlatformConfigurationResponse::builder)
+                .logger(LOG, "getPlatformConfiguration")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "GetPlatformConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/GetPlatformConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetPlatformConfigurationRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("platformConfigurations")
+                .appendPathParam(request.getPlatformConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.PlatformConfiguration.class,
+                        GetPlatformConfigurationResponse.Builder::platformConfiguration)
+                .handleResponseHeaderString("etag", GetPlatformConfigurationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetPlatformConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -237,6 +543,79 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
                 .handleResponseHeaderString("etag", GetPropertyResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetPropertyResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListCompliancePoliciesResponse listCompliancePolicies(
+            ListCompliancePoliciesRequest request) {
+
+        return clientCall(request, ListCompliancePoliciesResponse::builder)
+                .logger(LOG, "listCompliancePolicies")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListCompliancePolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyCollection/ListCompliancePolicies")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCompliancePoliciesRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicies")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyCollection.class,
+                        ListCompliancePoliciesResponse.Builder::compliancePolicyCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCompliancePoliciesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCompliancePoliciesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListCompliancePolicyRulesResponse listCompliancePolicyRules(
+            ListCompliancePolicyRulesRequest request) {
+
+        return clientCall(request, ListCompliancePolicyRulesResponse::builder)
+                .logger(LOG, "listCompliancePolicyRules")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListCompliancePolicyRules",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRuleCollection/ListCompliancePolicyRules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListCompliancePolicyRulesRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicyRules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("patchName", request.getPatchName())
+                .appendQueryParam("compliancePolicyId", request.getCompliancePolicyId())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.CompliancePolicyRuleCollection
+                                .class,
+                        ListCompliancePolicyRulesResponse.Builder::compliancePolicyRuleCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListCompliancePolicyRulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListCompliancePolicyRulesResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -305,6 +684,43 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public ListPlatformConfigurationsResponse listPlatformConfigurations(
+            ListPlatformConfigurationsRequest request) {
+
+        return clientCall(request, ListPlatformConfigurationsResponse::builder)
+                .logger(LOG, "listPlatformConfigurations")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ListPlatformConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfigurationCollection/ListPlatformConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPlatformConfigurationsRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("platformConfigurations")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendEnumQueryParam("configCategory", request.getConfigCategory())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.PlatformConfigurationCollection
+                                .class,
+                        ListPlatformConfigurationsResponse.Builder::platformConfigurationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPlatformConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPlatformConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListPropertiesResponse listProperties(ListPropertiesRequest request) {
 
         return clientCall(request, ListPropertiesResponse::builder)
@@ -336,6 +752,135 @@ public class FleetAppsManagementAdminClient extends com.oracle.bmc.http.internal
                         "opc-request-id", ListPropertiesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListPropertiesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ManageSettingsResponse manageSettings(ManageSettingsRequest request) {
+
+        Validate.notBlank(request.getOnboardingId(), "onboardingId must not be blank");
+        Objects.requireNonNull(
+                request.getManageSettingsDetails(), "manageSettingsDetails is required");
+
+        return clientCall(request, ManageSettingsResponse::builder)
+                .logger(LOG, "manageSettings")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "ManageSettings",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/ManageSettings")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ManageSettingsRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("Onboardings")
+                .appendPathParam(request.getOnboardingId())
+                .appendPathParam("actions")
+                .appendPathParam("manageSettings")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ManageSettingsResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateCompliancePolicyRuleResponse updateCompliancePolicyRule(
+            UpdateCompliancePolicyRuleRequest request) {
+
+        Validate.notBlank(
+                request.getCompliancePolicyRuleId(), "compliancePolicyRuleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateCompliancePolicyRuleDetails(),
+                "updateCompliancePolicyRuleDetails is required");
+
+        return clientCall(request, UpdateCompliancePolicyRuleResponse::builder)
+                .logger(LOG, "updateCompliancePolicyRule")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "UpdateCompliancePolicyRule",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/CompliancePolicyRule/UpdateCompliancePolicyRule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateCompliancePolicyRuleRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("compliancePolicyRules")
+                .appendPathParam(request.getCompliancePolicyRuleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateCompliancePolicyRuleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateCompliancePolicyRuleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateOnboardingResponse updateOnboarding(UpdateOnboardingRequest request) {
+
+        Validate.notBlank(request.getOnboardingId(), "onboardingId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateOnboardingDetails(), "updateOnboardingDetails is required");
+
+        return clientCall(request, UpdateOnboardingResponse::builder)
+                .logger(LOG, "updateOnboarding")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "UpdateOnboarding",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Onboarding/UpdateOnboarding")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateOnboardingRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("Onboardings")
+                .appendPathParam(request.getOnboardingId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateOnboardingResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateOnboardingResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdatePlatformConfigurationResponse updatePlatformConfiguration(
+            UpdatePlatformConfigurationRequest request) {
+
+        Validate.notBlank(
+                request.getPlatformConfigurationId(), "platformConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdatePlatformConfigurationDetails(),
+                "updatePlatformConfigurationDetails is required");
+
+        return clientCall(request, UpdatePlatformConfigurationResponse::builder)
+                .logger(LOG, "updatePlatformConfiguration")
+                .serviceDetails(
+                        "FleetAppsManagementAdmin",
+                        "UpdatePlatformConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/PlatformConfiguration/UpdatePlatformConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePlatformConfigurationRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("platformConfigurations")
+                .appendPathParam(request.getPlatformConfigurationId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdatePlatformConfigurationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePlatformConfigurationResponse.Builder::opcRequestId)
                 .callSync();
     }
 

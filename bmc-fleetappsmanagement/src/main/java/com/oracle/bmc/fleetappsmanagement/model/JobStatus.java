@@ -18,6 +18,7 @@ public enum JobStatus implements com.oracle.bmc.http.internal.BmcEnum {
     NotApplicable("NOT_APPLICABLE"),
     Aborted("ABORTED"),
     TimedOut("TIMED_OUT"),
+    Paused("PAUSED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

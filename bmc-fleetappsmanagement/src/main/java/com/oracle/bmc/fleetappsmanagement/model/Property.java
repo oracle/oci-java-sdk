@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Taxonomy metadata aka Property . <br>
+ * Global metadata element details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -209,12 +209,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
-        /** Text selection of the category */
+        /** Text selection of the property. */
         @com.fasterxml.jackson.annotation.JsonProperty("selection")
         private Selection selection;
 
         /**
-         * Text selection of the category
+         * Text selection of the property.
          *
          * @param selection the value to set
          * @return this builder
@@ -224,12 +224,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("selection");
             return this;
         }
-        /** Format of the value */
+        /** Format of the value. */
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
         /**
-         * Format of the value
+         * Format of the value.
          *
          * @param valueType the value to set
          * @return this builder
@@ -239,12 +239,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("valueType");
             return this;
         }
-        /** Values of the property (must be a single value if selection = 'single choice') */
+        /** Values of the property (must be a single value if selection = 'SINGLE_CHOICE'). */
         @com.fasterxml.jackson.annotation.JsonProperty("values")
         private java.util.List<String> values;
 
         /**
-         * Values of the property (must be a single value if selection = 'single choice')
+         * Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
          *
          * @param values the value to set
          * @return this builder
@@ -254,12 +254,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("values");
             return this;
         }
-        /** The scope of the property */
+        /** The scope of the property. */
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
         private Scope scope;
 
         /**
-         * The scope of the property
+         * The scope of the property.
          *
          * @param scope the value to set
          * @return this builder
@@ -597,12 +597,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
         return lifecycleDetails;
     }
 
-    /** Text selection of the category */
+    /** Text selection of the property. */
     @com.fasterxml.jackson.annotation.JsonProperty("selection")
     private final Selection selection;
 
     /**
-     * Text selection of the category
+     * Text selection of the property.
      *
      * @return the value
      */
@@ -610,12 +610,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
         return selection;
     }
 
-    /** Format of the value */
+    /** Format of the value. */
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
     /**
-     * Format of the value
+     * Format of the value.
      *
      * @return the value
      */
@@ -623,12 +623,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
         return valueType;
     }
 
-    /** Values of the property (must be a single value if selection = 'single choice') */
+    /** Values of the property (must be a single value if selection = 'SINGLE_CHOICE'). */
     @com.fasterxml.jackson.annotation.JsonProperty("values")
     private final java.util.List<String> values;
 
     /**
-     * Values of the property (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selection = 'SINGLE_CHOICE').
      *
      * @return the value
      */
@@ -636,12 +636,12 @@ public final class Property extends com.oracle.bmc.http.client.internal.Explicit
         return values;
     }
 
-    /** The scope of the property */
+    /** The scope of the property. */
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
     private final Scope scope;
 
     /**
-     * The scope of the property
+     * The scope of the property.
      *
      * @return the value
      */

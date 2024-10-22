@@ -174,12 +174,12 @@ public final class RunbookSummary
             this.__explicitlySet__.add("runbookRelevance");
             return this;
         }
-        /** The lifecycle operation performed by the task. */
+        /** The lifecycle operation performed by the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * The lifecycle operation performed by the task.
+         * The lifecycle operation performed by the runbook.
          *
          * @param operation the value to set
          * @return this builder
@@ -219,12 +219,16 @@ public final class RunbookSummary
             this.__explicitlySet__.add("platform");
             return this;
         }
-        /** Is the runbook default? */
+        /**
+         * Is the runbook default? Sets this runbook as the default for the chosen product/product
+         * stack for the specified lifecycle operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * Is the runbook default?
+         * Is the runbook default? Sets this runbook as the default for the chosen product/product
+         * stack for the specified lifecycle operation.
          *
          * @param isDefault the value to set
          * @return this builder
@@ -234,12 +238,12 @@ public final class RunbookSummary
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Estimated time to successfully complete the runbook execution */
+        /** Estimated time to successfully complete the runbook execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
         private String estimatedTime;
 
         /**
-         * Estimated time to successfully complete the runbook execution
+         * Estimated time to successfully complete the runbook execution.
          *
          * @param estimatedTime the value to set
          * @return this builder
@@ -582,12 +586,12 @@ public final class RunbookSummary
         return runbookRelevance;
     }
 
-    /** The lifecycle operation performed by the task. */
+    /** The lifecycle operation performed by the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * The lifecycle operation performed by the task.
+     * The lifecycle operation performed by the runbook.
      *
      * @return the value
      */
@@ -621,12 +625,16 @@ public final class RunbookSummary
         return platform;
     }
 
-    /** Is the runbook default? */
+    /**
+     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
+     * for the specified lifecycle operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Is the runbook default?
+     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
+     * for the specified lifecycle operation.
      *
      * @return the value
      */
@@ -634,12 +642,12 @@ public final class RunbookSummary
         return isDefault;
     }
 
-    /** Estimated time to successfully complete the runbook execution */
+    /** Estimated time to successfully complete the runbook execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
     private final String estimatedTime;
 
     /**
-     * Estimated time to successfully complete the runbook execution
+     * Estimated time to successfully complete the runbook execution.
      *
      * @return the value
      */

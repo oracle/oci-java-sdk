@@ -730,6 +730,8 @@ public class FleetAppsManagementClient extends com.oracle.bmc.http.internal.Base
                 .appendQueryParam("compartmentId", request.getCompartmentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("resourceId", request.getResourceId())
+                .appendQueryParam("target", request.getTarget())
                 .appendEnumQueryParam("credentialLevel", request.getCredentialLevel())
                 .appendQueryParam("id", request.getId())
                 .appendQueryParam("limit", request.getLimit())

@@ -135,12 +135,12 @@ public final class InventoryResourceSummary
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Compartment Id of the resource */
+        /** Compartment Id of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
         /**
-         * Compartment Id of the resource
+         * Compartment Id of the resource.
          *
          * @param resourceCompartmentId the value to set
          * @return this builder
@@ -150,12 +150,12 @@ public final class InventoryResourceSummary
             this.__explicitlySet__.add("resourceCompartmentId");
             return this;
         }
-        /** Availability Domain of the resource */
+        /** Availability Domain of the resource. */
         @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
         private String availabilityDomain;
 
         /**
-         * Availability Domain of the resource
+         * Availability Domain of the resource.
          *
          * @param availabilityDomain the value to set
          * @return this builder
@@ -165,12 +165,12 @@ public final class InventoryResourceSummary
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
-        /** Region the resource belongs to */
+        /** The region the resource belongs to. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
         private String resourceRegion;
 
         /**
-         * Region the resource belongs to
+         * The region the resource belongs to.
          *
          * @param resourceRegion the value to set
          * @return this builder
@@ -408,12 +408,12 @@ public final class InventoryResourceSummary
         return type;
     }
 
-    /** Compartment Id of the resource */
+    /** Compartment Id of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
     /**
-     * Compartment Id of the resource
+     * Compartment Id of the resource.
      *
      * @return the value
      */
@@ -421,12 +421,12 @@ public final class InventoryResourceSummary
         return resourceCompartmentId;
     }
 
-    /** Availability Domain of the resource */
+    /** Availability Domain of the resource. */
     @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
     private final String availabilityDomain;
 
     /**
-     * Availability Domain of the resource
+     * Availability Domain of the resource.
      *
      * @return the value
      */
@@ -434,12 +434,12 @@ public final class InventoryResourceSummary
         return availabilityDomain;
     }
 
-    /** Region the resource belongs to */
+    /** The region the resource belongs to. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceRegion")
     private final String resourceRegion;
 
     /**
-     * Region the resource belongs to
+     * The region the resource belongs to.
      *
      * @return the value
      */

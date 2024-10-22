@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Patch. <br>
+ * Details of the target and patches. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -49,12 +49,12 @@ public final class ComplianceReportTarget
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Target Identifier. */
+        /** Target Identifier.Can be the target name if a separate ID is not available. */
         @com.fasterxml.jackson.annotation.JsonProperty("targetId")
         private String targetId;
 
         /**
-         * Target Identifier.
+         * Target Identifier.Can be the target name if a separate ID is not available.
          *
          * @param targetId the value to set
          * @return this builder
@@ -79,12 +79,12 @@ public final class ComplianceReportTarget
             this.__explicitlySet__.add("targetName");
             return this;
         }
-        /** Current version. */
+        /** Current version of the target. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Current version.
+         * Current version of the target.
          *
          * @param version the value to set
          * @return this builder
@@ -94,12 +94,12 @@ public final class ComplianceReportTarget
             this.__explicitlySet__.add("version");
             return this;
         }
-        /** Last known compliance state of target. */
+        /** The last known compliance state of the target. */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
-         * Last known compliance state of target.
+         * The last known compliance state of the target.
          *
          * @param complianceState the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class ComplianceReportTarget
         return new Builder().copy(this);
     }
 
-    /** Target Identifier. */
+    /** Target Identifier.Can be the target name if a separate ID is not available. */
     @com.fasterxml.jackson.annotation.JsonProperty("targetId")
     private final String targetId;
 
     /**
-     * Target Identifier.
+     * Target Identifier.Can be the target name if a separate ID is not available.
      *
      * @return the value
      */
@@ -219,12 +219,12 @@ public final class ComplianceReportTarget
         return targetName;
     }
 
-    /** Current version. */
+    /** Current version of the target. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Current version.
+     * Current version of the target.
      *
      * @return the value
      */
@@ -232,12 +232,12 @@ public final class ComplianceReportTarget
         return version;
     }
 
-    /** Last known compliance state of target. */
+    /** The last known compliance state of the target. */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
-     * Last known compliance state of target.
+     * The last known compliance state of the target.
      *
      * @return the value
      */

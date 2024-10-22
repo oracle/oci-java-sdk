@@ -36,6 +36,7 @@ public final class CreateFleetDetails
         "ruleSelectionCriteria",
         "notificationPreferences",
         "resources",
+        "credentials",
         "isTargetAutoConfirm",
         "freeformTags",
         "definedTags"
@@ -53,6 +54,7 @@ public final class CreateFleetDetails
             SelectionCriteria ruleSelectionCriteria,
             NotificationPreferences notificationPreferences,
             java.util.List<AssociatedFleetResourceDetails> resources,
+            java.util.List<AssociatedFleetCredentialDetails> credentials,
             Boolean isTargetAutoConfirm,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -69,6 +71,7 @@ public final class CreateFleetDetails
         this.ruleSelectionCriteria = ruleSelectionCriteria;
         this.notificationPreferences = notificationPreferences;
         this.resources = resources;
+        this.credentials = credentials;
         this.isTargetAutoConfirm = isTargetAutoConfirm;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -133,12 +136,20 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Type of the Fleet */
+        /**
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
         private Fleet.FleetType fleetType;
 
         /**
-         * Type of the Fleet
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
          *
          * @param fleetType the value to set
          * @return this builder
@@ -148,12 +159,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("fleetType");
             return this;
         }
-        /** Products associated with the Fleet */
+        /** Products associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * Products associated with the Fleet
+         * Products associated with the Fleet.
          *
          * @param products the value to set
          * @return this builder
@@ -163,12 +174,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** Application Type associated with the Fleet.Applicable for Environment fleet types. */
+        /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * Application Type associated with the Fleet.Applicable for Environment fleet types.
+         * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          *
          * @param applicationType the value to set
          * @return this builder
@@ -178,12 +189,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("applicationType");
             return this;
         }
-        /** Environment Type associated with the Fleet.Applicable for Environment fleet types. */
+        /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
 
         /**
-         * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+         * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          *
          * @param environmentType the value to set
          * @return this builder
@@ -193,12 +204,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** Group Type associated with Group Fleet.Applicable for Group fleet types. */
+        /** Group Type associated with Group Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupType")
         private Fleet.GroupType groupType;
 
         /**
-         * Group Type associated with Group Fleet.Applicable for Group fleet types.
+         * Group Type associated with Group Fleet.
          *
          * @param groupType the value to set
          * @return this builder
@@ -208,12 +219,16 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("groupType");
             return this;
         }
-        /** Type of resource selection in a fleet */
+        /**
+         * Type of resource selection in a Fleet. Select resources manually or select resources
+         * based on rules.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
         private Fleet.ResourceSelectionType resourceSelectionType;
 
         /**
-         * Type of resource selection in a fleet
+         * Type of resource selection in a Fleet. Select resources manually or select resources
+         * based on rules.
          *
          * @param resourceSelectionType the value to set
          * @return this builder
@@ -241,12 +256,12 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("notificationPreferences");
             return this;
         }
-        /** Resources to be added during fleet creation when Resource selection type is Manual. */
+        /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<AssociatedFleetResourceDetails> resources;
 
         /**
-         * Resources to be added during fleet creation when Resource selection type is Manual.
+         * Resources associated with the Fleet if resourceSelectionType is MANUAL.
          *
          * @param resources the value to set
          * @return this builder
@@ -256,12 +271,31 @@ public final class CreateFleetDetails
             this.__explicitlySet__.add("resources");
             return this;
         }
-        /** A value which represents if auto confirming of the targets can be enabled */
+        /** Credentials associated with the Fleet. */
+        @com.fasterxml.jackson.annotation.JsonProperty("credentials")
+        private java.util.List<AssociatedFleetCredentialDetails> credentials;
+
+        /**
+         * Credentials associated with the Fleet.
+         *
+         * @param credentials the value to set
+         * @return this builder
+         */
+        public Builder credentials(java.util.List<AssociatedFleetCredentialDetails> credentials) {
+            this.credentials = credentials;
+            this.__explicitlySet__.add("credentials");
+            return this;
+        }
+        /**
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
         private Boolean isTargetAutoConfirm;
 
         /**
-         * A value which represents if auto confirming of the targets can be enabled
+         * A value that represents if auto-confirming of the targets can be enabled. This will allow
+         * targets to be auto-confirmed in the fleet without manual intervention.
          *
          * @param isTargetAutoConfirm the value to set
          * @return this builder
@@ -329,6 +363,7 @@ public final class CreateFleetDetails
                             this.ruleSelectionCriteria,
                             this.notificationPreferences,
                             this.resources,
+                            this.credentials,
                             this.isTargetAutoConfirm,
                             this.freeformTags,
                             this.definedTags);
@@ -375,6 +410,9 @@ public final class CreateFleetDetails
             }
             if (model.wasPropertyExplicitlySet("resources")) {
                 this.resources(model.getResources());
+            }
+            if (model.wasPropertyExplicitlySet("credentials")) {
+                this.credentials(model.getCredentials());
             }
             if (model.wasPropertyExplicitlySet("isTargetAutoConfirm")) {
                 this.isTargetAutoConfirm(model.getIsTargetAutoConfirm());
@@ -449,12 +487,20 @@ public final class CreateFleetDetails
         return compartmentId;
     }
 
-    /** Type of the Fleet */
+    /**
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     private final Fleet.FleetType fleetType;
 
     /**
-     * Type of the Fleet
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
      *
      * @return the value
      */
@@ -462,12 +508,12 @@ public final class CreateFleetDetails
         return fleetType;
     }
 
-    /** Products associated with the Fleet */
+    /** Products associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * Products associated with the Fleet
+     * Products associated with the Fleet.
      *
      * @return the value
      */
@@ -475,12 +521,12 @@ public final class CreateFleetDetails
         return products;
     }
 
-    /** Application Type associated with the Fleet.Applicable for Environment fleet types. */
+    /** Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * Application Type associated with the Fleet.Applicable for Environment fleet types.
+     * Product stack associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
      */
@@ -488,12 +534,12 @@ public final class CreateFleetDetails
         return applicationType;
     }
 
-    /** Environment Type associated with the Fleet.Applicable for Environment fleet types. */
+    /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
 
     /**
-     * Environment Type associated with the Fleet.Applicable for Environment fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
      */
@@ -501,12 +547,12 @@ public final class CreateFleetDetails
         return environmentType;
     }
 
-    /** Group Type associated with Group Fleet.Applicable for Group fleet types. */
+    /** Group Type associated with Group Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupType")
     private final Fleet.GroupType groupType;
 
     /**
-     * Group Type associated with Group Fleet.Applicable for Group fleet types.
+     * Group Type associated with Group Fleet.
      *
      * @return the value
      */
@@ -514,12 +560,16 @@ public final class CreateFleetDetails
         return groupType;
     }
 
-    /** Type of resource selection in a fleet */
+    /**
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on
+     * rules.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceSelectionType")
     private final Fleet.ResourceSelectionType resourceSelectionType;
 
     /**
-     * Type of resource selection in a fleet
+     * Type of resource selection in a Fleet. Select resources manually or select resources based on
+     * rules.
      *
      * @return the value
      */
@@ -541,12 +591,12 @@ public final class CreateFleetDetails
         return notificationPreferences;
     }
 
-    /** Resources to be added during fleet creation when Resource selection type is Manual. */
+    /** Resources associated with the Fleet if resourceSelectionType is MANUAL. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<AssociatedFleetResourceDetails> resources;
 
     /**
-     * Resources to be added during fleet creation when Resource selection type is Manual.
+     * Resources associated with the Fleet if resourceSelectionType is MANUAL.
      *
      * @return the value
      */
@@ -554,12 +604,29 @@ public final class CreateFleetDetails
         return resources;
     }
 
-    /** A value which represents if auto confirming of the targets can be enabled */
+    /** Credentials associated with the Fleet. */
+    @com.fasterxml.jackson.annotation.JsonProperty("credentials")
+    private final java.util.List<AssociatedFleetCredentialDetails> credentials;
+
+    /**
+     * Credentials associated with the Fleet.
+     *
+     * @return the value
+     */
+    public java.util.List<AssociatedFleetCredentialDetails> getCredentials() {
+        return credentials;
+    }
+
+    /**
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isTargetAutoConfirm")
     private final Boolean isTargetAutoConfirm;
 
     /**
-     * A value which represents if auto confirming of the targets can be enabled
+     * A value that represents if auto-confirming of the targets can be enabled. This will allow
+     * targets to be auto-confirmed in the fleet without manual intervention.
      *
      * @return the value
      */
@@ -629,6 +696,7 @@ public final class CreateFleetDetails
         sb.append(", notificationPreferences=")
                 .append(String.valueOf(this.notificationPreferences));
         sb.append(", resources=").append(String.valueOf(this.resources));
+        sb.append(", credentials=").append(String.valueOf(this.credentials));
         sb.append(", isTargetAutoConfirm=").append(String.valueOf(this.isTargetAutoConfirm));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -659,6 +727,7 @@ public final class CreateFleetDetails
                 && java.util.Objects.equals(
                         this.notificationPreferences, other.notificationPreferences)
                 && java.util.Objects.equals(this.resources, other.resources)
+                && java.util.Objects.equals(this.credentials, other.credentials)
                 && java.util.Objects.equals(this.isTargetAutoConfirm, other.isTargetAutoConfirm)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -699,6 +768,7 @@ public final class CreateFleetDetails
                                 ? 43
                                 : this.notificationPreferences.hashCode());
         result = (result * PRIME) + (this.resources == null ? 43 : this.resources.hashCode());
+        result = (result * PRIME) + (this.credentials == null ? 43 : this.credentials.hashCode());
         result =
                 (result * PRIME)
                         + (this.isTargetAutoConfirm == null

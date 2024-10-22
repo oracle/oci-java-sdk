@@ -32,9 +32,6 @@ package com.oracle.bmc.opsi.model;
             value = HostCpuUsage.class,
             name = "HOST_CPU_USAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HostContainers.class,
-            name = "HOST_CONTAINERS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = HostGpuUsage.class,
             name = "HOST_GPU_USAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -129,7 +126,6 @@ public class HostPerformanceMetricGroup
         HostGpuUsage("HOST_GPU_USAGE"),
         HostGpuProcesses("HOST_GPU_PROCESSES"),
         HostIoUsage("HOST_IO_USAGE"),
-        HostContainers("HOST_CONTAINERS"),
         ;
 
         private final String value;

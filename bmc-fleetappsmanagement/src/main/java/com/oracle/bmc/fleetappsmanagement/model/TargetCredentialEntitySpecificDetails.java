@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Fleet Credential Specific Details. <br>
+ * Target credential details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -27,12 +27,12 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class TargetCredentialEntitySpecificDetails extends CredentialEntitySpecificDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** OCID of the resource associated with the target for which credential is created */
+        /** OCID of the resource associated with the target for which the credential is created. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * OCID of the resource associated with the target for which credential is created
+         * OCID of the resource associated with the target for which the credential is created.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -42,12 +42,12 @@ public final class TargetCredentialEntitySpecificDetails extends CredentialEntit
             this.__explicitlySet__.add("resourceId");
             return this;
         }
-        /** Target associated with the Credential */
+        /** Target name for which the credential is provided. */
         @com.fasterxml.jackson.annotation.JsonProperty("target")
         private String target;
 
         /**
-         * Target associated with the Credential
+         * Target name for which the credential is provided.
          *
          * @param target the value to set
          * @return this builder
@@ -98,12 +98,12 @@ public final class TargetCredentialEntitySpecificDetails extends CredentialEntit
         this.target = target;
     }
 
-    /** OCID of the resource associated with the target for which credential is created */
+    /** OCID of the resource associated with the target for which the credential is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * OCID of the resource associated with the target for which credential is created
+     * OCID of the resource associated with the target for which the credential is created.
      *
      * @return the value
      */
@@ -111,12 +111,12 @@ public final class TargetCredentialEntitySpecificDetails extends CredentialEntit
         return resourceId;
     }
 
-    /** Target associated with the Credential */
+    /** Target name for which the credential is provided. */
     @com.fasterxml.jackson.annotation.JsonProperty("target")
     private final String target;
 
     /**
-     * Target associated with the Credential
+     * Target name for which the credential is provided.
      *
      * @return the value
      */

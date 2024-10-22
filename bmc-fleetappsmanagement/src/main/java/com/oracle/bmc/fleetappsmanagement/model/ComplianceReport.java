@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of a compliance report. <br>
+ * Compliance details for a fleet in Fleet Application Management. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -67,12 +67,12 @@ public final class ComplianceReport
             this.__explicitlySet__.add("fleetId");
             return this;
         }
-        /** Last known compliance state of fleet. */
+        /** The last known compliance state of the fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
-         * Last known compliance state of fleet.
+         * The last known compliance state of the fleet.
          *
          * @param complianceState the value to set
          * @return this builder
@@ -82,12 +82,12 @@ public final class ComplianceReport
             this.__explicitlySet__.add("complianceState");
             return this;
         }
-        /** Resources assocaited with the Fleet. */
+        /** Resources associated with the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("resources")
         private java.util.List<ComplianceReportResource> resources;
 
         /**
-         * Resources assocaited with the Fleet.
+         * Resources associated with the Fleet.
          *
          * @param resources the value to set
          * @return this builder
@@ -164,12 +164,12 @@ public final class ComplianceReport
         return fleetId;
     }
 
-    /** Last known compliance state of fleet. */
+    /** The last known compliance state of the fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
-     * Last known compliance state of fleet.
+     * The last known compliance state of the fleet.
      *
      * @return the value
      */
@@ -177,12 +177,12 @@ public final class ComplianceReport
         return complianceState;
     }
 
-    /** Resources assocaited with the Fleet. */
+    /** Resources associated with the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("resources")
     private final java.util.List<ComplianceReportResource> resources;
 
     /**
-     * Resources assocaited with the Fleet.
+     * Resources associated with the Fleet.
      *
      * @return the value
      */

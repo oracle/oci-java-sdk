@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public interface FleetAppsManagementAdminAsync extends AutoCloseable {
@@ -63,7 +64,25 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Onboard a tenant to Fleet Application Management Service
+     * Creates a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateCompliancePolicyRuleResponse> createCompliancePolicyRule(
+            CreateCompliancePolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateCompliancePolicyRuleRequest, CreateCompliancePolicyRuleResponse>
+                    handler);
+
+    /**
+     * Onboard a tenant to Fleet Application Management. The onboarding process lets Fleet
+     * Application Management create a few required policies that you need to start using it and its
+     * features.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -78,7 +97,24 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Creates a new Property.
+     * Creates a new PlatformConfiguration.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePlatformConfigurationResponse> createPlatformConfiguration(
+            CreatePlatformConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreatePlatformConfigurationRequest, CreatePlatformConfigurationResponse>
+                    handler);
+
+    /**
+     * Create a business-specific metadata property in Fleet Application Management and capture the
+     * business metadata classifications.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -93,7 +129,54 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a Property resource by identifier
+     * Deletes a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteCompliancePolicyRuleResponse> deleteCompliancePolicyRule(
+            DeleteCompliancePolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteCompliancePolicyRuleRequest, DeleteCompliancePolicyRuleResponse>
+                    handler);
+
+    /**
+     * Deletes Fleet Application Management onboarding resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteOnboardingResponse> deleteOnboarding(
+            DeleteOnboardingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteOnboardingRequest, DeleteOnboardingResponse>
+                    handler);
+
+    /**
+     * Deletes a PlatformConfiguration resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePlatformConfigurationResponse> deletePlatformConfiguration(
+            DeletePlatformConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeletePlatformConfigurationRequest, DeletePlatformConfigurationResponse>
+                    handler);
+
+    /**
+     * Delete a property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -105,6 +188,85 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
     java.util.concurrent.Future<DeletePropertyResponse> deleteProperty(
             DeletePropertyRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeletePropertyRequest, DeletePropertyResponse>
+                    handler);
+
+    /**
+     * Enable Policies for a newer version of Fleet Application Management
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableLatestPolicyResponse> enableLatestPolicy(
+            EnableLatestPolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            EnableLatestPolicyRequest, EnableLatestPolicyResponse>
+                    handler);
+
+    /**
+     * Gets information about a CompliancePolicy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCompliancePolicyResponse> getCompliancePolicy(
+            GetCompliancePolicyRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCompliancePolicyRequest, GetCompliancePolicyResponse>
+                    handler);
+
+    /**
+     * Gets information about a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetCompliancePolicyRuleResponse> getCompliancePolicyRule(
+            GetCompliancePolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetCompliancePolicyRuleRequest, GetCompliancePolicyRuleResponse>
+                    handler);
+
+    /**
+     * Gets a Fleet Application Management Onboarding by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOnboardingResponse> getOnboarding(
+            GetOnboardingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetOnboardingRequest, GetOnboardingResponse>
+                    handler);
+
+    /**
+     * Gets a PlatformConfiguration by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPlatformConfigurationResponse> getPlatformConfiguration(
+            GetPlatformConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetPlatformConfigurationRequest, GetPlatformConfigurationResponse>
                     handler);
 
     /**
@@ -122,7 +284,39 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPropertyRequest, GetPropertyResponse> handler);
 
     /**
-     * Returns a list of onboarding policy information for FAMS.
+     * Gets a list of compliancePolicies.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCompliancePoliciesResponse> listCompliancePolicies(
+            ListCompliancePoliciesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCompliancePoliciesRequest, ListCompliancePoliciesResponse>
+                    handler);
+
+    /**
+     * Gets a list of CompliancePolicyRules.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListCompliancePolicyRulesResponse> listCompliancePolicyRules(
+            ListCompliancePolicyRulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListCompliancePolicyRulesRequest, ListCompliancePolicyRulesResponse>
+                    handler);
+
+    /**
+     * Returns a list of onboarding policy information for Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -153,7 +347,23 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Properties for Tenancy.
+     * Returns a list of PlatformConfiguration for Tenancy.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPlatformConfigurationsResponse> listPlatformConfigurations(
+            ListPlatformConfigurationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPlatformConfigurationsRequest, ListPlatformConfigurationsResponse>
+                    handler);
+
+    /**
+     * List properties and their values for a tenancy in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -168,7 +378,69 @@ public interface FleetAppsManagementAdminAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the Property
+     * Updates the Onboarding setting
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ManageSettingsResponse> manageSettings(
+            ManageSettingsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ManageSettingsRequest, ManageSettingsResponse>
+                    handler);
+
+    /**
+     * Updates a CompliancePolicyRule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateCompliancePolicyRuleResponse> updateCompliancePolicyRule(
+            UpdateCompliancePolicyRuleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateCompliancePolicyRuleRequest, UpdateCompliancePolicyRuleResponse>
+                    handler);
+
+    /**
+     * Updates the Onboarding
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateOnboardingResponse> updateOnboarding(
+            UpdateOnboardingRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateOnboardingRequest, UpdateOnboardingResponse>
+                    handler);
+
+    /**
+     * Updates the PlatformConfiguration
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePlatformConfigurationResponse> updatePlatformConfiguration(
+            UpdatePlatformConfigurationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePlatformConfigurationRequest, UpdatePlatformConfigurationResponse>
+                    handler);
+
+    /**
+     * Update a property in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

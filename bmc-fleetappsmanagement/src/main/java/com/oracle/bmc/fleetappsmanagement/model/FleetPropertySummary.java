@@ -91,12 +91,12 @@ public final class FleetPropertySummary
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Property Id. */
+        /** OCID referring to global level metadata property. */
         @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
         private String propertyId;
 
         /**
-         * Property Id.
+         * OCID referring to global level metadata property.
          *
          * @param propertyId the value to set
          * @return this builder
@@ -159,12 +159,12 @@ public final class FleetPropertySummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Value of the Property */
+        /** Value of the Property. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the Property
+         * Value of the Property.
          *
          * @param value the value to set
          * @return this builder
@@ -174,12 +174,12 @@ public final class FleetPropertySummary
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Type of the FleetProperty. */
+        /** Format of the value. */
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
         /**
-         * Type of the FleetProperty.
+         * Format of the value.
          *
          * @param valueType the value to set
          * @return this builder
@@ -317,12 +317,12 @@ public final class FleetPropertySummary
         return compartmentId;
     }
 
-    /** Property Id. */
+    /** OCID referring to global level metadata property. */
     @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
     private final String propertyId;
 
     /**
-     * Property Id.
+     * OCID referring to global level metadata property.
      *
      * @return the value
      */
@@ -377,12 +377,12 @@ public final class FleetPropertySummary
         return timeUpdated;
     }
 
-    /** Value of the Property */
+    /** Value of the Property. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the Property
+     * Value of the Property.
      *
      * @return the value
      */
@@ -390,12 +390,12 @@ public final class FleetPropertySummary
         return value;
     }
 
-    /** Type of the FleetProperty. */
+    /** Format of the value. */
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
     /**
-     * Type of the FleetProperty.
+     * Format of the value.
      *
      * @return the value
      */

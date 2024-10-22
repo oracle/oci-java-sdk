@@ -15,17 +15,29 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 public class ListInventoryResourcesRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * A filter to return only resources whose base Compartment ID(TenancyId) matches the given base
+     * Compartment ID.
+     */
     private String compartmentId;
 
-    /** The ID of the compartment in which to list resources. */
+    /**
+     * A filter to return only resources whose base Compartment ID(TenancyId) matches the given base
+     * Compartment ID.
+     */
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** Resource Compartment ID */
+    /**
+     * A filter to return only resources whose resource Compartment ID matches the given resource
+     * Compartment ID.
+     */
     private String resourceCompartmentId;
 
-    /** Resource Compartment ID */
+    /**
+     * A filter to return only resources whose resource Compartment ID matches the given resource
+     * Compartment ID.
+     */
     public String getResourceCompartmentId() {
         return resourceCompartmentId;
     }
@@ -55,7 +67,7 @@ public class ListInventoryResourcesRequest
      * returned. Each item in the list has the format "{namespace}.{tagName}={value}". All inputs
      * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
      * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * names, or both) are interpreted as "AND". Example: Identification.Development=Yes
      */
     private java.util.List<String> definedTagEquals;
 
@@ -64,7 +76,7 @@ public class ListInventoryResourcesRequest
      * returned. Each item in the list has the format "{namespace}.{tagName}={value}". All inputs
      * are case-insensitive. Multiple values for the same key (i.e. same namespace and tag name) are
      * interpreted as "OR". Values for different keys (i.e. different namespaces, different tag
-     * names, or both) are interpreted as "AND".
+     * names, or both) are interpreted as "AND". Example: Identification.Development=Yes
      */
     public java.util.List<String> getDefinedTagEquals() {
         return definedTagEquals;
@@ -88,26 +100,28 @@ public class ListInventoryResourcesRequest
     }
     /**
      * A list of inventory properties filters to apply. The key for each inventory property and
-     * value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+     * value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example:
+     * Instance.displayName=TEST_INSTANCE
      */
     private java.util.List<String> inventoryProperties;
 
     /**
      * A list of inventory properties filters to apply. The key for each inventory property and
-     * value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+     * value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example:
+     * Instance.displayName=TEST_INSTANCE
      */
     public java.util.List<String> getInventoryProperties() {
         return inventoryProperties;
     }
     /**
-     * Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and
-     * "inventoryProperties"
+     * Fetch resources matching ANY or ALL criteria passed as params in "tags" and
+     * "inventoryProperties". Example: matchingCriteria=ANY
      */
     private String matchingCriteria;
 
     /**
-     * Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and
-     * "inventoryProperties"
+     * Fetch resources matching ANY or ALL criteria passed as params in "tags" and
+     * "inventoryProperties". Example: matchingCriteria=ANY
      */
     public String getMatchingCriteria() {
         return matchingCriteria;
@@ -203,11 +217,15 @@ public class ListInventoryResourcesRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The ID of the compartment in which to list resources. */
+        /**
+         * A filter to return only resources whose base Compartment ID(TenancyId) matches the given
+         * base Compartment ID.
+         */
         private String compartmentId = null;
 
         /**
-         * The ID of the compartment in which to list resources.
+         * A filter to return only resources whose base Compartment ID(TenancyId) matches the given
+         * base Compartment ID.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -217,11 +235,15 @@ public class ListInventoryResourcesRequest
             return this;
         }
 
-        /** Resource Compartment ID */
+        /**
+         * A filter to return only resources whose resource Compartment ID matches the given
+         * resource Compartment ID.
+         */
         private String resourceCompartmentId = null;
 
         /**
-         * Resource Compartment ID
+         * A filter to return only resources whose resource Compartment ID matches the given
+         * resource Compartment ID.
          *
          * @param resourceCompartmentId the value to set
          * @return this builder instance
@@ -280,7 +302,8 @@ public class ListInventoryResourcesRequest
          * be returned. Each item in the list has the format "{namespace}.{tagName}={value}". All
          * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
          * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * different tag names, or both) are interpreted as "AND". Example:
+         * Identification.Development=Yes
          */
         private java.util.List<String> definedTagEquals = null;
 
@@ -289,7 +312,8 @@ public class ListInventoryResourcesRequest
          * be returned. Each item in the list has the format "{namespace}.{tagName}={value}". All
          * inputs are case-insensitive. Multiple values for the same key (i.e. same namespace and
          * tag name) are interpreted as "OR". Values for different keys (i.e. different namespaces,
-         * different tag names, or both) are interpreted as "AND".
+         * different tag names, or both) are interpreted as "AND". Example:
+         * Identification.Development=Yes
          *
          * @param definedTagEquals the value to set
          * @return this builder instance
@@ -305,6 +329,7 @@ public class ListInventoryResourcesRequest
          * "{namespace}.{tagName}={value}". All inputs are case-insensitive. Multiple values for the
          * same key (i.e. same namespace and tag name) are interpreted as "OR". Values for different
          * keys (i.e. different namespaces, different tag names, or both) are interpreted as "AND".
+         * Example: Identification.Development=Yes
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -350,13 +375,15 @@ public class ListInventoryResourcesRequest
 
         /**
          * A list of inventory properties filters to apply. The key for each inventory property and
-         * value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+         * value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example:
+         * Instance.displayName=TEST_INSTANCE
          */
         private java.util.List<String> inventoryProperties = null;
 
         /**
          * A list of inventory properties filters to apply. The key for each inventory property and
-         * value for each resource type is "{resourceType}.{inventoryProperty}={value}".
+         * value for each resource type is "{resourceType}.{inventoryProperty}={value}". Example:
+         * Instance.displayName=TEST_INSTANCE
          *
          * @param inventoryProperties the value to set
          * @return this builder instance
@@ -369,7 +396,7 @@ public class ListInventoryResourcesRequest
         /**
          * Singular setter. A list of inventory properties filters to apply. The key for each
          * inventory property and value for each resource type is
-         * "{resourceType}.{inventoryProperty}={value}".
+         * "{resourceType}.{inventoryProperty}={value}". Example: Instance.displayName=TEST_INSTANCE
          *
          * @param singularValue the singular value to set
          * @return this builder instance
@@ -379,14 +406,14 @@ public class ListInventoryResourcesRequest
         }
 
         /**
-         * Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and
-         * "inventoryProperties"
+         * Fetch resources matching ANY or ALL criteria passed as params in "tags" and
+         * "inventoryProperties". Example: matchingCriteria=ANY
          */
         private String matchingCriteria = null;
 
         /**
-         * Fetch resources matching matching ANY or ALL criteria passed as params in "tags" and
-         * "inventoryProperties"
+         * Fetch resources matching ANY or ALL criteria passed as params in "tags" and
+         * "inventoryProperties". Example: matchingCriteria=ANY
          *
          * @param matchingCriteria the value to set
          * @return this builder instance

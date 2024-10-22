@@ -13,10 +13,10 @@ import com.oracle.bmc.fleetappsmanagement.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -34,10 +34,10 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getResourceId() {
         return resourceId;
     }
-    /** Resource Display Name */
+    /** Resource Display Name. */
     private String resourceDisplayName;
 
-    /** Resource Display Name */
+    /** Resource Display Name. */
     public String getResourceDisplayName() {
         return resourceDisplayName;
     }
@@ -139,11 +139,11 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance
@@ -181,11 +181,11 @@ public class ListFleetProductsRequest extends com.oracle.bmc.requests.BmcRequest
             return this;
         }
 
-        /** Resource Display Name */
+        /** Resource Display Name. */
         private String resourceDisplayName = null;
 
         /**
-         * Resource Display Name
+         * Resource Display Name.
          *
          * @param resourceDisplayName the value to set
          * @return this builder instance

@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -66,7 +67,7 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a new MaintenanceWindow.
+     * Create a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -82,7 +83,7 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     CreateMaintenanceWindowResponse createMaintenanceWindow(CreateMaintenanceWindowRequest request);
 
     /**
-     * Deletes a MaintenanceWindow resource by identifier
+     * Delete a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -98,7 +99,7 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     DeleteMaintenanceWindowResponse deleteMaintenanceWindow(DeleteMaintenanceWindowRequest request);
 
     /**
-     * Gets a MaintenanceWindow by identifier
+     * Get the details for a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -114,7 +115,7 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request);
 
     /**
-     * Returns a list of MaintenanceWindows in the specified Tenancy.
+     * List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -130,7 +131,7 @@ public interface FleetAppsManagementMaintenanceWindow extends AutoCloseable {
     ListMaintenanceWindowsResponse listMaintenanceWindows(ListMaintenanceWindowsRequest request);
 
     /**
-     * Updates the MaintenanceWindow
+     * Update a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

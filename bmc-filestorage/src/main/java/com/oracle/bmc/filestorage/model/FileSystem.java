@@ -44,6 +44,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         "isHydrated",
         "cloneCount",
         "cloneAttachStatus",
+        "locks",
         "lifecycleDetails",
         "isTargetable",
         "replicationTargetId",
@@ -65,6 +66,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             Boolean isHydrated,
             Integer cloneCount,
             CloneAttachStatus cloneAttachStatus,
+            java.util.List<ResourceLock> locks,
             String lifecycleDetails,
             Boolean isTargetable,
             String replicationTargetId,
@@ -85,6 +87,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         this.isHydrated = isHydrated;
         this.cloneCount = cloneCount;
         this.cloneAttachStatus = cloneAttachStatus;
+        this.locks = locks;
         this.lifecycleDetails = lifecycleDetails;
         this.isTargetable = isTargetable;
         this.replicationTargetId = replicationTargetId;
@@ -385,6 +388,21 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("cloneAttachStatus");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /** Additional information about the current 'lifecycleState'. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
         private String lifecycleDetails;
@@ -493,6 +511,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                             this.isHydrated,
                             this.cloneCount,
                             this.cloneAttachStatus,
+                            this.locks,
                             this.lifecycleDetails,
                             this.isTargetable,
                             this.replicationTargetId,
@@ -549,6 +568,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
                 this.cloneAttachStatus(model.getCloneAttachStatus());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -933,6 +955,19 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         return cloneAttachStatus;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /** Additional information about the current 'lifecycleState'. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
     private final String lifecycleDetails;
@@ -1041,6 +1076,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", isHydrated=").append(String.valueOf(this.isHydrated));
         sb.append(", cloneCount=").append(String.valueOf(this.cloneCount));
         sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", isTargetable=").append(String.valueOf(this.isTargetable));
         sb.append(", replicationTargetId=").append(String.valueOf(this.replicationTargetId));
@@ -1075,6 +1111,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.isHydrated, other.isHydrated)
                 && java.util.Objects.equals(this.cloneCount, other.cloneCount)
                 && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.isTargetable, other.isTargetable)
                 && java.util.Objects.equals(this.replicationTargetId, other.replicationTargetId)
@@ -1116,6 +1153,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

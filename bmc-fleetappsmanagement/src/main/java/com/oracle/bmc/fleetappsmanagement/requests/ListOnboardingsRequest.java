@@ -20,10 +20,10 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.Onboarding.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.Onboarding.LifecycleState getLifecycleState() {
         return lifecycleState;
     }
@@ -140,13 +140,13 @@ public class ListOnboardingsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.Onboarding.LifecycleState lifecycleState =
                 null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance

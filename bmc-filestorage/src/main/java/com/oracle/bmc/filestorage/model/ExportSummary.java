@@ -28,7 +28,8 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         "lifecycleState",
         "path",
         "isIdmapGroupsForSysAuth",
-        "timeCreated"
+        "timeCreated",
+        "locks"
     })
     public ExportSummary(
             String exportSetId,
@@ -37,7 +38,8 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             LifecycleState lifecycleState,
             String path,
             Boolean isIdmapGroupsForSysAuth,
-            java.util.Date timeCreated) {
+            java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks) {
         super();
         this.exportSetId = exportSetId;
         this.fileSystemId = fileSystemId;
@@ -46,6 +48,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         this.path = path;
         this.isIdmapGroupsForSysAuth = isIdmapGroupsForSysAuth;
         this.timeCreated = timeCreated;
+        this.locks = locks;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -201,6 +204,21 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -214,7 +232,8 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                             this.lifecycleState,
                             this.path,
                             this.isIdmapGroupsForSysAuth,
-                            this.timeCreated);
+                            this.timeCreated,
+                            this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -243,6 +262,9 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             return this;
         }
@@ -440,6 +462,19 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         return timeCreated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -463,6 +498,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", isIdmapGroupsForSysAuth=")
                 .append(String.valueOf(this.isIdmapGroupsForSysAuth));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -485,6 +521,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(
                         this.isIdmapGroupsForSysAuth, other.isIdmapGroupsForSysAuth)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -505,6 +542,7 @@ public final class ExportSummary extends com.oracle.bmc.http.client.internal.Exp
                                 ? 43
                                 : this.isIdmapGroupsForSysAuth.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

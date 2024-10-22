@@ -28,6 +28,7 @@ public final class SnapshotSummary
         "lifecycleState",
         "name",
         "timeCreated",
+        "locks",
         "snapshotType",
         "snapshotTime",
         "expirationTime",
@@ -43,6 +44,7 @@ public final class SnapshotSummary
             LifecycleState lifecycleState,
             String name,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             SnapshotType snapshotType,
             java.util.Date snapshotTime,
             java.util.Date expirationTime,
@@ -57,6 +59,7 @@ public final class SnapshotSummary
         this.lifecycleState = lifecycleState;
         this.name = name;
         this.timeCreated = timeCreated;
+        this.locks = locks;
         this.snapshotType = snapshotType;
         this.snapshotTime = snapshotTime;
         this.expirationTime = expirationTime;
@@ -168,6 +171,21 @@ public final class SnapshotSummary
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /** Specifies the generation type of the snapshot. */
@@ -349,6 +367,7 @@ public final class SnapshotSummary
                             this.lifecycleState,
                             this.name,
                             this.timeCreated,
+                            this.locks,
                             this.snapshotType,
                             this.snapshotTime,
                             this.expirationTime,
@@ -379,6 +398,9 @@ public final class SnapshotSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("snapshotType")) {
                 this.snapshotType(model.getSnapshotType());
@@ -554,6 +576,19 @@ public final class SnapshotSummary
      */
     public java.util.Date getTimeCreated() {
         return timeCreated;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /** Specifies the generation type of the snapshot. */
@@ -771,6 +806,7 @@ public final class SnapshotSummary
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", snapshotType=").append(String.valueOf(this.snapshotType));
         sb.append(", snapshotTime=").append(String.valueOf(this.snapshotTime));
         sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
@@ -798,6 +834,7 @@ public final class SnapshotSummary
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.snapshotType, other.snapshotType)
                 && java.util.Objects.equals(this.snapshotTime, other.snapshotTime)
                 && java.util.Objects.equals(this.expirationTime, other.expirationTime)
@@ -820,6 +857,7 @@ public final class SnapshotSummary
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.snapshotType == null ? 43 : this.snapshotType.hashCode());
         result = (result * PRIME) + (this.snapshotTime == null ? 43 : this.snapshotTime.hashCode());
         result =

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Results of a property search. Contains boh PropertySummary items and other information, such as
+ * Results of a property search. Contains both PropertySummary items and other information, such as
  * metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
@@ -32,12 +32,12 @@ public final class PropertyCollection
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** List of propertys. */
+        /** List of properties. */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<PropertySummary> items;
 
         /**
-         * List of propertys.
+         * List of properties.
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +77,12 @@ public final class PropertyCollection
         return new Builder().copy(this);
     }
 
-    /** List of propertys. */
+    /** List of properties. */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<PropertySummary> items;
 
     /**
-     * List of propertys.
+     * List of properties.
      *
      * @return the value
      */

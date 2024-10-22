@@ -32,6 +32,7 @@ public final class AutonomousDatabase
         "kmsKeyId",
         "vaultId",
         "kmsKeyLifecycleDetails",
+        "encryptionKey",
         "kmsKeyVersionId",
         "dbName",
         "characterSet",
@@ -46,6 +47,7 @@ public final class AutonomousDatabase
         "timeDeletionOfFreeAutonomousDatabase",
         "backupConfig",
         "keyHistoryEntry",
+        "encryptionKeyHistoryEntry",
         "cpuCoreCount",
         "localAdgAutoFailoverMaxDataLossLimit",
         "computeModel",
@@ -155,6 +157,7 @@ public final class AutonomousDatabase
             String kmsKeyId,
             String vaultId,
             String kmsKeyLifecycleDetails,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String kmsKeyVersionId,
             String dbName,
             String characterSet,
@@ -169,6 +172,7 @@ public final class AutonomousDatabase
             java.util.Date timeDeletionOfFreeAutonomousDatabase,
             AutonomousDatabaseBackupConfig backupConfig,
             java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
+            java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntry,
             Integer cpuCoreCount,
             Integer localAdgAutoFailoverMaxDataLossLimit,
             ComputeModel computeModel,
@@ -277,6 +281,7 @@ public final class AutonomousDatabase
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
         this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
+        this.encryptionKey = encryptionKey;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.dbName = dbName;
         this.characterSet = characterSet;
@@ -291,6 +296,7 @@ public final class AutonomousDatabase
         this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
         this.backupConfig = backupConfig;
         this.keyHistoryEntry = keyHistoryEntry;
+        this.encryptionKeyHistoryEntry = encryptionKeyHistoryEntry;
         this.cpuCoreCount = cpuCoreCount;
         this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.computeModel = computeModel;
@@ -536,6 +542,15 @@ public final class AutonomousDatabase
         public Builder kmsKeyLifecycleDetails(String kmsKeyLifecycleDetails) {
             this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             this.__explicitlySet__.add("kmsKeyLifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
             return this;
         }
         /**
@@ -832,6 +847,24 @@ public final class AutonomousDatabase
                 java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry) {
             this.keyHistoryEntry = keyHistoryEntry;
             this.__explicitlySet__.add("keyHistoryEntry");
+            return this;
+        }
+        /** Key History Entry. */
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyHistoryEntry")
+        private java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+                encryptionKeyHistoryEntry;
+
+        /**
+         * Key History Entry.
+         *
+         * @param encryptionKeyHistoryEntry the value to set
+         * @return this builder
+         */
+        public Builder encryptionKeyHistoryEntry(
+                java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+                        encryptionKeyHistoryEntry) {
+            this.encryptionKeyHistoryEntry = encryptionKeyHistoryEntry;
+            this.__explicitlySet__.add("encryptionKeyHistoryEntry");
             return this;
         }
         /**
@@ -3036,6 +3069,7 @@ public final class AutonomousDatabase
                             this.kmsKeyId,
                             this.vaultId,
                             this.kmsKeyLifecycleDetails,
+                            this.encryptionKey,
                             this.kmsKeyVersionId,
                             this.dbName,
                             this.characterSet,
@@ -3050,6 +3084,7 @@ public final class AutonomousDatabase
                             this.timeDeletionOfFreeAutonomousDatabase,
                             this.backupConfig,
                             this.keyHistoryEntry,
+                            this.encryptionKeyHistoryEntry,
                             this.cpuCoreCount,
                             this.localAdgAutoFailoverMaxDataLossLimit,
                             this.computeModel,
@@ -3181,6 +3216,9 @@ public final class AutonomousDatabase
             if (model.wasPropertyExplicitlySet("kmsKeyLifecycleDetails")) {
                 this.kmsKeyLifecycleDetails(model.getKmsKeyLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
                 this.kmsKeyVersionId(model.getKmsKeyVersionId());
             }
@@ -3224,6 +3262,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("keyHistoryEntry")) {
                 this.keyHistoryEntry(model.getKeyHistoryEntry());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyHistoryEntry")) {
+                this.encryptionKeyHistoryEntry(model.getEncryptionKeyHistoryEntry());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
@@ -3731,6 +3772,13 @@ public final class AutonomousDatabase
         return kmsKeyLifecycleDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+    private final AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+    public AutonomousDatabaseEncryptionKeyDetails getEncryptionKey() {
+        return encryptionKey;
+    }
+
     /**
      * The OCID of the key container version that is used in database transparent data encryption
      * (TDE) operations KMS Key can have multiple key versions. If none is specified, the current
@@ -3987,6 +4035,21 @@ public final class AutonomousDatabase
      */
     public java.util.List<AutonomousDatabaseKeyHistoryEntry> getKeyHistoryEntry() {
         return keyHistoryEntry;
+    }
+
+    /** Key History Entry. */
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyHistoryEntry")
+    private final java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+            encryptionKeyHistoryEntry;
+
+    /**
+     * Key History Entry.
+     *
+     * @return the value
+     */
+    public java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+            getEncryptionKeyHistoryEntry() {
+        return encryptionKeyHistoryEntry;
     }
 
     /**
@@ -6830,6 +6893,7 @@ public final class AutonomousDatabase
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyLifecycleDetails=").append(String.valueOf(this.kmsKeyLifecycleDetails));
+        sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
@@ -6847,6 +6911,8 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.timeDeletionOfFreeAutonomousDatabase));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
         sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
+        sb.append(", encryptionKeyHistoryEntry=")
+                .append(String.valueOf(this.encryptionKeyHistoryEntry));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", localAdgAutoFailoverMaxDataLossLimit=")
                 .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
@@ -7002,6 +7068,7 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(
                         this.kmsKeyLifecycleDetails, other.kmsKeyLifecycleDetails)
+                && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
@@ -7022,6 +7089,8 @@ public final class AutonomousDatabase
                         other.timeDeletionOfFreeAutonomousDatabase)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
                 && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
+                && java.util.Objects.equals(
+                        this.encryptionKeyHistoryEntry, other.encryptionKeyHistoryEntry)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.localAdgAutoFailoverMaxDataLossLimit,
@@ -7189,6 +7258,9 @@ public final class AutonomousDatabase
                                 : this.kmsKeyLifecycleDetails.hashCode());
         result =
                 (result * PRIME)
+                        + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
+        result =
+                (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result = (result * PRIME) + (this.dbName == null ? 43 : this.dbName.hashCode());
         result = (result * PRIME) + (this.characterSet == null ? 43 : this.characterSet.hashCode());
@@ -7229,6 +7301,11 @@ public final class AutonomousDatabase
         result =
                 (result * PRIME)
                         + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyHistoryEntry == null
+                                ? 43
+                                : this.encryptionKeyHistoryEntry.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =
                 (result * PRIME)

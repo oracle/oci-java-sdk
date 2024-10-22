@@ -56,6 +56,13 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** Whether to override locks (if any exist). */
+    private Boolean isLockOverride;
+
+    /** Whether to override locks (if any exist). */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
     /**
      * If the value is set to true, then the file system will be deleted by detaching its child file
      * system, turning the child file system into an independent File System.
@@ -134,6 +141,20 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
+        /** Whether to override locks (if any exist). */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         *
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
         /**
          * If the value is set to true, then the file system will be deleted by detaching its child
          * file system, turning the child file system into an independent File System.
@@ -185,6 +206,7 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
             fileSystemId(o.getFileSystemId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             canDetachChildFileSystem(o.getCanDetachChildFileSystem());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -223,9 +245,10 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
             request.fileSystemId = fileSystemId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             request.canDetachChildFileSystem = canDetachChildFileSystem;
             return request;
-            // new DeleteFileSystemRequest(fileSystemId, ifMatch, opcRequestId,
+            // new DeleteFileSystemRequest(fileSystemId, ifMatch, opcRequestId, isLockOverride,
             // canDetachChildFileSystem);
         }
     }
@@ -240,6 +263,7 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
                 .fileSystemId(fileSystemId)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride)
                 .canDetachChildFileSystem(canDetachChildFileSystem);
     }
 
@@ -260,6 +284,7 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
         sb.append(",fileSystemId=").append(String.valueOf(this.fileSystemId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(",canDetachChildFileSystem=")
                 .append(String.valueOf(this.canDetachChildFileSystem));
         sb.append(")");
@@ -280,6 +305,7 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
                 && java.util.Objects.equals(this.fileSystemId, other.fileSystemId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride)
                 && java.util.Objects.equals(
                         this.canDetachChildFileSystem, other.canDetachChildFileSystem);
     }
@@ -291,6 +317,9 @@ public class DeleteFileSystemRequest extends com.oracle.bmc.requests.BmcRequest<
         result = (result * PRIME) + (this.fileSystemId == null ? 43 : this.fileSystemId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         result =
                 (result * PRIME)
                         + (this.canDetachChildFileSystem == null

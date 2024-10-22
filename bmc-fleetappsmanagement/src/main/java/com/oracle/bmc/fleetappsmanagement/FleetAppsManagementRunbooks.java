@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  *
  * <p>This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by
  * default if no circuit breaker configuration is defined by the user.
@@ -66,7 +67,69 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets a Runbook by identifier
+     * Creates a new Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRunbook API.
+     */
+    CreateRunbookResponse createRunbook(CreateRunbookRequest request);
+
+    /**
+     * Creates a new Task.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateTaskRecordExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRecord
+     *     API.
+     */
+    CreateTaskRecordResponse createTaskRecord(CreateTaskRecordRequest request);
+
+    /**
+     * Deletes a Runbook resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRunbook API.
+     */
+    DeleteRunbookResponse deleteRunbook(DeleteRunbookRequest request);
+
+    /**
+     * Deletes a Task Record resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteTaskRecordExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRecord
+     *     API.
+     */
+    DeleteTaskRecordResponse deleteTaskRecord(DeleteTaskRecordRequest request);
+
+    /**
+     * Get the details of a runbook in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -81,7 +144,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
     GetRunbookResponse getRunbook(GetRunbookRequest request);
 
     /**
-     * Gets a TaskRecord by identifier
+     * Gets a Task by identifier
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -96,7 +159,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
     GetTaskRecordResponse getTaskRecord(GetTaskRecordRequest request);
 
     /**
-     * Returns a list of Runbooks.
+     * List runbooks in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -125,6 +188,68 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      *     API.
      */
     ListTaskRecordsResponse listTaskRecords(ListTaskRecordsRequest request);
+
+    /**
+     * Publish a Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/PublishRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishRunbook API.
+     */
+    PublishRunbookResponse publishRunbook(PublishRunbookRequest request);
+
+    /**
+     * Publish a Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SetDefaultRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDefaultRunbook
+     *     API.
+     */
+    SetDefaultRunbookResponse setDefaultRunbook(SetDefaultRunbookRequest request);
+
+    /**
+     * Updates the Ronbook
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateRunbookExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRunbook API.
+     */
+    UpdateRunbookResponse updateRunbook(UpdateRunbookRequest request);
+
+    /**
+     * Updates the Task
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRecord
+     *     API.
+     */
+    UpdateTaskRecordResponse updateTaskRecord(UpdateTaskRecordRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.

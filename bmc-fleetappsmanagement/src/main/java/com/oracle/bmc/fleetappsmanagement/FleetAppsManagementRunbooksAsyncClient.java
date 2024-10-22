@@ -97,6 +97,133 @@ public class FleetAppsManagementRunbooksAsyncClient
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRunbookResponse> createRunbook(
+            CreateRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateRunbookRequest, CreateRunbookResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateRunbookDetails(), "createRunbookDetails is required");
+
+        return clientCall(request, CreateRunbookResponse::builder)
+                .logger(LOG, "createRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/CreateRunbook")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRunbookRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("runbooks")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.Runbook.class,
+                        CreateRunbookResponse.Builder::runbook)
+                .handleResponseHeaderString("location", CreateRunbookResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateRunbookResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateRunbookResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateRunbookResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateTaskRecordResponse> createTaskRecord(
+            CreateTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateTaskRecordRequest, CreateTaskRecordResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getCreateTaskRecordDetails(), "createTaskRecordDetails is required");
+
+        return clientCall(request, CreateTaskRecordResponse::builder)
+                .logger(LOG, "createTaskRecord")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "CreateTaskRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/CreateTaskRecord")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateTaskRecordRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("taskRecords")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.TaskRecord.class,
+                        CreateTaskRecordResponse.Builder::taskRecord)
+                .handleResponseHeaderString("etag", CreateTaskRecordResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateTaskRecordResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRunbookResponse> deleteRunbook(
+            DeleteRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteRunbookRequest, DeleteRunbookResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+
+        return clientCall(request, DeleteRunbookResponse::builder)
+                .logger(LOG, "deleteRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/DeleteRunbook")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteRunbookRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteRunbookResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteTaskRecordResponse> deleteTaskRecord(
+            DeleteTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteTaskRecordRequest, DeleteTaskRecordResponse>
+                    handler) {
+
+        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
+
+        return clientCall(request, DeleteTaskRecordResponse::builder)
+                .logger(LOG, "deleteTaskRecord")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "DeleteTaskRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/DeleteTaskRecord")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteTaskRecordRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("taskRecords")
+                .appendPathParam(request.getTaskRecordId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteTaskRecordResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteTaskRecordResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetRunbookResponse> getRunbook(
             GetRunbookRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse>
@@ -232,6 +359,139 @@ public class FleetAppsManagementRunbooksAsyncClient
                         "opc-request-id", ListTaskRecordsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListTaskRecordsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PublishRunbookResponse> publishRunbook(
+            PublishRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PublishRunbookRequest, PublishRunbookResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getPublishRunbookDetails(), "publishRunbookDetails is required");
+
+        return clientCall(request, PublishRunbookResponse::builder)
+                .logger(LOG, "publishRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "PublishRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/PublishRunbook")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(PublishRunbookRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("publishRunbook")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", PublishRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", PublishRunbookResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetDefaultRunbookResponse> setDefaultRunbook(
+            SetDefaultRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetDefaultRunbookRequest, SetDefaultRunbookResponse>
+                    handler) {
+        Objects.requireNonNull(
+                request.getSetDefaultRunbookDetails(), "setDefaultRunbookDetails is required");
+
+        return clientCall(request, SetDefaultRunbookResponse::builder)
+                .logger(LOG, "setDefaultRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "SetDefaultRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/SetDefaultRunbook")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SetDefaultRunbookRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("runbooks")
+                .appendPathParam("actions")
+                .appendPathParam("setDefaultRunbook")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.fleetappsmanagement.model.Runbook.class,
+                        SetDefaultRunbookResponse.Builder::runbook)
+                .handleResponseHeaderString("etag", SetDefaultRunbookResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SetDefaultRunbookResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateRunbookResponse> updateRunbook(
+            UpdateRunbookRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateRunbookRequest, UpdateRunbookResponse>
+                    handler) {
+
+        Validate.notBlank(request.getRunbookId(), "runbookId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateRunbookDetails(), "updateRunbookDetails is required");
+
+        return clientCall(request, UpdateRunbookResponse::builder)
+                .logger(LOG, "updateRunbook")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateRunbook",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/Runbook/UpdateRunbook")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateRunbookRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("runbooks")
+                .appendPathParam(request.getRunbookId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateRunbookResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateRunbookResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateTaskRecordResponse> updateTaskRecord(
+            UpdateTaskRecordRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateTaskRecordRequest, UpdateTaskRecordResponse>
+                    handler) {
+
+        Validate.notBlank(request.getTaskRecordId(), "taskRecordId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateTaskRecordDetails(), "updateTaskRecordDetails is required");
+
+        return clientCall(request, UpdateTaskRecordResponse::builder)
+                .logger(LOG, "updateTaskRecord")
+                .serviceDetails(
+                        "FleetAppsManagementRunbooks",
+                        "UpdateTaskRecord",
+                        "https://docs.oracle.com/iaas/api/#/en/fleet-management/20230831/TaskRecord/UpdateTaskRecord")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateTaskRecordRequest::builder)
+                .basePath("/20230831")
+                .appendPathParam("taskRecords")
+                .appendPathParam(request.getTaskRecordId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateTaskRecordResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateTaskRecordResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The details of the task. <br>
+ * The details of the local task. The local tasks are specific to a single runbook. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -105,6 +105,36 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
             this.__explicitlySet__.add("properties");
             return this;
         }
+        /** Is this a discovery output task? */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
+        private Boolean isDiscoveryOutputTask;
+
+        /**
+         * Is this a discovery output task?
+         *
+         * @param isDiscoveryOutputTask the value to set
+         * @return this builder
+         */
+        public Builder isDiscoveryOutputTask(Boolean isDiscoveryOutputTask) {
+            this.isDiscoveryOutputTask = isDiscoveryOutputTask;
+            this.__explicitlySet__.add("isDiscoveryOutputTask");
+            return this;
+        }
+        /** Is this an Apply Subject Task? Ex. Patch Execution Task */
+        @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
+        private Boolean isApplySubjectTask;
+
+        /**
+         * Is this an Apply Subject Task? Ex. Patch Execution Task
+         *
+         * @param isApplySubjectTask the value to set
+         * @return this builder
+         */
+        public Builder isApplySubjectTask(Boolean isApplySubjectTask) {
+            this.isApplySubjectTask = isApplySubjectTask;
+            this.__explicitlySet__.add("isApplySubjectTask");
+            return this;
+        }
         /** The name of the task */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
@@ -133,6 +163,8 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
                             this.isCopyToLibraryEnabled,
                             this.osType,
                             this.properties,
+                            this.isDiscoveryOutputTask,
+                            this.isApplySubjectTask,
                             this.name);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -160,6 +192,12 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
             if (model.wasPropertyExplicitlySet("properties")) {
                 this.properties(model.getProperties());
             }
+            if (model.wasPropertyExplicitlySet("isDiscoveryOutputTask")) {
+                this.isDiscoveryOutputTask(model.getIsDiscoveryOutputTask());
+            }
+            if (model.wasPropertyExplicitlySet("isApplySubjectTask")) {
+                this.isApplySubjectTask(model.getIsApplySubjectTask());
+            }
             if (model.wasPropertyExplicitlySet("name")) {
                 this.name(model.getName());
             }
@@ -184,6 +222,8 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
             Boolean isCopyToLibraryEnabled,
             OsType osType,
             Properties properties,
+            Boolean isDiscoveryOutputTask,
+            Boolean isApplySubjectTask,
             String name) {
         super();
         this.executionDetails = executionDetails;
@@ -192,6 +232,8 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         this.isCopyToLibraryEnabled = isCopyToLibraryEnabled;
         this.osType = osType;
         this.properties = properties;
+        this.isDiscoveryOutputTask = isDiscoveryOutputTask;
+        this.isApplySubjectTask = isApplySubjectTask;
         this.name = name;
     }
 
@@ -261,6 +303,32 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         return properties;
     }
 
+    /** Is this a discovery output task? */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDiscoveryOutputTask")
+    private final Boolean isDiscoveryOutputTask;
+
+    /**
+     * Is this a discovery output task?
+     *
+     * @return the value
+     */
+    public Boolean getIsDiscoveryOutputTask() {
+        return isDiscoveryOutputTask;
+    }
+
+    /** Is this an Apply Subject Task? Ex. Patch Execution Task */
+    @com.fasterxml.jackson.annotation.JsonProperty("isApplySubjectTask")
+    private final Boolean isApplySubjectTask;
+
+    /**
+     * Is this an Apply Subject Task? Ex. Patch Execution Task
+     *
+     * @return the value
+     */
+    public Boolean getIsApplySubjectTask() {
+        return isApplySubjectTask;
+    }
+
     /** The name of the task */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
@@ -295,6 +363,8 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
         sb.append(", isCopyToLibraryEnabled=").append(String.valueOf(this.isCopyToLibraryEnabled));
         sb.append(", osType=").append(String.valueOf(this.osType));
         sb.append(", properties=").append(String.valueOf(this.properties));
+        sb.append(", isDiscoveryOutputTask=").append(String.valueOf(this.isDiscoveryOutputTask));
+        sb.append(", isApplySubjectTask=").append(String.valueOf(this.isApplySubjectTask));
         sb.append(", name=").append(String.valueOf(this.name));
         sb.append(")");
         return sb.toString();
@@ -317,6 +387,8 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
                         this.isCopyToLibraryEnabled, other.isCopyToLibraryEnabled)
                 && java.util.Objects.equals(this.osType, other.osType)
                 && java.util.Objects.equals(this.properties, other.properties)
+                && java.util.Objects.equals(this.isDiscoveryOutputTask, other.isDiscoveryOutputTask)
+                && java.util.Objects.equals(this.isApplySubjectTask, other.isApplySubjectTask)
                 && java.util.Objects.equals(this.name, other.name)
                 && super.equals(other);
     }
@@ -337,6 +409,16 @@ public final class AssociatedLocalTaskDetails extends AssociatedTaskDetails {
                                 : this.isCopyToLibraryEnabled.hashCode());
         result = (result * PRIME) + (this.osType == null ? 43 : this.osType.hashCode());
         result = (result * PRIME) + (this.properties == null ? 43 : this.properties.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDiscoveryOutputTask == null
+                                ? 43
+                                : this.isDiscoveryOutputTask.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isApplySubjectTask == null
+                                ? 43
+                                : this.isApplySubjectTask.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
         return result;
     }

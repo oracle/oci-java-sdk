@@ -4,7 +4,7 @@
  */
 package com.oracle.bmc.fleetappsmanagement.model;
 
-/** Possible values for compliance state. */
+/** Possible values for the compliance state. */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public enum ComplianceState implements com.oracle.bmc.http.internal.BmcEnum {
     Unknown("UNKNOWN"),

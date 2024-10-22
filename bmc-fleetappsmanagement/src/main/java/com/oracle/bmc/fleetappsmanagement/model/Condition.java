@@ -31,12 +31,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Attribute Group. */
+        /**
+         * Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource
+         * type if the rule is based on a resource property.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("attrGroup")
         private String attrGroup;
 
         /**
-         * Attribute Group.
+         * Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource
+         * type if the rule is based on a resource property.
          *
          * @param attrGroup the value to set
          * @return this builder
@@ -46,12 +50,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("attrGroup");
             return this;
         }
-        /** Attribute Key. */
+        /**
+         * Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property
+         * name if the rule is based on a resource property.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("attrKey")
         private String attrKey;
 
         /**
-         * Attribute Key.
+         * Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property
+         * name if the rule is based on a resource property.
          *
          * @param attrKey the value to set
          * @return this builder
@@ -61,12 +69,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("attrKey");
             return this;
         }
-        /** Attribute Value. */
+        /**
+         * Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource
+         * property value if the rule is based on a resource property.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("attrValue")
         private String attrValue;
 
         /**
-         * Attribute Value.
+         * Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource
+         * property value if the rule is based on a resource property.
          *
          * @param attrValue the value to set
          * @return this builder
@@ -112,12 +124,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
         return new Builder().copy(this);
     }
 
-    /** Attribute Group. */
+    /**
+     * Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type
+     * if the rule is based on a resource property.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("attrGroup")
     private final String attrGroup;
 
     /**
-     * Attribute Group.
+     * Attribute Group. Provide a Tag namespace if the rule is based on a tag. Provide resource type
+     * if the rule is based on a resource property.
      *
      * @return the value
      */
@@ -125,12 +141,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
         return attrGroup;
     }
 
-    /** Attribute Key. */
+    /**
+     * Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name
+     * if the rule is based on a resource property.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("attrKey")
     private final String attrKey;
 
     /**
-     * Attribute Key.
+     * Attribute Key.Provide Tag key if the rule is based on a tag. Provide resource property name
+     * if the rule is based on a resource property.
      *
      * @return the value
      */
@@ -138,12 +158,16 @@ public final class Condition extends com.oracle.bmc.http.client.internal.Explici
         return attrKey;
     }
 
-    /** Attribute Value. */
+    /**
+     * Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property
+     * value if the rule is based on a resource property.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("attrValue")
     private final String attrValue;
 
     /**
-     * Attribute Value.
+     * Attribute Value.Provide Tag value if the rule is based on a tag. Provide resource property
+     * value if the rule is based on a resource property.
      *
      * @return the value
      */

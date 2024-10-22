@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of the Fleet. <br>
+ * Summary of a Fleet.A fleet is a collection or grouping of resources based on criteria. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -166,12 +166,20 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Type of the Fleet. */
+        /**
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
         private Fleet.FleetType fleetType;
 
         /**
-         * Type of the Fleet.
+         * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+         * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A
+         * fleet of a fleet of either environment or product fleets. GENERIC - A fleet of resources
+         * selected dynamically or manually for reporting purposes
          *
          * @param fleetType the value to set
          * @return this builder
@@ -181,12 +189,12 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("fleetType");
             return this;
         }
-        /** Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+        /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
         @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
         private String environmentType;
 
         /**
-         * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+         * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
          *
          * @param environmentType the value to set
          * @return this builder
@@ -196,12 +204,12 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
             this.__explicitlySet__.add("environmentType");
             return this;
         }
-        /** The current state of the Fleet. */
+        /** The lifecycle state of the Fleet. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private Fleet.LifecycleState lifecycleState;
 
         /**
-         * The current state of the Fleet.
+         * The lifecycle state of the Fleet.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -454,12 +462,20 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         return timeUpdated;
     }
 
-    /** Type of the Fleet. */
+    /**
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("fleetType")
     private final Fleet.FleetType fleetType;
 
     /**
-     * Type of the Fleet.
+     * Type of the Fleet. PRODUCT - A fleet of product-specific resources for a product type.
+     * ENVIRONMENT - A fleet of environment-specific resources for a product stack. GROUP - A fleet
+     * of a fleet of either environment or product fleets. GENERIC - A fleet of resources selected
+     * dynamically or manually for reporting purposes
      *
      * @return the value
      */
@@ -467,12 +483,12 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         return fleetType;
     }
 
-    /** Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types. */
+    /** Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types. */
     @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
     private final String environmentType;
 
     /**
-     * Environment Type associated with the Fleet.Applicable for ENVIRONMENT fleet types.
+     * Environment Type associated with the Fleet. Applicable for ENVIRONMENT fleet types.
      *
      * @return the value
      */
@@ -480,12 +496,12 @@ public final class FleetSummary extends com.oracle.bmc.http.client.internal.Expl
         return environmentType;
     }
 
-    /** The current state of the Fleet. */
+    /** The lifecycle state of the Fleet. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final Fleet.LifecycleState lifecycleState;
 
     /**
-     * The current state of the Fleet.
+     * The lifecycle state of the Fleet.
      *
      * @return the value
      */

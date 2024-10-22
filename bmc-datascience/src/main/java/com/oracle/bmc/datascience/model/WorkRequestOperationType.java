@@ -31,6 +31,7 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
     PrivateEndpointMove("PRIVATE_ENDPOINT_MOVE"),
     PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
+    RestoreArchivedModel("RESTORE_ARCHIVED_MODEL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

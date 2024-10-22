@@ -15,11 +15,11 @@ public class CreateOnboardingRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.CreateOnboardingDetails> {
 
-    /** Details for onboarding FAMS. */
+    /** Details for onboarding Fleet Application Management. */
     private com.oracle.bmc.fleetappsmanagement.model.CreateOnboardingDetails
             createOnboardingDetails;
 
-    /** Details for onboarding FAMS. */
+    /** Details for onboarding Fleet Application Management. */
     public com.oracle.bmc.fleetappsmanagement.model.CreateOnboardingDetails
             getCreateOnboardingDetails() {
         return createOnboardingDetails;
@@ -69,12 +69,12 @@ public class CreateOnboardingRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for onboarding FAMS. */
+        /** Details for onboarding Fleet Application Management. */
         private com.oracle.bmc.fleetappsmanagement.model.CreateOnboardingDetails
                 createOnboardingDetails = null;
 
         /**
-         * Details for onboarding FAMS.
+         * Details for onboarding Fleet Application Management.
          *
          * @param createOnboardingDetails the value to set
          * @return this builder instance

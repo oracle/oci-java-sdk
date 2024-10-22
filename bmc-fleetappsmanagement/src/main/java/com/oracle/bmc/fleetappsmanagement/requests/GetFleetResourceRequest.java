@@ -20,10 +20,10 @@ public class GetFleetResourceRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getFleetResourceId() {
         return fleetResourceId;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -55,11 +55,11 @@ public class GetFleetResourceRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

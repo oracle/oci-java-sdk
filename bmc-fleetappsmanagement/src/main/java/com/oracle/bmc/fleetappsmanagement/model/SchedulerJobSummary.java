@@ -174,12 +174,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Scheduled date for the Job.Provide only the date */
+        /** The scheduled date and time for the Job. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
         private java.util.Date timeScheduled;
 
         /**
-         * Scheduled date for the Job.Provide only the date
+         * The scheduled date and time for the Job.
          *
          * @param timeScheduled the value to set
          * @return this builder
@@ -189,12 +189,18 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("timeScheduled");
             return this;
         }
-        /** Count of ActionGroups affected by the Schedule. */
+        /**
+         * Count of Action Groups affected by the Schedule. An action group is a group of entities
+         * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group
+         * for any lifecycle activity.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedActionGroups")
         private Integer countOfAffectedActionGroups;
 
         /**
-         * Count of ActionGroups affected by the Schedule.
+         * Count of Action Groups affected by the Schedule. An action group is a group of entities
+         * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group
+         * for any lifecycle activity.
          *
          * @param countOfAffectedActionGroups the value to set
          * @return this builder
@@ -204,12 +210,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("countOfAffectedActionGroups");
             return this;
         }
-        /** Count of Resources affected by the Schedule */
+        /** Count of resources affected by the schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedResources")
         private Integer countOfAffectedResources;
 
         /**
-         * Count of Resources affected by the Schedule
+         * Count of resources affected by the schedule.
          *
          * @param countOfAffectedResources the value to set
          * @return this builder
@@ -219,12 +225,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("countOfAffectedResources");
             return this;
         }
-        /** Count of Targets affected by the Schedule */
+        /** Count of targets affected by the schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedTargets")
         private Integer countOfAffectedTargets;
 
         /**
-         * Count of Targets affected by the Schedule
+         * Count of targets affected by the schedule.
          *
          * @param countOfAffectedTargets the value to set
          * @return this builder
@@ -234,12 +240,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("countOfAffectedTargets");
             return this;
         }
-        /** All ActionGroup Types part of the schedule. */
+        /** All Action Group types are part of the schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
         private java.util.List<LifeCycleActionGroupType> actionGroupTypes;
 
         /**
-         * All ActionGroup Types part of the schedule.
+         * All Action Group types are part of the schedule.
          *
          * @param actionGroupTypes the value to set
          * @return this builder
@@ -249,12 +255,14 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("actionGroupTypes");
             return this;
         }
-        /** All application types part of the schedule for ENVIRONMENT ActionGroup Type. */
+        /**
+         * All application types that are part of the schedule for an ENVIRONMENT action group Type.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
         private java.util.List<String> applicationTypes;
 
         /**
-         * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+         * All application types that are part of the schedule for an ENVIRONMENT action group Type.
          *
          * @param applicationTypes the value to set
          * @return this builder
@@ -264,12 +272,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("applicationTypes");
             return this;
         }
-        /** All products part of the schedule for PRODUCT ActionGroup Type. */
+        /** All products that are part of the schedule for a PRODUCT action group type. */
         @com.fasterxml.jackson.annotation.JsonProperty("products")
         private java.util.List<String> products;
 
         /**
-         * All products part of the schedule for PRODUCT ActionGroup Type.
+         * All products that are part of the schedule for a PRODUCT action group type.
          *
          * @param products the value to set
          * @return this builder
@@ -279,12 +287,12 @@ public final class SchedulerJobSummary
             this.__explicitlySet__.add("products");
             return this;
         }
-        /** All LifeCycle Operations part of the schedule */
+        /** All LifeCycle Operations that are part of the schedule. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperations")
         private java.util.List<String> lifecycleOperations;
 
         /**
-         * All LifeCycle Operations part of the schedule
+         * All LifeCycle Operations that are part of the schedule.
          *
          * @param lifecycleOperations the value to set
          * @return this builder
@@ -592,12 +600,12 @@ public final class SchedulerJobSummary
         return timeUpdated;
     }
 
-    /** Scheduled date for the Job.Provide only the date */
+    /** The scheduled date and time for the Job. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeScheduled")
     private final java.util.Date timeScheduled;
 
     /**
-     * Scheduled date for the Job.Provide only the date
+     * The scheduled date and time for the Job.
      *
      * @return the value
      */
@@ -605,12 +613,18 @@ public final class SchedulerJobSummary
         return timeScheduled;
     }
 
-    /** Count of ActionGroups affected by the Schedule. */
+    /**
+     * Count of Action Groups affected by the Schedule. An action group is a group of entities
+     * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group for
+     * any lifecycle activity.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedActionGroups")
     private final Integer countOfAffectedActionGroups;
 
     /**
-     * Count of ActionGroups affected by the Schedule.
+     * Count of Action Groups affected by the Schedule. An action group is a group of entities
+     * grouped for a lifecycle activity. Example - A Fleet will be considered an Action Group for
+     * any lifecycle activity.
      *
      * @return the value
      */
@@ -618,12 +632,12 @@ public final class SchedulerJobSummary
         return countOfAffectedActionGroups;
     }
 
-    /** Count of Resources affected by the Schedule */
+    /** Count of resources affected by the schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedResources")
     private final Integer countOfAffectedResources;
 
     /**
-     * Count of Resources affected by the Schedule
+     * Count of resources affected by the schedule.
      *
      * @return the value
      */
@@ -631,12 +645,12 @@ public final class SchedulerJobSummary
         return countOfAffectedResources;
     }
 
-    /** Count of Targets affected by the Schedule */
+    /** Count of targets affected by the schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("countOfAffectedTargets")
     private final Integer countOfAffectedTargets;
 
     /**
-     * Count of Targets affected by the Schedule
+     * Count of targets affected by the schedule.
      *
      * @return the value
      */
@@ -644,12 +658,12 @@ public final class SchedulerJobSummary
         return countOfAffectedTargets;
     }
 
-    /** All ActionGroup Types part of the schedule. */
+    /** All Action Group types are part of the schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("actionGroupTypes")
     private final java.util.List<LifeCycleActionGroupType> actionGroupTypes;
 
     /**
-     * All ActionGroup Types part of the schedule.
+     * All Action Group types are part of the schedule.
      *
      * @return the value
      */
@@ -657,12 +671,12 @@ public final class SchedulerJobSummary
         return actionGroupTypes;
     }
 
-    /** All application types part of the schedule for ENVIRONMENT ActionGroup Type. */
+    /** All application types that are part of the schedule for an ENVIRONMENT action group Type. */
     @com.fasterxml.jackson.annotation.JsonProperty("applicationTypes")
     private final java.util.List<String> applicationTypes;
 
     /**
-     * All application types part of the schedule for ENVIRONMENT ActionGroup Type.
+     * All application types that are part of the schedule for an ENVIRONMENT action group Type.
      *
      * @return the value
      */
@@ -670,12 +684,12 @@ public final class SchedulerJobSummary
         return applicationTypes;
     }
 
-    /** All products part of the schedule for PRODUCT ActionGroup Type. */
+    /** All products that are part of the schedule for a PRODUCT action group type. */
     @com.fasterxml.jackson.annotation.JsonProperty("products")
     private final java.util.List<String> products;
 
     /**
-     * All products part of the schedule for PRODUCT ActionGroup Type.
+     * All products that are part of the schedule for a PRODUCT action group type.
      *
      * @return the value
      */
@@ -683,12 +697,12 @@ public final class SchedulerJobSummary
         return products;
     }
 
-    /** All LifeCycle Operations part of the schedule */
+    /** All LifeCycle Operations that are part of the schedule. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperations")
     private final java.util.List<String> lifecycleOperations;
 
     /**
-     * All LifeCycle Operations part of the schedule
+     * All LifeCycle Operations that are part of the schedule.
      *
      * @return the value
      */

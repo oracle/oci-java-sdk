@@ -36,6 +36,7 @@ public final class CreateMountTargetDetails
         "kerberos",
         "freeformTags",
         "definedTags",
+        "locks",
         "requestedThroughput"
     })
     public CreateMountTargetDetails(
@@ -51,6 +52,7 @@ public final class CreateMountTargetDetails
             CreateKerberosDetails kerberos,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             Long requestedThroughput) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -65,6 +67,7 @@ public final class CreateMountTargetDetails
         this.kerberos = kerberos;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.requestedThroughput = requestedThroughput;
     }
 
@@ -339,6 +342,21 @@ public final class CreateMountTargetDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is
          * supported during create MountTarget. Available shapes and corresponding throughput are
@@ -381,6 +399,7 @@ public final class CreateMountTargetDetails
                             this.kerberos,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.requestedThroughput);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -425,6 +444,9 @@ public final class CreateMountTargetDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("requestedThroughput")) {
                 this.requestedThroughput(model.getRequestedThroughput());
@@ -682,6 +704,19 @@ public final class CreateMountTargetDetails
         return definedTags;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is
      * supported during create MountTarget. Available shapes and corresponding throughput are listed
@@ -730,6 +765,7 @@ public final class CreateMountTargetDetails
         sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", requestedThroughput=").append(String.valueOf(this.requestedThroughput));
         sb.append(")");
         return sb.toString();
@@ -757,6 +793,7 @@ public final class CreateMountTargetDetails
                 && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.requestedThroughput, other.requestedThroughput)
                 && super.equals(other);
     }
@@ -785,6 +822,7 @@ public final class CreateMountTargetDetails
         result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result =
                 (result * PRIME)
                         + (this.requestedThroughput == null

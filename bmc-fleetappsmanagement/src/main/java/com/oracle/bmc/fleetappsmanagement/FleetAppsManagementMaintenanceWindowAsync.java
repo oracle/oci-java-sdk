@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable {
@@ -63,7 +64,7 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Creates a new MaintenanceWindow.
+     * Create a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -79,7 +80,7 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
                     handler);
 
     /**
-     * Deletes a MaintenanceWindow resource by identifier
+     * Delete a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -95,7 +96,7 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
                     handler);
 
     /**
-     * Gets a MaintenanceWindow by identifier
+     * Get the details for a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -111,7 +112,7 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
                     handler);
 
     /**
-     * Returns a list of MaintenanceWindows in the specified Tenancy.
+     * List maintenance windows for a specified tenancy in\u00A0Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -127,7 +128,7 @@ public interface FleetAppsManagementMaintenanceWindowAsync extends AutoCloseable
                     handler);
 
     /**
-     * Updates the MaintenanceWindow
+     * Update a maintenance window in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

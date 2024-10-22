@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Details of the Product <br>
+ * Details of the Product. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -33,12 +33,12 @@ public final class ComplianceReportProduct
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Product Name */
+        /** Product Name. */
         @com.fasterxml.jackson.annotation.JsonProperty("productName")
         private String productName;
 
         /**
-         * Product Name
+         * Product Name.
          *
          * @param productName the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class ComplianceReportProduct
         return new Builder().copy(this);
     }
 
-    /** Product Name */
+    /** Product Name. */
     @com.fasterxml.jackson.annotation.JsonProperty("productName")
     private final String productName;
 
     /**
-     * Product Name
+     * Product Name.
      *
      * @return the value
      */

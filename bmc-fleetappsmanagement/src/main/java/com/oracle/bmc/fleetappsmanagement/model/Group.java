@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The group of the runbook <br>
+ * The group of the runbook. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,18 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The type of the group */
+        /**
+         * The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a
+         * resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+         * ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("type")
         private Type type;
 
         /**
-         * The type of the group
+         * The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a
+         * resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+         * ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
          *
          * @param type the value to set
          * @return this builder
@@ -46,12 +52,12 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** The name of the group */
+        /** The name of the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the group
+         * The name of the group.
          *
          * @param name the value to set
          * @return this builder
@@ -106,7 +112,11 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return new Builder().copy(this);
     }
 
-    /** The type of the group */
+    /**
+     * The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a
+     * resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+     * ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+     */
     public enum Type implements com.oracle.bmc.http.internal.BmcEnum {
         ParallelTaskGroup("PARALLEL_TASK_GROUP"),
         ParallelResourceGroup("PARALLEL_RESOURCE_GROUP"),
@@ -151,12 +161,18 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
             return UnknownEnumValue;
         }
     };
-    /** The type of the group */
+    /**
+     * The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a
+     * resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+     * ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("type")
     private final Type type;
 
     /**
-     * The type of the group
+     * The type of the group. PARALLEL_TASK_GROUP : Helps to execute tasks parallelly inside a
+     * resource. PARALLEL_RESOURCE_GROUP : Executes tasks across resources parallelly.
+     * ROLLING_RESOURCE_GROUP : Executes tasks across resources in a rolling order.
      *
      * @return the value
      */
@@ -164,12 +180,12 @@ public final class Group extends com.oracle.bmc.http.client.internal.ExplicitlyS
         return type;
     }
 
-    /** The name of the group */
+    /** The name of the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the group
+     * The name of the group.
      *
      * @return the value
      */

@@ -29,6 +29,7 @@ public final class CreateFileSystemDetails
         "displayName",
         "freeformTags",
         "definedTags",
+        "locks",
         "kmsKeyId",
         "sourceSnapshotId",
         "cloneAttachStatus",
@@ -40,6 +41,7 @@ public final class CreateFileSystemDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             String kmsKeyId,
             String sourceSnapshotId,
             CloneAttachStatus cloneAttachStatus,
@@ -50,6 +52,7 @@ public final class CreateFileSystemDetails
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.kmsKeyId = kmsKeyId;
         this.sourceSnapshotId = sourceSnapshotId;
         this.cloneAttachStatus = cloneAttachStatus;
@@ -168,6 +171,21 @@ public final class CreateFileSystemDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * KMS key used to encrypt the encryption keys associated with this file system.
@@ -266,6 +284,7 @@ public final class CreateFileSystemDetails
                             this.displayName,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.kmsKeyId,
                             this.sourceSnapshotId,
                             this.cloneAttachStatus,
@@ -292,6 +311,9 @@ public final class CreateFileSystemDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -415,6 +437,19 @@ public final class CreateFileSystemDetails
      */
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -552,6 +587,7 @@ public final class CreateFileSystemDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
         sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
@@ -576,6 +612,7 @@ public final class CreateFileSystemDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
                 && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
@@ -599,6 +636,7 @@ public final class CreateFileSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)

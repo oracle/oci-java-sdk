@@ -31,7 +31,9 @@ public final class UpdateModelDetails
         "customMetadataList",
         "definedMetadataList",
         "modelVersionSetId",
-        "versionLabel"
+        "versionLabel",
+        "retentionSetting",
+        "backupSetting"
     })
     public UpdateModelDetails(
             String displayName,
@@ -41,7 +43,9 @@ public final class UpdateModelDetails
             java.util.List<Metadata> customMetadataList,
             java.util.List<Metadata> definedMetadataList,
             String modelVersionSetId,
-            String versionLabel) {
+            String versionLabel,
+            RetentionSetting retentionSetting,
+            BackupSetting backupSetting) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -51,6 +55,8 @@ public final class UpdateModelDetails
         this.definedMetadataList = definedMetadataList;
         this.modelVersionSetId = modelVersionSetId;
         this.versionLabel = versionLabel;
+        this.retentionSetting = retentionSetting;
+        this.backupSetting = backupSetting;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -199,6 +205,24 @@ public final class UpdateModelDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionSetting")
+        private RetentionSetting retentionSetting;
+
+        public Builder retentionSetting(RetentionSetting retentionSetting) {
+            this.retentionSetting = retentionSetting;
+            this.__explicitlySet__.add("retentionSetting");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSetting")
+        private BackupSetting backupSetting;
+
+        public Builder backupSetting(BackupSetting backupSetting) {
+            this.backupSetting = backupSetting;
+            this.__explicitlySet__.add("backupSetting");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -212,7 +236,9 @@ public final class UpdateModelDetails
                             this.customMetadataList,
                             this.definedMetadataList,
                             this.modelVersionSetId,
-                            this.versionLabel);
+                            this.versionLabel,
+                            this.retentionSetting,
+                            this.backupSetting);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -244,6 +270,12 @@ public final class UpdateModelDetails
             }
             if (model.wasPropertyExplicitlySet("versionLabel")) {
                 this.versionLabel(model.getVersionLabel());
+            }
+            if (model.wasPropertyExplicitlySet("retentionSetting")) {
+                this.retentionSetting(model.getRetentionSetting());
+            }
+            if (model.wasPropertyExplicitlySet("backupSetting")) {
+                this.backupSetting(model.getBackupSetting());
             }
             return this;
         }
@@ -384,6 +416,20 @@ public final class UpdateModelDetails
         return versionLabel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionSetting")
+    private final RetentionSetting retentionSetting;
+
+    public RetentionSetting getRetentionSetting() {
+        return retentionSetting;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSetting")
+    private final BackupSetting backupSetting;
+
+    public BackupSetting getBackupSetting() {
+        return backupSetting;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -407,6 +453,8 @@ public final class UpdateModelDetails
         sb.append(", definedMetadataList=").append(String.valueOf(this.definedMetadataList));
         sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
         sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
+        sb.append(", retentionSetting=").append(String.valueOf(this.retentionSetting));
+        sb.append(", backupSetting=").append(String.valueOf(this.backupSetting));
         sb.append(")");
         return sb.toString();
     }
@@ -429,6 +477,8 @@ public final class UpdateModelDetails
                 && java.util.Objects.equals(this.definedMetadataList, other.definedMetadataList)
                 && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
                 && java.util.Objects.equals(this.versionLabel, other.versionLabel)
+                && java.util.Objects.equals(this.retentionSetting, other.retentionSetting)
+                && java.util.Objects.equals(this.backupSetting, other.backupSetting)
                 && super.equals(other);
     }
 
@@ -454,6 +504,12 @@ public final class UpdateModelDetails
                 (result * PRIME)
                         + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());
         result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionSetting == null ? 43 : this.retentionSetting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSetting == null ? 43 : this.backupSetting.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

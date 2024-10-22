@@ -20,10 +20,10 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     private com.oracle.bmc.fleetappsmanagement.model.SchedulerJob.LifecycleState lifecycleState;
 
-    /** A filter to return only resources their lifecycleState matches the given lifecycleState. */
+    /** A filter to return only resources whose lifecycleState matches the given lifecycleState. */
     public com.oracle.bmc.fleetappsmanagement.model.SchedulerJob.LifecycleState
             getLifecycleState() {
         return lifecycleState;
@@ -55,6 +55,13 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
     /** Fetch next remediation Job */
     public Boolean getIsRemediationJobNeeded() {
         return isRemediationJobNeeded;
+    }
+    /** A filter to return only resources their subState matches the given subState. */
+    private String subState;
+
+    /** A filter to return only resources their subState matches the given subState. */
+    public String getSubState() {
+        return subState;
     }
     /** A filter to return only resources that match the entire display name given. */
     private String displayName;
@@ -184,13 +191,13 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
         }
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          */
         private com.oracle.bmc.fleetappsmanagement.model.SchedulerJob.LifecycleState
                 lifecycleState = null;
 
         /**
-         * A filter to return only resources their lifecycleState matches the given lifecycleState.
+         * A filter to return only resources whose lifecycleState matches the given lifecycleState.
          *
          * @param lifecycleState the value to set
          * @return this builder instance
@@ -256,6 +263,20 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
          */
         public Builder isRemediationJobNeeded(Boolean isRemediationJobNeeded) {
             this.isRemediationJobNeeded = isRemediationJobNeeded;
+            return this;
+        }
+
+        /** A filter to return only resources their subState matches the given subState. */
+        private String subState = null;
+
+        /**
+         * A filter to return only resources their subState matches the given subState.
+         *
+         * @param subState the value to set
+         * @return this builder instance
+         */
+        public Builder subState(String subState) {
+            this.subState = subState;
             return this;
         }
 
@@ -415,6 +436,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
             timeScheduledGreaterThanOrEqualTo(o.getTimeScheduledGreaterThanOrEqualTo());
             timeScheduledLessThan(o.getTimeScheduledLessThan());
             isRemediationJobNeeded(o.getIsRemediationJobNeeded());
+            subState(o.getSubState());
             displayName(o.getDisplayName());
             id(o.getId());
             defintionId(o.getDefintionId());
@@ -463,6 +485,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
             request.timeScheduledGreaterThanOrEqualTo = timeScheduledGreaterThanOrEqualTo;
             request.timeScheduledLessThan = timeScheduledLessThan;
             request.isRemediationJobNeeded = isRemediationJobNeeded;
+            request.subState = subState;
             request.displayName = displayName;
             request.id = id;
             request.defintionId = defintionId;
@@ -474,7 +497,8 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
             return request;
             // new ListSchedulerJobsRequest(compartmentId, lifecycleState, fleetId,
             // timeScheduledGreaterThanOrEqualTo, timeScheduledLessThan, isRemediationJobNeeded,
-            // displayName, id, defintionId, limit, page, sortOrder, sortBy, opcRequestId);
+            // subState, displayName, id, defintionId, limit, page, sortOrder, sortBy,
+            // opcRequestId);
         }
     }
 
@@ -491,6 +515,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 .timeScheduledGreaterThanOrEqualTo(timeScheduledGreaterThanOrEqualTo)
                 .timeScheduledLessThan(timeScheduledLessThan)
                 .isRemediationJobNeeded(isRemediationJobNeeded)
+                .subState(subState)
                 .displayName(displayName)
                 .id(id)
                 .defintionId(defintionId)
@@ -522,6 +547,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 .append(String.valueOf(this.timeScheduledGreaterThanOrEqualTo));
         sb.append(",timeScheduledLessThan=").append(String.valueOf(this.timeScheduledLessThan));
         sb.append(",isRemediationJobNeeded=").append(String.valueOf(this.isRemediationJobNeeded));
+        sb.append(",subState=").append(String.valueOf(this.subState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",id=").append(String.valueOf(this.id));
         sb.append(",defintionId=").append(String.valueOf(this.defintionId));
@@ -554,6 +580,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                 && java.util.Objects.equals(this.timeScheduledLessThan, other.timeScheduledLessThan)
                 && java.util.Objects.equals(
                         this.isRemediationJobNeeded, other.isRemediationJobNeeded)
+                && java.util.Objects.equals(this.subState, other.subState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.defintionId, other.defintionId)
@@ -590,6 +617,7 @@ public class ListSchedulerJobsRequest extends com.oracle.bmc.requests.BmcRequest
                         + (this.isRemediationJobNeeded == null
                                 ? 43
                                 : this.isRemediationJobNeeded.hashCode());
+        result = (result * PRIME) + (this.subState == null ? 43 : this.subState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.defintionId == null ? 43 : this.defintionId.hashCode());

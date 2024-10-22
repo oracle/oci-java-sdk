@@ -2,39 +2,34 @@
  * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.cloudbridge.requests;
+package com.oracle.bmc.fleetappsmanagement.requests;
 
-import com.oracle.bmc.cloudbridge.model.*;
+import com.oracle.bmc.fleetappsmanagement.model.*;
 /**
  * <b>Example: </b>Click <a
- * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdatePluginExample.java.html"
- * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdatePluginRequest.
+ * href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html"
+ * target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateTaskRecordRequest.
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
-public class UpdatePluginRequest
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
+public class UpdateTaskRecordRequest
         extends com.oracle.bmc.requests.BmcRequest<
-                com.oracle.bmc.cloudbridge.model.UpdatePluginDetails> {
+                com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails> {
 
-    /** Unique Agent identifier path parameter. */
-    private String agentId;
+    /** unique TaskDetail identifier */
+    private String taskRecordId;
 
-    /** Unique Agent identifier path parameter. */
-    public String getAgentId() {
-        return agentId;
-    }
-    /** Unique plugin identifier path parameter. */
-    private String pluginName;
-
-    /** Unique plugin identifier path parameter. */
-    public String getPluginName() {
-        return pluginName;
+    /** unique TaskDetail identifier */
+    public String getTaskRecordId() {
+        return taskRecordId;
     }
     /** The information to be updated. */
-    private com.oracle.bmc.cloudbridge.model.UpdatePluginDetails updatePluginDetails;
+    private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
+            updateTaskRecordDetails;
 
     /** The information to be updated. */
-    public com.oracle.bmc.cloudbridge.model.UpdatePluginDetails getUpdatePluginDetails() {
-        return updatePluginDetails;
+    public com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
+            getUpdateTaskRecordDetails() {
+        return updateTaskRecordDetails;
     }
     /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code
@@ -68,56 +63,45 @@ public class UpdatePluginRequest
      */
     @Override
     @com.oracle.bmc.InternalSdk
-    public com.oracle.bmc.cloudbridge.model.UpdatePluginDetails getBody$() {
-        return updatePluginDetails;
+    public com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails getBody$() {
+        return updateTaskRecordDetails;
     }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UpdatePluginRequest, com.oracle.bmc.cloudbridge.model.UpdatePluginDetails> {
+                    UpdateTaskRecordRequest,
+                    com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails> {
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Unique Agent identifier path parameter. */
-        private String agentId = null;
+        /** unique TaskDetail identifier */
+        private String taskRecordId = null;
 
         /**
-         * Unique Agent identifier path parameter.
+         * unique TaskDetail identifier
          *
-         * @param agentId the value to set
+         * @param taskRecordId the value to set
          * @return this builder instance
          */
-        public Builder agentId(String agentId) {
-            this.agentId = agentId;
-            return this;
-        }
-
-        /** Unique plugin identifier path parameter. */
-        private String pluginName = null;
-
-        /**
-         * Unique plugin identifier path parameter.
-         *
-         * @param pluginName the value to set
-         * @return this builder instance
-         */
-        public Builder pluginName(String pluginName) {
-            this.pluginName = pluginName;
+        public Builder taskRecordId(String taskRecordId) {
+            this.taskRecordId = taskRecordId;
             return this;
         }
 
         /** The information to be updated. */
-        private com.oracle.bmc.cloudbridge.model.UpdatePluginDetails updatePluginDetails = null;
+        private com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
+                updateTaskRecordDetails = null;
 
         /**
          * The information to be updated.
          *
-         * @param updatePluginDetails the value to set
+         * @param updateTaskRecordDetails the value to set
          * @return this builder instance
          */
-        public Builder updatePluginDetails(
-                com.oracle.bmc.cloudbridge.model.UpdatePluginDetails updatePluginDetails) {
-            this.updatePluginDetails = updatePluginDetails;
+        public Builder updateTaskRecordDetails(
+                com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails
+                        updateTaskRecordDetails) {
+            this.updateTaskRecordDetails = updateTaskRecordDetails;
             return this;
         }
 
@@ -186,10 +170,9 @@ public class UpdatePluginRequest
          *
          * @return this builder instance
          */
-        public Builder copy(UpdatePluginRequest o) {
-            agentId(o.getAgentId());
-            pluginName(o.getPluginName());
-            updatePluginDetails(o.getUpdatePluginDetails());
+        public Builder copy(UpdateTaskRecordRequest o) {
+            taskRecordId(o.getTaskRecordId());
+            updateTaskRecordDetails(o.getUpdateTaskRecordDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
@@ -198,7 +181,7 @@ public class UpdatePluginRequest
         }
 
         /**
-         * Build the instance of UpdatePluginRequest as configured by this builder
+         * Build the instance of UpdateTaskRecordRequest as configured by this builder
          *
          * <p>Note that this method takes calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
@@ -206,10 +189,10 @@ public class UpdatePluginRequest
          *
          * <p>This is the preferred method to build an instance.
          *
-         * @return instance of UpdatePluginRequest
+         * @return instance of UpdateTaskRecordRequest
          */
-        public UpdatePluginRequest build() {
-            UpdatePluginRequest request = buildWithoutInvocationCallback();
+        public UpdateTaskRecordRequest build() {
+            UpdateTaskRecordRequest request = buildWithoutInvocationCallback();
             request.setInvocationCallback(invocationCallback);
             request.setRetryConfiguration(retryConfiguration);
             return request;
@@ -222,29 +205,29 @@ public class UpdatePluginRequest
          * @return this builder instance
          */
         @com.oracle.bmc.InternalSdk
-        public Builder body$(com.oracle.bmc.cloudbridge.model.UpdatePluginDetails body) {
-            updatePluginDetails(body);
+        public Builder body$(
+                com.oracle.bmc.fleetappsmanagement.model.UpdateTaskRecordDetails body) {
+            updateTaskRecordDetails(body);
             return this;
         }
 
         /**
-         * Build the instance of UpdatePluginRequest as configured by this builder
+         * Build the instance of UpdateTaskRecordRequest as configured by this builder
          *
          * <p>Note that this method does not take calls to {@link
          * Builder#invocationCallback(com.oracle.bmc.http.client.RequestInterceptor)} into account,
          * while the method {@link Builder#build} does
          *
-         * @return instance of UpdatePluginRequest
+         * @return instance of UpdateTaskRecordRequest
          */
-        public UpdatePluginRequest buildWithoutInvocationCallback() {
-            UpdatePluginRequest request = new UpdatePluginRequest();
-            request.agentId = agentId;
-            request.pluginName = pluginName;
-            request.updatePluginDetails = updatePluginDetails;
+        public UpdateTaskRecordRequest buildWithoutInvocationCallback() {
+            UpdateTaskRecordRequest request = new UpdateTaskRecordRequest();
+            request.taskRecordId = taskRecordId;
+            request.updateTaskRecordDetails = updateTaskRecordDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
             return request;
-            // new UpdatePluginRequest(agentId, pluginName, updatePluginDetails, ifMatch,
+            // new UpdateTaskRecordRequest(taskRecordId, updateTaskRecordDetails, ifMatch,
             // opcRequestId);
         }
     }
@@ -256,9 +239,8 @@ public class UpdatePluginRequest
      */
     public Builder toBuilder() {
         return new Builder()
-                .agentId(agentId)
-                .pluginName(pluginName)
-                .updatePluginDetails(updatePluginDetails)
+                .taskRecordId(taskRecordId)
+                .updateTaskRecordDetails(updateTaskRecordDetails)
                 .ifMatch(ifMatch)
                 .opcRequestId(opcRequestId);
     }
@@ -277,9 +259,8 @@ public class UpdatePluginRequest
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("(");
         sb.append("super=").append(super.toString());
-        sb.append(",agentId=").append(String.valueOf(this.agentId));
-        sb.append(",pluginName=").append(String.valueOf(this.pluginName));
-        sb.append(",updatePluginDetails=").append(String.valueOf(this.updatePluginDetails));
+        sb.append(",taskRecordId=").append(String.valueOf(this.taskRecordId));
+        sb.append(",updateTaskRecordDetails=").append(String.valueOf(this.updateTaskRecordDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
@@ -291,15 +272,15 @@ public class UpdatePluginRequest
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdatePluginRequest)) {
+        if (!(o instanceof UpdateTaskRecordRequest)) {
             return false;
         }
 
-        UpdatePluginRequest other = (UpdatePluginRequest) o;
+        UpdateTaskRecordRequest other = (UpdateTaskRecordRequest) o;
         return super.equals(o)
-                && java.util.Objects.equals(this.agentId, other.agentId)
-                && java.util.Objects.equals(this.pluginName, other.pluginName)
-                && java.util.Objects.equals(this.updatePluginDetails, other.updatePluginDetails)
+                && java.util.Objects.equals(this.taskRecordId, other.taskRecordId)
+                && java.util.Objects.equals(
+                        this.updateTaskRecordDetails, other.updateTaskRecordDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
@@ -308,13 +289,12 @@ public class UpdatePluginRequest
     public int hashCode() {
         final int PRIME = 59;
         int result = super.hashCode();
-        result = (result * PRIME) + (this.agentId == null ? 43 : this.agentId.hashCode());
-        result = (result * PRIME) + (this.pluginName == null ? 43 : this.pluginName.hashCode());
+        result = (result * PRIME) + (this.taskRecordId == null ? 43 : this.taskRecordId.hashCode());
         result =
                 (result * PRIME)
-                        + (this.updatePluginDetails == null
+                        + (this.updateTaskRecordDetails == null
                                 ? 43
-                                : this.updatePluginDetails.hashCode());
+                                : this.updateTaskRecordDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;

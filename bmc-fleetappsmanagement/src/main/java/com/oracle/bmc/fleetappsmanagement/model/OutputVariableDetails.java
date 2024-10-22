@@ -47,12 +47,12 @@ public final class OutputVariableDetails
             this.__explicitlySet__.add("stepName");
             return this;
         }
-        /** The name of the output variable whose value that has to be mapped. */
+        /** The name of the output variable whose value has to be mapped. */
         @com.fasterxml.jackson.annotation.JsonProperty("outputVariableName")
         private String outputVariableName;
 
         /**
-         * The name of the output variable whose value that has to be mapped.
+         * The name of the output variable whose value has to be mapped.
          *
          * @param outputVariableName the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class OutputVariableDetails
         return stepName;
     }
 
-    /** The name of the output variable whose value that has to be mapped. */
+    /** The name of the output variable whose value has to be mapped. */
     @com.fasterxml.jackson.annotation.JsonProperty("outputVariableName")
     private final String outputVariableName;
 
     /**
-     * The name of the output variable whose value that has to be mapped.
+     * The name of the output variable whose value has to be mapped.
      *
      * @return the value
      */

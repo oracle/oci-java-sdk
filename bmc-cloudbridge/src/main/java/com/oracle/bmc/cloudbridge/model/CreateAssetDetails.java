@@ -23,8 +23,14 @@ package com.oracle.bmc.cloudbridge.model;
         defaultImpl = CreateAssetDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAwsEbsAssetDetails.class,
+            name = "AWS_EBS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateVmwareVmAssetDetails.class,
-            name = "VMWARE_VM")
+            name = "VMWARE_VM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateAwsEc2AssetDetails.class,
+            name = "AWS_EC2")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

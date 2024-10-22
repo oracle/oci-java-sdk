@@ -16,19 +16,19 @@ public class GenerateComplianceReportRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails> {
 
-    /** Details for generating Compliance Report fort the Fleet. */
+    /** Details for generating Compliance Report for the Fleet. */
     private com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
             generateComplianceReportDetails;
 
-    /** Details for generating Compliance Report fort the Fleet. */
+    /** Details for generating Compliance Report for the Fleet. */
     public com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
             getGenerateComplianceReportDetails() {
         return generateComplianceReportDetails;
     }
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -77,12 +77,12 @@ public class GenerateComplianceReportRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** Details for generating Compliance Report fort the Fleet. */
+        /** Details for generating Compliance Report for the Fleet. */
         private com.oracle.bmc.fleetappsmanagement.model.GenerateComplianceReportDetails
                 generateComplianceReportDetails = null;
 
         /**
-         * Details for generating Compliance Report fort the Fleet.
+         * Details for generating Compliance Report for the Fleet.
          *
          * @param generateComplianceReportDetails the value to set
          * @return this builder instance
@@ -94,11 +94,11 @@ public class GenerateComplianceReportRequest
             return this;
         }
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

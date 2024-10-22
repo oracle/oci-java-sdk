@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Rule Selection Criteria <br>
+ * Rule for DYNAMIC selection. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -41,12 +41,18 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Rule to be be applied on. */
+        /**
+         * Based on what the rule is created. It can be based on a resourceProperty or a tag. If
+         * based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis
+         * will be 'inventoryProperties'
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("basis")
         private String basis;
 
         /**
-         * Rule to be be applied on.
+         * Based on what the rule is created. It can be based on a resourceProperty or a tag. If
+         * based on a tag, basis will be 'definedTagEquals' If based on a resource property, basis
+         * will be 'inventoryProperties'
          *
          * @param basis the value to set
          * @return this builder
@@ -56,12 +62,12 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("basis");
             return this;
         }
-        /** Please provide the root compartmentId (TenancyId). */
+        /** Tenancy Id (Root Compartment Id)for which the rule is created. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Please provide the root compartmentId (TenancyId).
+         * Tenancy Id (Root Compartment Id)for which the rule is created.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -71,12 +77,16 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** Resource Compartment Id.Provide the compartmentId the resource belongs to. */
+        /**
+         * The Compartment ID to dynamically search resources. Provide the compartment ID to which
+         * the rule is applicable.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
         private String resourceCompartmentId;
 
         /**
-         * Resource Compartment Id.Provide the compartmentId the resource belongs to.
+         * The Compartment ID to dynamically search resources. Provide the compartment ID to which
+         * the rule is applicable.
          *
          * @param resourceCompartmentId the value to set
          * @return this builder
@@ -145,12 +155,18 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return new Builder().copy(this);
     }
 
-    /** Rule to be be applied on. */
+    /**
+     * Based on what the rule is created. It can be based on a resourceProperty or a tag. If based
+     * on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be
+     * 'inventoryProperties'
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("basis")
     private final String basis;
 
     /**
-     * Rule to be be applied on.
+     * Based on what the rule is created. It can be based on a resourceProperty or a tag. If based
+     * on a tag, basis will be 'definedTagEquals' If based on a resource property, basis will be
+     * 'inventoryProperties'
      *
      * @return the value
      */
@@ -158,12 +174,12 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return basis;
     }
 
-    /** Please provide the root compartmentId (TenancyId). */
+    /** Tenancy Id (Root Compartment Id)for which the rule is created. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Please provide the root compartmentId (TenancyId).
+     * Tenancy Id (Root Compartment Id)for which the rule is created.
      *
      * @return the value
      */
@@ -171,12 +187,16 @@ public final class Rule extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return compartmentId;
     }
 
-    /** Resource Compartment Id.Provide the compartmentId the resource belongs to. */
+    /**
+     * The Compartment ID to dynamically search resources. Provide the compartment ID to which the
+     * rule is applicable.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceCompartmentId")
     private final String resourceCompartmentId;
 
     /**
-     * Resource Compartment Id.Provide the compartmentId the resource belongs to.
+     * The Compartment ID to dynamically search resources. Provide the compartment ID to which the
+     * rule is applicable.
      *
      * @return the value
      */

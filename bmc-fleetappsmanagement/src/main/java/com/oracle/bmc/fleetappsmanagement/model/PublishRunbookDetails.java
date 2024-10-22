@@ -2,10 +2,10 @@
  * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.cloudbridge.model;
+package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information to be updated. <br>
+ * Request to publish Runbook. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -15,43 +15,43 @@ package com.oracle.bmc.cloudbridge.model;
  * into account (since the constructor cannot distinguish explicit {@code null} from unset {@code
  * null}).
  */
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = UpdatePluginDetails.Builder.class)
+        builder = PublishRunbookDetails.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class UpdatePluginDetails
+public final class PublishRunbookDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"desiredState"})
-    public UpdatePluginDetails(Plugin.DesiredState desiredState) {
+    @java.beans.ConstructorProperties({"runbookId"})
+    public PublishRunbookDetails(String runbookId) {
         super();
-        this.desiredState = desiredState;
+        this.runbookId = runbookId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** State to which the customer wants the plugin to move to. */
-        @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
-        private Plugin.DesiredState desiredState;
+        /** The OCID of the resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
+        private String runbookId;
 
         /**
-         * State to which the customer wants the plugin to move to.
+         * The OCID of the resource.
          *
-         * @param desiredState the value to set
+         * @param runbookId the value to set
          * @return this builder
          */
-        public Builder desiredState(Plugin.DesiredState desiredState) {
-            this.desiredState = desiredState;
-            this.__explicitlySet__.add("desiredState");
+        public Builder runbookId(String runbookId) {
+            this.runbookId = runbookId;
+            this.__explicitlySet__.add("runbookId");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public UpdatePluginDetails build() {
-            UpdatePluginDetails model = new UpdatePluginDetails(this.desiredState);
+        public PublishRunbookDetails build() {
+            PublishRunbookDetails model = new PublishRunbookDetails(this.runbookId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,9 +59,9 @@ public final class UpdatePluginDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(UpdatePluginDetails model) {
-            if (model.wasPropertyExplicitlySet("desiredState")) {
-                this.desiredState(model.getDesiredState());
+        public Builder copy(PublishRunbookDetails model) {
+            if (model.wasPropertyExplicitlySet("runbookId")) {
+                this.runbookId(model.getRunbookId());
             }
             return this;
         }
@@ -76,17 +76,17 @@ public final class UpdatePluginDetails
         return new Builder().copy(this);
     }
 
-    /** State to which the customer wants the plugin to move to. */
-    @com.fasterxml.jackson.annotation.JsonProperty("desiredState")
-    private final Plugin.DesiredState desiredState;
+    /** The OCID of the resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
+    private final String runbookId;
 
     /**
-     * State to which the customer wants the plugin to move to.
+     * The OCID of the resource.
      *
      * @return the value
      */
-    public Plugin.DesiredState getDesiredState() {
-        return desiredState;
+    public String getRunbookId() {
+        return runbookId;
     }
 
     @Override
@@ -102,9 +102,9 @@ public final class UpdatePluginDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("UpdatePluginDetails(");
+        sb.append("PublishRunbookDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("desiredState=").append(String.valueOf(this.desiredState));
+        sb.append("runbookId=").append(String.valueOf(this.runbookId));
         sb.append(")");
         return sb.toString();
     }
@@ -114,20 +114,19 @@ public final class UpdatePluginDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof UpdatePluginDetails)) {
+        if (!(o instanceof PublishRunbookDetails)) {
             return false;
         }
 
-        UpdatePluginDetails other = (UpdatePluginDetails) o;
-        return java.util.Objects.equals(this.desiredState, other.desiredState)
-                && super.equals(other);
+        PublishRunbookDetails other = (PublishRunbookDetails) o;
+        return java.util.Objects.equals(this.runbookId, other.runbookId) && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.desiredState == null ? 43 : this.desiredState.hashCode());
+        result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

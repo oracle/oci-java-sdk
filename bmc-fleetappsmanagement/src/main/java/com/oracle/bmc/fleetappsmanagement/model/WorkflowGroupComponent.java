@@ -27,12 +27,12 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class WorkflowGroupComponent extends WorkflowComponent {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Provide the name of the group. */
+        /** Name of the group. */
         @com.fasterxml.jackson.annotation.JsonProperty("groupName")
         private String groupName;
 
         /**
-         * Provide the name of the group.
+         * Name of the group.
          *
          * @param groupName the value to set
          * @return this builder
@@ -42,12 +42,12 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
             this.__explicitlySet__.add("groupName");
             return this;
         }
-        /** Tasks within the Group. Provide the stepName for all tasks that are applicable */
+        /** Tasks within the Group. Provide the stepName for all applicable tasks. */
         @com.fasterxml.jackson.annotation.JsonProperty("steps")
         private java.util.List<String> steps;
 
         /**
-         * Tasks within the Group. Provide the stepName for all tasks that are applicable
+         * Tasks within the Group. Provide the stepName for all applicable tasks.
          *
          * @param steps the value to set
          * @return this builder
@@ -97,12 +97,12 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
         this.steps = steps;
     }
 
-    /** Provide the name of the group. */
+    /** Name of the group. */
     @com.fasterxml.jackson.annotation.JsonProperty("groupName")
     private final String groupName;
 
     /**
-     * Provide the name of the group.
+     * Name of the group.
      *
      * @return the value
      */
@@ -110,12 +110,12 @@ public final class WorkflowGroupComponent extends WorkflowComponent {
         return groupName;
     }
 
-    /** Tasks within the Group. Provide the stepName for all tasks that are applicable */
+    /** Tasks within the Group. Provide the stepName for all applicable tasks. */
     @com.fasterxml.jackson.annotation.JsonProperty("steps")
     private final java.util.List<String> steps;
 
     /**
-     * Tasks within the Group. Provide the stepName for all tasks that are applicable
+     * Tasks within the Group. Provide the stepName for all applicable tasks.
      *
      * @return the value
      */

@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Preferences to send notifications on the fleet activities <br>
+ * Preferences to send notifications on the fleet activities. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -51,12 +51,12 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("onUpcomingSchedule");
             return this;
         }
-        /** Enables or disables notification on Job Failures.' */
+        /** Enables or disables notification on Job Failures. */
         @com.fasterxml.jackson.annotation.JsonProperty("onJobFailure")
         private Boolean onJobFailure;
 
         /**
-         * Enables or disables notification on Job Failures.'
+         * Enables or disables notification on Job Failures.
          *
          * @param onJobFailure the value to set
          * @return this builder
@@ -134,12 +134,12 @@ public final class Preferences extends com.oracle.bmc.http.client.internal.Expli
         return onUpcomingSchedule;
     }
 
-    /** Enables or disables notification on Job Failures.' */
+    /** Enables or disables notification on Job Failures. */
     @com.fasterxml.jackson.annotation.JsonProperty("onJobFailure")
     private final Boolean onJobFailure;
 
     /**
-     * Enables or disables notification on Job Failures.'
+     * Enables or disables notification on Job Failures.
      *
      * @return the value
      */

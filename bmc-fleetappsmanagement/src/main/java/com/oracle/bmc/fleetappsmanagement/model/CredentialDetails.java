@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Credential Details <br>
+ * Credential Details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -81,7 +81,7 @@ public class CredentialDetails extends com.oracle.bmc.http.client.internal.Expli
         return result;
     }
 
-    /** Credential Type */
+    /** Credential Type. */
     public enum CredentialType implements com.oracle.bmc.http.internal.BmcEnum {
         PlainText("PLAIN_TEXT"),
         VaultSecret("VAULT_SECRET"),

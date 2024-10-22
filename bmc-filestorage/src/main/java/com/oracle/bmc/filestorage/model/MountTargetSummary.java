@@ -38,6 +38,7 @@ public final class MountTargetSummary
         "requestedThroughput",
         "reservedStorageCapacity",
         "timeCreated",
+        "locks",
         "freeformTags",
         "definedTags"
     })
@@ -56,6 +57,7 @@ public final class MountTargetSummary
             Long requestedThroughput,
             Long reservedStorageCapacity,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -73,6 +75,7 @@ public final class MountTargetSummary
         this.requestedThroughput = requestedThroughput;
         this.reservedStorageCapacity = reservedStorageCapacity;
         this.timeCreated = timeCreated;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -363,6 +366,21 @@ public final class MountTargetSummary
             this.__explicitlySet__.add("timeCreated");
             return this;
         }
+        /** Locks associated with this resource. */
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         *
+         * @param locks the value to set
+         * @return this builder
+         */
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -431,6 +449,7 @@ public final class MountTargetSummary
                             this.requestedThroughput,
                             this.reservedStorageCapacity,
                             this.timeCreated,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -482,6 +501,9 @@ public final class MountTargetSummary
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -806,6 +828,19 @@ public final class MountTargetSummary
         return timeCreated;
     }
 
+    /** Locks associated with this resource. */
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     *
+     * @return the value
+     */
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -878,6 +913,7 @@ public final class MountTargetSummary
         sb.append(", reservedStorageCapacity=")
                 .append(String.valueOf(this.reservedStorageCapacity));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -909,6 +945,7 @@ public final class MountTargetSummary
                 && java.util.Objects.equals(
                         this.reservedStorageCapacity, other.reservedStorageCapacity)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -956,6 +993,7 @@ public final class MountTargetSummary
                                 ? 43
                                 : this.reservedStorageCapacity.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

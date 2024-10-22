@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Action Group. <br>
+ * Action Group details. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -64,12 +64,12 @@ public final class ActionGroupDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The ID of the ActionGroup resource . Ex:fleetId. */
+        /** The ID of the ActionGroup resource. Ex:fleetId. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
         private String resourceId;
 
         /**
-         * The ID of the ActionGroup resource . Ex:fleetId.
+         * The ID of the ActionGroup resource. Ex:fleetId.
          *
          * @param resourceId the value to set
          * @return this builder
@@ -139,12 +139,12 @@ public final class ActionGroupDetails
             this.__explicitlySet__.add("product");
             return this;
         }
-        /** LifeCycle Operation */
+        /** LifeCycle Operation. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
         private String lifecycleOperation;
 
         /**
-         * LifeCycle Operation
+         * LifeCycle Operation.
          *
          * @param lifecycleOperation the value to set
          * @return this builder
@@ -169,12 +169,12 @@ public final class ActionGroupDetails
             this.__explicitlySet__.add("activityId");
             return this;
         }
-        /** Status of the Job at Action Group Level */
+        /** Status of the Job at Action Group Level. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Job at Action Group Level
+         * Status of the Job at Action Group Level.
          *
          * @param status the value to set
          * @return this builder
@@ -184,12 +184,12 @@ public final class ActionGroupDetails
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The time the the Scheduler Job started. An RFC3339 formatted datetime string */
+        /** The time the Scheduler Job started. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the the Scheduler Job started. An RFC3339 formatted datetime string
+         * The time the Scheduler Job started. An RFC3339 formatted datetime string.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -199,12 +199,12 @@ public final class ActionGroupDetails
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the Scheduler Job ended. An RFC3339 formatted datetime string */
+        /** The time the Scheduler Job ended. An RFC3339 formatted datetime string. */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * The time the Scheduler Job ended. An RFC3339 formatted datetime string
+         * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
          *
          * @param timeEnded the value to set
          * @return this builder
@@ -214,12 +214,12 @@ public final class ActionGroupDetails
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** ID of the runbook */
+        /** OCID of the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
         private String runbookId;
 
         /**
-         * ID of the runbook
+         * OCID of the runbook.
          *
          * @param runbookId the value to set
          * @return this builder
@@ -301,12 +301,12 @@ public final class ActionGroupDetails
         return new Builder().copy(this);
     }
 
-    /** The ID of the ActionGroup resource . Ex:fleetId. */
+    /** The ID of the ActionGroup resource. Ex:fleetId. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceId")
     private final String resourceId;
 
     /**
-     * The ID of the ActionGroup resource . Ex:fleetId.
+     * The ID of the ActionGroup resource. Ex:fleetId.
      *
      * @return the value
      */
@@ -366,12 +366,12 @@ public final class ActionGroupDetails
         return product;
     }
 
-    /** LifeCycle Operation */
+    /** LifeCycle Operation. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleOperation")
     private final String lifecycleOperation;
 
     /**
-     * LifeCycle Operation
+     * LifeCycle Operation.
      *
      * @return the value
      */
@@ -392,12 +392,12 @@ public final class ActionGroupDetails
         return activityId;
     }
 
-    /** Status of the Job at Action Group Level */
+    /** Status of the Job at Action Group Level. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Job at Action Group Level
+     * Status of the Job at Action Group Level.
      *
      * @return the value
      */
@@ -405,12 +405,12 @@ public final class ActionGroupDetails
         return status;
     }
 
-    /** The time the the Scheduler Job started. An RFC3339 formatted datetime string */
+    /** The time the Scheduler Job started. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the the Scheduler Job started. An RFC3339 formatted datetime string
+     * The time the Scheduler Job started. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -418,12 +418,12 @@ public final class ActionGroupDetails
         return timeStarted;
     }
 
-    /** The time the Scheduler Job ended. An RFC3339 formatted datetime string */
+    /** The time the Scheduler Job ended. An RFC3339 formatted datetime string. */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * The time the Scheduler Job ended. An RFC3339 formatted datetime string
+     * The time the Scheduler Job ended. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -431,12 +431,12 @@ public final class ActionGroupDetails
         return timeEnded;
     }
 
-    /** ID of the runbook */
+    /** OCID of the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
     private final String runbookId;
 
     /**
-     * ID of the runbook
+     * OCID of the runbook.
      *
      * @return the value
      */

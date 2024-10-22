@@ -24,7 +24,8 @@ package com.oracle.bmc.cloudbridge.model;
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VmWareAssetSource.class,
-            name = "VMWARE")
+            name = "VMWARE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AwsAssetSource.class, name = "AWS")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

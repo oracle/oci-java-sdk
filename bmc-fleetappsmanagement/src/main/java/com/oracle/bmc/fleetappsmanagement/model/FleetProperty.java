@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Property associated with a Fleet. <br>
+ * Property to manage fleet metadata details in\u00A0Fleet Application Management. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -148,12 +148,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
-        /** Value of the Property */
+        /** Value of the Property. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the Property
+         * Value of the Property.
          *
          * @param value the value to set
          * @return this builder
@@ -163,12 +163,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("value");
             return this;
         }
-        /** Property Id Ocid. */
+        /** OCID referring to global level metadata property. */
         @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
         private String propertyId;
 
         /**
-         * Property Id Ocid.
+         * OCID referring to global level metadata property.
          *
          * @param propertyId the value to set
          * @return this builder
@@ -178,12 +178,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("propertyId");
             return this;
         }
-        /** Text selection of the category */
+        /** Text selection of the property. */
         @com.fasterxml.jackson.annotation.JsonProperty("selectionType")
         private Selection selectionType;
 
         /**
-         * Text selection of the category
+         * Text selection of the property.
          *
          * @param selectionType the value to set
          * @return this builder
@@ -193,12 +193,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("selectionType");
             return this;
         }
-        /** Format of the value */
+        /** Format of the value. */
         @com.fasterxml.jackson.annotation.JsonProperty("valueType")
         private ValueType valueType;
 
         /**
-         * Format of the value
+         * Format of the value.
          *
          * @param valueType the value to set
          * @return this builder
@@ -208,12 +208,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("valueType");
             return this;
         }
-        /** Values of the category (must be a single value if selection = 'single choice') */
+        /** Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE'). */
         @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
         private java.util.List<String> allowedValues;
 
         /**
-         * Values of the category (must be a single value if selection = 'single choice')
+         * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
          *
          * @param allowedValues the value to set
          * @return this builder
@@ -406,12 +406,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
         return timeUpdated;
     }
 
-    /** Value of the Property */
+    /** Value of the Property. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the Property
+     * Value of the Property.
      *
      * @return the value
      */
@@ -419,12 +419,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
         return value;
     }
 
-    /** Property Id Ocid. */
+    /** OCID referring to global level metadata property. */
     @com.fasterxml.jackson.annotation.JsonProperty("propertyId")
     private final String propertyId;
 
     /**
-     * Property Id Ocid.
+     * OCID referring to global level metadata property.
      *
      * @return the value
      */
@@ -432,12 +432,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
         return propertyId;
     }
 
-    /** Text selection of the category */
+    /** Text selection of the property. */
     @com.fasterxml.jackson.annotation.JsonProperty("selectionType")
     private final Selection selectionType;
 
     /**
-     * Text selection of the category
+     * Text selection of the property.
      *
      * @return the value
      */
@@ -445,12 +445,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
         return selectionType;
     }
 
-    /** Format of the value */
+    /** Format of the value. */
     @com.fasterxml.jackson.annotation.JsonProperty("valueType")
     private final ValueType valueType;
 
     /**
-     * Format of the value
+     * Format of the value.
      *
      * @return the value
      */
@@ -458,12 +458,12 @@ public final class FleetProperty extends com.oracle.bmc.http.client.internal.Exp
         return valueType;
     }
 
-    /** Values of the category (must be a single value if selection = 'single choice') */
+    /** Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE'). */
     @com.fasterxml.jackson.annotation.JsonProperty("allowedValues")
     private final java.util.List<String> allowedValues;
 
     /**
-     * Values of the category (must be a single value if selection = 'single choice')
+     * Values of the property (must be a single value if selectionType = 'SINGLE_CHOICE').
      *
      * @return the value
      */

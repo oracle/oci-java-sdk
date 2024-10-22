@@ -15,10 +15,10 @@ public class UpdateFleetRequest
         extends com.oracle.bmc.requests.BmcRequest<
                 com.oracle.bmc.fleetappsmanagement.model.UpdateFleetDetails> {
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     private String fleetId;
 
-    /** unique Fleet identifier */
+    /** Unique Fleet identifier. */
     public String getFleetId() {
         return fleetId;
     }
@@ -72,11 +72,11 @@ public class UpdateFleetRequest
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** unique Fleet identifier */
+        /** Unique Fleet identifier. */
         private String fleetId = null;
 
         /**
-         * unique Fleet identifier
+         * Unique Fleet identifier.
          *
          * @param fleetId the value to set
          * @return this builder instance

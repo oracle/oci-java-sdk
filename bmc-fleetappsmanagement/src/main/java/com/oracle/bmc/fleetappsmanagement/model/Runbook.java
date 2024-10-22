@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Runbook definition. <br>
+ * Runbook definition. Runbooks allow you to capture procedural tasks for handling a workflow. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -161,12 +161,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("type");
             return this;
         }
-        /** Type of runbook structure. */
+        /** Relevance of the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
         private RunbookRelevance runbookRelevance;
 
         /**
-         * Type of runbook structure.
+         * Relevance of the runbook.
          *
          * @param runbookRelevance the value to set
          * @return this builder
@@ -176,12 +176,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("runbookRelevance");
             return this;
         }
-        /** The lifecycle operation performed by the task. */
+        /** The lifecycle operation performed by the runbook. */
         @com.fasterxml.jackson.annotation.JsonProperty("operation")
         private String operation;
 
         /**
-         * The lifecycle operation performed by the task.
+         * The lifecycle operation performed by the runbook.
          *
          * @param operation the value to set
          * @return this builder
@@ -221,12 +221,16 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("platform");
             return this;
         }
-        /** Is the runbook default? */
+        /**
+         * Is the runbook default? Sets this runbook as the default for the chosen product/product
+         * stack for the specified lifecycle operation.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
         private Boolean isDefault;
 
         /**
-         * Is the runbook default?
+         * Is the runbook default? Sets this runbook as the default for the chosen product/product
+         * stack for the specified lifecycle operation.
          *
          * @param isDefault the value to set
          * @return this builder
@@ -236,12 +240,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             this.__explicitlySet__.add("isDefault");
             return this;
         }
-        /** Estimated time to successfully complete the runbook execution */
+        /** Estimated time to successfully complete the runbook execution. */
         @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
         private String estimatedTime;
 
         /**
-         * Estimated time to successfully complete the runbook execution
+         * Estimated time to successfully complete the runbook execution.
          *
          * @param estimatedTime the value to set
          * @return this builder
@@ -629,7 +633,7 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         return type;
     }
 
-    /** Type of runbook structure. */
+    /** Relevance of the runbook. */
     public enum RunbookRelevance implements com.oracle.bmc.http.internal.BmcEnum {
         ProductGroup("PRODUCT_GROUP"),
         Product("PRODUCT"),
@@ -675,12 +679,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
             return UnknownEnumValue;
         }
     };
-    /** Type of runbook structure. */
+    /** Relevance of the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("runbookRelevance")
     private final RunbookRelevance runbookRelevance;
 
     /**
-     * Type of runbook structure.
+     * Relevance of the runbook.
      *
      * @return the value
      */
@@ -688,12 +692,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         return runbookRelevance;
     }
 
-    /** The lifecycle operation performed by the task. */
+    /** The lifecycle operation performed by the runbook. */
     @com.fasterxml.jackson.annotation.JsonProperty("operation")
     private final String operation;
 
     /**
-     * The lifecycle operation performed by the task.
+     * The lifecycle operation performed by the runbook.
      *
      * @return the value
      */
@@ -727,12 +731,16 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         return platform;
     }
 
-    /** Is the runbook default? */
+    /**
+     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
+     * for the specified lifecycle operation.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("isDefault")
     private final Boolean isDefault;
 
     /**
-     * Is the runbook default?
+     * Is the runbook default? Sets this runbook as the default for the chosen product/product stack
+     * for the specified lifecycle operation.
      *
      * @return the value
      */
@@ -740,12 +748,12 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         return isDefault;
     }
 
-    /** Estimated time to successfully complete the runbook execution */
+    /** Estimated time to successfully complete the runbook execution. */
     @com.fasterxml.jackson.annotation.JsonProperty("estimatedTime")
     private final String estimatedTime;
 
     /**
-     * Estimated time to successfully complete the runbook execution
+     * Estimated time to successfully complete the runbook execution.
      *
      * @return the value
      */
@@ -758,6 +766,10 @@ public final class Runbook extends com.oracle.bmc.http.client.internal.Explicitl
         Active("ACTIVE"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Inactive("INACTIVE"),
+        Creating("CREATING"),
+        Deleting("DELETING"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

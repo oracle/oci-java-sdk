@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Summary of the FleetTarget. <br>
+ * Summary of a confirmed target within a fleet. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,6 +31,9 @@ public final class FleetTargetSummary
         "product",
         "resource",
         "complianceState",
+        "timeOfLastSuccessfulDiscovery",
+        "timeOfLastDiscoveryAttempt",
+        "isLastDiscoveryAttemptSuccessful",
         "lifecycleState",
         "systemTags"
     })
@@ -42,6 +45,9 @@ public final class FleetTargetSummary
             String product,
             TargetResource resource,
             ComplianceState complianceState,
+            java.util.Date timeOfLastSuccessfulDiscovery,
+            java.util.Date timeOfLastDiscoveryAttempt,
+            Boolean isLastDiscoveryAttemptSuccessful,
             FleetTarget.LifecycleState lifecycleState,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
@@ -52,6 +58,9 @@ public final class FleetTargetSummary
         this.product = product;
         this.resource = resource;
         this.complianceState = complianceState;
+        this.timeOfLastSuccessfulDiscovery = timeOfLastSuccessfulDiscovery;
+        this.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
+        this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
         this.lifecycleState = lifecycleState;
         this.systemTags = systemTags;
     }
@@ -111,12 +120,12 @@ public final class FleetTargetSummary
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** Current version of Target */
+        /** Current version of target. */
         @com.fasterxml.jackson.annotation.JsonProperty("version")
         private String version;
 
         /**
-         * Current version of Target
+         * Current version of target.
          *
          * @param version the value to set
          * @return this builder
@@ -150,12 +159,12 @@ public final class FleetTargetSummary
             this.__explicitlySet__.add("resource");
             return this;
         }
-        /** Last known compliance state of Target. */
+        /** The last known compliance state of the target. */
         @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
         private ComplianceState complianceState;
 
         /**
-         * Last known compliance state of Target.
+         * The last known compliance state of the target.
          *
          * @param complianceState the value to set
          * @return this builder
@@ -163,6 +172,51 @@ public final class FleetTargetSummary
         public Builder complianceState(ComplianceState complianceState) {
             this.complianceState = complianceState;
             this.__explicitlySet__.add("complianceState");
+            return this;
+        }
+        /** The time when the last successful discovery was made. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSuccessfulDiscovery")
+        private java.util.Date timeOfLastSuccessfulDiscovery;
+
+        /**
+         * The time when the last successful discovery was made.
+         *
+         * @param timeOfLastSuccessfulDiscovery the value to set
+         * @return this builder
+         */
+        public Builder timeOfLastSuccessfulDiscovery(java.util.Date timeOfLastSuccessfulDiscovery) {
+            this.timeOfLastSuccessfulDiscovery = timeOfLastSuccessfulDiscovery;
+            this.__explicitlySet__.add("timeOfLastSuccessfulDiscovery");
+            return this;
+        }
+        /** The time when last discovery was attempted. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastDiscoveryAttempt")
+        private java.util.Date timeOfLastDiscoveryAttempt;
+
+        /**
+         * The time when last discovery was attempted.
+         *
+         * @param timeOfLastDiscoveryAttempt the value to set
+         * @return this builder
+         */
+        public Builder timeOfLastDiscoveryAttempt(java.util.Date timeOfLastDiscoveryAttempt) {
+            this.timeOfLastDiscoveryAttempt = timeOfLastDiscoveryAttempt;
+            this.__explicitlySet__.add("timeOfLastDiscoveryAttempt");
+            return this;
+        }
+        /** A boolean flag that represents whether the last discovery attempt was successful. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isLastDiscoveryAttemptSuccessful")
+        private Boolean isLastDiscoveryAttemptSuccessful;
+
+        /**
+         * A boolean flag that represents whether the last discovery attempt was successful.
+         *
+         * @param isLastDiscoveryAttemptSuccessful the value to set
+         * @return this builder
+         */
+        public Builder isLastDiscoveryAttemptSuccessful(Boolean isLastDiscoveryAttemptSuccessful) {
+            this.isLastDiscoveryAttemptSuccessful = isLastDiscoveryAttemptSuccessful;
+            this.__explicitlySet__.add("isLastDiscoveryAttemptSuccessful");
             return this;
         }
         /** The current state of the FleetTarget. */
@@ -213,6 +267,9 @@ public final class FleetTargetSummary
                             this.product,
                             this.resource,
                             this.complianceState,
+                            this.timeOfLastSuccessfulDiscovery,
+                            this.timeOfLastDiscoveryAttempt,
+                            this.isLastDiscoveryAttemptSuccessful,
                             this.lifecycleState,
                             this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -243,6 +300,15 @@ public final class FleetTargetSummary
             }
             if (model.wasPropertyExplicitlySet("complianceState")) {
                 this.complianceState(model.getComplianceState());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastSuccessfulDiscovery")) {
+                this.timeOfLastSuccessfulDiscovery(model.getTimeOfLastSuccessfulDiscovery());
+            }
+            if (model.wasPropertyExplicitlySet("timeOfLastDiscoveryAttempt")) {
+                this.timeOfLastDiscoveryAttempt(model.getTimeOfLastDiscoveryAttempt());
+            }
+            if (model.wasPropertyExplicitlySet("isLastDiscoveryAttemptSuccessful")) {
+                this.isLastDiscoveryAttemptSuccessful(model.getIsLastDiscoveryAttemptSuccessful());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -310,12 +376,12 @@ public final class FleetTargetSummary
         return displayName;
     }
 
-    /** Current version of Target */
+    /** Current version of target. */
     @com.fasterxml.jackson.annotation.JsonProperty("version")
     private final String version;
 
     /**
-     * Current version of Target
+     * Current version of target.
      *
      * @return the value
      */
@@ -343,17 +409,56 @@ public final class FleetTargetSummary
         return resource;
     }
 
-    /** Last known compliance state of Target. */
+    /** The last known compliance state of the target. */
     @com.fasterxml.jackson.annotation.JsonProperty("complianceState")
     private final ComplianceState complianceState;
 
     /**
-     * Last known compliance state of Target.
+     * The last known compliance state of the target.
      *
      * @return the value
      */
     public ComplianceState getComplianceState() {
         return complianceState;
+    }
+
+    /** The time when the last successful discovery was made. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastSuccessfulDiscovery")
+    private final java.util.Date timeOfLastSuccessfulDiscovery;
+
+    /**
+     * The time when the last successful discovery was made.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfLastSuccessfulDiscovery() {
+        return timeOfLastSuccessfulDiscovery;
+    }
+
+    /** The time when last discovery was attempted. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeOfLastDiscoveryAttempt")
+    private final java.util.Date timeOfLastDiscoveryAttempt;
+
+    /**
+     * The time when last discovery was attempted.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeOfLastDiscoveryAttempt() {
+        return timeOfLastDiscoveryAttempt;
+    }
+
+    /** A boolean flag that represents whether the last discovery attempt was successful. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isLastDiscoveryAttemptSuccessful")
+    private final Boolean isLastDiscoveryAttemptSuccessful;
+
+    /**
+     * A boolean flag that represents whether the last discovery attempt was successful.
+     *
+     * @return the value
+     */
+    public Boolean getIsLastDiscoveryAttemptSuccessful() {
+        return isLastDiscoveryAttemptSuccessful;
     }
 
     /** The current state of the FleetTarget. */
@@ -408,6 +513,12 @@ public final class FleetTargetSummary
         sb.append(", product=").append(String.valueOf(this.product));
         sb.append(", resource=").append(String.valueOf(this.resource));
         sb.append(", complianceState=").append(String.valueOf(this.complianceState));
+        sb.append(", timeOfLastSuccessfulDiscovery=")
+                .append(String.valueOf(this.timeOfLastSuccessfulDiscovery));
+        sb.append(", timeOfLastDiscoveryAttempt=")
+                .append(String.valueOf(this.timeOfLastDiscoveryAttempt));
+        sb.append(", isLastDiscoveryAttemptSuccessful=")
+                .append(String.valueOf(this.isLastDiscoveryAttemptSuccessful));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
@@ -431,6 +542,13 @@ public final class FleetTargetSummary
                 && java.util.Objects.equals(this.product, other.product)
                 && java.util.Objects.equals(this.resource, other.resource)
                 && java.util.Objects.equals(this.complianceState, other.complianceState)
+                && java.util.Objects.equals(
+                        this.timeOfLastSuccessfulDiscovery, other.timeOfLastSuccessfulDiscovery)
+                && java.util.Objects.equals(
+                        this.timeOfLastDiscoveryAttempt, other.timeOfLastDiscoveryAttempt)
+                && java.util.Objects.equals(
+                        this.isLastDiscoveryAttemptSuccessful,
+                        other.isLastDiscoveryAttemptSuccessful)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
@@ -451,6 +569,21 @@ public final class FleetTargetSummary
         result =
                 (result * PRIME)
                         + (this.complianceState == null ? 43 : this.complianceState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastSuccessfulDiscovery == null
+                                ? 43
+                                : this.timeOfLastSuccessfulDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeOfLastDiscoveryAttempt == null
+                                ? 43
+                                : this.timeOfLastDiscoveryAttempt.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLastDiscoveryAttemptSuccessful == null
+                                ? 43
+                                : this.isLastDiscoveryAttemptSuccessful.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());

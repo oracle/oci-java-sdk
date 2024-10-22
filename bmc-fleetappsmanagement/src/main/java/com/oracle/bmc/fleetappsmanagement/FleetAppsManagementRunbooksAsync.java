@@ -8,8 +8,9 @@ import com.oracle.bmc.fleetappsmanagement.requests.*;
 import com.oracle.bmc.fleetappsmanagement.responses.*;
 
 /**
- * Fleet Application Management Service API. Use this API to for all FAMS related activities. To
- * manage fleets,view complaince report for the Fleet,scedule patches and other lifecycle activities
+ * Fleet Application Management provides a centralized platform to help you automate resource
+ * management tasks, validate patch compliance, and enhance operational efficiency across an
+ * enterprise.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230831")
 public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
@@ -63,7 +64,67 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Gets a Runbook by identifier
+     * Creates a new Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRunbookResponse> createRunbook(
+            CreateRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateRunbookRequest, CreateRunbookResponse>
+                    handler);
+
+    /**
+     * Creates a new Task.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateTaskRecordResponse> createTaskRecord(
+            CreateTaskRecordRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateTaskRecordRequest, CreateTaskRecordResponse>
+                    handler);
+
+    /**
+     * Deletes a Runbook resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteRunbookResponse> deleteRunbook(
+            DeleteRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteRunbookRequest, DeleteRunbookResponse>
+                    handler);
+
+    /**
+     * Deletes a Task Record resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteTaskRecordResponse> deleteTaskRecord(
+            DeleteTaskRecordRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteTaskRecordRequest, DeleteTaskRecordResponse>
+                    handler);
+
+    /**
+     * Get the details of a runbook in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -77,7 +138,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetRunbookRequest, GetRunbookResponse> handler);
 
     /**
-     * Gets a TaskRecord by identifier
+     * Gets a Task by identifier
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -92,7 +153,7 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns a list of Runbooks.
+     * List runbooks in Fleet Application Management.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -119,5 +180,66 @@ public interface FleetAppsManagementRunbooksAsync extends AutoCloseable {
     java.util.concurrent.Future<ListTaskRecordsResponse> listTaskRecords(
             ListTaskRecordsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListTaskRecordsRequest, ListTaskRecordsResponse>
+                    handler);
+
+    /**
+     * Publish a Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<PublishRunbookResponse> publishRunbook(
+            PublishRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<PublishRunbookRequest, PublishRunbookResponse>
+                    handler);
+
+    /**
+     * Publish a Runbook.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetDefaultRunbookResponse> setDefaultRunbook(
+            SetDefaultRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SetDefaultRunbookRequest, SetDefaultRunbookResponse>
+                    handler);
+
+    /**
+     * Updates the Ronbook
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateRunbookResponse> updateRunbook(
+            UpdateRunbookRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateRunbookRequest, UpdateRunbookResponse>
+                    handler);
+
+    /**
+     * Updates the Task
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateTaskRecordResponse> updateTaskRecord(
+            UpdateTaskRecordRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateTaskRecordRequest, UpdateTaskRecordResponse>
                     handler);
 }

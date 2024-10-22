@@ -5,7 +5,8 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The details of the output variable that will be used as Input argument. <br>
+ * Output variable to Input variable mapping details. Output variable of a task can be used as an
+ * input variable for a subsequent task. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -32,12 +33,12 @@ public final class OutputVariableMapping
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The name of the input variable */
+        /** The name of the input variable. */
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * The name of the input variable
+         * The name of the input variable.
          *
          * @param name the value to set
          * @return this builder
@@ -90,12 +91,12 @@ public final class OutputVariableMapping
         return new Builder().copy(this);
     }
 
-    /** The name of the input variable */
+    /** The name of the input variable. */
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * The name of the input variable
+     * The name of the input variable.
      *
      * @return the value
      */

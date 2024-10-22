@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * Description of JobActivity. <br>
+ * Activity details including status corresponding to an Action Group. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -28,6 +28,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         "timeEnded",
         "runbookId",
         "runbookName",
+        "description",
         "resourceLevelExecutions"
     })
     public JobActivity(
@@ -37,6 +38,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             java.util.Date timeEnded,
             String runbookId,
             String runbookName,
+            String description,
             java.util.List<EntityExecutionDetails> resourceLevelExecutions) {
         super();
         this.id = id;
@@ -45,17 +47,22 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         this.timeEnded = timeEnded;
         this.runbookId = runbookId;
         this.runbookName = runbookName;
+        this.description = description;
         this.resourceLevelExecutions = resourceLevelExecutions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Unique activity id at action group level */
+        /**
+         * Unique activity id at the action group level. In most cases, this would be a generated
+         * ActionGroupId.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * Unique activity id at action group level
+         * Unique activity id at the action group level. In most cases, this would be a generated
+         * ActionGroupId.
          *
          * @param id the value to set
          * @return this builder
@@ -65,12 +72,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("id");
             return this;
         }
-        /** Status of the Job at Action Group Level */
+        /** Status of the Job at Action Group Level. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private JobStatus status;
 
         /**
-         * Status of the Job at Action Group Level
+         * Status of the Job at Action Group Level.
          *
          * @param status the value to set
          * @return this builder
@@ -80,12 +87,16 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("status");
             return this;
         }
-        /** The time the the Scheduler Job started. An RFC3339 formatted datetime string */
+        /**
+         * The time the execution for the Action Group started. An RFC3339 formatted datetime
+         * string.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
         private java.util.Date timeStarted;
 
         /**
-         * The time the the Scheduler Job started. An RFC3339 formatted datetime string
+         * The time the execution for the Action Group started. An RFC3339 formatted datetime
+         * string.
          *
          * @param timeStarted the value to set
          * @return this builder
@@ -95,12 +106,14 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeStarted");
             return this;
         }
-        /** The time the Scheduler Job ended. An RFC3339 formatted datetime string */
+        /**
+         * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
         private java.util.Date timeEnded;
 
         /**
-         * The time the Scheduler Job ended. An RFC3339 formatted datetime string
+         * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
          *
          * @param timeEnded the value to set
          * @return this builder
@@ -110,12 +123,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
-        /** ID of the runbook */
+        /** OCID of the runbook associated with the Action Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
         private String runbookId;
 
         /**
-         * ID of the runbook
+         * OCID of the runbook associated with the Action Group.
          *
          * @param runbookId the value to set
          * @return this builder
@@ -125,12 +138,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("runbookId");
             return this;
         }
-        /** Name of the runbook */
+        /** Name of the runbook associated with the Action Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
         private String runbookName;
 
         /**
-         * Name of the runbook
+         * Name of the runbook associated with the Action Group.
          *
          * @param runbookName the value to set
          * @return this builder
@@ -140,12 +153,31 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("runbookName");
             return this;
         }
-        /** Resources execution details and outcomes associated with the Task. */
+        /**
+         * A description of the Job Activity status. If there are any errors, this can also include
+         * a short error message.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * A description of the Job Activity status. If there are any errors, this can also include
+         * a short error message.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
+            return this;
+        }
+        /** List of Resource executions associated with the Action Group. */
         @com.fasterxml.jackson.annotation.JsonProperty("resourceLevelExecutions")
         private java.util.List<EntityExecutionDetails> resourceLevelExecutions;
 
         /**
-         * Resources execution details and outcomes associated with the Task.
+         * List of Resource executions associated with the Action Group.
          *
          * @param resourceLevelExecutions the value to set
          * @return this builder
@@ -169,6 +201,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
                             this.timeEnded,
                             this.runbookId,
                             this.runbookName,
+                            this.description,
                             this.resourceLevelExecutions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -196,6 +229,9 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
             if (model.wasPropertyExplicitlySet("runbookName")) {
                 this.runbookName(model.getRunbookName());
             }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
+            }
             if (model.wasPropertyExplicitlySet("resourceLevelExecutions")) {
                 this.resourceLevelExecutions(model.getResourceLevelExecutions());
             }
@@ -212,12 +248,16 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return new Builder().copy(this);
     }
 
-    /** Unique activity id at action group level */
+    /**
+     * Unique activity id at the action group level. In most cases, this would be a generated
+     * ActionGroupId.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * Unique activity id at action group level
+     * Unique activity id at the action group level. In most cases, this would be a generated
+     * ActionGroupId.
      *
      * @return the value
      */
@@ -225,12 +265,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return id;
     }
 
-    /** Status of the Job at Action Group Level */
+    /** Status of the Job at Action Group Level. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final JobStatus status;
 
     /**
-     * Status of the Job at Action Group Level
+     * Status of the Job at Action Group Level.
      *
      * @return the value
      */
@@ -238,12 +278,14 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return status;
     }
 
-    /** The time the the Scheduler Job started. An RFC3339 formatted datetime string */
+    /**
+     * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeStarted")
     private final java.util.Date timeStarted;
 
     /**
-     * The time the the Scheduler Job started. An RFC3339 formatted datetime string
+     * The time the execution for the Action Group started. An RFC3339 formatted datetime string.
      *
      * @return the value
      */
@@ -251,12 +293,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return timeStarted;
     }
 
-    /** The time the Scheduler Job ended. An RFC3339 formatted datetime string */
+    /** The time the execution for the Action Group ended. An RFC3339 formatted datetime string */
     @com.fasterxml.jackson.annotation.JsonProperty("timeEnded")
     private final java.util.Date timeEnded;
 
     /**
-     * The time the Scheduler Job ended. An RFC3339 formatted datetime string
+     * The time the execution for the Action Group ended. An RFC3339 formatted datetime string
      *
      * @return the value
      */
@@ -264,12 +306,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return timeEnded;
     }
 
-    /** ID of the runbook */
+    /** OCID of the runbook associated with the Action Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("runbookId")
     private final String runbookId;
 
     /**
-     * ID of the runbook
+     * OCID of the runbook associated with the Action Group.
      *
      * @return the value
      */
@@ -277,12 +319,12 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return runbookId;
     }
 
-    /** Name of the runbook */
+    /** Name of the runbook associated with the Action Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("runbookName")
     private final String runbookName;
 
     /**
-     * Name of the runbook
+     * Name of the runbook associated with the Action Group.
      *
      * @return the value
      */
@@ -290,12 +332,29 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         return runbookName;
     }
 
-    /** Resources execution details and outcomes associated with the Task. */
+    /**
+     * A description of the Job Activity status. If there are any errors, this can also include a
+     * short error message.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * A description of the Job Activity status. If there are any errors, this can also include a
+     * short error message.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
+    }
+
+    /** List of Resource executions associated with the Action Group. */
     @com.fasterxml.jackson.annotation.JsonProperty("resourceLevelExecutions")
     private final java.util.List<EntityExecutionDetails> resourceLevelExecutions;
 
     /**
-     * Resources execution details and outcomes associated with the Task.
+     * List of Resource executions associated with the Action Group.
      *
      * @return the value
      */
@@ -324,6 +383,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
         sb.append(", runbookId=").append(String.valueOf(this.runbookId));
         sb.append(", runbookName=").append(String.valueOf(this.runbookName));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", resourceLevelExecutions=")
                 .append(String.valueOf(this.resourceLevelExecutions));
         sb.append(")");
@@ -346,6 +406,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
                 && java.util.Objects.equals(this.runbookId, other.runbookId)
                 && java.util.Objects.equals(this.runbookName, other.runbookName)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(
                         this.resourceLevelExecutions, other.resourceLevelExecutions)
                 && super.equals(other);
@@ -361,6 +422,7 @@ public final class JobActivity extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
         result = (result * PRIME) + (this.runbookId == null ? 43 : this.runbookId.hashCode());
         result = (result * PRIME) + (this.runbookName == null ? 43 : this.runbookName.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
                         + (this.resourceLevelExecutions == null

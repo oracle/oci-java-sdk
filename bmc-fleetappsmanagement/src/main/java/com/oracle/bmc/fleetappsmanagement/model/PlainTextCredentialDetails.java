@@ -27,12 +27,12 @@ package com.oracle.bmc.fleetappsmanagement.model;
 public final class PlainTextCredentialDetails extends CredentialDetails {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The value corresponding to the credential */
+        /** The value corresponding to the credential. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * The value corresponding to the credential
+         * The value corresponding to the credential.
          *
          * @param value the value to set
          * @return this builder
@@ -78,12 +78,12 @@ public final class PlainTextCredentialDetails extends CredentialDetails {
         this.value = value;
     }
 
-    /** The value corresponding to the credential */
+    /** The value corresponding to the credential. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * The value corresponding to the credential
+     * The value corresponding to the credential.
      *
      * @return the value
      */

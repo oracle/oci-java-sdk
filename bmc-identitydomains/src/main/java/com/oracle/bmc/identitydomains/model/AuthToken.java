@@ -36,6 +36,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
         "compartmentOcid",
         "tenancyOcid",
         "description",
+        "token",
         "status",
         "expiresOn",
         "user",
@@ -56,6 +57,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
             String compartmentOcid,
             String tenancyOcid,
             String description,
+            String token,
             Status status,
             String expiresOn,
             AuthTokenUser user,
@@ -75,6 +77,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
         this.compartmentOcid = compartmentOcid;
         this.tenancyOcid = tenancyOcid;
         this.description = description;
+        this.token = token;
         this.status = status;
         this.expiresOn = expiresOn;
         this.user = user;
@@ -416,6 +419,33 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
+         * token
+         *
+         * <p>*Added In:** 2010242156
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
+         * required: false - returned: default - idcsSensitive: hash_sc
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("token")
+        private String token;
+
+        /**
+         * token
+         *
+         * <p>*Added In:** 2010242156
+         *
+         * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly -
+         * required: false - returned: default - idcsSensitive: hash_sc
+         *
+         * @param token the value to set
+         * @return this builder
+         */
+        public Builder token(String token) {
+            this.token = token;
+            this.__explicitlySet__.add("token");
+            return this;
+        }
+        /**
          * The user's credential status.
          *
          * <p>*Added In:** 2109090424
@@ -515,6 +545,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
                             this.compartmentOcid,
                             this.tenancyOcid,
                             this.description,
+                            this.token,
                             this.status,
                             this.expiresOn,
                             this.user,
@@ -568,6 +599,9 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("token")) {
+                this.token(model.getToken());
             }
             if (model.wasPropertyExplicitlySet("status")) {
                 this.status(model.getStatus());
@@ -885,6 +919,31 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
+     * token
+     *
+     * <p>*Added In:** 2010242156
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
+     * false - returned: default - idcsSensitive: hash_sc
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("token")
+    private final String token;
+
+    /**
+     * token
+     *
+     * <p>*Added In:** 2010242156
+     *
+     * <p>*SCIM++ Properties:** - caseExact: true - type: string - mutability: readOnly - required:
+     * false - returned: default - idcsSensitive: hash_sc
+     *
+     * @return the value
+     */
+    public String getToken() {
+        return token;
+    }
+
+    /**
      * The user's credential status.
      *
      * <p>*Added In:** 2109090424
@@ -1034,6 +1093,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", compartmentOcid=").append(String.valueOf(this.compartmentOcid));
         sb.append(", tenancyOcid=").append(String.valueOf(this.tenancyOcid));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", token=").append(String.valueOf(this.token));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
         sb.append(", user=").append(String.valueOf(this.user));
@@ -1071,6 +1131,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.compartmentOcid, other.compartmentOcid)
                 && java.util.Objects.equals(this.tenancyOcid, other.tenancyOcid)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.token, other.token)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.expiresOn, other.expiresOn)
                 && java.util.Objects.equals(this.user, other.user)
@@ -1116,6 +1177,7 @@ public final class AuthToken extends com.oracle.bmc.http.client.internal.Explici
                         + (this.compartmentOcid == null ? 43 : this.compartmentOcid.hashCode());
         result = (result * PRIME) + (this.tenancyOcid == null ? 43 : this.tenancyOcid.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.token == null ? 43 : this.token.hashCode());
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.expiresOn == null ? 43 : this.expiresOn.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());

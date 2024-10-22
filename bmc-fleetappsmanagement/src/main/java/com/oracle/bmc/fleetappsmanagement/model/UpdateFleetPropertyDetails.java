@@ -5,7 +5,7 @@
 package com.oracle.bmc.fleetappsmanagement.model;
 
 /**
- * The information to be updated. <br>
+ * The information to be updated for the fleet property. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -31,12 +31,12 @@ public final class UpdateFleetPropertyDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** Value of the Property */
+        /** Value of the Property. */
         @com.fasterxml.jackson.annotation.JsonProperty("value")
         private String value;
 
         /**
-         * Value of the Property
+         * Value of the Property.
          *
          * @param value the value to set
          * @return this builder
@@ -76,12 +76,12 @@ public final class UpdateFleetPropertyDetails
         return new Builder().copy(this);
     }
 
-    /** Value of the Property */
+    /** Value of the Property. */
     @com.fasterxml.jackson.annotation.JsonProperty("value")
     private final String value;
 
     /**
-     * Value of the Property
+     * Value of the Property.
      *
      * @return the value
      */

@@ -42,6 +42,132 @@ public class FleetAppsManagementOperationsPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listComplianceRecords operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListComplianceRecordsResponse> listComplianceRecordsResponseIterator(
+            final ListComplianceRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListComplianceRecordsRequest.Builder,
+                ListComplianceRecordsRequest,
+                ListComplianceRecordsResponse>(
+                new java.util.function.Supplier<ListComplianceRecordsRequest.Builder>() {
+                    @Override
+                    public ListComplianceRecordsRequest.Builder get() {
+                        return ListComplianceRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComplianceRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListComplianceRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComplianceRecordsRequest.Builder>,
+                        ListComplianceRecordsRequest>() {
+                    @Override
+                    public ListComplianceRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComplianceRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComplianceRecordsRequest, ListComplianceRecordsResponse>() {
+                    @Override
+                    public ListComplianceRecordsResponse apply(
+                            ListComplianceRecordsRequest request) {
+                        return client.listComplianceRecords(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSummary} objects contained in
+     * responses from the listComplianceRecords operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSummary>
+            listComplianceRecordsRecordIterator(final ListComplianceRecordsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListComplianceRecordsRequest.Builder,
+                ListComplianceRecordsRequest,
+                ListComplianceRecordsResponse,
+                com.oracle.bmc.fleetappsmanagement.model.ComplianceRecordSummary>(
+                new java.util.function.Supplier<ListComplianceRecordsRequest.Builder>() {
+                    @Override
+                    public ListComplianceRecordsRequest.Builder get() {
+                        return ListComplianceRecordsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListComplianceRecordsResponse, String>() {
+                    @Override
+                    public String apply(ListComplianceRecordsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListComplianceRecordsRequest.Builder>,
+                        ListComplianceRecordsRequest>() {
+                    @Override
+                    public ListComplianceRecordsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListComplianceRecordsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListComplianceRecordsRequest, ListComplianceRecordsResponse>() {
+                    @Override
+                    public ListComplianceRecordsResponse apply(
+                            ListComplianceRecordsRequest request) {
+                        return client.listComplianceRecords(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListComplianceRecordsResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model
+                                        .ComplianceRecordSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.fleetappsmanagement.model
+                                            .ComplianceRecordSummary>
+                            apply(ListComplianceRecordsResponse response) {
+                        return response.getComplianceRecordCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listExecutions
      * operation. This iterable will fetch more data from the server as needed.
      *
@@ -153,6 +279,235 @@ public class FleetAppsManagementOperationsPaginators {
                     public java.util.List<com.oracle.bmc.fleetappsmanagement.model.ExecutionSummary>
                             apply(ListExecutionsResponse response) {
                         return response.getExecutionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listPatches
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListPatchesResponse> listPatchesResponseIterator(
+            final ListPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListPatchesRequest.Builder, ListPatchesRequest, ListPatchesResponse>(
+                new java.util.function.Supplier<ListPatchesRequest.Builder>() {
+                    @Override
+                    public ListPatchesRequest.Builder get() {
+                        return ListPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchesRequest.Builder>,
+                        ListPatchesRequest>() {
+                    @Override
+                    public ListPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPatchesRequest, ListPatchesResponse>() {
+                    @Override
+                    public ListPatchesResponse apply(ListPatchesRequest request) {
+                        return client.listPatches(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.PatchSummary} objects contained in responses from
+     * the listPatches operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.PatchSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.PatchSummary>
+            listPatchesRecordIterator(final ListPatchesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListPatchesRequest.Builder,
+                ListPatchesRequest,
+                ListPatchesResponse,
+                com.oracle.bmc.fleetappsmanagement.model.PatchSummary>(
+                new java.util.function.Supplier<ListPatchesRequest.Builder>() {
+                    @Override
+                    public ListPatchesRequest.Builder get() {
+                        return ListPatchesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListPatchesResponse, String>() {
+                    @Override
+                    public String apply(ListPatchesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListPatchesRequest.Builder>,
+                        ListPatchesRequest>() {
+                    @Override
+                    public ListPatchesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListPatchesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListPatchesRequest, ListPatchesResponse>() {
+                    @Override
+                    public ListPatchesResponse apply(ListPatchesRequest request) {
+                        return client.listPatches(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListPatchesResponse,
+                        java.util.List<com.oracle.bmc.fleetappsmanagement.model.PatchSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fleetappsmanagement.model.PatchSummary>
+                            apply(ListPatchesResponse response) {
+                        return response.getPatchCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listResources
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListResourcesResponse> listResourcesResponseIterator(
+            final ListResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListResourcesRequest.Builder, ListResourcesRequest, ListResourcesResponse>(
+                new java.util.function.Supplier<ListResourcesRequest.Builder>() {
+                    @Override
+                    public ListResourcesRequest.Builder get() {
+                        return ListResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcesRequest.Builder>,
+                        ListResourcesRequest>() {
+                    @Override
+                    public ListResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListResourcesRequest, ListResourcesResponse>() {
+                    @Override
+                    public ListResourcesResponse apply(ListResourcesRequest request) {
+                        return client.listResources(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.ResourceSummary} objects contained in responses from
+     * the listResources operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.ResourceSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.ResourceSummary>
+            listResourcesRecordIterator(final ListResourcesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListResourcesRequest.Builder,
+                ListResourcesRequest,
+                ListResourcesResponse,
+                com.oracle.bmc.fleetappsmanagement.model.ResourceSummary>(
+                new java.util.function.Supplier<ListResourcesRequest.Builder>() {
+                    @Override
+                    public ListResourcesRequest.Builder get() {
+                        return ListResourcesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListResourcesResponse, String>() {
+                    @Override
+                    public String apply(ListResourcesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListResourcesRequest.Builder>,
+                        ListResourcesRequest>() {
+                    @Override
+                    public ListResourcesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListResourcesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListResourcesRequest, ListResourcesResponse>() {
+                    @Override
+                    public ListResourcesResponse apply(ListResourcesRequest request) {
+                        return client.listResources(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListResourcesResponse,
+                        java.util.List<
+                                com.oracle.bmc.fleetappsmanagement.model.ResourceSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fleetappsmanagement.model.ResourceSummary>
+                            apply(ListResourcesResponse response) {
+                        return response.getResourceCollection().getItems();
                     }
                 });
     }
@@ -521,6 +876,119 @@ public class FleetAppsManagementOperationsPaginators {
                                     com.oracle.bmc.fleetappsmanagement.model.SchedulerJobSummary>
                             apply(ListSchedulerJobsResponse response) {
                         return response.getSchedulerJobCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSteps
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListStepsResponse> listStepsResponseIterator(final ListStepsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListStepsRequest.Builder, ListStepsRequest, ListStepsResponse>(
+                new java.util.function.Supplier<ListStepsRequest.Builder>() {
+                    @Override
+                    public ListStepsRequest.Builder get() {
+                        return ListStepsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStepsResponse, String>() {
+                    @Override
+                    public String apply(ListStepsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStepsRequest.Builder>,
+                        ListStepsRequest>() {
+                    @Override
+                    public ListStepsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStepsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStepsRequest, ListStepsResponse>() {
+                    @Override
+                    public ListStepsResponse apply(ListStepsRequest request) {
+                        return client.listSteps(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.fleetappsmanagement.model.StepSummary} objects contained in responses from the
+     * listSteps operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.fleetappsmanagement.model.StepSummary} objects contained in responses
+     *     received from the service.
+     */
+    public Iterable<com.oracle.bmc.fleetappsmanagement.model.StepSummary> listStepsRecordIterator(
+            final ListStepsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListStepsRequest.Builder,
+                ListStepsRequest,
+                ListStepsResponse,
+                com.oracle.bmc.fleetappsmanagement.model.StepSummary>(
+                new java.util.function.Supplier<ListStepsRequest.Builder>() {
+                    @Override
+                    public ListStepsRequest.Builder get() {
+                        return ListStepsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListStepsResponse, String>() {
+                    @Override
+                    public String apply(ListStepsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListStepsRequest.Builder>,
+                        ListStepsRequest>() {
+                    @Override
+                    public ListStepsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListStepsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListStepsRequest, ListStepsResponse>() {
+                    @Override
+                    public ListStepsResponse apply(ListStepsRequest request) {
+                        return client.listSteps(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListStepsResponse,
+                        java.util.List<com.oracle.bmc.fleetappsmanagement.model.StepSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.fleetappsmanagement.model.StepSummary>
+                            apply(ListStepsResponse response) {
+                        return response.getStepCollection().getItems();
                     }
                 });
     }
