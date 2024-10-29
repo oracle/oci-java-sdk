@@ -199,16 +199,10 @@ public final class BackendSet extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("backends");
             return this;
         }
-        /** The health check policy configuration. */
+
         @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
         private HealthChecker healthChecker;
 
-        /**
-         * The health check policy configuration.
-         *
-         * @param healthChecker the value to set
-         * @return this builder
-         */
         public Builder healthChecker(HealthChecker healthChecker) {
             this.healthChecker = healthChecker;
             this.__explicitlySet__.add("healthChecker");
@@ -399,15 +393,9 @@ public final class BackendSet extends com.oracle.bmc.http.client.internal.Explic
         return backends;
     }
 
-    /** The health check policy configuration. */
     @com.fasterxml.jackson.annotation.JsonProperty("healthChecker")
     private final HealthChecker healthChecker;
 
-    /**
-     * The health check policy configuration.
-     *
-     * @return the value
-     */
     public HealthChecker getHealthChecker() {
         return healthChecker;
     }

@@ -23,13 +23,22 @@ package com.oracle.bmc.containerengine.model;
 public final class InstallAddonDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"addonName", "version", "configurations"})
+    @java.beans.ConstructorProperties({
+        "addonName",
+        "version",
+        "configurations",
+        "isOverrideExisting"
+    })
     public InstallAddonDetails(
-            String addonName, String version, java.util.List<AddonConfiguration> configurations) {
+            String addonName,
+            String version,
+            java.util.List<AddonConfiguration> configurations,
+            Boolean isOverrideExisting) {
         super();
         this.addonName = addonName;
         this.version = version;
         this.configurations = configurations;
+        this.isOverrideExisting = isOverrideExisting;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -79,13 +88,38 @@ public final class InstallAddonDetails
             this.__explicitlySet__.add("configurations");
             return this;
         }
+        /**
+         * Whether or not to override an existing addon installation. Defaults to false. If set to
+         * true, any existing addon installation would be overridden as per new installation
+         * details.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isOverrideExisting")
+        private Boolean isOverrideExisting;
+
+        /**
+         * Whether or not to override an existing addon installation. Defaults to false. If set to
+         * true, any existing addon installation would be overridden as per new installation
+         * details.
+         *
+         * @param isOverrideExisting the value to set
+         * @return this builder
+         */
+        public Builder isOverrideExisting(Boolean isOverrideExisting) {
+            this.isOverrideExisting = isOverrideExisting;
+            this.__explicitlySet__.add("isOverrideExisting");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public InstallAddonDetails build() {
             InstallAddonDetails model =
-                    new InstallAddonDetails(this.addonName, this.version, this.configurations);
+                    new InstallAddonDetails(
+                            this.addonName,
+                            this.version,
+                            this.configurations,
+                            this.isOverrideExisting);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -102,6 +136,9 @@ public final class InstallAddonDetails
             }
             if (model.wasPropertyExplicitlySet("configurations")) {
                 this.configurations(model.getConfigurations());
+            }
+            if (model.wasPropertyExplicitlySet("isOverrideExisting")) {
+                this.isOverrideExisting(model.getIsOverrideExisting());
             }
             return this;
         }
@@ -155,6 +192,23 @@ public final class InstallAddonDetails
         return configurations;
     }
 
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true,
+     * any existing addon installation would be overridden as per new installation details.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isOverrideExisting")
+    private final Boolean isOverrideExisting;
+
+    /**
+     * Whether or not to override an existing addon installation. Defaults to false. If set to true,
+     * any existing addon installation would be overridden as per new installation details.
+     *
+     * @return the value
+     */
+    public Boolean getIsOverrideExisting() {
+        return isOverrideExisting;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -173,6 +227,7 @@ public final class InstallAddonDetails
         sb.append("addonName=").append(String.valueOf(this.addonName));
         sb.append(", version=").append(String.valueOf(this.version));
         sb.append(", configurations=").append(String.valueOf(this.configurations));
+        sb.append(", isOverrideExisting=").append(String.valueOf(this.isOverrideExisting));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +245,7 @@ public final class InstallAddonDetails
         return java.util.Objects.equals(this.addonName, other.addonName)
                 && java.util.Objects.equals(this.version, other.version)
                 && java.util.Objects.equals(this.configurations, other.configurations)
+                && java.util.Objects.equals(this.isOverrideExisting, other.isOverrideExisting)
                 && super.equals(other);
     }
 
@@ -202,6 +258,11 @@ public final class InstallAddonDetails
         result =
                 (result * PRIME)
                         + (this.configurations == null ? 43 : this.configurations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isOverrideExisting == null
+                                ? 43
+                                : this.isOverrideExisting.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
