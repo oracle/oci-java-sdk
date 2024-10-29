@@ -11,6 +11,7 @@ public enum ListenerProtocols implements com.oracle.bmc.http.internal.BmcEnum {
     Tcp("TCP"),
     Udp("UDP"),
     TcpAndUdp("TCP_AND_UDP"),
+    L3Ip("L3IP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

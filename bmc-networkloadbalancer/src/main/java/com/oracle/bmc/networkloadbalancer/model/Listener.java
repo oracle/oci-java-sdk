@@ -31,7 +31,8 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         "ipVersion",
         "isPpv2Enabled",
         "tcpIdleTimeout",
-        "udpIdleTimeout"
+        "udpIdleTimeout",
+        "l3IpIdleTimeout"
     })
     public Listener(
             String name,
@@ -41,7 +42,8 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
             IpVersion ipVersion,
             Boolean isPpv2Enabled,
             Integer tcpIdleTimeout,
-            Integer udpIdleTimeout) {
+            Integer udpIdleTimeout,
+            Integer l3IpIdleTimeout) {
         super();
         this.name = name;
         this.defaultBackendSetName = defaultBackendSetName;
@@ -51,6 +53,7 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         this.isPpv2Enabled = isPpv2Enabled;
         this.tcpIdleTimeout = tcpIdleTimeout;
         this.udpIdleTimeout = udpIdleTimeout;
+        this.l3IpIdleTimeout = l3IpIdleTimeout;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -209,6 +212,21 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("udpIdleTimeout");
             return this;
         }
+        /** The duration for L3IP idle timeout in seconds. Example: {@code 200} */
+        @com.fasterxml.jackson.annotation.JsonProperty("l3IpIdleTimeout")
+        private Integer l3IpIdleTimeout;
+
+        /**
+         * The duration for L3IP idle timeout in seconds. Example: {@code 200}
+         *
+         * @param l3IpIdleTimeout the value to set
+         * @return this builder
+         */
+        public Builder l3IpIdleTimeout(Integer l3IpIdleTimeout) {
+            this.l3IpIdleTimeout = l3IpIdleTimeout;
+            this.__explicitlySet__.add("l3IpIdleTimeout");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -223,7 +241,8 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
                             this.ipVersion,
                             this.isPpv2Enabled,
                             this.tcpIdleTimeout,
-                            this.udpIdleTimeout);
+                            this.udpIdleTimeout,
+                            this.l3IpIdleTimeout);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -255,6 +274,9 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("udpIdleTimeout")) {
                 this.udpIdleTimeout(model.getUdpIdleTimeout());
+            }
+            if (model.wasPropertyExplicitlySet("l3IpIdleTimeout")) {
+                this.l3IpIdleTimeout(model.getL3IpIdleTimeout());
             }
             return this;
         }
@@ -407,6 +429,19 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         return udpIdleTimeout;
     }
 
+    /** The duration for L3IP idle timeout in seconds. Example: {@code 200} */
+    @com.fasterxml.jackson.annotation.JsonProperty("l3IpIdleTimeout")
+    private final Integer l3IpIdleTimeout;
+
+    /**
+     * The duration for L3IP idle timeout in seconds. Example: {@code 200}
+     *
+     * @return the value
+     */
+    public Integer getL3IpIdleTimeout() {
+        return l3IpIdleTimeout;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -430,6 +465,7 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", isPpv2Enabled=").append(String.valueOf(this.isPpv2Enabled));
         sb.append(", tcpIdleTimeout=").append(String.valueOf(this.tcpIdleTimeout));
         sb.append(", udpIdleTimeout=").append(String.valueOf(this.udpIdleTimeout));
+        sb.append(", l3IpIdleTimeout=").append(String.valueOf(this.l3IpIdleTimeout));
         sb.append(")");
         return sb.toString();
     }
@@ -452,6 +488,7 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.isPpv2Enabled, other.isPpv2Enabled)
                 && java.util.Objects.equals(this.tcpIdleTimeout, other.tcpIdleTimeout)
                 && java.util.Objects.equals(this.udpIdleTimeout, other.udpIdleTimeout)
+                && java.util.Objects.equals(this.l3IpIdleTimeout, other.l3IpIdleTimeout)
                 && super.equals(other);
     }
 
@@ -477,6 +514,9 @@ public final class Listener extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.udpIdleTimeout == null ? 43 : this.udpIdleTimeout.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.l3IpIdleTimeout == null ? 43 : this.l3IpIdleTimeout.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

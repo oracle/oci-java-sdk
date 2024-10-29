@@ -3,6 +3,11 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.52.1 - 2024-10-29
+### Added 
+- Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 
+- Support for overriding an existing add-on installation in the Kubernetes Engine service
+
 ## 3.52.0 - 2024-10-22
 ### Added 
 - Support for resource locking in the File storage service 

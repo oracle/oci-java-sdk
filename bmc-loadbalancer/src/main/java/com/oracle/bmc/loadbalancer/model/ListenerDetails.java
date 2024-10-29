@@ -100,8 +100,10 @@ public final class ListenerDetails
             return this;
         }
         /**
-         * The protocol on which the listener accepts connection requests. To get a list of valid
-         * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+         * The protocol on which the listener accepts connection requests. The supported protocols
+         * are HTTP, HTTP2, TCP, and GRPC. You can also use the {@link
+         * #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid
+         * protocols.
          *
          * <p>Example: {@code HTTP}
          */
@@ -109,8 +111,10 @@ public final class ListenerDetails
         private String protocol;
 
         /**
-         * The protocol on which the listener accepts connection requests. To get a list of valid
-         * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+         * The protocol on which the listener accepts connection requests. The supported protocols
+         * are HTTP, HTTP2, TCP, and GRPC. You can also use the {@link
+         * #listProtocols(ListProtocolsRequest) listProtocols} operation to get a list of valid
+         * protocols.
          *
          * <p>Example: {@code HTTP}
          *
@@ -327,8 +331,9 @@ public final class ListenerDetails
     }
 
     /**
-     * The protocol on which the listener accepts connection requests. To get a list of valid
-     * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+     * The protocol on which the listener accepts connection requests. The supported protocols are
+     * HTTP, HTTP2, TCP, and GRPC. You can also use the {@link #listProtocols(ListProtocolsRequest)
+     * listProtocols} operation to get a list of valid protocols.
      *
      * <p>Example: {@code HTTP}
      */
@@ -336,8 +341,9 @@ public final class ListenerDetails
     private final String protocol;
 
     /**
-     * The protocol on which the listener accepts connection requests. To get a list of valid
-     * protocols, use the {@link #listProtocols(ListProtocolsRequest) listProtocols} operation.
+     * The protocol on which the listener accepts connection requests. The supported protocols are
+     * HTTP, HTTP2, TCP, and GRPC. You can also use the {@link #listProtocols(ListProtocolsRequest)
+     * listProtocols} operation to get a list of valid protocols.
      *
      * <p>Example: {@code HTTP}
      *
