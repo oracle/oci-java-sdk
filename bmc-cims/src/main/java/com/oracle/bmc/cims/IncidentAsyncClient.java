@@ -133,46 +133,13 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
-    public java.util.concurrent.Future<GetCsiNumberResponse> getCsiNumber(
-            GetCsiNumberRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
-                    handler) {
-        Objects.requireNonNull(request.getTenantId(), "tenantId is required");
-
-        Objects.requireNonNull(request.getRegion(), "region is required");
-
-        return clientCall(request, GetCsiNumberResponse::builder)
-                .logger(LOG, "getCsiNumber")
-                .serviceDetails("Incident", "GetCsiNumber", "")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetCsiNumberRequest::builder)
-                .basePath("/20181231")
-                .appendPathParam("v2")
-                .appendPathParam("incidents")
-                .appendPathParam("getCsiNumber")
-                .appendQueryParam("tenantId", request.getTenantId())
-                .appendQueryParam("region", request.getRegion())
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("ocid", request.getOcid())
-                .appendHeader("homeregion", request.getHomeregion())
-                .appendHeader("bearertokentype", request.getBearertokentype())
-                .appendHeader("bearertoken", request.getBearertoken())
-                .appendHeader("idtoken", request.getIdtoken())
-                .appendHeader("domainid", request.getDomainid())
-                .handleBody(String.class, GetCsiNumberResponse.Builder::value)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetCsiNumberResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
     public java.util.concurrent.Future<GetIncidentResponse> getIncident(
             GetIncidentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse>
                     handler) {
 
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, GetIncidentResponse::builder)
                 .logger(LOG, "getIncident")
@@ -202,35 +169,6 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         GetIncidentResponse.Builder::incident)
                 .handleResponseHeaderString(
                         "opc-request-id", GetIncidentResponse.Builder::opcRequestId)
-                .callAsync(handler);
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStatusResponse> getStatus(
-            GetStatusRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse>
-                    handler) {
-
-        return clientCall(request, GetStatusResponse::builder)
-                .logger(LOG, "getStatus")
-                .serviceDetails(
-                        "Incident",
-                        "GetStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus")
-                .method(com.oracle.bmc.http.client.Method.GET)
-                .requestBuilder(GetStatusRequest::builder)
-                .basePath("/20181231")
-                .appendPathParam("v2")
-                .appendPathParam("incidents")
-                .appendPathParam("status")
-                .accept("application/json")
-                .appendHeader("opc-request-id", request.getOpcRequestId())
-                .appendHeader("ocid", request.getOcid())
-                .appendHeader("homeregion", request.getHomeregion())
-                .handleBody(
-                        com.oracle.bmc.cims.model.Status.class, GetStatusResponse.Builder::status)
-                .handleResponseHeaderString(
-                        "opc-request-id", GetStatusResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -336,6 +274,8 @@ public class IncidentAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
         Objects.requireNonNull(
                 request.getUpdateIncidentDetails(), "updateIncidentDetails is required");
+
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, UpdateIncidentResponse::builder)
                 .logger(LOG, "updateIncident")

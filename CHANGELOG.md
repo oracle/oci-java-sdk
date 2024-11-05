@@ -3,6 +3,28 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.53.0 - 2024-11-05
+### Added 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-seoul-2` region 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-suwon-1` region 
+- Support for calling Oracle Cloud Infrastructure services in the `ap-chuncheon-2` region 
+- Support for MFA Enablement v2 in the Identity Domains service 
+- Support for starting, stopping and updating min/max executor count for SQL Endpoints in the Data Flow service 
+- Support for customer message in the Customer Incident Management Service 
+- Support for REJECTED limitStatus in the Customer Incident Management Service   
+
+### Breaking Changes 
+- The retry strategy for getting the X509 token from Identity service was modified and is now protected via circuit breaker 
+- Method `public com.oracle.bmc.cims.responses.GetCsiNumberResponse getCsiNumber(com.oracle.bmc.cims.requests.GetCsiNumberRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
+- Method `public com.oracle.bmc.cims.responses.GetStatusResponse getStatus(com.oracle.bmc.cims.requests.GetStatusRequest)` has been removed from model `com.oracle.bmc.cims.Incident` in the Customer Incident Management Service 
+- Method `public java.util.List getServiceCategories()` has been removed from model `com.oracle.bmc.cims.model.IncidentResourceType` in the Customer Incident Management Service 
+- Method `public java.util.Map getIssueType()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
+- Method `public java.util.Map getServiceCategory()` has been removed from model `com.oracle.bmc.cims.model.ServiceCategories` in the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.requests.GetCsiNumberRequest` has been removed from the the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.requests.GetStatusRequest` has been removed from the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.responses.GetCsiNumberResponse` has been removed from the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.responses.GetStatusResponse` has been removed from the Customer Incident Management Service
+
 ## 3.52.1 - 2024-10-29
 ### Added 
 - Support for L3IP (Layer 3 IP) listeners in the Network Load Balancing service 

@@ -41,7 +41,8 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         "active",
         "policyGroovy",
         "rules",
-        "policyType"
+        "policyType",
+        "urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy"
     })
     public Policy(
             String id,
@@ -63,7 +64,9 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
             Boolean active,
             String policyGroovy,
             java.util.List<PolicyRules> rules,
-            PolicyPolicyType policyType) {
+            PolicyPolicyType policyType,
+            PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                    urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy) {
         super();
         this.id = id;
         this.ocid = ocid;
@@ -85,6 +88,8 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         this.policyGroovy = policyGroovy;
         this.rules = rules;
         this.policyType = policyType;
+        this.urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy =
+                urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -244,9 +249,10 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * A list of tags on this resource.
          *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsCsvAttributeNameMappings:
+         * [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value,
+         * mapsTo:tags.value]] - idcsSearchable: true - multiValued: true - mutability: readWrite -
+         * required: false - returned: request - type: complex - uniqueness: none
          */
         @com.fasterxml.jackson.annotation.JsonProperty("tags")
         private java.util.List<Tags> tags;
@@ -254,9 +260,10 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         /**
          * A list of tags on this resource.
          *
-         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-         * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-         * complex - uniqueness: none
+         * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsCsvAttributeNameMappings:
+         * [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value,
+         * mapsTo:tags.value]] - idcsSearchable: true - multiValued: true - mutability: readWrite -
+         * required: false - returned: request - type: complex - uniqueness: none
          *
          * @param tags the value to set
          * @return this builder
@@ -565,6 +572,22 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+        private PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy;
+
+        public Builder
+                urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy(
+                        PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                                urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy) {
+            this.urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy =
+                    urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy;
+            this.__explicitlySet__.add(
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -590,7 +613,9 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
                             this.active,
                             this.policyGroovy,
                             this.rules,
-                            this.policyType);
+                            this.policyType,
+                            this
+                                    .urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -658,6 +683,12 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("policyType")) {
                 this.policyType(model.getPolicyType());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy")) {
+                this.urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy(
+                        model
+                                .getUrnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy());
             }
             return this;
         }
@@ -808,9 +839,10 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * A list of tags on this resource.
      *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsCsvAttributeNameMappings:
+     * [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value,
+     * mapsTo:tags.value]] - idcsSearchable: true - multiValued: true - mutability: readWrite -
+     * required: false - returned: request - type: complex - uniqueness: none
      */
     @com.fasterxml.jackson.annotation.JsonProperty("tags")
     private final java.util.List<Tags> tags;
@@ -818,9 +850,10 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
     /**
      * A list of tags on this resource.
      *
-     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsSearchable: true -
-     * multiValued: true - mutability: readWrite - required: false - returned: request - type:
-     * complex - uniqueness: none
+     * <p>*SCIM++ Properties:** - idcsCompositeKey: [key, value] - idcsCsvAttributeNameMappings:
+     * [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value,
+     * mapsTo:tags.value]] - idcsSearchable: true - multiValued: true - mutability: readWrite -
+     * required: false - returned: request - type: complex - uniqueness: none
      *
      * @return the value
      */
@@ -1088,6 +1121,16 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         return policyType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+    private final PolicyExtensionOciconsolesignonpolicyconsentPolicy
+            urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy;
+
+    public PolicyExtensionOciconsolesignonpolicyconsentPolicy
+            getUrnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy() {
+        return urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1125,6 +1168,12 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", policyGroovy=").append(String.valueOf(this.policyGroovy));
         sb.append(", rules=").append(String.valueOf(this.rules));
         sb.append(", policyType=").append(String.valueOf(this.policyType));
+        sb.append(
+                        ", urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy=")
+                .append(
+                        String.valueOf(
+                                this
+                                        .urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -1161,6 +1210,10 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.policyGroovy, other.policyGroovy)
                 && java.util.Objects.equals(this.rules, other.rules)
                 && java.util.Objects.equals(this.policyType, other.policyType)
+                && java.util.Objects.equals(
+                        this
+                                .urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy,
+                        other.urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy)
                 && super.equals(other);
     }
 
@@ -1206,6 +1259,15 @@ public final class Policy extends com.oracle.bmc.http.client.internal.Explicitly
         result = (result * PRIME) + (this.policyGroovy == null ? 43 : this.policyGroovy.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
         result = (result * PRIME) + (this.policyType == null ? 43 : this.policyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this
+                                                .urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy
+                                        == null
+                                ? 43
+                                : this
+                                        .urnIetfParamsScimSchemasOracleIdcsExtensionOciconsolesignonpolicyconsentPolicy
+                                        .hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

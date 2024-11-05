@@ -38,7 +38,7 @@ public final class RuleConditionGroup
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Condition or ConditionGroup identifier
+         * Condition or ConditionGroup identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
@@ -48,7 +48,7 @@ public final class RuleConditionGroup
         private String value;
 
         /**
-         * Condition or ConditionGroup identifier
+         * Condition or ConditionGroup identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: readWrite - required: false - returned: default - type: string - uniqueness:
@@ -178,7 +178,7 @@ public final class RuleConditionGroup
     }
 
     /**
-     * Condition or ConditionGroup identifier
+     * Condition or ConditionGroup identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none
@@ -187,7 +187,7 @@ public final class RuleConditionGroup
     private final String value;
 
     /**
-     * Condition or ConditionGroup identifier
+     * Condition or ConditionGroup identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: readWrite - required: false - returned: default - type: string - uniqueness: none

@@ -23,32 +23,32 @@ package com.oracle.bmc.cims.model;
 public final class ServiceCategories
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"serviceCategory", "schema", "issueType"})
+    @java.beans.ConstructorProperties({"service", "schema", "subCategories"})
     public ServiceCategories(
-            java.util.Map<String, String> serviceCategory,
+            java.util.Map<String, String> service,
             String schema,
-            java.util.Map<String, String> issueType) {
+            java.util.List<SubCategories> subCategories) {
         super();
-        this.serviceCategory = serviceCategory;
+        this.service = service;
         this.schema = schema;
-        this.issueType = issueType;
+        this.subCategories = subCategories;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /** Service Category list. */
-        @com.fasterxml.jackson.annotation.JsonProperty("serviceCategory")
-        private java.util.Map<String, String> serviceCategory;
+        @com.fasterxml.jackson.annotation.JsonProperty("service")
+        private java.util.Map<String, String> service;
 
         /**
          * Service Category list.
          *
-         * @param serviceCategory the value to set
+         * @param service the value to set
          * @return this builder
          */
-        public Builder serviceCategory(java.util.Map<String, String> serviceCategory) {
-            this.serviceCategory = serviceCategory;
-            this.__explicitlySet__.add("serviceCategory");
+        public Builder service(java.util.Map<String, String> service) {
+            this.service = service;
+            this.__explicitlySet__.add("service");
             return this;
         }
         /** Schema of a Service Category. */
@@ -66,19 +66,19 @@ public final class ServiceCategories
             this.__explicitlySet__.add("schema");
             return this;
         }
-        /** Issue type list. */
-        @com.fasterxml.jackson.annotation.JsonProperty("issueType")
-        private java.util.Map<String, String> issueType;
+        /** The service categories list for MOS Taxonomy. */
+        @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
+        private java.util.List<SubCategories> subCategories;
 
         /**
-         * Issue type list.
+         * The service categories list for MOS Taxonomy.
          *
-         * @param issueType the value to set
+         * @param subCategories the value to set
          * @return this builder
          */
-        public Builder issueType(java.util.Map<String, String> issueType) {
-            this.issueType = issueType;
-            this.__explicitlySet__.add("issueType");
+        public Builder subCategories(java.util.List<SubCategories> subCategories) {
+            this.subCategories = subCategories;
+            this.__explicitlySet__.add("subCategories");
             return this;
         }
 
@@ -87,7 +87,7 @@ public final class ServiceCategories
 
         public ServiceCategories build() {
             ServiceCategories model =
-                    new ServiceCategories(this.serviceCategory, this.schema, this.issueType);
+                    new ServiceCategories(this.service, this.schema, this.subCategories);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -96,14 +96,14 @@ public final class ServiceCategories
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(ServiceCategories model) {
-            if (model.wasPropertyExplicitlySet("serviceCategory")) {
-                this.serviceCategory(model.getServiceCategory());
+            if (model.wasPropertyExplicitlySet("service")) {
+                this.service(model.getService());
             }
             if (model.wasPropertyExplicitlySet("schema")) {
                 this.schema(model.getSchema());
             }
-            if (model.wasPropertyExplicitlySet("issueType")) {
-                this.issueType(model.getIssueType());
+            if (model.wasPropertyExplicitlySet("subCategories")) {
+                this.subCategories(model.getSubCategories());
             }
             return this;
         }
@@ -119,16 +119,16 @@ public final class ServiceCategories
     }
 
     /** Service Category list. */
-    @com.fasterxml.jackson.annotation.JsonProperty("serviceCategory")
-    private final java.util.Map<String, String> serviceCategory;
+    @com.fasterxml.jackson.annotation.JsonProperty("service")
+    private final java.util.Map<String, String> service;
 
     /**
      * Service Category list.
      *
      * @return the value
      */
-    public java.util.Map<String, String> getServiceCategory() {
-        return serviceCategory;
+    public java.util.Map<String, String> getService() {
+        return service;
     }
 
     /** Schema of a Service Category. */
@@ -144,17 +144,17 @@ public final class ServiceCategories
         return schema;
     }
 
-    /** Issue type list. */
-    @com.fasterxml.jackson.annotation.JsonProperty("issueType")
-    private final java.util.Map<String, String> issueType;
+    /** The service categories list for MOS Taxonomy. */
+    @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
+    private final java.util.List<SubCategories> subCategories;
 
     /**
-     * Issue type list.
+     * The service categories list for MOS Taxonomy.
      *
      * @return the value
      */
-    public java.util.Map<String, String> getIssueType() {
-        return issueType;
+    public java.util.List<SubCategories> getSubCategories() {
+        return subCategories;
     }
 
     @Override
@@ -172,9 +172,9 @@ public final class ServiceCategories
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("ServiceCategories(");
         sb.append("super=").append(super.toString());
-        sb.append("serviceCategory=").append(String.valueOf(this.serviceCategory));
+        sb.append("service=").append(String.valueOf(this.service));
         sb.append(", schema=").append(String.valueOf(this.schema));
-        sb.append(", issueType=").append(String.valueOf(this.issueType));
+        sb.append(", subCategories=").append(String.valueOf(this.subCategories));
         sb.append(")");
         return sb.toString();
     }
@@ -189,9 +189,9 @@ public final class ServiceCategories
         }
 
         ServiceCategories other = (ServiceCategories) o;
-        return java.util.Objects.equals(this.serviceCategory, other.serviceCategory)
+        return java.util.Objects.equals(this.service, other.service)
                 && java.util.Objects.equals(this.schema, other.schema)
-                && java.util.Objects.equals(this.issueType, other.issueType)
+                && java.util.Objects.equals(this.subCategories, other.subCategories)
                 && super.equals(other);
     }
 
@@ -199,11 +199,11 @@ public final class ServiceCategories
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.service == null ? 43 : this.service.hashCode());
+        result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
         result =
                 (result * PRIME)
-                        + (this.serviceCategory == null ? 43 : this.serviceCategory.hashCode());
-        result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
-        result = (result * PRIME) + (this.issueType == null ? 43 : this.issueType.hashCode());
+                        + (this.subCategories == null ? 43 : this.subCategories.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

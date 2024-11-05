@@ -68,7 +68,9 @@ public interface IncidentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Operation to create a support ticket.
+     * Creates a support ticket in the specified tenancy. For more information, see [Creating
+     * Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -83,22 +85,8 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Fetches csi number of the user.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetCsiNumberResponse> getCsiNumber(
-            GetCsiNumberRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
-                    handler);
-
-    /**
-     * Gets details about the specified support ticket.
+     * Gets the specified support ticket. For more information, see [Getting Details for a Support
+     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -112,22 +100,14 @@ public interface IncidentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse> handler);
 
     /**
-     * Gets the status of the service.
-     *
-     * @param request The request object containing the details to send
-     * @param handler The request handler to invoke upon completion, may be null.
-     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
-     *     if you provide an AsyncHandler and use the Future, some types of responses (like
-     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
-     *     may only be consumed once.
-     */
-    java.util.concurrent.Future<GetStatusResponse> getStatus(
-            GetStatusRequest request,
-            com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse> handler);
-
-    /**
-     * During support ticket creation, returns the list of all possible products that Oracle Cloud
-     * Infrastructure supports.
+     * Depending on the selected `productType`, either lists available products (service groups,
+     * services, service categories, and subcategories) for technical support tickets or lists
+     * limits and current usage for limit increase tickets. This operation is called during creation
+     * of technical support and limit increase tickets. For more information about listing products,
+     * see [Listing Products for Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm).
+     * For more information about listing limits, see [Listing Limits for Service Limit Increase
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -143,7 +123,8 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Returns the list of support tickets raised by the tenancy.
+     * Lists support tickets for the specified tenancy. For more information, see [Listing Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -158,7 +139,8 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Updates the specified support ticket's information.
+     * Updates the specified support ticket. For more information, see [Updating Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -173,7 +155,8 @@ public interface IncidentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Checks whether the requested user is valid.
+     * Checks whether the requested user is valid. For more information, see [Validating a
+     * User](https://docs.cloud.oracle.com/iaas/Content/GSG/support/validate-user.htm).
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

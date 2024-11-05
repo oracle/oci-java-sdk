@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-common-httpclient-choices</artifactId>
-    <version>3.52.1</version>
+    <version>3.53.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -68,7 +68,7 @@
       <dependency>
         <groupId>com.oracle.oci.sdk</groupId>
         <artifactId>oci-java-sdk-addons-apache-configurator-jersey</artifactId>
-        <version>3.52.1</version>
+        <version>3.53.0</version>
       </dependency>
     </dependencies>
   </dependencyManagement>
@@ -77,7 +77,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.52.1</version>
+      <version>3.53.0</version>
     </dependency>
     <dependency>
       <groupId>org.glassfish.jersey.core</groupId>

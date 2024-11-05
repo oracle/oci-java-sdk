@@ -2,12 +2,12 @@
  * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
-package com.oracle.bmc.cims.responses;
+package com.oracle.bmc.identitydomains.responses;
 
-import com.oracle.bmc.cims.model.*;
+import com.oracle.bmc.identitydomains.model.*;
 
-@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
+@jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: v1")
+public class CreateRestoreOciConsolePolicyResponse extends com.oracle.bmc.responses.BmcResponse {
     /**
      * Unique Oracle-assigned identifier for the request. If you need to contact Oracle about a
      * particular request, please provide the request ID.
@@ -24,31 +24,53 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
         return opcRequestId;
     }
 
-    /** The returned {@code Status} instance. */
-    private com.oracle.bmc.cims.model.Status status;
+    /** For optimistic concurrency control. See {@code if-match}. */
+    private String etag;
 
     /**
-     * The returned {@code Status} instance.
+     * For optimistic concurrency control. See {@code if-match}.
      *
      * @return the value
      */
-    public com.oracle.bmc.cims.model.Status getStatus() {
-        return status;
+    public String getEtag() {
+        return etag;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId", "status"})
-    private GetStatusResponse(
+    /** The returned {@code RestoreOciConsolePolicy} instance. */
+    private com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy restoreOciConsolePolicy;
+
+    /**
+     * The returned {@code RestoreOciConsolePolicy} instance.
+     *
+     * @return the value
+     */
+    public com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy
+            getRestoreOciConsolePolicy() {
+        return restoreOciConsolePolicy;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "etag",
+        "restoreOciConsolePolicy"
+    })
+    private CreateRestoreOciConsolePolicyResponse(
             int __httpStatusCode__,
             java.util.Map<String, java.util.List<String>> headers,
             String opcRequestId,
-            com.oracle.bmc.cims.model.Status status) {
+            String etag,
+            com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy restoreOciConsolePolicy) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
-        this.status = status;
+        this.etag = etag;
+        this.restoreOciConsolePolicy = restoreOciConsolePolicy;
     }
 
     public static class Builder
-            implements com.oracle.bmc.responses.BmcResponse.Builder<GetStatusResponse> {
+            implements com.oracle.bmc.responses.BmcResponse.Builder<
+                    CreateRestoreOciConsolePolicyResponse> {
         private int __httpStatusCode__;
 
         @Override
@@ -83,17 +105,34 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
             return this;
         }
 
-        /** The returned {@code Status} instance. */
-        private com.oracle.bmc.cims.model.Status status;
+        /** For optimistic concurrency control. See {@code if-match}. */
+        private String etag;
 
         /**
-         * The returned {@code Status} instance.
+         * For optimistic concurrency control. See {@code if-match}.
          *
-         * @param status the value to set
+         * @param etag the value to set
          * @return this builder
          */
-        public Builder status(com.oracle.bmc.cims.model.Status status) {
-            this.status = status;
+        public Builder etag(String etag) {
+            this.etag = etag;
+            return this;
+        }
+
+        /** The returned {@code RestoreOciConsolePolicy} instance. */
+        private com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy
+                restoreOciConsolePolicy;
+
+        /**
+         * The returned {@code RestoreOciConsolePolicy} instance.
+         *
+         * @param restoreOciConsolePolicy the value to set
+         * @return this builder
+         */
+        public Builder restoreOciConsolePolicy(
+                com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy
+                        restoreOciConsolePolicy) {
+            this.restoreOciConsolePolicy = restoreOciConsolePolicy;
             return this;
         }
 
@@ -103,11 +142,12 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return this builder instance
          */
         @Override
-        public Builder copy(GetStatusResponse o) {
+        public Builder copy(CreateRestoreOciConsolePolicyResponse o) {
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
-            status(o.getStatus());
+            etag(o.getEtag());
+            restoreOciConsolePolicy(o.getRestoreOciConsolePolicy());
 
             return this;
         }
@@ -118,8 +158,9 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
          * @return the response object
          */
         @Override
-        public GetStatusResponse build() {
-            return new GetStatusResponse(__httpStatusCode__, headers, opcRequestId, status);
+        public CreateRestoreOciConsolePolicyResponse build() {
+            return new CreateRestoreOciConsolePolicyResponse(
+                    __httpStatusCode__, headers, opcRequestId, etag, restoreOciConsolePolicy);
         }
     }
 
@@ -138,7 +179,8 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
-        sb.append(",status=").append(String.valueOf(status));
+        sb.append(",etag=").append(String.valueOf(etag));
+        sb.append(",restoreOciConsolePolicy=").append(String.valueOf(restoreOciConsolePolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -148,14 +190,16 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
         if (this == o) {
             return true;
         }
-        if (!(o instanceof GetStatusResponse)) {
+        if (!(o instanceof CreateRestoreOciConsolePolicyResponse)) {
             return false;
         }
 
-        GetStatusResponse other = (GetStatusResponse) o;
+        CreateRestoreOciConsolePolicyResponse other = (CreateRestoreOciConsolePolicyResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.status, other.status);
+                && java.util.Objects.equals(this.etag, other.etag)
+                && java.util.Objects.equals(
+                        this.restoreOciConsolePolicy, other.restoreOciConsolePolicy);
     }
 
     @Override
@@ -163,7 +207,12 @@ public class GetStatusResponse extends com.oracle.bmc.responses.BmcResponse {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
-        result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
+        result = (result * PRIME) + (this.etag == null ? 43 : this.etag.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.restoreOciConsolePolicy == null
+                                ? 43
+                                : this.restoreOciConsolePolicy.hashCode());
         return result;
     }
 }
