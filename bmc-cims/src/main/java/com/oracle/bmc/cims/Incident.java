@@ -71,7 +71,9 @@ public interface Incident extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * Operation to create a support ticket.
+     * Creates a support ticket in the specified tenancy. For more information, see [Creating
+     * Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -86,22 +88,8 @@ public interface Incident extends AutoCloseable {
     CreateIncidentResponse createIncident(CreateIncidentRequest request);
 
     /**
-     * Fetches csi number of the user.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetCsiNumberExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCsiNumber API.
-     */
-    GetCsiNumberResponse getCsiNumber(GetCsiNumberRequest request);
-
-    /**
-     * Gets details about the specified support ticket.
+     * Gets the specified support ticket. For more information, see [Getting Details for a Support
+     * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/get-incident.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,23 +104,14 @@ public interface Incident extends AutoCloseable {
     GetIncidentResponse getIncident(GetIncidentRequest request);
 
     /**
-     * Gets the status of the service.
-     *
-     * @param request The request object containing the details to send
-     * @return A response object containing details about the completed operation
-     * @throws BmcException when an error occurs. This operation will not retry by default, users
-     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
-     *     enable retries for it. The specifics of the default retry strategy are described here
-     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
-     *     <p><b>Example: </b>Click <a
-     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cims/GetStatusExample.java.html"
-     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStatus API.
-     */
-    GetStatusResponse getStatus(GetStatusRequest request);
-
-    /**
-     * During support ticket creation, returns the list of all possible products that Oracle Cloud
-     * Infrastructure supports.
+     * Depending on the selected `productType`, either lists available products (service groups,
+     * services, service categories, and subcategories) for technical support tickets or lists
+     * limits and current usage for limit increase tickets. This operation is called during creation
+     * of technical support and limit increase tickets. For more information about listing products,
+     * see [Listing Products for Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-taxonomy.htm).
+     * For more information about listing limits, see [Listing Limits for Service Limit Increase
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incident-resource-types-limit.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -149,7 +128,8 @@ public interface Incident extends AutoCloseable {
             ListIncidentResourceTypesRequest request);
 
     /**
-     * Returns the list of support tickets raised by the tenancy.
+     * Lists support tickets for the specified tenancy. For more information, see [Listing Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/list-incidents.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -164,7 +144,8 @@ public interface Incident extends AutoCloseable {
     ListIncidentsResponse listIncidents(ListIncidentsRequest request);
 
     /**
-     * Updates the specified support ticket's information.
+     * Updates the specified support ticket. For more information, see [Updating Support
+     * Requests](https://docs.cloud.oracle.com/iaas/Content/GSG/support/update-incident.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -179,7 +160,8 @@ public interface Incident extends AutoCloseable {
     UpdateIncidentResponse updateIncident(UpdateIncidentRequest request);
 
     /**
-     * Checks whether the requested user is valid.
+     * Checks whether the requested user is valid. For more information, see [Validating a
+     * User](https://docs.cloud.oracle.com/iaas/Content/GSG/support/validate-user.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

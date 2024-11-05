@@ -4,96 +4,172 @@
  */
 package com.oracle.bmc.auth.internal;
 
+import com.github.tomakehurst.wiremock.client.WireMock;
+import com.github.tomakehurst.wiremock.junit.WireMockRule;
+import com.oracle.bmc.auth.SessionKeySupplier;
+import com.oracle.bmc.auth.X509CertificateSupplier;
 import com.oracle.bmc.http.ClientConfigurator;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.signing.internal.PEMFileRSAPrivateKeySupplier;
+import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.util.CircuitBreakerUtils;
+
+import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
-import org.junit.runner.RunWith;
-import org.mockito.Mock;
-import org.powermock.core.classloader.annotations.PrepareForTest;
-import org.powermock.modules.junit4.PowerMockRunner;
 
 import java.io.IOException;
-import java.util.List;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.security.KeyPair;
+import java.security.cert.Certificate;
+import java.security.cert.CertificateFactory;
+import java.security.cert.X509Certificate;
+import java.security.interfaces.RSAPrivateKey;
+import java.util.Collections;
+import java.util.Objects;
 
+import static com.github.tomakehurst.wiremock.client.WireMock.*;
+import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
+import static com.github.tomakehurst.wiremock.stubbing.Scenario.STARTED;
 import static org.junit.Assert.assertEquals;
+import static org.mockito.Mockito.mock;
 
-@RunWith(PowerMockRunner.class)
-@PrepareForTest({Thread.class, X509FederationClient.class})
 public class X509FederationClientTest {
 
-    @Mock private List<ClientConfigurator> mockAddlConfigurators;
     private X509FederationClient clientUnderTest;
+    private X509FederationClient.X509FederationRequest federationRequest;
 
-    /* TODO
+    @Rule
+    public WireMockRule mockService =
+            new WireMockRule(
+                    wireMockConfig().jettyAcceptors(10).containerThreads(25).dynamicPort());
+
     @Before
-    public void setUp() {
-        final Set<X509CertificateSupplier> intermediateCertificateSuppliers =
-                Collections.emptySet();
+    public void setUp() throws IOException {
+        SessionKeySupplier sessionKeySupplier =
+                new SessionKeySupplier() {
+                    @Override
+                    public KeyPair getKeyPair() {
+                        return mock(KeyPair.class);
+                    }
+
+                    @Override
+                    public void refreshKeys() {}
+                };
+
+        X509CertificateSupplier certificateSupplier =
+                new X509CertificateSupplier() {
+                    @Override
+                    public X509Certificate getCertificate() {
+                        return Objects.requireNonNull(getCertificateAndKeyPair()).getCertificate();
+                    }
+
+                    @Override
+                    public RSAPrivateKey getPrivateKey() {
+                        return Objects.requireNonNull(getCertificateAndKeyPair()).getPrivateKey();
+                    }
+
+                    @Override
+                    public CertificateAndPrivateKeyPair getCertificateAndKeyPair() {
+                        try {
+                            InputStream fakeCert =
+                                    Files.newInputStream(Paths.get("src/test/resources/cert.pem"));
+                            CertificateFactory cf = CertificateFactory.getInstance("X.509");
+                            Certificate certificate = cf.generateCertificate(fakeCert);
+
+                            RSAPrivateKey privateKey =
+                                    new PEMFileRSAPrivateKeySupplier(
+                                                    Files.newInputStream(
+                                                            Paths.get(
+                                                                    "src/test/resources/key.pem")),
+                                                    null)
+                                            .supplyKey("unused")
+                                            .orElse(null);
+                            return new CertificateAndPrivateKeyPair(
+                                    (X509Certificate) certificate, privateKey);
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
+                        return null;
+                    }
+                };
+
         clientUnderTest =
                 new X509FederationClient(
-                        "federationEndpoint",
+                        "http://localhost:" + mockService.port(),
                         "tenantId",
-                        mock(X509CertificateSupplier.class),
-                        mock(SessionKeySupplier.class),
-                        intermediateCertificateSuppliers,
+                        certificateSupplier,
+                        sessionKeySupplier,
+                        Collections.emptySet(),
                         mock(ClientConfigurator.class),
-                        mockAddlConfigurators,
-                        mock(CircuitBreakerConfiguration.class));
+                        Collections.emptyList(),
+                        CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration());
 
-        // Speed up the tests to mock out the sleep call between retries
-        mockStatic(Thread.class);
+        federationRequest =
+                new X509FederationClient.X509FederationRequest(
+                        "publicKey",
+                        "leafCertificate",
+                        Collections.emptySet(),
+                        "purpose",
+                        "DEFAULT_FINGERPRINT");
     }
-    */
 
-    /* TODO
     @Test
-    public void makeCall_shouldReuseWrappedInvocationBuilderReference_whenBmcExceptionIsThrown()
-            throws Exception {
-        // Set up WrappedInvocationBuilder used to verify
-        URI requestURI = PowerMockito.mock(URI.class);
-        final WrappedInvocationBuilder expectedWIb = mock(WrappedInvocationBuilder.class);
-        final Invocation.Builder ib = mock(Invocation.Builder.class);
-        whenNew(WrappedInvocationBuilder.class)
-                .withArguments(ib, requestURI)
-                .thenReturn(expectedWIb);
-        final Response expectedResponse = mock(Response.class);
+    public void testX509ClientRetriesWithFailure() {
+        stubFor(post(urlEqualTo("/v1/x509")).willReturn(WireMock.serverError()));
 
-        // Stub exceptions thrown by the client 3 consecutive times then a successful
-        when(
-                        mockFederationClient.post(
-                                Mockito.<WrappedInvocationBuilder>any(),
-                                Mockito.<X509FederationClient.X509FederationRequest>any(),
-                                Mockito.<BmcRequest>any()))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 1", "RequestId"))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 2", "RequestId"))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 3", "RequestId"))
-                .thenReturn(expectedResponse);
-
-        // Method under test.
-        final Response actualResponse =
-                clientUnderTest.makeCall(
-                        ib, requestURI, mock(X509FederationClient.X509FederationRequest.class));
-
-        assertEquals("Response should be equal", expectedResponse, actualResponse);
-        verify(mockFederationClient, times(4))
-                .post(
-                        wrappedIbCaptor.capture(),
-                        isA(X509FederationClient.X509FederationRequest.class),
-                        isA(BmcRequest.class));
-        final List<WrappedInvocationBuilder> wrappedIbsFromInvocation =
-                wrappedIbCaptor.getAllValues();
-        assertFalse(
-                "Captured list of WrappedInvocationBuilder should not be empty",
-                wrappedIbsFromInvocation.isEmpty());
-        assertEquals(
-                "Captured list of WrappedInvocationBuilder size should be 4",
-                4 /* expected number of captures * /,
-                wrappedIbsFromInvocation.size());
-        for (WrappedInvocationBuilder actualWib : wrappedIbsFromInvocation) {
-            assertEquals("Captured WIB should be the same", expectedWIb, actualWib);
+        try {
+            clientUnderTest.makeCall(federationRequest);
+        } catch (BmcException e) {
+            assertEquals(500, e.getStatusCode());
         }
+        // Make sure the X509 client retries 3 times before it errors out
+        verify(3, postRequestedFor(urlEqualTo("/v1/x509")));
     }
-    */
+
+    @Test
+    public void testX509ClientNoRetriesOn4xx() {
+        stubFor(post(urlEqualTo("/v1/x509")).willReturn(WireMock.unauthorized()));
+
+        try {
+            clientUnderTest.makeCall(federationRequest);
+        } catch (BmcException e) {
+            assertEquals(401, e.getStatusCode());
+        }
+        // Make sure the X509 client does not retry on 401
+        verify(1, postRequestedFor(urlEqualTo("/v1/x509")));
+    }
+
+    @Test
+    public void testX509ClientSuccessAfterRetries() {
+
+        stubFor(
+                post(urlEqualTo("/v1/x509"))
+                        .inScenario("Retry Scenario")
+                        .whenScenarioStateIs(STARTED)
+                        .willReturn(WireMock.serverError())
+                        .willSetStateTo("Second Attempt"));
+        stubFor(
+                post(urlEqualTo("/v1/x509"))
+                        .inScenario("Retry Scenario")
+                        .whenScenarioStateIs("Second Attempt")
+                        .willReturn(
+                                aResponse()
+                                        .withStatus(200)
+                                        .withHeader("Content-Type", "application/json")
+                                        .withBody("{\"token\" : \"abcdef\"}")));
+
+        X509FederationClient.FederationResponseWrapper responseWrapper =
+                clientUnderTest.makeCall(federationRequest);
+
+        // Make sure the X509 client called the stub 2 times, 1 successful retry after 500 error
+        verify(2, postRequestedFor(urlEqualTo("/v1/x509")));
+
+        // Make sure the token is as expected
+        assertEquals("abcdef", responseWrapper.token.getToken());
+    }
 
     @Test
     public void jacksonCanDeserializeSecurityToken() throws IOException {
@@ -106,10 +182,11 @@ public class X509FederationClientTest {
     public void jacksonCanRoundTripSecurityToken() throws IOException {
         final X509FederationClient.SecurityToken secToken =
                 new X509FederationClient.SecurityToken("abcdef");
-        final Serializer mapper = Serializer.getDefault();
+        final Serializer serializer = Serializer.getDefault();
         assertEquals(
                 secToken.getToken(),
-                mapper.readValue(mapper.writeValueAsString(secToken), secToken.getClass())
+                serializer
+                        .readValue(serializer.writeValueAsString(secToken), secToken.getClass())
                         .getToken());
     }
 }

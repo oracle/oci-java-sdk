@@ -93,22 +93,30 @@ public class ListIncidentResourceTypesRequest
     public String getName() {
         return name;
     }
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
+     */
     private String csi;
 
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
+     */
     public String getCsi() {
         return csi;
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     public String getOcid() {
         return ocid;
@@ -120,10 +128,16 @@ public class ListIncidentResourceTypesRequest
     public String getHomeregion() {
         return homeregion;
     }
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     private String domainid;
 
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -262,11 +276,15 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
-        /** The Customer Support Identifier (CSI) associated with the support account. */
+        /**
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
+         */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
          *
          * @param csi the value to set
          * @return this builder instance
@@ -278,13 +296,15 @@ public class ListIncidentResourceTypesRequest
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          *
          * @param ocid the value to set
          * @return this builder instance
@@ -308,11 +328,15 @@ public class ListIncidentResourceTypesRequest
             return this;
         }
 
-        /** The OCID of identity domain. */
+        /**
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
+         */
         private String domainid = null;
 
         /**
-         * The OCID of identity domain.
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
          *
          * @param domainid the value to set
          * @return this builder instance

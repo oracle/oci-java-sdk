@@ -203,6 +203,11 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region US_SOMERSET_1 = register("us-somerset-1", Realm.OC23, "ebb");
     public static final Region US_THAMES_1 = register("us-thames-1", Realm.OC23, "ebl");
 
+    // OC35
+    public static final Region AP_SEOUL_2 = register("ap-seoul-2", Realm.OC35, "dtz");
+    public static final Region AP_SUWON_1 = register("ap-suwon-1", Realm.OC35, "dln");
+    public static final Region AP_CHUNCHEON_2 = register("ap-chuncheon-2", Realm.OC35, "bno");
+
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
 

@@ -13,10 +13,16 @@ import com.oracle.bmc.cims.model.*;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
 public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
+     */
     private String csi;
 
-    /** The Customer Support Identifier (CSI) associated with the support account. */
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
+     * required for technical support tickets and optional for limits and billing tickets.
+     */
     public String getCsi() {
         return csi;
     }
@@ -42,13 +48,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-     * Cloud Infrastructure account.
+     * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+     * Multicloud users.
      */
     public String getOcid() {
         return ocid;
@@ -81,10 +89,16 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getIdtoken() {
         return idtoken;
     }
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     private String domainid;
 
-    /** The OCID of identity domain. */
+    /**
+     * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+     * Identity domain.
+     */
     public String getDomainid() {
         return domainid;
     }
@@ -95,11 +109,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
         private com.oracle.bmc.http.client.RequestInterceptor invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
-        /** The Customer Support Identifier (CSI) associated with the support account. */
+        /**
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
+         */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account. The CSI
+         * is required for technical support tickets and optional for limits and billing tickets.
          *
          * @param csi the value to set
          * @return this builder instance
@@ -143,13 +161,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle
-         * Cloud Infrastructure account.
+         * Cloud Infrastructure account. User OCID is mandatory for OCI Users and optional for
+         * Multicloud users.
          *
          * @param ocid the value to set
          * @return this builder instance
@@ -215,11 +235,15 @@ public class ValidateUserRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this;
         }
 
-        /** The OCID of identity domain. */
+        /**
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
+         */
         private String domainid = null;
 
         /**
-         * The OCID of identity domain.
+         * The OCID of identity domain. DomainID is mandatory if the user is part of Non Default
+         * Identity domain.
          *
          * @param domainid the value to set
          * @return this builder instance

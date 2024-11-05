@@ -28,9 +28,11 @@ import com.oracle.bmc.http.signing.internal.RequestSignerImpl;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
 import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.Validate;
-import com.oracle.bmc.waiter.FixedTimeDelayStrategy;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import org.slf4j.Logger;
 
@@ -61,8 +63,20 @@ import java.util.function.Supplier;
 public class X509FederationClient implements FederationClient, ProvidesConfigurableRefresh {
     private static final RetryConfiguration RETRY_CONFIGURATION =
             RetryConfiguration.builder()
-                    .delayStrategy(new FixedTimeDelayStrategy(250))
-                    .terminationStrategy(new MaxAttemptsTerminationStrategy(5))
+                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(1000))
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(3))
+                    .retryCondition(
+                            new DefaultRetryCondition() {
+                                @Override
+                                public boolean shouldBeRetried(@Nonnull BmcException e) {
+                                    if (e == null) {
+                                        throw new java.lang.NullPointerException(
+                                                "e is marked non-null but is null");
+                                    }
+                                    // We should not retry on 4xx
+                                    return e.getStatusCode() < 400 || e.getStatusCode() >= 500;
+                                }
+                            })
                     .build();
     private static final String DEFAULT_PURPOSE = "DEFAULT";
     private static final String DEFAULT_FINGERPRINT = "SHA256";
@@ -369,23 +383,7 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
                             purpose,
                             DEFAULT_FINGERPRINT);
 
-            FederationResponseWrapper resp =
-                    ClientCall.builder(
-                                    httpClient,
-                                    new FederationRequestWrapper(federationRequest),
-                                    FederationResponseWrapper.Builder::new)
-                            .method(Method.POST)
-                            .logger(LOG, "X509FederationClient")
-                            .appendPathPart("v1")
-                            .appendPathPart("x509")
-                            .handleBody(
-                                    SecurityToken.class, (builder, token) -> builder.token = token)
-                            .retryConfiguration(RETRY_CONFIGURATION)
-                            .clientConfigurator(clientConfigurator)
-                            .circuitBreaker(circuitBreaker)
-                            .accept("*/*")
-                            .hasBody()
-                            .callSync();
+            FederationResponseWrapper resp = makeCall(federationRequest);
             return new SecurityTokenAdapter(resp.token.getToken(), sessionKeySupplier);
         } catch (BmcException e) {
             throw e;
@@ -395,7 +393,24 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         }
     }
 
-    // really simple retry until the SDK supports internal retries
+    @VisibleForTesting
+    FederationResponseWrapper makeCall(X509FederationRequest federationRequest) {
+        return ClientCall.builder(
+                        httpClient,
+                        new FederationRequestWrapper(federationRequest),
+                        FederationResponseWrapper.Builder::new)
+                .method(Method.POST)
+                .logger(LOG, "X509FederationClient")
+                .appendPathPart("v1")
+                .appendPathPart("x509")
+                .handleBody(SecurityToken.class, (builder, token) -> builder.token = token)
+                .retryConfiguration(RETRY_CONFIGURATION)
+                .clientConfigurator(clientConfigurator)
+                .circuitBreaker(circuitBreaker)
+                .accept("*/*")
+                .hasBody()
+                .callSync();
+    }
 
     @Override
     public String refreshAndGetSecurityTokenIfExpiringWithin(Duration time) {

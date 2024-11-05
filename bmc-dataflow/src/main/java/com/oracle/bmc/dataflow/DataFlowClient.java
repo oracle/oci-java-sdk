@@ -1259,6 +1259,36 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public StartSqlEndpointResponse startSqlEndpoint(StartSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StartSqlEndpointResponse::builder)
+                .logger(LOG, "startSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StartSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StartSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StartSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartSqlEndpointResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public StopPoolResponse stopPool(StopPoolRequest request) {
 
         Validate.notBlank(request.getPoolId(), "poolId must not be blank");
@@ -1285,6 +1315,36 @@ public class DataFlowClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", StopPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopPoolResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public StopSqlEndpointResponse stopSqlEndpoint(StopSqlEndpointRequest request) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StopSqlEndpointResponse::builder)
+                .logger(LOG, "stopSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StopSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StopSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", StopSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

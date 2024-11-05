@@ -212,7 +212,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreateCloudGateServerResponse createCloudGateServer(CreateCloudGateServerRequest request);
 
     /**
-     * Create a Condition
+     * Create a condition
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -603,7 +603,7 @@ public interface IdentityDomains extends AutoCloseable {
     CreatePasswordPolicyResponse createPasswordPolicy(CreatePasswordPolicyRequest request);
 
     /**
-     * Create a Policy
+     * Create a Policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -618,7 +618,24 @@ public interface IdentityDomains extends AutoCloseable {
     CreatePolicyResponse createPolicy(CreatePolicyRequest request);
 
     /**
-     * Create a Rule
+     * Create a RestoreOciConsolePolicy entry to restore Policy to factory default.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/CreateRestoreOciConsolePolicyExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateRestoreOciConsolePolicy API.
+     */
+    CreateRestoreOciConsolePolicyResponse createRestoreOciConsolePolicy(
+            CreateRestoreOciConsolePolicyRequest request);
+
+    /**
+     * Create a Rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -889,7 +906,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeleteCloudGateServerResponse deleteCloudGateServer(DeleteCloudGateServerRequest request);
 
     /**
-     * Delete a Condition
+     * Delete a condition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1230,7 +1247,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeletePasswordPolicyResponse deletePasswordPolicy(DeletePasswordPolicyRequest request);
 
     /**
-     * Delete a Policy
+     * Delete a Policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1245,7 +1262,7 @@ public interface IdentityDomains extends AutoCloseable {
     DeletePolicyResponse deletePolicy(DeletePolicyRequest request);
 
     /**
-     * Delete a Rule
+     * Delete a Rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1579,7 +1596,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetCloudGateServerResponse getCloudGateServer(GetCloudGateServerRequest request);
 
     /**
-     * Get a Condition
+     * Get a condition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2009,6 +2026,23 @@ public interface IdentityDomains extends AutoCloseable {
             GetOAuthPartnerCertificateRequest request);
 
     /**
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/GetOciConsoleSignOnPolicyConsentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetOciConsoleSignOnPolicyConsent API.
+     */
+    GetOciConsoleSignOnPolicyConsentResponse getOciConsoleSignOnPolicyConsent(
+            GetOciConsoleSignOnPolicyConsentRequest request);
+
+    /**
      * Get a password policy.
      *
      * @param request The request object containing the details to send
@@ -2025,7 +2059,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetPasswordPolicyResponse getPasswordPolicy(GetPasswordPolicyRequest request);
 
     /**
-     * Get a Policy
+     * Get a Policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2040,7 +2074,7 @@ public interface IdentityDomains extends AutoCloseable {
     GetPolicyResponse getPolicy(GetPolicyRequest request);
 
     /**
-     * Get a Rule
+     * Get a Rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2439,7 +2473,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListCloudGatesResponse listCloudGates(ListCloudGatesRequest request);
 
     /**
-     * Search Conditions
+     * Search conditions.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2906,6 +2940,23 @@ public interface IdentityDomains extends AutoCloseable {
             ListOAuthPartnerCertificatesRequest request);
 
     /**
+     * Search OciConsoleSignOnPolicyConsent entries
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/ListOciConsoleSignOnPolicyConsentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListOciConsoleSignOnPolicyConsents API.
+     */
+    ListOciConsoleSignOnPolicyConsentsResponse listOciConsoleSignOnPolicyConsents(
+            ListOciConsoleSignOnPolicyConsentsRequest request);
+
+    /**
      * Search for password policies.
      *
      * @param request The request object containing the details to send
@@ -2922,7 +2973,7 @@ public interface IdentityDomains extends AutoCloseable {
     ListPasswordPoliciesResponse listPasswordPolicies(ListPasswordPoliciesRequest request);
 
     /**
-     * Search Policies
+     * Search Policies.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -2954,7 +3005,7 @@ public interface IdentityDomains extends AutoCloseable {
             ListResourceTypeSchemaAttributesRequest request);
 
     /**
-     * Search Rules
+     * Search Rules.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3287,7 +3338,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchCloudGateServerResponse patchCloudGateServer(PatchCloudGateServerRequest request);
 
     /**
-     * Update a Condition
+     * Update a condition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3621,7 +3672,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchPasswordPolicyResponse patchPasswordPolicy(PatchPasswordPolicyRequest request);
 
     /**
-     * Update a Policy
+     * Update a Policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3636,7 +3687,7 @@ public interface IdentityDomains extends AutoCloseable {
     PatchPolicyResponse patchPolicy(PatchPolicyRequest request);
 
     /**
-     * Update a Rule
+     * Update a Rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3924,7 +3975,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutCloudGateServerResponse putCloudGateServer(PutCloudGateServerRequest request);
 
     /**
-     * Replace a Condition
+     * Replace a condition.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4113,7 +4164,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutPasswordPolicyResponse putPasswordPolicy(PutPasswordPolicyRequest request);
 
     /**
-     * Replace a Policy
+     * Replace a Policy.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4128,7 +4179,7 @@ public interface IdentityDomains extends AutoCloseable {
     PutPolicyResponse putPolicy(PutPolicyRequest request);
 
     /**
-     * Replace a Rule
+     * Replace a Rule.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4446,7 +4497,7 @@ public interface IdentityDomains extends AutoCloseable {
     SearchCloudGatesResponse searchCloudGates(SearchCloudGatesRequest request);
 
     /**
-     * Search Conditions Using POST
+     * Search Conditions Using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -4721,6 +4772,23 @@ public interface IdentityDomains extends AutoCloseable {
             SearchOAuthPartnerCertificatesRequest request);
 
     /**
+     * Search OciConsoleSignOnPolicyConsents Using POST
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/identitydomains/SearchOciConsoleSignOnPolicyConsentsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SearchOciConsoleSignOnPolicyConsents API.
+     */
+    SearchOciConsoleSignOnPolicyConsentsResponse searchOciConsoleSignOnPolicyConsents(
+            SearchOciConsoleSignOnPolicyConsentsRequest request);
+
+    /**
      * Search for password policies using POST.
      *
      * @param request The request object containing the details to send
@@ -4769,7 +4837,7 @@ public interface IdentityDomains extends AutoCloseable {
             SearchResourceTypeSchemaAttributesRequest request);
 
     /**
-     * Search Rules Using POST
+     * Search Rules Using POST.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

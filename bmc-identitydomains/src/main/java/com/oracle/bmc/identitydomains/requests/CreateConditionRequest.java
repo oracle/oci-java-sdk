@@ -95,9 +95,10 @@ public class CreateConditionRequest
      *
      * <p>Before you specify an attribute-value in a request to create a resource, please check the
      * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
+     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     *
+     * <p>- Your request to create, update or replace a resource may specify in its payload a value
+     * for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
      * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
      * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
      * to update or replace a resource will fail with an error 400 Bad Request if you specify a
@@ -107,9 +108,10 @@ public class CreateConditionRequest
      * in the specified resource.
      *
      * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
+     * check the **'returned'** property of that attribute in the resource-type schema below:
+     *
+     * <p>- Your request to read a resource (or to search a resource-type) can specify as the value
+     * of attributes any attributes that are defined as *returned:default* or *returned:request* or
      * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
      * resource (or to search a resource-type) will return in each resource the set of attributes
      * that you requested, as well as any attribute that is defined as *returned:always*. - If you
@@ -126,9 +128,10 @@ public class CreateConditionRequest
      *
      * <p>Before you specify an attribute-value in a request to create a resource, please check the
      * **'mutability'** property of that attribute in the resource-type schema below. Clicking on an
-     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute. -
-     * Your request to create, update or replace a resource may specify in its payload a value for
-     * any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
+     * attribute-row will expand that row to show the **SCIM++ Properties** of that attribute.
+     *
+     * <p>- Your request to create, update or replace a resource may specify in its payload a value
+     * for any attribute that is defined as *mutability:readWrite* or *mutability:writeOnly* or
      * *mutability:immutable*: - The SCIM APIs to create a resource will ignore silently any value
      * that you specify for an attribute that is defined as *mutability:readOnly*. - The SCIM APIs
      * to update or replace a resource will fail with an error 400 Bad Request if you specify a
@@ -138,9 +141,10 @@ public class CreateConditionRequest
      * in the specified resource.
      *
      * <p>Also, before you use the query-parameter attributes to request specific attributes, please
-     * check the **'returned'** property of that attribute in the resource-type schema below: - Your
-     * request to read a resource (or to search a resource-type) can specify as the value of
-     * attributes any attributes that are defined as *returned:default* or *returned:request* or
+     * check the **'returned'** property of that attribute in the resource-type schema below:
+     *
+     * <p>- Your request to read a resource (or to search a resource-type) can specify as the value
+     * of attributes any attributes that are defined as *returned:default* or *returned:request* or
      * *returned:always*: - If you request a specific set of attributes, the SCIM APIs to read a
      * resource (or to search a resource-type) will return in each resource the set of attributes
      * that you requested, as well as any attribute that is defined as *returned:always*. - If you
@@ -305,8 +309,10 @@ public class CreateConditionRequest
          * <p>Before you specify an attribute-value in a request to create a resource, please check
          * the **'mutability'** property of that attribute in the resource-type schema below.
          * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
+         * that attribute.
+         *
+         * <p>- Your request to create, update or replace a resource may specify in its payload a
+         * value for any attribute that is defined as *mutability:readWrite* or
          * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
          * will ignore silently any value that you specify for an attribute that is defined as
          * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
@@ -317,8 +323,10 @@ public class CreateConditionRequest
          *
          * <p>Also, before you use the query-parameter attributes to request specific attributes,
          * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
+         * below:
+         *
+         * <p>- Your request to read a resource (or to search a resource-type) can specify as the
+         * value of attributes any attributes that are defined as *returned:default* or
          * *returned:request* or *returned:always*: - If you request a specific set of attributes,
          * the SCIM APIs to read a resource (or to search a resource-type) will return in each
          * resource the set of attributes that you requested, as well as any attribute that is
@@ -337,8 +345,10 @@ public class CreateConditionRequest
          * <p>Before you specify an attribute-value in a request to create a resource, please check
          * the **'mutability'** property of that attribute in the resource-type schema below.
          * Clicking on an attribute-row will expand that row to show the **SCIM++ Properties** of
-         * that attribute. - Your request to create, update or replace a resource may specify in its
-         * payload a value for any attribute that is defined as *mutability:readWrite* or
+         * that attribute.
+         *
+         * <p>- Your request to create, update or replace a resource may specify in its payload a
+         * value for any attribute that is defined as *mutability:readWrite* or
          * *mutability:writeOnly* or *mutability:immutable*: - The SCIM APIs to create a resource
          * will ignore silently any value that you specify for an attribute that is defined as
          * *mutability:readOnly*. - The SCIM APIs to update or replace a resource will fail with an
@@ -349,8 +359,10 @@ public class CreateConditionRequest
          *
          * <p>Also, before you use the query-parameter attributes to request specific attributes,
          * please check the **'returned'** property of that attribute in the resource-type schema
-         * below: - Your request to read a resource (or to search a resource-type) can specify as
-         * the value of attributes any attributes that are defined as *returned:default* or
+         * below:
+         *
+         * <p>- Your request to read a resource (or to search a resource-type) can specify as the
+         * value of attributes any attributes that are defined as *returned:default* or
          * *returned:request* or *returned:always*: - If you request a specific set of attributes,
          * the SCIM APIs to read a resource (or to search a resource-type) will return in each
          * resource the set of attributes that you requested, as well as any attribute that is

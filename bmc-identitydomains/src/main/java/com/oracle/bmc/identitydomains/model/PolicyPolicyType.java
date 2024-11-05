@@ -35,7 +35,7 @@ public final class PolicyPolicyType
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * PolicyType identifier
+         * PolicyType identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: true - returned: default - type: string - uniqueness:
@@ -45,7 +45,7 @@ public final class PolicyPolicyType
         private String value;
 
         /**
-         * PolicyType identifier
+         * PolicyType identifier.
          *
          * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
          * mutability: immutable - required: true - returned: default - type: string - uniqueness:
@@ -116,7 +116,7 @@ public final class PolicyPolicyType
     }
 
     /**
-     * PolicyType identifier
+     * PolicyType identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: true - returned: default - type: string - uniqueness: none
@@ -125,7 +125,7 @@ public final class PolicyPolicyType
     private final String value;
 
     /**
-     * PolicyType identifier
+     * PolicyType identifier.
      *
      * <p>*SCIM++ Properties:** - caseExact: true - idcsSearchable: true - multiValued: false -
      * mutability: immutable - required: true - returned: default - type: string - uniqueness: none

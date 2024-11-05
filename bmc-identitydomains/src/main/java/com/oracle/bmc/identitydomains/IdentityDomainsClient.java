@@ -1210,6 +1210,36 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateRestoreOciConsolePolicyResponse createRestoreOciConsolePolicy(
+            CreateRestoreOciConsolePolicyRequest request) {
+
+        return clientCall(request, CreateRestoreOciConsolePolicyResponse::builder)
+                .logger(LOG, "createRestoreOciConsolePolicy")
+                .serviceDetails("IdentityDomains", "CreateRestoreOciConsolePolicy", "")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateRestoreOciConsolePolicyRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("RestoreOciConsolePolicy")
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.RestoreOciConsolePolicy.class,
+                        CreateRestoreOciConsolePolicyResponse.Builder::restoreOciConsolePolicy)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateRestoreOciConsolePolicyResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", CreateRestoreOciConsolePolicyResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public CreateRuleResponse createRule(CreateRuleRequest request) {
 
         return clientCall(request, CreateRuleResponse::builder)
@@ -4116,6 +4146,47 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public GetOciConsoleSignOnPolicyConsentResponse getOciConsoleSignOnPolicyConsent(
+            GetOciConsoleSignOnPolicyConsentRequest request) {
+
+        Validate.notBlank(
+                request.getOciConsoleSignOnPolicyConsentId(),
+                "ociConsoleSignOnPolicyConsentId must not be blank");
+
+        return clientCall(request, GetOciConsoleSignOnPolicyConsentResponse::builder)
+                .logger(LOG, "getOciConsoleSignOnPolicyConsent")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "GetOciConsoleSignOnPolicyConsent",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/GetOciConsoleSignOnPolicyConsent")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetOciConsoleSignOnPolicyConsentRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OciConsoleSignOnPolicyConsents")
+                .appendPathParam(request.getOciConsoleSignOnPolicyConsentId())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OciConsoleSignOnPolicyConsent.class,
+                        GetOciConsoleSignOnPolicyConsentResponse.Builder
+                                ::ociConsoleSignOnPolicyConsent)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetOciConsoleSignOnPolicyConsentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetPasswordPolicyResponse getPasswordPolicy(GetPasswordPolicyRequest request) {
 
         Validate.notBlank(request.getPasswordPolicyId(), "passwordPolicyId must not be blank");
@@ -5174,7 +5245,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "ListConditions",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/ListConditions")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/ListConditions")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListConditionsRequest::builder)
                 .basePath("")
@@ -6326,6 +6397,52 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public ListOciConsoleSignOnPolicyConsentsResponse listOciConsoleSignOnPolicyConsents(
+            ListOciConsoleSignOnPolicyConsentsRequest request) {
+
+        return clientCall(request, ListOciConsoleSignOnPolicyConsentsResponse::builder)
+                .logger(LOG, "listOciConsoleSignOnPolicyConsents")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "ListOciConsoleSignOnPolicyConsents",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/ListOciConsoleSignOnPolicyConsents")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListOciConsoleSignOnPolicyConsentsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OciConsoleSignOnPolicyConsents")
+                .appendQueryParam("filter", request.getFilter())
+                .appendQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendQueryParam("startIndex", request.getStartIndex())
+                .appendQueryParam("count", request.getCount())
+                .appendQueryParam("attributes", request.getAttributes())
+                .appendListQueryParam(
+                        "attributeSets",
+                        request.getAttributeSets(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OciConsoleSignOnPolicyConsents.class,
+                        ListOciConsoleSignOnPolicyConsentsResponse.Builder
+                                ::ociConsoleSignOnPolicyConsents)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListOciConsoleSignOnPolicyConsentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListOciConsoleSignOnPolicyConsentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListPasswordPoliciesResponse listPasswordPolicies(ListPasswordPoliciesRequest request) {
 
         return clientCall(request, ListPasswordPoliciesResponse::builder)
@@ -6375,7 +6492,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "ListPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/ListPolicies")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/ListPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListPoliciesRequest::builder)
                 .basePath("")
@@ -6463,7 +6580,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "ListRules",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/ListRules")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/ListRules")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListRulesRequest::builder)
                 .basePath("")
@@ -10104,7 +10221,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "SearchConditions",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/SearchConditions")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/SearchConditions")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchConditionsRequest::builder)
                 .basePath("")
@@ -10689,6 +10806,44 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public SearchOciConsoleSignOnPolicyConsentsResponse searchOciConsoleSignOnPolicyConsents(
+            SearchOciConsoleSignOnPolicyConsentsRequest request) {
+
+        return clientCall(request, SearchOciConsoleSignOnPolicyConsentsResponse::builder)
+                .logger(LOG, "searchOciConsoleSignOnPolicyConsents")
+                .serviceDetails(
+                        "IdentityDomains",
+                        "SearchOciConsoleSignOnPolicyConsents",
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/SearchOciConsoleSignOnPolicyConsents")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SearchOciConsoleSignOnPolicyConsentsRequest::builder)
+                .basePath("")
+                .appendPathParam("admin")
+                .appendPathParam("v1")
+                .appendPathParam("OciConsoleSignOnPolicyConsents")
+                .appendPathParam(".search")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .accept("application/json, application/scim+json")
+                .appendHeader("authorization", request.getAuthorization())
+                .appendHeader(
+                        "resource_type_schema_version", request.getResourceTypeSchemaVersion())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.identitydomains.model.OciConsoleSignOnPolicyConsents.class,
+                        SearchOciConsoleSignOnPolicyConsentsResponse.Builder
+                                ::ociConsoleSignOnPolicyConsents)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        SearchOciConsoleSignOnPolicyConsentsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        SearchOciConsoleSignOnPolicyConsentsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public SearchPasswordPoliciesResponse searchPasswordPolicies(
             SearchPasswordPoliciesRequest request) {
 
@@ -10731,7 +10886,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "SearchPolicies",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/SearchPolicies")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/SearchPolicies")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchPoliciesRequest::builder)
                 .basePath("")
@@ -10803,7 +10958,7 @@ public class IdentityDomainsClient extends com.oracle.bmc.http.internal.BaseSync
                 .serviceDetails(
                         "IdentityDomains",
                         "SearchRules",
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/SearchRules")
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/SearchRules")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(SearchRulesRequest::builder)
                 .basePath("")

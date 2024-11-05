@@ -209,7 +209,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Condition
+     * Create a condition
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -598,7 +598,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Policy
+     * Create a Policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -613,7 +613,25 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Rule
+     * Create a RestoreOciConsolePolicy entry to restore Policy to factory default.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateRestoreOciConsolePolicyResponse>
+            createRestoreOciConsolePolicy(
+                    CreateRestoreOciConsolePolicyRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    CreateRestoreOciConsolePolicyRequest,
+                                    CreateRestoreOciConsolePolicyResponse>
+                            handler);
+
+    /**
+     * Create a Rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -880,7 +898,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a Condition
+     * Delete a condition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1217,7 +1235,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a Policy
+     * Delete a Policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1232,7 +1250,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Delete a Rule
+     * Delete a Rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1563,7 +1581,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a Condition
+     * Get a condition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1983,6 +2001,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Get a OciConsoleSignOnPolicyConsent Entry.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetOciConsoleSignOnPolicyConsentResponse>
+            getOciConsoleSignOnPolicyConsent(
+                    GetOciConsoleSignOnPolicyConsentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    GetOciConsoleSignOnPolicyConsentRequest,
+                                    GetOciConsoleSignOnPolicyConsentResponse>
+                            handler);
+
+    /**
      * Get a password policy.
      *
      * @param request The request object containing the details to send
@@ -1999,7 +2035,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Get a Policy
+     * Get a Policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2013,7 +2049,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetPolicyRequest, GetPolicyResponse> handler);
 
     /**
-     * Get a Rule
+     * Get a Rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2402,7 +2438,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search Conditions
+     * Search conditions.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2860,6 +2896,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Search OciConsoleSignOnPolicyConsent entries
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListOciConsoleSignOnPolicyConsentsResponse>
+            listOciConsoleSignOnPolicyConsents(
+                    ListOciConsoleSignOnPolicyConsentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListOciConsoleSignOnPolicyConsentsRequest,
+                                    ListOciConsoleSignOnPolicyConsentsResponse>
+                            handler);
+
+    /**
      * Search for password policies.
      *
      * @param request The request object containing the details to send
@@ -2876,7 +2930,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search Policies
+     * Search Policies.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -2909,7 +2963,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Search Rules
+     * Search Rules.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3233,7 +3287,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a Condition
+     * Update a condition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3561,7 +3615,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Update a Policy
+     * Update a Policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3575,7 +3629,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PatchPolicyRequest, PatchPolicyResponse> handler);
 
     /**
-     * Update a Rule
+     * Update a Rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3857,7 +3911,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Replace a Condition
+     * Replace a condition.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4043,7 +4097,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Replace a Policy
+     * Replace a Policy.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4057,7 +4111,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<PutPolicyRequest, PutPolicyResponse> handler);
 
     /**
-     * Replace a Rule
+     * Replace a Rule.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4365,7 +4419,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Search Conditions Using POST
+     * Search Conditions Using POST.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -4637,6 +4691,24 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Search OciConsoleSignOnPolicyConsents Using POST
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SearchOciConsoleSignOnPolicyConsentsResponse>
+            searchOciConsoleSignOnPolicyConsents(
+                    SearchOciConsoleSignOnPolicyConsentsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOciConsoleSignOnPolicyConsentsRequest,
+                                    SearchOciConsoleSignOnPolicyConsentsResponse>
+                            handler);
+
+    /**
      * Search for password policies using POST.
      *
      * @param request The request object containing the details to send
@@ -4686,7 +4758,7 @@ public interface IdentityDomainsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Search Rules Using POST
+     * Search Rules Using POST.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.

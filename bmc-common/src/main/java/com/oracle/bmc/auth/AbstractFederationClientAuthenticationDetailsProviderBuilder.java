@@ -223,7 +223,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
         CircuitBreakerConfiguration circuitBreakerConfig =
                 circuitBreakerConfiguration != null
                         ? circuitBreakerConfiguration
-                        : CircuitBreakerUtils.getDefaultCircuitBreakerConfiguration();
+                        : CircuitBreakerUtils.getDefaultAuthClientCircuitBreakerConfiguration();
 
         if (purpose != null) {
             return new X509FederationClient(

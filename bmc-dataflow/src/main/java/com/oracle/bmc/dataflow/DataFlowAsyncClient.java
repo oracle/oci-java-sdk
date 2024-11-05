@@ -1339,6 +1339,39 @@ public class DataFlowAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<StartSqlEndpointResponse> startSqlEndpoint(
+            StartSqlEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartSqlEndpointRequest, StartSqlEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StartSqlEndpointResponse::builder)
+                .logger(LOG, "startSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StartSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StartSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StartSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("start")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", StartSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StartSqlEndpointResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<StopPoolResponse> stopPool(
             StopPoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse>
@@ -1367,6 +1400,39 @@ public class DataFlowAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
                         "opc-request-id", StopPoolResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-work-request-id", StopPoolResponse.Builder::opcWorkRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSqlEndpointResponse> stopSqlEndpoint(
+            StopSqlEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopSqlEndpointRequest, StopSqlEndpointResponse>
+                    handler) {
+
+        Validate.notBlank(request.getSqlEndpointId(), "sqlEndpointId must not be blank");
+
+        return clientCall(request, StopSqlEndpointResponse::builder)
+                .logger(LOG, "stopSqlEndpoint")
+                .serviceDetails(
+                        "DataFlow",
+                        "StopSqlEndpoint",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StopSqlEndpoint")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(StopSqlEndpointRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("sqlEndpoints")
+                .appendPathParam(request.getSqlEndpointId())
+                .appendPathParam("actions")
+                .appendPathParam("stop")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-request-id", StopSqlEndpointResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", StopSqlEndpointResponse.Builder::opcWorkRequestId)
                 .callAsync(handler);
     }
 
