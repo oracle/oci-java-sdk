@@ -108,6 +108,15 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** Used authentication mechanism to access Azure Data Lake Storage. */
         @com.fasterxml.jackson.annotation.JsonProperty("authenticationType")
         private AzureDataLakeStorageConnection.AuthenticationType authenticationType;
@@ -161,6 +170,27 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
+         * be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+        private String accountKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the account key is stored. Note: When provided, 'accountKey' field must not
+         * be provided.
+         *
+         * @param accountKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder accountKeySecretId(String accountKeySecretId) {
+            this.accountKeySecretId = accountKeySecretId;
+            this.__explicitlySet__.add("accountKeySecretId");
+            return this;
+        }
+        /**
          * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service.
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
@@ -181,6 +211,27 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         public Builder sasToken(String sasToken) {
             this.sasToken = sasToken;
             this.__explicitlySet__.add("sasToken");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+         * provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+        private String sasTokenSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+         * provided.
+         *
+         * @param sasTokenSecretId the value to set
+         * @return this builder
+         */
+        public Builder sasTokenSecretId(String sasTokenSecretId) {
+            this.sasTokenSecretId = sasTokenSecretId;
+            this.__explicitlySet__.add("sasTokenSecretId");
             return this;
         }
         /**
@@ -242,6 +293,27 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             this.__explicitlySet__.add("clientSecret");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
+         * not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+        private String clientSecretSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must
+         * not be provided.
+         *
+         * @param clientSecretSecretId the value to set
+         * @return this builder
+         */
+        public Builder clientSecretSecretId(String clientSecretSecretId) {
+            this.clientSecretSecretId = clientSecretSecretId;
+            this.__explicitlySet__.add("clientSecretSecretId");
+            return this;
+        }
         /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
         private String endpoint;
@@ -273,13 +345,17 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.authenticationType,
                             this.accountName,
                             this.accountKey,
+                            this.accountKeySecretId,
                             this.sasToken,
+                            this.sasTokenSecretId,
                             this.azureTenantId,
                             this.clientId,
                             this.clientSecret,
+                            this.clientSecretSecretId,
                             this.endpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -316,6 +392,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("authenticationType")) {
                 this.authenticationType(model.getAuthenticationType());
             }
@@ -325,8 +404,14 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             if (model.wasPropertyExplicitlySet("accountKey")) {
                 this.accountKey(model.getAccountKey());
             }
+            if (model.wasPropertyExplicitlySet("accountKeySecretId")) {
+                this.accountKeySecretId(model.getAccountKeySecretId());
+            }
             if (model.wasPropertyExplicitlySet("sasToken")) {
                 this.sasToken(model.getSasToken());
+            }
+            if (model.wasPropertyExplicitlySet("sasTokenSecretId")) {
+                this.sasTokenSecretId(model.getSasTokenSecretId());
             }
             if (model.wasPropertyExplicitlySet("azureTenantId")) {
                 this.azureTenantId(model.getAzureTenantId());
@@ -336,6 +421,9 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             }
             if (model.wasPropertyExplicitlySet("clientSecret")) {
                 this.clientSecret(model.getClientSecret());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecretSecretId")) {
+                this.clientSecretSecretId(model.getClientSecretSecretId());
             }
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
@@ -364,13 +452,17 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             AzureDataLakeStorageConnection.AuthenticationType authenticationType,
             String accountName,
             String accountKey,
+            String accountKeySecretId,
             String sasToken,
+            String sasTokenSecretId,
             String azureTenantId,
             String clientId,
             String clientSecret,
+            String clientSecretSecretId,
             String endpoint) {
         super(
                 displayName,
@@ -381,14 +473,18 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.authenticationType = authenticationType;
         this.accountName = accountName;
         this.accountKey = accountKey;
+        this.accountKeySecretId = accountKeySecretId;
         this.sasToken = sasToken;
+        this.sasTokenSecretId = sasTokenSecretId;
         this.azureTenantId = azureTenantId;
         this.clientId = clientId;
         this.clientSecret = clientSecret;
+        this.clientSecretSecretId = clientSecretSecretId;
         this.endpoint = endpoint;
     }
 
@@ -438,6 +534,25 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
+     * provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+    private final String accountKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the account key is stored. Note: When provided, 'accountKey' field must not be
+     * provided.
+     *
+     * @return the value
+     */
+    public String getAccountKeySecretId() {
+        return accountKeySecretId;
+    }
+
+    /**
      * Credential that uses a shared access signature (SAS) to authenticate to an Azure Service.
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
@@ -456,6 +571,25 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      */
     public String getSasToken() {
         return sasToken;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+     * provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+    private final String sasTokenSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the sas token is stored. Note: When provided, 'sasToken' field must not be
+     * provided.
+     *
+     * @return the value
+     */
+    public String getSasTokenSecretId() {
+        return sasTokenSecretId;
     }
 
     /**
@@ -511,6 +645,25 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         return clientSecret;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
+     * be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+    private final String clientSecretSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the client secret is stored. Note: When provided, 'clientSecret' field must not
+     * be provided.
+     *
+     * @return the value
+     */
+    public String getClientSecretSecretId() {
+        return clientSecretSecretId;
+    }
+
     /** Azure Storage service endpoint. e.g: https://test.blob.core.windows.net */
     @com.fasterxml.jackson.annotation.JsonProperty("endpoint")
     private final String endpoint;
@@ -542,10 +695,13 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", accountName=").append(String.valueOf(this.accountName));
         sb.append(", accountKey=").append("<redacted>");
+        sb.append(", accountKeySecretId=").append(String.valueOf(this.accountKeySecretId));
         sb.append(", sasToken=").append("<redacted>");
+        sb.append(", sasTokenSecretId=").append(String.valueOf(this.sasTokenSecretId));
         sb.append(", azureTenantId=").append(String.valueOf(this.azureTenantId));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", clientSecret=").append("<redacted>");
+        sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
         sb.append(")");
         return sb.toString();
@@ -565,10 +721,13 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         return java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.accountName, other.accountName)
                 && java.util.Objects.equals(this.accountKey, other.accountKey)
+                && java.util.Objects.equals(this.accountKeySecretId, other.accountKeySecretId)
                 && java.util.Objects.equals(this.sasToken, other.sasToken)
+                && java.util.Objects.equals(this.sasTokenSecretId, other.sasTokenSecretId)
                 && java.util.Objects.equals(this.azureTenantId, other.azureTenantId)
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.clientSecret, other.clientSecret)
+                && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
                 && super.equals(other);
     }
@@ -584,12 +743,25 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.accountName == null ? 43 : this.accountName.hashCode());
         result = (result * PRIME) + (this.accountKey == null ? 43 : this.accountKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accountKeySecretId == null
+                                ? 43
+                                : this.accountKeySecretId.hashCode());
         result = (result * PRIME) + (this.sasToken == null ? 43 : this.sasToken.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sasTokenSecretId == null ? 43 : this.sasTokenSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.azureTenantId == null ? 43 : this.azureTenantId.hashCode());
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
         result = (result * PRIME) + (this.clientSecret == null ? 43 : this.clientSecret.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientSecretSecretId == null
+                                ? 43
+                                : this.clientSecretSecretId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
         return result;
     }

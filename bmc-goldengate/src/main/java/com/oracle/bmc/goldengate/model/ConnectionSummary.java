@@ -117,7 +117,8 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         "nsgIds",
         "subnetId",
         "routingMethod",
-        "locks"
+        "locks",
+        "doesUseSecretIds"
     })
     protected ConnectionSummary(
             String id,
@@ -137,7 +138,8 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
-            java.util.List<ResourceLock> locks) {
+            java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -157,6 +159,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         this.subnetId = subnetId;
         this.routingMethod = routingMethod;
         this.locks = locks;
+        this.doesUseSecretIds = doesUseSecretIds;
     }
 
     /**
@@ -475,6 +478,19 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         return locks;
     }
 
+    /** Indicates that sensitive attributes are provided via Secrets. */
+    @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+    private final Boolean doesUseSecretIds;
+
+    /**
+     * Indicates that sensitive attributes are provided via Secrets.
+     *
+     * @return the value
+     */
+    public Boolean getDoesUseSecretIds() {
+        return doesUseSecretIds;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -508,6 +524,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", routingMethod=").append(String.valueOf(this.routingMethod));
         sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", doesUseSecretIds=").append(String.valueOf(this.doesUseSecretIds));
         sb.append(")");
         return sb.toString();
     }
@@ -540,6 +557,7 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.routingMethod, other.routingMethod)
                 && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.doesUseSecretIds, other.doesUseSecretIds)
                 && super.equals(other);
     }
 
@@ -573,6 +591,9 @@ public class ConnectionSummary extends com.oracle.bmc.http.client.internal.Expli
                 (result * PRIME)
                         + (this.routingMethod == null ? 43 : this.routingMethod.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.doesUseSecretIds == null ? 43 : this.doesUseSecretIds.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -13,18 +13,27 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  * generation, summarization, and text embeddings.
  *
  * <p>Use the Generative AI service inference API to access your custom model endpoints, or to try
- * the out-of-the-box models to {@link #chat(ChatRequest) chat}, {@link
- * #generateText(GenerateTextRequest) generateText}, {@link #summarizeText(SummarizeTextRequest)
- * summarizeText}, and {@link #embedText(EmbedTextRequest) embedText}.
+ * the out-of-the-box models to {@link
+ * #eNGenerative-ai-inferenceLatestChatResultChat(ENGenerative-ai-inferenceLatestChatResultChatRequest)
+ * eNGenerative-ai-inferenceLatestChatResultChat}, {@link
+ * #eNGenerative-ai-inferenceLatestGenerateTextResultGenerateText(ENGenerative-ai-inferenceLatestGenerateTextResultGenerateTextRequest)
+ * eNGenerative-ai-inferenceLatestGenerateTextResultGenerateText}, {@link
+ * #eNGenerative-ai-inferenceLatestSummarizeTextResultSummarizeText(ENGenerative-ai-inferenceLatestSummarizeTextResultSummarizeTextRequest)
+ * eNGenerative-ai-inferenceLatestSummarizeTextResultSummarizeText}, and {@link
+ * #eNGenerative-ai-inferenceLatestEmbedTextResultEmbedText(ENGenerative-ai-inferenceLatestEmbedTextResultEmbedTextRequest)
+ * eNGenerative-ai-inferenceLatestEmbedTextResultEmbedText}.
  *
  * <p>To use a Generative AI custom model for inference, you must first create an endpoint for that
- * model. Use the [Generative AI service management
- * API](https://docs.cloud.oracle.com/#/en/generative-ai/latest/) to {@link Model} by fine-tuning an
- * out-of-the-box model, or a previous version of a custom model, using your own data. Fine-tune the
- * custom model on a {@link DedicatedAiCluster}. Then, create a {@link DedicatedAiCluster} with an
- * {@link Endpoint} to host your custom model. For resource management in the Generative AI service,
- * use the [Generative AI service management
- * API](https://docs.cloud.oracle.com/#/en/generative-ai/latest/).
+ * model. Use the {@link #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest}
+ * to {@link #eNGenerative-aiLatestModel(ENGenerative-aiLatestModelRequest)
+ * eNGenerative-aiLatestModel} by fine-tuning an out-of-the-box model, or a previous version of a
+ * custom model, using your own data. Fine-tune the custom model on a {@link
+ * #eNGenerative-aiLatestDedicatedAiCluster(ENGenerative-aiLatestDedicatedAiClusterRequest)
+ * eNGenerative-aiLatestDedicatedAiCluster}. Then, create a {@link
+ * #eNGenerative-aiLatestDedicatedAiCluster(ENGenerative-aiLatestDedicatedAiClusterRequest)
+ * eNGenerative-aiLatestDedicatedAiCluster} with an {@link Endpoint} to host your custom model. For
+ * resource management in the Generative AI service, use the {@link
+ * #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest}.
  *
  * <p>To learn more about the service, see the [Generative AI
  * documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).

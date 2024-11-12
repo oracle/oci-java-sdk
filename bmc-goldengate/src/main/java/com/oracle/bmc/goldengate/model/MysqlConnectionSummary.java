@@ -189,6 +189,15 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The MySQL technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private MysqlConnection.TechnologyType technologyType;
@@ -373,6 +382,54 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("dbSystemId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the Client Key - The content of a .pem or .crt file containing the
+         * client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be
+         * provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+        private String sslKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the Client Key - The content of a .pem or .crt file containing the
+         * client private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be
+         * provided.
+         *
+         * @param sslKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder sslKeySecretId(String sslKeySecretId) {
+            this.sslKeySecretId = sslKeySecretId;
+            this.__explicitlySet__.add("sslKeySecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -398,6 +455,7 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
                             this.subnetId,
                             this.routingMethod,
                             this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.username,
                             this.host,
@@ -407,7 +465,9 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
                             this.sslMode,
                             this.privateIp,
                             this.additionalAttributes,
-                            this.dbSystemId);
+                            this.dbSystemId,
+                            this.passwordSecretId,
+                            this.sslKeySecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -470,6 +530,9 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -499,6 +562,12 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             }
             if (model.wasPropertyExplicitlySet("dbSystemId")) {
                 this.dbSystemId(model.getDbSystemId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeySecretId")) {
+                this.sslKeySecretId(model.getSslKeySecretId());
             }
             return this;
         }
@@ -533,6 +602,7 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             String subnetId,
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             MysqlConnection.TechnologyType technologyType,
             String username,
             String host,
@@ -542,7 +612,9 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
             MysqlConnection.SslMode sslMode,
             String privateIp,
             java.util.List<NameValuePair> additionalAttributes,
-            String dbSystemId) {
+            String dbSystemId,
+            String passwordSecretId,
+            String sslKeySecretId) {
         super(
                 id,
                 displayName,
@@ -561,7 +633,8 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                locks);
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.username = username;
         this.host = host;
@@ -572,6 +645,8 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
         this.privateIp = privateIp;
         this.additionalAttributes = additionalAttributes;
         this.dbSystemId = dbSystemId;
+        this.passwordSecretId = passwordSecretId;
+        this.sslKeySecretId = sslKeySecretId;
     }
 
     /** The MySQL technology type. */
@@ -738,6 +813,48 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
         return dbSystemId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the Client Key - The content of a .pem or .crt file containing the client
+     * private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+    private final String sslKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the Client Key - The content of a .pem or .crt file containing the client
+     * private key (for 2-way SSL). Note: When provided, 'sslKey' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getSslKeySecretId() {
+        return sslKeySecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -763,6 +880,8 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -787,6 +906,8 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.sslKeySecretId, other.sslKeySecretId)
                 && super.equals(other);
     }
 
@@ -812,6 +933,12 @@ public final class MysqlConnectionSummary extends ConnectionSummary {
                                 ? 43
                                 : this.additionalAttributes.hashCode());
         result = (result * PRIME) + (this.dbSystemId == null ? 43 : this.dbSystemId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeySecretId == null ? 43 : this.sslKeySecretId.hashCode());
         return result;
     }
 }

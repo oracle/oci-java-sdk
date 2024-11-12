@@ -189,6 +189,15 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Java Message Service technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private JavaMessageServiceConnection.TechnologyType technologyType;
@@ -423,6 +432,157 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             this.__explicitlySet__.add("privateIp");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the security credentials are stored associated to the principal. Note: When
+         * provided, 'jndiSecurityCredentials' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
+        private String jndiSecurityCredentialsSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the security credentials are stored associated to the principal. Note: When
+         * provided, 'jndiSecurityCredentials' field must not be provided.
+         *
+         * @param jndiSecurityCredentialsSecretId the value to set
+         * @return this builder
+         */
+        public Builder jndiSecurityCredentialsSecretId(String jndiSecurityCredentialsSecretId) {
+            this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+            this.__explicitlySet__.add("jndiSecurityCredentialsSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated Java Message Service. Note: When provided, 'password' field must not be
+         * provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated Java Message Service. Note: When provided, 'password' field must not be
+         * provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the TrustStore file is stored. Note: When provided,
+         * 'trustStore' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+        private String trustStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the TrustStore file is stored. Note: When provided,
+         * 'trustStore' field must not be provided.
+         *
+         * @param trustStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            this.trustStoreSecretId = trustStoreSecretId;
+            this.__explicitlySet__.add("trustStoreSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+        private String trustStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+         * field must not be provided.
+         *
+         * @param trustStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            this.__explicitlySet__.add("trustStorePasswordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+        private String keyStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+         * field must not be provided.
+         *
+         * @param keyStoreSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            this.keyStoreSecretId = keyStoreSecretId;
+            this.__explicitlySet__.add("keyStoreSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+        private String keyStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword'
+         * field must not be provided.
+         *
+         * @param keyStorePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            this.__explicitlySet__.add("keyStorePasswordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored for the cert inside of the Keystore. In case it
+         * differs from the KeyStore password, it should be provided. Note: When provided,
+         * 'sslKeyPassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+        private String sslKeyPasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored for the cert inside of the Keystore. In case it
+         * differs from the KeyStore password, it should be provided. Note: When provided,
+         * 'sslKeyPassword' field must not be provided.
+         *
+         * @param sslKeyPasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
+            this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            this.__explicitlySet__.add("sslKeyPasswordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -448,6 +608,7 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                             this.subnetId,
                             this.routingMethod,
                             this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.shouldUseJndi,
                             this.jndiConnectionFactory,
@@ -459,7 +620,14 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                             this.securityProtocol,
                             this.authenticationType,
                             this.username,
-                            this.privateIp);
+                            this.privateIp,
+                            this.jndiSecurityCredentialsSecretId,
+                            this.passwordSecretId,
+                            this.trustStoreSecretId,
+                            this.trustStorePasswordSecretId,
+                            this.keyStoreSecretId,
+                            this.keyStorePasswordSecretId,
+                            this.sslKeyPasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -522,6 +690,9 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -558,6 +729,27 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("jndiSecurityCredentialsSecretId")) {
+                this.jndiSecurityCredentialsSecretId(model.getJndiSecurityCredentialsSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("trustStoreSecretId")) {
+                this.trustStoreSecretId(model.getTrustStoreSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("trustStorePasswordSecretId")) {
+                this.trustStorePasswordSecretId(model.getTrustStorePasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreSecretId")) {
+                this.keyStoreSecretId(model.getKeyStoreSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("keyStorePasswordSecretId")) {
+                this.keyStorePasswordSecretId(model.getKeyStorePasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
+                this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
+            }
             return this;
         }
     }
@@ -591,6 +783,7 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             String subnetId,
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             JavaMessageServiceConnection.TechnologyType technologyType,
             Boolean shouldUseJndi,
             String jndiConnectionFactory,
@@ -602,7 +795,14 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
             JavaMessageServiceConnection.SecurityProtocol securityProtocol,
             JavaMessageServiceConnection.AuthenticationType authenticationType,
             String username,
-            String privateIp) {
+            String privateIp,
+            String jndiSecurityCredentialsSecretId,
+            String passwordSecretId,
+            String trustStoreSecretId,
+            String trustStorePasswordSecretId,
+            String keyStoreSecretId,
+            String keyStorePasswordSecretId,
+            String sslKeyPasswordSecretId) {
         super(
                 id,
                 displayName,
@@ -621,7 +821,8 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                 nsgIds,
                 subnetId,
                 routingMethod,
-                locks);
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.shouldUseJndi = shouldUseJndi;
         this.jndiConnectionFactory = jndiConnectionFactory;
@@ -634,6 +835,13 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         this.authenticationType = authenticationType;
         this.username = username;
         this.privateIp = privateIp;
+        this.jndiSecurityCredentialsSecretId = jndiSecurityCredentialsSecretId;
+        this.passwordSecretId = passwordSecretId;
+        this.trustStoreSecretId = trustStoreSecretId;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+        this.keyStoreSecretId = keyStoreSecretId;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
     }
 
     /** The Java Message Service technology type. */
@@ -842,6 +1050,141 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         return privateIp;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the security credentials are stored associated to the principal. Note: When
+     * provided, 'jndiSecurityCredentials' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("jndiSecurityCredentialsSecretId")
+    private final String jndiSecurityCredentialsSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the security credentials are stored associated to the principal. Note: When
+     * provided, 'jndiSecurityCredentials' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getJndiSecurityCredentialsSecretId() {
+        return jndiSecurityCredentialsSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * Java Message Service. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * Java Message Service. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+    private final String trustStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the TrustStore file is stored. Note: When provided, 'trustStore'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStoreSecretId() {
+        return trustStoreSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+    private final String trustStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the TrustStore password is stored. Note: When provided, 'trustStorePassword'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTrustStorePasswordSecretId() {
+        return trustStorePasswordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+    private final String keyStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the KeyStore file is stored. Note: When provided, 'keyStore'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStoreSecretId() {
+        return keyStoreSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
+     * must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+    private final String keyStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the KeyStore password is stored. Note: When provided, 'keyStorePassword' field
+     * must not be provided.
+     *
+     * @return the value
+     */
+    public String getKeyStorePasswordSecretId() {
+        return keyStorePasswordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
+     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
+     * field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+    private final String sslKeyPasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored for the cert inside of the Keystore. In case it differs
+     * from the KeyStore password, it should be provided. Note: When provided, 'sslKeyPassword'
+     * field must not be provided.
+     *
+     * @return the value
+     */
+    public String getSslKeyPasswordSecretId() {
+        return sslKeyPasswordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -870,6 +1213,16 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", jndiSecurityCredentialsSecretId=")
+                .append(String.valueOf(this.jndiSecurityCredentialsSecretId));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
+        sb.append(", trustStorePasswordSecretId=")
+                .append(String.valueOf(this.trustStorePasswordSecretId));
+        sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
+        sb.append(", keyStorePasswordSecretId=")
+                .append(String.valueOf(this.keyStorePasswordSecretId));
+        sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -897,6 +1250,17 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(
+                        this.jndiSecurityCredentialsSecretId, other.jndiSecurityCredentialsSecretId)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(this.trustStoreSecretId, other.trustStoreSecretId)
+                && java.util.Objects.equals(
+                        this.trustStorePasswordSecretId, other.trustStorePasswordSecretId)
+                && java.util.Objects.equals(this.keyStoreSecretId, other.keyStoreSecretId)
+                && java.util.Objects.equals(
+                        this.keyStorePasswordSecretId, other.keyStorePasswordSecretId)
+                && java.util.Objects.equals(
+                        this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
                 && super.equals(other);
     }
 
@@ -944,6 +1308,37 @@ public final class JavaMessageServiceConnectionSummary extends ConnectionSummary
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jndiSecurityCredentialsSecretId == null
+                                ? 43
+                                : this.jndiSecurityCredentialsSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStoreSecretId == null
+                                ? 43
+                                : this.trustStoreSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStorePasswordSecretId == null
+                                ? 43
+                                : this.trustStorePasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreSecretId == null ? 43 : this.keyStoreSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStorePasswordSecretId == null
+                                ? 43
+                                : this.keyStorePasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeyPasswordSecretId == null
+                                ? 43
+                                : this.sslKeyPasswordSecretId.hashCode());
         return result;
     }
 }

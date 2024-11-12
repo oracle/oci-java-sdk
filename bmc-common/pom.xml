@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.53.0</version>
+    <version>3.53.1</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -59,12 +59,12 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.53.0</version>
+      <version>3.53.1</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.53.0</version>
+      <version>3.53.1</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
@@ -76,7 +76,7 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.53.0</version>
+      <version>3.53.1</version>
       <scope>test</scope>
     </dependency>
     <dependency>

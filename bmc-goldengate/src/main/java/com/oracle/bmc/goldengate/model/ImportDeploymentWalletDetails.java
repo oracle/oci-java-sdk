@@ -27,6 +27,7 @@ public final class ImportDeploymentWalletDetails
         "vaultId",
         "newWalletSecretId",
         "walletBackupSecretName",
+        "walletBackupSecretCompartmentId",
         "masterEncryptionKeyId",
         "description"
     })
@@ -34,12 +35,14 @@ public final class ImportDeploymentWalletDetails
             String vaultId,
             String newWalletSecretId,
             String walletBackupSecretName,
+            String walletBackupSecretCompartmentId,
             String masterEncryptionKeyId,
             String description) {
         super();
         this.vaultId = vaultId;
         this.newWalletSecretId = newWalletSecretId;
         this.walletBackupSecretName = walletBackupSecretName;
+        this.walletBackupSecretCompartmentId = walletBackupSecretCompartmentId;
         this.masterEncryptionKeyId = masterEncryptionKeyId;
         this.description = description;
     }
@@ -104,6 +107,25 @@ public final class ImportDeploymentWalletDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment, where the secret will be created in.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("walletBackupSecretCompartmentId")
+        private String walletBackupSecretCompartmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment, where the secret will be created in.
+         *
+         * @param walletBackupSecretCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder walletBackupSecretCompartmentId(String walletBackupSecretCompartmentId) {
+            this.walletBackupSecretCompartmentId = walletBackupSecretCompartmentId;
+            this.__explicitlySet__.add("walletBackupSecretCompartmentId");
+            return this;
+        }
+        /**
          * Refers to the customer's master key OCID. If provided, it references a key to manage
          * secrets. Customers must add policies to permit GoldenGate to use this key.
          */
@@ -147,6 +169,7 @@ public final class ImportDeploymentWalletDetails
                             this.vaultId,
                             this.newWalletSecretId,
                             this.walletBackupSecretName,
+                            this.walletBackupSecretCompartmentId,
                             this.masterEncryptionKeyId,
                             this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -165,6 +188,9 @@ public final class ImportDeploymentWalletDetails
             }
             if (model.wasPropertyExplicitlySet("walletBackupSecretName")) {
                 this.walletBackupSecretName(model.getWalletBackupSecretName());
+            }
+            if (model.wasPropertyExplicitlySet("walletBackupSecretCompartmentId")) {
+                this.walletBackupSecretCompartmentId(model.getWalletBackupSecretCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("masterEncryptionKeyId")) {
                 this.masterEncryptionKeyId(model.getMasterEncryptionKeyId());
@@ -237,6 +263,23 @@ public final class ImportDeploymentWalletDetails
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment, where the secret will be created in.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("walletBackupSecretCompartmentId")
+    private final String walletBackupSecretCompartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment, where the secret will be created in.
+     *
+     * @return the value
+     */
+    public String getWalletBackupSecretCompartmentId() {
+        return walletBackupSecretCompartmentId;
+    }
+
+    /**
      * Refers to the customer's master key OCID. If provided, it references a key to manage secrets.
      * Customers must add policies to permit GoldenGate to use this key.
      */
@@ -284,6 +327,8 @@ public final class ImportDeploymentWalletDetails
         sb.append("vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", newWalletSecretId=").append(String.valueOf(this.newWalletSecretId));
         sb.append(", walletBackupSecretName=").append(String.valueOf(this.walletBackupSecretName));
+        sb.append(", walletBackupSecretCompartmentId=")
+                .append(String.valueOf(this.walletBackupSecretCompartmentId));
         sb.append(", masterEncryptionKeyId=").append(String.valueOf(this.masterEncryptionKeyId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
@@ -304,6 +349,8 @@ public final class ImportDeploymentWalletDetails
                 && java.util.Objects.equals(this.newWalletSecretId, other.newWalletSecretId)
                 && java.util.Objects.equals(
                         this.walletBackupSecretName, other.walletBackupSecretName)
+                && java.util.Objects.equals(
+                        this.walletBackupSecretCompartmentId, other.walletBackupSecretCompartmentId)
                 && java.util.Objects.equals(this.masterEncryptionKeyId, other.masterEncryptionKeyId)
                 && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
@@ -322,6 +369,11 @@ public final class ImportDeploymentWalletDetails
                         + (this.walletBackupSecretName == null
                                 ? 43
                                 : this.walletBackupSecretName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.walletBackupSecretCompartmentId == null
+                                ? 43
+                                : this.walletBackupSecretCompartmentId.hashCode());
         result =
                 (result * PRIME)
                         + (this.masterEncryptionKeyId == null

@@ -1927,6 +1927,39 @@ public class GoldenGateClient extends com.oracle.bmc.http.internal.BaseSyncClien
     }
 
     @Override
+    public RefreshConnectionResponse refreshConnection(RefreshConnectionRequest request) {
+
+        Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshConnectionDetails(), "refreshConnectionDetails is required");
+
+        return clientCall(request, RefreshConnectionResponse::builder)
+                .logger(LOG, "refreshConnection")
+                .serviceDetails(
+                        "GoldenGate",
+                        "RefreshConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RefreshConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshConnectionRequest::builder)
+                .basePath("/20200407")
+                .appendPathParam("connections")
+                .appendPathParam(request.getConnectionId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .appendQueryParam("isLockOverride", request.getIsLockOverride())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RefreshConnectionResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshConnectionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public RemoveConnectionLockResponse removeConnectionLock(RemoveConnectionLockRequest request) {
 
         Validate.notBlank(request.getConnectionId(), "connectionId must not be blank");

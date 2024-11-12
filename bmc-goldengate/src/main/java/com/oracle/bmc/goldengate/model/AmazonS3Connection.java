@@ -189,6 +189,15 @@ public final class AmazonS3Connection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Amazon S3 technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
@@ -219,6 +228,27 @@ public final class AmazonS3Connection extends Connection {
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
+         * field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+        private String secretAccessKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey'
+         * field must not be provided.
+         *
+         * @param secretAccessKeySecretId the value to set
+         * @return this builder
+         */
+        public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
+            this.secretAccessKeySecretId = secretAccessKeySecretId;
+            this.__explicitlySet__.add("secretAccessKeySecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -244,8 +274,10 @@ public final class AmazonS3Connection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
-                            this.accessKeyId);
+                            this.accessKeyId,
+                            this.secretAccessKeySecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -308,11 +340,17 @@ public final class AmazonS3Connection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
             if (model.wasPropertyExplicitlySet("accessKeyId")) {
                 this.accessKeyId(model.getAccessKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
+                this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
             }
             return this;
         }
@@ -347,8 +385,10 @@ public final class AmazonS3Connection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
-            String accessKeyId) {
+            String accessKeyId,
+            String secretAccessKeySecretId) {
         super(
                 id,
                 displayName,
@@ -367,9 +407,11 @@ public final class AmazonS3Connection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.accessKeyId = accessKeyId;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
     /** The Amazon S3 technology type. */
@@ -443,6 +485,25 @@ public final class AmazonS3Connection extends Connection {
         return accessKeyId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
+     * must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+    private final String secretAccessKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the Secret Access Key is stored. Note: When provided, 'secretAccessKey' field
+     * must not be provided.
+     *
+     * @return the value
+     */
+    public String getSecretAccessKeySecretId() {
+        return secretAccessKeySecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -460,6 +521,8 @@ public final class AmazonS3Connection extends Connection {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
+        sb.append(", secretAccessKeySecretId=")
+                .append(String.valueOf(this.secretAccessKeySecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -476,6 +539,8 @@ public final class AmazonS3Connection extends Connection {
         AmazonS3Connection other = (AmazonS3Connection) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
+                && java.util.Objects.equals(
+                        this.secretAccessKeySecretId, other.secretAccessKeySecretId)
                 && super.equals(other);
     }
 
@@ -487,6 +552,11 @@ public final class AmazonS3Connection extends Connection {
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
         result = (result * PRIME) + (this.accessKeyId == null ? 43 : this.accessKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretAccessKeySecretId == null
+                                ? 43
+                                : this.secretAccessKeySecretId.hashCode());
         return result;
     }
 }

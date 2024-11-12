@@ -189,6 +189,15 @@ public final class SnowflakeConnection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The Snowflake technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private TechnologyType technologyType;
@@ -257,6 +266,77 @@ public final class SnowflakeConnection extends Connection {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+         * associated system of the given technology. It must conform to the specific security
+         * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+         * field must not be provided. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the private key file (PEM file) corresponding to the
+         * API key of the fingerprint. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
+         * When provided, 'privateKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+        private String privateKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the private key file (PEM file) corresponding to the
+         * API key of the fingerprint. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
+         * When provided, 'privateKeyFile' field must not be provided.
+         *
+         * @param privateKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
+            this.privateKeyFileSecretId = privateKeyFileSecretId;
+            this.__explicitlySet__.add("privateKeyFileSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password for the private key file. Note: When provided,
+         * 'privateKeyPassphrase' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+        private String privateKeyPassphraseSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password for the private key file. Note: When provided,
+         * 'privateKeyPassphrase' field must not be provided.
+         *
+         * @param privateKeyPassphraseSecretId the value to set
+         * @return this builder
+         */
+        public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
+            this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+            this.__explicitlySet__.add("privateKeyPassphraseSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -282,10 +362,14 @@ public final class SnowflakeConnection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.connectionUrl,
                             this.authenticationType,
-                            this.username);
+                            this.username,
+                            this.passwordSecretId,
+                            this.privateKeyFileSecretId,
+                            this.privateKeyPassphraseSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -348,6 +432,9 @@ public final class SnowflakeConnection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -359,6 +446,15 @@ public final class SnowflakeConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyFileSecretId")) {
+                this.privateKeyFileSecretId(model.getPrivateKeyFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
+                this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
             return this;
         }
@@ -393,10 +489,14 @@ public final class SnowflakeConnection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String connectionUrl,
             AuthenticationType authenticationType,
-            String username) {
+            String username,
+            String passwordSecretId,
+            String privateKeyFileSecretId,
+            String privateKeyPassphraseSecretId) {
         super(
                 id,
                 displayName,
@@ -415,11 +515,15 @@ public final class SnowflakeConnection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.connectionUrl = connectionUrl;
         this.authenticationType = authenticationType;
         this.username = username;
+        this.passwordSecretId = passwordSecretId;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
     }
 
     /** The Snowflake technology type. */
@@ -573,6 +677,71 @@ public final class SnowflakeConnection extends Connection {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored. The password Oracle GoldenGate uses to connect the
+     * associated system of the given technology. It must conform to the specific security
+     * requirements including length, case sensitivity, and so on. If secretId is used plaintext
+     * field must not be provided. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the private key file (PEM file) corresponding to the API
+     * key of the fingerprint. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
+     * provided, 'privateKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+    private final String privateKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the private key file (PEM file) corresponding to the API
+     * key of the fingerprint. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
+     * provided, 'privateKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPrivateKeyFileSecretId() {
+        return privateKeyFileSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password for the private key file. Note: When provided,
+     * 'privateKeyPassphrase' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+    private final String privateKeyPassphraseSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password for the private key file. Note: When provided,
+     * 'privateKeyPassphrase' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPrivateKeyPassphraseSecretId() {
+        return privateKeyPassphraseSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -592,6 +761,10 @@ public final class SnowflakeConnection extends Connection {
         sb.append(", connectionUrl=").append(String.valueOf(this.connectionUrl));
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
+        sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
+        sb.append(", privateKeyPassphraseSecretId=")
+                .append(String.valueOf(this.privateKeyPassphraseSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -610,6 +783,11 @@ public final class SnowflakeConnection extends Connection {
                 && java.util.Objects.equals(this.connectionUrl, other.connectionUrl)
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
+                && java.util.Objects.equals(
+                        this.privateKeyFileSecretId, other.privateKeyFileSecretId)
+                && java.util.Objects.equals(
+                        this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
                 && super.equals(other);
     }
 
@@ -629,6 +807,19 @@ public final class SnowflakeConnection extends Connection {
                                 ? 43
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyFileSecretId == null
+                                ? 43
+                                : this.privateKeyFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyPassphraseSecretId == null
+                                ? 43
+                                : this.privateKeyPassphraseSecretId.hashCode());
         return result;
     }
 }
