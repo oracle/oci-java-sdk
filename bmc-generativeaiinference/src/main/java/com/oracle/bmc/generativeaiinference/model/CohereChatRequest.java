@@ -92,6 +92,15 @@ public final class CohereChatRequest extends BaseChatRequest {
             this.__explicitlySet__.add("documents");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("responseFormat")
+        private CohereResponseFormat responseFormat;
+
+        public Builder responseFormat(CohereResponseFormat responseFormat) {
+            this.responseFormat = responseFormat;
+            this.__explicitlySet__.add("responseFormat");
+            return this;
+        }
         /**
          * When set to true, the response contains only a list of generated search queries without
          * the search results and the model will not respond to the user's message.
@@ -168,6 +177,25 @@ public final class CohereChatRequest extends BaseChatRequest {
         public Builder maxTokens(Integer maxTokens) {
             this.maxTokens = maxTokens;
             this.__explicitlySet__.add("maxTokens");
+            return this;
+        }
+        /**
+         * The maximum number of input tokens to send to the model. If not specified,
+         * max_input_tokens is the model's context length limit minus a small buffer.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxInputTokens")
+        private Integer maxInputTokens;
+
+        /**
+         * The maximum number of input tokens to send to the model. If not specified,
+         * max_input_tokens is the model's context length limit minus a small buffer.
+         *
+         * @param maxInputTokens the value to set
+         * @return this builder
+         */
+        public Builder maxInputTokens(Integer maxInputTokens) {
+            this.maxInputTokens = maxInputTokens;
+            this.__explicitlySet__.add("maxInputTokens");
             return this;
         }
         /**
@@ -261,8 +289,8 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
         /**
          * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
-         * prompt_truncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history}
-         * and {@code documents} will be dropped to construct a prompt that fits within the model's
+         * promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and
+         * {@code documents} will be dropped to construct a prompt that fits within the model's
          * context length limit. During this process the order of the documents and chat history
          * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
          * dropped.
@@ -272,8 +300,8 @@ public final class CohereChatRequest extends BaseChatRequest {
 
         /**
          * Defaults to OFF. Dictates how the prompt will be constructed. With {@code
-         * prompt_truncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history}
-         * and {@code documents} will be dropped to construct a prompt that fits within the model's
+         * promptTruncation} set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and
+         * {@code documents} will be dropped to construct a prompt that fits within the model's
          * context length limit. During this process the order of the documents and chat history
          * will be preserved. With {@code prompt_truncation} set to OFF, no elements will be
          * dropped.
@@ -492,10 +520,12 @@ public final class CohereChatRequest extends BaseChatRequest {
                             this.message,
                             this.chatHistory,
                             this.documents,
+                            this.responseFormat,
                             this.isSearchQueriesOnly,
                             this.preambleOverride,
                             this.isStream,
                             this.maxTokens,
+                            this.maxInputTokens,
                             this.temperature,
                             this.topK,
                             this.topP,
@@ -527,6 +557,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("documents")) {
                 this.documents(model.getDocuments());
             }
+            if (model.wasPropertyExplicitlySet("responseFormat")) {
+                this.responseFormat(model.getResponseFormat());
+            }
             if (model.wasPropertyExplicitlySet("isSearchQueriesOnly")) {
                 this.isSearchQueriesOnly(model.getIsSearchQueriesOnly());
             }
@@ -538,6 +571,9 @@ public final class CohereChatRequest extends BaseChatRequest {
             }
             if (model.wasPropertyExplicitlySet("maxTokens")) {
                 this.maxTokens(model.getMaxTokens());
+            }
+            if (model.wasPropertyExplicitlySet("maxInputTokens")) {
+                this.maxInputTokens(model.getMaxInputTokens());
             }
             if (model.wasPropertyExplicitlySet("temperature")) {
                 this.temperature(model.getTemperature());
@@ -599,10 +635,12 @@ public final class CohereChatRequest extends BaseChatRequest {
             String message,
             java.util.List<CohereMessage> chatHistory,
             java.util.List<Object> documents,
+            CohereResponseFormat responseFormat,
             Boolean isSearchQueriesOnly,
             String preambleOverride,
             Boolean isStream,
             Integer maxTokens,
+            Integer maxInputTokens,
             Double temperature,
             Integer topK,
             Double topP,
@@ -621,10 +659,12 @@ public final class CohereChatRequest extends BaseChatRequest {
         this.message = message;
         this.chatHistory = chatHistory;
         this.documents = documents;
+        this.responseFormat = responseFormat;
         this.isSearchQueriesOnly = isSearchQueriesOnly;
         this.preambleOverride = preambleOverride;
         this.isStream = isStream;
         this.maxTokens = maxTokens;
+        this.maxInputTokens = maxInputTokens;
         this.temperature = temperature;
         this.topK = topK;
         this.topP = topP;
@@ -700,6 +740,13 @@ public final class CohereChatRequest extends BaseChatRequest {
         return documents;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("responseFormat")
+    private final CohereResponseFormat responseFormat;
+
+    public CohereResponseFormat getResponseFormat() {
+        return responseFormat;
+    }
+
     /**
      * When set to true, the response contains only a list of generated search queries without the
      * search results and the model will not respond to the user's message.
@@ -768,6 +815,23 @@ public final class CohereChatRequest extends BaseChatRequest {
      */
     public Integer getMaxTokens() {
         return maxTokens;
+    }
+
+    /**
+     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens
+     * is the model's context length limit minus a small buffer.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxInputTokens")
+    private final Integer maxInputTokens;
+
+    /**
+     * The maximum number of input tokens to send to the model. If not specified, max_input_tokens
+     * is the model's context length limit minus a small buffer.
+     *
+     * @return the value
+     */
+    public Integer getMaxInputTokens() {
+        return maxInputTokens;
     }
 
     /**
@@ -850,11 +914,11 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
-     * will be dropped to construct a prompt that fits within the model's context length limit.
-     * During this process the order of the documents and chat history will be preserved. With
-     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
+     * be dropped to construct a prompt that fits within the model's context length limit. During
+     * this process the order of the documents and chat history will be preserved. With {@code
+     * prompt_truncation} set to OFF, no elements will be dropped.
      */
     public enum PromptTruncation implements com.oracle.bmc.http.internal.BmcEnum {
         Off("OFF"),
@@ -889,21 +953,21 @@ public final class CohereChatRequest extends BaseChatRequest {
         }
     };
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
-     * will be dropped to construct a prompt that fits within the model's context length limit.
-     * During this process the order of the documents and chat history will be preserved. With
-     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
+     * be dropped to construct a prompt that fits within the model's context length limit. During
+     * this process the order of the documents and chat history will be preserved. With {@code
+     * prompt_truncation} set to OFF, no elements will be dropped.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("promptTruncation")
     private final PromptTruncation promptTruncation;
 
     /**
-     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code prompt_truncation}
-     * set to AUTO_PRESERVE_ORDER, some elements from {@code chat_history} and {@code documents}
-     * will be dropped to construct a prompt that fits within the model's context length limit.
-     * During this process the order of the documents and chat history will be preserved. With
-     * {@code prompt_truncation} set to OFF, no elements will be dropped.
+     * Defaults to OFF. Dictates how the prompt will be constructed. With {@code promptTruncation}
+     * set to AUTO_PRESERVE_ORDER, some elements from {@code chatHistory} and {@code documents} will
+     * be dropped to construct a prompt that fits within the model's context length limit. During
+     * this process the order of the documents and chat history will be preserved. With {@code
+     * prompt_truncation} set to OFF, no elements will be dropped.
      *
      * @return the value
      */
@@ -1137,10 +1201,12 @@ public final class CohereChatRequest extends BaseChatRequest {
         sb.append(", message=").append(String.valueOf(this.message));
         sb.append(", chatHistory=").append(String.valueOf(this.chatHistory));
         sb.append(", documents=").append(String.valueOf(this.documents));
+        sb.append(", responseFormat=").append(String.valueOf(this.responseFormat));
         sb.append(", isSearchQueriesOnly=").append(String.valueOf(this.isSearchQueriesOnly));
         sb.append(", preambleOverride=").append(String.valueOf(this.preambleOverride));
         sb.append(", isStream=").append(String.valueOf(this.isStream));
         sb.append(", maxTokens=").append(String.valueOf(this.maxTokens));
+        sb.append(", maxInputTokens=").append(String.valueOf(this.maxInputTokens));
         sb.append(", temperature=").append(String.valueOf(this.temperature));
         sb.append(", topK=").append(String.valueOf(this.topK));
         sb.append(", topP=").append(String.valueOf(this.topP));
@@ -1172,10 +1238,12 @@ public final class CohereChatRequest extends BaseChatRequest {
         return java.util.Objects.equals(this.message, other.message)
                 && java.util.Objects.equals(this.chatHistory, other.chatHistory)
                 && java.util.Objects.equals(this.documents, other.documents)
+                && java.util.Objects.equals(this.responseFormat, other.responseFormat)
                 && java.util.Objects.equals(this.isSearchQueriesOnly, other.isSearchQueriesOnly)
                 && java.util.Objects.equals(this.preambleOverride, other.preambleOverride)
                 && java.util.Objects.equals(this.isStream, other.isStream)
                 && java.util.Objects.equals(this.maxTokens, other.maxTokens)
+                && java.util.Objects.equals(this.maxInputTokens, other.maxInputTokens)
                 && java.util.Objects.equals(this.temperature, other.temperature)
                 && java.util.Objects.equals(this.topK, other.topK)
                 && java.util.Objects.equals(this.topP, other.topP)
@@ -1202,6 +1270,9 @@ public final class CohereChatRequest extends BaseChatRequest {
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result =
                 (result * PRIME)
+                        + (this.responseFormat == null ? 43 : this.responseFormat.hashCode());
+        result =
+                (result * PRIME)
                         + (this.isSearchQueriesOnly == null
                                 ? 43
                                 : this.isSearchQueriesOnly.hashCode());
@@ -1210,6 +1281,9 @@ public final class CohereChatRequest extends BaseChatRequest {
                         + (this.preambleOverride == null ? 43 : this.preambleOverride.hashCode());
         result = (result * PRIME) + (this.isStream == null ? 43 : this.isStream.hashCode());
         result = (result * PRIME) + (this.maxTokens == null ? 43 : this.maxTokens.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxInputTokens == null ? 43 : this.maxInputTokens.hashCode());
         result = (result * PRIME) + (this.temperature == null ? 43 : this.temperature.hashCode());
         result = (result * PRIME) + (this.topK == null ? 43 : this.topK.hashCode());
         result = (result * PRIME) + (this.topP == null ? 43 : this.topP.hashCode());

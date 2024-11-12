@@ -143,7 +143,8 @@ public final class CreateDedicatedAiClusterDetails
          * hidden from customers.
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
-         * - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
+         * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2
          */
         @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
         private DedicatedAiCluster.UnitShape unitShape;
@@ -153,7 +154,8 @@ public final class CreateDedicatedAiClusterDetails
          * hidden from customers.
          *
          * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2
-         * - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
+         * - SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
+         * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2
          *
          * @param unitShape the value to set
          * @return this builder
@@ -352,7 +354,8 @@ public final class CreateDedicatedAiClusterDetails
      * hidden from customers.
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
-     * EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
+     * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2
      */
     @com.fasterxml.jackson.annotation.JsonProperty("unitShape")
     private final DedicatedAiCluster.UnitShape unitShape;
@@ -362,7 +365,8 @@ public final class CreateDedicatedAiClusterDetails
      * hidden from customers.
      *
      * <p>Allowed values are: - LARGE_COHERE - LARGE_COHERE_V2 - SMALL_COHERE - SMALL_COHERE_V2 -
-     * EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2
+     * SMALL_COHERE_4 - EMBED_COHERE - LLAMA2_70 - LARGE_GENERIC - LARGE_COHERE_V2_2 -
+     * LARGE_GENERIC_4 - SMALL_GENERIC_V2 - LARGE_GENERIC_2
      *
      * @return the value
      */

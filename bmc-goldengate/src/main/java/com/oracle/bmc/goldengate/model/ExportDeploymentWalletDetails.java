@@ -27,14 +27,20 @@ public final class ExportDeploymentWalletDetails
         "vaultId",
         "masterEncryptionKeyId",
         "secretName",
+        "secretCompartmentId",
         "description"
     })
     public ExportDeploymentWalletDetails(
-            String vaultId, String masterEncryptionKeyId, String secretName, String description) {
+            String vaultId,
+            String masterEncryptionKeyId,
+            String secretName,
+            String secretCompartmentId,
+            String description) {
         super();
         this.vaultId = vaultId;
         this.masterEncryptionKeyId = masterEncryptionKeyId;
         this.secretName = secretName;
+        this.secretCompartmentId = secretCompartmentId;
         this.description = description;
     }
 
@@ -95,6 +101,25 @@ public final class ExportDeploymentWalletDetails
             this.__explicitlySet__.add("secretName");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment, where the secret will be created in.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
+        private String secretCompartmentId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * compartment, where the secret will be created in.
+         *
+         * @param secretCompartmentId the value to set
+         * @return this builder
+         */
+        public Builder secretCompartmentId(String secretCompartmentId) {
+            this.secretCompartmentId = secretCompartmentId;
+            this.__explicitlySet__.add("secretCompartmentId");
+            return this;
+        }
         /** Metadata about this specific object. */
         @com.fasterxml.jackson.annotation.JsonProperty("description")
         private String description;
@@ -120,6 +145,7 @@ public final class ExportDeploymentWalletDetails
                             this.vaultId,
                             this.masterEncryptionKeyId,
                             this.secretName,
+                            this.secretCompartmentId,
                             this.description);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -137,6 +163,9 @@ public final class ExportDeploymentWalletDetails
             }
             if (model.wasPropertyExplicitlySet("secretName")) {
                 this.secretName(model.getSecretName());
+            }
+            if (model.wasPropertyExplicitlySet("secretCompartmentId")) {
+                this.secretCompartmentId(model.getSecretCompartmentId());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -203,6 +232,23 @@ public final class ExportDeploymentWalletDetails
         return secretName;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment, where the secret will be created in.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("secretCompartmentId")
+    private final String secretCompartmentId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * compartment, where the secret will be created in.
+     *
+     * @return the value
+     */
+    public String getSecretCompartmentId() {
+        return secretCompartmentId;
+    }
+
     /** Metadata about this specific object. */
     @com.fasterxml.jackson.annotation.JsonProperty("description")
     private final String description;
@@ -234,6 +280,7 @@ public final class ExportDeploymentWalletDetails
         sb.append("vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", masterEncryptionKeyId=").append(String.valueOf(this.masterEncryptionKeyId));
         sb.append(", secretName=").append(String.valueOf(this.secretName));
+        sb.append(", secretCompartmentId=").append(String.valueOf(this.secretCompartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(")");
         return sb.toString();
@@ -252,6 +299,7 @@ public final class ExportDeploymentWalletDetails
         return java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.masterEncryptionKeyId, other.masterEncryptionKeyId)
                 && java.util.Objects.equals(this.secretName, other.secretName)
+                && java.util.Objects.equals(this.secretCompartmentId, other.secretCompartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && super.equals(other);
     }
@@ -267,6 +315,11 @@ public final class ExportDeploymentWalletDetails
                                 ? 43
                                 : this.masterEncryptionKeyId.hashCode());
         result = (result * PRIME) + (this.secretName == null ? 43 : this.secretName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretCompartmentId == null
+                                ? 43
+                                : this.secretCompartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

@@ -108,6 +108,15 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The base64 encoded content of the service account key file containing the credentials
          * required to use Google Cloud Storage.
@@ -127,6 +136,29 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("serviceAccountKeyFile");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the service account key file is stored, which containing the
+         * credentials required to use Google Cloud Storage. Note: When provided,
+         * 'serviceAccountKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+        private String serviceAccountKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the content of the service account key file is stored, which containing the
+         * credentials required to use Google Cloud Storage. Note: When provided,
+         * 'serviceAccountKeyFile' field must not be provided.
+         *
+         * @param serviceAccountKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
+            this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+            this.__explicitlySet__.add("serviceAccountKeyFileSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -143,7 +175,9 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
-                            this.serviceAccountKeyFile);
+                            this.doesUseSecretIds,
+                            this.serviceAccountKeyFile,
+                            this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -179,8 +213,14 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("serviceAccountKeyFile")) {
                 this.serviceAccountKeyFile(model.getServiceAccountKeyFile());
+            }
+            if (model.wasPropertyExplicitlySet("serviceAccountKeyFileSecretId")) {
+                this.serviceAccountKeyFileSecretId(model.getServiceAccountKeyFileSecretId());
             }
             return this;
         }
@@ -206,7 +246,9 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
-            String serviceAccountKeyFile) {
+            Boolean doesUseSecretIds,
+            String serviceAccountKeyFile,
+            String serviceAccountKeyFileSecretId) {
         super(
                 displayName,
                 description,
@@ -216,8 +258,10 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.serviceAccountKeyFile = serviceAccountKeyFile;
+        this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
 
     /**
@@ -237,6 +281,27 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         return serviceAccountKeyFile;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the service account key file is stored, which containing the
+     * credentials required to use Google Cloud Storage. Note: When provided,
+     * 'serviceAccountKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+    private final String serviceAccountKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the content of the service account key file is stored, which containing the
+     * credentials required to use Google Cloud Storage. Note: When provided,
+     * 'serviceAccountKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getServiceAccountKeyFileSecretId() {
+        return serviceAccountKeyFileSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -253,6 +318,8 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         sb.append("UpdateGoogleCloudStorageConnectionDetails(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", serviceAccountKeyFile=").append(String.valueOf(this.serviceAccountKeyFile));
+        sb.append(", serviceAccountKeyFileSecretId=")
+                .append(String.valueOf(this.serviceAccountKeyFileSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -269,6 +336,8 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
         UpdateGoogleCloudStorageConnectionDetails other =
                 (UpdateGoogleCloudStorageConnectionDetails) o;
         return java.util.Objects.equals(this.serviceAccountKeyFile, other.serviceAccountKeyFile)
+                && java.util.Objects.equals(
+                        this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
                 && super.equals(other);
     }
 
@@ -281,6 +350,11 @@ public final class UpdateGoogleCloudStorageConnectionDetails extends UpdateConne
                         + (this.serviceAccountKeyFile == null
                                 ? 43
                                 : this.serviceAccountKeyFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceAccountKeyFileSecretId == null
+                                ? 43
+                                : this.serviceAccountKeyFileSecretId.hashCode());
         return result;
     }
 }

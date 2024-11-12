@@ -126,6 +126,15 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /** The DB2 technology type. */
         @com.fasterxml.jackson.annotation.JsonProperty("technologyType")
         private Db2Connection.TechnologyType technologyType;
@@ -221,6 +230,27 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated DB2 database. Note: When provided, 'password' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the password is stored, that Oracle GoldenGate uses to connect the
+         * associated DB2 database. Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         */
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
          * An array of name-value pair attribute entries. Used as additional parameters in
          * connection string.
          */
@@ -274,6 +304,29 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the keystore file stored, which created at the client containing the server
+         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
+         * not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
+        private String sslClientKeystoredbSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the keystore file stored, which created at the client containing the server
+         * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must
+         * not be provided.
+         *
+         * @param sslClientKeystoredbSecretId the value to set
+         * @return this builder
+         */
+        public Builder sslClientKeystoredbSecretId(String sslClientKeystoredbSecretId) {
+            this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
+            this.__explicitlySet__.add("sslClientKeystoredbSecretId");
+            return this;
+        }
+        /**
          * The base64 encoded keystash file which contains the encrypted password to the key
          * database file.
          */
@@ -290,6 +343,27 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         public Builder sslClientKeystash(String sslClientKeystash) {
             this.sslClientKeystash = sslClientKeystash;
             this.__explicitlySet__.add("sslClientKeystash");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the keystash file is stored, which contains the encrypted password to the
+         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
+        private String sslClientKeystashSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret where the keystash file is stored, which contains the encrypted password to the
+         * key database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+         *
+         * @param sslClientKeystashSecretId the value to set
+         * @return this builder
+         */
+        public Builder sslClientKeystashSecretId(String sslClientKeystashSecretId) {
+            this.sslClientKeystashSecretId = sslClientKeystashSecretId;
+            this.__explicitlySet__.add("sslClientKeystashSecretId");
             return this;
         }
         /**
@@ -329,16 +403,20 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.databaseName,
                             this.host,
                             this.port,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslClientKeystoredb,
+                            this.sslClientKeystoredbSecretId,
                             this.sslClientKeystash,
+                            this.sslClientKeystashSecretId,
                             this.sslServerCertificate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -381,6 +459,9 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -399,6 +480,9 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
             }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("additionalAttributes")) {
                 this.additionalAttributes(model.getAdditionalAttributes());
             }
@@ -408,8 +492,14 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("sslClientKeystoredb")) {
                 this.sslClientKeystoredb(model.getSslClientKeystoredb());
             }
+            if (model.wasPropertyExplicitlySet("sslClientKeystoredbSecretId")) {
+                this.sslClientKeystoredbSecretId(model.getSslClientKeystoredbSecretId());
+            }
             if (model.wasPropertyExplicitlySet("sslClientKeystash")) {
                 this.sslClientKeystash(model.getSslClientKeystash());
+            }
+            if (model.wasPropertyExplicitlySet("sslClientKeystashSecretId")) {
+                this.sslClientKeystashSecretId(model.getSslClientKeystashSecretId());
             }
             if (model.wasPropertyExplicitlySet("sslServerCertificate")) {
                 this.sslServerCertificate(model.getSslServerCertificate());
@@ -440,16 +530,20 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             Db2Connection.TechnologyType technologyType,
             String databaseName,
             String host,
             Integer port,
             String username,
             String password,
+            String passwordSecretId,
             java.util.List<NameValuePair> additionalAttributes,
             Db2Connection.SecurityProtocol securityProtocol,
             String sslClientKeystoredb,
+            String sslClientKeystoredbSecretId,
             String sslClientKeystash,
+            String sslClientKeystashSecretId,
             String sslServerCertificate) {
         super(
                 displayName,
@@ -462,17 +556,21 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.databaseName = databaseName;
         this.host = host;
         this.port = port;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
         this.securityProtocol = securityProtocol;
         this.sslClientKeystoredb = sslClientKeystoredb;
+        this.sslClientKeystoredbSecretId = sslClientKeystoredbSecretId;
         this.sslClientKeystash = sslClientKeystash;
+        this.sslClientKeystashSecretId = sslClientKeystashSecretId;
         this.sslServerCertificate = sslServerCertificate;
     }
 
@@ -559,6 +657,25 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * DB2 database. Note: When provided, 'password' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the password is stored, that Oracle GoldenGate uses to connect the associated
+     * DB2 database. Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
      * An array of name-value pair attribute entries. Used as additional parameters in connection
      * string.
      */
@@ -606,6 +723,27 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the keystore file stored, which created at the client containing the server
+     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
+     * be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredbSecretId")
+    private final String sslClientKeystoredbSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the keystore file stored, which created at the client containing the server
+     * certificate / CA root certificate. Note: When provided, 'sslClientKeystoredb' field must not
+     * be provided.
+     *
+     * @return the value
+     */
+    public String getSslClientKeystoredbSecretId() {
+        return sslClientKeystoredbSecretId;
+    }
+
+    /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
      * file.
      */
@@ -620,6 +758,25 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
      */
     public String getSslClientKeystash() {
         return sslClientKeystash;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the keystash file is stored, which contains the encrypted password to the key
+     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystashSecretId")
+    private final String sslClientKeystashSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret where the keystash file is stored, which contains the encrypted password to the key
+     * database file. Note: When provided, 'sslClientKeystash' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getSslClientKeystashSecretId() {
+        return sslClientKeystashSecretId;
     }
 
     /**
@@ -660,10 +817,15 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslClientKeystoredb=").append(String.valueOf(this.sslClientKeystoredb));
+        sb.append(", sslClientKeystoredbSecretId=")
+                .append(String.valueOf(this.sslClientKeystoredbSecretId));
         sb.append(", sslClientKeystash=").append(String.valueOf(this.sslClientKeystash));
+        sb.append(", sslClientKeystashSecretId=")
+                .append(String.valueOf(this.sslClientKeystashSecretId));
         sb.append(", sslServerCertificate=").append(String.valueOf(this.sslServerCertificate));
         sb.append(")");
         return sb.toString();
@@ -685,10 +847,15 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslClientKeystoredb, other.sslClientKeystoredb)
+                && java.util.Objects.equals(
+                        this.sslClientKeystoredbSecretId, other.sslClientKeystoredbSecretId)
                 && java.util.Objects.equals(this.sslClientKeystash, other.sslClientKeystash)
+                && java.util.Objects.equals(
+                        this.sslClientKeystashSecretId, other.sslClientKeystashSecretId)
                 && java.util.Objects.equals(this.sslServerCertificate, other.sslServerCertificate)
                 && super.equals(other);
     }
@@ -707,6 +874,9 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result =
                 (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.additionalAttributes == null
                                 ? 43
                                 : this.additionalAttributes.hashCode());
@@ -720,7 +890,17 @@ public final class CreateDb2ConnectionDetails extends CreateConnectionDetails {
                                 : this.sslClientKeystoredb.hashCode());
         result =
                 (result * PRIME)
+                        + (this.sslClientKeystoredbSecretId == null
+                                ? 43
+                                : this.sslClientKeystoredbSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.sslClientKeystash == null ? 43 : this.sslClientKeystash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslClientKeystashSecretId == null
+                                ? 43
+                                : this.sslClientKeystashSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.sslServerCertificate == null

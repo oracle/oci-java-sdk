@@ -108,6 +108,15 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * related OCI tenancy.
@@ -184,6 +193,31 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             this.__explicitlySet__.add("privateKeyFile");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the private key file (PEM file) corresponding to the
+         * API key of the fingerprint. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
+         * When provided, 'privateKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+        private String privateKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the content of the private key file (PEM file) corresponding to the
+         * API key of the fingerprint. See documentation:
+         * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note:
+         * When provided, 'privateKeyFile' field must not be provided.
+         *
+         * @param privateKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
+            this.privateKeyFileSecretId = privateKeyFileSecretId;
+            this.__explicitlySet__.add("privateKeyFileSecretId");
+            return this;
+        }
         /** The passphrase of the private key. */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
         private String privateKeyPassphrase;
@@ -197,6 +231,27 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
         public Builder privateKeyPassphrase(String privateKeyPassphrase) {
             this.privateKeyPassphrase = privateKeyPassphrase;
             this.__explicitlySet__.add("privateKeyPassphrase");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the passphrase of the private key. Note: When provided,
+         * 'privateKeyPassphrase' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+        private String privateKeyPassphraseSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the passphrase of the private key. Note: When provided,
+         * 'privateKeyPassphrase' field must not be provided.
+         *
+         * @param privateKeyPassphraseSecretId the value to set
+         * @return this builder
+         */
+        public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
+            this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+            this.__explicitlySet__.add("privateKeyPassphraseSecretId");
             return this;
         }
         /**
@@ -234,11 +289,14 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.tenancyId,
                             this.region,
                             this.userId,
                             this.privateKeyFile,
+                            this.privateKeyFileSecretId,
                             this.privateKeyPassphrase,
+                            this.privateKeyPassphraseSecretId,
                             this.publicKeyFingerprint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -275,6 +333,9 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("tenancyId")) {
                 this.tenancyId(model.getTenancyId());
             }
@@ -287,8 +348,14 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             if (model.wasPropertyExplicitlySet("privateKeyFile")) {
                 this.privateKeyFile(model.getPrivateKeyFile());
             }
+            if (model.wasPropertyExplicitlySet("privateKeyFileSecretId")) {
+                this.privateKeyFileSecretId(model.getPrivateKeyFileSecretId());
+            }
             if (model.wasPropertyExplicitlySet("privateKeyPassphrase")) {
                 this.privateKeyPassphrase(model.getPrivateKeyPassphrase());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
+                this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
             if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
                 this.publicKeyFingerprint(model.getPublicKeyFingerprint());
@@ -317,11 +384,14 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String tenancyId,
             String region,
             String userId,
             String privateKeyFile,
+            String privateKeyFileSecretId,
             String privateKeyPassphrase,
+            String privateKeyPassphraseSecretId,
             String publicKeyFingerprint) {
         super(
                 displayName,
@@ -332,12 +402,15 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;
         this.privateKeyFile = privateKeyFile;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphrase = privateKeyPassphrase;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
         this.publicKeyFingerprint = publicKeyFingerprint;
     }
 
@@ -409,6 +482,29 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
         return privateKeyFile;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the private key file (PEM file) corresponding to the API
+     * key of the fingerprint. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
+     * provided, 'privateKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+    private final String privateKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the content of the private key file (PEM file) corresponding to the API
+     * key of the fingerprint. See documentation:
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Note: When
+     * provided, 'privateKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPrivateKeyFileSecretId() {
+        return privateKeyFileSecretId;
+    }
+
     /** The passphrase of the private key. */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
     private final String privateKeyPassphrase;
@@ -420,6 +516,25 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
      */
     public String getPrivateKeyPassphrase() {
         return privateKeyPassphrase;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the passphrase of the private key. Note: When provided,
+     * 'privateKeyPassphrase' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+    private final String privateKeyPassphraseSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the passphrase of the private key. Note: When provided,
+     * 'privateKeyPassphrase' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getPrivateKeyPassphraseSecretId() {
+        return privateKeyPassphraseSecretId;
     }
 
     /**
@@ -458,7 +573,10 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", userId=").append(String.valueOf(this.userId));
         sb.append(", privateKeyFile=").append(String.valueOf(this.privateKeyFile));
+        sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphrase=").append("<redacted>");
+        sb.append(", privateKeyPassphraseSecretId=")
+                .append(String.valueOf(this.privateKeyPassphraseSecretId));
         sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
         sb.append(")");
         return sb.toString();
@@ -478,7 +596,11 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.userId, other.userId)
                 && java.util.Objects.equals(this.privateKeyFile, other.privateKeyFile)
+                && java.util.Objects.equals(
+                        this.privateKeyFileSecretId, other.privateKeyFileSecretId)
                 && java.util.Objects.equals(this.privateKeyPassphrase, other.privateKeyPassphrase)
+                && java.util.Objects.equals(
+                        this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
                 && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
                 && super.equals(other);
     }
@@ -495,9 +617,19 @@ public final class UpdateOracleNosqlConnectionDetails extends UpdateConnectionDe
                         + (this.privateKeyFile == null ? 43 : this.privateKeyFile.hashCode());
         result =
                 (result * PRIME)
+                        + (this.privateKeyFileSecretId == null
+                                ? 43
+                                : this.privateKeyFileSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.privateKeyPassphrase == null
                                 ? 43
                                 : this.privateKeyPassphrase.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyPassphraseSecretId == null
+                                ? 43
+                                : this.privateKeyPassphraseSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.publicKeyFingerprint == null

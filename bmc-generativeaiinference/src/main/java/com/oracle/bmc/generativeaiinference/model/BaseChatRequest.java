@@ -78,7 +78,11 @@ public class BaseChatRequest extends com.oracle.bmc.http.client.internal.Explici
         return result;
     }
 
-    /** The API format for the model's request. */
+    /**
+     * The API format for the model's family group. COHERE is for the Cohere family models such as
+     * the cohere.command-r-16k and cohere.command-r-plus models. GENERIC is for other model
+     * families such as the meta.llama-3-70b-instruct model.
+     */
     public enum ApiFormat implements com.oracle.bmc.http.internal.BmcEnum {
         Cohere("COHERE"),
         Generic("GENERIC"),
