@@ -27,15 +27,23 @@ package com.oracle.bmc.database.model;
 public final class CreateDbHomeFromDatabaseDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "database", "freeformTags", "definedTags"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "database",
+        "isUnifiedAuditingEnabled",
+        "freeformTags",
+        "definedTags"
+    })
     public CreateDbHomeFromDatabaseDetails(
             String displayName,
             CreateDatabaseFromAnotherDatabaseDetails database,
+            Boolean isUnifiedAuditingEnabled,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.database = database;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -64,6 +72,21 @@ public final class CreateDbHomeFromDatabaseDetails
         public Builder database(CreateDatabaseFromAnotherDatabaseDetails database) {
             this.database = database;
             this.__explicitlySet__.add("database");
+            return this;
+        }
+        /** Indicates whether unified auditing is enabled or not */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified auditing is enabled or not
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
             return this;
         }
         /**
@@ -120,7 +143,11 @@ public final class CreateDbHomeFromDatabaseDetails
         public CreateDbHomeFromDatabaseDetails build() {
             CreateDbHomeFromDatabaseDetails model =
                     new CreateDbHomeFromDatabaseDetails(
-                            this.displayName, this.database, this.freeformTags, this.definedTags);
+                            this.displayName,
+                            this.database,
+                            this.isUnifiedAuditingEnabled,
+                            this.freeformTags,
+                            this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -134,6 +161,9 @@ public final class CreateDbHomeFromDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("database")) {
                 this.database(model.getDatabase());
+            }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -172,6 +202,19 @@ public final class CreateDbHomeFromDatabaseDetails
 
     public CreateDatabaseFromAnotherDatabaseDetails getDatabase() {
         return database;
+    }
+
+    /** Indicates whether unified auditing is enabled or not */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified auditing is enabled or not
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
     }
 
     /**
@@ -233,6 +276,8 @@ public final class CreateDbHomeFromDatabaseDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", database=").append(String.valueOf(this.database));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -251,6 +296,8 @@ public final class CreateDbHomeFromDatabaseDetails
         CreateDbHomeFromDatabaseDetails other = (CreateDbHomeFromDatabaseDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.database, other.database)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -262,6 +309,11 @@ public final class CreateDbHomeFromDatabaseDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.database == null ? 43 : this.database.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

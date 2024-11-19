@@ -23,15 +23,22 @@ package com.oracle.bmc.psql.model;
 public final class ConnectionDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"caCertificate", "primaryDbEndpoint", "instanceEndpoints"})
+    @java.beans.ConstructorProperties({
+        "caCertificate",
+        "primaryDbEndpoint",
+        "instanceEndpoints",
+        "readerEndpoint"
+    })
     public ConnectionDetails(
             String caCertificate,
             Endpoint primaryDbEndpoint,
-            java.util.List<DbInstanceEndpoint> instanceEndpoints) {
+            java.util.List<DbInstanceEndpoint> instanceEndpoints,
+            Endpoint readerEndpoint) {
         super();
         this.caCertificate = caCertificate;
         this.primaryDbEndpoint = primaryDbEndpoint;
         this.instanceEndpoints = instanceEndpoints;
+        this.readerEndpoint = readerEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -82,13 +89,25 @@ public final class ConnectionDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("readerEndpoint")
+        private Endpoint readerEndpoint;
+
+        public Builder readerEndpoint(Endpoint readerEndpoint) {
+            this.readerEndpoint = readerEndpoint;
+            this.__explicitlySet__.add("readerEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ConnectionDetails build() {
             ConnectionDetails model =
                     new ConnectionDetails(
-                            this.caCertificate, this.primaryDbEndpoint, this.instanceEndpoints);
+                            this.caCertificate,
+                            this.primaryDbEndpoint,
+                            this.instanceEndpoints,
+                            this.readerEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +124,9 @@ public final class ConnectionDetails
             }
             if (model.wasPropertyExplicitlySet("instanceEndpoints")) {
                 this.instanceEndpoints(model.getInstanceEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("readerEndpoint")) {
+                this.readerEndpoint(model.getReaderEndpoint());
             }
             return this;
         }
@@ -158,6 +180,13 @@ public final class ConnectionDetails
         return instanceEndpoints;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("readerEndpoint")
+    private final Endpoint readerEndpoint;
+
+    public Endpoint getReaderEndpoint() {
+        return readerEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -176,6 +205,7 @@ public final class ConnectionDetails
         sb.append("caCertificate=").append(String.valueOf(this.caCertificate));
         sb.append(", primaryDbEndpoint=").append(String.valueOf(this.primaryDbEndpoint));
         sb.append(", instanceEndpoints=").append(String.valueOf(this.instanceEndpoints));
+        sb.append(", readerEndpoint=").append(String.valueOf(this.readerEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -193,6 +223,7 @@ public final class ConnectionDetails
         return java.util.Objects.equals(this.caCertificate, other.caCertificate)
                 && java.util.Objects.equals(this.primaryDbEndpoint, other.primaryDbEndpoint)
                 && java.util.Objects.equals(this.instanceEndpoints, other.instanceEndpoints)
+                && java.util.Objects.equals(this.readerEndpoint, other.readerEndpoint)
                 && super.equals(other);
     }
 
@@ -209,6 +240,9 @@ public final class ConnectionDetails
         result =
                 (result * PRIME)
                         + (this.instanceEndpoints == null ? 43 : this.instanceEndpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.readerEndpoint == null ? 43 : this.readerEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -41,7 +41,7 @@ public final class IncidentResourceType
             Boolean isSubscriptionsSupported,
             java.util.List<ServiceCategory> serviceCategoryList,
             java.util.Map<String, String> service,
-            java.util.List<ServiceCategories> services) {
+            java.util.List<Services> services) {
         super();
         this.resourceTypeKey = resourceTypeKey;
         this.name = name;
@@ -162,7 +162,7 @@ public final class IncidentResourceType
         }
         /** The service categories list for MOS Taxonomy. */
         @com.fasterxml.jackson.annotation.JsonProperty("services")
-        private java.util.List<ServiceCategories> services;
+        private java.util.List<Services> services;
 
         /**
          * The service categories list for MOS Taxonomy.
@@ -170,7 +170,7 @@ public final class IncidentResourceType
          * @param services the value to set
          * @return this builder
          */
-        public Builder services(java.util.List<ServiceCategories> services) {
+        public Builder services(java.util.List<Services> services) {
             this.services = services;
             this.__explicitlySet__.add("services");
             return this;
@@ -328,14 +328,14 @@ public final class IncidentResourceType
 
     /** The service categories list for MOS Taxonomy. */
     @com.fasterxml.jackson.annotation.JsonProperty("services")
-    private final java.util.List<ServiceCategories> services;
+    private final java.util.List<Services> services;
 
     /**
      * The service categories list for MOS Taxonomy.
      *
      * @return the value
      */
-    public java.util.List<ServiceCategories> getServices() {
+    public java.util.List<Services> getServices() {
         return services;
     }
 

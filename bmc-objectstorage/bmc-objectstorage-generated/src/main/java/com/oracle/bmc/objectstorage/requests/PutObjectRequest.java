@@ -141,6 +141,110 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         return contentMD5;
     }
     /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm;
+
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the
+     * HTTP request (or the parts in case of multipart uploads), in addition to the default MD5
+     * checksum.
+     */
+    public com.oracle.bmc.objectstorage.model.ChecksumAlgorithm getOpcChecksumAlgorithm() {
+        return opcChecksumAlgorithm;
+    }
+    /**
+     * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum
+     * of the body. If the optional opc-content-crc32c header is present, Object Storage performs an
+     * integrity check on the body of the HTTP request by computing the CRC32C checksum for the body
+     * and comparing it to the CRC32C checksum supplied in the header. If the two checksums do not
+     * match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error is returned with
+     * the message:
+     *
+     * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+     * opc-content-crc32c header (HEADER_CRC32C)"
+     */
+    private String opcContentCrc32c;
+
+    /**
+     * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli) checksum
+     * of the body. If the optional opc-content-crc32c header is present, Object Storage performs an
+     * integrity check on the body of the HTTP request by computing the CRC32C checksum for the body
+     * and comparing it to the CRC32C checksum supplied in the header. If the two checksums do not
+     * match, the object is rejected and an HTTP-400 Unmatched Content CRC32C error is returned with
+     * the message:
+     *
+     * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+     * opc-content-crc32c header (HEADER_CRC32C)"
+     */
+    public String getOpcContentCrc32c() {
+        return opcContentCrc32c;
+    }
+    /**
+     * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+     * optional opc-content-sha256 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA256 hash for the body and comparing it to
+     * the SHA256 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+     *
+     * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+     * opc-content-sha256 header (HEADER_SHA256)"
+     */
+    private String opcContentSha256;
+
+    /**
+     * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+     * optional opc-content-sha256 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA256 hash for the body and comparing it to
+     * the SHA256 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+     *
+     * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+     * opc-content-sha256 header (HEADER_SHA256)"
+     */
+    public String getOpcContentSha256() {
+        return opcContentSha256;
+    }
+    /**
+     * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+     * optional opc-content-sha384 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA384 hash for the body and comparing it to
+     * the SHA384 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+     *
+     * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+     * opc-content-sha384 header (HEADER_SHA384)"
+     */
+    private String opcContentSha384;
+
+    /**
+     * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+     *
+     * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+     * optional opc-content-sha384 header is present, Object Storage performs an integrity check on
+     * the body of the HTTP request by computing the SHA384 hash for the body and comparing it to
+     * the SHA384 hash supplied in the header. If the two hashes do not match, the object is
+     * rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+     *
+     * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+     * opc-content-sha384 header (HEADER_SHA384)"
+     */
+    public String getOpcContentSha384() {
+        return opcContentSha384;
+    }
+    /**
      * The optional Content-Type header that defines the standard MIME type format of the object.
      * Content type defaults to 'application/octet-stream' if not specified in the PutObject call.
      * Specifying values for this header has no effect on Object Storage behavior. Programs that
@@ -523,6 +627,131 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         }
 
         /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         */
+        private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm = null;
+
+        /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of
+         * the HTTP request (or the parts in case of multipart uploads), in addition to the default
+         * MD5 checksum.
+         *
+         * @param opcChecksumAlgorithm the value to set
+         * @return this builder instance
+         */
+        public Builder opcChecksumAlgorithm(
+                com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm) {
+            this.opcChecksumAlgorithm = opcChecksumAlgorithm;
+            return this;
+        }
+
+        /**
+         * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli)
+         * checksum of the body. If the optional opc-content-crc32c header is present, Object
+         * Storage performs an integrity check on the body of the HTTP request by computing the
+         * CRC32C checksum for the body and comparing it to the CRC32C checksum supplied in the
+         * header. If the two checksums do not match, the object is rejected and an HTTP-400
+         * Unmatched Content CRC32C error is returned with the message:
+         *
+         * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+         * opc-content-crc32c header (HEADER_CRC32C)"
+         */
+        private String opcContentCrc32c = null;
+
+        /**
+         * Applicable only if CRC32C is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded, 32-bit CRC32C (Castagnoli)
+         * checksum of the body. If the optional opc-content-crc32c header is present, Object
+         * Storage performs an integrity check on the body of the HTTP request by computing the
+         * CRC32C checksum for the body and comparing it to the CRC32C checksum supplied in the
+         * header. If the two checksums do not match, the object is rejected and an HTTP-400
+         * Unmatched Content CRC32C error is returned with the message:
+         *
+         * <p>"The computed CRC32C of the request body (ACTUAL_CRC32C) does not match the
+         * opc-content-crc32c header (HEADER_CRC32C)"
+         *
+         * @param opcContentCrc32c the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentCrc32c(String opcContentCrc32c) {
+            this.opcContentCrc32c = opcContentCrc32c;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+         * optional opc-content-sha256 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA256 hash for the body and comparing
+         * it to the SHA256 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+         *
+         * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+         * opc-content-sha256 header (HEADER_SHA256)"
+         */
+        private String opcContentSha256 = null;
+
+        /**
+         * Applicable only if SHA256 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA256 hash of the body. If the
+         * optional opc-content-sha256 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA256 hash for the body and comparing
+         * it to the SHA256 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA256 error is returned with the message:
+         *
+         * <p>"The computed SHA256 of the request body (ACTUAL_SHA256) does not match the
+         * opc-content-sha256 header (HEADER_SHA256)"
+         *
+         * @param opcContentSha256 the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentSha256(String opcContentSha256) {
+            this.opcContentSha256 = opcContentSha256;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+         * optional opc-content-sha384 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA384 hash for the body and comparing
+         * it to the SHA384 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+         *
+         * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+         * opc-content-sha384 header (HEADER_SHA384)"
+         */
+        private String opcContentSha384 = null;
+
+        /**
+         * Applicable only if SHA384 is specified in the opc-checksum-algorithm request header.
+         *
+         * <p>The optional header that defines the base64-encoded SHA384 hash of the body. If the
+         * optional opc-content-sha384 header is present, Object Storage performs an integrity check
+         * on the body of the HTTP request by computing the SHA384 hash for the body and comparing
+         * it to the SHA384 hash supplied in the header. If the two hashes do not match, the object
+         * is rejected and an HTTP-400 Unmatched Content SHA384 error is returned with the message:
+         *
+         * <p>"The computed SHA384 of the request body (ACTUAL_SHA384) does not match the
+         * opc-content-sha384 header (HEADER_SHA384)"
+         *
+         * @param opcContentSha384 the value to set
+         * @return this builder instance
+         */
+        public Builder opcContentSha384(String opcContentSha384) {
+            this.opcContentSha384 = opcContentSha384;
+            return this;
+        }
+
+        /**
          * The optional Content-Type header that defines the standard MIME type format of the
          * object. Content type defaults to 'application/octet-stream' if not specified in the
          * PutObject call. Specifying values for this header has no effect on Object Storage
@@ -802,6 +1031,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             opcClientRequestId(o.getOpcClientRequestId());
             expect(o.getExpect());
             contentMD5(o.getContentMD5());
+            opcChecksumAlgorithm(o.getOpcChecksumAlgorithm());
+            opcContentCrc32c(o.getOpcContentCrc32c());
+            opcContentSha256(o.getOpcContentSha256());
+            opcContentSha384(o.getOpcContentSha384());
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
@@ -869,6 +1102,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             request.opcClientRequestId = opcClientRequestId;
             request.expect = expect;
             request.contentMD5 = contentMD5;
+            request.opcChecksumAlgorithm = opcChecksumAlgorithm;
+            request.opcContentCrc32c = opcContentCrc32c;
+            request.opcContentSha256 = opcContentSha256;
+            request.opcContentSha384 = opcContentSha384;
             request.contentType = contentType;
             request.contentLanguage = contentLanguage;
             request.contentEncoding = contentEncoding;
@@ -883,6 +1120,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
             return request;
             // new PutObjectRequest(namespaceName, bucketName, objectName, contentLength,
             // putObjectBody, ifMatch, ifNoneMatch, opcClientRequestId, expect, contentMD5,
+            // opcChecksumAlgorithm, opcContentCrc32c, opcContentSha256, opcContentSha384,
             // contentType, contentLanguage, contentEncoding, contentDisposition, cacheControl,
             // opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId,
             // storageTier, opcMeta);
@@ -906,6 +1144,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
                 .opcClientRequestId(opcClientRequestId)
                 .expect(expect)
                 .contentMD5(contentMD5)
+                .opcChecksumAlgorithm(opcChecksumAlgorithm)
+                .opcContentCrc32c(opcContentCrc32c)
+                .opcContentSha256(opcContentSha256)
+                .opcContentSha384(opcContentSha384)
                 .contentType(contentType)
                 .contentLanguage(contentLanguage)
                 .contentEncoding(contentEncoding)
@@ -943,6 +1185,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         sb.append(",opcClientRequestId=").append(String.valueOf(this.opcClientRequestId));
         sb.append(",expect=").append(String.valueOf(this.expect));
         sb.append(",contentMD5=").append(String.valueOf(this.contentMD5));
+        sb.append(",opcChecksumAlgorithm=").append(String.valueOf(this.opcChecksumAlgorithm));
+        sb.append(",opcContentCrc32c=").append(String.valueOf(this.opcContentCrc32c));
+        sb.append(",opcContentSha256=").append(String.valueOf(this.opcContentSha256));
+        sb.append(",opcContentSha384=").append(String.valueOf(this.opcContentSha384));
         sb.append(",contentType=").append(String.valueOf(this.contentType));
         sb.append(",contentLanguage=").append(String.valueOf(this.contentLanguage));
         sb.append(",contentEncoding=").append(String.valueOf(this.contentEncoding));
@@ -979,6 +1225,10 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
                 && java.util.Objects.equals(this.expect, other.expect)
                 && java.util.Objects.equals(this.contentMD5, other.contentMD5)
+                && java.util.Objects.equals(this.opcChecksumAlgorithm, other.opcChecksumAlgorithm)
+                && java.util.Objects.equals(this.opcContentCrc32c, other.opcContentCrc32c)
+                && java.util.Objects.equals(this.opcContentSha256, other.opcContentSha256)
+                && java.util.Objects.equals(this.opcContentSha384, other.opcContentSha384)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.contentLanguage, other.contentLanguage)
                 && java.util.Objects.equals(this.contentEncoding, other.contentEncoding)
@@ -1018,6 +1268,20 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
                                 : this.opcClientRequestId.hashCode());
         result = (result * PRIME) + (this.expect == null ? 43 : this.expect.hashCode());
         result = (result * PRIME) + (this.contentMD5 == null ? 43 : this.contentMD5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcChecksumAlgorithm == null
+                                ? 43
+                                : this.opcChecksumAlgorithm.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentCrc32c == null ? 43 : this.opcContentCrc32c.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha256 == null ? 43 : this.opcContentSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha384 == null ? 43 : this.opcContentSha384.hashCode());
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result =
                 (result * PRIME)

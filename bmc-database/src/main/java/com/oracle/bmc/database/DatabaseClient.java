@@ -1680,6 +1680,49 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ConfigureExascaleExadataInfrastructureResponse configureExascaleExadataInfrastructure(
+            ConfigureExascaleExadataInfrastructureRequest request) {
+
+        Validate.notBlank(
+                request.getExadataInfrastructureId(), "exadataInfrastructureId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureExascaleExadataInfrastructureDetails(),
+                "configureExascaleExadataInfrastructureDetails is required");
+
+        return clientCall(request, ConfigureExascaleExadataInfrastructureResponse::builder)
+                .logger(LOG, "configureExascaleExadataInfrastructure")
+                .serviceDetails(
+                        "Database",
+                        "ConfigureExascaleExadataInfrastructure",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/ExadataInfrastructure/ConfigureExascaleExadataInfrastructure")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureExascaleExadataInfrastructureRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("exadataInfrastructures")
+                .appendPathParam(request.getExadataInfrastructureId())
+                .appendPathParam("actions")
+                .appendPathParam("configureExascale")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.ExadataInfrastructure.class,
+                        ConfigureExascaleExadataInfrastructureResponse.Builder
+                                ::exadataInfrastructure)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureExascaleExadataInfrastructureResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", ConfigureExascaleExadataInfrastructureResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ConfigureExascaleExadataInfrastructureResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConfigureSaasAdminUserResponse configureSaasAdminUser(
             ConfigureSaasAdminUserRequest request) {
 
@@ -9559,6 +9602,7 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("exadataInfrastructureId", request.getExadataInfrastructureId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBodyList(

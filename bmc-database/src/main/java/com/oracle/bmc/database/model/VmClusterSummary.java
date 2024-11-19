@@ -53,7 +53,9 @@ public final class VmClusterSummary
         "dataCollectionOptions",
         "giSoftwareImageId",
         "fileSystemConfigurationDetails",
-        "cloudAutomationUpdateDetails"
+        "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId",
+        "storageManagementType"
     })
     public VmClusterSummary(
             String id,
@@ -86,7 +88,9 @@ public final class VmClusterSummary
             DataCollectionOptions dataCollectionOptions,
             String giSoftwareImageId,
             java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
-            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId,
+            StorageManagementType storageManagementType) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -119,6 +123,8 @@ public final class VmClusterSummary
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
         this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+        this.storageManagementType = storageManagementType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -645,6 +651,42 @@ public final class VmClusterSummary
             this.__explicitlySet__.add("cloudAutomationUpdateDetails");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata Database Storage Vault.
+         *
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         */
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+        /**
+         * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+        private StorageManagementType storageManagementType;
+
+        /**
+         * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+         *
+         * @param storageManagementType the value to set
+         * @return this builder
+         */
+        public Builder storageManagementType(StorageManagementType storageManagementType) {
+            this.storageManagementType = storageManagementType;
+            this.__explicitlySet__.add("storageManagementType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -682,7 +724,9 @@ public final class VmClusterSummary
                             this.dataCollectionOptions,
                             this.giSoftwareImageId,
                             this.fileSystemConfigurationDetails,
-                            this.cloudAutomationUpdateDetails);
+                            this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId,
+                            this.storageManagementType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -783,6 +827,12 @@ public final class VmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
                 this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
+            }
+            if (model.wasPropertyExplicitlySet("storageManagementType")) {
+                this.storageManagementType(model.getStorageManagementType());
             }
             return this;
         }
@@ -1347,6 +1397,82 @@ public final class VmClusterSummary
         return cloudAutomationUpdateDetails;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata Database Storage Vault.
+     *
+     * @return the value
+     */
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
+    /** Specifies whether the type of storage management for the VM cluster is ASM or Exascale. */
+    public enum StorageManagementType implements com.oracle.bmc.http.internal.BmcEnum {
+        Asm("ASM"),
+        Exascale("EXASCALE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(StorageManagementType.class);
+
+        private final String value;
+        private static java.util.Map<String, StorageManagementType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (StorageManagementType v : StorageManagementType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        StorageManagementType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static StorageManagementType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'StorageManagementType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Specifies whether the type of storage management for the VM cluster is ASM or Exascale. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageManagementType")
+    private final StorageManagementType storageManagementType;
+
+    /**
+     * Specifies whether the type of storage management for the VM cluster is ASM or Exascale.
+     *
+     * @return the value
+     */
+    public StorageManagementType getStorageManagementType() {
+        return storageManagementType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1398,6 +1524,9 @@ public final class VmClusterSummary
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
         sb.append(", cloudAutomationUpdateDetails=")
                 .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
+        sb.append(", storageManagementType=").append(String.valueOf(this.storageManagementType));
         sb.append(")");
         return sb.toString();
     }
@@ -1449,6 +1578,9 @@ public final class VmClusterSummary
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
                 && java.util.Objects.equals(
                         this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
+                && java.util.Objects.equals(this.storageManagementType, other.storageManagementType)
                 && super.equals(other);
     }
 
@@ -1549,6 +1681,16 @@ public final class VmClusterSummary
                         + (this.cloudAutomationUpdateDetails == null
                                 ? 43
                                 : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageManagementType == null
+                                ? 43
+                                : this.storageManagementType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

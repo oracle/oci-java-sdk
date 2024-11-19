@@ -3,6 +3,22 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.54.0 - 2024-11-19
+### Added 
+- Support for optional parameters for unified auditing in the Database service 
+- Support for user groups for creating technical requests in the Support Management service 
+- Support for additional checksum algorithms (SHA-256, SHA-384, CRC32C) in the Object Storage service 
+- Support for single Read Only (RO) endpoint for the read replicas in the PostgreSQL service 
+- Support for exascale database vaults in the Database service 
+- Support for virtual machine clusters with database vaults in the Database service 
+- Support for N3-Gi version in the Database service    
+
+### Breaking Changes 
+- Method `public com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus getLimitStatus()` has been removed from the model `com.oracle.bmc.cims.model.CreateLimitItemDetails` in the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.model.CreateLimitItemDetails$LimitStatus` has been removed from the Customer Incident Management Service 
+- Class `com.oracle.bmc.cims.model.ServiceCategories` removed has been removed from the Customer Incident Management Service 
+- Method `public java.util.List getSubComponents()` has been removed from model `com.oracle.bmc.cims.model.SubCategories` in the Customer Incident Management Service
+
 ## 3.53.1 - 2024-11-12
 ### Added 
 - Support for calling Oracle Cloud Infrastructure services in the `me-alain-1` region 

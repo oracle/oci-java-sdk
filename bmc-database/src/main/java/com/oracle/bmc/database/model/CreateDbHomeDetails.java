@@ -32,7 +32,8 @@ public final class CreateDbHomeDetails
         "databaseSoftwareImageId",
         "database",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "isUnifiedAuditingEnabled"
     })
     public CreateDbHomeDetails(
             String displayName,
@@ -40,7 +41,8 @@ public final class CreateDbHomeDetails
             String databaseSoftwareImageId,
             CreateDatabaseDetails database,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isUnifiedAuditingEnabled) {
         super();
         this.displayName = displayName;
         this.dbVersion = dbVersion;
@@ -48,6 +50,7 @@ public final class CreateDbHomeDetails
         this.database = database;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -173,6 +176,21 @@ public final class CreateDbHomeDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /** Indicates whether unified auditing is enabled or not */
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified auditing is enabled or not
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         */
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -185,7 +203,8 @@ public final class CreateDbHomeDetails
                             this.databaseSoftwareImageId,
                             this.database,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.isUnifiedAuditingEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -211,6 +230,9 @@ public final class CreateDbHomeDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
             }
             return this;
         }
@@ -333,6 +355,19 @@ public final class CreateDbHomeDetails
         return definedTags;
     }
 
+    /** Indicates whether unified auditing is enabled or not */
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified auditing is enabled or not
+     *
+     * @return the value
+     */
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -355,6 +390,8 @@ public final class CreateDbHomeDetails
         sb.append(", database=").append(String.valueOf(this.database));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -376,6 +413,8 @@ public final class CreateDbHomeDetails
                 && java.util.Objects.equals(this.database, other.database)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
                 && super.equals(other);
     }
 
@@ -393,6 +432,11 @@ public final class CreateDbHomeDetails
         result = (result * PRIME) + (this.database == null ? 43 : this.database.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

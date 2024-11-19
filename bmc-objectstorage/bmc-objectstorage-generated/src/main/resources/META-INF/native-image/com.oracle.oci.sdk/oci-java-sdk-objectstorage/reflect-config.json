@@ -73,6 +73,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.objectstorage.model.ChecksumAlgorithm",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

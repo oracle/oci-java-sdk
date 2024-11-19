@@ -73,7 +73,8 @@ public final class ExadataInfrastructure
         "definedFileSystemConfigurations",
         "freeformTags",
         "definedTags",
-        "isSchedulingPolicyAssociated"
+        "isSchedulingPolicyAssociated",
+        "exascaleConfig"
     })
     public ExadataInfrastructure(
             String id,
@@ -125,7 +126,8 @@ public final class ExadataInfrastructure
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            Boolean isSchedulingPolicyAssociated) {
+            Boolean isSchedulingPolicyAssociated,
+            ExascaleConfigDetails exascaleConfig) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -177,6 +179,7 @@ public final class ExadataInfrastructure
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+        this.exascaleConfig = exascaleConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1002,6 +1005,15 @@ public final class ExadataInfrastructure
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+        private ExascaleConfigDetails exascaleConfig;
+
+        public Builder exascaleConfig(ExascaleConfigDetails exascaleConfig) {
+            this.exascaleConfig = exascaleConfig;
+            this.__explicitlySet__.add("exascaleConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1057,7 +1069,8 @@ public final class ExadataInfrastructure
                             this.definedFileSystemConfigurations,
                             this.freeformTags,
                             this.definedTags,
-                            this.isSchedulingPolicyAssociated);
+                            this.isSchedulingPolicyAssociated,
+                            this.exascaleConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1215,6 +1228,9 @@ public final class ExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
                 this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleConfig")) {
+                this.exascaleConfig(model.getExascaleConfig());
             }
             return this;
         }
@@ -2101,6 +2117,13 @@ public final class ExadataInfrastructure
         return isSchedulingPolicyAssociated;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleConfig")
+    private final ExascaleConfigDetails exascaleConfig;
+
+    public ExascaleConfigDetails getExascaleConfig() {
+        return exascaleConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2182,6 +2205,7 @@ public final class ExadataInfrastructure
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", isSchedulingPolicyAssociated=")
                 .append(String.valueOf(this.isSchedulingPolicyAssociated));
+        sb.append(", exascaleConfig=").append(String.valueOf(this.exascaleConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -2258,6 +2282,7 @@ public final class ExadataInfrastructure
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
+                && java.util.Objects.equals(this.exascaleConfig, other.exascaleConfig)
                 && super.equals(other);
     }
 
@@ -2423,6 +2448,9 @@ public final class ExadataInfrastructure
                         + (this.isSchedulingPolicyAssociated == null
                                 ? 43
                                 : this.isSchedulingPolicyAssociated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleConfig == null ? 43 : this.exascaleConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
