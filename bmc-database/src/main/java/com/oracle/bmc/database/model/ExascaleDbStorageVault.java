@@ -37,6 +37,7 @@ public final class ExascaleDbStorageVault
         "vmClusterCount",
         "freeformTags",
         "definedTags",
+        "exadataInfrastructureId",
         "systemTags",
         "highCapacityDatabaseStorage",
         "additionalFlashCacheInPercent"
@@ -55,6 +56,7 @@ public final class ExascaleDbStorageVault
             Integer vmClusterCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            String exadataInfrastructureId,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             ExascaleDbStorageDetails highCapacityDatabaseStorage,
             Integer additionalFlashCacheInPercent) {
@@ -72,6 +74,7 @@ public final class ExascaleDbStorageVault
         this.vmClusterCount = vmClusterCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.exadataInfrastructureId = exadataInfrastructureId;
         this.systemTags = systemTags;
         this.highCapacityDatabaseStorage = highCapacityDatabaseStorage;
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
@@ -322,6 +325,25 @@ public final class ExascaleDbStorageVault
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
+        private String exadataInfrastructureId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         *
+         * @param exadataInfrastructureId the value to set
+         * @return this builder
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
+            this.__explicitlySet__.add("exadataInfrastructureId");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace. For more
          * information, see [Resource
          * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -387,6 +409,7 @@ public final class ExascaleDbStorageVault
                             this.vmClusterCount,
                             this.freeformTags,
                             this.definedTags,
+                            this.exadataInfrastructureId,
                             this.systemTags,
                             this.highCapacityDatabaseStorage,
                             this.additionalFlashCacheInPercent);
@@ -436,6 +459,9 @@ public final class ExascaleDbStorageVault
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInfrastructureId")) {
+                this.exadataInfrastructureId(model.getExadataInfrastructureId());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -721,6 +747,23 @@ public final class ExascaleDbStorageVault
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
+    private final String exadataInfrastructureId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
      * Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -787,6 +830,8 @@ public final class ExascaleDbStorageVault
         sb.append(", vmClusterCount=").append(String.valueOf(this.vmClusterCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", exadataInfrastructureId=")
+                .append(String.valueOf(this.exadataInfrastructureId));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", highCapacityDatabaseStorage=")
                 .append(String.valueOf(this.highCapacityDatabaseStorage));
@@ -819,6 +864,8 @@ public final class ExascaleDbStorageVault
                 && java.util.Objects.equals(this.vmClusterCount, other.vmClusterCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(
                         this.highCapacityDatabaseStorage, other.highCapacityDatabaseStorage)
@@ -856,6 +903,11 @@ public final class ExascaleDbStorageVault
                         + (this.vmClusterCount == null ? 43 : this.vmClusterCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result =
                 (result * PRIME)

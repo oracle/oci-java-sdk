@@ -23,10 +23,11 @@ package com.oracle.bmc.psql.model;
 public final class UpdateNetworkDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"nsgIds"})
-    public UpdateNetworkDetails(java.util.List<String> nsgIds) {
+    @java.beans.ConstructorProperties({"nsgIds", "isReaderEndpointEnabled"})
+    public UpdateNetworkDetails(java.util.List<String> nsgIds, Boolean isReaderEndpointEnabled) {
         super();
         this.nsgIds = nsgIds;
+        this.isReaderEndpointEnabled = isReaderEndpointEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -52,12 +53,28 @@ public final class UpdateNetworkDetails
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /** Specifies if the reader endpoint is enabled on the dbSystem. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
+        private Boolean isReaderEndpointEnabled;
+
+        /**
+         * Specifies if the reader endpoint is enabled on the dbSystem.
+         *
+         * @param isReaderEndpointEnabled the value to set
+         * @return this builder
+         */
+        public Builder isReaderEndpointEnabled(Boolean isReaderEndpointEnabled) {
+            this.isReaderEndpointEnabled = isReaderEndpointEnabled;
+            this.__explicitlySet__.add("isReaderEndpointEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public UpdateNetworkDetails build() {
-            UpdateNetworkDetails model = new UpdateNetworkDetails(this.nsgIds);
+            UpdateNetworkDetails model =
+                    new UpdateNetworkDetails(this.nsgIds, this.isReaderEndpointEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -68,6 +85,9 @@ public final class UpdateNetworkDetails
         public Builder copy(UpdateNetworkDetails model) {
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isReaderEndpointEnabled")) {
+                this.isReaderEndpointEnabled(model.getIsReaderEndpointEnabled());
             }
             return this;
         }
@@ -101,6 +121,19 @@ public final class UpdateNetworkDetails
         return nsgIds;
     }
 
+    /** Specifies if the reader endpoint is enabled on the dbSystem. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
+    private final Boolean isReaderEndpointEnabled;
+
+    /**
+     * Specifies if the reader endpoint is enabled on the dbSystem.
+     *
+     * @return the value
+     */
+    public Boolean getIsReaderEndpointEnabled() {
+        return isReaderEndpointEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -117,6 +150,8 @@ public final class UpdateNetworkDetails
         sb.append("UpdateNetworkDetails(");
         sb.append("super=").append(super.toString());
         sb.append("nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", isReaderEndpointEnabled=")
+                .append(String.valueOf(this.isReaderEndpointEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -131,7 +166,10 @@ public final class UpdateNetworkDetails
         }
 
         UpdateNetworkDetails other = (UpdateNetworkDetails) o;
-        return java.util.Objects.equals(this.nsgIds, other.nsgIds) && super.equals(other);
+        return java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(
+                        this.isReaderEndpointEnabled, other.isReaderEndpointEnabled)
+                && super.equals(other);
     }
 
     @Override
@@ -139,6 +177,11 @@ public final class UpdateNetworkDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReaderEndpointEnabled == null
+                                ? 43
+                                : this.isReaderEndpointEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

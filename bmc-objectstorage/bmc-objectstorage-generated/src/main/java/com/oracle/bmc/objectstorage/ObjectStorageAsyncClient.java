@@ -264,6 +264,15 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", CommitMultipartUploadResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", CommitMultipartUploadResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c",
+                        CommitMultipartUploadResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384",
+                        CommitMultipartUploadResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("ETag", CommitMultipartUploadResponse.Builder::eTag)
                 .handleResponseHeaderDate(
                         "last-modified", CommitMultipartUploadResponse.Builder::lastModified)
@@ -413,6 +422,7 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
                 .appendHeader("opc-sse-kms-key-id", request.getOpcSseKmsKeyId())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
                 .hasBody()
                 .handleBody(
                         com.oracle.bmc.objectstorage.model.MultipartUpload.class,
@@ -1100,6 +1110,16 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString("content-md5", GetObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", GetObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", GetObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", GetObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", GetObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", GetObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", GetObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", GetObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", GetObjectResponse.Builder::contentLanguage)
@@ -1493,6 +1513,16 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .handleResponseHeaderString("content-md5", HeadObjectResponse.Builder::contentMd5)
                 .handleResponseHeaderString(
                         "opc-multipart-md5", HeadObjectResponse.Builder::opcMultipartMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", HeadObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", HeadObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha256", HeadObjectResponse.Builder::opcMultipartSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", HeadObjectResponse.Builder::opcContentSha384)
+                .handleResponseHeaderString(
+                        "opc-multipart-sha384", HeadObjectResponse.Builder::opcMultipartSha384)
                 .handleResponseHeaderString("content-type", HeadObjectResponse.Builder::contentType)
                 .handleResponseHeaderString(
                         "content-language", HeadObjectResponse.Builder::contentLanguage)
@@ -2217,6 +2247,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("Content-Type", request.getContentType())
                 .appendHeader("Content-Language", request.getContentLanguage())
                 .appendHeader("Content-Encoding", request.getContentEncoding())
@@ -2236,6 +2270,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", PutObjectResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", PutObjectResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", PutObjectResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", PutObjectResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", PutObjectResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", PutObjectResponse.Builder::eTag)
                 .handleResponseHeaderDate("last-modified", PutObjectResponse.Builder::lastModified)
                 .handleResponseHeaderString("version-id", PutObjectResponse.Builder::versionId)
@@ -2751,6 +2791,10 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                 .appendHeader("Expect", request.getExpect())
                 .appendHeader("Content-Length", request.getContentLength())
                 .appendHeader("Content-MD5", request.getContentMD5())
+                .appendEnumHeader("opc-checksum-algorithm", request.getOpcChecksumAlgorithm())
+                .appendHeader("opc-content-crc32c", request.getOpcContentCrc32c())
+                .appendHeader("opc-content-sha256", request.getOpcContentSha256())
+                .appendHeader("opc-content-sha384", request.getOpcContentSha384())
                 .appendHeader("opc-sse-customer-algorithm", request.getOpcSseCustomerAlgorithm())
                 .appendHeader("opc-sse-customer-key", request.getOpcSseCustomerKey())
                 .appendHeader("opc-sse-customer-key-sha256", request.getOpcSseCustomerKeySha256())
@@ -2763,6 +2807,12 @@ public class ObjectStorageAsyncClient extends com.oracle.bmc.http.internal.BaseA
                         "opc-request-id", UploadPartResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-content-md5", UploadPartResponse.Builder::opcContentMd5)
+                .handleResponseHeaderString(
+                        "opc-content-crc32c", UploadPartResponse.Builder::opcContentCrc32c)
+                .handleResponseHeaderString(
+                        "opc-content-sha256", UploadPartResponse.Builder::opcContentSha256)
+                .handleResponseHeaderString(
+                        "opc-content-sha384", UploadPartResponse.Builder::opcContentSha384)
                 .handleResponseHeaderString("ETag", UploadPartResponse.Builder::eTag)
                 .callAsync(handler);
     }

@@ -949,12 +949,12 @@ public final class AutonomousDatabaseSummary
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on
          * the compute model and whether the database is an Autonomous Database Serverless instance
-         * or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
-         * Serverless instance, the 'ECPU' compute model requires a minimum value of one, for
-         * databases in the elastic resource pool and minimum value of two, otherwise. Required when
-         * using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it
-         * is an error to specify computeCount to a non-null value. Providing {@code computeModel}
-         * and {@code computeCount} is the preferred method for both OCPU and ECPU.
+         * or an Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model
+         * requires a minimum value of one, for databases in the elastic resource pool and minimum
+         * value of two, otherwise. Required when using the {@code computeModel} parameter. When
+         * using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a
+         * non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred
+         * method for both OCPU and ECPU.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
         private Float computeCount;
@@ -962,12 +962,12 @@ public final class AutonomousDatabaseSummary
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on
          * the compute model and whether the database is an Autonomous Database Serverless instance
-         * or an Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
-         * Serverless instance, the 'ECPU' compute model requires a minimum value of one, for
-         * databases in the elastic resource pool and minimum value of two, otherwise. Required when
-         * using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it
-         * is an error to specify computeCount to a non-null value. Providing {@code computeModel}
-         * and {@code computeCount} is the preferred method for both OCPU and ECPU.
+         * or an Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model
+         * requires a minimum value of one, for databases in the elastic resource pool and minimum
+         * value of two, otherwise. Required when using the {@code computeModel} parameter. When
+         * using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a
+         * non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred
+         * method for both OCPU and ECPU.
          *
          * @param computeCount the value to set
          * @return this builder
@@ -4176,12 +4176,12 @@ public final class AutonomousDatabaseSummary
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
      * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
-     * Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases
-     * in the elastic resource pool and minimum value of two, otherwise. Required when using the
-     * {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to
-     * specify computeCount to a non-null value. Providing {@code computeModel} and {@code
-     * computeCount} is the preferred method for both OCPU and ECPU.
+     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
+     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * otherwise. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
+     * and ECPU.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
     private final Float computeCount;
@@ -4189,12 +4189,12 @@ public final class AutonomousDatabaseSummary
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the
      * compute model and whether the database is an Autonomous Database Serverless instance or an
-     * Autonomous Database on Dedicated Exadata Infrastructure. For an Autonomous Database
-     * Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases
-     * in the elastic resource pool and minimum value of two, otherwise. Required when using the
-     * {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to
-     * specify computeCount to a non-null value. Providing {@code computeModel} and {@code
-     * computeCount} is the preferred method for both OCPU and ECPU.
+     * Autonomous Database on Dedicated Exadata Infrastructure. The 'ECPU' compute model requires a
+     * minimum value of one, for databases in the elastic resource pool and minimum value of two,
+     * otherwise. Required when using the {@code computeModel} parameter. When using {@code
+     * cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value.
+     * Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU
+     * and ECPU.
      *
      * @return the value
      */

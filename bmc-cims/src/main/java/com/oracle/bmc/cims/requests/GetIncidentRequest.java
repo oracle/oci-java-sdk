@@ -42,13 +42,13 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
     }
     /**
      * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * required for technical support tickets and optional for limits and billing tickets.
+     * optional for all support request types.
      */
     private String csi;
 
     /**
      * The Customer Support Identifier (CSI) number associated with the support account. The CSI is
-     * required for technical support tickets and optional for limits and billing tickets.
+     * optional for all support request types.
      */
     public String getCsi() {
         return csi;
@@ -171,13 +171,13 @@ public class GetIncidentRequest extends com.oracle.bmc.requests.BmcRequest<java.
 
         /**
          * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is required for technical support tickets and optional for limits and billing tickets.
+         * is optional for all support request types.
          */
         private String csi = null;
 
         /**
          * The Customer Support Identifier (CSI) number associated with the support account. The CSI
-         * is required for technical support tickets and optional for limits and billing tickets.
+         * is optional for all support request types.
          *
          * @param csi the value to set
          * @return this builder instance

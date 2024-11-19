@@ -25,18 +25,18 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
         "serviceCategory",
         "schema",
         "hasSubCategory",
-        "subComponents"
+        "subCategories"
     })
     public SubCategories(
             java.util.Map<String, String> serviceCategory,
             String schema,
             String hasSubCategory,
-            java.util.List<SubComponents> subComponents) {
+            java.util.List<SubComponents> subCategories) {
         super();
         this.serviceCategory = serviceCategory;
         this.schema = schema;
         this.hasSubCategory = hasSubCategory;
-        this.subComponents = subComponents;
+        this.subCategories = subCategories;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -87,18 +87,18 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
             return this;
         }
         /** The sub component list for MOS Taxonomy. */
-        @com.fasterxml.jackson.annotation.JsonProperty("subComponents")
-        private java.util.List<SubComponents> subComponents;
+        @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
+        private java.util.List<SubComponents> subCategories;
 
         /**
          * The sub component list for MOS Taxonomy.
          *
-         * @param subComponents the value to set
+         * @param subCategories the value to set
          * @return this builder
          */
-        public Builder subComponents(java.util.List<SubComponents> subComponents) {
-            this.subComponents = subComponents;
-            this.__explicitlySet__.add("subComponents");
+        public Builder subCategories(java.util.List<SubComponents> subCategories) {
+            this.subCategories = subCategories;
+            this.__explicitlySet__.add("subCategories");
             return this;
         }
 
@@ -111,7 +111,7 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
                             this.serviceCategory,
                             this.schema,
                             this.hasSubCategory,
-                            this.subComponents);
+                            this.subCategories);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -129,8 +129,8 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
             if (model.wasPropertyExplicitlySet("hasSubCategory")) {
                 this.hasSubCategory(model.getHasSubCategory());
             }
-            if (model.wasPropertyExplicitlySet("subComponents")) {
-                this.subComponents(model.getSubComponents());
+            if (model.wasPropertyExplicitlySet("subCategories")) {
+                this.subCategories(model.getSubCategories());
             }
             return this;
         }
@@ -185,16 +185,16 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
     }
 
     /** The sub component list for MOS Taxonomy. */
-    @com.fasterxml.jackson.annotation.JsonProperty("subComponents")
-    private final java.util.List<SubComponents> subComponents;
+    @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
+    private final java.util.List<SubComponents> subCategories;
 
     /**
      * The sub component list for MOS Taxonomy.
      *
      * @return the value
      */
-    public java.util.List<SubComponents> getSubComponents() {
-        return subComponents;
+    public java.util.List<SubComponents> getSubCategories() {
+        return subCategories;
     }
 
     @Override
@@ -215,7 +215,7 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
         sb.append("serviceCategory=").append(String.valueOf(this.serviceCategory));
         sb.append(", schema=").append(String.valueOf(this.schema));
         sb.append(", hasSubCategory=").append(String.valueOf(this.hasSubCategory));
-        sb.append(", subComponents=").append(String.valueOf(this.subComponents));
+        sb.append(", subCategories=").append(String.valueOf(this.subCategories));
         sb.append(")");
         return sb.toString();
     }
@@ -233,7 +233,7 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
         return java.util.Objects.equals(this.serviceCategory, other.serviceCategory)
                 && java.util.Objects.equals(this.schema, other.schema)
                 && java.util.Objects.equals(this.hasSubCategory, other.hasSubCategory)
-                && java.util.Objects.equals(this.subComponents, other.subComponents)
+                && java.util.Objects.equals(this.subCategories, other.subCategories)
                 && super.equals(other);
     }
 
@@ -250,7 +250,7 @@ public final class SubCategories extends com.oracle.bmc.http.client.internal.Exp
                         + (this.hasSubCategory == null ? 43 : this.hasSubCategory.hashCode());
         result =
                 (result * PRIME)
-                        + (this.subComponents == null ? 43 : this.subComponents.hashCode());
+                        + (this.subCategories == null ? 43 : this.subCategories.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

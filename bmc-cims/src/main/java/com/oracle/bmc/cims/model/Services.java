@@ -16,22 +16,20 @@ package com.oracle.bmc.cims.model;
  * null}).
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181231")
-@com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = ServiceCategories.Builder.class)
+@com.fasterxml.jackson.databind.annotation.JsonDeserialize(builder = Services.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class ServiceCategories
-        extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
+public final class Services extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"service", "schema", "subCategories"})
-    public ServiceCategories(
+    @java.beans.ConstructorProperties({"service", "schema", "serviceCategories"})
+    public Services(
             java.util.Map<String, String> service,
             String schema,
-            java.util.List<SubCategories> subCategories) {
+            java.util.List<SubCategories> serviceCategories) {
         super();
         this.service = service;
         this.schema = schema;
-        this.subCategories = subCategories;
+        this.serviceCategories = serviceCategories;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -67,27 +65,26 @@ public final class ServiceCategories
             return this;
         }
         /** The service categories list for MOS Taxonomy. */
-        @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
-        private java.util.List<SubCategories> subCategories;
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
+        private java.util.List<SubCategories> serviceCategories;
 
         /**
          * The service categories list for MOS Taxonomy.
          *
-         * @param subCategories the value to set
+         * @param serviceCategories the value to set
          * @return this builder
          */
-        public Builder subCategories(java.util.List<SubCategories> subCategories) {
-            this.subCategories = subCategories;
-            this.__explicitlySet__.add("subCategories");
+        public Builder serviceCategories(java.util.List<SubCategories> serviceCategories) {
+            this.serviceCategories = serviceCategories;
+            this.__explicitlySet__.add("serviceCategories");
             return this;
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public ServiceCategories build() {
-            ServiceCategories model =
-                    new ServiceCategories(this.service, this.schema, this.subCategories);
+        public Services build() {
+            Services model = new Services(this.service, this.schema, this.serviceCategories);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -95,15 +92,15 @@ public final class ServiceCategories
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(ServiceCategories model) {
+        public Builder copy(Services model) {
             if (model.wasPropertyExplicitlySet("service")) {
                 this.service(model.getService());
             }
             if (model.wasPropertyExplicitlySet("schema")) {
                 this.schema(model.getSchema());
             }
-            if (model.wasPropertyExplicitlySet("subCategories")) {
-                this.subCategories(model.getSubCategories());
+            if (model.wasPropertyExplicitlySet("serviceCategories")) {
+                this.serviceCategories(model.getServiceCategories());
             }
             return this;
         }
@@ -145,16 +142,16 @@ public final class ServiceCategories
     }
 
     /** The service categories list for MOS Taxonomy. */
-    @com.fasterxml.jackson.annotation.JsonProperty("subCategories")
-    private final java.util.List<SubCategories> subCategories;
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceCategories")
+    private final java.util.List<SubCategories> serviceCategories;
 
     /**
      * The service categories list for MOS Taxonomy.
      *
      * @return the value
      */
-    public java.util.List<SubCategories> getSubCategories() {
-        return subCategories;
+    public java.util.List<SubCategories> getServiceCategories() {
+        return serviceCategories;
     }
 
     @Override
@@ -170,11 +167,11 @@ public final class ServiceCategories
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("ServiceCategories(");
+        sb.append("Services(");
         sb.append("super=").append(super.toString());
         sb.append("service=").append(String.valueOf(this.service));
         sb.append(", schema=").append(String.valueOf(this.schema));
-        sb.append(", subCategories=").append(String.valueOf(this.subCategories));
+        sb.append(", serviceCategories=").append(String.valueOf(this.serviceCategories));
         sb.append(")");
         return sb.toString();
     }
@@ -184,14 +181,14 @@ public final class ServiceCategories
         if (this == o) {
             return true;
         }
-        if (!(o instanceof ServiceCategories)) {
+        if (!(o instanceof Services)) {
             return false;
         }
 
-        ServiceCategories other = (ServiceCategories) o;
+        Services other = (Services) o;
         return java.util.Objects.equals(this.service, other.service)
                 && java.util.Objects.equals(this.schema, other.schema)
-                && java.util.Objects.equals(this.subCategories, other.subCategories)
+                && java.util.Objects.equals(this.serviceCategories, other.serviceCategories)
                 && super.equals(other);
     }
 
@@ -203,7 +200,7 @@ public final class ServiceCategories
         result = (result * PRIME) + (this.schema == null ? 43 : this.schema.hashCode());
         result =
                 (result * PRIME)
-                        + (this.subCategories == null ? 43 : this.subCategories.hashCode());
+                        + (this.serviceCategories == null ? 43 : this.serviceCategories.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -28,6 +28,12 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
         "tenancyInformation",
         "ticket",
         "incidentType",
+        "userGroupId",
+        "userGroupName",
+        "primaryContactPartyId",
+        "primaryContactPartyName",
+        "isWritePermitted",
+        "warnMessage",
         "problemType",
         "referrer"
     })
@@ -38,6 +44,12 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
             TenancyInformation tenancyInformation,
             Ticket ticket,
             IncidentType incidentType,
+            String userGroupId,
+            String userGroupName,
+            String primaryContactPartyId,
+            String primaryContactPartyName,
+            Boolean isWritePermitted,
+            String warnMessage,
             ProblemType problemType,
             String referrer) {
         super();
@@ -47,6 +59,12 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
         this.tenancyInformation = tenancyInformation;
         this.ticket = ticket;
         this.incidentType = incidentType;
+        this.userGroupId = userGroupId;
+        this.userGroupName = userGroupName;
+        this.primaryContactPartyId = primaryContactPartyId;
+        this.primaryContactPartyName = primaryContactPartyName;
+        this.isWritePermitted = isWritePermitted;
+        this.warnMessage = warnMessage;
         this.problemType = problemType;
         this.referrer = referrer;
     }
@@ -120,6 +138,124 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user
+         * group in My Oracle Cloud Support portal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
+        private String userGroupId;
+
+        /**
+         * Technical support type ({@code TECH}) only: The identifier of the support request's user
+         * group in My Oracle Cloud Support portal.
+         *
+         * @param userGroupId the value to set
+         * @return this builder
+         */
+        public Builder userGroupId(String userGroupId) {
+            this.userGroupId = userGroupId;
+            this.__explicitlySet__.add("userGroupId");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in
+         * My Oracle Cloud Support portal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
+        private String userGroupName;
+
+        /**
+         * Technical support type ({@code TECH}) only: Name of the support request's user group in
+         * My Oracle Cloud Support portal.
+         *
+         * @param userGroupName the value to set
+         * @return this builder
+         */
+        public Builder userGroupName(String userGroupName) {
+            this.userGroupName = userGroupName;
+            this.__explicitlySet__.add("userGroupName");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: The identifier of the support request's
+         * primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyId")
+        private String primaryContactPartyId;
+
+        /**
+         * Technical support type ({@code TECH}) only: The identifier of the support request's
+         * primary contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+         *
+         * @param primaryContactPartyId the value to set
+         * @return this builder
+         */
+        public Builder primaryContactPartyId(String primaryContactPartyId) {
+            this.primaryContactPartyId = primaryContactPartyId;
+            this.__explicitlySet__.add("primaryContactPartyId");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: The name of the support request's primary
+         * contact in My Oracle Cloud Support portal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyName")
+        private String primaryContactPartyName;
+
+        /**
+         * Technical support type ({@code TECH}) only: The name of the support request's primary
+         * contact in My Oracle Cloud Support portal.
+         *
+         * @param primaryContactPartyName the value to set
+         * @return this builder
+         */
+        public Builder primaryContactPartyName(String primaryContactPartyName) {
+            this.primaryContactPartyName = primaryContactPartyName;
+            this.__explicitlySet__.add("primaryContactPartyName");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: Allows update of the support request in My
+         * Oracle Cloud Support portal, when the user has write permission to the support request's
+         * user group.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isWritePermitted")
+        private Boolean isWritePermitted;
+
+        /**
+         * Technical support type ({@code TECH}) only: Allows update of the support request in My
+         * Oracle Cloud Support portal, when the user has write permission to the support request's
+         * user group.
+         *
+         * @param isWritePermitted the value to set
+         * @return this builder
+         */
+        public Builder isWritePermitted(Boolean isWritePermitted) {
+            this.isWritePermitted = isWritePermitted;
+            this.__explicitlySet__.add("isWritePermitted");
+            return this;
+        }
+        /**
+         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
+         * userGroupId}) that was auto-selected for a new support request. This message appears when
+         * no user group was specified in the create request for a new technical support request.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("warnMessage")
+        private String warnMessage;
+
+        /**
+         * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
+         * userGroupId}) that was auto-selected for a new support request. This message appears when
+         * no user group was specified in the create request for a new technical support request.
+         *
+         * @param warnMessage the value to set
+         * @return this builder
+         */
+        public Builder warnMessage(String warnMessage) {
+            this.warnMessage = warnMessage;
+            this.__explicitlySet__.add("warnMessage");
+            return this;
+        }
+        /**
          * The kind of support ticket (type of support request). For information about {@code
          * ACCOUNT} support tickets, see [Creating a Billing Support
          * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
@@ -182,6 +318,12 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
                             this.tenancyInformation,
                             this.ticket,
                             this.incidentType,
+                            this.userGroupId,
+                            this.userGroupName,
+                            this.primaryContactPartyId,
+                            this.primaryContactPartyName,
+                            this.isWritePermitted,
+                            this.warnMessage,
                             this.problemType,
                             this.referrer);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -209,6 +351,24 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("incidentType")) {
                 this.incidentType(model.getIncidentType());
+            }
+            if (model.wasPropertyExplicitlySet("userGroupId")) {
+                this.userGroupId(model.getUserGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("userGroupName")) {
+                this.userGroupName(model.getUserGroupName());
+            }
+            if (model.wasPropertyExplicitlySet("primaryContactPartyId")) {
+                this.primaryContactPartyId(model.getPrimaryContactPartyId());
+            }
+            if (model.wasPropertyExplicitlySet("primaryContactPartyName")) {
+                this.primaryContactPartyName(model.getPrimaryContactPartyName());
+            }
+            if (model.wasPropertyExplicitlySet("isWritePermitted")) {
+                this.isWritePermitted(model.getIsWritePermitted());
+            }
+            if (model.wasPropertyExplicitlySet("warnMessage")) {
+                this.warnMessage(model.getWarnMessage());
             }
             if (model.wasPropertyExplicitlySet("problemType")) {
                 this.problemType(model.getProblemType());
@@ -284,6 +444,110 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user
+     * group in My Oracle Cloud Support portal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("userGroupId")
+    private final String userGroupId;
+
+    /**
+     * Technical support type ({@code TECH}) only: The identifier of the support request's user
+     * group in My Oracle Cloud Support portal.
+     *
+     * @return the value
+     */
+    public String getUserGroupId() {
+        return userGroupId;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
+     * Oracle Cloud Support portal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("userGroupName")
+    private final String userGroupName;
+
+    /**
+     * Technical support type ({@code TECH}) only: Name of the support request's user group in My
+     * Oracle Cloud Support portal.
+     *
+     * @return the value
+     */
+    public String getUserGroupName() {
+        return userGroupName;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: The identifier of the support request's primary
+     * contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyId")
+    private final String primaryContactPartyId;
+
+    /**
+     * Technical support type ({@code TECH}) only: The identifier of the support request's primary
+     * contact ({@code primaryContactPartyName}) in My Oracle Cloud Support portal.
+     *
+     * @return the value
+     */
+    public String getPrimaryContactPartyId() {
+        return primaryContactPartyId;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: The name of the support request's primary contact
+     * in My Oracle Cloud Support portal.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("primaryContactPartyName")
+    private final String primaryContactPartyName;
+
+    /**
+     * Technical support type ({@code TECH}) only: The name of the support request's primary contact
+     * in My Oracle Cloud Support portal.
+     *
+     * @return the value
+     */
+    public String getPrimaryContactPartyName() {
+        return primaryContactPartyName;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle
+     * Cloud Support portal, when the user has write permission to the support request's user group.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isWritePermitted")
+    private final Boolean isWritePermitted;
+
+    /**
+     * Technical support type ({@code TECH}) only: Allows update of the support request in My Oracle
+     * Cloud Support portal, when the user has write permission to the support request's user group.
+     *
+     * @return the value
+     */
+    public Boolean getIsWritePermitted() {
+        return isWritePermitted;
+    }
+
+    /**
+     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
+     * userGroupId}) that was auto-selected for a new support request. This message appears when no
+     * user group was specified in the create request for a new technical support request.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("warnMessage")
+    private final String warnMessage;
+
+    /**
+     * Technical support type ({@code TECH}) only: Message indicating the user group ({@code
+     * userGroupId}) that was auto-selected for a new support request. This message appears when no
+     * user group was specified in the create request for a new technical support request.
+     *
+     * @return the value
+     */
+    public String getWarnMessage() {
+        return warnMessage;
+    }
+
+    /**
      * The kind of support ticket (type of support request). For information about {@code ACCOUNT}
      * support tickets, see [Creating a Billing Support
      * Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
@@ -348,6 +612,13 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", tenancyInformation=").append(String.valueOf(this.tenancyInformation));
         sb.append(", ticket=").append(String.valueOf(this.ticket));
         sb.append(", incidentType=").append(String.valueOf(this.incidentType));
+        sb.append(", userGroupId=").append(String.valueOf(this.userGroupId));
+        sb.append(", userGroupName=").append(String.valueOf(this.userGroupName));
+        sb.append(", primaryContactPartyId=").append(String.valueOf(this.primaryContactPartyId));
+        sb.append(", primaryContactPartyName=")
+                .append(String.valueOf(this.primaryContactPartyName));
+        sb.append(", isWritePermitted=").append(String.valueOf(this.isWritePermitted));
+        sb.append(", warnMessage=").append(String.valueOf(this.warnMessage));
         sb.append(", problemType=").append(String.valueOf(this.problemType));
         sb.append(", referrer=").append(String.valueOf(this.referrer));
         sb.append(")");
@@ -370,6 +641,13 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.tenancyInformation, other.tenancyInformation)
                 && java.util.Objects.equals(this.ticket, other.ticket)
                 && java.util.Objects.equals(this.incidentType, other.incidentType)
+                && java.util.Objects.equals(this.userGroupId, other.userGroupId)
+                && java.util.Objects.equals(this.userGroupName, other.userGroupName)
+                && java.util.Objects.equals(this.primaryContactPartyId, other.primaryContactPartyId)
+                && java.util.Objects.equals(
+                        this.primaryContactPartyName, other.primaryContactPartyName)
+                && java.util.Objects.equals(this.isWritePermitted, other.isWritePermitted)
+                && java.util.Objects.equals(this.warnMessage, other.warnMessage)
                 && java.util.Objects.equals(this.problemType, other.problemType)
                 && java.util.Objects.equals(this.referrer, other.referrer)
                 && super.equals(other);
@@ -391,6 +669,24 @@ public final class Incident extends com.oracle.bmc.http.client.internal.Explicit
                                 : this.tenancyInformation.hashCode());
         result = (result * PRIME) + (this.ticket == null ? 43 : this.ticket.hashCode());
         result = (result * PRIME) + (this.incidentType == null ? 43 : this.incidentType.hashCode());
+        result = (result * PRIME) + (this.userGroupId == null ? 43 : this.userGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.userGroupName == null ? 43 : this.userGroupName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryContactPartyId == null
+                                ? 43
+                                : this.primaryContactPartyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.primaryContactPartyName == null
+                                ? 43
+                                : this.primaryContactPartyName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isWritePermitted == null ? 43 : this.isWritePermitted.hashCode());
+        result = (result * PRIME) + (this.warnMessage == null ? 43 : this.warnMessage.hashCode());
         result = (result * PRIME) + (this.problemType == null ? 43 : this.problemType.hashCode());
         result = (result * PRIME) + (this.referrer == null ? 43 : this.referrer.hashCode());
         result = (result * PRIME) + super.hashCode();

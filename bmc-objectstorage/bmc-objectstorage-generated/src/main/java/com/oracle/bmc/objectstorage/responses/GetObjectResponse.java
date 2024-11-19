@@ -131,6 +131,104 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
     }
 
     /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
+     * complete reconstructed object.
+     */
+    private String opcContentCrc32c;
+
+    /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
+     * complete reconstructed object.
+     *
+     * @return the value
+     */
+    public String getOpcContentCrc32c() {
+        return opcContentCrc32c;
+    }
+
+    /**
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during
+     * upload. The base64-encoded SHA256 hash of the object as computed during upload. Unavailable
+     * for objects uploaded using multipart upload.
+     */
+    private String opcContentSha256;
+
+    /**
+     * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header during
+     * upload. The base64-encoded SHA256 hash of the object as computed during upload. Unavailable
+     * for objects uploaded using multipart upload.
+     *
+     * @return the value
+     */
+    public String getOpcContentSha256() {
+        return opcContentSha256;
+    }
+
+    /**
+     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
+     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
+     * of the multipart object SHA256 hash. The multipart object hash is calculated by taking the
+     * SHA256 hashes of the parts, concatenating the binary representation of those hashes in order
+     * of their part numbers, and then calculating the SHA256 hash of the concatenated values.
+     */
+    private String opcMultipartSha256;
+
+    /**
+     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
+     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
+     * of the multipart object SHA256 hash. The multipart object hash is calculated by taking the
+     * SHA256 hashes of the parts, concatenating the binary representation of those hashes in order
+     * of their part numbers, and then calculating the SHA256 hash of the concatenated values.
+     *
+     * @return the value
+     */
+    public String getOpcMultipartSha256() {
+        return opcMultipartSha256;
+    }
+
+    /**
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during
+     * upload. The base64-encoded SHA384 hash of the object as computed during upload. Unavailable
+     * for objects uploaded using multipart upload.
+     */
+    private String opcContentSha384;
+
+    /**
+     * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header during
+     * upload. The base64-encoded SHA384 hash of the object as computed during upload. Unavailable
+     * for objects uploaded using multipart upload.
+     *
+     * @return the value
+     */
+    public String getOpcContentSha384() {
+        return opcContentSha384;
+    }
+
+    /**
+     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
+     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
+     * of the multipart object SHA384 hash. The multipart object hash is calculated by taking the
+     * SHA384 hashes of the parts, concatenating the binary representation of those hashes in order
+     * of their part numbers, and then calculating the SHA384 hash of the concatenated values.
+     */
+    private String opcMultipartSha384;
+
+    /**
+     * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
+     * specified in the opc-checksum-algorithm request header during upload. Base-64 representation
+     * of the multipart object SHA384 hash. The multipart object hash is calculated by taking the
+     * SHA384 hashes of the parts, concatenating the binary representation of those hashes in order
+     * of their part numbers, and then calculating the SHA384 hash of the concatenated values.
+     *
+     * @return the value
+     */
+    public String getOpcMultipartSha384() {
+        return opcMultipartSha384;
+    }
+
+    /**
      * Content-Type header, as described in [RFC
      * 2616](https://tools.ietf.org/html/rfc2616#section-14.17).
      */
@@ -335,6 +433,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         "contentRange",
         "contentMd5",
         "opcMultipartMd5",
+        "opcContentCrc32c",
+        "opcContentSha256",
+        "opcMultipartSha256",
+        "opcContentSha384",
+        "opcMultipartSha384",
         "contentType",
         "contentLanguage",
         "contentEncoding",
@@ -360,6 +463,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             com.oracle.bmc.model.Range contentRange,
             String contentMd5,
             String opcMultipartMd5,
+            String opcContentCrc32c,
+            String opcContentSha256,
+            String opcMultipartSha256,
+            String opcContentSha384,
+            String opcMultipartSha384,
             String contentType,
             String contentLanguage,
             String contentEncoding,
@@ -382,6 +490,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         this.contentRange = contentRange;
         this.contentMd5 = contentMd5;
         this.opcMultipartMd5 = opcMultipartMd5;
+        this.opcContentCrc32c = opcContentCrc32c;
+        this.opcContentSha256 = opcContentSha256;
+        this.opcMultipartSha256 = opcMultipartSha256;
+        this.opcContentSha384 = opcContentSha384;
+        this.opcMultipartSha384 = opcMultipartSha384;
         this.contentType = contentType;
         this.contentLanguage = contentLanguage;
         this.contentEncoding = contentEncoding;
@@ -550,6 +663,118 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
          */
         public Builder opcMultipartMd5(String opcMultipartMd5) {
             this.opcMultipartMd5 = opcMultipartMd5;
+            return this;
+        }
+
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
+         * the complete reconstructed object.
+         */
+        private String opcContentCrc32c;
+
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
+         * the complete reconstructed object.
+         *
+         * @param opcContentCrc32c the value to set
+         * @return this builder
+         */
+        public Builder opcContentCrc32c(String opcContentCrc32c) {
+            this.opcContentCrc32c = opcContentCrc32c;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header
+         * during upload. The base64-encoded SHA256 hash of the object as computed during upload.
+         * Unavailable for objects uploaded using multipart upload.
+         */
+        private String opcContentSha256;
+
+        /**
+         * Applicable only if SHA256 was specified in the opc-checksum-algorithm request header
+         * during upload. The base64-encoded SHA256 hash of the object as computed during upload.
+         * Unavailable for objects uploaded using multipart upload.
+         *
+         * @param opcContentSha256 the value to set
+         * @return this builder
+         */
+        public Builder opcContentSha256(String opcContentSha256) {
+            this.opcContentSha256 = opcContentSha256;
+            return this;
+        }
+
+        /**
+         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
+         * specified in the opc-checksum-algorithm request header during upload. Base-64
+         * representation of the multipart object SHA256 hash. The multipart object hash is
+         * calculated by taking the SHA256 hashes of the parts, concatenating the binary
+         * representation of those hashes in order of their part numbers, and then calculating the
+         * SHA256 hash of the concatenated values.
+         */
+        private String opcMultipartSha256;
+
+        /**
+         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA256 was
+         * specified in the opc-checksum-algorithm request header during upload. Base-64
+         * representation of the multipart object SHA256 hash. The multipart object hash is
+         * calculated by taking the SHA256 hashes of the parts, concatenating the binary
+         * representation of those hashes in order of their part numbers, and then calculating the
+         * SHA256 hash of the concatenated values.
+         *
+         * @param opcMultipartSha256 the value to set
+         * @return this builder
+         */
+        public Builder opcMultipartSha256(String opcMultipartSha256) {
+            this.opcMultipartSha256 = opcMultipartSha256;
+            return this;
+        }
+
+        /**
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header
+         * during upload. The base64-encoded SHA384 hash of the object as computed during upload.
+         * Unavailable for objects uploaded using multipart upload.
+         */
+        private String opcContentSha384;
+
+        /**
+         * Applicable only if SHA384 was specified in the opc-checksum-algorithm request header
+         * during upload. The base64-encoded SHA384 hash of the object as computed during upload.
+         * Unavailable for objects uploaded using multipart upload.
+         *
+         * @param opcContentSha384 the value to set
+         * @return this builder
+         */
+        public Builder opcContentSha384(String opcContentSha384) {
+            this.opcContentSha384 = opcContentSha384;
+            return this;
+        }
+
+        /**
+         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
+         * specified in the opc-checksum-algorithm request header during upload. Base-64
+         * representation of the multipart object SHA384 hash. The multipart object hash is
+         * calculated by taking the SHA384 hashes of the parts, concatenating the binary
+         * representation of those hashes in order of their part numbers, and then calculating the
+         * SHA384 hash of the concatenated values.
+         */
+        private String opcMultipartSha384;
+
+        /**
+         * Only applicable to objects uploaded using multipart upload. Applicable only if SHA384 was
+         * specified in the opc-checksum-algorithm request header during upload. Base-64
+         * representation of the multipart object SHA384 hash. The multipart object hash is
+         * calculated by taking the SHA384 hashes of the parts, concatenating the binary
+         * representation of those hashes in order of their part numbers, and then calculating the
+         * SHA384 hash of the concatenated values.
+         *
+         * @param opcMultipartSha384 the value to set
+         * @return this builder
+         */
+        public Builder opcMultipartSha384(String opcMultipartSha384) {
+            this.opcMultipartSha384 = opcMultipartSha384;
             return this;
         }
 
@@ -793,6 +1018,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
             contentRange(o.getContentRange());
             contentMd5(o.getContentMd5());
             opcMultipartMd5(o.getOpcMultipartMd5());
+            opcContentCrc32c(o.getOpcContentCrc32c());
+            opcContentSha256(o.getOpcContentSha256());
+            opcMultipartSha256(o.getOpcMultipartSha256());
+            opcContentSha384(o.getOpcContentSha384());
+            opcMultipartSha384(o.getOpcMultipartSha384());
             contentType(o.getContentType());
             contentLanguage(o.getContentLanguage());
             contentEncoding(o.getContentEncoding());
@@ -827,6 +1057,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
                     contentRange,
                     contentMd5,
                     opcMultipartMd5,
+                    opcContentCrc32c,
+                    opcContentSha256,
+                    opcMultipartSha256,
+                    opcContentSha384,
+                    opcMultipartSha384,
                     contentType,
                     contentLanguage,
                     contentEncoding,
@@ -865,6 +1100,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         sb.append(",contentRange=").append(String.valueOf(contentRange));
         sb.append(",contentMd5=").append(String.valueOf(contentMd5));
         sb.append(",opcMultipartMd5=").append(String.valueOf(opcMultipartMd5));
+        sb.append(",opcContentCrc32c=").append(String.valueOf(opcContentCrc32c));
+        sb.append(",opcContentSha256=").append(String.valueOf(opcContentSha256));
+        sb.append(",opcMultipartSha256=").append(String.valueOf(opcMultipartSha256));
+        sb.append(",opcContentSha384=").append(String.valueOf(opcContentSha384));
+        sb.append(",opcMultipartSha384=").append(String.valueOf(opcMultipartSha384));
         sb.append(",contentType=").append(String.valueOf(contentType));
         sb.append(",contentLanguage=").append(String.valueOf(contentLanguage));
         sb.append(",contentEncoding=").append(String.valueOf(contentEncoding));
@@ -901,6 +1141,11 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
                 && java.util.Objects.equals(this.contentRange, other.contentRange)
                 && java.util.Objects.equals(this.contentMd5, other.contentMd5)
                 && java.util.Objects.equals(this.opcMultipartMd5, other.opcMultipartMd5)
+                && java.util.Objects.equals(this.opcContentCrc32c, other.opcContentCrc32c)
+                && java.util.Objects.equals(this.opcContentSha256, other.opcContentSha256)
+                && java.util.Objects.equals(this.opcMultipartSha256, other.opcMultipartSha256)
+                && java.util.Objects.equals(this.opcContentSha384, other.opcContentSha384)
+                && java.util.Objects.equals(this.opcMultipartSha384, other.opcMultipartSha384)
                 && java.util.Objects.equals(this.contentType, other.contentType)
                 && java.util.Objects.equals(this.contentLanguage, other.contentLanguage)
                 && java.util.Objects.equals(this.contentEncoding, other.contentEncoding)
@@ -936,6 +1181,25 @@ public class GetObjectResponse extends com.oracle.bmc.responses.BmcResponse {
         result =
                 (result * PRIME)
                         + (this.opcMultipartMd5 == null ? 43 : this.opcMultipartMd5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentCrc32c == null ? 43 : this.opcContentCrc32c.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha256 == null ? 43 : this.opcContentSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMultipartSha256 == null
+                                ? 43
+                                : this.opcMultipartSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentSha384 == null ? 43 : this.opcContentSha384.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMultipartSha384 == null
+                                ? 43
+                                : this.opcMultipartSha384.hashCode());
         result = (result * PRIME) + (this.contentType == null ? 43 : this.contentType.hashCode());
         result =
                 (result * PRIME)

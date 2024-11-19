@@ -130,12 +130,12 @@ public final class LimitItem extends Item {
             this.__explicitlySet__.add("limitStatus");
             return this;
         }
-        /** Message to customer for partial approval and rejected limit requests */
+        /** The message to customer for partially approved and rejected limit requests */
         @com.fasterxml.jackson.annotation.JsonProperty("customerMessage")
         private String customerMessage;
 
         /**
-         * Message to customer for partial approval and rejected limit requests
+         * The message to customer for partially approved and rejected limit requests
          *
          * @param customerMessage the value to set
          * @return this builder
@@ -333,12 +333,12 @@ public final class LimitItem extends Item {
         return limitStatus;
     }
 
-    /** Message to customer for partial approval and rejected limit requests */
+    /** The message to customer for partially approved and rejected limit requests */
     @com.fasterxml.jackson.annotation.JsonProperty("customerMessage")
     private final String customerMessage;
 
     /**
-     * Message to customer for partial approval and rejected limit requests
+     * The message to customer for partially approved and rejected limit requests
      *
      * @return the value
      */

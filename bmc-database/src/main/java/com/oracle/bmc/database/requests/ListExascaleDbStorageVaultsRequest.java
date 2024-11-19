@@ -169,6 +169,13 @@ public class ListExascaleDbStorageVaultsRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** A filter to return only list of Vaults that are linked to the exadata infrastructure Id. */
+    private String exadataInfrastructureId;
+
+    /** A filter to return only list of Vaults that are linked to the exadata infrastructure Id. */
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -310,6 +317,22 @@ public class ListExascaleDbStorageVaultsRequest
         }
 
         /**
+         * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+         */
+        private String exadataInfrastructureId = null;
+
+        /**
+         * A filter to return only list of Vaults that are linked to the exadata infrastructure Id.
+         *
+         * @param exadataInfrastructureId the value to set
+         * @return this builder instance
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          *
          * @param invocationCallback the invocation callback to be set for the request
@@ -347,6 +370,7 @@ public class ListExascaleDbStorageVaultsRequest
             lifecycleState(o.getLifecycleState());
             displayName(o.getDisplayName());
             opcRequestId(o.getOpcRequestId());
+            exadataInfrastructureId(o.getExadataInfrastructureId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -389,9 +413,10 @@ public class ListExascaleDbStorageVaultsRequest
             request.lifecycleState = lifecycleState;
             request.displayName = displayName;
             request.opcRequestId = opcRequestId;
+            request.exadataInfrastructureId = exadataInfrastructureId;
             return request;
             // new ListExascaleDbStorageVaultsRequest(compartmentId, limit, page, sortBy, sortOrder,
-            // lifecycleState, displayName, opcRequestId);
+            // lifecycleState, displayName, opcRequestId, exadataInfrastructureId);
         }
     }
 
@@ -409,7 +434,8 @@ public class ListExascaleDbStorageVaultsRequest
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
                 .displayName(displayName)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .exadataInfrastructureId(exadataInfrastructureId);
     }
 
     /**
@@ -434,6 +460,7 @@ public class ListExascaleDbStorageVaultsRequest
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",displayName=").append(String.valueOf(this.displayName));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",exadataInfrastructureId=").append(String.valueOf(this.exadataInfrastructureId));
         sb.append(")");
         return sb.toString();
     }
@@ -456,7 +483,9 @@ public class ListExascaleDbStorageVaultsRequest
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId);
     }
 
     @Override
@@ -475,6 +504,11 @@ public class ListExascaleDbStorageVaultsRequest
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
         return result;
     }
 }

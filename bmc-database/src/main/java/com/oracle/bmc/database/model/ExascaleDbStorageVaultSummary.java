@@ -38,7 +38,8 @@ public final class ExascaleDbStorageVaultSummary
         "systemTags",
         "highCapacityDatabaseStorage",
         "additionalFlashCacheInPercent",
-        "vmClusterCount"
+        "vmClusterCount",
+        "exadataInfrastructureId"
     })
     public ExascaleDbStorageVaultSummary(
             String id,
@@ -55,7 +56,8 @@ public final class ExascaleDbStorageVaultSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             ExascaleDbStorageDetails highCapacityDatabaseStorage,
             Integer additionalFlashCacheInPercent,
-            Integer vmClusterCount) {
+            Integer vmClusterCount,
+            String exadataInfrastructureId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -72,6 +74,7 @@ public final class ExascaleDbStorageVaultSummary
         this.highCapacityDatabaseStorage = highCapacityDatabaseStorage;
         this.additionalFlashCacheInPercent = additionalFlashCacheInPercent;
         this.vmClusterCount = vmClusterCount;
+        this.exadataInfrastructureId = exadataInfrastructureId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -341,6 +344,25 @@ public final class ExascaleDbStorageVaultSummary
             this.__explicitlySet__.add("vmClusterCount");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
+        private String exadataInfrastructureId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Exadata infrastructure.
+         *
+         * @param exadataInfrastructureId the value to set
+         * @return this builder
+         */
+        public Builder exadataInfrastructureId(String exadataInfrastructureId) {
+            this.exadataInfrastructureId = exadataInfrastructureId;
+            this.__explicitlySet__.add("exadataInfrastructureId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -362,7 +384,8 @@ public final class ExascaleDbStorageVaultSummary
                             this.systemTags,
                             this.highCapacityDatabaseStorage,
                             this.additionalFlashCacheInPercent,
-                            this.vmClusterCount);
+                            this.vmClusterCount,
+                            this.exadataInfrastructureId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -415,6 +438,9 @@ public final class ExascaleDbStorageVaultSummary
             }
             if (model.wasPropertyExplicitlySet("vmClusterCount")) {
                 this.vmClusterCount(model.getVmClusterCount());
+            }
+            if (model.wasPropertyExplicitlySet("exadataInfrastructureId")) {
+                this.exadataInfrastructureId(model.getExadataInfrastructureId());
             }
             return this;
         }
@@ -658,6 +684,23 @@ public final class ExascaleDbStorageVaultSummary
         return vmClusterCount;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("exadataInfrastructureId")
+    private final String exadataInfrastructureId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getExadataInfrastructureId() {
+        return exadataInfrastructureId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -690,6 +733,8 @@ public final class ExascaleDbStorageVaultSummary
         sb.append(", additionalFlashCacheInPercent=")
                 .append(String.valueOf(this.additionalFlashCacheInPercent));
         sb.append(", vmClusterCount=").append(String.valueOf(this.vmClusterCount));
+        sb.append(", exadataInfrastructureId=")
+                .append(String.valueOf(this.exadataInfrastructureId));
         sb.append(")");
         return sb.toString();
     }
@@ -721,6 +766,8 @@ public final class ExascaleDbStorageVaultSummary
                 && java.util.Objects.equals(
                         this.additionalFlashCacheInPercent, other.additionalFlashCacheInPercent)
                 && java.util.Objects.equals(this.vmClusterCount, other.vmClusterCount)
+                && java.util.Objects.equals(
+                        this.exadataInfrastructureId, other.exadataInfrastructureId)
                 && super.equals(other);
     }
 
@@ -763,6 +810,11 @@ public final class ExascaleDbStorageVaultSummary
         result =
                 (result * PRIME)
                         + (this.vmClusterCount == null ? 43 : this.vmClusterCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exadataInfrastructureId == null
+                                ? 43
+                                : this.exadataInfrastructureId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

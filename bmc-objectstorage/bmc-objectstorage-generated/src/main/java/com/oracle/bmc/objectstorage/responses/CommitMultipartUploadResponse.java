@@ -62,6 +62,68 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         return opcMultipartMd5;
     }
 
+    /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
+     * complete reconstructed object.
+     */
+    private String opcContentCrc32c;
+
+    /**
+     * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+     * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of the
+     * complete reconstructed object.
+     *
+     * @return the value
+     */
+    public String getOpcContentCrc32c() {
+        return opcContentCrc32c;
+    }
+
+    /**
+     * Base-64 representation of the multipart object SHA256 hash. The multipart object hash is
+     * calculated by taking the SHA256 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the SHA256 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
+     */
+    private String opcMultipartSha256;
+
+    /**
+     * Base-64 representation of the multipart object SHA256 hash. The multipart object hash is
+     * calculated by taking the SHA256 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the SHA256 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
+     *
+     * @return the value
+     */
+    public String getOpcMultipartSha256() {
+        return opcMultipartSha256;
+    }
+
+    /**
+     * Base-64 representation of the multipart object SHA384 hash. The multipart object hash is
+     * calculated by taking the SHA384 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the SHA384 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
+     */
+    private String opcMultipartSha384;
+
+    /**
+     * Base-64 representation of the multipart object SHA384 hash. The multipart object hash is
+     * calculated by taking the SHA384 hashes of the parts passed to this call, concatenating the
+     * binary representation of those hashes in order of their part numbers, and then calculating
+     * the SHA384 hash of the concatenated values. The multipart object hash is followed by a hyphen
+     * and the total number of parts (for example, '-6').
+     *
+     * @return the value
+     */
+    public String getOpcMultipartSha384() {
+        return opcMultipartSha384;
+    }
+
     /** The entity tag (ETag) for the object. */
     private String eTag;
 
@@ -108,6 +170,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         "opcClientRequestId",
         "opcRequestId",
         "opcMultipartMd5",
+        "opcContentCrc32c",
+        "opcMultipartSha256",
+        "opcMultipartSha384",
         "eTag",
         "lastModified",
         "versionId"
@@ -118,6 +183,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             String opcClientRequestId,
             String opcRequestId,
             String opcMultipartMd5,
+            String opcContentCrc32c,
+            String opcMultipartSha256,
+            String opcMultipartSha384,
             String eTag,
             java.util.Date lastModified,
             String versionId) {
@@ -125,6 +193,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         this.opcClientRequestId = opcClientRequestId;
         this.opcRequestId = opcRequestId;
         this.opcMultipartMd5 = opcMultipartMd5;
+        this.opcContentCrc32c = opcContentCrc32c;
+        this.opcMultipartSha256 = opcMultipartSha256;
+        this.opcMultipartSha384 = opcMultipartSha384;
         this.eTag = eTag;
         this.lastModified = lastModified;
         this.versionId = versionId;
@@ -208,6 +279,74 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             return this;
         }
 
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
+         * the complete reconstructed object.
+         */
+        private String opcContentCrc32c;
+
+        /**
+         * The base64-encoded, 32-bit CRC32C (Castagnoli) checksum of the object. Even for objects
+         * uploaded using multipart upload, this header returns the CRC32C (Castagnoli) checksum of
+         * the complete reconstructed object.
+         *
+         * @param opcContentCrc32c the value to set
+         * @return this builder
+         */
+        public Builder opcContentCrc32c(String opcContentCrc32c) {
+            this.opcContentCrc32c = opcContentCrc32c;
+            return this;
+        }
+
+        /**
+         * Base-64 representation of the multipart object SHA256 hash. The multipart object hash is
+         * calculated by taking the SHA256 hashes of the parts passed to this call, concatenating
+         * the binary representation of those hashes in order of their part numbers, and then
+         * calculating the SHA256 hash of the concatenated values. The multipart object hash is
+         * followed by a hyphen and the total number of parts (for example, '-6').
+         */
+        private String opcMultipartSha256;
+
+        /**
+         * Base-64 representation of the multipart object SHA256 hash. The multipart object hash is
+         * calculated by taking the SHA256 hashes of the parts passed to this call, concatenating
+         * the binary representation of those hashes in order of their part numbers, and then
+         * calculating the SHA256 hash of the concatenated values. The multipart object hash is
+         * followed by a hyphen and the total number of parts (for example, '-6').
+         *
+         * @param opcMultipartSha256 the value to set
+         * @return this builder
+         */
+        public Builder opcMultipartSha256(String opcMultipartSha256) {
+            this.opcMultipartSha256 = opcMultipartSha256;
+            return this;
+        }
+
+        /**
+         * Base-64 representation of the multipart object SHA384 hash. The multipart object hash is
+         * calculated by taking the SHA384 hashes of the parts passed to this call, concatenating
+         * the binary representation of those hashes in order of their part numbers, and then
+         * calculating the SHA384 hash of the concatenated values. The multipart object hash is
+         * followed by a hyphen and the total number of parts (for example, '-6').
+         */
+        private String opcMultipartSha384;
+
+        /**
+         * Base-64 representation of the multipart object SHA384 hash. The multipart object hash is
+         * calculated by taking the SHA384 hashes of the parts passed to this call, concatenating
+         * the binary representation of those hashes in order of their part numbers, and then
+         * calculating the SHA384 hash of the concatenated values. The multipart object hash is
+         * followed by a hyphen and the total number of parts (for example, '-6').
+         *
+         * @param opcMultipartSha384 the value to set
+         * @return this builder
+         */
+        public Builder opcMultipartSha384(String opcMultipartSha384) {
+            this.opcMultipartSha384 = opcMultipartSha384;
+            return this;
+        }
+
         /** The entity tag (ETag) for the object. */
         private String eTag;
 
@@ -266,6 +405,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
             opcClientRequestId(o.getOpcClientRequestId());
             opcRequestId(o.getOpcRequestId());
             opcMultipartMd5(o.getOpcMultipartMd5());
+            opcContentCrc32c(o.getOpcContentCrc32c());
+            opcMultipartSha256(o.getOpcMultipartSha256());
+            opcMultipartSha384(o.getOpcMultipartSha384());
             eTag(o.getETag());
             lastModified(o.getLastModified());
             versionId(o.getVersionId());
@@ -286,6 +428,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
                     opcClientRequestId,
                     opcRequestId,
                     opcMultipartMd5,
+                    opcContentCrc32c,
+                    opcMultipartSha256,
+                    opcMultipartSha384,
                     eTag,
                     lastModified,
                     versionId);
@@ -309,6 +454,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         sb.append(",opcClientRequestId=").append(String.valueOf(opcClientRequestId));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
         sb.append(",opcMultipartMd5=").append(String.valueOf(opcMultipartMd5));
+        sb.append(",opcContentCrc32c=").append(String.valueOf(opcContentCrc32c));
+        sb.append(",opcMultipartSha256=").append(String.valueOf(opcMultipartSha256));
+        sb.append(",opcMultipartSha384=").append(String.valueOf(opcMultipartSha384));
         sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",lastModified=").append(String.valueOf(lastModified));
         sb.append(",versionId=").append(String.valueOf(versionId));
@@ -330,6 +478,9 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
                 && java.util.Objects.equals(this.opcClientRequestId, other.opcClientRequestId)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.opcMultipartMd5, other.opcMultipartMd5)
+                && java.util.Objects.equals(this.opcContentCrc32c, other.opcContentCrc32c)
+                && java.util.Objects.equals(this.opcMultipartSha256, other.opcMultipartSha256)
+                && java.util.Objects.equals(this.opcMultipartSha384, other.opcMultipartSha384)
                 && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(this.lastModified, other.lastModified)
                 && java.util.Objects.equals(this.versionId, other.versionId);
@@ -348,6 +499,19 @@ public class CommitMultipartUploadResponse extends com.oracle.bmc.responses.BmcR
         result =
                 (result * PRIME)
                         + (this.opcMultipartMd5 == null ? 43 : this.opcMultipartMd5.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcContentCrc32c == null ? 43 : this.opcContentCrc32c.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMultipartSha256 == null
+                                ? 43
+                                : this.opcMultipartSha256.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcMultipartSha384 == null
+                                ? 43
+                                : this.opcMultipartSha384.hashCode());
         result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result = (result * PRIME) + (this.lastModified == null ? 43 : this.lastModified.hashCode());
         result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
