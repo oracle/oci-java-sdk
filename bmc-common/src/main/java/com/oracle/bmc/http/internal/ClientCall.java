@@ -33,6 +33,7 @@ import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import com.oracle.bmc.waiter.TerminationStrategy;
 import com.oracle.bmc.waiter.WaiterScheduler;
 import jakarta.annotation.Nullable;
+import com.oracle.bmc.model.SdkRuntimeException;
 import org.slf4j.Logger;
 
 import java.io.IOException;
@@ -106,6 +107,11 @@ public final class ClientCall<
     private Executor offloadExecutor = null;
     private boolean firstAttempt = true;
     private BiConsumer<RESP_BUILDER, Object> responseEventStreamHandler;
+
+    // Unless overridden, throw BmcException when receive a response error.
+    @SuppressWarnings("rawtypes")
+    private ResponseErrorRuntimeExceptionFactory responseErrorExceptionFactory =
+            ResponseErrorBmcExceptionFactory.INSTANCE;
 
     private ClientCall(HttpClient httpClient) {
         this.httpClient = httpClient;
@@ -648,6 +654,13 @@ public final class ClientCall<
         return this;
     }
 
+    @SuppressWarnings("rawtypes")
+    public ClientCall<REQ, RESP, RESP_BUILDER> responseErrorExceptionFactory(
+            ResponseErrorRuntimeExceptionFactory responseErrorExceptionFactory) {
+        this.responseErrorExceptionFactory = responseErrorExceptionFactory;
+        return this;
+    }
+
     private CompletionStage<RESP> transformResponse(HttpResponse rawResponse) {
         CompletionStage<RESP> failure = checkError(rawResponse);
         if (failure != null) {
@@ -786,7 +799,7 @@ public final class ClientCall<
                     responseBody,
                     s ->
                             failedFuture(
-                                    new BmcException(
+                                    responseErrorExceptionFactory.createRuntimeException(
                                             status,
                                             "Unknown",
                                             String.format(
@@ -796,7 +809,7 @@ public final class ClientCall<
                                             buildServiceDetails())));
         }
 
-        return response.body(ResponseHelper.ErrorCodeAndMessage.class)
+        return response.body(this.responseErrorExceptionFactory.getResponseErrorModelType())
                 .handle(
                         (ecm, t) -> {
                             if (t != null) {
@@ -811,13 +824,14 @@ public final class ClientCall<
                                         msgFuture,
                                         msg ->
                                                 ClientCall.<T>failedFuture(
-                                                        new BmcException(
-                                                                status,
-                                                                "Unknown",
-                                                                msg,
-                                                                opcRequestId,
-                                                                t,
-                                                                buildServiceDetails())));
+                                                        responseErrorExceptionFactory
+                                                                .createRuntimeException(
+                                                                        status,
+                                                                        "Unknown",
+                                                                        msg,
+                                                                        opcRequestId,
+                                                                        (Throwable) t,
+                                                                        buildServiceDetails())));
                             } else {
                                 if (ecm == null) {
                                     String defaultMessage =
@@ -825,7 +839,7 @@ public final class ClientCall<
                                                     status,
                                                     "Detailed exception information not available");
                                     return ClientCall.<T>failedFuture(
-                                            new BmcException(
+                                            responseErrorExceptionFactory.createRuntimeException(
                                                     status,
                                                     "Unknown",
                                                     defaultMessage,
@@ -833,15 +847,11 @@ public final class ClientCall<
                                                     buildServiceDetails()));
                                 } else {
                                     return ClientCall.<T>failedFuture(
-                                            new BmcException(
+                                            responseErrorExceptionFactory.createRuntimeException(
                                                     status,
-                                                    ecm.getCode(),
-                                                    ecm.getMessage(),
                                                     opcRequestId,
-                                                    buildServiceDetails(),
-                                                    ecm.getOriginalMessage(),
-                                                    ecm.getOriginalMessageTemplate(),
-                                                    ecm.getMessageArguments()));
+                                                    ecm,
+                                                    buildServiceDetails()));
                                 }
                             }
                         })
@@ -1123,7 +1133,7 @@ public final class ClientCall<
 
         try {
             return futureWaiter.listenForResult(callAsync0(null));
-        } catch (BmcException e) {
+        } catch (SdkRuntimeException e) {
             throw e;
         } catch (Throwable e) {
             throw BmcException.createClientSide("Unknown error", e, null, buildServiceDetails());

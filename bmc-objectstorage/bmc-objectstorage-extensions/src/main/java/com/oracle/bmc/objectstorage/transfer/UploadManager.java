@@ -4,10 +4,12 @@
  */
 package com.oracle.bmc.objectstorage.transfer;
 
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumUtils;
+import com.oracle.bmc.responses.BmcResponse;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.internal.ClientThreadFactory;
 import com.oracle.bmc.ClientRuntime;
-import com.oracle.bmc.http.client.io.DuplicatableInputStream;
 import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
@@ -16,7 +18,6 @@ import com.oracle.bmc.objectstorage.responses.CommitMultipartUploadResponse;
 import com.oracle.bmc.objectstorage.responses.PutObjectResponse;
 import com.oracle.bmc.objectstorage.transfer.internal.MultipartUtils;
 import com.oracle.bmc.objectstorage.transfer.internal.StreamChunkCreator;
-import com.oracle.bmc.objectstorage.transfer.internal.StreamHelper;
 import com.oracle.bmc.retrier.DefaultRetryCondition;
 import com.oracle.bmc.retrier.RetryCondition;
 import com.oracle.bmc.retrier.RetryConfiguration;
@@ -24,12 +25,9 @@ import com.oracle.bmc.util.StreamUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategy;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import jakarta.annotation.Nonnull;
-import java.io.ByteArrayOutputStream;
+
 import java.io.File;
-import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.security.DigestOutputStream;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -109,18 +107,38 @@ public class UploadManager {
                 ProgressTrackerFactory.createSingleUploadProgressTrackerFactory(
                         uploadRequest.progressReporter, contentLength);
         PutObjectRequest putObjectRequest = uploadRequest.putObjectRequest;
+        ChecksumAlgorithm algorithm = uploadConfiguration.getAdditionalChecksumAlgorithm();
+        ChecksumAlgorithm enforceAlgoChecksum =
+                uploadConfiguration.getEnforceAdditionalChecksumBeforeUpload();
+
         if (MultipartUtils.shouldCalculateMd5(uploadConfiguration, putObjectRequest)) {
-            MD5Calculation md5Calculation =
-                    calculateMd5(
+            ChecksumUtils.MD5Calculation md5Calculation =
+                    ChecksumUtils.calculateMd5(
                             putObjectRequest.getPutObjectBody(),
                             putObjectRequest.getContentLength());
             putObjectRequest =
                     PutObjectRequest.builder()
                             .copy(putObjectRequest)
-                            .contentMD5(md5Calculation.md5)
+                            .contentMD5(md5Calculation.getMd5())
                             .putObjectBody(
                                     ProgressTrackingInputStreamFactory.create(
-                                            md5Calculation.streamToUse,
+                                            md5Calculation.getStreamToUse(),
+                                            progressTrackerFactory.getProgressTracker()))
+                            .build();
+        } else if (MultipartUtils.shouldCalculateAdditionalChecksum(
+                uploadConfiguration, putObjectRequest)) {
+            putObjectRequest =
+                    updateRequestWithChecksum(
+                            putObjectRequest, enforceAlgoChecksum, progressTrackerFactory);
+        } else if (MultipartUtils.shouldSetAdditionalChecksum(
+                uploadConfiguration, putObjectRequest)) {
+            putObjectRequest =
+                    PutObjectRequest.builder()
+                            .copy(putObjectRequest)
+                            .opcChecksumAlgorithm(algorithm)
+                            .putObjectBody(
+                                    ProgressTrackingInputStreamFactory.create(
+                                            putObjectRequest.getPutObjectBody(),
                                             progressTrackerFactory.getProgressTracker()))
                             .build();
         } else {
@@ -139,12 +157,13 @@ public class UploadManager {
                 getRetryToUse(putObjectRequest.getRetryConfiguration()));
 
         PutObjectResponse response = objectStorage.putObject(putObjectRequest);
-        return new UploadResponse(
-                response.getETag(),
-                response.getOpcContentMd5(),
-                null,
-                response.getOpcRequestId(),
-                response.getOpcClientRequestId());
+
+        return buildUploadResponse(
+                response,
+                algorithm,
+                enforceAlgoChecksum,
+                putObjectRequest.getOpcChecksumAlgorithm(),
+                false);
     }
 
     private UploadResponse multipartUpload(UploadRequest uploadRequest) {
@@ -161,6 +180,10 @@ public class UploadManager {
 
         final ExecutorService executorServiceToUse;
         final boolean shutdownExecutor;
+        ChecksumAlgorithm algorithm = uploadConfiguration.getAdditionalChecksumAlgorithm();
+        ChecksumAlgorithm enforceAlgoChecksum =
+                uploadConfiguration.getEnforceAdditionalChecksumBeforeMultipartUpload();
+
         if (uploadConfiguration.isAllowParallelUploads() && chunkCreator.supportsParallelReads()) {
             if (uploadRequest.parallelUploadExecutorService != null) {
                 executorServiceToUse = uploadRequest.parallelUploadExecutorService;
@@ -191,13 +214,33 @@ public class UploadManager {
                 LOG.trace("Creating part {}", ++partCount);
                 StreamChunkCreator.SubRangeInputStream chunk = chunkCreator.next();
                 if (uploadConfiguration.isEnforceMd5BeforeMultipartUpload()) {
-                    MD5Calculation md5Calculation = calculateMd5(chunk, chunk.length());
+                    ChecksumUtils.MD5Calculation md5Calculation =
+                            ChecksumUtils.calculateMd5(chunk, chunk.length());
                     assembler.addPart(
                             ProgressTrackingInputStreamFactory.create(
-                                    md5Calculation.streamToUse,
+                                    md5Calculation.getStreamToUse(),
                                     progressTrackerFactory.getProgressTracker()),
                             chunk.length(),
-                            md5Calculation.md5);
+                            md5Calculation.getMd5());
+                } else if (uploadConfiguration.getEnforceAdditionalChecksumBeforeMultipartUpload()
+                        != null) {
+                    addPartWithChecksum(
+                            assembler, chunk, enforceAlgoChecksum, progressTrackerFactory);
+                } else if (MultipartUtils.shouldSetAdditionalChecksum(
+                        uploadConfiguration, request)) {
+                    assembler.addPart(
+                            ProgressTrackingInputStreamFactory.create(
+                                    chunk, progressTrackerFactory.getProgressTracker()),
+                            chunk.length(),
+                            null,
+                            algorithm.getValue());
+                } else if (request.getOpcChecksumAlgorithm() != null) {
+                    assembler.addPart(
+                            ProgressTrackingInputStreamFactory.create(
+                                    chunk, progressTrackerFactory.getProgressTracker()),
+                            chunk.length(),
+                            null,
+                            request.getOpcChecksumAlgorithm().getValue());
                 } else {
                     assembler.addPart(
                             ProgressTrackingInputStreamFactory.create(
@@ -208,12 +251,13 @@ public class UploadManager {
             }
             LOG.debug("Created {} parts", partCount);
             CommitMultipartUploadResponse response = assembler.commit();
-            return new UploadResponse(
-                    response.getETag(),
-                    null,
-                    response.getOpcMultipartMd5(),
-                    response.getOpcRequestId(),
-                    response.getOpcClientRequestId());
+
+            return buildUploadResponse(
+                    response,
+                    algorithm,
+                    enforceAlgoChecksum,
+                    request.getOpcChecksumAlgorithm(),
+                    true);
         } catch (Exception e) {
             if (manifest != null) {
                 LOG.error(
@@ -256,6 +300,171 @@ public class UploadManager {
         }
     }
 
+    private UploadResponse buildUploadResponse(
+            BmcResponse response,
+            ChecksumAlgorithm algorithm,
+            ChecksumAlgorithm enforceAlgoChecksum,
+            ChecksumAlgorithm requestAlgorithm,
+            boolean isMultipart) {
+        UploadResponse.Builder responseBuilder = new UploadResponse.Builder();
+
+        if (response instanceof PutObjectResponse) {
+            PutObjectResponse putObjectResponse = (PutObjectResponse) response;
+            responseBuilder
+                    .eTag(putObjectResponse.getETag())
+                    .opcRequestId(putObjectResponse.getOpcRequestId())
+                    .opcClientRequestId(putObjectResponse.getOpcClientRequestId())
+                    .contentMd5(putObjectResponse.getOpcContentMd5());
+        } else if (response instanceof CommitMultipartUploadResponse) {
+            CommitMultipartUploadResponse commitResponse = (CommitMultipartUploadResponse) response;
+            responseBuilder
+                    .eTag(commitResponse.getETag())
+                    .opcRequestId(commitResponse.getOpcRequestId())
+                    .opcClientRequestId(commitResponse.getOpcClientRequestId())
+                    .multipartMd5(commitResponse.getOpcMultipartMd5());
+        } else {
+            throw new IllegalArgumentException(
+                    "Unsupported response type: " + response.getClass().getName());
+        }
+
+        ChecksumAlgorithm checksumAlgorithm =
+                algorithm != null
+                        ? algorithm
+                        : enforceAlgoChecksum != null ? enforceAlgoChecksum : requestAlgorithm;
+
+        if (checksumAlgorithm != null) {
+            String responseChecksum =
+                    ChecksumUtils.getResponseChecksum(response, checksumAlgorithm, isMultipart);
+            if (responseChecksum != null) {
+                switch (checksumAlgorithm) {
+                    case Crc32C:
+                        responseBuilder.contentCrc32c(responseChecksum);
+                        break;
+                    case Sha256:
+                        if (isMultipart) {
+                            responseBuilder.multipartSha256(responseChecksum);
+                        } else {
+                            responseBuilder.contentSha256(responseChecksum);
+                        }
+                        break;
+                    case Sha384:
+                        if (isMultipart) {
+                            responseBuilder.multipartSha384(responseChecksum);
+                        } else {
+                            responseBuilder.contentSha384(responseChecksum);
+                        }
+                        break;
+                    default:
+                        throw new IllegalArgumentException(
+                                "Unsupported checksum algorithm: " + checksumAlgorithm);
+                }
+            }
+        }
+
+        return responseBuilder.build();
+    }
+
+    private PutObjectRequest updateRequestWithChecksum(
+            PutObjectRequest putObjectRequest,
+            ChecksumAlgorithm algorithm,
+            ProgressTrackerFactory progressTrackerFactory) {
+
+        InputStream streamToUse;
+        String checksum;
+        PutObjectRequest.Builder requestBuilder =
+                PutObjectRequest.builder().copy(putObjectRequest).opcChecksumAlgorithm(algorithm);
+
+        switch (algorithm) {
+            case Crc32C:
+                ChecksumUtils.CRC32CCalculation crc32CCalculation =
+                        ChecksumUtils.calculateCrc32c(
+                                putObjectRequest.getPutObjectBody(),
+                                putObjectRequest.getContentLength());
+                streamToUse = crc32CCalculation.getStreamToUse();
+                checksum = crc32CCalculation.getCrc32c();
+                requestBuilder.opcContentCrc32c(checksum);
+                break;
+            case Sha256:
+                ChecksumUtils.SHA256Calculation sha256Calculation =
+                        ChecksumUtils.calculateSha256(
+                                putObjectRequest.getPutObjectBody(),
+                                putObjectRequest.getContentLength());
+                streamToUse = sha256Calculation.getStreamToUse();
+                checksum = sha256Calculation.getSha256();
+                requestBuilder.opcContentSha256(checksum);
+                break;
+            case Sha384:
+                ChecksumUtils.SHA384Calculation sha384Calculation =
+                        ChecksumUtils.calculateSha384(
+                                putObjectRequest.getPutObjectBody(),
+                                putObjectRequest.getContentLength());
+                streamToUse = sha384Calculation.getStreamToUse();
+                checksum = sha384Calculation.getSha384();
+                requestBuilder.opcContentSha384(checksum);
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported checksum algorithm: " + algorithm);
+        }
+
+        return requestBuilder
+                .putObjectBody(
+                        ProgressTrackingInputStreamFactory.create(
+                                streamToUse, progressTrackerFactory.getProgressTracker()))
+                .build();
+    }
+
+    private void addPartWithChecksum(
+            MultipartObjectAssembler assembler,
+            StreamChunkCreator.SubRangeInputStream chunk,
+            ChecksumAlgorithm algorithm,
+            ProgressTrackerFactory progressTrackerFactory) {
+
+        InputStream streamToUse;
+        String checksum;
+
+        switch (algorithm) {
+            case Crc32C:
+                ChecksumUtils.CRC32CCalculation crc32CCalculation =
+                        ChecksumUtils.calculateCrc32c(chunk, chunk.length());
+                streamToUse = crc32CCalculation.getStreamToUse();
+                checksum = crc32CCalculation.getCrc32c();
+                assembler.addPart(
+                        ProgressTrackingInputStreamFactory.create(
+                                streamToUse, progressTrackerFactory.getProgressTracker()),
+                        chunk.length(),
+                        checksum,
+                        algorithm.getValue());
+                break;
+            case Sha256:
+                ChecksumUtils.SHA256Calculation sha256Calculation =
+                        ChecksumUtils.calculateSha256(chunk, chunk.length());
+                streamToUse = sha256Calculation.getStreamToUse();
+                checksum = sha256Calculation.getSha256();
+                assembler.addPart(
+                        ProgressTrackingInputStreamFactory.create(
+                                streamToUse, progressTrackerFactory.getProgressTracker()),
+                        chunk.length(),
+                        checksum,
+                        algorithm.getValue());
+                break;
+            case Sha384:
+                ChecksumUtils.SHA384Calculation sha384Calculation =
+                        ChecksumUtils.calculateSha384(chunk, chunk.length());
+                streamToUse = sha384Calculation.getStreamToUse();
+                checksum = sha384Calculation.getSha384();
+                assembler.addPart(
+                        ProgressTrackingInputStreamFactory.create(
+                                streamToUse, progressTrackerFactory.getProgressTracker()),
+                        chunk.length(),
+                        checksum,
+                        algorithm.getValue());
+                break;
+            default:
+                throw new UnsupportedOperationException(
+                        "Unsupported checksum algorithm: " + algorithm);
+        }
+    }
+
     /**
      * Determines the first non-null RetryConfiguration 1 -> RetryConfiguration set on
      * UploadConfiguration 2 -> Default static RetryConfiguration for UploadManager
@@ -283,20 +492,29 @@ public class UploadManager {
                         uploadRequest.putObjectRequest.getRetryConfiguration(),
                         request.getRetryConfiguration());
 
-        return MultipartObjectAssembler.builder()
-                .allowOverwrite(uploadRequest.allowOverwrite)
-                .bucketName(request.getBucketName())
-                .executorService(executorService)
-                .invocationCallback(request.getInvocationCallback())
-                .namespaceName(request.getNamespaceName())
-                .objectName(request.getObjectName())
-                .storageTier(request.getStorageTier())
-                .opcClientRequestId(request.getOpcClientRequestId())
-                .service(objectStorage)
-                .cacheControl(request.getCacheControl())
-                .contentDisposition(request.getContentDisposition())
-                .retryConfiguration(retryToUse)
-                .build();
+        MultipartObjectAssembler.MultipartObjectAssemblerBuilder assemblerBuilder =
+                MultipartObjectAssembler.builder()
+                        .allowOverwrite(uploadRequest.allowOverwrite)
+                        .bucketName(request.getBucketName())
+                        .executorService(executorService)
+                        .invocationCallback(request.getInvocationCallback())
+                        .namespaceName(request.getNamespaceName())
+                        .objectName(request.getObjectName())
+                        .storageTier(request.getStorageTier())
+                        .opcClientRequestId(request.getOpcClientRequestId())
+                        .service(objectStorage)
+                        .cacheControl(request.getCacheControl())
+                        .contentDisposition(request.getContentDisposition())
+                        .retryConfiguration(retryToUse);
+
+        if (uploadConfiguration.getAdditionalChecksumAlgorithm() != null) {
+            assemblerBuilder.additionalChecksumAlgorithm(
+                    uploadConfiguration.getAdditionalChecksumAlgorithm());
+        } else if (request.getOpcChecksumAlgorithm() != null) {
+            assemblerBuilder.additionalChecksumAlgorithm(request.getOpcChecksumAlgorithm());
+        }
+
+        return assemblerBuilder.build();
     }
 
     private static ExecutorService buildDefaultParallelExecutor() {
@@ -306,67 +524,6 @@ public class UploadManager {
                         .nameFormat("multipart-upload-" + System.currentTimeMillis() + "-%d")
                         .isDaemon(true)
                         .build());
-    }
-
-    private static MD5Calculation calculateMd5(InputStream stream, Long contentLength) {
-        String md5 = null;
-        InputStream streamToReturn = null;
-
-        if (stream instanceof DuplicatableInputStream) {
-            md5 =
-                    performMd5Calculation(
-                            ((DuplicatableInputStream) stream).duplicate(),
-                            new StreamHelper.NullOutputStream(),
-                            contentLength);
-            streamToReturn = stream;
-        } else {
-            LOG.info(
-                    "About to copy object into memory to calculate MD5, may lead to OutOfMemory exceptions");
-            if (contentLength.longValue() > Integer.MAX_VALUE) {
-                throw new BmcException(
-                        false,
-                        "Cannot compute MD5 client-size as content length ("
-                                + contentLength.longValue()
-                                + ") is larger than max buffer.  Disable MD5 enforcement or provide a DuplicableInputStream to avoid this problem",
-                        null,
-                        null);
-            }
-            try {
-                ByteArrayOutputStream baos = new ByteArrayOutputStream(contentLength.intValue());
-                md5 = performMd5Calculation(stream, baos, contentLength);
-                streamToReturn = StreamUtils.createByteArrayInputStream(baos.toByteArray());
-            } catch (OutOfMemoryError oom) {
-                OutOfMemoryError newOom =
-                        new OutOfMemoryError(
-                                "Could not compute MD5.  Disable MD5 enforcement or provide a DuplicableInputStream to avoid this problem");
-                newOom.initCause(oom);
-                throw newOom;
-            }
-        }
-        return new MD5Calculation(streamToReturn, md5);
-    }
-
-    private static String performMd5Calculation(
-            InputStream stream, OutputStream outputStream, long contentLength) {
-        DigestOutputStream digestOutputStream =
-                StreamHelper.createMd5MessageOutputStream(outputStream);
-        long bytesCopied;
-        try {
-            bytesCopied = StreamHelper.copy(stream, digestOutputStream);
-        } catch (IOException e) {
-            throw new BmcException(false, "Unable to calculate MD5", e, null);
-        }
-        if (bytesCopied != contentLength) {
-            throw new BmcException(
-                    false,
-                    "Failed to read all bytes while calculating MD5: "
-                            + bytesCopied
-                            + ", "
-                            + contentLength,
-                    null,
-                    null);
-        }
-        return StreamHelper.base64Encode(digestOutputStream.getMessageDigest());
     }
 
     public static class UploadRequest {
@@ -530,6 +687,16 @@ public class UploadManager {
         private final String opcRequestId;
         /** The opc-client-request-id sent with every request, if provided. */
         private final String opcClientRequestId;
+        /** The CRC32C of the single or multipart object uploaded. */
+        private final String contentCrc32c;
+        /** The SHA256 of the object uploaded. */
+        private final String contentSha256;
+        /** The SHA384 of the object uploaded. */
+        private final String contentSha384;
+        /** The SHA256 of the multipart object uploaded. */
+        private final String multipartSha256;
+        /** The SHA384 of the multipart object uploaded. */
+        private final String multipartSha384;
 
         @java.beans.ConstructorProperties({
             "eTag",
@@ -544,11 +711,65 @@ public class UploadManager {
                 final String multipartMd5,
                 final String opcRequestId,
                 final String opcClientRequestId) {
+            this(
+                    eTag,
+                    contentMd5,
+                    multipartMd5,
+                    opcRequestId,
+                    opcClientRequestId,
+                    null,
+                    null,
+                    null,
+                    null,
+                    null);
+        }
+
+        @java.beans.ConstructorProperties({
+            "eTag",
+            "contentMd5",
+            "multipartMd5",
+            "opcRequestId",
+            "opcClientRequestId",
+            "contentCrc32c",
+            "contentSha256",
+            "contentSha384",
+            "multipartSha256",
+            "multipartSha384"
+        })
+        public UploadResponse(
+                final String eTag,
+                final String contentMd5,
+                final String multipartMd5,
+                final String opcRequestId,
+                final String opcClientRequestId,
+                final String contentCrc32c,
+                final String contentSha256,
+                final String contentSha384,
+                final String multipartSha256,
+                final String multipartSha384) {
             this.eTag = eTag;
             this.contentMd5 = contentMd5;
             this.multipartMd5 = multipartMd5;
             this.opcRequestId = opcRequestId;
             this.opcClientRequestId = opcClientRequestId;
+            this.contentCrc32c = contentCrc32c;
+            this.contentSha256 = contentSha256;
+            this.contentSha384 = contentSha384;
+            this.multipartSha256 = multipartSha256;
+            this.multipartSha384 = multipartSha384;
+        }
+
+        private UploadResponse(Builder builder) {
+            this.eTag = builder.eTag;
+            this.contentMd5 = builder.contentMd5;
+            this.multipartMd5 = builder.multipartMd5;
+            this.opcRequestId = builder.opcRequestId;
+            this.opcClientRequestId = builder.opcClientRequestId;
+            this.contentCrc32c = builder.contentCrc32c;
+            this.contentSha256 = builder.contentSha256;
+            this.contentSha384 = builder.contentSha384;
+            this.multipartSha256 = builder.multipartSha256;
+            this.multipartSha384 = builder.multipartSha384;
         }
 
         /** The etag of the object uploaded. */
@@ -589,8 +810,33 @@ public class UploadManager {
             return this.opcClientRequestId;
         }
 
-        @java.lang.Override
-        public java.lang.String toString() {
+        /** The CRC32C of the single or multipart object uploaded. */
+        public String getContentCrc32c() {
+            return this.contentCrc32c;
+        }
+
+        /** The SHA256 of the object uploaded. */
+        public String getContentSha256() {
+            return this.contentSha256;
+        }
+
+        /** The SHA384 of the object uploaded. */
+        public String getContentSha384() {
+            return this.contentSha384;
+        }
+
+        /** The SHA256 of the multipart object uploaded. */
+        public String getMultipartSha256() {
+            return this.multipartSha256;
+        }
+
+        /** The SHA384 of the multipart object uploaded. */
+        public String getMultipartSha384() {
+            return this.multipartSha384;
+        }
+
+        @Override
+        public String toString() {
             return "UploadManager.UploadResponse(eTag="
                     + this.getETag()
                     + ", contentMd5="
@@ -601,18 +847,84 @@ public class UploadManager {
                     + this.getOpcRequestId()
                     + ", opcClientRequestId="
                     + this.getOpcClientRequestId()
+                    + ", contentCrc32c="
+                    + this.getContentCrc32c()
+                    + ", contentSha256="
+                    + this.getContentSha256()
+                    + ", contentSha384="
+                    + this.getContentSha384()
+                    + ", multipartSha256="
+                    + this.getMultipartSha256()
+                    + ", multipartSha384="
+                    + this.getMultipartSha384()
                     + ")";
         }
-    }
 
-    private static class MD5Calculation {
-        private final InputStream streamToUse;
-        private final String md5;
+        public static class Builder {
+            private String eTag;
+            private String contentMd5;
+            private String multipartMd5;
+            private String opcRequestId;
+            private String opcClientRequestId;
+            private String contentCrc32c;
+            private String contentSha256;
+            private String contentSha384;
+            private String multipartSha256;
+            private String multipartSha384;
 
-        @java.beans.ConstructorProperties({"streamToUse", "md5"})
-        public MD5Calculation(final InputStream streamToUse, final String md5) {
-            this.streamToUse = streamToUse;
-            this.md5 = md5;
+            public Builder eTag(String eTag) {
+                this.eTag = eTag;
+                return this;
+            }
+
+            public Builder contentMd5(String contentMd5) {
+                this.contentMd5 = contentMd5;
+                return this;
+            }
+
+            public Builder multipartMd5(String multipartMd5) {
+                this.multipartMd5 = multipartMd5;
+                return this;
+            }
+
+            public Builder opcRequestId(String opcRequestId) {
+                this.opcRequestId = opcRequestId;
+                return this;
+            }
+
+            public Builder opcClientRequestId(String opcClientRequestId) {
+                this.opcClientRequestId = opcClientRequestId;
+                return this;
+            }
+
+            public Builder contentCrc32c(String contentCrc32c) {
+                this.contentCrc32c = contentCrc32c;
+                return this;
+            }
+
+            public Builder contentSha256(String contentSha256) {
+                this.contentSha256 = contentSha256;
+                return this;
+            }
+
+            public Builder contentSha384(String contentSha384) {
+                this.contentSha384 = contentSha384;
+                return this;
+            }
+
+            public Builder multipartSha256(String multipartSha256) {
+                this.multipartSha256 = multipartSha256;
+                return this;
+            }
+
+            public Builder multipartSha384(String multipartSha384) {
+                this.multipartSha384 = multipartSha384;
+                return this;
+            }
+
+            public UploadResponse build() {
+                return new UploadResponse(this);
+            }
         }
     }
 

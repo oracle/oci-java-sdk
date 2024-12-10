@@ -24,6 +24,8 @@ public final class EndpointSummary
     @Deprecated
     @java.beans.ConstructorProperties({
         "id",
+        "alias",
+        "computeType",
         "displayName",
         "compartmentId",
         "projectId",
@@ -39,6 +41,8 @@ public final class EndpointSummary
     })
     public EndpointSummary(
             String id,
+            String alias,
+            ComputeType computeType,
             String displayName,
             String compartmentId,
             String projectId,
@@ -53,6 +57,8 @@ public final class EndpointSummary
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
+        this.alias = alias;
+        this.computeType = computeType;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.projectId = projectId;
@@ -82,6 +88,40 @@ public final class EndpointSummary
         public Builder id(String id) {
             this.id = id;
             this.__explicitlySet__.add("id");
+            return this;
+        }
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
+        /** Compute infra type for endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeType")
+        private ComputeType computeType;
+
+        /**
+         * Compute infra type for endpoint.
+         *
+         * @param computeType the value to set
+         * @return this builder
+         */
+        public Builder computeType(ComputeType computeType) {
+            this.computeType = computeType;
+            this.__explicitlySet__.add("computeType");
             return this;
         }
         /**
@@ -309,6 +349,8 @@ public final class EndpointSummary
             EndpointSummary model =
                     new EndpointSummary(
                             this.id,
+                            this.alias,
+                            this.computeType,
                             this.displayName,
                             this.compartmentId,
                             this.projectId,
@@ -331,6 +373,12 @@ public final class EndpointSummary
         public Builder copy(EndpointSummary model) {
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
+            if (model.wasPropertyExplicitlySet("computeType")) {
+                this.computeType(model.getComputeType());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -392,6 +440,82 @@ public final class EndpointSummary
      */
     public String getId() {
         return id;
+    }
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
+    }
+
+    /** Compute infra type for endpoint. */
+    public enum ComputeType implements com.oracle.bmc.http.internal.BmcEnum {
+        Cpu("CPU"),
+        Gpu("GPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeType.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeType v : ComputeType.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Compute infra type for endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeType")
+    private final ComputeType computeType;
+
+    /**
+     * Compute infra type for endpoint.
+     *
+     * @return the value
+     */
+    public ComputeType getComputeType() {
+        return computeType;
     }
 
     /**
@@ -602,6 +726,8 @@ public final class EndpointSummary
         sb.append("EndpointSummary(");
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", alias=").append(String.valueOf(this.alias));
+        sb.append(", computeType=").append(String.valueOf(this.computeType));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", projectId=").append(String.valueOf(this.projectId));
@@ -629,6 +755,8 @@ public final class EndpointSummary
 
         EndpointSummary other = (EndpointSummary) o;
         return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.computeType, other.computeType)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.projectId, other.projectId)
@@ -649,6 +777,8 @@ public final class EndpointSummary
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
+        result = (result * PRIME) + (this.computeType == null ? 43 : this.computeType.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

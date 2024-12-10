@@ -54,7 +54,8 @@ public final class LaunchInstanceDetails
         "launchVolumeAttachments",
         "isPvEncryptionInTransitEnabled",
         "platformConfig",
-        "instanceConfigurationId"
+        "instanceConfigurationId",
+        "licensingConfigs"
     })
     public LaunchInstanceDetails(
             String availabilityDomain,
@@ -86,7 +87,8 @@ public final class LaunchInstanceDetails
             java.util.List<LaunchAttachVolumeDetails> launchVolumeAttachments,
             Boolean isPvEncryptionInTransitEnabled,
             LaunchInstancePlatformConfig platformConfig,
-            String instanceConfigurationId) {
+            String instanceConfigurationId,
+            java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -118,6 +120,7 @@ public final class LaunchInstanceDetails
         this.isPvEncryptionInTransitEnabled = isPvEncryptionInTransitEnabled;
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -801,6 +804,22 @@ public final class LaunchInstanceDetails
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
+        /** List of licensing configurations associated with target launch values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with target launch values.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(
+                java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -837,7 +856,8 @@ public final class LaunchInstanceDetails
                             this.launchVolumeAttachments,
                             this.isPvEncryptionInTransitEnabled,
                             this.platformConfig,
-                            this.instanceConfigurationId);
+                            this.instanceConfigurationId,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -935,6 +955,9 @@ public final class LaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -1555,6 +1578,19 @@ public final class LaunchInstanceDetails
         return instanceConfigurationId;
     }
 
+    /** List of licensing configurations associated with target launch values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with target launch values.
+     *
+     * @return the value
+     */
+    public java.util.List<LaunchInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1605,6 +1641,7 @@ public final class LaunchInstanceDetails
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1654,6 +1691,7 @@ public final class LaunchInstanceDetails
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1747,6 +1785,9 @@ public final class LaunchInstanceDetails
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

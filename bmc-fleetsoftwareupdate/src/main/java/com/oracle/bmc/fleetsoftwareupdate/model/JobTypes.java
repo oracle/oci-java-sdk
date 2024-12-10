@@ -11,6 +11,7 @@ public enum JobTypes implements com.oracle.bmc.http.internal.BmcEnum {
     Precheck("PRECHECK"),
     Apply("APPLY"),
     RollbackAndRemoveTarget("ROLLBACK_AND_REMOVE_TARGET"),
+    RollbackMaintenanceCycle("ROLLBACK_MAINTENANCE_CYCLE"),
     Cleanup("CLEANUP"),
 
     /**

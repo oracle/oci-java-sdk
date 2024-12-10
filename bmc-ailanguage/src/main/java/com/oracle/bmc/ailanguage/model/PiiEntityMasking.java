@@ -34,9 +34,37 @@ package com.oracle.bmc.ailanguage.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({})
-    protected PiiEntityMasking() {
+    @java.beans.ConstructorProperties({"exclude", "shouldDetect"})
+    protected PiiEntityMasking(java.util.List<String> exclude, Boolean shouldDetect) {
         super();
+        this.exclude = exclude;
+        this.shouldDetect = shouldDetect;
+    }
+
+    /** List of offsets/entities to be removed from anonymization. */
+    @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+    private final java.util.List<String> exclude;
+
+    /**
+     * List of offsets/entities to be removed from anonymization.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getExclude() {
+        return exclude;
+    }
+
+    /** To include excluded entities from masking in detected entities or not. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldDetect")
+    private final Boolean shouldDetect;
+
+    /**
+     * To include excluded entities from masking in detected entities or not.
+     *
+     * @return the value
+     */
+    public Boolean getShouldDetect() {
+        return shouldDetect;
     }
 
     @Override
@@ -54,6 +82,8 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("PiiEntityMasking(");
         sb.append("super=").append(super.toString());
+        sb.append("exclude=").append(String.valueOf(this.exclude));
+        sb.append(", shouldDetect=").append(String.valueOf(this.shouldDetect));
         sb.append(")");
         return sb.toString();
     }
@@ -68,13 +98,17 @@ public class PiiEntityMasking extends com.oracle.bmc.http.client.internal.Explic
         }
 
         PiiEntityMasking other = (PiiEntityMasking) o;
-        return super.equals(other);
+        return java.util.Objects.equals(this.exclude, other.exclude)
+                && java.util.Objects.equals(this.shouldDetect, other.shouldDetect)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.exclude == null ? 43 : this.exclude.hashCode());
+        result = (result * PRIME) + (this.shouldDetect == null ? 43 : this.shouldDetect.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

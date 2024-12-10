@@ -25,6 +25,8 @@ public final class CreateEndpointDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "computeType",
+        "alias",
         "description",
         "compartmentId",
         "modelId",
@@ -34,6 +36,8 @@ public final class CreateEndpointDetails
     })
     public CreateEndpointDetails(
             String displayName,
+            ComputeType computeType,
+            String alias,
             String description,
             String compartmentId,
             String modelId,
@@ -42,6 +46,8 @@ public final class CreateEndpointDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.computeType = computeType;
+        this.alias = alias;
         this.description = description;
         this.compartmentId = compartmentId;
         this.modelId = modelId;
@@ -69,6 +75,40 @@ public final class CreateEndpointDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /** Compute infra type for endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeType")
+        private ComputeType computeType;
+
+        /**
+         * Compute infra type for endpoint.
+         *
+         * @param computeType the value to set
+         * @return this builder
+         */
+        public Builder computeType(ComputeType computeType) {
+            this.computeType = computeType;
+            this.__explicitlySet__.add("computeType");
+            return this;
+        }
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
             return this;
         }
         /** A short description of the an endpoint. */
@@ -190,6 +230,8 @@ public final class CreateEndpointDetails
             CreateEndpointDetails model =
                     new CreateEndpointDetails(
                             this.displayName,
+                            this.computeType,
+                            this.alias,
                             this.description,
                             this.compartmentId,
                             this.modelId,
@@ -206,6 +248,12 @@ public final class CreateEndpointDetails
         public Builder copy(CreateEndpointDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("computeType")) {
+                this.computeType(model.getComputeType());
+            }
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -253,6 +301,69 @@ public final class CreateEndpointDetails
      */
     public String getDisplayName() {
         return displayName;
+    }
+
+    /** Compute infra type for endpoint. */
+    public enum ComputeType implements com.oracle.bmc.http.internal.BmcEnum {
+        Cpu("CPU"),
+        Gpu("GPU"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, ComputeType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeType v : ComputeType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        ComputeType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid ComputeType: " + key);
+        }
+    };
+    /** Compute infra type for endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeType")
+    private final ComputeType computeType;
+
+    /**
+     * Compute infra type for endpoint.
+     *
+     * @return the value
+     */
+    public ComputeType getComputeType() {
+        return computeType;
+    }
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
     }
 
     /** A short description of the an endpoint. */
@@ -369,6 +480,8 @@ public final class CreateEndpointDetails
         sb.append("CreateEndpointDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", computeType=").append(String.valueOf(this.computeType));
+        sb.append(", alias=").append(String.valueOf(this.alias));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
@@ -390,6 +503,8 @@ public final class CreateEndpointDetails
 
         CreateEndpointDetails other = (CreateEndpointDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.computeType, other.computeType)
+                && java.util.Objects.equals(this.alias, other.alias)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.modelId, other.modelId)
@@ -404,6 +519,8 @@ public final class CreateEndpointDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.computeType == null ? 43 : this.computeType.hashCode());
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)

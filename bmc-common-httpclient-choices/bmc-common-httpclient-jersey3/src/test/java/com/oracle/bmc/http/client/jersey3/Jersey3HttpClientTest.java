@@ -5,15 +5,19 @@
 package com.oracle.bmc.http.client.jersey3;
 
 import com.oracle.bmc.http.client.HttpClientBuilder;
+import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.internal.ClientThreadFactory;
 import com.oracle.bmc.http.client.jersey3.internal.IdleConnectionMonitor;
 import org.apache.http.conn.HttpClientConnectionManager;
 import org.junit.Test;
 
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
@@ -33,6 +37,55 @@ public class Jersey3HttpClientTest {
         client.close();
         assertTrue(icm.isIdleMonitorThreadShutdown());
         assertNull(IdleConnectionMonitor.getInstance());
+    }
+
+    @Test
+    public void threadSafeUpdateEndpoint() throws InterruptedException {
+
+        HttpClientBuilder builder = Jersey3HttpProvider.getInstance().newBuilder();
+        Jersey3HttpClient client =
+                (Jersey3HttpClient)
+                        builder.baseUri("https://objectstorage.us-phoenix-1.oci.customer-oci.com")
+                                .build();
+
+        final ConcurrentMap<Integer, String> endpointMap = new ConcurrentHashMap<>();
+        final String epOne = "https://ns1.objectstorage.us-phoenix-1.oci.customer-oci.com";
+        final String epTwo = "https://ns2.objectstorage.us-phoenix-1.oci.customer-oci.com";
+        Thread t1 =
+                new Thread(
+                        () -> {
+                            try {
+                                client.updateEndpoint(epOne);
+                                Thread.sleep(30);
+                                Jersey3HttpRequest request =
+                                        (Jersey3HttpRequest) client.createRequest(Method.GET);
+                                String endpoint = request.uri().toString();
+                                endpointMap.put(1, endpoint);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+        Thread t2 =
+                new Thread(
+                        () -> {
+                            try {
+                                Thread.sleep(10);
+                                client.updateEndpoint(epTwo);
+                                Jersey3HttpRequest request =
+                                        (Jersey3HttpRequest) client.createRequest(Method.GET);
+                                String endpoint = request.uri().toString();
+                                endpointMap.put(2, endpoint);
+                            } catch (InterruptedException e) {
+                                throw new RuntimeException(e);
+                            }
+                        });
+        t1.start();
+        t2.start();
+        t1.join();
+        t2.join();
+        assertEquals(epOne, endpointMap.get(1));
+        assertEquals(epTwo, endpointMap.get(2));
+        client.close();
     }
 
     @Test

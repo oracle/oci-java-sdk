@@ -4,7 +4,7 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk</artifactId>
-    <version>3.54.0</version>
+    <version>3.55.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
@@ -12,6 +12,9 @@
   <name>Oracle Cloud Infrastructure SDK - Common</name>
   <description>This project contains the common runtime components of the SDK used for Oracle Cloud Infrastructure</description>
   <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <properties>
+    <jetty.version>9.4.56.v20240826</jetty.version>
+  </properties>
   <build>
     <!-- Substitutes maven properties into the SDK properties -->
     <resources>
@@ -59,12 +62,12 @@
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-circuitbreaker</artifactId>
-      <version>3.54.0</version>
+      <version>3.55.0</version>
     </dependency>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient</artifactId>
-      <version>3.54.0</version>
+      <version>3.55.0</version>
     </dependency>
     <!-- Test dependencies -->
     <dependency>
@@ -73,10 +76,43 @@
       <version>2.23.2</version>
       <scope>test</scope>
     </dependency>
+    <!-- SDK-6401 / SDK-6502: vulnerabilities in wiremock -->
+    <!-- but cannot upgrade to 3.x, because 3.x requires Java 11 -->
+    <dependency>
+      <groupId>net.minidev</groupId>
+      <artifactId>json-smart</artifactId>
+      <version>2.5.1</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-server</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlet</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-servlets</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.eclipse.jetty</groupId>
+      <artifactId>jetty-webapp</artifactId>
+      <version>${jetty.version}</version>
+      <scope>test</scope>
+    </dependency>
+    <!-- End SDK-6401/ SDK-6502: vulnerabilities in wiremock -->
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-      <version>3.54.0</version>
+      <version>3.55.0</version>
       <scope>test</scope>
     </dependency>
     <dependency>

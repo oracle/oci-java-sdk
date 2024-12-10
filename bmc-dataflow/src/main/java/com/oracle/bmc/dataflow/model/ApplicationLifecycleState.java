@@ -8,6 +8,7 @@ package com.oracle.bmc.dataflow.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200129")
 public enum ApplicationLifecycleState implements com.oracle.bmc.http.internal.BmcEnum {
     Active("ACTIVE"),
+    Deleting("DELETING"),
     Deleted("DELETED"),
     Inactive("INACTIVE"),
 

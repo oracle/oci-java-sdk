@@ -24,6 +24,7 @@ public final class BatchDetectHealthEntityDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "alias",
         "endpointId",
         "documents",
         "linkOntologies",
@@ -32,6 +33,7 @@ public final class BatchDetectHealthEntityDetails
         "profile"
     })
     public BatchDetectHealthEntityDetails(
+            String alias,
             String endpointId,
             java.util.List<TextDocument> documents,
             java.util.List<String> linkOntologies,
@@ -39,6 +41,7 @@ public final class BatchDetectHealthEntityDetails
             Boolean isDetectRelationships,
             Profile profile) {
         super();
+        this.alias = alias;
         this.endpointId = endpointId;
         this.documents = documents;
         this.linkOntologies = linkOntologies;
@@ -49,6 +52,25 @@ public final class BatchDetectHealthEntityDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for
+         * inferencing.
+         *
+         * @param alias the value to set
+         * @return this builder
+         */
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
         /** The endpoint which have to be used for inferencing. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpointId")
         private String endpointId;
@@ -140,6 +162,7 @@ public final class BatchDetectHealthEntityDetails
         public BatchDetectHealthEntityDetails build() {
             BatchDetectHealthEntityDetails model =
                     new BatchDetectHealthEntityDetails(
+                            this.alias,
                             this.endpointId,
                             this.documents,
                             this.linkOntologies,
@@ -154,6 +177,9 @@ public final class BatchDetectHealthEntityDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectHealthEntityDetails model) {
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
             if (model.wasPropertyExplicitlySet("endpointId")) {
                 this.endpointId(model.getEndpointId());
             }
@@ -183,6 +209,23 @@ public final class BatchDetectHealthEntityDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for
+     * inferencing.
+     *
+     * @return the value
+     */
+    public String getAlias() {
+        return alias;
     }
 
     /** The endpoint which have to be used for inferencing. */
@@ -272,7 +315,8 @@ public final class BatchDetectHealthEntityDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectHealthEntityDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("endpointId=").append(String.valueOf(this.endpointId));
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(", linkOntologies=").append(String.valueOf(this.linkOntologies));
         sb.append(", isDetectAssertions=").append(String.valueOf(this.isDetectAssertions));
@@ -292,7 +336,8 @@ public final class BatchDetectHealthEntityDetails
         }
 
         BatchDetectHealthEntityDetails other = (BatchDetectHealthEntityDetails) o;
-        return java.util.Objects.equals(this.endpointId, other.endpointId)
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.linkOntologies, other.linkOntologies)
                 && java.util.Objects.equals(this.isDetectAssertions, other.isDetectAssertions)
@@ -305,6 +350,7 @@ public final class BatchDetectHealthEntityDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result = (result * PRIME) + (this.documents == null ? 43 : this.documents.hashCode());
         result =

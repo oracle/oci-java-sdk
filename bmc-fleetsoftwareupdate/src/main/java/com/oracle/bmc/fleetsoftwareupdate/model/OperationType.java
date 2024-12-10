@@ -20,6 +20,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteMaintenanceCycle("DELETE_MAINTENANCE_CYCLE"),
     MoveMaintenanceCycle("MOVE_MAINTENANCE_CYCLE"),
     CloneMaintenanceCycle("CLONE_MAINTENANCE_CYCLE"),
+    RollbackMaintenanceCycleAction("ROLLBACK_MAINTENANCE_CYCLE_ACTION"),
     CreateAction("CREATE_ACTION"),
     UpdateAction("UPDATE_ACTION"),
     DeleteAction("DELETE_ACTION"),

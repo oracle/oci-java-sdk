@@ -42,7 +42,8 @@ public final class UpdateInstanceDetails
         "availabilityConfig",
         "timeMaintenanceRebootDue",
         "dedicatedVmHostId",
-        "platformConfig"
+        "platformConfig",
+        "licensingConfigs"
     })
     public UpdateInstanceDetails(
             String capacityReservationId,
@@ -63,7 +64,8 @@ public final class UpdateInstanceDetails
             UpdateInstanceAvailabilityConfigDetails availabilityConfig,
             java.util.Date timeMaintenanceRebootDue,
             String dedicatedVmHostId,
-            UpdateInstancePlatformConfig platformConfig) {
+            UpdateInstancePlatformConfig platformConfig,
+            java.util.List<UpdateInstanceLicensingConfig> licensingConfigs) {
         super();
         this.capacityReservationId = capacityReservationId;
         this.definedTags = definedTags;
@@ -84,6 +86,7 @@ public final class UpdateInstanceDetails
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.dedicatedVmHostId = dedicatedVmHostId;
         this.platformConfig = platformConfig;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -549,6 +552,22 @@ public final class UpdateInstanceDetails
             this.__explicitlySet__.add("platformConfig");
             return this;
         }
+        /** The list of liscensing configurations with target update values. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<UpdateInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * The list of liscensing configurations with target update values.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(
+                java.util.List<UpdateInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -574,7 +593,8 @@ public final class UpdateInstanceDetails
                             this.availabilityConfig,
                             this.timeMaintenanceRebootDue,
                             this.dedicatedVmHostId,
-                            this.platformConfig);
+                            this.platformConfig,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -639,6 +659,9 @@ public final class UpdateInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("platformConfig")) {
                 this.platformConfig(model.getPlatformConfig());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -1108,6 +1131,19 @@ public final class UpdateInstanceDetails
         return platformConfig;
     }
 
+    /** The list of liscensing configurations with target update values. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<UpdateInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * The list of liscensing configurations with target update values.
+     *
+     * @return the value
+     */
+    public java.util.List<UpdateInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1144,6 +1180,7 @@ public final class UpdateInstanceDetails
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", dedicatedVmHostId=").append(String.valueOf(this.dedicatedVmHostId));
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1179,6 +1216,7 @@ public final class UpdateInstanceDetails
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.dedicatedVmHostId, other.dedicatedVmHostId)
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1237,6 +1275,9 @@ public final class UpdateInstanceDetails
         result =
                 (result * PRIME)
                         + (this.platformConfig == null ? 43 : this.platformConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

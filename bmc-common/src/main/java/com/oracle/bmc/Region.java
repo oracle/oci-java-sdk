@@ -47,6 +47,7 @@ import java.util.stream.Collectors;
 
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
+import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_URL_OVERRIDE;
 import static com.oracle.bmc.http.internal.HeaderUtils.AUTHORIZATION_HEADER_NAME;
 import static com.oracle.bmc.http.internal.HeaderUtils.MEDIA_TYPE_APPLICATION_JSON;
 
@@ -935,7 +936,7 @@ public final class Region implements Serializable, Comparable<Region> {
             }
 
             enableInstanceMetadataService();
-            Region result = getRegionFromImds(METADATA_SERVICE_BASE_URL);
+            Region result = getRegionFromImds(getMetadataBaseUrl());
             if (result != null) {
                 regionFromImds = result;
             }
@@ -947,6 +948,20 @@ public final class Region implements Serializable, Comparable<Region> {
             hasUsedInstanceMetadataService = true;
         }
         return hasReceivedInstanceMetadataServiceResponse;
+    }
+
+    private static String getMetadataBaseUrl() {
+        if (!StringUtils.isBlank(METADATA_URL_OVERRIDE)) {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is present. Overriding default base url to: {}",
+                    METADATA_URL_OVERRIDE);
+            return METADATA_URL_OVERRIDE;
+        } else {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is not present. Using default base url: {}",
+                    METADATA_SERVICE_BASE_URL);
+            return METADATA_SERVICE_BASE_URL;
+        }
     }
 
     /**

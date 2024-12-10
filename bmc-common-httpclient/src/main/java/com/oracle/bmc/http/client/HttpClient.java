@@ -14,4 +14,12 @@ public interface HttpClient extends Closeable {
 
     /** Check whether the given exception is a "processing exception", e.g. a json parse failure. */
     boolean isProcessingException(Exception e);
+
+    /**
+     * Updates the endpoint URL used by this HTTP client instance.
+     *
+     * @param baseTarget A string representing the new base target URL for all subsequent requests
+     *     made through this client.
+     */
+    void updateEndpoint(String baseTarget);
 }

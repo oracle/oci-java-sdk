@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.http.internal;
 
+import com.oracle.bmc.ServiceDetails;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.circuitbreaker.internal.resilience4j.OciCircuitBreakerImpl;
 import com.oracle.bmc.http.client.HttpClient;
@@ -11,7 +12,10 @@ import com.oracle.bmc.http.client.HttpRequest;
 import com.oracle.bmc.http.client.HttpResponse;
 import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.Serializer;
+import com.oracle.bmc.http.internal.ClientCallTest.TestErrorModel;
+import com.oracle.bmc.http.internal.ClientCallTest.TestRuntimeSdkException;
 import com.oracle.bmc.model.BmcException;
+import com.oracle.bmc.model.SdkRuntimeException;
 import com.oracle.bmc.retrier.RetryConfiguration;
 import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 
@@ -36,6 +40,7 @@ import java.util.function.Supplier;
 import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
+import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -375,6 +380,98 @@ public class ClientCallTest {
         }
     }
 
+    public static class TestResponseErrorRuntimeExceptionFactory
+            implements ResponseErrorRuntimeExceptionFactory<
+                    TestErrorModel, TestRuntimeSdkException> {
+
+        @Override
+        public Class<TestErrorModel> getResponseErrorModelType() {
+            return TestErrorModel.class;
+        }
+
+        @Override
+        public TestRuntimeSdkException createRuntimeException(
+                int statusCode,
+                String opcRequestId,
+                TestErrorModel errorResponse,
+                ServiceDetails serviceDetails) {
+            return new TestRuntimeSdkException(
+                    statusCode, opcRequestId, serviceDetails, errorResponse);
+        }
+
+        @Override
+        public TestRuntimeSdkException createRuntimeException(
+                int statusCode,
+                String serviceCode,
+                String message,
+                String opcRequestId,
+                ServiceDetails serviceDetails) {
+            return new TestRuntimeSdkException(
+                    statusCode, opcRequestId, serviceDetails, serviceCode, message);
+        }
+
+        @Override
+        public TestRuntimeSdkException createRuntimeException(
+                int statusCode,
+                String serviceCode,
+                String message,
+                String opcRequestId,
+                Throwable cause,
+                ServiceDetails serviceDetails) {
+            return new TestRuntimeSdkException(
+                    statusCode, opcRequestId, serviceDetails, serviceCode, message, cause);
+        }
+    }
+
+    public static class TestRuntimeSdkException extends SdkRuntimeException {
+        private int statusCode;
+        private String errorCode;
+        private String opcRequestId;
+        private ServiceDetails serviceDetails;
+        private TestErrorModel error;
+
+        public TestRuntimeSdkException(
+                int statusCode,
+                String opcRequestId,
+                ServiceDetails serviceDetails,
+                String errorCode,
+                String errorMessage) {
+            this(statusCode, opcRequestId, serviceDetails, errorCode, errorMessage, null);
+        }
+
+        public TestRuntimeSdkException(
+                int statusCode,
+                String opcRequestId,
+                ServiceDetails serviceDetails,
+                String errorCode,
+                String errorMessage,
+                Throwable cause) {
+            super(errorMessage, cause);
+            this.statusCode = statusCode;
+            this.opcRequestId = opcRequestId;
+            this.serviceDetails = serviceDetails;
+            this.errorCode = errorCode;
+        }
+
+        public TestRuntimeSdkException(
+                int statusCode,
+                String opcRequestId,
+                ServiceDetails serviceDetails,
+                TestErrorModel error) {
+            super(error.errorMessage);
+            this.statusCode = statusCode;
+            this.opcRequestId = opcRequestId;
+            this.serviceDetails = serviceDetails;
+            this.errorCode = error.errorCode;
+            this.error = error;
+        }
+    }
+
+    public static class TestErrorModel {
+        private String errorCode;
+        private String errorMessage;
+    }
+
     public static class TestResponseHelper {
         private static final String OPC_REQUEST_ID = "DummyOPCRequestID";
         private static final String JSON_MEDIA_TYPE = "application/json";
@@ -524,6 +621,36 @@ public class ClientCallTest {
                 assertEquals(ecm.getOriginalMessage(), e.getOriginalMessage());
                 assertEquals(ecm.getOriginalMessageTemplate(), e.getOriginalMessageTemplate());
                 assertEquals(ecm.getMessageArguments(), e.getMessageArguments());
+            }
+        }
+
+        @Test
+        public void test_throwIfNotSuccessful_CustomRuntimeExceptionFactory() {
+            TestErrorModel tem = new TestErrorModel();
+            tem.errorCode = "TestErrorModel_errorCode";
+            tem.errorMessage = "TestErrorModel_errorMessage";
+
+            when(mockResponse.body(TestErrorModel.class))
+                    .thenReturn(CompletableFuture.completedFuture(tem));
+
+            when(mockResponse.status()).thenReturn(BAD_GATEWAY_STATUS);
+            when(mockResponse.header("content-type")).thenReturn(JSON_MEDIA_TYPE);
+            try {
+                ClientCall.builder(mockClient, new ClientCallTest.TestRequest(), responseBuilder)
+                        .logger(mockLogger, "mockLogger")
+                        .method(Method.GET)
+                        // Inject the custom exception factory
+                        .responseErrorExceptionFactory(
+                                new TestResponseErrorRuntimeExceptionFactory())
+                        .callSync();
+                fail("Expected to throw");
+            } catch (TestRuntimeSdkException e) {
+                // expected
+                assertEquals(BAD_GATEWAY_STATUS, e.statusCode);
+                assertEquals(tem.errorMessage, e.getMessage());
+                assertEquals(tem.errorCode, e.errorCode);
+                assertEquals(OPC_REQUEST_ID, e.opcRequestId);
+                assertNotNull(e.serviceDetails);
             }
         }
 

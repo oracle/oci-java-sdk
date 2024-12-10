@@ -26,12 +26,29 @@ package com.oracle.bmc.ailanguage.model;
 public final class PiiEntityRemove extends PiiEntityMasking {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private java.util.List<String> exclude;
+
+        public Builder exclude(java.util.List<String> exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldDetect")
+        private Boolean shouldDetect;
+
+        public Builder shouldDetect(Boolean shouldDetect) {
+            this.shouldDetect = shouldDetect;
+            this.__explicitlySet__.add("shouldDetect");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PiiEntityRemove build() {
-            PiiEntityRemove model = new PiiEntityRemove();
+            PiiEntityRemove model = new PiiEntityRemove(this.exclude, this.shouldDetect);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -40,6 +57,12 @@ public final class PiiEntityRemove extends PiiEntityMasking {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PiiEntityRemove model) {
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
+            }
+            if (model.wasPropertyExplicitlySet("shouldDetect")) {
+                this.shouldDetect(model.getShouldDetect());
+            }
             return this;
         }
     }
@@ -54,8 +77,8 @@ public final class PiiEntityRemove extends PiiEntityMasking {
     }
 
     @Deprecated
-    public PiiEntityRemove() {
-        super();
+    public PiiEntityRemove(java.util.List<String> exclude, Boolean shouldDetect) {
+        super(exclude, shouldDetect);
     }
 
     @Override

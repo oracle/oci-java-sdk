@@ -38,12 +38,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         "customEndpoint",
         "alternateCustomEndpoints",
         "consumptionModel",
-        "idcsInfo",
-        "attachments",
         "serviceNatGatewayIp",
         "managementNatGatewayIp",
         "serviceVcnId",
-        "managementVcnId"
+        "managementVcnId",
+        "networkEndpointDetails"
     })
     public VbInstance(
             String id,
@@ -62,12 +61,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
             CustomEndpointDetails customEndpoint,
             java.util.List<CustomEndpointDetails> alternateCustomEndpoints,
             ConsumptionModel consumptionModel,
-            IdcsInfoDetails idcsInfo,
-            java.util.List<AttachmentDetails> attachments,
             String serviceNatGatewayIp,
             String managementNatGatewayIp,
             String serviceVcnId,
-            String managementVcnId) {
+            String managementVcnId,
+            NetworkEndpointDetails networkEndpointDetails) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -85,12 +83,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         this.customEndpoint = customEndpoint;
         this.alternateCustomEndpoints = alternateCustomEndpoints;
         this.consumptionModel = consumptionModel;
-        this.idcsInfo = idcsInfo;
-        this.attachments = attachments;
         this.serviceNatGatewayIp = serviceNatGatewayIp;
         this.managementNatGatewayIp = managementNatGatewayIp;
         this.serviceVcnId = serviceVcnId;
         this.managementVcnId = managementVcnId;
+        this.networkEndpointDetails = networkEndpointDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -347,30 +344,6 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
             this.__explicitlySet__.add("consumptionModel");
             return this;
         }
-
-        @com.fasterxml.jackson.annotation.JsonProperty("idcsInfo")
-        private IdcsInfoDetails idcsInfo;
-
-        public Builder idcsInfo(IdcsInfoDetails idcsInfo) {
-            this.idcsInfo = idcsInfo;
-            this.__explicitlySet__.add("idcsInfo");
-            return this;
-        }
-        /** A list of associated attachments to other services */
-        @com.fasterxml.jackson.annotation.JsonProperty("attachments")
-        private java.util.List<AttachmentDetails> attachments;
-
-        /**
-         * A list of associated attachments to other services
-         *
-         * @param attachments the value to set
-         * @return this builder
-         */
-        public Builder attachments(java.util.List<AttachmentDetails> attachments) {
-            this.attachments = attachments;
-            this.__explicitlySet__.add("attachments");
-            return this;
-        }
         /** The NAT gateway IP address for the VB service VCN */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceNatGatewayIp")
         private String serviceNatGatewayIp;
@@ -432,6 +405,15 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -454,12 +436,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
                             this.customEndpoint,
                             this.alternateCustomEndpoints,
                             this.consumptionModel,
-                            this.idcsInfo,
-                            this.attachments,
                             this.serviceNatGatewayIp,
                             this.managementNatGatewayIp,
                             this.serviceVcnId,
-                            this.managementVcnId);
+                            this.managementVcnId,
+                            this.networkEndpointDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -516,12 +497,6 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
             if (model.wasPropertyExplicitlySet("consumptionModel")) {
                 this.consumptionModel(model.getConsumptionModel());
             }
-            if (model.wasPropertyExplicitlySet("idcsInfo")) {
-                this.idcsInfo(model.getIdcsInfo());
-            }
-            if (model.wasPropertyExplicitlySet("attachments")) {
-                this.attachments(model.getAttachments());
-            }
             if (model.wasPropertyExplicitlySet("serviceNatGatewayIp")) {
                 this.serviceNatGatewayIp(model.getServiceNatGatewayIp());
             }
@@ -533,6 +508,9 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("managementVcnId")) {
                 this.managementVcnId(model.getManagementVcnId());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
             }
             return this;
         }
@@ -863,26 +841,6 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         return consumptionModel;
     }
 
-    @com.fasterxml.jackson.annotation.JsonProperty("idcsInfo")
-    private final IdcsInfoDetails idcsInfo;
-
-    public IdcsInfoDetails getIdcsInfo() {
-        return idcsInfo;
-    }
-
-    /** A list of associated attachments to other services */
-    @com.fasterxml.jackson.annotation.JsonProperty("attachments")
-    private final java.util.List<AttachmentDetails> attachments;
-
-    /**
-     * A list of associated attachments to other services
-     *
-     * @return the value
-     */
-    public java.util.List<AttachmentDetails> getAttachments() {
-        return attachments;
-    }
-
     /** The NAT gateway IP address for the VB service VCN */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceNatGatewayIp")
     private final String serviceNatGatewayIp;
@@ -935,6 +893,13 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         return managementVcnId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -967,12 +932,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", alternateCustomEndpoints=")
                 .append(String.valueOf(this.alternateCustomEndpoints));
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
-        sb.append(", idcsInfo=").append(String.valueOf(this.idcsInfo));
-        sb.append(", attachments=").append(String.valueOf(this.attachments));
         sb.append(", serviceNatGatewayIp=").append(String.valueOf(this.serviceNatGatewayIp));
         sb.append(", managementNatGatewayIp=").append(String.valueOf(this.managementNatGatewayIp));
         sb.append(", serviceVcnId=").append(String.valueOf(this.serviceVcnId));
         sb.append(", managementVcnId=").append(String.valueOf(this.managementVcnId));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1005,13 +969,13 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
-                && java.util.Objects.equals(this.idcsInfo, other.idcsInfo)
-                && java.util.Objects.equals(this.attachments, other.attachments)
                 && java.util.Objects.equals(this.serviceNatGatewayIp, other.serviceNatGatewayIp)
                 && java.util.Objects.equals(
                         this.managementNatGatewayIp, other.managementNatGatewayIp)
                 && java.util.Objects.equals(this.serviceVcnId, other.serviceVcnId)
                 && java.util.Objects.equals(this.managementVcnId, other.managementVcnId)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
                 && super.equals(other);
     }
 
@@ -1051,8 +1015,6 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
-        result = (result * PRIME) + (this.idcsInfo == null ? 43 : this.idcsInfo.hashCode());
-        result = (result * PRIME) + (this.attachments == null ? 43 : this.attachments.hashCode());
         result =
                 (result * PRIME)
                         + (this.serviceNatGatewayIp == null
@@ -1067,6 +1029,11 @@ public final class VbInstance extends com.oracle.bmc.http.client.internal.Explic
         result =
                 (result * PRIME)
                         + (this.managementVcnId == null ? 43 : this.managementVcnId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

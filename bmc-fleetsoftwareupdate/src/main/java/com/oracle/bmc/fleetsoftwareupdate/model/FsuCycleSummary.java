@@ -31,6 +31,8 @@ public final class FsuCycleSummary
         "collectionType",
         "executingFsuActionId",
         "nextActionToExecute",
+        "lastCompletedActionId",
+        "rollbackCycleState",
         "lastCompletedAction",
         "goalVersionDetails",
         "diagnosticsCollection",
@@ -52,6 +54,8 @@ public final class FsuCycleSummary
             CollectionTypes collectionType,
             String executingFsuActionId,
             java.util.List<NextActionToExecuteDetails> nextActionToExecute,
+            String lastCompletedActionId,
+            RollbackCycleStates rollbackCycleState,
             DetailedActionTypes lastCompletedAction,
             FsuGoalVersionDetails goalVersionDetails,
             DiagnosticsCollectionDetails diagnosticsCollection,
@@ -72,6 +76,8 @@ public final class FsuCycleSummary
         this.collectionType = collectionType;
         this.executingFsuActionId = executingFsuActionId;
         this.nextActionToExecute = nextActionToExecute;
+        this.lastCompletedActionId = lastCompletedActionId;
+        this.rollbackCycleState = rollbackCycleState;
         this.lastCompletedAction = lastCompletedAction;
         this.goalVersionDetails = goalVersionDetails;
         this.diagnosticsCollection = diagnosticsCollection;
@@ -210,6 +216,46 @@ public final class FsuCycleSummary
                 java.util.List<NextActionToExecuteDetails> nextActionToExecute) {
             this.nextActionToExecute = nextActionToExecute;
             this.__explicitlySet__.add("nextActionToExecute");
+            return this;
+        }
+        /**
+         * OCID identifier for the latest Action the Exadata Fleet Update Cycle. No value would
+         * indicate that the Cycle has not completed any Action yet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+        private String lastCompletedActionId;
+
+        /**
+         * OCID identifier for the latest Action the Exadata Fleet Update Cycle. No value would
+         * indicate that the Cycle has not completed any Action yet.
+         *
+         * @param lastCompletedActionId the value to set
+         * @return this builder
+         */
+        public Builder lastCompletedActionId(String lastCompletedActionId) {
+            this.lastCompletedActionId = lastCompletedActionId;
+            this.__explicitlySet__.add("lastCompletedActionId");
+            return this;
+        }
+        /**
+         * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+         * value would indicate that the Cycle has not run a rollback maintenance cycle action
+         * before.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+        private RollbackCycleStates rollbackCycleState;
+
+        /**
+         * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+         * value would indicate that the Cycle has not run a rollback maintenance cycle action
+         * before.
+         *
+         * @param rollbackCycleState the value to set
+         * @return this builder
+         */
+        public Builder rollbackCycleState(RollbackCycleStates rollbackCycleState) {
+            this.rollbackCycleState = rollbackCycleState;
+            this.__explicitlySet__.add("rollbackCycleState");
             return this;
         }
         /**
@@ -413,6 +459,8 @@ public final class FsuCycleSummary
                             this.collectionType,
                             this.executingFsuActionId,
                             this.nextActionToExecute,
+                            this.lastCompletedActionId,
+                            this.rollbackCycleState,
                             this.lastCompletedAction,
                             this.goalVersionDetails,
                             this.diagnosticsCollection,
@@ -455,6 +503,12 @@ public final class FsuCycleSummary
             }
             if (model.wasPropertyExplicitlySet("nextActionToExecute")) {
                 this.nextActionToExecute(model.getNextActionToExecute());
+            }
+            if (model.wasPropertyExplicitlySet("lastCompletedActionId")) {
+                this.lastCompletedActionId(model.getLastCompletedActionId());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackCycleState")) {
+                this.rollbackCycleState(model.getRollbackCycleState());
             }
             if (model.wasPropertyExplicitlySet("lastCompletedAction")) {
                 this.lastCompletedAction(model.getLastCompletedAction());
@@ -608,6 +662,40 @@ public final class FsuCycleSummary
      */
     public java.util.List<NextActionToExecuteDetails> getNextActionToExecute() {
         return nextActionToExecute;
+    }
+
+    /**
+     * OCID identifier for the latest Action the Exadata Fleet Update Cycle. No value would indicate
+     * that the Cycle has not completed any Action yet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+    private final String lastCompletedActionId;
+
+    /**
+     * OCID identifier for the latest Action the Exadata Fleet Update Cycle. No value would indicate
+     * that the Cycle has not completed any Action yet.
+     *
+     * @return the value
+     */
+    public String getLastCompletedActionId() {
+        return lastCompletedActionId;
+    }
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+     * value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+    private final RollbackCycleStates rollbackCycleState;
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted. No
+     * value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     *
+     * @return the value
+     */
+    public RollbackCycleStates getRollbackCycleState() {
+        return rollbackCycleState;
     }
 
     /**
@@ -796,6 +884,8 @@ public final class FsuCycleSummary
         sb.append(", collectionType=").append(String.valueOf(this.collectionType));
         sb.append(", executingFsuActionId=").append(String.valueOf(this.executingFsuActionId));
         sb.append(", nextActionToExecute=").append(String.valueOf(this.nextActionToExecute));
+        sb.append(", lastCompletedActionId=").append(String.valueOf(this.lastCompletedActionId));
+        sb.append(", rollbackCycleState=").append(String.valueOf(this.rollbackCycleState));
         sb.append(", lastCompletedAction=").append(String.valueOf(this.lastCompletedAction));
         sb.append(", goalVersionDetails=").append(String.valueOf(this.goalVersionDetails));
         sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
@@ -829,6 +919,8 @@ public final class FsuCycleSummary
                 && java.util.Objects.equals(this.collectionType, other.collectionType)
                 && java.util.Objects.equals(this.executingFsuActionId, other.executingFsuActionId)
                 && java.util.Objects.equals(this.nextActionToExecute, other.nextActionToExecute)
+                && java.util.Objects.equals(this.lastCompletedActionId, other.lastCompletedActionId)
+                && java.util.Objects.equals(this.rollbackCycleState, other.rollbackCycleState)
                 && java.util.Objects.equals(this.lastCompletedAction, other.lastCompletedAction)
                 && java.util.Objects.equals(this.goalVersionDetails, other.goalVersionDetails)
                 && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
@@ -869,6 +961,16 @@ public final class FsuCycleSummary
                         + (this.nextActionToExecute == null
                                 ? 43
                                 : this.nextActionToExecute.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastCompletedActionId == null
+                                ? 43
+                                : this.lastCompletedActionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackCycleState == null
+                                ? 43
+                                : this.rollbackCycleState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lastCompletedAction == null

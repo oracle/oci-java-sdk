@@ -66,6 +66,24 @@ public interface DataFlow extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Deletes an application using an `applicationId` and terminates related runs. This operation
+     * will timeout in approximate 30 minutes if any related Runs are not terminated successfully.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CascadingDeleteApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CascadingDeleteApplication API.
+     */
+    CascadingDeleteApplicationResponse cascadingDeleteApplication(
+            CascadingDeleteApplicationRequest request);
+
+    /**
      * Moves an application into a different compartment. When provided, If-Match is checked against
      * ETag values of the resource. Associated resources, like runs, will not be automatically
      * moved.

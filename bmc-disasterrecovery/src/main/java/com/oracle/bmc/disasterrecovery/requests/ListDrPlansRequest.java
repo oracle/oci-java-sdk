@@ -187,6 +187,13 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /** A filter to return only DR plans that match the given lifecycle sub-state. */
+    private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState lifecycleSubState;
+
+    /** A filter to return only DR plans that match the given lifecycle sub-state. */
+    public com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -387,6 +394,22 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             return this;
         }
 
+        /** A filter to return only DR plans that match the given lifecycle sub-state. */
+        private com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState lifecycleSubState =
+                null;
+
+        /**
+         * A filter to return only DR plans that match the given lifecycle sub-state.
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder instance
+         */
+        public Builder lifecycleSubState(
+                com.oracle.bmc.disasterrecovery.model.DrPlanLifecycleSubState lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            return this;
+        }
+
         /**
          * Set the invocation callback for the request to be built.
          *
@@ -427,6 +450,7 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             opcRequestId(o.getOpcRequestId());
+            lifecycleSubState(o.getLifecycleSubState());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -471,9 +495,10 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.opcRequestId = opcRequestId;
+            request.lifecycleSubState = lifecycleSubState;
             return request;
             // new ListDrPlansRequest(drProtectionGroupId, lifecycleState, drPlanId, drPlanType,
-            // displayName, limit, page, sortOrder, sortBy, opcRequestId);
+            // displayName, limit, page, sortOrder, sortBy, opcRequestId, lifecycleSubState);
         }
     }
 
@@ -493,7 +518,8 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 .page(page)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .lifecycleSubState(lifecycleSubState);
     }
 
     /**
@@ -520,6 +546,7 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(")");
         return sb.toString();
     }
@@ -544,7 +571,8 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState);
     }
 
     @Override
@@ -567,6 +595,9 @@ public class ListDrPlansRequest extends com.oracle.bmc.requests.BmcRequest<java.
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
         return result;
     }
 }
