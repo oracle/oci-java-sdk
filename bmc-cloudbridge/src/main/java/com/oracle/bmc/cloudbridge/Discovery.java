@@ -197,6 +197,20 @@ public interface Discovery extends AutoCloseable {
     ListDiscoverySchedulesResponse listDiscoverySchedules(ListDiscoverySchedulesRequest request);
 
     /**
+     * Returns a list of supported cloud regions related to AssetSourceTypeParam.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListSupportedCloudRegionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCloudRegions API.
+     */
+    ListSupportedCloudRegionsResponse listSupportedCloudRegions(
+            ListSupportedCloudRegionsRequest request);
+
+    /**
      * Initiates the process of asset metadata synchronization with the related asset source.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

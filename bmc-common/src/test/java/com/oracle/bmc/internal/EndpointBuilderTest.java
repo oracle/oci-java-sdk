@@ -125,7 +125,7 @@ public class EndpointBuilderTest {
         Service testService =
                 Services.serviceBuilder()
                         .serviceEndpointPrefix("foobar")
-                        .serviceName("EndpointBuilderTest7")
+                        .serviceName("EndpointBuilderTest6")
                         .serviceEndpointTemplate(
                                 "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
                         .build();
@@ -142,7 +142,7 @@ public class EndpointBuilderTest {
         Service testService =
                 Services.serviceBuilder()
                         .serviceEndpointPrefix("foobar")
-                        .serviceName("EndpointBuilderTest6")
+                        .serviceName("EndpointBuilderTest7")
                         .serviceEndpointTemplate(
                                 "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
                         .addServiceEndpointTemplateForRealm(
@@ -152,5 +152,49 @@ public class EndpointBuilderTest {
         assertEquals(
                 "http://foobar.us-phoenix-1.oraclecloud.com",
                 EndpointBuilder.createEndpoint(testService, Region.US_PHOENIX_1));
+    }
+
+    @Test
+    public void testEndpointWithPopulatedServiceParamsWithNoRequiredParams() {
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest8")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc1",
+                                "http://testservice.{serviceParameter+Dot}us-phoenix-1.oraclecloud.com")
+                        .build();
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+
+        assertEquals(
+                "http://testservice.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        testService.getServiceEndpointTemplateForRealmMap().get("oc1"),
+                        requiredParametersMap));
+    }
+
+    @Test
+    public void testEndpointWithPopulatedServiceParamsWithRequiredParams() {
+        Service testService =
+                Services.serviceBuilder()
+                        .serviceEndpointPrefix("foobar")
+                        .serviceName("EndpointBuilderTest9")
+                        .serviceEndpointTemplate(
+                                "http://{serviceEndpointPrefix}.{region}.{secondLevelDomain}")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc1",
+                                "http://testservice.{serviceParameter1}{serviceParameter2+Dot}us-phoenix-1.{serviceParameter3}oraclecloud.com")
+                        .build();
+        Map<String, Object> requiredParametersMap = new HashMap<>();
+        requiredParametersMap.put("serviceParameter1", "sp1");
+        requiredParametersMap.put("serviceParameter2", "sp2");
+
+        assertEquals(
+                "http://testservice.sp1sp2.us-phoenix-1.oraclecloud.com",
+                EndpointBuilder.getEndpointWithPopulatedServiceParams(
+                        testService.getServiceEndpointTemplateForRealmMap().get("oc1"),
+                        requiredParametersMap));
     }
 }

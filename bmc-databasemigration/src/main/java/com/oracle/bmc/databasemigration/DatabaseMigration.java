@@ -169,6 +169,20 @@ public interface DatabaseMigration extends AutoCloseable {
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
     /**
+     * Creates a new version of the current parameter file contents to the specified value.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/CreateParameterFileVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateParameterFileVersion API.
+     */
+    CreateParameterFileVersionResponse createParameterFileVersion(
+            CreateParameterFileVersionRequest request);
+
+    /**
      * Deletes the Database Connection represented by the specified connection ID.
      *
      * @param request The request object containing the details to send
@@ -206,6 +220,20 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigration API.
      */
     DeleteMigrationResponse deleteMigration(DeleteMigrationRequest request);
+
+    /**
+     * Deletes the given parameter file version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/DeleteParameterFileVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteParameterFileVersion API.
+     */
+    DeleteParameterFileVersionResponse deleteParameterFileVersion(
+            DeleteParameterFileVersionRequest request);
 
     /**
      * Start Validate Migration job.
@@ -284,6 +312,20 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigration API.
      */
     GetMigrationResponse getMigration(GetMigrationRequest request);
+
+    /**
+     * Obtain the parameter file version contents for the specified parameter file name and the associated job. This operation will
+     * be allowed only if the job is certain acceptable lifecycle states.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/GetParameterFileVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetParameterFileVersion API.
+     */
+    GetParameterFileVersionResponse getParameterFileVersion(GetParameterFileVersionRequest request);
 
     /**
      * Gets the details of a work request.
@@ -379,6 +421,18 @@ public interface DatabaseMigration extends AutoCloseable {
     ListMigrationObjectsResponse listMigrationObjects(ListMigrationObjectsRequest request);
 
     /**
+     * List of parameters that can be used to customize migrations.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationParametersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationParameters API.
+     */
+    ListMigrationParametersResponse listMigrationParameters(ListMigrationParametersRequest request);
+
+    /**
      * List all Migrations.
      *
      * @param request The request object containing the details to send
@@ -390,6 +444,22 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListMigrationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrations API.
      */
     ListMigrationsResponse listMigrations(ListMigrationsRequest request);
+
+    /**
+     * Return a list of the parameter file metadata of the migration execution of the specified job.  This will
+     * only be acceptable if the job is in particular state. It will be accessible if the job is in
+     * the FAILED, PAUSED or SUSPENDED state.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListParameterFileVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParameterFileVersions API.
+     */
+    ListParameterFileVersionsResponse listParameterFileVersions(
+            ListParameterFileVersionsRequest request);
 
     /**
      * Gets the errors for a work request.
@@ -429,6 +499,20 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Make current the given parameter file version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/MakeCurrentParameterFileVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MakeCurrentParameterFileVersion API.
+     */
+    MakeCurrentParameterFileVersionResponse makeCurrentParameterFileVersion(
+            MakeCurrentParameterFileVersionRequest request);
 
     /**
      * Remove excluded/included objects.
@@ -481,6 +565,19 @@ public interface DatabaseMigration extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/StartMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartMigration API.
      */
     StartMigrationResponse startMigration(StartMigrationRequest request);
+
+    /**
+     * Place the currently executing migration Job in a Suspended State.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemigration/SuspendJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SuspendJob API.
+     */
+    SuspendJobResponse suspendJob(SuspendJobRequest request);
 
     /**
      * Update Database Connection resource details.

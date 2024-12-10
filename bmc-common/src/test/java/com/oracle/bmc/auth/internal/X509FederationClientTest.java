@@ -99,15 +99,14 @@ public class X509FederationClientTest {
                 .thenReturn(expectedWIb);
         final Response expectedResponse = mock(Response.class);
 
-        // Stub exceptions thrown by the client 3 consecutive times then a successful
+        // Stub exceptions thrown by the client 2 consecutive times then a successful
         when(
                         mockFederationClient.post(
                                 Mockito.<WrappedInvocationBuilder>any(),
                                 Mockito.<X509FederationClient.X509FederationRequest>any(),
                                 Mockito.<BmcRequest>any()))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 1", "RequestId"))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 2", "RequestId"))
-                .thenThrow(new BmcException(409, "ServiceCode", "Exception 3", "RequestId"))
+                .thenThrow(new BmcException(501, "ServiceCode", "Exception 1", "RequestId"))
+                .thenThrow(new BmcException(502, "ServiceCode", "Exception 2", "RequestId"))
                 .thenReturn(expectedResponse);
 
         // Method under test.
@@ -116,7 +115,7 @@ public class X509FederationClientTest {
                         ib, requestURI, mock(X509FederationClient.X509FederationRequest.class));
 
         assertEquals("Response should be equal", expectedResponse, actualResponse);
-        verify(mockFederationClient, times(4))
+        verify(mockFederationClient, times(3))
                 .post(
                         wrappedIbCaptor.capture(),
                         isA(X509FederationClient.X509FederationRequest.class),
@@ -127,11 +126,38 @@ public class X509FederationClientTest {
                 "Captured list of WrappedInvocationBuilder should not be empty",
                 wrappedIbsFromInvocation.isEmpty());
         assertEquals(
-                "Captured list of WrappedInvocationBuilder size should be 4",
-                4 /* expected number of captures */,
+                "Captured list of WrappedInvocationBuilder size should be 3",
+                3 /* expected number of captures */,
                 wrappedIbsFromInvocation.size());
         for (WrappedInvocationBuilder actualWib : wrappedIbsFromInvocation) {
             assertEquals("Captured WIB should be the same", expectedWIb, actualWib);
+        }
+    }
+
+    @Test()
+    public void makeCall_should_fail_when_4xx_BmcExceptionIsThrown() throws Exception {
+        // Set up WrappedInvocationBuilder used to verify
+        URI requestURI = PowerMockito.mock(URI.class);
+        final WrappedInvocationBuilder expectedWIb = mock(WrappedInvocationBuilder.class);
+        final Invocation.Builder ib = mock(Invocation.Builder.class);
+        whenNew(WrappedInvocationBuilder.class)
+                .withArguments(ib, requestURI)
+                .thenReturn(expectedWIb);
+
+        // Stub exceptions thrown by the client is 401
+        when(
+                        mockFederationClient.post(
+                                Mockito.<WrappedInvocationBuilder>any(),
+                                Mockito.<X509FederationClient.X509FederationRequest>any(),
+                                Mockito.<BmcRequest>any()))
+                .thenThrow(new BmcException(401, "ServiceCode", "Exception 1", "RequestId"));
+
+        // Method under test
+        try {
+            clientUnderTest.makeCall(
+                    ib, requestURI, mock(X509FederationClient.X509FederationRequest.class));
+        } catch (BmcException e) {
+            assertEquals(401, e.getStatusCode());
         }
     }
 

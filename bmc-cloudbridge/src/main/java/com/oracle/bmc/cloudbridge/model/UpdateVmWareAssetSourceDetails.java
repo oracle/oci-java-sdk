@@ -5,7 +5,7 @@
 package com.oracle.bmc.cloudbridge.model;
 
 /**
- * Asset source update details.
+ * VMware asset source update request.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -42,6 +42,15 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
         public Builder assetsCompartmentId(String assetsCompartmentId) {
             this.assetsCompartmentId = assetsCompartmentId;
             this.__explicitlySet__.add("assetsCompartmentId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
+        private String discoveryScheduleId;
+
+        public Builder discoveryScheduleId(String discoveryScheduleId) {
+            this.discoveryScheduleId = discoveryScheduleId;
+            this.__explicitlySet__.add("discoveryScheduleId");
             return this;
         }
 
@@ -138,22 +147,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             this.__explicitlySet__.add("areRealtimeMetricsCollected");
             return this;
         }
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be assigned to an asset source.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
-        private String discoveryScheduleId;
-
-        /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be assigned to an asset source.
-         * @param discoveryScheduleId the value to set
-         * @return this builder
-         **/
-        public Builder discoveryScheduleId(String discoveryScheduleId) {
-            this.discoveryScheduleId = discoveryScheduleId;
-            this.__explicitlySet__.add("discoveryScheduleId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -163,6 +156,7 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                     new UpdateVmWareAssetSourceDetails(
                             this.displayName,
                             this.assetsCompartmentId,
+                            this.discoveryScheduleId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -170,8 +164,7 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                             this.discoveryCredentials,
                             this.replicationCredentials,
                             this.areHistoricalMetricsCollected,
-                            this.areRealtimeMetricsCollected,
-                            this.discoveryScheduleId);
+                            this.areRealtimeMetricsCollected);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -185,6 +178,9 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             }
             if (model.wasPropertyExplicitlySet("assetsCompartmentId")) {
                 this.assetsCompartmentId(model.getAssetsCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("discoveryScheduleId")) {
+                this.discoveryScheduleId(model.getDiscoveryScheduleId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -210,9 +206,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             if (model.wasPropertyExplicitlySet("areRealtimeMetricsCollected")) {
                 this.areRealtimeMetricsCollected(model.getAreRealtimeMetricsCollected());
             }
-            if (model.wasPropertyExplicitlySet("discoveryScheduleId")) {
-                this.discoveryScheduleId(model.getDiscoveryScheduleId());
-            }
             return this;
         }
     }
@@ -232,6 +225,7 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
     public UpdateVmWareAssetSourceDetails(
             String displayName,
             String assetsCompartmentId,
+            String discoveryScheduleId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -239,15 +233,19 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
             AssetSourceCredentials discoveryCredentials,
             AssetSourceCredentials replicationCredentials,
             Boolean areHistoricalMetricsCollected,
-            Boolean areRealtimeMetricsCollected,
-            String discoveryScheduleId) {
-        super(displayName, assetsCompartmentId, freeformTags, definedTags, systemTags);
+            Boolean areRealtimeMetricsCollected) {
+        super(
+                displayName,
+                assetsCompartmentId,
+                discoveryScheduleId,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.vcenterEndpoint = vcenterEndpoint;
         this.discoveryCredentials = discoveryCredentials;
         this.replicationCredentials = replicationCredentials;
         this.areHistoricalMetricsCollected = areHistoricalMetricsCollected;
         this.areRealtimeMetricsCollected = areRealtimeMetricsCollected;
-        this.discoveryScheduleId = discoveryScheduleId;
     }
 
     /**
@@ -306,20 +304,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
         return areRealtimeMetricsCollected;
     }
 
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be assigned to an asset source.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("discoveryScheduleId")
-    private final String discoveryScheduleId;
-
-    /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the discovery schedule that is going to be assigned to an asset source.
-     * @return the value
-     **/
-    public String getDiscoveryScheduleId() {
-        return discoveryScheduleId;
-    }
-
     @Override
     public String toString() {
         return this.toString(true);
@@ -341,7 +325,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                 .append(String.valueOf(this.areHistoricalMetricsCollected));
         sb.append(", areRealtimeMetricsCollected=")
                 .append(String.valueOf(this.areRealtimeMetricsCollected));
-        sb.append(", discoveryScheduleId=").append(String.valueOf(this.discoveryScheduleId));
         sb.append(")");
         return sb.toString();
     }
@@ -364,7 +347,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                         this.areHistoricalMetricsCollected, other.areHistoricalMetricsCollected)
                 && java.util.Objects.equals(
                         this.areRealtimeMetricsCollected, other.areRealtimeMetricsCollected)
-                && java.util.Objects.equals(this.discoveryScheduleId, other.discoveryScheduleId)
                 && super.equals(other);
     }
 
@@ -395,11 +377,6 @@ public final class UpdateVmWareAssetSourceDetails extends UpdateAssetSourceDetai
                         + (this.areRealtimeMetricsCollected == null
                                 ? 43
                                 : this.areRealtimeMetricsCollected.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.discoveryScheduleId == null
-                                ? 43
-                                : this.discoveryScheduleId.hashCode());
         return result;
     }
 }

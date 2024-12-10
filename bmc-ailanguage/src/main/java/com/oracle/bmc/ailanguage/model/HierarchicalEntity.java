@@ -21,8 +21,17 @@ package com.oracle.bmc.ailanguage.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class HierarchicalEntity extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"offset", "length", "text", "type", "subType", "score"})
+    @java.beans.ConstructorProperties({
+        "metaInfo",
+        "offset",
+        "length",
+        "text",
+        "type",
+        "subType",
+        "score"
+    })
     public HierarchicalEntity(
+            MetaInfo metaInfo,
             Integer offset,
             Integer length,
             String text,
@@ -30,6 +39,7 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
             String subType,
             Double score) {
         super();
+        this.metaInfo = metaInfo;
         this.offset = offset;
         this.length = length;
         this.text = text;
@@ -40,6 +50,15 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+
+        @com.fasterxml.jackson.annotation.JsonProperty("metaInfo")
+        private MetaInfo metaInfo;
+
+        public Builder metaInfo(MetaInfo metaInfo) {
+            this.metaInfo = metaInfo;
+            this.__explicitlySet__.add("metaInfo");
+            return this;
+        }
         /**
          * The number of Unicode code points preceding this entity in the submitted text.
          **/
@@ -143,6 +162,7 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
         public HierarchicalEntity build() {
             HierarchicalEntity model =
                     new HierarchicalEntity(
+                            this.metaInfo,
                             this.offset,
                             this.length,
                             this.text,
@@ -157,6 +177,9 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(HierarchicalEntity model) {
+            if (model.wasPropertyExplicitlySet("metaInfo")) {
+                this.metaInfo(model.getMetaInfo());
+            }
             if (model.wasPropertyExplicitlySet("offset")) {
                 this.offset(model.getOffset());
             }
@@ -188,6 +211,13 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("metaInfo")
+    private final MetaInfo metaInfo;
+
+    public MetaInfo getMetaInfo() {
+        return metaInfo;
     }
 
     /**
@@ -288,7 +318,8 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("HierarchicalEntity(");
         sb.append("super=").append(super.toString());
-        sb.append("offset=").append(String.valueOf(this.offset));
+        sb.append("metaInfo=").append(String.valueOf(this.metaInfo));
+        sb.append(", offset=").append(String.valueOf(this.offset));
         sb.append(", length=").append(String.valueOf(this.length));
         sb.append(", text=").append(String.valueOf(this.text));
         sb.append(", type=").append(String.valueOf(this.type));
@@ -308,7 +339,8 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
         }
 
         HierarchicalEntity other = (HierarchicalEntity) o;
-        return java.util.Objects.equals(this.offset, other.offset)
+        return java.util.Objects.equals(this.metaInfo, other.metaInfo)
+                && java.util.Objects.equals(this.offset, other.offset)
                 && java.util.Objects.equals(this.length, other.length)
                 && java.util.Objects.equals(this.text, other.text)
                 && java.util.Objects.equals(this.type, other.type)
@@ -321,6 +353,7 @@ public final class HierarchicalEntity extends com.oracle.bmc.http.internal.Expli
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.metaInfo == null ? 43 : this.metaInfo.hashCode());
         result = (result * PRIME) + (this.offset == null ? 43 : this.offset.hashCode());
         result = (result * PRIME) + (this.length == null ? 43 : this.length.hashCode());
         result = (result * PRIME) + (this.text == null ? 43 : this.text.hashCode());

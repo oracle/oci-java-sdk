@@ -232,6 +232,19 @@ public class ListExadataConfigurationsRequest
         return freeformTagExists;
     }
     /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    private Boolean compartmentIdInSubtree;
+
+    /**
+     * A flag to search all resources within a given compartment and all sub-compartments.
+     *
+     */
+    public Boolean getCompartmentIdInSubtree() {
+        return compartmentIdInSubtree;
+    }
+    /**
      * Unique Oracle-assigned identifier for the request. If you need to contact
      * Oracle about a particular request, please provide the request ID.
      *
@@ -554,6 +567,23 @@ public class ListExadataConfigurationsRequest
         }
 
         /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         */
+        private Boolean compartmentIdInSubtree = null;
+
+        /**
+         * A flag to search all resources within a given compartment and all sub-compartments.
+         *
+         * @param compartmentIdInSubtree the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentIdInSubtree(Boolean compartmentIdInSubtree) {
+            this.compartmentIdInSubtree = compartmentIdInSubtree;
+            return this;
+        }
+
+        /**
          * Unique Oracle-assigned identifier for the request. If you need to contact
          * Oracle about a particular request, please provide the request ID.
          *
@@ -611,6 +641,7 @@ public class ListExadataConfigurationsRequest
             freeformTagEquals(o.getFreeformTagEquals());
             definedTagExists(o.getDefinedTagExists());
             freeformTagExists(o.getFreeformTagExists());
+            compartmentIdInSubtree(o.getCompartmentIdInSubtree());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -655,9 +686,10 @@ public class ListExadataConfigurationsRequest
             request.freeformTagEquals = freeformTagEquals;
             request.definedTagExists = definedTagExists;
             request.freeformTagExists = freeformTagExists;
+            request.compartmentIdInSubtree = compartmentIdInSubtree;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListExadataConfigurationsRequest(compartmentId, exadataInsightId, exadataType, limit, page, sortOrder, sortBy, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, opcRequestId);
+            // new ListExadataConfigurationsRequest(compartmentId, exadataInsightId, exadataType, limit, page, sortOrder, sortBy, definedTagEquals, freeformTagEquals, definedTagExists, freeformTagExists, compartmentIdInSubtree, opcRequestId);
         }
     }
 
@@ -678,6 +710,7 @@ public class ListExadataConfigurationsRequest
                 .freeformTagEquals(freeformTagEquals)
                 .definedTagExists(definedTagExists)
                 .freeformTagExists(freeformTagExists)
+                .compartmentIdInSubtree(compartmentIdInSubtree)
                 .opcRequestId(opcRequestId);
     }
 
@@ -705,6 +738,7 @@ public class ListExadataConfigurationsRequest
         sb.append(",freeformTagEquals=").append(String.valueOf(this.freeformTagEquals));
         sb.append(",definedTagExists=").append(String.valueOf(this.definedTagExists));
         sb.append(",freeformTagExists=").append(String.valueOf(this.freeformTagExists));
+        sb.append(",compartmentIdInSubtree=").append(String.valueOf(this.compartmentIdInSubtree));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -732,6 +766,8 @@ public class ListExadataConfigurationsRequest
                 && java.util.Objects.equals(this.freeformTagEquals, other.freeformTagEquals)
                 && java.util.Objects.equals(this.definedTagExists, other.definedTagExists)
                 && java.util.Objects.equals(this.freeformTagExists, other.freeformTagExists)
+                && java.util.Objects.equals(
+                        this.compartmentIdInSubtree, other.compartmentIdInSubtree)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -762,6 +798,11 @@ public class ListExadataConfigurationsRequest
         result =
                 (result * PRIME)
                         + (this.freeformTagExists == null ? 43 : this.freeformTagExists.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.compartmentIdInSubtree == null
+                                ? 43
+                                : this.compartmentIdInSubtree.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

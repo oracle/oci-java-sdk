@@ -25,6 +25,23 @@ package com.oracle.bmc.ailanguage.model;
 public final class PiiEntityMask extends PiiEntityMasking {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private java.util.List<String> exclude;
+
+        public Builder exclude(java.util.List<String> exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldDetect")
+        private Boolean shouldDetect;
+
+        public Builder shouldDetect(Boolean shouldDetect) {
+            this.shouldDetect = shouldDetect;
+            this.__explicitlySet__.add("shouldDetect");
+            return this;
+        }
         /**
          * Masking character. By default, the character is an asterisk (*)
          **/
@@ -86,6 +103,8 @@ public final class PiiEntityMask extends PiiEntityMasking {
         public PiiEntityMask build() {
             PiiEntityMask model =
                     new PiiEntityMask(
+                            this.exclude,
+                            this.shouldDetect,
                             this.maskingCharacter,
                             this.leaveCharactersUnmasked,
                             this.isUnmaskedFromEnd);
@@ -97,6 +116,12 @@ public final class PiiEntityMask extends PiiEntityMasking {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PiiEntityMask model) {
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
+            }
+            if (model.wasPropertyExplicitlySet("shouldDetect")) {
+                this.shouldDetect(model.getShouldDetect());
+            }
             if (model.wasPropertyExplicitlySet("maskingCharacter")) {
                 this.maskingCharacter(model.getMaskingCharacter());
             }
@@ -123,8 +148,12 @@ public final class PiiEntityMask extends PiiEntityMasking {
 
     @Deprecated
     public PiiEntityMask(
-            String maskingCharacter, Integer leaveCharactersUnmasked, Boolean isUnmaskedFromEnd) {
-        super();
+            java.util.List<String> exclude,
+            Boolean shouldDetect,
+            String maskingCharacter,
+            Integer leaveCharactersUnmasked,
+            Boolean isUnmaskedFromEnd) {
+        super(exclude, shouldDetect);
         this.maskingCharacter = maskingCharacter;
         this.leaveCharactersUnmasked = leaveCharactersUnmasked;
         this.isUnmaskedFromEnd = isUnmaskedFromEnd;

@@ -23,6 +23,10 @@ package com.oracle.bmc.core.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = LaunchAttachParavirtualizedVolumeDetails.class,
+        name = "paravirtualized"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = LaunchAttachIScsiVolumeDetails.class,
         name = "iscsi"
     )

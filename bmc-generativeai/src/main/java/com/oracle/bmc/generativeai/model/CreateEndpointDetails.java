@@ -103,13 +103,13 @@ public final class CreateEndpointDetails
             return this;
         }
         /**
-         * The ID of the model that's used to create this endpoint.
+         * The OCID of the model that's used to create this endpoint.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelId")
         private String modelId;
 
         /**
-         * The ID of the model that's used to create this endpoint.
+         * The OCID of the model that's used to create this endpoint.
          * @param modelId the value to set
          * @return this builder
          **/
@@ -297,13 +297,13 @@ public final class CreateEndpointDetails
     }
 
     /**
-     * The ID of the model that's used to create this endpoint.
+     * The OCID of the model that's used to create this endpoint.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelId")
     private final String modelId;
 
     /**
-     * The ID of the model that's used to create this endpoint.
+     * The OCID of the model that's used to create this endpoint.
      * @return the value
      **/
     public String getModelId() {

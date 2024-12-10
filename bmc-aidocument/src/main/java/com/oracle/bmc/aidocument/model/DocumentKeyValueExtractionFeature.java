@@ -43,29 +43,13 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
             this.__explicitlySet__.add("modelId");
             return this;
         }
-        /**
-         * The custom model tenancy ID when modelId represents aliasName.
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-        private String tenancyId;
-
-        /**
-         * The custom model tenancy ID when modelId represents aliasName.
-         * @param tenancyId the value to set
-         * @return this builder
-         **/
-        public Builder tenancyId(String tenancyId) {
-            this.tenancyId = tenancyId;
-            this.__explicitlySet__.add("tenancyId");
-            return this;
-        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DocumentKeyValueExtractionFeature build() {
             DocumentKeyValueExtractionFeature model =
-                    new DocumentKeyValueExtractionFeature(this.modelId, this.tenancyId);
+                    new DocumentKeyValueExtractionFeature(this.modelId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -76,9 +60,6 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         public Builder copy(DocumentKeyValueExtractionFeature model) {
             if (model.wasPropertyExplicitlySet("modelId")) {
                 this.modelId(model.getModelId());
-            }
-            if (model.wasPropertyExplicitlySet("tenancyId")) {
-                this.tenancyId(model.getTenancyId());
             }
             return this;
         }
@@ -96,10 +77,9 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
     }
 
     @Deprecated
-    public DocumentKeyValueExtractionFeature(String modelId, String tenancyId) {
+    public DocumentKeyValueExtractionFeature(String modelId) {
         super();
         this.modelId = modelId;
-        this.tenancyId = tenancyId;
     }
 
     /**
@@ -114,20 +94,6 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
      **/
     public String getModelId() {
         return modelId;
-    }
-
-    /**
-     * The custom model tenancy ID when modelId represents aliasName.
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("tenancyId")
-    private final String tenancyId;
-
-    /**
-     * The custom model tenancy ID when modelId represents aliasName.
-     * @return the value
-     **/
-    public String getTenancyId() {
-        return tenancyId;
     }
 
     @Override
@@ -145,7 +111,6 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         sb.append("DocumentKeyValueExtractionFeature(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", modelId=").append(String.valueOf(this.modelId));
-        sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(")");
         return sb.toString();
     }
@@ -160,9 +125,7 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         }
 
         DocumentKeyValueExtractionFeature other = (DocumentKeyValueExtractionFeature) o;
-        return java.util.Objects.equals(this.modelId, other.modelId)
-                && java.util.Objects.equals(this.tenancyId, other.tenancyId)
-                && super.equals(other);
+        return java.util.Objects.equals(this.modelId, other.modelId) && super.equals(other);
     }
 
     @Override
@@ -170,7 +133,6 @@ public final class DocumentKeyValueExtractionFeature extends DocumentFeature {
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.modelId == null ? 43 : this.modelId.hashCode());
-        result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         return result;
     }
 }

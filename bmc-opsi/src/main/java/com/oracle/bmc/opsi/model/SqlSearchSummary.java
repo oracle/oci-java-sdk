@@ -129,13 +129,13 @@ public final class SqlSearchSummary extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Operations Insights internal representation of the database type.
+         * Ops Insights internal representation of the database type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
         private String databaseType;
 
         /**
-         * Operations Insights internal representation of the database type.
+         * Ops Insights internal representation of the database type.
          * @param databaseType the value to set
          * @return this builder
          **/
@@ -289,13 +289,13 @@ public final class SqlSearchSummary extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
     private final String databaseType;
 
     /**
-     * Operations Insights internal representation of the database type.
+     * Ops Insights internal representation of the database type.
      * @return the value
      **/
     public String getDatabaseType() {

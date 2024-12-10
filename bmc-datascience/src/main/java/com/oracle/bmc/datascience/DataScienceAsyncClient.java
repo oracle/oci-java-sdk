@@ -4392,6 +4392,58 @@ public class DataScienceAsyncClient implements DataScienceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreArchivedModelArtifactResponse>
+            restoreArchivedModelArtifact(
+                    RestoreArchivedModelArtifactRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RestoreArchivedModelArtifactRequest,
+                                    RestoreArchivedModelArtifactResponse>
+                            handler) {
+        LOG.trace("Called async restoreArchivedModelArtifact");
+        final RestoreArchivedModelArtifactRequest interceptedRequest =
+                RestoreArchivedModelArtifactConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RestoreArchivedModelArtifactConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataScience",
+                        "RestoreArchivedModelArtifact",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Model/RestoreArchivedModelArtifact");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RestoreArchivedModelArtifactResponse>
+                transformer =
+                        RestoreArchivedModelArtifactConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RestoreArchivedModelArtifactRequest, RestoreArchivedModelArtifactResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RestoreArchivedModelArtifactRequest,
+                                RestoreArchivedModelArtifactResponse>,
+                        java.util.concurrent.Future<RestoreArchivedModelArtifactResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RestoreArchivedModelArtifactRequest, RestoreArchivedModelArtifactResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDataSciencePrivateEndpointResponse>
             updateDataSciencePrivateEndpoint(
                     UpdateDataSciencePrivateEndpointRequest request,

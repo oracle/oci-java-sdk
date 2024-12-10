@@ -144,6 +144,14 @@ public class ListZonesConverter {
                                     request.getTsigKeyId()));
         }
 
+        if (request.getDnssecState() != null) {
+            target =
+                    target.queryParam(
+                            "dnssecState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getDnssecState().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

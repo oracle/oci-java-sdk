@@ -49,6 +49,38 @@ public class ListJavaMigrationAnalysisResultsConverter {
                                     request.getManagedInstanceId()));
         }
 
+        if (request.getHostName() != null) {
+            target =
+                    target.queryParam(
+                            "hostName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getHostName()));
+        }
+
+        if (request.getApplicationName() != null) {
+            target =
+                    target.queryParam(
+                            "applicationName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getApplicationName()));
+        }
+
+        if (request.getTimeStart() != null) {
+            target =
+                    target.queryParam(
+                            "timeStart",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeStart()));
+        }
+
+        if (request.getTimeEnd() != null) {
+            target =
+                    target.queryParam(
+                            "timeEnd",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeEnd()));
+        }
+
         if (request.getLimit() != null) {
             target =
                     target.queryParam(
@@ -79,22 +111,6 @@ public class ListJavaMigrationAnalysisResultsConverter {
                             "sortBy",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getSortBy().getValue()));
-        }
-
-        if (request.getTimeStart() != null) {
-            target =
-                    target.queryParam(
-                            "timeStart",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getTimeStart()));
-        }
-
-        if (request.getTimeEnd() != null) {
-            target =
-                    target.queryParam(
-                            "timeEnd",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getTimeEnd()));
         }
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();

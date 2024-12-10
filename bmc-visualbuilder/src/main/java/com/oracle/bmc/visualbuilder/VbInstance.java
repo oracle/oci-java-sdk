@@ -175,6 +175,22 @@ public interface VbInstance extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Reconfigures the Private Endpoint associated with the private visual builder instance. Use this action in case the Private Endpoint is not working and needs to be reset.
+     * The VB instance has to be in ACTIVE state and should be a private instance to perform this operation.
+     * If the previous state is not ACTIVE, then the state of the vbInstance will not be changed and a 409 response returned.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/visualbuilder/ReconfigurePrivateEndpointVbInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReconfigurePrivateEndpointVbInstance API.
+     */
+    ReconfigurePrivateEndpointVbInstanceResponse reconfigurePrivateEndpointVbInstance(
+            ReconfigurePrivateEndpointVbInstanceRequest request);
+
+    /**
      * Summarizes the applications for a vb instance.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

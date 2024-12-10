@@ -25,12 +25,12 @@ public class UpdateExportSettingRequest
         return fleetId;
     }
     /**
-     * The new details for the Export setting.
+     * The new details for the export setting.
      */
     private com.oracle.bmc.jms.model.UpdateExportSettingDetails updateExportSettingDetails;
 
     /**
-     * The new details for the Export setting.
+     * The new details for the export setting.
      */
     public com.oracle.bmc.jms.model.UpdateExportSettingDetails getUpdateExportSettingDetails() {
         return updateExportSettingDetails;
@@ -102,13 +102,13 @@ public class UpdateExportSettingRequest
         }
 
         /**
-         * The new details for the Export setting.
+         * The new details for the export setting.
          */
         private com.oracle.bmc.jms.model.UpdateExportSettingDetails updateExportSettingDetails =
                 null;
 
         /**
-         * The new details for the Export setting.
+         * The new details for the export setting.
          * @param updateExportSettingDetails the value to set
          * @return this builder instance
          */

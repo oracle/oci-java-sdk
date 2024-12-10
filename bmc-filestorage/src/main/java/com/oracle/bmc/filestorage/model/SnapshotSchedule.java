@@ -154,7 +154,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         }
         /**
          * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-         * If not set, a value will be chosen at creation time.
+         * If not set, the system chooses a value at creation time.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
@@ -162,7 +162,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
 
         /**
          * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-         * If not set, a value will be chosen at creation time.
+         * If not set, the system chooses a value at creation time.
          *
          * @param hourOfDay the value to set
          * @return this builder
@@ -175,6 +175,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         /**
          * The day of the week to create a scheduled snapshot.
          * Used for WEEKLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
@@ -183,6 +184,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         /**
          * The day of the week to create a scheduled snapshot.
          * Used for WEEKLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          * @param dayOfWeek the value to set
          * @return this builder
@@ -196,6 +198,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
          * The day of the month to create a scheduled snapshot.
          * If the day does not exist for the month, snapshot creation will be skipped.
          * Used for MONTHLY and YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
@@ -205,6 +208,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
          * The day of the month to create a scheduled snapshot.
          * If the day does not exist for the month, snapshot creation will be skipped.
          * Used for MONTHLY and YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          * @param dayOfMonth the value to set
          * @return this builder
@@ -217,6 +221,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         /**
          * The month to create a scheduled snapshot.
          * Used only for YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("month")
@@ -225,6 +230,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
         /**
          * The month to create a scheduled snapshot.
          * Used only for YEARLY snapshot schedules.
+         * If not set, the system chooses a value at creation time.
          *
          * @param month the value to set
          * @return this builder
@@ -486,7 +492,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
 
     /**
      * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-     * If not set, a value will be chosen at creation time.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hourOfDay")
@@ -494,7 +500,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
 
     /**
      * The hour of the day to create a DAILY, WEEKLY, MONTHLY, or YEARLY snapshot.
-     * If not set, a value will be chosen at creation time.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
      **/
@@ -505,6 +511,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The day of the week to create a scheduled snapshot.
      * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     public enum DayOfWeek {
@@ -560,6 +567,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The day of the week to create a scheduled snapshot.
      * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfWeek")
@@ -568,6 +576,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The day of the week to create a scheduled snapshot.
      * Used for WEEKLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
      **/
@@ -579,6 +588,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
      * The day of the month to create a scheduled snapshot.
      * If the day does not exist for the month, snapshot creation will be skipped.
      * Used for MONTHLY and YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dayOfMonth")
@@ -588,6 +598,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
      * The day of the month to create a scheduled snapshot.
      * If the day does not exist for the month, snapshot creation will be skipped.
      * Used for MONTHLY and YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
      **/
@@ -598,6 +609,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The month to create a scheduled snapshot.
      * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     public enum Month {
@@ -657,6 +669,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The month to create a scheduled snapshot.
      * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("month")
@@ -665,6 +678,7 @@ public final class SnapshotSchedule extends com.oracle.bmc.http.internal.Explici
     /**
      * The month to create a scheduled snapshot.
      * Used only for YEARLY snapshot schedules.
+     * If not set, the system chooses a value at creation time.
      *
      * @return the value
      **/

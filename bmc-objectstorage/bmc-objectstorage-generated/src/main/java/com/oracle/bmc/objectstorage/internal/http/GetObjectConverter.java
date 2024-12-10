@@ -300,6 +300,65 @@ public class GetObjectConverter {
                                                     String.class));
                                 }
 
+                                java.util.Optional<java.util.List<String>> opcContentCrc32cHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-content-crc32c");
+                                if (opcContentCrc32cHeader.isPresent()) {
+                                    builder.opcContentCrc32c(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-content-crc32c",
+                                                    opcContentCrc32cHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcContentSha256Header =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-content-sha256");
+                                if (opcContentSha256Header.isPresent()) {
+                                    builder.opcContentSha256(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-content-sha256",
+                                                    opcContentSha256Header.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>>
+                                        opcMultipartSha256Header =
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-multipart-sha256");
+                                if (opcMultipartSha256Header.isPresent()) {
+                                    builder.opcMultipartSha256(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-multipart-sha256",
+                                                    opcMultipartSha256Header.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>> opcContentSha384Header =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-content-sha384");
+                                if (opcContentSha384Header.isPresent()) {
+                                    builder.opcContentSha384(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-content-sha384",
+                                                    opcContentSha384Header.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>>
+                                        opcMultipartSha384Header =
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-multipart-sha384");
+                                if (opcMultipartSha384Header.isPresent()) {
+                                    builder.opcMultipartSha384(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-multipart-sha384",
+                                                    opcMultipartSha384Header.get().get(0),
+                                                    String.class));
+                                }
+
                                 java.util.Optional<java.util.List<String>> contentTypeHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "content-type");

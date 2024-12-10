@@ -436,6 +436,47 @@ public interface NetworkFirewall extends AutoCloseable {
     BulkUploadServicesResponse bulkUploadServices(BulkUploadServicesRequest request);
 
     /**
+     * Creates a new Tunnel Inspection Rule at bulk for the Network Firewall Policy.
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/BulkUploadTunnelInspectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use BulkUploadTunnelInspectionRules API.
+     */
+    BulkUploadTunnelInspectionRulesResponse bulkUploadTunnelInspectionRules(
+            BulkUploadTunnelInspectionRulesRequest request);
+
+    /**
      * Creates a new Url Lists at bulk for the Network Firewall Policy.
      *
      *
@@ -671,6 +712,20 @@ public interface NetworkFirewall extends AutoCloseable {
     CreateServiceListResponse createServiceList(CreateServiceListRequest request);
 
     /**
+     * Creates a new tunnel inspection rule for the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/CreateTunnelInspectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTunnelInspectionRule API.
+     */
+    CreateTunnelInspectionRuleResponse createTunnelInspectionRule(
+            CreateTunnelInspectionRuleRequest request);
+
+    /**
      * Creates a new Url List for the Network Firewall Policy.
      *
      * @param request The request object containing the details to send
@@ -817,6 +872,19 @@ public interface NetworkFirewall extends AutoCloseable {
     DeleteServiceListResponse deleteServiceList(DeleteServiceListRequest request);
 
     /**
+     * Deletes a tunnel inspection rule resource with the given identifier.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/DeleteTunnelInspectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTunnelInspectionRule API.
+     */
+    DeleteTunnelInspectionRuleResponse deleteTunnelInspectionRule(
+            DeleteTunnelInspectionRuleRequest request);
+
+    /**
      * Deletes a Url List resource with the given identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -960,6 +1028,18 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetServiceListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceList API.
      */
     GetServiceListResponse getServiceList(GetServiceListRequest request);
+
+    /**
+     * Get tunnel inspection rule by the given name in the context of network firewall policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/GetTunnelInspectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTunnelInspectionRule API.
+     */
+    GetTunnelInspectionRuleResponse getTunnelInspectionRule(GetTunnelInspectionRuleRequest request);
 
     /**
      * Get Url List by the given name in the context of network firewall policy.
@@ -1128,6 +1208,20 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListServicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServices API.
      */
     ListServicesResponse listServices(ListServicesRequest request);
+
+    /**
+     * Returns a list of tunnel inspection rules for the network firewall policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/ListTunnelInspectionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTunnelInspectionRules API.
+     */
+    ListTunnelInspectionRulesResponse listTunnelInspectionRules(
+            ListTunnelInspectionRulesRequest request);
 
     /**
      * Returns a list of URL lists for the Network Firewall Policy.
@@ -1326,6 +1420,19 @@ public interface NetworkFirewall extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateServiceListExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateServiceList API.
      */
     UpdateServiceListResponse updateServiceList(UpdateServiceListRequest request);
+
+    /**
+     * Updates the tunnel inspection rule with the given name in the network firewall policy.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkfirewall/UpdateTunnelInspectionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTunnelInspectionRule API.
+     */
+    UpdateTunnelInspectionRuleResponse updateTunnelInspectionRule(
+            UpdateTunnelInspectionRuleRequest request);
 
     /**
      * Updates the Url list with the given name in the network firewall policy.

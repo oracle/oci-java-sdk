@@ -32,7 +32,8 @@ public final class CreateOggDeploymentDetails
         "adminPassword",
         "certificate",
         "key",
-        "oggVersion"
+        "oggVersion",
+        "groupToRolesMapping"
     })
     public CreateOggDeploymentDetails(
             String deploymentName,
@@ -43,7 +44,8 @@ public final class CreateOggDeploymentDetails
             String adminPassword,
             String certificate,
             String key,
-            String oggVersion) {
+            String oggVersion,
+            GroupToRolesMappingDetails groupToRolesMapping) {
         super();
         this.deploymentName = deploymentName;
         this.credentialStore = credentialStore;
@@ -54,6 +56,7 @@ public final class CreateOggDeploymentDetails
         this.certificate = certificate;
         this.key = key;
         this.oggVersion = oggVersion;
+        this.groupToRolesMapping = groupToRolesMapping;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -229,6 +232,15 @@ public final class CreateOggDeploymentDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+        private GroupToRolesMappingDetails groupToRolesMapping;
+
+        public Builder groupToRolesMapping(GroupToRolesMappingDetails groupToRolesMapping) {
+            this.groupToRolesMapping = groupToRolesMapping;
+            this.__explicitlySet__.add("groupToRolesMapping");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -243,7 +255,8 @@ public final class CreateOggDeploymentDetails
                             this.adminPassword,
                             this.certificate,
                             this.key,
-                            this.oggVersion);
+                            this.oggVersion,
+                            this.groupToRolesMapping);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -278,6 +291,9 @@ public final class CreateOggDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("oggVersion")) {
                 this.oggVersion(model.getOggVersion());
+            }
+            if (model.wasPropertyExplicitlySet("groupToRolesMapping")) {
+                this.groupToRolesMapping(model.getGroupToRolesMapping());
             }
             return this;
         }
@@ -446,6 +462,13 @@ public final class CreateOggDeploymentDetails
         return oggVersion;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("groupToRolesMapping")
+    private final GroupToRolesMappingDetails groupToRolesMapping;
+
+    public GroupToRolesMappingDetails getGroupToRolesMapping() {
+        return groupToRolesMapping;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -469,6 +492,7 @@ public final class CreateOggDeploymentDetails
         sb.append(", certificate=").append(String.valueOf(this.certificate));
         sb.append(", key=").append(String.valueOf(this.key));
         sb.append(", oggVersion=").append(String.valueOf(this.oggVersion));
+        sb.append(", groupToRolesMapping=").append(String.valueOf(this.groupToRolesMapping));
         sb.append(")");
         return sb.toString();
     }
@@ -492,6 +516,7 @@ public final class CreateOggDeploymentDetails
                 && java.util.Objects.equals(this.certificate, other.certificate)
                 && java.util.Objects.equals(this.key, other.key)
                 && java.util.Objects.equals(this.oggVersion, other.oggVersion)
+                && java.util.Objects.equals(this.groupToRolesMapping, other.groupToRolesMapping)
                 && super.equals(other);
     }
 
@@ -520,6 +545,11 @@ public final class CreateOggDeploymentDetails
         result = (result * PRIME) + (this.certificate == null ? 43 : this.certificate.hashCode());
         result = (result * PRIME) + (this.key == null ? 43 : this.key.hashCode());
         result = (result * PRIME) + (this.oggVersion == null ? 43 : this.oggVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.groupToRolesMapping == null
+                                ? 43
+                                : this.groupToRolesMapping.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

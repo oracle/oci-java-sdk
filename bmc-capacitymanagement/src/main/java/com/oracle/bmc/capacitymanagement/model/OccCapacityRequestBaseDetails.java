@@ -30,6 +30,8 @@ public final class OccCapacityRequestBaseDetails
         "dateExpectedHandover",
         "actualHandoverQuantity",
         "dateActualHandover",
+        "availabilityDomain",
+        "associatedOccHandoverResourceBlockList",
         "resourceName",
         "demandQuantity"
     })
@@ -41,6 +43,9 @@ public final class OccCapacityRequestBaseDetails
             java.util.Date dateExpectedHandover,
             Long actualHandoverQuantity,
             java.util.Date dateActualHandover,
+            String availabilityDomain,
+            java.util.List<AssociatedOccHandoverResourceBlock>
+                    associatedOccHandoverResourceBlockList,
             String resourceName,
             Long demandQuantity) {
         super();
@@ -51,6 +56,8 @@ public final class OccCapacityRequestBaseDetails
         this.dateExpectedHandover = dateExpectedHandover;
         this.actualHandoverQuantity = actualHandoverQuantity;
         this.dateActualHandover = dateActualHandover;
+        this.availabilityDomain = availabilityDomain;
+        this.associatedOccHandoverResourceBlockList = associatedOccHandoverResourceBlockList;
         this.resourceName = resourceName;
         this.demandQuantity = demandQuantity;
     }
@@ -170,6 +177,43 @@ public final class OccCapacityRequestBaseDetails
             return this;
         }
         /**
+         * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedOccHandoverResourceBlockList")
+        private java.util.List<AssociatedOccHandoverResourceBlock>
+                associatedOccHandoverResourceBlockList;
+
+        /**
+         * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+         *
+         * @param associatedOccHandoverResourceBlockList the value to set
+         * @return this builder
+         **/
+        public Builder associatedOccHandoverResourceBlockList(
+                java.util.List<AssociatedOccHandoverResourceBlock>
+                        associatedOccHandoverResourceBlockList) {
+            this.associatedOccHandoverResourceBlockList = associatedOccHandoverResourceBlockList;
+            this.__explicitlySet__.add("associatedOccHandoverResourceBlockList");
+            return this;
+        }
+        /**
          * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
@@ -215,6 +259,8 @@ public final class OccCapacityRequestBaseDetails
                             this.dateExpectedHandover,
                             this.actualHandoverQuantity,
                             this.dateActualHandover,
+                            this.availabilityDomain,
+                            this.associatedOccHandoverResourceBlockList,
                             this.resourceName,
                             this.demandQuantity);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -245,6 +291,13 @@ public final class OccCapacityRequestBaseDetails
             }
             if (model.wasPropertyExplicitlySet("dateActualHandover")) {
                 this.dateActualHandover(model.getDateActualHandover());
+            }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("associatedOccHandoverResourceBlockList")) {
+                this.associatedOccHandoverResourceBlockList(
+                        model.getAssociatedOccHandoverResourceBlockList());
             }
             if (model.wasPropertyExplicitlySet("resourceName")) {
                 this.resourceName(model.getResourceName());
@@ -366,6 +419,38 @@ public final class OccCapacityRequestBaseDetails
     }
 
     /**
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain of the resource which is to be transferred. Note that this is only required for Capacity Request Transfer requests.
+     * @return the value
+     **/
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
+     * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedOccHandoverResourceBlockList")
+    private final java.util.List<AssociatedOccHandoverResourceBlock>
+            associatedOccHandoverResourceBlockList;
+
+    /**
+     * A list containing details about occHandoverResourceBlocks which were handed over for the corresponding resource name.
+     *
+     * @return the value
+     **/
+    public java.util.List<AssociatedOccHandoverResourceBlock>
+            getAssociatedOccHandoverResourceBlockList() {
+        return associatedOccHandoverResourceBlockList;
+    }
+
+    /**
      * The name of the COMPUTE server shape for which the request is made. Do not use CAPACITY_CONSTRAINT as the resource name.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourceName")
@@ -415,6 +500,9 @@ public final class OccCapacityRequestBaseDetails
         sb.append(", dateExpectedHandover=").append(String.valueOf(this.dateExpectedHandover));
         sb.append(", actualHandoverQuantity=").append(String.valueOf(this.actualHandoverQuantity));
         sb.append(", dateActualHandover=").append(String.valueOf(this.dateActualHandover));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", associatedOccHandoverResourceBlockList=")
+                .append(String.valueOf(this.associatedOccHandoverResourceBlockList));
         sb.append(", resourceName=").append(String.valueOf(this.resourceName));
         sb.append(", demandQuantity=").append(String.valueOf(this.demandQuantity));
         sb.append(")");
@@ -440,6 +528,10 @@ public final class OccCapacityRequestBaseDetails
                 && java.util.Objects.equals(
                         this.actualHandoverQuantity, other.actualHandoverQuantity)
                 && java.util.Objects.equals(this.dateActualHandover, other.dateActualHandover)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(
+                        this.associatedOccHandoverResourceBlockList,
+                        other.associatedOccHandoverResourceBlockList)
                 && java.util.Objects.equals(this.resourceName, other.resourceName)
                 && java.util.Objects.equals(this.demandQuantity, other.demandQuantity)
                 && super.equals(other);
@@ -476,6 +568,16 @@ public final class OccCapacityRequestBaseDetails
                         + (this.dateActualHandover == null
                                 ? 43
                                 : this.dateActualHandover.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedOccHandoverResourceBlockList == null
+                                ? 43
+                                : this.associatedOccHandoverResourceBlockList.hashCode());
         result = (result * PRIME) + (this.resourceName == null ? 43 : this.resourceName.hashCode());
         result =
                 (result * PRIME)

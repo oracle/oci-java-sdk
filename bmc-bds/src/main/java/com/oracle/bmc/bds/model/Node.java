@@ -42,6 +42,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "timeMaintenanceRebootDue",
         "osVersion",
         "isRebootRequired",
+        "odhVersion",
         "timeReplaced",
         "nodeBackupId"
     })
@@ -68,6 +69,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             java.util.Date timeMaintenanceRebootDue,
             String osVersion,
             Boolean isRebootRequired,
+            String odhVersion,
             java.util.Date timeReplaced,
             String nodeBackupId) {
         super();
@@ -93,6 +95,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.osVersion = osVersion;
         this.isRebootRequired = isRebootRequired;
+        this.odhVersion = odhVersion;
         this.timeReplaced = timeReplaced;
         this.nodeBackupId = nodeBackupId;
     }
@@ -453,6 +456,22 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
+        private String odhVersion;
+
+        /**
+         * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+         * @param odhVersion the value to set
+         * @return this builder
+         **/
+        public Builder odhVersion(String odhVersion) {
+            this.odhVersion = odhVersion;
+            this.__explicitlySet__.add("odhVersion");
+            return this;
+        }
+        /**
          * The date and time the instance was replaced by a new vm with a node backup.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
@@ -513,6 +532,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.timeMaintenanceRebootDue,
                             this.osVersion,
                             this.isRebootRequired,
+                            this.odhVersion,
                             this.timeReplaced,
                             this.nodeBackupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -588,6 +608,9 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("isRebootRequired")) {
                 this.isRebootRequired(model.getIsRebootRequired());
+            }
+            if (model.wasPropertyExplicitlySet("odhVersion")) {
+                this.odhVersion(model.getOdhVersion());
             }
             if (model.wasPropertyExplicitlySet("timeReplaced")) {
                 this.timeReplaced(model.getTimeReplaced());
@@ -1029,6 +1052,20 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("odhVersion")
+    private final String odhVersion;
+
+    /**
+     * Version of the ODH (Oracle Distribution including Apache Hadoop) for the node.
+     * @return the value
+     **/
+    public String getOdhVersion() {
+        return odhVersion;
+    }
+
+    /**
      * The date and time the instance was replaced by a new vm with a node backup.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeReplaced")
@@ -1094,6 +1131,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 .append(String.valueOf(this.timeMaintenanceRebootDue));
         sb.append(", osVersion=").append(String.valueOf(this.osVersion));
         sb.append(", isRebootRequired=").append(String.valueOf(this.isRebootRequired));
+        sb.append(", odhVersion=").append(String.valueOf(this.odhVersion));
         sb.append(", timeReplaced=").append(String.valueOf(this.timeReplaced));
         sb.append(", nodeBackupId=").append(String.valueOf(this.nodeBackupId));
         sb.append(")");
@@ -1134,6 +1172,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                         this.timeMaintenanceRebootDue, other.timeMaintenanceRebootDue)
                 && java.util.Objects.equals(this.osVersion, other.osVersion)
                 && java.util.Objects.equals(this.isRebootRequired, other.isRebootRequired)
+                && java.util.Objects.equals(this.odhVersion, other.odhVersion)
                 && java.util.Objects.equals(this.timeReplaced, other.timeReplaced)
                 && java.util.Objects.equals(this.nodeBackupId, other.nodeBackupId)
                 && super.equals(other);
@@ -1187,6 +1226,7 @@ public final class Node extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result =
                 (result * PRIME)
                         + (this.isRebootRequired == null ? 43 : this.isRebootRequired.hashCode());
+        result = (result * PRIME) + (this.odhVersion == null ? 43 : this.odhVersion.hashCode());
         result = (result * PRIME) + (this.timeReplaced == null ? 43 : this.timeReplaced.hashCode());
         result = (result * PRIME) + (this.nodeBackupId == null ? 43 : this.nodeBackupId.hashCode());
         result = (result * PRIME) + super.hashCode();

@@ -19,6 +19,7 @@ import com.oracle.bmc.Service;
 import com.oracle.bmc.http.internal.RestClient;
 import com.oracle.bmc.http.internal.WrappedWebTarget;
 import com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils;
+import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.util.internal.StringUtils;
 import javax.annotation.Nonnull;
 
@@ -241,12 +242,19 @@ public class EndpointBuilder {
         if (!endpointTemplate.contains("{")) {
             return client.getBaseTarget();
         }
+        String endpoint =
+                getEndpointWithPopulatedServiceParams(endpointTemplate, requiredParametersMap);
+        return new WrappedWebTarget(client.getClient().target(endpoint));
+    }
 
+    @VisibleForTesting
+    protected static String getEndpointWithPopulatedServiceParams(
+            String endpointTemplate, Map<String, Object> requiredParametersMap) {
         List<String> parameters = parseEndpointForParams(endpointTemplate);
-        String updatedEndpoint = null;
+        String updatedEndpoint = endpointTemplate;
         if (parameters != null && parameters.size() > 0 && requiredParametersMap.isEmpty()) {
             updatedEndpoint = endpointTemplate.replaceAll("\\{.*?\\}", "");
-            return new WrappedWebTarget(client.getClient().target(updatedEndpoint));
+            return updatedEndpoint;
         }
 
         for (String parameter : parameters) {
@@ -267,24 +275,23 @@ public class EndpointBuilder {
                     LOG.debug(
                             "The parameter for {} cannot be populated since the value is not of type String",
                             paramName);
-                    updatedEndpoint = endpointTemplate.replace(parameter, "");
-                    client.getClient().target(updatedEndpoint);
+                    updatedEndpoint = updatedEndpoint.replace(parameter, "");
                     continue;
                 }
                 if (appendDot) {
                     updatedEndpoint =
-                            endpointTemplate.replace(
+                            updatedEndpoint.replace(
                                     parameter, requiredParametersMap.get(paramName) + ".");
                 } else {
                     updatedEndpoint =
-                            endpointTemplate.replace(
+                            updatedEndpoint.replace(
                                     parameter, requiredParametersMap.get(paramName).toString());
                 }
             } else {
-                updatedEndpoint = endpointTemplate.replace(parameter, "");
+                updatedEndpoint = updatedEndpoint.replace(parameter, "");
             }
         }
-        return new WrappedWebTarget(client.getClient().target(updatedEndpoint));
+        return updatedEndpoint;
     }
 
     private static List<String> parseEndpointForParams(String endpointTemplate) {

@@ -2204,6 +2204,44 @@ public class GoldenGateClient implements GoldenGate {
     }
 
     @Override
+    public ListDeploymentEnvironmentsResponse listDeploymentEnvironments(
+            ListDeploymentEnvironmentsRequest request) {
+        LOG.trace("Called listDeploymentEnvironments");
+        final ListDeploymentEnvironmentsRequest interceptedRequest =
+                ListDeploymentEnvironmentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentEnvironmentsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentEnvironmentCollection/ListDeploymentEnvironments");
+        java.util.function.Function<javax.ws.rs.core.Response, ListDeploymentEnvironmentsResponse>
+                transformer =
+                        ListDeploymentEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListDeploymentTypesResponse listDeploymentTypes(ListDeploymentTypesRequest request) {
         LOG.trace("Called listDeploymentTypes");
         final ListDeploymentTypesRequest interceptedRequest =
@@ -2606,6 +2644,47 @@ public class GoldenGateClient implements GoldenGate {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RefreshConnectionResponse refreshConnection(RefreshConnectionRequest request) {
+        LOG.trace("Called refreshConnection");
+        final RefreshConnectionRequest interceptedRequest =
+                RefreshConnectionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshConnectionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RefreshConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RefreshConnection");
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshConnectionResponse>
+                transformer =
+                        RefreshConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRefreshConnectionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

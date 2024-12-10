@@ -1592,6 +1592,56 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RefreshDrPlanResponse> refreshDrPlan(
+            RefreshDrPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RefreshDrPlanRequest, RefreshDrPlanResponse>
+                    handler) {
+        LOG.trace("Called async refreshDrPlan");
+        final RefreshDrPlanRequest interceptedRequest =
+                RefreshDrPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDrPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "RefreshDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/RefreshDrPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, RefreshDrPlanResponse>
+                transformer =
+                        RefreshDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RefreshDrPlanRequest, RefreshDrPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshDrPlanRequest, RefreshDrPlanResponse>,
+                        java.util.concurrent.Future<RefreshDrPlanResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRefreshDrPlanDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshDrPlanRequest, RefreshDrPlanResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ResumeDrPlanExecutionResponse> resumeDrPlanExecution(
             ResumeDrPlanExecutionRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1896,6 +1946,56 @@ public class DisasterRecoveryAsyncClient implements DisasterRecoveryAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateDrProtectionGroupRoleRequest, UpdateDrProtectionGroupRoleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<VerifyDrPlanResponse> verifyDrPlan(
+            VerifyDrPlanRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<VerifyDrPlanRequest, VerifyDrPlanResponse>
+                    handler) {
+        LOG.trace("Called async verifyDrPlan");
+        final VerifyDrPlanRequest interceptedRequest =
+                VerifyDrPlanConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyDrPlanConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "VerifyDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/VerifyDrPlan");
+        final java.util.function.Function<javax.ws.rs.core.Response, VerifyDrPlanResponse>
+                transformer =
+                        VerifyDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<VerifyDrPlanRequest, VerifyDrPlanResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                VerifyDrPlanRequest, VerifyDrPlanResponse>,
+                        java.util.concurrent.Future<VerifyDrPlanResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getVerifyDrPlanDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    VerifyDrPlanRequest, VerifyDrPlanResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

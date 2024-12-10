@@ -7,6 +7,8 @@ package com.oracle.bmc;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import static org.junit.Assert.assertEquals;
+
 public class ServicesTest {
 
     @BeforeClass
@@ -46,5 +48,51 @@ public class ServicesTest {
     @Test(expected = IllegalArgumentException.class)
     public void addService_blankServiceName() {
         Services.serviceBuilder().serviceName("").build();
+    }
+
+    @Test
+    public void testAddServiceEndpointTemplateForRealm() {
+        Service testService1 =
+                Services.serviceBuilder()
+                        .serviceName("SERVICE")
+                        .serviceEndpointPrefix("service")
+                        .serviceEndpointTemplate("{region}.service.oci.oraclecloud.com")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc1", "{region}.service.oci.oracle-cloud.com")
+                        .build();
+
+        assertEquals(
+                "{region}.service.oci.oracle-cloud.com",
+                testService1.getServiceEndpointTemplateForRealmMap().get("oc1"));
+        assertEquals(null, testService1.getServiceEndpointTemplateForRealmMap().get("oc3"));
+
+        Service testService2 =
+                Services.serviceBuilder()
+                        .serviceName("TEST")
+                        .serviceEndpointPrefix("test")
+                        .serviceEndpointTemplate("{region}.test.oci.oraclecloud.com")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc3", "{region}.test.oci.oracle-cloud.com")
+                        .addServiceEndpointTemplateForRealm(
+                                "oc6", "{region}.test.oci.oracle-cloud.com")
+                        .build();
+
+        assertEquals(null, testService2.getServiceEndpointTemplateForRealmMap().get("oc1"));
+        assertEquals(
+                "{region}.test.oci.oracle-cloud.com",
+                testService2.getServiceEndpointTemplateForRealmMap().get("oc3"));
+        assertEquals(
+                "{region}.test.oci.oracle-cloud.com",
+                testService2.getServiceEndpointTemplateForRealmMap().get("oc6"));
+
+        Service testService3 =
+                Services.serviceBuilder()
+                        .serviceName("SERVICETEST")
+                        .serviceEndpointPrefix("test")
+                        .serviceEndpointTemplate("{region}.servicetest.oci.oraclecloud.com")
+                        .build();
+        assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc1"));
+        assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc3"));
+        assertEquals(null, testService3.getServiceEndpointTemplateForRealmMap().get("oc6"));
     }
 }

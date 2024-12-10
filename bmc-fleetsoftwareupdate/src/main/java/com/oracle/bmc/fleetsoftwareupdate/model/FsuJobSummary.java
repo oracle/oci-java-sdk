@@ -36,6 +36,10 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
         name = "APPLY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = RollbackCycleFsuJobSummary.class,
+        name = "ROLLBACK_MAINTENANCE_CYCLE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CleanupFsuJobSummary.class,
         name = "CLEANUP"
     ),

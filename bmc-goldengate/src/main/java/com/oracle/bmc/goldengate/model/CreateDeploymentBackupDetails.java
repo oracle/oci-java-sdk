@@ -32,6 +32,7 @@ public final class CreateDeploymentBackupDetails
         "objectName",
         "freeformTags",
         "definedTags",
+        "isMetadataOnly",
         "locks"
     })
     public CreateDeploymentBackupDetails(
@@ -43,6 +44,7 @@ public final class CreateDeploymentBackupDetails
             String objectName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            Boolean isMetadataOnly,
             java.util.List<AddResourceLockDetails> locks) {
         super();
         this.displayName = displayName;
@@ -53,6 +55,7 @@ public final class CreateDeploymentBackupDetails
         this.objectName = objectName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.isMetadataOnly = isMetadataOnly;
         this.locks = locks;
     }
 
@@ -208,6 +211,22 @@ public final class CreateDeploymentBackupDetails
             return this;
         }
         /**
+         * Parameter to allow users to create backup without trails
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+        private Boolean isMetadataOnly;
+
+        /**
+         * Parameter to allow users to create backup without trails
+         * @param isMetadataOnly the value to set
+         * @return this builder
+         **/
+        public Builder isMetadataOnly(Boolean isMetadataOnly) {
+            this.isMetadataOnly = isMetadataOnly;
+            this.__explicitlySet__.add("isMetadataOnly");
+            return this;
+        }
+        /**
          * Locks associated with this resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -238,6 +257,7 @@ public final class CreateDeploymentBackupDetails
                             this.objectName,
                             this.freeformTags,
                             this.definedTags,
+                            this.isMetadataOnly,
                             this.locks);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -270,6 +290,9 @@ public final class CreateDeploymentBackupDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("isMetadataOnly")) {
+                this.isMetadataOnly(model.getIsMetadataOnly());
             }
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
@@ -422,6 +445,20 @@ public final class CreateDeploymentBackupDetails
     }
 
     /**
+     * Parameter to allow users to create backup without trails
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMetadataOnly")
+    private final Boolean isMetadataOnly;
+
+    /**
+     * Parameter to allow users to create backup without trails
+     * @return the value
+     **/
+    public Boolean getIsMetadataOnly() {
+        return isMetadataOnly;
+    }
+
+    /**
      * Locks associated with this resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("locks")
@@ -457,6 +494,7 @@ public final class CreateDeploymentBackupDetails
         sb.append(", objectName=").append(String.valueOf(this.objectName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", isMetadataOnly=").append(String.valueOf(this.isMetadataOnly));
         sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
@@ -480,6 +518,7 @@ public final class CreateDeploymentBackupDetails
                 && java.util.Objects.equals(this.objectName, other.objectName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.isMetadataOnly, other.isMetadataOnly)
                 && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
@@ -500,6 +539,9 @@ public final class CreateDeploymentBackupDetails
         result = (result * PRIME) + (this.objectName == null ? 43 : this.objectName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMetadataOnly == null ? 43 : this.isMetadataOnly.hashCode());
         result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

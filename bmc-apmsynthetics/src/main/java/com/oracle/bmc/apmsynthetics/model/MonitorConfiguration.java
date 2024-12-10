@@ -23,12 +23,20 @@ package com.oracle.bmc.apmsynthetics.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = FtpMonitorConfiguration.class,
+        name = "FTP_CONFIG"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DnsSecMonitorConfiguration.class,
         name = "DNSSEC_CONFIG"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DnsTraceMonitorConfiguration.class,
         name = "DNS_TRACE_CONFIG"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = SqlMonitorConfiguration.class,
+        name = "SQL_CONFIG"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ScriptedRestMonitorConfiguration.class,
@@ -147,6 +155,8 @@ public class MonitorConfiguration extends com.oracle.bmc.http.internal.Explicitl
         DnsServerConfig("DNS_SERVER_CONFIG"),
         DnsTraceConfig("DNS_TRACE_CONFIG"),
         DnssecConfig("DNSSEC_CONFIG"),
+        FtpConfig("FTP_CONFIG"),
+        SqlConfig("SQL_CONFIG"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

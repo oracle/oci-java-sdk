@@ -31,7 +31,9 @@ public final class LimitDefinitionSummary
         "isResourceAvailabilitySupported",
         "isDeprecated",
         "isEligibleForLimitIncrease",
-        "isDynamic"
+        "isDynamic",
+        "supportedSubscriptions",
+        "supportedQuotaFamilies"
     })
     public LimitDefinitionSummary(
             String name,
@@ -42,7 +44,9 @@ public final class LimitDefinitionSummary
             Boolean isResourceAvailabilitySupported,
             Boolean isDeprecated,
             Boolean isEligibleForLimitIncrease,
-            Boolean isDynamic) {
+            Boolean isDynamic,
+            java.util.List<String> supportedSubscriptions,
+            java.util.List<String> supportedQuotaFamilies) {
         super();
         this.name = name;
         this.serviceName = serviceName;
@@ -53,6 +57,8 @@ public final class LimitDefinitionSummary
         this.isDeprecated = isDeprecated;
         this.isEligibleForLimitIncrease = isEligibleForLimitIncrease;
         this.isDynamic = isDynamic;
+        this.supportedSubscriptions = supportedSubscriptions;
+        this.supportedQuotaFamilies = supportedQuotaFamilies;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -217,6 +223,42 @@ public final class LimitDefinitionSummary
             this.__explicitlySet__.add("isDynamic");
             return this;
         }
+        /**
+         * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+        private java.util.List<String> supportedSubscriptions;
+
+        /**
+         * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+         *
+         * @param supportedSubscriptions the value to set
+         * @return this builder
+         **/
+        public Builder supportedSubscriptions(java.util.List<String> supportedSubscriptions) {
+            this.supportedSubscriptions = supportedSubscriptions;
+            this.__explicitlySet__.add("supportedSubscriptions");
+            return this;
+        }
+        /**
+         * Supported quota family names for creation of quota policy.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedQuotaFamilies")
+        private java.util.List<String> supportedQuotaFamilies;
+
+        /**
+         * Supported quota family names for creation of quota policy.
+         *
+         * @param supportedQuotaFamilies the value to set
+         * @return this builder
+         **/
+        public Builder supportedQuotaFamilies(java.util.List<String> supportedQuotaFamilies) {
+            this.supportedQuotaFamilies = supportedQuotaFamilies;
+            this.__explicitlySet__.add("supportedQuotaFamilies");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -232,7 +274,9 @@ public final class LimitDefinitionSummary
                             this.isResourceAvailabilitySupported,
                             this.isDeprecated,
                             this.isEligibleForLimitIncrease,
-                            this.isDynamic);
+                            this.isDynamic,
+                            this.supportedSubscriptions,
+                            this.supportedQuotaFamilies);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -267,6 +311,12 @@ public final class LimitDefinitionSummary
             }
             if (model.wasPropertyExplicitlySet("isDynamic")) {
                 this.isDynamic(model.getIsDynamic());
+            }
+            if (model.wasPropertyExplicitlySet("supportedSubscriptions")) {
+                this.supportedSubscriptions(model.getSupportedSubscriptions());
+            }
+            if (model.wasPropertyExplicitlySet("supportedQuotaFamilies")) {
+                this.supportedQuotaFamilies(model.getSupportedQuotaFamilies());
             }
             return this;
         }
@@ -475,6 +525,38 @@ public final class LimitDefinitionSummary
         return isDynamic;
     }
 
+    /**
+     * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+    private final java.util.List<String> supportedSubscriptions;
+
+    /**
+     * An array of subscription types supported by the limit. e,g The type of subscription, such as 'SAAS', 'ERP', 'CRM'.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getSupportedSubscriptions() {
+        return supportedSubscriptions;
+    }
+
+    /**
+     * Supported quota family names for creation of quota policy.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedQuotaFamilies")
+    private final java.util.List<String> supportedQuotaFamilies;
+
+    /**
+     * Supported quota family names for creation of quota policy.
+     *
+     * @return the value
+     **/
+    public java.util.List<String> getSupportedQuotaFamilies() {
+        return supportedQuotaFamilies;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -500,6 +582,8 @@ public final class LimitDefinitionSummary
         sb.append(", isEligibleForLimitIncrease=")
                 .append(String.valueOf(this.isEligibleForLimitIncrease));
         sb.append(", isDynamic=").append(String.valueOf(this.isDynamic));
+        sb.append(", supportedSubscriptions=").append(String.valueOf(this.supportedSubscriptions));
+        sb.append(", supportedQuotaFamilies=").append(String.valueOf(this.supportedQuotaFamilies));
         sb.append(")");
         return sb.toString();
     }
@@ -525,6 +609,10 @@ public final class LimitDefinitionSummary
                 && java.util.Objects.equals(
                         this.isEligibleForLimitIncrease, other.isEligibleForLimitIncrease)
                 && java.util.Objects.equals(this.isDynamic, other.isDynamic)
+                && java.util.Objects.equals(
+                        this.supportedSubscriptions, other.supportedSubscriptions)
+                && java.util.Objects.equals(
+                        this.supportedQuotaFamilies, other.supportedQuotaFamilies)
                 && super.equals(other);
     }
 
@@ -553,6 +641,16 @@ public final class LimitDefinitionSummary
                                 ? 43
                                 : this.isEligibleForLimitIncrease.hashCode());
         result = (result * PRIME) + (this.isDynamic == null ? 43 : this.isDynamic.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedSubscriptions == null
+                                ? 43
+                                : this.supportedSubscriptions.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedQuotaFamilies == null
+                                ? 43
+                                : this.supportedQuotaFamilies.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

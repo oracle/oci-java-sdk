@@ -5,7 +5,7 @@
 package com.oracle.bmc.keymanagement.model;
 
 /**
- * The details of the HSM resource that you want to create.
+ * The details of the HSM cluster resource that you want to create.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -43,13 +43,13 @@ public final class CreateHsmClusterDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The OCID of the compartment where you want to create this HSM resource.
+         * The OCID of the compartment where you want to create this HSM cluster resource.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment where you want to create this HSM resource.
+         * The OCID of the compartment where you want to create this HSM cluster resource.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -59,7 +59,7 @@ public final class CreateHsmClusterDetails
             return this;
         }
         /**
-         * A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+         * A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
          * Avoid entering confidential information.
          *
          **/
@@ -67,7 +67,7 @@ public final class CreateHsmClusterDetails
         private String displayName;
 
         /**
-         * A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+         * A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
          * Avoid entering confidential information.
          *
          * @param displayName the value to set
@@ -170,13 +170,13 @@ public final class CreateHsmClusterDetails
     }
 
     /**
-     * The OCID of the compartment where you want to create this HSM resource.
+     * The OCID of the compartment where you want to create this HSM cluster resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment where you want to create this HSM resource.
+     * The OCID of the compartment where you want to create this HSM cluster resource.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -184,7 +184,7 @@ public final class CreateHsmClusterDetails
     }
 
     /**
-     * A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+     * A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      *
      **/
@@ -192,7 +192,7 @@ public final class CreateHsmClusterDetails
     private final String displayName;
 
     /**
-     * A user-friendly name for the HSM resource. It does not have to be unique, and it is changeable.
+     * A user-friendly display name for the HSM cluster resource. It does not have to be unique, and it is changeable.
      * Avoid entering confidential information.
      *
      * @return the value

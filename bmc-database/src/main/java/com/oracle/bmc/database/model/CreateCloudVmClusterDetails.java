@@ -25,6 +25,7 @@ public final class CreateCloudVmClusterDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "compartmentId",
+        "subscriptionId",
         "subnetId",
         "backupSubnetId",
         "cpuCoreCount",
@@ -52,12 +53,15 @@ public final class CreateCloudVmClusterDetails
         "giVersion",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "dataCollectionOptions",
         "systemVersion",
-        "fileSystemConfigurationDetails"
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails"
     })
     public CreateCloudVmClusterDetails(
             String compartmentId,
+            String subscriptionId,
             String subnetId,
             String backupSubnetId,
             Integer cpuCoreCount,
@@ -85,11 +89,14 @@ public final class CreateCloudVmClusterDetails
             String giVersion,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             DataCollectionOptions dataCollectionOptions,
             String systemVersion,
-            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
         super();
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
         this.cpuCoreCount = cpuCoreCount;
@@ -117,9 +124,11 @@ public final class CreateCloudVmClusterDetails
         this.giVersion = giVersion;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.dataCollectionOptions = dataCollectionOptions;
         this.systemVersion = systemVersion;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -138,6 +147,22 @@ public final class CreateCloudVmClusterDetails
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -651,6 +676,29 @@ public final class CreateCloudVmClusterDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
@@ -694,6 +742,16 @@ public final class CreateCloudVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -701,6 +759,7 @@ public final class CreateCloudVmClusterDetails
             CreateCloudVmClusterDetails model =
                     new CreateCloudVmClusterDetails(
                             this.compartmentId,
+                            this.subscriptionId,
                             this.subnetId,
                             this.backupSubnetId,
                             this.cpuCoreCount,
@@ -728,9 +787,11 @@ public final class CreateCloudVmClusterDetails
                             this.giVersion,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.dataCollectionOptions,
                             this.systemVersion,
-                            this.fileSystemConfigurationDetails);
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -741,6 +802,9 @@ public final class CreateCloudVmClusterDetails
         public Builder copy(CreateCloudVmClusterDetails model) {
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -823,6 +887,9 @@ public final class CreateCloudVmClusterDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
@@ -831,6 +898,9 @@ public final class CreateCloudVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
             return this;
         }
@@ -859,6 +929,20 @@ public final class CreateCloudVmClusterDetails
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1353,6 +1437,26 @@ public final class CreateCloudVmClusterDetails
         return definedTags;
     }
 
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
@@ -1388,6 +1492,13 @@ public final class CreateCloudVmClusterDetails
         return fileSystemConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1403,6 +1514,7 @@ public final class CreateCloudVmClusterDetails
         sb.append("CreateCloudVmClusterDetails(");
         sb.append("super=").append(super.toString());
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
@@ -1432,10 +1544,13 @@ public final class CreateCloudVmClusterDetails
         sb.append(", giVersion=").append(String.valueOf(this.giVersion));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1451,6 +1566,7 @@ public final class CreateCloudVmClusterDetails
 
         CreateCloudVmClusterDetails other = (CreateCloudVmClusterDetails) o;
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
@@ -1482,10 +1598,13 @@ public final class CreateCloudVmClusterDetails
                 && java.util.Objects.equals(this.giVersion, other.giVersion)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && super.equals(other);
     }
 
@@ -1496,6 +1615,9 @@ public final class CreateCloudVmClusterDetails
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result =
                 (result * PRIME)
@@ -1569,6 +1691,11 @@ public final class CreateCloudVmClusterDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =
                 (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
+        result =
+                (result * PRIME)
                         + (this.dataCollectionOptions == null
                                 ? 43
                                 : this.dataCollectionOptions.hashCode());
@@ -1580,6 +1707,11 @@ public final class CreateCloudVmClusterDetails
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

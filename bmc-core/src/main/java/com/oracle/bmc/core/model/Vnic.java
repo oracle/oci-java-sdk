@@ -45,6 +45,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "compartmentId",
         "definedTags",
         "displayName",
+        "securityAttributes",
         "freeformTags",
         "hostnameLabel",
         "id",
@@ -65,6 +66,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             String compartmentId,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, String> freeformTags,
             String hostnameLabel,
             String id,
@@ -84,6 +86,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
         this.displayName = displayName;
+        this.securityAttributes = securityAttributes;
         this.freeformTags = freeformTags;
         this.hostnameLabel = hostnameLabel;
         this.id = id;
@@ -183,6 +186,29 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -534,6 +560,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.compartmentId,
                             this.definedTags,
                             this.displayName,
+                            this.securityAttributes,
                             this.freeformTags,
                             this.hostnameLabel,
                             this.id,
@@ -567,6 +594,9 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -697,6 +727,26 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1077,6 +1127,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", id=").append(String.valueOf(this.id));
@@ -1109,6 +1160,7 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.id, other.id)
@@ -1140,6 +1192,11 @@ public final class Vnic extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result =
                 (result * PRIME)

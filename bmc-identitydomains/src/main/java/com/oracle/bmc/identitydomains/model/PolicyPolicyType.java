@@ -38,7 +38,7 @@ public final class PolicyPolicyType extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * PolicyType identifier
+         * PolicyType identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -54,7 +54,7 @@ public final class PolicyPolicyType extends com.oracle.bmc.http.internal.Explici
         private String value;
 
         /**
-         * PolicyType identifier
+         * PolicyType identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -143,7 +143,7 @@ public final class PolicyPolicyType extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * PolicyType identifier
+     * PolicyType identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -159,7 +159,7 @@ public final class PolicyPolicyType extends com.oracle.bmc.http.internal.Explici
     private final String value;
 
     /**
-     * PolicyType identifier
+     * PolicyType identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true

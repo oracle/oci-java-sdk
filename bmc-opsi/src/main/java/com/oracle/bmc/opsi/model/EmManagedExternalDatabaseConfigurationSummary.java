@@ -175,6 +175,70 @@ public final class EmManagedExternalDatabaseConfigurationSummary
             this.__explicitlySet__.add("exadataDetails");
             return this;
         }
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
+        private String enterpriseManagerEntityIdentifier;
+
+        /**
+         * Enterprise Manager Entity Unique Identifier
+         * @param enterpriseManagerEntityIdentifier the value to set
+         * @return this builder
+         **/
+        public Builder enterpriseManagerEntityIdentifier(String enterpriseManagerEntityIdentifier) {
+            this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+            this.__explicitlySet__.add("enterpriseManagerEntityIdentifier");
+            return this;
+        }
+        /**
+         * Enterprise Manager Console Url
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerConsoleUrl")
+        private String enterpriseManagerConsoleUrl;
+
+        /**
+         * Enterprise Manager Console Url
+         * @param enterpriseManagerConsoleUrl the value to set
+         * @return this builder
+         **/
+        public Builder enterpriseManagerConsoleUrl(String enterpriseManagerConsoleUrl) {
+            this.enterpriseManagerConsoleUrl = enterpriseManagerConsoleUrl;
+            this.__explicitlySet__.add("enterpriseManagerConsoleUrl");
+            return this;
+        }
+        /**
+         * Enterprise Manager OMS Version
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerOmsVer")
+        private String enterpriseManagerOmsVer;
+
+        /**
+         * Enterprise Manager OMS Version
+         * @param enterpriseManagerOmsVer the value to set
+         * @return this builder
+         **/
+        public Builder enterpriseManagerOmsVer(String enterpriseManagerOmsVer) {
+            this.enterpriseManagerOmsVer = enterpriseManagerOmsVer;
+            this.__explicitlySet__.add("enterpriseManagerOmsVer");
+            return this;
+        }
+        /**
+         * Enterprise Manager Entity Type
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
+        private String enterpriseManagerEntityType;
+
+        /**
+         * Enterprise Manager Entity Type
+         * @param enterpriseManagerEntityType the value to set
+         * @return this builder
+         **/
+        public Builder enterpriseManagerEntityType(String enterpriseManagerEntityType) {
+            this.enterpriseManagerEntityType = enterpriseManagerEntityType;
+            this.__explicitlySet__.add("enterpriseManagerEntityType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -195,7 +259,11 @@ public final class EmManagedExternalDatabaseConfigurationSummary
                             this.enterpriseManagerIdentifier,
                             this.enterpriseManagerBridgeId,
                             this.instances,
-                            this.exadataDetails);
+                            this.exadataDetails,
+                            this.enterpriseManagerEntityIdentifier,
+                            this.enterpriseManagerConsoleUrl,
+                            this.enterpriseManagerOmsVer,
+                            this.enterpriseManagerEntityType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -246,6 +314,19 @@ public final class EmManagedExternalDatabaseConfigurationSummary
             if (model.wasPropertyExplicitlySet("exadataDetails")) {
                 this.exadataDetails(model.getExadataDetails());
             }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityIdentifier")) {
+                this.enterpriseManagerEntityIdentifier(
+                        model.getEnterpriseManagerEntityIdentifier());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerConsoleUrl")) {
+                this.enterpriseManagerConsoleUrl(model.getEnterpriseManagerConsoleUrl());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerOmsVer")) {
+                this.enterpriseManagerOmsVer(model.getEnterpriseManagerOmsVer());
+            }
+            if (model.wasPropertyExplicitlySet("enterpriseManagerEntityType")) {
+                this.enterpriseManagerEntityType(model.getEnterpriseManagerEntityType());
+            }
             return this;
         }
     }
@@ -276,7 +357,11 @@ public final class EmManagedExternalDatabaseConfigurationSummary
             String enterpriseManagerIdentifier,
             String enterpriseManagerBridgeId,
             java.util.List<HostInstanceMap> instances,
-            ExadataDetails exadataDetails) {
+            ExadataDetails exadataDetails,
+            String enterpriseManagerEntityIdentifier,
+            String enterpriseManagerConsoleUrl,
+            String enterpriseManagerOmsVer,
+            String enterpriseManagerEntityType) {
         super(
                 databaseInsightId,
                 compartmentId,
@@ -292,6 +377,10 @@ public final class EmManagedExternalDatabaseConfigurationSummary
         this.enterpriseManagerBridgeId = enterpriseManagerBridgeId;
         this.instances = instances;
         this.exadataDetails = exadataDetails;
+        this.enterpriseManagerEntityIdentifier = enterpriseManagerEntityIdentifier;
+        this.enterpriseManagerConsoleUrl = enterpriseManagerConsoleUrl;
+        this.enterpriseManagerOmsVer = enterpriseManagerOmsVer;
+        this.enterpriseManagerEntityType = enterpriseManagerEntityType;
     }
 
     /**
@@ -343,6 +432,62 @@ public final class EmManagedExternalDatabaseConfigurationSummary
         return exadataDetails;
     }
 
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityIdentifier")
+    private final String enterpriseManagerEntityIdentifier;
+
+    /**
+     * Enterprise Manager Entity Unique Identifier
+     * @return the value
+     **/
+    public String getEnterpriseManagerEntityIdentifier() {
+        return enterpriseManagerEntityIdentifier;
+    }
+
+    /**
+     * Enterprise Manager Console Url
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerConsoleUrl")
+    private final String enterpriseManagerConsoleUrl;
+
+    /**
+     * Enterprise Manager Console Url
+     * @return the value
+     **/
+    public String getEnterpriseManagerConsoleUrl() {
+        return enterpriseManagerConsoleUrl;
+    }
+
+    /**
+     * Enterprise Manager OMS Version
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerOmsVer")
+    private final String enterpriseManagerOmsVer;
+
+    /**
+     * Enterprise Manager OMS Version
+     * @return the value
+     **/
+    public String getEnterpriseManagerOmsVer() {
+        return enterpriseManagerOmsVer;
+    }
+
+    /**
+     * Enterprise Manager Entity Type
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("enterpriseManagerEntityType")
+    private final String enterpriseManagerEntityType;
+
+    /**
+     * Enterprise Manager Entity Type
+     * @return the value
+     **/
+    public String getEnterpriseManagerEntityType() {
+        return enterpriseManagerEntityType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -363,6 +508,14 @@ public final class EmManagedExternalDatabaseConfigurationSummary
                 .append(String.valueOf(this.enterpriseManagerBridgeId));
         sb.append(", instances=").append(String.valueOf(this.instances));
         sb.append(", exadataDetails=").append(String.valueOf(this.exadataDetails));
+        sb.append(", enterpriseManagerEntityIdentifier=")
+                .append(String.valueOf(this.enterpriseManagerEntityIdentifier));
+        sb.append(", enterpriseManagerConsoleUrl=")
+                .append(String.valueOf(this.enterpriseManagerConsoleUrl));
+        sb.append(", enterpriseManagerOmsVer=")
+                .append(String.valueOf(this.enterpriseManagerOmsVer));
+        sb.append(", enterpriseManagerEntityType=")
+                .append(String.valueOf(this.enterpriseManagerEntityType));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +537,15 @@ public final class EmManagedExternalDatabaseConfigurationSummary
                         this.enterpriseManagerBridgeId, other.enterpriseManagerBridgeId)
                 && java.util.Objects.equals(this.instances, other.instances)
                 && java.util.Objects.equals(this.exadataDetails, other.exadataDetails)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityIdentifier,
+                        other.enterpriseManagerEntityIdentifier)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerConsoleUrl, other.enterpriseManagerConsoleUrl)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerOmsVer, other.enterpriseManagerOmsVer)
+                && java.util.Objects.equals(
+                        this.enterpriseManagerEntityType, other.enterpriseManagerEntityType)
                 && super.equals(other);
     }
 
@@ -405,6 +567,26 @@ public final class EmManagedExternalDatabaseConfigurationSummary
         result =
                 (result * PRIME)
                         + (this.exadataDetails == null ? 43 : this.exadataDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityIdentifier == null
+                                ? 43
+                                : this.enterpriseManagerEntityIdentifier.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerConsoleUrl == null
+                                ? 43
+                                : this.enterpriseManagerConsoleUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerOmsVer == null
+                                ? 43
+                                : this.enterpriseManagerOmsVer.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.enterpriseManagerEntityType == null
+                                ? 43
+                                : this.enterpriseManagerEntityType.hashCode());
         return result;
     }
 }

@@ -13,18 +13,6 @@
     <formats>
         <format>zip</format>
     </formats>
-    <!-- 3P dependencies only, exclude OCI -->
-    <dependencySets>
-        <dependencySet>
-          <excludes>
-            <exclude>com.oracle.oci.sdk:*</exclude>
-          </excludes>
-          <outputDirectory>third-party/lib</outputDirectory>
-          <useProjectArtifact>false</useProjectArtifact>
-          <useProjectAttachments>false</useProjectAttachments>
-          <scope>runtime</scope>
-        </dependencySet>
-    </dependencySets>
     <fileSets>
         <!-- Include the README.md -->
         <fileSet>
@@ -59,6 +47,11 @@
             <source>${source.jar.for.zip}</source>
             <outputDirectory>lib</outputDirectory>
             <destName>${project.artifactId}-${project.version}.jar</destName>
+        </file>
+        <file>
+            <source>pom.xml</source>
+            <outputDirectory>lib</outputDirectory>
+            <destName>${project.artifactId}-${project.version}.pom</destName>
         </file>
     </files>
 </assembly>

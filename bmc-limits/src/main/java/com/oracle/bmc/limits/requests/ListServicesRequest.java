@@ -165,6 +165,19 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
+    private String subscriptionId;
+
+    /**
+     * The OCID of the subscription assigned to tenant
+     *
+     */
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -278,6 +291,23 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * The OCID of the subscription assigned to tenant
+         *
+         */
+        private String subscriptionId = null;
+
+        /**
+         * The OCID of the subscription assigned to tenant
+         *
+         * @param subscriptionId the value to set
+         * @return this builder instance
+         */
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -311,6 +341,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             limit(o.getLimit());
             page(o.getPage());
             opcRequestId(o.getOpcRequestId());
+            subscriptionId(o.getSubscriptionId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -349,8 +380,9 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.limit = limit;
             request.page = page;
             request.opcRequestId = opcRequestId;
+            request.subscriptionId = subscriptionId;
             return request;
-            // new ListServicesRequest(compartmentId, sortBy, sortOrder, limit, page, opcRequestId);
+            // new ListServicesRequest(compartmentId, sortBy, sortOrder, limit, page, opcRequestId, subscriptionId);
         }
     }
 
@@ -365,7 +397,8 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .sortOrder(sortOrder)
                 .limit(limit)
                 .page(page)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .subscriptionId(subscriptionId);
     }
 
     /**
@@ -387,6 +420,7 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(")");
         return sb.toString();
     }
@@ -407,7 +441,8 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId);
     }
 
     @Override
@@ -422,6 +457,9 @@ public class ListServicesRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         return result;
     }
 }

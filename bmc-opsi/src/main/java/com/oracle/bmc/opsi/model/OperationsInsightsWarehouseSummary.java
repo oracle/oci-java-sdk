@@ -114,13 +114,13 @@ public final class OperationsInsightsWarehouseSummary
             return this;
         }
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+         * User-friedly name of Ops Insights Warehouse that does not have to be unique.
          * @param displayName the value to set
          * @return this builder
          **/
@@ -218,13 +218,13 @@ public final class OperationsInsightsWarehouseSummary
             return this;
         }
         /**
-         * Tenancy Identifier of Operations Insights service
+         * Tenancy Identifier of Ops Insights service
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
         private String operationsInsightsTenancyId;
 
         /**
-         * Tenancy Identifier of Operations Insights service
+         * Tenancy Identifier of Ops Insights service
          * @param operationsInsightsTenancyId the value to set
          * @return this builder
          **/
@@ -234,13 +234,13 @@ public final class OperationsInsightsWarehouseSummary
             return this;
         }
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+         * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
         private java.util.Date timeLastWalletRotated;
 
         /**
-         * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+         * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
          * @param timeLastWalletRotated the value to set
          * @return this builder
          **/
@@ -501,13 +501,13 @@ public final class OperationsInsightsWarehouseSummary
     }
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * User-friedly name of Operations Insights Warehouse that does not have to be unique.
+     * User-friedly name of Ops Insights Warehouse that does not have to be unique.
      * @return the value
      **/
     public String getDisplayName() {
@@ -593,13 +593,13 @@ public final class OperationsInsightsWarehouseSummary
     }
 
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("operationsInsightsTenancyId")
     private final String operationsInsightsTenancyId;
 
     /**
-     * Tenancy Identifier of Operations Insights service
+     * Tenancy Identifier of Ops Insights service
      * @return the value
      **/
     public String getOperationsInsightsTenancyId() {
@@ -607,13 +607,13 @@ public final class OperationsInsightsWarehouseSummary
     }
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeLastWalletRotated")
     private final java.util.Date timeLastWalletRotated;
 
     /**
-     * The time at which the ADW wallet was last rotated for the Operations Insights Warehouse. An RFC3339 formatted datetime string
+     * The time at which the ADW wallet was last rotated for the Ops Insights Warehouse. An RFC3339 formatted datetime string
      * @return the value
      **/
     public java.util.Date getTimeLastWalletRotated() {

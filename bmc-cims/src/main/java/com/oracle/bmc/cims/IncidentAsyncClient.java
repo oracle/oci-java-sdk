@@ -509,47 +509,6 @@ public class IncidentAsyncClient implements IncidentAsync {
     }
 
     @Override
-    public java.util.concurrent.Future<GetCsiNumberResponse> getCsiNumber(
-            GetCsiNumberRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
-                    handler) {
-        LOG.trace("Called async getCsiNumber");
-        final GetCsiNumberRequest interceptedRequest =
-                GetCsiNumberConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCsiNumberConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Incident", "GetCsiNumber", ib.getRequestUri().toString(), "");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetCsiNumberResponse>
-                transformer =
-                        GetCsiNumberConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetCsiNumberRequest, GetCsiNumberResponse>
-                handlerToUse = handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<
-                                GetCsiNumberRequest, GetCsiNumberResponse>,
-                        java.util.concurrent.Future<GetCsiNumberResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetCsiNumberRequest, GetCsiNumberResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
     public java.util.concurrent.Future<GetIncidentResponse> getIncident(
             GetIncidentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetIncidentRequest, GetIncidentResponse>
@@ -581,48 +540,6 @@ public class IncidentAsyncClient implements IncidentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetIncidentRequest, GetIncidentResponse>(
-                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
-                            this.authenticationDetailsProvider,
-                    handlerToUse,
-                    futureSupplier) {
-                @Override
-                protected void beforeRetryAction() {}
-            };
-        } else {
-            return futureSupplier.apply(handlerToUse);
-        }
-    }
-
-    @Override
-    public java.util.concurrent.Future<GetStatusResponse> getStatus(
-            GetStatusRequest request,
-            final com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse>
-                    handler) {
-        LOG.trace("Called async getStatus");
-        final GetStatusRequest interceptedRequest = GetStatusConverter.interceptRequest(request);
-        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStatusConverter.fromRequest(client, interceptedRequest);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Incident",
-                        "GetStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
-        final java.util.function.Function<javax.ws.rs.core.Response, GetStatusResponse>
-                transformer =
-                        GetStatusConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse> handlerToUse =
-                handler;
-
-        java.util.function.Function<
-                        com.oracle.bmc.responses.AsyncHandler<GetStatusRequest, GetStatusResponse>,
-                        java.util.concurrent.Future<GetStatusResponse>>
-                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
-
-        if (this.authenticationDetailsProvider
-                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
-            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
-                    GetStatusRequest, GetStatusResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

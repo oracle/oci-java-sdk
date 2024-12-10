@@ -32,6 +32,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         "definedTags",
         "displayName",
         "freeformTags",
+        "securityAttributes",
         "hostnameLabel",
         "ipv6AddressIpv6SubnetCidrPairDetails",
         "nsgIds",
@@ -47,6 +48,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String hostnameLabel,
             java.util.List<Ipv6AddressIpv6SubnetCidrPairDetails>
                     ipv6AddressIpv6SubnetCidrPairDetails,
@@ -62,6 +64,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.hostnameLabel = hostnameLabel;
         this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.nsgIds = nsgIds;
@@ -254,6 +257,29 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -532,6 +558,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.hostnameLabel,
                             this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.nsgIds,
@@ -564,6 +591,9 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -770,6 +800,26 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
      **/
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1040,6 +1090,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
                 .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
@@ -1069,6 +1120,7 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(
                         this.ipv6AddressIpv6SubnetCidrPairDetails,
@@ -1097,6 +1149,11 @@ public final class CreateVnicDetails extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

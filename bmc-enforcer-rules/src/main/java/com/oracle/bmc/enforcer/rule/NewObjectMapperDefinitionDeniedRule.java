@@ -17,23 +17,36 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
+import javax.inject.Named;
+
 /**
- * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in Serialization.java
- * The ObjectMapper defined in Serialization.java should be re-used as com.oracle.bmc.http.Serialization.getObjectMapper()
- * Any new ObjectMapper object (including any form of constructors) will cause the build to fail.
+ * Enforcer to ensure no new ObjectMapper objects are created in OCI Java SDK except in the
+ * explicitly specified classes. Any new ObjectMapper object (including any form of constructors)
+ * will cause the build to fail. This is required to avoid incorrectly configured object mappers.
+ *
+ * <p>The ObjectMapper defined in a client choice should be re-used. As an example, use
+ * JacksonSerializer.getDefaultSerializer() from oci-java-sdk-common-httpclient-jersey to get the
+ * json mapper.
  */
+@Named("newObjectMapperDefinitionDeniedRule")
 public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
 
     private String excludeClasses;
 
-    // This regex will match any string that looks like "new ObjectMapper" or "new com.fasterxml.jackson.databind.ObjectMapper" ignoring all the whitespaces
+    // This regex will match any string that looks like "new ObjectMapper" or "new
+    // com.fasterxml.jackson.databind.ObjectMapper" ignoring all the whitespaces
     private static final String REGEX_TO_FIND_NEW_OBJECT_MAPPER_DEFINITION =
             ".*new\\s+(ObjectMapper|com\\s?[.]\\s?fasterxml\\s?[.]\\s?jackson\\s?[.]\\s?databind\\s?[.]\\s?ObjectMapper).*";
 
     @Override
     public void execute(EnforcerRuleHelper helper) throws EnforcerRuleException {
         Log log = helper.getLog();
-        String[] ignoreClasses = excludeClasses.split(",");
+        String[] ignoreClasses;
+        if (excludeClasses != null) {
+            ignoreClasses = excludeClasses.split(",");
+        } else {
+            ignoreClasses = new String[0];
+        }
         log.info(
                 "Classes that can create new ObjectMapper objects: "
                         + Arrays.toString(ignoreClasses));
@@ -58,7 +71,7 @@ public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
                             throw new EnforcerRuleException(
                                     "New ObjectMapper defined in "
                                             + javaFile.getAbsolutePath()
-                                            + ". Please re-use the ObjectMapper defined in Serialization.java by calling com.oracle.bmc.http.Serialization.getObjectMapper().");
+                                            + ". Please re-use the ObjectMapper defined in a client implementation (e.g. the JacksonSerializer.getDefaultObjectMapper() from oci-java-sdk-common-httpclient-jersey).");
                         }
                     }
                 }
@@ -72,34 +85,35 @@ public class NewObjectMapperDefinitionDeniedRule implements EnforcerRule {
     }
 
     /**
-     * If your rule is cacheable, you must return a unique id when parameters or conditions
-     * change that would cause the result to be different. Multiple cached results are stored
-     * based on their id.
-     * <p>
-     * The easiest way to do this is to return a hash computed from the values of your parameters.
-     * <p>
-     * If your rule is not cacheable, then the result here is not important, you may return anything.
+     * If your rule is cacheable, you must return a unique id when parameters or conditions change
+     * that would cause the result to be different. Multiple cached results are stored based on
+     * their id.
+     *
+     * <p>The easiest way to do this is to return a hash computed from the values of your
+     * parameters.
+     *
+     * <p>If your rule is not cacheable, then the result here is not important, you may return
+     * anything.
      */
     public String getCacheId() {
         return this.getClass().getSimpleName() + "-notCacheable";
     }
 
     /**
-     * This tells the system if the results are cacheable at all. Keep in mind that during
-     * forked builds and other things, a given rule may be executed more than once for the same
-     * project. This means that even things that change from project to project may still
-     * be cacheable in certain instances.
+     * This tells the system if the results are cacheable at all. Keep in mind that during forked
+     * builds and other things, a given rule may be executed more than once for the same project.
+     * This means that even things that change from project to project may still be cacheable in
+     * certain instances.
      */
     public boolean isCacheable() {
         return false;
     }
 
     /**
-     * If the rule is cacheable and the same id is found in the cache, the stored results
-     * are passed to this method to allow double checking of the results. Most of the time
-     * this can be done by generating unique ids, but sometimes the results of objects returned
-     * by the helper need to be queried. You may for example, store certain objects in your rule
-     * and then query them later.
+     * If the rule is cacheable and the same id is found in the cache, the stored results are passed
+     * to this method to allow double checking of the results. Most of the time this can be done by
+     * generating unique ids, but sometimes the results of objects returned by the helper need to be
+     * queried. You may for example, store certain objects in your rule and then query them later.
      */
     public boolean isResultValid(EnforcerRule rule) {
         return false;

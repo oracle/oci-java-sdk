@@ -30,6 +30,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         "displayName",
         "dnsLabel",
         "freeformTags",
+        "securityAttributes",
         "isIpv6Enabled"
     })
     public CreateVcnDetails(
@@ -43,6 +44,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             String displayName,
             String dnsLabel,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             Boolean isIpv6Enabled) {
         super();
         this.cidrBlock = cidrBlock;
@@ -55,6 +57,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         this.displayName = displayName;
         this.dnsLabel = dnsLabel;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.isIpv6Enabled = isIpv6Enabled;
     }
 
@@ -306,6 +309,29 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * Whether IPv6 is enabled for the VCN. Default is {@code false}.
          * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
          * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
@@ -350,6 +376,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
                             this.displayName,
                             this.dnsLabel,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.isIpv6Enabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -388,6 +415,9 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("isIpv6Enabled")) {
                 this.isIpv6Enabled(model.getIsIpv6Enabled());
@@ -632,6 +662,26 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * Whether IPv6 is enabled for the VCN. Default is {@code false}.
      * If enabled, Oracle will assign the VCN a IPv6 /56 CIDR block.
      * You may skip having Oracle allocate the VCN a IPv6 /56 CIDR block by setting isOracleGuaAllocationEnabled to {@code false}.
@@ -682,6 +732,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", dnsLabel=").append(String.valueOf(this.dnsLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", isIpv6Enabled=").append(String.valueOf(this.isIpv6Enabled));
         sb.append(")");
         return sb.toString();
@@ -708,6 +759,7 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.dnsLabel, other.dnsLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.isIpv6Enabled, other.isIpv6Enabled)
                 && super.equals(other);
     }
@@ -740,6 +792,11 @@ public final class CreateVcnDetails extends com.oracle.bmc.http.internal.Explici
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.dnsLabel == null ? 43 : this.dnsLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.isIpv6Enabled == null ? 43 : this.isIpv6Enabled.hashCode());

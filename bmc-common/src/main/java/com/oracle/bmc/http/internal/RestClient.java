@@ -1496,7 +1496,7 @@ public class RestClient implements AutoCloseable {
      */
     private static String getUriSafe(WebTarget target) {
         try {
-            return target.getUri().toString();
+            return target.getUriBuilder().toTemplate();
         } catch (Exception ex) {
             LOG.error("Error getting target URI string", ex);
             return "<error getting target URI string>: " + ex.getMessage();

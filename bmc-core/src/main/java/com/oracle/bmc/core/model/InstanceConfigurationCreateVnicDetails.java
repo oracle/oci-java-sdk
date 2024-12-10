@@ -31,6 +31,7 @@ public final class InstanceConfigurationCreateVnicDetails
         "definedTags",
         "displayName",
         "freeformTags",
+        "securityAttributes",
         "ipv6AddressIpv6SubnetCidrPairDetails",
         "hostnameLabel",
         "nsgIds",
@@ -45,6 +46,7 @@ public final class InstanceConfigurationCreateVnicDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.List<InstanceConfigurationIpv6AddressIpv6SubnetCidrPairDetails>
                     ipv6AddressIpv6SubnetCidrPairDetails,
             String hostnameLabel,
@@ -59,6 +61,7 @@ public final class InstanceConfigurationCreateVnicDetails
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.securityAttributes = securityAttributes;
         this.ipv6AddressIpv6SubnetCidrPairDetails = ipv6AddressIpv6SubnetCidrPairDetails;
         this.hostnameLabel = hostnameLabel;
         this.nsgIds = nsgIds;
@@ -205,6 +208,29 @@ public final class InstanceConfigurationCreateVnicDetails
             return this;
         }
         /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address.
          * You can provide only the prefix and OCI selects an available
          * address from the range. You can optionally choose to leave the prefix range empty
@@ -346,6 +372,7 @@ public final class InstanceConfigurationCreateVnicDetails
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.securityAttributes,
                             this.ipv6AddressIpv6SubnetCidrPairDetails,
                             this.hostnameLabel,
                             this.nsgIds,
@@ -377,6 +404,9 @@ public final class InstanceConfigurationCreateVnicDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("ipv6AddressIpv6SubnetCidrPairDetails")) {
                 this.ipv6AddressIpv6SubnetCidrPairDetails(
@@ -535,6 +565,26 @@ public final class InstanceConfigurationCreateVnicDetails
     }
 
     /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * A list of IPv6 prefixes from which the VNIC should be assigned an IPv6 address.
      * You can provide only the prefix and OCI selects an available
      * address from the range. You can optionally choose to leave the prefix range empty
@@ -670,6 +720,7 @@ public final class InstanceConfigurationCreateVnicDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", ipv6AddressIpv6SubnetCidrPairDetails=")
                 .append(String.valueOf(this.ipv6AddressIpv6SubnetCidrPairDetails));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
@@ -698,6 +749,7 @@ public final class InstanceConfigurationCreateVnicDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(
                         this.ipv6AddressIpv6SubnetCidrPairDetails,
                         other.ipv6AddressIpv6SubnetCidrPairDetails)
@@ -725,6 +777,11 @@ public final class InstanceConfigurationCreateVnicDetails
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.ipv6AddressIpv6SubnetCidrPairDetails == null

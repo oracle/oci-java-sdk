@@ -10,6 +10,7 @@ package com.oracle.bmc.cloudbridge.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220509")
 public enum AssetSourceType {
     Vmware("VMWARE"),
+    Aws("AWS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

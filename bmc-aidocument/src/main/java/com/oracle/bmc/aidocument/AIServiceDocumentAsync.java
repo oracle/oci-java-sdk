@@ -59,6 +59,36 @@ public interface AIServiceDocumentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddModelLockResponse> addModelLock(
+            AddModelLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddModelLockRequest, AddModelLockResponse>
+                    handler);
+
+    /**
+     * Adds a lock to a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<AddProjectLockResponse> addProjectLock(
+            AddProjectLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<AddProjectLockRequest, AddProjectLockResponse>
+                    handler);
+
+    /**
      * Perform different types of document analysis.
      *
      *
@@ -369,6 +399,37 @@ public interface AIServiceDocumentAsync extends AutoCloseable {
     java.util.concurrent.Future<PatchModelResponse> patchModel(
             PatchModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<PatchModelRequest, PatchModelResponse> handler);
+
+    /**
+     * Remove a lock from a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveModelLockResponse> removeModelLock(
+            RemoveModelLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RemoveModelLockRequest, RemoveModelLockResponse>
+                    handler);
+
+    /**
+     * Remove a lock from a resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RemoveProjectLockResponse> removeProjectLock(
+            RemoveProjectLockRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RemoveProjectLockRequest, RemoveProjectLockResponse>
+                    handler);
 
     /**
      * Updates the model metadata.

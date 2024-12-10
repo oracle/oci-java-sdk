@@ -14,12 +14,12 @@ public class EnableHostInsightRequest
                 com.oracle.bmc.opsi.model.EnableHostInsightDetails> {
 
     /**
-     * Details for the host to be enabled in Operations Insights.
+     * Details for the host to be enabled in Ops Insights.
      */
     private com.oracle.bmc.opsi.model.EnableHostInsightDetails enableHostInsightDetails;
 
     /**
-     * Details for the host to be enabled in Operations Insights.
+     * Details for the host to be enabled in Ops Insights.
      */
     public com.oracle.bmc.opsi.model.EnableHostInsightDetails getEnableHostInsightDetails() {
         return enableHostInsightDetails;
@@ -109,12 +109,12 @@ public class EnableHostInsightRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the host to be enabled in Operations Insights.
+         * Details for the host to be enabled in Ops Insights.
          */
         private com.oracle.bmc.opsi.model.EnableHostInsightDetails enableHostInsightDetails = null;
 
         /**
-         * Details for the host to be enabled in Operations Insights.
+         * Details for the host to be enabled in Ops Insights.
          * @param enableHostInsightDetails the value to set
          * @return this builder instance
          */

@@ -1870,6 +1870,50 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public CreateRestoreOciConsolePolicyResponse createRestoreOciConsolePolicy(
+            CreateRestoreOciConsolePolicyRequest request) {
+        LOG.trace("Called createRestoreOciConsolePolicy");
+        final CreateRestoreOciConsolePolicyRequest interceptedRequest =
+                CreateRestoreOciConsolePolicyConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRestoreOciConsolePolicyConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateRestoreOciConsolePolicy",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateRestoreOciConsolePolicyResponse>
+                transformer =
+                        CreateRestoreOciConsolePolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRestoreOciConsolePolicy(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateRuleResponse createRule(CreateRuleRequest request) {
         LOG.trace("Called createRule");
         final CreateRuleRequest interceptedRequest = CreateRuleConverter.interceptRequest(request);
@@ -2025,6 +2069,49 @@ public class IdentityDomainsClient implements IdentityDomains {
                                         client.post(
                                                 ib,
                                                 retriedRequest.getSmtpCredential(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateSocialIdentityProviderResponse createSocialIdentityProvider(
+            CreateSocialIdentityProviderRequest request) {
+        LOG.trace("Called createSocialIdentityProvider");
+        final CreateSocialIdentityProviderRequest interceptedRequest =
+                CreateSocialIdentityProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateSocialIdentityProviderResponse>
+                transformer =
+                        CreateSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getSocialIdentityProvider(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3500,6 +3587,46 @@ public class IdentityDomainsClient implements IdentityDomains {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteSmtpCredentialResponse>
                 transformer =
                         DeleteSmtpCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteSocialIdentityProviderResponse deleteSocialIdentityProvider(
+            DeleteSocialIdentityProviderRequest request) {
+        LOG.trace("Called deleteSocialIdentityProvider");
+        final DeleteSocialIdentityProviderRequest interceptedRequest =
+                DeleteSocialIdentityProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "DeleteSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/DeleteSocialIdentityProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteSocialIdentityProviderResponse>
+                transformer =
+                        DeleteSocialIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -5135,6 +5262,46 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public GetOciConsoleSignOnPolicyConsentResponse getOciConsoleSignOnPolicyConsent(
+            GetOciConsoleSignOnPolicyConsentRequest request) {
+        LOG.trace("Called getOciConsoleSignOnPolicyConsent");
+        final GetOciConsoleSignOnPolicyConsentRequest interceptedRequest =
+                GetOciConsoleSignOnPolicyConsentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOciConsoleSignOnPolicyConsentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetOciConsoleSignOnPolicyConsent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/GetOciConsoleSignOnPolicyConsent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOciConsoleSignOnPolicyConsentResponse>
+                transformer =
+                        GetOciConsoleSignOnPolicyConsentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetPasswordPolicyResponse getPasswordPolicy(GetPasswordPolicyRequest request) {
         LOG.trace("Called getPasswordPolicy");
         final GetPasswordPolicyRequest interceptedRequest =
@@ -5450,6 +5617,45 @@ public class IdentityDomainsClient implements IdentityDomains {
         java.util.function.Function<javax.ws.rs.core.Response, GetSmtpCredentialResponse>
                 transformer =
                         GetSmtpCredentialConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetSocialIdentityProviderResponse getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request) {
+        LOG.trace("Called getSocialIdentityProvider");
+        final GetSocialIdentityProviderRequest interceptedRequest =
+                GetSocialIdentityProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/GetSocialIdentityProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, GetSocialIdentityProviderResponse>
+                transformer =
+                        GetSocialIdentityProviderConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -6125,7 +6331,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListConditions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/ListConditions");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/ListConditions");
         java.util.function.Function<javax.ws.rs.core.Response, ListConditionsResponse> transformer =
                 ListConditionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -7211,6 +7417,46 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public ListOciConsoleSignOnPolicyConsentsResponse listOciConsoleSignOnPolicyConsents(
+            ListOciConsoleSignOnPolicyConsentsRequest request) {
+        LOG.trace("Called listOciConsoleSignOnPolicyConsents");
+        final ListOciConsoleSignOnPolicyConsentsRequest interceptedRequest =
+                ListOciConsoleSignOnPolicyConsentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOciConsoleSignOnPolicyConsentsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListOciConsoleSignOnPolicyConsents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/ListOciConsoleSignOnPolicyConsents");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOciConsoleSignOnPolicyConsentsResponse>
+                transformer =
+                        ListOciConsoleSignOnPolicyConsentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListPasswordPoliciesResponse listPasswordPolicies(ListPasswordPoliciesRequest request) {
         LOG.trace("Called listPasswordPolicies");
         final ListPasswordPoliciesRequest interceptedRequest =
@@ -7266,7 +7512,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/ListPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/ListPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse> transformer =
                 ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -7341,7 +7587,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListRules",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/ListRules");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/ListRules");
         java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse> transformer =
                 ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -7587,6 +7833,45 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public ListSocialIdentityProvidersResponse listSocialIdentityProviders(
+            ListSocialIdentityProvidersRequest request) {
+        LOG.trace("Called listSocialIdentityProviders");
+        final ListSocialIdentityProvidersRequest interceptedRequest =
+                ListSocialIdentityProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders");
+        java.util.function.Function<javax.ws.rs.core.Response, ListSocialIdentityProvidersResponse>
+                transformer =
+                        ListSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListUserAttributesSettingsResponse listUserAttributesSettings(
             ListUserAttributesSettingsRequest request) {
         LOG.trace("Called listUserAttributesSettings");
@@ -7605,7 +7890,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "ListUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/ListUserAttributesSettings");
         java.util.function.Function<javax.ws.rs.core.Response, ListUserAttributesSettingsResponse>
                 transformer =
                         ListUserAttributesSettingsConverter.fromResponse(
@@ -9242,6 +9527,47 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public PatchSocialIdentityProviderResponse patchSocialIdentityProvider(
+            PatchSocialIdentityProviderRequest request) {
+        LOG.trace("Called patchSocialIdentityProvider");
+        final PatchSocialIdentityProviderRequest interceptedRequest =
+                PatchSocialIdentityProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PatchSocialIdentityProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, PatchSocialIdentityProviderResponse>
+                transformer =
+                        PatchSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.patch(
+                                                ib, retriedRequest.getPatchOp(), retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public PatchUserResponse patchUser(PatchUserRequest request) {
         LOG.trace("Called patchUser");
         final PatchUserRequest interceptedRequest = PatchUserConverter.interceptRequest(request);
@@ -10368,6 +10694,49 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public PutSocialIdentityProviderResponse putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request) {
+        LOG.trace("Called putSocialIdentityProvider");
+        final PutSocialIdentityProviderRequest interceptedRequest =
+                PutSocialIdentityProviderConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PutSocialIdentityProvider");
+        java.util.function.Function<javax.ws.rs.core.Response, PutSocialIdentityProviderResponse>
+                transformer =
+                        PutSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getSocialIdentityProvider(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public PutUserResponse putUser(PutUserRequest request) {
         LOG.trace("Called putUser");
         final PutUserRequest interceptedRequest = PutUserConverter.interceptRequest(request);
@@ -10969,7 +11338,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "SearchConditions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/SearchConditions");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/SearchConditions");
         java.util.function.Function<javax.ws.rs.core.Response, SearchConditionsResponse>
                 transformer =
                         SearchConditionsConverter.fromResponse(
@@ -11676,6 +12045,52 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public SearchOciConsoleSignOnPolicyConsentsResponse searchOciConsoleSignOnPolicyConsents(
+            SearchOciConsoleSignOnPolicyConsentsRequest request) {
+        LOG.trace("Called searchOciConsoleSignOnPolicyConsents");
+        final SearchOciConsoleSignOnPolicyConsentsRequest interceptedRequest =
+                SearchOciConsoleSignOnPolicyConsentsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchOciConsoleSignOnPolicyConsentsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchOciConsoleSignOnPolicyConsents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/SearchOciConsoleSignOnPolicyConsents");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchOciConsoleSignOnPolicyConsentsResponse>
+                transformer =
+                        SearchOciConsoleSignOnPolicyConsentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getOciConsoleSignOnPolicyConsentSearchRequest(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SearchPasswordPoliciesResponse searchPasswordPolicies(
             SearchPasswordPoliciesRequest request) {
         LOG.trace("Called searchPasswordPolicies");
@@ -11736,7 +12151,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "SearchPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/SearchPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/SearchPolicies");
         java.util.function.Function<javax.ws.rs.core.Response, SearchPoliciesResponse> transformer =
                 SearchPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -11821,7 +12236,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "SearchRules",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/SearchRules");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/SearchRules");
         java.util.function.Function<javax.ws.rs.core.Response, SearchRulesResponse> transformer =
                 SearchRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -12100,6 +12515,51 @@ public class IdentityDomainsClient implements IdentityDomains {
     }
 
     @Override
+    public SearchSocialIdentityProvidersResponse searchSocialIdentityProviders(
+            SearchSocialIdentityProvidersRequest request) {
+        LOG.trace("Called searchSocialIdentityProviders");
+        final SearchSocialIdentityProvidersRequest interceptedRequest =
+                SearchSocialIdentityProvidersConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchSocialIdentityProvidersResponse>
+                transformer =
+                        SearchSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getSocialIdentityProviderSearchRequest(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SearchUserAttributesSettingsResponse searchUserAttributesSettings(
             SearchUserAttributesSettingsRequest request) {
         LOG.trace("Called searchUserAttributesSettings");
@@ -12118,7 +12578,7 @@ public class IdentityDomainsClient implements IdentityDomains {
                         "IdentityDomains",
                         "SearchUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/SearchUserAttributesSettings");
         java.util.function.Function<javax.ws.rs.core.Response, SearchUserAttributesSettingsResponse>
                 transformer =
                         SearchUserAttributesSettingsConverter.fromResponse(

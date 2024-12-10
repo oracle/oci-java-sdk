@@ -71,6 +71,17 @@ public class UpdateSnapshotRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -165,6 +176,21 @@ public class UpdateSnapshotRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -196,6 +222,7 @@ public class UpdateSnapshotRequest
             updateSnapshotDetails(o.getUpdateSnapshotDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -243,8 +270,9 @@ public class UpdateSnapshotRequest
             request.updateSnapshotDetails = updateSnapshotDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateSnapshotRequest(snapshotId, updateSnapshotDetails, ifMatch, opcRequestId);
+            // new UpdateSnapshotRequest(snapshotId, updateSnapshotDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -257,7 +285,8 @@ public class UpdateSnapshotRequest
                 .snapshotId(snapshotId)
                 .updateSnapshotDetails(updateSnapshotDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -277,6 +306,7 @@ public class UpdateSnapshotRequest
         sb.append(",updateSnapshotDetails=").append(String.valueOf(this.updateSnapshotDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -295,7 +325,8 @@ public class UpdateSnapshotRequest
                 && java.util.Objects.equals(this.snapshotId, other.snapshotId)
                 && java.util.Objects.equals(this.updateSnapshotDetails, other.updateSnapshotDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -310,6 +341,9 @@ public class UpdateSnapshotRequest
                                 : this.updateSnapshotDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

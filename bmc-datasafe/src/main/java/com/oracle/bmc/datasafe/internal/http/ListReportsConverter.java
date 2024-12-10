@@ -96,12 +96,36 @@ public class ListReportsConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getMimeType() != null) {
+            target =
+                    target.queryParam(
+                            "mimeType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getMimeType().getValue()));
+        }
+
         if (request.getReportDefinitionId() != null) {
             target =
                     target.queryParam(
                             "reportDefinitionId",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getReportDefinitionId()));
+        }
+
+        if (request.getTimeGeneratedGreaterThanOrEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "timeGeneratedGreaterThanOrEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeGeneratedGreaterThanOrEqualTo()));
+        }
+
+        if (request.getTimeGeneratedLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "timeGeneratedLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTimeGeneratedLessThan()));
         }
 
         if (request.getLifecycleState() != null) {

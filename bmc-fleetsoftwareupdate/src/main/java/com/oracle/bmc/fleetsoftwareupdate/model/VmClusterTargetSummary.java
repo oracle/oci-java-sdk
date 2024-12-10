@@ -65,13 +65,35 @@ public final class VmClusterTargetSummary extends TargetDetails {
             this.__explicitlySet__.add("infrastructureId");
             return this;
         }
+        /**
+         * OCID of the Grid Infrastructure software image.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
+        private String softwareImageId;
+
+        /**
+         * OCID of the Grid Infrastructure software image.
+         *
+         * @param softwareImageId the value to set
+         * @return this builder
+         **/
+        public Builder softwareImageId(String softwareImageId) {
+            this.softwareImageId = softwareImageId;
+            this.__explicitlySet__.add("softwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public VmClusterTargetSummary build() {
             VmClusterTargetSummary model =
-                    new VmClusterTargetSummary(this.id, this.compartmentId, this.infrastructureId);
+                    new VmClusterTargetSummary(
+                            this.id,
+                            this.compartmentId,
+                            this.infrastructureId,
+                            this.softwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -89,6 +111,9 @@ public final class VmClusterTargetSummary extends TargetDetails {
             if (model.wasPropertyExplicitlySet("infrastructureId")) {
                 this.infrastructureId(model.getInfrastructureId());
             }
+            if (model.wasPropertyExplicitlySet("softwareImageId")) {
+                this.softwareImageId(model.getSoftwareImageId());
+            }
             return this;
         }
     }
@@ -105,9 +130,11 @@ public final class VmClusterTargetSummary extends TargetDetails {
     }
 
     @Deprecated
-    public VmClusterTargetSummary(String id, String compartmentId, String infrastructureId) {
+    public VmClusterTargetSummary(
+            String id, String compartmentId, String infrastructureId, String softwareImageId) {
         super(id, compartmentId);
         this.infrastructureId = infrastructureId;
+        this.softwareImageId = softwareImageId;
     }
 
     /**
@@ -126,6 +153,22 @@ public final class VmClusterTargetSummary extends TargetDetails {
         return infrastructureId;
     }
 
+    /**
+     * OCID of the Grid Infrastructure software image.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("softwareImageId")
+    private final String softwareImageId;
+
+    /**
+     * OCID of the Grid Infrastructure software image.
+     *
+     * @return the value
+     **/
+    public String getSoftwareImageId() {
+        return softwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -141,6 +184,7 @@ public final class VmClusterTargetSummary extends TargetDetails {
         sb.append("VmClusterTargetSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", infrastructureId=").append(String.valueOf(this.infrastructureId));
+        sb.append(", softwareImageId=").append(String.valueOf(this.softwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -156,6 +200,7 @@ public final class VmClusterTargetSummary extends TargetDetails {
 
         VmClusterTargetSummary other = (VmClusterTargetSummary) o;
         return java.util.Objects.equals(this.infrastructureId, other.infrastructureId)
+                && java.util.Objects.equals(this.softwareImageId, other.softwareImageId)
                 && super.equals(other);
     }
 
@@ -166,6 +211,9 @@ public final class VmClusterTargetSummary extends TargetDetails {
         result =
                 (result * PRIME)
                         + (this.infrastructureId == null ? 43 : this.infrastructureId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.softwareImageId == null ? 43 : this.softwareImageId.hashCode());
         return result;
     }
 }

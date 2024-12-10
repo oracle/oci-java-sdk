@@ -94,6 +94,17 @@ public class ListSupportedVmwareSoftwareVersionsRequest
     public String getHostShapeName() {
         return hostShapeName;
     }
+    /**
+     * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     */
+    private String versionToUpgrade;
+
+    /**
+     * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+     */
+    public String getVersionToUpgrade() {
+        return versionToUpgrade;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -209,6 +220,21 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         }
 
         /**
+         * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+         */
+        private String versionToUpgrade = null;
+
+        /**
+         * A filter to return only VMware software versions that the given VMware software version can be upgraded to.
+         * @param versionToUpgrade the value to set
+         * @return this builder instance
+         */
+        public Builder versionToUpgrade(String versionToUpgrade) {
+            this.versionToUpgrade = versionToUpgrade;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -242,6 +268,7 @@ public class ListSupportedVmwareSoftwareVersionsRequest
             opcRequestId(o.getOpcRequestId());
             version(o.getVersion());
             hostShapeName(o.getHostShapeName());
+            versionToUpgrade(o.getVersionToUpgrade());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -281,8 +308,9 @@ public class ListSupportedVmwareSoftwareVersionsRequest
             request.opcRequestId = opcRequestId;
             request.version = version;
             request.hostShapeName = hostShapeName;
+            request.versionToUpgrade = versionToUpgrade;
             return request;
-            // new ListSupportedVmwareSoftwareVersionsRequest(compartmentId, limit, page, opcRequestId, version, hostShapeName);
+            // new ListSupportedVmwareSoftwareVersionsRequest(compartmentId, limit, page, opcRequestId, version, hostShapeName, versionToUpgrade);
         }
     }
 
@@ -297,7 +325,8 @@ public class ListSupportedVmwareSoftwareVersionsRequest
                 .page(page)
                 .opcRequestId(opcRequestId)
                 .version(version)
-                .hostShapeName(hostShapeName);
+                .hostShapeName(hostShapeName)
+                .versionToUpgrade(versionToUpgrade);
     }
 
     /**
@@ -319,6 +348,7 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",version=").append(String.valueOf(this.version));
         sb.append(",hostShapeName=").append(String.valueOf(this.hostShapeName));
+        sb.append(",versionToUpgrade=").append(String.valueOf(this.versionToUpgrade));
         sb.append(")");
         return sb.toString();
     }
@@ -340,7 +370,8 @@ public class ListSupportedVmwareSoftwareVersionsRequest
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.version, other.version)
-                && java.util.Objects.equals(this.hostShapeName, other.hostShapeName);
+                && java.util.Objects.equals(this.hostShapeName, other.hostShapeName)
+                && java.util.Objects.equals(this.versionToUpgrade, other.versionToUpgrade);
     }
 
     @Override
@@ -357,6 +388,9 @@ public class ListSupportedVmwareSoftwareVersionsRequest
         result =
                 (result * PRIME)
                         + (this.hostShapeName == null ? 43 : this.hostShapeName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.versionToUpgrade == null ? 43 : this.versionToUpgrade.hashCode());
         return result;
     }
 }

@@ -34,6 +34,7 @@ public final class CreateCloudExadataInfrastructureDetails
         "freeformTags",
         "definedTags",
         "clusterPlacementGroupId",
+        "subscriptionId",
         "customerContacts"
     })
     public CreateCloudExadataInfrastructureDetails(
@@ -47,6 +48,7 @@ public final class CreateCloudExadataInfrastructureDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String clusterPlacementGroupId,
+            String subscriptionId,
             java.util.List<CustomerContact> customerContacts) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -59,6 +61,7 @@ public final class CreateCloudExadataInfrastructureDetails
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.customerContacts = customerContacts;
     }
 
@@ -235,6 +238,22 @@ public final class CreateCloudExadataInfrastructureDetails
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
          * Customer contacts.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
@@ -267,6 +286,7 @@ public final class CreateCloudExadataInfrastructureDetails
                             this.freeformTags,
                             this.definedTags,
                             this.clusterPlacementGroupId,
+                            this.subscriptionId,
                             this.customerContacts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -305,6 +325,9 @@ public final class CreateCloudExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
@@ -474,6 +497,20 @@ public final class CreateCloudExadataInfrastructureDetails
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
      * Customer contacts.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
@@ -512,6 +549,7 @@ public final class CreateCloudExadataInfrastructureDetails
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(")");
         return sb.toString();
@@ -538,6 +576,7 @@ public final class CreateCloudExadataInfrastructureDetails
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && super.equals(other);
     }
@@ -568,6 +607,9 @@ public final class CreateCloudExadataInfrastructureDetails
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());

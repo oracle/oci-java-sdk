@@ -31,6 +31,10 @@ package com.oracle.bmc.opsi.model;
         name = "EM_MANAGED_EXTERNAL_HOST"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedCloudDatabaseHostInsight.class,
+        name = "MACS_MANAGED_CLOUD_DB_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PeComanagedHostInsight.class,
         name = "PE_COMANAGED_HOST"
     ),
@@ -147,13 +151,13 @@ public class HostInsight extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
     }
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * @return the value
      **/
     public String getHostType() {

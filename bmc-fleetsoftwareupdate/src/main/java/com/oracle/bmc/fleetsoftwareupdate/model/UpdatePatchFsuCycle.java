@@ -55,6 +55,15 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -159,6 +168,7 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
                             this.displayName,
                             this.goalVersionDetails,
                             this.batchingStrategy,
+                            this.diagnosticsCollection,
                             this.freeformTags,
                             this.definedTags,
                             this.isIgnorePatches,
@@ -181,6 +191,9 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             }
             if (model.wasPropertyExplicitlySet("batchingStrategy")) {
                 this.batchingStrategy(model.getBatchingStrategy());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -220,13 +233,20 @@ public final class UpdatePatchFsuCycle extends UpdateFsuCycleDetails {
             String displayName,
             FsuGoalVersionDetails goalVersionDetails,
             UpdateBatchingStrategyDetails batchingStrategy,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isIgnorePatches,
             java.util.List<String> isIgnoreMissingPatches,
             Integer maxDrainTimeoutInSeconds,
             Boolean isKeepPlacement) {
-        super(displayName, goalVersionDetails, batchingStrategy, freeformTags, definedTags);
+        super(
+                displayName,
+                goalVersionDetails,
+                batchingStrategy,
+                diagnosticsCollection,
+                freeformTags,
+                definedTags);
         this.isIgnorePatches = isIgnorePatches;
         this.isIgnoreMissingPatches = isIgnoreMissingPatches;
         this.maxDrainTimeoutInSeconds = maxDrainTimeoutInSeconds;

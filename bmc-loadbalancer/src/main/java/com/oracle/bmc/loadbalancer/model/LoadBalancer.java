@@ -40,6 +40,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         "shapeDetails",
         "isPrivate",
         "isDeleteProtectionEnabled",
+        "isRequestIdEnabled",
+        "requestIdHeader",
         "subnetIds",
         "networkSecurityGroupIds",
         "listeners",
@@ -50,6 +52,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         "pathRouteSets",
         "freeformTags",
         "definedTags",
+        "zprTags",
         "systemTags",
         "ruleSets",
         "routingPolicies"
@@ -65,6 +68,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             ShapeDetails shapeDetails,
             Boolean isPrivate,
             Boolean isDeleteProtectionEnabled,
+            Boolean isRequestIdEnabled,
+            String requestIdHeader,
             java.util.List<String> subnetIds,
             java.util.List<String> networkSecurityGroupIds,
             java.util.Map<String, Listener> listeners,
@@ -75,6 +80,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.Map<String, PathRouteSet> pathRouteSets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> zprTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.Map<String, RuleSet> ruleSets,
             java.util.Map<String, RoutingPolicy> routingPolicies) {
@@ -89,6 +95,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         this.shapeDetails = shapeDetails;
         this.isPrivate = isPrivate;
         this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
+        this.isRequestIdEnabled = isRequestIdEnabled;
+        this.requestIdHeader = requestIdHeader;
         this.subnetIds = subnetIds;
         this.networkSecurityGroupIds = networkSecurityGroupIds;
         this.listeners = listeners;
@@ -99,6 +107,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         this.pathRouteSets = pathRouteSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.zprTags = zprTags;
         this.systemTags = systemTags;
         this.ruleSets = ruleSets;
         this.routingPolicies = routingPolicies;
@@ -324,6 +333,80 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
+         * passed through from the load balancer to load balancer backends. This same request id
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
+        private Boolean isRequestIdEnabled;
+
+        /**
+         * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
+         * passed through from the load balancer to load balancer backends. This same request id
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isRequestIdEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRequestIdEnabled(Boolean isRequestIdEnabled) {
+            this.isRequestIdEnabled = isRequestIdEnabled;
+            this.__explicitlySet__.add("isRequestIdEnabled");
+            return this;
+        }
+        /**
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If this field is set to "" this field defaults to X-Request-Id.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
+        private String requestIdHeader;
+
+        /**
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If this field is set to "" this field defaults to X-Request-Id.
+         *
+         * @param requestIdHeader the value to set
+         * @return this builder
+         **/
+        public Builder requestIdHeader(String requestIdHeader) {
+            this.requestIdHeader = requestIdHeader;
+            this.__explicitlySet__.add("requestIdHeader");
+            return this;
+        }
+        /**
          * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
@@ -485,6 +568,28 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+         *
+         * @param zprTags the value to set
+         * @return this builder
+         **/
+        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
+            this.zprTags = zprTags;
+            this.__explicitlySet__.add("zprTags");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * System tags can be viewed by users, but can only be created by the system.
@@ -545,6 +650,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.shapeDetails,
                             this.isPrivate,
                             this.isDeleteProtectionEnabled,
+                            this.isRequestIdEnabled,
+                            this.requestIdHeader,
                             this.subnetIds,
                             this.networkSecurityGroupIds,
                             this.listeners,
@@ -555,6 +662,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.pathRouteSets,
                             this.freeformTags,
                             this.definedTags,
+                            this.zprTags,
                             this.systemTags,
                             this.ruleSets,
                             this.routingPolicies);
@@ -596,6 +704,12 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             if (model.wasPropertyExplicitlySet("isDeleteProtectionEnabled")) {
                 this.isDeleteProtectionEnabled(model.getIsDeleteProtectionEnabled());
             }
+            if (model.wasPropertyExplicitlySet("isRequestIdEnabled")) {
+                this.isRequestIdEnabled(model.getIsRequestIdEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("requestIdHeader")) {
+                this.requestIdHeader(model.getRequestIdHeader());
+            }
             if (model.wasPropertyExplicitlySet("subnetIds")) {
                 this.subnetIds(model.getSubnetIds());
             }
@@ -625,6 +739,9 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("zprTags")) {
+                this.zprTags(model.getZprTags());
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
@@ -900,6 +1017,76 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
+     * passed through to the load balancer backends nor to the reponse returned to the user.
+     * <p>
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
+    private final Boolean isRequestIdEnabled;
+
+    /**
+     * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
+     * passed through to the load balancer backends nor to the reponse returned to the user.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsRequestIdEnabled() {
+        return isRequestIdEnabled;
+    }
+
+    /**
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If this field is set to "" this field defaults to X-Request-Id.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
+    private final String requestIdHeader;
+
+    /**
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If this field is set to "" this field defaults to X-Request-Id.
+     *
+     * @return the value
+     **/
+    public String getRequestIdHeader() {
+        return requestIdHeader;
+    }
+
+    /**
      * An array of subnet [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetIds")
@@ -1040,6 +1227,26 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
+        return zprTags;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * System tags can be viewed by users, but can only be created by the system.
@@ -1102,6 +1309,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", isPrivate=").append(String.valueOf(this.isPrivate));
         sb.append(", isDeleteProtectionEnabled=")
                 .append(String.valueOf(this.isDeleteProtectionEnabled));
+        sb.append(", isRequestIdEnabled=").append(String.valueOf(this.isRequestIdEnabled));
+        sb.append(", requestIdHeader=").append(String.valueOf(this.requestIdHeader));
         sb.append(", subnetIds=").append(String.valueOf(this.subnetIds));
         sb.append(", networkSecurityGroupIds=")
                 .append(String.valueOf(this.networkSecurityGroupIds));
@@ -1113,6 +1322,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(", routingPolicies=").append(String.valueOf(this.routingPolicies));
@@ -1141,6 +1351,8 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.isPrivate, other.isPrivate)
                 && java.util.Objects.equals(
                         this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
+                && java.util.Objects.equals(this.isRequestIdEnabled, other.isRequestIdEnabled)
+                && java.util.Objects.equals(this.requestIdHeader, other.requestIdHeader)
                 && java.util.Objects.equals(this.subnetIds, other.subnetIds)
                 && java.util.Objects.equals(
                         this.networkSecurityGroupIds, other.networkSecurityGroupIds)
@@ -1152,6 +1364,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.zprTags, other.zprTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && java.util.Objects.equals(this.routingPolicies, other.routingPolicies)
@@ -1180,6 +1393,14 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.isDeleteProtectionEnabled == null
                                 ? 43
                                 : this.isDeleteProtectionEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRequestIdEnabled == null
+                                ? 43
+                                : this.isRequestIdEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestIdHeader == null ? 43 : this.requestIdHeader.hashCode());
         result = (result * PRIME) + (this.subnetIds == null ? 43 : this.subnetIds.hashCode());
         result =
                 (result * PRIME)
@@ -1198,6 +1419,7 @@ public final class LoadBalancer extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
         result =

@@ -27,12 +27,36 @@ package com.oracle.bmc.ailanguage.model;
         name = "PRE_TRAINED_KEYPHRASE_EXTRACTION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedTranslationModelDetails.class,
+        name = "PRE_TRAINED_TRANSLATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreTrainedHealthNluModelDetails.class,
         name = "PRE_TRAINED_HEALTH_NLU"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreTrainedUniversalModel.class,
         name = "PRE_TRAINED_UNIVERSAL"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedLanguageDetectionModelDetails.class,
+        name = "PRE_TRAINED_LANGUAGE_DETECTION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedSentimentAnalysisModelDetails.class,
+        name = "PRE_TRAINED_SENTIMENT_ANALYSIS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = TextClassificationModelDetails.class,
+        name = "TEXT_CLASSIFICATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HealthNluModelDetails.class,
+        name = "HEALTH_NLU"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PreTrainedSummarization.class,
+        name = "PRE_TRAINED_SUMMARIZATION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = NamedEntityRecognitionModelDetails.class,
@@ -43,28 +67,12 @@ package com.oracle.bmc.ailanguage.model;
         name = "PII"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = PreTrainedLanguageDetectionModelDetails.class,
-        name = "PRE_TRAINED_LANGUAGE_DETECTION"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreTrainedNamedEntityRecognitionModelDetails.class,
         name = "PRE_TRAINED_NAMED_ENTITY_RECOGNITION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = PreTrainedSentimentAnalysisModelDetails.class,
-        name = "PRE_TRAINED_SENTIMENT_ANALYSIS"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreTrainedTextClassificationModelDetails.class,
         name = "PRE_TRAINED_TEXT_CLASSIFICATION"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = TextClassificationModelDetails.class,
-        name = "TEXT_CLASSIFICATION"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = PreTrainedSummarization.class,
-        name = "PRE_TRAINED_SUMMARIZATION"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = PreTrainedPiiModelDetails.class,
@@ -148,11 +156,12 @@ public class ModelDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         PreTrainedKeyphraseExtraction("PRE_TRAINED_KEYPHRASE_EXTRACTION"),
         PreTrainedLanguageDetection("PRE_TRAINED_LANGUAGE_DETECTION"),
         PreTrainedPii("PRE_TRAINED_PII"),
-        PreTrainedTranslation("PRE_TRAINED_TRANSLATION"),
         PreTrainedHealthNlu("PRE_TRAINED_HEALTH_NLU"),
         PreTrainedSummarization("PRE_TRAINED_SUMMARIZATION"),
         PreTrainedUniversal("PRE_TRAINED_UNIVERSAL"),
         Pii("PII"),
+        PreTrainedTranslation("PRE_TRAINED_TRANSLATION"),
+        HealthNlu("HEALTH_NLU"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

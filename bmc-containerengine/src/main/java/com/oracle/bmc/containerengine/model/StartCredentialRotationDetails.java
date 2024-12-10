@@ -31,13 +31,13 @@ public final class StartCredentialRotationDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+         * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("autoCompletionDelayDuration")
         private String autoCompletionDelayDuration;
 
         /**
-         * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+         * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
          * @param autoCompletionDelayDuration the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class StartCredentialRotationDetails
     }
 
     /**
-     * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+     * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autoCompletionDelayDuration")
     private final String autoCompletionDelayDuration;
 
     /**
-     * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 14 days.
+     * The duration in days(in ISO 8601 notation eg. P5D) after which the old credentials should be retired. Maximum delay duration is 90 days.
      * @return the value
      **/
     public String getAutoCompletionDelayDuration() {

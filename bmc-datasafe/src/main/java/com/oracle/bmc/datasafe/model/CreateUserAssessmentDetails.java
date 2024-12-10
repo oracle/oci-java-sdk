@@ -26,6 +26,7 @@ public final class CreateUserAssessmentDetails
         "compartmentId",
         "description",
         "displayName",
+        "isAssessmentScheduled",
         "schedule",
         "targetId",
         "freeformTags",
@@ -35,6 +36,7 @@ public final class CreateUserAssessmentDetails
             String compartmentId,
             String description,
             String displayName,
+            Boolean isAssessmentScheduled,
             String schedule,
             String targetId,
             java.util.Map<String, String> freeformTags,
@@ -43,6 +45,7 @@ public final class CreateUserAssessmentDetails
         this.compartmentId = compartmentId;
         this.description = description;
         this.displayName = displayName;
+        this.isAssessmentScheduled = isAssessmentScheduled;
         this.schedule = schedule;
         this.targetId = targetId;
         this.freeformTags = freeformTags;
@@ -97,6 +100,22 @@ public final class CreateUserAssessmentDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+        private Boolean isAssessmentScheduled;
+
+        /**
+         * Indicates whether the assessment is scheduled to run.
+         * @param isAssessmentScheduled the value to set
+         * @return this builder
+         **/
+        public Builder isAssessmentScheduled(Boolean isAssessmentScheduled) {
+            this.isAssessmentScheduled = isAssessmentScheduled;
+            this.__explicitlySet__.add("isAssessmentScheduled");
             return this;
         }
         /**
@@ -218,6 +237,7 @@ public final class CreateUserAssessmentDetails
                             this.compartmentId,
                             this.description,
                             this.displayName,
+                            this.isAssessmentScheduled,
                             this.schedule,
                             this.targetId,
                             this.freeformTags,
@@ -238,6 +258,9 @@ public final class CreateUserAssessmentDetails
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isAssessmentScheduled")) {
+                this.isAssessmentScheduled(model.getIsAssessmentScheduled());
             }
             if (model.wasPropertyExplicitlySet("schedule")) {
                 this.schedule(model.getSchedule());
@@ -306,6 +329,20 @@ public final class CreateUserAssessmentDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isAssessmentScheduled")
+    private final Boolean isAssessmentScheduled;
+
+    /**
+     * Indicates whether the assessment is scheduled to run.
+     * @return the value
+     **/
+    public Boolean getIsAssessmentScheduled() {
+        return isAssessmentScheduled;
     }
 
     /**
@@ -425,6 +462,7 @@ public final class CreateUserAssessmentDetails
         sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isAssessmentScheduled=").append(String.valueOf(this.isAssessmentScheduled));
         sb.append(", schedule=").append(String.valueOf(this.schedule));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -446,6 +484,7 @@ public final class CreateUserAssessmentDetails
         return java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.isAssessmentScheduled, other.isAssessmentScheduled)
                 && java.util.Objects.equals(this.schedule, other.schedule)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -462,6 +501,11 @@ public final class CreateUserAssessmentDetails
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAssessmentScheduled == null
+                                ? 43
+                                : this.isAssessmentScheduled.hashCode());
         result = (result * PRIME) + (this.schedule == null ? 43 : this.schedule.hashCode());
         result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

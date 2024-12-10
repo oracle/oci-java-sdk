@@ -2596,6 +2596,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DisableAutonomousDatabaseManagementFeatureResponse>
+            disableAutonomousDatabaseManagementFeature(
+                    DisableAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableAutonomousDatabaseManagementFeatureRequest,
+                                    DisableAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+        LOG.trace("Called async disableAutonomousDatabaseManagementFeature");
+        final DisableAutonomousDatabaseManagementFeatureRequest interceptedRequest =
+                DisableAutonomousDatabaseManagementFeatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableAutonomousDatabaseManagementFeatureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "DisableAutonomousDatabaseManagementFeature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/DisableAutonomousDatabaseManagementFeature");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        DisableAutonomousDatabaseManagementFeatureResponse>
+                transformer =
+                        DisableAutonomousDatabaseManagementFeatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableAutonomousDatabaseManagementFeatureRequest,
+                        DisableAutonomousDatabaseManagementFeatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableAutonomousDatabaseManagementFeatureRequest,
+                                DisableAutonomousDatabaseManagementFeatureResponse>,
+                        java.util.concurrent.Future<
+                                DisableAutonomousDatabaseManagementFeatureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDisableAutonomousDatabaseManagementFeatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableAutonomousDatabaseManagementFeatureRequest,
+                    DisableAutonomousDatabaseManagementFeatureResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DisableDatabaseManagementFeatureResponse>
             disableDatabaseManagementFeature(
                     DisableDatabaseManagementFeatureRequest request,
@@ -3466,6 +3529,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableAutomaticSpmEvolveAdvisorTaskRequest,
                     EnableAutomaticSpmEvolveAdvisorTaskResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableAutonomousDatabaseManagementFeatureResponse>
+            enableAutonomousDatabaseManagementFeature(
+                    EnableAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableAutonomousDatabaseManagementFeatureRequest,
+                                    EnableAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+        LOG.trace("Called async enableAutonomousDatabaseManagementFeature");
+        final EnableAutonomousDatabaseManagementFeatureRequest interceptedRequest =
+                EnableAutonomousDatabaseManagementFeatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableAutonomousDatabaseManagementFeatureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "EnableAutonomousDatabaseManagementFeature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/EnableAutonomousDatabaseManagementFeature");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        EnableAutonomousDatabaseManagementFeatureResponse>
+                transformer =
+                        EnableAutonomousDatabaseManagementFeatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableAutonomousDatabaseManagementFeatureRequest,
+                        EnableAutonomousDatabaseManagementFeatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableAutonomousDatabaseManagementFeatureRequest,
+                                EnableAutonomousDatabaseManagementFeatureResponse>,
+                        java.util.concurrent.Future<
+                                EnableAutonomousDatabaseManagementFeatureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getEnableAutonomousDatabaseManagementFeatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableAutonomousDatabaseManagementFeatureRequest,
+                    EnableAutonomousDatabaseManagementFeatureResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -8683,6 +8809,69 @@ public class DbManagementAsyncClient implements DbManagementAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     LoadSqlPlanBaselinesFromCursorCacheRequest,
                     LoadSqlPlanBaselinesFromCursorCacheResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ModifyAutonomousDatabaseManagementFeatureResponse>
+            modifyAutonomousDatabaseManagementFeature(
+                    ModifyAutonomousDatabaseManagementFeatureRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ModifyAutonomousDatabaseManagementFeatureRequest,
+                                    ModifyAutonomousDatabaseManagementFeatureResponse>
+                            handler) {
+        LOG.trace("Called async modifyAutonomousDatabaseManagementFeature");
+        final ModifyAutonomousDatabaseManagementFeatureRequest interceptedRequest =
+                ModifyAutonomousDatabaseManagementFeatureConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ModifyAutonomousDatabaseManagementFeatureConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DbManagement",
+                        "ModifyAutonomousDatabaseManagementFeature",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ManagedDatabase/ModifyAutonomousDatabaseManagementFeature");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ModifyAutonomousDatabaseManagementFeatureResponse>
+                transformer =
+                        ModifyAutonomousDatabaseManagementFeatureConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ModifyAutonomousDatabaseManagementFeatureRequest,
+                        ModifyAutonomousDatabaseManagementFeatureResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ModifyAutonomousDatabaseManagementFeatureRequest,
+                                ModifyAutonomousDatabaseManagementFeatureResponse>,
+                        java.util.concurrent.Future<
+                                ModifyAutonomousDatabaseManagementFeatureResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getModifyAutonomousDatabaseManagementFeatureDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ModifyAutonomousDatabaseManagementFeatureRequest,
+                    ModifyAutonomousDatabaseManagementFeatureResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

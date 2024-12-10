@@ -68,6 +68,7 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
         PrivateEndpointMove("PRIVATE_ENDPOINT_MOVE"),
         PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
+        RestoreArchivedModel("RESTORE_ARCHIVED_MODEL"),
         ;
 
         private final String value;

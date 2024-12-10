@@ -30,6 +30,7 @@ public class GetIncidentConverter {
             com.oracle.bmc.cims.requests.GetIncidentRequest request) {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getIncidentKey(), "incidentKey must not be blank");
+        Validate.notNull(request.getCompartmentId(), "compartmentId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -40,13 +41,11 @@ public class GetIncidentConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getIncidentKey()));
 
-        if (request.getCompartmentId() != null) {
-            target =
-                    target.queryParam(
-                            "compartmentId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getCompartmentId()));
-        }
+        target =
+                target.queryParam(
+                        "compartmentId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getCompartmentId()));
 
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 

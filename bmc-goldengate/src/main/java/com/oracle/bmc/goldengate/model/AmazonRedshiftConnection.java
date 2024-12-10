@@ -190,6 +190,15 @@ public final class AmazonRedshiftConnection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Amazon Redshift technology type.
          **/
@@ -248,6 +257,32 @@ public final class AmazonRedshiftConnection extends Connection {
             this.__explicitlySet__.add("username");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -273,9 +308,11 @@ public final class AmazonRedshiftConnection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.connectionUrl,
-                            this.username);
+                            this.username,
+                            this.passwordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -338,6 +375,9 @@ public final class AmazonRedshiftConnection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -346,6 +386,9 @@ public final class AmazonRedshiftConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             return this;
         }
@@ -382,9 +425,11 @@ public final class AmazonRedshiftConnection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String connectionUrl,
-            String username) {
+            String username,
+            String passwordSecretId) {
         super(
                 id,
                 displayName,
@@ -403,10 +448,12 @@ public final class AmazonRedshiftConnection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.connectionUrl = connectionUrl;
         this.username = username;
+        this.passwordSecretId = passwordSecretId;
     }
 
     /**
@@ -508,6 +555,30 @@ public final class AmazonRedshiftConnection extends Connection {
         return username;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -525,6 +596,7 @@ public final class AmazonRedshiftConnection extends Connection {
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", connectionUrl=").append(String.valueOf(this.connectionUrl));
         sb.append(", username=").append(String.valueOf(this.username));
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -542,6 +614,7 @@ public final class AmazonRedshiftConnection extends Connection {
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.connectionUrl, other.connectionUrl)
                 && java.util.Objects.equals(this.username, other.username)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && super.equals(other);
     }
 
@@ -556,6 +629,9 @@ public final class AmazonRedshiftConnection extends Connection {
                 (result * PRIME)
                         + (this.connectionUrl == null ? 43 : this.connectionUrl.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         return result;
     }
 }

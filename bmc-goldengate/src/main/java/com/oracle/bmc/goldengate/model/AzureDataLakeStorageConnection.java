@@ -190,6 +190,15 @@ public final class AzureDataLakeStorageConnection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Azure Data Lake Storage technology type.
          **/
@@ -302,6 +311,66 @@ public final class AzureDataLakeStorageConnection extends Connection {
             this.__explicitlySet__.add("endpoint");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * Note: When provided, 'accountKey' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+        private String accountKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * Note: When provided, 'accountKey' field must not be provided.
+         *
+         * @param accountKeySecretId the value to set
+         * @return this builder
+         **/
+        public Builder accountKeySecretId(String accountKeySecretId) {
+            this.accountKeySecretId = accountKeySecretId;
+            this.__explicitlySet__.add("accountKeySecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * Note: When provided, 'sasToken' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+        private String sasTokenSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * Note: When provided, 'sasToken' field must not be provided.
+         *
+         * @param sasTokenSecretId the value to set
+         * @return this builder
+         **/
+        public Builder sasTokenSecretId(String sasTokenSecretId) {
+            this.sasTokenSecretId = sasTokenSecretId;
+            this.__explicitlySet__.add("sasTokenSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+        private String clientSecretSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * Note: When provided, 'clientSecret' field must not be provided.
+         *
+         * @param clientSecretSecretId the value to set
+         * @return this builder
+         **/
+        public Builder clientSecretSecretId(String clientSecretSecretId) {
+            this.clientSecretSecretId = clientSecretSecretId;
+            this.__explicitlySet__.add("clientSecretSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -327,12 +396,16 @@ public final class AzureDataLakeStorageConnection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.authenticationType,
                             this.accountName,
                             this.azureTenantId,
                             this.clientId,
-                            this.endpoint);
+                            this.endpoint,
+                            this.accountKeySecretId,
+                            this.sasTokenSecretId,
+                            this.clientSecretSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -395,6 +468,9 @@ public final class AzureDataLakeStorageConnection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -412,6 +488,15 @@ public final class AzureDataLakeStorageConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("endpoint")) {
                 this.endpoint(model.getEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("accountKeySecretId")) {
+                this.accountKeySecretId(model.getAccountKeySecretId());
+            }
+            if (model.wasPropertyExplicitlySet("sasTokenSecretId")) {
+                this.sasTokenSecretId(model.getSasTokenSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("clientSecretSecretId")) {
+                this.clientSecretSecretId(model.getClientSecretSecretId());
             }
             return this;
         }
@@ -448,12 +533,16 @@ public final class AzureDataLakeStorageConnection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             AuthenticationType authenticationType,
             String accountName,
             String azureTenantId,
             String clientId,
-            String endpoint) {
+            String endpoint,
+            String accountKeySecretId,
+            String sasTokenSecretId,
+            String clientSecretSecretId) {
         super(
                 id,
                 displayName,
@@ -472,13 +561,17 @@ public final class AzureDataLakeStorageConnection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.authenticationType = authenticationType;
         this.accountName = accountName;
         this.azureTenantId = azureTenantId;
         this.clientId = clientId;
         this.endpoint = endpoint;
+        this.accountKeySecretId = accountKeySecretId;
+        this.sasTokenSecretId = sasTokenSecretId;
+        this.clientSecretSecretId = clientSecretSecretId;
     }
 
     /**
@@ -678,6 +771,60 @@ public final class AzureDataLakeStorageConnection extends Connection {
         return endpoint;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * Note: When provided, 'accountKey' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accountKeySecretId")
+    private final String accountKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * Note: When provided, 'accountKey' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getAccountKeySecretId() {
+        return accountKeySecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * Note: When provided, 'sasToken' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sasTokenSecretId")
+    private final String sasTokenSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * Note: When provided, 'sasToken' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getSasTokenSecretId() {
+        return sasTokenSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clientSecretSecretId")
+    private final String clientSecretSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * Note: When provided, 'clientSecret' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getClientSecretSecretId() {
+        return clientSecretSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -698,6 +845,9 @@ public final class AzureDataLakeStorageConnection extends Connection {
         sb.append(", azureTenantId=").append(String.valueOf(this.azureTenantId));
         sb.append(", clientId=").append(String.valueOf(this.clientId));
         sb.append(", endpoint=").append(String.valueOf(this.endpoint));
+        sb.append(", accountKeySecretId=").append(String.valueOf(this.accountKeySecretId));
+        sb.append(", sasTokenSecretId=").append(String.valueOf(this.sasTokenSecretId));
+        sb.append(", clientSecretSecretId=").append(String.valueOf(this.clientSecretSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -718,6 +868,9 @@ public final class AzureDataLakeStorageConnection extends Connection {
                 && java.util.Objects.equals(this.azureTenantId, other.azureTenantId)
                 && java.util.Objects.equals(this.clientId, other.clientId)
                 && java.util.Objects.equals(this.endpoint, other.endpoint)
+                && java.util.Objects.equals(this.accountKeySecretId, other.accountKeySecretId)
+                && java.util.Objects.equals(this.sasTokenSecretId, other.sasTokenSecretId)
+                && java.util.Objects.equals(this.clientSecretSecretId, other.clientSecretSecretId)
                 && super.equals(other);
     }
 
@@ -739,6 +892,19 @@ public final class AzureDataLakeStorageConnection extends Connection {
                         + (this.azureTenantId == null ? 43 : this.azureTenantId.hashCode());
         result = (result * PRIME) + (this.clientId == null ? 43 : this.clientId.hashCode());
         result = (result * PRIME) + (this.endpoint == null ? 43 : this.endpoint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.accountKeySecretId == null
+                                ? 43
+                                : this.accountKeySecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sasTokenSecretId == null ? 43 : this.sasTokenSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clientSecretSecretId == null
+                                ? 43
+                                : this.clientSecretSecretId.hashCode());
         return result;
     }
 }

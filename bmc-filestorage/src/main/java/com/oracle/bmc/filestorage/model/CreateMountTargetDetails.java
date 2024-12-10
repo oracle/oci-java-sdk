@@ -34,7 +34,9 @@ public final class CreateMountTargetDetails
         "nsgIds",
         "kerberos",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "locks",
+        "requestedThroughput"
     })
     public CreateMountTargetDetails(
             String availabilityDomain,
@@ -48,7 +50,9 @@ public final class CreateMountTargetDetails
             java.util.List<String> nsgIds,
             CreateKerberosDetails kerberos,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
+            Long requestedThroughput) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -62,6 +66,8 @@ public final class CreateMountTargetDetails
         this.kerberos = kerberos;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
+        this.requestedThroughput = requestedThroughput;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -189,14 +195,6 @@ public final class CreateMountTargetDetails
          * the subnet's CIDR. If you don't specify a value, Oracle automatically
          * assigns a private IP address from the subnet.
          * <p>
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
-         * not in the {@code mountTarget} resource.
-         * To update the {@code ipAddress}, use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target's
-         * private IPs ({@code privateIpIds}). Then, you can use
-         * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-         * to update the {@code ipAddress} value.
-         * <p>
          * Example: {@code 10.0.3.3}
          *
          **/
@@ -207,14 +205,6 @@ public final class CreateMountTargetDetails
          * A private IP address of your choice. Must be an available IP address within
          * the subnet's CIDR. If you don't specify a value, Oracle automatically
          * assigns a private IP address from the subnet.
-         * <p>
-         * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
-         * not in the {@code mountTarget} resource.
-         * To update the {@code ipAddress}, use {@code GetMountTarget} to obtain the
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target's
-         * private IPs ({@code privateIpIds}). Then, you can use
-         * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-         * to update the {@code ipAddress} value.
          * <p>
          * Example: {@code 10.0.3.3}
          *
@@ -349,6 +339,42 @@ public final class CreateMountTargetDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
+         * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+        private Long requestedThroughput;
+
+        /**
+         * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         * @param requestedThroughput the value to set
+         * @return this builder
+         **/
+        public Builder requestedThroughput(Long requestedThroughput) {
+            this.requestedThroughput = requestedThroughput;
+            this.__explicitlySet__.add("requestedThroughput");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -367,7 +393,9 @@ public final class CreateMountTargetDetails
                             this.nsgIds,
                             this.kerberos,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.locks,
+                            this.requestedThroughput);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -411,6 +439,12 @@ public final class CreateMountTargetDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
+            if (model.wasPropertyExplicitlySet("requestedThroughput")) {
+                this.requestedThroughput(model.getRequestedThroughput());
             }
             return this;
         }
@@ -542,14 +576,6 @@ public final class CreateMountTargetDetails
      * the subnet's CIDR. If you don't specify a value, Oracle automatically
      * assigns a private IP address from the subnet.
      * <p>
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
-     * not in the {@code mountTarget} resource.
-     * To update the {@code ipAddress}, use {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target's
-     * private IPs ({@code privateIpIds}). Then, you can use
-     * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-     * to update the {@code ipAddress} value.
-     * <p>
      * Example: {@code 10.0.3.3}
      *
      **/
@@ -560,14 +586,6 @@ public final class CreateMountTargetDetails
      * A private IP address of your choice. Must be an available IP address within
      * the subnet's CIDR. If you don't specify a value, Oracle automatically
      * assigns a private IP address from the subnet.
-     * <p>
-     * Note: This attribute value is stored in the [PrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/) resource,
-     * not in the {@code mountTarget} resource.
-     * To update the {@code ipAddress}, use {@code GetMountTarget} to obtain the
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the mount target's
-     * private IPs ({@code privateIpIds}). Then, you can use
-     * [UpdatePrivateIp](https://docs.cloud.oracle.com/en-us/iaas/api/#/en/iaas/20160918/PrivateIp/UpdatePrivateIp)
-     * to update the {@code ipAddress} value.
      * <p>
      * Example: {@code 10.0.3.3}
      *
@@ -685,6 +703,38 @@ public final class CreateMountTargetDetails
         return definedTags;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
+     * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+    private final Long requestedThroughput;
+
+    /**
+     * Throughput for mount target in Gbps. Currently only 1 Gbps of requestedThroughput is supported during create MountTarget.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     * @return the value
+     **/
+    public Long getRequestedThroughput() {
+        return requestedThroughput;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -711,6 +761,8 @@ public final class CreateMountTargetDetails
         sb.append(", kerberos=").append(String.valueOf(this.kerberos));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
+        sb.append(", requestedThroughput=").append(String.valueOf(this.requestedThroughput));
         sb.append(")");
         return sb.toString();
     }
@@ -737,6 +789,8 @@ public final class CreateMountTargetDetails
                 && java.util.Objects.equals(this.kerberos, other.kerberos)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
+                && java.util.Objects.equals(this.requestedThroughput, other.requestedThroughput)
                 && super.equals(other);
     }
 
@@ -764,6 +818,12 @@ public final class CreateMountTargetDetails
         result = (result * PRIME) + (this.kerberos == null ? 43 : this.kerberos.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestedThroughput == null
+                                ? 43
+                                : this.requestedThroughput.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -40,12 +40,12 @@ public class RestoreObjectsRequest
         return bucketName;
     }
     /**
-     * Request to restore objects.
+     * Request to restore object.
      */
     private com.oracle.bmc.objectstorage.model.RestoreObjectsDetails restoreObjectsDetails;
 
     /**
-     * Request to restore objects.
+     * Request to restore object.
      */
     public com.oracle.bmc.objectstorage.model.RestoreObjectsDetails getRestoreObjectsDetails() {
         return restoreObjectsDetails;
@@ -115,13 +115,13 @@ public class RestoreObjectsRequest
         }
 
         /**
-         * Request to restore objects.
+         * Request to restore object.
          */
         private com.oracle.bmc.objectstorage.model.RestoreObjectsDetails restoreObjectsDetails =
                 null;
 
         /**
-         * Request to restore objects.
+         * Request to restore object.
          * @param restoreObjectsDetails the value to set
          * @return this builder instance
          */

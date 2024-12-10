@@ -12,6 +12,7 @@ public enum WorkRequestOperationType {
     ClusterCreate("CLUSTER_CREATE"),
     ClusterUpdate("CLUSTER_UPDATE"),
     ClusterDelete("CLUSTER_DELETE"),
+    CreateNamespace("CREATE_NAMESPACE"),
     NodepoolCreate("NODEPOOL_CREATE"),
     NodepoolUpdate("NODEPOOL_UPDATE"),
     NodepoolDelete("NODEPOOL_DELETE"),

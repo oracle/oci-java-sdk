@@ -43,6 +43,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "cpuCoreCount",
         "memorySizeInGBs",
         "dbNodeStorageSizeInGBs",
+        "totalCpuCoreCount",
         "dbServerId"
     })
     public DbNode(
@@ -69,6 +70,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             Integer cpuCoreCount,
             Integer memorySizeInGBs,
             Integer dbNodeStorageSizeInGBs,
+            Integer totalCpuCoreCount,
             String dbServerId) {
         super();
         this.id = id;
@@ -94,6 +96,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.cpuCoreCount = cpuCoreCount;
         this.memorySizeInGBs = memorySizeInGBs;
         this.dbNodeStorageSizeInGBs = dbNodeStorageSizeInGBs;
+        this.totalCpuCoreCount = totalCpuCoreCount;
         this.dbServerId = dbServerId;
     }
 
@@ -515,6 +518,22 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * The total number of CPU cores reserved on the Db node.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCoreCount")
+        private Integer totalCpuCoreCount;
+
+        /**
+         * The total number of CPU cores reserved on the Db node.
+         * @param totalCpuCoreCount the value to set
+         * @return this builder
+         **/
+        public Builder totalCpuCoreCount(Integer totalCpuCoreCount) {
+            this.totalCpuCoreCount = totalCpuCoreCount;
+            this.__explicitlySet__.add("totalCpuCoreCount");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
@@ -560,6 +579,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.cpuCoreCount,
                             this.memorySizeInGBs,
                             this.dbNodeStorageSizeInGBs,
+                            this.totalCpuCoreCount,
                             this.dbServerId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -637,6 +657,9 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("dbNodeStorageSizeInGBs")) {
                 this.dbNodeStorageSizeInGBs(model.getDbNodeStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("totalCpuCoreCount")) {
+                this.totalCpuCoreCount(model.getTotalCpuCoreCount());
             }
             if (model.wasPropertyExplicitlySet("dbServerId")) {
                 this.dbServerId(model.getDbServerId());
@@ -932,6 +955,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public enum MaintenanceType {
         VmdbRebootMigration("VMDB_REBOOT_MIGRATION"),
+        ExadbxsRebootMigration("EXADBXS_REBOOT_MIGRATION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1127,6 +1151,20 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * The total number of CPU cores reserved on the Db node.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalCpuCoreCount")
+    private final Integer totalCpuCoreCount;
+
+    /**
+     * The total number of CPU cores reserved on the Db node.
+     * @return the value
+     **/
+    public Integer getTotalCpuCoreCount() {
+        return totalCpuCoreCount;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exacc Db server associated with the database node.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dbServerId")
@@ -1180,6 +1218,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", memorySizeInGBs=").append(String.valueOf(this.memorySizeInGBs));
         sb.append(", dbNodeStorageSizeInGBs=").append(String.valueOf(this.dbNodeStorageSizeInGBs));
+        sb.append(", totalCpuCoreCount=").append(String.valueOf(this.totalCpuCoreCount));
         sb.append(", dbServerId=").append(String.valueOf(this.dbServerId));
         sb.append(")");
         return sb.toString();
@@ -1222,6 +1261,7 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.memorySizeInGBs, other.memorySizeInGBs)
                 && java.util.Objects.equals(
                         this.dbNodeStorageSizeInGBs, other.dbNodeStorageSizeInGBs)
+                && java.util.Objects.equals(this.totalCpuCoreCount, other.totalCpuCoreCount)
                 && java.util.Objects.equals(this.dbServerId, other.dbServerId)
                 && super.equals(other);
     }
@@ -1281,6 +1321,9 @@ public final class DbNode extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                         + (this.dbNodeStorageSizeInGBs == null
                                 ? 43
                                 : this.dbNodeStorageSizeInGBs.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalCpuCoreCount == null ? 43 : this.totalCpuCoreCount.hashCode());
         result = (result * PRIME) + (this.dbServerId == null ? 43 : this.dbServerId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

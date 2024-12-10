@@ -67,6 +67,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "nextMaintenanceRunId",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "sourceDbSystemId",
         "pointInTimeDataDiskCloneTimestamp",
         "dataCollectionOptions"
@@ -119,6 +120,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String nextMaintenanceRunId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String sourceDbSystemId,
             java.util.Date pointInTimeDataDiskCloneTimestamp,
             DataCollectionOptions dataCollectionOptions) {
@@ -170,6 +172,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.nextMaintenanceRunId = nextMaintenanceRunId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.sourceDbSystemId = sourceDbSystemId;
         this.pointInTimeDataDiskCloneTimestamp = pointInTimeDataDiskCloneTimestamp;
         this.dataCollectionOptions = dataCollectionOptions;
@@ -1013,6 +1016,29 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
@@ -1108,6 +1134,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.nextMaintenanceRunId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.sourceDbSystemId,
                             this.pointInTimeDataDiskCloneTimestamp,
                             this.dataCollectionOptions);
@@ -1259,6 +1286,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("sourceDbSystemId")) {
                 this.sourceDbSystemId(model.getSourceDbSystemId());
@@ -2281,6 +2311,26 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB system.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("sourceDbSystemId")
@@ -2378,6 +2428,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", nextMaintenanceRunId=").append(String.valueOf(this.nextMaintenanceRunId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", sourceDbSystemId=").append(String.valueOf(this.sourceDbSystemId));
         sb.append(", pointInTimeDataDiskCloneTimestamp=")
                 .append(String.valueOf(this.pointInTimeDataDiskCloneTimestamp));
@@ -2445,6 +2496,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.nextMaintenanceRunId, other.nextMaintenanceRunId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.sourceDbSystemId, other.sourceDbSystemId)
                 && java.util.Objects.equals(
                         this.pointInTimeDataDiskCloneTimestamp,
@@ -2568,6 +2620,11 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                                 : this.nextMaintenanceRunId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceDbSystemId == null ? 43 : this.sourceDbSystemId.hashCode());

@@ -109,6 +109,15 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * Comma separated list of Elasticsearch server addresses, specified as host:port entries, where :port is optional.
          * If port is not specified, it defaults to 9200.
@@ -209,6 +218,32 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
          * Fingerprint required by TLS security protocol.
          * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
          *
@@ -244,11 +279,13 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.servers,
                             this.securityProtocol,
                             this.authenticationType,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.fingerprint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -285,6 +322,9 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("servers")) {
                 this.servers(model.getServers());
             }
@@ -299,6 +339,9 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("fingerprint")) {
                 this.fingerprint(model.getFingerprint());
@@ -329,11 +372,13 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String servers,
             ElasticsearchConnection.SecurityProtocol securityProtocol,
             ElasticsearchConnection.AuthenticationType authenticationType,
             String username,
             String password,
+            String passwordSecretId,
             String fingerprint) {
         super(
                 displayName,
@@ -344,12 +389,14 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.servers = servers;
         this.securityProtocol = securityProtocol;
         this.authenticationType = authenticationType;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.fingerprint = fingerprint;
     }
 
@@ -442,6 +489,30 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
      * Fingerprint required by TLS security protocol.
      * Eg.: '6152b2dfbff200f973c5074a5b91d06ab3b472c07c09a1ea57bb7fd406cdce9c'
      *
@@ -478,6 +549,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", fingerprint=").append(String.valueOf(this.fingerprint));
         sb.append(")");
         return sb.toString();
@@ -498,6 +570,7 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.fingerprint, other.fingerprint)
                 && super.equals(other);
     }
@@ -517,6 +590,9 @@ public final class UpdateElasticsearchConnectionDetails extends UpdateConnection
                                 : this.authenticationType.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.fingerprint == null ? 43 : this.fingerprint.hashCode());
         return result;
     }

@@ -2990,6 +2990,127 @@ public class ComputePaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listInstanceMaintenanceEvents operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListInstanceMaintenanceEventsResponse>
+            listInstanceMaintenanceEventsResponseIterator(
+                    final ListInstanceMaintenanceEventsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListInstanceMaintenanceEventsRequest.Builder, ListInstanceMaintenanceEventsRequest,
+                ListInstanceMaintenanceEventsResponse>(
+                new java.util.function.Supplier<ListInstanceMaintenanceEventsRequest.Builder>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsRequest.Builder get() {
+                        return ListInstanceMaintenanceEventsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInstanceMaintenanceEventsResponse, String>() {
+                    @Override
+                    public String apply(ListInstanceMaintenanceEventsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInstanceMaintenanceEventsRequest.Builder>,
+                        ListInstanceMaintenanceEventsRequest>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInstanceMaintenanceEventsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInstanceMaintenanceEventsRequest,
+                        ListInstanceMaintenanceEventsResponse>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsResponse apply(
+                            ListInstanceMaintenanceEventsRequest request) {
+                        return client.listInstanceMaintenanceEvents(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects
+     * contained in responses from the listInstanceMaintenanceEvents operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.core.model.InstanceMaintenanceEventSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>
+            listInstanceMaintenanceEventsRecordIterator(
+                    final ListInstanceMaintenanceEventsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListInstanceMaintenanceEventsRequest.Builder, ListInstanceMaintenanceEventsRequest,
+                ListInstanceMaintenanceEventsResponse,
+                com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>(
+                new java.util.function.Supplier<ListInstanceMaintenanceEventsRequest.Builder>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsRequest.Builder get() {
+                        return ListInstanceMaintenanceEventsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListInstanceMaintenanceEventsResponse, String>() {
+                    @Override
+                    public String apply(ListInstanceMaintenanceEventsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListInstanceMaintenanceEventsRequest.Builder>,
+                        ListInstanceMaintenanceEventsRequest>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListInstanceMaintenanceEventsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListInstanceMaintenanceEventsRequest,
+                        ListInstanceMaintenanceEventsResponse>() {
+                    @Override
+                    public ListInstanceMaintenanceEventsResponse apply(
+                            ListInstanceMaintenanceEventsRequest request) {
+                        return client.listInstanceMaintenanceEvents(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListInstanceMaintenanceEventsResponse,
+                        java.util.List<
+                                com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.InstanceMaintenanceEventSummary>
+                            apply(ListInstanceMaintenanceEventsResponse response) {
+                        return response.getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listInstances operation. This iterable
      * will fetch more data from the server as needed.
      *

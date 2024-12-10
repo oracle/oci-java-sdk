@@ -13,6 +13,7 @@ public enum WorkRequestResourceMetadataKey {
     Namespace("NAMESPACE"),
     Bucket("BUCKET"),
     Object("OBJECT"),
+    PrivateEndpointName("PRIVATE_ENDPOINT_NAME"),
     ;
 
     private final String value;

@@ -8,6 +8,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import org.junit.Rule;
 import org.junit.Test;
 
@@ -189,5 +190,71 @@ public class MultipartUtilsTest {
                 MultipartUtils.shouldCalculateMd5(
                         UploadConfiguration.builder().enforceMd5(true).build(),
                         PutObjectRequest.builder().build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_disabled() {
+        assertFalse(
+                MultipartUtils.shouldCalculateAdditionalChecksum(
+                        UploadConfiguration.builder()
+                                .enforceAdditionalChecksumBeforeUpload(null)
+                                .build(),
+                        PutObjectRequest.builder().build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_enabled_crc32cAlreadySet() {
+        assertFalse(
+                MultipartUtils.shouldCalculateAdditionalChecksum(
+                        UploadConfiguration.builder()
+                                .enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm.Crc32C)
+                                .build(),
+                        PutObjectRequest.builder().opcContentCrc32c("crc32c").build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_enabled_sha256AlreadySet() {
+        assertFalse(
+                MultipartUtils.shouldCalculateAdditionalChecksum(
+                        UploadConfiguration.builder()
+                                .enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm.Sha256)
+                                .build(),
+                        PutObjectRequest.builder().opcContentSha256("sha256").build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_enabled_sha384AlreadySet() {
+        assertFalse(
+                MultipartUtils.shouldCalculateAdditionalChecksum(
+                        UploadConfiguration.builder()
+                                .enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm.Sha384)
+                                .build(),
+                        PutObjectRequest.builder().opcContentSha384("sha384").build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_enabled_notSet() {
+        assertTrue(
+                MultipartUtils.shouldCalculateAdditionalChecksum(
+                        UploadConfiguration.builder()
+                                .enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm.Crc32C)
+                                .build(),
+                        PutObjectRequest.builder().build()));
+    }
+
+    @Test
+    public void shouldCalculateAdditionalChecksum_conflictAlgorithms() {
+        UploadConfiguration config =
+                UploadConfiguration.builder()
+                        .enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm.Crc32C)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Sha256)
+                        .build();
+
+        PutObjectRequest request = PutObjectRequest.builder().build();
+
+        thrown.expect(IllegalArgumentException.class);
+        thrown.expectMessage("must be the same");
+
+        MultipartUtils.shouldCalculateAdditionalChecksum(config, request);
     }
 }

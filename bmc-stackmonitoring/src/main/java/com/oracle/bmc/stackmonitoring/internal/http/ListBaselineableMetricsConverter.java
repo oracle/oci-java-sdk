@@ -43,6 +43,22 @@ public class ListBaselineableMetricsConverter {
                                     request.getResourceGroup()));
         }
 
+        if (request.getResourceType() != null) {
+            target =
+                    target.queryParam(
+                            "resourceType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getResourceType()));
+        }
+
+        if (request.getIsOutOfBox() != null) {
+            target =
+                    target.queryParam(
+                            "isOutOfBox",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsOutOfBox()));
+        }
+
         if (request.getName() != null) {
             target =
                     target.queryParam(

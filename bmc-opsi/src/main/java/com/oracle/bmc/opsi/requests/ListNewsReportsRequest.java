@@ -23,12 +23,12 @@ public class ListNewsReportsRequest extends com.oracle.bmc.requests.BmcRequest<j
         return compartmentId;
     }
     /**
-     * Unique Operations Insights news report identifier
+     * Unique Ops Insights news report identifier
      */
     private String newsReportId;
 
     /**
-     * Unique Operations Insights news report identifier
+     * Unique Ops Insights news report identifier
      */
     public String getNewsReportId() {
         return newsReportId;
@@ -208,12 +208,12 @@ public class ListNewsReportsRequest extends com.oracle.bmc.requests.BmcRequest<j
         }
 
         /**
-         * Unique Operations Insights news report identifier
+         * Unique Ops Insights news report identifier
          */
         private String newsReportId = null;
 
         /**
-         * Unique Operations Insights news report identifier
+         * Unique Ops Insights news report identifier
          * @param newsReportId the value to set
          * @return this builder instance
          */

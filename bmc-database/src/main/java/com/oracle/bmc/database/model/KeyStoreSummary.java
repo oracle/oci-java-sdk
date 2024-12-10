@@ -357,6 +357,7 @@ public final class KeyStoreSummary extends com.oracle.bmc.http.internal.Explicit
     public enum LifecycleState {
         Active("ACTIVE"),
         Deleted("DELETED"),
+        NeedsAttention("NEEDS_ATTENTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

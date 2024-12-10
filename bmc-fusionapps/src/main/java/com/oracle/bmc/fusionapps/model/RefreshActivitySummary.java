@@ -34,6 +34,7 @@ public final class RefreshActivitySummary
         "serviceAvailability",
         "timeAccepted",
         "timeUpdated",
+        "isDataMaskingOpted",
         "lifecycleDetails",
         "refreshIssueDetailsList"
     })
@@ -49,6 +50,7 @@ public final class RefreshActivitySummary
             RefreshActivity.ServiceAvailability serviceAvailability,
             java.util.Date timeAccepted,
             java.util.Date timeUpdated,
+            Boolean isDataMaskingOpted,
             RefreshActivity.LifecycleDetails lifecycleDetails,
             java.util.List<RefreshIssueDetails> refreshIssueDetailsList) {
         super();
@@ -63,6 +65,7 @@ public final class RefreshActivitySummary
         this.serviceAvailability = serviceAvailability;
         this.timeAccepted = timeAccepted;
         this.timeUpdated = timeUpdated;
+        this.isDataMaskingOpted = isDataMaskingOpted;
         this.lifecycleDetails = lifecycleDetails;
         this.refreshIssueDetailsList = refreshIssueDetailsList;
     }
@@ -247,6 +250,22 @@ public final class RefreshActivitySummary
             return this;
         }
         /**
+         * Represents if the customer opted for Data Masking or not during refreshActivity.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+        private Boolean isDataMaskingOpted;
+
+        /**
+         * Represents if the customer opted for Data Masking or not during refreshActivity.
+         * @param isDataMaskingOpted the value to set
+         * @return this builder
+         **/
+        public Builder isDataMaskingOpted(Boolean isDataMaskingOpted) {
+            this.isDataMaskingOpted = isDataMaskingOpted;
+            this.__explicitlySet__.add("isDataMaskingOpted");
+            return this;
+        }
+        /**
          * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
@@ -297,6 +316,7 @@ public final class RefreshActivitySummary
                             this.serviceAvailability,
                             this.timeAccepted,
                             this.timeUpdated,
+                            this.isDataMaskingOpted,
                             this.lifecycleDetails,
                             this.refreshIssueDetailsList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -339,6 +359,9 @@ public final class RefreshActivitySummary
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isDataMaskingOpted")) {
+                this.isDataMaskingOpted(model.getIsDataMaskingOpted());
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
@@ -516,6 +539,20 @@ public final class RefreshActivitySummary
     }
 
     /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDataMaskingOpted")
+    private final Boolean isDataMaskingOpted;
+
+    /**
+     * Represents if the customer opted for Data Masking or not during refreshActivity.
+     * @return the value
+     **/
+    public Boolean getIsDataMaskingOpted() {
+        return isDataMaskingOpted;
+    }
+
+    /**
      * A message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
@@ -569,6 +606,7 @@ public final class RefreshActivitySummary
         sb.append(", serviceAvailability=").append(String.valueOf(this.serviceAvailability));
         sb.append(", timeAccepted=").append(String.valueOf(this.timeAccepted));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isDataMaskingOpted=").append(String.valueOf(this.isDataMaskingOpted));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", refreshIssueDetailsList=")
                 .append(String.valueOf(this.refreshIssueDetailsList));
@@ -599,6 +637,7 @@ public final class RefreshActivitySummary
                 && java.util.Objects.equals(this.serviceAvailability, other.serviceAvailability)
                 && java.util.Objects.equals(this.timeAccepted, other.timeAccepted)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isDataMaskingOpted, other.isDataMaskingOpted)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(
                         this.refreshIssueDetailsList, other.refreshIssueDetailsList)
@@ -642,6 +681,11 @@ public final class RefreshActivitySummary
                                 : this.serviceAvailability.hashCode());
         result = (result * PRIME) + (this.timeAccepted == null ? 43 : this.timeAccepted.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDataMaskingOpted == null
+                                ? 43
+                                : this.isDataMaskingOpted.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());

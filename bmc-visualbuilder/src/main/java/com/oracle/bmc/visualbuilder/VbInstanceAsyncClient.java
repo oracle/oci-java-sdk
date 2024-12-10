@@ -889,6 +889,61 @@ public class VbInstanceAsyncClient implements VbInstanceAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ReconfigurePrivateEndpointVbInstanceResponse>
+            reconfigurePrivateEndpointVbInstance(
+                    ReconfigurePrivateEndpointVbInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReconfigurePrivateEndpointVbInstanceRequest,
+                                    ReconfigurePrivateEndpointVbInstanceResponse>
+                            handler) {
+        LOG.trace("Called async reconfigurePrivateEndpointVbInstance");
+        final ReconfigurePrivateEndpointVbInstanceRequest interceptedRequest =
+                ReconfigurePrivateEndpointVbInstanceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ReconfigurePrivateEndpointVbInstanceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VbInstance",
+                        "ReconfigurePrivateEndpointVbInstance",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/ReconfigurePrivateEndpointVbInstance");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ReconfigurePrivateEndpointVbInstanceResponse>
+                transformer =
+                        ReconfigurePrivateEndpointVbInstanceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ReconfigurePrivateEndpointVbInstanceRequest,
+                        ReconfigurePrivateEndpointVbInstanceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ReconfigurePrivateEndpointVbInstanceRequest,
+                                ReconfigurePrivateEndpointVbInstanceResponse>,
+                        java.util.concurrent.Future<ReconfigurePrivateEndpointVbInstanceResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ReconfigurePrivateEndpointVbInstanceRequest,
+                    ReconfigurePrivateEndpointVbInstanceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestSummarizedApplicationsResponse>
             requestSummarizedApplications(
                     RequestSummarizedApplicationsRequest request,

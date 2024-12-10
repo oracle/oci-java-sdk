@@ -30,6 +30,7 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
         "approximateInstallationCount",
         "approximateJreCount",
         "approximateManagedInstanceCount",
+        "approximateLibraryCount",
         "timeStart",
         "timeEnd",
         "timeFirstSeen",
@@ -43,6 +44,7 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
             Integer approximateInstallationCount,
             Integer approximateJreCount,
             Integer approximateManagedInstanceCount,
+            Integer approximateLibraryCount,
             java.util.Date timeStart,
             java.util.Date timeEnd,
             java.util.Date timeFirstSeen,
@@ -55,6 +57,7 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
         this.approximateInstallationCount = approximateInstallationCount;
         this.approximateJreCount = approximateJreCount;
         this.approximateManagedInstanceCount = approximateManagedInstanceCount;
+        this.approximateLibraryCount = approximateLibraryCount;
         this.timeStart = timeStart;
         this.timeEnd = timeEnd;
         this.timeFirstSeen = timeFirstSeen;
@@ -64,14 +67,14 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * An internal identifier for the application that is unique to a Fleet.
+         * An internal identifier for the application that is unique to a fleet.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
         private String applicationId;
 
         /**
-         * An internal identifier for the application that is unique to a Fleet.
+         * An internal identifier for the application that is unique to a fleet.
          *
          * @param applicationId the value to set
          * @return this builder
@@ -98,13 +101,13 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * The type of the application, denoted by how the application was started.
+         * The type of the application denoted by how the application was started.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
         private String applicationType;
 
         /**
-         * The type of the application, denoted by how the application was started.
+         * The type of the application denoted by how the application was started.
          * @param applicationType the value to set
          * @return this builder
          **/
@@ -175,6 +178,24 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
         public Builder approximateManagedInstanceCount(Integer approximateManagedInstanceCount) {
             this.approximateManagedInstanceCount = approximateManagedInstanceCount;
             this.__explicitlySet__.add("approximateManagedInstanceCount");
+            return this;
+        }
+        /**
+         * The approximate count of libraries in this application.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+        private Integer approximateLibraryCount;
+
+        /**
+         * The approximate count of libraries in this application.
+         *
+         * @param approximateLibraryCount the value to set
+         * @return this builder
+         **/
+        public Builder approximateLibraryCount(Integer approximateLibraryCount) {
+            this.approximateLibraryCount = approximateLibraryCount;
+            this.__explicitlySet__.add("approximateLibraryCount");
             return this;
         }
         /**
@@ -271,6 +292,7 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
                             this.approximateInstallationCount,
                             this.approximateJreCount,
                             this.approximateManagedInstanceCount,
+                            this.approximateLibraryCount,
                             this.timeStart,
                             this.timeEnd,
                             this.timeFirstSeen,
@@ -304,6 +326,9 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
             if (model.wasPropertyExplicitlySet("approximateManagedInstanceCount")) {
                 this.approximateManagedInstanceCount(model.getApproximateManagedInstanceCount());
             }
+            if (model.wasPropertyExplicitlySet("approximateLibraryCount")) {
+                this.approximateLibraryCount(model.getApproximateLibraryCount());
+            }
             if (model.wasPropertyExplicitlySet("timeStart")) {
                 this.timeStart(model.getTimeStart());
             }
@@ -332,14 +357,14 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * An internal identifier for the application that is unique to a Fleet.
+     * An internal identifier for the application that is unique to a fleet.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationId")
     private final String applicationId;
 
     /**
-     * An internal identifier for the application that is unique to a Fleet.
+     * An internal identifier for the application that is unique to a fleet.
      *
      * @return the value
      **/
@@ -362,13 +387,13 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * The type of the application, denoted by how the application was started.
+     * The type of the application denoted by how the application was started.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicationType")
     private final String applicationType;
 
     /**
-     * The type of the application, denoted by how the application was started.
+     * The type of the application denoted by how the application was started.
      * @return the value
      **/
     public String getApplicationType() {
@@ -429,6 +454,22 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
      **/
     public Integer getApproximateManagedInstanceCount() {
         return approximateManagedInstanceCount;
+    }
+
+    /**
+     * The approximate count of libraries in this application.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("approximateLibraryCount")
+    private final Integer approximateLibraryCount;
+
+    /**
+     * The approximate count of libraries in this application.
+     *
+     * @return the value
+     **/
+    public Integer getApproximateLibraryCount() {
+        return approximateLibraryCount;
     }
 
     /**
@@ -526,6 +567,8 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
         sb.append(", approximateJreCount=").append(String.valueOf(this.approximateJreCount));
         sb.append(", approximateManagedInstanceCount=")
                 .append(String.valueOf(this.approximateManagedInstanceCount));
+        sb.append(", approximateLibraryCount=")
+                .append(String.valueOf(this.approximateLibraryCount));
         sb.append(", timeStart=").append(String.valueOf(this.timeStart));
         sb.append(", timeEnd=").append(String.valueOf(this.timeEnd));
         sb.append(", timeFirstSeen=").append(String.valueOf(this.timeFirstSeen));
@@ -553,6 +596,8 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.approximateJreCount, other.approximateJreCount)
                 && java.util.Objects.equals(
                         this.approximateManagedInstanceCount, other.approximateManagedInstanceCount)
+                && java.util.Objects.equals(
+                        this.approximateLibraryCount, other.approximateLibraryCount)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
                 && java.util.Objects.equals(this.timeFirstSeen, other.timeFirstSeen)
@@ -589,6 +634,11 @@ public final class ApplicationUsage extends com.oracle.bmc.http.internal.Explici
                         + (this.approximateManagedInstanceCount == null
                                 ? 43
                                 : this.approximateManagedInstanceCount.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.approximateLibraryCount == null
+                                ? 43
+                                : this.approximateLibraryCount.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());
         result =

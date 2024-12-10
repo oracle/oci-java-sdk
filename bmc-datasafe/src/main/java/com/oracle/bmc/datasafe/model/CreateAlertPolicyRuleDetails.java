@@ -23,11 +23,12 @@ package com.oracle.bmc.datasafe.model;
 public final class CreateAlertPolicyRuleDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"expression", "description"})
-    public CreateAlertPolicyRuleDetails(String expression, String description) {
+    @java.beans.ConstructorProperties({"expression", "description", "displayName"})
+    public CreateAlertPolicyRuleDetails(String expression, String description, String displayName) {
         super();
         this.expression = expression;
         this.description = description;
+        this.displayName = displayName;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -64,13 +65,30 @@ public final class CreateAlertPolicyRuleDetails
             this.__explicitlySet__.add("description");
             return this;
         }
+        /**
+         * The display name of the alert policy rule.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        /**
+         * The display name of the alert policy rule.
+         * @param displayName the value to set
+         * @return this builder
+         **/
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public CreateAlertPolicyRuleDetails build() {
             CreateAlertPolicyRuleDetails model =
-                    new CreateAlertPolicyRuleDetails(this.expression, this.description);
+                    new CreateAlertPolicyRuleDetails(
+                            this.expression, this.description, this.displayName);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -84,6 +102,9 @@ public final class CreateAlertPolicyRuleDetails
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
             }
             return this;
         }
@@ -128,6 +149,20 @@ public final class CreateAlertPolicyRuleDetails
         return description;
     }
 
+    /**
+     * The display name of the alert policy rule.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    /**
+     * The display name of the alert policy rule.
+     * @return the value
+     **/
+    public String getDisplayName() {
+        return displayName;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -144,6 +179,7 @@ public final class CreateAlertPolicyRuleDetails
         sb.append("super=").append(super.toString());
         sb.append("expression=").append(String.valueOf(this.expression));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(")");
         return sb.toString();
     }
@@ -160,6 +196,7 @@ public final class CreateAlertPolicyRuleDetails
         CreateAlertPolicyRuleDetails other = (CreateAlertPolicyRuleDetails) o;
         return java.util.Objects.equals(this.expression, other.expression)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && super.equals(other);
     }
 
@@ -169,6 +206,7 @@ public final class CreateAlertPolicyRuleDetails
         int result = 1;
         result = (result * PRIME) + (this.expression == null ? 43 : this.expression.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

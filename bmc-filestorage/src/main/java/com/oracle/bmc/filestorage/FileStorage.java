@@ -62,6 +62,106 @@ public interface FileStorage extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddExportLock API.
+     */
+    AddExportLockResponse addExportLock(AddExportLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFileSystemLock API.
+     */
+    AddFileSystemLockResponse addFileSystemLock(AddFileSystemLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFilesystemSnapshotPolicyLock API.
+     */
+    AddFilesystemSnapshotPolicyLockResponse addFilesystemSnapshotPolicyLock(
+            AddFilesystemSnapshotPolicyLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddMountTargetLock API.
+     */
+    AddMountTargetLockResponse addMountTargetLock(AddMountTargetLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddOutboundConnectorLock API.
+     */
+    AddOutboundConnectorLockResponse addOutboundConnectorLock(
+            AddOutboundConnectorLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddReplicationLock API.
+     */
+    AddReplicationLockResponse addReplicationLock(AddReplicationLockRequest request);
+
+    /**
+     * Adds a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/AddSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddSnapshotLock API.
+     */
+    AddSnapshotLockResponse addSnapshotLock(AddSnapshotLockRequest request);
+
+    /**
+     * Cancel scheduled downgrade shape request for mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/CancelDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeShapeMountTarget API.
+     */
+    CancelDowngradeShapeMountTargetResponse cancelDowngradeShapeMountTarget(
+            CancelDowngradeShapeMountTargetRequest request);
+
+    /**
      * Moves a file system and its associated snapshots into a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes)
      *
      * @param request The request object containing the details to send
@@ -448,6 +548,19 @@ public interface FileStorage extends AutoCloseable {
     DeleteSnapshotResponse deleteSnapshot(DeleteSnapshotRequest request);
 
     /**
+     * Detaches the file system from its parent file system
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/DetachCloneExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachClone API.
+     */
+    DetachCloneResponse detachClone(DetachCloneRequest request);
+
+    /**
      * Provides estimates for replication created using specific file system.
      *
      * @param request The request object containing the details to send
@@ -716,6 +829,106 @@ public interface FileStorage extends AutoCloseable {
             PauseFilesystemSnapshotPolicyRequest request);
 
     /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveExportLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveExportLock API.
+     */
+    RemoveExportLockResponse removeExportLock(RemoveExportLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFileSystemLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFileSystemLock API.
+     */
+    RemoveFileSystemLockResponse removeFileSystemLock(RemoveFileSystemLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveFilesystemSnapshotPolicyLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFilesystemSnapshotPolicyLock API.
+     */
+    RemoveFilesystemSnapshotPolicyLockResponse removeFilesystemSnapshotPolicyLock(
+            RemoveFilesystemSnapshotPolicyLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveMountTargetLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveMountTargetLock API.
+     */
+    RemoveMountTargetLockResponse removeMountTargetLock(RemoveMountTargetLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveOutboundConnectorLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveOutboundConnectorLock API.
+     */
+    RemoveOutboundConnectorLockResponse removeOutboundConnectorLock(
+            RemoveOutboundConnectorLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveReplicationLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveReplicationLock API.
+     */
+    RemoveReplicationLockResponse removeReplicationLock(RemoveReplicationLockRequest request);
+
+    /**
+     * Removes a lock to a resource.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/RemoveSnapshotLockExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveSnapshotLock API.
+     */
+    RemoveSnapshotLockResponse removeSnapshotLock(RemoveSnapshotLockRequest request);
+
+    /**
+     * Schedule a downgrade shape of the mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/ScheduleDowngradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleDowngradeShapeMountTarget API.
+     */
+    ScheduleDowngradeShapeMountTargetResponse scheduleDowngradeShapeMountTarget(
+            ScheduleDowngradeShapeMountTargetRequest request);
+
+    /**
      * This operation unpauses a paused file system snapshot policy and updates the lifecycle state of the file system snapshot policy from
      * INACTIVE to ACTIVE. By default, file system snapshot policies are in the ACTIVE state. When a file system snapshot policy is not paused, or in the ACTIVE state, file systems that are associated with the
      * policy will have snapshots created and deleted according to the schedules defined in the policy.
@@ -832,6 +1045,19 @@ public interface FileStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpdateSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSnapshot API.
      */
     UpdateSnapshotResponse updateSnapshot(UpdateSnapshotRequest request);
+
+    /**
+     * Upgrade shape request for mount target.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/filestorage/UpgradeShapeMountTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeShapeMountTarget API.
+     */
+    UpgradeShapeMountTargetResponse upgradeShapeMountTarget(UpgradeShapeMountTargetRequest request);
 
     /**
      * Validates keytab contents for the secret details passed on the request or validte keytab contents associated with

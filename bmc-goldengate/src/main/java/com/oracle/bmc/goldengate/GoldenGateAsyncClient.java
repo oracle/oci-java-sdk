@@ -2546,6 +2546,57 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListDeploymentEnvironmentsResponse>
+            listDeploymentEnvironments(
+                    ListDeploymentEnvironmentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListDeploymentEnvironmentsRequest,
+                                    ListDeploymentEnvironmentsResponse>
+                            handler) {
+        LOG.trace("Called async listDeploymentEnvironments");
+        final ListDeploymentEnvironmentsRequest interceptedRequest =
+                ListDeploymentEnvironmentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListDeploymentEnvironmentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "ListDeploymentEnvironments",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/DeploymentEnvironmentCollection/ListDeploymentEnvironments");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListDeploymentEnvironmentsResponse>
+                transformer =
+                        ListDeploymentEnvironmentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListDeploymentEnvironmentsRequest,
+                                ListDeploymentEnvironmentsResponse>,
+                        java.util.concurrent.Future<ListDeploymentEnvironmentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListDeploymentEnvironmentsRequest, ListDeploymentEnvironmentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeploymentTypesResponse> listDeploymentTypes(
             ListDeploymentTypesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3048,6 +3099,57 @@ public class GoldenGateAsyncClient implements GoldenGateAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RefreshConnectionResponse> refreshConnection(
+            RefreshConnectionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RefreshConnectionRequest, RefreshConnectionResponse>
+                    handler) {
+        LOG.trace("Called async refreshConnection");
+        final RefreshConnectionRequest interceptedRequest =
+                RefreshConnectionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshConnectionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "GoldenGate",
+                        "RefreshConnection",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/goldengate/20200407/Connection/RefreshConnection");
+        final java.util.function.Function<javax.ws.rs.core.Response, RefreshConnectionResponse>
+                transformer =
+                        RefreshConnectionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RefreshConnectionRequest, RefreshConnectionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RefreshConnectionRequest, RefreshConnectionResponse>,
+                        java.util.concurrent.Future<RefreshConnectionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRefreshConnectionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RefreshConnectionRequest, RefreshConnectionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

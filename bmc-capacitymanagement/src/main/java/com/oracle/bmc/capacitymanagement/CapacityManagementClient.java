@@ -573,7 +573,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "CreateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog");
         java.util.function.Function<javax.ws.rs.core.Response, CreateOccAvailabilityCatalogResponse>
                 transformer =
                         CreateOccAvailabilityCatalogConverter.fromResponse(
@@ -617,7 +617,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "CreateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CreateOccCapacityRequestResponse>
                 transformer =
                         CreateOccCapacityRequestConverter.fromResponse(
@@ -642,6 +642,91 @@ public class CapacityManagementClient implements CapacityManagement {
     }
 
     @Override
+    public CreateOccCustomerResponse createOccCustomer(CreateOccCustomerRequest request) {
+        LOG.trace("Called createOccCustomer");
+        final CreateOccCustomerRequest interceptedRequest =
+                CreateOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerResponse>
+                transformer =
+                        CreateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOccCustomerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public CreateOccCustomerGroupResponse createOccCustomerGroup(
+            CreateOccCustomerGroupRequest request) {
+        LOG.trace("Called createOccCustomerGroup");
+        final CreateOccCustomerGroupRequest interceptedRequest =
+                CreateOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerGroupResponse>
+                transformer =
+                        CreateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateOccCustomerGroupDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteOccAvailabilityCatalogResponse deleteOccAvailabilityCatalog(
             DeleteOccAvailabilityCatalogRequest request) {
         LOG.trace("Called deleteOccAvailabilityCatalog");
@@ -659,7 +744,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "DeleteOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOccAvailabilityCatalogResponse>
                 transformer =
                         DeleteOccAvailabilityCatalogConverter.fromResponse(
@@ -698,10 +783,87 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "DeleteOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCapacityRequestResponse>
                 transformer =
                         DeleteOccCapacityRequestConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOccCustomerResponse deleteOccCustomer(DeleteOccCustomerRequest request) {
+        LOG.trace("Called deleteOccCustomer");
+        final DeleteOccCustomerRequest interceptedRequest =
+                DeleteOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerResponse>
+                transformer =
+                        DeleteOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteOccCustomerGroupResponse deleteOccCustomerGroup(
+            DeleteOccCustomerGroupRequest request) {
+        LOG.trace("Called deleteOccCustomerGroup");
+        final DeleteOccCustomerGroupRequest interceptedRequest =
+                DeleteOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerGroupResponse>
+                transformer =
+                        DeleteOccCustomerGroupConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -737,7 +899,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog");
         java.util.function.Function<javax.ws.rs.core.Response, GetOccAvailabilityCatalogResponse>
                 transformer =
                         GetOccAvailabilityCatalogConverter.fromResponse(
@@ -776,7 +938,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalogContent",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetOccAvailabilityCatalogContentResponse>
                 transformer =
@@ -815,7 +977,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "GetOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetOccCapacityRequestResponse>
                 transformer =
                         GetOccCapacityRequestConverter.fromResponse(
@@ -852,7 +1014,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "GetOccCustomerGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup");
         java.util.function.Function<javax.ws.rs.core.Response, GetOccCustomerGroupResponse>
                 transformer =
                         GetOccCustomerGroupConverter.fromResponse(
@@ -890,11 +1052,93 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListInternalNamespaceOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListInternalNamespaceOccOverviewsResponse>
                 transformer =
                         ListInternalNamespaceOccOverviewsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListInternalOccHandoverResourceBlockDetailsResponse
+            listInternalOccHandoverResourceBlockDetails(
+                    ListInternalOccHandoverResourceBlockDetailsRequest request) {
+        LOG.trace("Called listInternalOccHandoverResourceBlockDetails");
+        final ListInternalOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlockDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListInternalOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListInternalOccHandoverResourceBlocksResponse listInternalOccHandoverResourceBlocks(
+            ListInternalOccHandoverResourceBlocksRequest request) {
+        LOG.trace("Called listInternalOccHandoverResourceBlocks");
+        final ListInternalOccHandoverResourceBlocksRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlocksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlocksConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlocks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInternalOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlocksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -929,7 +1173,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccAvailabilities",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities");
         java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilitiesResponse>
                 transformer =
                         ListOccAvailabilitiesConverter.fromResponse(
@@ -967,7 +1211,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilityCatalogsResponse>
                 transformer =
                         ListOccAvailabilityCatalogsConverter.fromResponse(
@@ -1006,7 +1250,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccAvailabilityCatalogsInternalResponse>
                 transformer =
@@ -1045,7 +1289,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccCapacityRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListOccCapacityRequestsResponse>
                 transformer =
                         ListOccCapacityRequestsConverter.fromResponse(
@@ -1083,7 +1327,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccCapacityRequestsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccCapacityRequestsInternalResponse>
                 transformer =
@@ -1122,10 +1366,89 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccCustomerGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups");
         java.util.function.Function<javax.ws.rs.core.Response, ListOccCustomerGroupsResponse>
                 transformer =
                         ListOccCustomerGroupsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOccHandoverResourceBlockDetailsResponse listOccHandoverResourceBlockDetails(
+            ListOccHandoverResourceBlockDetailsRequest request) {
+        LOG.trace("Called listOccHandoverResourceBlockDetails");
+        final ListOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlockDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListOccHandoverResourceBlocksResponse listOccHandoverResourceBlocks(
+            ListOccHandoverResourceBlocksRequest request) {
+        LOG.trace("Called listOccHandoverResourceBlocks");
+        final ListOccHandoverResourceBlocksRequest interceptedRequest =
+                ListOccHandoverResourceBlocksConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlocksConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlocks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListOccHandoverResourceBlocksConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1159,7 +1482,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "ListOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews");
         java.util.function.Function<javax.ws.rs.core.Response, ListOccOverviewsResponse>
                 transformer =
                         ListOccOverviewsConverter.fromResponse(
@@ -1197,7 +1520,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "PatchInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest");
         java.util.function.Function<
                         javax.ws.rs.core.Response, PatchInternalOccCapacityRequestResponse>
                 transformer =
@@ -1240,7 +1563,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "PatchOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest");
         java.util.function.Function<javax.ws.rs.core.Response, PatchOccCapacityRequestResponse>
                 transformer =
                         PatchOccCapacityRequestConverter.fromResponse(
@@ -1283,7 +1606,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "PublishOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog");
         java.util.function.Function<
                         javax.ws.rs.core.Response, PublishOccAvailabilityCatalogResponse>
                 transformer =
@@ -1323,7 +1646,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "UpdateInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateInternalOccCapacityRequestResponse>
                 transformer =
@@ -1367,7 +1690,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "UpdateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateOccAvailabilityCatalogResponse>
                 transformer =
                         UpdateOccAvailabilityCatalogConverter.fromResponse(
@@ -1410,7 +1733,7 @@ public class CapacityManagementClient implements CapacityManagement {
                         "CapacityManagement",
                         "UpdateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCapacityRequestResponse>
                 transformer =
                         UpdateOccCapacityRequestConverter.fromResponse(
@@ -1428,6 +1751,89 @@ public class CapacityManagementClient implements CapacityManagement {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateOccCapacityRequestDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOccCustomerResponse updateOccCustomer(UpdateOccCustomerRequest request) {
+        LOG.trace("Called updateOccCustomer");
+        final UpdateOccCustomerRequest interceptedRequest =
+                UpdateOccCustomerConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerResponse>
+                transformer =
+                        UpdateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOccCustomerDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateOccCustomerGroupResponse updateOccCustomerGroup(
+            UpdateOccCustomerGroupRequest request) {
+        LOG.trace("Called updateOccCustomerGroup");
+        final UpdateOccCustomerGroupRequest interceptedRequest =
+                UpdateOccCustomerGroupConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerGroupResponse>
+                transformer =
+                        UpdateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateOccCustomerGroupDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

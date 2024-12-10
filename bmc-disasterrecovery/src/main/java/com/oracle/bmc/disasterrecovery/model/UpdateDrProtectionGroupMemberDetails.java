@@ -47,8 +47,16 @@ package com.oracle.bmc.disasterrecovery.model;
         name = "COMPUTE_INSTANCE_NON_MOVABLE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberAutonomousContainerDatabaseDetails.class,
+        name = "AUTONOMOUS_CONTAINER_DATABASE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberLoadBalancerDetails.class,
         name = "LOAD_BALANCER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateDrProtectionGroupMemberObjectStorageBucketDetails.class,
+        name = "OBJECT_STORAGE_BUCKET"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateDrProtectionGroupMemberComputeInstanceMovableDetails.class,

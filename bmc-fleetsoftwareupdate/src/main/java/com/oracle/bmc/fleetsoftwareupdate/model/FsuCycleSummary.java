@@ -29,8 +29,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
         "collectionType",
         "executingFsuActionId",
         "nextActionToExecute",
+        "lastCompletedActionId",
+        "rollbackCycleState",
         "lastCompletedAction",
         "goalVersionDetails",
+        "diagnosticsCollection",
         "timeCreated",
         "timeUpdated",
         "timeFinished",
@@ -49,8 +52,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
             CollectionTypes collectionType,
             String executingFsuActionId,
             java.util.List<NextActionToExecuteDetails> nextActionToExecute,
+            String lastCompletedActionId,
+            RollbackCycleStates rollbackCycleState,
             DetailedActionTypes lastCompletedAction,
             FsuGoalVersionDetails goalVersionDetails,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -68,8 +74,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
         this.collectionType = collectionType;
         this.executingFsuActionId = executingFsuActionId;
         this.nextActionToExecute = nextActionToExecute;
+        this.lastCompletedActionId = lastCompletedActionId;
+        this.rollbackCycleState = rollbackCycleState;
         this.lastCompletedAction = lastCompletedAction;
         this.goalVersionDetails = goalVersionDetails;
+        this.diagnosticsCollection = diagnosticsCollection;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeFinished = timeFinished;
@@ -228,6 +237,46 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * OCID identifier for the latest Action the Exadata Fleet Update Cycle.
+         * No value would indicate that the Cycle has not completed any Action yet.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+        private String lastCompletedActionId;
+
+        /**
+         * OCID identifier for the latest Action the Exadata Fleet Update Cycle.
+         * No value would indicate that the Cycle has not completed any Action yet.
+         *
+         * @param lastCompletedActionId the value to set
+         * @return this builder
+         **/
+        public Builder lastCompletedActionId(String lastCompletedActionId) {
+            this.lastCompletedActionId = lastCompletedActionId;
+            this.__explicitlySet__.add("lastCompletedActionId");
+            return this;
+        }
+        /**
+         * Current rollback cycle state if rollback maintenance cycle action has been attempted.
+         * No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+        private RollbackCycleStates rollbackCycleState;
+
+        /**
+         * Current rollback cycle state if rollback maintenance cycle action has been attempted.
+         * No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+         *
+         * @param rollbackCycleState the value to set
+         * @return this builder
+         **/
+        public Builder rollbackCycleState(RollbackCycleStates rollbackCycleState) {
+            this.rollbackCycleState = rollbackCycleState;
+            this.__explicitlySet__.add("rollbackCycleState");
+            return this;
+        }
+        /**
          * The latest Action type that was completed in the Exadata Fleet Update Cycle.
          * No value would indicate that the Cycle has not completed any Action yet.
          *
@@ -254,6 +303,15 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
         public Builder goalVersionDetails(FsuGoalVersionDetails goalVersionDetails) {
             this.goalVersionDetails = goalVersionDetails;
             this.__explicitlySet__.add("goalVersionDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
             return this;
         }
         /**
@@ -430,8 +488,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
                             this.collectionType,
                             this.executingFsuActionId,
                             this.nextActionToExecute,
+                            this.lastCompletedActionId,
+                            this.rollbackCycleState,
                             this.lastCompletedAction,
                             this.goalVersionDetails,
+                            this.diagnosticsCollection,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeFinished,
@@ -472,11 +533,20 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
             if (model.wasPropertyExplicitlySet("nextActionToExecute")) {
                 this.nextActionToExecute(model.getNextActionToExecute());
             }
+            if (model.wasPropertyExplicitlySet("lastCompletedActionId")) {
+                this.lastCompletedActionId(model.getLastCompletedActionId());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackCycleState")) {
+                this.rollbackCycleState(model.getRollbackCycleState());
+            }
             if (model.wasPropertyExplicitlySet("lastCompletedAction")) {
                 this.lastCompletedAction(model.getLastCompletedAction());
             }
             if (model.wasPropertyExplicitlySet("goalVersionDetails")) {
                 this.goalVersionDetails(model.getGoalVersionDetails());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -646,6 +716,42 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * OCID identifier for the latest Action the Exadata Fleet Update Cycle.
+     * No value would indicate that the Cycle has not completed any Action yet.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+    private final String lastCompletedActionId;
+
+    /**
+     * OCID identifier for the latest Action the Exadata Fleet Update Cycle.
+     * No value would indicate that the Cycle has not completed any Action yet.
+     *
+     * @return the value
+     **/
+    public String getLastCompletedActionId() {
+        return lastCompletedActionId;
+    }
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted.
+     * No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+    private final RollbackCycleStates rollbackCycleState;
+
+    /**
+     * Current rollback cycle state if rollback maintenance cycle action has been attempted.
+     * No value would indicate that the Cycle has not run a rollback maintenance cycle action before.
+     *
+     * @return the value
+     **/
+    public RollbackCycleStates getRollbackCycleState() {
+        return rollbackCycleState;
+    }
+
+    /**
      * The latest Action type that was completed in the Exadata Fleet Update Cycle.
      * No value would indicate that the Cycle has not completed any Action yet.
      *
@@ -668,6 +774,13 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
 
     public FsuGoalVersionDetails getGoalVersionDetails() {
         return goalVersionDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+    private final DiagnosticsCollectionDetails diagnosticsCollection;
+
+    public DiagnosticsCollectionDetails getDiagnosticsCollection() {
+        return diagnosticsCollection;
     }
 
     /**
@@ -834,8 +947,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
         sb.append(", collectionType=").append(String.valueOf(this.collectionType));
         sb.append(", executingFsuActionId=").append(String.valueOf(this.executingFsuActionId));
         sb.append(", nextActionToExecute=").append(String.valueOf(this.nextActionToExecute));
+        sb.append(", lastCompletedActionId=").append(String.valueOf(this.lastCompletedActionId));
+        sb.append(", rollbackCycleState=").append(String.valueOf(this.rollbackCycleState));
         sb.append(", lastCompletedAction=").append(String.valueOf(this.lastCompletedAction));
         sb.append(", goalVersionDetails=").append(String.valueOf(this.goalVersionDetails));
+        sb.append(", diagnosticsCollection=").append(String.valueOf(this.diagnosticsCollection));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeFinished=").append(String.valueOf(this.timeFinished));
@@ -866,8 +982,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.collectionType, other.collectionType)
                 && java.util.Objects.equals(this.executingFsuActionId, other.executingFsuActionId)
                 && java.util.Objects.equals(this.nextActionToExecute, other.nextActionToExecute)
+                && java.util.Objects.equals(this.lastCompletedActionId, other.lastCompletedActionId)
+                && java.util.Objects.equals(this.rollbackCycleState, other.rollbackCycleState)
                 && java.util.Objects.equals(this.lastCompletedAction, other.lastCompletedAction)
                 && java.util.Objects.equals(this.goalVersionDetails, other.goalVersionDetails)
+                && java.util.Objects.equals(this.diagnosticsCollection, other.diagnosticsCollection)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeFinished, other.timeFinished)
@@ -907,6 +1026,16 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
                                 : this.nextActionToExecute.hashCode());
         result =
                 (result * PRIME)
+                        + (this.lastCompletedActionId == null
+                                ? 43
+                                : this.lastCompletedActionId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rollbackCycleState == null
+                                ? 43
+                                : this.rollbackCycleState.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lastCompletedAction == null
                                 ? 43
                                 : this.lastCompletedAction.hashCode());
@@ -915,6 +1044,11 @@ public final class FsuCycleSummary extends com.oracle.bmc.http.internal.Explicit
                         + (this.goalVersionDetails == null
                                 ? 43
                                 : this.goalVersionDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.diagnosticsCollection == null
+                                ? 43
+                                : this.diagnosticsCollection.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeFinished == null ? 43 : this.timeFinished.hashCode());

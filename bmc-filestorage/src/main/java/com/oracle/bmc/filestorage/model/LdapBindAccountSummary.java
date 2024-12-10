@@ -82,6 +82,15 @@ public final class LdapBindAccountSummary extends OutboundConnectorSummary {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -147,6 +156,7 @@ public final class LdapBindAccountSummary extends OutboundConnectorSummary {
                             this.lifecycleState,
                             this.displayName,
                             this.timeCreated,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.endpoints,
@@ -176,6 +186,9 @@ public final class LdapBindAccountSummary extends OutboundConnectorSummary {
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -212,6 +225,7 @@ public final class LdapBindAccountSummary extends OutboundConnectorSummary {
             LifecycleState lifecycleState,
             String displayName,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Endpoint> endpoints,
@@ -223,6 +237,7 @@ public final class LdapBindAccountSummary extends OutboundConnectorSummary {
                 lifecycleState,
                 displayName,
                 timeCreated,
+                locks,
                 freeformTags,
                 definedTags);
         this.endpoints = endpoints;

@@ -30,7 +30,8 @@ public final class UpdateVbInstanceDetails
         "nodeCount",
         "isVisualBuilderEnabled",
         "customEndpoint",
-        "alternateCustomEndpoints"
+        "alternateCustomEndpoints",
+        "networkEndpointDetails"
     })
     public UpdateVbInstanceDetails(
             String displayName,
@@ -40,7 +41,8 @@ public final class UpdateVbInstanceDetails
             Integer nodeCount,
             Boolean isVisualBuilderEnabled,
             UpdateCustomEndpointDetails customEndpoint,
-            java.util.List<UpdateCustomEndpointDetails> alternateCustomEndpoints) {
+            java.util.List<UpdateCustomEndpointDetails> alternateCustomEndpoints,
+            UpdateNetworkEndpointDetails networkEndpointDetails) {
         super();
         this.displayName = displayName;
         this.freeformTags = freeformTags;
@@ -50,6 +52,7 @@ public final class UpdateVbInstanceDetails
         this.isVisualBuilderEnabled = isVisualBuilderEnabled;
         this.customEndpoint = customEndpoint;
         this.alternateCustomEndpoints = alternateCustomEndpoints;
+        this.networkEndpointDetails = networkEndpointDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -194,6 +197,15 @@ public final class UpdateVbInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private UpdateNetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(UpdateNetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -207,7 +219,8 @@ public final class UpdateVbInstanceDetails
                             this.nodeCount,
                             this.isVisualBuilderEnabled,
                             this.customEndpoint,
-                            this.alternateCustomEndpoints);
+                            this.alternateCustomEndpoints,
+                            this.networkEndpointDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -239,6 +252,9 @@ public final class UpdateVbInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("alternateCustomEndpoints")) {
                 this.alternateCustomEndpoints(model.getAlternateCustomEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
             }
             return this;
         }
@@ -376,6 +392,13 @@ public final class UpdateVbInstanceDetails
         return alternateCustomEndpoints;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    private final UpdateNetworkEndpointDetails networkEndpointDetails;
+
+    public UpdateNetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -399,6 +422,7 @@ public final class UpdateVbInstanceDetails
         sb.append(", customEndpoint=").append(String.valueOf(this.customEndpoint));
         sb.append(", alternateCustomEndpoints=")
                 .append(String.valueOf(this.alternateCustomEndpoints));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -423,6 +447,8 @@ public final class UpdateVbInstanceDetails
                 && java.util.Objects.equals(this.customEndpoint, other.customEndpoint)
                 && java.util.Objects.equals(
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
                 && super.equals(other);
     }
 
@@ -448,6 +474,11 @@ public final class UpdateVbInstanceDetails
                         + (this.alternateCustomEndpoints == null
                                 ? 43
                                 : this.alternateCustomEndpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -119,13 +119,13 @@ public final class NodePool extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The state of the nodepool.
+         * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private NodePoolLifecycleState lifecycleState;
 
         /**
-         * The state of the nodepool.
+         * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
          * @param lifecycleState the value to set
          * @return this builder
          **/
@@ -655,13 +655,13 @@ public final class NodePool extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final NodePoolLifecycleState lifecycleState;
 
     /**
-     * The state of the nodepool.
+     * The state of the nodepool. For more information, see [Monitoring Clusters](https://docs.cloud.oracle.com/Content/ContEng/Tasks/contengmonitoringclusters.htm)
      * @return the value
      **/
     public NodePoolLifecycleState getLifecycleState() {

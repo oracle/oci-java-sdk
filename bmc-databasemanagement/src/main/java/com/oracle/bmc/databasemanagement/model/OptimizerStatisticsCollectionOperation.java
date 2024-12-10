@@ -487,6 +487,7 @@ public final class OptimizerStatisticsCollectionOperation
         Completed("COMPLETED"),
         Failed("FAILED"),
         TimedOut("TIMED_OUT"),
+        Unknown("UNKNOWN"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

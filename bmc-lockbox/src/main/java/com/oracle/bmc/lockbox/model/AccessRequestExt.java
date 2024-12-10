@@ -38,7 +38,8 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
         "timeExpired",
         "timeReminded",
         "reminderCount",
-        "requestorLocation"
+        "requestorLocation",
+        "ticketNumber"
     })
     public AccessRequestExt(
             String requestorUserName,
@@ -57,7 +58,8 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
             java.util.Date timeExpired,
             java.util.Date timeReminded,
             Integer reminderCount,
-            String requestorLocation) {
+            String requestorLocation,
+            String ticketNumber) {
         super();
         this.requestorUserName = requestorUserName;
         this.id = id;
@@ -76,6 +78,7 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
         this.timeReminded = timeReminded;
         this.reminderCount = reminderCount;
         this.requestorLocation = requestorLocation;
+        this.ticketNumber = ticketNumber;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -376,6 +379,26 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
             this.__explicitlySet__.add("requestorLocation");
             return this;
         }
+        /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+        private String ticketNumber;
+
+        /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         * @param ticketNumber the value to set
+         * @return this builder
+         **/
+        public Builder ticketNumber(String ticketNumber) {
+            this.ticketNumber = ticketNumber;
+            this.__explicitlySet__.add("ticketNumber");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -399,7 +422,8 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
                             this.timeExpired,
                             this.timeReminded,
                             this.reminderCount,
-                            this.requestorLocation);
+                            this.requestorLocation,
+                            this.ticketNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -458,6 +482,9 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("requestorLocation")) {
                 this.requestorLocation(model.getRequestorLocation());
+            }
+            if (model.wasPropertyExplicitlySet("ticketNumber")) {
+                this.ticketNumber(model.getTicketNumber());
             }
             return this;
         }
@@ -843,6 +870,24 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
         return requestorLocation;
     }
 
+    /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+    private final String ticketNumber;
+
+    /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     * @return the value
+     **/
+    public String getTicketNumber() {
+        return ticketNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -874,6 +919,7 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
         sb.append(", timeReminded=").append(String.valueOf(this.timeReminded));
         sb.append(", reminderCount=").append(String.valueOf(this.reminderCount));
         sb.append(", requestorLocation=").append(String.valueOf(this.requestorLocation));
+        sb.append(", ticketNumber=").append(String.valueOf(this.ticketNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -905,6 +951,7 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.timeReminded, other.timeReminded)
                 && java.util.Objects.equals(this.reminderCount, other.reminderCount)
                 && java.util.Objects.equals(this.requestorLocation, other.requestorLocation)
+                && java.util.Objects.equals(this.ticketNumber, other.ticketNumber)
                 && super.equals(other);
     }
 
@@ -943,6 +990,7 @@ public final class AccessRequestExt extends com.oracle.bmc.http.internal.Explici
         result =
                 (result * PRIME)
                         + (this.requestorLocation == null ? 43 : this.requestorLocation.hashCode());
+        result = (result * PRIME) + (this.ticketNumber == null ? 43 : this.ticketNumber.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -29,16 +29,17 @@ public class ListAlarmSuppressionsConverter {
             com.oracle.bmc.http.internal.RestClient client,
             com.oracle.bmc.monitoring.requests.ListAlarmSuppressionsRequest request) {
         Validate.notNull(request, "request instance is required");
-        Validate.notNull(request.getAlarmId(), "alarmId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget().path("/20180401").path("alarmSuppressions");
 
-        target =
-                target.queryParam(
-                        "alarmId",
-                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                request.getAlarmId()));
+        if (request.getAlarmId() != null) {
+            target =
+                    target.queryParam(
+                            "alarmId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAlarmId()));
+        }
 
         if (request.getDisplayName() != null) {
             target =
@@ -54,6 +55,46 @@ public class ListAlarmSuppressionsConverter {
                             "lifecycleState",
                             com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                     request.getLifecycleState().getValue()));
+        }
+
+        if (request.getLevel() != null) {
+            target =
+                    target.queryParam(
+                            "level",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLevel().getValue()));
+        }
+
+        if (request.getCompartmentId() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentId()));
+        }
+
+        if (request.getCompartmentIdInSubtree() != null) {
+            target =
+                    target.queryParam(
+                            "compartmentIdInSubtree",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCompartmentIdInSubtree()));
+        }
+
+        if (request.getTargetType() != null) {
+            target =
+                    target.queryParam(
+                            "targetType",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetType().getValue()));
+        }
+
+        if (request.getIsAllSuppressions() != null) {
+            target =
+                    target.queryParam(
+                            "isAllSuppressions",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsAllSuppressions()));
         }
 
         if (request.getSortBy() != null) {

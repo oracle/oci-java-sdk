@@ -255,6 +255,16 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("privateIp")
         private String privateIp;
 
@@ -382,6 +392,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                             this.nodeCount,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.privateIp,
                             this.dataCollectionOptions,
                             this.dbHome,
@@ -472,6 +483,9 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
@@ -535,6 +549,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
             Integer nodeCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
             DataCollectionOptions dataCollectionOptions,
             CreateDbHomeDetails dbHome,
@@ -568,6 +583,7 @@ public final class LaunchDbSystemDetails extends LaunchDbSystemBase {
                 nodeCount,
                 freeformTags,
                 definedTags,
+                securityAttributes,
                 privateIp,
                 dataCollectionOptions);
         this.dbHome = dbHome;

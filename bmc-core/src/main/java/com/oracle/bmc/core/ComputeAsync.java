@@ -1086,6 +1086,23 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets the maintenance event for the given instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<GetInstanceMaintenanceEventResponse> getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetInstanceMaintenanceEventRequest, GetInstanceMaintenanceEventResponse>
+                    handler);
+
+    /**
      * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
      * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
@@ -1269,6 +1286,12 @@ public interface ComputeAsync extends AutoCloseable {
      * Then, call {@link #createAppCatalogSubscription(CreateAppCatalogSubscriptionRequest, Consumer, Consumer) createAppCatalogSubscription}
      * with the signature. To get the image ID for the LaunchInstance operation, call
      * {@link #getAppCatalogListingResourceVersion(GetAppCatalogListingResourceVersionRequest, Consumer, Consumer) getAppCatalogListingResourceVersion}.
+     * <p>
+     * When launching an instance, you may provide the `securityAttributes` parameter in
+     * {@link LaunchInstanceDetails} to manage security attributes via the instance,
+     * or in the embedded {@link CreateVnicDetails} to manage security attributes
+     * via the VNIC directly, but not both.  Providing `securityAttributes` in both locations will return a
+     * 400 Bad Request response.
      * <p>
      * To determine whether capacity is available for a specific shape before you create an instance,
      * use the {@link #createComputeCapacityReport(CreateComputeCapacityReportRequest, Consumer, Consumer) createComputeCapacityReport}
@@ -1737,6 +1760,25 @@ public interface ComputeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a list of all the maintenance events for the given instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ListInstanceMaintenanceEventsResponse>
+            listInstanceMaintenanceEvents(
+                    ListInstanceMaintenanceEventsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListInstanceMaintenanceEventsRequest,
+                                    ListInstanceMaintenanceEventsResponse>
+                            handler);
+
+    /**
      * Lists the instances in the specified compartment and the specified availability domain.
      * You can filter the results by specifying an instance name (the list will include all the identically-named
      * instances in the compartment).
@@ -2029,6 +2071,25 @@ public interface ComputeAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     UpdateInstanceConsoleConnectionRequest,
                                     UpdateInstanceConsoleConnectionResponse>
+                            handler);
+
+    /**
+     * Updates the maintenance event for the given instance.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateInstanceMaintenanceEventResponse>
+            updateInstanceMaintenanceEvent(
+                    UpdateInstanceMaintenanceEventRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateInstanceMaintenanceEventRequest,
+                                    UpdateInstanceMaintenanceEventResponse>
                             handler);
 
     /**

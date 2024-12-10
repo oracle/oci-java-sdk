@@ -34,6 +34,7 @@ import java.util.Optional;
 import java.util.concurrent.locks.ReentrantLock;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.AUTHORIZATION_HEADER_VALUE;
 import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_SERVICE_BASE_URL;
+import static com.oracle.bmc.auth.AbstractFederationClientAuthenticationDetailsProviderBuilder.METADATA_URL_OVERRIDE;
 import static javax.ws.rs.core.HttpHeaders.AUTHORIZATION;
 
 /**
@@ -124,6 +125,8 @@ public final class Region implements Serializable, Comparable<Region> {
     public static final Region US_SALTLAKE_2 = register("us-saltlake-2", Realm.OC1, "aga");
     public static final Region SA_BOGOTA_1 = register("sa-bogota-1", Realm.OC1, "bog");
     public static final Region SA_VALPARAISO_1 = register("sa-valparaiso-1", Realm.OC1, "vap");
+    public static final Region AP_SINGAPORE_2 = register("ap-singapore-2", Realm.OC1, "xsp");
+    public static final Region ME_RIYADH_1 = register("me-riyadh-1", Realm.OC1, "ruh");
 
     // OC2
     public static final Region US_LANGLEY_1 = register("us-langley-1", Realm.OC2, "lfi");
@@ -165,15 +168,30 @@ public final class Region implements Serializable, Comparable<Region> {
 
     // OC24
     public static final Region EU_DCC_ZURICH_1 = register("eu-dcc-zurich-1", Realm.OC24, "avz");
+    public static final Region EU_CRISSIER_1 = register("eu-crissier-1", Realm.OC24, "avf");
 
     // OC21
     public static final Region ME_DCC_DOHA_1 = register("me-dcc-doha-1", Realm.OC21, "doh");
 
     // OC26
     public static final Region ME_ABUDHABI_3 = register("me-abudhabi-3", Realm.OC26, "ahu");
+    public static final Region ME_ALAIN_1 = register("me-alain-1", Realm.OC26, "rba");
 
     // OC15
     public static final Region AP_DCC_GAZIPUR_1 = register("ap-dcc-gazipur-1", Realm.OC15, "dac");
+
+    // OC29
+    public static final Region ME_ABUDHABI_2 = register("me-abudhabi-2", Realm.OC29, "rkt");
+    public static final Region ME_ABUDHABI_4 = register("me-abudhabi-4", Realm.OC29, "shj");
+
+    // OC23
+    public static final Region US_SOMERSET_1 = register("us-somerset-1", Realm.OC23, "ebb");
+    public static final Region US_THAMES_1 = register("us-thames-1", Realm.OC23, "ebl");
+
+    // OC35
+    public static final Region AP_SEOUL_2 = register("ap-seoul-2", Realm.OC35, "dtz");
+    public static final Region AP_SUWON_1 = register("ap-suwon-1", Realm.OC35, "dln");
+    public static final Region AP_CHUNCHEON_2 = register("ap-chuncheon-2", Realm.OC35, "bno");
 
     private static final Map<String, Map<Region, String>> SERVICE_TO_REGION_ENDPOINTS =
             new HashMap<>();
@@ -710,7 +728,7 @@ public final class Region implements Serializable, Comparable<Region> {
 
             LOG.info(
                     "Requesting region metadata blob from IMDS at {}",
-                    METADATA_SERVICE_BASE_URL + "instance/regionInfo");
+                    getMetadataBaseUrl() + "instance/regionInfo");
             final String REGION_INFO = "regionInfo";
             String regionMetadataSchema =
                     AbstractFederationClientAuthenticationDetailsProviderBuilder.simpleRetry(
@@ -719,7 +737,7 @@ public final class Region implements Serializable, Comparable<Region> {
                                             .request(MediaType.APPLICATION_JSON)
                                             .header(AUTHORIZATION, AUTHORIZATION_HEADER_VALUE)
                                             .get(String.class),
-                            METADATA_SERVICE_BASE_URL,
+                            getMetadataBaseUrl(),
                             REGION_INFO);
 
             hasReceivedInstanceMetadataServiceResponse = true;
@@ -747,6 +765,20 @@ public final class Region implements Serializable, Comparable<Region> {
             hasUsedInstanceMetadataService = true;
         }
         return hasReceivedInstanceMetadataServiceResponse;
+    }
+
+    private static String getMetadataBaseUrl() {
+        if (!StringUtils.isBlank(METADATA_URL_OVERRIDE)) {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is present. Overriding default base url to: {}",
+                    METADATA_URL_OVERRIDE);
+            return METADATA_URL_OVERRIDE;
+        } else {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is not present. Using default base url: {}",
+                    METADATA_SERVICE_BASE_URL);
+            return METADATA_SERVICE_BASE_URL;
+        }
     }
 
     public boolean equals(final Object o) {

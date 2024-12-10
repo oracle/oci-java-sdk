@@ -35,7 +35,11 @@ public final class CreateAnalyticsInstanceDetails
         "idcsAccessToken",
         "definedTags",
         "freeformTags",
-        "kmsKeyId"
+        "updateChannel",
+        "kmsKeyId",
+        "domainId",
+        "adminUser",
+        "featureBundle"
     })
     public CreateAnalyticsInstanceDetails(
             String name,
@@ -49,7 +53,11 @@ public final class CreateAnalyticsInstanceDetails
             String idcsAccessToken,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, String> freeformTags,
-            String kmsKeyId) {
+            UpdateChannel updateChannel,
+            String kmsKeyId,
+            String domainId,
+            String adminUser,
+            FeatureBundle featureBundle) {
         super();
         this.name = name;
         this.description = description;
@@ -62,7 +70,11 @@ public final class CreateAnalyticsInstanceDetails
         this.idcsAccessToken = idcsAccessToken;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.updateChannel = updateChannel;
         this.kmsKeyId = kmsKeyId;
+        this.domainId = domainId;
+        this.adminUser = adminUser;
+        this.featureBundle = featureBundle;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -261,14 +273,32 @@ public final class CreateAnalyticsInstanceDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * Analytics instance update channel.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+        private UpdateChannel updateChannel;
+
+        /**
+         * Analytics instance update channel.
+         *
+         * @param updateChannel the value to set
+         * @return this builder
+         **/
+        public Builder updateChannel(UpdateChannel updateChannel) {
+            this.updateChannel = updateChannel;
+            this.__explicitlySet__.add("updateChannel");
+            return this;
+        }
+        /**
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
         private String kmsKeyId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+         * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
          *
          * @param kmsKeyId the value to set
          * @return this builder
@@ -276,6 +306,60 @@ public final class CreateAnalyticsInstanceDetails
         public Builder kmsKeyId(String kmsKeyId) {
             this.kmsKeyId = kmsKeyId;
             this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
+         * domain id for which the user is authorized.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+        private String domainId;
+
+        /**
+         * domain id for which the user is authorized.
+         *
+         * @param domainId the value to set
+         * @return this builder
+         **/
+        public Builder domainId(String domainId) {
+            this.domainId = domainId;
+            this.__explicitlySet__.add("domainId");
+            return this;
+        }
+        /**
+         * user name of the authorized user.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
+        private String adminUser;
+
+        /**
+         * user name of the authorized user.
+         *
+         * @param adminUser the value to set
+         * @return this builder
+         **/
+        public Builder adminUser(String adminUser) {
+            this.adminUser = adminUser;
+            this.__explicitlySet__.add("adminUser");
+            return this;
+        }
+        /**
+         * The feature set of an Analytics instance.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
+        private FeatureBundle featureBundle;
+
+        /**
+         * The feature set of an Analytics instance.
+         *
+         * @param featureBundle the value to set
+         * @return this builder
+         **/
+        public Builder featureBundle(FeatureBundle featureBundle) {
+            this.featureBundle = featureBundle;
+            this.__explicitlySet__.add("featureBundle");
             return this;
         }
 
@@ -296,7 +380,11 @@ public final class CreateAnalyticsInstanceDetails
                             this.idcsAccessToken,
                             this.definedTags,
                             this.freeformTags,
-                            this.kmsKeyId);
+                            this.updateChannel,
+                            this.kmsKeyId,
+                            this.domainId,
+                            this.adminUser,
+                            this.featureBundle);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -338,8 +426,20 @@ public final class CreateAnalyticsInstanceDetails
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
+            if (model.wasPropertyExplicitlySet("updateChannel")) {
+                this.updateChannel(model.getUpdateChannel());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("domainId")) {
+                this.domainId(model.getDomainId());
+            }
+            if (model.wasPropertyExplicitlySet("adminUser")) {
+                this.adminUser(model.getAdminUser());
+            }
+            if (model.wasPropertyExplicitlySet("featureBundle")) {
+                this.featureBundle(model.getFeatureBundle());
             }
             return this;
         }
@@ -527,19 +627,83 @@ public final class CreateAnalyticsInstanceDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * Analytics instance update channel.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+    private final UpdateChannel updateChannel;
+
+    /**
+     * Analytics instance update channel.
+     *
+     * @return the value
+     **/
+    public UpdateChannel getUpdateChannel() {
+        return updateChannel;
+    }
+
+    /**
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
     private final String kmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
+     * OCID of the OCI Vault Key encrypting the customer data stored in this Analytics instance. A null value indicates Oracle managed default encryption.
      *
      * @return the value
      **/
     public String getKmsKeyId() {
         return kmsKeyId;
+    }
+
+    /**
+     * domain id for which the user is authorized.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainId")
+    private final String domainId;
+
+    /**
+     * domain id for which the user is authorized.
+     *
+     * @return the value
+     **/
+    public String getDomainId() {
+        return domainId;
+    }
+
+    /**
+     * user name of the authorized user.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("adminUser")
+    private final String adminUser;
+
+    /**
+     * user name of the authorized user.
+     *
+     * @return the value
+     **/
+    public String getAdminUser() {
+        return adminUser;
+    }
+
+    /**
+     * The feature set of an Analytics instance.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("featureBundle")
+    private final FeatureBundle featureBundle;
+
+    /**
+     * The feature set of an Analytics instance.
+     *
+     * @return the value
+     **/
+    public FeatureBundle getFeatureBundle() {
+        return featureBundle;
     }
 
     @Override
@@ -567,7 +731,11 @@ public final class CreateAnalyticsInstanceDetails
         sb.append(", idcsAccessToken=").append(String.valueOf(this.idcsAccessToken));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", updateChannel=").append(String.valueOf(this.updateChannel));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", domainId=").append(String.valueOf(this.domainId));
+        sb.append(", adminUser=").append(String.valueOf(this.adminUser));
+        sb.append(", featureBundle=").append(String.valueOf(this.featureBundle));
         sb.append(")");
         return sb.toString();
     }
@@ -594,7 +762,11 @@ public final class CreateAnalyticsInstanceDetails
                 && java.util.Objects.equals(this.idcsAccessToken, other.idcsAccessToken)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.updateChannel, other.updateChannel)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.domainId, other.domainId)
+                && java.util.Objects.equals(this.adminUser, other.adminUser)
+                && java.util.Objects.equals(this.featureBundle, other.featureBundle)
                 && super.equals(other);
     }
 
@@ -623,7 +795,15 @@ public final class CreateAnalyticsInstanceDetails
                         + (this.idcsAccessToken == null ? 43 : this.idcsAccessToken.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateChannel == null ? 43 : this.updateChannel.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result = (result * PRIME) + (this.domainId == null ? 43 : this.domainId.hashCode());
+        result = (result * PRIME) + (this.adminUser == null ? 43 : this.adminUser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.featureBundle == null ? 43 : this.featureBundle.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

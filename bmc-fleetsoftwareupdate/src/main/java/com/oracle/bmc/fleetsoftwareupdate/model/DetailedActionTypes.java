@@ -16,6 +16,7 @@ public enum DetailedActionTypes {
     Apply("APPLY"),
     RollbackAndRemoveTarget("ROLLBACK_AND_REMOVE_TARGET"),
     Cleanup("CLEANUP"),
+    RollbackMaintenanceCycle("ROLLBACK_MAINTENANCE_CYCLE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

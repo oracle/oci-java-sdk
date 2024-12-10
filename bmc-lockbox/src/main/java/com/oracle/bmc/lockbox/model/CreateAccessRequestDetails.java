@@ -30,20 +30,23 @@ public final class CreateAccessRequestDetails
         "displayName",
         "description",
         "context",
-        "accessDuration"
+        "accessDuration",
+        "ticketNumber"
     })
     public CreateAccessRequestDetails(
             String lockboxId,
             String displayName,
             String description,
             java.util.Map<String, String> context,
-            String accessDuration) {
+            String accessDuration,
+            String ticketNumber) {
         super();
         this.lockboxId = lockboxId;
         this.displayName = displayName;
         this.description = description;
         this.context = context;
         this.accessDuration = accessDuration;
+        this.ticketNumber = ticketNumber;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -128,6 +131,26 @@ public final class CreateAccessRequestDetails
             this.__explicitlySet__.add("accessDuration");
             return this;
         }
+        /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+        private String ticketNumber;
+
+        /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         * @param ticketNumber the value to set
+         * @return this builder
+         **/
+        public Builder ticketNumber(String ticketNumber) {
+            this.ticketNumber = ticketNumber;
+            this.__explicitlySet__.add("ticketNumber");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -139,7 +162,8 @@ public final class CreateAccessRequestDetails
                             this.displayName,
                             this.description,
                             this.context,
-                            this.accessDuration);
+                            this.accessDuration,
+                            this.ticketNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -162,6 +186,9 @@ public final class CreateAccessRequestDetails
             }
             if (model.wasPropertyExplicitlySet("accessDuration")) {
                 this.accessDuration(model.getAccessDuration());
+            }
+            if (model.wasPropertyExplicitlySet("ticketNumber")) {
+                this.ticketNumber(model.getTicketNumber());
             }
             return this;
         }
@@ -248,6 +275,24 @@ public final class CreateAccessRequestDetails
         return accessDuration;
     }
 
+    /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+    private final String ticketNumber;
+
+    /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     * @return the value
+     **/
+    public String getTicketNumber() {
+        return ticketNumber;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -267,6 +312,7 @@ public final class CreateAccessRequestDetails
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", context=").append(String.valueOf(this.context));
         sb.append(", accessDuration=").append(String.valueOf(this.accessDuration));
+        sb.append(", ticketNumber=").append(String.valueOf(this.ticketNumber));
         sb.append(")");
         return sb.toString();
     }
@@ -286,6 +332,7 @@ public final class CreateAccessRequestDetails
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.context, other.context)
                 && java.util.Objects.equals(this.accessDuration, other.accessDuration)
+                && java.util.Objects.equals(this.ticketNumber, other.ticketNumber)
                 && super.equals(other);
     }
 
@@ -300,6 +347,7 @@ public final class CreateAccessRequestDetails
         result =
                 (result * PRIME)
                         + (this.accessDuration == null ? 43 : this.accessDuration.hashCode());
+        result = (result * PRIME) + (this.ticketNumber == null ? 43 : this.ticketNumber.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

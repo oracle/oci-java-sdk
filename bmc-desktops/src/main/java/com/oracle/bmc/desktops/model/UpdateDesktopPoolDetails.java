@@ -33,7 +33,8 @@ public final class UpdateDesktopPoolDetails
         "timeStartScheduled",
         "timeStopScheduled",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "sessionLifecycleActions"
     })
     public UpdateDesktopPoolDetails(
             String displayName,
@@ -46,7 +47,8 @@ public final class UpdateDesktopPoolDetails
             java.util.Date timeStartScheduled,
             java.util.Date timeStopScheduled,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            UpdateDesktopPoolDesktopSessionLifecycleActions sessionLifecycleActions) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -59,6 +61,7 @@ public final class UpdateDesktopPoolDetails
         this.timeStopScheduled = timeStopScheduled;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.sessionLifecycleActions = sessionLifecycleActions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -245,6 +248,16 @@ public final class UpdateDesktopPoolDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionLifecycleActions")
+        private UpdateDesktopPoolDesktopSessionLifecycleActions sessionLifecycleActions;
+
+        public Builder sessionLifecycleActions(
+                UpdateDesktopPoolDesktopSessionLifecycleActions sessionLifecycleActions) {
+            this.sessionLifecycleActions = sessionLifecycleActions;
+            this.__explicitlySet__.add("sessionLifecycleActions");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -261,7 +274,8 @@ public final class UpdateDesktopPoolDetails
                             this.timeStartScheduled,
                             this.timeStopScheduled,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.sessionLifecycleActions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -302,6 +316,9 @@ public final class UpdateDesktopPoolDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("sessionLifecycleActions")) {
+                this.sessionLifecycleActions(model.getSessionLifecycleActions());
             }
             return this;
         }
@@ -476,6 +493,13 @@ public final class UpdateDesktopPoolDetails
         return definedTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionLifecycleActions")
+    private final UpdateDesktopPoolDesktopSessionLifecycleActions sessionLifecycleActions;
+
+    public UpdateDesktopPoolDesktopSessionLifecycleActions getSessionLifecycleActions() {
+        return sessionLifecycleActions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -501,6 +525,8 @@ public final class UpdateDesktopPoolDetails
         sb.append(", timeStopScheduled=").append(String.valueOf(this.timeStopScheduled));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", sessionLifecycleActions=")
+                .append(String.valueOf(this.sessionLifecycleActions));
         sb.append(")");
         return sb.toString();
     }
@@ -526,6 +552,8 @@ public final class UpdateDesktopPoolDetails
                 && java.util.Objects.equals(this.timeStopScheduled, other.timeStopScheduled)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.sessionLifecycleActions, other.sessionLifecycleActions)
                 && super.equals(other);
     }
 
@@ -556,6 +584,11 @@ public final class UpdateDesktopPoolDetails
                         + (this.timeStopScheduled == null ? 43 : this.timeStopScheduled.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sessionLifecycleActions == null
+                                ? 43
+                                : this.sessionLifecycleActions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

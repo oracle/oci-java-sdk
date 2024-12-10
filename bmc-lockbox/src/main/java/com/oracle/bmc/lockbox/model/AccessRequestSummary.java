@@ -33,6 +33,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         "timeCreated",
         "timeUpdated",
         "timeExpired",
+        "ticketNumber",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -49,6 +50,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeExpired,
+            String ticketNumber,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -64,6 +66,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.timeExpired = timeExpired;
+        this.ticketNumber = ticketNumber;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -264,6 +267,26 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+        private String ticketNumber;
+
+        /**
+         * The ticket number raised by external customers
+         * Example: {@code 3-37509643121}
+         *
+         * @param ticketNumber the value to set
+         * @return this builder
+         **/
+        public Builder ticketNumber(String ticketNumber) {
+            this.ticketNumber = ticketNumber;
+            this.__explicitlySet__.add("ticketNumber");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -342,6 +365,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeExpired,
+                            this.ticketNumber,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -385,6 +409,9 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeExpired")) {
                 this.timeExpired(model.getTimeExpired());
+            }
+            if (model.wasPropertyExplicitlySet("ticketNumber")) {
+                this.ticketNumber(model.getTicketNumber());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -581,6 +608,24 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ticketNumber")
+    private final String ticketNumber;
+
+    /**
+     * The ticket number raised by external customers
+     * Example: {@code 3-37509643121}
+     *
+     * @return the value
+     **/
+    public String getTicketNumber() {
+        return ticketNumber;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -659,6 +704,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", timeExpired=").append(String.valueOf(this.timeExpired));
+        sb.append(", ticketNumber=").append(String.valueOf(this.ticketNumber));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -687,6 +733,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.timeExpired, other.timeExpired)
+                && java.util.Objects.equals(this.ticketNumber, other.ticketNumber)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -714,6 +761,7 @@ public final class AccessRequestSummary extends com.oracle.bmc.http.internal.Exp
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + (this.timeExpired == null ? 43 : this.timeExpired.hashCode());
+        result = (result * PRIME) + (this.ticketNumber == null ? 43 : this.ticketNumber.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

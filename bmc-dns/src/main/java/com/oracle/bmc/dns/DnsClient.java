@@ -35,6 +35,7 @@ public class DnsClient implements Dns {
     private final DnsPaginators paginators;
     private final com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider
             authenticationDetailsProvider;
+    private final java.util.concurrent.ExecutorService executorService;
     private final com.oracle.bmc.retrier.RetryConfiguration retryConfiguration;
     private final org.glassfish.jersey.apache.connector.ApacheConnectionClosingStrategy
             apacheConnectionClosingStrategy;
@@ -351,6 +352,7 @@ public class DnsClient implements Dns {
 
             executorService = threadPoolExecutor;
         }
+        this.executorService = executorService;
         this.waiters = new DnsWaiters(executorService, this);
 
         this.paginators = new DnsPaginators(this);
@@ -2155,6 +2157,94 @@ public class DnsClient implements Dns {
     }
 
     @Override
+    public PromoteZoneDnssecKeyVersionResponse promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request) {
+        LOG.trace("Called promoteZoneDnssecKeyVersion");
+        final PromoteZoneDnssecKeyVersionRequest interceptedRequest =
+                PromoteZoneDnssecKeyVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PromoteZoneDnssecKeyVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dns",
+                        "PromoteZoneDnssecKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/PromoteZoneDnssecKeyVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, PromoteZoneDnssecKeyVersionResponse>
+                transformer =
+                        PromoteZoneDnssecKeyVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getPromoteZoneDnssecKeyVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public StageZoneDnssecKeyVersionResponse stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request) {
+        LOG.trace("Called stageZoneDnssecKeyVersion");
+        final StageZoneDnssecKeyVersionRequest interceptedRequest =
+                StageZoneDnssecKeyVersionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StageZoneDnssecKeyVersionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dns",
+                        "StageZoneDnssecKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/StageZoneDnssecKeyVersion");
+        java.util.function.Function<javax.ws.rs.core.Response, StageZoneDnssecKeyVersionResponse>
+                transformer =
+                        StageZoneDnssecKeyVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getStageZoneDnssecKeyVersionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public UpdateDomainRecordsResponse updateDomainRecords(UpdateDomainRecordsRequest request) {
         LOG.trace("Called updateDomainRecords");
         final UpdateDomainRecordsRequest interceptedRequest =
@@ -2559,6 +2649,11 @@ public class DnsClient implements Dns {
     @Override
     public DnsWaiters getWaiters() {
         return waiters;
+    }
+
+    @Override
+    public DnsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient) {
+        return new DnsWaiters(executorService, this, workRequestClient);
     }
 
     @Override

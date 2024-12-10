@@ -9,8 +9,10 @@ package com.oracle.bmc.databasemigration.model;
  **/
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20230518")
 public enum DataPumpTablespaceBlockSizesInKb {
+    Size2K("SIZE_2K"),
     Size8K("SIZE_8K"),
     Size16K("SIZE_16K"),
+    Size32K("SIZE_32K"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

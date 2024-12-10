@@ -44,6 +44,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         "scheduledReportCompartmentId",
         "recordTimeSpan",
         "complianceStandards",
+        "lifecycleDetails",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -73,6 +74,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             String scheduledReportCompartmentId,
             String recordTimeSpan,
             java.util.List<String> complianceStandards,
+            String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -101,6 +103,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         this.scheduledReportCompartmentId = scheduledReportCompartmentId;
         this.recordTimeSpan = recordTimeSpan;
         this.complianceStandards = complianceStandards;
+        this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -425,13 +428,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Specifies the format of the report ( either .xls or .pdf )
+         * Specifies the format of the report ( either .xls or .pdf or .json)
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
         private ScheduledReportMimeType scheduledReportMimeType;
 
         /**
-         * Specifies the format of the report ( either .xls or .pdf )
+         * Specifies the format of the report ( either .xls or .pdf or .json)
          * @param scheduledReportMimeType the value to set
          * @return this builder
          **/
@@ -541,6 +544,22 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
+         * Details about the current state of the report definition in Data Safe.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the current state of the report definition in Data Safe.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -636,6 +655,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                             this.scheduledReportCompartmentId,
                             this.recordTimeSpan,
                             this.complianceStandards,
+                            this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -718,6 +738,9 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("complianceStandards")) {
                 this.complianceStandards(model.getComplianceStandards());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -1075,11 +1098,12 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      **/
     public enum ScheduledReportMimeType {
         Pdf("PDF"),
         Xls("XLS"),
+        Json("JSON"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1123,13 +1147,13 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
         }
     };
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scheduledReportMimeType")
     private final ScheduledReportMimeType scheduledReportMimeType;
 
     /**
-     * Specifies the format of the report ( either .xls or .pdf )
+     * Specifies the format of the report ( either .xls or .pdf or .json)
      * @return the value
      **/
     public ScheduledReportMimeType getScheduledReportMimeType() {
@@ -1224,6 +1248,20 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
      **/
     public java.util.List<String> getComplianceStandards() {
         return complianceStandards;
+    }
+
+    /**
+     * Details about the current state of the report definition in Data Safe.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the current state of the report definition in Data Safe.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -1325,6 +1363,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                 .append(String.valueOf(this.scheduledReportCompartmentId));
         sb.append(", recordTimeSpan=").append(String.valueOf(this.recordTimeSpan));
         sb.append(", complianceStandards=").append(String.valueOf(this.complianceStandards));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -1369,6 +1408,7 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                         this.scheduledReportCompartmentId, other.scheduledReportCompartmentId)
                 && java.util.Objects.equals(this.recordTimeSpan, other.recordTimeSpan)
                 && java.util.Objects.equals(this.complianceStandards, other.complianceStandards)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1433,6 +1473,9 @@ public final class ReportDefinition extends com.oracle.bmc.http.internal.Explici
                         + (this.complianceStandards == null
                                 ? 43
                                 : this.complianceStandards.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

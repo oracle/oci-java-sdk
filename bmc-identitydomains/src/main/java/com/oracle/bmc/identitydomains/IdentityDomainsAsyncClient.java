@@ -2290,6 +2290,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateRestoreOciConsolePolicyResponse>
+            createRestoreOciConsolePolicy(
+                    CreateRestoreOciConsolePolicyRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateRestoreOciConsolePolicyRequest,
+                                    CreateRestoreOciConsolePolicyResponse>
+                            handler) {
+        LOG.trace("Called async createRestoreOciConsolePolicy");
+        final CreateRestoreOciConsolePolicyRequest interceptedRequest =
+                CreateRestoreOciConsolePolicyConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateRestoreOciConsolePolicyConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateRestoreOciConsolePolicy",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateRestoreOciConsolePolicyResponse>
+                transformer =
+                        CreateRestoreOciConsolePolicyConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateRestoreOciConsolePolicyRequest, CreateRestoreOciConsolePolicyResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateRestoreOciConsolePolicyRequest,
+                                CreateRestoreOciConsolePolicyResponse>,
+                        java.util.concurrent.Future<CreateRestoreOciConsolePolicyResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRestoreOciConsolePolicy(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateRestoreOciConsolePolicyRequest, CreateRestoreOciConsolePolicyResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateRuleResponse> createRule(
             CreateRuleRequest request,
             final com.oracle.bmc.responses.AsyncHandler<CreateRuleRequest, CreateRuleResponse>
@@ -2483,6 +2540,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     CreateSmtpCredentialRequest, CreateSmtpCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateSocialIdentityProviderResponse>
+            createSocialIdentityProvider(
+                    CreateSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateSocialIdentityProviderRequest,
+                                    CreateSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async createSocialIdentityProvider");
+        final CreateSocialIdentityProviderRequest interceptedRequest =
+                CreateSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "CreateSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateSocialIdentityProviderResponse>
+                transformer =
+                        CreateSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateSocialIdentityProviderRequest, CreateSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateSocialIdentityProviderRequest,
+                                CreateSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<CreateSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProvider(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateSocialIdentityProviderRequest, CreateSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -4320,6 +4434,58 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeleteSmtpCredentialRequest, DeleteSmtpCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteSocialIdentityProviderResponse>
+            deleteSocialIdentityProvider(
+                    DeleteSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DeleteSocialIdentityProviderRequest,
+                                    DeleteSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async deleteSocialIdentityProvider");
+        final DeleteSocialIdentityProviderRequest interceptedRequest =
+                DeleteSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "DeleteSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/DeleteSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DeleteSocialIdentityProviderResponse>
+                transformer =
+                        DeleteSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteSocialIdentityProviderRequest, DeleteSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteSocialIdentityProviderRequest,
+                                DeleteSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<DeleteSocialIdentityProviderResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteSocialIdentityProviderRequest, DeleteSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -6359,6 +6525,60 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetOciConsoleSignOnPolicyConsentResponse>
+            getOciConsoleSignOnPolicyConsent(
+                    GetOciConsoleSignOnPolicyConsentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetOciConsoleSignOnPolicyConsentRequest,
+                                    GetOciConsoleSignOnPolicyConsentResponse>
+                            handler) {
+        LOG.trace("Called async getOciConsoleSignOnPolicyConsent");
+        final GetOciConsoleSignOnPolicyConsentRequest interceptedRequest =
+                GetOciConsoleSignOnPolicyConsentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetOciConsoleSignOnPolicyConsentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetOciConsoleSignOnPolicyConsent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/GetOciConsoleSignOnPolicyConsent");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetOciConsoleSignOnPolicyConsentResponse>
+                transformer =
+                        GetOciConsoleSignOnPolicyConsentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetOciConsoleSignOnPolicyConsentRequest,
+                        GetOciConsoleSignOnPolicyConsentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetOciConsoleSignOnPolicyConsentRequest,
+                                GetOciConsoleSignOnPolicyConsentResponse>,
+                        java.util.concurrent.Future<GetOciConsoleSignOnPolicyConsentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetOciConsoleSignOnPolicyConsentRequest,
+                    GetOciConsoleSignOnPolicyConsentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPasswordPolicyResponse> getPasswordPolicy(
             GetPasswordPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -6763,6 +6983,56 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetSmtpCredentialRequest, GetSmtpCredentialResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSocialIdentityProviderResponse> getSocialIdentityProvider(
+            GetSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
+                    handler) {
+        LOG.trace("Called async getSocialIdentityProvider");
+        final GetSocialIdentityProviderRequest interceptedRequest =
+                GetSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "GetSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/GetSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetSocialIdentityProviderResponse>
+                transformer =
+                        GetSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetSocialIdentityProviderRequest,
+                                GetSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<GetSocialIdentityProviderResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetSocialIdentityProviderRequest, GetSocialIdentityProviderResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7604,7 +7874,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "ListConditions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/ListConditions");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/ListConditions");
         final java.util.function.Function<javax.ws.rs.core.Response, ListConditionsResponse>
                 transformer =
                         ListConditionsConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -8981,6 +9251,60 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOciConsoleSignOnPolicyConsentsResponse>
+            listOciConsoleSignOnPolicyConsents(
+                    ListOciConsoleSignOnPolicyConsentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOciConsoleSignOnPolicyConsentsRequest,
+                                    ListOciConsoleSignOnPolicyConsentsResponse>
+                            handler) {
+        LOG.trace("Called async listOciConsoleSignOnPolicyConsents");
+        final ListOciConsoleSignOnPolicyConsentsRequest interceptedRequest =
+                ListOciConsoleSignOnPolicyConsentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOciConsoleSignOnPolicyConsentsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListOciConsoleSignOnPolicyConsents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/ListOciConsoleSignOnPolicyConsents");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOciConsoleSignOnPolicyConsentsResponse>
+                transformer =
+                        ListOciConsoleSignOnPolicyConsentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOciConsoleSignOnPolicyConsentsRequest,
+                        ListOciConsoleSignOnPolicyConsentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOciConsoleSignOnPolicyConsentsRequest,
+                                ListOciConsoleSignOnPolicyConsentsResponse>,
+                        java.util.concurrent.Future<ListOciConsoleSignOnPolicyConsentsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOciConsoleSignOnPolicyConsentsRequest,
+                    ListOciConsoleSignOnPolicyConsentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListPasswordPoliciesResponse> listPasswordPolicies(
             ListPasswordPoliciesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -9044,7 +9368,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "ListPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/ListPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/ListPolicies");
         final java.util.function.Function<javax.ws.rs.core.Response, ListPoliciesResponse>
                 transformer =
                         ListPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -9142,7 +9466,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "ListRules",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/ListRules");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/ListRules");
         final java.util.function.Function<javax.ws.rs.core.Response, ListRulesResponse>
                 transformer =
                         ListRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -9461,6 +9785,58 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSocialIdentityProvidersResponse>
+            listSocialIdentityProviders(
+                    ListSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListSocialIdentityProvidersRequest,
+                                    ListSocialIdentityProvidersResponse>
+                            handler) {
+        LOG.trace("Called async listSocialIdentityProviders");
+        final ListSocialIdentityProvidersRequest interceptedRequest =
+                ListSocialIdentityProvidersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "ListSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/ListSocialIdentityProviders");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSocialIdentityProvidersResponse>
+                transformer =
+                        ListSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSocialIdentityProvidersRequest, ListSocialIdentityProvidersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSocialIdentityProvidersRequest,
+                                ListSocialIdentityProvidersResponse>,
+                        java.util.concurrent.Future<ListSocialIdentityProvidersResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSocialIdentityProvidersRequest, ListSocialIdentityProvidersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserAttributesSettingsResponse>
             listUserAttributesSettings(
                     ListUserAttributesSettingsRequest request,
@@ -9479,7 +9855,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "ListUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/ListUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/ListUserAttributesSettings");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListUserAttributesSettingsResponse>
                 transformer =
@@ -11643,6 +12019,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PatchSocialIdentityProviderResponse>
+            patchSocialIdentityProvider(
+                    PatchSocialIdentityProviderRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PatchSocialIdentityProviderRequest,
+                                    PatchSocialIdentityProviderResponse>
+                            handler) {
+        LOG.trace("Called async patchSocialIdentityProvider");
+        final PatchSocialIdentityProviderRequest interceptedRequest =
+                PatchSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PatchSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PatchSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PatchSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PatchSocialIdentityProviderResponse>
+                transformer =
+                        PatchSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PatchSocialIdentityProviderRequest, PatchSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PatchSocialIdentityProviderRequest,
+                                PatchSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<PatchSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.patchFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPatchOp(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PatchSocialIdentityProviderRequest, PatchSocialIdentityProviderResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<PatchUserResponse> patchUser(
             PatchUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PatchUserRequest, PatchUserResponse>
@@ -13080,6 +13513,61 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PutSocialIdentityProviderResponse> putSocialIdentityProvider(
+            PutSocialIdentityProviderRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                    handler) {
+        LOG.trace("Called async putSocialIdentityProvider");
+        final PutSocialIdentityProviderRequest interceptedRequest =
+                PutSocialIdentityProviderConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PutSocialIdentityProviderConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "PutSocialIdentityProvider",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProvider/PutSocialIdentityProvider");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PutSocialIdentityProviderResponse>
+                transformer =
+                        PutSocialIdentityProviderConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PutSocialIdentityProviderRequest,
+                                PutSocialIdentityProviderResponse>,
+                        java.util.concurrent.Future<PutSocialIdentityProviderResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProvider(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PutSocialIdentityProviderRequest, PutSocialIdentityProviderResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<PutUserResponse> putUser(
             PutUserRequest request,
             final com.oracle.bmc.responses.AsyncHandler<PutUserRequest, PutUserResponse> handler) {
@@ -13829,7 +14317,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "SearchConditions",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Conditions/SearchConditions");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Condition/SearchConditions");
         final java.util.function.Function<javax.ws.rs.core.Response, SearchConditionsResponse>
                 transformer =
                         SearchConditionsConverter.fromResponse(
@@ -14726,6 +15214,66 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SearchOciConsoleSignOnPolicyConsentsResponse>
+            searchOciConsoleSignOnPolicyConsents(
+                    SearchOciConsoleSignOnPolicyConsentsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchOciConsoleSignOnPolicyConsentsRequest,
+                                    SearchOciConsoleSignOnPolicyConsentsResponse>
+                            handler) {
+        LOG.trace("Called async searchOciConsoleSignOnPolicyConsents");
+        final SearchOciConsoleSignOnPolicyConsentsRequest interceptedRequest =
+                SearchOciConsoleSignOnPolicyConsentsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchOciConsoleSignOnPolicyConsentsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchOciConsoleSignOnPolicyConsents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/OciConsoleSignOnPolicyConsent/SearchOciConsoleSignOnPolicyConsents");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchOciConsoleSignOnPolicyConsentsResponse>
+                transformer =
+                        SearchOciConsoleSignOnPolicyConsentsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SearchOciConsoleSignOnPolicyConsentsRequest,
+                        SearchOciConsoleSignOnPolicyConsentsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SearchOciConsoleSignOnPolicyConsentsRequest,
+                                SearchOciConsoleSignOnPolicyConsentsResponse>,
+                        java.util.concurrent.Future<SearchOciConsoleSignOnPolicyConsentsResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getOciConsoleSignOnPolicyConsentSearchRequest(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SearchOciConsoleSignOnPolicyConsentsRequest,
+                    SearchOciConsoleSignOnPolicyConsentsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchPasswordPoliciesResponse> searchPasswordPolicies(
             SearchPasswordPoliciesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -14795,7 +15343,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "SearchPolicies",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policies/SearchPolicies");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Policy/SearchPolicies");
         final java.util.function.Function<javax.ws.rs.core.Response, SearchPoliciesResponse>
                 transformer =
                         SearchPoliciesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -14904,7 +15452,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "SearchRules",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rules/SearchRules");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/Rule/SearchRules");
         final java.util.function.Function<javax.ws.rs.core.Response, SearchRulesResponse>
                 transformer =
                         SearchRulesConverter.fromResponse(java.util.Optional.of(serviceDetails));
@@ -15263,6 +15811,63 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>
+            searchSocialIdentityProviders(
+                    SearchSocialIdentityProvidersRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    SearchSocialIdentityProvidersRequest,
+                                    SearchSocialIdentityProvidersResponse>
+                            handler) {
+        LOG.trace("Called async searchSocialIdentityProviders");
+        final SearchSocialIdentityProvidersRequest interceptedRequest =
+                SearchSocialIdentityProvidersConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SearchSocialIdentityProvidersConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IdentityDomains",
+                        "SearchSocialIdentityProviders",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/SocialIdentityProviders/SearchSocialIdentityProviders");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, SearchSocialIdentityProvidersResponse>
+                transformer =
+                        SearchSocialIdentityProvidersConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SearchSocialIdentityProvidersRequest, SearchSocialIdentityProvidersResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SearchSocialIdentityProvidersRequest,
+                                SearchSocialIdentityProvidersResponse>,
+                        java.util.concurrent.Future<SearchSocialIdentityProvidersResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSocialIdentityProviderSearchRequest(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SearchSocialIdentityProvidersRequest, SearchSocialIdentityProvidersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchUserAttributesSettingsResponse>
             searchUserAttributesSettings(
                     SearchUserAttributesSettingsRequest request,
@@ -15281,7 +15886,7 @@ public class IdentityDomainsAsyncClient implements IdentityDomainsAsync {
                         "IdentityDomains",
                         "SearchUserAttributesSettings",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSettings/SearchUserAttributesSettings");
+                        "https://docs.oracle.com/iaas/api/#/en/identity-domains/v1/UserAttributesSetting/SearchUserAttributesSettings");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, SearchUserAttributesSettingsResponse>
                 transformer =

@@ -744,6 +744,47 @@ public interface Dns extends AutoCloseable {
     PatchZoneRecordsResponse patchZoneRecords(PatchZoneRecordsRequest request);
 
     /**
+     * Promotes a specified `DnssecKeyVersion` on the zone.
+     * <p>
+     * If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that is replacing
+     * another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for removal from the zone.
+     * <p>
+     * For key signing keys (KSKs), you must create the DS record with the new key information **before** promoting
+     * the new key to establish a chain of trust. To avoid a service disruption, remove the old DS record as soon
+     * as its TTL (time to live) expires.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/PromoteZoneDnssecKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PromoteZoneDnssecKeyVersion API.
+     */
+    PromoteZoneDnssecKeyVersionResponse promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request);
+
+    /**
+     * Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new \"successor\" key version
+     * that replaces an existing \"predecessor\" key version.
+     * **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
+     * <p>
+     * For more information, see the [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dns/StageZoneDnssecKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StageZoneDnssecKeyVersion API.
+     */
+    StageZoneDnssecKeyVersionResponse stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request);
+
+    /**
      * Replaces records in the specified zone at a domain with the records specified in the request body.
      * <p>
      * If a specified record does not exist, it will be created. If the record exists, then it will be updated to
@@ -897,8 +938,20 @@ public interface Dns extends AutoCloseable {
      * Gets the pre-configured waiters available for resources for this service.
      *
      * @return The service waiters.
+     * @deprecated use {@link #newWaiters(WorkRequest)} instead.  Otherwise, a default one will be provided
+     *   that does not support operations that rely on the {@code WorkRequestClient} for polling.  An
+     *   {@code IllegalStateException} will be thrown for such operations.
      */
+    @Deprecated
     DnsWaiters getWaiters();
+
+    /**
+     * Creates a new {@code DnsWaiters} for resources for this service.
+     *
+     * @param workRequestClient The work request service client used to query for work request status
+     * @return The service waiters.
+     */
+    DnsWaiters newWaiters(com.oracle.bmc.workrequests.WorkRequest workRequestClient);
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may return multiple

@@ -42,7 +42,7 @@ public final class RuleConditionGroup extends com.oracle.bmc.http.internal.Expli
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Condition or ConditionGroup identifier
+         * Condition or ConditionGroup identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -58,7 +58,7 @@ public final class RuleConditionGroup extends com.oracle.bmc.http.internal.Expli
         private String value;
 
         /**
-         * Condition or ConditionGroup identifier
+         * Condition or ConditionGroup identifier.
          * <p>
          **SCIM++ Properties:**
          *  - caseExact: true
@@ -228,7 +228,7 @@ public final class RuleConditionGroup extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * Condition or ConditionGroup identifier
+     * Condition or ConditionGroup identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true
@@ -244,7 +244,7 @@ public final class RuleConditionGroup extends com.oracle.bmc.http.internal.Expli
     private final String value;
 
     /**
-     * Condition or ConditionGroup identifier
+     * Condition or ConditionGroup identifier.
      * <p>
      **SCIM++ Properties:**
      *  - caseExact: true

@@ -176,6 +176,43 @@ public class CommitMultipartUploadConverter {
                                                     String.class));
                                 }
 
+                                java.util.Optional<java.util.List<String>> opcContentCrc32cHeader =
+                                        com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
+                                                headers, "opc-content-crc32c");
+                                if (opcContentCrc32cHeader.isPresent()) {
+                                    builder.opcContentCrc32c(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-content-crc32c",
+                                                    opcContentCrc32cHeader.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>>
+                                        opcMultipartSha256Header =
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-multipart-sha256");
+                                if (opcMultipartSha256Header.isPresent()) {
+                                    builder.opcMultipartSha256(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-multipart-sha256",
+                                                    opcMultipartSha256Header.get().get(0),
+                                                    String.class));
+                                }
+
+                                java.util.Optional<java.util.List<String>>
+                                        opcMultipartSha384Header =
+                                                com.oracle.bmc.http.internal.HeaderUtils
+                                                        .getHeadersWithName(
+                                                                headers, "opc-multipart-sha384");
+                                if (opcMultipartSha384Header.isPresent()) {
+                                    builder.opcMultipartSha384(
+                                            com.oracle.bmc.http.internal.HeaderUtils.toValue(
+                                                    "opc-multipart-sha384",
+                                                    opcMultipartSha384Header.get().get(0),
+                                                    String.class));
+                                }
+
                                 java.util.Optional<java.util.List<String>> eTagHeader =
                                         com.oracle.bmc.http.internal.HeaderUtils.getHeadersWithName(
                                                 headers, "ETag");

@@ -7459,7 +7459,7 @@ public class VirtualNetworkClient implements VirtualNetwork {
                         "VirtualNetwork",
                         "ListIpInventory",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Vcn/ListIpInventory");
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/IpInventoryCollection/ListIpInventory");
         java.util.function.Function<javax.ws.rs.core.Response, ListIpInventoryResponse>
                 transformer =
                         ListIpInventoryConverter.fromResponse(

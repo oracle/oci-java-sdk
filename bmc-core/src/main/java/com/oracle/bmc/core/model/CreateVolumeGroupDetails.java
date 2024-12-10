@@ -31,7 +31,8 @@ public final class CreateVolumeGroupDetails
         "freeformTags",
         "sourceDetails",
         "volumeGroupReplicas",
-        "clusterPlacementGroupId"
+        "clusterPlacementGroupId",
+        "xrcKmsKeyId"
     })
     public CreateVolumeGroupDetails(
             String availabilityDomain,
@@ -42,7 +43,8 @@ public final class CreateVolumeGroupDetails
             java.util.Map<String, String> freeformTags,
             VolumeGroupSourceDetails sourceDetails,
             java.util.List<VolumeGroupReplicaDetails> volumeGroupReplicas,
-            String clusterPlacementGroupId) {
+            String clusterPlacementGroupId,
+            String xrcKmsKeyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -53,6 +55,7 @@ public final class CreateVolumeGroupDetails
         this.sourceDetails = sourceDetails;
         this.volumeGroupReplicas = volumeGroupReplicas;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.xrcKmsKeyId = xrcKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -224,6 +227,30 @@ public final class CreateVolumeGroupDetails
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -239,7 +266,8 @@ public final class CreateVolumeGroupDetails
                             this.freeformTags,
                             this.sourceDetails,
                             this.volumeGroupReplicas,
-                            this.clusterPlacementGroupId);
+                            this.clusterPlacementGroupId,
+                            this.xrcKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -274,6 +302,9 @@ public final class CreateVolumeGroupDetails
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
             }
             return this;
         }
@@ -437,6 +468,28 @@ public final class CreateVolumeGroupDetails
         return clusterPlacementGroupId;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the volume's cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -461,6 +514,7 @@ public final class CreateVolumeGroupDetails
         sb.append(", volumeGroupReplicas=").append(String.valueOf(this.volumeGroupReplicas));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -485,6 +539,7 @@ public final class CreateVolumeGroupDetails
                 && java.util.Objects.equals(this.volumeGroupReplicas, other.volumeGroupReplicas)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
                 && super.equals(other);
     }
 
@@ -519,6 +574,7 @@ public final class CreateVolumeGroupDetails
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

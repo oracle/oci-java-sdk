@@ -51,6 +51,10 @@ public class SummarizeSqlStatisticsRequest
         ComanagedExacsCdb("COMANAGED-EXACS-CDB"),
         ComanagedExacsPdb("COMANAGED-EXACS-PDB"),
         ComanagedExacsNoncdb("COMANAGED-EXACS-NONCDB"),
+        ComanagedExaccCdb("COMANAGED-EXACC-CDB"),
+        ComanagedExaccPdb("COMANAGED-EXACC-PDB"),
+        ComanagedExaccNoncdb("COMANAGED-EXACC-NONCDB"),
+        MdsMysql("MDS-MYSQL"),
         ;
 
         private final String value;

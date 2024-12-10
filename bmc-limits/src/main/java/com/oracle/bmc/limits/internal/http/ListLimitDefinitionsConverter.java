@@ -40,6 +40,14 @@ public class ListLimitDefinitionsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getSubscriptionId() != null) {
+            target =
+                    target.queryParam(
+                            "subscriptionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSubscriptionId()));
+        }
+
         if (request.getServiceName() != null) {
             target =
                     target.queryParam(

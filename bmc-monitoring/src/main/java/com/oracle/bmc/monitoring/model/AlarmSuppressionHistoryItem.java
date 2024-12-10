@@ -31,7 +31,8 @@ public final class AlarmSuppressionHistoryItem
         "description",
         "dimensions",
         "timeEffectiveFrom",
-        "timeEffectiveUntil"
+        "timeEffectiveUntil",
+        "suppressionConditions"
     })
     public AlarmSuppressionHistoryItem(
             String suppressionId,
@@ -41,7 +42,8 @@ public final class AlarmSuppressionHistoryItem
             String description,
             java.util.Map<String, String> dimensions,
             java.util.Date timeEffectiveFrom,
-            java.util.Date timeEffectiveUntil) {
+            java.util.Date timeEffectiveUntil,
+            java.util.List<SuppressionCondition> suppressionConditions) {
         super();
         this.suppressionId = suppressionId;
         this.alarmSuppressionTarget = alarmSuppressionTarget;
@@ -51,6 +53,7 @@ public final class AlarmSuppressionHistoryItem
         this.dimensions = dimensions;
         this.timeEffectiveFrom = timeEffectiveFrom;
         this.timeEffectiveUntil = timeEffectiveUntil;
+        this.suppressionConditions = suppressionConditions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -216,6 +219,35 @@ public final class AlarmSuppressionHistoryItem
             this.__explicitlySet__.add("timeEffectiveUntil");
             return this;
         }
+        /**
+         * Array of all preconditions for alarm suppression.
+         * Example: {@code [{
+         *   conditionType: "RECURRENCE",
+         *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+         *   suppressionDuration: "PT1H"
+         * }]}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+        private java.util.List<SuppressionCondition> suppressionConditions;
+
+        /**
+         * Array of all preconditions for alarm suppression.
+         * Example: {@code [{
+         *   conditionType: "RECURRENCE",
+         *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+         *   suppressionDuration: "PT1H"
+         * }]}
+         *
+         * @param suppressionConditions the value to set
+         * @return this builder
+         **/
+        public Builder suppressionConditions(
+                java.util.List<SuppressionCondition> suppressionConditions) {
+            this.suppressionConditions = suppressionConditions;
+            this.__explicitlySet__.add("suppressionConditions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -230,7 +262,8 @@ public final class AlarmSuppressionHistoryItem
                             this.description,
                             this.dimensions,
                             this.timeEffectiveFrom,
-                            this.timeEffectiveUntil);
+                            this.timeEffectiveUntil,
+                            this.suppressionConditions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -262,6 +295,9 @@ public final class AlarmSuppressionHistoryItem
             }
             if (model.wasPropertyExplicitlySet("timeEffectiveUntil")) {
                 this.timeEffectiveUntil(model.getTimeEffectiveUntil());
+            }
+            if (model.wasPropertyExplicitlySet("suppressionConditions")) {
+                this.suppressionConditions(model.getSuppressionConditions());
             }
             return this;
         }
@@ -473,6 +509,32 @@ public final class AlarmSuppressionHistoryItem
         return timeEffectiveUntil;
     }
 
+    /**
+     * Array of all preconditions for alarm suppression.
+     * Example: {@code [{
+     *   conditionType: "RECURRENCE",
+     *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+     *   suppressionDuration: "PT1H"
+     * }]}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("suppressionConditions")
+    private final java.util.List<SuppressionCondition> suppressionConditions;
+
+    /**
+     * Array of all preconditions for alarm suppression.
+     * Example: {@code [{
+     *   conditionType: "RECURRENCE",
+     *   suppressionRecurrence: "FRQ=DAILY;BYHOUR=10",
+     *   suppressionDuration: "PT1H"
+     * }]}
+     *
+     * @return the value
+     **/
+    public java.util.List<SuppressionCondition> getSuppressionConditions() {
+        return suppressionConditions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -495,6 +557,7 @@ public final class AlarmSuppressionHistoryItem
         sb.append(", dimensions=").append(String.valueOf(this.dimensions));
         sb.append(", timeEffectiveFrom=").append(String.valueOf(this.timeEffectiveFrom));
         sb.append(", timeEffectiveUntil=").append(String.valueOf(this.timeEffectiveUntil));
+        sb.append(", suppressionConditions=").append(String.valueOf(this.suppressionConditions));
         sb.append(")");
         return sb.toString();
     }
@@ -518,6 +581,7 @@ public final class AlarmSuppressionHistoryItem
                 && java.util.Objects.equals(this.dimensions, other.dimensions)
                 && java.util.Objects.equals(this.timeEffectiveFrom, other.timeEffectiveFrom)
                 && java.util.Objects.equals(this.timeEffectiveUntil, other.timeEffectiveUntil)
+                && java.util.Objects.equals(this.suppressionConditions, other.suppressionConditions)
                 && super.equals(other);
     }
 
@@ -545,6 +609,11 @@ public final class AlarmSuppressionHistoryItem
                         + (this.timeEffectiveUntil == null
                                 ? 43
                                 : this.timeEffectiveUntil.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.suppressionConditions == null
+                                ? 43
+                                : this.suppressionConditions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

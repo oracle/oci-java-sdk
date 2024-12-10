@@ -88,6 +88,10 @@ public class CreateMultipartUploadConverter {
             ib.header("opc-sse-kms-key-id", request.getOpcSseKmsKeyId());
         }
 
+        if (request.getOpcChecksumAlgorithm() != null) {
+            ib.header("opc-checksum-algorithm", request.getOpcChecksumAlgorithm().getValue());
+        }
+
         if (client.getClientConfigurator() != null) {
             client.getClientConfigurator().customizeRequest(request, ib);
         }

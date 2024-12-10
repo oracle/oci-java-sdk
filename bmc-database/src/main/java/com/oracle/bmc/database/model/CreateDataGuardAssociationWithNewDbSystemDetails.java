@@ -289,6 +289,28 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * A domain name used for the DB system. If the Oracle-provided Internet and VCN
+         * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domain")
+        private String domain;
+
+        /**
+         * A domain name used for the DB system. If the Oracle-provided Internet and VCN
+         * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+         * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+         *
+         * @param domain the value to set
+         * @return this builder
+         **/
+        public Builder domain(String domain) {
+            this.domain = domain;
+            this.__explicitlySet__.add("domain");
+            return this;
+        }
+        /**
          * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
@@ -438,6 +460,29 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param dbSystemSecurityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder dbSystemSecurityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes) {
+            this.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
+            this.__explicitlySet__.add("dbSystemSecurityAttributes");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          * <p>
@@ -515,12 +560,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.nsgIds,
                             this.backupNetworkNsgIds,
                             this.hostname,
+                            this.domain,
                             this.timeZone,
                             this.faultDomains,
                             this.privateIp,
                             this.licenseModel,
                             this.dbSystemFreeformTags,
                             this.dbSystemDefinedTags,
+                            this.dbSystemSecurityAttributes,
                             this.databaseFreeformTags,
                             this.databaseDefinedTags,
                             this.dataCollectionOptions);
@@ -583,6 +630,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
             }
+            if (model.wasPropertyExplicitlySet("domain")) {
+                this.domain(model.getDomain());
+            }
             if (model.wasPropertyExplicitlySet("timeZone")) {
                 this.timeZone(model.getTimeZone());
             }
@@ -600,6 +650,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("dbSystemDefinedTags")) {
                 this.dbSystemDefinedTags(model.getDbSystemDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("dbSystemSecurityAttributes")) {
+                this.dbSystemSecurityAttributes(model.getDbSystemSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("databaseFreeformTags")) {
                 this.databaseFreeformTags(model.getDatabaseFreeformTags());
@@ -644,12 +697,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             java.util.List<String> nsgIds,
             java.util.List<String> backupNetworkNsgIds,
             String hostname,
+            String domain,
             String timeZone,
             java.util.List<String> faultDomains,
             String privateIp,
             LicenseModel licenseModel,
             java.util.Map<String, String> dbSystemFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags,
+            java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes,
             java.util.Map<String, String> databaseFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> databaseDefinedTags,
             DataCollectionOptions dataCollectionOptions) {
@@ -671,12 +726,14 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.nsgIds = nsgIds;
         this.backupNetworkNsgIds = backupNetworkNsgIds;
         this.hostname = hostname;
+        this.domain = domain;
         this.timeZone = timeZone;
         this.faultDomains = faultDomains;
         this.privateIp = privateIp;
         this.licenseModel = licenseModel;
         this.dbSystemFreeformTags = dbSystemFreeformTags;
         this.dbSystemDefinedTags = dbSystemDefinedTags;
+        this.dbSystemSecurityAttributes = dbSystemSecurityAttributes;
         this.databaseFreeformTags = databaseFreeformTags;
         this.databaseDefinedTags = databaseDefinedTags;
         this.dataCollectionOptions = dataCollectionOptions;
@@ -893,6 +950,26 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN
+     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domain")
+    private final String domain;
+
+    /**
+     * A domain name used for the DB system. If the Oracle-provided Internet and VCN
+     * Resolver is enabled for the specified subnet, the domain name for the subnet is used
+     * (do not provide one). Otherwise, provide a valid DNS domain name. Hyphens (-) are not permitted.
+     *
+     * @return the value
+     **/
+    public String getDomain() {
+        return domain;
+    }
+
+    /**
      * The time zone of the dataguard standby DB system. For details, see [DB System Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
@@ -1065,6 +1142,26 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dbSystemSecurityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> dbSystemSecurityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getDbSystemSecurityAttributes() {
+        return dbSystemSecurityAttributes;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      * <p>
@@ -1136,12 +1233,15 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", backupNetworkNsgIds=").append(String.valueOf(this.backupNetworkNsgIds));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", domain=").append(String.valueOf(this.domain));
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", dbSystemFreeformTags=").append(String.valueOf(this.dbSystemFreeformTags));
         sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
+        sb.append(", dbSystemSecurityAttributes=")
+                .append(String.valueOf(this.dbSystemSecurityAttributes));
         sb.append(", databaseFreeformTags=").append(String.valueOf(this.databaseFreeformTags));
         sb.append(", databaseDefinedTags=").append(String.valueOf(this.databaseDefinedTags));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
@@ -1171,12 +1271,15 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.backupNetworkNsgIds, other.backupNetworkNsgIds)
                 && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.domain, other.domain)
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.dbSystemFreeformTags, other.dbSystemFreeformTags)
                 && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
+                && java.util.Objects.equals(
+                        this.dbSystemSecurityAttributes, other.dbSystemSecurityAttributes)
                 && java.util.Objects.equals(this.databaseFreeformTags, other.databaseFreeformTags)
                 && java.util.Objects.equals(this.databaseDefinedTags, other.databaseDefinedTags)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
@@ -1209,6 +1312,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                                 ? 43
                                 : this.backupNetworkNsgIds.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result = (result * PRIME) + (this.domain == null ? 43 : this.domain.hashCode());
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
         result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
@@ -1223,6 +1327,11 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                         + (this.dbSystemDefinedTags == null
                                 ? 43
                                 : this.dbSystemDefinedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dbSystemSecurityAttributes == null
+                                ? 43
+                                : this.dbSystemSecurityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseFreeformTags == null

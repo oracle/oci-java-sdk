@@ -14,12 +14,12 @@ public class UpdateHsmClusterRequest
                 com.oracle.bmc.keymanagement.model.UpdateHsmClusterDetails> {
 
     /**
-     * The OCID of the HSM Cluster.
+     * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
      */
     private String hsmClusterId;
 
     /**
-     * The OCID of the HSM Cluster.
+     * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
      */
     public String getHsmClusterId() {
         return hsmClusterId;
@@ -93,12 +93,12 @@ public class UpdateHsmClusterRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The OCID of the HSM Cluster.
+         * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
          */
         private String hsmClusterId = null;
 
         /**
-         * The OCID of the HSM Cluster.
+         * The OCID of the HSM Cluster. This is a unique identifier assigned to each hsmCluster.
          * @param hsmClusterId the value to set
          * @return this builder instance
          */

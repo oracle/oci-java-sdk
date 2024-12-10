@@ -549,6 +549,51 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     }
 
     @Override
+    public AddOracleManagedCustomEndpointResponse addOracleManagedCustomEndpoint(
+            AddOracleManagedCustomEndpointRequest request) {
+        LOG.trace("Called addOracleManagedCustomEndpoint");
+        final AddOracleManagedCustomEndpointRequest interceptedRequest =
+                AddOracleManagedCustomEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddOracleManagedCustomEndpointConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "AddOracleManagedCustomEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddOracleManagedCustomEndpoint");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, AddOracleManagedCustomEndpointResponse>
+                transformer =
+                        AddOracleManagedCustomEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getAddOracleManagedCustomEndpointDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeIntegrationInstanceCompartmentResponse changeIntegrationInstanceCompartment(
             ChangeIntegrationInstanceCompartmentRequest request) {
         LOG.trace("Called changeIntegrationInstanceCompartment");
@@ -771,6 +816,46 @@ public class IntegrationInstanceClient implements IntegrationInstance {
     }
 
     @Override
+    public DisasterRecoveryFailoverResponse disasterRecoveryFailover(
+            DisasterRecoveryFailoverRequest request) {
+        LOG.trace("Called disasterRecoveryFailover");
+        final DisasterRecoveryFailoverRequest interceptedRequest =
+                DisasterRecoveryFailoverConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisasterRecoveryFailoverConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "DisasterRecoveryFailover",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisasterRecoveryFailover");
+        java.util.function.Function<javax.ws.rs.core.Response, DisasterRecoveryFailoverResponse>
+                transformer =
+                        DisasterRecoveryFailoverConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public EnableProcessAutomationResponse enableProcessAutomation(
             EnableProcessAutomationRequest request) {
         LOG.trace("Called enableProcessAutomation");
@@ -805,6 +890,48 @@ public class IntegrationInstanceClient implements IntegrationInstance {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ExtendDataRetentionResponse extendDataRetention(ExtendDataRetentionRequest request) {
+        LOG.trace("Called extendDataRetention");
+        final ExtendDataRetentionRequest interceptedRequest =
+                ExtendDataRetentionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExtendDataRetentionConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "ExtendDataRetention",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ExtendDataRetention");
+        java.util.function.Function<javax.ws.rs.core.Response, ExtendDataRetentionResponse>
+                transformer =
+                        ExtendDataRetentionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getExtendDataRetentionDetails(),
+                                                retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -1028,6 +1155,47 @@ public class IntegrationInstanceClient implements IntegrationInstance {
                             retryRequest,
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveOracleManagedCustomEndpointResponse removeOracleManagedCustomEndpoint(
+            RemoveOracleManagedCustomEndpointRequest request) {
+        LOG.trace("Called removeOracleManagedCustomEndpoint");
+        final RemoveOracleManagedCustomEndpointRequest interceptedRequest =
+                RemoveOracleManagedCustomEndpointConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveOracleManagedCustomEndpointConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "RemoveOracleManagedCustomEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveOracleManagedCustomEndpoint");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveOracleManagedCustomEndpointResponse>
+                transformer =
+                        RemoveOracleManagedCustomEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });

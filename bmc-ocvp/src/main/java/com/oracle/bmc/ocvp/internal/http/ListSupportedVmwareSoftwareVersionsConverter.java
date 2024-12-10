@@ -74,6 +74,14 @@ public class ListSupportedVmwareSoftwareVersionsConverter {
                                     request.getHostShapeName()));
         }
 
+        if (request.getVersionToUpgrade() != null) {
+            target =
+                    target.queryParam(
+                            "versionToUpgrade",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getVersionToUpgrade()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

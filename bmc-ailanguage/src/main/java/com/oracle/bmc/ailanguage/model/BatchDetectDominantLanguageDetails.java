@@ -23,6 +23,7 @@ public final class BatchDetectDominantLanguageDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "alias",
         "shouldIgnoreTransliteration",
         "charsToConsider",
         "endpointId",
@@ -30,12 +31,14 @@ public final class BatchDetectDominantLanguageDetails
         "documents"
     })
     public BatchDetectDominantLanguageDetails(
+            String alias,
             Boolean shouldIgnoreTransliteration,
             Integer charsToConsider,
             String endpointId,
             String compartmentId,
             java.util.List<DominantLanguageDocument> documents) {
         super();
+        this.alias = alias;
         this.shouldIgnoreTransliteration = shouldIgnoreTransliteration;
         this.charsToConsider = charsToConsider;
         this.endpointId = endpointId;
@@ -45,6 +48,22 @@ public final class BatchDetectDominantLanguageDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         * @param alias the value to set
+         * @return this builder
+         **/
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
         /**
          * Specifies whether to consider or ignore transliteration. For example "hi, aap kaise ho? sab kuch teek hai? I will call you tomorrow." would be detected as English when ignore transliteration=true, Hindi when ignoreTransliteration=false.
          **/
@@ -142,6 +161,7 @@ public final class BatchDetectDominantLanguageDetails
         public BatchDetectDominantLanguageDetails build() {
             BatchDetectDominantLanguageDetails model =
                     new BatchDetectDominantLanguageDetails(
+                            this.alias,
                             this.shouldIgnoreTransliteration,
                             this.charsToConsider,
                             this.endpointId,
@@ -155,6 +175,9 @@ public final class BatchDetectDominantLanguageDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectDominantLanguageDetails model) {
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
             if (model.wasPropertyExplicitlySet("shouldIgnoreTransliteration")) {
                 this.shouldIgnoreTransliteration(model.getShouldIgnoreTransliteration());
             }
@@ -183,6 +206,20 @@ public final class BatchDetectDominantLanguageDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * @return the value
+     **/
+    public String getAlias() {
+        return alias;
     }
 
     /**
@@ -279,7 +316,8 @@ public final class BatchDetectDominantLanguageDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectDominantLanguageDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("shouldIgnoreTransliteration=")
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", shouldIgnoreTransliteration=")
                 .append(String.valueOf(this.shouldIgnoreTransliteration));
         sb.append(", charsToConsider=").append(String.valueOf(this.charsToConsider));
         sb.append(", endpointId=").append(String.valueOf(this.endpointId));
@@ -299,7 +337,8 @@ public final class BatchDetectDominantLanguageDetails
         }
 
         BatchDetectDominantLanguageDetails other = (BatchDetectDominantLanguageDetails) o;
-        return java.util.Objects.equals(
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(
                         this.shouldIgnoreTransliteration, other.shouldIgnoreTransliteration)
                 && java.util.Objects.equals(this.charsToConsider, other.charsToConsider)
                 && java.util.Objects.equals(this.endpointId, other.endpointId)
@@ -312,6 +351,7 @@ public final class BatchDetectDominantLanguageDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result =
                 (result * PRIME)
                         + (this.shouldIgnoreTransliteration == null

@@ -26,6 +26,7 @@ public final class UpdateDeploymentDetails
     @java.beans.ConstructorProperties({
         "displayName",
         "licenseModel",
+        "environmentType",
         "description",
         "freeformTags",
         "definedTags",
@@ -43,6 +44,7 @@ public final class UpdateDeploymentDetails
     public UpdateDeploymentDetails(
             String displayName,
             LicenseModel licenseModel,
+            EnvironmentType environmentType,
             String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -59,6 +61,7 @@ public final class UpdateDeploymentDetails
         super();
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.environmentType = environmentType;
         this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -110,6 +113,24 @@ public final class UpdateDeploymentDetails
         public Builder licenseModel(LicenseModel licenseModel) {
             this.licenseModel = licenseModel;
             this.__explicitlySet__.add("licenseModel");
+            return this;
+        }
+        /**
+         * Specifies whether the deployment is used in a production or development/testing environment.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+        private EnvironmentType environmentType;
+
+        /**
+         * Specifies whether the deployment is used in a production or development/testing environment.
+         *
+         * @param environmentType the value to set
+         * @return this builder
+         **/
+        public Builder environmentType(EnvironmentType environmentType) {
+            this.environmentType = environmentType;
+            this.__explicitlySet__.add("environmentType");
             return this;
         }
         /**
@@ -348,6 +369,7 @@ public final class UpdateDeploymentDetails
                     new UpdateDeploymentDetails(
                             this.displayName,
                             this.licenseModel,
+                            this.environmentType,
                             this.description,
                             this.freeformTags,
                             this.definedTags,
@@ -374,6 +396,9 @@ public final class UpdateDeploymentDetails
             }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
+            }
+            if (model.wasPropertyExplicitlySet("environmentType")) {
+                this.environmentType(model.getEnvironmentType());
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
@@ -459,6 +484,22 @@ public final class UpdateDeploymentDetails
      **/
     public LicenseModel getLicenseModel() {
         return licenseModel;
+    }
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("environmentType")
+    private final EnvironmentType environmentType;
+
+    /**
+     * Specifies whether the deployment is used in a production or development/testing environment.
+     *
+     * @return the value
+     **/
+    public EnvironmentType getEnvironmentType() {
+        return environmentType;
     }
 
     /**
@@ -676,6 +717,7 @@ public final class UpdateDeploymentDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", environmentType=").append(String.valueOf(this.environmentType));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -706,6 +748,7 @@ public final class UpdateDeploymentDetails
         UpdateDeploymentDetails other = (UpdateDeploymentDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.environmentType, other.environmentType)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -729,6 +772,9 @@ public final class UpdateDeploymentDetails
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.environmentType == null ? 43 : this.environmentType.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

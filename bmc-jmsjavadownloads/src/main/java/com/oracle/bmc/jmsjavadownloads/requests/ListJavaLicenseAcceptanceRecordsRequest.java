@@ -28,7 +28,7 @@ public class ListJavaLicenseAcceptanceRecordsRequest
     /**
      * A filter to return only resources that match the user principal detail.
      * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-     * This object is used as response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+     * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
      *
      */
     private String searchByUser;
@@ -36,7 +36,7 @@ public class ListJavaLicenseAcceptanceRecordsRequest
     /**
      * A filter to return only resources that match the user principal detail.
      * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-     * This object is used as response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+     * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
      *
      */
     public String getSearchByUser() {
@@ -160,7 +160,7 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         /**
          * A filter to return only resources that match the user principal detail.
          * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-         * This object is used as response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+         * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
          *
          */
         private String searchByUser = null;
@@ -168,7 +168,7 @@ public class ListJavaLicenseAcceptanceRecordsRequest
         /**
          * A filter to return only resources that match the user principal detail.
          * The search string can be any of the property values from the {@link #principal(PrincipalRequest) principal} object.
-         * This object is used as response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
+         * This object is used as a response datatype for the {@code createdBy} and {@code lastUpdatedBy} fields in applicable resource.
          *
          * @param searchByUser the value to set
          * @return this builder instance

@@ -13,12 +13,12 @@ public class RotateOperationsInsightsWarehouseWalletRequest
         extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     private String operationsInsightsWarehouseId;
 
     /**
-     * Unique Operations Insights Warehouse identifier
+     * Unique Ops Insights Warehouse identifier
      */
     public String getOperationsInsightsWarehouseId() {
         return operationsInsightsWarehouseId;
@@ -64,12 +64,12 @@ public class RotateOperationsInsightsWarehouseWalletRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Unique Operations Insights Warehouse identifier
+         * Unique Ops Insights Warehouse identifier
          */
         private String operationsInsightsWarehouseId = null;
 
         /**
-         * Unique Operations Insights Warehouse identifier
+         * Unique Ops Insights Warehouse identifier
          * @param operationsInsightsWarehouseId the value to set
          * @return this builder instance
          */

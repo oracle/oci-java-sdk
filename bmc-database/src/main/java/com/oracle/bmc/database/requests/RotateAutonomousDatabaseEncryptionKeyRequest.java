@@ -10,7 +10,8 @@ import com.oracle.bmc.database.model.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class RotateAutonomousDatabaseEncryptionKeyRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails> {
 
     /**
      * The database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
@@ -74,10 +75,34 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Key details provided by the user for rotate key operation for Autonomous Database.
+     */
+    private com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails
+            rotateAutonomousDatabaseEncryptionKeyDetails;
+
+    /**
+     * Key details provided by the user for rotate key operation for Autonomous Database.
+     */
+    public com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails
+            getRotateAutonomousDatabaseEncryptionKeyDetails() {
+        return rotateAutonomousDatabaseEncryptionKeyDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails getBody$() {
+        return rotateAutonomousDatabaseEncryptionKeyDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    RotateAutonomousDatabaseEncryptionKeyRequest, java.lang.Void> {
+                    RotateAutonomousDatabaseEncryptionKeyRequest,
+                    com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -161,6 +186,25 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
         }
 
         /**
+         * Key details provided by the user for rotate key operation for Autonomous Database.
+         */
+        private com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails
+                rotateAutonomousDatabaseEncryptionKeyDetails = null;
+
+        /**
+         * Key details provided by the user for rotate key operation for Autonomous Database.
+         * @param rotateAutonomousDatabaseEncryptionKeyDetails the value to set
+         * @return this builder instance
+         */
+        public Builder rotateAutonomousDatabaseEncryptionKeyDetails(
+                com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails
+                        rotateAutonomousDatabaseEncryptionKeyDetails) {
+            this.rotateAutonomousDatabaseEncryptionKeyDetails =
+                    rotateAutonomousDatabaseEncryptionKeyDetails;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -192,6 +236,8 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            rotateAutonomousDatabaseEncryptionKeyDetails(
+                    o.getRotateAutonomousDatabaseEncryptionKeyDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -215,6 +261,18 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.database.model.RotateAutonomousDatabaseEncryptionKeyDetails body) {
+            rotateAutonomousDatabaseEncryptionKeyDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of RotateAutonomousDatabaseEncryptionKeyRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -229,8 +287,10 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.rotateAutonomousDatabaseEncryptionKeyDetails =
+                    rotateAutonomousDatabaseEncryptionKeyDetails;
             return request;
-            // new RotateAutonomousDatabaseEncryptionKeyRequest(autonomousDatabaseId, ifMatch, opcRetryToken, opcRequestId);
+            // new RotateAutonomousDatabaseEncryptionKeyRequest(autonomousDatabaseId, ifMatch, opcRetryToken, opcRequestId, rotateAutonomousDatabaseEncryptionKeyDetails);
         }
     }
 
@@ -243,7 +303,9 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
                 .autonomousDatabaseId(autonomousDatabaseId)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .rotateAutonomousDatabaseEncryptionKeyDetails(
+                        rotateAutonomousDatabaseEncryptionKeyDetails);
     }
 
     /**
@@ -263,6 +325,8 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",rotateAutonomousDatabaseEncryptionKeyDetails=")
+                .append(String.valueOf(this.rotateAutonomousDatabaseEncryptionKeyDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -282,7 +346,10 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
                 && java.util.Objects.equals(this.autonomousDatabaseId, other.autonomousDatabaseId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.rotateAutonomousDatabaseEncryptionKeyDetails,
+                        other.rotateAutonomousDatabaseEncryptionKeyDetails);
     }
 
     @Override
@@ -299,6 +366,11 @@ public class RotateAutonomousDatabaseEncryptionKeyRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rotateAutonomousDatabaseEncryptionKeyDetails == null
+                                ? 43
+                                : this.rotateAutonomousDatabaseEncryptionKeyDetails.hashCode());
         return result;
     }
 }

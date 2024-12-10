@@ -60,6 +60,23 @@ public interface DataFlowAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Deletes an application using an `applicationId` and terminates related runs. This operation will timeout in approximate 30 minutes if any related Runs are not terminated successfully.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<CascadingDeleteApplicationResponse> cascadingDeleteApplication(
+            CascadingDeleteApplicationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CascadingDeleteApplicationRequest, CascadingDeleteApplicationResponse>
+                    handler);
+
+    /**
      * Moves an application into a different compartment. When provided, If-Match is checked against ETag values of the resource.
      * Associated resources, like runs, will not be automatically moved.
      *
@@ -650,6 +667,21 @@ public interface DataFlowAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<StartPoolRequest, StartPoolResponse> handler);
 
     /**
+     * Starts the SqlEndpoint for a given `SqlEndpointId`. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StartSqlEndpointResponse> startSqlEndpoint(
+            StartSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartSqlEndpointRequest, StartSqlEndpointResponse>
+                    handler);
+
+    /**
      * Stops the dataflow pool for a given `poolId`. When provided, If-Match is checked against ETag values of the resource.
      *
      *
@@ -663,6 +695,21 @@ public interface DataFlowAsync extends AutoCloseable {
     java.util.concurrent.Future<StopPoolResponse> stopPool(
             StopPoolRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse> handler);
+
+    /**
+     * Stops the SqlEndpoint for a given `SqlEndpointId`. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StopSqlEndpointResponse> stopSqlEndpoint(
+            StopSqlEndpointRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopSqlEndpointRequest, StopSqlEndpointResponse>
+                    handler);
 
     /**
      * Updates an application using an `applicationId`.

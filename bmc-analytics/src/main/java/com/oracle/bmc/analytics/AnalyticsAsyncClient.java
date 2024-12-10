@@ -1312,6 +1312,58 @@ public class AnalyticsAsyncClient implements AnalyticsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<SetFeatureBundleResponse> setFeatureBundle(
+            SetFeatureBundleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetFeatureBundleRequest, SetFeatureBundleResponse>
+                    handler) {
+        LOG.trace("Called async setFeatureBundle");
+        final SetFeatureBundleRequest interceptedRequest =
+                SetFeatureBundleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetFeatureBundleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Analytics",
+                        "SetFeatureBundle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/analytics/20190331/AnalyticsInstance/SetFeatureBundle");
+        final java.util.function.Function<javax.ws.rs.core.Response, SetFeatureBundleResponse>
+                transformer =
+                        SetFeatureBundleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SetFeatureBundleRequest, SetFeatureBundleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetFeatureBundleRequest, SetFeatureBundleResponse>,
+                        java.util.concurrent.Future<SetFeatureBundleResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSetFeatureBundleDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetFeatureBundleRequest, SetFeatureBundleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<SetKmsKeyResponse> setKmsKey(
             SetKmsKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<SetKmsKeyRequest, SetKmsKeyResponse>

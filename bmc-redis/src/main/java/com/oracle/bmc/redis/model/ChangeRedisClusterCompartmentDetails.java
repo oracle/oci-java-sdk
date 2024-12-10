@@ -32,7 +32,7 @@ public final class ChangeRedisClusterCompartmentDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment
-         * into which the Redis cluster should be moved.
+         * into which the cluster should be moved.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -40,7 +40,7 @@ public final class ChangeRedisClusterCompartmentDetails
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment
-         * into which the Redis cluster should be moved.
+         * into which the cluster should be moved.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -85,7 +85,7 @@ public final class ChangeRedisClusterCompartmentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment
-     * into which the Redis cluster should be moved.
+     * into which the cluster should be moved.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
@@ -93,7 +93,7 @@ public final class ChangeRedisClusterCompartmentDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment
-     * into which the Redis cluster should be moved.
+     * into which the cluster should be moved.
      *
      * @return the value
      **/

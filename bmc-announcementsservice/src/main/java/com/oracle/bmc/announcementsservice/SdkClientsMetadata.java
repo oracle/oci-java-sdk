@@ -13,6 +13,8 @@ import com.oracle.bmc.SdkClients;
     AnnouncementSubscriptionAsyncClient.class,
     AnnouncementSubscriptionClient.class,
     AnnouncementsPreferencesAsyncClient.class,
-    AnnouncementsPreferencesClient.class
+    AnnouncementsPreferencesClient.class,
+    ServiceAsyncClient.class,
+    ServiceClient.class
 })
 public final class SdkClientsMetadata {}

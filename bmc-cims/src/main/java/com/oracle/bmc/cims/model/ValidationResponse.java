@@ -6,6 +6,7 @@ package com.oracle.bmc.cims.model;
 
 /**
  * The validation response returned when checking whether the requested user is valid.
+ *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -21,10 +22,12 @@ package com.oracle.bmc.cims.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class ValidationResponse extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"isValidUser"})
-    public ValidationResponse(Boolean isValidUser) {
+    @java.beans.ConstructorProperties({"isValidUser", "writePermittedUserGroupInfos"})
+    public ValidationResponse(
+            Boolean isValidUser, java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos) {
         super();
         this.isValidUser = isValidUser;
+        this.writePermittedUserGroupInfos = writePermittedUserGroupInfos;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -45,12 +48,32 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("isValidUser");
             return this;
         }
+        /**
+         * Technical support type ({@code TECH}) only: Identifier and name of the support request's user group ({@code userGroupId} and {@code userGroupName}).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("writePermittedUserGroupInfos")
+        private java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos;
+
+        /**
+         * Technical support type ({@code TECH}) only: Identifier and name of the support request's user group ({@code userGroupId} and {@code userGroupName}).
+         *
+         * @param writePermittedUserGroupInfos the value to set
+         * @return this builder
+         **/
+        public Builder writePermittedUserGroupInfos(
+                java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos) {
+            this.writePermittedUserGroupInfos = writePermittedUserGroupInfos;
+            this.__explicitlySet__.add("writePermittedUserGroupInfos");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public ValidationResponse build() {
-            ValidationResponse model = new ValidationResponse(this.isValidUser);
+            ValidationResponse model =
+                    new ValidationResponse(this.isValidUser, this.writePermittedUserGroupInfos);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +84,9 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
         public Builder copy(ValidationResponse model) {
             if (model.wasPropertyExplicitlySet("isValidUser")) {
                 this.isValidUser(model.getIsValidUser());
+            }
+            if (model.wasPropertyExplicitlySet("writePermittedUserGroupInfos")) {
+                this.writePermittedUserGroupInfos(model.getWritePermittedUserGroupInfos());
             }
             return this;
         }
@@ -91,6 +117,22 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
         return isValidUser;
     }
 
+    /**
+     * Technical support type ({@code TECH}) only: Identifier and name of the support request's user group ({@code userGroupId} and {@code userGroupName}).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("writePermittedUserGroupInfos")
+    private final java.util.List<CmosUserGroupInfo> writePermittedUserGroupInfos;
+
+    /**
+     * Technical support type ({@code TECH}) only: Identifier and name of the support request's user group ({@code userGroupId} and {@code userGroupName}).
+     *
+     * @return the value
+     **/
+    public java.util.List<CmosUserGroupInfo> getWritePermittedUserGroupInfos() {
+        return writePermittedUserGroupInfos;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -106,6 +148,8 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
         sb.append("ValidationResponse(");
         sb.append("super=").append(super.toString());
         sb.append("isValidUser=").append(String.valueOf(this.isValidUser));
+        sb.append(", writePermittedUserGroupInfos=")
+                .append(String.valueOf(this.writePermittedUserGroupInfos));
         sb.append(")");
         return sb.toString();
     }
@@ -120,7 +164,10 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
         }
 
         ValidationResponse other = (ValidationResponse) o;
-        return java.util.Objects.equals(this.isValidUser, other.isValidUser) && super.equals(other);
+        return java.util.Objects.equals(this.isValidUser, other.isValidUser)
+                && java.util.Objects.equals(
+                        this.writePermittedUserGroupInfos, other.writePermittedUserGroupInfos)
+                && super.equals(other);
     }
 
     @Override
@@ -128,6 +175,11 @@ public final class ValidationResponse extends com.oracle.bmc.http.internal.Expli
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.isValidUser == null ? 43 : this.isValidUser.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.writePermittedUserGroupInfos == null
+                                ? 43
+                                : this.writePermittedUserGroupInfos.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

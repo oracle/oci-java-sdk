@@ -9,9 +9,14 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.security.NoSuchAlgorithmException;
+
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.requests.GetObjectRequest;
 import com.oracle.bmc.objectstorage.responses.GetObjectResponse;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumInfo;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumInputStream;
+import com.oracle.bmc.objectstorage.transfer.internal.ChecksumUtils;
 import com.oracle.bmc.objectstorage.transfer.internal.download.DownloadExecution;
 import com.oracle.bmc.objectstorage.transfer.internal.download.MultithreadStream;
 import com.oracle.bmc.objectstorage.transfer.internal.download.RetryingStream;
@@ -165,9 +170,31 @@ public class DownloadManager {
             stream = retryingStream;
         }
 
-        final GetObjectResponse retryingResponse =
-                GetObjectResponse.builder().copy(response).inputStream(stream).build();
-        return retryingResponse;
+        // Wrap the stream with ChecksumInputStream for data integrity verification
+        InputStream resultStream;
+        if (this.config.isEnforceDataIntegrityForDownload() && request.getRange() == null) {
+            try {
+                ChecksumInfo checksumInfo = ChecksumUtils.getExpectedChecksumAndAlgorithm(response);
+                if (checksumInfo.getChecksum() != null) {
+                    resultStream =
+                            new ChecksumInputStream(
+                                    stream,
+                                    checksumInfo.getAlgorithm(),
+                                    checksumInfo.getChecksum(),
+                                    response.getContentLength());
+                } else {
+                    resultStream = stream;
+                }
+            } catch (NoSuchAlgorithmException e) {
+                throw new RuntimeException(
+                        "Checksum initialization error: The specified algorithm is not available",
+                        e);
+            }
+        } else {
+            resultStream = stream;
+        }
+
+        return GetObjectResponse.builder().copy(response).inputStream(resultStream).build();
     }
 
     /**

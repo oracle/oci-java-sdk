@@ -61,6 +61,14 @@ public class GetResourceAvailabilityConverter {
                                     request.getAvailabilityDomain()));
         }
 
+        if (request.getSubscriptionId() != null) {
+            target =
+                    target.queryParam(
+                            "subscriptionId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getSubscriptionId()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

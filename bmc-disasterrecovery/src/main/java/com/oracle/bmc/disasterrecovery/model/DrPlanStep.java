@@ -24,6 +24,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
         "groupId",
         "memberId",
         "type",
+        "refreshStatus",
         "displayName",
         "errorMode",
         "timeout",
@@ -35,6 +36,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
             String groupId,
             String memberId,
             DrPlanStepType type,
+            DrPlanStepRefreshStatus refreshStatus,
             String displayName,
             DrPlanStepErrorMode errorMode,
             Integer timeout,
@@ -45,6 +47,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
         this.groupId = groupId;
         this.memberId = memberId;
         this.type = type;
+        this.refreshStatus = refreshStatus;
         this.displayName = displayName;
         this.errorMode = errorMode;
         this.timeout = timeout;
@@ -136,6 +139,28 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
         public Builder type(DrPlanStepType type) {
             this.type = type;
             this.__explicitlySet__.add("type");
+            return this;
+        }
+        /**
+         * The DR plan step refresh status.
+         * <p>
+         * Example: {@code STEP_ADDED}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
+        private DrPlanStepRefreshStatus refreshStatus;
+
+        /**
+         * The DR plan step refresh status.
+         * <p>
+         * Example: {@code STEP_ADDED}
+         *
+         * @param refreshStatus the value to set
+         * @return this builder
+         **/
+        public Builder refreshStatus(DrPlanStepRefreshStatus refreshStatus) {
+            this.refreshStatus = refreshStatus;
+            this.__explicitlySet__.add("refreshStatus");
             return this;
         }
         /**
@@ -242,6 +267,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
                             this.groupId,
                             this.memberId,
                             this.type,
+                            this.refreshStatus,
                             this.displayName,
                             this.errorMode,
                             this.timeout,
@@ -266,6 +292,9 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
             }
             if (model.wasPropertyExplicitlySet("type")) {
                 this.type(model.getType());
+            }
+            if (model.wasPropertyExplicitlySet("refreshStatus")) {
+                this.refreshStatus(model.getRefreshStatus());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -374,6 +403,26 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
+     * The DR plan step refresh status.
+     * <p>
+     * Example: {@code STEP_ADDED}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("refreshStatus")
+    private final DrPlanStepRefreshStatus refreshStatus;
+
+    /**
+     * The DR plan step refresh status.
+     * <p>
+     * Example: {@code STEP_ADDED}
+     *
+     * @return the value
+     **/
+    public DrPlanStepRefreshStatus getRefreshStatus() {
+        return refreshStatus;
+    }
+
+    /**
      * The display name of the group.
      * <p>
      * Example: {@code DATABASE_SWITCHOVER}
@@ -474,6 +523,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
         sb.append(", groupId=").append(String.valueOf(this.groupId));
         sb.append(", memberId=").append(String.valueOf(this.memberId));
         sb.append(", type=").append(String.valueOf(this.type));
+        sb.append(", refreshStatus=").append(String.valueOf(this.refreshStatus));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", errorMode=").append(String.valueOf(this.errorMode));
         sb.append(", timeout=").append(String.valueOf(this.timeout));
@@ -497,6 +547,7 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
                 && java.util.Objects.equals(this.groupId, other.groupId)
                 && java.util.Objects.equals(this.memberId, other.memberId)
                 && java.util.Objects.equals(this.type, other.type)
+                && java.util.Objects.equals(this.refreshStatus, other.refreshStatus)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.errorMode, other.errorMode)
                 && java.util.Objects.equals(this.timeout, other.timeout)
@@ -513,6 +564,9 @@ public final class DrPlanStep extends com.oracle.bmc.http.internal.ExplicitlySet
         result = (result * PRIME) + (this.groupId == null ? 43 : this.groupId.hashCode());
         result = (result * PRIME) + (this.memberId == null ? 43 : this.memberId.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.refreshStatus == null ? 43 : this.refreshStatus.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.errorMode == null ? 43 : this.errorMode.hashCode());
         result = (result * PRIME) + (this.timeout == null ? 43 : this.timeout.hashCode());

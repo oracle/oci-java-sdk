@@ -541,6 +541,7 @@ public class BaseAnnouncement extends com.oracle.bmc.http.internal.ExplicitlySet
     public enum PlatformType {
         Iaas("IAAS"),
         Saas("SAAS"),
+        Paas("PAAS"),
         ;
 
         private final String value;

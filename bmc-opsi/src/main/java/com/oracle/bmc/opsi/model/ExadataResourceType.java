@@ -10,6 +10,7 @@ package com.oracle.bmc.opsi.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
 public enum ExadataResourceType {
     CloudExadataInfrastructure("cloudExadataInfrastructure"),
+    ExadataInfrastructure("exadataInfrastructure"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

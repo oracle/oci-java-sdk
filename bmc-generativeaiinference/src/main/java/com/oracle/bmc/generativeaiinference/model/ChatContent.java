@@ -22,6 +22,7 @@ package com.oracle.bmc.generativeaiinference.model;
     defaultImpl = ChatContent.class
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ImageContent.class, name = "IMAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = TextContent.class, name = "TEXT")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -76,6 +77,7 @@ public class ChatContent extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      **/
     public enum Type {
         Text("TEXT"),
+        Image("IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

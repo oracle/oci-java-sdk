@@ -16,6 +16,7 @@ import com.oracle.bmc.auth.internal.KeyPairAuthenticationDetailProvider;
 import com.oracle.bmc.auth.internal.ResourcePrincipalV2FederationClient;
 import com.oracle.bmc.auth.internal.ResourcePrincipalsFederationClient;
 import com.oracle.bmc.auth.internal.RptPathProvider;
+import com.oracle.bmc.auth.internal.SupplierBasedResourcePrincipalFederationClient;
 import com.oracle.bmc.circuitbreaker.CircuitBreakerConfiguration;
 import com.oracle.bmc.internal.GuavaUtils;
 import com.oracle.bmc.util.CircuitBreakerUtils;
@@ -157,6 +158,8 @@ public class ResourcePrincipalAuthenticationDetailsProvider
             org.slf4j.LoggerFactory.getLogger(ResourcePrincipalAuthenticationDetailsProvider.class);
     protected final static String OCI_RESOURCE_PRINCIPAL_VERSION = "OCI_RESOURCE_PRINCIPAL_VERSION";
     static final String OCI_RESOURCE_PRINCIPAL_RPST = "OCI_RESOURCE_PRINCIPAL_RPST";
+    static final String OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER =
+            "OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER";
     private static final String OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT =
             "OCI_RESOURCE_PRINCIPAL_RPST_ENDPOINT";
     private static final String OCI_RESOURCE_PRINCIPAL_RPT_ENDPOINT =
@@ -508,6 +511,38 @@ public class ResourcePrincipalAuthenticationDetailsProvider
         }
 
         /**
+         * Helper method that builds a v2.2-configured client based on a resource principal supplier function
+         * @return ResourcePrincipalAuthenticationDetailsProvider
+         */
+        public static <T> ResourcePrincipalAuthenticationDetailsProvider build_2_2(
+                String ociResourcePrincipalPrivateKey,
+                String ociResourcePrincipalPassphrase,
+                java.util.function.Function<T, String> ociResourcePrincipalRpstSupplier,
+                T resourcePrincipalCreationConfig,
+                String ociResourcePrincipalRegion,
+                String inputType) {
+
+            final SessionKeySupplier sessionKeySupplier =
+                    getSessionKeySupplierFromPemAndPassphrase(
+                            ociResourcePrincipalPrivateKey,
+                            ociResourcePrincipalPassphrase,
+                            inputType);
+
+            final FederationClient federationClient =
+                    getFederationClientFromRpstSupplier(
+                            ociResourcePrincipalRpstSupplier,
+                            resourcePrincipalCreationConfig,
+                            sessionKeySupplier);
+
+            final Region region =
+                    ResourcePrincipalAuthenticationDetailsProvider.getRegion(
+                            ociResourcePrincipalRegion, inputType);
+
+            return new ResourcePrincipalAuthenticationDetailsProvider(
+                    federationClient, sessionKeySupplier, region);
+        }
+
+        /**
          * Helper method that interprets the runtime environment to build a v2.1.2-configured client
          * @return ResourcePrincipalAuthenticationDetailsProvider
          */
@@ -804,6 +839,24 @@ public class ResourcePrincipalAuthenticationDetailsProvider
                             ociResourcePrincipalRpst, sessionKeySupplier);
         }
         return federationClient;
+    }
+
+    private static <T> FederationClient getFederationClientFromRpstSupplier(
+            java.util.function.Function<T, String> ociResourcePrincipalRpstSupplier,
+            T resourcePrincipalCreationConfig,
+            SessionKeySupplier sessionKeySupplier) {
+
+        if (ociResourcePrincipalRpstSupplier == null) {
+            throw new IllegalArgumentException(
+                    OCI_RESOURCE_PRINCIPAL_RPST_SUPPLIER + " missing." + RP_DEBUG_INFORMATION_LOG);
+        }
+
+        LOG.debug(
+                "Loading RPST from supplier provided. Creating instance of SupplierBasedResourcePrincipalFederationClient");
+        return new SupplierBasedResourcePrincipalFederationClient<>(
+                ociResourcePrincipalRpstSupplier,
+                resourcePrincipalCreationConfig,
+                sessionKeySupplier);
     }
 
     protected static SessionKeySupplier getSessionKeySupplierFromPemAndPassphrase(

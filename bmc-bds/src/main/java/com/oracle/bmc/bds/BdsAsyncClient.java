@@ -1365,6 +1365,66 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateResourcePrincipalConfigurationResponse>
+            createResourcePrincipalConfiguration(
+                    CreateResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CreateResourcePrincipalConfigurationRequest,
+                                    CreateResourcePrincipalConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async createResourcePrincipalConfiguration");
+        final CreateResourcePrincipalConfigurationRequest interceptedRequest =
+                CreateResourcePrincipalConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateResourcePrincipalConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateResourcePrincipalConfigurationResponse>
+                transformer =
+                        CreateResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateResourcePrincipalConfigurationRequest,
+                        CreateResourcePrincipalConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateResourcePrincipalConfigurationRequest,
+                                CreateResourcePrincipalConfigurationResponse>,
+                        java.util.concurrent.Future<CreateResourcePrincipalConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateResourcePrincipalConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateResourcePrincipalConfigurationRequest,
+                    CreateResourcePrincipalConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteBdsApiKeyResponse> deleteBdsApiKey(
             DeleteBdsApiKeyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1764,6 +1824,63 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ForceRefreshResourcePrincipalResponse>
+            forceRefreshResourcePrincipal(
+                    ForceRefreshResourcePrincipalRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ForceRefreshResourcePrincipalRequest,
+                                    ForceRefreshResourcePrincipalResponse>
+                            handler) {
+        LOG.trace("Called async forceRefreshResourcePrincipal");
+        final ForceRefreshResourcePrincipalRequest interceptedRequest =
+                ForceRefreshResourcePrincipalConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ForceRefreshResourcePrincipalConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ForceRefreshResourcePrincipal",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ForceRefreshResourcePrincipal");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ForceRefreshResourcePrincipalResponse>
+                transformer =
+                        ForceRefreshResourcePrincipalConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ForceRefreshResourcePrincipalRequest, ForceRefreshResourcePrincipalResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ForceRefreshResourcePrincipalRequest,
+                                ForceRefreshResourcePrincipalResponse>,
+                        java.util.concurrent.Future<ForceRefreshResourcePrincipalResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getForceRefreshResourcePrincipalDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ForceRefreshResourcePrincipalRequest, ForceRefreshResourcePrincipalResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAutoScalingConfigurationResponse>
             getAutoScalingConfiguration(
                     GetAutoScalingConfigurationRequest request,
@@ -2135,6 +2252,59 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetOsPatchDetailsRequest, GetOsPatchDetailsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourcePrincipalConfigurationResponse>
+            getResourcePrincipalConfiguration(
+                    GetResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetResourcePrincipalConfigurationRequest,
+                                    GetResourcePrincipalConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async getResourcePrincipalConfiguration");
+        final GetResourcePrincipalConfigurationRequest interceptedRequest =
+                GetResourcePrincipalConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourcePrincipalConfigurationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetResourcePrincipalConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetResourcePrincipalConfigurationResponse>
+                transformer =
+                        GetResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetResourcePrincipalConfigurationRequest,
+                        GetResourcePrincipalConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetResourcePrincipalConfigurationRequest,
+                                GetResourcePrincipalConfigurationResponse>,
+                        java.util.concurrent.Future<GetResourcePrincipalConfigurationResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetResourcePrincipalConfigurationRequest,
+                    GetResourcePrincipalConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2771,6 +2941,60 @@ public class BdsAsyncClient implements BdsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListResourcePrincipalConfigurationsResponse>
+            listResourcePrincipalConfigurations(
+                    ListResourcePrincipalConfigurationsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListResourcePrincipalConfigurationsRequest,
+                                    ListResourcePrincipalConfigurationsResponse>
+                            handler) {
+        LOG.trace("Called async listResourcePrincipalConfigurations");
+        final ListResourcePrincipalConfigurationsRequest interceptedRequest =
+                ListResourcePrincipalConfigurationsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourcePrincipalConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListResourcePrincipalConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListResourcePrincipalConfigurations");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListResourcePrincipalConfigurationsResponse>
+                transformer =
+                        ListResourcePrincipalConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListResourcePrincipalConfigurationsRequest,
+                        ListResourcePrincipalConfigurationsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListResourcePrincipalConfigurationsRequest,
+                                ListResourcePrincipalConfigurationsResponse>,
+                        java.util.concurrent.Future<ListResourcePrincipalConfigurationsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListResourcePrincipalConfigurationsRequest,
+                    ListResourcePrincipalConfigurationsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListWorkRequestErrorsResponse> listWorkRequestErrors(
             ListWorkRequestErrorsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -3163,6 +3387,65 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveNodeReplaceConfigurationRequest, RemoveNodeReplaceConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveResourcePrincipalConfigurationResponse>
+            removeResourcePrincipalConfiguration(
+                    RemoveResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveResourcePrincipalConfigurationRequest,
+                                    RemoveResourcePrincipalConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async removeResourcePrincipalConfiguration");
+        final RemoveResourcePrincipalConfigurationRequest interceptedRequest =
+                RemoveResourcePrincipalConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "RemoveResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/ResourcePrincipalConfiguration/RemoveResourcePrincipalConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveResourcePrincipalConfigurationResponse>
+                transformer =
+                        RemoveResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveResourcePrincipalConfigurationRequest,
+                        RemoveResourcePrincipalConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveResourcePrincipalConfigurationRequest,
+                                RemoveResourcePrincipalConfigurationResponse>,
+                        java.util.concurrent.Future<RemoveResourcePrincipalConfigurationResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveResourcePrincipalConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveResourcePrincipalConfigurationRequest,
+                    RemoveResourcePrincipalConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3812,6 +4095,66 @@ public class BdsAsyncClient implements BdsAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateNodeReplaceConfigurationRequest, UpdateNodeReplaceConfigurationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateResourcePrincipalConfigurationResponse>
+            updateResourcePrincipalConfiguration(
+                    UpdateResourcePrincipalConfigurationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    UpdateResourcePrincipalConfigurationRequest,
+                                    UpdateResourcePrincipalConfigurationResponse>
+                            handler) {
+        LOG.trace("Called async updateResourcePrincipalConfiguration");
+        final UpdateResourcePrincipalConfigurationRequest interceptedRequest =
+                UpdateResourcePrincipalConfigurationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateResourcePrincipalConfiguration");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateResourcePrincipalConfigurationResponse>
+                transformer =
+                        UpdateResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateResourcePrincipalConfigurationRequest,
+                        UpdateResourcePrincipalConfigurationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateResourcePrincipalConfigurationRequest,
+                                UpdateResourcePrincipalConfigurationResponse>,
+                        java.util.concurrent.Future<UpdateResourcePrincipalConfigurationResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateResourcePrincipalConfigurationDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateResourcePrincipalConfigurationRequest,
+                    UpdateResourcePrincipalConfigurationResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

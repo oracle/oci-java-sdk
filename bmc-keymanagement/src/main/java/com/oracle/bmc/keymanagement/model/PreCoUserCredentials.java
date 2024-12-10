@@ -31,13 +31,13 @@ public final class PreCoUserCredentials extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The pre crypto officer username..
+         * The pre crypto officer username, which should be chosen as a non confidential string.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("username")
         private String username;
 
         /**
-         * The pre crypto officer username..
+         * The pre crypto officer username, which should be chosen as a non confidential string.
          * @param username the value to set
          * @return this builder
          **/
@@ -98,13 +98,13 @@ public final class PreCoUserCredentials extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * The pre crypto officer username..
+     * The pre crypto officer username, which should be chosen as a non confidential string.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("username")
     private final String username;
 
     /**
-     * The pre crypto officer username..
+     * The pre crypto officer username, which should be chosen as a non confidential string.
      * @return the value
      **/
     public String getUsername() {

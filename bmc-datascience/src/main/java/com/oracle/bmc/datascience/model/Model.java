@@ -26,6 +26,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "displayName",
         "description",
         "lifecycleState",
+        "lifecycleDetails",
         "timeCreated",
         "createdBy",
         "freeformTags",
@@ -37,7 +38,11 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "modelVersionSetId",
         "modelVersionSetName",
         "versionId",
-        "versionLabel"
+        "versionLabel",
+        "retentionSetting",
+        "backupSetting",
+        "retentionOperationDetails",
+        "backupOperationDetails"
     })
     public Model(
             String id,
@@ -46,6 +51,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String displayName,
             String description,
             ModelLifecycleState lifecycleState,
+            String lifecycleDetails,
             java.util.Date timeCreated,
             String createdBy,
             java.util.Map<String, String> freeformTags,
@@ -57,7 +63,11 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String modelVersionSetId,
             String modelVersionSetName,
             Long versionId,
-            String versionLabel) {
+            String versionLabel,
+            RetentionSetting retentionSetting,
+            BackupSetting backupSetting,
+            RetentionOperationDetails retentionOperationDetails,
+            BackupOperationDetails backupOperationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -65,6 +75,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.displayName = displayName;
         this.description = description;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.timeCreated = timeCreated;
         this.createdBy = createdBy;
         this.freeformTags = freeformTags;
@@ -77,6 +88,10 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.modelVersionSetName = modelVersionSetName;
         this.versionId = versionId;
         this.versionLabel = versionLabel;
+        this.retentionSetting = retentionSetting;
+        this.backupSetting = backupSetting;
+        this.retentionOperationDetails = retentionOperationDetails;
+        this.backupOperationDetails = backupOperationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +190,22 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         public Builder lifecycleState(ModelLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * Details about the lifecycle state of the model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the lifecycle state of the model.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
             return this;
         }
         /**
@@ -383,6 +414,43 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionSetting")
+        private RetentionSetting retentionSetting;
+
+        public Builder retentionSetting(RetentionSetting retentionSetting) {
+            this.retentionSetting = retentionSetting;
+            this.__explicitlySet__.add("retentionSetting");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupSetting")
+        private BackupSetting backupSetting;
+
+        public Builder backupSetting(BackupSetting backupSetting) {
+            this.backupSetting = backupSetting;
+            this.__explicitlySet__.add("backupSetting");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("retentionOperationDetails")
+        private RetentionOperationDetails retentionOperationDetails;
+
+        public Builder retentionOperationDetails(
+                RetentionOperationDetails retentionOperationDetails) {
+            this.retentionOperationDetails = retentionOperationDetails;
+            this.__explicitlySet__.add("retentionOperationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupOperationDetails")
+        private BackupOperationDetails backupOperationDetails;
+
+        public Builder backupOperationDetails(BackupOperationDetails backupOperationDetails) {
+            this.backupOperationDetails = backupOperationDetails;
+            this.__explicitlySet__.add("backupOperationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -395,6 +463,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.displayName,
                             this.description,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.timeCreated,
                             this.createdBy,
                             this.freeformTags,
@@ -406,7 +475,11 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.modelVersionSetId,
                             this.modelVersionSetName,
                             this.versionId,
-                            this.versionLabel);
+                            this.versionLabel,
+                            this.retentionSetting,
+                            this.backupSetting,
+                            this.retentionOperationDetails,
+                            this.backupOperationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -432,6 +505,9 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -468,6 +544,18 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("versionLabel")) {
                 this.versionLabel(model.getVersionLabel());
+            }
+            if (model.wasPropertyExplicitlySet("retentionSetting")) {
+                this.retentionSetting(model.getRetentionSetting());
+            }
+            if (model.wasPropertyExplicitlySet("backupSetting")) {
+                this.backupSetting(model.getBackupSetting());
+            }
+            if (model.wasPropertyExplicitlySet("retentionOperationDetails")) {
+                this.retentionOperationDetails(model.getRetentionOperationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("backupOperationDetails")) {
+                this.backupOperationDetails(model.getBackupOperationDetails());
             }
             return this;
         }
@@ -566,6 +654,20 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
      **/
     public ModelLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * Details about the lifecycle state of the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the lifecycle state of the model.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
     }
 
     /**
@@ -748,6 +850,34 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return versionLabel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionSetting")
+    private final RetentionSetting retentionSetting;
+
+    public RetentionSetting getRetentionSetting() {
+        return retentionSetting;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupSetting")
+    private final BackupSetting backupSetting;
+
+    public BackupSetting getBackupSetting() {
+        return backupSetting;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("retentionOperationDetails")
+    private final RetentionOperationDetails retentionOperationDetails;
+
+    public RetentionOperationDetails getRetentionOperationDetails() {
+        return retentionOperationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupOperationDetails")
+    private final BackupOperationDetails backupOperationDetails;
+
+    public BackupOperationDetails getBackupOperationDetails() {
+        return backupOperationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -768,6 +898,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -780,6 +911,11 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
         sb.append(", versionLabel=").append(String.valueOf(this.versionLabel));
+        sb.append(", retentionSetting=").append(String.valueOf(this.retentionSetting));
+        sb.append(", backupSetting=").append(String.valueOf(this.backupSetting));
+        sb.append(", retentionOperationDetails=")
+                .append(String.valueOf(this.retentionOperationDetails));
+        sb.append(", backupOperationDetails=").append(String.valueOf(this.backupOperationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -800,6 +936,7 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -812,6 +949,12 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
                 && java.util.Objects.equals(this.versionId, other.versionId)
                 && java.util.Objects.equals(this.versionLabel, other.versionLabel)
+                && java.util.Objects.equals(this.retentionSetting, other.retentionSetting)
+                && java.util.Objects.equals(this.backupSetting, other.backupSetting)
+                && java.util.Objects.equals(
+                        this.retentionOperationDetails, other.retentionOperationDetails)
+                && java.util.Objects.equals(
+                        this.backupOperationDetails, other.backupOperationDetails)
                 && super.equals(other);
     }
 
@@ -829,6 +972,9 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
@@ -855,6 +1001,22 @@ public final class Model extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                                 : this.modelVersionSetName.hashCode());
         result = (result * PRIME) + (this.versionId == null ? 43 : this.versionId.hashCode());
         result = (result * PRIME) + (this.versionLabel == null ? 43 : this.versionLabel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionSetting == null ? 43 : this.retentionSetting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupSetting == null ? 43 : this.backupSetting.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.retentionOperationDetails == null
+                                ? 43
+                                : this.retentionOperationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupOperationDetails == null
+                                ? 43
+                                : this.backupOperationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

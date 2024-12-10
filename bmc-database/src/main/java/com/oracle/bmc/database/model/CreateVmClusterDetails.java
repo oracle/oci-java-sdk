@@ -46,7 +46,9 @@ public final class CreateVmClusterDetails
         "definedTags",
         "dataCollectionOptions",
         "systemVersion",
-        "fileSystemConfigurationDetails"
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails",
+        "exascaleDbStorageVaultId"
     })
     public CreateVmClusterDetails(
             String compartmentId,
@@ -70,7 +72,9 @@ public final class CreateVmClusterDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DataCollectionOptions dataCollectionOptions,
             String systemVersion,
-            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails,
+            String exascaleDbStorageVaultId) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -94,6 +98,8 @@ public final class CreateVmClusterDetails
         this.dataCollectionOptions = dataCollectionOptions;
         this.systemVersion = systemVersion;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+        this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -464,6 +470,32 @@ public final class CreateVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+        private String exascaleDbStorageVaultId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+         * @param exascaleDbStorageVaultId the value to set
+         * @return this builder
+         **/
+        public Builder exascaleDbStorageVaultId(String exascaleDbStorageVaultId) {
+            this.exascaleDbStorageVaultId = exascaleDbStorageVaultId;
+            this.__explicitlySet__.add("exascaleDbStorageVaultId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -491,7 +523,9 @@ public final class CreateVmClusterDetails
                             this.definedTags,
                             this.dataCollectionOptions,
                             this.systemVersion,
-                            this.fileSystemConfigurationDetails);
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails,
+                            this.exascaleDbStorageVaultId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -565,6 +599,12 @@ public final class CreateVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
+            }
+            if (model.wasPropertyExplicitlySet("exascaleDbStorageVaultId")) {
+                this.exascaleDbStorageVaultId(model.getExascaleDbStorageVaultId());
             }
             return this;
         }
@@ -936,6 +976,27 @@ public final class CreateVmClusterDetails
         return fileSystemConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("exascaleDbStorageVaultId")
+    private final String exascaleDbStorageVaultId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Exadata Database Storage Vault.
+     * @return the value
+     **/
+    public String getExascaleDbStorageVaultId() {
+        return exascaleDbStorageVaultId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -975,6 +1036,10 @@ public final class CreateVmClusterDetails
         sb.append(", systemVersion=").append(String.valueOf(this.systemVersion));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
+        sb.append(", exascaleDbStorageVaultId=")
+                .append(String.valueOf(this.exascaleDbStorageVaultId));
         sb.append(")");
         return sb.toString();
     }
@@ -1015,6 +1080,10 @@ public final class CreateVmClusterDetails
                 && java.util.Objects.equals(this.systemVersion, other.systemVersion)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
+                && java.util.Objects.equals(
+                        this.exascaleDbStorageVaultId, other.exascaleDbStorageVaultId)
                 && super.equals(other);
     }
 
@@ -1088,6 +1157,16 @@ public final class CreateVmClusterDetails
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.exascaleDbStorageVaultId == null
+                                ? 43
+                                : this.exascaleDbStorageVaultId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

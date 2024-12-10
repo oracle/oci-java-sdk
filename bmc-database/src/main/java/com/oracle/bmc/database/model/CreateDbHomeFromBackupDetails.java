@@ -27,6 +27,7 @@ public final class CreateDbHomeFromBackupDetails
     @Deprecated
     @java.beans.ConstructorProperties({
         "displayName",
+        "isUnifiedAuditingEnabled",
         "databaseSoftwareImageId",
         "database",
         "freeformTags",
@@ -34,12 +35,14 @@ public final class CreateDbHomeFromBackupDetails
     })
     public CreateDbHomeFromBackupDetails(
             String displayName,
+            Boolean isUnifiedAuditingEnabled,
             String databaseSoftwareImageId,
             CreateDatabaseFromBackupDetails database,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
+        this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.database = database;
         this.freeformTags = freeformTags;
@@ -62,6 +65,24 @@ public final class CreateDbHomeFromBackupDetails
         public Builder displayName(String displayName) {
             this.displayName = displayName;
             this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * Indicates whether unified auditing is enabled or not
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+        private Boolean isUnifiedAuditingEnabled;
+
+        /**
+         * Indicates whether unified auditing is enabled or not
+         *
+         * @param isUnifiedAuditingEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isUnifiedAuditingEnabled(Boolean isUnifiedAuditingEnabled) {
+            this.isUnifiedAuditingEnabled = isUnifiedAuditingEnabled;
+            this.__explicitlySet__.add("isUnifiedAuditingEnabled");
             return this;
         }
         /**
@@ -142,6 +163,7 @@ public final class CreateDbHomeFromBackupDetails
             CreateDbHomeFromBackupDetails model =
                     new CreateDbHomeFromBackupDetails(
                             this.displayName,
+                            this.isUnifiedAuditingEnabled,
                             this.databaseSoftwareImageId,
                             this.database,
                             this.freeformTags,
@@ -156,6 +178,9 @@ public final class CreateDbHomeFromBackupDetails
         public Builder copy(CreateDbHomeFromBackupDetails model) {
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("isUnifiedAuditingEnabled")) {
+                this.isUnifiedAuditingEnabled(model.getIsUnifiedAuditingEnabled());
             }
             if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
                 this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
@@ -196,6 +221,22 @@ public final class CreateDbHomeFromBackupDetails
      **/
     public String getDisplayName() {
         return displayName;
+    }
+
+    /**
+     * Indicates whether unified auditing is enabled or not
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isUnifiedAuditingEnabled")
+    private final Boolean isUnifiedAuditingEnabled;
+
+    /**
+     * Indicates whether unified auditing is enabled or not
+     *
+     * @return the value
+     **/
+    public Boolean getIsUnifiedAuditingEnabled() {
+        return isUnifiedAuditingEnabled;
     }
 
     /**
@@ -274,6 +315,8 @@ public final class CreateDbHomeFromBackupDetails
         sb.append("CreateDbHomeFromBackupDetails(");
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append(", isUnifiedAuditingEnabled=")
+                .append(String.valueOf(this.isUnifiedAuditingEnabled));
         sb.append(", databaseSoftwareImageId=")
                 .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", database=").append(String.valueOf(this.database));
@@ -295,6 +338,8 @@ public final class CreateDbHomeFromBackupDetails
         CreateDbHomeFromBackupDetails other = (CreateDbHomeFromBackupDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(
+                        this.isUnifiedAuditingEnabled, other.isUnifiedAuditingEnabled)
+                && java.util.Objects.equals(
                         this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.database, other.database)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -307,6 +352,11 @@ public final class CreateDbHomeFromBackupDetails
         final int PRIME = 59;
         int result = 1;
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isUnifiedAuditingEnabled == null
+                                ? 43
+                                : this.isUnifiedAuditingEnabled.hashCode());
         result =
                 (result * PRIME)
                         + (this.databaseSoftwareImageId == null

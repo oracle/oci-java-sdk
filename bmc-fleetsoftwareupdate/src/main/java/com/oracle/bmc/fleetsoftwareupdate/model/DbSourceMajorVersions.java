@@ -15,6 +15,7 @@ public enum DbSourceMajorVersions {
     Db122("DB_122"),
     Db18("DB_18"),
     Db19("DB_19"),
+    Db23("DB_23"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

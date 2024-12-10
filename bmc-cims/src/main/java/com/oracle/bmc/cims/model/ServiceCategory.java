@@ -25,6 +25,7 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
         "label",
         "description",
         "issueTypeList",
+        "supportedSubscriptions",
         "scope",
         "unit",
         "limitId"
@@ -35,6 +36,7 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
             String label,
             String description,
             java.util.List<IssueType> issueTypeList,
+            java.util.List<String> supportedSubscriptions,
             Scope scope,
             Unit unit,
             String limitId) {
@@ -44,6 +46,7 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
         this.label = label;
         this.description = description;
         this.issueTypeList = issueTypeList;
+        this.supportedSubscriptions = supportedSubscriptions;
         this.scope = scope;
         this.unit = unit;
         this.limitId = limitId;
@@ -132,6 +135,22 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
+         * List of supported subscriptions
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+        private java.util.List<String> supportedSubscriptions;
+
+        /**
+         * List of supported subscriptions
+         * @param supportedSubscriptions the value to set
+         * @return this builder
+         **/
+        public Builder supportedSubscriptions(java.util.List<String> supportedSubscriptions) {
+            this.supportedSubscriptions = supportedSubscriptions;
+            this.__explicitlySet__.add("supportedSubscriptions");
+            return this;
+        }
+        /**
          * The scope of the incident.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("scope")
@@ -191,6 +210,7 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
                             this.label,
                             this.description,
                             this.issueTypeList,
+                            this.supportedSubscriptions,
                             this.scope,
                             this.unit,
                             this.limitId);
@@ -216,6 +236,9 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("issueTypeList")) {
                 this.issueTypeList(model.getIssueTypeList());
+            }
+            if (model.wasPropertyExplicitlySet("supportedSubscriptions")) {
+                this.supportedSubscriptions(model.getSupportedSubscriptions());
             }
             if (model.wasPropertyExplicitlySet("scope")) {
                 this.scope(model.getScope());
@@ -312,6 +335,20 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
+     * List of supported subscriptions
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("supportedSubscriptions")
+    private final java.util.List<String> supportedSubscriptions;
+
+    /**
+     * List of supported subscriptions
+     * @return the value
+     **/
+    public java.util.List<String> getSupportedSubscriptions() {
+        return supportedSubscriptions;
+    }
+
+    /**
      * The scope of the incident.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("scope")
@@ -372,6 +409,7 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
         sb.append(", label=").append(String.valueOf(this.label));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", issueTypeList=").append(String.valueOf(this.issueTypeList));
+        sb.append(", supportedSubscriptions=").append(String.valueOf(this.supportedSubscriptions));
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", unit=").append(String.valueOf(this.unit));
         sb.append(", limitId=").append(String.valueOf(this.limitId));
@@ -394,6 +432,8 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
                 && java.util.Objects.equals(this.label, other.label)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.issueTypeList, other.issueTypeList)
+                && java.util.Objects.equals(
+                        this.supportedSubscriptions, other.supportedSubscriptions)
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.unit, other.unit)
                 && java.util.Objects.equals(this.limitId, other.limitId)
@@ -411,6 +451,11 @@ public final class ServiceCategory extends com.oracle.bmc.http.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.issueTypeList == null ? 43 : this.issueTypeList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.supportedSubscriptions == null
+                                ? 43
+                                : this.supportedSubscriptions.hashCode());
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.unit == null ? 43 : this.unit.hashCode());
         result = (result * PRIME) + (this.limitId == null ? 43 : this.limitId.hashCode());

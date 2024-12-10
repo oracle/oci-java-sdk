@@ -30,6 +30,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "scope",
         "freeformTags",
         "definedTags",
+        "dnssecState",
         "externalMasters",
         "externalDownstreams",
         "self",
@@ -39,6 +40,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "serial",
         "lifecycleState",
         "isProtected",
+        "dnssecConfig",
         "nameservers",
         "zoneTransferServers"
     })
@@ -50,6 +52,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Scope scope,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            ZoneDnssecState dnssecState,
             java.util.List<ExternalMaster> externalMasters,
             java.util.List<ExternalDownstream> externalDownstreams,
             String self,
@@ -59,6 +62,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             Long serial,
             LifecycleState lifecycleState,
             Boolean isProtected,
+            DnssecConfig dnssecConfig,
             java.util.List<Nameserver> nameservers,
             java.util.List<ZoneTransferServer> zoneTransferServers) {
         super();
@@ -69,6 +73,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.scope = scope;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.dnssecState = dnssecState;
         this.externalMasters = externalMasters;
         this.externalDownstreams = externalDownstreams;
         this.self = self;
@@ -78,6 +83,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.serial = serial;
         this.lifecycleState = lifecycleState;
         this.isProtected = isProtected;
+        this.dnssecConfig = dnssecConfig;
         this.nameservers = nameservers;
         this.zoneTransferServers = zoneTransferServers;
     }
@@ -223,6 +229,72 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * The state of DNSSEC on the zone.
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
+        private ZoneDnssecState dnssecState;
+
+        /**
+         * The state of DNSSEC on the zone.
+         * <p>
+         * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+         * trust anchor) must also have DNSSEC correctly set up.
+         * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+         * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+         * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+         * <p>
+         * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+         * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+         * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+         * <p>
+         * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+         * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+         * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+         * <p>
+         * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+         * days are left until expiration.
+         * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+         * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+         * <p>
+         * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+         * cause higher response latency.
+         * <p>
+         * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+         *
+         * @param dnssecState the value to set
+         * @return this builder
+         **/
+        public Builder dnssecState(ZoneDnssecState dnssecState) {
+            this.dnssecState = dnssecState;
+            this.__explicitlySet__.add("dnssecState");
             return this;
         }
         /**
@@ -395,6 +467,15 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             this.__explicitlySet__.add("isProtected");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dnssecConfig")
+        private DnssecConfig dnssecConfig;
+
+        public Builder dnssecConfig(DnssecConfig dnssecConfig) {
+            this.dnssecConfig = dnssecConfig;
+            this.__explicitlySet__.add("dnssecConfig");
+            return this;
+        }
         /**
          * The authoritative nameservers for the zone.
          **/
@@ -443,6 +524,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.scope,
                             this.freeformTags,
                             this.definedTags,
+                            this.dnssecState,
                             this.externalMasters,
                             this.externalDownstreams,
                             this.self,
@@ -452,6 +534,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.serial,
                             this.lifecycleState,
                             this.isProtected,
+                            this.dnssecConfig,
                             this.nameservers,
                             this.zoneTransferServers);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -483,6 +566,9 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("dnssecState")) {
+                this.dnssecState(model.getDnssecState());
+            }
             if (model.wasPropertyExplicitlySet("externalMasters")) {
                 this.externalMasters(model.getExternalMasters());
             }
@@ -509,6 +595,9 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             }
             if (model.wasPropertyExplicitlySet("isProtected")) {
                 this.isProtected(model.getIsProtected());
+            }
+            if (model.wasPropertyExplicitlySet("dnssecConfig")) {
+                this.dnssecConfig(model.getDnssecConfig());
             }
             if (model.wasPropertyExplicitlySet("nameservers")) {
                 this.nameservers(model.getNameservers());
@@ -704,6 +793,70 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * The state of DNSSEC on the zone.
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dnssecState")
+    private final ZoneDnssecState dnssecState;
+
+    /**
+     * The state of DNSSEC on the zone.
+     * <p>
+     * For DNSSEC to function, every parent zone in the DNS tree up to the top-level domain (or an independent
+     * trust anchor) must also have DNSSEC correctly set up.
+     * After enabling DNSSEC, you must add a DS record to the zone's parent zone containing the
+     * {@code KskDnssecKeyVersion} data. You can find the DS data in the {@code dsData} attribute of the {@code KskDnssecKeyVersion}.
+     * Then, use the {@code PromoteZoneDnssecKeyVersion} operation to promote the {@code KskDnssecKeyVersion}.
+     * <p>
+     * New {@code KskDnssecKeyVersion}s are generated annually, a week before the existing {@code KskDnssecKeyVersion}'s expiration.
+     * To rollover a {@code KskDnssecKeyVersion}, you must replace the parent zone's DS record containing the old
+     * {@code KskDnssecKeyVersion} data with the data from the new {@code KskDnssecKeyVersion}.
+     * <p>
+     * To remove the old DS record without causing service disruption, wait until the old DS record's TTL has
+     * expired, and the new DS record has propagated. After the DS replacement has been completed, then the
+     * {@code PromoteZoneDnssecKeyVersion} operation must be called.
+     * <p>
+     * Metrics are emitted in the {@code oci_dns} namespace daily for each {@code KskDnssecKeyVersion} indicating how many
+     * days are left until expiration.
+     * We recommend that you set up alarms and notifications for KskDnssecKeyVersion expiration so that the
+     * necessary parent zone updates can be made and the {@code PromoteZoneDnssecKeyVersion} operation can be called.
+     * <p>
+     * Enabling DNSSEC results in additional records in DNS responses which increases their size and can
+     * cause higher response latency.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     * @return the value
+     **/
+    public ZoneDnssecState getDnssecState() {
+        return dnssecState;
     }
 
     /**
@@ -910,6 +1063,13 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         return isProtected;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dnssecConfig")
+    private final DnssecConfig dnssecConfig;
+
+    public DnssecConfig getDnssecConfig() {
+        return dnssecConfig;
+    }
+
     /**
      * The authoritative nameservers for the zone.
      **/
@@ -961,6 +1121,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", scope=").append(String.valueOf(this.scope));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", dnssecState=").append(String.valueOf(this.dnssecState));
         sb.append(", externalMasters=").append(String.valueOf(this.externalMasters));
         sb.append(", externalDownstreams=").append(String.valueOf(this.externalDownstreams));
         sb.append(", self=").append(String.valueOf(this.self));
@@ -970,6 +1131,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", serial=").append(String.valueOf(this.serial));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", isProtected=").append(String.valueOf(this.isProtected));
+        sb.append(", dnssecConfig=").append(String.valueOf(this.dnssecConfig));
         sb.append(", nameservers=").append(String.valueOf(this.nameservers));
         sb.append(", zoneTransferServers=").append(String.valueOf(this.zoneTransferServers));
         sb.append(")");
@@ -993,6 +1155,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.scope, other.scope)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.dnssecState, other.dnssecState)
                 && java.util.Objects.equals(this.externalMasters, other.externalMasters)
                 && java.util.Objects.equals(this.externalDownstreams, other.externalDownstreams)
                 && java.util.Objects.equals(this.self, other.self)
@@ -1002,6 +1165,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.serial, other.serial)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.isProtected, other.isProtected)
+                && java.util.Objects.equals(this.dnssecConfig, other.dnssecConfig)
                 && java.util.Objects.equals(this.nameservers, other.nameservers)
                 && java.util.Objects.equals(this.zoneTransferServers, other.zoneTransferServers)
                 && super.equals(other);
@@ -1020,6 +1184,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.scope == null ? 43 : this.scope.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.dnssecState == null ? 43 : this.dnssecState.hashCode());
         result =
                 (result * PRIME)
                         + (this.externalMasters == null ? 43 : this.externalMasters.hashCode());
@@ -1037,6 +1202,7 @@ public final class Zone extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.isProtected == null ? 43 : this.isProtected.hashCode());
+        result = (result * PRIME) + (this.dnssecConfig == null ? 43 : this.dnssecConfig.hashCode());
         result = (result * PRIME) + (this.nameservers == null ? 43 : this.nameservers.hashCode());
         result =
                 (result * PRIME)

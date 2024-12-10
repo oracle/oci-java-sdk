@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.oracle.oci.sdk</groupId>
   <artifactId>oci-java-sdk</artifactId>
-  <version>2.73.0</version>
+  <version>2.79.0</version>
   <packaging>pom</packaging>
   <name>Oracle Cloud Infrastructure SDK</name>
   <description>This project contains the SDK used for Oracle Cloud Infrastructure</description>
@@ -40,7 +40,7 @@
     <jersey.version>2.35</jersey.version>
     <apache-httpcomponents.httpclient.version>4.5.13</apache-httpcomponents.httpclient.version>
     <apache-httpcomponents.httpcore.version>4.4.13</apache-httpcomponents.httpcore.version>
-    <guava.version>31.0.1-jre</guava.version>
+    <guava.version>33.3.0-jre</guava.version>
     <junit.version>4.13.2</junit.version>
     <jsr305.version>3.0.2</jsr305.version>
     <slf4j.version>1.7.33</slf4j.version>
@@ -92,6 +92,7 @@
           <plugin>
             <groupId>org.codehaus.mojo</groupId>
             <artifactId>build-helper-maven-plugin</artifactId>
+            <version>3.6.0</version>
             <executions>
               <execution>
                 <id>timestamp-property</id>
@@ -172,6 +173,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>${dev.profile.skip.javadoc}</skip>
             </configuration>
@@ -214,6 +216,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
@@ -246,6 +249,7 @@
           <plugin>
             <groupId>org.apache.maven.plugins</groupId>
             <artifactId>maven-javadoc-plugin</artifactId>
+            <version>3.7.0</version>
             <configuration>
               <skip>true</skip>
             </configuration>
@@ -319,7 +323,7 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
-          <version>1.12</version>
+          <version>3.6.0</version>
         </plugin>
         <plugin>
           <groupId>com.mycila</groupId>
@@ -358,7 +362,7 @@
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-javadoc-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.7.0</version>
           <goals>
             <goal>jar</goal>
           </goals>
@@ -374,7 +378,6 @@
           <configuration>
             <!-- Exclude classes that shouldn't be exposed to end users, ex, those in 'internal' packages -->
             <excludePackageNames>*.internal.*</excludePackageNames>
-            <aggregate>true</aggregate>
             <minmemory>2048</minmemory>
             <maxmemory>6144m</maxmemory>
             <doclint>none</doclint>
@@ -416,13 +419,13 @@
         <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>exec-maven-plugin</artifactId>
-          <version>1.6.0</version>
+          <version>3.3.0</version>
           <inherited>true</inherited>
         </plugin>
         <plugin>
           <groupId>org.apache.maven.plugins</groupId>
           <artifactId>maven-enforcer-plugin</artifactId>
-          <version>3.3.0</version>
+          <version>3.5.0</version>
           <dependencies>
             <dependency>
               <groupId>org.codehaus.mojo</groupId>
@@ -430,6 +433,11 @@
               <version>1.7.0</version>
             </dependency>
           </dependencies>
+        </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-deploy-plugin</artifactId>
+          <version>3.1.2</version>
         </plugin>
       </plugins>
     </pluginManagement>
@@ -589,6 +597,11 @@
       <dependency>
         <groupId>org.hamcrest</groupId>
         <artifactId>hamcrest-core</artifactId>
+        <version>${hamcrest.core.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>hamcrest-all</artifactId>
         <version>${hamcrest.core.version}</version>
       </dependency>
       <dependency>
@@ -848,6 +861,12 @@
     <module>bmc-marketplaceprivateoffer</module>
     <module>bmc-resourcescheduler</module>
     <module>bmc-demandsignal</module>
+    <module>bmc-fleetappsmanagement</module>
+    <module>bmc-delegateaccesscontrol</module>
+    <module>bmc-generativeaiagent</module>
+    <module>bmc-generativeaiagentruntime</module>
+    <module>bmc-securityattribute</module>
+    <module>bmc-zpr</module>
     <module>bmc-full</module>
     <module>bmc-shaded</module>
   </modules>

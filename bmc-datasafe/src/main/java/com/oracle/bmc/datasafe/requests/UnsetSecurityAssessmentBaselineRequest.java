@@ -10,7 +10,8 @@ import com.oracle.bmc.datasafe.model.*;
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class UnsetSecurityAssessmentBaselineRequest
-        extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
+        extends com.oracle.bmc.requests.BmcRequest<
+                com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails> {
 
     /**
      * The OCID of the security assessment.
@@ -74,10 +75,34 @@ public class UnsetSecurityAssessmentBaselineRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Details of the target associated with the security assessment for which the user intents to unset the baseline.
+     */
+    private com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails
+            unsetSecurityAssessmentBaselineDetails;
+
+    /**
+     * Details of the target associated with the security assessment for which the user intents to unset the baseline.
+     */
+    public com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails
+            getUnsetSecurityAssessmentBaselineDetails() {
+        return unsetSecurityAssessmentBaselineDetails;
+    }
+
+    /**
+     * Alternative accessor for the body parameter.
+     * @return body parameter
+     */
+    @Override
+    @com.oracle.bmc.InternalSdk
+    public com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails getBody$() {
+        return unsetSecurityAssessmentBaselineDetails;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
-                    UnsetSecurityAssessmentBaselineRequest, java.lang.Void> {
+                    UnsetSecurityAssessmentBaselineRequest,
+                    com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails> {
         private com.oracle.bmc.util.internal.Consumer<javax.ws.rs.client.Invocation.Builder>
                 invocationCallback = null;
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
@@ -161,6 +186,24 @@ public class UnsetSecurityAssessmentBaselineRequest
         }
 
         /**
+         * Details of the target associated with the security assessment for which the user intents to unset the baseline.
+         */
+        private com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails
+                unsetSecurityAssessmentBaselineDetails = null;
+
+        /**
+         * Details of the target associated with the security assessment for which the user intents to unset the baseline.
+         * @param unsetSecurityAssessmentBaselineDetails the value to set
+         * @return this builder instance
+         */
+        public Builder unsetSecurityAssessmentBaselineDetails(
+                com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails
+                        unsetSecurityAssessmentBaselineDetails) {
+            this.unsetSecurityAssessmentBaselineDetails = unsetSecurityAssessmentBaselineDetails;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -192,6 +235,7 @@ public class UnsetSecurityAssessmentBaselineRequest
             ifMatch(o.getIfMatch());
             opcRetryToken(o.getOpcRetryToken());
             opcRequestId(o.getOpcRequestId());
+            unsetSecurityAssessmentBaselineDetails(o.getUnsetSecurityAssessmentBaselineDetails());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -215,6 +259,18 @@ public class UnsetSecurityAssessmentBaselineRequest
         }
 
         /**
+         * Alternative setter for the body parameter.
+         * @param body the body parameter
+         * @return this builder instance
+         */
+        @com.oracle.bmc.InternalSdk
+        public Builder body$(
+                com.oracle.bmc.datasafe.model.UnsetSecurityAssessmentBaselineDetails body) {
+            unsetSecurityAssessmentBaselineDetails(body);
+            return this;
+        }
+
+        /**
          * Build the instance of UnsetSecurityAssessmentBaselineRequest as configured by this builder
          *
          * Note that this method does not take calls to {@link Builder#invocationCallback(com.oracle.bmc.util.internal.Consumer)} into account,
@@ -229,8 +285,9 @@ public class UnsetSecurityAssessmentBaselineRequest
             request.ifMatch = ifMatch;
             request.opcRetryToken = opcRetryToken;
             request.opcRequestId = opcRequestId;
+            request.unsetSecurityAssessmentBaselineDetails = unsetSecurityAssessmentBaselineDetails;
             return request;
-            // new UnsetSecurityAssessmentBaselineRequest(securityAssessmentId, ifMatch, opcRetryToken, opcRequestId);
+            // new UnsetSecurityAssessmentBaselineRequest(securityAssessmentId, ifMatch, opcRetryToken, opcRequestId, unsetSecurityAssessmentBaselineDetails);
         }
     }
 
@@ -243,7 +300,8 @@ public class UnsetSecurityAssessmentBaselineRequest
                 .securityAssessmentId(securityAssessmentId)
                 .ifMatch(ifMatch)
                 .opcRetryToken(opcRetryToken)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .unsetSecurityAssessmentBaselineDetails(unsetSecurityAssessmentBaselineDetails);
     }
 
     /**
@@ -263,6 +321,8 @@ public class UnsetSecurityAssessmentBaselineRequest
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRetryToken=").append(String.valueOf(this.opcRetryToken));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",unsetSecurityAssessmentBaselineDetails=")
+                .append(String.valueOf(this.unsetSecurityAssessmentBaselineDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -281,7 +341,10 @@ public class UnsetSecurityAssessmentBaselineRequest
                 && java.util.Objects.equals(this.securityAssessmentId, other.securityAssessmentId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.opcRetryToken, other.opcRetryToken)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(
+                        this.unsetSecurityAssessmentBaselineDetails,
+                        other.unsetSecurityAssessmentBaselineDetails);
     }
 
     @Override
@@ -298,6 +361,11 @@ public class UnsetSecurityAssessmentBaselineRequest
                 (result * PRIME)
                         + (this.opcRetryToken == null ? 43 : this.opcRetryToken.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.unsetSecurityAssessmentBaselineDetails == null
+                                ? 43
+                                : this.unsetSecurityAssessmentBaselineDetails.hashCode());
         return result;
     }
 }

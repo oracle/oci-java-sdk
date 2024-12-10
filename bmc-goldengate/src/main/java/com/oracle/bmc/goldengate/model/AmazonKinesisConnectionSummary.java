@@ -190,6 +190,15 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Amazon Kinesis technology type.
          **/
@@ -224,6 +233,26 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+        private String secretAccessKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+         * Note: When provided, 'secretAccessKey' field must not be provided.
+         *
+         * @param secretAccessKeySecretId the value to set
+         * @return this builder
+         **/
+        public Builder secretAccessKeySecretId(String secretAccessKeySecretId) {
+            this.secretAccessKeySecretId = secretAccessKeySecretId;
+            this.__explicitlySet__.add("secretAccessKeySecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -249,8 +278,10 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
                             this.subnetId,
                             this.routingMethod,
                             this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType,
-                            this.accessKeyId);
+                            this.accessKeyId,
+                            this.secretAccessKeySecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -313,11 +344,17 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
             if (model.wasPropertyExplicitlySet("accessKeyId")) {
                 this.accessKeyId(model.getAccessKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("secretAccessKeySecretId")) {
+                this.secretAccessKeySecretId(model.getSecretAccessKeySecretId());
             }
             return this;
         }
@@ -354,8 +391,10 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
             String subnetId,
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             AmazonKinesisConnection.TechnologyType technologyType,
-            String accessKeyId) {
+            String accessKeyId,
+            String secretAccessKeySecretId) {
         super(
                 id,
                 displayName,
@@ -374,9 +413,11 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                locks);
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.accessKeyId = accessKeyId;
+        this.secretAccessKeySecretId = secretAccessKeySecretId;
     }
 
     /**
@@ -409,6 +450,24 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
         return accessKeyId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKeySecretId")
+    private final String secretAccessKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the secret access key is stored.
+     * Note: When provided, 'secretAccessKey' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getSecretAccessKeySecretId() {
+        return secretAccessKeySecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -425,6 +484,8 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
         sb.append(", accessKeyId=").append(String.valueOf(this.accessKeyId));
+        sb.append(", secretAccessKeySecretId=")
+                .append(String.valueOf(this.secretAccessKeySecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -441,6 +502,8 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
         AmazonKinesisConnectionSummary other = (AmazonKinesisConnectionSummary) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
                 && java.util.Objects.equals(this.accessKeyId, other.accessKeyId)
+                && java.util.Objects.equals(
+                        this.secretAccessKeySecretId, other.secretAccessKeySecretId)
                 && super.equals(other);
     }
 
@@ -452,6 +515,11 @@ public final class AmazonKinesisConnectionSummary extends ConnectionSummary {
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
         result = (result * PRIME) + (this.accessKeyId == null ? 43 : this.accessKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.secretAccessKeySecretId == null
+                                ? 43
+                                : this.secretAccessKeySecretId.hashCode());
         return result;
     }
 }

@@ -23,6 +23,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "alias",
         "endpointId",
         "compartmentId",
         "documents",
@@ -30,12 +31,14 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         "profile"
     })
     public BatchDetectLanguagePiiEntitiesDetails(
+            String alias,
             String endpointId,
             String compartmentId,
             java.util.List<TextDocument> documents,
             java.util.Map<String, PiiEntityMasking> masking,
             Profile profile) {
         super();
+        this.alias = alias;
         this.endpointId = endpointId;
         this.compartmentId = compartmentId;
         this.documents = documents;
@@ -45,6 +48,22 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alias")
+        private String alias;
+
+        /**
+         * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+         * @param alias the value to set
+         * @return this builder
+         **/
+        public Builder alias(String alias) {
+            this.alias = alias;
+            this.__explicitlySet__.add("alias");
+            return this;
+        }
         /**
          * The endpoint which have to be used for inferencing. If endpointId and compartmentId is provided, then inference will be served from custom model which is mapped to this Endpoint.
          **/
@@ -125,6 +144,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         public BatchDetectLanguagePiiEntitiesDetails build() {
             BatchDetectLanguagePiiEntitiesDetails model =
                     new BatchDetectLanguagePiiEntitiesDetails(
+                            this.alias,
                             this.endpointId,
                             this.compartmentId,
                             this.documents,
@@ -138,6 +158,9 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BatchDetectLanguagePiiEntitiesDetails model) {
+            if (model.wasPropertyExplicitlySet("alias")) {
+                this.alias(model.getAlias());
+            }
             if (model.wasPropertyExplicitlySet("endpointId")) {
                 this.endpointId(model.getEndpointId());
             }
@@ -166,6 +189,20 @@ public final class BatchDetectLanguagePiiEntitiesDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alias")
+    private final String alias;
+
+    /**
+     * Unique name across user tenancy in a region to identify an endpoint to be used for inferencing.
+     * @return the value
+     **/
+    public String getAlias() {
+        return alias;
     }
 
     /**
@@ -245,7 +282,8 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BatchDetectLanguagePiiEntitiesDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("endpointId=").append(String.valueOf(this.endpointId));
+        sb.append("alias=").append(String.valueOf(this.alias));
+        sb.append(", endpointId=").append(String.valueOf(this.endpointId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", documents=").append(String.valueOf(this.documents));
         sb.append(", masking=").append(String.valueOf(this.masking));
@@ -264,7 +302,8 @@ public final class BatchDetectLanguagePiiEntitiesDetails
         }
 
         BatchDetectLanguagePiiEntitiesDetails other = (BatchDetectLanguagePiiEntitiesDetails) o;
-        return java.util.Objects.equals(this.endpointId, other.endpointId)
+        return java.util.Objects.equals(this.alias, other.alias)
+                && java.util.Objects.equals(this.endpointId, other.endpointId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.documents, other.documents)
                 && java.util.Objects.equals(this.masking, other.masking)
@@ -276,6 +315,7 @@ public final class BatchDetectLanguagePiiEntitiesDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.alias == null ? 43 : this.alias.hashCode());
         result = (result * PRIME) + (this.endpointId == null ? 43 : this.endpointId.hashCode());
         result =
                 (result * PRIME)

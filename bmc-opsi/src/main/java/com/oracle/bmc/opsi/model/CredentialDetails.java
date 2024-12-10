@@ -5,7 +5,7 @@
 package com.oracle.bmc.opsi.model;
 
 /**
- * User credential details to connect to the database. This is supplied via the External Database Service.
+ * User credential details to connect to the database.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -30,6 +30,10 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CredentialByVault.class,
         name = "CREDENTIALS_BY_VAULT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CredentialByIam.class,
+        name = "CREDENTIALS_BY_IAM"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -102,11 +106,13 @@ public class CredentialDetails extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * Credential type.
+     * CREDENTIALS_BY_SOURCE is supplied via the External Database Service. CREDENTIALS_BY_VAULT is supplied by secret service to connection PE_COMANAGED_DATABASE and ADB as well. CREDENTIALS_BY_IAM is used db-token to connect only for Autonomous Database.
+     *
      **/
     public enum CredentialType {
         CredentialsBySource("CREDENTIALS_BY_SOURCE"),
         CredentialsByVault("CREDENTIALS_BY_VAULT"),
+        CredentialsByIam("CREDENTIALS_BY_IAM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

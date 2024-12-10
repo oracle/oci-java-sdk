@@ -16,6 +16,7 @@ public enum WorkItemStatus {
     Succeeded("SUCCEEDED"),
     NeedsAttention("NEEDS_ATTENTION"),
     Retrying("RETRYING"),
+    Skipped("SKIPPED"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
