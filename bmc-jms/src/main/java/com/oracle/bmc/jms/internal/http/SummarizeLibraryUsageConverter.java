@@ -89,6 +89,22 @@ public class SummarizeLibraryUsageConverter {
                                     request.getLibraryName()));
         }
 
+        if (request.getCvssScoreGreaterThan() != null) {
+            target =
+                    target.queryParam(
+                            "cvssScoreGreaterThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCvssScoreGreaterThan()));
+        }
+
+        if (request.getCvssScoreLessThan() != null) {
+            target =
+                    target.queryParam(
+                            "cvssScoreLessThan",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCvssScoreLessThan()));
+        }
+
         if (request.getTimeStart() != null) {
             target =
                     target.queryParam(

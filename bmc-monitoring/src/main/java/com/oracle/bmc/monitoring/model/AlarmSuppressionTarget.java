@@ -25,6 +25,10 @@ package com.oracle.bmc.monitoring.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AlarmSuppressionAlarmTarget.class,
         name = "ALARM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AlarmSuppressionCompartmentTarget.class,
+        name = "COMPARTMENT"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -79,6 +83,7 @@ public class AlarmSuppressionTarget extends com.oracle.bmc.http.internal.Explici
      **/
     public enum TargetType {
         Alarm("ALARM"),
+        Compartment("COMPARTMENT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -203,6 +203,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          * The status of this alarm.
          * Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         * <p>
          * Example: {@code FIRING}
          *
          **/
@@ -213,6 +214,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
          * The status of this alarm.
          * Status is collective, across all metric streams in the alarm.
          * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+         * <p>
          * Example: {@code FIRING}
          *
          * @param status the value to set
@@ -482,6 +484,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     * <p>
      * Example: {@code FIRING}
      *
      **/
@@ -534,6 +537,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     * <p>
      * Example: {@code FIRING}
      *
      **/
@@ -544,6 +548,7 @@ public final class AlarmStatusSummary extends com.oracle.bmc.http.internal.Expli
      * The status of this alarm.
      * Status is collective, across all metric streams in the alarm.
      * To list alarm status for each metric stream, use {@link #retrieveDimensionStates(RetrieveDimensionStatesRequest) retrieveDimensionStates}.
+     * <p>
      * Example: {@code FIRING}
      *
      * @return the value

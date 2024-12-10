@@ -65,6 +65,14 @@ public class ListBackupsConverter {
                                     request.getPage()));
         }
 
+        if (request.getShapeFamily() != null) {
+            target =
+                    target.queryParam(
+                            "shapeFamily",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getShapeFamily().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

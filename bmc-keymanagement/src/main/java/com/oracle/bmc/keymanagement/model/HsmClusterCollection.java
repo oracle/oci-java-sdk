@@ -30,13 +30,13 @@ public final class HsmClusterCollection extends com.oracle.bmc.http.internal.Exp
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * List of Hsm Clusters.
+         * List of HSM Cluster Summary Objects.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<HsmClusterSummary> items;
 
         /**
-         * List of Hsm Clusters.
+         * List of HSM Cluster Summary Objects.
          * @param items the value to set
          * @return this builder
          **/
@@ -78,13 +78,13 @@ public final class HsmClusterCollection extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
-     * List of Hsm Clusters.
+     * List of HSM Cluster Summary Objects.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<HsmClusterSummary> items;
 
     /**
-     * List of Hsm Clusters.
+     * List of HSM Cluster Summary Objects.
      * @return the value
      **/
     public java.util.List<HsmClusterSummary> getItems() {

@@ -91,6 +91,15 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -197,6 +206,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
                             this.batchingStrategy,
                             this.stageActionSchedule,
                             this.applyActionSchedule,
+                            this.diagnosticsCollection,
                             this.freeformTags,
                             this.definedTags,
                             this.isIgnorePatches,
@@ -231,6 +241,9 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             }
             if (model.wasPropertyExplicitlySet("applyActionSchedule")) {
                 this.applyActionSchedule(model.getApplyActionSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -274,6 +287,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
             CreateBatchingStrategyDetails batchingStrategy,
             CreateScheduleDetails stageActionSchedule,
             CreateScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isIgnorePatches,
@@ -288,6 +302,7 @@ public final class CreatePatchFsuCycle extends CreateFsuCycleDetails {
                 batchingStrategy,
                 stageActionSchedule,
                 applyActionSchedule,
+                diagnosticsCollection,
                 freeformTags,
                 definedTags);
         this.isIgnorePatches = isIgnorePatches;

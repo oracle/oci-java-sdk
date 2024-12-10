@@ -36,20 +36,23 @@ public class CreateOutboundConnectorDetails
         "compartmentId",
         "displayName",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "locks"
     })
     protected CreateOutboundConnectorDetails(
             String availabilityDomain,
             String compartmentId,
             String displayName,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
     }
 
     /**
@@ -152,6 +155,20 @@ public class CreateOutboundConnectorDetails
         return definedTags;
     }
 
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -171,6 +188,7 @@ public class CreateOutboundConnectorDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(")");
         return sb.toString();
     }
@@ -190,6 +208,7 @@ public class CreateOutboundConnectorDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && super.equals(other);
     }
 
@@ -208,6 +227,7 @@ public class CreateOutboundConnectorDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,7 +5,7 @@
 package com.oracle.bmc.redis.model;
 
 /**
- * The configuration details for a new Redis cluster. A Redis cluster is a memory-based storage solution. For more information, see [OCI Caching Service with Redis](https://docs.cloud.oracle.com/iaas/Content/redis/home.htm).
+ * The configuration details for a new OCI Cache cluster. An OCI Cache cluster is a memory-based storage solution. For more information, see [OCI Cache](https://docs.cloud.oracle.com/iaas/Content/ocicache/home.htm).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -23,6 +23,8 @@ public final class CreateRedisClusterDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "clusterMode",
+        "shardCount",
         "displayName",
         "compartmentId",
         "nodeCount",
@@ -34,6 +36,8 @@ public final class CreateRedisClusterDetails
         "definedTags"
     })
     public CreateRedisClusterDetails(
+            RedisCluster.ClusterMode clusterMode,
+            Integer shardCount,
             String displayName,
             String compartmentId,
             Integer nodeCount,
@@ -44,6 +48,8 @@ public final class CreateRedisClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.clusterMode = clusterMode;
+        this.shardCount = shardCount;
         this.displayName = displayName;
         this.compartmentId = compartmentId;
         this.nodeCount = nodeCount;
@@ -57,6 +63,38 @@ public final class CreateRedisClusterDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * Specifies whether the cluster is sharded or non-sharded.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+        private RedisCluster.ClusterMode clusterMode;
+
+        /**
+         * Specifies whether the cluster is sharded or non-sharded.
+         * @param clusterMode the value to set
+         * @return this builder
+         **/
+        public Builder clusterMode(RedisCluster.ClusterMode clusterMode) {
+            this.clusterMode = clusterMode;
+            this.__explicitlySet__.add("clusterMode");
+            return this;
+        }
+        /**
+         * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+        private Integer shardCount;
+
+        /**
+         * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+         * @param shardCount the value to set
+         * @return this builder
+         **/
+        public Builder shardCount(Integer shardCount) {
+            this.shardCount = shardCount;
+            this.__explicitlySet__.add("shardCount");
+            return this;
+        }
         /**
          * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
          **/
@@ -74,13 +112,13 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -90,13 +128,13 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The number of nodes in the Redis cluster.
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
         private Integer nodeCount;
 
         /**
-         * The number of nodes in the Redis cluster.
+         * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
          * @param nodeCount the value to set
          * @return this builder
          **/
@@ -106,13 +144,13 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The Redis version that the cluster is running.
+         * The OCI Cache engine version that the cluster is running.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
         private RedisCluster.SoftwareVersion softwareVersion;
 
         /**
-         * The Redis version that the cluster is running.
+         * The OCI Cache engine version that the cluster is running.
          * @param softwareVersion the value to set
          * @return this builder
          **/
@@ -122,13 +160,13 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
         private Float nodeMemoryInGBs;
 
         /**
-         * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+         * The amount of memory allocated to the cluster's nodes, in gigabytes.
          * @param nodeMemoryInGBs the value to set
          * @return this builder
          **/
@@ -138,13 +176,13 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -154,13 +192,19 @@ public final class CreateRedisClusterDetails
             return this;
         }
         /**
-         * OCIDs of the NSGs to control access in the customer network
+         * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information,
+         * see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * OCIDs of the NSGs to control access in the customer network
+         * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * associated with this cluster. For more information,
+         * see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+         *
          * @param nsgIds the value to set
          * @return this builder
          **/
@@ -217,6 +261,8 @@ public final class CreateRedisClusterDetails
         public CreateRedisClusterDetails build() {
             CreateRedisClusterDetails model =
                     new CreateRedisClusterDetails(
+                            this.clusterMode,
+                            this.shardCount,
                             this.displayName,
                             this.compartmentId,
                             this.nodeCount,
@@ -234,6 +280,12 @@ public final class CreateRedisClusterDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(CreateRedisClusterDetails model) {
+            if (model.wasPropertyExplicitlySet("clusterMode")) {
+                this.clusterMode(model.getClusterMode());
+            }
+            if (model.wasPropertyExplicitlySet("shardCount")) {
+                this.shardCount(model.getShardCount());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
             }
@@ -277,6 +329,34 @@ public final class CreateRedisClusterDetails
     }
 
     /**
+     * Specifies whether the cluster is sharded or non-sharded.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterMode")
+    private final RedisCluster.ClusterMode clusterMode;
+
+    /**
+     * Specifies whether the cluster is sharded or non-sharded.
+     * @return the value
+     **/
+    public RedisCluster.ClusterMode getClusterMode() {
+        return clusterMode;
+    }
+
+    /**
+     * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("shardCount")
+    private final Integer shardCount;
+
+    /**
+     * The number of shards in sharded cluster. Only applicable when clusterMode is SHARDED.
+     * @return the value
+     **/
+    public Integer getShardCount() {
+        return shardCount;
+    }
+
+    /**
      * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering confidential information.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
@@ -291,13 +371,13 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the Redis cluster.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the compartment that contains the cluster.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -305,13 +385,13 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeCount")
     private final Integer nodeCount;
 
     /**
-     * The number of nodes in the Redis cluster.
+     * The number of nodes per shard in the cluster when clusterMode is SHARDED. This is the total number of nodes when clusterMode is NONSHARDED.
      * @return the value
      **/
     public Integer getNodeCount() {
@@ -319,13 +399,13 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The Redis version that the cluster is running.
+     * The OCI Cache engine version that the cluster is running.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("softwareVersion")
     private final RedisCluster.SoftwareVersion softwareVersion;
 
     /**
-     * The Redis version that the cluster is running.
+     * The OCI Cache engine version that the cluster is running.
      * @return the value
      **/
     public RedisCluster.SoftwareVersion getSoftwareVersion() {
@@ -333,13 +413,13 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nodeMemoryInGBs")
     private final Float nodeMemoryInGBs;
 
     /**
-     * The amount of memory allocated to the Redis cluster's nodes, in gigabytes.
+     * The amount of memory allocated to the cluster's nodes, in gigabytes.
      * @return the value
      **/
     public Float getNodeMemoryInGBs() {
@@ -347,13 +427,13 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the Redis cluster's subnet.
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm#Oracle) of the cluster's subnet.
      * @return the value
      **/
     public String getSubnetId() {
@@ -361,13 +441,19 @@ public final class CreateRedisClusterDetails
     }
 
     /**
-     * OCIDs of the NSGs to control access in the customer network
+     * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information,
+     * see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * OCIDs of the NSGs to control access in the customer network
+     * A list of Network Security Group (NSG) [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+     * associated with this cluster. For more information,
+     * see [Using an NSG for Clusters](https://docs.cloud.oracle.com/iaas/Content/ocicache/connecttocluster.htm#connecttocluster__networksecuritygroup).
+     *
      * @return the value
      **/
     public java.util.List<String> getNsgIds() {
@@ -424,7 +510,9 @@ public final class CreateRedisClusterDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateRedisClusterDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
+        sb.append("clusterMode=").append(String.valueOf(this.clusterMode));
+        sb.append(", shardCount=").append(String.valueOf(this.shardCount));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", nodeCount=").append(String.valueOf(this.nodeCount));
         sb.append(", softwareVersion=").append(String.valueOf(this.softwareVersion));
@@ -447,7 +535,9 @@ public final class CreateRedisClusterDetails
         }
 
         CreateRedisClusterDetails other = (CreateRedisClusterDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
+        return java.util.Objects.equals(this.clusterMode, other.clusterMode)
+                && java.util.Objects.equals(this.shardCount, other.shardCount)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.nodeCount, other.nodeCount)
                 && java.util.Objects.equals(this.softwareVersion, other.softwareVersion)
@@ -463,6 +553,8 @@ public final class CreateRedisClusterDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.clusterMode == null ? 43 : this.clusterMode.hashCode());
+        result = (result * PRIME) + (this.shardCount == null ? 43 : this.shardCount.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)

@@ -72,6 +72,14 @@ public class ListGiVersionsConverter {
                                     request.getShape()));
         }
 
+        if (request.getAvailabilityDomain() != null) {
+            target =
+                    target.queryParam(
+                            "availabilityDomain",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getAvailabilityDomain()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

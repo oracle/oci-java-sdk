@@ -6,6 +6,7 @@ package com.oracle.bmc.cims.model;
 
 /**
  * Details about the issue that the account support ticket relates to. Avoid entering confidential information.
+ * For information about {@code ACCOUNT} support tickets, see [Creating a Billing Support Request](https://docs.cloud.oracle.com/iaas/Content/GSG/support/create-incident-billing.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

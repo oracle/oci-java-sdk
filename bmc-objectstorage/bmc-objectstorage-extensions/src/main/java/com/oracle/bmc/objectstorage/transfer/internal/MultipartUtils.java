@@ -4,6 +4,7 @@
  */
 package com.oracle.bmc.objectstorage.transfer.internal;
 
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import com.oracle.bmc.util.VisibleForTesting;
 import com.oracle.bmc.objectstorage.requests.PutObjectRequest;
 import com.oracle.bmc.objectstorage.transfer.UploadConfiguration;
@@ -79,6 +80,100 @@ public final class MultipartUtils {
             throw new java.lang.NullPointerException("request is marked non-null but is null");
         }
         return config.isEnforceMd5BeforeUpload() && request.getContentMD5() == null;
+    }
+
+    /**
+     * Test whether or not the additional checksum value should be calculated for the given request
+     * when issuing a single upload (non-multipart) request.
+     *
+     * @param config The configuration to use.
+     * @param request The request being sent.
+     * @return true to calculate additional checksum, false if it's not necessary.
+     */
+    public static boolean shouldCalculateAdditionalChecksum(
+            @Nonnull UploadConfiguration config, @Nonnull PutObjectRequest request) {
+        if (config == null) {
+            throw new java.lang.NullPointerException("config is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new java.lang.NullPointerException("request is marked non-null but is null");
+        }
+
+        ChecksumAlgorithm checksumAlgorithm = config.getEnforceAdditionalChecksumBeforeUpload();
+        ChecksumAlgorithm additionalChecksumAlgorithm = config.getAdditionalChecksumAlgorithm();
+
+        if (checksumAlgorithm == null) {
+            return false;
+        }
+
+        if (additionalChecksumAlgorithm != null
+                && !checksumAlgorithm.equals(additionalChecksumAlgorithm)) {
+            throw new IllegalArgumentException(
+                    "If both additionalChecksumAlgorithm and enforceAdditionalChecksumBeforeUpload are provided, they must be the same.");
+        }
+
+        switch (checksumAlgorithm) {
+            case Crc32C:
+                return request.getOpcContentCrc32c() == null;
+            case Sha256:
+                return request.getOpcContentSha256() == null;
+            case Sha384:
+                return request.getOpcContentSha384() == null;
+            default:
+                return false;
+        }
+    }
+
+    /**
+     * Determines whether an additional checksum value should be set for the given request.
+     *
+     * <p>This method covers the following cases:
+     *
+     * <ul>
+     *   <li>If the request already has a checksum algorithm set, the method returns false, as
+     *       there's no need to set it again.
+     *   <li>If both the configuration's additional checksum algorithm and the request's checksum
+     *       algorithm are provided but differ, an IllegalArgumentException is thrown.
+     *   <li>If the configuration has no additional checksum algorithm and the request has no
+     *       checksum algorithm, the method returns false, as there's nothing to set.
+     *   <li>If the configuration has an additional checksum algorithm, and the request has no
+     *       checksum algorithm, the method returns true, indicating that the additional checksum
+     *       should be set.
+     * </ul>
+     *
+     * @param config The configuration to use.
+     * @param request The request being sent.
+     * @return true if the additional checksum should be set, false otherwise.
+     * @throws NullPointerException if config or request is null.
+     * @throws IllegalArgumentException if both the configuration and the request have different
+     *     checksum algorithms.
+     */
+    public static boolean shouldSetAdditionalChecksum(
+            @Nonnull UploadConfiguration config, @Nonnull PutObjectRequest request) {
+        if (config == null) {
+            throw new NullPointerException("config is marked non-null but is null");
+        }
+        if (request == null) {
+            throw new NullPointerException("request is marked non-null but is null");
+        }
+
+        ChecksumAlgorithm additionalChecksumAlgorithm = config.getAdditionalChecksumAlgorithm();
+        ChecksumAlgorithm requestChecksumAlgorithm = request.getOpcChecksumAlgorithm();
+
+        if (requestChecksumAlgorithm != null) {
+            if (additionalChecksumAlgorithm != null
+                    && !additionalChecksumAlgorithm.equals(requestChecksumAlgorithm)) {
+                throw new IllegalArgumentException(
+                        "If you are providing ChecksumAlgorithm in the upload request and setting the additionalChecksumAlgorithm, then both must be the same.");
+            }
+            return false;
+        }
+
+        if (additionalChecksumAlgorithm == null) {
+            return false;
+        }
+
+        return true;
     }
 
     private static boolean meetsMinimumSize(UploadConfiguration config, long contentLength) {

@@ -10,6 +10,7 @@ package com.oracle.bmc.jms.model;
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210610")
 public enum ManagedInstanceType {
     OracleManagementAgent("ORACLE_MANAGEMENT_AGENT"),
+    OracleCloudAgent("ORACLE_CLOUD_AGENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

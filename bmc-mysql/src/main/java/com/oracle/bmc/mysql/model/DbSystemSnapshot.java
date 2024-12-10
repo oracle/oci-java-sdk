@@ -34,6 +34,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         "backupPolicy",
         "configurationId",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -63,6 +64,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             BackupPolicy backupPolicy,
             String configurationId,
             Integer dataStorageSizeInGBs,
+            DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -91,6 +93,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         this.backupPolicy = backupPolicy;
         this.configurationId = configurationId;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -311,14 +314,16 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             return this;
         }
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+         * Replaced by dataStorage.dataStorageSizeInGBs.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+         * Replaced by dataStorage.dataStorageSizeInGBs.
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
@@ -326,6 +331,15 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorage dataStorage;
+
+        public Builder dataStorage(DataStorage dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
             return this;
         }
         /**
@@ -592,6 +606,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                             this.backupPolicy,
                             this.configurationId,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -652,6 +667,9 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
+            }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
             }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
@@ -888,19 +906,28 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
     }
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+     * Replaced by dataStorage.dataStorageSizeInGBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+     * Replaced by dataStorage.dataStorageSizeInGBs.
      *
      * @return the value
      **/
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorage dataStorage;
+
+    public DataStorage getDataStorage() {
+        return dataStorage;
     }
 
     /**
@@ -1145,6 +1172,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
         sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1186,6 +1214,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                 && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1234,6 +1263,7 @@ public final class DbSystemSnapshot extends com.oracle.bmc.http.internal.Explici
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());

@@ -34,6 +34,119 @@ public class AIServiceSpeechPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listCustomizations operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListCustomizationsResponse> listCustomizationsResponseIterator(
+            final ListCustomizationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListCustomizationsRequest.Builder, ListCustomizationsRequest,
+                ListCustomizationsResponse>(
+                new java.util.function.Supplier<ListCustomizationsRequest.Builder>() {
+                    @Override
+                    public ListCustomizationsRequest.Builder get() {
+                        return ListCustomizationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCustomizationsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomizationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomizationsRequest.Builder>,
+                        ListCustomizationsRequest>() {
+                    @Override
+                    public ListCustomizationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomizationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomizationsRequest, ListCustomizationsResponse>() {
+                    @Override
+                    public ListCustomizationsResponse apply(ListCustomizationsRequest request) {
+                        return client.listCustomizations(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.aispeech.model.CustomizationSummary} objects
+     * contained in responses from the listCustomizations operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.aispeech.model.CustomizationSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.aispeech.model.CustomizationSummary>
+            listCustomizationsRecordIterator(final ListCustomizationsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListCustomizationsRequest.Builder, ListCustomizationsRequest,
+                ListCustomizationsResponse, com.oracle.bmc.aispeech.model.CustomizationSummary>(
+                new java.util.function.Supplier<ListCustomizationsRequest.Builder>() {
+                    @Override
+                    public ListCustomizationsRequest.Builder get() {
+                        return ListCustomizationsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListCustomizationsResponse, String>() {
+                    @Override
+                    public String apply(ListCustomizationsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListCustomizationsRequest.Builder>,
+                        ListCustomizationsRequest>() {
+                    @Override
+                    public ListCustomizationsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListCustomizationsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomizationsRequest, ListCustomizationsResponse>() {
+                    @Override
+                    public ListCustomizationsResponse apply(ListCustomizationsRequest request) {
+                        return client.listCustomizations(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListCustomizationsResponse,
+                        java.util.List<com.oracle.bmc.aispeech.model.CustomizationSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.aispeech.model.CustomizationSummary> apply(
+                            ListCustomizationsResponse response) {
+                        return response.getCustomizationCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listTranscriptionJobs operation. This iterable
      * will fetch more data from the server as needed.
      *

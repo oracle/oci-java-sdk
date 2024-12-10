@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * Attributes to update a Export setting.
+ * Attributes to update an export setting.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -145,14 +145,14 @@ public final class UpdateExportSettingDetails
             return this;
         }
         /**
-         * The namespace of the bucket where data will be exported.
+         * The id of the region of the target bucket.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
         private String targetBucketRegion;
 
         /**
-         * The namespace of the bucket where data will be exported.
+         * The id of the region of the target bucket.
          *
          * @param targetBucketRegion the value to set
          * @return this builder
@@ -339,14 +339,14 @@ public final class UpdateExportSettingDetails
     }
 
     /**
-     * The namespace of the bucket where data will be exported.
+     * The id of the region of the target bucket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
     private final String targetBucketRegion;
 
     /**
-     * The namespace of the bucket where data will be exported.
+     * The id of the region of the target bucket.
      *
      * @return the value
      **/

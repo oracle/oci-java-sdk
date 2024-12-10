@@ -36,8 +36,24 @@ package com.oracle.bmc.opsi.model;
         name = "DB_PARAMETERS"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DBConnectionStatus.class,
+        name = "DB_CONNECTION_STATUS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostAllocation.class,
+        name = "HOST_RESOURCE_ALLOCATION"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExadataCellConfig.class,
+        name = "EXADATA_CELL_CONFIG"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DBExternalProperties.class,
         name = "DB_EXTERNAL_PROPERTIES"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ExadataAsmEntity.class,
+        name = "ASM_ENTITY"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -121,6 +137,10 @@ public class DatabaseConfigurationMetricGroup
         DbExternalInstance("DB_EXTERNAL_INSTANCE"),
         DbOsConfigInstance("DB_OS_CONFIG_INSTANCE"),
         DbParameters("DB_PARAMETERS"),
+        DbConnectionStatus("DB_CONNECTION_STATUS"),
+        HostResourceAllocation("HOST_RESOURCE_ALLOCATION"),
+        AsmEntity("ASM_ENTITY"),
+        ExadataCellConfig("EXADATA_CELL_CONFIG"),
         ;
 
         private final String value;

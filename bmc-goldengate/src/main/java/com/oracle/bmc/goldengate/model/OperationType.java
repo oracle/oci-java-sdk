@@ -32,6 +32,7 @@ public enum OperationType {
     GoldengateConnectionUpdate("GOLDENGATE_CONNECTION_UPDATE"),
     GoldengateConnectionDelete("GOLDENGATE_CONNECTION_DELETE"),
     GoldengateConnectionMove("GOLDENGATE_CONNECTION_MOVE"),
+    GoldengateConnectionRefresh("GOLDENGATE_CONNECTION_REFRESH"),
     GoldengateConnectionAssignmentCreate("GOLDENGATE_CONNECTION_ASSIGNMENT_CREATE"),
     GoldengateConnectionAssignmentDelete("GOLDENGATE_CONNECTION_ASSIGNMENT_DELETE"),
     GoldengateConnectionAssigmnentDelete("GOLDENGATE_CONNECTION_ASSIGMNENT_DELETE"),

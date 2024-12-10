@@ -57,14 +57,6 @@ public class ListDrPlanExecutionsConverter {
                                     request.getDrPlanExecutionId()));
         }
 
-        if (request.getDrPlanExecutionType() != null) {
-            target =
-                    target.queryParam(
-                            "drPlanExecutionType",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getDrPlanExecutionType().getValue()));
-        }
-
         if (request.getDisplayName() != null) {
             target =
                     target.queryParam(

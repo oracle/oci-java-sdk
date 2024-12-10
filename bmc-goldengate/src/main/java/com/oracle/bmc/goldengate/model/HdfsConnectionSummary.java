@@ -190,6 +190,15 @@ public final class HdfsConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Hadoop Distributed File System technology type.
          **/
@@ -231,6 +240,7 @@ public final class HdfsConnectionSummary extends ConnectionSummary {
                             this.subnetId,
                             this.routingMethod,
                             this.locks,
+                            this.doesUseSecretIds,
                             this.technologyType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -294,6 +304,9 @@ public final class HdfsConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -332,6 +345,7 @@ public final class HdfsConnectionSummary extends ConnectionSummary {
             String subnetId,
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
+            Boolean doesUseSecretIds,
             HdfsConnection.TechnologyType technologyType) {
         super(
                 id,
@@ -351,7 +365,8 @@ public final class HdfsConnectionSummary extends ConnectionSummary {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                locks);
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
     }
 

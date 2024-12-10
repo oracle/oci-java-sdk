@@ -235,6 +235,32 @@ public interface Devops extends AutoCloseable {
     CreateDeploymentResponse createDeployment(CreateDeploymentRequest request);
 
     /**
+     * Creates a new reference or updates an existing one.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateGitRef API.
+     */
+    CreateOrUpdateGitRefResponse createOrUpdateGitRef(CreateOrUpdateGitRefRequest request);
+
+    /**
+     * Creates a restriction on a branch that prevents certain actions on it.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateOrUpdateProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOrUpdateProtectedBranch API.
+     */
+    CreateOrUpdateProtectedBranchResponse createOrUpdateProtectedBranch(
+            CreateOrUpdateProtectedBranchRequest request);
+
+    /**
      * Creates a new project.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -245,6 +271,74 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProject API.
      */
     CreateProjectResponse createProject(CreateProjectRequest request);
+
+    /**
+     * Creates a new PullRequest.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequest API.
+     */
+    CreatePullRequestResponse createPullRequest(CreatePullRequestRequest request);
+
+    /**
+     * Creates PullRequest attachment
+     *
+     *
+     * Note: This operation consumes a stream.
+     *
+     * If the stream supports {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, when a retry is
+     * necessary, the stream is reset so it starts at the beginning (or whatever the stream's position was at the time this
+     * operation is called}.
+     *
+     * Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before, then the mark
+     * will not be the same anymore after this operation, and a subsequent call to {@link java.io.InputStream#reset()} by
+     * the caller will reset the stream not to the caller's mark, but to the position the stream was in when this operation
+     * was called.
+     *
+     * If the stream is a {@link java.io.FileInputStream}, and the stream's {@link java.nio.channels.FileChannel} position
+     * can be changed (like for a regular file), the stream will be wrapped in such a way that it does provide
+     * support for {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same procedure as
+     * above is followed. If the stream's {@link java.nio.channels.FileChannel} position cannot be changed (like for a
+     * named pipe), then the stream's contents will be buffered in memory, as described below.
+     *
+     * If the stream does not support {@link java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}, then
+     * the stream is wrapped in a {@link java.io.BufferedInputStream}, which means the entire contents may
+     * be buffered in memory. Then the same procedure as above is followed.
+     *
+     * The contents of the stream, except when the stream is a {@link java.io.FileInputStream} whose
+     * {@link java.nio.channels.FileChannel} position can be changed, should be less than 2 GiB in size if retries are used.
+     * This is because streams 2 GiB in size or larger do no guarantee that mark-and-reset can be performed. If the stream
+     * is larger, do not use built-in retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestAttachment API.
+     */
+    CreatePullRequestAttachmentResponse createPullRequestAttachment(
+            CreatePullRequestAttachmentRequest request);
+
+    /**
+     * Creates a new PullRequest comment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePullRequestComment API.
+     */
+    CreatePullRequestCommentResponse createPullRequestComment(
+            CreatePullRequestCommentRequest request);
 
     /**
      * Creates a new repository.
@@ -271,6 +365,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/CreateTriggerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTrigger API.
      */
     CreateTriggerResponse createTrigger(CreateTriggerRequest request);
+
+    /**
+     * Decline a PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeclinePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeclinePullRequest API.
+     */
+    DeclinePullRequestResponse declinePullRequest(DeclinePullRequestRequest request);
 
     /**
      * Deletes a build pipeline resource by identifier.
@@ -358,6 +465,18 @@ public interface Devops extends AutoCloseable {
     DeleteDeployStageResponse deleteDeployStage(DeleteDeployStageRequest request);
 
     /**
+     * Deletes a Repository's Ref by its name. Returns an error if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteGitRefExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteGitRef API.
+     */
+    DeleteGitRefResponse deleteGitRef(DeleteGitRefRequest request);
+
+    /**
      * Deletes a project resource by identifier
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -368,6 +487,69 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
+
+    /**
+     * Removes the custom repository settings configured for a project.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProjectRepositorySettings API.
+     */
+    DeleteProjectRepositorySettingsResponse deleteProjectRepositorySettings(
+            DeleteProjectRepositorySettingsRequest request);
+
+    /**
+     * Removes the protection from a branch
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteProtectedBranchExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectedBranch API.
+     */
+    DeleteProtectedBranchResponse deleteProtectedBranch(DeleteProtectedBranchRequest request);
+
+    /**
+     * Deletes a PullRequest resource by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequest API.
+     */
+    DeletePullRequestResponse deletePullRequest(DeletePullRequestRequest request);
+
+    /**
+     * Deletes a PullRequest attachment metadata by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestAttachment API.
+     */
+    DeletePullRequestAttachmentResponse deletePullRequestAttachment(
+            DeletePullRequestAttachmentRequest request);
+
+    /**
+     * Deletes a PullRequest comment by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeletePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePullRequestComment API.
+     */
+    DeletePullRequestCommentResponse deletePullRequestComment(
+            DeletePullRequestCommentRequest request);
 
     /**
      * Deletes a Repository's Ref by its name. Returns an error if the name is ambiguous. Can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\". This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/actions/deleteGitRef\".
@@ -392,6 +574,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepository API.
      */
     DeleteRepositoryResponse deleteRepository(DeleteRepositoryRequest request);
+
+    /**
+     * Removes the custom settings configured for a repository
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/DeleteRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRepositorySettings API.
+     */
+    DeleteRepositorySettingsResponse deleteRepositorySettings(
+            DeleteRepositorySettingsRequest request);
 
     /**
      * Deletes a trigger resource by identifier.
@@ -604,6 +799,108 @@ public interface Devops extends AutoCloseable {
     GetProjectResponse getProject(GetProjectRequest request);
 
     /**
+     * Get the project notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectNotificationPreference API.
+     */
+    GetProjectNotificationPreferenceResponse getProjectNotificationPreference(
+            GetProjectNotificationPreferenceRequest request);
+
+    /**
+     * Retrieves a project's repository settings details.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProjectRepositorySettings API.
+     */
+    GetProjectRepositorySettingsResponse getProjectRepositorySettings(
+            GetProjectRepositorySettingsRequest request);
+
+    /**
+     * Gets a PullRequest by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequest API.
+     */
+    GetPullRequestResponse getPullRequest(GetPullRequestRequest request);
+
+    /**
+     * Get PullRequest attachment metadata by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachment API.
+     */
+    GetPullRequestAttachmentResponse getPullRequestAttachment(
+            GetPullRequestAttachmentRequest request);
+
+    /**
+     * Gets the content of the attachment.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestAttachmentContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestAttachmentContent API.
+     */
+    GetPullRequestAttachmentContentResponse getPullRequestAttachmentContent(
+            GetPullRequestAttachmentContentRequest request);
+
+    /**
+     * Get pull request diff summary metric
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestChangeSummaryMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestChangeSummaryMetrics API.
+     */
+    GetPullRequestChangeSummaryMetricsResponse getPullRequestChangeSummaryMetrics(
+            GetPullRequestChangeSummaryMetricsRequest request);
+
+    /**
+     * Get PullRequest comment by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestComment API.
+     */
+    GetPullRequestCommentResponse getPullRequestComment(GetPullRequestCommentRequest request);
+
+    /**
+     * Get the pull request notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetPullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPullRequestNotificationPreference API.
+     */
+    GetPullRequestNotificationPreferenceResponse getPullRequestNotificationPreference(
+            GetPullRequestNotificationPreferenceRequest request);
+
+    /**
      * This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/refs\". Retrieves a repository's reference by its name with preference for branches over tags if the name is ambiguous. This can be disambiguated by using full names like \"heads/<name>\" or \"tags/<name>\".
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -681,6 +978,31 @@ public interface Devops extends AutoCloseable {
     GetRepositoryFileLinesResponse getRepositoryFileLines(GetRepositoryFileLinesRequest request);
 
     /**
+     * Get the repository notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositoryNotificationPreference API.
+     */
+    GetRepositoryNotificationPreferenceResponse getRepositoryNotificationPreference(
+            GetRepositoryNotificationPreferenceRequest request);
+
+    /**
+     * Retrieves a repository's settings details.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRepositorySettings API.
+     */
+    GetRepositorySettingsResponse getRepositorySettings(GetRepositorySettingsRequest request);
+
+    /**
      * Retrieves a trigger by identifier.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -703,6 +1025,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Like a PullRequest comment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/LikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LikePullRequestComment API.
+     */
+    LikePullRequestCommentResponse likePullRequestComment(LikePullRequestCommentRequest request);
 
     /**
      * Retrieve a list of all the authors.
@@ -742,6 +1077,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildPipelinesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildPipelines API.
      */
     ListBuildPipelinesResponse listBuildPipelines(ListBuildPipelinesRequest request);
+
+    /**
+     * Returns a list of build run snapshots for a given commit or the latest commit on a pull request if no commit is provided.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListBuildRunSnapshotsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuildRunSnapshots API.
+     */
+    ListBuildRunSnapshotsResponse listBuildRunSnapshots(ListBuildRunSnapshotsRequest request);
 
     /**
      * Returns a list of build run summary.
@@ -856,6 +1204,18 @@ public interface Devops extends AutoCloseable {
     ListDeploymentsResponse listDeployments(ListDeploymentsRequest request);
 
     /**
+     * LIST operation that returns a collection of fork sync status objects.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListForkSyncStatusesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListForkSyncStatuses API.
+     */
+    ListForkSyncStatusesResponse listForkSyncStatuses(ListForkSyncStatusesRequest request);
+
+    /**
      * Returns a list of mirror entry in history within 30 days.
      *
      * @param request The request object containing the details to send
@@ -882,6 +1242,20 @@ public interface Devops extends AutoCloseable {
     ListPathsResponse listPaths(ListPathsRequest request);
 
     /**
+     * Retrieve a list of all the Commit Analytics authors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjectCommitAnalyticsAuthors API.
+     */
+    ListProjectCommitAnalyticsAuthorsResponse listProjectCommitAnalyticsAuthors(
+            ListProjectCommitAnalyticsAuthorsRequest request);
+
+    /**
      * Returns a list of projects.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -892,6 +1266,108 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
+
+    /**
+     * Returns a list of Protected Branches.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListProtectedBranchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectedBranches API.
+     */
+    ListProtectedBranchesResponse listProtectedBranches(ListProtectedBranchesRequest request);
+
+    /**
+     * List actions that have been taken on a pull request
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestActivitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestActivities API.
+     */
+    ListPullRequestActivitiesResponse listPullRequestActivities(
+            ListPullRequestActivitiesRequest request);
+
+    /**
+     * List PullRequest level attachments by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAttachments API.
+     */
+    ListPullRequestAttachmentsResponse listPullRequestAttachments(
+            ListPullRequestAttachmentsRequest request);
+
+    /**
+     * Retrieve a list of all the PR authors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestAuthors API.
+     */
+    ListPullRequestAuthorsResponse listPullRequestAuthors(ListPullRequestAuthorsRequest request);
+
+    /**
+     * List PullRequest level comments by identifier
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestComments API.
+     */
+    ListPullRequestCommentsResponse listPullRequestComments(ListPullRequestCommentsRequest request);
+
+    /**
+     * List pull request commits
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestCommitsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestCommits API.
+     */
+    ListPullRequestCommitsResponse listPullRequestCommits(ListPullRequestCommitsRequest request);
+
+    /**
+     * List pull request file changes
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestFileChangesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequestFileChanges API.
+     */
+    ListPullRequestFileChangesResponse listPullRequestFileChanges(
+            ListPullRequestFileChangesRequest request);
+
+    /**
+     * Returns a list of PullRequests.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListPullRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPullRequests API.
+     */
+    ListPullRequestsResponse listPullRequests(ListPullRequestsRequest request);
 
     /**
      * Returns a list of references.
@@ -918,6 +1394,20 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositories API.
      */
     ListRepositoriesResponse listRepositories(ListRepositoriesRequest request);
+
+    /**
+     * Retrieve a list of all the Commit Analytics authors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ListRepositoryCommitAnalyticsAuthorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRepositoryCommitAnalyticsAuthors API.
+     */
+    ListRepositoryCommitAnalyticsAuthorsResponse listRepositoryCommitAnalyticsAuthors(
+            ListRepositoryCommitAnalyticsAuthorsRequest request);
 
     /**
      * Returns a list of triggers.
@@ -969,6 +1459,18 @@ public interface Devops extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
+     * Merge the PullRequest
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MergePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MergePullRequest API.
+     */
+    MergePullRequestResponse mergePullRequest(MergePullRequestRequest request);
+
+    /**
      * Synchronize a mirrored repository to the latest version from external providers.
      *
      * @param request The request object containing the details to send
@@ -980,6 +1482,19 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/MirrorRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MirrorRepository API.
      */
     MirrorRepositoryResponse mirrorRepository(MirrorRepositoryRequest request);
+
+    /**
+     * Updates the reviewer list of a pull request
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/PatchPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchPullRequest API.
+     */
+    PatchPullRequestResponse patchPullRequest(PatchPullRequestRequest request);
 
     /**
      * Creates a new reference or updates an existing one. This API will be deprecated on Wed, 12 June 2024 01:00:00 GMT as it does not get recognized when refName has '/'. This will be replaced by \"/repositories/{repositoryId}/actions/createOrUpdateGitRef\".
@@ -995,6 +1510,32 @@ public interface Devops extends AutoCloseable {
     PutRepositoryRefResponse putRepositoryRef(PutRepositoryRefRequest request);
 
     /**
+     * Reopen a PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReopenPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReopenPullRequest API.
+     */
+    ReopenPullRequestResponse reopenPullRequest(ReopenPullRequestRequest request);
+
+    /**
+     * Review a PullRequest
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/ReviewPullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReviewPullRequest API.
+     */
+    ReviewPullRequestResponse reviewPullRequest(ReviewPullRequestRequest request);
+
+    /**
      * Cascading operation that marks Project and child DevOps resources in a DELETING state for a retention period
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1006,6 +1547,71 @@ public interface Devops extends AutoCloseable {
      */
     ScheduleCascadingProjectDeletionResponse scheduleCascadingProjectDeletion(
             ScheduleCascadingProjectDeletionRequest request);
+
+    /**
+     * Retrieves repository analytics for a given project.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeProjectRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeProjectRepositoryAnalytics API.
+     */
+    SummarizeProjectRepositoryAnalyticsResponse summarizeProjectRepositoryAnalytics(
+            SummarizeProjectRepositoryAnalyticsRequest request);
+
+    /**
+     * Retrieves repository analytics for a given repository.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SummarizeRepositoryAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeRepositoryAnalytics API.
+     */
+    SummarizeRepositoryAnalyticsResponse summarizeRepositoryAnalytics(
+            SummarizeRepositoryAnalyticsRequest request);
+
+    /**
+     * Synchronize a forked repository to the latest version
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/SyncRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SyncRepository API.
+     */
+    SyncRepositoryResponse syncRepository(SyncRepositoryRequest request);
+
+    /**
+     * Unlike a PullRequest comment
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnlikePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnlikePullRequestComment API.
+     */
+    UnlikePullRequestCommentResponse unlikePullRequestComment(
+            UnlikePullRequestCommentRequest request);
+
+    /**
+     * unsubscribe the PullRequest
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UnsubscribePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnsubscribePullRequest API.
+     */
+    UnsubscribePullRequestResponse unsubscribePullRequest(UnsubscribePullRequestRequest request);
 
     /**
      * Updates the build pipeline.
@@ -1129,6 +1735,70 @@ public interface Devops extends AutoCloseable {
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
 
     /**
+     * Update the project notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectNotificationPreference API.
+     */
+    UpdateProjectNotificationPreferenceResponse updateProjectNotificationPreference(
+            UpdateProjectNotificationPreferenceRequest request);
+
+    /**
+     * Updates the repository settings for a project.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateProjectRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProjectRepositorySettings API.
+     */
+    UpdateProjectRepositorySettingsResponse updateProjectRepositorySettings(
+            UpdateProjectRepositorySettingsRequest request);
+
+    /**
+     * Updates the PullRequest
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequest API.
+     */
+    UpdatePullRequestResponse updatePullRequest(UpdatePullRequestRequest request);
+
+    /**
+     * Updates the PullRequest comment
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestCommentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestComment API.
+     */
+    UpdatePullRequestCommentResponse updatePullRequestComment(
+            UpdatePullRequestCommentRequest request);
+
+    /**
+     * Update the pull request notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdatePullRequestNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePullRequestNotificationPreference API.
+     */
+    UpdatePullRequestNotificationPreferenceResponse updatePullRequestNotificationPreference(
+            UpdatePullRequestNotificationPreferenceRequest request);
+
+    /**
      * Updates the repository.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1139,6 +1809,32 @@ public interface Devops extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepository API.
      */
     UpdateRepositoryResponse updateRepository(UpdateRepositoryRequest request);
+
+    /**
+     * Update the repository notification preference for the user passed as path param
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositoryNotificationPreferenceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositoryNotificationPreference API.
+     */
+    UpdateRepositoryNotificationPreferenceResponse updateRepositoryNotificationPreference(
+            UpdateRepositoryNotificationPreferenceRequest request);
+
+    /**
+     * Updates the settings for a repository.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/devops/UpdateRepositorySettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRepositorySettings API.
+     */
+    UpdateRepositorySettingsResponse updateRepositorySettings(
+            UpdateRepositorySettingsRequest request);
 
     /**
      * Updates the trigger.

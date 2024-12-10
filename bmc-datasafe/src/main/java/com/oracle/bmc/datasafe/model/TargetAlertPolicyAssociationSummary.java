@@ -33,6 +33,7 @@ public final class TargetAlertPolicyAssociationSummary
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleDetails",
         "freeformTags",
         "definedTags"
     })
@@ -47,6 +48,7 @@ public final class TargetAlertPolicyAssociationSummary
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             AlertPolicyLifecycleState lifecycleState,
+            String lifecycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -60,6 +62,7 @@ public final class TargetAlertPolicyAssociationSummary
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -227,6 +230,22 @@ public final class TargetAlertPolicyAssociationSummary
             return this;
         }
         /**
+         * Details about the current state of the target-alert policy association.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the current state of the target-alert policy association.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
          * <p>
          * Example: {@code {"Department": "Finance"}}
@@ -288,6 +307,7 @@ public final class TargetAlertPolicyAssociationSummary
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -327,6 +347,9 @@ public final class TargetAlertPolicyAssociationSummary
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -490,6 +513,20 @@ public final class TargetAlertPolicyAssociationSummary
     }
 
     /**
+     * Details about the current state of the target-alert policy association.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the current state of the target-alert policy association.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
      * <p>
      * Example: {@code {"Department": "Finance"}}
@@ -553,6 +590,7 @@ public final class TargetAlertPolicyAssociationSummary
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -579,6 +617,7 @@ public final class TargetAlertPolicyAssociationSummary
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -602,6 +641,9 @@ public final class TargetAlertPolicyAssociationSummary
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

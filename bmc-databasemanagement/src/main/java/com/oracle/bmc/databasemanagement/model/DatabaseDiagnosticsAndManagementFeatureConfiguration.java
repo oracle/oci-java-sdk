@@ -136,7 +136,15 @@ public final class DatabaseDiagnosticsAndManagementFeatureConfiguration
     public enum LicenseModel {
         LicenseIncluded("LICENSE_INCLUDED"),
         BringYourOwnLicense("BRING_YOUR_OWN_LICENSE"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(LicenseModel.class);
 
         private final String value;
         private static java.util.Map<String, LicenseModel> map;
@@ -144,7 +152,9 @@ public final class DatabaseDiagnosticsAndManagementFeatureConfiguration
         static {
             map = new java.util.HashMap<>();
             for (LicenseModel v : LicenseModel.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -162,7 +172,10 @@ public final class DatabaseDiagnosticsAndManagementFeatureConfiguration
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid LicenseModel: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'LicenseModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

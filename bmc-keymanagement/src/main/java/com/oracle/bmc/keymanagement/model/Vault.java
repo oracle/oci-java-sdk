@@ -35,6 +35,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         "wrappingkeyId",
         "replicaDetails",
         "isPrimary",
+        "isVaultReplicable",
         "externalKeyManagerMetadataSummary"
     })
     public Vault(
@@ -53,6 +54,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             String wrappingkeyId,
             VaultReplicaDetails replicaDetails,
             Boolean isPrimary,
+            Boolean isVaultReplicable,
             ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary) {
         super();
         this.compartmentId = compartmentId;
@@ -70,6 +72,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         this.wrappingkeyId = wrappingkeyId;
         this.replicaDetails = replicaDetails;
         this.isPrimary = isPrimary;
+        this.isVaultReplicable = isVaultReplicable;
         this.externalKeyManagerMetadataSummary = externalKeyManagerMetadataSummary;
     }
 
@@ -359,6 +362,22 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             this.__explicitlySet__.add("isPrimary");
             return this;
         }
+        /**
+         * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isVaultReplicable")
+        private Boolean isVaultReplicable;
+
+        /**
+         * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+         * @param isVaultReplicable the value to set
+         * @return this builder
+         **/
+        public Builder isVaultReplicable(Boolean isVaultReplicable) {
+            this.isVaultReplicable = isVaultReplicable;
+            this.__explicitlySet__.add("isVaultReplicable");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
         private ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
@@ -391,6 +410,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                             this.wrappingkeyId,
                             this.replicaDetails,
                             this.isPrimary,
+                            this.isVaultReplicable,
                             this.externalKeyManagerMetadataSummary);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -444,6 +464,9 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
             }
             if (model.wasPropertyExplicitlySet("isPrimary")) {
                 this.isPrimary(model.getIsPrimary());
+            }
+            if (model.wasPropertyExplicitlySet("isVaultReplicable")) {
+                this.isVaultReplicable(model.getIsVaultReplicable());
             }
             if (model.wasPropertyExplicitlySet("externalKeyManagerMetadataSummary")) {
                 this.externalKeyManagerMetadataSummary(
@@ -827,6 +850,20 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         return isPrimary;
     }
 
+    /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isVaultReplicable")
+    private final Boolean isVaultReplicable;
+
+    /**
+     * A Boolean value that indicates whether the Vault has cross region replication capability. Always true for Virtual Private Vaults.
+     * @return the value
+     **/
+    public Boolean getIsVaultReplicable() {
+        return isVaultReplicable;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("externalKeyManagerMetadataSummary")
     private final ExternalKeyManagerMetadataSummary externalKeyManagerMetadataSummary;
 
@@ -863,6 +900,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
         sb.append(", wrappingkeyId=").append(String.valueOf(this.wrappingkeyId));
         sb.append(", replicaDetails=").append(String.valueOf(this.replicaDetails));
         sb.append(", isPrimary=").append(String.valueOf(this.isPrimary));
+        sb.append(", isVaultReplicable=").append(String.valueOf(this.isVaultReplicable));
         sb.append(", externalKeyManagerMetadataSummary=")
                 .append(String.valueOf(this.externalKeyManagerMetadataSummary));
         sb.append(")");
@@ -894,6 +932,7 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 && java.util.Objects.equals(this.wrappingkeyId, other.wrappingkeyId)
                 && java.util.Objects.equals(this.replicaDetails, other.replicaDetails)
                 && java.util.Objects.equals(this.isPrimary, other.isPrimary)
+                && java.util.Objects.equals(this.isVaultReplicable, other.isVaultReplicable)
                 && java.util.Objects.equals(
                         this.externalKeyManagerMetadataSummary,
                         other.externalKeyManagerMetadataSummary)
@@ -939,6 +978,9 @@ public final class Vault extends com.oracle.bmc.http.internal.ExplicitlySetBmcMo
                 (result * PRIME)
                         + (this.replicaDetails == null ? 43 : this.replicaDetails.hashCode());
         result = (result * PRIME) + (this.isPrimary == null ? 43 : this.isPrimary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isVaultReplicable == null ? 43 : this.isVaultReplicable.hashCode());
         result =
                 (result * PRIME)
                         + (this.externalKeyManagerMetadataSummary == null

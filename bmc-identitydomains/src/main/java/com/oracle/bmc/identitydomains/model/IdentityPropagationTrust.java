@@ -50,7 +50,6 @@ public final class IdentityPropagationTrust
         "publicKeyEndpoint",
         "publicCertificate",
         "oauthClients",
-        "servicePrincipals",
         "allowImpersonation",
         "clockSkewSeconds",
         "impersonationServiceUsers",
@@ -84,7 +83,6 @@ public final class IdentityPropagationTrust
             String publicKeyEndpoint,
             String publicCertificate,
             java.util.List<String> oauthClients,
-            java.util.List<String> servicePrincipals,
             Boolean allowImpersonation,
             Integer clockSkewSeconds,
             java.util.List<IdentityPropagationTrustImpersonationServiceUsers>
@@ -118,7 +116,6 @@ public final class IdentityPropagationTrust
         this.publicKeyEndpoint = publicKeyEndpoint;
         this.publicCertificate = publicCertificate;
         this.oauthClients = oauthClients;
-        this.servicePrincipals = servicePrincipals;
         this.allowImpersonation = allowImpersonation;
         this.clockSkewSeconds = clockSkewSeconds;
         this.impersonationServiceUsers = impersonationServiceUsers;
@@ -1006,40 +1003,6 @@ public final class IdentityPropagationTrust
             return this;
         }
         /**
-         * The value of all the authorized OCI Service Principals.
-         * <p>
-         **SCIM++ Properties:**
-         *  - idcsSearchable: false
-         *  - multiValued: true
-         *  - mutability: readWrite
-         *  - required: false
-         *  - returned: default
-         *  - type: string
-         *  - uniqueness: none
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipals")
-        private java.util.List<String> servicePrincipals;
-
-        /**
-         * The value of all the authorized OCI Service Principals.
-         * <p>
-         **SCIM++ Properties:**
-         *  - idcsSearchable: false
-         *  - multiValued: true
-         *  - mutability: readWrite
-         *  - required: false
-         *  - returned: default
-         *  - type: string
-         *  - uniqueness: none
-         * @param servicePrincipals the value to set
-         * @return this builder
-         **/
-        public Builder servicePrincipals(java.util.List<String> servicePrincipals) {
-            this.servicePrincipals = servicePrincipals;
-            this.__explicitlySet__.add("servicePrincipals");
-            return this;
-        }
-        /**
          * Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
          * <p>
          **SCIM++ Properties:**
@@ -1195,7 +1158,6 @@ public final class IdentityPropagationTrust
                             this.publicKeyEndpoint,
                             this.publicCertificate,
                             this.oauthClients,
-                            this.servicePrincipals,
                             this.allowImpersonation,
                             this.clockSkewSeconds,
                             this.impersonationServiceUsers,
@@ -1288,9 +1250,6 @@ public final class IdentityPropagationTrust
             }
             if (model.wasPropertyExplicitlySet("oauthClients")) {
                 this.oauthClients(model.getOauthClients());
-            }
-            if (model.wasPropertyExplicitlySet("servicePrincipals")) {
-                this.servicePrincipals(model.getServicePrincipals());
             }
             if (model.wasPropertyExplicitlySet("allowImpersonation")) {
                 this.allowImpersonation(model.getAllowImpersonation());
@@ -2258,38 +2217,6 @@ public final class IdentityPropagationTrust
     }
 
     /**
-     * The value of all the authorized OCI Service Principals.
-     * <p>
-     **SCIM++ Properties:**
-     *  - idcsSearchable: false
-     *  - multiValued: true
-     *  - mutability: readWrite
-     *  - required: false
-     *  - returned: default
-     *  - type: string
-     *  - uniqueness: none
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("servicePrincipals")
-    private final java.util.List<String> servicePrincipals;
-
-    /**
-     * The value of all the authorized OCI Service Principals.
-     * <p>
-     **SCIM++ Properties:**
-     *  - idcsSearchable: false
-     *  - multiValued: true
-     *  - mutability: readWrite
-     *  - required: false
-     *  - returned: default
-     *  - type: string
-     *  - uniqueness: none
-     * @return the value
-     **/
-    public java.util.List<String> getServicePrincipals() {
-        return servicePrincipals;
-    }
-
-    /**
      * Allow customers to define whether the resulting token should contain the authenticated user as the subject or whether the token should impersonate another Application Principal in IAM.
      * <p>
      **SCIM++ Properties:**
@@ -2446,7 +2373,6 @@ public final class IdentityPropagationTrust
         sb.append(", publicKeyEndpoint=").append(String.valueOf(this.publicKeyEndpoint));
         sb.append(", publicCertificate=").append(String.valueOf(this.publicCertificate));
         sb.append(", oauthClients=").append(String.valueOf(this.oauthClients));
-        sb.append(", servicePrincipals=").append(String.valueOf(this.servicePrincipals));
         sb.append(", allowImpersonation=").append(String.valueOf(this.allowImpersonation));
         sb.append(", clockSkewSeconds=").append(String.valueOf(this.clockSkewSeconds));
         sb.append(", impersonationServiceUsers=")
@@ -2496,7 +2422,6 @@ public final class IdentityPropagationTrust
                 && java.util.Objects.equals(this.publicKeyEndpoint, other.publicKeyEndpoint)
                 && java.util.Objects.equals(this.publicCertificate, other.publicCertificate)
                 && java.util.Objects.equals(this.oauthClients, other.oauthClients)
-                && java.util.Objects.equals(this.servicePrincipals, other.servicePrincipals)
                 && java.util.Objects.equals(this.allowImpersonation, other.allowImpersonation)
                 && java.util.Objects.equals(this.clockSkewSeconds, other.clockSkewSeconds)
                 && java.util.Objects.equals(
@@ -2568,9 +2493,6 @@ public final class IdentityPropagationTrust
                 (result * PRIME)
                         + (this.publicCertificate == null ? 43 : this.publicCertificate.hashCode());
         result = (result * PRIME) + (this.oauthClients == null ? 43 : this.oauthClients.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.servicePrincipals == null ? 43 : this.servicePrincipals.hashCode());
         result =
                 (result * PRIME)
                         + (this.allowImpersonation == null

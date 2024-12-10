@@ -134,6 +134,15 @@ public class SummarizeHostInsightTopProcessesUsageTrendConverter {
                                     request.getStatistic().getValue()));
         }
 
+        if (request.getStatus() != null) {
+            target =
+                    com.oracle.bmc.util.internal.HttpUtils.encodeCollectionFormatQueryParam(
+                            target,
+                            "status",
+                            request.getStatus(),
+                            com.oracle.bmc.util.internal.CollectionFormatType.Multi);
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

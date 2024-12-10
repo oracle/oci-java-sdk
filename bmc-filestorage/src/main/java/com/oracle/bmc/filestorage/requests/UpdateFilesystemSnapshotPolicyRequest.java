@@ -73,6 +73,17 @@ public class UpdateFilesystemSnapshotPolicyRequest
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -170,6 +181,21 @@ public class UpdateFilesystemSnapshotPolicyRequest
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -201,6 +227,7 @@ public class UpdateFilesystemSnapshotPolicyRequest
             updateFilesystemSnapshotPolicyDetails(o.getUpdateFilesystemSnapshotPolicyDetails());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -250,8 +277,9 @@ public class UpdateFilesystemSnapshotPolicyRequest
             request.updateFilesystemSnapshotPolicyDetails = updateFilesystemSnapshotPolicyDetails;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new UpdateFilesystemSnapshotPolicyRequest(filesystemSnapshotPolicyId, updateFilesystemSnapshotPolicyDetails, ifMatch, opcRequestId);
+            // new UpdateFilesystemSnapshotPolicyRequest(filesystemSnapshotPolicyId, updateFilesystemSnapshotPolicyDetails, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -264,7 +292,8 @@ public class UpdateFilesystemSnapshotPolicyRequest
                 .filesystemSnapshotPolicyId(filesystemSnapshotPolicyId)
                 .updateFilesystemSnapshotPolicyDetails(updateFilesystemSnapshotPolicyDetails)
                 .ifMatch(ifMatch)
-                .opcRequestId(opcRequestId);
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -286,6 +315,7 @@ public class UpdateFilesystemSnapshotPolicyRequest
                 .append(String.valueOf(this.updateFilesystemSnapshotPolicyDetails));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -307,7 +337,8 @@ public class UpdateFilesystemSnapshotPolicyRequest
                         this.updateFilesystemSnapshotPolicyDetails,
                         other.updateFilesystemSnapshotPolicyDetails)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -326,6 +357,9 @@ public class UpdateFilesystemSnapshotPolicyRequest
                                 : this.updateFilesystemSnapshotPolicyDetails.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

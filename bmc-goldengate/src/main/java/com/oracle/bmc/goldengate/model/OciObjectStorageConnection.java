@@ -190,6 +190,15 @@ public final class OciObjectStorageConnection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The OCI Object Storage technology type.
          **/
@@ -262,6 +271,48 @@ public final class OciObjectStorageConnection extends Connection {
             this.__explicitlySet__.add("userId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+        private String privateKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+         * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Note: When provided, 'privateKeyFile' field must not be provided.
+         *
+         * @param privateKeyFileSecretId the value to set
+         * @return this builder
+         **/
+        public Builder privateKeyFileSecretId(String privateKeyFileSecretId) {
+            this.privateKeyFileSecretId = privateKeyFileSecretId;
+            this.__explicitlySet__.add("privateKeyFileSecretId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+        private String privateKeyPassphraseSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+         * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+         *
+         * @param privateKeyPassphraseSecretId the value to set
+         * @return this builder
+         **/
+        public Builder privateKeyPassphraseSecretId(String privateKeyPassphraseSecretId) {
+            this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+            this.__explicitlySet__.add("privateKeyPassphraseSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -287,10 +338,13 @@ public final class OciObjectStorageConnection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.tenancyId,
                             this.region,
-                            this.userId);
+                            this.userId,
+                            this.privateKeyFileSecretId,
+                            this.privateKeyPassphraseSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -353,6 +407,9 @@ public final class OciObjectStorageConnection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -364,6 +421,12 @@ public final class OciObjectStorageConnection extends Connection {
             }
             if (model.wasPropertyExplicitlySet("userId")) {
                 this.userId(model.getUserId());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyFileSecretId")) {
+                this.privateKeyFileSecretId(model.getPrivateKeyFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
+                this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
             return this;
         }
@@ -400,10 +463,13 @@ public final class OciObjectStorageConnection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String tenancyId,
             String region,
-            String userId) {
+            String userId,
+            String privateKeyFileSecretId,
+            String privateKeyPassphraseSecretId) {
         super(
                 id,
                 displayName,
@@ -422,11 +488,14 @@ public final class OciObjectStorageConnection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.tenancyId = tenancyId;
         this.region = region;
         this.userId = userId;
+        this.privateKeyFileSecretId = privateKeyFileSecretId;
+        this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
     }
 
     /**
@@ -540,6 +609,44 @@ public final class OciObjectStorageConnection extends Connection {
         return userId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFileSecretId")
+    private final String privateKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the content of the private key file (PEM file) corresponding to the API key of the fingerprint.
+     * See documentation: https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * Note: When provided, 'privateKeyFile' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPrivateKeyFileSecretId() {
+        return privateKeyFileSecretId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphraseSecretId")
+    private final String privateKeyPassphraseSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the passphrase of the private key.
+     * Note: When provided, 'privateKeyPassphrase' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPrivateKeyPassphraseSecretId() {
+        return privateKeyPassphraseSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -558,6 +665,9 @@ public final class OciObjectStorageConnection extends Connection {
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", region=").append(String.valueOf(this.region));
         sb.append(", userId=").append(String.valueOf(this.userId));
+        sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
+        sb.append(", privateKeyPassphraseSecretId=")
+                .append(String.valueOf(this.privateKeyPassphraseSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -576,6 +686,10 @@ public final class OciObjectStorageConnection extends Connection {
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.region, other.region)
                 && java.util.Objects.equals(this.userId, other.userId)
+                && java.util.Objects.equals(
+                        this.privateKeyFileSecretId, other.privateKeyFileSecretId)
+                && java.util.Objects.equals(
+                        this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
                 && super.equals(other);
     }
 
@@ -589,6 +703,16 @@ public final class OciObjectStorageConnection extends Connection {
         result = (result * PRIME) + (this.tenancyId == null ? 43 : this.tenancyId.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
         result = (result * PRIME) + (this.userId == null ? 43 : this.userId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyFileSecretId == null
+                                ? 43
+                                : this.privateKeyFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateKeyPassphraseSecretId == null
+                                ? 43
+                                : this.privateKeyPassphraseSecretId.hashCode());
         return result;
     }
 }

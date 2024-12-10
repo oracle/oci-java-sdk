@@ -8,9 +8,9 @@ import com.oracle.bmc.opsi.requests.*;
 import com.oracle.bmc.opsi.responses.*;
 
 /**
- * Use the Operations Insights API to perform data extraction operations to obtain database
+ * Use the Ops Insights API to perform data extraction operations to obtain database
  * resource utilization, performance statistics, and reference information. For more information,
- * see [About Oracle Cloud Infrastructure Operations Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
+ * see [About Oracle Cloud Infrastructure Ops Insights](https://docs.cloud.oracle.com/en-us/iaas/operations-insights/doc/operations-insights.html).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200630")
@@ -183,6 +183,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             ChangeHostInsightCompartmentRequest,
                             ChangeHostInsightCompartmentResponse>
                     handler);
+
+    /**
+     * Change the connection details of a Cloud MACS-managed database insight. When provided, If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeMacsManagedCloudDatabaseInsightConnectionResponse>
+            changeMacsManagedCloudDatabaseInsightConnection(
+                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeMacsManagedCloudDatabaseInsightConnectionRequest,
+                                    ChangeMacsManagedCloudDatabaseInsightConnectionResponse>
+                            handler);
 
     /**
      * Moves a news report resource from one compartment identifier to another. When provided, If-Match is checked against ETag values of the resource.
@@ -360,7 +378,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a Host Insight resource for a host in Operations Insights. The host will be enabled in Operations Insights. Host metric collection and analysis will be started.
+     * Create a Host Insight resource for a host in Ops Insights. The host will be enabled in Ops Insights. Host metric collection and analysis will be started.
      *
      *
      * @param request The request object containing the details to send
@@ -377,7 +395,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a news report in Operations Insights. The report will be enabled in Operations Insights. Insights will be emailed as per selected frequency.
+     * Create a news report in Ops Insights. The report will be enabled in Ops Insights. Insights will be emailed as per selected frequency.
      *
      *
      * @param request The request object containing the details to send
@@ -393,7 +411,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Create a private endpoint resource for the tenant in Operations Insights.
+     * Create a private endpoint resource for the tenant in Ops Insights.
      * This resource will be created in customer compartment.
      *
      *
@@ -413,7 +431,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a Operations Insights Warehouse resource for the tenant in Operations Insights. New ADW will be provisioned for this tenant.
+     * Create a Ops Insights Warehouse resource for the tenant in Ops Insights. New ADW will be provisioned for this tenant.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment. If the 'opsi-warehouse-type'
      * header is passed to the API, a warehouse resource without ADW or Schema provisioning is created.
      *
@@ -739,7 +757,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Disables a host in Operations Insights. Host metric collection and analysis will be stopped.
+     * Disables a host in Ops Insights. Host metric collection and analysis will be stopped.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -839,7 +857,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Enables a host in Operations Insights. Host metric collection and analysis will be started.
+     * Enables a host in Ops Insights. Host metric collection and analysis will be started.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -1046,7 +1064,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets details of an Operations Insights Warehouse.
+     * Gets details of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      *
      *
@@ -1216,7 +1234,44 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The sqlbucket endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+     * The MySql SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestMySqlSqlStatsResponse> ingestMySqlSqlStats(
+            IngestMySqlSqlStatsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlStatsRequest, IngestMySqlSqlStatsResponse>
+                    handler);
+
+    /**
+     * The SqlText endpoint takes in a JSON payload, persists it in Operation Insights ingest pipeline.
+     * Either databaseId or id must be specified.
+     * Disclaimer: SQL text being uploaded explicitly via APIs is already masked. All sensitive literals contained in the sqlFullText column are masked prior to ingestion.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<IngestMySqlSqlTextResponse> ingestMySqlSqlText(
+            IngestMySqlSqlTextRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            IngestMySqlSqlTextRequest, IngestMySqlSqlTextResponse>
+                    handler);
+
+    /**
+     * The sqlbucket endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *
      *
@@ -1251,7 +1306,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * The SQL Stats endpoint takes in a JSON payload, persists it in Operations Insights ingest pipeline.
+     * The SQL Stats endpoint takes in a JSON payload, persists it in Ops Insights ingest pipeline.
      * Either databaseId or id must be specified.
      *
      *
@@ -1527,7 +1582,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets a list of Operations Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights Enterprise Manager bridges. Either compartmentId or id must be specified.
      * When both compartmentId and compartmentIdInSubtree are specified, a list of bridges in that compartment and in all sub-compartments will be returned.
      *
      *
@@ -1750,7 +1805,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Gets a list of Operations Insights warehouses. Either compartmentId or id must be specified.
+     * Gets a list of Ops Insights warehouses. Either compartmentId or id must be specified.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      *
      *
@@ -2712,6 +2767,25 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Returns response with usage time series data with breakdown by IO interface for the time period specified.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<SummarizeHostInsightIoUsageTrendResponse>
+            summarizeHostInsightIoUsageTrend(
+                    SummarizeHostInsightIoUsageTrendRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    SummarizeHostInsightIoUsageTrendRequest,
+                                    SummarizeHostInsightIoUsageTrendResponse>
+                            handler);
+
+    /**
      * Returns response with usage time series data with breakdown by network interface for the time period specified.
      *
      *
@@ -3050,6 +3124,24 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Test the connection details of a Cloud MACS-managed database.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<TestMacsManagedCloudDatabaseInsightConnectionResponse>
+            testMacsManagedCloudDatabaseInsightConnection(
+                    TestMacsManagedCloudDatabaseInsightConnectionRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    TestMacsManagedCloudDatabaseInsightConnectionRequest,
+                                    TestMacsManagedCloudDatabaseInsightConnectionResponse>
+                            handler);
+
+    /**
      * Updates the configuration of a hub .
      *
      * @param request The request object containing the details to send
@@ -3180,7 +3272,7 @@ public interface OperationsInsightsAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Updates the configuration of an Operations Insights Warehouse.
+     * Updates the configuration of an Ops Insights Warehouse.
      * There is only expected to be 1 warehouse per tenant. The warehouse is expected to be in the root compartment.
      *
      *

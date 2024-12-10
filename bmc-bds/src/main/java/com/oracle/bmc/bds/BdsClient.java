@@ -1265,6 +1265,52 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public CreateResourcePrincipalConfigurationResponse createResourcePrincipalConfiguration(
+            CreateResourcePrincipalConfigurationRequest request) {
+        LOG.trace("Called createResourcePrincipalConfiguration");
+        final CreateResourcePrincipalConfigurationRequest interceptedRequest =
+                CreateResourcePrincipalConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "CreateResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/CreateResourcePrincipalConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, CreateResourcePrincipalConfigurationResponse>
+                transformer =
+                        CreateResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getCreateResourcePrincipalConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request) {
         LOG.trace("Called deleteBdsApiKey");
         final DeleteBdsApiKeyRequest interceptedRequest =
@@ -1586,6 +1632,51 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ForceRefreshResourcePrincipalResponse forceRefreshResourcePrincipal(
+            ForceRefreshResourcePrincipalRequest request) {
+        LOG.trace("Called forceRefreshResourcePrincipal");
+        final ForceRefreshResourcePrincipalRequest interceptedRequest =
+                ForceRefreshResourcePrincipalConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ForceRefreshResourcePrincipalConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ForceRefreshResourcePrincipal",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ForceRefreshResourcePrincipal");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ForceRefreshResourcePrincipalResponse>
+                transformer =
+                        ForceRefreshResourcePrincipalConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getForceRefreshResourcePrincipalDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAutoScalingConfigurationResponse getAutoScalingConfiguration(
             GetAutoScalingConfigurationRequest request) {
         LOG.trace("Called getAutoScalingConfiguration");
@@ -1876,6 +1967,45 @@ public class BdsClient implements Bds {
                             retriedRequest -> {
                                 javax.ws.rs.core.Response response =
                                         client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public GetResourcePrincipalConfigurationResponse getResourcePrincipalConfiguration(
+            GetResourcePrincipalConfigurationRequest request) {
+        LOG.trace("Called getResourcePrincipalConfiguration");
+        final GetResourcePrincipalConfigurationRequest interceptedRequest =
+                GetResourcePrincipalConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetResourcePrincipalConfigurationConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "GetResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/GetResourcePrincipalConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, GetResourcePrincipalConfigurationResponse>
+                transformer =
+                        GetResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
                                 return transformer.apply(response);
                             });
                 });
@@ -2370,6 +2500,46 @@ public class BdsClient implements Bds {
     }
 
     @Override
+    public ListResourcePrincipalConfigurationsResponse listResourcePrincipalConfigurations(
+            ListResourcePrincipalConfigurationsRequest request) {
+        LOG.trace("Called listResourcePrincipalConfigurations");
+        final ListResourcePrincipalConfigurationsRequest interceptedRequest =
+                ListResourcePrincipalConfigurationsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListResourcePrincipalConfigurationsConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "ListResourcePrincipalConfigurations",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/ListResourcePrincipalConfigurations");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListResourcePrincipalConfigurationsResponse>
+                transformer =
+                        ListResourcePrincipalConfigurationsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
         LOG.trace("Called listWorkRequestErrors");
@@ -2683,6 +2853,51 @@ public class BdsClient implements Bds {
                                                 ib,
                                                 retriedRequest
                                                         .getRemoveNodeReplaceConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public RemoveResourcePrincipalConfigurationResponse removeResourcePrincipalConfiguration(
+            RemoveResourcePrincipalConfigurationRequest request) {
+        LOG.trace("Called removeResourcePrincipalConfiguration");
+        final RemoveResourcePrincipalConfigurationRequest interceptedRequest =
+                RemoveResourcePrincipalConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "RemoveResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/ResourcePrincipalConfiguration/RemoveResourcePrincipalConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveResourcePrincipalConfigurationResponse>
+                transformer =
+                        RemoveResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getRemoveResourcePrincipalConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });
@@ -3195,6 +3410,52 @@ public class BdsClient implements Bds {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateNodeReplaceConfigurationDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateResourcePrincipalConfigurationResponse updateResourcePrincipalConfiguration(
+            UpdateResourcePrincipalConfigurationRequest request) {
+        LOG.trace("Called updateResourcePrincipalConfiguration");
+        final UpdateResourcePrincipalConfigurationRequest interceptedRequest =
+                UpdateResourcePrincipalConfigurationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateResourcePrincipalConfigurationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Bds",
+                        "UpdateResourcePrincipalConfiguration",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsInstance/UpdateResourcePrincipalConfiguration");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateResourcePrincipalConfigurationResponse>
+                transformer =
+                        UpdateResourcePrincipalConfigurationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateResourcePrincipalConfigurationDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

@@ -819,6 +819,58 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreatePrivateEndpointResponse> createPrivateEndpoint(
+            CreatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async createPrivateEndpoint");
+        final CreatePrivateEndpointRequest interceptedRequest =
+                CreatePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ObjectStorage",
+                        "CreatePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/CreatePrivateEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreatePrivateEndpointResponse>
+                transformer =
+                        CreatePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>,
+                        java.util.concurrent.Future<CreatePrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreatePrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreatePrivateEndpointRequest, CreatePrivateEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateReplicationPolicyResponse> createReplicationPolicy(
             CreateReplicationPolicyRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1101,6 +1153,53 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     DeletePreauthenticatedRequestRequest, DeletePreauthenticatedRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeletePrivateEndpointResponse> deletePrivateEndpoint(
+            DeletePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async deletePrivateEndpoint");
+        final DeletePrivateEndpointRequest interceptedRequest =
+                DeletePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeletePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ObjectStorage",
+                        "DeletePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/DeletePrivateEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeletePrivateEndpointResponse>
+                transformer =
+                        DeletePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>,
+                        java.util.concurrent.Future<DeletePrivateEndpointResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeletePrivateEndpointRequest, DeletePrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1470,6 +1569,52 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetPreauthenticatedRequestRequest, GetPreauthenticatedRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrivateEndpointResponse> getPrivateEndpoint(
+            GetPrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async getPrivateEndpoint");
+        final GetPrivateEndpointRequest interceptedRequest =
+                GetPrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetPrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ObjectStorage",
+                        "GetPrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/GetPrivateEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetPrivateEndpointResponse>
+                transformer =
+                        GetPrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetPrivateEndpointRequest, GetPrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetPrivateEndpointRequest, GetPrivateEndpointResponse>,
+                        java.util.concurrent.Future<GetPrivateEndpointResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetPrivateEndpointRequest, GetPrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1974,6 +2119,53 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListPreauthenticatedRequestsRequest, ListPreauthenticatedRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPrivateEndpointsResponse> listPrivateEndpoints(
+            ListPrivateEndpointsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                    handler) {
+        LOG.trace("Called async listPrivateEndpoints");
+        final ListPrivateEndpointsRequest interceptedRequest =
+                ListPrivateEndpointsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPrivateEndpointsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ObjectStorage",
+                        "ListPrivateEndpoints",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpointSummary/ListPrivateEndpoints");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListPrivateEndpointsResponse>
+                transformer =
+                        ListPrivateEndpointsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>,
+                        java.util.concurrent.Future<ListPrivateEndpointsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListPrivateEndpointsRequest, ListPrivateEndpointsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2767,6 +2959,58 @@ public class ObjectStorageAsyncClient implements ObjectStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateObjectStorageTierRequest, UpdateObjectStorageTierResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePrivateEndpointResponse> updatePrivateEndpoint(
+            UpdatePrivateEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                    handler) {
+        LOG.trace("Called async updatePrivateEndpoint");
+        final UpdatePrivateEndpointRequest interceptedRequest =
+                UpdatePrivateEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdatePrivateEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ObjectStorage",
+                        "UpdatePrivateEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/objectstorage/20160918/PrivateEndpoint/UpdatePrivateEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdatePrivateEndpointResponse>
+                transformer =
+                        UpdatePrivateEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>,
+                        java.util.concurrent.Future<UpdatePrivateEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdatePrivateEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdatePrivateEndpointRequest, UpdatePrivateEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

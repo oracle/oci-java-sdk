@@ -190,6 +190,15 @@ public final class GenericConnection extends Connection {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Generic technology type.
          **/
@@ -257,6 +266,7 @@ public final class GenericConnection extends Connection {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.host);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -321,6 +331,9 @@ public final class GenericConnection extends Connection {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -362,6 +375,7 @@ public final class GenericConnection extends Connection {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             TechnologyType technologyType,
             String host) {
         super(
@@ -382,7 +396,8 @@ public final class GenericConnection extends Connection {
                 ingressIps,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.host = host;
     }

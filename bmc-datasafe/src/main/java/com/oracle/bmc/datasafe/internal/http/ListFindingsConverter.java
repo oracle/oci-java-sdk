@@ -105,6 +105,14 @@ public class ListFindingsConverter {
                                     request.getAccessLevel().getValue()));
         }
 
+        if (request.getTargetId() != null) {
+            target =
+                    target.queryParam(
+                            "targetId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetId()));
+        }
+
         if (request.getFindingKey() != null) {
             target =
                     target.queryParam(

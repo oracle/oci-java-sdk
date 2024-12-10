@@ -96,6 +96,14 @@ public class ListAutonomousDatabasesConverter {
                                     request.getLifecycleState().getValue()));
         }
 
+        if (request.getLifecycleStateNotEqualTo() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleStateNotEqualTo",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleStateNotEqualTo().getValue()));
+        }
+
         if (request.getDbWorkload() != null) {
             target =
                     target.queryParam(

@@ -5,7 +5,7 @@
 package com.oracle.bmc.jms.model;
 
 /**
- * An export settings for JMS fleets.
+ * Export settings of a fleet.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -191,14 +191,14 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
-         * The namespace of the bucket where data will be exported.
+         * The id of the region of the target bucket.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
         private String targetBucketRegion;
 
         /**
-         * The namespace of the bucket where data will be exported.
+         * The id of the region of the target bucket.
          *
          * @param targetBucketRegion the value to set
          * @return this builder
@@ -469,14 +469,14 @@ public final class ExportSetting extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
-     * The namespace of the bucket where data will be exported.
+     * The id of the region of the target bucket.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetBucketRegion")
     private final String targetBucketRegion;
 
     /**
-     * The namespace of the bucket where data will be exported.
+     * The id of the region of the target bucket.
      *
      * @return the value
      **/

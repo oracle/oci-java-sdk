@@ -35,12 +35,27 @@ public class UpdateIncidentRequest
         return updateIncidentDetails;
     }
     /**
-     * The Customer Support Identifier (CSI) associated with the support account.
+     * The OCID of the tenancy.
+     */
+    private String compartmentId;
+
+    /**
+     * The OCID of the tenancy.
+     */
+    public String getCompartmentId() {
+        return compartmentId;
+    }
+    /**
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
+     *
      */
     private String csi;
 
     /**
-     * The Customer Support Identifier (CSI) associated with the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
+     *
      */
     public String getCsi() {
         return csi;
@@ -57,17 +72,6 @@ public class UpdateIncidentRequest
         return opcRequestId;
     }
     /**
-     * The OCID of the tenancy.
-     */
-    private String compartmentId;
-
-    /**
-     * The OCID of the tenancy.
-     */
-    public String getCompartmentId() {
-        return compartmentId;
-    }
-    /**
      * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
      */
     private String ifMatch;
@@ -80,11 +84,15 @@ public class UpdateIncidentRequest
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID is mandatory for OCI Users and optional for Multicloud users.
+     *
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID is mandatory for OCI Users and optional for Multicloud users.
+     *
      */
     public String getOcid() {
         return ocid;
@@ -135,11 +143,15 @@ public class UpdateIncidentRequest
     }
     /**
      * The OCID of identity domain.
+     * DomainID is mandatory if the user is part of Non Default Identity domain.
+     *
      */
     private String domainid;
 
     /**
      * The OCID of identity domain.
+     * DomainID is mandatory if the user is part of Non Default Identity domain.
+     *
      */
     public String getDomainid() {
         return domainid;
@@ -194,12 +206,31 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The OCID of the tenancy.
+         */
+        private String compartmentId = null;
+
+        /**
+         * The OCID of the tenancy.
+         * @param compartmentId the value to set
+         * @return this builder instance
+         */
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            return this;
+        }
+
+        /**
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
+         *
          */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
+         *
          * @param csi the value to set
          * @return this builder instance
          */
@@ -224,21 +255,6 @@ public class UpdateIncidentRequest
         }
 
         /**
-         * The OCID of the tenancy.
-         */
-        private String compartmentId = null;
-
-        /**
-         * The OCID of the tenancy.
-         * @param compartmentId the value to set
-         * @return this builder instance
-         */
-        public Builder compartmentId(String compartmentId) {
-            this.compartmentId = compartmentId;
-            return this;
-        }
-
-        /**
          * For optimistic concurrency control. In the PUT or DELETE call for a resource, set the {@code if-match} parameter to the value of the etag from a previous GET or POST response for that resource. The resource will be updated or deleted only if the etag you provide matches the resource's current etag value.
          */
         private String ifMatch = null;
@@ -255,11 +271,15 @@ public class UpdateIncidentRequest
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID is mandatory for OCI Users and optional for Multicloud users.
+         *
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID is mandatory for OCI Users and optional for Multicloud users.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -330,11 +350,15 @@ public class UpdateIncidentRequest
 
         /**
          * The OCID of identity domain.
+         * DomainID is mandatory if the user is part of Non Default Identity domain.
+         *
          */
         private String domainid = null;
 
         /**
          * The OCID of identity domain.
+         * DomainID is mandatory if the user is part of Non Default Identity domain.
+         *
          * @param domainid the value to set
          * @return this builder instance
          */
@@ -373,9 +397,9 @@ public class UpdateIncidentRequest
         public Builder copy(UpdateIncidentRequest o) {
             incidentKey(o.getIncidentKey());
             updateIncidentDetails(o.getUpdateIncidentDetails());
+            compartmentId(o.getCompartmentId());
             csi(o.getCsi());
             opcRequestId(o.getOpcRequestId());
-            compartmentId(o.getCompartmentId());
             ifMatch(o.getIfMatch());
             ocid(o.getOcid());
             homeregion(o.getHomeregion());
@@ -428,9 +452,9 @@ public class UpdateIncidentRequest
             UpdateIncidentRequest request = new UpdateIncidentRequest();
             request.incidentKey = incidentKey;
             request.updateIncidentDetails = updateIncidentDetails;
+            request.compartmentId = compartmentId;
             request.csi = csi;
             request.opcRequestId = opcRequestId;
-            request.compartmentId = compartmentId;
             request.ifMatch = ifMatch;
             request.ocid = ocid;
             request.homeregion = homeregion;
@@ -439,7 +463,7 @@ public class UpdateIncidentRequest
             request.idtoken = idtoken;
             request.domainid = domainid;
             return request;
-            // new UpdateIncidentRequest(incidentKey, updateIncidentDetails, csi, opcRequestId, compartmentId, ifMatch, ocid, homeregion, bearertokentype, bearertoken, idtoken, domainid);
+            // new UpdateIncidentRequest(incidentKey, updateIncidentDetails, compartmentId, csi, opcRequestId, ifMatch, ocid, homeregion, bearertokentype, bearertoken, idtoken, domainid);
         }
     }
 
@@ -451,9 +475,9 @@ public class UpdateIncidentRequest
         return new Builder()
                 .incidentKey(incidentKey)
                 .updateIncidentDetails(updateIncidentDetails)
+                .compartmentId(compartmentId)
                 .csi(csi)
                 .opcRequestId(opcRequestId)
-                .compartmentId(compartmentId)
                 .ifMatch(ifMatch)
                 .ocid(ocid)
                 .homeregion(homeregion)
@@ -478,9 +502,9 @@ public class UpdateIncidentRequest
         sb.append("super=").append(super.toString());
         sb.append(",incidentKey=").append(String.valueOf(this.incidentKey));
         sb.append(",updateIncidentDetails=").append(String.valueOf(this.updateIncidentDetails));
+        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",csi=").append(String.valueOf(this.csi));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
-        sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",ocid=").append(String.valueOf(this.ocid));
         sb.append(",homeregion=").append(String.valueOf(this.homeregion));
@@ -505,9 +529,9 @@ public class UpdateIncidentRequest
         return super.equals(o)
                 && java.util.Objects.equals(this.incidentKey, other.incidentKey)
                 && java.util.Objects.equals(this.updateIncidentDetails, other.updateIncidentDetails)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.csi, other.csi)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
-                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
                 && java.util.Objects.equals(this.ocid, other.ocid)
                 && java.util.Objects.equals(this.homeregion, other.homeregion)
@@ -527,11 +551,11 @@ public class UpdateIncidentRequest
                         + (this.updateIncidentDetails == null
                                 ? 43
                                 : this.updateIncidentDetails.hashCode());
-        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
-        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result = (result * PRIME) + (this.csi == null ? 43 : this.csi.hashCode());
+        result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.ocid == null ? 43 : this.ocid.hashCode());
         result = (result * PRIME) + (this.homeregion == null ? 43 : this.homeregion.hashCode());

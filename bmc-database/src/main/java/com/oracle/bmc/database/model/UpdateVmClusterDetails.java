@@ -38,7 +38,8 @@ public final class UpdateVmClusterDetails
         "freeformTags",
         "definedTags",
         "dataCollectionOptions",
-        "fileSystemConfigurationDetails"
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails"
     })
     public UpdateVmClusterDetails(
             Integer cpuCoreCount,
@@ -54,7 +55,8 @@ public final class UpdateVmClusterDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             DataCollectionOptions dataCollectionOptions,
-            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
         super();
         this.cpuCoreCount = cpuCoreCount;
         this.ocpuCount = ocpuCount;
@@ -70,6 +72,7 @@ public final class UpdateVmClusterDetails
         this.definedTags = definedTags;
         this.dataCollectionOptions = dataCollectionOptions;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -294,6 +297,16 @@ public final class UpdateVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -313,7 +326,8 @@ public final class UpdateVmClusterDetails
                             this.freeformTags,
                             this.definedTags,
                             this.dataCollectionOptions,
-                            this.fileSystemConfigurationDetails);
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -363,6 +377,9 @@ public final class UpdateVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
             return this;
         }
@@ -604,6 +621,13 @@ public final class UpdateVmClusterDetails
         return fileSystemConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -633,6 +657,8 @@ public final class UpdateVmClusterDetails
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -663,6 +689,8 @@ public final class UpdateVmClusterDetails
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && super.equals(other);
     }
 
@@ -710,6 +738,11 @@ public final class UpdateVmClusterDetails
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

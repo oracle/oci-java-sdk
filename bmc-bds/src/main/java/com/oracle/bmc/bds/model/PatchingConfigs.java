@@ -5,7 +5,7 @@
 package com.oracle.bmc.bds.model;
 
 /**
- * Detailed configurations for defining the behavior when installing os patches. If not provided, nodes will be patched and rebooted AD/FD by AD/FD.
+ * Detailed configurations for defining the behavior when installing os patches. If not provided, nodes will be patched and rebooted AD/FD by AD/FD for regular patches or will be patched with down time if the patch is an emergent patch.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,6 +29,10 @@ package com.oracle.bmc.bds.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DowntimeBasedPatchingConfigs.class,
         name = "DOWNTIME_BASED"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DomainBasedPatchingConfigs.class,
+        name = "DOMAIN_BASED"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -84,6 +88,7 @@ public class PatchingConfigs extends com.oracle.bmc.http.internal.ExplicitlySetB
     public enum PatchingConfigStrategy {
         DowntimeBased("DOWNTIME_BASED"),
         BatchingBased("BATCHING_BASED"),
+        DomainBased("DOMAIN_BASED"),
         ;
 
         private final String value;

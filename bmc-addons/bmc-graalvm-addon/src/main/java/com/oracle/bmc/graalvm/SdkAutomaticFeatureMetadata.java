@@ -51,6 +51,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.datalabelingservicedataplane.SdkClientsMetadata",
     "com.oracle.bmc.datasafe.SdkClientsMetadata",
     "com.oracle.bmc.datascience.SdkClientsMetadata",
+    "com.oracle.bmc.delegateaccesscontrol.SdkClientsMetadata",
     "com.oracle.bmc.demandsignal.SdkClientsMetadata",
     "com.oracle.bmc.desktops.SdkClientsMetadata",
     "com.oracle.bmc.devops.SdkClientsMetadata",
@@ -62,10 +63,13 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.emwarehouse.SdkClientsMetadata",
     "com.oracle.bmc.events.SdkClientsMetadata",
     "com.oracle.bmc.filestorage.SdkClientsMetadata",
+    "com.oracle.bmc.fleetappsmanagement.SdkClientsMetadata",
     "com.oracle.bmc.fleetsoftwareupdate.SdkClientsMetadata",
     "com.oracle.bmc.functions.SdkClientsMetadata",
     "com.oracle.bmc.fusionapps.SdkClientsMetadata",
     "com.oracle.bmc.generativeai.SdkClientsMetadata",
+    "com.oracle.bmc.generativeaiagent.SdkClientsMetadata",
+    "com.oracle.bmc.generativeaiagentruntime.SdkClientsMetadata",
     "com.oracle.bmc.generativeaiinference.SdkClientsMetadata",
     "com.oracle.bmc.genericartifactscontent.SdkClientsMetadata",
     "com.oracle.bmc.globallydistributeddatabase.SdkClientsMetadata",
@@ -126,6 +130,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.rover.SdkClientsMetadata",
     "com.oracle.bmc.sch.SdkClientsMetadata",
     "com.oracle.bmc.secrets.SdkClientsMetadata",
+    "com.oracle.bmc.securityattribute.SdkClientsMetadata",
     "com.oracle.bmc.servicecatalog.SdkClientsMetadata",
     "com.oracle.bmc.servicemanagerproxy.SdkClientsMetadata",
     "com.oracle.bmc.servicemesh.SdkClientsMetadata",
@@ -143,6 +148,7 @@ package com.oracle.bmc.graalvm;
     "com.oracle.bmc.waa.SdkClientsMetadata",
     "com.oracle.bmc.waas.SdkClientsMetadata",
     "com.oracle.bmc.waf.SdkClientsMetadata",
-    "com.oracle.bmc.workrequests.SdkClientsMetadata"
+    "com.oracle.bmc.workrequests.SdkClientsMetadata",
+    "com.oracle.bmc.zpr.SdkClientsMetadata"
 })
 final class SdkAutomaticFeatureMetadata {}

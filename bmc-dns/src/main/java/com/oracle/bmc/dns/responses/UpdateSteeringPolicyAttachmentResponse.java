@@ -26,6 +26,23 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
     }
 
     /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * The current version of the resource, ending with a
      * representation-specific suffix. This value may be used in If-Match
      * and If-None-Match headers for later requests of the same resource.
@@ -61,6 +78,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         "__httpStatusCode__",
         "headers",
         "opcRequestId",
+        "opcWorkRequestId",
         "eTag",
         "steeringPolicyAttachment"
     })
@@ -68,10 +86,12 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
             String opcRequestId,
+            String opcWorkRequestId,
             String eTag,
             com.oracle.bmc.dns.model.SteeringPolicyAttachment steeringPolicyAttachment) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.eTag = eTag;
         this.steeringPolicyAttachment = steeringPolicyAttachment;
     }
@@ -107,6 +127,25 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public Builder opcRequestId(String opcRequestId) {
             this.opcRequestId = opcRequestId;
+            return this;
+        }
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
             return this;
         }
 
@@ -155,6 +194,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             eTag(o.getETag());
             steeringPolicyAttachment(o.getSteeringPolicyAttachment());
 
@@ -167,7 +207,12 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public UpdateSteeringPolicyAttachmentResponse build() {
             return new UpdateSteeringPolicyAttachmentResponse(
-                    __httpStatusCode__, headers, opcRequestId, eTag, steeringPolicyAttachment);
+                    __httpStatusCode__,
+                    headers,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    eTag,
+                    steeringPolicyAttachment);
         }
     }
 
@@ -185,6 +230,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",steeringPolicyAttachment=").append(String.valueOf(steeringPolicyAttachment));
         sb.append(")");
@@ -203,6 +249,7 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         UpdateSteeringPolicyAttachmentResponse other = (UpdateSteeringPolicyAttachmentResponse) o;
         return super.equals(o)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(
                         this.steeringPolicyAttachment, other.steeringPolicyAttachment);
@@ -213,6 +260,9 @@ public class UpdateSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result =
                 (result * PRIME)

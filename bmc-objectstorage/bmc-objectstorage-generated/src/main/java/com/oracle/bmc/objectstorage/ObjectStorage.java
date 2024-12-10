@@ -162,6 +162,19 @@ public interface ObjectStorage extends AutoCloseable {
             CreatePreauthenticatedRequestRequest request);
 
     /**
+     * Create a PrivateEndpoint.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
+     */
+    CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
+
+    /**
      * Creates a replication policy for the specified bucket.
      *
      * @param request The request object containing the details to send
@@ -243,6 +256,19 @@ public interface ObjectStorage extends AutoCloseable {
      */
     DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
             DeletePreauthenticatedRequestRequest request);
+
+    /**
+     * Deletes a Private Endpoint if it exists in the given namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
+     */
+    DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
     /**
      * Deletes the replication policy associated with the source bucket.
@@ -359,6 +385,19 @@ public interface ObjectStorage extends AutoCloseable {
      */
     GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request);
+
+    /**
+     * Gets the current representation of the given Private Endpoint in the given Object Storage namespace.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
+     */
+    GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
     /**
      * Get the replication policy.
@@ -526,6 +565,22 @@ public interface ObjectStorage extends AutoCloseable {
      */
     ListPreauthenticatedRequestsResponse listPreauthenticatedRequests(
             ListPreauthenticatedRequestsRequest request);
+
+    /**
+     * Gets a list of all PrivateEndpointSummary in a compartment associated with a namespace.
+     * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
+     * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
+     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
+     */
+    ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
     /**
      * List the replication policies associated with a bucket.
@@ -746,8 +801,8 @@ public interface ObjectStorage extends AutoCloseable {
     RenameObjectResponse renameObject(RenameObjectRequest request);
 
     /**
-     * Restores one or more objects specified by the objectName parameter.
-     * By default objects will be restored for 24 hours. Duration can be configured using the hours parameter.
+     * Restores the object specified by the objectName parameter.
+     * By default object will be restored for 24 hours. Duration can be configured using the hours parameter.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -807,6 +862,26 @@ public interface ObjectStorage extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateObjectStorageTierExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateObjectStorageTier API.
      */
     UpdateObjectStorageTierResponse updateObjectStorageTier(UpdateObjectStorageTierRequest request);
+
+    /**
+     * Performs a partial or full update of a user-defined data associated with the Private Endpoint.
+     * <p>
+     * Use UpdatePrivateEndpoint to move a Private Endpoint from one compartment to another within the same tenancy. Supply the compartmentID
+     * of the compartment that you want to move the Private Endpoint to. Or use it to update the name, subnetId, endpointFqdn or privateEndpointIp or accessTargets of the Private Endpoint.
+     * For more information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * <p>
+     * This API follows replace semantics (rather than merge semantics). That means if the body provides values for
+     * parameters and the resource has exisiting ones, this operation will replace those existing values.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
+     */
+    UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
     /**
      * Updates the specified retention rule. Rule changes take effect typically within 30 seconds.

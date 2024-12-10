@@ -34,6 +34,121 @@ public class RedisClusterPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listRedisClusterNodes operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListRedisClusterNodesResponse> listRedisClusterNodesResponseIterator(
+            final ListRedisClusterNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListRedisClusterNodesRequest.Builder, ListRedisClusterNodesRequest,
+                ListRedisClusterNodesResponse>(
+                new java.util.function.Supplier<ListRedisClusterNodesRequest.Builder>() {
+                    @Override
+                    public ListRedisClusterNodesRequest.Builder get() {
+                        return ListRedisClusterNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRedisClusterNodesResponse, String>() {
+                    @Override
+                    public String apply(ListRedisClusterNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRedisClusterNodesRequest.Builder>,
+                        ListRedisClusterNodesRequest>() {
+                    @Override
+                    public ListRedisClusterNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRedisClusterNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRedisClusterNodesRequest, ListRedisClusterNodesResponse>() {
+                    @Override
+                    public ListRedisClusterNodesResponse apply(
+                            ListRedisClusterNodesRequest request) {
+                        return client.listRedisClusterNodes(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.redis.model.NodeSummary} objects
+     * contained in responses from the listRedisClusterNodes operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.redis.model.NodeSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.redis.model.NodeSummary> listRedisClusterNodesRecordIterator(
+            final ListRedisClusterNodesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListRedisClusterNodesRequest.Builder, ListRedisClusterNodesRequest,
+                ListRedisClusterNodesResponse, com.oracle.bmc.redis.model.NodeSummary>(
+                new java.util.function.Supplier<ListRedisClusterNodesRequest.Builder>() {
+                    @Override
+                    public ListRedisClusterNodesRequest.Builder get() {
+                        return ListRedisClusterNodesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListRedisClusterNodesResponse, String>() {
+                    @Override
+                    public String apply(ListRedisClusterNodesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListRedisClusterNodesRequest.Builder>,
+                        ListRedisClusterNodesRequest>() {
+                    @Override
+                    public ListRedisClusterNodesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListRedisClusterNodesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListRedisClusterNodesRequest, ListRedisClusterNodesResponse>() {
+                    @Override
+                    public ListRedisClusterNodesResponse apply(
+                            ListRedisClusterNodesRequest request) {
+                        return client.listRedisClusterNodes(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListRedisClusterNodesResponse,
+                        java.util.List<com.oracle.bmc.redis.model.NodeSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.redis.model.NodeSummary> apply(
+                            ListRedisClusterNodesResponse response) {
+                        return response.getRedisNodeCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listRedisClusters operation. This iterable
      * will fetch more data from the server as needed.
      *

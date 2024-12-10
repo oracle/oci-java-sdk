@@ -45,13 +45,6 @@ public interface Service {
     Map<String, String> getServiceEndpointTemplateForRealmMap();
 
     /**
-     * This method adds service endpoint templates for the realm to a map
-     *
-     * @param realmId Key in the map
-     * @param endpoint Value in the map
-     */
-
-    /**
      * The service endpoint name that will be used only for dotted regions if set by the service.
      * {service} in "https://{service}.{region}".
      * The service endpoint template (if specified) will be ignored in this case.

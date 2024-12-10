@@ -459,6 +459,64 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<AddOracleManagedCustomEndpointResponse>
+            addOracleManagedCustomEndpoint(
+                    AddOracleManagedCustomEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddOracleManagedCustomEndpointRequest,
+                                    AddOracleManagedCustomEndpointResponse>
+                            handler) {
+        LOG.trace("Called async addOracleManagedCustomEndpoint");
+        final AddOracleManagedCustomEndpointRequest interceptedRequest =
+                AddOracleManagedCustomEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddOracleManagedCustomEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "AddOracleManagedCustomEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/AddOracleManagedCustomEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddOracleManagedCustomEndpointResponse>
+                transformer =
+                        AddOracleManagedCustomEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddOracleManagedCustomEndpointRequest,
+                        AddOracleManagedCustomEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddOracleManagedCustomEndpointRequest,
+                                AddOracleManagedCustomEndpointResponse>,
+                        java.util.concurrent.Future<AddOracleManagedCustomEndpointResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddOracleManagedCustomEndpointDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddOracleManagedCustomEndpointRequest, AddOracleManagedCustomEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeIntegrationInstanceCompartmentResponse>
             changeIntegrationInstanceCompartment(
                     ChangeIntegrationInstanceCompartmentRequest request,
@@ -747,6 +805,55 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
     }
 
     @Override
+    public java.util.concurrent.Future<DisasterRecoveryFailoverResponse> disasterRecoveryFailover(
+            DisasterRecoveryFailoverRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DisasterRecoveryFailoverRequest, DisasterRecoveryFailoverResponse>
+                    handler) {
+        LOG.trace("Called async disasterRecoveryFailover");
+        final DisasterRecoveryFailoverRequest interceptedRequest =
+                DisasterRecoveryFailoverConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisasterRecoveryFailoverConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "DisasterRecoveryFailover",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/DisasterRecoveryFailover");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisasterRecoveryFailoverResponse>
+                transformer =
+                        DisasterRecoveryFailoverConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisasterRecoveryFailoverRequest, DisasterRecoveryFailoverResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisasterRecoveryFailoverRequest, DisasterRecoveryFailoverResponse>,
+                        java.util.concurrent.Future<DisasterRecoveryFailoverResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisasterRecoveryFailoverRequest, DisasterRecoveryFailoverResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<EnableProcessAutomationResponse> enableProcessAutomation(
             EnableProcessAutomationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -783,6 +890,59 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     EnableProcessAutomationRequest, EnableProcessAutomationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExtendDataRetentionResponse> extendDataRetention(
+            ExtendDataRetentionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ExtendDataRetentionRequest, ExtendDataRetentionResponse>
+                    handler) {
+        LOG.trace("Called async extendDataRetention");
+        final ExtendDataRetentionRequest interceptedRequest =
+                ExtendDataRetentionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ExtendDataRetentionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "ExtendDataRetention",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/ExtendDataRetention");
+        final java.util.function.Function<javax.ws.rs.core.Response, ExtendDataRetentionResponse>
+                transformer =
+                        ExtendDataRetentionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ExtendDataRetentionRequest, ExtendDataRetentionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ExtendDataRetentionRequest, ExtendDataRetentionResponse>,
+                        java.util.concurrent.Future<ExtendDataRetentionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getExtendDataRetentionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ExtendDataRetentionRequest, ExtendDataRetentionResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1063,6 +1223,60 @@ public class IntegrationInstanceAsyncClient implements IntegrationInstanceAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListWorkRequestsRequest, ListWorkRequestsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveOracleManagedCustomEndpointResponse>
+            removeOracleManagedCustomEndpoint(
+                    RemoveOracleManagedCustomEndpointRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveOracleManagedCustomEndpointRequest,
+                                    RemoveOracleManagedCustomEndpointResponse>
+                            handler) {
+        LOG.trace("Called async removeOracleManagedCustomEndpoint");
+        final RemoveOracleManagedCustomEndpointRequest interceptedRequest =
+                RemoveOracleManagedCustomEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveOracleManagedCustomEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "IntegrationInstance",
+                        "RemoveOracleManagedCustomEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/integration/20190131/IntegrationInstance/RemoveOracleManagedCustomEndpoint");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveOracleManagedCustomEndpointResponse>
+                transformer =
+                        RemoveOracleManagedCustomEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveOracleManagedCustomEndpointRequest,
+                        RemoveOracleManagedCustomEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveOracleManagedCustomEndpointRequest,
+                                RemoveOracleManagedCustomEndpointResponse>,
+                        java.util.concurrent.Future<RemoveOracleManagedCustomEndpointResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveOracleManagedCustomEndpointRequest,
+                    RemoveOracleManagedCustomEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

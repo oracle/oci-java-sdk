@@ -514,38 +514,6 @@ public class IncidentClient implements Incident {
     }
 
     @Override
-    public GetCsiNumberResponse getCsiNumber(GetCsiNumberRequest request) {
-        LOG.trace("Called getCsiNumber");
-        final GetCsiNumberRequest interceptedRequest =
-                GetCsiNumberConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetCsiNumberConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Incident", "GetCsiNumber", ib.getRequestUri().toString(), "");
-        java.util.function.Function<javax.ws.rs.core.Response, GetCsiNumberResponse> transformer =
-                GetCsiNumberConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
     public GetIncidentResponse getIncident(GetIncidentRequest request) {
         LOG.trace("Called getIncident");
         final GetIncidentRequest interceptedRequest =
@@ -565,40 +533,6 @@ public class IncidentClient implements Incident {
                         "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Incident/GetIncident");
         java.util.function.Function<javax.ws.rs.core.Response, GetIncidentResponse> transformer =
                 GetIncidentConverter.fromResponse(java.util.Optional.of(serviceDetails));
-        return retrier.execute(
-                interceptedRequest,
-                retryRequest -> {
-                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
-                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
-                                    authenticationDetailsProvider);
-                    return tokenRefreshRetrier.execute(
-                            retryRequest,
-                            retriedRequest -> {
-                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
-                                return transformer.apply(response);
-                            });
-                });
-    }
-
-    @Override
-    public GetStatusResponse getStatus(GetStatusRequest request) {
-        LOG.trace("Called getStatus");
-        final GetStatusRequest interceptedRequest = GetStatusConverter.interceptRequest(request);
-        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
-                GetStatusConverter.fromRequest(client, interceptedRequest);
-
-        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
-                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
-                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
-        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
-        com.oracle.bmc.ServiceDetails serviceDetails =
-                new com.oracle.bmc.ServiceDetails(
-                        "Incident",
-                        "GetStatus",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/incidentmanagement/20181231/Status/GetStatus");
-        java.util.function.Function<javax.ws.rs.core.Response, GetStatusResponse> transformer =
-                GetStatusConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
                 retryRequest -> {

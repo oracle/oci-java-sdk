@@ -12,6 +12,7 @@ import java.util.concurrent.ExecutorService;
 import javax.ws.rs.client.Invocation;
 import com.oracle.bmc.objectstorage.ObjectStorage;
 import com.oracle.bmc.objectstorage.internal.ObjectStorageUtils;
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import com.oracle.bmc.objectstorage.model.CommitMultipartUploadDetails;
 import com.oracle.bmc.objectstorage.model.CreateMultipartUploadDetails;
 import com.oracle.bmc.objectstorage.model.MultipartUpload;
@@ -61,6 +62,7 @@ public class MultipartObjectAssembler {
     private final ExecutorService executorService;
     private final String cacheControl;
     private final String contentDisposition;
+    private final ChecksumAlgorithm additionalChecksumAlgorithm;
 
     private MultipartTransferManager transferManager;
     private MultipartManifestImpl manifest;
@@ -104,7 +106,8 @@ public class MultipartObjectAssembler {
                 null /* invocationCallback */,
                 UploadManager.RETRY_CONFIGURATION, /* backwards compatibility */
                 null /* cacheControl */,
-                null /* contentDisposition */);
+                null /* contentDisposition */,
+                null /* additionalChecksumAlgorithm */);
     }
 
     private MultipartObjectAssembler(
@@ -119,7 +122,8 @@ public class MultipartObjectAssembler {
             Consumer<Invocation.Builder> invocationCallback,
             RetryConfiguration retryConfiguration,
             String cacheControl,
-            String contentDisposition) {
+            String contentDisposition,
+            ChecksumAlgorithm additionalChecksumAlgorithm) {
         this.service = service;
         this.namespaceName = namespaceName;
         this.bucketName = bucketName;
@@ -132,6 +136,7 @@ public class MultipartObjectAssembler {
         this.retryConfiguration = retryConfiguration;
         this.cacheControl = cacheControl;
         this.contentDisposition = contentDisposition;
+        this.additionalChecksumAlgorithm = additionalChecksumAlgorithm;
     }
 
     /**
@@ -150,26 +155,31 @@ public class MultipartObjectAssembler {
         checkInitialized();
 
         String ifNoneMatch = ObjectStorageUtils.getIfNoneMatchHeader(allowOverwrite);
+        CreateMultipartUploadRequest.Builder requestBuilder =
+                CreateMultipartUploadRequest.builder()
+                        .invocationCallback(invocationCallback)
+                        .bucketName(bucketName)
+                        .ifNoneMatch(ifNoneMatch)
+                        .namespaceName(namespaceName)
+                        .createMultipartUploadDetails(
+                                CreateMultipartUploadDetails.builder()
+                                        .object(objectName)
+                                        .contentEncoding(contentEncoding)
+                                        .contentLanguage(contentLanguage)
+                                        .contentType(contentType)
+                                        .metadata(opcMeta)
+                                        .storageTier(storageTier)
+                                        .cacheControl(cacheControl)
+                                        .contentDisposition(contentDisposition)
+                                        .build())
+                        .opcClientRequestId(createClientRequestId("-create"));
+
+        if (additionalChecksumAlgorithm != null) {
+            requestBuilder.opcChecksumAlgorithm(additionalChecksumAlgorithm);
+        }
+        CreateMultipartUploadRequest createMultipartUploadRequest = requestBuilder.build();
         CreateMultipartUploadResponse createUploadResponse =
-                service.createMultipartUpload(
-                        CreateMultipartUploadRequest.builder()
-                                .invocationCallback(invocationCallback)
-                                .bucketName(bucketName)
-                                .ifNoneMatch(ifNoneMatch)
-                                .namespaceName(namespaceName)
-                                .createMultipartUploadDetails(
-                                        CreateMultipartUploadDetails.builder()
-                                                .object(objectName)
-                                                .contentEncoding(contentEncoding)
-                                                .contentLanguage(contentLanguage)
-                                                .contentType(contentType)
-                                                .metadata(opcMeta)
-                                                .cacheControl(cacheControl)
-                                                .contentDisposition(contentDisposition)
-                                                .storageTier(storageTier)
-                                                .build())
-                                .opcClientRequestId(createClientRequestId("-create"))
-                                .build());
+                service.createMultipartUpload(createMultipartUploadRequest);
 
         this.manifest =
                 new MultipartManifestImpl(createUploadResponse.getMultipartUpload().getUploadId());
@@ -250,6 +260,25 @@ public class MultipartObjectAssembler {
     }
 
     /**
+     * Adds the next part to the upload. Parts will be committed in the order submitted.
+     *
+     * <p>We allow part overwrites to facilitate retries.
+     *
+     * @param stream The stream to upload as the next part
+     * @param contentLength The content length of the part
+     * @param checksum The checksum of the part, optional
+     * @param checksumAlgorithm The checksum algorithm used, optional (e.g., "CRC32C")
+     * @return The part number assigned to this part
+     * @throws IllegalStateException if the assembler has not been initialized or the upload has
+     *     been aborted
+     */
+    public int addPart(
+            InputStream stream, long contentLength, String checksum, String checksumAlgorithm) {
+        int nextPartNumber = manifest.nextPartNumber();
+        return doUploadPart(stream, contentLength, checksum, checksumAlgorithm, nextPartNumber);
+    }
+
+    /**
      * Add the next part to the upload.  Parts will be committed in the order
      * submitted.
      *
@@ -301,6 +330,28 @@ public class MultipartObjectAssembler {
         doUploadPart(stream, contentLength, md5, partNum);
     }
 
+    /**
+     * Adds a part to the upload. The part will be ordered based on the part number provided.
+     *
+     * <p>This method is for setting parts with additional checksum algorithms.
+     *
+     * <p>Calling this will not set the ifNoneMatch value and will allow overwriting existing parts.
+     *
+     * @param stream The stream to upload
+     * @param contentLength The content length of the part
+     * @param checksum The checksum value, optional
+     * @param checksumAlgorithm The checksum algorithm used
+     * @param partNum The part number to assign to the part
+     */
+    public void setPart(
+            InputStream stream,
+            long contentLength,
+            String checksum,
+            String checksumAlgorithm,
+            int partNum) {
+        doUploadPart(stream, contentLength, checksum, checksumAlgorithm, partNum);
+    }
+
     private int doUploadPart(InputStream stream, long contentLength, String md5, int partNumber) {
         validateState();
         UploadPartRequest request =
@@ -317,6 +368,54 @@ public class MultipartObjectAssembler {
                         .opcClientRequestId(createClientRequestId("-" + partNumber))
                         .build();
 
+        request.setRetryConfiguration(this.retryConfiguration);
+
+        transferManager.startTransfer(request);
+        return partNumber;
+    }
+
+    private int doUploadPart(
+            InputStream stream,
+            long contentLength,
+            String checksum,
+            String checksumAlgorithm,
+            int partNumber) {
+        validateState();
+        UploadPartRequest.Builder requestBuilder =
+                UploadPartRequest.builder()
+                        .invocationCallback(invocationCallback)
+                        .namespaceName(namespaceName)
+                        .bucketName(bucketName)
+                        .objectName(objectName)
+                        .contentLength(contentLength)
+                        .uploadId(manifest.getUploadId())
+                        .uploadPartNum(partNumber)
+                        .uploadPartBody(stream)
+                        .opcClientRequestId(createClientRequestId("-" + partNumber));
+
+        if (checksumAlgorithm != null) {
+            ChecksumAlgorithm algo = ChecksumAlgorithm.create(checksumAlgorithm);
+            requestBuilder.opcChecksumAlgorithm(algo);
+
+            if (checksum != null) {
+                switch (algo) {
+                    case Crc32C:
+                        requestBuilder.opcContentCrc32c(checksum);
+                        break;
+                    case Sha256:
+                        requestBuilder.opcContentSha256(checksum);
+                        break;
+                    case Sha384:
+                        requestBuilder.opcContentSha384(checksum);
+                        break;
+                    default:
+                        throw new IllegalArgumentException(
+                                "Unsupported checksum algorithm: " + checksumAlgorithm);
+                }
+            }
+        }
+
+        UploadPartRequest request = requestBuilder.build();
         request.setRetryConfiguration(this.retryConfiguration);
 
         transferManager.startTransfer(request);
@@ -452,6 +551,7 @@ public class MultipartObjectAssembler {
         private RetryConfiguration retryConfiguration;
         private String cacheControl;
         private String contentDisposition;
+        private ChecksumAlgorithm additionalChecksumAlgorithm;
 
         MultipartObjectAssemblerBuilder() {}
 
@@ -563,6 +663,13 @@ public class MultipartObjectAssembler {
             return this;
         }
 
+        /** @return {@code this}. */
+        public MultipartObjectAssembler.MultipartObjectAssemblerBuilder additionalChecksumAlgorithm(
+                final ChecksumAlgorithm additionalChecksumAlgorithm) {
+            this.additionalChecksumAlgorithm = additionalChecksumAlgorithm;
+            return this;
+        }
+
         public MultipartObjectAssembler build() {
             return new MultipartObjectAssembler(
                     this.service,
@@ -576,7 +683,8 @@ public class MultipartObjectAssembler {
                     this.invocationCallback,
                     this.retryConfiguration,
                     this.cacheControl,
-                    this.contentDisposition);
+                    this.contentDisposition,
+                    this.additionalChecksumAlgorithm);
         }
 
         @java.lang.Override
@@ -605,6 +713,8 @@ public class MultipartObjectAssembler {
                     + this.cacheControl
                     + ", contentDisposition="
                     + this.contentDisposition
+                    + ", additionalChecksumAlgorithm="
+                    + this.additionalChecksumAlgorithm
                     + ")";
         }
     }

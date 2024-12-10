@@ -127,6 +127,15 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Kafka technology type.
          *
@@ -248,6 +257,32 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
          * The base64 encoded content of the TrustStore file.
          *
          **/
@@ -263,6 +298,26 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         public Builder trustStore(String trustStore) {
             this.trustStore = trustStore;
             this.__explicitlySet__.add("trustStore");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+        private String trustStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+         * Note: When provided, 'trustStore' field must not be provided.
+         *
+         * @param trustStoreSecretId the value to set
+         * @return this builder
+         **/
+        public Builder trustStoreSecretId(String trustStoreSecretId) {
+            this.trustStoreSecretId = trustStoreSecretId;
+            this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
         /**
@@ -284,6 +339,26 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+        private String trustStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+         * Note: When provided, 'trustStorePassword' field must not be provided.
+         *
+         * @param trustStorePasswordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder trustStorePasswordSecretId(String trustStorePasswordSecretId) {
+            this.trustStorePasswordSecretId = trustStorePasswordSecretId;
+            this.__explicitlySet__.add("trustStorePasswordSecretId");
+            return this;
+        }
+        /**
          * The base64 encoded content of the KeyStore file.
          *
          **/
@@ -299,6 +374,26 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         public Builder keyStore(String keyStore) {
             this.keyStore = keyStore;
             this.__explicitlySet__.add("keyStore");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+        private String keyStoreSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+         * Note: When provided, 'keyStore' field must not be provided.
+         *
+         * @param keyStoreSecretId the value to set
+         * @return this builder
+         **/
+        public Builder keyStoreSecretId(String keyStoreSecretId) {
+            this.keyStoreSecretId = keyStoreSecretId;
+            this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
         /**
@@ -320,6 +415,26 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+        private String keyStorePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+         * Note: When provided, 'keyStorePassword' field must not be provided.
+         *
+         * @param keyStorePasswordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder keyStorePasswordSecretId(String keyStorePasswordSecretId) {
+            this.keyStorePasswordSecretId = keyStorePasswordSecretId;
+            this.__explicitlySet__.add("keyStorePasswordSecretId");
+            return this;
+        }
+        /**
          * The password for the cert inside of the KeyStore.
          * In case it differs from the KeyStore password, it should be provided.
          *
@@ -337,6 +452,26 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         public Builder sslKeyPassword(String sslKeyPassword) {
             this.sslKeyPassword = sslKeyPassword;
             this.__explicitlySet__.add("sslKeyPassword");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+        private String sslKeyPasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+         * Note: When provided, 'sslKeyPassword' field must not be provided.
+         *
+         * @param sslKeyPasswordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder sslKeyPasswordSecretId(String sslKeyPasswordSecretId) {
+            this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
+            this.__explicitlySet__.add("sslKeyPasswordSecretId");
             return this;
         }
         /**
@@ -393,17 +528,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.streamPoolId,
                             this.bootstrapServers,
                             this.securityProtocol,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.trustStore,
+                            this.trustStoreSecretId,
                             this.trustStorePassword,
+                            this.trustStorePasswordSecretId,
                             this.keyStore,
+                            this.keyStoreSecretId,
                             this.keyStorePassword,
+                            this.keyStorePasswordSecretId,
                             this.sslKeyPassword,
+                            this.sslKeyPasswordSecretId,
                             this.consumerProperties,
                             this.producerProperties);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -447,6 +589,9 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -465,20 +610,38 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
             }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("trustStore")) {
                 this.trustStore(model.getTrustStore());
+            }
+            if (model.wasPropertyExplicitlySet("trustStoreSecretId")) {
+                this.trustStoreSecretId(model.getTrustStoreSecretId());
             }
             if (model.wasPropertyExplicitlySet("trustStorePassword")) {
                 this.trustStorePassword(model.getTrustStorePassword());
             }
+            if (model.wasPropertyExplicitlySet("trustStorePasswordSecretId")) {
+                this.trustStorePasswordSecretId(model.getTrustStorePasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("keyStore")) {
                 this.keyStore(model.getKeyStore());
+            }
+            if (model.wasPropertyExplicitlySet("keyStoreSecretId")) {
+                this.keyStoreSecretId(model.getKeyStoreSecretId());
             }
             if (model.wasPropertyExplicitlySet("keyStorePassword")) {
                 this.keyStorePassword(model.getKeyStorePassword());
             }
+            if (model.wasPropertyExplicitlySet("keyStorePasswordSecretId")) {
+                this.keyStorePasswordSecretId(model.getKeyStorePasswordSecretId());
+            }
             if (model.wasPropertyExplicitlySet("sslKeyPassword")) {
                 this.sslKeyPassword(model.getSslKeyPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeyPasswordSecretId")) {
+                this.sslKeyPasswordSecretId(model.getSslKeyPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("consumerProperties")) {
                 this.consumerProperties(model.getConsumerProperties());
@@ -514,17 +677,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             KafkaConnection.TechnologyType technologyType,
             String streamPoolId,
             java.util.List<KafkaBootstrapServer> bootstrapServers,
             KafkaConnection.SecurityProtocol securityProtocol,
             String username,
             String password,
+            String passwordSecretId,
             String trustStore,
+            String trustStoreSecretId,
             String trustStorePassword,
+            String trustStorePasswordSecretId,
             String keyStore,
+            String keyStoreSecretId,
             String keyStorePassword,
+            String keyStorePasswordSecretId,
             String sslKeyPassword,
+            String sslKeyPasswordSecretId,
             String consumerProperties,
             String producerProperties) {
         super(
@@ -538,18 +708,25 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.streamPoolId = streamPoolId;
         this.bootstrapServers = bootstrapServers;
         this.securityProtocol = securityProtocol;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.trustStore = trustStore;
+        this.trustStoreSecretId = trustStoreSecretId;
         this.trustStorePassword = trustStorePassword;
+        this.trustStorePasswordSecretId = trustStorePasswordSecretId;
         this.keyStore = keyStore;
+        this.keyStoreSecretId = keyStoreSecretId;
         this.keyStorePassword = keyStorePassword;
+        this.keyStorePasswordSecretId = keyStorePasswordSecretId;
         this.sslKeyPassword = sslKeyPassword;
+        this.sslKeyPasswordSecretId = sslKeyPasswordSecretId;
         this.consumerProperties = consumerProperties;
         this.producerProperties = producerProperties;
     }
@@ -663,6 +840,30 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
      * The base64 encoded content of the TrustStore file.
      *
      **/
@@ -676,6 +877,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      **/
     public String getTrustStore() {
         return trustStore;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStoreSecretId")
+    private final String trustStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the TrustStore file is stored.
+     * Note: When provided, 'trustStore' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getTrustStoreSecretId() {
+        return trustStoreSecretId;
     }
 
     /**
@@ -695,6 +914,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("trustStorePasswordSecretId")
+    private final String trustStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka TrustStore password is stored.
+     * Note: When provided, 'trustStorePassword' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getTrustStorePasswordSecretId() {
+        return trustStorePasswordSecretId;
+    }
+
+    /**
      * The base64 encoded content of the KeyStore file.
      *
      **/
@@ -708,6 +945,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      **/
     public String getKeyStore() {
         return keyStore;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStoreSecretId")
+    private final String keyStoreSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the KeyStore file is stored.
+     * Note: When provided, 'keyStore' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getKeyStoreSecretId() {
+        return keyStoreSecretId;
     }
 
     /**
@@ -727,6 +982,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyStorePasswordSecretId")
+    private final String keyStorePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka KeyStore password is stored.
+     * Note: When provided, 'keyStorePassword' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getKeyStorePasswordSecretId() {
+        return keyStorePasswordSecretId;
+    }
+
+    /**
      * The password for the cert inside of the KeyStore.
      * In case it differs from the KeyStore password, it should be provided.
      *
@@ -742,6 +1015,24 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
      **/
     public String getSslKeyPassword() {
         return sslKeyPassword;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPasswordSecretId")
+    private final String sslKeyPasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the kafka Ssl Key password is stored.
+     * Note: When provided, 'sslKeyPassword' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getSslKeyPasswordSecretId() {
+        return sslKeyPasswordSecretId;
     }
 
     /**
@@ -796,11 +1087,19 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", trustStore=").append(String.valueOf(this.trustStore));
+        sb.append(", trustStoreSecretId=").append(String.valueOf(this.trustStoreSecretId));
         sb.append(", trustStorePassword=").append("<redacted>");
+        sb.append(", trustStorePasswordSecretId=")
+                .append(String.valueOf(this.trustStorePasswordSecretId));
         sb.append(", keyStore=").append(String.valueOf(this.keyStore));
+        sb.append(", keyStoreSecretId=").append(String.valueOf(this.keyStoreSecretId));
         sb.append(", keyStorePassword=").append("<redacted>");
+        sb.append(", keyStorePasswordSecretId=")
+                .append(String.valueOf(this.keyStorePasswordSecretId));
         sb.append(", sslKeyPassword=").append("<redacted>");
+        sb.append(", sslKeyPasswordSecretId=").append(String.valueOf(this.sslKeyPasswordSecretId));
         sb.append(", consumerProperties=").append(String.valueOf(this.consumerProperties));
         sb.append(", producerProperties=").append(String.valueOf(this.producerProperties));
         sb.append(")");
@@ -823,11 +1122,20 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.trustStore, other.trustStore)
+                && java.util.Objects.equals(this.trustStoreSecretId, other.trustStoreSecretId)
                 && java.util.Objects.equals(this.trustStorePassword, other.trustStorePassword)
+                && java.util.Objects.equals(
+                        this.trustStorePasswordSecretId, other.trustStorePasswordSecretId)
                 && java.util.Objects.equals(this.keyStore, other.keyStore)
+                && java.util.Objects.equals(this.keyStoreSecretId, other.keyStoreSecretId)
                 && java.util.Objects.equals(this.keyStorePassword, other.keyStorePassword)
+                && java.util.Objects.equals(
+                        this.keyStorePasswordSecretId, other.keyStorePasswordSecretId)
                 && java.util.Objects.equals(this.sslKeyPassword, other.sslKeyPassword)
+                && java.util.Objects.equals(
+                        this.sslKeyPasswordSecretId, other.sslKeyPasswordSecretId)
                 && java.util.Objects.equals(this.consumerProperties, other.consumerProperties)
                 && java.util.Objects.equals(this.producerProperties, other.producerProperties)
                 && super.equals(other);
@@ -849,19 +1157,45 @@ public final class CreateKafkaConnectionDetails extends CreateConnectionDetails 
                         + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.trustStore == null ? 43 : this.trustStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStoreSecretId == null
+                                ? 43
+                                : this.trustStoreSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.trustStorePassword == null
                                 ? 43
                                 : this.trustStorePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.trustStorePasswordSecretId == null
+                                ? 43
+                                : this.trustStorePasswordSecretId.hashCode());
         result = (result * PRIME) + (this.keyStore == null ? 43 : this.keyStore.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.keyStoreSecretId == null ? 43 : this.keyStoreSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.keyStorePassword == null ? 43 : this.keyStorePassword.hashCode());
         result =
                 (result * PRIME)
+                        + (this.keyStorePasswordSecretId == null
+                                ? 43
+                                : this.keyStorePasswordSecretId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.sslKeyPassword == null ? 43 : this.sslKeyPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeyPasswordSecretId == null
+                                ? 43
+                                : this.sslKeyPasswordSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.consumerProperties == null

@@ -69,7 +69,8 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
         "serviceType",
         "timeCreated",
         "type",
-        "ipMtu"
+        "ipMtu",
+        "virtualCircuitRedundancyMetadata"
     })
     public VirtualCircuit(
             String bandwidthShapeName,
@@ -102,7 +103,8 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
             ServiceType serviceType,
             java.util.Date timeCreated,
             Type type,
-            VirtualCircuitIpMtu ipMtu) {
+            VirtualCircuitIpMtu ipMtu,
+            VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata) {
         super();
         this.bandwidthShapeName = bandwidthShapeName;
         this.bgpManagement = bgpManagement;
@@ -135,6 +137,7 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
         this.timeCreated = timeCreated;
         this.type = type;
         this.ipMtu = ipMtu;
+        this.virtualCircuitRedundancyMetadata = virtualCircuitRedundancyMetadata;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -762,6 +765,16 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuitRedundancyMetadata")
+        private VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata;
+
+        public Builder virtualCircuitRedundancyMetadata(
+                VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata) {
+            this.virtualCircuitRedundancyMetadata = virtualCircuitRedundancyMetadata;
+            this.__explicitlySet__.add("virtualCircuitRedundancyMetadata");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -798,7 +811,8 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
                             this.serviceType,
                             this.timeCreated,
                             this.type,
-                            this.ipMtu);
+                            this.ipMtu,
+                            this.virtualCircuitRedundancyMetadata);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -899,6 +913,9 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("ipMtu")) {
                 this.ipMtu(model.getIpMtu());
+            }
+            if (model.wasPropertyExplicitlySet("virtualCircuitRedundancyMetadata")) {
+                this.virtualCircuitRedundancyMetadata(model.getVirtualCircuitRedundancyMetadata());
             }
             return this;
         }
@@ -1926,6 +1943,13 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
         return ipMtu;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("virtualCircuitRedundancyMetadata")
+    private final VirtualCircuitRedundancyMetadata virtualCircuitRedundancyMetadata;
+
+    public VirtualCircuitRedundancyMetadata getVirtualCircuitRedundancyMetadata() {
+        return virtualCircuitRedundancyMetadata;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1971,6 +1995,8 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", ipMtu=").append(String.valueOf(this.ipMtu));
+        sb.append(", virtualCircuitRedundancyMetadata=")
+                .append(String.valueOf(this.virtualCircuitRedundancyMetadata));
         sb.append(")");
         return sb.toString();
     }
@@ -2017,6 +2043,9 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.ipMtu, other.ipMtu)
+                && java.util.Objects.equals(
+                        this.virtualCircuitRedundancyMetadata,
+                        other.virtualCircuitRedundancyMetadata)
                 && super.equals(other);
     }
 
@@ -2099,6 +2128,11 @@ public final class VirtualCircuit extends com.oracle.bmc.http.internal.Explicitl
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.type == null ? 43 : this.type.hashCode());
         result = (result * PRIME) + (this.ipMtu == null ? 43 : this.ipMtu.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.virtualCircuitRedundancyMetadata == null
+                                ? 43
+                                : this.virtualCircuitRedundancyMetadata.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

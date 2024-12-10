@@ -105,23 +105,31 @@ public class ListIncidentResourceTypesRequest
         return name;
     }
     /**
-     * The Customer Support Identifier (CSI) associated with the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
+     *
      */
     private String csi;
 
     /**
-     * The Customer Support Identifier (CSI) associated with the support account.
+     * The Customer Support Identifier (CSI) number associated with the support account.
+     * The CSI is optional for all support request types.
+     *
      */
     public String getCsi() {
         return csi;
     }
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID is mandatory for OCI Users and optional for Multicloud users.
+     *
      */
     private String ocid;
 
     /**
      * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+     * User OCID is mandatory for OCI Users and optional for Multicloud users.
+     *
      */
     public String getOcid() {
         return ocid;
@@ -139,11 +147,15 @@ public class ListIncidentResourceTypesRequest
     }
     /**
      * The OCID of identity domain.
+     * DomainID is mandatory if the user is part of Non Default Identity domain.
+     *
      */
     private String domainid;
 
     /**
      * The OCID of identity domain.
+     * DomainID is mandatory if the user is part of Non Default Identity domain.
+     *
      */
     public String getDomainid() {
         return domainid;
@@ -281,12 +293,16 @@ public class ListIncidentResourceTypesRequest
         }
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
+         *
          */
         private String csi = null;
 
         /**
-         * The Customer Support Identifier (CSI) associated with the support account.
+         * The Customer Support Identifier (CSI) number associated with the support account.
+         * The CSI is optional for all support request types.
+         *
          * @param csi the value to set
          * @return this builder instance
          */
@@ -297,11 +313,15 @@ public class ListIncidentResourceTypesRequest
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID is mandatory for OCI Users and optional for Multicloud users.
+         *
          */
         private String ocid = null;
 
         /**
          * User OCID for Oracle Identity Cloud Service (IDCS) users who also have a federated Oracle Cloud Infrastructure account.
+         * User OCID is mandatory for OCI Users and optional for Multicloud users.
+         *
          * @param ocid the value to set
          * @return this builder instance
          */
@@ -327,11 +347,15 @@ public class ListIncidentResourceTypesRequest
 
         /**
          * The OCID of identity domain.
+         * DomainID is mandatory if the user is part of Non Default Identity domain.
+         *
          */
         private String domainid = null;
 
         /**
          * The OCID of identity domain.
+         * DomainID is mandatory if the user is part of Non Default Identity domain.
+         *
          * @param domainid the value to set
          * @return this builder instance
          */

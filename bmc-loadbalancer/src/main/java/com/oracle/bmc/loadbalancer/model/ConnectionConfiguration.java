@@ -23,11 +23,19 @@ package com.oracle.bmc.loadbalancer.model;
 public final class ConnectionConfiguration
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"idleTimeout", "backendTcpProxyProtocolVersion"})
-    public ConnectionConfiguration(Long idleTimeout, Integer backendTcpProxyProtocolVersion) {
+    @java.beans.ConstructorProperties({
+        "idleTimeout",
+        "backendTcpProxyProtocolVersion",
+        "backendTcpProxyProtocolOptions"
+    })
+    public ConnectionConfiguration(
+            Long idleTimeout,
+            Integer backendTcpProxyProtocolVersion,
+            java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions) {
         super();
         this.idleTimeout = idleTimeout;
         this.backendTcpProxyProtocolVersion = backendTcpProxyProtocolVersion;
+        this.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -84,6 +92,27 @@ public final class ConnectionConfiguration
             this.__explicitlySet__.add("backendTcpProxyProtocolVersion");
             return this;
         }
+        /**
+         * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+         * Example: ["PP2_TYPE_AUTHORITY"]
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolOptions")
+        private java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions;
+
+        /**
+         * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+         * Example: ["PP2_TYPE_AUTHORITY"]
+         *
+         * @param backendTcpProxyProtocolOptions the value to set
+         * @return this builder
+         **/
+        public Builder backendTcpProxyProtocolOptions(
+                java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions) {
+            this.backendTcpProxyProtocolOptions = backendTcpProxyProtocolOptions;
+            this.__explicitlySet__.add("backendTcpProxyProtocolOptions");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -91,7 +120,9 @@ public final class ConnectionConfiguration
         public ConnectionConfiguration build() {
             ConnectionConfiguration model =
                     new ConnectionConfiguration(
-                            this.idleTimeout, this.backendTcpProxyProtocolVersion);
+                            this.idleTimeout,
+                            this.backendTcpProxyProtocolVersion,
+                            this.backendTcpProxyProtocolOptions);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +136,9 @@ public final class ConnectionConfiguration
             }
             if (model.wasPropertyExplicitlySet("backendTcpProxyProtocolVersion")) {
                 this.backendTcpProxyProtocolVersion(model.getBackendTcpProxyProtocolVersion());
+            }
+            if (model.wasPropertyExplicitlySet("backendTcpProxyProtocolOptions")) {
+                this.backendTcpProxyProtocolOptions(model.getBackendTcpProxyProtocolOptions());
             }
             return this;
         }
@@ -169,6 +203,70 @@ public final class ConnectionConfiguration
         return backendTcpProxyProtocolVersion;
     }
 
+    /**
+     **/
+    public enum BackendTcpProxyProtocolOptions {
+        Pp2TypeAuthority("PP2_TYPE_AUTHORITY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(BackendTcpProxyProtocolOptions.class);
+
+        private final String value;
+        private static java.util.Map<String, BackendTcpProxyProtocolOptions> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (BackendTcpProxyProtocolOptions v : BackendTcpProxyProtocolOptions.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        BackendTcpProxyProtocolOptions(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static BackendTcpProxyProtocolOptions create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'BackendTcpProxyProtocolOptions', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+     * Example: ["PP2_TYPE_AUTHORITY"]
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("backendTcpProxyProtocolOptions")
+    private final java.util.List<BackendTcpProxyProtocolOptions> backendTcpProxyProtocolOptions;
+
+    /**
+     * An array that represents the PPV2 Options that can be enabled on TCP Listeners.
+     * Example: ["PP2_TYPE_AUTHORITY"]
+     *
+     * @return the value
+     **/
+    public java.util.List<BackendTcpProxyProtocolOptions> getBackendTcpProxyProtocolOptions() {
+        return backendTcpProxyProtocolOptions;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -186,6 +284,8 @@ public final class ConnectionConfiguration
         sb.append("idleTimeout=").append(String.valueOf(this.idleTimeout));
         sb.append(", backendTcpProxyProtocolVersion=")
                 .append(String.valueOf(this.backendTcpProxyProtocolVersion));
+        sb.append(", backendTcpProxyProtocolOptions=")
+                .append(String.valueOf(this.backendTcpProxyProtocolOptions));
         sb.append(")");
         return sb.toString();
     }
@@ -203,6 +303,8 @@ public final class ConnectionConfiguration
         return java.util.Objects.equals(this.idleTimeout, other.idleTimeout)
                 && java.util.Objects.equals(
                         this.backendTcpProxyProtocolVersion, other.backendTcpProxyProtocolVersion)
+                && java.util.Objects.equals(
+                        this.backendTcpProxyProtocolOptions, other.backendTcpProxyProtocolOptions)
                 && super.equals(other);
     }
 
@@ -216,6 +318,11 @@ public final class ConnectionConfiguration
                         + (this.backendTcpProxyProtocolVersion == null
                                 ? 43
                                 : this.backendTcpProxyProtocolVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backendTcpProxyProtocolOptions == null
+                                ? 43
+                                : this.backendTcpProxyProtocolOptions.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

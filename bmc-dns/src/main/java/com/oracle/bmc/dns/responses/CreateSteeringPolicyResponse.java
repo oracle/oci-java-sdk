@@ -60,6 +60,23 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
     }
 
     /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    /**
      * The returned SteeringPolicy instance.
      */
     private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
@@ -78,6 +95,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         "eTag",
         "location",
         "opcRequestId",
+        "opcWorkRequestId",
         "steeringPolicy"
     })
     private CreateSteeringPolicyResponse(
@@ -86,11 +104,13 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
             String eTag,
             String location,
             String opcRequestId,
+            String opcWorkRequestId,
             com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy) {
         super(__httpStatusCode__, headers);
         this.eTag = eTag;
         this.location = location;
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
         this.steeringPolicy = steeringPolicy;
     }
 
@@ -167,6 +187,25 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         }
 
         /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * The returned SteeringPolicy instance.
          */
         private com.oracle.bmc.dns.model.SteeringPolicy steeringPolicy;
@@ -191,6 +230,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
             eTag(o.getETag());
             location(o.getLocation());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
             steeringPolicy(o.getSteeringPolicy());
 
             return this;
@@ -202,7 +242,13 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
          */
         public CreateSteeringPolicyResponse build() {
             return new CreateSteeringPolicyResponse(
-                    __httpStatusCode__, headers, eTag, location, opcRequestId, steeringPolicy);
+                    __httpStatusCode__,
+                    headers,
+                    eTag,
+                    location,
+                    opcRequestId,
+                    opcWorkRequestId,
+                    steeringPolicy);
         }
     }
 
@@ -222,6 +268,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         sb.append(",eTag=").append(String.valueOf(eTag));
         sb.append(",location=").append(String.valueOf(location));
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(",steeringPolicy=").append(String.valueOf(steeringPolicy));
         sb.append(")");
         return sb.toString();
@@ -241,6 +288,7 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
                 && java.util.Objects.equals(this.eTag, other.eTag)
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId)
                 && java.util.Objects.equals(this.steeringPolicy, other.steeringPolicy);
     }
 
@@ -251,6 +299,9 @@ public class CreateSteeringPolicyResponse extends com.oracle.bmc.responses.BmcRe
         result = (result * PRIME) + (this.eTag == null ? 43 : this.eTag.hashCode());
         result = (result * PRIME) + (this.location == null ? 43 : this.location.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         result =
                 (result * PRIME)
                         + (this.steeringPolicy == null ? 43 : this.steeringPolicy.hashCode());

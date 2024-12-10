@@ -135,13 +135,13 @@ public final class Ticket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The time when the ticket was created, in milliseconds since epoch time.
+         * The time when the ticket was created, in seconds since epoch time.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private Integer timeCreated;
 
         /**
-         * The time when the ticket was created, in milliseconds since epoch time.
+         * The time when the ticket was created, in seconds since epoch time.
          * @param timeCreated the value to set
          * @return this builder
          **/
@@ -151,13 +151,13 @@ public final class Ticket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
-         * The time when the ticket was updated, in milliseconds since epoch time.
+         * The time when the ticket was updated, in seconds since epoch time.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
         private Integer timeUpdated;
 
         /**
-         * The time when the ticket was updated, in milliseconds since epoch time.
+         * The time when the ticket was updated, in seconds since epoch time.
          * @param timeUpdated the value to set
          * @return this builder
          **/
@@ -385,13 +385,13 @@ public final class Ticket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The time when the ticket was created, in milliseconds since epoch time.
+     * The time when the ticket was created, in seconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final Integer timeCreated;
 
     /**
-     * The time when the ticket was created, in milliseconds since epoch time.
+     * The time when the ticket was created, in seconds since epoch time.
      * @return the value
      **/
     public Integer getTimeCreated() {
@@ -399,13 +399,13 @@ public final class Ticket extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
-     * The time when the ticket was updated, in milliseconds since epoch time.
+     * The time when the ticket was updated, in seconds since epoch time.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
     private final Integer timeUpdated;
 
     /**
-     * The time when the ticket was updated, in milliseconds since epoch time.
+     * The time when the ticket was updated, in seconds since epoch time.
      * @return the value
      **/
     public Integer getTimeUpdated() {

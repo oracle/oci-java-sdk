@@ -48,6 +48,7 @@ public final class ProtectedDatabaseSummary
         "healthDetails",
         "isReadOnlyResource",
         "metrics",
+        "subscriptionId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -71,6 +72,7 @@ public final class ProtectedDatabaseSummary
             String healthDetails,
             Boolean isReadOnlyResource,
             MetricsSummary metrics,
+            String subscriptionId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -93,6 +95,7 @@ public final class ProtectedDatabaseSummary
         this.healthDetails = healthDetails;
         this.isReadOnlyResource = isReadOnlyResource;
         this.metrics = metrics;
+        this.subscriptionId = subscriptionId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -401,6 +404,22 @@ public final class ProtectedDatabaseSummary
             return this;
         }
         /**
+         * The OCID of the cloud service subscription to which the protected database is linked.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The OCID of the cloud service subscription to which the protected database is linked.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
          * Example: {@code {"bar-key": "value"}}
          *
@@ -486,6 +505,7 @@ public final class ProtectedDatabaseSummary
                             this.healthDetails,
                             this.isReadOnlyResource,
                             this.metrics,
+                            this.subscriptionId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -550,6 +570,9 @@ public final class ProtectedDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("metrics")) {
                 this.metrics(model.getMetrics());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -839,6 +862,20 @@ public final class ProtectedDatabaseSummary
     }
 
     /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The OCID of the cloud service subscription to which the protected database is linked.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -924,6 +961,7 @@ public final class ProtectedDatabaseSummary
         sb.append(", healthDetails=").append(String.valueOf(this.healthDetails));
         sb.append(", isReadOnlyResource=").append(String.valueOf(this.isReadOnlyResource));
         sb.append(", metrics=").append(String.valueOf(this.metrics));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -960,6 +998,7 @@ public final class ProtectedDatabaseSummary
                 && java.util.Objects.equals(this.healthDetails, other.healthDetails)
                 && java.util.Objects.equals(this.isReadOnlyResource, other.isReadOnlyResource)
                 && java.util.Objects.equals(this.metrics, other.metrics)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -1012,6 +1051,9 @@ public final class ProtectedDatabaseSummary
                                 ? 43
                                 : this.isReadOnlyResource.hashCode());
         result = (result * PRIME) + (this.metrics == null ? 43 : this.metrics.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

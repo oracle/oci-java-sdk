@@ -33,6 +33,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         "clusterPlacementGroupId",
         "createVnicDetails",
         "definedTags",
+        "securityAttributes",
         "displayName",
         "extendedMetadata",
         "freeformTags",
@@ -51,7 +52,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
         "preferredMaintenanceAction",
         "instanceOptions",
         "availabilityConfig",
-        "preemptibleInstanceConfig"
+        "preemptibleInstanceConfig",
+        "licensingConfigs"
     })
     public InstanceConfigurationLaunchInstanceDetails(
             String availabilityDomain,
@@ -60,6 +62,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
             String clusterPlacementGroupId,
             InstanceConfigurationCreateVnicDetails createVnicDetails,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String displayName,
             java.util.Map<String, Object> extendedMetadata,
             java.util.Map<String, String> freeformTags,
@@ -78,7 +81,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
             PreferredMaintenanceAction preferredMaintenanceAction,
             InstanceConfigurationInstanceOptions instanceOptions,
             InstanceConfigurationAvailabilityConfig availabilityConfig,
-            PreemptibleInstanceConfigDetails preemptibleInstanceConfig) {
+            PreemptibleInstanceConfigDetails preemptibleInstanceConfig,
+            java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -86,6 +90,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.createVnicDetails = createVnicDetails;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.displayName = displayName;
         this.extendedMetadata = extendedMetadata;
         this.freeformTags = freeformTags;
@@ -105,6 +110,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         this.instanceOptions = instanceOptions;
         this.availabilityConfig = availabilityConfig;
         this.preemptibleInstanceConfig = preemptibleInstanceConfig;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -217,6 +223,29 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+         * <p>
+         * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -705,6 +734,23 @@ public final class InstanceConfigurationLaunchInstanceDetails
             this.__explicitlySet__.add("preemptibleInstanceConfig");
             return this;
         }
+        /**
+         * List of licensing configurations associated with target launch values.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with target launch values.
+         * @param licensingConfigs the value to set
+         * @return this builder
+         **/
+        public Builder licensingConfigs(
+                java.util.List<LaunchInstanceLicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -718,6 +764,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                             this.clusterPlacementGroupId,
                             this.createVnicDetails,
                             this.definedTags,
+                            this.securityAttributes,
                             this.displayName,
                             this.extendedMetadata,
                             this.freeformTags,
@@ -736,7 +783,8 @@ public final class InstanceConfigurationLaunchInstanceDetails
                             this.preferredMaintenanceAction,
                             this.instanceOptions,
                             this.availabilityConfig,
-                            this.preemptibleInstanceConfig);
+                            this.preemptibleInstanceConfig,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -762,6 +810,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
@@ -819,6 +870,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("preemptibleInstanceConfig")) {
                 this.preemptibleInstanceConfig(model.getPreemptibleInstanceConfig());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -930,6 +984,26 @@ public final class InstanceConfigurationLaunchInstanceDetails
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. This is unique to ZPR, and helps identify which resources are allowed to be accessed by what permission controls.
+     * <p>
+     * Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -1480,6 +1554,20 @@ public final class InstanceConfigurationLaunchInstanceDetails
         return preemptibleInstanceConfig;
     }
 
+    /**
+     * List of licensing configurations associated with target launch values.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LaunchInstanceLicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with target launch values.
+     * @return the value
+     **/
+    public java.util.List<LaunchInstanceLicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1501,6 +1589,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", createVnicDetails=").append(String.valueOf(this.createVnicDetails));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", extendedMetadata=").append(String.valueOf(this.extendedMetadata));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -1523,6 +1612,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
         sb.append(", availabilityConfig=").append(String.valueOf(this.availabilityConfig));
         sb.append(", preemptibleInstanceConfig=")
                 .append(String.valueOf(this.preemptibleInstanceConfig));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1545,6 +1635,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.createVnicDetails, other.createVnicDetails)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.extendedMetadata, other.extendedMetadata)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -1567,6 +1658,7 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 && java.util.Objects.equals(this.availabilityConfig, other.availabilityConfig)
                 && java.util.Objects.equals(
                         this.preemptibleInstanceConfig, other.preemptibleInstanceConfig)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1596,6 +1688,11 @@ public final class InstanceConfigurationLaunchInstanceDetails
                 (result * PRIME)
                         + (this.createVnicDetails == null ? 43 : this.createVnicDetails.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
                 (result * PRIME)
@@ -1643,6 +1740,9 @@ public final class InstanceConfigurationLaunchInstanceDetails
                         + (this.preemptibleInstanceConfig == null
                                 ? 43
                                 : this.preemptibleInstanceConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

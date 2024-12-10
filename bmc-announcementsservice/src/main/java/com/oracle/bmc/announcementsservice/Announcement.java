@@ -75,6 +75,20 @@ public interface Announcement extends AutoCloseable {
     GetAnnouncementResponse getAnnouncement(GetAnnouncementRequest request);
 
     /**
+     * Gets the compartment details of an announcement.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/announcementsservice/GetAnnouncementCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAnnouncementCompartment API.
+     */
+    GetAnnouncementCompartmentResponse getAnnouncementCompartment(
+            GetAnnouncementCompartmentRequest request);
+
+    /**
      * Gets information about whether a specific announcement was acknowledged by a user.
      * <p>
      * This call is subject to an Announcements limit that applies to the total number of requests across all read or write operations. Announcements might throttle this call to reject an otherwise valid request when the total rate of operations exceeds 20 requests per second for a given user. The service might also throttle this call to reject an otherwise valid request when the total rate of operations exceeds 100 requests per second for a given tenancy.

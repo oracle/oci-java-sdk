@@ -463,6 +463,57 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CascadingDeleteApplicationResponse>
+            cascadingDeleteApplication(
+                    CascadingDeleteApplicationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteApplicationRequest,
+                                    CascadingDeleteApplicationResponse>
+                            handler) {
+        LOG.trace("Called async cascadingDeleteApplication");
+        final CascadingDeleteApplicationRequest interceptedRequest =
+                CascadingDeleteApplicationConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CascadingDeleteApplicationConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "CascadingDeleteApplication",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CascadingDeleteApplication");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CascadingDeleteApplicationResponse>
+                transformer =
+                        CascadingDeleteApplicationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CascadingDeleteApplicationRequest, CascadingDeleteApplicationResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CascadingDeleteApplicationRequest,
+                                CascadingDeleteApplicationResponse>,
+                        java.util.concurrent.Future<CascadingDeleteApplicationResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CascadingDeleteApplicationRequest, CascadingDeleteApplicationResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeApplicationCompartmentResponse>
             changeApplicationCompartment(
                     ChangeApplicationCompartmentRequest request,
@@ -2147,6 +2198,53 @@ public class DataFlowAsyncClient implements DataFlowAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<StartSqlEndpointResponse> startSqlEndpoint(
+            StartSqlEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StartSqlEndpointRequest, StartSqlEndpointResponse>
+                    handler) {
+        LOG.trace("Called async startSqlEndpoint");
+        final StartSqlEndpointRequest interceptedRequest =
+                StartSqlEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StartSqlEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "StartSqlEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StartSqlEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, StartSqlEndpointResponse>
+                transformer =
+                        StartSqlEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StartSqlEndpointRequest, StartSqlEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StartSqlEndpointRequest, StartSqlEndpointResponse>,
+                        java.util.concurrent.Future<StartSqlEndpointResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StartSqlEndpointRequest, StartSqlEndpointResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<StopPoolResponse> stopPool(
             StopPoolRequest request,
             final com.oracle.bmc.responses.AsyncHandler<StopPoolRequest, StopPoolResponse>
@@ -2176,6 +2274,53 @@ public class DataFlowAsyncClient implements DataFlowAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     StopPoolRequest, StopPoolResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StopSqlEndpointResponse> stopSqlEndpoint(
+            StopSqlEndpointRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StopSqlEndpointRequest, StopSqlEndpointResponse>
+                    handler) {
+        LOG.trace("Called async stopSqlEndpoint");
+        final StopSqlEndpointRequest interceptedRequest =
+                StopSqlEndpointConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopSqlEndpointConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DataFlow",
+                        "StopSqlEndpoint",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/SqlEndpoint/StopSqlEndpoint");
+        final java.util.function.Function<javax.ws.rs.core.Response, StopSqlEndpointResponse>
+                transformer =
+                        StopSqlEndpointConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<StopSqlEndpointRequest, StopSqlEndpointResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StopSqlEndpointRequest, StopSqlEndpointResponse>,
+                        java.util.concurrent.Future<StopSqlEndpointResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StopSqlEndpointRequest, StopSqlEndpointResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

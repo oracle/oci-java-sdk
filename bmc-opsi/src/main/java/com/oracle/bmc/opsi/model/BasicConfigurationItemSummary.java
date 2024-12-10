@@ -7,7 +7,7 @@ package com.oracle.bmc.opsi.model;
 /**
  * Basic configuration item summary.
  * Value field contain the most preferred value for the specified scope (compartmentId), which could be from any of the ConfigurationItemValueSourceConfigurationType.
- * Default value field contains the default value from Operations Insights.
+ * Default value field contains the default value from Ops Insights.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -96,13 +96,13 @@ public final class BasicConfigurationItemSummary extends ConfigurationItemSummar
             return this;
         }
         /**
-         * List of contexts in Operations Insights where this configuration item is applicable.
+         * List of contexts in Ops Insights where this configuration item is applicable.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("applicableContexts")
         private java.util.List<String> applicableContexts;
 
         /**
-         * List of contexts in Operations Insights where this configuration item is applicable.
+         * List of contexts in Ops Insights where this configuration item is applicable.
          * @param applicableContexts the value to set
          * @return this builder
          **/
@@ -248,13 +248,13 @@ public final class BasicConfigurationItemSummary extends ConfigurationItemSummar
     }
 
     /**
-     * List of contexts in Operations Insights where this configuration item is applicable.
+     * List of contexts in Ops Insights where this configuration item is applicable.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("applicableContexts")
     private final java.util.List<String> applicableContexts;
 
     /**
-     * List of contexts in Operations Insights where this configuration item is applicable.
+     * List of contexts in Ops Insights where this configuration item is applicable.
      * @return the value
      **/
     public java.util.List<String> getApplicableContexts() {

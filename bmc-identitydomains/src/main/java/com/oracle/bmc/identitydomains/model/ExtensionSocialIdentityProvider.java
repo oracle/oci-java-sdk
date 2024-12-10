@@ -24,6 +24,10 @@ public final class ExtensionSocialIdentityProvider
     @Deprecated
     @java.beans.ConstructorProperties({
         "accountLinkingEnabled",
+        "autoRedirectEnabled",
+        "socialJitProvisioningEnabled",
+        "jitProvGroupStaticListEnabled",
+        "jitProvAssignedGroups",
         "registrationEnabled",
         "status",
         "authzUrl",
@@ -43,6 +47,10 @@ public final class ExtensionSocialIdentityProvider
     })
     public ExtensionSocialIdentityProvider(
             Boolean accountLinkingEnabled,
+            Boolean autoRedirectEnabled,
+            Boolean socialJitProvisioningEnabled,
+            Boolean jitProvGroupStaticListEnabled,
+            java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups,
             Boolean registrationEnabled,
             Status status,
             String authzUrl,
@@ -61,6 +69,10 @@ public final class ExtensionSocialIdentityProvider
             String idAttribute) {
         super();
         this.accountLinkingEnabled = accountLinkingEnabled;
+        this.autoRedirectEnabled = autoRedirectEnabled;
+        this.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
+        this.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
+        this.jitProvAssignedGroups = jitProvAssignedGroups;
         this.registrationEnabled = registrationEnabled;
         this.status = status;
         this.authzUrl = authzUrl;
@@ -119,6 +131,167 @@ public final class ExtensionSocialIdentityProvider
         public Builder accountLinkingEnabled(Boolean accountLinkingEnabled) {
             this.accountLinkingEnabled = accountLinkingEnabled;
             this.__explicitlySet__.add("accountLinkingEnabled");
+            return this;
+        }
+        /**
+         * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("autoRedirectEnabled")
+        private Boolean autoRedirectEnabled;
+
+        /**
+         * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         * @param autoRedirectEnabled the value to set
+         * @return this builder
+         **/
+        public Builder autoRedirectEnabled(Boolean autoRedirectEnabled) {
+            this.autoRedirectEnabled = autoRedirectEnabled;
+            this.__explicitlySet__.add("autoRedirectEnabled");
+            return this;
+        }
+        /**
+         * Whether Social JIT Provisioning is enabled
+         * <p>
+         **Added In:** 2307282043
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("socialJitProvisioningEnabled")
+        private Boolean socialJitProvisioningEnabled;
+
+        /**
+         * Whether Social JIT Provisioning is enabled
+         * <p>
+         **Added In:** 2307282043
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - idcsSearchable: true
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         * @param socialJitProvisioningEnabled the value to set
+         * @return this builder
+         **/
+        public Builder socialJitProvisioningEnabled(Boolean socialJitProvisioningEnabled) {
+            this.socialJitProvisioningEnabled = socialJitProvisioningEnabled;
+            this.__explicitlySet__.add("socialJitProvisioningEnabled");
+            return this;
+        }
+        /**
+         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jitProvGroupStaticListEnabled")
+        private Boolean jitProvGroupStaticListEnabled;
+
+        /**
+         * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: false
+         *  - idcsSearchable: false
+         *  - multiValued: false
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: boolean
+         *  - uniqueness: none
+         * @param jitProvGroupStaticListEnabled the value to set
+         * @return this builder
+         **/
+        public Builder jitProvGroupStaticListEnabled(Boolean jitProvGroupStaticListEnabled) {
+            this.jitProvGroupStaticListEnabled = jitProvGroupStaticListEnabled;
+            this.__explicitlySet__.add("jitProvGroupStaticListEnabled");
+            return this;
+        }
+        /**
+         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("jitProvAssignedGroups")
+        private java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups;
+
+        /**
+         * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+         * <p>
+         **Added In:** 2310202314
+         * <p>
+         **SCIM++ Properties:**
+         *  - idcsCompositeKey: [value]
+         *  - idcsSearchable: false
+         *  - multiValued: true
+         *  - mutability: readWrite
+         *  - required: false
+         *  - returned: default
+         *  - type: complex
+         *  - uniqueness: none
+         * @param jitProvAssignedGroups the value to set
+         * @return this builder
+         **/
+        public Builder jitProvAssignedGroups(
+                java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups) {
+            this.jitProvAssignedGroups = jitProvAssignedGroups;
+            this.__explicitlySet__.add("jitProvAssignedGroups");
             return this;
         }
         /**
@@ -770,6 +943,10 @@ public final class ExtensionSocialIdentityProvider
             ExtensionSocialIdentityProvider model =
                     new ExtensionSocialIdentityProvider(
                             this.accountLinkingEnabled,
+                            this.autoRedirectEnabled,
+                            this.socialJitProvisioningEnabled,
+                            this.jitProvGroupStaticListEnabled,
+                            this.jitProvAssignedGroups,
                             this.registrationEnabled,
                             this.status,
                             this.authzUrl,
@@ -796,6 +973,18 @@ public final class ExtensionSocialIdentityProvider
         public Builder copy(ExtensionSocialIdentityProvider model) {
             if (model.wasPropertyExplicitlySet("accountLinkingEnabled")) {
                 this.accountLinkingEnabled(model.getAccountLinkingEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("autoRedirectEnabled")) {
+                this.autoRedirectEnabled(model.getAutoRedirectEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("socialJitProvisioningEnabled")) {
+                this.socialJitProvisioningEnabled(model.getSocialJitProvisioningEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("jitProvGroupStaticListEnabled")) {
+                this.jitProvGroupStaticListEnabled(model.getJitProvGroupStaticListEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("jitProvAssignedGroups")) {
+                this.jitProvAssignedGroups(model.getJitProvAssignedGroups());
             }
             if (model.wasPropertyExplicitlySet("registrationEnabled")) {
                 this.registrationEnabled(model.getRegistrationEnabled());
@@ -896,6 +1085,158 @@ public final class ExtensionSocialIdentityProvider
      **/
     public Boolean getAccountLinkingEnabled() {
         return accountLinkingEnabled;
+    }
+
+    /**
+     * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("autoRedirectEnabled")
+    private final Boolean autoRedirectEnabled;
+
+    /**
+     * Whether social auto redirect is enabled. The IDP policy should be configured with only one Social IDP, and without username/password selected.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public Boolean getAutoRedirectEnabled() {
+        return autoRedirectEnabled;
+    }
+
+    /**
+     * Whether Social JIT Provisioning is enabled
+     * <p>
+     **Added In:** 2307282043
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("socialJitProvisioningEnabled")
+    private final Boolean socialJitProvisioningEnabled;
+
+    /**
+     * Whether Social JIT Provisioning is enabled
+     * <p>
+     **Added In:** 2307282043
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - idcsSearchable: true
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public Boolean getSocialJitProvisioningEnabled() {
+        return socialJitProvisioningEnabled;
+    }
+
+    /**
+     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jitProvGroupStaticListEnabled")
+    private final Boolean jitProvGroupStaticListEnabled;
+
+    /**
+     * Set to true to indicate Social JIT User Provisioning Groups should be assigned from a static list
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: false
+     *  - idcsSearchable: false
+     *  - multiValued: false
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: boolean
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public Boolean getJitProvGroupStaticListEnabled() {
+        return jitProvGroupStaticListEnabled;
+    }
+
+    /**
+     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("jitProvAssignedGroups")
+    private final java.util.List<IdentityProviderJitProvAssignedGroups> jitProvAssignedGroups;
+
+    /**
+     * Lists the groups each social JIT-provisioned user is a member. Just-in-Time user-provisioning applies this static list when jitProvGroupStaticListEnabled:true.
+     * <p>
+     **Added In:** 2310202314
+     * <p>
+     **SCIM++ Properties:**
+     *  - idcsCompositeKey: [value]
+     *  - idcsSearchable: false
+     *  - multiValued: true
+     *  - mutability: readWrite
+     *  - required: false
+     *  - returned: default
+     *  - type: complex
+     *  - uniqueness: none
+     * @return the value
+     **/
+    public java.util.List<IdentityProviderJitProvAssignedGroups> getJitProvAssignedGroups() {
+        return jitProvAssignedGroups;
     }
 
     /**
@@ -1580,6 +1921,12 @@ public final class ExtensionSocialIdentityProvider
         sb.append("ExtensionSocialIdentityProvider(");
         sb.append("super=").append(super.toString());
         sb.append("accountLinkingEnabled=").append(String.valueOf(this.accountLinkingEnabled));
+        sb.append(", autoRedirectEnabled=").append(String.valueOf(this.autoRedirectEnabled));
+        sb.append(", socialJitProvisioningEnabled=")
+                .append(String.valueOf(this.socialJitProvisioningEnabled));
+        sb.append(", jitProvGroupStaticListEnabled=")
+                .append(String.valueOf(this.jitProvGroupStaticListEnabled));
+        sb.append(", jitProvAssignedGroups=").append(String.valueOf(this.jitProvAssignedGroups));
         sb.append(", registrationEnabled=").append(String.valueOf(this.registrationEnabled));
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", authzUrl=").append(String.valueOf(this.authzUrl));
@@ -1612,6 +1959,12 @@ public final class ExtensionSocialIdentityProvider
 
         ExtensionSocialIdentityProvider other = (ExtensionSocialIdentityProvider) o;
         return java.util.Objects.equals(this.accountLinkingEnabled, other.accountLinkingEnabled)
+                && java.util.Objects.equals(this.autoRedirectEnabled, other.autoRedirectEnabled)
+                && java.util.Objects.equals(
+                        this.socialJitProvisioningEnabled, other.socialJitProvisioningEnabled)
+                && java.util.Objects.equals(
+                        this.jitProvGroupStaticListEnabled, other.jitProvGroupStaticListEnabled)
+                && java.util.Objects.equals(this.jitProvAssignedGroups, other.jitProvAssignedGroups)
                 && java.util.Objects.equals(this.registrationEnabled, other.registrationEnabled)
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.authzUrl, other.authzUrl)
@@ -1641,6 +1994,26 @@ public final class ExtensionSocialIdentityProvider
                         + (this.accountLinkingEnabled == null
                                 ? 43
                                 : this.accountLinkingEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autoRedirectEnabled == null
+                                ? 43
+                                : this.autoRedirectEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.socialJitProvisioningEnabled == null
+                                ? 43
+                                : this.socialJitProvisioningEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jitProvGroupStaticListEnabled == null
+                                ? 43
+                                : this.jitProvGroupStaticListEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.jitProvAssignedGroups == null
+                                ? 43
+                                : this.jitProvAssignedGroups.hashCode());
         result =
                 (result * PRIME)
                         + (this.registrationEnabled == null

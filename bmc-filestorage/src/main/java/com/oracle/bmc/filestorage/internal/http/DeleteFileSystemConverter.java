@@ -39,6 +39,22 @@ public class DeleteFileSystemConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getFileSystemId()));
 
+        if (request.getIsLockOverride() != null) {
+            target =
+                    target.queryParam(
+                            "isLockOverride",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsLockOverride()));
+        }
+
+        if (request.getCanDetachChildFileSystem() != null) {
+            target =
+                    target.queryParam(
+                            "canDetachChildFileSystem",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getCanDetachChildFileSystem()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

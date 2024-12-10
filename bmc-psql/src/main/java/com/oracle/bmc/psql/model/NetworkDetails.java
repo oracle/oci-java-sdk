@@ -19,13 +19,22 @@ package com.oracle.bmc.psql.model;
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
 public final class NetworkDetails extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"subnetId", "primaryDbEndpointPrivateIp", "nsgIds"})
+    @java.beans.ConstructorProperties({
+        "subnetId",
+        "primaryDbEndpointPrivateIp",
+        "nsgIds",
+        "isReaderEndpointEnabled"
+    })
     public NetworkDetails(
-            String subnetId, String primaryDbEndpointPrivateIp, java.util.List<String> nsgIds) {
+            String subnetId,
+            String primaryDbEndpointPrivateIp,
+            java.util.List<String> nsgIds,
+            Boolean isReaderEndpointEnabled) {
         super();
         this.subnetId = subnetId;
         this.primaryDbEndpointPrivateIp = primaryDbEndpointPrivateIp;
         this.nsgIds = nsgIds;
+        this.isReaderEndpointEnabled = isReaderEndpointEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -82,13 +91,33 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("nsgIds");
             return this;
         }
+        /**
+         * Specifies if the reader endpoint is enabled on the dbSystem.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
+        private Boolean isReaderEndpointEnabled;
+
+        /**
+         * Specifies if the reader endpoint is enabled on the dbSystem.
+         * @param isReaderEndpointEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isReaderEndpointEnabled(Boolean isReaderEndpointEnabled) {
+            this.isReaderEndpointEnabled = isReaderEndpointEnabled;
+            this.__explicitlySet__.add("isReaderEndpointEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public NetworkDetails build() {
             NetworkDetails model =
-                    new NetworkDetails(this.subnetId, this.primaryDbEndpointPrivateIp, this.nsgIds);
+                    new NetworkDetails(
+                            this.subnetId,
+                            this.primaryDbEndpointPrivateIp,
+                            this.nsgIds,
+                            this.isReaderEndpointEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -105,6 +134,9 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("isReaderEndpointEnabled")) {
+                this.isReaderEndpointEnabled(model.getIsReaderEndpointEnabled());
             }
             return this;
         }
@@ -167,6 +199,20 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
         return nsgIds;
     }
 
+    /**
+     * Specifies if the reader endpoint is enabled on the dbSystem.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isReaderEndpointEnabled")
+    private final Boolean isReaderEndpointEnabled;
+
+    /**
+     * Specifies if the reader endpoint is enabled on the dbSystem.
+     * @return the value
+     **/
+    public Boolean getIsReaderEndpointEnabled() {
+        return isReaderEndpointEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -185,6 +231,8 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", primaryDbEndpointPrivateIp=")
                 .append(String.valueOf(this.primaryDbEndpointPrivateIp));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", isReaderEndpointEnabled=")
+                .append(String.valueOf(this.isReaderEndpointEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -203,6 +251,8 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(
                         this.primaryDbEndpointPrivateIp, other.primaryDbEndpointPrivateIp)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(
+                        this.isReaderEndpointEnabled, other.isReaderEndpointEnabled)
                 && super.equals(other);
     }
 
@@ -217,6 +267,11 @@ public final class NetworkDetails extends com.oracle.bmc.http.internal.Explicitl
                                 ? 43
                                 : this.primaryDbEndpointPrivateIp.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isReaderEndpointEnabled == null
+                                ? 43
+                                : this.isReaderEndpointEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

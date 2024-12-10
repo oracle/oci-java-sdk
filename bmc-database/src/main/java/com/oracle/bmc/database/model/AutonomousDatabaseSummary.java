@@ -6,8 +6,8 @@ package com.oracle.bmc.database.model;
 
 /**
  * An Oracle Autonomous Database.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,11 +28,13 @@ public final class AutonomousDatabaseSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
         "lifecycleState",
         "lifecycleDetails",
         "kmsKeyId",
         "vaultId",
         "kmsKeyLifecycleDetails",
+        "encryptionKey",
         "kmsKeyVersionId",
         "dbName",
         "characterSet",
@@ -47,6 +49,7 @@ public final class AutonomousDatabaseSummary
         "timeDeletionOfFreeAutonomousDatabase",
         "backupConfig",
         "keyHistoryEntry",
+        "encryptionKeyHistoryEntry",
         "cpuCoreCount",
         "localAdgAutoFailoverMaxDataLossLimit",
         "computeModel",
@@ -62,6 +65,7 @@ public final class AutonomousDatabaseSummary
         "infrastructureType",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "timeUndeleted",
         "timeCreated",
         "displayName",
         "serviceConsoleUrl",
@@ -69,9 +73,11 @@ public final class AutonomousDatabaseSummary
         "connectionUrls",
         "publicConnectionUrls",
         "licenseModel",
+        "byolComputeCountLimit",
         "usedDataStorageSizeInTBs",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "subnetId",
         "nsgIds",
         "privateEndpoint",
@@ -140,16 +146,20 @@ public final class AutonomousDatabaseSummary
         "disasterRecoveryRegionType",
         "timeDisasterRecoveryRoleChanged",
         "remoteDisasterRecoveryConfiguration",
-        "netServicesArchitecture"
+        "netServicesArchitecture",
+        "availabilityDomain",
+        "clusterPlacementGroupId"
     })
     public AutonomousDatabaseSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
             LifecycleState lifecycleState,
             String lifecycleDetails,
             String kmsKeyId,
             String vaultId,
             String kmsKeyLifecycleDetails,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String kmsKeyVersionId,
             String dbName,
             String characterSet,
@@ -164,6 +174,7 @@ public final class AutonomousDatabaseSummary
             java.util.Date timeDeletionOfFreeAutonomousDatabase,
             AutonomousDatabaseBackupConfig backupConfig,
             java.util.List<AutonomousDatabaseKeyHistoryEntry> keyHistoryEntry,
+            java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry> encryptionKeyHistoryEntry,
             Integer cpuCoreCount,
             Integer localAdgAutoFailoverMaxDataLossLimit,
             ComputeModel computeModel,
@@ -179,6 +190,7 @@ public final class AutonomousDatabaseSummary
             InfrastructureType infrastructureType,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            java.util.Date timeUndeleted,
             java.util.Date timeCreated,
             String displayName,
             String serviceConsoleUrl,
@@ -186,9 +198,11 @@ public final class AutonomousDatabaseSummary
             AutonomousDatabaseConnectionUrls connectionUrls,
             AutonomousDatabaseConnectionUrls publicConnectionUrls,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Integer usedDataStorageSizeInTBs,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String subnetId,
             java.util.List<String> nsgIds,
             String privateEndpoint,
@@ -257,15 +271,19 @@ public final class AutonomousDatabaseSummary
             DisasterRecoveryRegionType disasterRecoveryRegionType,
             java.util.Date timeDisasterRecoveryRoleChanged,
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
-            NetServicesArchitecture netServicesArchitecture) {
+            NetServicesArchitecture netServicesArchitecture,
+            String availabilityDomain,
+            String clusterPlacementGroupId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
         this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
+        this.encryptionKey = encryptionKey;
         this.kmsKeyVersionId = kmsKeyVersionId;
         this.dbName = dbName;
         this.characterSet = characterSet;
@@ -280,6 +298,7 @@ public final class AutonomousDatabaseSummary
         this.timeDeletionOfFreeAutonomousDatabase = timeDeletionOfFreeAutonomousDatabase;
         this.backupConfig = backupConfig;
         this.keyHistoryEntry = keyHistoryEntry;
+        this.encryptionKeyHistoryEntry = encryptionKeyHistoryEntry;
         this.cpuCoreCount = cpuCoreCount;
         this.localAdgAutoFailoverMaxDataLossLimit = localAdgAutoFailoverMaxDataLossLimit;
         this.computeModel = computeModel;
@@ -295,6 +314,7 @@ public final class AutonomousDatabaseSummary
         this.infrastructureType = infrastructureType;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.timeUndeleted = timeUndeleted;
         this.timeCreated = timeCreated;
         this.displayName = displayName;
         this.serviceConsoleUrl = serviceConsoleUrl;
@@ -302,9 +322,11 @@ public final class AutonomousDatabaseSummary
         this.connectionUrls = connectionUrls;
         this.publicConnectionUrls = publicConnectionUrls;
         this.licenseModel = licenseModel;
+        this.byolComputeCountLimit = byolComputeCountLimit;
         this.usedDataStorageSizeInTBs = usedDataStorageSizeInTBs;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
         this.privateEndpoint = privateEndpoint;
@@ -374,6 +396,8 @@ public final class AutonomousDatabaseSummary
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
         this.remoteDisasterRecoveryConfiguration = remoteDisasterRecoveryConfiguration;
         this.netServicesArchitecture = netServicesArchitecture;
+        this.availabilityDomain = availabilityDomain;
+        this.clusterPlacementGroupId = clusterPlacementGroupId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -408,6 +432,22 @@ public final class AutonomousDatabaseSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -488,6 +528,15 @@ public final class AutonomousDatabaseSummary
         public Builder kmsKeyLifecycleDetails(String kmsKeyLifecycleDetails) {
             this.kmsKeyLifecycleDetails = kmsKeyLifecycleDetails;
             this.__explicitlySet__.add("kmsKeyLifecycleDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+        private AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+        public Builder encryptionKey(AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            this.__explicitlySet__.add("encryptionKey");
             return this;
         }
         /**
@@ -731,6 +780,25 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
+         * Key History Entry.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyHistoryEntry")
+        private java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+                encryptionKeyHistoryEntry;
+
+        /**
+         * Key History Entry.
+         * @param encryptionKeyHistoryEntry the value to set
+         * @return this builder
+         **/
+        public Builder encryptionKeyHistoryEntry(
+                java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+                        encryptionKeyHistoryEntry) {
+            this.encryptionKeyHistoryEntry = encryptionKeyHistoryEntry;
+            this.__explicitlySet__.add("encryptionKeyHistoryEntry");
+            return this;
+        }
+        /**
          * The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
          * <p>
          **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
@@ -787,7 +855,7 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-         * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+         * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
@@ -795,7 +863,7 @@ public final class AutonomousDatabaseSummary
 
         /**
          * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-         * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+         * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
          *
          * @param computeCount the value to set
          * @return this builder
@@ -891,12 +959,22 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * The quantity of data in the database, in terabytes.
+         * <p>
+         * The following points apply to Autonomous Databases on Serverless Infrastructure:
+         * - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+         * - To get the exact value of data storage size without rounding error, please see {@code dataStorageSizeInGBs} of Autonomous Database.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
         private Integer dataStorageSizeInTBs;
 
         /**
          * The quantity of data in the database, in terabytes.
+         * <p>
+         * The following points apply to Autonomous Databases on Serverless Infrastructure:
+         * - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+         * - To get the exact value of data storage size without rounding error, please see {@code dataStorageSizeInGBs} of Autonomous Database.
+         *
          * @param dataStorageSizeInTBs the value to set
          * @return this builder
          **/
@@ -925,12 +1003,18 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * The quantity of data in the database, in gigabytes.
+         * <p>
+         * For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and {@code dataStorageSizeInTBs} will be populated instead.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
          * The quantity of data in the database, in gigabytes.
+         * <p>
+         * For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and {@code dataStorageSizeInTBs} will be populated instead.
+         *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
          **/
@@ -957,12 +1041,14 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * The infrastructure type this resource belongs to.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
         private InfrastructureType infrastructureType;
 
         /**
          * The infrastructure type this resource belongs to.
+         *
          * @param infrastructureType the value to set
          * @return this builder
          **/
@@ -1003,6 +1089,24 @@ public final class AutonomousDatabaseSummary
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+        /**
+         * The date and time the Autonomous Database was most recently undeleted.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
+        private java.util.Date timeUndeleted;
+
+        /**
+         * The date and time the Autonomous Database was most recently undeleted.
+         *
+         * @param timeUndeleted the value to set
+         * @return this builder
+         **/
+        public Builder timeUndeleted(java.util.Date timeUndeleted) {
+            this.timeUndeleted = timeUndeleted;
+            this.__explicitlySet__.add("timeUndeleted");
             return this;
         }
         /**
@@ -1123,13 +1227,29 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * The amount of storage that has been used, in terabytes.
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+        private Float byolComputeCountLimit;
+
+        /**
+         * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+         * @param byolComputeCountLimit the value to set
+         * @return this builder
+         **/
+        public Builder byolComputeCountLimit(Float byolComputeCountLimit) {
+            this.byolComputeCountLimit = byolComputeCountLimit;
+            this.__explicitlySet__.add("byolComputeCountLimit");
+            return this;
+        }
+        /**
+         * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
         private Integer usedDataStorageSizeInTBs;
 
         /**
-         * The amount of storage that has been used, in terabytes.
+         * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
          * @param usedDataStorageSizeInTBs the value to set
          * @return this builder
          **/
@@ -1181,6 +1301,29 @@ public final class AutonomousDatabaseSummary
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
             return this;
         }
         /**
@@ -1382,14 +1525,14 @@ public final class AutonomousDatabaseSummary
             return this;
         }
         /**
-         * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
         private Boolean isDevTier;
 
         /**
-         * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+         * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
          *
          * @param isDevTier the value to set
          * @return this builder
@@ -2475,18 +2618,52 @@ public final class AutonomousDatabaseSummary
         }
         /**
          * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
         private NetServicesArchitecture netServicesArchitecture;
 
         /**
          * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+         *
          * @param netServicesArchitecture the value to set
          * @return this builder
          **/
         public Builder netServicesArchitecture(NetServicesArchitecture netServicesArchitecture) {
             this.netServicesArchitecture = netServicesArchitecture;
             this.__explicitlySet__.add("netServicesArchitecture");
+            return this;
+        }
+        /**
+         * The availability domain where the Autonomous Database Serverless instance is located.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+        private String availabilityDomain;
+
+        /**
+         * The availability domain where the Autonomous Database Serverless instance is located.
+         * @param availabilityDomain the value to set
+         * @return this builder
+         **/
+        public Builder availabilityDomain(String availabilityDomain) {
+            this.availabilityDomain = availabilityDomain;
+            this.__explicitlySet__.add("availabilityDomain");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+        private String clusterPlacementGroupId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+         * @param clusterPlacementGroupId the value to set
+         * @return this builder
+         **/
+        public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
+            this.clusterPlacementGroupId = clusterPlacementGroupId;
+            this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
 
@@ -2498,11 +2675,13 @@ public final class AutonomousDatabaseSummary
                     new AutonomousDatabaseSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
                             this.lifecycleState,
                             this.lifecycleDetails,
                             this.kmsKeyId,
                             this.vaultId,
                             this.kmsKeyLifecycleDetails,
+                            this.encryptionKey,
                             this.kmsKeyVersionId,
                             this.dbName,
                             this.characterSet,
@@ -2517,6 +2696,7 @@ public final class AutonomousDatabaseSummary
                             this.timeDeletionOfFreeAutonomousDatabase,
                             this.backupConfig,
                             this.keyHistoryEntry,
+                            this.encryptionKeyHistoryEntry,
                             this.cpuCoreCount,
                             this.localAdgAutoFailoverMaxDataLossLimit,
                             this.computeModel,
@@ -2532,6 +2712,7 @@ public final class AutonomousDatabaseSummary
                             this.infrastructureType,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.timeUndeleted,
                             this.timeCreated,
                             this.displayName,
                             this.serviceConsoleUrl,
@@ -2539,9 +2720,11 @@ public final class AutonomousDatabaseSummary
                             this.connectionUrls,
                             this.publicConnectionUrls,
                             this.licenseModel,
+                            this.byolComputeCountLimit,
                             this.usedDataStorageSizeInTBs,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.subnetId,
                             this.nsgIds,
                             this.privateEndpoint,
@@ -2610,7 +2793,9 @@ public final class AutonomousDatabaseSummary
                             this.disasterRecoveryRegionType,
                             this.timeDisasterRecoveryRoleChanged,
                             this.remoteDisasterRecoveryConfiguration,
-                            this.netServicesArchitecture);
+                            this.netServicesArchitecture,
+                            this.availabilityDomain,
+                            this.clusterPlacementGroupId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2624,6 +2809,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -2639,6 +2827,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("kmsKeyLifecycleDetails")) {
                 this.kmsKeyLifecycleDetails(model.getKmsKeyLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKey")) {
+                this.encryptionKey(model.getEncryptionKey());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
                 this.kmsKeyVersionId(model.getKmsKeyVersionId());
@@ -2683,6 +2874,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("keyHistoryEntry")) {
                 this.keyHistoryEntry(model.getKeyHistoryEntry());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyHistoryEntry")) {
+                this.encryptionKeyHistoryEntry(model.getEncryptionKeyHistoryEntry());
             }
             if (model.wasPropertyExplicitlySet("cpuCoreCount")) {
                 this.cpuCoreCount(model.getCpuCoreCount());
@@ -2730,6 +2924,9 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
             }
+            if (model.wasPropertyExplicitlySet("timeUndeleted")) {
+                this.timeUndeleted(model.getTimeUndeleted());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
             }
@@ -2751,6 +2948,9 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
+            if (model.wasPropertyExplicitlySet("byolComputeCountLimit")) {
+                this.byolComputeCountLimit(model.getByolComputeCountLimit());
+            }
             if (model.wasPropertyExplicitlySet("usedDataStorageSizeInTBs")) {
                 this.usedDataStorageSizeInTBs(model.getUsedDataStorageSizeInTBs());
             }
@@ -2759,6 +2959,9 @@ public final class AutonomousDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -2969,6 +3172,12 @@ public final class AutonomousDatabaseSummary
             if (model.wasPropertyExplicitlySet("netServicesArchitecture")) {
                 this.netServicesArchitecture(model.getNetServicesArchitecture());
             }
+            if (model.wasPropertyExplicitlySet("availabilityDomain")) {
+                this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
+                this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
             return this;
         }
     }
@@ -3010,6 +3219,20 @@ public final class AutonomousDatabaseSummary
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -3147,6 +3370,13 @@ public final class AutonomousDatabaseSummary
      **/
     public String getKmsKeyLifecycleDetails() {
         return kmsKeyLifecycleDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+    private final AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+    public AutonomousDatabaseEncryptionKeyDetails getEncryptionKey() {
+        return encryptionKey;
     }
 
     /**
@@ -3358,6 +3588,22 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
+     * Key History Entry.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyHistoryEntry")
+    private final java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+            encryptionKeyHistoryEntry;
+
+    /**
+     * Key History Entry.
+     * @return the value
+     **/
+    public java.util.List<AutonomousDatabaseEncryptionKeyHistoryEntry>
+            getEncryptionKeyHistoryEntry() {
+        return encryptionKeyHistoryEntry;
+    }
+
+    /**
      * The number of CPU cores to be made available to the database. When the ECPU is selected, the value for cpuCoreCount is 0. For Autonomous Database on Dedicated Exadata infrastructure, the maximum number of cores is determined by the infrastructure shape. See [Characteristics of Infrastructure Shapes](https://www.oracle.com/pls/topic/lookup?ctx=en/cloud/paas/autonomous-database&id=ATPFG-GUID-B0F033C1-CC5A-42F0-B2E7-3CECFEDA1FD1) for shape details.
      * <p>
      **Note:** This parameter cannot be used with the {@code ocpuCount} parameter.
@@ -3455,7 +3701,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
@@ -3463,7 +3709,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
      *
      * @return the value
      **/
@@ -3549,12 +3795,22 @@ public final class AutonomousDatabaseSummary
 
     /**
      * The quantity of data in the database, in terabytes.
+     * <p>
+     * The following points apply to Autonomous Databases on Serverless Infrastructure:
+     * - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+     * - To get the exact value of data storage size without rounding error, please see {@code dataStorageSizeInGBs} of Autonomous Database.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInTBs")
     private final Integer dataStorageSizeInTBs;
 
     /**
      * The quantity of data in the database, in terabytes.
+     * <p>
+     * The following points apply to Autonomous Databases on Serverless Infrastructure:
+     * - This is an integer field whose value remains null when the data size is in GBs and cannot be converted to TBs (by dividing the GB value by 1024) without rounding error.
+     * - To get the exact value of data storage size without rounding error, please see {@code dataStorageSizeInGBs} of Autonomous Database.
+     *
      * @return the value
      **/
     public Integer getDataStorageSizeInTBs() {
@@ -3579,12 +3835,18 @@ public final class AutonomousDatabaseSummary
 
     /**
      * The quantity of data in the database, in gigabytes.
+     * <p>
+     * For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and {@code dataStorageSizeInTBs} will be populated instead.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
      * The quantity of data in the database, in gigabytes.
+     * <p>
+     * For Autonomous Transaction Processing databases using ECPUs on Serverless Infrastructure, this value is always populated. In all the other cases, this value will be null and {@code dataStorageSizeInTBs} will be populated instead.
+     *
      * @return the value
      **/
     public Integer getDataStorageSizeInGBs() {
@@ -3607,6 +3869,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * The infrastructure type this resource belongs to.
+     *
      **/
     public enum InfrastructureType {
         Cloud("CLOUD"),
@@ -3655,12 +3918,14 @@ public final class AutonomousDatabaseSummary
     };
     /**
      * The infrastructure type this resource belongs to.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("infrastructureType")
     private final InfrastructureType infrastructureType;
 
     /**
      * The infrastructure type this resource belongs to.
+     *
      * @return the value
      **/
     public InfrastructureType getInfrastructureType() {
@@ -3695,6 +3960,22 @@ public final class AutonomousDatabaseSummary
      **/
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
+    }
+
+    /**
+     * The date and time the Autonomous Database was most recently undeleted.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUndeleted")
+    private final java.util.Date timeUndeleted;
+
+    /**
+     * The date and time the Autonomous Database was most recently undeleted.
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeUndeleted() {
+        return timeUndeleted;
     }
 
     /**
@@ -3855,13 +4136,27 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+    private final Float byolComputeCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     * @return the value
+     **/
+    public Float getByolComputeCountLimit() {
+        return byolComputeCountLimit;
+    }
+
+    /**
+     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("usedDataStorageSizeInTBs")
     private final Integer usedDataStorageSizeInTBs;
 
     /**
-     * The amount of storage that has been used, in terabytes.
+     * The amount of storage that has been used for Autonomous Databases in dedicated infrastructure, in terabytes.
      * @return the value
      **/
     public Integer getUsedDataStorageSizeInTBs() {
@@ -3906,6 +4201,26 @@ public final class AutonomousDatabaseSummary
      **/
     public java.util.Map<String, java.util.Map<String, Object>> getDefinedTags() {
         return definedTags;
+    }
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
     }
 
     /**
@@ -4147,14 +4462,14 @@ public final class AutonomousDatabaseSummary
     }
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
     private final Boolean isDevTier;
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      *
      * @return the value
      **/
@@ -5715,6 +6030,7 @@ public final class AutonomousDatabaseSummary
 
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     *
      **/
     public enum NetServicesArchitecture {
         Dedicated("DEDICATED"),
@@ -5763,16 +6079,46 @@ public final class AutonomousDatabaseSummary
     };
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("netServicesArchitecture")
     private final NetServicesArchitecture netServicesArchitecture;
 
     /**
      * Enabling SHARED server architecture enables a database server to allow many client processes to share very few server processes, thereby increasing the number of supported users.
+     *
      * @return the value
      **/
     public NetServicesArchitecture getNetServicesArchitecture() {
         return netServicesArchitecture;
+    }
+
+    /**
+     * The availability domain where the Autonomous Database Serverless instance is located.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("availabilityDomain")
+    private final String availabilityDomain;
+
+    /**
+     * The availability domain where the Autonomous Database Serverless instance is located.
+     * @return the value
+     **/
+    public String getAvailabilityDomain() {
+        return availabilityDomain;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("clusterPlacementGroupId")
+    private final String clusterPlacementGroupId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the cluster placement group of the Autonomous Serverless Database.
+     * @return the value
+     **/
+    public String getClusterPlacementGroupId() {
+        return clusterPlacementGroupId;
     }
 
     @Override
@@ -5791,11 +6137,13 @@ public final class AutonomousDatabaseSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", kmsKeyLifecycleDetails=").append(String.valueOf(this.kmsKeyLifecycleDetails));
+        sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
         sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
@@ -5813,6 +6161,8 @@ public final class AutonomousDatabaseSummary
                 .append(String.valueOf(this.timeDeletionOfFreeAutonomousDatabase));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
         sb.append(", keyHistoryEntry=").append(String.valueOf(this.keyHistoryEntry));
+        sb.append(", encryptionKeyHistoryEntry=")
+                .append(String.valueOf(this.encryptionKeyHistoryEntry));
         sb.append(", cpuCoreCount=").append(String.valueOf(this.cpuCoreCount));
         sb.append(", localAdgAutoFailoverMaxDataLossLimit=")
                 .append(String.valueOf(this.localAdgAutoFailoverMaxDataLossLimit));
@@ -5834,6 +6184,7 @@ public final class AutonomousDatabaseSummary
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", timeUndeleted=").append(String.valueOf(this.timeUndeleted));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", serviceConsoleUrl=").append(String.valueOf(this.serviceConsoleUrl));
@@ -5841,10 +6192,12 @@ public final class AutonomousDatabaseSummary
         sb.append(", connectionUrls=").append(String.valueOf(this.connectionUrls));
         sb.append(", publicConnectionUrls=").append(String.valueOf(this.publicConnectionUrls));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", usedDataStorageSizeInTBs=")
                 .append(String.valueOf(this.usedDataStorageSizeInTBs));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
@@ -5939,6 +6292,9 @@ public final class AutonomousDatabaseSummary
                 .append(String.valueOf(this.remoteDisasterRecoveryConfiguration));
         sb.append(", netServicesArchitecture=")
                 .append(String.valueOf(this.netServicesArchitecture));
+        sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", clusterPlacementGroupId=")
+                .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(")");
         return sb.toString();
     }
@@ -5955,12 +6311,14 @@ public final class AutonomousDatabaseSummary
         AutonomousDatabaseSummary other = (AutonomousDatabaseSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(
                         this.kmsKeyLifecycleDetails, other.kmsKeyLifecycleDetails)
+                && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
                 && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(this.dbName, other.dbName)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
@@ -5981,6 +6339,8 @@ public final class AutonomousDatabaseSummary
                         other.timeDeletionOfFreeAutonomousDatabase)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
                 && java.util.Objects.equals(this.keyHistoryEntry, other.keyHistoryEntry)
+                && java.util.Objects.equals(
+                        this.encryptionKeyHistoryEntry, other.encryptionKeyHistoryEntry)
                 && java.util.Objects.equals(this.cpuCoreCount, other.cpuCoreCount)
                 && java.util.Objects.equals(
                         this.localAdgAutoFailoverMaxDataLossLimit,
@@ -6003,6 +6363,7 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(this.timeUndeleted, other.timeUndeleted)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.serviceConsoleUrl, other.serviceConsoleUrl)
@@ -6010,10 +6371,12 @@ public final class AutonomousDatabaseSummary
                 && java.util.Objects.equals(this.connectionUrls, other.connectionUrls)
                 && java.util.Objects.equals(this.publicConnectionUrls, other.publicConnectionUrls)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
                         this.usedDataStorageSizeInTBs, other.usedDataStorageSizeInTBs)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
@@ -6113,6 +6476,9 @@ public final class AutonomousDatabaseSummary
                         other.remoteDisasterRecoveryConfiguration)
                 && java.util.Objects.equals(
                         this.netServicesArchitecture, other.netServicesArchitecture)
+                && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(
+                        this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && super.equals(other);
     }
 
@@ -6126,6 +6492,9 @@ public final class AutonomousDatabaseSummary
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
+        result =
+                (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result =
                 (result * PRIME)
@@ -6137,6 +6506,9 @@ public final class AutonomousDatabaseSummary
                         + (this.kmsKeyLifecycleDetails == null
                                 ? 43
                                 : this.kmsKeyLifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
         result =
                 (result * PRIME)
                         + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
@@ -6179,6 +6551,11 @@ public final class AutonomousDatabaseSummary
         result =
                 (result * PRIME)
                         + (this.keyHistoryEntry == null ? 43 : this.keyHistoryEntry.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyHistoryEntry == null
+                                ? 43
+                                : this.encryptionKeyHistoryEntry.hashCode());
         result = (result * PRIME) + (this.cpuCoreCount == null ? 43 : this.cpuCoreCount.hashCode());
         result =
                 (result * PRIME)
@@ -6232,6 +6609,9 @@ public final class AutonomousDatabaseSummary
                         + (this.autonomousContainerDatabaseId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeUndeleted == null ? 43 : this.timeUndeleted.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result =
@@ -6251,11 +6631,21 @@ public final class AutonomousDatabaseSummary
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
                 (result * PRIME)
+                        + (this.byolComputeCountLimit == null
+                                ? 43
+                                : this.byolComputeCountLimit.hashCode());
+        result =
+                (result * PRIME)
                         + (this.usedDataStorageSizeInTBs == null
                                 ? 43
                                 : this.usedDataStorageSizeInTBs.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
         result =
@@ -6521,6 +6911,16 @@ public final class AutonomousDatabaseSummary
                         + (this.netServicesArchitecture == null
                                 ? 43
                                 : this.netServicesArchitecture.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.availabilityDomain == null
+                                ? 43
+                                : this.availabilityDomain.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.clusterPlacementGroupId == null
+                                ? 43
+                                : this.clusterPlacementGroupId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

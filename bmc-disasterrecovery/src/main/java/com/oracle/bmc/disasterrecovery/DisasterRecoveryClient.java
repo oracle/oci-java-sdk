@@ -1454,6 +1454,46 @@ public class DisasterRecoveryClient implements DisasterRecovery {
     }
 
     @Override
+    public RefreshDrPlanResponse refreshDrPlan(RefreshDrPlanRequest request) {
+        LOG.trace("Called refreshDrPlan");
+        final RefreshDrPlanRequest interceptedRequest =
+                RefreshDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RefreshDrPlanConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "RefreshDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/RefreshDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, RefreshDrPlanResponse> transformer =
+                RefreshDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getRefreshDrPlanDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ResumeDrPlanExecutionResponse resumeDrPlanExecution(
             ResumeDrPlanExecutionRequest request) {
         LOG.trace("Called resumeDrPlanExecution");
@@ -1699,6 +1739,46 @@ public class DisasterRecoveryClient implements DisasterRecovery {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateDrProtectionGroupRoleDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public VerifyDrPlanResponse verifyDrPlan(VerifyDrPlanRequest request) {
+        LOG.trace("Called verifyDrPlan");
+        final VerifyDrPlanRequest interceptedRequest =
+                VerifyDrPlanConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                VerifyDrPlanConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DisasterRecovery",
+                        "VerifyDrPlan",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/VerifyDrPlan");
+        java.util.function.Function<javax.ws.rs.core.Response, VerifyDrPlanResponse> transformer =
+                VerifyDrPlanConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getVerifyDrPlanDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

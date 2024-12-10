@@ -6,13 +6,13 @@ package com.oracle.bmc.database.model;
 
 /**
  * Details to create an Oracle Autonomous Database.
- * <p>
- **Notes:**
+ *
+ * **Notes:**
  * - To specify OCPU core count, you must use either {@code ocpuCount} or {@code cpuCoreCount}. You cannot use both parameters at the same time. For Autonomous Database Serverless instances, {@code ocpuCount} is not used.
  * - To specify a storage allocation, you must use  either {@code dataStorageSizeInGBs} or {@code dataStorageSizeInTBs}.
  * - See the individual parameter discriptions for more information on the OCPU and storage value parameters.
- * <p>
- **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
+ *
+ * **Warning:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -31,6 +31,10 @@ package com.oracle.bmc.database.model;
 )
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UndeleteAutonomousDatabaseDetails.class,
+        name = "UNDELETE_ADB"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousDatabaseCloneDetails.class,
         name = "DATABASE"
     ),
@@ -47,12 +51,12 @@ package com.oracle.bmc.database.model;
         name = "CROSS_REGION_DISASTER_RECOVERY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = CreateCrossTenancyDisasterRecoveryDetails.class,
-        name = "CROSS_TENANCY_DISASTER_RECOVERY"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateAutonomousDatabaseFromBackupTimestampDetails.class,
         name = "BACKUP_FROM_TIMESTAMP"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = CreateCrossTenancyDisasterRecoveryDetails.class,
+        name = "CROSS_TENANCY_DISASTER_RECOVERY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CreateCrossRegionAutonomousDatabaseDataGuardDetails.class,
@@ -68,6 +72,7 @@ public class CreateAutonomousDatabaseBase
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "subscriptionId",
         "compartmentId",
         "characterSet",
         "ncharacterSet",
@@ -83,9 +88,11 @@ public class CreateAutonomousDatabaseBase
         "isFreeTier",
         "kmsKeyId",
         "vaultId",
+        "encryptionKey",
         "adminPassword",
         "displayName",
         "licenseModel",
+        "byolComputeCountLimit",
         "isPreviewVersionWithServiceTermsAccepted",
         "isAutoScalingEnabled",
         "isDevTier",
@@ -103,6 +110,7 @@ public class CreateAutonomousDatabaseBase
         "privateEndpointLabel",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "privateEndpointIp",
         "dbVersion",
         "customerContacts",
@@ -118,6 +126,7 @@ public class CreateAutonomousDatabaseBase
         "secretVersionNumber"
     })
     protected CreateAutonomousDatabaseBase(
+            String subscriptionId,
             String compartmentId,
             String characterSet,
             String ncharacterSet,
@@ -133,9 +142,11 @@ public class CreateAutonomousDatabaseBase
             Boolean isFreeTier,
             String kmsKeyId,
             String vaultId,
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
             String adminPassword,
             String displayName,
             LicenseModel licenseModel,
+            Float byolComputeCountLimit,
             Boolean isPreviewVersionWithServiceTermsAccepted,
             Boolean isAutoScalingEnabled,
             Boolean isDevTier,
@@ -153,6 +164,7 @@ public class CreateAutonomousDatabaseBase
             String privateEndpointLabel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateEndpointIp,
             String dbVersion,
             java.util.List<CustomerContact> customerContacts,
@@ -167,6 +179,7 @@ public class CreateAutonomousDatabaseBase
             String secretId,
             Integer secretVersionNumber) {
         super();
+        this.subscriptionId = subscriptionId;
         this.compartmentId = compartmentId;
         this.characterSet = characterSet;
         this.ncharacterSet = ncharacterSet;
@@ -182,9 +195,11 @@ public class CreateAutonomousDatabaseBase
         this.isFreeTier = isFreeTier;
         this.kmsKeyId = kmsKeyId;
         this.vaultId = vaultId;
+        this.encryptionKey = encryptionKey;
         this.adminPassword = adminPassword;
         this.displayName = displayName;
         this.licenseModel = licenseModel;
+        this.byolComputeCountLimit = byolComputeCountLimit;
         this.isPreviewVersionWithServiceTermsAccepted = isPreviewVersionWithServiceTermsAccepted;
         this.isAutoScalingEnabled = isAutoScalingEnabled;
         this.isDevTier = isDevTier;
@@ -202,6 +217,7 @@ public class CreateAutonomousDatabaseBase
         this.privateEndpointLabel = privateEndpointLabel;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.privateEndpointIp = privateEndpointIp;
         this.dbVersion = dbVersion;
         this.customerContacts = customerContacts;
@@ -215,6 +231,20 @@ public class CreateAutonomousDatabaseBase
         this.dbToolsDetails = dbToolsDetails;
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -374,7 +404,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("computeCount")
@@ -382,7 +412,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * The compute amount (CPUs) available to the database. Minimum and maximum values depend on the compute model and whether the database is an Autonomous Database Serverless instance or an Autonomous Database on Dedicated Exadata Infrastructure.
-     * For an Autonomous Database Serverless instance, the 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
+     * The 'ECPU' compute model requires a minimum value of one, for databases in the elastic resource pool and minimum value of two, otherwise. Required when using the {@code computeModel} parameter. When using {@code cpuCoreCount} parameter, it is an error to specify computeCount to a non-null value. Providing {@code computeModel} and {@code computeCount} is the preferred method for both OCPU and ECPU.
      *
      * @return the value
      **/
@@ -593,6 +623,13 @@ public class CreateAutonomousDatabaseBase
         return vaultId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKey")
+    private final AutonomousDatabaseEncryptionKeyDetails encryptionKey;
+
+    public AutonomousDatabaseEncryptionKeyDetails getEncryptionKey() {
+        return encryptionKey;
+    }
+
     /**
      * **Important** The {@code adminPassword} or {@code secretId} must be specified for all Autonomous Databases except for refreshable clones. The password must be between 12 and 30 characters long, and must contain at least 1 uppercase, 1 lowercase, and 1 numeric character. It cannot contain the double quote symbol (") or the username "admin", regardless of casing.
      * <p>
@@ -695,6 +732,20 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("byolComputeCountLimit")
+    private final Float byolComputeCountLimit;
+
+    /**
+     * The maximum number of CPUs allowed with a Bring Your Own License (BYOL), including those used for auto-scaling, disaster recovery, tools, etc. Any CPU usage above this limit is considered as License Included and billed.
+     * @return the value
+     **/
+    public Float getByolComputeCountLimit() {
+        return byolComputeCountLimit;
+    }
+
+    /**
      * If set to {@code TRUE}, indicates that an Autonomous Database preview version is being provisioned, and that the preview version's terms of service have been accepted. Note that preview version software is only available for Autonomous Database Serverless instances (https://docs.oracle.com/en/cloud/paas/autonomous-database/serverless/).
      *
      **/
@@ -727,14 +778,14 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isDevTier")
     private final Boolean isDevTier;
 
     /**
-     * Autonomous Database for Developers are free Autonomous Databases that developers can use to build and test new applications.With Autonomous these database instancess instances, you can try new Autonomous Database features for free and apply them to ongoing or new development projects. Developer database comes with limited resources and is, therefore, not suitable for large-scale testing and production deployments. When you need more compute or storage resources, you can transition to a paid database licensing by cloning your developer database into a regular Autonomous Database. See [Autonomous Database documentation](https://docs.oracle.com/en/cloud/paas/autonomous-database/dedicated/eddjo/index.html) for more details.
+     * Autonomous Database for Developers are fixed-shape Autonomous Databases that developers can use to build and test new applications. On Serverless, these are low-cost and billed per instance, on Dedicated and Cloud@Customer there is no additional cost to create Developer databases. Developer databases come with limited resources and is not intended for large-scale testing and production deployments. When you need more compute or storage resources, you may upgrade to a full paid production database.
      *
      * @return the value
      **/
@@ -1065,6 +1116,26 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * The private endpoint Ip address for the resource.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointIp")
@@ -1338,7 +1409,8 @@ public class CreateAutonomousDatabaseBase
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("CreateAutonomousDatabaseBase(");
         sb.append("super=").append(super.toString());
-        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append("subscriptionId=").append(String.valueOf(this.subscriptionId));
+        sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", characterSet=").append(String.valueOf(this.characterSet));
         sb.append(", ncharacterSet=").append(String.valueOf(this.ncharacterSet));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -1354,9 +1426,11 @@ public class CreateAutonomousDatabaseBase
         sb.append(", isFreeTier=").append(String.valueOf(this.isFreeTier));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
+        sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
+        sb.append(", byolComputeCountLimit=").append(String.valueOf(this.byolComputeCountLimit));
         sb.append(", isPreviewVersionWithServiceTermsAccepted=")
                 .append(String.valueOf(this.isPreviewVersionWithServiceTermsAccepted));
         sb.append(", isAutoScalingEnabled=").append(String.valueOf(this.isAutoScalingEnabled));
@@ -1378,6 +1452,7 @@ public class CreateAutonomousDatabaseBase
         sb.append(", privateEndpointLabel=").append(String.valueOf(this.privateEndpointLabel));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateEndpointIp=").append(String.valueOf(this.privateEndpointIp));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
@@ -1408,7 +1483,8 @@ public class CreateAutonomousDatabaseBase
         }
 
         CreateAutonomousDatabaseBase other = (CreateAutonomousDatabaseBase) o;
-        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+        return java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
+                && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.characterSet, other.characterSet)
                 && java.util.Objects.equals(this.ncharacterSet, other.ncharacterSet)
                 && java.util.Objects.equals(this.dbName, other.dbName)
@@ -1424,9 +1500,11 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.isFreeTier, other.isFreeTier)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
+                && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
+                && java.util.Objects.equals(this.byolComputeCountLimit, other.byolComputeCountLimit)
                 && java.util.Objects.equals(
                         this.isPreviewVersionWithServiceTermsAccepted,
                         other.isPreviewVersionWithServiceTermsAccepted)
@@ -1450,6 +1528,7 @@ public class CreateAutonomousDatabaseBase
                 && java.util.Objects.equals(this.privateEndpointLabel, other.privateEndpointLabel)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateEndpointIp, other.privateEndpointIp)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
@@ -1474,6 +1553,9 @@ public class CreateAutonomousDatabaseBase
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
@@ -1507,9 +1589,17 @@ public class CreateAutonomousDatabaseBase
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result =
                 (result * PRIME)
+                        + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
+        result =
+                (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.byolComputeCountLimit == null
+                                ? 43
+                                : this.byolComputeCountLimit.hashCode());
         result =
                 (result * PRIME)
                         + (this.isPreviewVersionWithServiceTermsAccepted == null
@@ -1569,6 +1659,11 @@ public class CreateAutonomousDatabaseBase
                                 : this.privateEndpointLabel.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result =
                 (result * PRIME)
                         + (this.privateEndpointIp == null ? 43 : this.privateEndpointIp.hashCode());
@@ -1633,6 +1728,7 @@ public class CreateAutonomousDatabaseBase
         Database("DATABASE"),
         BackupFromId("BACKUP_FROM_ID"),
         BackupFromTimestamp("BACKUP_FROM_TIMESTAMP"),
+        UndeleteAdb("UNDELETE_ADB"),
         CloneToRefreshable("CLONE_TO_REFRESHABLE"),
         CrossRegionDataguard("CROSS_REGION_DATAGUARD"),
         CrossRegionDisasterRecovery("CROSS_REGION_DISASTER_RECOVERY"),

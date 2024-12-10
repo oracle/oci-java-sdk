@@ -37,6 +37,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
         "status",
         "expiresOn",
         "userName",
+        "password",
         "user",
         "urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser"
     })
@@ -58,6 +59,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
             Status status,
             String expiresOn,
             String userName,
+            String password,
             SmtpCredentialUser user,
             ExtensionSelfChangeUser urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser) {
         super();
@@ -78,6 +80,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
         this.status = status;
         this.expiresOn = expiresOn;
         this.userName = userName;
+        this.password = password;
         this.user = user;
         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser =
                 urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser;
@@ -611,6 +614,38 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("userName");
             return this;
         }
+        /**
+         * Password
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - type: string
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - idcsSensitive: hash_sc
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("password")
+        private String password;
+
+        /**
+         * Password
+         * <p>
+         **SCIM++ Properties:**
+         *  - caseExact: true
+         *  - type: string
+         *  - mutability: readOnly
+         *  - required: false
+         *  - returned: default
+         *  - idcsSensitive: hash_sc
+         * @param password the value to set
+         * @return this builder
+         **/
+        public Builder password(String password) {
+            this.password = password;
+            this.__explicitlySet__.add("password");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("user")
         private SmtpCredentialUser user;
@@ -656,6 +691,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
                             this.status,
                             this.expiresOn,
                             this.userName,
+                            this.password,
                             this.user,
                             this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -716,6 +752,9 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
             }
             if (model.wasPropertyExplicitlySet("userName")) {
                 this.userName(model.getUserName());
+            }
+            if (model.wasPropertyExplicitlySet("password")) {
+                this.password(model.getPassword());
             }
             if (model.wasPropertyExplicitlySet("user")) {
                 this.user(model.getUser());
@@ -1290,6 +1329,36 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
         return userName;
     }
 
+    /**
+     * Password
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - type: string
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - idcsSensitive: hash_sc
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("password")
+    private final String password;
+
+    /**
+     * Password
+     * <p>
+     **SCIM++ Properties:**
+     *  - caseExact: true
+     *  - type: string
+     *  - mutability: readOnly
+     *  - required: false
+     *  - returned: default
+     *  - idcsSensitive: hash_sc
+     * @return the value
+     **/
+    public String getPassword() {
+        return password;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("user")
     private final SmtpCredentialUser user;
 
@@ -1338,6 +1407,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
         sb.append(", status=").append(String.valueOf(this.status));
         sb.append(", expiresOn=").append(String.valueOf(this.expiresOn));
         sb.append(", userName=").append(String.valueOf(this.userName));
+        sb.append(", password=").append(String.valueOf(this.password));
         sb.append(", user=").append(String.valueOf(this.user));
         sb.append(", urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser=")
                 .append(
@@ -1376,6 +1446,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(this.status, other.status)
                 && java.util.Objects.equals(this.expiresOn, other.expiresOn)
                 && java.util.Objects.equals(this.userName, other.userName)
+                && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.user, other.user)
                 && java.util.Objects.equals(
                         this.urnIetfParamsScimSchemasOracleIdcsExtensionSelfChangeUser,
@@ -1422,6 +1493,7 @@ public final class SmtpCredential extends com.oracle.bmc.http.internal.Explicitl
         result = (result * PRIME) + (this.status == null ? 43 : this.status.hashCode());
         result = (result * PRIME) + (this.expiresOn == null ? 43 : this.expiresOn.hashCode());
         result = (result * PRIME) + (this.userName == null ? 43 : this.userName.hashCode());
+        result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
         result = (result * PRIME) + (this.user == null ? 43 : this.user.hashCode());
         result =
                 (result * PRIME)

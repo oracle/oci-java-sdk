@@ -32,7 +32,8 @@ public final class CreateVbInstanceDetails
         "isVisualBuilderEnabled",
         "customEndpoint",
         "alternateCustomEndpoints",
-        "consumptionModel"
+        "consumptionModel",
+        "networkEndpointDetails"
     })
     public CreateVbInstanceDetails(
             String displayName,
@@ -44,7 +45,8 @@ public final class CreateVbInstanceDetails
             Boolean isVisualBuilderEnabled,
             CreateCustomEndpointDetails customEndpoint,
             java.util.List<CreateCustomEndpointDetails> alternateCustomEndpoints,
-            ConsumptionModel consumptionModel) {
+            ConsumptionModel consumptionModel,
+            NetworkEndpointDetails networkEndpointDetails) {
         super();
         this.displayName = displayName;
         this.compartmentId = compartmentId;
@@ -56,6 +58,7 @@ public final class CreateVbInstanceDetails
         this.customEndpoint = customEndpoint;
         this.alternateCustomEndpoints = alternateCustomEndpoints;
         this.consumptionModel = consumptionModel;
+        this.networkEndpointDetails = networkEndpointDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -232,6 +235,15 @@ public final class CreateVbInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -247,7 +259,8 @@ public final class CreateVbInstanceDetails
                             this.isVisualBuilderEnabled,
                             this.customEndpoint,
                             this.alternateCustomEndpoints,
-                            this.consumptionModel);
+                            this.consumptionModel,
+                            this.networkEndpointDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -285,6 +298,9 @@ public final class CreateVbInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("consumptionModel")) {
                 this.consumptionModel(model.getConsumptionModel());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
             }
             return this;
         }
@@ -486,6 +502,13 @@ public final class CreateVbInstanceDetails
         return consumptionModel;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -511,6 +534,7 @@ public final class CreateVbInstanceDetails
         sb.append(", alternateCustomEndpoints=")
                 .append(String.valueOf(this.alternateCustomEndpoints));
         sb.append(", consumptionModel=").append(String.valueOf(this.consumptionModel));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -537,6 +561,8 @@ public final class CreateVbInstanceDetails
                 && java.util.Objects.equals(
                         this.alternateCustomEndpoints, other.alternateCustomEndpoints)
                 && java.util.Objects.equals(this.consumptionModel, other.consumptionModel)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
                 && super.equals(other);
     }
 
@@ -568,6 +594,11 @@ public final class CreateVbInstanceDetails
         result =
                 (result * PRIME)
                         + (this.consumptionModel == null ? 43 : this.consumptionModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

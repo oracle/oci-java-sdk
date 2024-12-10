@@ -34,13 +34,13 @@ public final class MirrorRepositoryConfig
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Upstream git repository connection identifer.
+         * Upstream git repository connection identifier.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
         private String connectorId;
 
         /**
-         * Upstream git repository connection identifer.
+         * Upstream git repository connection identifier.
          * @param connectorId the value to set
          * @return this builder
          **/
@@ -115,13 +115,13 @@ public final class MirrorRepositoryConfig
     }
 
     /**
-     * Upstream git repository connection identifer.
+     * Upstream git repository connection identifier.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectorId")
     private final String connectorId;
 
     /**
-     * Upstream git repository connection identifer.
+     * Upstream git repository connection identifier.
      * @return the value
      **/
     public String getConnectorId() {

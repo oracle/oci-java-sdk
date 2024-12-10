@@ -36,6 +36,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "alertPolicyRuleKey",
+        "alertPolicyRuleName",
         "featureDetails",
         "freeformTags",
         "definedTags"
@@ -57,6 +59,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             AlertLifecycleState lifecycleState,
+            String alertPolicyRuleKey,
+            String alertPolicyRuleName,
             java.util.Map<String, java.util.Map<String, Object>> featureDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -77,6 +81,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.alertPolicyRuleKey = alertPolicyRuleKey;
+        this.alertPolicyRuleName = alertPolicyRuleName;
         this.featureDetails = featureDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -341,6 +347,38 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * The key of the rule of alert policy that triggered alert.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleKey")
+        private String alertPolicyRuleKey;
+
+        /**
+         * The key of the rule of alert policy that triggered alert.
+         * @param alertPolicyRuleKey the value to set
+         * @return this builder
+         **/
+        public Builder alertPolicyRuleKey(String alertPolicyRuleKey) {
+            this.alertPolicyRuleKey = alertPolicyRuleKey;
+            this.__explicitlySet__.add("alertPolicyRuleKey");
+            return this;
+        }
+        /**
+         * The display name of the rule of alert policy that triggered alert.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleName")
+        private String alertPolicyRuleName;
+
+        /**
+         * The display name of the rule of alert policy that triggered alert.
+         * @param alertPolicyRuleName the value to set
+         * @return this builder
+         **/
+        public Builder alertPolicyRuleName(String alertPolicyRuleName) {
+            this.alertPolicyRuleName = alertPolicyRuleName;
+            this.__explicitlySet__.add("alertPolicyRuleName");
+            return this;
+        }
+        /**
          * Map that contains maps of values.
          *  Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -429,6 +467,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.alertPolicyRuleKey,
+                            this.alertPolicyRuleName,
                             this.featureDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -487,6 +527,12 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("alertPolicyRuleKey")) {
+                this.alertPolicyRuleKey(model.getAlertPolicyRuleKey());
+            }
+            if (model.wasPropertyExplicitlySet("alertPolicyRuleName")) {
+                this.alertPolicyRuleName(model.getAlertPolicyRuleName());
             }
             if (model.wasPropertyExplicitlySet("featureDetails")) {
                 this.featureDetails(model.getFeatureDetails());
@@ -785,6 +831,34 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * The key of the rule of alert policy that triggered alert.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleKey")
+    private final String alertPolicyRuleKey;
+
+    /**
+     * The key of the rule of alert policy that triggered alert.
+     * @return the value
+     **/
+    public String getAlertPolicyRuleKey() {
+        return alertPolicyRuleKey;
+    }
+
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("alertPolicyRuleName")
+    private final String alertPolicyRuleName;
+
+    /**
+     * The display name of the rule of alert policy that triggered alert.
+     * @return the value
+     **/
+    public String getAlertPolicyRuleName() {
+        return alertPolicyRuleName;
+    }
+
+    /**
      * Map that contains maps of values.
      *  Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -872,6 +946,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", alertPolicyRuleKey=").append(String.valueOf(this.alertPolicyRuleKey));
+        sb.append(", alertPolicyRuleName=").append(String.valueOf(this.alertPolicyRuleName));
         sb.append(", featureDetails=").append(String.valueOf(this.featureDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -905,6 +981,8 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.alertPolicyRuleKey, other.alertPolicyRuleKey)
+                && java.util.Objects.equals(this.alertPolicyRuleName, other.alertPolicyRuleName)
                 && java.util.Objects.equals(this.featureDetails, other.featureDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -939,6 +1017,16 @@ public final class AlertSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alertPolicyRuleKey == null
+                                ? 43
+                                : this.alertPolicyRuleKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.alertPolicyRuleName == null
+                                ? 43
+                                : this.alertPolicyRuleName.hashCode());
         result =
                 (result * PRIME)
                         + (this.featureDetails == null ? 43 : this.featureDetails.hashCode());

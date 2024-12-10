@@ -29,6 +29,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         "maximumSize",
         "standbySize",
         "shapeName",
+        "shapeConfig",
+        "useDedicatedVmHost",
         "isStorageEnabled",
         "storageSizeInGBs",
         "storageBackupPolicyId",
@@ -36,6 +38,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         "availabilityPolicy",
         "image",
         "networkConfiguration",
+        "sessionLifecycleActions",
         "timeStartScheduled",
         "timeStopScheduled",
         "contactDetails",
@@ -43,7 +46,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         "availabilityDomain",
         "freeformTags",
         "definedTags",
-        "nsgIds"
+        "nsgIds",
+        "privateAccessDetails"
     })
     public DesktopPool(
             String id,
@@ -55,6 +59,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             Integer maximumSize,
             Integer standbySize,
             String shapeName,
+            DesktopPoolShapeConfig shapeConfig,
+            UseDedicatedVmHost useDedicatedVmHost,
             Boolean isStorageEnabled,
             Integer storageSizeInGBs,
             String storageBackupPolicyId,
@@ -62,6 +68,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             DesktopAvailabilityPolicy availabilityPolicy,
             DesktopImage image,
             DesktopNetworkConfiguration networkConfiguration,
+            DesktopSessionLifecycleActions sessionLifecycleActions,
             java.util.Date timeStartScheduled,
             java.util.Date timeStopScheduled,
             String contactDetails,
@@ -69,7 +76,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             String availabilityDomain,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.List<String> nsgIds) {
+            java.util.List<String> nsgIds,
+            DesktopPoolPrivateAccessDetails privateAccessDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -80,6 +88,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         this.maximumSize = maximumSize;
         this.standbySize = standbySize;
         this.shapeName = shapeName;
+        this.shapeConfig = shapeConfig;
+        this.useDedicatedVmHost = useDedicatedVmHost;
         this.isStorageEnabled = isStorageEnabled;
         this.storageSizeInGBs = storageSizeInGBs;
         this.storageBackupPolicyId = storageBackupPolicyId;
@@ -87,6 +97,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         this.availabilityPolicy = availabilityPolicy;
         this.image = image;
         this.networkConfiguration = networkConfiguration;
+        this.sessionLifecycleActions = sessionLifecycleActions;
         this.timeStartScheduled = timeStartScheduled;
         this.timeStopScheduled = timeStopScheduled;
         this.contactDetails = contactDetails;
@@ -95,6 +106,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.nsgIds = nsgIds;
+        this.privateAccessDetails = privateAccessDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -247,6 +259,31 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             this.__explicitlySet__.add("shapeName");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+        private DesktopPoolShapeConfig shapeConfig;
+
+        public Builder shapeConfig(DesktopPoolShapeConfig shapeConfig) {
+            this.shapeConfig = shapeConfig;
+            this.__explicitlySet__.add("shapeConfig");
+            return this;
+        }
+        /**
+         * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("useDedicatedVmHost")
+        private UseDedicatedVmHost useDedicatedVmHost;
+
+        /**
+         * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+         * @param useDedicatedVmHost the value to set
+         * @return this builder
+         **/
+        public Builder useDedicatedVmHost(UseDedicatedVmHost useDedicatedVmHost) {
+            this.useDedicatedVmHost = useDedicatedVmHost;
+            this.__explicitlySet__.add("useDedicatedVmHost");
+            return this;
+        }
         /**
          * Indicates whether storage is enabled for the desktop pool.
          **/
@@ -329,6 +366,16 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         public Builder networkConfiguration(DesktopNetworkConfiguration networkConfiguration) {
             this.networkConfiguration = networkConfiguration;
             this.__explicitlySet__.add("networkConfiguration");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sessionLifecycleActions")
+        private DesktopSessionLifecycleActions sessionLifecycleActions;
+
+        public Builder sessionLifecycleActions(
+                DesktopSessionLifecycleActions sessionLifecycleActions) {
+            this.sessionLifecycleActions = sessionLifecycleActions;
+            this.__explicitlySet__.add("sessionLifecycleActions");
             return this;
         }
         /**
@@ -459,19 +506,28 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * A list of network security groups for the desktop pool.
+         * A list of network security groups for the network.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
         private java.util.List<String> nsgIds;
 
         /**
-         * A list of network security groups for the desktop pool.
+         * A list of network security groups for the network.
          * @param nsgIds the value to set
          * @return this builder
          **/
         public Builder nsgIds(java.util.List<String> nsgIds) {
             this.nsgIds = nsgIds;
             this.__explicitlySet__.add("nsgIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("privateAccessDetails")
+        private DesktopPoolPrivateAccessDetails privateAccessDetails;
+
+        public Builder privateAccessDetails(DesktopPoolPrivateAccessDetails privateAccessDetails) {
+            this.privateAccessDetails = privateAccessDetails;
+            this.__explicitlySet__.add("privateAccessDetails");
             return this;
         }
 
@@ -490,6 +546,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.maximumSize,
                             this.standbySize,
                             this.shapeName,
+                            this.shapeConfig,
+                            this.useDedicatedVmHost,
                             this.isStorageEnabled,
                             this.storageSizeInGBs,
                             this.storageBackupPolicyId,
@@ -497,6 +555,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.availabilityPolicy,
                             this.image,
                             this.networkConfiguration,
+                            this.sessionLifecycleActions,
                             this.timeStartScheduled,
                             this.timeStopScheduled,
                             this.contactDetails,
@@ -504,7 +563,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.availabilityDomain,
                             this.freeformTags,
                             this.definedTags,
-                            this.nsgIds);
+                            this.nsgIds,
+                            this.privateAccessDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -540,6 +600,12 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             if (model.wasPropertyExplicitlySet("shapeName")) {
                 this.shapeName(model.getShapeName());
             }
+            if (model.wasPropertyExplicitlySet("shapeConfig")) {
+                this.shapeConfig(model.getShapeConfig());
+            }
+            if (model.wasPropertyExplicitlySet("useDedicatedVmHost")) {
+                this.useDedicatedVmHost(model.getUseDedicatedVmHost());
+            }
             if (model.wasPropertyExplicitlySet("isStorageEnabled")) {
                 this.isStorageEnabled(model.getIsStorageEnabled());
             }
@@ -560,6 +626,9 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("networkConfiguration")) {
                 this.networkConfiguration(model.getNetworkConfiguration());
+            }
+            if (model.wasPropertyExplicitlySet("sessionLifecycleActions")) {
+                this.sessionLifecycleActions(model.getSessionLifecycleActions());
             }
             if (model.wasPropertyExplicitlySet("timeStartScheduled")) {
                 this.timeStartScheduled(model.getTimeStartScheduled());
@@ -584,6 +653,9 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
+            }
+            if (model.wasPropertyExplicitlySet("privateAccessDetails")) {
+                this.privateAccessDetails(model.getPrivateAccessDetails());
             }
             return this;
         }
@@ -730,6 +802,76 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         return shapeName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("shapeConfig")
+    private final DesktopPoolShapeConfig shapeConfig;
+
+    public DesktopPoolShapeConfig getShapeConfig() {
+        return shapeConfig;
+    }
+
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     **/
+    public enum UseDedicatedVmHost {
+        True("TRUE"),
+        False("FALSE"),
+        Auto("AUTO"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(UseDedicatedVmHost.class);
+
+        private final String value;
+        private static java.util.Map<String, UseDedicatedVmHost> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (UseDedicatedVmHost v : UseDedicatedVmHost.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        UseDedicatedVmHost(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static UseDedicatedVmHost create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'UseDedicatedVmHost', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("useDedicatedVmHost")
+    private final UseDedicatedVmHost useDedicatedVmHost;
+
+    /**
+     * Indicates whether the desktop pool uses dedicated virtual machine hosts.
+     * @return the value
+     **/
+    public UseDedicatedVmHost getUseDedicatedVmHost() {
+        return useDedicatedVmHost;
+    }
+
     /**
      * Indicates whether storage is enabled for the desktop pool.
      **/
@@ -798,6 +940,13 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
 
     public DesktopNetworkConfiguration getNetworkConfiguration() {
         return networkConfiguration;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sessionLifecycleActions")
+    private final DesktopSessionLifecycleActions sessionLifecycleActions;
+
+    public DesktopSessionLifecycleActions getSessionLifecycleActions() {
+        return sessionLifecycleActions;
     }
 
     /**
@@ -913,17 +1062,24 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the network.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nsgIds")
     private final java.util.List<String> nsgIds;
 
     /**
-     * A list of network security groups for the desktop pool.
+     * A list of network security groups for the network.
      * @return the value
      **/
     public java.util.List<String> getNsgIds() {
         return nsgIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("privateAccessDetails")
+    private final DesktopPoolPrivateAccessDetails privateAccessDetails;
+
+    public DesktopPoolPrivateAccessDetails getPrivateAccessDetails() {
+        return privateAccessDetails;
     }
 
     @Override
@@ -949,6 +1105,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", maximumSize=").append(String.valueOf(this.maximumSize));
         sb.append(", standbySize=").append(String.valueOf(this.standbySize));
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
+        sb.append(", shapeConfig=").append(String.valueOf(this.shapeConfig));
+        sb.append(", useDedicatedVmHost=").append(String.valueOf(this.useDedicatedVmHost));
         sb.append(", isStorageEnabled=").append(String.valueOf(this.isStorageEnabled));
         sb.append(", storageSizeInGBs=").append(String.valueOf(this.storageSizeInGBs));
         sb.append(", storageBackupPolicyId=").append(String.valueOf(this.storageBackupPolicyId));
@@ -956,6 +1114,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", availabilityPolicy=").append(String.valueOf(this.availabilityPolicy));
         sb.append(", image=").append(String.valueOf(this.image));
         sb.append(", networkConfiguration=").append(String.valueOf(this.networkConfiguration));
+        sb.append(", sessionLifecycleActions=")
+                .append(String.valueOf(this.sessionLifecycleActions));
         sb.append(", timeStartScheduled=").append(String.valueOf(this.timeStartScheduled));
         sb.append(", timeStopScheduled=").append(String.valueOf(this.timeStopScheduled));
         sb.append(", contactDetails=").append(String.valueOf(this.contactDetails));
@@ -964,6 +1124,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", privateAccessDetails=").append(String.valueOf(this.privateAccessDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -987,6 +1148,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.maximumSize, other.maximumSize)
                 && java.util.Objects.equals(this.standbySize, other.standbySize)
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
+                && java.util.Objects.equals(this.shapeConfig, other.shapeConfig)
+                && java.util.Objects.equals(this.useDedicatedVmHost, other.useDedicatedVmHost)
                 && java.util.Objects.equals(this.isStorageEnabled, other.isStorageEnabled)
                 && java.util.Objects.equals(this.storageSizeInGBs, other.storageSizeInGBs)
                 && java.util.Objects.equals(this.storageBackupPolicyId, other.storageBackupPolicyId)
@@ -994,6 +1157,8 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.availabilityPolicy, other.availabilityPolicy)
                 && java.util.Objects.equals(this.image, other.image)
                 && java.util.Objects.equals(this.networkConfiguration, other.networkConfiguration)
+                && java.util.Objects.equals(
+                        this.sessionLifecycleActions, other.sessionLifecycleActions)
                 && java.util.Objects.equals(this.timeStartScheduled, other.timeStartScheduled)
                 && java.util.Objects.equals(this.timeStopScheduled, other.timeStopScheduled)
                 && java.util.Objects.equals(this.contactDetails, other.contactDetails)
@@ -1002,6 +1167,7 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.privateAccessDetails, other.privateAccessDetails)
                 && super.equals(other);
     }
 
@@ -1022,6 +1188,12 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.maximumSize == null ? 43 : this.maximumSize.hashCode());
         result = (result * PRIME) + (this.standbySize == null ? 43 : this.standbySize.hashCode());
         result = (result * PRIME) + (this.shapeName == null ? 43 : this.shapeName.hashCode());
+        result = (result * PRIME) + (this.shapeConfig == null ? 43 : this.shapeConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.useDedicatedVmHost == null
+                                ? 43
+                                : this.useDedicatedVmHost.hashCode());
         result =
                 (result * PRIME)
                         + (this.isStorageEnabled == null ? 43 : this.isStorageEnabled.hashCode());
@@ -1047,6 +1219,11 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
                                 : this.networkConfiguration.hashCode());
         result =
                 (result * PRIME)
+                        + (this.sessionLifecycleActions == null
+                                ? 43
+                                : this.sessionLifecycleActions.hashCode());
+        result =
+                (result * PRIME)
                         + (this.timeStartScheduled == null
                                 ? 43
                                 : this.timeStartScheduled.hashCode());
@@ -1069,6 +1246,11 @@ public final class DesktopPool extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateAccessDetails == null
+                                ? 43
+                                : this.privateAccessDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

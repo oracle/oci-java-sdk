@@ -190,10 +190,15 @@ public class IdleConnectionMonitor extends Thread {
         return waitTimeInSeconds;
     }
 
+    @VisibleForTesting
     boolean isIdleConnectionMonitorThreadClosed() {
         return shutdown;
     }
 
+    @VisibleForTesting
+    public static IdleConnectionMonitor getInstance() {
+        return instance;
+    }
     /**
      * Keeps the settings for a ConnectionMonitor.
      */

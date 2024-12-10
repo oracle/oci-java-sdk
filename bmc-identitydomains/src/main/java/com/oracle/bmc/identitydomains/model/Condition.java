@@ -39,7 +39,8 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
         "attributeName",
         "operator",
         "attributeValue",
-        "evaluateConditionIf"
+        "evaluateConditionIf",
+        "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy"
     })
     public Condition(
             String id,
@@ -61,7 +62,9 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
             String attributeName,
             Operator operator,
             String attributeValue,
-            String evaluateConditionIf) {
+            String evaluateConditionIf,
+            ConditionExtensionOciconsolesignonpolicyconsentPolicy
+                    urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy) {
         super();
         this.id = id;
         this.ocid = ocid;
@@ -83,6 +86,8 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
         this.operator = operator;
         this.attributeValue = attributeValue;
         this.evaluateConditionIf = evaluateConditionIf;
+        this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy =
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -262,6 +267,7 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [key, value]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          *  - idcsSearchable: true
          *  - multiValued: true
          *  - mutability: readWrite
@@ -278,6 +284,7 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [key, value]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          *  - idcsSearchable: true
          *  - multiValued: true
          *  - mutability: readWrite
@@ -726,6 +733,22 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+        private ConditionExtensionOciconsolesignonpolicyconsentPolicy
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+
+        public Builder
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy(
+                        ConditionExtensionOciconsolesignonpolicyconsentPolicy
+                                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy) {
+            this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy =
+                    urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+            this.__explicitlySet__.add(
+                    "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -751,7 +774,8 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.attributeName,
                             this.operator,
                             this.attributeValue,
-                            this.evaluateConditionIf);
+                            this.evaluateConditionIf,
+                            this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -819,6 +843,12 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("evaluateConditionIf")) {
                 this.evaluateConditionIf(model.getEvaluateConditionIf());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy")) {
+                this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy(
+                        model
+                                .getUrnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy());
             }
             return this;
         }
@@ -995,6 +1025,7 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [key, value]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      *  - idcsSearchable: true
      *  - multiValued: true
      *  - mutability: readWrite
@@ -1011,6 +1042,7 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [key, value]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      *  - idcsSearchable: true
      *  - multiValued: true
      *  - mutability: readWrite
@@ -1499,6 +1531,16 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
         return evaluateConditionIf;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+    private final ConditionExtensionOciconsolesignonpolicyconsentPolicy
+            urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+
+    public ConditionExtensionOciconsolesignonpolicyconsentPolicy
+            getUrnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy() {
+        return urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1535,6 +1577,11 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", operator=").append(String.valueOf(this.operator));
         sb.append(", attributeValue=").append(String.valueOf(this.attributeValue));
         sb.append(", evaluateConditionIf=").append(String.valueOf(this.evaluateConditionIf));
+        sb.append(
+                        ", urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy=")
+                .append(
+                        String.valueOf(
+                                this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -1571,6 +1618,9 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.operator, other.operator)
                 && java.util.Objects.equals(this.attributeValue, other.attributeValue)
                 && java.util.Objects.equals(this.evaluateConditionIf, other.evaluateConditionIf)
+                && java.util.Objects.equals(
+                        this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy,
+                        other.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy)
                 && super.equals(other);
     }
 
@@ -1624,6 +1674,14 @@ public final class Condition extends com.oracle.bmc.http.internal.ExplicitlySetB
                         + (this.evaluateConditionIf == null
                                 ? 43
                                 : this.evaluateConditionIf.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy
+                                        == null
+                                ? 43
+                                : this
+                                        .urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy
+                                        .hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

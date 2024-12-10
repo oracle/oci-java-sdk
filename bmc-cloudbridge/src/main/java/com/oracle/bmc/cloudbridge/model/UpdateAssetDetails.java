@@ -27,8 +27,16 @@ package com.oracle.bmc.cloudbridge.model;
         name = "VM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateAwsEbsAssetDetails.class,
+        name = "AWS_EBS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = UpdateVmwareVmAssetDetails.class,
         name = "VMWARE_VM"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = UpdateAwsEc2AssetDetails.class,
+        name = "AWS_EC2"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)

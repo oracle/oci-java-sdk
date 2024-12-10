@@ -637,6 +637,51 @@ public class DatabaseRecoveryClient implements DatabaseRecovery {
     }
 
     @Override
+    public ChangeProtectedDatabaseSubscriptionResponse changeProtectedDatabaseSubscription(
+            ChangeProtectedDatabaseSubscriptionRequest request) {
+        LOG.trace("Called changeProtectedDatabaseSubscription");
+        final ChangeProtectedDatabaseSubscriptionRequest interceptedRequest =
+                ChangeProtectedDatabaseSubscriptionConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProtectedDatabaseSubscriptionConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectedDatabaseSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseSubscription");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeProtectedDatabaseSubscriptionResponse>
+                transformer =
+                        ChangeProtectedDatabaseSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest
+                                                        .getChangeProtectedDatabaseSubscriptionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ChangeProtectionPolicyCompartmentResponse changeProtectionPolicyCompartment(
             ChangeProtectionPolicyCompartmentRequest request) {
         LOG.trace("Called changeProtectionPolicyCompartment");

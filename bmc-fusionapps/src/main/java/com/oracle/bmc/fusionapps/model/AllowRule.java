@@ -14,7 +14,7 @@ package com.oracle.bmc.fusionapps.model;
  * *  You can specify this rule only with the following {@code RuleCondition} combinations:
  * *  {@code SOURCE_IP_ADDRESS}
  * *  {@code SOURCE_VCN_ID}
- * *  {@code SOURCE_VCN_ID", "SOURCE_VCN_IP_ADDRESS}
+ * *  {@code SOURCE_VCN_ID}, {@code SOURCE_VCN_IP_ADDRESS}
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

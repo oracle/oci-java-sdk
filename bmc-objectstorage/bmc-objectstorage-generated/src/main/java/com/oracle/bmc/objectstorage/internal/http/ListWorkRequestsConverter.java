@@ -46,6 +46,14 @@ public class ListWorkRequestsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
+        if (request.getPrivateEndpointName() != null) {
+            target =
+                    target.queryParam(
+                            "privateEndpointName",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getPrivateEndpointName()));
+        }
+
         if (request.getPage() != null) {
             target =
                     target.queryParam(

@@ -29,8 +29,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "drProtectionGroupId",
         "peerDrProtectionGroupId",
         "peerRegion",
+        "sourcePlanId",
         "planGroups",
         "lifecycleState",
+        "lifecycleSubState",
         "lifeCycleDetails",
         "freeformTags",
         "definedTags",
@@ -46,8 +48,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             String drProtectionGroupId,
             String peerDrProtectionGroupId,
             String peerRegion,
+            String sourcePlanId,
             java.util.List<DrPlanGroup> planGroups,
             DrPlanLifecycleState lifecycleState,
+            DrPlanLifecycleSubState lifecycleSubState,
             String lifeCycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -62,8 +66,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.drProtectionGroupId = drProtectionGroupId;
         this.peerDrProtectionGroupId = peerDrProtectionGroupId;
         this.peerRegion = peerRegion;
+        this.sourcePlanId = sourcePlanId;
         this.planGroups = planGroups;
         this.lifecycleState = lifecycleState;
+        this.lifecycleSubState = lifecycleSubState;
         this.lifeCycleDetails = lifeCycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -271,6 +277,30 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
         /**
+         * If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+         * If this DR plan was not cloned, then the value for this will be {@code null}.
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sourcePlanId")
+        private String sourcePlanId;
+
+        /**
+         * If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+         * If this DR plan was not cloned, then the value for this will be {@code null}.
+         * <p>
+         * Example: {@code ocid1.drplan.oc1..uniqueID}
+         *
+         * @param sourcePlanId the value to set
+         * @return this builder
+         **/
+        public Builder sourcePlanId(String sourcePlanId) {
+            this.sourcePlanId = sourcePlanId;
+            this.__explicitlySet__.add("sourcePlanId");
+            return this;
+        }
+        /**
          * The list of groups in this DR plan.
          *
          **/
@@ -304,6 +334,24 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         public Builder lifecycleState(DrPlanLifecycleState lifecycleState) {
             this.lifecycleState = lifecycleState;
             this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The current state of the DR plan.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+        private DrPlanLifecycleSubState lifecycleSubState;
+
+        /**
+         * The current state of the DR plan.
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleSubState(DrPlanLifecycleSubState lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            this.__explicitlySet__.add("lifecycleSubState");
             return this;
         }
         /**
@@ -407,8 +455,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.drProtectionGroupId,
                             this.peerDrProtectionGroupId,
                             this.peerRegion,
+                            this.sourcePlanId,
                             this.planGroups,
                             this.lifecycleState,
+                            this.lifecycleSubState,
                             this.lifeCycleDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -448,11 +498,17 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             if (model.wasPropertyExplicitlySet("peerRegion")) {
                 this.peerRegion(model.getPeerRegion());
             }
+            if (model.wasPropertyExplicitlySet("sourcePlanId")) {
+                this.sourcePlanId(model.getSourcePlanId());
+            }
             if (model.wasPropertyExplicitlySet("planGroups")) {
                 this.planGroups(model.getPlanGroups());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleSubState")) {
+                this.lifecycleSubState(model.getLifecycleSubState());
             }
             if (model.wasPropertyExplicitlySet("lifeCycleDetails")) {
                 this.lifeCycleDetails(model.getLifeCycleDetails());
@@ -662,6 +718,28 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
     }
 
     /**
+     * If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+     * If this DR plan was not cloned, then the value for this will be {@code null}.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sourcePlanId")
+    private final String sourcePlanId;
+
+    /**
+     * If this is a cloned DR plan, the OCID of the source DR plan that was used to clone this DR plan.
+     * If this DR plan was not cloned, then the value for this will be {@code null}.
+     * <p>
+     * Example: {@code ocid1.drplan.oc1..uniqueID}
+     *
+     * @return the value
+     **/
+    public String getSourcePlanId() {
+        return sourcePlanId;
+    }
+
+    /**
      * The list of groups in this DR plan.
      *
      **/
@@ -691,6 +769,22 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      **/
     public DrPlanLifecycleState getLifecycleState() {
         return lifecycleState;
+    }
+
+    /**
+     * The current state of the DR plan.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+    private final DrPlanLifecycleSubState lifecycleSubState;
+
+    /**
+     * The current state of the DR plan.
+     *
+     * @return the value
+     **/
+    public DrPlanLifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
     }
 
     /**
@@ -793,8 +887,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", peerDrProtectionGroupId=")
                 .append(String.valueOf(this.peerDrProtectionGroupId));
         sb.append(", peerRegion=").append(String.valueOf(this.peerRegion));
+        sb.append(", sourcePlanId=").append(String.valueOf(this.sourcePlanId));
         sb.append(", planGroups=").append(String.valueOf(this.planGroups));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(", lifeCycleDetails=").append(String.valueOf(this.lifeCycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -823,8 +919,10 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(
                         this.peerDrProtectionGroupId, other.peerDrProtectionGroupId)
                 && java.util.Objects.equals(this.peerRegion, other.peerRegion)
+                && java.util.Objects.equals(this.sourcePlanId, other.sourcePlanId)
                 && java.util.Objects.equals(this.planGroups, other.planGroups)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
                 && java.util.Objects.equals(this.lifeCycleDetails, other.lifeCycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -855,10 +953,14 @@ public final class DrPlan extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                                 ? 43
                                 : this.peerDrProtectionGroupId.hashCode());
         result = (result * PRIME) + (this.peerRegion == null ? 43 : this.peerRegion.hashCode());
+        result = (result * PRIME) + (this.sourcePlanId == null ? 43 : this.sourcePlanId.hashCode());
         result = (result * PRIME) + (this.planGroups == null ? 43 : this.planGroups.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifeCycleDetails == null ? 43 : this.lifeCycleDetails.hashCode());

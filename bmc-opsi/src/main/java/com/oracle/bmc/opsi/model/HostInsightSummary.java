@@ -27,6 +27,10 @@ package com.oracle.bmc.opsi.model;
         name = "MACS_MANAGED_EXTERNAL_HOST"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MacsManagedCloudDatabaseHostInsightSummary.class,
+        name = "MACS_MANAGED_CLOUD_DB_HOST"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = EmManagedExternalHostInsightSummary.class,
         name = "EM_MANAGED_EXTERNAL_HOST"
     ),
@@ -150,13 +154,13 @@ public class HostInsightSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("hostType")
     private final String hostType;
 
     /**
-     * Operations Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
+     * Ops Insights internal representation of the host type. Possible value is EXTERNAL-HOST.
      * @return the value
      **/
     public String getHostType() {
@@ -246,13 +250,13 @@ public class HostInsightSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
-     * Indicates the status of a host insight in Operations Insights
+     * Indicates the status of a host insight in Ops Insights
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
-     * Indicates the status of a host insight in Operations Insights
+     * Indicates the status of a host insight in Ops Insights
      * @return the value
      **/
     public ResourceStatus getStatus() {

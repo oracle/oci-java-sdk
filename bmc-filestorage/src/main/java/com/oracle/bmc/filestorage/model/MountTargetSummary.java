@@ -32,7 +32,12 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         "privateIpIds",
         "subnetId",
         "nsgIds",
+        "timeBillingCycleEnd",
+        "observedThroughput",
+        "requestedThroughput",
+        "reservedStorageCapacity",
         "timeCreated",
+        "locks",
         "freeformTags",
         "definedTags"
     })
@@ -46,7 +51,12 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
             java.util.List<String> privateIpIds,
             String subnetId,
             java.util.List<String> nsgIds,
+            java.util.Date timeBillingCycleEnd,
+            Long observedThroughput,
+            Long requestedThroughput,
+            Long reservedStorageCapacity,
             java.util.Date timeCreated,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -59,7 +69,12 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         this.privateIpIds = privateIpIds;
         this.subnetId = subnetId;
         this.nsgIds = nsgIds;
+        this.timeBillingCycleEnd = timeBillingCycleEnd;
+        this.observedThroughput = observedThroughput;
+        this.requestedThroughput = requestedThroughput;
+        this.reservedStorageCapacity = reservedStorageCapacity;
         this.timeCreated = timeCreated;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -241,6 +256,90 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * The date and time the mount target current billing cycle will end, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+         * automatically to next timestamp which is after 30 days.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
+        private java.util.Date timeBillingCycleEnd;
+
+        /**
+         * The date and time the mount target current billing cycle will end, expressed in
+         * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+         * automatically to next timestamp which is after 30 days.
+         * <p>
+         * Example: {@code 2016-08-25T21:10:29.600Z}
+         *
+         * @param timeBillingCycleEnd the value to set
+         * @return this builder
+         **/
+        public Builder timeBillingCycleEnd(java.util.Date timeBillingCycleEnd) {
+            this.timeBillingCycleEnd = timeBillingCycleEnd;
+            this.__explicitlySet__.add("timeBillingCycleEnd");
+            return this;
+        }
+        /**
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
+        private Long observedThroughput;
+
+        /**
+         * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+         * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         * @param observedThroughput the value to set
+         * @return this builder
+         **/
+        public Builder observedThroughput(Long observedThroughput) {
+            this.observedThroughput = observedThroughput;
+            this.__explicitlySet__.add("observedThroughput");
+            return this;
+        }
+        /**
+         * - New throughput for mount target at the end of billing cycle in Gbps.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+        private Long requestedThroughput;
+
+        /**
+         * - New throughput for mount target at the end of billing cycle in Gbps.
+         *
+         * @param requestedThroughput the value to set
+         * @return this builder
+         **/
+        public Builder requestedThroughput(Long requestedThroughput) {
+            this.requestedThroughput = requestedThroughput;
+            this.__explicitlySet__.add("requestedThroughput");
+            return this;
+        }
+        /**
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+         * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
+        private Long reservedStorageCapacity;
+
+        /**
+         * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+         * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+         *
+         * @param reservedStorageCapacity the value to set
+         * @return this builder
+         **/
+        public Builder reservedStorageCapacity(Long reservedStorageCapacity) {
+            this.reservedStorageCapacity = reservedStorageCapacity;
+            this.__explicitlySet__.add("reservedStorageCapacity");
+            return this;
+        }
+        /**
          * The date and time the mount target was created, expressed
          * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
          * <p>
@@ -262,6 +361,22 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         public Builder timeCreated(java.util.Date timeCreated) {
             this.timeCreated = timeCreated;
             this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
             return this;
         }
         /**
@@ -327,7 +442,12 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
                             this.privateIpIds,
                             this.subnetId,
                             this.nsgIds,
+                            this.timeBillingCycleEnd,
+                            this.observedThroughput,
+                            this.requestedThroughput,
+                            this.reservedStorageCapacity,
                             this.timeCreated,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -365,8 +485,23 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("nsgIds")) {
                 this.nsgIds(model.getNsgIds());
             }
+            if (model.wasPropertyExplicitlySet("timeBillingCycleEnd")) {
+                this.timeBillingCycleEnd(model.getTimeBillingCycleEnd());
+            }
+            if (model.wasPropertyExplicitlySet("observedThroughput")) {
+                this.observedThroughput(model.getObservedThroughput());
+            }
+            if (model.wasPropertyExplicitlySet("requestedThroughput")) {
+                this.requestedThroughput(model.getRequestedThroughput());
+            }
+            if (model.wasPropertyExplicitlySet("reservedStorageCapacity")) {
+                this.reservedStorageCapacity(model.getReservedStorageCapacity());
+            }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -490,6 +625,7 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        Updating("UPDATING"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -597,6 +733,82 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * The date and time the mount target current billing cycle will end, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+     * automatically to next timestamp which is after 30 days.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeBillingCycleEnd")
+    private final java.util.Date timeBillingCycleEnd;
+
+    /**
+     * The date and time the mount target current billing cycle will end, expressed in
+     * [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format. Once a cycle ends, it is updated
+     * automatically to next timestamp which is after 30 days.
+     * <p>
+     * Example: {@code 2016-08-25T21:10:29.600Z}
+     *
+     * @return the value
+     **/
+    public java.util.Date getTimeBillingCycleEnd() {
+        return timeBillingCycleEnd;
+    }
+
+    /**
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("observedThroughput")
+    private final Long observedThroughput;
+
+    /**
+     * Current billed throughput for mount target in Gbps. This corresponds to shape of mount target.
+     * Available shapes and corresponding throughput are listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     * @return the value
+     **/
+    public Long getObservedThroughput() {
+        return observedThroughput;
+    }
+
+    /**
+     * - New throughput for mount target at the end of billing cycle in Gbps.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestedThroughput")
+    private final Long requestedThroughput;
+
+    /**
+     * - New throughput for mount target at the end of billing cycle in Gbps.
+     *
+     * @return the value
+     **/
+    public Long getRequestedThroughput() {
+        return requestedThroughput;
+    }
+
+    /**
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+     * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("reservedStorageCapacity")
+    private final Long reservedStorageCapacity;
+
+    /**
+     * - Reserved capacity (GB) associated with this mount target. Reserved capacity depends on observedThroughput value
+     * of mount target. Value is listed at [Mount Target Performance](https://docs.oracle.com/iaas/Content/File/Tasks/managingmounttargets.htm#performance).
+     *
+     * @return the value
+     **/
+    public Long getReservedStorageCapacity() {
+        return reservedStorageCapacity;
+    }
+
+    /**
      * The date and time the mount target was created, expressed
      * in [RFC 3339](https://tools.ietf.org/rfc/rfc3339) timestamp format.
      * <p>
@@ -616,6 +828,20 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
      **/
     public java.util.Date getTimeCreated() {
         return timeCreated;
+    }
+
+    /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
     }
 
     /**
@@ -683,7 +909,13 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", privateIpIds=").append(String.valueOf(this.privateIpIds));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
+        sb.append(", timeBillingCycleEnd=").append(String.valueOf(this.timeBillingCycleEnd));
+        sb.append(", observedThroughput=").append(String.valueOf(this.observedThroughput));
+        sb.append(", requestedThroughput=").append(String.valueOf(this.requestedThroughput));
+        sb.append(", reservedStorageCapacity=")
+                .append(String.valueOf(this.reservedStorageCapacity));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -709,7 +941,13 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.privateIpIds, other.privateIpIds)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
+                && java.util.Objects.equals(this.timeBillingCycleEnd, other.timeBillingCycleEnd)
+                && java.util.Objects.equals(this.observedThroughput, other.observedThroughput)
+                && java.util.Objects.equals(this.requestedThroughput, other.requestedThroughput)
+                && java.util.Objects.equals(
+                        this.reservedStorageCapacity, other.reservedStorageCapacity)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -736,7 +974,28 @@ public final class MountTargetSummary extends com.oracle.bmc.http.internal.Expli
         result = (result * PRIME) + (this.privateIpIds == null ? 43 : this.privateIpIds.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeBillingCycleEnd == null
+                                ? 43
+                                : this.timeBillingCycleEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.observedThroughput == null
+                                ? 43
+                                : this.observedThroughput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestedThroughput == null
+                                ? 43
+                                : this.requestedThroughput.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reservedStorageCapacity == null
+                                ? 43
+                                : this.reservedStorageCapacity.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

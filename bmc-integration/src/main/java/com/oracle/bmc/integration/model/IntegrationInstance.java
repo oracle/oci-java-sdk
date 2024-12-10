@@ -29,11 +29,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleDetails",
         "stateMessage",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "isByol",
         "instanceUrl",
+        "instanceDesignTimeUrl",
         "messagePacks",
         "isFileServerEnabled",
         "isVisualBuilderEnabled",
@@ -44,7 +47,10 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         "idcsInfo",
         "attachments",
         "shape",
-        "privateEndpointOutboundConnection"
+        "privateEndpointOutboundConnection",
+        "isDisasterRecoveryEnabled",
+        "disasterRecoveryDetails",
+        "dataRetentionPeriod"
     })
     public IntegrationInstance(
             String id,
@@ -54,11 +60,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
+            String lifecycleDetails,
             String stateMessage,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             Boolean isByol,
             String instanceUrl,
+            String instanceDesignTimeUrl,
             Integer messagePacks,
             Boolean isFileServerEnabled,
             Boolean isVisualBuilderEnabled,
@@ -69,7 +78,10 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             IdcsInfoDetails idcsInfo,
             java.util.List<AttachmentDetails> attachments,
             Shape shape,
-            OutboundConnection privateEndpointOutboundConnection) {
+            OutboundConnection privateEndpointOutboundConnection,
+            Boolean isDisasterRecoveryEnabled,
+            DisasterRecoveryDetails disasterRecoveryDetails,
+            DataRetentionPeriod dataRetentionPeriod) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -78,11 +90,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.stateMessage = stateMessage;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.isByol = isByol;
         this.instanceUrl = instanceUrl;
+        this.instanceDesignTimeUrl = instanceDesignTimeUrl;
         this.messagePacks = messagePacks;
         this.isFileServerEnabled = isFileServerEnabled;
         this.isVisualBuilderEnabled = isVisualBuilderEnabled;
@@ -94,6 +109,9 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         this.attachments = attachments;
         this.shape = shape;
         this.privateEndpointOutboundConnection = privateEndpointOutboundConnection;
+        this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+        this.disasterRecoveryDetails = disasterRecoveryDetails;
+        this.dataRetentionPeriod = dataRetentionPeriod;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -217,6 +235,22 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * Additional details of lifecycleState or substates
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Additional details of lifecycleState or substates
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
@@ -278,6 +312,26 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             return this;
         }
         /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces.
+         * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         **/
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
+        /**
          * Bring your own license.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isByol")
@@ -307,6 +361,22 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         public Builder instanceUrl(String instanceUrl) {
             this.instanceUrl = instanceUrl;
             this.__explicitlySet__.add("instanceUrl");
+            return this;
+        }
+        /**
+         * The Integration Instance Design Time URL
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+        private String instanceDesignTimeUrl;
+
+        /**
+         * The Integration Instance Design Time URL
+         * @param instanceDesignTimeUrl the value to set
+         * @return this builder
+         **/
+        public Builder instanceDesignTimeUrl(String instanceDesignTimeUrl) {
+            this.instanceDesignTimeUrl = instanceDesignTimeUrl;
+            this.__explicitlySet__.add("instanceDesignTimeUrl");
             return this;
         }
         /**
@@ -463,6 +533,47 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("privateEndpointOutboundConnection");
             return this;
         }
+        /**
+         * Is Disaster Recovery enabled for the integrationInstance
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+        private Boolean isDisasterRecoveryEnabled;
+
+        /**
+         * Is Disaster Recovery enabled for the integrationInstance
+         * @param isDisasterRecoveryEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDisasterRecoveryEnabled(Boolean isDisasterRecoveryEnabled) {
+            this.isDisasterRecoveryEnabled = isDisasterRecoveryEnabled;
+            this.__explicitlySet__.add("isDisasterRecoveryEnabled");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryDetails")
+        private DisasterRecoveryDetails disasterRecoveryDetails;
+
+        public Builder disasterRecoveryDetails(DisasterRecoveryDetails disasterRecoveryDetails) {
+            this.disasterRecoveryDetails = disasterRecoveryDetails;
+            this.__explicitlySet__.add("disasterRecoveryDetails");
+            return this;
+        }
+        /**
+         * Data retention period set for given integration instance
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+        private DataRetentionPeriod dataRetentionPeriod;
+
+        /**
+         * Data retention period set for given integration instance
+         * @param dataRetentionPeriod the value to set
+         * @return this builder
+         **/
+        public Builder dataRetentionPeriod(DataRetentionPeriod dataRetentionPeriod) {
+            this.dataRetentionPeriod = dataRetentionPeriod;
+            this.__explicitlySet__.add("dataRetentionPeriod");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -477,11 +588,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.stateMessage,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.isByol,
                             this.instanceUrl,
+                            this.instanceDesignTimeUrl,
                             this.messagePacks,
                             this.isFileServerEnabled,
                             this.isVisualBuilderEnabled,
@@ -492,7 +606,10 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                             this.idcsInfo,
                             this.attachments,
                             this.shape,
-                            this.privateEndpointOutboundConnection);
+                            this.privateEndpointOutboundConnection,
+                            this.isDisasterRecoveryEnabled,
+                            this.disasterRecoveryDetails,
+                            this.dataRetentionPeriod);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -522,6 +639,9 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
             }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
+            }
             if (model.wasPropertyExplicitlySet("stateMessage")) {
                 this.stateMessage(model.getStateMessage());
             }
@@ -531,11 +651,17 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("isByol")) {
                 this.isByol(model.getIsByol());
             }
             if (model.wasPropertyExplicitlySet("instanceUrl")) {
                 this.instanceUrl(model.getInstanceUrl());
+            }
+            if (model.wasPropertyExplicitlySet("instanceDesignTimeUrl")) {
+                this.instanceDesignTimeUrl(model.getInstanceDesignTimeUrl());
             }
             if (model.wasPropertyExplicitlySet("messagePacks")) {
                 this.messagePacks(model.getMessagePacks());
@@ -570,6 +696,15 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
             if (model.wasPropertyExplicitlySet("privateEndpointOutboundConnection")) {
                 this.privateEndpointOutboundConnection(
                         model.getPrivateEndpointOutboundConnection());
+            }
+            if (model.wasPropertyExplicitlySet("isDisasterRecoveryEnabled")) {
+                this.isDisasterRecoveryEnabled(model.getIsDisasterRecoveryEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("disasterRecoveryDetails")) {
+                this.disasterRecoveryDetails(model.getDisasterRecoveryDetails());
+            }
+            if (model.wasPropertyExplicitlySet("dataRetentionPeriod")) {
+                this.dataRetentionPeriod(model.getDataRetentionPeriod());
             }
             return this;
         }
@@ -639,6 +774,7 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         Enterprise("ENTERPRISE"),
         Standardx("STANDARDX"),
         Enterprisex("ENTERPRISEX"),
+        Healthcare("HEALTHCARE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -797,6 +933,20 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * Additional details of lifecycleState or substates
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Additional details of lifecycleState or substates
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * An message describing the current state in more detail. For example, can be used to provide actionable information for a resource in Failed state.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("stateMessage")
@@ -851,6 +1001,24 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
     }
 
     /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces.
+     * Example: {@code {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * Bring your own license.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isByol")
@@ -876,6 +1044,20 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
      **/
     public String getInstanceUrl() {
         return instanceUrl;
+    }
+
+    /**
+     * The Integration Instance Design Time URL
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("instanceDesignTimeUrl")
+    private final String instanceDesignTimeUrl;
+
+    /**
+     * The Integration Instance Design Time URL
+     * @return the value
+     **/
+    public String getInstanceDesignTimeUrl() {
+        return instanceDesignTimeUrl;
     }
 
     /**
@@ -1104,6 +1286,90 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         return privateEndpointOutboundConnection;
     }
 
+    /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisasterRecoveryEnabled")
+    private final Boolean isDisasterRecoveryEnabled;
+
+    /**
+     * Is Disaster Recovery enabled for the integrationInstance
+     * @return the value
+     **/
+    public Boolean getIsDisasterRecoveryEnabled() {
+        return isDisasterRecoveryEnabled;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("disasterRecoveryDetails")
+    private final DisasterRecoveryDetails disasterRecoveryDetails;
+
+    public DisasterRecoveryDetails getDisasterRecoveryDetails() {
+        return disasterRecoveryDetails;
+    }
+
+    /**
+     * Data retention period set for given integration instance
+     **/
+    public enum DataRetentionPeriod {
+        Months1("MONTHS_1"),
+        Months3("MONTHS_3"),
+        Months6("MONTHS_6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DataRetentionPeriod.class);
+
+        private final String value;
+        private static java.util.Map<String, DataRetentionPeriod> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DataRetentionPeriod v : DataRetentionPeriod.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DataRetentionPeriod(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DataRetentionPeriod create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DataRetentionPeriod', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Data retention period set for given integration instance
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dataRetentionPeriod")
+    private final DataRetentionPeriod dataRetentionPeriod;
+
+    /**
+     * Data retention period set for given integration instance
+     * @return the value
+     **/
+    public DataRetentionPeriod getDataRetentionPeriod() {
+        return dataRetentionPeriod;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1126,11 +1392,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", stateMessage=").append(String.valueOf(this.stateMessage));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", isByol=").append(String.valueOf(this.isByol));
         sb.append(", instanceUrl=").append(String.valueOf(this.instanceUrl));
+        sb.append(", instanceDesignTimeUrl=").append(String.valueOf(this.instanceDesignTimeUrl));
         sb.append(", messagePacks=").append(String.valueOf(this.messagePacks));
         sb.append(", isFileServerEnabled=").append(String.valueOf(this.isFileServerEnabled));
         sb.append(", isVisualBuilderEnabled=").append(String.valueOf(this.isVisualBuilderEnabled));
@@ -1144,6 +1413,11 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         sb.append(", shape=").append(String.valueOf(this.shape));
         sb.append(", privateEndpointOutboundConnection=")
                 .append(String.valueOf(this.privateEndpointOutboundConnection));
+        sb.append(", isDisasterRecoveryEnabled=")
+                .append(String.valueOf(this.isDisasterRecoveryEnabled));
+        sb.append(", disasterRecoveryDetails=")
+                .append(String.valueOf(this.disasterRecoveryDetails));
+        sb.append(", dataRetentionPeriod=").append(String.valueOf(this.dataRetentionPeriod));
         sb.append(")");
         return sb.toString();
     }
@@ -1166,11 +1440,14 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.stateMessage, other.stateMessage)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.isByol, other.isByol)
                 && java.util.Objects.equals(this.instanceUrl, other.instanceUrl)
+                && java.util.Objects.equals(this.instanceDesignTimeUrl, other.instanceDesignTimeUrl)
                 && java.util.Objects.equals(this.messagePacks, other.messagePacks)
                 && java.util.Objects.equals(this.isFileServerEnabled, other.isFileServerEnabled)
                 && java.util.Objects.equals(
@@ -1187,6 +1464,11 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(
                         this.privateEndpointOutboundConnection,
                         other.privateEndpointOutboundConnection)
+                && java.util.Objects.equals(
+                        this.isDisasterRecoveryEnabled, other.isDisasterRecoveryEnabled)
+                && java.util.Objects.equals(
+                        this.disasterRecoveryDetails, other.disasterRecoveryDetails)
+                && java.util.Objects.equals(this.dataRetentionPeriod, other.dataRetentionPeriod)
                 && super.equals(other);
     }
 
@@ -1209,11 +1491,20 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result = (result * PRIME) + (this.stateMessage == null ? 43 : this.stateMessage.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.isByol == null ? 43 : this.isByol.hashCode());
         result = (result * PRIME) + (this.instanceUrl == null ? 43 : this.instanceUrl.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.instanceDesignTimeUrl == null
+                                ? 43
+                                : this.instanceDesignTimeUrl.hashCode());
         result = (result * PRIME) + (this.messagePacks == null ? 43 : this.messagePacks.hashCode());
         result =
                 (result * PRIME)
@@ -1249,6 +1540,21 @@ public final class IntegrationInstance extends com.oracle.bmc.http.internal.Expl
                         + (this.privateEndpointOutboundConnection == null
                                 ? 43
                                 : this.privateEndpointOutboundConnection.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisasterRecoveryEnabled == null
+                                ? 43
+                                : this.isDisasterRecoveryEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.disasterRecoveryDetails == null
+                                ? 43
+                                : this.disasterRecoveryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataRetentionPeriod == null
+                                ? 43
+                                : this.dataRetentionPeriod.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

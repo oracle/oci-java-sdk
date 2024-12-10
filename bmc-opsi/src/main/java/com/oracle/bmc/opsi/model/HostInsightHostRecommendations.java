@@ -26,6 +26,18 @@ package com.oracle.bmc.opsi.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = HostCpuRecommendations.class,
         name = "HOST_CPU_RECOMMENDATIONS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostNetworkRecommendations.class,
+        name = "HOST_NETWORK_RECOMMENDATIONS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostMemoryRecommendations.class,
+        name = "HOST_MEMORY_RECOMMENDATIONS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HostStorageRecommendations.class,
+        name = "HOST_STORAGE_RECOMMENDATIONS"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -81,6 +93,9 @@ public class HostInsightHostRecommendations
      **/
     public enum MetricRecommendationName {
         HostCpuRecommendations("HOST_CPU_RECOMMENDATIONS"),
+        HostMemoryRecommendations("HOST_MEMORY_RECOMMENDATIONS"),
+        HostNetworkRecommendations("HOST_NETWORK_RECOMMENDATIONS"),
+        HostStorageRecommendations("HOST_STORAGE_RECOMMENDATIONS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

@@ -5,7 +5,7 @@
 package com.oracle.bmc.ocvp.model;
 
 /**
- * Datastore summary for a getting an Sddc.
+ * Datastore details for a getting an Sddc.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields

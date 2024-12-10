@@ -127,6 +127,15 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The MongoDB technology type.
          **/
@@ -202,6 +211,26 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
          *
          **/
@@ -237,10 +266,12 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.connectionString,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.databaseId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -283,6 +314,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -294,6 +328,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("databaseId")) {
                 this.databaseId(model.getDatabaseId());
@@ -326,10 +363,12 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             MongoDbConnection.TechnologyType technologyType,
             String connectionString,
             String username,
             String password,
+            String passwordSecretId,
             String databaseId) {
         super(
                 displayName,
@@ -342,11 +381,13 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.connectionString = connectionString;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.databaseId = databaseId;
     }
 
@@ -417,6 +458,24 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated database.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Autonomous Json Database.
      *
      **/
@@ -450,6 +509,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
         sb.append(", connectionString=").append(String.valueOf(this.connectionString));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
         sb.append(")");
         return sb.toString();
@@ -469,6 +529,7 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                 && java.util.Objects.equals(this.connectionString, other.connectionString)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
                 && super.equals(other);
     }
@@ -485,6 +546,9 @@ public final class CreateMongoDbConnectionDetails extends CreateConnectionDetail
                         + (this.connectionString == null ? 43 : this.connectionString.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
         return result;
     }

@@ -159,6 +159,21 @@ public class CreateMultipartUploadRequest
     public String getOpcSseKmsKeyId() {
         return opcSseKmsKeyId;
     }
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+     * in addition to the default MD5 checksum.
+     *
+     */
+    private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm;
+
+    /**
+     * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+     * in addition to the default MD5 checksum.
+     *
+     */
+    public com.oracle.bmc.objectstorage.model.ChecksumAlgorithm getOpcChecksumAlgorithm() {
+        return opcChecksumAlgorithm;
+    }
 
     /**
      * Alternative accessor for the body parameter.
@@ -366,6 +381,26 @@ public class CreateMultipartUploadRequest
         }
 
         /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+         * in addition to the default MD5 checksum.
+         *
+         */
+        private com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm = null;
+
+        /**
+         * The optional checksum algorithm to use to compute and store the checksum of the body of the HTTP request (or the parts in case of multipart uploads),
+         * in addition to the default MD5 checksum.
+         *
+         * @param opcChecksumAlgorithm the value to set
+         * @return this builder instance
+         */
+        public Builder opcChecksumAlgorithm(
+                com.oracle.bmc.objectstorage.model.ChecksumAlgorithm opcChecksumAlgorithm) {
+            this.opcChecksumAlgorithm = opcChecksumAlgorithm;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -403,6 +438,7 @@ public class CreateMultipartUploadRequest
             opcSseCustomerKey(o.getOpcSseCustomerKey());
             opcSseCustomerKeySha256(o.getOpcSseCustomerKeySha256());
             opcSseKmsKeyId(o.getOpcSseKmsKeyId());
+            opcChecksumAlgorithm(o.getOpcChecksumAlgorithm());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -456,8 +492,9 @@ public class CreateMultipartUploadRequest
             request.opcSseCustomerKey = opcSseCustomerKey;
             request.opcSseCustomerKeySha256 = opcSseCustomerKeySha256;
             request.opcSseKmsKeyId = opcSseKmsKeyId;
+            request.opcChecksumAlgorithm = opcChecksumAlgorithm;
             return request;
-            // new CreateMultipartUploadRequest(namespaceName, bucketName, createMultipartUploadDetails, ifMatch, ifNoneMatch, opcClientRequestId, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId);
+            // new CreateMultipartUploadRequest(namespaceName, bucketName, createMultipartUploadDetails, ifMatch, ifNoneMatch, opcClientRequestId, opcSseCustomerAlgorithm, opcSseCustomerKey, opcSseCustomerKeySha256, opcSseKmsKeyId, opcChecksumAlgorithm);
         }
     }
 
@@ -476,7 +513,8 @@ public class CreateMultipartUploadRequest
                 .opcSseCustomerAlgorithm(opcSseCustomerAlgorithm)
                 .opcSseCustomerKey(opcSseCustomerKey)
                 .opcSseCustomerKeySha256(opcSseCustomerKeySha256)
-                .opcSseKmsKeyId(opcSseKmsKeyId);
+                .opcSseKmsKeyId(opcSseKmsKeyId)
+                .opcChecksumAlgorithm(opcChecksumAlgorithm);
     }
 
     /**
@@ -503,6 +541,7 @@ public class CreateMultipartUploadRequest
         sb.append(",opcSseCustomerKey=").append(String.valueOf(this.opcSseCustomerKey));
         sb.append(",opcSseCustomerKeySha256=").append(String.valueOf(this.opcSseCustomerKeySha256));
         sb.append(",opcSseKmsKeyId=").append(String.valueOf(this.opcSseKmsKeyId));
+        sb.append(",opcChecksumAlgorithm=").append(String.valueOf(this.opcChecksumAlgorithm));
         sb.append(")");
         return sb.toString();
     }
@@ -530,7 +569,8 @@ public class CreateMultipartUploadRequest
                 && java.util.Objects.equals(this.opcSseCustomerKey, other.opcSseCustomerKey)
                 && java.util.Objects.equals(
                         this.opcSseCustomerKeySha256, other.opcSseCustomerKeySha256)
-                && java.util.Objects.equals(this.opcSseKmsKeyId, other.opcSseKmsKeyId);
+                && java.util.Objects.equals(this.opcSseKmsKeyId, other.opcSseKmsKeyId)
+                && java.util.Objects.equals(this.opcChecksumAlgorithm, other.opcChecksumAlgorithm);
     }
 
     @Override
@@ -569,6 +609,11 @@ public class CreateMultipartUploadRequest
         result =
                 (result * PRIME)
                         + (this.opcSseKmsKeyId == null ? 43 : this.opcSseKmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcChecksumAlgorithm == null
+                                ? 43
+                                : this.opcChecksumAlgorithm.hashCode());
         return result;
     }
 }

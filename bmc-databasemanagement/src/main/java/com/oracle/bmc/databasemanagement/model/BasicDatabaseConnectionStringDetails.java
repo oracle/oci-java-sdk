@@ -157,7 +157,15 @@ public final class BasicDatabaseConnectionStringDetails extends DatabaseConnecti
     public enum Protocol {
         Tcp("TCP"),
         Tcps("TCPS"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Protocol.class);
 
         private final String value;
         private static java.util.Map<String, Protocol> map;
@@ -165,7 +173,9 @@ public final class BasicDatabaseConnectionStringDetails extends DatabaseConnecti
         static {
             map = new java.util.HashMap<>();
             for (Protocol v : Protocol.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -183,7 +193,10 @@ public final class BasicDatabaseConnectionStringDetails extends DatabaseConnecti
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid Protocol: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Protocol', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

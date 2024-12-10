@@ -49,7 +49,10 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         "patchingEndTime",
         "estimatedPatchingTime",
         "currentPatchingComponent",
-        "estimatedComponentPatchingStartTime"
+        "estimatedComponentPatchingStartTime",
+        "isMaintenanceRunGranular",
+        "totalTimeTakenInMins",
+        "databaseSoftwareImageId"
     })
     public MaintenanceRun(
             String id,
@@ -80,7 +83,10 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             java.util.Date patchingEndTime,
             EstimatedPatchingTime estimatedPatchingTime,
             String currentPatchingComponent,
-            java.util.Date estimatedComponentPatchingStartTime) {
+            java.util.Date estimatedComponentPatchingStartTime,
+            Boolean isMaintenanceRunGranular,
+            Integer totalTimeTakenInMins,
+            String databaseSoftwareImageId) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -111,6 +117,9 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         this.estimatedPatchingTime = estimatedPatchingTime;
         this.currentPatchingComponent = currentPatchingComponent;
         this.estimatedComponentPatchingStartTime = estimatedComponentPatchingStartTime;
+        this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+        this.totalTimeTakenInMins = totalTimeTakenInMins;
+        this.databaseSoftwareImageId = databaseSoftwareImageId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -585,6 +594,54 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             this.__explicitlySet__.add("estimatedComponentPatchingStartTime");
             return this;
         }
+        /**
+         * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+        private Boolean isMaintenanceRunGranular;
+
+        /**
+         * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+         * @param isMaintenanceRunGranular the value to set
+         * @return this builder
+         **/
+        public Builder isMaintenanceRunGranular(Boolean isMaintenanceRunGranular) {
+            this.isMaintenanceRunGranular = isMaintenanceRunGranular;
+            this.__explicitlySet__.add("isMaintenanceRunGranular");
+            return this;
+        }
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+        private Integer totalTimeTakenInMins;
+
+        /**
+         * The total time taken by corresponding resource activity in minutes.
+         * @param totalTimeTakenInMins the value to set
+         * @return this builder
+         **/
+        public Builder totalTimeTakenInMins(Integer totalTimeTakenInMins) {
+            this.totalTimeTakenInMins = totalTimeTakenInMins;
+            this.__explicitlySet__.add("totalTimeTakenInMins");
+            return this;
+        }
+        /**
+         * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+        private String databaseSoftwareImageId;
+
+        /**
+         * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * @param databaseSoftwareImageId the value to set
+         * @return this builder
+         **/
+        public Builder databaseSoftwareImageId(String databaseSoftwareImageId) {
+            this.databaseSoftwareImageId = databaseSoftwareImageId;
+            this.__explicitlySet__.add("databaseSoftwareImageId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -620,7 +677,10 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                             this.patchingEndTime,
                             this.estimatedPatchingTime,
                             this.currentPatchingComponent,
-                            this.estimatedComponentPatchingStartTime);
+                            this.estimatedComponentPatchingStartTime,
+                            this.isMaintenanceRunGranular,
+                            this.totalTimeTakenInMins,
+                            this.databaseSoftwareImageId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -716,6 +776,15 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
             if (model.wasPropertyExplicitlySet("estimatedComponentPatchingStartTime")) {
                 this.estimatedComponentPatchingStartTime(
                         model.getEstimatedComponentPatchingStartTime());
+            }
+            if (model.wasPropertyExplicitlySet("isMaintenanceRunGranular")) {
+                this.isMaintenanceRunGranular(model.getIsMaintenanceRunGranular());
+            }
+            if (model.wasPropertyExplicitlySet("totalTimeTakenInMins")) {
+                this.totalTimeTakenInMins(model.getTotalTimeTakenInMins());
+            }
+            if (model.wasPropertyExplicitlySet("databaseSoftwareImageId")) {
+                this.databaseSoftwareImageId(model.getDatabaseSoftwareImageId());
             }
             return this;
         }
@@ -1086,6 +1155,7 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         Oneoff("ONEOFF"),
         SecurityMonthly("SECURITY_MONTHLY"),
         Timezone("TIMEZONE"),
+        CustomDatabaseSoftwareImage("CUSTOM_DATABASE_SOFTWARE_IMAGE"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -1455,6 +1525,48 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
         return estimatedComponentPatchingStartTime;
     }
 
+    /**
+     * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isMaintenanceRunGranular")
+    private final Boolean isMaintenanceRunGranular;
+
+    /**
+     * If {@code FALSE}, the maintenance run doesn't support granular maintenance.
+     * @return the value
+     **/
+    public Boolean getIsMaintenanceRunGranular() {
+        return isMaintenanceRunGranular;
+    }
+
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("totalTimeTakenInMins")
+    private final Integer totalTimeTakenInMins;
+
+    /**
+     * The total time taken by corresponding resource activity in minutes.
+     * @return the value
+     **/
+    public Integer getTotalTimeTakenInMins() {
+        return totalTimeTakenInMins;
+    }
+
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseSoftwareImageId")
+    private final String databaseSoftwareImageId;
+
+    /**
+     * The Autonomous Database Software Image [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * @return the value
+     **/
+    public String getDatabaseSoftwareImageId() {
+        return databaseSoftwareImageId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1504,6 +1616,11 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                 .append(String.valueOf(this.currentPatchingComponent));
         sb.append(", estimatedComponentPatchingStartTime=")
                 .append(String.valueOf(this.estimatedComponentPatchingStartTime));
+        sb.append(", isMaintenanceRunGranular=")
+                .append(String.valueOf(this.isMaintenanceRunGranular));
+        sb.append(", totalTimeTakenInMins=").append(String.valueOf(this.totalTimeTakenInMins));
+        sb.append(", databaseSoftwareImageId=")
+                .append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(")");
         return sb.toString();
     }
@@ -1556,6 +1673,11 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                 && java.util.Objects.equals(
                         this.estimatedComponentPatchingStartTime,
                         other.estimatedComponentPatchingStartTime)
+                && java.util.Objects.equals(
+                        this.isMaintenanceRunGranular, other.isMaintenanceRunGranular)
+                && java.util.Objects.equals(this.totalTimeTakenInMins, other.totalTimeTakenInMins)
+                && java.util.Objects.equals(
+                        this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && super.equals(other);
     }
 
@@ -1660,6 +1782,21 @@ public final class MaintenanceRun extends com.oracle.bmc.http.internal.Explicitl
                         + (this.estimatedComponentPatchingStartTime == null
                                 ? 43
                                 : this.estimatedComponentPatchingStartTime.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isMaintenanceRunGranular == null
+                                ? 43
+                                : this.isMaintenanceRunGranular.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.totalTimeTakenInMins == null
+                                ? 43
+                                : this.totalTimeTakenInMins.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseSoftwareImageId == null
+                                ? 43
+                                : this.databaseSoftwareImageId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

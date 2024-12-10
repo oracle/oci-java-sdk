@@ -133,6 +133,22 @@ public final class LimitItem extends Item {
             this.__explicitlySet__.add("limitStatus");
             return this;
         }
+        /**
+         * The message to customer for partially approved and rejected limit requests
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("customerMessage")
+        private String customerMessage;
+
+        /**
+         * The message to customer for partially approved and rejected limit requests
+         * @param customerMessage the value to set
+         * @return this builder
+         **/
+        public Builder customerMessage(String customerMessage) {
+            this.customerMessage = customerMessage;
+            this.__explicitlySet__.add("customerMessage");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -148,7 +164,8 @@ public final class LimitItem extends Item {
                             this.currentLimit,
                             this.currentUsage,
                             this.requestedLimit,
-                            this.limitStatus);
+                            this.limitStatus,
+                            this.customerMessage);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,6 +201,9 @@ public final class LimitItem extends Item {
             if (model.wasPropertyExplicitlySet("limitStatus")) {
                 this.limitStatus(model.getLimitStatus());
             }
+            if (model.wasPropertyExplicitlySet("customerMessage")) {
+                this.customerMessage(model.getCustomerMessage());
+            }
             return this;
         }
     }
@@ -209,12 +229,14 @@ public final class LimitItem extends Item {
             Integer currentLimit,
             Integer currentUsage,
             Integer requestedLimit,
-            LimitStatus limitStatus) {
+            LimitStatus limitStatus,
+            String customerMessage) {
         super(itemKey, name, category, subCategory, issueType);
         this.currentLimit = currentLimit;
         this.currentUsage = currentUsage;
         this.requestedLimit = requestedLimit;
         this.limitStatus = limitStatus;
+        this.customerMessage = customerMessage;
     }
 
     /**
@@ -266,6 +288,7 @@ public final class LimitItem extends Item {
         Approved("APPROVED"),
         PartiallyApproved("PARTIALLY_APPROVED"),
         NotApproved("NOT_APPROVED"),
+        Rejected("REJECTED"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -322,6 +345,20 @@ public final class LimitItem extends Item {
         return limitStatus;
     }
 
+    /**
+     * The message to customer for partially approved and rejected limit requests
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerMessage")
+    private final String customerMessage;
+
+    /**
+     * The message to customer for partially approved and rejected limit requests
+     * @return the value
+     **/
+    public String getCustomerMessage() {
+        return customerMessage;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -340,6 +377,7 @@ public final class LimitItem extends Item {
         sb.append(", currentUsage=").append(String.valueOf(this.currentUsage));
         sb.append(", requestedLimit=").append(String.valueOf(this.requestedLimit));
         sb.append(", limitStatus=").append(String.valueOf(this.limitStatus));
+        sb.append(", customerMessage=").append(String.valueOf(this.customerMessage));
         sb.append(")");
         return sb.toString();
     }
@@ -358,6 +396,7 @@ public final class LimitItem extends Item {
                 && java.util.Objects.equals(this.currentUsage, other.currentUsage)
                 && java.util.Objects.equals(this.requestedLimit, other.requestedLimit)
                 && java.util.Objects.equals(this.limitStatus, other.limitStatus)
+                && java.util.Objects.equals(this.customerMessage, other.customerMessage)
                 && super.equals(other);
     }
 
@@ -371,6 +410,9 @@ public final class LimitItem extends Item {
                 (result * PRIME)
                         + (this.requestedLimit == null ? 43 : this.requestedLimit.hashCode());
         result = (result * PRIME) + (this.limitStatus == null ? 43 : this.limitStatus.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerMessage == null ? 43 : this.customerMessage.hashCode());
         return result;
     }
 }

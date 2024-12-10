@@ -34,7 +34,8 @@ public final class FusionEnvironmentFamily
         "lifecycleDetails",
         "systemName",
         "freeformTags",
-        "definedTags"
+        "definedTags",
+        "timeLastSubscriptionUpdate"
     })
     public FusionEnvironmentFamily(
             String id,
@@ -48,7 +49,8 @@ public final class FusionEnvironmentFamily
             String lifecycleDetails,
             String systemName,
             java.util.Map<String, String> freeformTags,
-            java.util.Map<String, java.util.Map<String, Object>> definedTags) {
+            java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Date timeLastSubscriptionUpdate) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -62,6 +64,7 @@ public final class FusionEnvironmentFamily
         this.systemName = systemName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.timeLastSubscriptionUpdate = timeLastSubscriptionUpdate;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -260,6 +263,22 @@ public final class FusionEnvironmentFamily
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Indicates when the family received the last subscription update
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastSubscriptionUpdate")
+        private java.util.Date timeLastSubscriptionUpdate;
+
+        /**
+         * Indicates when the family received the last subscription update
+         * @param timeLastSubscriptionUpdate the value to set
+         * @return this builder
+         **/
+        public Builder timeLastSubscriptionUpdate(java.util.Date timeLastSubscriptionUpdate) {
+            this.timeLastSubscriptionUpdate = timeLastSubscriptionUpdate;
+            this.__explicitlySet__.add("timeLastSubscriptionUpdate");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -278,7 +297,8 @@ public final class FusionEnvironmentFamily
                             this.lifecycleDetails,
                             this.systemName,
                             this.freeformTags,
-                            this.definedTags);
+                            this.definedTags,
+                            this.timeLastSubscriptionUpdate);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -322,6 +342,9 @@ public final class FusionEnvironmentFamily
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastSubscriptionUpdate")) {
+                this.timeLastSubscriptionUpdate(model.getTimeLastSubscriptionUpdate());
             }
             return this;
         }
@@ -559,6 +582,20 @@ public final class FusionEnvironmentFamily
         return definedTags;
     }
 
+    /**
+     * Indicates when the family received the last subscription update
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastSubscriptionUpdate")
+    private final java.util.Date timeLastSubscriptionUpdate;
+
+    /**
+     * Indicates when the family received the last subscription update
+     * @return the value
+     **/
+    public java.util.Date getTimeLastSubscriptionUpdate() {
+        return timeLastSubscriptionUpdate;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -587,6 +624,8 @@ public final class FusionEnvironmentFamily
         sb.append(", systemName=").append(String.valueOf(this.systemName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", timeLastSubscriptionUpdate=")
+                .append(String.valueOf(this.timeLastSubscriptionUpdate));
         sb.append(")");
         return sb.toString();
     }
@@ -615,6 +654,8 @@ public final class FusionEnvironmentFamily
                 && java.util.Objects.equals(this.systemName, other.systemName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(
+                        this.timeLastSubscriptionUpdate, other.timeLastSubscriptionUpdate)
                 && super.equals(other);
     }
 
@@ -650,6 +691,11 @@ public final class FusionEnvironmentFamily
         result = (result * PRIME) + (this.systemName == null ? 43 : this.systemName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastSubscriptionUpdate == null
+                                ? 43
+                                : this.timeLastSubscriptionUpdate.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -58,6 +58,17 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
     public String getOpcRequestId() {
         return opcRequestId;
     }
+    /**
+     * Whether to override locks (if any exist).
+     */
+    private Boolean isLockOverride;
+
+    /**
+     * Whether to override locks (if any exist).
+     */
+    public Boolean getIsLockOverride() {
+        return isLockOverride;
+    }
 
     public static class Builder
             implements com.oracle.bmc.requests.BmcRequest.Builder<
@@ -126,6 +137,21 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
         }
 
         /**
+         * Whether to override locks (if any exist).
+         */
+        private Boolean isLockOverride = null;
+
+        /**
+         * Whether to override locks (if any exist).
+         * @param isLockOverride the value to set
+         * @return this builder instance
+         */
+        public Builder isLockOverride(Boolean isLockOverride) {
+            this.isLockOverride = isLockOverride;
+            return this;
+        }
+
+        /**
          * Set the invocation callback for the request to be built.
          * @param invocationCallback the invocation callback to be set for the request
          * @return this builder instance
@@ -156,6 +182,7 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
             exportId(o.getExportId());
             ifMatch(o.getIfMatch());
             opcRequestId(o.getOpcRequestId());
+            isLockOverride(o.getIsLockOverride());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
             return this;
@@ -191,8 +218,9 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.exportId = exportId;
             request.ifMatch = ifMatch;
             request.opcRequestId = opcRequestId;
+            request.isLockOverride = isLockOverride;
             return request;
-            // new DeleteExportRequest(exportId, ifMatch, opcRequestId);
+            // new DeleteExportRequest(exportId, ifMatch, opcRequestId, isLockOverride);
         }
     }
 
@@ -201,7 +229,11 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
      * @return instance of {@link Builder} that allows you to modify request properties.
      */
     public Builder toBuilder() {
-        return new Builder().exportId(exportId).ifMatch(ifMatch).opcRequestId(opcRequestId);
+        return new Builder()
+                .exportId(exportId)
+                .ifMatch(ifMatch)
+                .opcRequestId(opcRequestId)
+                .isLockOverride(isLockOverride);
     }
 
     /**
@@ -220,6 +252,7 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",exportId=").append(String.valueOf(this.exportId));
         sb.append(",ifMatch=").append(String.valueOf(this.ifMatch));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
+        sb.append(",isLockOverride=").append(String.valueOf(this.isLockOverride));
         sb.append(")");
         return sb.toString();
     }
@@ -237,7 +270,8 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
         return super.equals(o)
                 && java.util.Objects.equals(this.exportId, other.exportId)
                 && java.util.Objects.equals(this.ifMatch, other.ifMatch)
-                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.isLockOverride, other.isLockOverride);
     }
 
     @Override
@@ -247,6 +281,9 @@ public class DeleteExportRequest extends com.oracle.bmc.requests.BmcRequest<java
         result = (result * PRIME) + (this.exportId == null ? 43 : this.exportId.hashCode());
         result = (result * PRIME) + (this.ifMatch == null ? 43 : this.ifMatch.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isLockOverride == null ? 43 : this.isLockOverride.hashCode());
         return result;
     }
 }

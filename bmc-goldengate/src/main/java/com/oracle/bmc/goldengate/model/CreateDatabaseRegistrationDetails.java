@@ -345,16 +345,16 @@ public final class CreateDatabaseRegistrationDetails
             return this;
         }
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-         * attribute is expected to be base64 encoded.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * This attribute is expected to be base64 encoded.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
         /**
-         * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-         * attribute is expected to be base64 encoded.
+         * The wallet contents Oracle GoldenGate uses to make connections to a database.
+         * This attribute is expected to be base64 encoded.
          *
          * @param wallet the value to set
          * @return this builder
@@ -818,16 +818,16 @@ public final class CreateDatabaseRegistrationDetails
     }
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-     * attribute is expected to be base64 encoded.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * This attribute is expected to be base64 encoded.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
     private final String wallet;
 
     /**
-     * The wallet contents Oracle GoldenGate uses to make connections to a database.  This
-     * attribute is expected to be base64 encoded.
+     * The wallet contents Oracle GoldenGate uses to make connections to a database.
+     * This attribute is expected to be base64 encoded.
      *
      * @return the value
      **/

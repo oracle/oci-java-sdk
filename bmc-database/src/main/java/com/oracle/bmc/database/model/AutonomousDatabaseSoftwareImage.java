@@ -35,7 +35,8 @@ public final class AutonomousDatabaseSoftwareImage
         "freeformTags",
         "definedTags",
         "autonomousDsiOneOffPatches",
-        "imageShapeFamily"
+        "imageShapeFamily",
+        "dstFileVersion"
     })
     public AutonomousDatabaseSoftwareImage(
             String id,
@@ -49,7 +50,8 @@ public final class AutonomousDatabaseSoftwareImage
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<String> autonomousDsiOneOffPatches,
-            ImageShapeFamily imageShapeFamily) {
+            ImageShapeFamily imageShapeFamily,
+            String dstFileVersion) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -63,6 +65,7 @@ public final class AutonomousDatabaseSoftwareImage
         this.definedTags = definedTags;
         this.autonomousDsiOneOffPatches = autonomousDsiOneOffPatches;
         this.imageShapeFamily = imageShapeFamily;
+        this.dstFileVersion = dstFileVersion;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -273,6 +276,22 @@ public final class AutonomousDatabaseSoftwareImage
             this.__explicitlySet__.add("imageShapeFamily");
             return this;
         }
+        /**
+         * DST Time-Zone File version of the Autonomous Container Database.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+        private String dstFileVersion;
+
+        /**
+         * DST Time-Zone File version of the Autonomous Container Database.
+         * @param dstFileVersion the value to set
+         * @return this builder
+         **/
+        public Builder dstFileVersion(String dstFileVersion) {
+            this.dstFileVersion = dstFileVersion;
+            this.__explicitlySet__.add("dstFileVersion");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -291,7 +310,8 @@ public final class AutonomousDatabaseSoftwareImage
                             this.freeformTags,
                             this.definedTags,
                             this.autonomousDsiOneOffPatches,
-                            this.imageShapeFamily);
+                            this.imageShapeFamily,
+                            this.dstFileVersion);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -335,6 +355,9 @@ public final class AutonomousDatabaseSoftwareImage
             }
             if (model.wasPropertyExplicitlySet("imageShapeFamily")) {
                 this.imageShapeFamily(model.getImageShapeFamily());
+            }
+            if (model.wasPropertyExplicitlySet("dstFileVersion")) {
+                this.dstFileVersion(model.getDstFileVersion());
             }
             return this;
         }
@@ -632,6 +655,20 @@ public final class AutonomousDatabaseSoftwareImage
         return imageShapeFamily;
     }
 
+    /**
+     * DST Time-Zone File version of the Autonomous Container Database.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("dstFileVersion")
+    private final String dstFileVersion;
+
+    /**
+     * DST Time-Zone File version of the Autonomous Container Database.
+     * @return the value
+     **/
+    public String getDstFileVersion() {
+        return dstFileVersion;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -659,6 +696,7 @@ public final class AutonomousDatabaseSoftwareImage
         sb.append(", autonomousDsiOneOffPatches=")
                 .append(String.valueOf(this.autonomousDsiOneOffPatches));
         sb.append(", imageShapeFamily=").append(String.valueOf(this.imageShapeFamily));
+        sb.append(", dstFileVersion=").append(String.valueOf(this.dstFileVersion));
         sb.append(")");
         return sb.toString();
     }
@@ -686,6 +724,7 @@ public final class AutonomousDatabaseSoftwareImage
                 && java.util.Objects.equals(
                         this.autonomousDsiOneOffPatches, other.autonomousDsiOneOffPatches)
                 && java.util.Objects.equals(this.imageShapeFamily, other.imageShapeFamily)
+                && java.util.Objects.equals(this.dstFileVersion, other.dstFileVersion)
                 && super.equals(other);
     }
 
@@ -721,6 +760,9 @@ public final class AutonomousDatabaseSoftwareImage
         result =
                 (result * PRIME)
                         + (this.imageShapeFamily == null ? 43 : this.imageShapeFamily.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dstFileVersion == null ? 43 : this.dstFileVersion.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -20,6 +20,10 @@ import javax.security.auth.RefreshFailedException;
 import javax.security.auth.Refreshable;
 import javax.ws.rs.client.Invocation.Builder;
 import javax.ws.rs.client.WebTarget;
+import com.oracle.bmc.retrier.DefaultRetryCondition;
+import com.oracle.bmc.retrier.RetryConfiguration;
+import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
+import com.oracle.bmc.waiter.MaxAttemptsTerminationStrategy;
 import javax.ws.rs.core.Response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -39,6 +43,7 @@ import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.util.internal.Validate;
 
 import javax.annotation.concurrent.Immutable;
+import javax.annotation.Nonnull;
 import javax.security.auth.RefreshFailedException;
 import javax.security.auth.Refreshable;
 import javax.ws.rs.client.Invocation.Builder;
@@ -62,6 +67,23 @@ import org.slf4j.Logger;
  * passing along a temporary public key that is bounded to the the security token, and the leaf certificate.
  */
 public class X509FederationClient implements FederationClient, ProvidesConfigurableRefresh {
+    private static final RetryConfiguration RETRY_CONFIGURATION =
+            RetryConfiguration.builder()
+                    .delayStrategy(new ExponentialBackoffDelayStrategyWithJitter(1000))
+                    .terminationStrategy(new MaxAttemptsTerminationStrategy(3))
+                    .retryCondition(
+                            new DefaultRetryCondition() {
+                                @Override
+                                public boolean shouldBeRetried(@Nonnull BmcException e) {
+                                    if (e == null) {
+                                        throw new java.lang.NullPointerException(
+                                                "e is marked non-null but is null");
+                                    }
+                                    // We should not retry on 4xx
+                                    return e.getStatusCode() < 400 || e.getStatusCode() >= 500;
+                                }
+                            })
+                    .build();
     private static final Function<Response, WithHeaders<SecurityToken>> SECURITY_TOKEN_FN =
             new ResponseConversionFunctionFactory().create(SecurityToken.class);
     private static final String DEFAULT_PURPOSE = "DEFAULT";
@@ -315,30 +337,17 @@ public class X509FederationClient implements FederationClient, ProvidesConfigura
         }
     }
 
-    // really simple retry until the SDK supports internal retries
     @VisibleForTesting
     Response makeCall(Builder ib, URI requestUri, X509FederationRequest federationRequest) {
-        BmcException lastException = null;
-        // Keeping one instance of the WrappedInvocationBuilder in order to preserve the request ID on retries.
         final WrappedInvocationBuilder wrappedIb = new WrappedInvocationBuilder(ib, requestUri);
-        for (int retry = 0; retry < 5; retry++) {
-            try {
-                return federationHttpClient.post(wrappedIb, federationRequest, new BmcRequest());
-            } catch (BmcException e) {
-                // retry in all cases right now
-                lastException = e;
-                try {
-                    Thread.sleep(250L);
-                } catch (InterruptedException e1) {
-                    LOG.debug(
-                            "Thread interrupted while waiting to make next call to federation service",
-                            e1);
-                    Thread.currentThread().interrupt();
-                    break;
-                }
-            }
-        }
-        throw lastException;
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(RETRY_CONFIGURATION, null);
+        return retrier.execute(
+                federationRequest,
+                retryRequest -> {
+                    return federationHttpClient.post(
+                            wrappedIb, federationRequest, new BmcRequest());
+                });
     }
 
     @Override

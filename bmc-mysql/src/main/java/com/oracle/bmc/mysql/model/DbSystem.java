@@ -38,6 +38,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "source",
         "configurationId",
         "dataStorageSizeInGBs",
+        "dataStorage",
         "hostnameLabel",
         "ipAddress",
         "port",
@@ -55,7 +56,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "crashRecovery",
         "pointInTimeRecoveryDetails",
         "databaseManagement",
-        "secureConnections"
+        "secureConnections",
+        "customerContacts"
     })
     public DbSystem(
             String id,
@@ -75,6 +77,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             DbSystemSource source,
             String configurationId,
             Integer dataStorageSizeInGBs,
+            DataStorage dataStorage,
             String hostnameLabel,
             String ipAddress,
             Integer port,
@@ -92,7 +95,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             CrashRecoveryStatus crashRecovery,
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
             DatabaseManagementStatus databaseManagement,
-            SecureConnectionDetails secureConnections) {
+            SecureConnectionDetails secureConnections,
+            java.util.List<CustomerContact> customerContacts) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -111,6 +115,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.source = source;
         this.configurationId = configurationId;
         this.dataStorageSizeInGBs = dataStorageSizeInGBs;
+        this.dataStorage = dataStorage;
         this.hostnameLabel = hostnameLabel;
         this.ipAddress = ipAddress;
         this.port = port;
@@ -129,6 +134,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.customerContacts = customerContacts;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -406,14 +412,16 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+         * Replaced by dataStorage.dataStorageSizeInGBs.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
         private Integer dataStorageSizeInGBs;
 
         /**
-         * Initial size of the data volume in GiBs that will be created and attached.
+         * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+         * Replaced by dataStorage.dataStorageSizeInGBs.
          *
          * @param dataStorageSizeInGBs the value to set
          * @return this builder
@@ -421,6 +429,15 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         public Builder dataStorageSizeInGBs(Integer dataStorageSizeInGBs) {
             this.dataStorageSizeInGBs = dataStorageSizeInGBs;
             this.__explicitlySet__.add("dataStorageSizeInGBs");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+        private DataStorage dataStorage;
+
+        public Builder dataStorage(DataStorage dataStorage) {
+            this.dataStorage = dataStorage;
+            this.__explicitlySet__.add("dataStorage");
             return this;
         }
         /**
@@ -719,6 +736,28 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             this.__explicitlySet__.add("secureConnections");
             return this;
         }
+        /**
+         * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+         * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+         * Up to 10 email addresses can be added to the customer contacts for a DB System.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+        private java.util.List<CustomerContact> customerContacts;
+
+        /**
+         * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+         * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+         * Up to 10 email addresses can be added to the customer contacts for a DB System.
+         *
+         * @param customerContacts the value to set
+         * @return this builder
+         **/
+        public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
+            this.customerContacts = customerContacts;
+            this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -743,6 +782,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.source,
                             this.configurationId,
                             this.dataStorageSizeInGBs,
+                            this.dataStorage,
                             this.hostnameLabel,
                             this.ipAddress,
                             this.port,
@@ -760,7 +800,8 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.crashRecovery,
                             this.pointInTimeRecoveryDetails,
                             this.databaseManagement,
-                            this.secureConnections);
+                            this.secureConnections,
+                            this.customerContacts);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -820,6 +861,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             if (model.wasPropertyExplicitlySet("dataStorageSizeInGBs")) {
                 this.dataStorageSizeInGBs(model.getDataStorageSizeInGBs());
             }
+            if (model.wasPropertyExplicitlySet("dataStorage")) {
+                this.dataStorage(model.getDataStorage());
+            }
             if (model.wasPropertyExplicitlySet("hostnameLabel")) {
                 this.hostnameLabel(model.getHostnameLabel());
             }
@@ -873,6 +917,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
+            }
+            if (model.wasPropertyExplicitlySet("customerContacts")) {
+                this.customerContacts(model.getCustomerContacts());
             }
             return this;
         }
@@ -1130,19 +1177,28 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+     * Replaced by dataStorage.dataStorageSizeInGBs.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("dataStorageSizeInGBs")
     private final Integer dataStorageSizeInGBs;
 
     /**
-     * Initial size of the data volume in GiBs that will be created and attached.
+     * DEPRECATED: User specified size of the data volume. May be less than current allocatedStorageSizeInGBs.
+     * Replaced by dataStorage.dataStorageSizeInGBs.
      *
      * @return the value
      **/
     public Integer getDataStorageSizeInGBs() {
         return dataStorageSizeInGBs;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("dataStorage")
+    private final DataStorage dataStorage;
+
+    public DataStorage getDataStorage() {
+        return dataStorage;
     }
 
     /**
@@ -1456,6 +1512,26 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         return secureConnections;
     }
 
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+     * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+     * Up to 10 email addresses can be added to the customer contacts for a DB System.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("customerContacts")
+    private final java.util.List<CustomerContact> customerContacts;
+
+    /**
+     * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
+     * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
+     * Up to 10 email addresses can be added to the customer contacts for a DB System.
+     *
+     * @return the value
+     **/
+    public java.util.List<CustomerContact> getCustomerContacts() {
+        return customerContacts;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1488,6 +1564,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", source=").append(String.valueOf(this.source));
         sb.append(", configurationId=").append(String.valueOf(this.configurationId));
         sb.append(", dataStorageSizeInGBs=").append(String.valueOf(this.dataStorageSizeInGBs));
+        sb.append(", dataStorage=").append(String.valueOf(this.dataStorage));
         sb.append(", hostnameLabel=").append(String.valueOf(this.hostnameLabel));
         sb.append(", ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(", port=").append(String.valueOf(this.port));
@@ -1507,6 +1584,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
         sb.append(")");
         return sb.toString();
     }
@@ -1539,6 +1617,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.source, other.source)
                 && java.util.Objects.equals(this.configurationId, other.configurationId)
                 && java.util.Objects.equals(this.dataStorageSizeInGBs, other.dataStorageSizeInGBs)
+                && java.util.Objects.equals(this.dataStorage, other.dataStorage)
                 && java.util.Objects.equals(this.hostnameLabel, other.hostnameLabel)
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.port, other.port)
@@ -1558,6 +1637,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.customerContacts, other.customerContacts)
                 && super.equals(other);
     }
 
@@ -1604,6 +1684,7 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
                         + (this.dataStorageSizeInGBs == null
                                 ? 43
                                 : this.dataStorageSizeInGBs.hashCode());
+        result = (result * PRIME) + (this.dataStorage == null ? 43 : this.dataStorage.hashCode());
         result =
                 (result * PRIME)
                         + (this.hostnameLabel == null ? 43 : this.hostnameLabel.hashCode());
@@ -1642,6 +1723,9 @@ public final class DbSystem extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

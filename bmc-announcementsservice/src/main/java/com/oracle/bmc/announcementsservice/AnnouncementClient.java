@@ -511,6 +511,44 @@ public class AnnouncementClient implements Announcement {
     }
 
     @Override
+    public GetAnnouncementCompartmentResponse getAnnouncementCompartment(
+            GetAnnouncementCompartmentRequest request) {
+        LOG.trace("Called getAnnouncementCompartment");
+        final GetAnnouncementCompartmentRequest interceptedRequest =
+                GetAnnouncementCompartmentConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnnouncementCompartmentConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "GetAnnouncementCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment");
+        java.util.function.Function<javax.ws.rs.core.Response, GetAnnouncementCompartmentResponse>
+                transformer =
+                        GetAnnouncementCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetAnnouncementUserStatusResponse getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request) {
         LOG.trace("Called getAnnouncementUserStatus");

@@ -2448,6 +2448,118 @@ public class DnsAsyncClient implements DnsAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PromoteZoneDnssecKeyVersionResponse>
+            promoteZoneDnssecKeyVersion(
+                    PromoteZoneDnssecKeyVersionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    PromoteZoneDnssecKeyVersionRequest,
+                                    PromoteZoneDnssecKeyVersionResponse>
+                            handler) {
+        LOG.trace("Called async promoteZoneDnssecKeyVersion");
+        final PromoteZoneDnssecKeyVersionRequest interceptedRequest =
+                PromoteZoneDnssecKeyVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PromoteZoneDnssecKeyVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dns",
+                        "PromoteZoneDnssecKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/PromoteZoneDnssecKeyVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, PromoteZoneDnssecKeyVersionResponse>
+                transformer =
+                        PromoteZoneDnssecKeyVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PromoteZoneDnssecKeyVersionRequest, PromoteZoneDnssecKeyVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PromoteZoneDnssecKeyVersionRequest,
+                                PromoteZoneDnssecKeyVersionResponse>,
+                        java.util.concurrent.Future<PromoteZoneDnssecKeyVersionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getPromoteZoneDnssecKeyVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PromoteZoneDnssecKeyVersionRequest, PromoteZoneDnssecKeyVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<StageZoneDnssecKeyVersionResponse> stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>
+                    handler) {
+        LOG.trace("Called async stageZoneDnssecKeyVersion");
+        final StageZoneDnssecKeyVersionRequest interceptedRequest =
+                StageZoneDnssecKeyVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StageZoneDnssecKeyVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Dns",
+                        "StageZoneDnssecKeyVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/dns/20180115/Zone/StageZoneDnssecKeyVersion");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, StageZoneDnssecKeyVersionResponse>
+                transformer =
+                        StageZoneDnssecKeyVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                StageZoneDnssecKeyVersionRequest,
+                                StageZoneDnssecKeyVersionResponse>,
+                        java.util.concurrent.Future<StageZoneDnssecKeyVersionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getStageZoneDnssecKeyVersionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateDomainRecordsResponse> updateDomainRecords(
             UpdateDomainRecordsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

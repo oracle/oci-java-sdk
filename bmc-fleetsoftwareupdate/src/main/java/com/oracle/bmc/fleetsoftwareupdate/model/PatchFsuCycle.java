@@ -90,6 +90,24 @@ public final class PatchFsuCycle extends FsuCycle {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedActionId")
+        private String lastCompletedActionId;
+
+        public Builder lastCompletedActionId(String lastCompletedActionId) {
+            this.lastCompletedActionId = lastCompletedActionId;
+            this.__explicitlySet__.add("lastCompletedActionId");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("rollbackCycleState")
+        private RollbackCycleStates rollbackCycleState;
+
+        public Builder rollbackCycleState(RollbackCycleStates rollbackCycleState) {
+            this.rollbackCycleState = rollbackCycleState;
+            this.__explicitlySet__.add("rollbackCycleState");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedAction")
         private DetailedActionTypes lastCompletedAction;
 
@@ -132,6 +150,15 @@ public final class PatchFsuCycle extends FsuCycle {
         public Builder applyActionSchedule(ScheduleDetails applyActionSchedule) {
             this.applyActionSchedule = applyActionSchedule;
             this.__explicitlySet__.add("applyActionSchedule");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("diagnosticsCollection")
+        private DiagnosticsCollectionDetails diagnosticsCollection;
+
+        public Builder diagnosticsCollection(DiagnosticsCollectionDetails diagnosticsCollection) {
+            this.diagnosticsCollection = diagnosticsCollection;
+            this.__explicitlySet__.add("diagnosticsCollection");
             return this;
         }
 
@@ -295,11 +322,14 @@ public final class PatchFsuCycle extends FsuCycle {
                             this.collectionType,
                             this.executingFsuActionId,
                             this.nextActionToExecute,
+                            this.lastCompletedActionId,
+                            this.rollbackCycleState,
                             this.lastCompletedAction,
                             this.goalVersionDetails,
                             this.batchingStrategy,
                             this.stageActionSchedule,
                             this.applyActionSchedule,
+                            this.diagnosticsCollection,
                             this.timeCreated,
                             this.timeUpdated,
                             this.timeFinished,
@@ -341,6 +371,12 @@ public final class PatchFsuCycle extends FsuCycle {
             if (model.wasPropertyExplicitlySet("nextActionToExecute")) {
                 this.nextActionToExecute(model.getNextActionToExecute());
             }
+            if (model.wasPropertyExplicitlySet("lastCompletedActionId")) {
+                this.lastCompletedActionId(model.getLastCompletedActionId());
+            }
+            if (model.wasPropertyExplicitlySet("rollbackCycleState")) {
+                this.rollbackCycleState(model.getRollbackCycleState());
+            }
             if (model.wasPropertyExplicitlySet("lastCompletedAction")) {
                 this.lastCompletedAction(model.getLastCompletedAction());
             }
@@ -355,6 +391,9 @@ public final class PatchFsuCycle extends FsuCycle {
             }
             if (model.wasPropertyExplicitlySet("applyActionSchedule")) {
                 this.applyActionSchedule(model.getApplyActionSchedule());
+            }
+            if (model.wasPropertyExplicitlySet("diagnosticsCollection")) {
+                this.diagnosticsCollection(model.getDiagnosticsCollection());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -416,11 +455,14 @@ public final class PatchFsuCycle extends FsuCycle {
             CollectionTypes collectionType,
             String executingFsuActionId,
             java.util.List<NextActionToExecuteDetails> nextActionToExecute,
+            String lastCompletedActionId,
+            RollbackCycleStates rollbackCycleState,
             DetailedActionTypes lastCompletedAction,
             FsuGoalVersionDetails goalVersionDetails,
             BatchingStrategyDetails batchingStrategy,
             ScheduleDetails stageActionSchedule,
             ScheduleDetails applyActionSchedule,
+            DiagnosticsCollectionDetails diagnosticsCollection,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             java.util.Date timeFinished,
@@ -441,11 +483,14 @@ public final class PatchFsuCycle extends FsuCycle {
                 collectionType,
                 executingFsuActionId,
                 nextActionToExecute,
+                lastCompletedActionId,
+                rollbackCycleState,
                 lastCompletedAction,
                 goalVersionDetails,
                 batchingStrategy,
                 stageActionSchedule,
                 applyActionSchedule,
+                diagnosticsCollection,
                 timeCreated,
                 timeUpdated,
                 timeFinished,

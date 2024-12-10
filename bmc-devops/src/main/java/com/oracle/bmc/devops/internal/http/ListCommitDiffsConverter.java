@@ -54,6 +54,14 @@ public class ListCommitDiffsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getTargetVersion()));
 
+        if (request.getTargetRepositoryId() != null) {
+            target =
+                    target.queryParam(
+                            "targetRepositoryId",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getTargetRepositoryId()));
+        }
+
         if (request.getIsComparisonFromMergeBase() != null) {
             target =
                     target.queryParam(

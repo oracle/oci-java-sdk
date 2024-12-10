@@ -40,6 +40,7 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         "timeUpdated",
         "lifecycleState",
         "lifecycleDetails",
+        "lastCompletedFsuCycleId",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -55,6 +56,7 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
             java.util.Date timeUpdated,
             CollectionLifecycleStates lifecycleState,
             String lifecycleDetails,
+            String lastCompletedFsuCycleId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -69,6 +71,7 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.lifecycleDetails = lifecycleDetails;
+        this.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -226,6 +229,22 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedFsuCycleId")
+    private final String lastCompletedFsuCycleId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of last completed FSU Cycle.
+     *
+     * @return the value
+     **/
+    public String getLastCompletedFsuCycleId() {
+        return lastCompletedFsuCycleId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for cross-compatibility only.
      * Example: {@code {"bar-key": "value"}}
      *
@@ -303,6 +322,8 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", lastCompletedFsuCycleId=")
+                .append(String.valueOf(this.lastCompletedFsuCycleId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -330,6 +351,8 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(
+                        this.lastCompletedFsuCycleId, other.lastCompletedFsuCycleId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -358,6 +381,11 @@ public class FsuCollection extends com.oracle.bmc.http.internal.ExplicitlySetBmc
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastCompletedFsuCycleId == null
+                                ? 43
+                                : this.lastCompletedFsuCycleId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

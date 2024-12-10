@@ -35,6 +35,7 @@ public class ListOccAvailabilityCatalogsInternalConverter {
                     request) {
         Validate.notNull(request, "request instance is required");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
+        Validate.notNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -80,13 +81,11 @@ public class ListOccAvailabilityCatalogsInternalConverter {
                                     request.getCatalogState().getValue()));
         }
 
-        if (request.getOccCustomerGroupId() != null) {
-            target =
-                    target.queryParam(
-                            "occCustomerGroupId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getOccCustomerGroupId()));
-        }
+        target =
+                target.queryParam(
+                        "occCustomerGroupId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getOccCustomerGroupId()));
 
         if (request.getLimit() != null) {
             target =

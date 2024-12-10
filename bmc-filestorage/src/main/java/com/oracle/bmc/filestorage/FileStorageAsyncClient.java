@@ -458,6 +458,423 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddExportLockResponse> addExportLock(
+            AddExportLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddExportLockRequest, AddExportLockResponse>
+                    handler) {
+        LOG.trace("Called async addExportLock");
+        final AddExportLockRequest interceptedRequest =
+                AddExportLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddExportLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddExportLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/AddExportLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddExportLockResponse>
+                transformer =
+                        AddExportLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddExportLockRequest, AddExportLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddExportLockRequest, AddExportLockResponse>,
+                        java.util.concurrent.Future<AddExportLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddExportLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddExportLockRequest, AddExportLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFileSystemLockResponse> addFileSystemLock(
+            AddFileSystemLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddFileSystemLockRequest, AddFileSystemLockResponse>
+                    handler) {
+        LOG.trace("Called async addFileSystemLock");
+        final AddFileSystemLockRequest interceptedRequest =
+                AddFileSystemLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddFileSystemLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddFileSystemLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/AddFileSystemLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddFileSystemLockResponse>
+                transformer =
+                        AddFileSystemLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddFileSystemLockRequest, AddFileSystemLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddFileSystemLockRequest, AddFileSystemLockResponse>,
+                        java.util.concurrent.Future<AddFileSystemLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddFileSystemLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddFileSystemLockRequest, AddFileSystemLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddFilesystemSnapshotPolicyLockResponse>
+            addFilesystemSnapshotPolicyLock(
+                    AddFilesystemSnapshotPolicyLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AddFilesystemSnapshotPolicyLockRequest,
+                                    AddFilesystemSnapshotPolicyLockResponse>
+                            handler) {
+        LOG.trace("Called async addFilesystemSnapshotPolicyLock");
+        final AddFilesystemSnapshotPolicyLockRequest interceptedRequest =
+                AddFilesystemSnapshotPolicyLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddFilesystemSnapshotPolicyLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddFilesystemSnapshotPolicyLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/AddFilesystemSnapshotPolicyLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddFilesystemSnapshotPolicyLockResponse>
+                transformer =
+                        AddFilesystemSnapshotPolicyLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddFilesystemSnapshotPolicyLockRequest,
+                        AddFilesystemSnapshotPolicyLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddFilesystemSnapshotPolicyLockRequest,
+                                AddFilesystemSnapshotPolicyLockResponse>,
+                        java.util.concurrent.Future<AddFilesystemSnapshotPolicyLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddFilesystemSnapshotPolicyLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddFilesystemSnapshotPolicyLockRequest,
+                    AddFilesystemSnapshotPolicyLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddMountTargetLockResponse> addMountTargetLock(
+            AddMountTargetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddMountTargetLockRequest, AddMountTargetLockResponse>
+                    handler) {
+        LOG.trace("Called async addMountTargetLock");
+        final AddMountTargetLockRequest interceptedRequest =
+                AddMountTargetLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddMountTargetLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddMountTargetLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/AddMountTargetLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddMountTargetLockResponse>
+                transformer =
+                        AddMountTargetLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddMountTargetLockRequest, AddMountTargetLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddMountTargetLockRequest, AddMountTargetLockResponse>,
+                        java.util.concurrent.Future<AddMountTargetLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddMountTargetLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddMountTargetLockRequest, AddMountTargetLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddOutboundConnectorLockResponse> addOutboundConnectorLock(
+            AddOutboundConnectorLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddOutboundConnectorLockRequest, AddOutboundConnectorLockResponse>
+                    handler) {
+        LOG.trace("Called async addOutboundConnectorLock");
+        final AddOutboundConnectorLockRequest interceptedRequest =
+                AddOutboundConnectorLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddOutboundConnectorLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddOutboundConnectorLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/AddOutboundConnectorLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AddOutboundConnectorLockResponse>
+                transformer =
+                        AddOutboundConnectorLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AddOutboundConnectorLockRequest, AddOutboundConnectorLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddOutboundConnectorLockRequest, AddOutboundConnectorLockResponse>,
+                        java.util.concurrent.Future<AddOutboundConnectorLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddOutboundConnectorLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddOutboundConnectorLockRequest, AddOutboundConnectorLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddReplicationLockResponse> addReplicationLock(
+            AddReplicationLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddReplicationLockRequest, AddReplicationLockResponse>
+                    handler) {
+        LOG.trace("Called async addReplicationLock");
+        final AddReplicationLockRequest interceptedRequest =
+                AddReplicationLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddReplicationLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddReplicationLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/AddReplicationLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddReplicationLockResponse>
+                transformer =
+                        AddReplicationLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddReplicationLockRequest, AddReplicationLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddReplicationLockRequest, AddReplicationLockResponse>,
+                        java.util.concurrent.Future<AddReplicationLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddReplicationLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddReplicationLockRequest, AddReplicationLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddSnapshotLockResponse> addSnapshotLock(
+            AddSnapshotLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddSnapshotLockRequest, AddSnapshotLockResponse>
+                    handler) {
+        LOG.trace("Called async addSnapshotLock");
+        final AddSnapshotLockRequest interceptedRequest =
+                AddSnapshotLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddSnapshotLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "AddSnapshotLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/AddSnapshotLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddSnapshotLockResponse>
+                transformer =
+                        AddSnapshotLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddSnapshotLockRequest, AddSnapshotLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddSnapshotLockRequest, AddSnapshotLockResponse>,
+                        java.util.concurrent.Future<AddSnapshotLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddSnapshotLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddSnapshotLockRequest, AddSnapshotLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelDowngradeShapeMountTargetResponse>
+            cancelDowngradeShapeMountTarget(
+                    CancelDowngradeShapeMountTargetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CancelDowngradeShapeMountTargetRequest,
+                                    CancelDowngradeShapeMountTargetResponse>
+                            handler) {
+        LOG.trace("Called async cancelDowngradeShapeMountTarget");
+        final CancelDowngradeShapeMountTargetRequest interceptedRequest =
+                CancelDowngradeShapeMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelDowngradeShapeMountTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "CancelDowngradeShapeMountTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/CancelDowngradeShapeMountTarget");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, CancelDowngradeShapeMountTargetResponse>
+                transformer =
+                        CancelDowngradeShapeMountTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CancelDowngradeShapeMountTargetRequest,
+                        CancelDowngradeShapeMountTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelDowngradeShapeMountTargetRequest,
+                                CancelDowngradeShapeMountTargetResponse>,
+                        java.util.concurrent.Future<CancelDowngradeShapeMountTargetResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelDowngradeShapeMountTargetRequest,
+                    CancelDowngradeShapeMountTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeFileSystemCompartmentResponse>
             changeFileSystemCompartment(
                     ChangeFileSystemCompartmentRequest request,
@@ -1490,6 +1907,50 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachCloneResponse> detachClone(
+            DetachCloneRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DetachCloneRequest, DetachCloneResponse>
+                    handler) {
+        LOG.trace("Called async detachClone");
+        final DetachCloneRequest interceptedRequest =
+                DetachCloneConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachCloneConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "DetachClone",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/DetachClone");
+        final java.util.function.Function<javax.ws.rs.core.Response, DetachCloneResponse>
+                transformer =
+                        DetachCloneConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DetachCloneRequest, DetachCloneResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachCloneRequest, DetachCloneResponse>,
+                        java.util.concurrent.Future<DetachCloneResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachCloneRequest, DetachCloneResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<EstimateReplicationResponse> estimateReplication(
             EstimateReplicationRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -2414,6 +2875,436 @@ public class FileStorageAsyncClient implements FileStorageAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveExportLockResponse> removeExportLock(
+            RemoveExportLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveExportLockRequest, RemoveExportLockResponse>
+                    handler) {
+        LOG.trace("Called async removeExportLock");
+        final RemoveExportLockRequest interceptedRequest =
+                RemoveExportLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveExportLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveExportLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/RemoveExportLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveExportLockResponse>
+                transformer =
+                        RemoveExportLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveExportLockRequest, RemoveExportLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveExportLockRequest, RemoveExportLockResponse>,
+                        java.util.concurrent.Future<RemoveExportLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveExportLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveExportLockRequest, RemoveExportLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFileSystemLockResponse> removeFileSystemLock(
+            RemoveFileSystemLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveFileSystemLockRequest, RemoveFileSystemLockResponse>
+                    handler) {
+        LOG.trace("Called async removeFileSystemLock");
+        final RemoveFileSystemLockRequest interceptedRequest =
+                RemoveFileSystemLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveFileSystemLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveFileSystemLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FileSystem/RemoveFileSystemLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveFileSystemLockResponse>
+                transformer =
+                        RemoveFileSystemLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveFileSystemLockRequest, RemoveFileSystemLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveFileSystemLockRequest, RemoveFileSystemLockResponse>,
+                        java.util.concurrent.Future<RemoveFileSystemLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveFileSystemLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveFileSystemLockRequest, RemoveFileSystemLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveFilesystemSnapshotPolicyLockResponse>
+            removeFilesystemSnapshotPolicyLock(
+                    RemoveFilesystemSnapshotPolicyLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveFilesystemSnapshotPolicyLockRequest,
+                                    RemoveFilesystemSnapshotPolicyLockResponse>
+                            handler) {
+        LOG.trace("Called async removeFilesystemSnapshotPolicyLock");
+        final RemoveFilesystemSnapshotPolicyLockRequest interceptedRequest =
+                RemoveFilesystemSnapshotPolicyLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveFilesystemSnapshotPolicyLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveFilesystemSnapshotPolicyLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/FilesystemSnapshotPolicy/RemoveFilesystemSnapshotPolicyLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveFilesystemSnapshotPolicyLockResponse>
+                transformer =
+                        RemoveFilesystemSnapshotPolicyLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveFilesystemSnapshotPolicyLockRequest,
+                        RemoveFilesystemSnapshotPolicyLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveFilesystemSnapshotPolicyLockRequest,
+                                RemoveFilesystemSnapshotPolicyLockResponse>,
+                        java.util.concurrent.Future<RemoveFilesystemSnapshotPolicyLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveFilesystemSnapshotPolicyLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveFilesystemSnapshotPolicyLockRequest,
+                    RemoveFilesystemSnapshotPolicyLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveMountTargetLockResponse> removeMountTargetLock(
+            RemoveMountTargetLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveMountTargetLockRequest, RemoveMountTargetLockResponse>
+                    handler) {
+        LOG.trace("Called async removeMountTargetLock");
+        final RemoveMountTargetLockRequest interceptedRequest =
+                RemoveMountTargetLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveMountTargetLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveMountTargetLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/RemoveMountTargetLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveMountTargetLockResponse>
+                transformer =
+                        RemoveMountTargetLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveMountTargetLockRequest, RemoveMountTargetLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveMountTargetLockRequest, RemoveMountTargetLockResponse>,
+                        java.util.concurrent.Future<RemoveMountTargetLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveMountTargetLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveMountTargetLockRequest, RemoveMountTargetLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveOutboundConnectorLockResponse>
+            removeOutboundConnectorLock(
+                    RemoveOutboundConnectorLockRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    RemoveOutboundConnectorLockRequest,
+                                    RemoveOutboundConnectorLockResponse>
+                            handler) {
+        LOG.trace("Called async removeOutboundConnectorLock");
+        final RemoveOutboundConnectorLockRequest interceptedRequest =
+                RemoveOutboundConnectorLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveOutboundConnectorLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveOutboundConnectorLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/OutboundConnector/RemoveOutboundConnectorLock");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, RemoveOutboundConnectorLockResponse>
+                transformer =
+                        RemoveOutboundConnectorLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveOutboundConnectorLockRequest, RemoveOutboundConnectorLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveOutboundConnectorLockRequest,
+                                RemoveOutboundConnectorLockResponse>,
+                        java.util.concurrent.Future<RemoveOutboundConnectorLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveOutboundConnectorLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveOutboundConnectorLockRequest, RemoveOutboundConnectorLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveReplicationLockResponse> removeReplicationLock(
+            RemoveReplicationLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveReplicationLockRequest, RemoveReplicationLockResponse>
+                    handler) {
+        LOG.trace("Called async removeReplicationLock");
+        final RemoveReplicationLockRequest interceptedRequest =
+                RemoveReplicationLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveReplicationLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveReplicationLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Replication/RemoveReplicationLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveReplicationLockResponse>
+                transformer =
+                        RemoveReplicationLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        RemoveReplicationLockRequest, RemoveReplicationLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveReplicationLockRequest, RemoveReplicationLockResponse>,
+                        java.util.concurrent.Future<RemoveReplicationLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveReplicationLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveReplicationLockRequest, RemoveReplicationLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveSnapshotLockResponse> removeSnapshotLock(
+            RemoveSnapshotLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveSnapshotLockRequest, RemoveSnapshotLockResponse>
+                    handler) {
+        LOG.trace("Called async removeSnapshotLock");
+        final RemoveSnapshotLockRequest interceptedRequest =
+                RemoveSnapshotLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveSnapshotLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "RemoveSnapshotLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Snapshot/RemoveSnapshotLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveSnapshotLockResponse>
+                transformer =
+                        RemoveSnapshotLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveSnapshotLockRequest, RemoveSnapshotLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveSnapshotLockRequest, RemoveSnapshotLockResponse>,
+                        java.util.concurrent.Future<RemoveSnapshotLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveSnapshotLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveSnapshotLockRequest, RemoveSnapshotLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ScheduleDowngradeShapeMountTargetResponse>
+            scheduleDowngradeShapeMountTarget(
+                    ScheduleDowngradeShapeMountTargetRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ScheduleDowngradeShapeMountTargetRequest,
+                                    ScheduleDowngradeShapeMountTargetResponse>
+                            handler) {
+        LOG.trace("Called async scheduleDowngradeShapeMountTarget");
+        final ScheduleDowngradeShapeMountTargetRequest interceptedRequest =
+                ScheduleDowngradeShapeMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ScheduleDowngradeShapeMountTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "ScheduleDowngradeShapeMountTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/ScheduleDowngradeShapeMountTarget");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ScheduleDowngradeShapeMountTargetResponse>
+                transformer =
+                        ScheduleDowngradeShapeMountTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ScheduleDowngradeShapeMountTargetRequest,
+                        ScheduleDowngradeShapeMountTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ScheduleDowngradeShapeMountTargetRequest,
+                                ScheduleDowngradeShapeMountTargetResponse>,
+                        java.util.concurrent.Future<ScheduleDowngradeShapeMountTargetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getScheduleDowngradeShapeMountTargetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ScheduleDowngradeShapeMountTargetRequest,
+                    ScheduleDowngradeShapeMountTargetResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<UnpauseFilesystemSnapshotPolicyResponse>
             unpauseFilesystemSnapshotPolicy(
                     UnpauseFilesystemSnapshotPolicyRequest request,
@@ -2867,6 +3758,59 @@ public class FileStorageAsyncClient implements FileStorageAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateSnapshotRequest, UpdateSnapshotResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeShapeMountTargetResponse> upgradeShapeMountTarget(
+            UpgradeShapeMountTargetRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeShapeMountTargetRequest, UpgradeShapeMountTargetResponse>
+                    handler) {
+        LOG.trace("Called async upgradeShapeMountTarget");
+        final UpgradeShapeMountTargetRequest interceptedRequest =
+                UpgradeShapeMountTargetConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeShapeMountTargetConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "FileStorage",
+                        "UpgradeShapeMountTarget",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/MountTarget/UpgradeShapeMountTarget");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpgradeShapeMountTargetResponse>
+                transformer =
+                        UpgradeShapeMountTargetConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpgradeShapeMountTargetRequest, UpgradeShapeMountTargetResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeShapeMountTargetRequest, UpgradeShapeMountTargetResponse>,
+                        java.util.concurrent.Future<UpgradeShapeMountTargetResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpgradeShapeMountTargetDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeShapeMountTargetRequest, UpgradeShapeMountTargetResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

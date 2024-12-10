@@ -19,6 +19,7 @@ import static com.oracle.bmc.util.internal.FileUtils.expandUserHome;
 /**
  * Implementation of {@link AuthenticationDetailsProvider} that uses a session token for authentication.
  */
+@AuthCachingPolicy(cacheKeyId = false, cachePrivateKey = false)
 public class SessionTokenAuthenticationDetailsProvider
         implements AuthenticationDetailsProvider, RegionProvider,
                 RefreshableOnNotAuthenticatedProvider<String> {
@@ -147,6 +148,9 @@ public class SessionTokenAuthenticationDetailsProvider
             if (this.sessionToken.equals(oldSessionToken)) {
                 LOG.warn(
                         "A session token refresh was attempted but it did not change. The token file has not been updated!");
+            } else {
+                LOG.info(
+                        "A session token refresh was attempted and the token was successfully changed. The token file has been updated!");
             }
         } catch (IOException e) {
             LOG.warn("Unable to refresh session token.", e);

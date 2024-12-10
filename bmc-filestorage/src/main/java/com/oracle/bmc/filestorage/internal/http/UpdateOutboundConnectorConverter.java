@@ -44,6 +44,14 @@ public class UpdateOutboundConnectorConverter {
                                 com.oracle.bmc.util.internal.HttpUtils.encodePathSegment(
                                         request.getOutboundConnectorId()));
 
+        if (request.getIsLockOverride() != null) {
+            target =
+                    target.queryParam(
+                            "isLockOverride",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsLockOverride()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

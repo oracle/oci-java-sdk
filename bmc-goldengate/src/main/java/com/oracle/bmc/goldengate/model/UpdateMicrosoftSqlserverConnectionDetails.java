@@ -109,6 +109,15 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The name of the database.
          *
@@ -199,6 +208,26 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
@@ -324,11 +353,13 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.databaseName,
                             this.host,
                             this.port,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.additionalAttributes,
                             this.securityProtocol,
                             this.sslCa,
@@ -369,6 +400,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("databaseName")) {
                 this.databaseName(model.getDatabaseName());
             }
@@ -383,6 +417,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("additionalAttributes")) {
                 this.additionalAttributes(model.getAdditionalAttributes());
@@ -425,11 +462,13 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String databaseName,
             String host,
             Integer port,
             String username,
             String password,
+            String passwordSecretId,
             java.util.List<NameValuePair> additionalAttributes,
             MicrosoftSqlserverConnection.SecurityProtocol securityProtocol,
             String sslCa,
@@ -444,12 +483,14 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.databaseName = databaseName;
         this.host = host;
         this.port = port;
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.additionalAttributes = additionalAttributes;
         this.securityProtocol = securityProtocol;
         this.sslCa = sslCa;
@@ -537,6 +578,24 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
      **/
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /**
@@ -654,6 +713,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
         sb.append(", sslCa=").append(String.valueOf(this.sslCa));
@@ -680,6 +740,7 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
                 && java.util.Objects.equals(this.sslCa, other.sslCa)
@@ -698,6 +759,9 @@ public final class UpdateMicrosoftSqlserverConnectionDetails extends UpdateConne
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result =
                 (result * PRIME)
                         + (this.additionalAttributes == null

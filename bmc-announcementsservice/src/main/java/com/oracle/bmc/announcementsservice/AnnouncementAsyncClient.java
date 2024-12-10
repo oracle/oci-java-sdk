@@ -504,6 +504,57 @@ public class AnnouncementAsyncClient implements AnnouncementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<GetAnnouncementCompartmentResponse>
+            getAnnouncementCompartment(
+                    GetAnnouncementCompartmentRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetAnnouncementCompartmentRequest,
+                                    GetAnnouncementCompartmentResponse>
+                            handler) {
+        LOG.trace("Called async getAnnouncementCompartment");
+        final GetAnnouncementCompartmentRequest interceptedRequest =
+                GetAnnouncementCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetAnnouncementCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Announcement",
+                        "GetAnnouncementCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/announcements/0.0.1/AnnouncementCompartment/GetAnnouncementCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetAnnouncementCompartmentResponse>
+                transformer =
+                        GetAnnouncementCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetAnnouncementCompartmentRequest, GetAnnouncementCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetAnnouncementCompartmentRequest,
+                                GetAnnouncementCompartmentResponse>,
+                        java.util.concurrent.Future<GetAnnouncementCompartmentResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetAnnouncementCompartmentRequest, GetAnnouncementCompartmentResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetAnnouncementUserStatusResponse> getAnnouncementUserStatus(
             GetAnnouncementUserStatusRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

@@ -27,6 +27,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         "createdBy",
         "timeCreated",
         "lifecycleState",
+        "lifecycleDetails",
         "modelVersionSetId",
         "modelVersionSetName",
         "versionId",
@@ -42,6 +43,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             String createdBy,
             java.util.Date timeCreated,
             ModelLifecycleState lifecycleState,
+            String lifecycleDetails,
             String modelVersionSetId,
             String modelVersionSetName,
             Long versionId,
@@ -56,6 +58,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         this.createdBy = createdBy;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleDetails = lifecycleDetails;
         this.modelVersionSetId = modelVersionSetId;
         this.modelVersionSetName = modelVersionSetName;
         this.versionId = versionId;
@@ -183,6 +186,22 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             return this;
         }
         /**
+         * Details about the lifecycle state of the model.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+        private String lifecycleDetails;
+
+        /**
+         * Details about the lifecycle state of the model.
+         * @param lifecycleDetails the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleDetails(String lifecycleDetails) {
+            this.lifecycleDetails = lifecycleDetails;
+            this.__explicitlySet__.add("lifecycleDetails");
+            return this;
+        }
+        /**
          * The OCID of the model version set that the model is associated to.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
@@ -301,6 +320,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.createdBy,
                             this.timeCreated,
                             this.lifecycleState,
+                            this.lifecycleDetails,
                             this.modelVersionSetId,
                             this.modelVersionSetName,
                             this.versionId,
@@ -335,6 +355,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
+                this.lifecycleDetails(model.getLifecycleDetails());
             }
             if (model.wasPropertyExplicitlySet("modelVersionSetId")) {
                 this.modelVersionSetId(model.getModelVersionSetId());
@@ -472,6 +495,20 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
     }
 
     /**
+     * Details about the lifecycle state of the model.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleDetails")
+    private final String lifecycleDetails;
+
+    /**
+     * Details about the lifecycle state of the model.
+     * @return the value
+     **/
+    public String getLifecycleDetails() {
+        return lifecycleDetails;
+    }
+
+    /**
      * The OCID of the model version set that the model is associated to.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("modelVersionSetId")
@@ -584,6 +621,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", createdBy=").append(String.valueOf(this.createdBy));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
         sb.append(", modelVersionSetId=").append(String.valueOf(this.modelVersionSetId));
         sb.append(", modelVersionSetName=").append(String.valueOf(this.modelVersionSetName));
         sb.append(", versionId=").append(String.valueOf(this.versionId));
@@ -611,6 +649,7 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.createdBy, other.createdBy)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
                 && java.util.Objects.equals(this.modelVersionSetId, other.modelVersionSetId)
                 && java.util.Objects.equals(this.modelVersionSetName, other.modelVersionSetName)
                 && java.util.Objects.equals(this.versionId, other.versionId)
@@ -635,6 +674,9 @@ public final class ModelSummary extends com.oracle.bmc.http.internal.ExplicitlyS
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.modelVersionSetId == null ? 43 : this.modelVersionSetId.hashCode());

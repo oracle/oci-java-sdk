@@ -28,8 +28,10 @@ public final class CreateFileSystemDetails
         "displayName",
         "freeformTags",
         "definedTags",
+        "locks",
         "kmsKeyId",
         "sourceSnapshotId",
+        "cloneAttachStatus",
         "filesystemSnapshotPolicyId"
     })
     public CreateFileSystemDetails(
@@ -38,8 +40,10 @@ public final class CreateFileSystemDetails
             String displayName,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.List<ResourceLock> locks,
             String kmsKeyId,
             String sourceSnapshotId,
+            CloneAttachStatus cloneAttachStatus,
             String filesystemSnapshotPolicyId) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -47,8 +51,10 @@ public final class CreateFileSystemDetails
         this.displayName = displayName;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.locks = locks;
         this.kmsKeyId = kmsKeyId;
         this.sourceSnapshotId = sourceSnapshotId;
+        this.cloneAttachStatus = cloneAttachStatus;
         this.filesystemSnapshotPolicyId = filesystemSnapshotPolicyId;
     }
 
@@ -164,6 +170,22 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
          *
          **/
@@ -202,6 +224,28 @@ public final class CreateFileSystemDetails
             return this;
         }
         /**
+         * Specifies whether the clone file system is attached to its parent file system.
+         * If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+         * specified by sourceSnapshotId, else will remain attached to its parent.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+        private CloneAttachStatus cloneAttachStatus;
+
+        /**
+         * Specifies whether the clone file system is attached to its parent file system.
+         * If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+         * specified by sourceSnapshotId, else will remain attached to its parent.
+         *
+         * @param cloneAttachStatus the value to set
+         * @return this builder
+         **/
+        public Builder cloneAttachStatus(CloneAttachStatus cloneAttachStatus) {
+            this.cloneAttachStatus = cloneAttachStatus;
+            this.__explicitlySet__.add("cloneAttachStatus");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the associated file system snapshot policy, which
          * controls the frequency of snapshot creation and retention period of the taken snapshots.
          * <p>
@@ -237,8 +281,10 @@ public final class CreateFileSystemDetails
                             this.displayName,
                             this.freeformTags,
                             this.definedTags,
+                            this.locks,
                             this.kmsKeyId,
                             this.sourceSnapshotId,
+                            this.cloneAttachStatus,
                             this.filesystemSnapshotPolicyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -263,11 +309,17 @@ public final class CreateFileSystemDetails
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
+            }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
             }
             if (model.wasPropertyExplicitlySet("sourceSnapshotId")) {
                 this.sourceSnapshotId(model.getSourceSnapshotId());
+            }
+            if (model.wasPropertyExplicitlySet("cloneAttachStatus")) {
+                this.cloneAttachStatus(model.getCloneAttachStatus());
             }
             if (model.wasPropertyExplicitlySet("filesystemSnapshotPolicyId")) {
                 this.filesystemSnapshotPolicyId(model.getFilesystemSnapshotPolicyId());
@@ -386,6 +438,20 @@ public final class CreateFileSystemDetails
     }
 
     /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS key used to encrypt the encryption keys associated with this file system.
      *
      **/
@@ -417,6 +483,64 @@ public final class CreateFileSystemDetails
      **/
     public String getSourceSnapshotId() {
         return sourceSnapshotId;
+    }
+
+    /**
+     * Specifies whether the clone file system is attached to its parent file system.
+     * If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+     * specified by sourceSnapshotId, else will remain attached to its parent.
+     *
+     **/
+    public enum CloneAttachStatus {
+        Detach("DETACH"),
+        Attach("ATTACH"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, CloneAttachStatus> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (CloneAttachStatus v : CloneAttachStatus.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        CloneAttachStatus(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static CloneAttachStatus create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid CloneAttachStatus: " + key);
+        }
+    };
+    /**
+     * Specifies whether the clone file system is attached to its parent file system.
+     * If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+     * specified by sourceSnapshotId, else will remain attached to its parent.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneAttachStatus")
+    private final CloneAttachStatus cloneAttachStatus;
+
+    /**
+     * Specifies whether the clone file system is attached to its parent file system.
+     * If the value is set to 'DETACH', then the file system will be created, which is deep copied from the snapshot
+     * specified by sourceSnapshotId, else will remain attached to its parent.
+     *
+     * @return the value
+     **/
+    public CloneAttachStatus getCloneAttachStatus() {
+        return cloneAttachStatus;
     }
 
     /**
@@ -460,8 +584,10 @@ public final class CreateFileSystemDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceSnapshotId=").append(String.valueOf(this.sourceSnapshotId));
+        sb.append(", cloneAttachStatus=").append(String.valueOf(this.cloneAttachStatus));
         sb.append(", filesystemSnapshotPolicyId=")
                 .append(String.valueOf(this.filesystemSnapshotPolicyId));
         sb.append(")");
@@ -483,8 +609,10 @@ public final class CreateFileSystemDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceSnapshotId, other.sourceSnapshotId)
+                && java.util.Objects.equals(this.cloneAttachStatus, other.cloneAttachStatus)
                 && java.util.Objects.equals(
                         this.filesystemSnapshotPolicyId, other.filesystemSnapshotPolicyId)
                 && super.equals(other);
@@ -505,10 +633,14 @@ public final class CreateFileSystemDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)
                         + (this.sourceSnapshotId == null ? 43 : this.sourceSnapshotId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneAttachStatus == null ? 43 : this.cloneAttachStatus.hashCode());
         result =
                 (result * PRIME)
                         + (this.filesystemSnapshotPolicyId == null

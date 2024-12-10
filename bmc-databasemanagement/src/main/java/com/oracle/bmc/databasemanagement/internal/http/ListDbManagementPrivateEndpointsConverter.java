@@ -68,6 +68,14 @@ public class ListDbManagementPrivateEndpointsConverter {
                                     request.getIsCluster()));
         }
 
+        if (request.getIsDnsResolutionEnabled() != null) {
+            target =
+                    target.queryParam(
+                            "isDnsResolutionEnabled",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getIsDnsResolutionEnabled()));
+        }
+
         if (request.getLifecycleState() != null) {
             target =
                     target.queryParam(

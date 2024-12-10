@@ -484,7 +484,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "CreateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/CreateOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOccAvailabilityCatalogResponse>
                 transformer =
@@ -539,7 +539,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "CreateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/CreateOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, CreateOccCapacityRequestResponse>
                 transformer =
@@ -577,6 +577,111 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateOccCustomerResponse> createOccCustomer(
+            CreateOccCustomerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOccCustomerRequest, CreateOccCustomerResponse>
+                    handler) {
+        LOG.trace("Called async createOccCustomer");
+        final CreateOccCustomerRequest interceptedRequest =
+                CreateOccCustomerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/CreateOccCustomer");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerResponse>
+                transformer =
+                        CreateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateOccCustomerRequest, CreateOccCustomerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOccCustomerRequest, CreateOccCustomerResponse>,
+                        java.util.concurrent.Future<CreateOccCustomerResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOccCustomerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOccCustomerRequest, CreateOccCustomerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateOccCustomerGroupResponse> createOccCustomerGroup(
+            CreateOccCustomerGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateOccCustomerGroupRequest, CreateOccCustomerGroupResponse>
+                    handler) {
+        LOG.trace("Called async createOccCustomerGroup");
+        final CreateOccCustomerGroupRequest interceptedRequest =
+                CreateOccCustomerGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "CreateOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/CreateOccCustomerGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateOccCustomerGroupResponse>
+                transformer =
+                        CreateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        CreateOccCustomerGroupRequest, CreateOccCustomerGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateOccCustomerGroupRequest, CreateOccCustomerGroupResponse>,
+                        java.util.concurrent.Future<CreateOccCustomerGroupResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateOccCustomerGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateOccCustomerGroupRequest, CreateOccCustomerGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteOccAvailabilityCatalogResponse>
             deleteOccAvailabilityCatalog(
                     DeleteOccAvailabilityCatalogRequest request,
@@ -594,7 +699,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "DeleteOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/DeleteOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOccAvailabilityCatalogResponse>
                 transformer =
@@ -643,7 +748,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "DeleteOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/DeleteOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteOccCapacityRequestResponse>
                 transformer =
@@ -676,6 +781,99 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteOccCustomerResponse> deleteOccCustomer(
+            DeleteOccCustomerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOccCustomerRequest, DeleteOccCustomerResponse>
+                    handler) {
+        LOG.trace("Called async deleteOccCustomer");
+        final DeleteOccCustomerRequest interceptedRequest =
+                DeleteOccCustomerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/DeleteOccCustomer");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerResponse>
+                transformer =
+                        DeleteOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteOccCustomerRequest, DeleteOccCustomerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOccCustomerRequest, DeleteOccCustomerResponse>,
+                        java.util.concurrent.Future<DeleteOccCustomerResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOccCustomerRequest, DeleteOccCustomerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteOccCustomerGroupResponse> deleteOccCustomerGroup(
+            DeleteOccCustomerGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            DeleteOccCustomerGroupRequest, DeleteOccCustomerGroupResponse>
+                    handler) {
+        LOG.trace("Called async deleteOccCustomerGroup");
+        final DeleteOccCustomerGroupRequest interceptedRequest =
+                DeleteOccCustomerGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "DeleteOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/DeleteOccCustomerGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteOccCustomerGroupResponse>
+                transformer =
+                        DeleteOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DeleteOccCustomerGroupRequest, DeleteOccCustomerGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteOccCustomerGroupRequest, DeleteOccCustomerGroupResponse>,
+                        java.util.concurrent.Future<DeleteOccCustomerGroupResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteOccCustomerGroupRequest, DeleteOccCustomerGroupResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetOccAvailabilityCatalogResponse> getOccAvailabilityCatalog(
             GetOccAvailabilityCatalogRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -691,7 +889,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOccAvailabilityCatalogResponse>
                 transformer =
@@ -743,7 +941,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccAvailabilityCatalogContent",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/GetOccAvailabilityCatalogContent");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, GetOccAvailabilityCatalogContentResponse>
                 transformer =
@@ -794,7 +992,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/GetOccCapacityRequest");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOccCapacityRequestResponse>
                 transformer =
                         GetOccCapacityRequestConverter.fromResponse(
@@ -841,7 +1039,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "GetOccCustomerGroup",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/GetOccCustomerGroup");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOccCustomerGroupResponse>
                 transformer =
                         GetOccCustomerGroupConverter.fromResponse(
@@ -890,7 +1088,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListInternalNamespaceOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListInternalNamespaceOccOverviews");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListInternalNamespaceOccOverviewsResponse>
                 transformer =
@@ -926,6 +1124,116 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListInternalOccHandoverResourceBlockDetailsResponse>
+            listInternalOccHandoverResourceBlockDetails(
+                    ListInternalOccHandoverResourceBlockDetailsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListInternalOccHandoverResourceBlockDetailsRequest,
+                                    ListInternalOccHandoverResourceBlockDetailsResponse>
+                            handler) {
+        LOG.trace("Called async listInternalOccHandoverResourceBlockDetails");
+        final ListInternalOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlockDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListInternalOccHandoverResourceBlockDetails");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response,
+                        ListInternalOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInternalOccHandoverResourceBlockDetailsRequest,
+                        ListInternalOccHandoverResourceBlockDetailsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInternalOccHandoverResourceBlockDetailsRequest,
+                                ListInternalOccHandoverResourceBlockDetailsResponse>,
+                        java.util.concurrent.Future<
+                                ListInternalOccHandoverResourceBlockDetailsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInternalOccHandoverResourceBlockDetailsRequest,
+                    ListInternalOccHandoverResourceBlockDetailsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInternalOccHandoverResourceBlocksResponse>
+            listInternalOccHandoverResourceBlocks(
+                    ListInternalOccHandoverResourceBlocksRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListInternalOccHandoverResourceBlocksRequest,
+                                    ListInternalOccHandoverResourceBlocksResponse>
+                            handler) {
+        LOG.trace("Called async listInternalOccHandoverResourceBlocks");
+        final ListInternalOccHandoverResourceBlocksRequest interceptedRequest =
+                ListInternalOccHandoverResourceBlocksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInternalOccHandoverResourceBlocksConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListInternalOccHandoverResourceBlocks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListInternalOccHandoverResourceBlocks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInternalOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListInternalOccHandoverResourceBlocksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListInternalOccHandoverResourceBlocksRequest,
+                        ListInternalOccHandoverResourceBlocksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListInternalOccHandoverResourceBlocksRequest,
+                                ListInternalOccHandoverResourceBlocksResponse>,
+                        java.util.concurrent.Future<ListInternalOccHandoverResourceBlocksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListInternalOccHandoverResourceBlocksRequest,
+                    ListInternalOccHandoverResourceBlocksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOccAvailabilitiesResponse> listOccAvailabilities(
             ListOccAvailabilitiesRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -941,7 +1249,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilities",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCollection/ListOccAvailabilities");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccAvailabilitiesResponse>
                 transformer =
                         ListOccAvailabilitiesConverter.fromResponse(
@@ -990,7 +1298,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogs");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccAvailabilityCatalogsResponse>
                 transformer =
@@ -1042,7 +1350,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccAvailabilityCatalogsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalogCollection/ListOccAvailabilityCatalogsInternal");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccAvailabilityCatalogsInternalResponse>
                 transformer =
@@ -1093,7 +1401,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCapacityRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequests");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccCapacityRequestsResponse>
                 transformer =
@@ -1143,7 +1451,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCapacityRequestsInternal",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequestCollection/ListOccCapacityRequestsInternal");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ListOccCapacityRequestsInternalResponse>
                 transformer =
@@ -1194,7 +1502,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccCustomerGroups",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroupCollection/ListOccCustomerGroups");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccCustomerGroupsResponse>
                 transformer =
                         ListOccCustomerGroupsConverter.fromResponse(
@@ -1226,6 +1534,111 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListOccHandoverResourceBlockDetailsResponse>
+            listOccHandoverResourceBlockDetails(
+                    ListOccHandoverResourceBlockDetailsRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOccHandoverResourceBlockDetailsRequest,
+                                    ListOccHandoverResourceBlockDetailsResponse>
+                            handler) {
+        LOG.trace("Called async listOccHandoverResourceBlockDetails");
+        final ListOccHandoverResourceBlockDetailsRequest interceptedRequest =
+                ListOccHandoverResourceBlockDetailsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlockDetailsConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlockDetails",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockDetailCollection/ListOccHandoverResourceBlockDetails");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlockDetailsResponse>
+                transformer =
+                        ListOccHandoverResourceBlockDetailsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOccHandoverResourceBlockDetailsRequest,
+                        ListOccHandoverResourceBlockDetailsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOccHandoverResourceBlockDetailsRequest,
+                                ListOccHandoverResourceBlockDetailsResponse>,
+                        java.util.concurrent.Future<ListOccHandoverResourceBlockDetailsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOccHandoverResourceBlockDetailsRequest,
+                    ListOccHandoverResourceBlockDetailsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListOccHandoverResourceBlocksResponse>
+            listOccHandoverResourceBlocks(
+                    ListOccHandoverResourceBlocksRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListOccHandoverResourceBlocksRequest,
+                                    ListOccHandoverResourceBlocksResponse>
+                            handler) {
+        LOG.trace("Called async listOccHandoverResourceBlocks");
+        final ListOccHandoverResourceBlocksRequest interceptedRequest =
+                ListOccHandoverResourceBlocksConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListOccHandoverResourceBlocksConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "ListOccHandoverResourceBlocks",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccHandoverResourceBlockCollection/ListOccHandoverResourceBlocks");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListOccHandoverResourceBlocksResponse>
+                transformer =
+                        ListOccHandoverResourceBlocksConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListOccHandoverResourceBlocksRequest, ListOccHandoverResourceBlocksResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListOccHandoverResourceBlocksRequest,
+                                ListOccHandoverResourceBlocksResponse>,
+                        java.util.concurrent.Future<ListOccHandoverResourceBlocksResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListOccHandoverResourceBlocksRequest, ListOccHandoverResourceBlocksResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListOccOverviewsResponse> listOccOverviews(
             ListOccOverviewsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1241,7 +1654,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "ListOccOverviews",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccOverviewCollection/ListOccOverviews");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOccOverviewsResponse>
                 transformer =
                         ListOccOverviewsConverter.fromResponse(
@@ -1289,7 +1702,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PatchInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchInternalOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchInternalOccCapacityRequestResponse>
                 transformer =
@@ -1345,7 +1758,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PatchOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/PatchOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PatchOccCapacityRequestResponse>
                 transformer =
@@ -1401,7 +1814,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "PublishOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/PublishOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, PublishOccAvailabilityCatalogResponse>
                 transformer =
@@ -1452,7 +1865,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateInternalOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateInternalOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateInternalOccCapacityRequestResponse>
                 transformer =
@@ -1510,7 +1923,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateOccAvailabilityCatalog",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccAvailabilityCatalog/UpdateOccAvailabilityCatalog");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOccAvailabilityCatalogResponse>
                 transformer =
@@ -1564,7 +1977,7 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                         "CapacityManagement",
                         "UpdateOccCapacityRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCapacityRequest/UpdateOccCapacityRequest");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateOccCapacityRequestResponse>
                 transformer =
@@ -1589,6 +2002,109 @@ public class CapacityManagementAsyncClient implements CapacityManagementAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOccCapacityRequestRequest, UpdateOccCapacityRequestResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOccCustomerResponse> updateOccCustomer(
+            UpdateOccCustomerRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOccCustomerRequest, UpdateOccCustomerResponse>
+                    handler) {
+        LOG.trace("Called async updateOccCustomer");
+        final UpdateOccCustomerRequest interceptedRequest =
+                UpdateOccCustomerConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomer",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomer/UpdateOccCustomer");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerResponse>
+                transformer =
+                        UpdateOccCustomerConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateOccCustomerRequest, UpdateOccCustomerResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOccCustomerRequest, UpdateOccCustomerResponse>,
+                        java.util.concurrent.Future<UpdateOccCustomerResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOccCustomerDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOccCustomerRequest, UpdateOccCustomerResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateOccCustomerGroupResponse> updateOccCustomerGroup(
+            UpdateOccCustomerGroupRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpdateOccCustomerGroupRequest, UpdateOccCustomerGroupResponse>
+                    handler) {
+        LOG.trace("Called async updateOccCustomerGroup");
+        final UpdateOccCustomerGroupRequest interceptedRequest =
+                UpdateOccCustomerGroupConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateOccCustomerGroupConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "CapacityManagement",
+                        "UpdateOccCustomerGroup",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/occcm/20231107/OccCustomerGroup/UpdateOccCustomerGroup");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateOccCustomerGroupResponse>
+                transformer =
+                        UpdateOccCustomerGroupConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpdateOccCustomerGroupRequest, UpdateOccCustomerGroupResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateOccCustomerGroupRequest, UpdateOccCustomerGroupResponse>,
+                        java.util.concurrent.Future<UpdateOccCustomerGroupResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateOccCustomerGroupDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateOccCustomerGroupRequest, UpdateOccCustomerGroupResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

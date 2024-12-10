@@ -104,6 +104,14 @@ public class ListDrPlansConverter {
                                     request.getSortBy().getValue()));
         }
 
+        if (request.getLifecycleSubState() != null) {
+            target =
+                    target.queryParam(
+                            "lifecycleSubState",
+                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                    request.getLifecycleSubState().getValue()));
+        }
+
         com.oracle.bmc.http.internal.WrappedInvocationBuilder ib = target.request();
 
         ib.accept(javax.ws.rs.core.MediaType.APPLICATION_JSON);

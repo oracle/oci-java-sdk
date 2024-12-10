@@ -22,15 +22,25 @@ package com.oracle.bmc.database.model;
 public final class MaintenanceRunHistorySummary
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"id", "maintenanceRunDetails", "dbServersHistoryDetails"})
+    @java.beans.ConstructorProperties({
+        "id",
+        "maintenanceRunDetails",
+        "dbServersHistoryDetails",
+        "currentExecutionWindow",
+        "granularMaintenanceHistory"
+    })
     public MaintenanceRunHistorySummary(
             String id,
             MaintenanceRunSummary maintenanceRunDetails,
-            java.util.List<DbServerHistorySummary> dbServersHistoryDetails) {
+            java.util.List<DbServerHistorySummary> dbServersHistoryDetails,
+            String currentExecutionWindow,
+            java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory) {
         super();
         this.id = id;
         this.maintenanceRunDetails = maintenanceRunDetails;
         this.dbServersHistoryDetails = dbServersHistoryDetails;
+        this.currentExecutionWindow = currentExecutionWindow;
+        this.granularMaintenanceHistory = granularMaintenanceHistory;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -77,6 +87,39 @@ public final class MaintenanceRunHistorySummary
             this.__explicitlySet__.add("dbServersHistoryDetails");
             return this;
         }
+        /**
+         * The OCID of the current execution window.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("currentExecutionWindow")
+        private String currentExecutionWindow;
+
+        /**
+         * The OCID of the current execution window.
+         * @param currentExecutionWindow the value to set
+         * @return this builder
+         **/
+        public Builder currentExecutionWindow(String currentExecutionWindow) {
+            this.currentExecutionWindow = currentExecutionWindow;
+            this.__explicitlySet__.add("currentExecutionWindow");
+            return this;
+        }
+        /**
+         * The list of granular maintenance history details.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("granularMaintenanceHistory")
+        private java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory;
+
+        /**
+         * The list of granular maintenance history details.
+         * @param granularMaintenanceHistory the value to set
+         * @return this builder
+         **/
+        public Builder granularMaintenanceHistory(
+                java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory) {
+            this.granularMaintenanceHistory = granularMaintenanceHistory;
+            this.__explicitlySet__.add("granularMaintenanceHistory");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -84,7 +127,11 @@ public final class MaintenanceRunHistorySummary
         public MaintenanceRunHistorySummary build() {
             MaintenanceRunHistorySummary model =
                     new MaintenanceRunHistorySummary(
-                            this.id, this.maintenanceRunDetails, this.dbServersHistoryDetails);
+                            this.id,
+                            this.maintenanceRunDetails,
+                            this.dbServersHistoryDetails,
+                            this.currentExecutionWindow,
+                            this.granularMaintenanceHistory);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -101,6 +148,12 @@ public final class MaintenanceRunHistorySummary
             }
             if (model.wasPropertyExplicitlySet("dbServersHistoryDetails")) {
                 this.dbServersHistoryDetails(model.getDbServersHistoryDetails());
+            }
+            if (model.wasPropertyExplicitlySet("currentExecutionWindow")) {
+                this.currentExecutionWindow(model.getCurrentExecutionWindow());
+            }
+            if (model.wasPropertyExplicitlySet("granularMaintenanceHistory")) {
+                this.granularMaintenanceHistory(model.getGranularMaintenanceHistory());
             }
             return this;
         }
@@ -152,6 +205,34 @@ public final class MaintenanceRunHistorySummary
         return dbServersHistoryDetails;
     }
 
+    /**
+     * The OCID of the current execution window.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("currentExecutionWindow")
+    private final String currentExecutionWindow;
+
+    /**
+     * The OCID of the current execution window.
+     * @return the value
+     **/
+    public String getCurrentExecutionWindow() {
+        return currentExecutionWindow;
+    }
+
+    /**
+     * The list of granular maintenance history details.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("granularMaintenanceHistory")
+    private final java.util.List<GranularMaintenanceHistoryDetails> granularMaintenanceHistory;
+
+    /**
+     * The list of granular maintenance history details.
+     * @return the value
+     **/
+    public java.util.List<GranularMaintenanceHistoryDetails> getGranularMaintenanceHistory() {
+        return granularMaintenanceHistory;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -170,6 +251,9 @@ public final class MaintenanceRunHistorySummary
         sb.append(", maintenanceRunDetails=").append(String.valueOf(this.maintenanceRunDetails));
         sb.append(", dbServersHistoryDetails=")
                 .append(String.valueOf(this.dbServersHistoryDetails));
+        sb.append(", currentExecutionWindow=").append(String.valueOf(this.currentExecutionWindow));
+        sb.append(", granularMaintenanceHistory=")
+                .append(String.valueOf(this.granularMaintenanceHistory));
         sb.append(")");
         return sb.toString();
     }
@@ -188,6 +272,10 @@ public final class MaintenanceRunHistorySummary
                 && java.util.Objects.equals(this.maintenanceRunDetails, other.maintenanceRunDetails)
                 && java.util.Objects.equals(
                         this.dbServersHistoryDetails, other.dbServersHistoryDetails)
+                && java.util.Objects.equals(
+                        this.currentExecutionWindow, other.currentExecutionWindow)
+                && java.util.Objects.equals(
+                        this.granularMaintenanceHistory, other.granularMaintenanceHistory)
                 && super.equals(other);
     }
 
@@ -206,6 +294,16 @@ public final class MaintenanceRunHistorySummary
                         + (this.dbServersHistoryDetails == null
                                 ? 43
                                 : this.dbServersHistoryDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.currentExecutionWindow == null
+                                ? 43
+                                : this.currentExecutionWindow.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.granularMaintenanceHistory == null
+                                ? 43
+                                : this.granularMaintenanceHistory.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

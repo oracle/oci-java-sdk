@@ -22,10 +22,6 @@ package com.oracle.bmc.stackmonitoring.model;
 public final class BaselineableMetric extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
-        "createdBy",
-        "lastUpdatedBy",
-        "timeCreated",
-        "timeLastUpdated",
         "id",
         "lifecycleState",
         "tenancyId",
@@ -34,16 +30,17 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         "column",
         "namespace",
         "resourceGroup",
+        "resourceType",
         "isOutOfBox",
+        "createdBy",
+        "lastUpdatedBy",
+        "timeCreated",
+        "timeLastUpdated",
         "freeformTags",
         "definedTags",
         "systemTags"
     })
     public BaselineableMetric(
-            String createdBy,
-            String lastUpdatedBy,
-            java.util.Date timeCreated,
-            java.util.Date timeLastUpdated,
             String id,
             BaselineableMetricLifeCycleStates lifecycleState,
             String tenancyId,
@@ -52,15 +49,16 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
             String column,
             String namespace,
             String resourceGroup,
+            String resourceType,
             Boolean isOutOfBox,
+            String createdBy,
+            String lastUpdatedBy,
+            java.util.Date timeCreated,
+            java.util.Date timeLastUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
-        this.createdBy = createdBy;
-        this.lastUpdatedBy = lastUpdatedBy;
-        this.timeCreated = timeCreated;
-        this.timeLastUpdated = timeLastUpdated;
         this.id = id;
         this.lifecycleState = lifecycleState;
         this.tenancyId = tenancyId;
@@ -69,7 +67,12 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         this.column = column;
         this.namespace = namespace;
         this.resourceGroup = resourceGroup;
+        this.resourceType = resourceType;
         this.isOutOfBox = isOutOfBox;
+        this.createdBy = createdBy;
+        this.lastUpdatedBy = lastUpdatedBy;
+        this.timeCreated = timeCreated;
+        this.timeLastUpdated = timeLastUpdated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -77,70 +80,6 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /**
-         * Created user id
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-        private String createdBy;
-
-        /**
-         * Created user id
-         * @param createdBy the value to set
-         * @return this builder
-         **/
-        public Builder createdBy(String createdBy) {
-            this.createdBy = createdBy;
-            this.__explicitlySet__.add("createdBy");
-            return this;
-        }
-        /**
-         * last Updated user id
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
-        private String lastUpdatedBy;
-
-        /**
-         * last Updated user id
-         * @param lastUpdatedBy the value to set
-         * @return this builder
-         **/
-        public Builder lastUpdatedBy(String lastUpdatedBy) {
-            this.lastUpdatedBy = lastUpdatedBy;
-            this.__explicitlySet__.add("lastUpdatedBy");
-            return this;
-        }
-        /**
-         * creation date
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-        private java.util.Date timeCreated;
-
-        /**
-         * creation date
-         * @param timeCreated the value to set
-         * @return this builder
-         **/
-        public Builder timeCreated(java.util.Date timeCreated) {
-            this.timeCreated = timeCreated;
-            this.__explicitlySet__.add("timeCreated");
-            return this;
-        }
-        /**
-         * last updated time
-         **/
-        @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
-        private java.util.Date timeLastUpdated;
-
-        /**
-         * last updated time
-         * @param timeLastUpdated the value to set
-         * @return this builder
-         **/
-        public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
-            this.timeLastUpdated = timeLastUpdated;
-            this.__explicitlySet__.add("timeLastUpdated");
-            return this;
-        }
         /**
          * OCID of the metric
          **/
@@ -270,6 +209,22 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
+         * Resource type of the metric
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+        private String resourceType;
+
+        /**
+         * Resource type of the metric
+         * @param resourceType the value to set
+         * @return this builder
+         **/
+        public Builder resourceType(String resourceType) {
+            this.resourceType = resourceType;
+            this.__explicitlySet__.add("resourceType");
+            return this;
+        }
+        /**
          * Is the metric created out of box, default false
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
@@ -283,6 +238,70 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         public Builder isOutOfBox(Boolean isOutOfBox) {
             this.isOutOfBox = isOutOfBox;
             this.__explicitlySet__.add("isOutOfBox");
+            return this;
+        }
+        /**
+         * Created user id
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+        private String createdBy;
+
+        /**
+         * Created user id
+         * @param createdBy the value to set
+         * @return this builder
+         **/
+        public Builder createdBy(String createdBy) {
+            this.createdBy = createdBy;
+            this.__explicitlySet__.add("createdBy");
+            return this;
+        }
+        /**
+         * last Updated user id
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
+        private String lastUpdatedBy;
+
+        /**
+         * last Updated user id
+         * @param lastUpdatedBy the value to set
+         * @return this builder
+         **/
+        public Builder lastUpdatedBy(String lastUpdatedBy) {
+            this.lastUpdatedBy = lastUpdatedBy;
+            this.__explicitlySet__.add("lastUpdatedBy");
+            return this;
+        }
+        /**
+         * creation date
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
+
+        /**
+         * creation date
+         * @param timeCreated the value to set
+         * @return this builder
+         **/
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * last updated time
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
+        private java.util.Date timeLastUpdated;
+
+        /**
+         * last updated time
+         * @param timeLastUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeLastUpdated(java.util.Date timeLastUpdated) {
+            this.timeLastUpdated = timeLastUpdated;
+            this.__explicitlySet__.add("timeLastUpdated");
             return this;
         }
         /**
@@ -353,10 +372,6 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         public BaselineableMetric build() {
             BaselineableMetric model =
                     new BaselineableMetric(
-                            this.createdBy,
-                            this.lastUpdatedBy,
-                            this.timeCreated,
-                            this.timeLastUpdated,
                             this.id,
                             this.lifecycleState,
                             this.tenancyId,
@@ -365,7 +380,12 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
                             this.column,
                             this.namespace,
                             this.resourceGroup,
+                            this.resourceType,
                             this.isOutOfBox,
+                            this.createdBy,
+                            this.lastUpdatedBy,
+                            this.timeCreated,
+                            this.timeLastUpdated,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -377,18 +397,6 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(BaselineableMetric model) {
-            if (model.wasPropertyExplicitlySet("createdBy")) {
-                this.createdBy(model.getCreatedBy());
-            }
-            if (model.wasPropertyExplicitlySet("lastUpdatedBy")) {
-                this.lastUpdatedBy(model.getLastUpdatedBy());
-            }
-            if (model.wasPropertyExplicitlySet("timeCreated")) {
-                this.timeCreated(model.getTimeCreated());
-            }
-            if (model.wasPropertyExplicitlySet("timeLastUpdated")) {
-                this.timeLastUpdated(model.getTimeLastUpdated());
-            }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
             }
@@ -413,8 +421,23 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("resourceGroup")) {
                 this.resourceGroup(model.getResourceGroup());
             }
+            if (model.wasPropertyExplicitlySet("resourceType")) {
+                this.resourceType(model.getResourceType());
+            }
             if (model.wasPropertyExplicitlySet("isOutOfBox")) {
                 this.isOutOfBox(model.getIsOutOfBox());
+            }
+            if (model.wasPropertyExplicitlySet("createdBy")) {
+                this.createdBy(model.getCreatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("lastUpdatedBy")) {
+                this.lastUpdatedBy(model.getLastUpdatedBy());
+            }
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeLastUpdated")) {
+                this.timeLastUpdated(model.getTimeLastUpdated());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -438,62 +461,6 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
 
     public Builder toBuilder() {
         return new Builder().copy(this);
-    }
-
-    /**
-     * Created user id
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
-    private final String createdBy;
-
-    /**
-     * Created user id
-     * @return the value
-     **/
-    public String getCreatedBy() {
-        return createdBy;
-    }
-
-    /**
-     * last Updated user id
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
-    private final String lastUpdatedBy;
-
-    /**
-     * last Updated user id
-     * @return the value
-     **/
-    public String getLastUpdatedBy() {
-        return lastUpdatedBy;
-    }
-
-    /**
-     * creation date
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
-    private final java.util.Date timeCreated;
-
-    /**
-     * creation date
-     * @return the value
-     **/
-    public java.util.Date getTimeCreated() {
-        return timeCreated;
-    }
-
-    /**
-     * last updated time
-     **/
-    @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
-    private final java.util.Date timeLastUpdated;
-
-    /**
-     * last updated time
-     * @return the value
-     **/
-    public java.util.Date getTimeLastUpdated() {
-        return timeLastUpdated;
     }
 
     /**
@@ -609,6 +576,20 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
+     * Resource type of the metric
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    private final String resourceType;
+
+    /**
+     * Resource type of the metric
+     * @return the value
+     **/
+    public String getResourceType() {
+        return resourceType;
+    }
+
+    /**
      * Is the metric created out of box, default false
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("isOutOfBox")
@@ -620,6 +601,62 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
      **/
     public Boolean getIsOutOfBox() {
         return isOutOfBox;
+    }
+
+    /**
+     * Created user id
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("createdBy")
+    private final String createdBy;
+
+    /**
+     * Created user id
+     * @return the value
+     **/
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    /**
+     * last Updated user id
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lastUpdatedBy")
+    private final String lastUpdatedBy;
+
+    /**
+     * last Updated user id
+     * @return the value
+     **/
+    public String getLastUpdatedBy() {
+        return lastUpdatedBy;
+    }
+
+    /**
+     * creation date
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
+
+    /**
+     * creation date
+     * @return the value
+     **/
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * last updated time
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeLastUpdated")
+    private final java.util.Date timeLastUpdated;
+
+    /**
+     * last updated time
+     * @return the value
+     **/
+    public java.util.Date getTimeLastUpdated() {
+        return timeLastUpdated;
     }
 
     /**
@@ -690,11 +727,7 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("BaselineableMetric(");
         sb.append("super=").append(super.toString());
-        sb.append("createdBy=").append(String.valueOf(this.createdBy));
-        sb.append(", lastUpdatedBy=").append(String.valueOf(this.lastUpdatedBy));
-        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
-        sb.append(", timeLastUpdated=").append(String.valueOf(this.timeLastUpdated));
-        sb.append(", id=").append(String.valueOf(this.id));
+        sb.append("id=").append(String.valueOf(this.id));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", tenancyId=").append(String.valueOf(this.tenancyId));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
@@ -702,7 +735,12 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         sb.append(", column=").append(String.valueOf(this.column));
         sb.append(", namespace=").append(String.valueOf(this.namespace));
         sb.append(", resourceGroup=").append(String.valueOf(this.resourceGroup));
+        sb.append(", resourceType=").append(String.valueOf(this.resourceType));
         sb.append(", isOutOfBox=").append(String.valueOf(this.isOutOfBox));
+        sb.append(", createdBy=").append(String.valueOf(this.createdBy));
+        sb.append(", lastUpdatedBy=").append(String.valueOf(this.lastUpdatedBy));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeLastUpdated=").append(String.valueOf(this.timeLastUpdated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -720,11 +758,7 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         }
 
         BaselineableMetric other = (BaselineableMetric) o;
-        return java.util.Objects.equals(this.createdBy, other.createdBy)
-                && java.util.Objects.equals(this.lastUpdatedBy, other.lastUpdatedBy)
-                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
-                && java.util.Objects.equals(this.timeLastUpdated, other.timeLastUpdated)
-                && java.util.Objects.equals(this.id, other.id)
+        return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.tenancyId, other.tenancyId)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
@@ -732,7 +766,12 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.column, other.column)
                 && java.util.Objects.equals(this.namespace, other.namespace)
                 && java.util.Objects.equals(this.resourceGroup, other.resourceGroup)
+                && java.util.Objects.equals(this.resourceType, other.resourceType)
                 && java.util.Objects.equals(this.isOutOfBox, other.isOutOfBox)
+                && java.util.Objects.equals(this.createdBy, other.createdBy)
+                && java.util.Objects.equals(this.lastUpdatedBy, other.lastUpdatedBy)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeLastUpdated, other.timeLastUpdated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -743,14 +782,6 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
-        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.lastUpdatedBy == null ? 43 : this.lastUpdatedBy.hashCode());
-        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
-        result =
-                (result * PRIME)
-                        + (this.timeLastUpdated == null ? 43 : this.timeLastUpdated.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)
@@ -765,7 +796,16 @@ public final class BaselineableMetric extends com.oracle.bmc.http.internal.Expli
         result =
                 (result * PRIME)
                         + (this.resourceGroup == null ? 43 : this.resourceGroup.hashCode());
+        result = (result * PRIME) + (this.resourceType == null ? 43 : this.resourceType.hashCode());
         result = (result * PRIME) + (this.isOutOfBox == null ? 43 : this.isOutOfBox.hashCode());
+        result = (result * PRIME) + (this.createdBy == null ? 43 : this.createdBy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lastUpdatedBy == null ? 43 : this.lastUpdatedBy.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeLastUpdated == null ? 43 : this.timeLastUpdated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

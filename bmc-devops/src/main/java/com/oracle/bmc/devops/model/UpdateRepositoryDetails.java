@@ -103,6 +103,7 @@ public final class UpdateRepositoryDetails
          * Type of repository. Allowed values:
          * {@code MIRRORED}
          * {@code HOSTED}
+         * {@code FORKED}
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
@@ -112,6 +113,7 @@ public final class UpdateRepositoryDetails
          * Type of repository. Allowed values:
          * {@code MIRRORED}
          * {@code HOSTED}
+         * {@code FORKED}
          *
          * @param repositoryType the value to set
          * @return this builder
@@ -267,6 +269,7 @@ public final class UpdateRepositoryDetails
      * Type of repository. Allowed values:
      * {@code MIRRORED}
      * {@code HOSTED}
+     * {@code FORKED}
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("repositoryType")
@@ -276,6 +279,7 @@ public final class UpdateRepositoryDetails
      * Type of repository. Allowed values:
      * {@code MIRRORED}
      * {@code HOSTED}
+     * {@code FORKED}
      *
      * @return the value
      **/

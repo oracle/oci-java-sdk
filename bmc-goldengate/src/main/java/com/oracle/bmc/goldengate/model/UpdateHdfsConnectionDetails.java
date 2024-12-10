@@ -109,6 +109,15 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The base64 encoded content of the Hadoop Distributed File System configuration file (core-site.xml).
          *
@@ -143,6 +152,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -179,6 +189,9 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("coreSiteXml")) {
                 this.coreSiteXml(model.getCoreSiteXml());
             }
@@ -208,6 +221,7 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String coreSiteXml) {
         super(
                 displayName,
@@ -218,7 +232,8 @@ public final class UpdateHdfsConnectionDetails extends UpdateConnectionDetails {
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.coreSiteXml = coreSiteXml;
     }
 

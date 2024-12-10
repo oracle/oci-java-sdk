@@ -158,6 +158,33 @@ public interface Database extends AutoCloseable {
     CancelBackupResponse cancelBackup(CancelBackupRequest request);
 
     /**
+     * Cancels the in progress maintenance activity under this execution window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CancelExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelExecutionWindow API.
+     */
+    CancelExecutionWindowResponse cancelExecutionWindow(CancelExecutionWindowRequest request);
+
+    /**
+     * Delete the scheduling plan resource along with all the scheduled actions associated with this resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CascadingDeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteSchedulingPlan API.
+     */
+    CascadingDeleteSchedulingPlanResponse cascadingDeleteSchedulingPlan(
+            CascadingDeleteSchedulingPlanRequest request);
+
+    /**
      * Move the Autonomous Container Database and its dependent resources to the specified compartment.
      * For more information about moving Autonomous Container Databases, see
      * [Moving Database Resources to a Different Compartment](https://docs.cloud.oracle.com/Content/Database/Concepts/databaseoverview.htm#moveRes).
@@ -204,6 +231,20 @@ public interface Database extends AutoCloseable {
     ChangeAutonomousDatabaseSoftwareImageCompartmentResponse
             changeAutonomousDatabaseSoftwareImageCompartment(
                     ChangeAutonomousDatabaseSoftwareImageCompartmentRequest request);
+
+    /**
+     * Associate an Autonomous Database with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeAutonomousDatabaseSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAutonomousDatabaseSubscription API.
+     */
+    ChangeAutonomousDatabaseSubscriptionResponse changeAutonomousDatabaseSubscription(
+            ChangeAutonomousDatabaseSubscriptionRequest request);
 
     /**
      * **Deprecated.** Use the {@link #changeCloudExadataInfrastructureCompartment(ChangeCloudExadataInfrastructureCompartmentRequest) changeCloudExadataInfrastructureCompartment} operation to move an Exadata infrastructure resource to a different compartment and  {@link #changeCloudAutonomousVmClusterCompartment(ChangeCloudAutonomousVmClusterCompartmentRequest) changeCloudAutonomousVmClusterCompartment} operation to move an Autonomous Exadata VM cluster to a different compartment.
@@ -281,6 +322,21 @@ public interface Database extends AutoCloseable {
             ChangeCloudExadataInfrastructureCompartmentRequest request);
 
     /**
+     * Associate a cloud Exadata infrastructure with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudExadataInfrastructureSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudExadataInfrastructureSubscription API.
+     */
+    ChangeCloudExadataInfrastructureSubscriptionResponse
+            changeCloudExadataInfrastructureSubscription(
+                    ChangeCloudExadataInfrastructureSubscriptionRequest request);
+
+    /**
      * Moves a cloud VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud Service instances and Autonomous Database on dedicated Exadata infrastructure only.
      *
      * @param request The request object containing the details to send
@@ -293,6 +349,20 @@ public interface Database extends AutoCloseable {
      */
     ChangeCloudVmClusterCompartmentResponse changeCloudVmClusterCompartment(
             ChangeCloudVmClusterCompartmentRequest request);
+
+    /**
+     * Associate a cloud VM cluster with a different subscription.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeCloudVmClusterSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCloudVmClusterSubscription API.
+     */
+    ChangeCloudVmClusterSubscriptionResponse changeCloudVmClusterSubscription(
+            ChangeCloudVmClusterSubscriptionRequest request);
 
     /**
      * Move the Database Software Image and its dependent resources to the specified compartment.
@@ -368,6 +438,34 @@ public interface Database extends AutoCloseable {
      */
     ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
             ChangeExadataInfrastructureCompartmentRequest request);
+
+    /**
+     * Moves a Exadata VM cluster on Exascale Infrastructure and its dependent resources to another compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExadbVmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExadbVmClusterCompartment API.
+     */
+    ChangeExadbVmClusterCompartmentResponse changeExadbVmClusterCompartment(
+            ChangeExadbVmClusterCompartmentRequest request);
+
+    /**
+     * Moves a Exadata Database Storage Vault to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeExascaleDbStorageVaultCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeExascaleDbStorageVaultCompartment API.
+     */
+    ChangeExascaleDbStorageVaultCompartmentResponse changeExascaleDbStorageVaultCompartment(
+            ChangeExascaleDbStorageVaultCompartmentRequest request);
 
     /**
      * Move the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
@@ -463,6 +561,34 @@ public interface Database extends AutoCloseable {
             ChangeOneoffPatchCompartmentRequest request);
 
     /**
+     * Moves an scheduling plan resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPlanCompartment API.
+     */
+    ChangeSchedulingPlanCompartmentResponse changeSchedulingPlanCompartment(
+            ChangeSchedulingPlanCompartmentRequest request);
+
+    /**
+     * Moves an scheduling policy resource to another compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeSchedulingPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSchedulingPolicyCompartment API.
+     */
+    ChangeSchedulingPolicyCompartmentResponse changeSchedulingPolicyCompartment(
+            ChangeSchedulingPolicyCompartmentRequest request);
+
+    /**
      * Moves a VM cluster and its dependent resources to another compartment. Applies to Exadata Cloud@Customer instances only.
      * To move a cloud VM cluster in an Exadata Cloud Service instance to another compartment, use the {@link #changeCloudVmClusterCompartment(ChangeCloudVmClusterCompartmentRequest) changeCloudVmClusterCompartment} operation.
      *
@@ -524,6 +650,20 @@ public interface Database extends AutoCloseable {
             ConfigureAutonomousDatabaseVaultKeyRequest request);
 
     /**
+     * Configures Exascale on Exadata infrastructure resource. Applies to Exadata Cloud@Customer instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureExascaleExadataInfrastructureExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureExascaleExadataInfrastructure API.
+     */
+    ConfigureExascaleExadataInfrastructureResponse configureExascaleExadataInfrastructure(
+            ConfigureExascaleExadataInfrastructureRequest request);
+
+    /**
      * This operation updates SaaS administrative user configuration of the Autonomous Database.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -534,6 +674,21 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfigureSaasAdminUserExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfigureSaasAdminUser API.
      */
     ConfigureSaasAdminUserResponse configureSaasAdminUser(ConfigureSaasAdminUserRequest request);
+
+    /**
+     * This is for user to confirm to DBaaS that the Oracle Key Valut (OKV) connection IPs, username and password are all correct. This operation will put
+     * the Key Store back into Active state. If details are incorrect, your OKV account may get locked after some unsuccessful attempts to connect.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConfirmKeyStoreDetailsAreCorrectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfirmKeyStoreDetailsAreCorrect API.
+     */
+    ConfirmKeyStoreDetailsAreCorrectResponse confirmKeyStoreDetailsAreCorrect(
+            ConfirmKeyStoreDetailsAreCorrectRequest request);
 
     /**
      * Converts a non-container database to a pluggable database.
@@ -840,6 +995,59 @@ public interface Database extends AutoCloseable {
             CreateExadataInfrastructureRequest request);
 
     /**
+     * Creates an Exadata VM cluster on Exascale Infrastructure
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExadbVmCluster API.
+     */
+    CreateExadbVmClusterResponse createExadbVmCluster(CreateExadbVmClusterRequest request);
+
+    /**
+     * Creates an Exadata Database Storage Vault
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExascaleDbStorageVault API.
+     */
+    CreateExascaleDbStorageVaultResponse createExascaleDbStorageVault(
+            CreateExascaleDbStorageVaultRequest request);
+
+    /**
+     * Creates an execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionAction API.
+     */
+    CreateExecutionActionResponse createExecutionAction(CreateExecutionActionRequest request);
+
+    /**
+     * Creates an execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateExecutionWindow API.
+     */
+    CreateExecutionWindowResponse createExecutionWindow(CreateExecutionWindowRequest request);
+
+    /**
      * Creates a new backup resource and returns the information the caller needs to back up an on-premises Oracle Database to Oracle Cloud Infrastructure.
      * <p>
      **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
@@ -965,6 +1173,58 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePluggableDatabase API.
      */
     CreatePluggableDatabaseResponse createPluggableDatabase(CreatePluggableDatabaseRequest request);
+
+    /**
+     * Creates a Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledAction API.
+     */
+    CreateScheduledActionResponse createScheduledAction(CreateScheduledActionRequest request);
+
+    /**
+     * Creates a Scheduling Plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPlan API.
+     */
+    CreateSchedulingPlanResponse createSchedulingPlan(CreateSchedulingPlanRequest request);
+
+    /**
+     * Creates a Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingPolicy API.
+     */
+    CreateSchedulingPolicyResponse createSchedulingPolicy(CreateSchedulingPolicyRequest request);
+
+    /**
+     * Creates a Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/CreateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedulingWindow API.
+     */
+    CreateSchedulingWindowResponse createSchedulingWindow(CreateSchedulingWindowRequest request);
 
     /**
      * Creates an Exadata Cloud@Customer VM cluster.
@@ -1234,6 +1494,59 @@ public interface Database extends AutoCloseable {
             DeleteExadataInfrastructureRequest request);
 
     /**
+     * Deletes the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExadbVmCluster API.
+     */
+    DeleteExadbVmClusterResponse deleteExadbVmCluster(DeleteExadbVmClusterRequest request);
+
+    /**
+     * Deletes the specified Exadata Database Storage Vault.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExascaleDbStorageVault API.
+     */
+    DeleteExascaleDbStorageVaultResponse deleteExascaleDbStorageVault(
+            DeleteExascaleDbStorageVaultRequest request);
+
+    /**
+     * Deletes the execution action.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionAction API.
+     */
+    DeleteExecutionActionResponse deleteExecutionAction(DeleteExecutionActionRequest request);
+
+    /**
+     * Deletes the execution window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteExecutionWindow API.
+     */
+    DeleteExecutionWindowResponse deleteExecutionWindow(DeleteExecutionWindowRequest request);
+
+    /**
      * Deletes the {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails}
      * resource. Any external pluggable databases registered under this container database must be deleted in
      * your Oracle Cloud Infrastructure tenancy prior to this operation.
@@ -1331,6 +1644,58 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeletePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePluggableDatabase API.
      */
     DeletePluggableDatabaseResponse deletePluggableDatabase(DeletePluggableDatabaseRequest request);
+
+    /**
+     * Deletes the scheduled action.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledAction API.
+     */
+    DeleteScheduledActionResponse deleteScheduledAction(DeleteScheduledActionRequest request);
+
+    /**
+     * Deletes the scheduling plan.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPlan API.
+     */
+    DeleteSchedulingPlanResponse deleteSchedulingPlan(DeleteSchedulingPlanRequest request);
+
+    /**
+     * Deletes the scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingPolicy API.
+     */
+    DeleteSchedulingPolicyResponse deleteSchedulingPolicy(DeleteSchedulingPolicyRequest request);
+
+    /**
+     * Deletes the scheduling window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/DeleteSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedulingWindow API.
+     */
+    DeleteSchedulingWindowResponse deleteSchedulingWindow(DeleteSchedulingWindowRequest request);
 
     /**
      * Deletes the specified VM cluster. Applies to Exadata Cloud@Customer instances only.
@@ -2488,6 +2853,86 @@ public interface Database extends AutoCloseable {
     GetExadataIormConfigResponse getExadataIormConfig(GetExadataIormConfigRequest request);
 
     /**
+     * Gets information about the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmCluster API.
+     */
+    GetExadbVmClusterResponse getExadbVmCluster(GetExadbVmClusterRequest request);
+
+    /**
+     * Gets information about a specified maintenance update package for a Exadata VM cluster on Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdate API.
+     */
+    GetExadbVmClusterUpdateResponse getExadbVmClusterUpdate(GetExadbVmClusterUpdateRequest request);
+
+    /**
+     * Gets the maintenance update history details for the specified update history entry.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExadbVmClusterUpdateHistoryEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExadbVmClusterUpdateHistoryEntry API.
+     */
+    GetExadbVmClusterUpdateHistoryEntryResponse getExadbVmClusterUpdateHistoryEntry(
+            GetExadbVmClusterUpdateHistoryEntryRequest request);
+
+    /**
+     * Gets information about the specified Exadata Database Storage Vaults in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExascaleDbStorageVault API.
+     */
+    GetExascaleDbStorageVaultResponse getExascaleDbStorageVault(
+            GetExascaleDbStorageVaultRequest request);
+
+    /**
+     * Gets information about the specified execution action.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionAction API.
+     */
+    GetExecutionActionResponse getExecutionAction(GetExecutionActionRequest request);
+
+    /**
+     * Gets information about the specified execution window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetExecutionWindow API.
+     */
+    GetExecutionWindowResponse getExecutionWindow(GetExecutionWindowRequest request);
+
+    /**
      * Gets information about the specified external backup job.
      * <p>
      **Note:** This API is used by an Oracle Cloud Infrastructure Python script that is packaged with the Oracle Cloud Infrastructure CLI. Oracle recommends that you use the script instead using the API directly. See [Migrating an On-Premises Database to Oracle Cloud Infrastructure by Creating a Backup in the Cloud](https://docs.cloud.oracle.com/Content/Database/Tasks/mig-onprembackup.htm) for more information.
@@ -2647,6 +3092,58 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetPluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPluggableDatabase API.
      */
     GetPluggableDatabaseResponse getPluggableDatabase(GetPluggableDatabaseRequest request);
+
+    /**
+     * Gets information about the specified Scheduled Action.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledAction API.
+     */
+    GetScheduledActionResponse getScheduledAction(GetScheduledActionRequest request);
+
+    /**
+     * Gets information about the specified Scheduling Plan.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPlan API.
+     */
+    GetSchedulingPlanResponse getSchedulingPlan(GetSchedulingPlanRequest request);
+
+    /**
+     * Gets information about the specified Scheduling Policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingPolicy API.
+     */
+    GetSchedulingPolicyResponse getSchedulingPolicy(GetSchedulingPolicyRequest request);
+
+    /**
+     * Gets information about the specified Scheduling Window.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/GetSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedulingWindow API.
+     */
+    GetSchedulingWindowResponse getSchedulingWindow(GetSchedulingWindowRequest request);
 
     /**
      * Gets information about the VM cluster. Applies to Exadata Cloud@Customer instances only.
@@ -3427,6 +3924,87 @@ public interface Database extends AutoCloseable {
             ListExadataInfrastructuresRequest request);
 
     /**
+     * Gets the history of the maintenance update actions performed on the specified Exadata VM cluster on Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdateHistoryEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdateHistoryEntries API.
+     */
+    ListExadbVmClusterUpdateHistoryEntriesResponse listExadbVmClusterUpdateHistoryEntries(
+            ListExadbVmClusterUpdateHistoryEntriesRequest request);
+
+    /**
+     * Lists the maintenance updates that can be applied to the specified Exadata VM cluster on Exascale Infrastructure.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClusterUpdatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusterUpdates API.
+     */
+    ListExadbVmClusterUpdatesResponse listExadbVmClusterUpdates(
+            ListExadbVmClusterUpdatesRequest request);
+
+    /**
+     * Gets a list of the Exadata VM clusters on Exascale Infrastructure in the specified compartment. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExadbVmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExadbVmClusters API.
+     */
+    ListExadbVmClustersResponse listExadbVmClusters(ListExadbVmClustersRequest request);
+
+    /**
+     * Gets a list of the Exadata Database Storage Vaults in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExascaleDbStorageVaultsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExascaleDbStorageVaults API.
+     */
+    ListExascaleDbStorageVaultsResponse listExascaleDbStorageVaults(
+            ListExascaleDbStorageVaultsRequest request);
+
+    /**
+     * Lists the execution action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionActions API.
+     */
+    ListExecutionActionsResponse listExecutionActions(ListExecutionActionsRequest request);
+
+    /**
+     * Lists the execution window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListExecutionWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListExecutionWindows API.
+     */
+    ListExecutionWindowsResponse listExecutionWindows(ListExecutionWindowsRequest request);
+
+    /**
      * Gets a list of the external container databases in the specified compartment.
      *
      * @param request The request object containing the details to send
@@ -3496,6 +4074,19 @@ public interface Database extends AutoCloseable {
     ListFlexComponentsResponse listFlexComponents(ListFlexComponentsRequest request);
 
     /**
+     * Gets a list of supported Oracle Grid Infrastructure minor versions for the given major version and shape family.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListGiVersionMinorVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListGiVersionMinorVersions API.
+     */
+    ListGiVersionMinorVersionsResponse listGiVersionMinorVersions(
+            ListGiVersionMinorVersionsRequest request);
+
+    /**
      * Gets a list of supported GI versions.
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3561,6 +4152,19 @@ public interface Database extends AutoCloseable {
     ListOneoffPatchesResponse listOneoffPatches(ListOneoffPatchesRequest request);
 
     /**
+     * List all the action params and their possible values for a given action type
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListParamsForActionTypeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListParamsForActionType API.
+     */
+    ListParamsForActionTypeResponse listParamsForActionType(ListParamsForActionTypeRequest request);
+
+    /**
      * Gets the pluggable database conversion history for a specified database in a bare metal or virtual machine DB system.
      *
      * @param request The request object containing the details to send
@@ -3586,6 +4190,72 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListPluggableDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluggableDatabases API.
      */
     ListPluggableDatabasesResponse listPluggableDatabases(ListPluggableDatabasesRequest request);
+
+    /**
+     * Returns a recommended Scheduled Actions configuration for a given resource, plan intent and scheduling policy.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListRecommendedScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecommendedScheduledActions API.
+     */
+    ListRecommendedScheduledActionsResponse listRecommendedScheduledActions(
+            ListRecommendedScheduledActionsRequest request);
+
+    /**
+     * Lists the Scheduled Action resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledActions API.
+     */
+    ListScheduledActionsResponse listScheduledActions(ListScheduledActionsRequest request);
+
+    /**
+     * Lists the Scheduling Plan resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPlans API.
+     */
+    ListSchedulingPlansResponse listSchedulingPlans(ListSchedulingPlansRequest request);
+
+    /**
+     * Lists the Scheduling Policy resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingPolicies API.
+     */
+    ListSchedulingPoliciesResponse listSchedulingPolicies(ListSchedulingPoliciesRequest request);
+
+    /**
+     * Lists the Scheduling Window resources in the specified compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListSchedulingWindowsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedulingWindows API.
+     */
+    ListSchedulingWindowsResponse listSchedulingWindows(ListSchedulingWindowsRequest request);
 
     /**
      * Gets a list of supported Exadata system versions for a given shape and GI version.
@@ -3749,6 +4419,20 @@ public interface Database extends AutoCloseable {
             ModifyPluggableDatabaseManagementRequest request);
 
     /**
+     * Moves an execution action member to this execution action resource from another.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MoveExecutionActionMemberExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MoveExecutionActionMember API.
+     */
+    MoveExecutionActionMemberResponse moveExecutionActionMember(
+            MoveExecutionActionMemberRequest request);
+
+    /**
      * Refreshes a pluggable database (PDB) Refreshable clone.
      *
      * @param request The request object containing the details to send
@@ -3836,6 +4520,20 @@ public interface Database extends AutoCloseable {
             RemoveVirtualMachineFromCloudVmClusterRequest request);
 
     /**
+     * Remove Virtual Machines from the Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Cloud instances only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/RemoveVirtualMachineFromExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveVirtualMachineFromExadbVmCluster API.
+     */
+    RemoveVirtualMachineFromExadbVmClusterResponse removeVirtualMachineFromExadbVmCluster(
+            RemoveVirtualMachineFromExadbVmClusterRequest request);
+
+    /**
      * Remove Virtual Machines from the VM cluster. Applies to Exadata Cloud@Customer instances only.
      *
      * @param request The request object containing the details to send
@@ -3848,6 +4546,32 @@ public interface Database extends AutoCloseable {
      */
     RemoveVirtualMachineFromVmClusterResponse removeVirtualMachineFromVmCluster(
             RemoveVirtualMachineFromVmClusterRequest request);
+
+    /**
+     * Reorders the execution actions under this execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderExecutionActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderExecutionActions API.
+     */
+    ReorderExecutionActionsResponse reorderExecutionActions(ReorderExecutionActionsRequest request);
+
+    /**
+     * Re-order the scheduled actions under this scheduling plan resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReorderScheduledActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReorderScheduledActions API.
+     */
+    ReorderScheduledActionsResponse reorderScheduledActions(ReorderScheduledActionsRequest request);
 
     /**
      * Adds or removes Db server network nodes to extend or shrink the existing VM cluster network. Applies to Exadata
@@ -4091,6 +4815,30 @@ public interface Database extends AutoCloseable {
     ScanExternalContainerDatabasePluggableDatabasesResponse
             scanExternalContainerDatabasePluggableDatabases(
                     ScanExternalContainerDatabasePluggableDatabasesRequest request);
+
+    /**
+     * Sets a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetDbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDbKeyVersion API.
+     */
+    SetDbKeyVersionResponse setDbKeyVersion(SetDbKeyVersionRequest request);
+
+    /**
+     * Sets a new version of an existing [Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) key.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SetPdbKeyVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetPdbKeyVersion API.
+     */
+    SetPdbKeyVersionResponse setPdbKeyVersion(SetPdbKeyVersionRequest request);
 
     /**
      * This operation shrinks the current allocated storage down to the current actual used data storage (actualUsedDataStorageSizeInTBs). The if the base storage value for the database (dataStorageSizeInTBs) is larger than the actualUsedDataStorageSizeInTBs value, you are billed for the base storage value.
@@ -4590,6 +5338,59 @@ public interface Database extends AutoCloseable {
     UpdateExadataIormConfigResponse updateExadataIormConfig(UpdateExadataIormConfigRequest request);
 
     /**
+     * Updates the specified Exadata VM cluster on Exascale Infrastructure. Applies to Exadata Database Service on Exascale Infrastructure only.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExadbVmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExadbVmCluster API.
+     */
+    UpdateExadbVmClusterResponse updateExadbVmCluster(UpdateExadbVmClusterRequest request);
+
+    /**
+     * Updates the specified Exadata Database Storage Vault.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExascaleDbStorageVaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExascaleDbStorageVault API.
+     */
+    UpdateExascaleDbStorageVaultResponse updateExascaleDbStorageVault(
+            UpdateExascaleDbStorageVaultRequest request);
+
+    /**
+     * Updates the execution action resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionAction API.
+     */
+    UpdateExecutionActionResponse updateExecutionAction(UpdateExecutionActionRequest request);
+
+    /**
+     * Updates the execution window resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateExecutionWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateExecutionWindow API.
+     */
+    UpdateExecutionWindowResponse updateExecutionWindow(UpdateExecutionWindowRequest request);
+
+    /**
      * Updates the properties of
      * an {@link #createExternalContainerDatabaseDetails(CreateExternalContainerDatabaseDetailsRequest) createExternalContainerDatabaseDetails} resource,
      * such as the display name.
@@ -4696,6 +5497,45 @@ public interface Database extends AutoCloseable {
      * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdatePluggableDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePluggableDatabase API.
      */
     UpdatePluggableDatabaseResponse updatePluggableDatabase(UpdatePluggableDatabaseRequest request);
+
+    /**
+     * Updates the Scheduled Action resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateScheduledActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledAction API.
+     */
+    UpdateScheduledActionResponse updateScheduledAction(UpdateScheduledActionRequest request);
+
+    /**
+     * Updates the Scheduling Policy resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingPolicy API.
+     */
+    UpdateSchedulingPolicyResponse updateSchedulingPolicy(UpdateSchedulingPolicyRequest request);
+
+    /**
+     * Updates the Scheduling Window resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateSchedulingWindowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedulingWindow API.
+     */
+    UpdateSchedulingWindowResponse updateSchedulingWindow(UpdateSchedulingWindowRequest request);
 
     /**
      * Updates the specified VM cluster. Applies to Exadata Cloud@Customer instances only.

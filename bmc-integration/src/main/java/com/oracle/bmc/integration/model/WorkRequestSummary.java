@@ -303,6 +303,10 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         DeleteIntegrationInstance("DELETE_INTEGRATION_INSTANCE"),
         ChangePrivateEndpointOutboundConnection("CHANGE_PRIVATE_ENDPOINT_OUTBOUND_CONNECTION"),
         EnableProcessAutomation("ENABLE_PROCESS_AUTOMATION"),
+        ExtendDataRetention("EXTEND_DATA_RETENTION"),
+        DisasterRecoveryFailover("DISASTER_RECOVERY_FAILOVER"),
+        CreateCustomEndpoint("CREATE_CUSTOM_ENDPOINT"),
+        DeleteCustomEndpoint("DELETE_CUSTOM_ENDPOINT"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this

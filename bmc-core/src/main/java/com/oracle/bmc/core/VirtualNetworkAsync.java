@@ -135,7 +135,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Adds one or more security rules to the specified network security group.
+     * Adds up to 25 security rules to the specified network security group. Adding more than 25 rules requires multiple operations.
      *
      *
      * @param request The request object containing the details to send
@@ -1355,6 +1355,9 @@ public interface VirtualNetworkAsync extends AutoCloseable {
      * <p>
      * You may optionally specify a *display name* for the service gateway, otherwise a default is provided.
      * It does not have to be unique, and you can change it. Avoid entering confidential information.
+     * <p>
+     * Use the {@link #listServices(ListServicesRequest, Consumer, Consumer) listServices} operation to find service CIDR labels
+     * available in the region.
      *
      *
      * @param request The request object containing the details to send
@@ -4012,7 +4015,7 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
-     * The deprecated operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
+     * The operation lists available bandwidth levels for virtual circuits. For the compartment ID, provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of your tenancy (the root compartment).
      *
      *
      * @param request The request object containing the details to send

@@ -223,7 +223,9 @@ public class KmsHsmClusterWaiters {
                                         response.getHsmPartition().getLifecycleState());
                             }
                         },
-                        false),
+                        targetStatesSet.contains(
+                                com.oracle.bmc.keymanagement.model.HsmPartition.LifecycleState
+                                        .Deleted)),
                 request);
     }
 }

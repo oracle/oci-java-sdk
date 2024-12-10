@@ -36,6 +36,7 @@ public class ListInternalNamespaceOccOverviewsConverter {
         Validate.notNull(request, "request instance is required");
         Validate.notBlank(request.getNamespace().getValue(), "namespace must not be blank");
         Validate.notNull(request.getCompartmentId(), "compartmentId is required");
+        Validate.notNull(request.getOccCustomerGroupId(), "occCustomerGroupId is required");
 
         com.oracle.bmc.http.internal.WrappedWebTarget target =
                 client.getBaseTarget()
@@ -53,13 +54,11 @@ public class ListInternalNamespaceOccOverviewsConverter {
                         com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
                                 request.getCompartmentId()));
 
-        if (request.getOccCustomerGroupId() != null) {
-            target =
-                    target.queryParam(
-                            "occCustomerGroupId",
-                            com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
-                                    request.getOccCustomerGroupId()));
-        }
+        target =
+                target.queryParam(
+                        "occCustomerGroupId",
+                        com.oracle.bmc.util.internal.HttpUtils.attemptEncodeQueryParam(
+                                request.getOccCustomerGroupId()));
 
         if (request.getWorkloadType() != null) {
             target =

@@ -27,6 +27,7 @@ public final class CloudExadataInfrastructureSummary
         "id",
         "compartmentId",
         "clusterPlacementGroupId",
+        "subscriptionId",
         "lifecycleState",
         "displayName",
         "shape",
@@ -58,12 +59,14 @@ public final class CloudExadataInfrastructureSummary
         "dbServerVersion",
         "monthlyStorageServerVersion",
         "monthlyDbServerVersion",
-        "definedFileSystemConfigurations"
+        "definedFileSystemConfigurations",
+        "isSchedulingPolicyAssociated"
     })
     public CloudExadataInfrastructureSummary(
             String id,
             String compartmentId,
             String clusterPlacementGroupId,
+            String subscriptionId,
             LifecycleState lifecycleState,
             String displayName,
             String shape,
@@ -95,11 +98,13 @@ public final class CloudExadataInfrastructureSummary
             String dbServerVersion,
             String monthlyStorageServerVersion,
             String monthlyDbServerVersion,
-            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations) {
+            java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
+            Boolean isSchedulingPolicyAssociated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.subscriptionId = subscriptionId;
         this.lifecycleState = lifecycleState;
         this.displayName = displayName;
         this.shape = shape;
@@ -132,6 +137,7 @@ public final class CloudExadataInfrastructureSummary
         this.monthlyStorageServerVersion = monthlyStorageServerVersion;
         this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
+        this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -182,6 +188,22 @@ public final class CloudExadataInfrastructureSummary
         public Builder clusterPlacementGroupId(String clusterPlacementGroupId) {
             this.clusterPlacementGroupId = clusterPlacementGroupId;
             this.__explicitlySet__.add("clusterPlacementGroupId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -733,6 +755,22 @@ public final class CloudExadataInfrastructureSummary
             this.__explicitlySet__.add("definedFileSystemConfigurations");
             return this;
         }
+        /**
+         * If true, the infrastructure is using granular maintenance scheduling preference.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+        private Boolean isSchedulingPolicyAssociated;
+
+        /**
+         * If true, the infrastructure is using granular maintenance scheduling preference.
+         * @param isSchedulingPolicyAssociated the value to set
+         * @return this builder
+         **/
+        public Builder isSchedulingPolicyAssociated(Boolean isSchedulingPolicyAssociated) {
+            this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+            this.__explicitlySet__.add("isSchedulingPolicyAssociated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -743,6 +781,7 @@ public final class CloudExadataInfrastructureSummary
                             this.id,
                             this.compartmentId,
                             this.clusterPlacementGroupId,
+                            this.subscriptionId,
                             this.lifecycleState,
                             this.displayName,
                             this.shape,
@@ -774,7 +813,8 @@ public final class CloudExadataInfrastructureSummary
                             this.dbServerVersion,
                             this.monthlyStorageServerVersion,
                             this.monthlyDbServerVersion,
-                            this.definedFileSystemConfigurations);
+                            this.definedFileSystemConfigurations,
+                            this.isSchedulingPolicyAssociated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -791,6 +831,9 @@ public final class CloudExadataInfrastructureSummary
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
@@ -888,6 +931,9 @@ public final class CloudExadataInfrastructureSummary
             if (model.wasPropertyExplicitlySet("definedFileSystemConfigurations")) {
                 this.definedFileSystemConfigurations(model.getDefinedFileSystemConfigurations());
             }
+            if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
+                this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
+            }
             return this;
         }
     }
@@ -943,6 +989,20 @@ public final class CloudExadataInfrastructureSummary
      **/
     public String getClusterPlacementGroupId() {
         return clusterPlacementGroupId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -1481,6 +1541,20 @@ public final class CloudExadataInfrastructureSummary
         return definedFileSystemConfigurations;
     }
 
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isSchedulingPolicyAssociated")
+    private final Boolean isSchedulingPolicyAssociated;
+
+    /**
+     * If true, the infrastructure is using granular maintenance scheduling preference.
+     * @return the value
+     **/
+    public Boolean getIsSchedulingPolicyAssociated() {
+        return isSchedulingPolicyAssociated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1499,6 +1573,7 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", shape=").append(String.valueOf(this.shape));
@@ -1534,6 +1609,8 @@ public final class CloudExadataInfrastructureSummary
         sb.append(", monthlyDbServerVersion=").append(String.valueOf(this.monthlyDbServerVersion));
         sb.append(", definedFileSystemConfigurations=")
                 .append(String.valueOf(this.definedFileSystemConfigurations));
+        sb.append(", isSchedulingPolicyAssociated=")
+                .append(String.valueOf(this.isSchedulingPolicyAssociated));
         sb.append(")");
         return sb.toString();
     }
@@ -1552,6 +1629,7 @@ public final class CloudExadataInfrastructureSummary
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.shape, other.shape)
@@ -1590,6 +1668,8 @@ public final class CloudExadataInfrastructureSummary
                         this.monthlyDbServerVersion, other.monthlyDbServerVersion)
                 && java.util.Objects.equals(
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
+                && java.util.Objects.equals(
+                        this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
                 && super.equals(other);
     }
 
@@ -1606,6 +1686,9 @@ public final class CloudExadataInfrastructureSummary
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
@@ -1712,6 +1795,11 @@ public final class CloudExadataInfrastructureSummary
                         + (this.definedFileSystemConfigurations == null
                                 ? 43
                                 : this.definedFileSystemConfigurations.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isSchedulingPolicyAssociated == null
+                                ? 43
+                                : this.isSchedulingPolicyAssociated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

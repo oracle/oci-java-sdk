@@ -33,6 +33,8 @@ public final class CreateLoadBalancerDetails
         "isPrivate",
         "isDeleteProtectionEnabled",
         "ipMode",
+        "isRequestIdEnabled",
+        "requestIdHeader",
         "reservedIps",
         "listeners",
         "hostnames",
@@ -44,6 +46,7 @@ public final class CreateLoadBalancerDetails
         "pathRouteSets",
         "freeformTags",
         "definedTags",
+        "zprTags",
         "ruleSets"
     })
     public CreateLoadBalancerDetails(
@@ -54,6 +57,8 @@ public final class CreateLoadBalancerDetails
             Boolean isPrivate,
             Boolean isDeleteProtectionEnabled,
             IpMode ipMode,
+            Boolean isRequestIdEnabled,
+            String requestIdHeader,
             java.util.List<ReservedIP> reservedIps,
             java.util.Map<String, ListenerDetails> listeners,
             java.util.Map<String, HostnameDetails> hostnames,
@@ -65,6 +70,7 @@ public final class CreateLoadBalancerDetails
             java.util.Map<String, PathRouteSetDetails> pathRouteSets,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> zprTags,
             java.util.Map<String, RuleSetDetails> ruleSets) {
         super();
         this.compartmentId = compartmentId;
@@ -74,6 +80,8 @@ public final class CreateLoadBalancerDetails
         this.isPrivate = isPrivate;
         this.isDeleteProtectionEnabled = isDeleteProtectionEnabled;
         this.ipMode = ipMode;
+        this.isRequestIdEnabled = isRequestIdEnabled;
+        this.requestIdHeader = requestIdHeader;
         this.reservedIps = reservedIps;
         this.listeners = listeners;
         this.hostnames = hostnames;
@@ -85,6 +93,7 @@ public final class CreateLoadBalancerDetails
         this.pathRouteSets = pathRouteSets;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.zprTags = zprTags;
         this.ruleSets = ruleSets;
     }
 
@@ -279,6 +288,96 @@ public final class CreateLoadBalancerDetails
             return this;
         }
         /**
+         * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
+         * passed through from the load balancer to load balancer backends. This same request id
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+         * <p>
+         * Example: {@code true}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
+        private Boolean isRequestIdEnabled;
+
+        /**
+         * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+         * <p>
+         * If "true", the load balancer will attach a unique request id header to every request
+         * passed through from the load balancer to load balancer backends. This same request id
+         * header also will be added to the response the lb received from the backend handling
+         * the request before the load balancer returns the response to the requestor. The name
+         * of the unique request id header is set the by value of requestIdHeader.
+         * <p>
+         * If "false", the loadbalancer not add this unique request id header to either the request
+         * passed through to the load balancer backends nor to the reponse returned to the user.
+         * <p>
+         * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+         * <p>
+         * Example: {@code true}
+         *
+         * @param isRequestIdEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isRequestIdEnabled(Boolean isRequestIdEnabled) {
+            this.isRequestIdEnabled = isRequestIdEnabled;
+            this.__explicitlySet__.add("isRequestIdEnabled");
+            return this;
+        }
+        /**
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If isRequestIdEnabled is false then this field is ignored.
+         * <p>
+         * If this field is not set or is set to "" then this field defaults to X-Request-Id
+         * <p>
+         **Notes:**
+         * * Unless the header name is "" it must start with "X-" prefix.
+         * * Setting the header name to "" will set it to the default: X-Request-Id.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
+        private String requestIdHeader;
+
+        /**
+         * If isRequestIdEnabled is true then this field contains the name of the header field
+         * that contains the unique request id that is attached to every request from
+         * the load balancer to the load balancer backends and to every response from the load
+         * balancer.
+         * <p>
+         * If a request to the load balancer already contains a header with same name as specified
+         * in requestIdHeader then the load balancer will not change the value of that field.
+         * <p>
+         * If isRequestIdEnabled is false then this field is ignored.
+         * <p>
+         * If this field is not set or is set to "" then this field defaults to X-Request-Id
+         * <p>
+         **Notes:**
+         * * Unless the header name is "" it must start with "X-" prefix.
+         * * Setting the header name to "" will set it to the default: X-Request-Id.
+         *
+         * @param requestIdHeader the value to set
+         * @return this builder
+         **/
+        public Builder requestIdHeader(String requestIdHeader) {
+            this.requestIdHeader = requestIdHeader;
+            this.__explicitlySet__.add("requestIdHeader");
+            return this;
+        }
+        /**
          * An array of reserved Ips.
          *
          **/
@@ -456,6 +555,28 @@ public final class CreateLoadBalancerDetails
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+        private java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+        /**
+         * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+         * <p>
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+         *
+         * @param zprTags the value to set
+         * @return this builder
+         **/
+        public Builder zprTags(java.util.Map<String, java.util.Map<String, Object>> zprTags) {
+            this.zprTags = zprTags;
+            this.__explicitlySet__.add("zprTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
         private java.util.Map<String, RuleSetDetails> ruleSets;
@@ -479,6 +600,8 @@ public final class CreateLoadBalancerDetails
                             this.isPrivate,
                             this.isDeleteProtectionEnabled,
                             this.ipMode,
+                            this.isRequestIdEnabled,
+                            this.requestIdHeader,
                             this.reservedIps,
                             this.listeners,
                             this.hostnames,
@@ -490,6 +613,7 @@ public final class CreateLoadBalancerDetails
                             this.pathRouteSets,
                             this.freeformTags,
                             this.definedTags,
+                            this.zprTags,
                             this.ruleSets);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -519,6 +643,12 @@ public final class CreateLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("ipMode")) {
                 this.ipMode(model.getIpMode());
+            }
+            if (model.wasPropertyExplicitlySet("isRequestIdEnabled")) {
+                this.isRequestIdEnabled(model.getIsRequestIdEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("requestIdHeader")) {
+                this.requestIdHeader(model.getRequestIdHeader());
             }
             if (model.wasPropertyExplicitlySet("reservedIps")) {
                 this.reservedIps(model.getReservedIps());
@@ -552,6 +682,9 @@ public final class CreateLoadBalancerDetails
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("zprTags")) {
+                this.zprTags(model.getZprTags());
             }
             if (model.wasPropertyExplicitlySet("ruleSets")) {
                 this.ruleSets(model.getRuleSets());
@@ -788,6 +921,92 @@ public final class CreateLoadBalancerDetails
     }
 
     /**
+     * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
+     * passed through to the load balancer backends nor to the reponse returned to the user.
+     * <p>
+     * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+     * <p>
+     * Example: {@code true}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isRequestIdEnabled")
+    private final Boolean isRequestIdEnabled;
+
+    /**
+     * Whether or not the load balancer has the Request Id feature enabled for HTTP listeners.
+     * <p>
+     * If "true", the load balancer will attach a unique request id header to every request
+     * passed through from the load balancer to load balancer backends. This same request id
+     * header also will be added to the response the lb received from the backend handling
+     * the request before the load balancer returns the response to the requestor. The name
+     * of the unique request id header is set the by value of requestIdHeader.
+     * <p>
+     * If "false", the loadbalancer not add this unique request id header to either the request
+     * passed through to the load balancer backends nor to the reponse returned to the user.
+     * <p>
+     * New load balancers have the Request Id feature disabled unless isRequestIdEnabled is set to true.
+     * <p>
+     * Example: {@code true}
+     *
+     * @return the value
+     **/
+    public Boolean getIsRequestIdEnabled() {
+        return isRequestIdEnabled;
+    }
+
+    /**
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If isRequestIdEnabled is false then this field is ignored.
+     * <p>
+     * If this field is not set or is set to "" then this field defaults to X-Request-Id
+     * <p>
+     **Notes:**
+     * * Unless the header name is "" it must start with "X-" prefix.
+     * * Setting the header name to "" will set it to the default: X-Request-Id.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("requestIdHeader")
+    private final String requestIdHeader;
+
+    /**
+     * If isRequestIdEnabled is true then this field contains the name of the header field
+     * that contains the unique request id that is attached to every request from
+     * the load balancer to the load balancer backends and to every response from the load
+     * balancer.
+     * <p>
+     * If a request to the load balancer already contains a header with same name as specified
+     * in requestIdHeader then the load balancer will not change the value of that field.
+     * <p>
+     * If isRequestIdEnabled is false then this field is ignored.
+     * <p>
+     * If this field is not set or is set to "" then this field defaults to X-Request-Id
+     * <p>
+     **Notes:**
+     * * Unless the header name is "" it must start with "X-" prefix.
+     * * Setting the header name to "" will set it to the default: X-Request-Id.
+     *
+     * @return the value
+     **/
+    public String getRequestIdHeader() {
+        return requestIdHeader;
+    }
+
+    /**
      * An array of reserved Ips.
      *
      **/
@@ -941,6 +1160,26 @@ public final class CreateLoadBalancerDetails
         return definedTags;
     }
 
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("zprTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> zprTags;
+
+    /**
+     * Extended Defined tags for ZPR for this resource. Each key is predefined and scoped to a namespace.
+     * <p>
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value":"42","mode":"audit", "usagetype" : "zpr"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getZprTags() {
+        return zprTags;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("ruleSets")
     private final java.util.Map<String, RuleSetDetails> ruleSets;
 
@@ -970,6 +1209,8 @@ public final class CreateLoadBalancerDetails
         sb.append(", isDeleteProtectionEnabled=")
                 .append(String.valueOf(this.isDeleteProtectionEnabled));
         sb.append(", ipMode=").append(String.valueOf(this.ipMode));
+        sb.append(", isRequestIdEnabled=").append(String.valueOf(this.isRequestIdEnabled));
+        sb.append(", requestIdHeader=").append(String.valueOf(this.requestIdHeader));
         sb.append(", reservedIps=").append(String.valueOf(this.reservedIps));
         sb.append(", listeners=").append(String.valueOf(this.listeners));
         sb.append(", hostnames=").append(String.valueOf(this.hostnames));
@@ -982,6 +1223,7 @@ public final class CreateLoadBalancerDetails
         sb.append(", pathRouteSets=").append(String.valueOf(this.pathRouteSets));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", zprTags=").append(String.valueOf(this.zprTags));
         sb.append(", ruleSets=").append(String.valueOf(this.ruleSets));
         sb.append(")");
         return sb.toString();
@@ -1005,6 +1247,8 @@ public final class CreateLoadBalancerDetails
                 && java.util.Objects.equals(
                         this.isDeleteProtectionEnabled, other.isDeleteProtectionEnabled)
                 && java.util.Objects.equals(this.ipMode, other.ipMode)
+                && java.util.Objects.equals(this.isRequestIdEnabled, other.isRequestIdEnabled)
+                && java.util.Objects.equals(this.requestIdHeader, other.requestIdHeader)
                 && java.util.Objects.equals(this.reservedIps, other.reservedIps)
                 && java.util.Objects.equals(this.listeners, other.listeners)
                 && java.util.Objects.equals(this.hostnames, other.hostnames)
@@ -1017,6 +1261,7 @@ public final class CreateLoadBalancerDetails
                 && java.util.Objects.equals(this.pathRouteSets, other.pathRouteSets)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.zprTags, other.zprTags)
                 && java.util.Objects.equals(this.ruleSets, other.ruleSets)
                 && super.equals(other);
     }
@@ -1038,6 +1283,14 @@ public final class CreateLoadBalancerDetails
                                 ? 43
                                 : this.isDeleteProtectionEnabled.hashCode());
         result = (result * PRIME) + (this.ipMode == null ? 43 : this.ipMode.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isRequestIdEnabled == null
+                                ? 43
+                                : this.isRequestIdEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.requestIdHeader == null ? 43 : this.requestIdHeader.hashCode());
         result = (result * PRIME) + (this.reservedIps == null ? 43 : this.reservedIps.hashCode());
         result = (result * PRIME) + (this.listeners == null ? 43 : this.listeners.hashCode());
         result = (result * PRIME) + (this.hostnames == null ? 43 : this.hostnames.hashCode());
@@ -1057,6 +1310,7 @@ public final class CreateLoadBalancerDetails
                         + (this.pathRouteSets == null ? 43 : this.pathRouteSets.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.zprTags == null ? 43 : this.zprTags.hashCode());
         result = (result * PRIME) + (this.ruleSets == null ? 43 : this.ruleSets.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

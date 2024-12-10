@@ -26,6 +26,7 @@ public final class CreateDbManagementPrivateEndpointDetails
         "name",
         "compartmentId",
         "isCluster",
+        "isDnsResolutionEnabled",
         "subnetId",
         "description",
         "nsgIds",
@@ -36,6 +37,7 @@ public final class CreateDbManagementPrivateEndpointDetails
             String name,
             String compartmentId,
             Boolean isCluster,
+            Boolean isDnsResolutionEnabled,
             String subnetId,
             String description,
             java.util.List<String> nsgIds,
@@ -45,6 +47,7 @@ public final class CreateDbManagementPrivateEndpointDetails
         this.name = name;
         this.compartmentId = compartmentId;
         this.isCluster = isCluster;
+        this.isDnsResolutionEnabled = isDnsResolutionEnabled;
         this.subnetId = subnetId;
         this.description = description;
         this.nsgIds = nsgIds;
@@ -100,6 +103,22 @@ public final class CreateDbManagementPrivateEndpointDetails
         public Builder isCluster(Boolean isCluster) {
             this.isCluster = isCluster;
             this.__explicitlySet__.add("isCluster");
+            return this;
+        }
+        /**
+         * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isDnsResolutionEnabled")
+        private Boolean isDnsResolutionEnabled;
+
+        /**
+         * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+         * @param isDnsResolutionEnabled the value to set
+         * @return this builder
+         **/
+        public Builder isDnsResolutionEnabled(Boolean isDnsResolutionEnabled) {
+            this.isDnsResolutionEnabled = isDnsResolutionEnabled;
+            this.__explicitlySet__.add("isDnsResolutionEnabled");
             return this;
         }
         /**
@@ -207,6 +226,7 @@ public final class CreateDbManagementPrivateEndpointDetails
                             this.name,
                             this.compartmentId,
                             this.isCluster,
+                            this.isDnsResolutionEnabled,
                             this.subnetId,
                             this.description,
                             this.nsgIds,
@@ -228,6 +248,9 @@ public final class CreateDbManagementPrivateEndpointDetails
             }
             if (model.wasPropertyExplicitlySet("isCluster")) {
                 this.isCluster(model.getIsCluster());
+            }
+            if (model.wasPropertyExplicitlySet("isDnsResolutionEnabled")) {
+                this.isDnsResolutionEnabled(model.getIsDnsResolutionEnabled());
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
@@ -299,6 +322,20 @@ public final class CreateDbManagementPrivateEndpointDetails
      **/
     public Boolean getIsCluster() {
         return isCluster;
+    }
+
+    /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isDnsResolutionEnabled")
+    private final Boolean isDnsResolutionEnabled;
+
+    /**
+     * Specifies whether the Database Management private endpoint has DNS proxy server enabled to resolve private host name.
+     * @return the value
+     **/
+    public Boolean getIsDnsResolutionEnabled() {
+        return isDnsResolutionEnabled;
     }
 
     /**
@@ -402,6 +439,7 @@ public final class CreateDbManagementPrivateEndpointDetails
         sb.append("name=").append(String.valueOf(this.name));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", isCluster=").append(String.valueOf(this.isCluster));
+        sb.append(", isDnsResolutionEnabled=").append(String.valueOf(this.isDnsResolutionEnabled));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", nsgIds=").append(String.valueOf(this.nsgIds));
@@ -425,6 +463,8 @@ public final class CreateDbManagementPrivateEndpointDetails
         return java.util.Objects.equals(this.name, other.name)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.isCluster, other.isCluster)
+                && java.util.Objects.equals(
+                        this.isDnsResolutionEnabled, other.isDnsResolutionEnabled)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.nsgIds, other.nsgIds)
@@ -442,6 +482,11 @@ public final class CreateDbManagementPrivateEndpointDetails
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.isCluster == null ? 43 : this.isCluster.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDnsResolutionEnabled == null
+                                ? 43
+                                : this.isDnsResolutionEnabled.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.nsgIds == null ? 43 : this.nsgIds.hashCode());

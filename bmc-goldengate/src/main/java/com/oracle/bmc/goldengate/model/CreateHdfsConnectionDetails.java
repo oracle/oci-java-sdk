@@ -127,6 +127,15 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Hadoop Distributed File System technology type.
          **/
@@ -179,6 +188,7 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.technologyType,
                             this.coreSiteXml);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -222,6 +232,9 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
             }
@@ -256,6 +269,7 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             HdfsConnection.TechnologyType technologyType,
             String coreSiteXml) {
         super(
@@ -269,7 +283,8 @@ public final class CreateHdfsConnectionDetails extends CreateConnectionDetails {
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.technologyType = technologyType;
         this.coreSiteXml = coreSiteXml;
     }

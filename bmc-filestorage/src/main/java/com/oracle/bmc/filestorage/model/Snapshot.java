@@ -31,6 +31,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         "provenanceId",
         "isCloneSource",
         "lifecycleDetails",
+        "locks",
         "freeformTags",
         "definedTags",
         "expirationTime",
@@ -47,6 +48,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             String provenanceId,
             Boolean isCloneSource,
             String lifecycleDetails,
+            java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Date expirationTime,
@@ -62,6 +64,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         this.provenanceId = provenanceId;
         this.isCloneSource = isCloneSource;
         this.lifecycleDetails = lifecycleDetails;
+        this.locks = locks;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.expirationTime = expirationTime;
@@ -285,6 +288,22 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
+         * Locks associated with this resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("locks")
+        private java.util.List<ResourceLock> locks;
+
+        /**
+         * Locks associated with this resource.
+         * @param locks the value to set
+         * @return this builder
+         **/
+        public Builder locks(java.util.List<ResourceLock> locks) {
+            this.locks = locks;
+            this.__explicitlySet__.add("locks");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          *  with no predefined name, type, or namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -382,6 +401,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                             this.provenanceId,
                             this.isCloneSource,
                             this.lifecycleDetails,
+                            this.locks,
                             this.freeformTags,
                             this.definedTags,
                             this.expirationTime,
@@ -423,6 +443,9 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
             }
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
+            }
+            if (model.wasPropertyExplicitlySet("locks")) {
+                this.locks(model.getLocks());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -746,6 +769,20 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
+     * Locks associated with this resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("locks")
+    private final java.util.List<ResourceLock> locks;
+
+    /**
+     * Locks associated with this resource.
+     * @return the value
+     **/
+    public java.util.List<ResourceLock> getLocks() {
+        return locks;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      *  with no predefined name, type, or namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
@@ -841,6 +878,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         sb.append(", provenanceId=").append(String.valueOf(this.provenanceId));
         sb.append(", isCloneSource=").append(String.valueOf(this.isCloneSource));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
+        sb.append(", locks=").append(String.valueOf(this.locks));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", expirationTime=").append(String.valueOf(this.expirationTime));
@@ -870,6 +908,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
                 && java.util.Objects.equals(this.provenanceId, other.provenanceId)
                 && java.util.Objects.equals(this.isCloneSource, other.isCloneSource)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
+                && java.util.Objects.equals(this.locks, other.locks)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.expirationTime, other.expirationTime)
@@ -898,6 +937,7 @@ public final class Snapshot extends com.oracle.bmc.http.internal.ExplicitlySetBm
         result =
                 (result * PRIME)
                         + (this.lifecycleDetails == null ? 43 : this.lifecycleDetails.hashCode());
+        result = (result * PRIME) + (this.locks == null ? 43 : this.locks.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result =

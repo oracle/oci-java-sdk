@@ -190,6 +190,15 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("locks");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The Google BigQuery technology type.
          **/
@@ -204,6 +213,28 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
         public Builder technologyType(GoogleBigQueryConnection.TechnologyType technologyType) {
             this.technologyType = technologyType;
             this.__explicitlySet__.add("technologyType");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+         * which containing the credentials required to use Google BigQuery.
+         * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+        private String serviceAccountKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+         * which containing the credentials required to use Google BigQuery.
+         * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+         *
+         * @param serviceAccountKeyFileSecretId the value to set
+         * @return this builder
+         **/
+        public Builder serviceAccountKeyFileSecretId(String serviceAccountKeyFileSecretId) {
+            this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
+            this.__explicitlySet__.add("serviceAccountKeyFileSecretId");
             return this;
         }
 
@@ -231,7 +262,9 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
                             this.subnetId,
                             this.routingMethod,
                             this.locks,
-                            this.technologyType);
+                            this.doesUseSecretIds,
+                            this.technologyType,
+                            this.serviceAccountKeyFileSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -294,8 +327,14 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("locks")) {
                 this.locks(model.getLocks());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("technologyType")) {
                 this.technologyType(model.getTechnologyType());
+            }
+            if (model.wasPropertyExplicitlySet("serviceAccountKeyFileSecretId")) {
+                this.serviceAccountKeyFileSecretId(model.getServiceAccountKeyFileSecretId());
             }
             return this;
         }
@@ -332,7 +371,9 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
             String subnetId,
             RoutingMethod routingMethod,
             java.util.List<ResourceLock> locks,
-            GoogleBigQueryConnection.TechnologyType technologyType) {
+            Boolean doesUseSecretIds,
+            GoogleBigQueryConnection.TechnologyType technologyType,
+            String serviceAccountKeyFileSecretId) {
         super(
                 id,
                 displayName,
@@ -351,8 +392,10 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
                 nsgIds,
                 subnetId,
                 routingMethod,
-                locks);
+                locks,
+                doesUseSecretIds);
         this.technologyType = technologyType;
+        this.serviceAccountKeyFileSecretId = serviceAccountKeyFileSecretId;
     }
 
     /**
@@ -367,6 +410,26 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
      **/
     public GoogleBigQueryConnection.TechnologyType getTechnologyType() {
         return technologyType;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+     * which containing the credentials required to use Google BigQuery.
+     * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFileSecretId")
+    private final String serviceAccountKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the content of the service account key file is stored,
+     * which containing the credentials required to use Google BigQuery.
+     * Note: When provided, 'serviceAccountKeyFile' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getServiceAccountKeyFileSecretId() {
+        return serviceAccountKeyFileSecretId;
     }
 
     @Override
@@ -384,6 +447,8 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
         sb.append("GoogleBigQueryConnectionSummary(");
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", technologyType=").append(String.valueOf(this.technologyType));
+        sb.append(", serviceAccountKeyFileSecretId=")
+                .append(String.valueOf(this.serviceAccountKeyFileSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -399,6 +464,8 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
 
         GoogleBigQueryConnectionSummary other = (GoogleBigQueryConnectionSummary) o;
         return java.util.Objects.equals(this.technologyType, other.technologyType)
+                && java.util.Objects.equals(
+                        this.serviceAccountKeyFileSecretId, other.serviceAccountKeyFileSecretId)
                 && super.equals(other);
     }
 
@@ -409,6 +476,11 @@ public final class GoogleBigQueryConnectionSummary extends ConnectionSummary {
         result =
                 (result * PRIME)
                         + (this.technologyType == null ? 43 : this.technologyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.serviceAccountKeyFileSecretId == null
+                                ? 43
+                                : this.serviceAccountKeyFileSecretId.hashCode());
         return result;
     }
 }

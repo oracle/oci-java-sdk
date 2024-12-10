@@ -39,7 +39,8 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         "volumeBackupId",
         "isAutoTuneEnabled",
         "blockVolumeReplicas",
-        "autotunePolicies"
+        "autotunePolicies",
+        "xrcKmsKeyId"
     })
     public CreateVolumeDetails(
             String availabilityDomain,
@@ -57,7 +58,8 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             String volumeBackupId,
             Boolean isAutoTuneEnabled,
             java.util.List<BlockVolumeReplicaDetails> blockVolumeReplicas,
-            java.util.List<AutotunePolicy> autotunePolicies) {
+            java.util.List<AutotunePolicy> autotunePolicies,
+            String xrcKmsKeyId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.backupPolicyId = backupPolicyId;
@@ -75,6 +77,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         this.isAutoTuneEnabled = isAutoTuneEnabled;
         this.blockVolumeReplicas = blockVolumeReplicas;
         this.autotunePolicies = autotunePolicies;
+        this.xrcKmsKeyId = xrcKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -412,6 +415,30 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             this.__explicitlySet__.add("autotunePolicies");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+        private String xrcKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrcKmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder xrcKmsKeyId(String xrcKmsKeyId) {
+            this.xrcKmsKeyId = xrcKmsKeyId;
+            this.__explicitlySet__.add("xrcKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -434,7 +461,8 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
                             this.volumeBackupId,
                             this.isAutoTuneEnabled,
                             this.blockVolumeReplicas,
-                            this.autotunePolicies);
+                            this.autotunePolicies,
+                            this.xrcKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -490,6 +518,9 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
             }
             if (model.wasPropertyExplicitlySet("autotunePolicies")) {
                 this.autotunePolicies(model.getAutotunePolicies());
+            }
+            if (model.wasPropertyExplicitlySet("xrcKmsKeyId")) {
+                this.xrcKmsKeyId(model.getXrcKmsKeyId());
             }
             return this;
         }
@@ -805,6 +836,28 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         return autotunePolicies;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("xrcKmsKeyId")
+    private final String xrcKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the block volume cross region backups, which will be used in the destination region to encrypt the backup's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
+    public String getXrcKmsKeyId() {
+        return xrcKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -836,6 +889,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         sb.append(", isAutoTuneEnabled=").append(String.valueOf(this.isAutoTuneEnabled));
         sb.append(", blockVolumeReplicas=").append(String.valueOf(this.blockVolumeReplicas));
         sb.append(", autotunePolicies=").append(String.valueOf(this.autotunePolicies));
+        sb.append(", xrcKmsKeyId=").append(String.valueOf(this.xrcKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -867,6 +921,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
                 && java.util.Objects.equals(this.isAutoTuneEnabled, other.isAutoTuneEnabled)
                 && java.util.Objects.equals(this.blockVolumeReplicas, other.blockVolumeReplicas)
                 && java.util.Objects.equals(this.autotunePolicies, other.autotunePolicies)
+                && java.util.Objects.equals(this.xrcKmsKeyId, other.xrcKmsKeyId)
                 && super.equals(other);
     }
 
@@ -914,6 +969,7 @@ public final class CreateVolumeDetails extends com.oracle.bmc.http.internal.Expl
         result =
                 (result * PRIME)
                         + (this.autotunePolicies == null ? 43 : this.autotunePolicies.hashCode());
+        result = (result * PRIME) + (this.xrcKmsKeyId == null ? 43 : this.xrcKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

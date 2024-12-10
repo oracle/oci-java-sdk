@@ -851,6 +851,53 @@ public interface DnsAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Promotes a specified `DnssecKeyVersion` on the zone.
+     * <p>
+     * If the `DnssecKeyVersion` identified in the request body is a key signing key (KSK) that is replacing
+     * another `DnssecKeyVersion`, then the old `DnssecKeyVersion` is scheduled for removal from the zone.
+     * <p>
+     * For key signing keys (KSKs), you must create the DS record with the new key information **before** promoting
+     * the new key to establish a chain of trust. To avoid a service disruption, remove the old DS record as soon
+     * as its TTL (time to live) expires.
+     * <p>
+     * For more information, see [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm).
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<PromoteZoneDnssecKeyVersionResponse> promoteZoneDnssecKeyVersion(
+            PromoteZoneDnssecKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            PromoteZoneDnssecKeyVersionRequest, PromoteZoneDnssecKeyVersionResponse>
+                    handler);
+
+    /**
+     * Stages a new `DnssecKeyVersion` on the zone. Staging is a process that generates a new \"successor\" key version
+     * that replaces an existing \"predecessor\" key version.
+     * **Note:** A new key-signing key (KSK) version is inert until you update the parent zone DS records.
+     * <p>
+     * For more information, see the [DNSSEC](https://docs.cloud.oracle.com/iaas/Content/DNS/Concepts/dnssec.htm) documentation.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<StageZoneDnssecKeyVersionResponse> stageZoneDnssecKeyVersion(
+            StageZoneDnssecKeyVersionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            StageZoneDnssecKeyVersionRequest, StageZoneDnssecKeyVersionResponse>
+                    handler);
+
+    /**
      * Replaces records in the specified zone at a domain with the records specified in the request body.
      * <p>
      * If a specified record does not exist, it will be created. If the record exists, then it will be updated to

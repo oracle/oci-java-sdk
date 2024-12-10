@@ -1300,6 +1300,127 @@ public class NetworkFirewallPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listTunnelInspectionRules operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListTunnelInspectionRulesResponse> listTunnelInspectionRulesResponseIterator(
+            final ListTunnelInspectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListTunnelInspectionRulesRequest.Builder, ListTunnelInspectionRulesRequest,
+                ListTunnelInspectionRulesResponse>(
+                new java.util.function.Supplier<ListTunnelInspectionRulesRequest.Builder>() {
+                    @Override
+                    public ListTunnelInspectionRulesRequest.Builder get() {
+                        return ListTunnelInspectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTunnelInspectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListTunnelInspectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTunnelInspectionRulesRequest.Builder>,
+                        ListTunnelInspectionRulesRequest>() {
+                    @Override
+                    public ListTunnelInspectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTunnelInspectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>() {
+                    @Override
+                    public ListTunnelInspectionRulesResponse apply(
+                            ListTunnelInspectionRulesRequest request) {
+                        return client.listTunnelInspectionRules(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects
+     * contained in responses from the listTunnelInspectionRules operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary>
+            listTunnelInspectionRulesRecordIterator(
+                    final ListTunnelInspectionRulesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListTunnelInspectionRulesRequest.Builder, ListTunnelInspectionRulesRequest,
+                ListTunnelInspectionRulesResponse,
+                com.oracle.bmc.networkfirewall.model.TunnelInspectionRuleSummary>(
+                new java.util.function.Supplier<ListTunnelInspectionRulesRequest.Builder>() {
+                    @Override
+                    public ListTunnelInspectionRulesRequest.Builder get() {
+                        return ListTunnelInspectionRulesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListTunnelInspectionRulesResponse, String>() {
+                    @Override
+                    public String apply(ListTunnelInspectionRulesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListTunnelInspectionRulesRequest.Builder>,
+                        ListTunnelInspectionRulesRequest>() {
+                    @Override
+                    public ListTunnelInspectionRulesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListTunnelInspectionRulesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListTunnelInspectionRulesRequest, ListTunnelInspectionRulesResponse>() {
+                    @Override
+                    public ListTunnelInspectionRulesResponse apply(
+                            ListTunnelInspectionRulesRequest request) {
+                        return client.listTunnelInspectionRules(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListTunnelInspectionRulesResponse,
+                        java.util.List<
+                                com.oracle.bmc.networkfirewall.model
+                                        .TunnelInspectionRuleSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.networkfirewall.model
+                                            .TunnelInspectionRuleSummary>
+                            apply(ListTunnelInspectionRulesResponse response) {
+                        return response.getTunnelInspectionRuleSummaryCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listUrlLists operation. This iterable
      * will fetch more data from the server as needed.
      *

@@ -37,7 +37,8 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
         "consumptionModel",
         "freeformTags",
         "definedTags",
-        "systemTags"
+        "systemTags",
+        "networkEndpointDetails"
     })
     public VbInstanceSummary(
             String id,
@@ -55,7 +56,8 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
             ConsumptionModel consumptionModel,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
+            NetworkEndpointDetails networkEndpointDetails) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -73,6 +75,7 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
+        this.networkEndpointDetails = networkEndpointDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -343,6 +346,15 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+        private NetworkEndpointDetails networkEndpointDetails;
+
+        public Builder networkEndpointDetails(NetworkEndpointDetails networkEndpointDetails) {
+            this.networkEndpointDetails = networkEndpointDetails;
+            this.__explicitlySet__.add("networkEndpointDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -364,7 +376,8 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
                             this.consumptionModel,
                             this.freeformTags,
                             this.definedTags,
-                            this.systemTags);
+                            this.systemTags,
+                            this.networkEndpointDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -420,6 +433,9 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
+            }
+            if (model.wasPropertyExplicitlySet("networkEndpointDetails")) {
+                this.networkEndpointDetails(model.getNetworkEndpointDetails());
             }
             return this;
         }
@@ -769,6 +785,13 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
         return systemTags;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkEndpointDetails")
+    private final NetworkEndpointDetails networkEndpointDetails;
+
+    public NetworkEndpointDetails getNetworkEndpointDetails() {
+        return networkEndpointDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -800,6 +823,7 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
+        sb.append(", networkEndpointDetails=").append(String.valueOf(this.networkEndpointDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -832,6 +856,8 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
+                && java.util.Objects.equals(
+                        this.networkEndpointDetails, other.networkEndpointDetails)
                 && super.equals(other);
     }
 
@@ -871,6 +897,11 @@ public final class VbInstanceSummary extends com.oracle.bmc.http.internal.Explic
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkEndpointDetails == null
+                                ? 43
+                                : this.networkEndpointDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

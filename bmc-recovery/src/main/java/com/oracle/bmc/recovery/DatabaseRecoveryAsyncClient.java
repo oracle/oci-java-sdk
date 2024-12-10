@@ -575,6 +575,65 @@ public class DatabaseRecoveryAsyncClient implements DatabaseRecoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeProtectedDatabaseSubscriptionResponse>
+            changeProtectedDatabaseSubscription(
+                    ChangeProtectedDatabaseSubscriptionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeProtectedDatabaseSubscriptionRequest,
+                                    ChangeProtectedDatabaseSubscriptionResponse>
+                            handler) {
+        LOG.trace("Called async changeProtectedDatabaseSubscription");
+        final ChangeProtectedDatabaseSubscriptionRequest interceptedRequest =
+                ChangeProtectedDatabaseSubscriptionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeProtectedDatabaseSubscriptionConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "DatabaseRecovery",
+                        "ChangeProtectedDatabaseSubscription",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/recovery-service/20210216/ProtectedDatabase/ChangeProtectedDatabaseSubscription");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeProtectedDatabaseSubscriptionResponse>
+                transformer =
+                        ChangeProtectedDatabaseSubscriptionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeProtectedDatabaseSubscriptionRequest,
+                        ChangeProtectedDatabaseSubscriptionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeProtectedDatabaseSubscriptionRequest,
+                                ChangeProtectedDatabaseSubscriptionResponse>,
+                        java.util.concurrent.Future<ChangeProtectedDatabaseSubscriptionResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeProtectedDatabaseSubscriptionDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeProtectedDatabaseSubscriptionRequest,
+                    ChangeProtectedDatabaseSubscriptionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProtectionPolicyCompartmentResponse>
             changeProtectionPolicyCompartment(
                     ChangeProtectionPolicyCompartmentRequest request,

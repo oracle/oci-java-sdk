@@ -946,6 +946,49 @@ public class StackMonitoringClient implements StackMonitoring {
     }
 
     @Override
+    public CreateMaintenanceWindowResponse createMaintenanceWindow(
+            CreateMaintenanceWindowRequest request) {
+        LOG.trace("Called createMaintenanceWindow");
+        final CreateMaintenanceWindowRequest interceptedRequest =
+                CreateMaintenanceWindowConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateMaintenanceWindowConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "CreateMaintenanceWindow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/CreateMaintenanceWindow");
+        java.util.function.Function<javax.ws.rs.core.Response, CreateMaintenanceWindowResponse>
+                transformer =
+                        CreateMaintenanceWindowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getCreateMaintenanceWindowDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateMetricExtensionResponse createMetricExtension(
             CreateMetricExtensionRequest request) {
         LOG.trace("Called createMetricExtension");
@@ -1257,6 +1300,45 @@ public class StackMonitoringClient implements StackMonitoring {
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDiscoveryJobResponse>
                 transformer =
                         DeleteDiscoveryJobConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.delete(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public DeleteMaintenanceWindowResponse deleteMaintenanceWindow(
+            DeleteMaintenanceWindowRequest request) {
+        LOG.trace("Called deleteMaintenanceWindow");
+        final DeleteMaintenanceWindowRequest interceptedRequest =
+                DeleteMaintenanceWindowConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteMaintenanceWindowConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "DeleteMaintenanceWindow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/DeleteMaintenanceWindow");
+        java.util.function.Function<javax.ws.rs.core.Response, DeleteMaintenanceWindowResponse>
+                transformer =
+                        DeleteMaintenanceWindowConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -1794,6 +1876,43 @@ public class StackMonitoringClient implements StackMonitoring {
     }
 
     @Override
+    public GetMaintenanceWindowResponse getMaintenanceWindow(GetMaintenanceWindowRequest request) {
+        LOG.trace("Called getMaintenanceWindow");
+        final GetMaintenanceWindowRequest interceptedRequest =
+                GetMaintenanceWindowConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetMaintenanceWindowConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "GetMaintenanceWindow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/GetMaintenanceWindow");
+        java.util.function.Function<javax.ws.rs.core.Response, GetMaintenanceWindowResponse>
+                transformer =
+                        GetMaintenanceWindowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetMetricExtensionResponse getMetricExtension(GetMetricExtensionRequest request) {
         LOG.trace("Called getMetricExtension");
         final GetMetricExtensionRequest interceptedRequest =
@@ -2144,6 +2263,44 @@ public class StackMonitoringClient implements StackMonitoring {
         java.util.function.Function<javax.ws.rs.core.Response, ListDiscoveryJobsResponse>
                 transformer =
                         ListDiscoveryJobsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListMaintenanceWindowsResponse listMaintenanceWindows(
+            ListMaintenanceWindowsRequest request) {
+        LOG.trace("Called listMaintenanceWindows");
+        final ListMaintenanceWindowsRequest interceptedRequest =
+                ListMaintenanceWindowsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListMaintenanceWindowsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "ListMaintenanceWindows",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/ListMaintenanceWindows");
+        java.util.function.Function<javax.ws.rs.core.Response, ListMaintenanceWindowsResponse>
+                transformer =
+                        ListMaintenanceWindowsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2583,6 +2740,47 @@ public class StackMonitoringClient implements StackMonitoring {
     }
 
     @Override
+    public RetryFailedMaintenanceWindowOperationResponse retryFailedMaintenanceWindowOperation(
+            RetryFailedMaintenanceWindowOperationRequest request) {
+        LOG.trace("Called retryFailedMaintenanceWindowOperation");
+        final RetryFailedMaintenanceWindowOperationRequest interceptedRequest =
+                RetryFailedMaintenanceWindowOperationConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RetryFailedMaintenanceWindowOperationConverter.fromRequest(
+                        client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "RetryFailedMaintenanceWindowOperation",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/RetryFailedMaintenanceWindowOperation");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, RetryFailedMaintenanceWindowOperationResponse>
+                transformer =
+                        RetryFailedMaintenanceWindowOperationConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public SearchAssociatedResourcesResponse searchAssociatedResources(
             SearchAssociatedResourcesRequest request) {
         LOG.trace("Called searchAssociatedResources");
@@ -2761,6 +2959,45 @@ public class StackMonitoringClient implements StackMonitoring {
     }
 
     @Override
+    public StopMaintenanceWindowResponse stopMaintenanceWindow(
+            StopMaintenanceWindowRequest request) {
+        LOG.trace("Called stopMaintenanceWindow");
+        final StopMaintenanceWindowRequest interceptedRequest =
+                StopMaintenanceWindowConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                StopMaintenanceWindowConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "StopMaintenanceWindow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/StopMaintenanceWindow");
+        java.util.function.Function<javax.ws.rs.core.Response, StopMaintenanceWindowResponse>
+                transformer =
+                        StopMaintenanceWindowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public TestMetricExtensionResponse testMetricExtension(TestMetricExtensionRequest request) {
         LOG.trace("Called testMetricExtension");
         final TestMetricExtensionRequest interceptedRequest =
@@ -2920,6 +3157,48 @@ public class StackMonitoringClient implements StackMonitoring {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateConfigDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateMaintenanceWindowResponse updateMaintenanceWindow(
+            UpdateMaintenanceWindowRequest request) {
+        LOG.trace("Called updateMaintenanceWindow");
+        final UpdateMaintenanceWindowRequest interceptedRequest =
+                UpdateMaintenanceWindowConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateMaintenanceWindowConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "StackMonitoring",
+                        "UpdateMaintenanceWindow",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/stack-monitoring/20210330/MaintenanceWindow/UpdateMaintenanceWindow");
+        java.util.function.Function<javax.ws.rs.core.Response, UpdateMaintenanceWindowResponse>
+                transformer =
+                        UpdateMaintenanceWindowConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest.getUpdateMaintenanceWindowDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

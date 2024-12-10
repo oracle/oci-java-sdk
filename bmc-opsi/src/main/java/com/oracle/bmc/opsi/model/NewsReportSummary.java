@@ -268,13 +268,13 @@ public final class NewsReportSummary extends com.oracle.bmc.http.internal.Explic
             return this;
         }
         /**
-         * Indicates the status of a news report in Operations Insights.
+         * Indicates the status of a news report in Ops Insights.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private ResourceStatus status;
 
         /**
-         * Indicates the status of a news report in Operations Insights.
+         * Indicates the status of a news report in Ops Insights.
          * @param status the value to set
          * @return this builder
          **/
@@ -643,13 +643,13 @@ public final class NewsReportSummary extends com.oracle.bmc.http.internal.Explic
     }
 
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final ResourceStatus status;
 
     /**
-     * Indicates the status of a news report in Operations Insights.
+     * Indicates the status of a news report in Ops Insights.
      * @return the value
      **/
     public ResourceStatus getStatus() {

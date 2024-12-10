@@ -25,6 +25,23 @@ package com.oracle.bmc.ailanguage.model;
 public final class PiiEntityReplace extends PiiEntityMasking {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("exclude")
+        private java.util.List<String> exclude;
+
+        public Builder exclude(java.util.List<String> exclude) {
+            this.exclude = exclude;
+            this.__explicitlySet__.add("exclude");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldDetect")
+        private Boolean shouldDetect;
+
+        public Builder shouldDetect(Boolean shouldDetect) {
+            this.shouldDetect = shouldDetect;
+            this.__explicitlySet__.add("shouldDetect");
+            return this;
+        }
         /**
          * Replace entities with given sequence of characters. By default PII entity will be replaced with <ENTITY_TYPE>.
          **/
@@ -46,7 +63,8 @@ public final class PiiEntityReplace extends PiiEntityMasking {
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public PiiEntityReplace build() {
-            PiiEntityReplace model = new PiiEntityReplace(this.replaceWith);
+            PiiEntityReplace model =
+                    new PiiEntityReplace(this.exclude, this.shouldDetect, this.replaceWith);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -55,6 +73,12 @@ public final class PiiEntityReplace extends PiiEntityMasking {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(PiiEntityReplace model) {
+            if (model.wasPropertyExplicitlySet("exclude")) {
+                this.exclude(model.getExclude());
+            }
+            if (model.wasPropertyExplicitlySet("shouldDetect")) {
+                this.shouldDetect(model.getShouldDetect());
+            }
             if (model.wasPropertyExplicitlySet("replaceWith")) {
                 this.replaceWith(model.getReplaceWith());
             }
@@ -74,8 +98,9 @@ public final class PiiEntityReplace extends PiiEntityMasking {
     }
 
     @Deprecated
-    public PiiEntityReplace(String replaceWith) {
-        super();
+    public PiiEntityReplace(
+            java.util.List<String> exclude, Boolean shouldDetect, String replaceWith) {
+        super(exclude, shouldDetect);
         this.replaceWith = replaceWith;
     }
 

@@ -25,13 +25,37 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         return opcRequestId;
     }
 
-    @java.beans.ConstructorProperties({"__httpStatusCode__", "headers", "opcRequestId"})
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     */
+    private String opcWorkRequestId;
+
+    /**
+     * Unique Oracle-assigned identifier for the asynchronous request.
+     * You can use this to query status of the asynchronous operation.
+     *
+     * @return the value
+     */
+    public String getOpcWorkRequestId() {
+        return opcWorkRequestId;
+    }
+
+    @java.beans.ConstructorProperties({
+        "__httpStatusCode__",
+        "headers",
+        "opcRequestId",
+        "opcWorkRequestId"
+    })
     private DeleteSteeringPolicyAttachmentResponse(
             int __httpStatusCode__,
             javax.ws.rs.core.MultivaluedMap<String, String> headers,
-            String opcRequestId) {
+            String opcRequestId,
+            String opcWorkRequestId) {
         super(__httpStatusCode__, headers);
         this.opcRequestId = opcRequestId;
+        this.opcWorkRequestId = opcWorkRequestId;
     }
 
     public static class Builder {
@@ -69,6 +93,25 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         }
 
         /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         */
+        private String opcWorkRequestId;
+
+        /**
+         * Unique Oracle-assigned identifier for the asynchronous request.
+         * You can use this to query status of the asynchronous operation.
+         *
+         * @param opcWorkRequestId the value to set
+         * @return this builder
+         */
+        public Builder opcWorkRequestId(String opcWorkRequestId) {
+            this.opcWorkRequestId = opcWorkRequestId;
+            return this;
+        }
+
+        /**
          * Copy method to populate the builder with values from the given instance.
          * @return this builder instance
          */
@@ -76,6 +119,7 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
             __httpStatusCode__(o.get__httpStatusCode__());
             headers(o.getHeaders());
             opcRequestId(o.getOpcRequestId());
+            opcWorkRequestId(o.getOpcWorkRequestId());
 
             return this;
         }
@@ -86,7 +130,7 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
          */
         public DeleteSteeringPolicyAttachmentResponse build() {
             return new DeleteSteeringPolicyAttachmentResponse(
-                    __httpStatusCode__, headers, opcRequestId);
+                    __httpStatusCode__, headers, opcRequestId, opcWorkRequestId);
         }
     }
 
@@ -104,6 +148,7 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         sb.append("(");
         sb.append("super=").append(super.toString());
         sb.append(",opcRequestId=").append(String.valueOf(opcRequestId));
+        sb.append(",opcWorkRequestId=").append(String.valueOf(opcWorkRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -118,7 +163,9 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         }
 
         DeleteSteeringPolicyAttachmentResponse other = (DeleteSteeringPolicyAttachmentResponse) o;
-        return super.equals(o) && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
+        return super.equals(o)
+                && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
+                && java.util.Objects.equals(this.opcWorkRequestId, other.opcWorkRequestId);
     }
 
     @Override
@@ -126,6 +173,9 @@ public class DeleteSteeringPolicyAttachmentResponse extends com.oracle.bmc.respo
         final int PRIME = 59;
         int result = super.hashCode();
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.opcWorkRequestId == null ? 43 : this.opcWorkRequestId.hashCode());
         return result;
     }
 }

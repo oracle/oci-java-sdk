@@ -1010,6 +1010,55 @@ public class DiscoveryAsyncClient implements DiscoveryAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<ListSupportedCloudRegionsResponse> listSupportedCloudRegions(
+            ListSupportedCloudRegionsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>
+                    handler) {
+        LOG.trace("Called async listSupportedCloudRegions");
+        final ListSupportedCloudRegionsRequest interceptedRequest =
+                ListSupportedCloudRegionsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListSupportedCloudRegionsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Discovery",
+                        "ListSupportedCloudRegions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/SupportedCloudRegionSummary/ListSupportedCloudRegions");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListSupportedCloudRegionsResponse>
+                transformer =
+                        ListSupportedCloudRegionsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListSupportedCloudRegionsRequest,
+                                ListSupportedCloudRegionsResponse>,
+                        java.util.concurrent.Future<ListSupportedCloudRegionsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RefreshAssetSourceResponse> refreshAssetSource(
             RefreshAssetSourceRequest request,
             final com.oracle.bmc.responses.AsyncHandler<

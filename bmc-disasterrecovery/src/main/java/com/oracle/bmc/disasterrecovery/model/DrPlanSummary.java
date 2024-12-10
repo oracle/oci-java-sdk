@@ -30,6 +30,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
+        "lifecycleSubState",
         "lifeCycleDetails",
         "freeformTags",
         "definedTags",
@@ -46,6 +47,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             DrPlanLifecycleState lifecycleState,
+            DrPlanLifecycleSubState lifecycleSubState,
             String lifeCycleDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
@@ -61,6 +63,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
+        this.lifecycleSubState = lifecycleSubState;
         this.lifeCycleDetails = lifeCycleDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -294,6 +297,28 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
             return this;
         }
         /**
+         * The current sub state of the DR plan.
+         * <p>
+         * Example: {@code NEEDS_REFRESH}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+        private DrPlanLifecycleSubState lifecycleSubState;
+
+        /**
+         * The current sub state of the DR plan.
+         * <p>
+         * Example: {@code NEEDS_REFRESH}
+         *
+         * @param lifecycleSubState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleSubState(DrPlanLifecycleSubState lifecycleSubState) {
+            this.lifecycleSubState = lifecycleSubState;
+            this.__explicitlySet__.add("lifecycleSubState");
+            return this;
+        }
+        /**
          * A message describing the DR plan's current state in more detail.
          *
          **/
@@ -395,6 +420,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
+                            this.lifecycleSubState,
                             this.lifeCycleDetails,
                             this.freeformTags,
                             this.definedTags,
@@ -436,6 +462,9 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleSubState")) {
+                this.lifecycleSubState(model.getLifecycleSubState());
             }
             if (model.wasPropertyExplicitlySet("lifeCycleDetails")) {
                 this.lifeCycleDetails(model.getLifeCycleDetails());
@@ -669,6 +698,26 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
     }
 
     /**
+     * The current sub state of the DR plan.
+     * <p>
+     * Example: {@code NEEDS_REFRESH}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleSubState")
+    private final DrPlanLifecycleSubState lifecycleSubState;
+
+    /**
+     * The current sub state of the DR plan.
+     * <p>
+     * Example: {@code NEEDS_REFRESH}
+     *
+     * @return the value
+     **/
+    public DrPlanLifecycleSubState getLifecycleSubState() {
+        return lifecycleSubState;
+    }
+
+    /**
      * A message describing the DR plan's current state in more detail.
      *
      **/
@@ -769,6 +818,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", lifecycleSubState=").append(String.valueOf(this.lifecycleSubState));
         sb.append(", lifeCycleDetails=").append(String.valueOf(this.lifeCycleDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -798,6 +848,7 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.lifecycleSubState, other.lifecycleSubState)
                 && java.util.Objects.equals(this.lifeCycleDetails, other.lifeCycleDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -831,6 +882,9 @@ public final class DrPlanSummary extends com.oracle.bmc.http.internal.Explicitly
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleSubState == null ? 43 : this.lifecycleSubState.hashCode());
         result =
                 (result * PRIME)
                         + (this.lifeCycleDetails == null ? 43 : this.lifeCycleDetails.hashCode());

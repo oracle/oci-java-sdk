@@ -22,13 +22,22 @@ package com.oracle.bmc.core.model;
 public final class BootVolumeReplicaInfo
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "bootVolumeReplicaId", "availabilityDomain"})
+    @java.beans.ConstructorProperties({
+        "displayName",
+        "bootVolumeReplicaId",
+        "availabilityDomain",
+        "kmsKeyId"
+    })
     public BootVolumeReplicaInfo(
-            String displayName, String bootVolumeReplicaId, String availabilityDomain) {
+            String displayName,
+            String bootVolumeReplicaId,
+            String availabilityDomain,
+            String kmsKeyId) {
         super();
         this.displayName = displayName;
         this.bootVolumeReplicaId = bootVolumeReplicaId;
         this.availabilityDomain = availabilityDomain;
+        this.kmsKeyId = kmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -91,6 +100,28 @@ public final class BootVolumeReplicaInfo
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -98,7 +129,10 @@ public final class BootVolumeReplicaInfo
         public BootVolumeReplicaInfo build() {
             BootVolumeReplicaInfo model =
                     new BootVolumeReplicaInfo(
-                            this.displayName, this.bootVolumeReplicaId, this.availabilityDomain);
+                            this.displayName,
+                            this.bootVolumeReplicaId,
+                            this.availabilityDomain,
+                            this.kmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -115,6 +149,9 @@ public final class BootVolumeReplicaInfo
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
             }
             return this;
         }
@@ -183,6 +220,26 @@ public final class BootVolumeReplicaInfo
         return availabilityDomain;
     }
 
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the Vault service key to assign as the master encryption key for the block volume replica, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -200,6 +257,7 @@ public final class BootVolumeReplicaInfo
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", bootVolumeReplicaId=").append(String.valueOf(this.bootVolumeReplicaId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -217,6 +275,7 @@ public final class BootVolumeReplicaInfo
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.bootVolumeReplicaId, other.bootVolumeReplicaId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && super.equals(other);
     }
 
@@ -235,6 +294,7 @@ public final class BootVolumeReplicaInfo
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -12,7 +12,7 @@ import com.oracle.bmc.generativeai.responses.*;
  *
  * Use the Generative AI service management API to create and manage {@link DedicatedAiCluster}, {@link Endpoint}, {@link Model}, and {@link WorkRequest} in the Generative AI service. For example, create a custom model by fine-tuning an out-of-the-box model using your own data, on a fine-tuning dedicated AI cluster. Then, create a hosting dedicated AI cluster with an endpoint to host your custom model.
  *
- * To access your custom model endpoints, or to try the out-of-the-box models to generate text, summarize, and create text embeddings see the [Generative AI Inference API](https://docs.cloud.oracle.com/#/en/generative-ai-inference/latest/).
+ * To access your custom model endpoints, or to try the out-of-the-box models to generate text, summarize, and create text embeddings see the [Generative AI Inference API](https://docs.cloud.oracle.com/iaas/api/#/en/generative-ai-inference/latest/).
  *
  * To learn more about the service, see the [Generative AI documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).
  *

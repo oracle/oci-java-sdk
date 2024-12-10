@@ -27,6 +27,10 @@ package com.oracle.bmc.databasemanagement.model;
         name = "EXTERNAL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DirectConnectorDetails.class,
+        name = "DIRECT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = MacsConnectorDetails.class,
         name = "MACS"
     ),
@@ -87,13 +91,24 @@ public class ConnectorDetails extends com.oracle.bmc.http.internal.ExplicitlySet
      *   - PE: Private endpoint
      *   - MACS: Management agent
      *   - EXTERNAL: External database connector
+     * <p>
+     * - DIRECT: Direct connection
      *
      **/
     public enum ConnectorType {
         Pe("PE"),
         Macs("MACS"),
         External("EXTERNAL"),
-        ;
+        Direct("DIRECT"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ConnectorType.class);
 
         private final String value;
         private static java.util.Map<String, ConnectorType> map;
@@ -101,7 +116,9 @@ public class ConnectorDetails extends com.oracle.bmc.http.internal.ExplicitlySet
         static {
             map = new java.util.HashMap<>();
             for (ConnectorType v : ConnectorType.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -119,7 +136,10 @@ public class ConnectorDetails extends com.oracle.bmc.http.internal.ExplicitlySet
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid ConnectorType: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ConnectorType', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
 }

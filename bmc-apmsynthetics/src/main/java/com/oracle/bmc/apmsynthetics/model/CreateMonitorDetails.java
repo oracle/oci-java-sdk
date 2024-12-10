@@ -39,7 +39,8 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         "definedTags",
         "isRunNow",
         "schedulingPolicy",
-        "batchIntervalInSeconds"
+        "batchIntervalInSeconds",
+        "isIPv6"
     })
     public CreateMonitorDetails(
             String displayName,
@@ -59,7 +60,8 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             Boolean isRunNow,
             SchedulingPolicy schedulingPolicy,
-            Integer batchIntervalInSeconds) {
+            Integer batchIntervalInSeconds,
+            Boolean isIPv6) {
         super();
         this.displayName = displayName;
         this.monitorType = monitorType;
@@ -79,6 +81,7 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         this.isRunNow = isRunNow;
         this.schedulingPolicy = schedulingPolicy;
         this.batchIntervalInSeconds = batchIntervalInSeconds;
+        this.isIPv6 = isIPv6;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -233,10 +236,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         }
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
+         * For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -244,10 +247,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
         /**
          * Specify the endpoint on which to run the monitor.
-         * For BROWSER, REST and NETWORK monitor types, target is mandatory.
+         * For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
          * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
          * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+         * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
          *
          * @param target the value to set
          * @return this builder
@@ -397,6 +400,22 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("batchIntervalInSeconds");
             return this;
         }
+        /**
+         * If enabled, domain name will resolve to an IPv6 address.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isIPv6")
+        private Boolean isIPv6;
+
+        /**
+         * If enabled, domain name will resolve to an IPv6 address.
+         * @param isIPv6 the value to set
+         * @return this builder
+         **/
+        public Builder isIPv6(Boolean isIPv6) {
+            this.isIPv6 = isIPv6;
+            this.__explicitlySet__.add("isIPv6");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -421,7 +440,8 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
                             this.definedTags,
                             this.isRunNow,
                             this.schedulingPolicy,
-                            this.batchIntervalInSeconds);
+                            this.batchIntervalInSeconds,
+                            this.isIPv6);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -483,6 +503,9 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("batchIntervalInSeconds")) {
                 this.batchIntervalInSeconds(model.getBatchIntervalInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("isIPv6")) {
+                this.isIPv6(model.getIsIPv6());
             }
             return this;
         }
@@ -633,10 +656,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
+     * For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("target")
@@ -644,10 +667,10 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
 
     /**
      * Specify the endpoint on which to run the monitor.
-     * For BROWSER, REST and NETWORK monitor types, target is mandatory.
+     * For BROWSER, REST, NETWORK, DNS and FTP monitor types, target is mandatory.
      * If target is specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script (specified by scriptId in monitor) against the specified target endpoint.
      * If target is not specified in the SCRIPTED_BROWSER monitor type, then the monitor will run the selected script as it is.
-     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80
+     * For NETWORK monitor with TCP protocol, a port needs to be provided along with target. Example: 192.168.0.1:80.
      *
      * @return the value
      **/
@@ -774,6 +797,20 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         return batchIntervalInSeconds;
     }
 
+    /**
+     * If enabled, domain name will resolve to an IPv6 address.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isIPv6")
+    private final Boolean isIPv6;
+
+    /**
+     * If enabled, domain name will resolve to an IPv6 address.
+     * @return the value
+     **/
+    public Boolean getIsIPv6() {
+        return isIPv6;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -809,6 +846,7 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
         sb.append(", isRunNow=").append(String.valueOf(this.isRunNow));
         sb.append(", schedulingPolicy=").append(String.valueOf(this.schedulingPolicy));
         sb.append(", batchIntervalInSeconds=").append(String.valueOf(this.batchIntervalInSeconds));
+        sb.append(", isIPv6=").append(String.valueOf(this.isIPv6));
         sb.append(")");
         return sb.toString();
     }
@@ -845,6 +883,7 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.schedulingPolicy, other.schedulingPolicy)
                 && java.util.Objects.equals(
                         this.batchIntervalInSeconds, other.batchIntervalInSeconds)
+                && java.util.Objects.equals(this.isIPv6, other.isIPv6)
                 && super.equals(other);
     }
 
@@ -896,6 +935,7 @@ public final class CreateMonitorDetails extends com.oracle.bmc.http.internal.Exp
                         + (this.batchIntervalInSeconds == null
                                 ? 43
                                 : this.batchIntervalInSeconds.hashCode());
+        result = (result * PRIME) + (this.isIPv6 == null ? 43 : this.isIPv6.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

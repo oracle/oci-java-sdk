@@ -39,6 +39,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         "freeformTags",
         "definedTags",
         "pluggableDatabaseManagementConfig",
+        "kmsKeyId",
+        "kmsKeyVersionId",
         "refreshableCloneConfig",
         "pdbNodeLevelDetails"
     })
@@ -56,6 +58,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             PluggableDatabaseManagementConfig pluggableDatabaseManagementConfig,
+            String kmsKeyId,
+            String kmsKeyVersionId,
             PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig,
             java.util.List<PluggableDatabaseNodeLevelDetails> pdbNodeLevelDetails) {
         super();
@@ -72,6 +76,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.pluggableDatabaseManagementConfig = pluggableDatabaseManagementConfig;
+        this.kmsKeyId = kmsKeyId;
+        this.kmsKeyVersionId = kmsKeyVersionId;
         this.refreshableCloneConfig = refreshableCloneConfig;
         this.pdbNodeLevelDetails = pdbNodeLevelDetails;
     }
@@ -294,6 +300,40 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             this.__explicitlySet__.add("pluggableDatabaseManagementConfig");
             return this;
         }
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+        private String kmsKeyId;
+
+        /**
+         * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+         * @param kmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyId(String kmsKeyId) {
+            this.kmsKeyId = kmsKeyId;
+            this.__explicitlySet__.add("kmsKeyId");
+            return this;
+        }
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+        private String kmsKeyVersionId;
+
+        /**
+         * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+         *
+         * @param kmsKeyVersionId the value to set
+         * @return this builder
+         **/
+        public Builder kmsKeyVersionId(String kmsKeyVersionId) {
+            this.kmsKeyVersionId = kmsKeyVersionId;
+            this.__explicitlySet__.add("kmsKeyVersionId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("refreshableCloneConfig")
         private PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig;
@@ -345,6 +385,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                             this.freeformTags,
                             this.definedTags,
                             this.pluggableDatabaseManagementConfig,
+                            this.kmsKeyId,
+                            this.kmsKeyVersionId,
                             this.refreshableCloneConfig,
                             this.pdbNodeLevelDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -394,6 +436,12 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
             if (model.wasPropertyExplicitlySet("pluggableDatabaseManagementConfig")) {
                 this.pluggableDatabaseManagementConfig(
                         model.getPluggableDatabaseManagementConfig());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyId")) {
+                this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("kmsKeyVersionId")) {
+                this.kmsKeyVersionId(model.getKmsKeyVersionId());
             }
             if (model.wasPropertyExplicitlySet("refreshableCloneConfig")) {
                 this.refreshableCloneConfig(model.getRefreshableCloneConfig());
@@ -715,6 +763,36 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         return pluggableDatabaseManagementConfig;
     }
 
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyId")
+    private final String kmsKeyId;
+
+    /**
+     * The OCID of the key container that is used as the master encryption key in database transparent data encryption (TDE) operations.
+     * @return the value
+     **/
+    public String getKmsKeyId() {
+        return kmsKeyId;
+    }
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("kmsKeyVersionId")
+    private final String kmsKeyVersionId;
+
+    /**
+     * The OCID of the key container version that is used in database transparent data encryption (TDE) operations KMS Key can have multiple key versions. If none is specified, the current key version (latest) of the Key Id is used for the operation. Autonomous Database Serverless does not use key versions, hence is not applicable for Autonomous Database Serverless instances.
+     *
+     * @return the value
+     **/
+    public String getKmsKeyVersionId() {
+        return kmsKeyVersionId;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("refreshableCloneConfig")
     private final PluggableDatabaseRefreshableCloneConfig refreshableCloneConfig;
 
@@ -768,6 +846,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", pluggableDatabaseManagementConfig=")
                 .append(String.valueOf(this.pluggableDatabaseManagementConfig));
+        sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", kmsKeyVersionId=").append(String.valueOf(this.kmsKeyVersionId));
         sb.append(", refreshableCloneConfig=").append(String.valueOf(this.refreshableCloneConfig));
         sb.append(", pdbNodeLevelDetails=").append(String.valueOf(this.pdbNodeLevelDetails));
         sb.append(")");
@@ -799,6 +879,8 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                 && java.util.Objects.equals(
                         this.pluggableDatabaseManagementConfig,
                         other.pluggableDatabaseManagementConfig)
+                && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.kmsKeyVersionId, other.kmsKeyVersionId)
                 && java.util.Objects.equals(
                         this.refreshableCloneConfig, other.refreshableCloneConfig)
                 && java.util.Objects.equals(this.pdbNodeLevelDetails, other.pdbNodeLevelDetails)
@@ -838,6 +920,10 @@ public final class PluggableDatabase extends com.oracle.bmc.http.internal.Explic
                         + (this.pluggableDatabaseManagementConfig == null
                                 ? 43
                                 : this.pluggableDatabaseManagementConfig.hashCode());
+        result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.kmsKeyVersionId == null ? 43 : this.kmsKeyVersionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.refreshableCloneConfig == null

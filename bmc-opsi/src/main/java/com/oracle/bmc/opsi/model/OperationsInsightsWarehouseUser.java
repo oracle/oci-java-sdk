@@ -124,13 +124,13 @@ public final class OperationsInsightsWarehouseUser
             return this;
         }
         /**
-         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("name")
         private String name;
 
         /**
-         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * @param name the value to set
          * @return this builder
          **/
@@ -140,13 +140,13 @@ public final class OperationsInsightsWarehouseUser
             return this;
         }
         /**
-         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
         private String connectionPassword;
 
         /**
-         * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+         * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
          * @param connectionPassword the value to set
          * @return this builder
          **/
@@ -462,13 +462,13 @@ public final class OperationsInsightsWarehouseUser
     }
 
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("name")
     private final String name;
 
     /**
-     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * Username for schema which would have access to AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * @return the value
      **/
     public String getName() {
@@ -476,13 +476,13 @@ public final class OperationsInsightsWarehouseUser
     }
 
     /**
-     * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("connectionPassword")
     private final String connectionPassword;
 
     /**
-     * User provided connection password for the AWR Data,  Enterprise Manager Data and Operations Insights OPSI Hub.
+     * User provided connection password for the AWR Data,  Enterprise Manager Data and Ops Insights OPSI Hub.
      * @return the value
      **/
     public String getConnectionPassword() {

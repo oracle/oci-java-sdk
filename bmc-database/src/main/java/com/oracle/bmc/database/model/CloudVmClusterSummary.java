@@ -26,6 +26,7 @@ public final class CloudVmClusterSummary
     @java.beans.ConstructorProperties({
         "id",
         "compartmentId",
+        "subscriptionId",
         "availabilityDomain",
         "subnetId",
         "backupSubnetId",
@@ -64,6 +65,7 @@ public final class CloudVmClusterSummary
         "scanDnsRecordId",
         "freeformTags",
         "definedTags",
+        "securityAttributes",
         "systemTags",
         "scanDnsName",
         "zoneId",
@@ -71,11 +73,13 @@ public final class CloudVmClusterSummary
         "scanListenerPortTcpSsl",
         "dataCollectionOptions",
         "giSoftwareImageId",
-        "fileSystemConfigurationDetails"
+        "fileSystemConfigurationDetails",
+        "cloudAutomationUpdateDetails"
     })
     public CloudVmClusterSummary(
             String id,
             String compartmentId,
+            String subscriptionId,
             String availabilityDomain,
             String subnetId,
             String backupSubnetId,
@@ -114,6 +118,7 @@ public final class CloudVmClusterSummary
             String scanDnsRecordId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String scanDnsName,
             String zoneId,
@@ -121,10 +126,12 @@ public final class CloudVmClusterSummary
             Integer scanListenerPortTcpSsl,
             DataCollectionOptions dataCollectionOptions,
             String giSoftwareImageId,
-            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails) {
+            java.util.List<FileSystemConfigurationDetail> fileSystemConfigurationDetails,
+            CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
+        this.subscriptionId = subscriptionId;
         this.availabilityDomain = availabilityDomain;
         this.subnetId = subnetId;
         this.backupSubnetId = backupSubnetId;
@@ -163,6 +170,7 @@ public final class CloudVmClusterSummary
         this.scanDnsRecordId = scanDnsRecordId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.securityAttributes = securityAttributes;
         this.systemTags = systemTags;
         this.scanDnsName = scanDnsName;
         this.zoneId = zoneId;
@@ -171,6 +179,7 @@ public final class CloudVmClusterSummary
         this.dataCollectionOptions = dataCollectionOptions;
         this.giSoftwareImageId = giSoftwareImageId;
         this.fileSystemConfigurationDetails = fileSystemConfigurationDetails;
+        this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -205,6 +214,22 @@ public final class CloudVmClusterSummary
         public Builder compartmentId(String compartmentId) {
             this.compartmentId = compartmentId;
             this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+        private String subscriptionId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+         * @param subscriptionId the value to set
+         * @return this builder
+         **/
+        public Builder subscriptionId(String subscriptionId) {
+            this.subscriptionId = subscriptionId;
+            this.__explicitlySet__.add("subscriptionId");
             return this;
         }
         /**
@@ -903,6 +928,29 @@ public final class CloudVmClusterSummary
             return this;
         }
         /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+        private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+        /**
+         * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+         *
+         * @param securityAttributes the value to set
+         * @return this builder
+         **/
+        public Builder securityAttributes(
+                java.util.Map<String, java.util.Map<String, Object>> securityAttributes) {
+            this.securityAttributes = securityAttributes;
+            this.__explicitlySet__.add("securityAttributes");
+            return this;
+        }
+        /**
          * System tags for this resource. Each key is predefined and scoped to a namespace.
          * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
          *
@@ -1033,6 +1081,16 @@ public final class CloudVmClusterSummary
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+        private CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+        public Builder cloudAutomationUpdateDetails(
+                CloudAutomationUpdateDetails cloudAutomationUpdateDetails) {
+            this.cloudAutomationUpdateDetails = cloudAutomationUpdateDetails;
+            this.__explicitlySet__.add("cloudAutomationUpdateDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -1041,6 +1099,7 @@ public final class CloudVmClusterSummary
                     new CloudVmClusterSummary(
                             this.id,
                             this.compartmentId,
+                            this.subscriptionId,
                             this.availabilityDomain,
                             this.subnetId,
                             this.backupSubnetId,
@@ -1079,6 +1138,7 @@ public final class CloudVmClusterSummary
                             this.scanDnsRecordId,
                             this.freeformTags,
                             this.definedTags,
+                            this.securityAttributes,
                             this.systemTags,
                             this.scanDnsName,
                             this.zoneId,
@@ -1086,7 +1146,8 @@ public final class CloudVmClusterSummary
                             this.scanListenerPortTcpSsl,
                             this.dataCollectionOptions,
                             this.giSoftwareImageId,
-                            this.fileSystemConfigurationDetails);
+                            this.fileSystemConfigurationDetails,
+                            this.cloudAutomationUpdateDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -1100,6 +1161,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
+            }
+            if (model.wasPropertyExplicitlySet("subscriptionId")) {
+                this.subscriptionId(model.getSubscriptionId());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -1215,6 +1279,9 @@ public final class CloudVmClusterSummary
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("securityAttributes")) {
+                this.securityAttributes(model.getSecurityAttributes());
+            }
             if (model.wasPropertyExplicitlySet("systemTags")) {
                 this.systemTags(model.getSystemTags());
             }
@@ -1238,6 +1305,9 @@ public final class CloudVmClusterSummary
             }
             if (model.wasPropertyExplicitlySet("fileSystemConfigurationDetails")) {
                 this.fileSystemConfigurationDetails(model.getFileSystemConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("cloudAutomationUpdateDetails")) {
+                this.cloudAutomationUpdateDetails(model.getCloudAutomationUpdateDetails());
             }
             return this;
         }
@@ -1280,6 +1350,20 @@ public final class CloudVmClusterSummary
      **/
     public String getCompartmentId() {
         return compartmentId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
+    private final String subscriptionId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * @return the value
+     **/
+    public String getSubscriptionId() {
+        return subscriptionId;
     }
 
     /**
@@ -2054,6 +2138,26 @@ public final class CloudVmClusterSummary
     }
 
     /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("securityAttributes")
+    private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
+
+    /**
+     * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
+     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
+     *
+     * @return the value
+     **/
+    public java.util.Map<String, java.util.Map<String, Object>> getSecurityAttributes() {
+        return securityAttributes;
+    }
+
+    /**
      * System tags for this resource. Each key is predefined and scoped to a namespace.
      * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
      *
@@ -2166,6 +2270,13 @@ public final class CloudVmClusterSummary
         return fileSystemConfigurationDetails;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("cloudAutomationUpdateDetails")
+    private final CloudAutomationUpdateDetails cloudAutomationUpdateDetails;
+
+    public CloudAutomationUpdateDetails getCloudAutomationUpdateDetails() {
+        return cloudAutomationUpdateDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -2182,6 +2293,7 @@ public final class CloudVmClusterSummary
         sb.append("super=").append(super.toString());
         sb.append("id=").append(String.valueOf(this.id));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", backupSubnetId=").append(String.valueOf(this.backupSubnetId));
@@ -2223,6 +2335,7 @@ public final class CloudVmClusterSummary
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
@@ -2232,6 +2345,8 @@ public final class CloudVmClusterSummary
         sb.append(", giSoftwareImageId=").append(String.valueOf(this.giSoftwareImageId));
         sb.append(", fileSystemConfigurationDetails=")
                 .append(String.valueOf(this.fileSystemConfigurationDetails));
+        sb.append(", cloudAutomationUpdateDetails=")
+                .append(String.valueOf(this.cloudAutomationUpdateDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -2248,6 +2363,7 @@ public final class CloudVmClusterSummary
         CloudVmClusterSummary other = (CloudVmClusterSummary) o;
         return java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.backupSubnetId, other.backupSubnetId)
@@ -2290,6 +2406,7 @@ public final class CloudVmClusterSummary
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
                 && java.util.Objects.equals(this.zoneId, other.zoneId)
@@ -2300,6 +2417,8 @@ public final class CloudVmClusterSummary
                 && java.util.Objects.equals(this.giSoftwareImageId, other.giSoftwareImageId)
                 && java.util.Objects.equals(
                         this.fileSystemConfigurationDetails, other.fileSystemConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.cloudAutomationUpdateDetails, other.cloudAutomationUpdateDetails)
                 && super.equals(other);
     }
 
@@ -2311,6 +2430,9 @@ public final class CloudVmClusterSummary
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.subscriptionId == null ? 43 : this.subscriptionId.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null
@@ -2403,6 +2525,11 @@ public final class CloudVmClusterSummary
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityAttributes == null
+                                ? 43
+                                : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.scanDnsName == null ? 43 : this.scanDnsName.hashCode());
         result = (result * PRIME) + (this.zoneId == null ? 43 : this.zoneId.hashCode());
@@ -2429,6 +2556,11 @@ public final class CloudVmClusterSummary
                         + (this.fileSystemConfigurationDetails == null
                                 ? 43
                                 : this.fileSystemConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloudAutomationUpdateDetails == null
+                                ? 43
+                                : this.cloudAutomationUpdateDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

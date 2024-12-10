@@ -6,7 +6,7 @@ package com.oracle.bmc.jms.model;
 
 /**
  * The target describes the input data for Java migration analysis.
- * A target contains a managed instance, application Installation Key, sourceJdkVersion, and targetJdkVersion.
+ * A target contains a managed instance, application Installation Key, sourceJdkVersion, targetJdkVersion and optional excludePackagePrefixes.
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -28,18 +28,21 @@ public final class JavaMigrationAnalysisTarget
         "managedInstanceId",
         "applicationInstallationKey",
         "sourceJdkVersion",
-        "targetJdkVersion"
+        "targetJdkVersion",
+        "excludePackagePrefixes"
     })
     public JavaMigrationAnalysisTarget(
             String managedInstanceId,
             String applicationInstallationKey,
             String sourceJdkVersion,
-            String targetJdkVersion) {
+            String targetJdkVersion,
+            java.util.List<String> excludePackagePrefixes) {
         super();
         this.managedInstanceId = managedInstanceId;
         this.applicationInstallationKey = applicationInstallationKey;
         this.sourceJdkVersion = sourceJdkVersion;
         this.targetJdkVersion = targetJdkVersion;
+        this.excludePackagePrefixes = excludePackagePrefixes;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -108,6 +111,22 @@ public final class JavaMigrationAnalysisTarget
             this.__explicitlySet__.add("targetJdkVersion");
             return this;
         }
+        /**
+         * Excludes the packages that starts with the prefix from the migration analysis result.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("excludePackagePrefixes")
+        private java.util.List<String> excludePackagePrefixes;
+
+        /**
+         * Excludes the packages that starts with the prefix from the migration analysis result.
+         * @param excludePackagePrefixes the value to set
+         * @return this builder
+         **/
+        public Builder excludePackagePrefixes(java.util.List<String> excludePackagePrefixes) {
+            this.excludePackagePrefixes = excludePackagePrefixes;
+            this.__explicitlySet__.add("excludePackagePrefixes");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -118,7 +137,8 @@ public final class JavaMigrationAnalysisTarget
                             this.managedInstanceId,
                             this.applicationInstallationKey,
                             this.sourceJdkVersion,
-                            this.targetJdkVersion);
+                            this.targetJdkVersion,
+                            this.excludePackagePrefixes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -138,6 +158,9 @@ public final class JavaMigrationAnalysisTarget
             }
             if (model.wasPropertyExplicitlySet("targetJdkVersion")) {
                 this.targetJdkVersion(model.getTargetJdkVersion());
+            }
+            if (model.wasPropertyExplicitlySet("excludePackagePrefixes")) {
+                this.excludePackagePrefixes(model.getExcludePackagePrefixes());
             }
             return this;
         }
@@ -210,6 +233,20 @@ public final class JavaMigrationAnalysisTarget
         return targetJdkVersion;
     }
 
+    /**
+     * Excludes the packages that starts with the prefix from the migration analysis result.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("excludePackagePrefixes")
+    private final java.util.List<String> excludePackagePrefixes;
+
+    /**
+     * Excludes the packages that starts with the prefix from the migration analysis result.
+     * @return the value
+     **/
+    public java.util.List<String> getExcludePackagePrefixes() {
+        return excludePackagePrefixes;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -229,6 +266,7 @@ public final class JavaMigrationAnalysisTarget
                 .append(String.valueOf(this.applicationInstallationKey));
         sb.append(", sourceJdkVersion=").append(String.valueOf(this.sourceJdkVersion));
         sb.append(", targetJdkVersion=").append(String.valueOf(this.targetJdkVersion));
+        sb.append(", excludePackagePrefixes=").append(String.valueOf(this.excludePackagePrefixes));
         sb.append(")");
         return sb.toString();
     }
@@ -248,6 +286,8 @@ public final class JavaMigrationAnalysisTarget
                         this.applicationInstallationKey, other.applicationInstallationKey)
                 && java.util.Objects.equals(this.sourceJdkVersion, other.sourceJdkVersion)
                 && java.util.Objects.equals(this.targetJdkVersion, other.targetJdkVersion)
+                && java.util.Objects.equals(
+                        this.excludePackagePrefixes, other.excludePackagePrefixes)
                 && super.equals(other);
     }
 
@@ -269,6 +309,11 @@ public final class JavaMigrationAnalysisTarget
         result =
                 (result * PRIME)
                         + (this.targetJdkVersion == null ? 43 : this.targetJdkVersion.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.excludePackagePrefixes == null
+                                ? 43
+                                : this.excludePackagePrefixes.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

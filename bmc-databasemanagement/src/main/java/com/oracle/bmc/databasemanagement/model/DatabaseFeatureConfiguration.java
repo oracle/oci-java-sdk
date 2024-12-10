@@ -25,6 +25,14 @@ package com.oracle.bmc.databasemanagement.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = DatabaseDiagnosticsAndManagementFeatureConfiguration.class,
         name = "DIAGNOSTICS_AND_MANAGEMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DatabaseLifecycleFeatureConfiguration.class,
+        name = "DB_LIFECYCLE_MANAGEMENT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DatabaseSqlWatchFeatureConfiguration.class,
+        name = "SQLWATCH"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -61,7 +69,15 @@ public class DatabaseFeatureConfiguration
         PendingDisable("PENDING_DISABLE"),
         Enabling("ENABLING"),
         Disabling("DISABLING"),
-        ;
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(FeatureStatus.class);
 
         private final String value;
         private static java.util.Map<String, FeatureStatus> map;
@@ -69,7 +85,9 @@ public class DatabaseFeatureConfiguration
         static {
             map = new java.util.HashMap<>();
             for (FeatureStatus v : FeatureStatus.values()) {
-                map.put(v.getValue(), v);
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
             }
         }
 
@@ -87,7 +105,10 @@ public class DatabaseFeatureConfiguration
             if (map.containsKey(key)) {
                 return map.get(key);
             }
-            throw new IllegalArgumentException("Invalid FeatureStatus: " + key);
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'FeatureStatus', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
         }
     };
     /**

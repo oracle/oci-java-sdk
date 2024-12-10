@@ -493,6 +493,124 @@ public class StackMonitoringPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listMaintenanceWindows operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListMaintenanceWindowsResponse> listMaintenanceWindowsResponseIterator(
+            final ListMaintenanceWindowsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMaintenanceWindowsRequest.Builder, ListMaintenanceWindowsRequest,
+                ListMaintenanceWindowsResponse>(
+                new java.util.function.Supplier<ListMaintenanceWindowsRequest.Builder>() {
+                    @Override
+                    public ListMaintenanceWindowsRequest.Builder get() {
+                        return ListMaintenanceWindowsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaintenanceWindowsResponse, String>() {
+                    @Override
+                    public String apply(ListMaintenanceWindowsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaintenanceWindowsRequest.Builder>,
+                        ListMaintenanceWindowsRequest>() {
+                    @Override
+                    public ListMaintenanceWindowsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaintenanceWindowsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>() {
+                    @Override
+                    public ListMaintenanceWindowsResponse apply(
+                            ListMaintenanceWindowsRequest request) {
+                        return client.listMaintenanceWindows(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects
+     * contained in responses from the listMaintenanceWindows operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>
+            listMaintenanceWindowsRecordIterator(final ListMaintenanceWindowsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMaintenanceWindowsRequest.Builder, ListMaintenanceWindowsRequest,
+                ListMaintenanceWindowsResponse,
+                com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>(
+                new java.util.function.Supplier<ListMaintenanceWindowsRequest.Builder>() {
+                    @Override
+                    public ListMaintenanceWindowsRequest.Builder get() {
+                        return ListMaintenanceWindowsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMaintenanceWindowsResponse, String>() {
+                    @Override
+                    public String apply(ListMaintenanceWindowsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMaintenanceWindowsRequest.Builder>,
+                        ListMaintenanceWindowsRequest>() {
+                    @Override
+                    public ListMaintenanceWindowsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMaintenanceWindowsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaintenanceWindowsRequest, ListMaintenanceWindowsResponse>() {
+                    @Override
+                    public ListMaintenanceWindowsResponse apply(
+                            ListMaintenanceWindowsRequest request) {
+                        return client.listMaintenanceWindows(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMaintenanceWindowsResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.MaintenanceWindowSummary>
+                            apply(ListMaintenanceWindowsResponse response) {
+                        return response.getMaintenanceWindowCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the listMetricExtensions operation. This iterable
      * will fetch more data from the server as needed.
      *

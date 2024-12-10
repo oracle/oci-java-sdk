@@ -22,14 +22,31 @@ package com.oracle.bmc.jmsjavadownloads.model;
 public final class GenerateArtifactDownloadUrlDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"artifactId"})
-    public GenerateArtifactDownloadUrlDetails(Long artifactId) {
+    @java.beans.ConstructorProperties({"compartmentId", "artifactId"})
+    public GenerateArtifactDownloadUrlDetails(String compartmentId, Long artifactId) {
         super();
+        this.compartmentId = compartmentId;
         this.artifactId = artifactId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /**
+         * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user initiating the download.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+        private String compartmentId;
+
+        /**
+         * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user initiating the download.
+         * @param compartmentId the value to set
+         * @return this builder
+         **/
+        public Builder compartmentId(String compartmentId) {
+            this.compartmentId = compartmentId;
+            this.__explicitlySet__.add("compartmentId");
+            return this;
+        }
         /**
          * Unique identifier for the Java runtime artifact.
          **/
@@ -52,7 +69,7 @@ public final class GenerateArtifactDownloadUrlDetails
 
         public GenerateArtifactDownloadUrlDetails build() {
             GenerateArtifactDownloadUrlDetails model =
-                    new GenerateArtifactDownloadUrlDetails(this.artifactId);
+                    new GenerateArtifactDownloadUrlDetails(this.compartmentId, this.artifactId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -61,6 +78,9 @@ public final class GenerateArtifactDownloadUrlDetails
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(GenerateArtifactDownloadUrlDetails model) {
+            if (model.wasPropertyExplicitlySet("compartmentId")) {
+                this.compartmentId(model.getCompartmentId());
+            }
             if (model.wasPropertyExplicitlySet("artifactId")) {
                 this.artifactId(model.getArtifactId());
             }
@@ -77,6 +97,20 @@ public final class GenerateArtifactDownloadUrlDetails
 
     public Builder toBuilder() {
         return new Builder().copy(this);
+    }
+
+    /**
+     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user initiating the download.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
+    private final String compartmentId;
+
+    /**
+     * The tenancy [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the user initiating the download.
+     * @return the value
+     **/
+    public String getCompartmentId() {
+        return compartmentId;
     }
 
     /**
@@ -107,7 +141,8 @@ public final class GenerateArtifactDownloadUrlDetails
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
         sb.append("GenerateArtifactDownloadUrlDetails(");
         sb.append("super=").append(super.toString());
-        sb.append("artifactId=").append(String.valueOf(this.artifactId));
+        sb.append("compartmentId=").append(String.valueOf(this.compartmentId));
+        sb.append(", artifactId=").append(String.valueOf(this.artifactId));
         sb.append(")");
         return sb.toString();
     }
@@ -122,13 +157,18 @@ public final class GenerateArtifactDownloadUrlDetails
         }
 
         GenerateArtifactDownloadUrlDetails other = (GenerateArtifactDownloadUrlDetails) o;
-        return java.util.Objects.equals(this.artifactId, other.artifactId) && super.equals(other);
+        return java.util.Objects.equals(this.compartmentId, other.compartmentId)
+                && java.util.Objects.equals(this.artifactId, other.artifactId)
+                && super.equals(other);
     }
 
     @Override
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result =
+                (result * PRIME)
+                        + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.artifactId == null ? 43 : this.artifactId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

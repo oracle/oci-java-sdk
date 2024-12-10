@@ -7,7 +7,7 @@ package com.oracle.bmc.networkloadbalancer.model;
 /**
  * The configuration of a network load balancer backend set.
  * For more information about backend set configuration, see
- * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
+ * [Managing Backend Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
  * <p>
  **Caution:** Oracle recommends that you avoid using any confidential information when you supply string values using the API.
  *
@@ -183,14 +183,14 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * Array of backends.
+         * An array of backends.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backends")
         private java.util.List<Backend> backends;
 
         /**
-         * Array of backends.
+         * An array of backends.
          *
          * @param backends the value to set
          * @return this builder
@@ -386,14 +386,14 @@ public final class BackendSet extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * Array of backends.
+     * An array of backends.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backends")
     private final java.util.List<Backend> backends;
 
     /**
-     * Array of backends.
+     * An array of backends.
      *
      * @return the value
      **/

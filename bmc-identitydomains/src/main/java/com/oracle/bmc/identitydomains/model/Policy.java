@@ -39,7 +39,8 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         "active",
         "policyGroovy",
         "rules",
-        "policyType"
+        "policyType",
+        "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy"
     })
     public Policy(
             String id,
@@ -61,7 +62,9 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             Boolean active,
             String policyGroovy,
             java.util.List<PolicyRules> rules,
-            PolicyPolicyType policyType) {
+            PolicyPolicyType policyType,
+            PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                    urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy) {
         super();
         this.id = id;
         this.ocid = ocid;
@@ -83,6 +86,8 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         this.policyGroovy = policyGroovy;
         this.rules = rules;
         this.policyType = policyType;
+        this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy =
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -262,6 +267,7 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [key, value]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          *  - idcsSearchable: true
          *  - multiValued: true
          *  - mutability: readWrite
@@ -278,6 +284,7 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
          * <p>
          **SCIM++ Properties:**
          *  - idcsCompositeKey: [key, value]
+         *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
          *  - idcsSearchable: true
          *  - multiValued: true
          *  - mutability: readWrite
@@ -695,6 +702,22 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty(
+                "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+        private PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+
+        public Builder
+                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy(
+                        PolicyExtensionOciconsolesignonpolicyconsentPolicy
+                                urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy) {
+            this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy =
+                    urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+            this.__explicitlySet__.add(
+                    "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -720,7 +743,8 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                             this.active,
                             this.policyGroovy,
                             this.rules,
-                            this.policyType);
+                            this.policyType,
+                            this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -788,6 +812,12 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
             }
             if (model.wasPropertyExplicitlySet("policyType")) {
                 this.policyType(model.getPolicyType());
+            }
+            if (model.wasPropertyExplicitlySet(
+                    "urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy")) {
+                this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy(
+                        model
+                                .getUrnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy());
             }
             return this;
         }
@@ -964,6 +994,7 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [key, value]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      *  - idcsSearchable: true
      *  - multiValued: true
      *  - mutability: readWrite
@@ -980,6 +1011,7 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
      * <p>
      **SCIM++ Properties:**
      *  - idcsCompositeKey: [key, value]
+     *  - idcsCsvAttributeNameMappings: [[columnHeaderName:Tag Key, mapsTo:tags.key], [columnHeaderName:Tag Value, mapsTo:tags.value]]
      *  - idcsSearchable: true
      *  - multiValued: true
      *  - mutability: readWrite
@@ -1370,6 +1402,16 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         return policyType;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty(
+            "urn:ietf:params:scim:schemas:oracle:idcs:extension:ociconsolesignonpolicyconsent:Policy")
+    private final PolicyExtensionOciconsolesignonpolicyconsentPolicy
+            urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+
+    public PolicyExtensionOciconsolesignonpolicyconsentPolicy
+            getUrnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy() {
+        return urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1406,6 +1448,11 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         sb.append(", policyGroovy=").append(String.valueOf(this.policyGroovy));
         sb.append(", rules=").append(String.valueOf(this.rules));
         sb.append(", policyType=").append(String.valueOf(this.policyType));
+        sb.append(
+                        ", urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy=")
+                .append(
+                        String.valueOf(
+                                this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy));
         sb.append(")");
         return sb.toString();
     }
@@ -1442,6 +1489,9 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
                 && java.util.Objects.equals(this.policyGroovy, other.policyGroovy)
                 && java.util.Objects.equals(this.rules, other.rules)
                 && java.util.Objects.equals(this.policyType, other.policyType)
+                && java.util.Objects.equals(
+                        this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy,
+                        other.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy)
                 && super.equals(other);
     }
 
@@ -1487,6 +1537,14 @@ public final class Policy extends com.oracle.bmc.http.internal.ExplicitlySetBmcM
         result = (result * PRIME) + (this.policyGroovy == null ? 43 : this.policyGroovy.hashCode());
         result = (result * PRIME) + (this.rules == null ? 43 : this.rules.hashCode());
         result = (result * PRIME) + (this.policyType == null ? 43 : this.policyType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy
+                                        == null
+                                ? 43
+                                : this
+                                        .urnietfparamsscimschemasoracleidcsextensionociconsolesignonpolicyconsentPolicy
+                                        .hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

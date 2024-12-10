@@ -5,6 +5,8 @@
 package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.internal.EndpointBuilder;
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
+import com.oracle.bmc.util.RealmSpecificEndpointTemplateUtils;
 import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.ClientConfiguration;
 import com.oracle.bmc.Service;
@@ -708,6 +710,225 @@ public class UploadManagerTest {
             assertThat(e.getCause(), Matchers.instanceOf(IllegalStateException.class));
             verify(objectStorage).abortMultipartUpload(any(AbortMultipartUploadRequest.class));
         }
+    }
+
+    @Test
+    public void upload_singleUpload_withSha256Checksum() throws IOException {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .allowMultipartUploads(false)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Sha256)
+                        .build();
+        UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        UploadRequest request = createUploadRequest();
+
+        ArgumentCaptor<PutObjectRequest> putRequestCaptor =
+                ArgumentCaptor.forClass(PutObjectRequest.class);
+        PutObjectResponse putResponse =
+                PutObjectResponse.builder()
+                        .eTag("etag")
+                        .opcContentSha256("sha256")
+                        .opcRequestId(REQ_ID)
+                        .opcClientRequestId(CLIENT_REQ_ID)
+                        .build();
+        when(objectStorage.putObject(putRequestCaptor.capture())).thenReturn(putResponse);
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+
+        assertNotNull(uploadResponse);
+        assertEquals("etag", uploadResponse.getETag());
+        assertEquals("sha256", uploadResponse.getContentSha256());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+        byte[] buffer = new byte[(int) CONTENT_LENGTH];
+        putRequestCaptor.getValue().getPutObjectBody().read(buffer);
+        assertEquals(CONTENT, new String(buffer));
+        assertSame(
+                UploadManager.RETRY_CONFIGURATION,
+                putRequestCaptor.getValue().getRetryConfiguration());
+        assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
+        assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
+        assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
+    }
+
+    @Test
+    public void upload_singleUpload_withSha384Checksum() throws IOException {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .allowMultipartUploads(false)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Sha384)
+                        .build();
+        UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        UploadRequest request = createUploadRequest();
+
+        ArgumentCaptor<PutObjectRequest> putRequestCaptor =
+                ArgumentCaptor.forClass(PutObjectRequest.class);
+        PutObjectResponse putResponse =
+                PutObjectResponse.builder()
+                        .eTag("etag")
+                        .opcContentSha384("sha384")
+                        .opcRequestId(REQ_ID)
+                        .opcClientRequestId(CLIENT_REQ_ID)
+                        .build();
+        when(objectStorage.putObject(putRequestCaptor.capture())).thenReturn(putResponse);
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+
+        assertNotNull(uploadResponse);
+        assertEquals("etag", uploadResponse.getETag());
+        assertEquals("sha384", uploadResponse.getContentSha384());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+        byte[] buffer = new byte[(int) CONTENT_LENGTH];
+        putRequestCaptor.getValue().getPutObjectBody().read(buffer);
+        assertEquals(CONTENT, new String(buffer));
+        assertSame(
+                UploadManager.RETRY_CONFIGURATION,
+                putRequestCaptor.getValue().getRetryConfiguration());
+        assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
+        assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
+        assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
+    }
+
+    @Test
+    public void upload_singleUpload_withCrc32cChecksum() throws IOException {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .allowMultipartUploads(false)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Crc32C)
+                        .build();
+        UploadManager uploadManager = new UploadManager(objectStorage, uploadConfiguration);
+
+        UploadRequest request = createUploadRequest();
+
+        ArgumentCaptor<PutObjectRequest> putRequestCaptor =
+                ArgumentCaptor.forClass(PutObjectRequest.class);
+        PutObjectResponse putResponse =
+                PutObjectResponse.builder()
+                        .eTag("etag")
+                        .opcContentCrc32c("crc32c")
+                        .opcRequestId(REQ_ID)
+                        .opcClientRequestId(CLIENT_REQ_ID)
+                        .build();
+        when(objectStorage.putObject(putRequestCaptor.capture())).thenReturn(putResponse);
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+
+        assertNotNull(uploadResponse);
+        assertEquals("etag", uploadResponse.getETag());
+        assertEquals("crc32c", uploadResponse.getContentCrc32c());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+        byte[] buffer = new byte[(int) CONTENT_LENGTH];
+        putRequestCaptor.getValue().getPutObjectBody().read(buffer);
+        assertEquals(CONTENT, new String(buffer));
+        assertSame(
+                UploadManager.RETRY_CONFIGURATION,
+                putRequestCaptor.getValue().getRetryConfiguration());
+        assertEquals(CONTENT_LENGTH, putRequestCaptor.getValue().getContentLength().longValue());
+        assertEquals(CLIENT_REQ_ID, putRequestCaptor.getValue().getOpcClientRequestId());
+        assertSame(METADATA, putRequestCaptor.getValue().getOpcMeta());
+    }
+
+    @Test
+    public void upload_multipartUpload_withSha256Checksum() {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Sha256)
+                        .enforceAdditionalChecksumBeforeMultipartUpload(ChecksumAlgorithm.Sha256)
+                        .build();
+        UploadManager uploadManager =
+                new UploadManager(objectStorage, uploadConfiguration) {
+                    @Override
+                    protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
+                            UploadRequest uploadRequest,
+                            ExecutorService executorService) {
+                        return assembler;
+                    }
+                };
+
+        UploadRequest request = createUploadRequest();
+        when(assembler.commit())
+                .thenReturn(
+                        CommitMultipartUploadResponse.builder()
+                                .eTag("finalEtag")
+                                .opcRequestId(REQ_ID)
+                                .opcClientRequestId(CLIENT_REQ_ID)
+                                .opcMultipartSha256("multipartSha256")
+                                .build());
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+        assertNotNull(uploadResponse);
+        assertEquals("finalEtag", uploadResponse.getETag());
+        assertEquals("multipartSha256", uploadResponse.getMultipartSha256());
+        assertNull(uploadResponse.getContentMd5());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+
+        verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
+        verify(assembler, times(2))
+                .addPart(
+                        any(InputStream.class),
+                        eq(CONTENT_LENGTH / 2),
+                        anyString(),
+                        eq(ChecksumAlgorithm.Sha256.getValue()));
+    }
+
+    @Test
+    public void upload_multipartUpload_withCrc32cChecksum() {
+        UploadConfiguration uploadConfiguration =
+                UploadConfiguration.builder()
+                        .minimumLengthForMultipartUpload(10)
+                        .lengthPerUploadPart(10)
+                        .additionalChecksumAlgorithm(ChecksumAlgorithm.Crc32C)
+                        .enforceAdditionalChecksumBeforeMultipartUpload(ChecksumAlgorithm.Crc32C)
+                        .build();
+        UploadManager uploadManager =
+                new UploadManager(objectStorage, uploadConfiguration) {
+                    @Override
+                    protected MultipartObjectAssembler createAssembler(
+                            PutObjectRequest request,
+                            UploadRequest uploadRequest,
+                            ExecutorService executorService) {
+                        return assembler;
+                    }
+                };
+
+        UploadRequest request = createUploadRequest();
+        when(assembler.commit())
+                .thenReturn(
+                        CommitMultipartUploadResponse.builder()
+                                .eTag("finalEtag")
+                                .opcRequestId(REQ_ID)
+                                .opcClientRequestId(CLIENT_REQ_ID)
+                                .opcContentCrc32c("contentCrc32c")
+                                .build());
+
+        UploadResponse uploadResponse = uploadManager.upload(request);
+        assertNotNull(uploadResponse);
+        assertEquals("finalEtag", uploadResponse.getETag());
+        assertEquals("contentCrc32c", uploadResponse.getContentCrc32c());
+        assertNull(uploadResponse.getContentMd5());
+        assertNull(uploadResponse.getMultipartMd5());
+        assertEquals(REQ_ID, uploadResponse.getOpcRequestId());
+        assertEquals(CLIENT_REQ_ID, uploadResponse.getOpcClientRequestId());
+
+        verify(assembler).newRequest(CONTENT_TYPE, CONTENT_LANG, CONTENT_ENCODING, METADATA);
+        verify(assembler, times(2))
+                .addPart(
+                        any(InputStream.class),
+                        eq(CONTENT_LENGTH / 2),
+                        anyString(),
+                        eq(ChecksumAlgorithm.Crc32C.getValue()));
     }
 
     private static UploadConfiguration getMultipartUploadConfiguration() {

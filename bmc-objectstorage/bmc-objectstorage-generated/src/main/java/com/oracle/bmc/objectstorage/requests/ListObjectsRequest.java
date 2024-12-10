@@ -49,23 +49,23 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return prefix;
     }
     /**
-     * Object names returned by a list query must be greater or equal to this parameter.
+     * Returns object names which are lexicographically greater than or equal to this parameter.
      */
     private String start;
 
     /**
-     * Object names returned by a list query must be greater or equal to this parameter.
+     * Returns object names which are lexicographically greater than or equal to this parameter.
      */
     public String getStart() {
         return start;
     }
     /**
-     * Object names returned by a list query must be strictly less than this parameter.
+     * Returns object names which are lexicographically strictly less than this parameter.
      */
     private String end;
 
     /**
-     * Object names returned by a list query must be strictly less than this parameter.
+     * Returns object names which are lexicographically strictly less than this parameter.
      */
     public String getEnd() {
         return end;
@@ -141,12 +141,12 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         return opcClientRequestId;
     }
     /**
-     * Object names returned by a list query must be greater than this parameter.
+     * Returns object names which are lexicographically strictly greater than this parameter.
      */
     private String startAfter;
 
     /**
-     * Object names returned by a list query must be greater than this parameter.
+     * Returns object names which are lexicographically strictly greater than this parameter.
      */
     public String getStartAfter() {
         return startAfter;
@@ -209,12 +209,12 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Object names returned by a list query must be greater or equal to this parameter.
+         * Returns object names which are lexicographically greater than or equal to this parameter.
          */
         private String start = null;
 
         /**
-         * Object names returned by a list query must be greater or equal to this parameter.
+         * Returns object names which are lexicographically greater than or equal to this parameter.
          * @param start the value to set
          * @return this builder instance
          */
@@ -224,12 +224,12 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Object names returned by a list query must be strictly less than this parameter.
+         * Returns object names which are lexicographically strictly less than this parameter.
          */
         private String end = null;
 
         /**
-         * Object names returned by a list query must be strictly less than this parameter.
+         * Returns object names which are lexicographically strictly less than this parameter.
          * @param end the value to set
          * @return this builder instance
          */
@@ -325,12 +325,12 @@ public class ListObjectsRequest extends com.oracle.bmc.requests.BmcRequest<java.
         }
 
         /**
-         * Object names returned by a list query must be greater than this parameter.
+         * Returns object names which are lexicographically strictly greater than this parameter.
          */
         private String startAfter = null;
 
         /**
-         * Object names returned by a list query must be greater than this parameter.
+         * Returns object names which are lexicographically strictly greater than this parameter.
          * @param startAfter the value to set
          * @return this builder instance
          */

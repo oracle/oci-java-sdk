@@ -29,20 +29,23 @@ public final class UpdateAnalyticsInstanceDetails
         "emailNotification",
         "licenseType",
         "definedTags",
-        "freeformTags"
+        "freeformTags",
+        "updateChannel"
     })
     public UpdateAnalyticsInstanceDetails(
             String description,
             String emailNotification,
             LicenseType licenseType,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            java.util.Map<String, String> freeformTags) {
+            java.util.Map<String, String> freeformTags,
+            UpdateChannel updateChannel) {
         super();
         this.description = description;
         this.emailNotification = emailNotification;
         this.licenseType = licenseType;
         this.definedTags = definedTags;
         this.freeformTags = freeformTags;
+        this.updateChannel = updateChannel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -150,6 +153,24 @@ public final class UpdateAnalyticsInstanceDetails
             this.__explicitlySet__.add("freeformTags");
             return this;
         }
+        /**
+         * Analytics instance update channel.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+        private UpdateChannel updateChannel;
+
+        /**
+         * Analytics instance update channel.
+         *
+         * @param updateChannel the value to set
+         * @return this builder
+         **/
+        public Builder updateChannel(UpdateChannel updateChannel) {
+            this.updateChannel = updateChannel;
+            this.__explicitlySet__.add("updateChannel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -161,7 +182,8 @@ public final class UpdateAnalyticsInstanceDetails
                             this.emailNotification,
                             this.licenseType,
                             this.definedTags,
-                            this.freeformTags);
+                            this.freeformTags,
+                            this.updateChannel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -184,6 +206,9 @@ public final class UpdateAnalyticsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("updateChannel")) {
+                this.updateChannel(model.getUpdateChannel());
             }
             return this;
         }
@@ -292,6 +317,22 @@ public final class UpdateAnalyticsInstanceDetails
         return freeformTags;
     }
 
+    /**
+     * Analytics instance update channel.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("updateChannel")
+    private final UpdateChannel updateChannel;
+
+    /**
+     * Analytics instance update channel.
+     *
+     * @return the value
+     **/
+    public UpdateChannel getUpdateChannel() {
+        return updateChannel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -311,6 +352,7 @@ public final class UpdateAnalyticsInstanceDetails
         sb.append(", licenseType=").append(String.valueOf(this.licenseType));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", updateChannel=").append(String.valueOf(this.updateChannel));
         sb.append(")");
         return sb.toString();
     }
@@ -330,6 +372,7 @@ public final class UpdateAnalyticsInstanceDetails
                 && java.util.Objects.equals(this.licenseType, other.licenseType)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.updateChannel, other.updateChannel)
                 && super.equals(other);
     }
 
@@ -344,6 +387,9 @@ public final class UpdateAnalyticsInstanceDetails
         result = (result * PRIME) + (this.licenseType == null ? 43 : this.licenseType.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.updateChannel == null ? 43 : this.updateChannel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

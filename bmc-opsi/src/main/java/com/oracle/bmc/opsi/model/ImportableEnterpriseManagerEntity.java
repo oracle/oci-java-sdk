@@ -110,13 +110,13 @@ public final class ImportableEnterpriseManagerEntity
             return this;
         }
         /**
-         * Operations Insights internal representation of the resource type.
+         * Ops Insights internal representation of the resource type.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
         private String opsiEntityType;
 
         /**
-         * Operations Insights internal representation of the resource type.
+         * Ops Insights internal representation of the resource type.
          * @param opsiEntityType the value to set
          * @return this builder
          **/
@@ -233,13 +233,13 @@ public final class ImportableEnterpriseManagerEntity
     }
 
     /**
-     * Operations Insights internal representation of the resource type.
+     * Ops Insights internal representation of the resource type.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("opsiEntityType")
     private final String opsiEntityType;
 
     /**
-     * Operations Insights internal representation of the resource type.
+     * Ops Insights internal representation of the resource type.
      * @return the value
      **/
     public String getOpsiEntityType() {

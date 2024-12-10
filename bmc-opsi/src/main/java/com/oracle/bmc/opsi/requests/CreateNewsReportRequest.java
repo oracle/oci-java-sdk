@@ -14,12 +14,12 @@ public class CreateNewsReportRequest
                 com.oracle.bmc.opsi.model.CreateNewsReportDetails> {
 
     /**
-     * Details for the news report that will be created in Operations Insights.
+     * Details for the news report that will be created in Ops Insights.
      */
     private com.oracle.bmc.opsi.model.CreateNewsReportDetails createNewsReportDetails;
 
     /**
-     * Details for the news report that will be created in Operations Insights.
+     * Details for the news report that will be created in Ops Insights.
      */
     public com.oracle.bmc.opsi.model.CreateNewsReportDetails getCreateNewsReportDetails() {
         return createNewsReportDetails;
@@ -81,12 +81,12 @@ public class CreateNewsReportRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * Details for the news report that will be created in Operations Insights.
+         * Details for the news report that will be created in Ops Insights.
          */
         private com.oracle.bmc.opsi.model.CreateNewsReportDetails createNewsReportDetails = null;
 
         /**
-         * Details for the news report that will be created in Operations Insights.
+         * Details for the news report that will be created in Ops Insights.
          * @param createNewsReportDetails the value to set
          * @return this builder instance
          */

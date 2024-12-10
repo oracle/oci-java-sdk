@@ -109,6 +109,15 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             this.__explicitlySet__.add("routingMethod");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("doesUseSecretIds")
+        private Boolean doesUseSecretIds;
+
+        public Builder doesUseSecretIds(Boolean doesUseSecretIds) {
+            this.doesUseSecretIds = doesUseSecretIds;
+            this.__explicitlySet__.add("doesUseSecretIds");
+            return this;
+        }
         /**
          * The username Oracle GoldenGate uses to connect the associated system of the given technology.
          * This username must already exist and be available by the system/application to be connected to
@@ -149,6 +158,32 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         public Builder password(String password) {
             this.password = password;
             this.__explicitlySet__.add("password");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+        private String passwordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+         * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+         * It must conform to the specific security requirements including length, case sensitivity, and so on.
+         * If secretId is used plaintext field must not be provided.
+         * Note: When provided, 'password' field must not be provided.
+         *
+         * @param passwordSecretId the value to set
+         * @return this builder
+         **/
+        public Builder passwordSecretId(String passwordSecretId) {
+            this.passwordSecretId = passwordSecretId;
+            this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
         /**
@@ -316,6 +351,28 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             return this;
         }
         /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+         * - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'sslKey' field must not be provided.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+        private String sslKeySecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+         * - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+         * Note: When provided, 'sslKey' field must not be provided.
+         *
+         * @param sslKeySecretId the value to set
+         * @return this builder
+         **/
+        public Builder sslKeySecretId(String sslKeySecretId) {
+            this.sslKeySecretId = sslKeySecretId;
+            this.__explicitlySet__.add("sslKeySecretId");
+            return this;
+        }
+        /**
          * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
          * field, or make sure the host name is resolvable in the target VCN.
          * <p>
@@ -401,8 +458,10 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
                             this.nsgIds,
                             this.subnetId,
                             this.routingMethod,
+                            this.doesUseSecretIds,
                             this.username,
                             this.password,
+                            this.passwordSecretId,
                             this.host,
                             this.port,
                             this.databaseName,
@@ -412,6 +471,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
                             this.sslCrl,
                             this.sslCert,
                             this.sslKey,
+                            this.sslKeySecretId,
                             this.privateIp,
                             this.additionalAttributes,
                             this.dbSystemId);
@@ -450,11 +510,17 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             if (model.wasPropertyExplicitlySet("routingMethod")) {
                 this.routingMethod(model.getRoutingMethod());
             }
+            if (model.wasPropertyExplicitlySet("doesUseSecretIds")) {
+                this.doesUseSecretIds(model.getDoesUseSecretIds());
+            }
             if (model.wasPropertyExplicitlySet("username")) {
                 this.username(model.getUsername());
             }
             if (model.wasPropertyExplicitlySet("password")) {
                 this.password(model.getPassword());
+            }
+            if (model.wasPropertyExplicitlySet("passwordSecretId")) {
+                this.passwordSecretId(model.getPasswordSecretId());
             }
             if (model.wasPropertyExplicitlySet("host")) {
                 this.host(model.getHost());
@@ -482,6 +548,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             }
             if (model.wasPropertyExplicitlySet("sslKey")) {
                 this.sslKey(model.getSslKey());
+            }
+            if (model.wasPropertyExplicitlySet("sslKeySecretId")) {
+                this.sslKeySecretId(model.getSslKeySecretId());
             }
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
@@ -518,8 +587,10 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             java.util.List<String> nsgIds,
             String subnetId,
             RoutingMethod routingMethod,
+            Boolean doesUseSecretIds,
             String username,
             String password,
+            String passwordSecretId,
             String host,
             Integer port,
             String databaseName,
@@ -529,6 +600,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
             String sslCrl,
             String sslCert,
             String sslKey,
+            String sslKeySecretId,
             String privateIp,
             java.util.List<NameValuePair> additionalAttributes,
             String dbSystemId) {
@@ -541,9 +613,11 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
                 keyId,
                 nsgIds,
                 subnetId,
-                routingMethod);
+                routingMethod,
+                doesUseSecretIds);
         this.username = username;
         this.password = password;
+        this.passwordSecretId = passwordSecretId;
         this.host = host;
         this.port = port;
         this.databaseName = databaseName;
@@ -553,6 +627,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         this.sslCrl = sslCrl;
         this.sslCert = sslCert;
         this.sslKey = sslKey;
+        this.sslKeySecretId = sslKeySecretId;
         this.privateIp = privateIp;
         this.additionalAttributes = additionalAttributes;
         this.dbSystemId = dbSystemId;
@@ -594,6 +669,30 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
      **/
     public String getPassword() {
         return password;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("passwordSecretId")
+    private final String passwordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the password is stored.
+     * The password Oracle GoldenGate uses to connect the associated system of the given technology.
+     * It must conform to the specific security requirements including length, case sensitivity, and so on.
+     * If secretId is used plaintext field must not be provided.
+     * Note: When provided, 'password' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getPasswordSecretId() {
+        return passwordSecretId;
     }
 
     /**
@@ -743,6 +842,26 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
     }
 
     /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'sslKey' field must not be provided.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("sslKeySecretId")
+    private final String sslKeySecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret that stores the Client Key
+     * - The content of a .pem or .crt file containing the client private key (for 2-way SSL).
+     * Note: When provided, 'sslKey' field must not be provided.
+     *
+     * @return the value
+     **/
+    public String getSslKeySecretId() {
+        return sslKeySecretId;
+    }
+
+    /**
      * Deprecated: this field will be removed in future versions. Either specify the private IP in the connectionString or host
      * field, or make sure the host name is resolvable in the target VCN.
      * <p>
@@ -822,6 +941,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", username=").append(String.valueOf(this.username));
         sb.append(", password=").append("<redacted>");
+        sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", host=").append(String.valueOf(this.host));
         sb.append(", port=").append(String.valueOf(this.port));
         sb.append(", databaseName=").append(String.valueOf(this.databaseName));
@@ -831,6 +951,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         sb.append(", sslCrl=").append(String.valueOf(this.sslCrl));
         sb.append(", sslCert=").append(String.valueOf(this.sslCert));
         sb.append(", sslKey=").append(String.valueOf(this.sslKey));
+        sb.append(", sslKeySecretId=").append(String.valueOf(this.sslKeySecretId));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
         sb.append(", additionalAttributes=").append(String.valueOf(this.additionalAttributes));
         sb.append(", dbSystemId=").append(String.valueOf(this.dbSystemId));
@@ -850,6 +971,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         UpdateMysqlConnectionDetails other = (UpdateMysqlConnectionDetails) o;
         return java.util.Objects.equals(this.username, other.username)
                 && java.util.Objects.equals(this.password, other.password)
+                && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.host, other.host)
                 && java.util.Objects.equals(this.port, other.port)
                 && java.util.Objects.equals(this.databaseName, other.databaseName)
@@ -859,6 +981,7 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
                 && java.util.Objects.equals(this.sslCrl, other.sslCrl)
                 && java.util.Objects.equals(this.sslCert, other.sslCert)
                 && java.util.Objects.equals(this.sslKey, other.sslKey)
+                && java.util.Objects.equals(this.sslKeySecretId, other.sslKeySecretId)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
                 && java.util.Objects.equals(this.additionalAttributes, other.additionalAttributes)
                 && java.util.Objects.equals(this.dbSystemId, other.dbSystemId)
@@ -871,6 +994,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         int result = super.hashCode();
         result = (result * PRIME) + (this.username == null ? 43 : this.username.hashCode());
         result = (result * PRIME) + (this.password == null ? 43 : this.password.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.host == null ? 43 : this.host.hashCode());
         result = (result * PRIME) + (this.port == null ? 43 : this.port.hashCode());
         result = (result * PRIME) + (this.databaseName == null ? 43 : this.databaseName.hashCode());
@@ -882,6 +1008,9 @@ public final class UpdateMysqlConnectionDetails extends UpdateConnectionDetails 
         result = (result * PRIME) + (this.sslCrl == null ? 43 : this.sslCrl.hashCode());
         result = (result * PRIME) + (this.sslCert == null ? 43 : this.sslCert.hashCode());
         result = (result * PRIME) + (this.sslKey == null ? 43 : this.sslKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sslKeySecretId == null ? 43 : this.sslKeySecretId.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
         result =
                 (result * PRIME)

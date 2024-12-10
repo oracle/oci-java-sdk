@@ -70,6 +70,10 @@ public enum OperationType {
     MoveAwrhubSource("MOVE_AWRHUB_SOURCE"),
     EnableAwrhubSource("ENABLE_AWRHUB_SOURCE"),
     DisableAwrhubSource("DISABLE_AWRHUB_SOURCE"),
+    ChangeMacsManagedCloudDatabaseInsightConnectionDetails(
+            "CHANGE_MACS_MANAGED_CLOUD_DATABASE_INSIGHT_CONNECTION_DETAILS"),
+    TestMacsManagedCloudDatabaseInsightConnectionDetails(
+            "TEST_MACS_MANAGED_CLOUD_DATABASE_INSIGHT_CONNECTION_DETAILS"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

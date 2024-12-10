@@ -30,6 +30,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
         "sensitiveDataModelId",
         "targetId",
         "schemasForDiscovery",
+        "tablesForDiscovery",
         "sensitiveTypeIdsForDiscovery",
         "isSampleDataCollectionEnabled",
         "isAppDefinedRelationDiscoveryEnabled",
@@ -56,6 +57,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
             String sensitiveDataModelId,
             String targetId,
             java.util.List<String> schemasForDiscovery,
+            java.util.List<TablesForDiscovery> tablesForDiscovery,
             java.util.List<String> sensitiveTypeIdsForDiscovery,
             Boolean isSampleDataCollectionEnabled,
             Boolean isAppDefinedRelationDiscoveryEnabled,
@@ -81,6 +83,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
         this.sensitiveDataModelId = sensitiveDataModelId;
         this.targetId = targetId;
         this.schemasForDiscovery = schemasForDiscovery;
+        this.tablesForDiscovery = tablesForDiscovery;
         this.sensitiveTypeIdsForDiscovery = sensitiveTypeIdsForDiscovery;
         this.isSampleDataCollectionEnabled = isSampleDataCollectionEnabled;
         this.isAppDefinedRelationDiscoveryEnabled = isAppDefinedRelationDiscoveryEnabled;
@@ -267,6 +270,24 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
         public Builder schemasForDiscovery(java.util.List<String> schemasForDiscovery) {
             this.schemasForDiscovery = schemasForDiscovery;
             this.__explicitlySet__.add("schemasForDiscovery");
+            return this;
+        }
+        /**
+         * The data discovery jobs will scan the tables specified here, including both schemas and tables.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
+        private java.util.List<TablesForDiscovery> tablesForDiscovery;
+
+        /**
+         * The data discovery jobs will scan the tables specified here, including both schemas and tables.
+         *
+         * @param tablesForDiscovery the value to set
+         * @return this builder
+         **/
+        public Builder tablesForDiscovery(java.util.List<TablesForDiscovery> tablesForDiscovery) {
+            this.tablesForDiscovery = tablesForDiscovery;
+            this.__explicitlySet__.add("tablesForDiscovery");
             return this;
         }
         /**
@@ -557,6 +578,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
                             this.sensitiveDataModelId,
                             this.targetId,
                             this.schemasForDiscovery,
+                            this.tablesForDiscovery,
                             this.sensitiveTypeIdsForDiscovery,
                             this.isSampleDataCollectionEnabled,
                             this.isAppDefinedRelationDiscoveryEnabled,
@@ -608,6 +630,9 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
             }
             if (model.wasPropertyExplicitlySet("schemasForDiscovery")) {
                 this.schemasForDiscovery(model.getSchemasForDiscovery());
+            }
+            if (model.wasPropertyExplicitlySet("tablesForDiscovery")) {
+                this.tablesForDiscovery(model.getTablesForDiscovery());
             }
             if (model.wasPropertyExplicitlySet("sensitiveTypeIdsForDiscovery")) {
                 this.sensitiveTypeIdsForDiscovery(model.getSensitiveTypeIdsForDiscovery());
@@ -870,6 +895,22 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
      **/
     public java.util.List<String> getSchemasForDiscovery() {
         return schemasForDiscovery;
+    }
+
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tablesForDiscovery")
+    private final java.util.List<TablesForDiscovery> tablesForDiscovery;
+
+    /**
+     * The data discovery jobs will scan the tables specified here, including both schemas and tables.
+     *
+     * @return the value
+     **/
+    public java.util.List<TablesForDiscovery> getTablesForDiscovery() {
+        return tablesForDiscovery;
     }
 
     /**
@@ -1136,6 +1177,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
         sb.append(", sensitiveDataModelId=").append(String.valueOf(this.sensitiveDataModelId));
         sb.append(", targetId=").append(String.valueOf(this.targetId));
         sb.append(", schemasForDiscovery=").append(String.valueOf(this.schemasForDiscovery));
+        sb.append(", tablesForDiscovery=").append(String.valueOf(this.tablesForDiscovery));
         sb.append(", sensitiveTypeIdsForDiscovery=")
                 .append(String.valueOf(this.sensitiveTypeIdsForDiscovery));
         sb.append(", isSampleDataCollectionEnabled=")
@@ -1181,6 +1223,7 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
                 && java.util.Objects.equals(this.sensitiveDataModelId, other.sensitiveDataModelId)
                 && java.util.Objects.equals(this.targetId, other.targetId)
                 && java.util.Objects.equals(this.schemasForDiscovery, other.schemasForDiscovery)
+                && java.util.Objects.equals(this.tablesForDiscovery, other.tablesForDiscovery)
                 && java.util.Objects.equals(
                         this.sensitiveTypeIdsForDiscovery, other.sensitiveTypeIdsForDiscovery)
                 && java.util.Objects.equals(
@@ -1234,6 +1277,11 @@ public final class DiscoveryJob extends com.oracle.bmc.http.internal.ExplicitlyS
                         + (this.schemasForDiscovery == null
                                 ? 43
                                 : this.schemasForDiscovery.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tablesForDiscovery == null
+                                ? 43
+                                : this.tablesForDiscovery.hashCode());
         result =
                 (result * PRIME)
                         + (this.sensitiveTypeIdsForDiscovery == null

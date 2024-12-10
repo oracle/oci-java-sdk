@@ -6,6 +6,7 @@ package com.oracle.bmc.objectstorage.transfer;
 
 import com.oracle.bmc.io.DuplicatableInputStream;
 
+import com.oracle.bmc.objectstorage.model.ChecksumAlgorithm;
 import com.oracle.bmc.util.internal.Validate;
 
 /**
@@ -63,6 +64,58 @@ public class UploadConfiguration {
      */
     private final boolean enforceMd5BeforeMultipartUpload;
     /**
+     * Flag to indicate that additional checksum should be set on every PutObject call. If not
+     * provided, the SDK will calculate it before uploading the object. Default is null.
+     *
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},
+     * {@link ChecksumAlgorithm#Sha384}.
+     *
+     * <p>Note: If {@link #additionalChecksumAlgorithm} is provided, this value must match it.
+     *
+     * <p>When this value is set, the SDK will set the corresponding header:
+     *
+     * <ul>
+     *   <li>{@code opc-content-crc32c} if the value is "Crc32C"
+     *   <li>{@code opc-content-sha256} if the value is "Sha256"
+     *   <li>{@code opc-content-sha384} if the value is "Sha384"
+     * </ul>
+     *
+     * <p>If {@link #additionalChecksumAlgorithm} has a matching value or is null, the header {@code
+     * opc-checksum-algorithm} will also be set.
+     *
+     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source
+     * stream for the part cannot be duplicated, i.e., does not implement {@link
+     * DuplicatableInputStream}, as the entire part will have to be read into memory.
+     */
+    private final ChecksumAlgorithm enforceAdditionalChecksumBeforeUpload;
+
+    /**
+     * Flag to indicate that additional checksum should be set on every part of a multi-part upload.
+     * The SDK will calculate the additional checksum before uploading for each part it creates.
+     * Default is null.
+     *
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},
+     * {@link ChecksumAlgorithm#Sha384}.
+     *
+     * <p>Note: If {@link #additionalChecksumAlgorithm} is provided, this value must match it.
+     *
+     * <p>When this value is set, the SDK will set the corresponding header:
+     *
+     * <ul>
+     *   <li>{@code opc-content-crc32c} if the value is "Crc32C"
+     *   <li>{@code opc-content-sha256} if the value is "Sha256"
+     *   <li>{@code opc-content-sha384} if the value is "Sha384"
+     * </ul>
+     *
+     * <p>If {@link #additionalChecksumAlgorithm} has a matching value or is null, the header {@code
+     * opc-checksum-algorithm} will also be set.
+     *
+     * <p>Note, having the SDK calculate it could lead to OutOfMemory exceptions if the source
+     * stream for the part cannot be duplicated, i.e., does not implement {@link
+     * DuplicatableInputStream}, as the entire part will have to be read into memory.
+     */
+    private final ChecksumAlgorithm enforceAdditionalChecksumBeforeMultipartUpload;
+    /**
      * Flag to indicate that multi-part uploads can be used.  Default is true.
      */
     private final boolean allowMultipartUploads;
@@ -75,6 +128,21 @@ public class UploadConfiguration {
      * failed uploads themselves).  Default is false.
      */
     private final boolean disableAutoAbort;
+    /**
+     * The value of the additional checksum algorithm to be used for data integrity checks. Default
+     * is null.
+     *
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},
+     * {@link ChecksumAlgorithm#Sha384}.
+     *
+     * <p>Note: If provided, {@link #enforceAdditionalChecksumBeforeUpload} and {@link
+     * #enforceAdditionalChecksumBeforeMultipartUpload} must match this value.
+     *
+     * <p>When this value is provided, the additional checksum algorithm will be set for both single
+     * PutObject requests and each part of a multipart upload. Specifically, the header
+     * `opc-checksum-algorithm` will be set to the value of this algorithm.
+     */
+    private final ChecksumAlgorithm additionalChecksumAlgorithm;
 
     @Deprecated
     public long getMinimumLengthPerUploadPart() {
@@ -90,6 +158,52 @@ public class UploadConfiguration {
             Boolean allowMultipartUploads,
             Boolean allowParallelUploads,
             Boolean disableAutoAbort) {
+        this(
+                minimumLengthForMultipartUpload,
+                lengthPerUploadPart,
+                enforceMd5BeforeUpload,
+                enforceMd5BeforeMultipartUpload,
+                null,
+                null,
+                allowMultipartUploads,
+                allowParallelUploads,
+                disableAutoAbort,
+                null);
+    }
+
+    /**
+     * Create a configuration for the {@link UploadManager} with an additional checksum algorithm.
+     *
+     * @param minimumLengthForMultipartUpload Minimum length in MiB before an upload is performed
+     *     using multi-part upload
+     * @param lengthPerUploadPart Length in MiB for each part of a multi-part upload (except the
+     *     last)
+     * @param enforceMd5BeforeUpload Flag to indicate that MD5 should be set on every PutObject call
+     * @param enforceMd5BeforeMultipartUpload Flag to indicate that MD5 should be set on every part
+     *     of a multi-part upload
+     * @param enforceAdditionalChecksumBeforeUpload Flag to indicate that additional checksum should
+     *     be set on every PutObject call
+     * @param enforceAdditionalChecksumBeforeMultipartUpload Flag to indicate that additional
+     *     checksum should be set on every part of a multi-part upload
+     * @param allowMultipartUploads Flag to indicate that multi-part uploads can be used
+     * @param allowParallelUploads Flag to indicate that multi-part uploads can upload individual
+     *     parts in parallel if possible
+     * @param disableAutoAbort Flag to indicate that uploads that fail should not be automatically
+     *     aborted
+     * @param additionalChecksumAlgorithm The additional checksum algorithm to be used for data
+     *     integrity checks
+     */
+    public UploadConfiguration(
+            Integer minimumLengthForMultipartUpload,
+            Integer lengthPerUploadPart,
+            Boolean enforceMd5BeforeUpload,
+            Boolean enforceMd5BeforeMultipartUpload,
+            ChecksumAlgorithm enforceAdditionalChecksumBeforeUpload,
+            ChecksumAlgorithm enforceAdditionalChecksumBeforeMultipartUpload,
+            Boolean allowMultipartUploads,
+            Boolean allowParallelUploads,
+            Boolean disableAutoAbort,
+            ChecksumAlgorithm additionalChecksumAlgorithm) {
         this.minimumLengthForMultipartUpload =
                 getOrDefault(
                         minimumLengthForMultipartUpload, DEFAULT_MIN_LENGTH_FOR_MULTI_PART_UPLOAD);
@@ -98,9 +212,14 @@ public class UploadConfiguration {
         this.maxPartsForMultipartUpload = MAXIMUM_NUM_ALLOWED_PARTS;
         this.enforceMd5BeforeUpload = getOrDefault(enforceMd5BeforeUpload, false);
         this.enforceMd5BeforeMultipartUpload = getOrDefault(enforceMd5BeforeMultipartUpload, false);
+        this.enforceAdditionalChecksumBeforeUpload =
+                getOrDefault(enforceAdditionalChecksumBeforeUpload, null);
+        this.enforceAdditionalChecksumBeforeMultipartUpload =
+                getOrDefault(enforceAdditionalChecksumBeforeMultipartUpload, null);
         this.allowMultipartUploads = getOrDefault(allowMultipartUploads, true);
         this.allowParallelUploads = getOrDefault(allowParallelUploads, true);
         this.disableAutoAbort = getOrDefault(disableAutoAbort, false);
+        this.additionalChecksumAlgorithm = getOrDefault(additionalChecksumAlgorithm, null);
 
         Validate.isTrue(
                 this.minimumLengthForMultipartUpload >= 0L,
@@ -117,6 +236,24 @@ public class UploadConfiguration {
                         this.lengthPerUploadPart,
                         MINIMUM_ALLOWED_LENGTH_PER_PART_MB,
                         MAXIMUM_ALLOWED_LENGTH_PER_PART_MB));
+        Validate.isTrue(
+                this.enforceAdditionalChecksumBeforeUpload == null
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Sha256)
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Sha384)
+                        || this.enforceAdditionalChecksumBeforeUpload.equals(
+                                ChecksumAlgorithm.Crc32C),
+                "Invalid value for enforceAdditionalChecksumBeforeUpload. Valid values are: SHA256, SHA384, CRC32C.");
+        Validate.isTrue(
+                this.enforceAdditionalChecksumBeforeMultipartUpload == null
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Sha256)
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Sha384)
+                        || this.enforceAdditionalChecksumBeforeMultipartUpload.equals(
+                                ChecksumAlgorithm.Crc32C),
+                "Invalid value for enforceAdditionalChecksumBeforeMultipartUpload. Valid values are: SHA256, SHA384, CRC32C.");
     }
 
     public static class UploadConfigurationBuilder {
@@ -124,9 +261,12 @@ public class UploadConfiguration {
         private Integer lengthPerUploadPart;
         private Boolean enforceMd5BeforeUpload;
         private Boolean enforceMd5BeforeMultipartUpload;
+        private ChecksumAlgorithm enforceAdditionalChecksumBeforeUpload;
+        private ChecksumAlgorithm enforceAdditionalChecksumBeforeMultipartUpload;
         private Boolean allowMultipartUploads;
         private Boolean allowParallelUploads;
         private Boolean disableAutoAbort;
+        private ChecksumAlgorithm additionalChecksumAlgorithm;
 
         /**
          * Sets the enforce MD5 flag for both {@link #enforceMd5BeforeUpload(Boolean)} and
@@ -137,6 +277,22 @@ public class UploadConfiguration {
         public UploadConfigurationBuilder enforceMd5(Boolean enforceMd5) {
             this.enforceMd5BeforeUpload = enforceMd5;
             this.enforceMd5BeforeMultipartUpload = enforceMd5;
+            return this;
+        }
+
+        /**
+         * Sets the enforce additional checksum flag for both {@link
+         * #enforceAdditionalChecksumBeforeUpload(ChecksumAlgorithm)} and {@link
+         * #enforceAdditionalChecksumBeforeMultipartUpload(ChecksumAlgorithm)} in a single call.
+         *
+         * @param enforceAdditionalChecksum the additional checksum algorithm to enforce everywhere,
+         *     null to use default values.
+         * @return the current builder instance
+         */
+        public UploadConfigurationBuilder enforceAdditionalChecksum(
+                ChecksumAlgorithm enforceAdditionalChecksum) {
+            this.enforceAdditionalChecksumBeforeUpload = enforceAdditionalChecksum;
+            this.enforceAdditionalChecksumBeforeMultipartUpload = enforceAdditionalChecksum;
             return this;
         }
 
@@ -205,6 +361,22 @@ public class UploadConfiguration {
             return this;
         }
 
+        /** @return {@code this}. */
+        public UploadConfiguration.UploadConfigurationBuilder enforceAdditionalChecksumBeforeUpload(
+                final ChecksumAlgorithm enforceAdditionalChecksumBeforeUpload) {
+            this.enforceAdditionalChecksumBeforeUpload = enforceAdditionalChecksumBeforeUpload;
+            return this;
+        }
+
+        /** @return {@code this}. */
+        public UploadConfiguration.UploadConfigurationBuilder
+                enforceAdditionalChecksumBeforeMultipartUpload(
+                        final ChecksumAlgorithm enforceAdditionalChecksumBeforeMultipartUpload) {
+            this.enforceAdditionalChecksumBeforeMultipartUpload =
+                    enforceAdditionalChecksumBeforeMultipartUpload;
+            return this;
+        }
+
         /**
          * @return {@code this}.
          */
@@ -232,15 +404,25 @@ public class UploadConfiguration {
             return this;
         }
 
+        /** @return {@code this}. */
+        public UploadConfiguration.UploadConfigurationBuilder additionalChecksumAlgorithm(
+                final ChecksumAlgorithm additionalChecksumAlgorithm) {
+            this.additionalChecksumAlgorithm = additionalChecksumAlgorithm;
+            return this;
+        }
+
         public UploadConfiguration build() {
             return new UploadConfiguration(
                     this.minimumLengthForMultipartUpload,
                     this.lengthPerUploadPart,
                     this.enforceMd5BeforeUpload,
                     this.enforceMd5BeforeMultipartUpload,
+                    this.enforceAdditionalChecksumBeforeUpload,
+                    this.enforceAdditionalChecksumBeforeMultipartUpload,
                     this.allowMultipartUploads,
                     this.allowParallelUploads,
-                    this.disableAutoAbort);
+                    this.disableAutoAbort,
+                    this.additionalChecksumAlgorithm);
         }
 
         @java.lang.Override
@@ -253,12 +435,18 @@ public class UploadConfiguration {
                     + this.enforceMd5BeforeUpload
                     + ", enforceMd5BeforeMultipartUpload="
                     + this.enforceMd5BeforeMultipartUpload
+                    + ", enforceAdditionalChecksumBeforeUpload="
+                    + this.enforceAdditionalChecksumBeforeUpload
+                    + ", enforceAdditionalChecksumBeforeMultipartUpload="
+                    + this.enforceAdditionalChecksumBeforeMultipartUpload
                     + ", allowMultipartUploads="
                     + this.allowMultipartUploads
                     + ", allowParallelUploads="
                     + this.allowParallelUploads
                     + ", disableAutoAbort="
                     + this.disableAutoAbort
+                    + ", additionalChecksumAlgorithm="
+                    + this.additionalChecksumAlgorithm
                     + ")";
         }
     }
@@ -324,6 +512,27 @@ public class UploadConfiguration {
     }
 
     /**
+     * Flag to indicate that additional checksum should be set on every PutObject call. If not
+     * provided, the SDK will calculate it before uploading the object. Default is null.
+     *
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
+     */
+    public ChecksumAlgorithm getEnforceAdditionalChecksumBeforeUpload() {
+        return this.enforceAdditionalChecksumBeforeUpload;
+    }
+
+    /**
+     * Flag to indicate that additional checksum should be set on every part of a multi-part upload.
+     * The SDK will calculate the additional checksum before uploading for each part it creates.
+     * Default is null.
+     *
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
+     */
+    public ChecksumAlgorithm getEnforceAdditionalChecksumBeforeMultipartUpload() {
+        return this.enforceAdditionalChecksumBeforeMultipartUpload;
+    }
+
+    /**
      * Flag to indicate that multi-part uploads can be used.  Default is true.
      */
     public boolean isAllowMultipartUploads() {
@@ -345,6 +554,13 @@ public class UploadConfiguration {
         return this.disableAutoAbort;
     }
 
+    /** The value of the additional checksum algorithm. Default is null.
+     * <p>Note: Valid values are {@link ChecksumAlgorithm#Crc32C}, {@link ChecksumAlgorithm#Sha256},{@link ChecksumAlgorithm#Sha384}.
+     * */
+    public ChecksumAlgorithm getAdditionalChecksumAlgorithm() {
+        return this.additionalChecksumAlgorithm;
+    }
+
     @java.lang.Override
     public java.lang.String toString() {
         return "UploadConfiguration(minimumLengthForMultipartUpload="
@@ -357,12 +573,18 @@ public class UploadConfiguration {
                 + this.isEnforceMd5BeforeUpload()
                 + ", enforceMd5BeforeMultipartUpload="
                 + this.isEnforceMd5BeforeMultipartUpload()
+                + ", enforceAdditionalChecksumBeforeUpload="
+                + this.getEnforceAdditionalChecksumBeforeUpload()
+                + ", enforceAdditionalChecksumBeforeMultipartUpload="
+                + this.getEnforceAdditionalChecksumBeforeMultipartUpload()
                 + ", allowMultipartUploads="
                 + this.isAllowMultipartUploads()
                 + ", allowParallelUploads="
                 + this.isAllowParallelUploads()
                 + ", disableAutoAbort="
                 + this.isDisableAutoAbort()
+                + ", additionalChecksumAlgorithm="
+                + this.getAdditionalChecksumAlgorithm()
                 + ")";
     }
 }

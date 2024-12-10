@@ -2648,6 +2648,44 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public GetInstanceMaintenanceEventResponse getInstanceMaintenanceEvent(
+            GetInstanceMaintenanceEventRequest request) {
+        LOG.trace("Called getInstanceMaintenanceEvent");
+        final GetInstanceMaintenanceEventRequest interceptedRequest =
+                GetInstanceMaintenanceEventConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetInstanceMaintenanceEventConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "GetInstanceMaintenanceEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/GetInstanceMaintenanceEvent");
+        java.util.function.Function<javax.ws.rs.core.Response, GetInstanceMaintenanceEventResponse>
+                transformer =
+                        GetInstanceMaintenanceEventConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public GetInstanceMaintenanceRebootResponse getInstanceMaintenanceReboot(
             GetInstanceMaintenanceRebootRequest request) {
         LOG.trace("Called getInstanceMaintenanceReboot");
@@ -3854,6 +3892,45 @@ public class ComputeClient implements Compute {
     }
 
     @Override
+    public ListInstanceMaintenanceEventsResponse listInstanceMaintenanceEvents(
+            ListInstanceMaintenanceEventsRequest request) {
+        LOG.trace("Called listInstanceMaintenanceEvents");
+        final ListInstanceMaintenanceEventsRequest interceptedRequest =
+                ListInstanceMaintenanceEventsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListInstanceMaintenanceEventsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "ListInstanceMaintenanceEvents",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEventSummary/ListInstanceMaintenanceEvents");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, ListInstanceMaintenanceEventsResponse>
+                transformer =
+                        ListInstanceMaintenanceEventsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public ListInstancesResponse listInstances(ListInstancesRequest request) {
         LOG.trace("Called listInstances");
         final ListInstancesRequest interceptedRequest =
@@ -4448,6 +4525,51 @@ public class ComputeClient implements Compute {
                                                 ib,
                                                 retriedRequest
                                                         .getUpdateInstanceConsoleConnectionDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpdateInstanceMaintenanceEventResponse updateInstanceMaintenanceEvent(
+            UpdateInstanceMaintenanceEventRequest request) {
+        LOG.trace("Called updateInstanceMaintenanceEvent");
+        final UpdateInstanceMaintenanceEventRequest interceptedRequest =
+                UpdateInstanceMaintenanceEventConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateInstanceMaintenanceEventConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Compute",
+                        "UpdateInstanceMaintenanceEvent",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/InstanceMaintenanceEvent/UpdateInstanceMaintenanceEvent");
+        java.util.function.Function<
+                        javax.ws.rs.core.Response, UpdateInstanceMaintenanceEventResponse>
+                transformer =
+                        UpdateInstanceMaintenanceEventConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.put(
+                                                ib,
+                                                retriedRequest
+                                                        .getUpdateInstanceMaintenanceEventDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

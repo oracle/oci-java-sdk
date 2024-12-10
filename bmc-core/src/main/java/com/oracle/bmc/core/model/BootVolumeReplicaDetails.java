@@ -22,11 +22,13 @@ package com.oracle.bmc.core.model;
 public final class BootVolumeReplicaDetails
         extends com.oracle.bmc.http.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"displayName", "availabilityDomain"})
-    public BootVolumeReplicaDetails(String displayName, String availabilityDomain) {
+    @java.beans.ConstructorProperties({"displayName", "availabilityDomain", "xrrKmsKeyId"})
+    public BootVolumeReplicaDetails(
+            String displayName, String availabilityDomain, String xrrKmsKeyId) {
         super();
         this.displayName = displayName;
         this.availabilityDomain = availabilityDomain;
+        this.xrrKmsKeyId = xrrKmsKeyId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -73,13 +75,38 @@ public final class BootVolumeReplicaDetails
             this.__explicitlySet__.add("availabilityDomain");
             return this;
         }
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("xrrKmsKeyId")
+        private String xrrKmsKeyId;
+
+        /**
+         * The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys.
+         * For more information about the Vault service and encryption keys, see
+         * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+         * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+         *
+         * @param xrrKmsKeyId the value to set
+         * @return this builder
+         **/
+        public Builder xrrKmsKeyId(String xrrKmsKeyId) {
+            this.xrrKmsKeyId = xrrKmsKeyId;
+            this.__explicitlySet__.add("xrrKmsKeyId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public BootVolumeReplicaDetails build() {
             BootVolumeReplicaDetails model =
-                    new BootVolumeReplicaDetails(this.displayName, this.availabilityDomain);
+                    new BootVolumeReplicaDetails(
+                            this.displayName, this.availabilityDomain, this.xrrKmsKeyId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -93,6 +120,9 @@ public final class BootVolumeReplicaDetails
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
+            }
+            if (model.wasPropertyExplicitlySet("xrrKmsKeyId")) {
+                this.xrrKmsKeyId(model.getXrrKmsKeyId());
             }
             return this;
         }
@@ -147,6 +177,28 @@ public final class BootVolumeReplicaDetails
         return availabilityDomain;
     }
 
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("xrrKmsKeyId")
+    private final String xrrKmsKeyId;
+
+    /**
+     * The OCID of the Vault service key which is the master encryption key for the cross region boot volume replicas, which will be used in the destination region to encrypt the boot volume replica's encryption keys.
+     * For more information about the Vault service and encryption keys, see
+     * [Overview of Vault service](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm) and
+     * [Using Keys](https://docs.cloud.oracle.com/iaas/Content/KeyManagement/Tasks/usingkeys.htm).
+     *
+     * @return the value
+     **/
+    public String getXrrKmsKeyId() {
+        return xrrKmsKeyId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -163,6 +215,7 @@ public final class BootVolumeReplicaDetails
         sb.append("super=").append(super.toString());
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
+        sb.append(", xrrKmsKeyId=").append(String.valueOf(this.xrrKmsKeyId));
         sb.append(")");
         return sb.toString();
     }
@@ -179,6 +232,7 @@ public final class BootVolumeReplicaDetails
         BootVolumeReplicaDetails other = (BootVolumeReplicaDetails) o;
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
+                && java.util.Objects.equals(this.xrrKmsKeyId, other.xrrKmsKeyId)
                 && super.equals(other);
     }
 
@@ -192,6 +246,7 @@ public final class BootVolumeReplicaDetails
                         + (this.availabilityDomain == null
                                 ? 43
                                 : this.availabilityDomain.hashCode());
+        result = (result * PRIME) + (this.xrrKmsKeyId == null ? 43 : this.xrrKmsKeyId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

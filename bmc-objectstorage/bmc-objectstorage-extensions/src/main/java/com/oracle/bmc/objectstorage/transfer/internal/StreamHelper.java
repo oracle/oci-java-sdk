@@ -67,6 +67,46 @@ public class StreamHelper {
     }
 
     /**
+     * Creates a DigestOutputStream where the digest uses SHA-384.
+     *
+     * @param stream The output stream to write to.
+     * @return A new DigestOutputStream
+     */
+    public static DigestOutputStream createSha384MessageOutputStream(OutputStream stream) {
+        try {
+            MessageDigest sha384Digest = MessageDigest.getInstance("SHA-384");
+            return new DigestOutputStream(stream, sha384Digest);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-384 algorithm not available", e);
+        }
+    }
+
+    /**
+     * Creates a DigestOutputStream where the digest uses SHA-256.
+     *
+     * @param stream The output stream to write to.
+     * @return A new DigestOutputStream
+     */
+    public static DigestOutputStream createSha256MessageOutputStream(OutputStream stream) {
+        try {
+            MessageDigest sha256Digest = MessageDigest.getInstance("SHA-256");
+            return new DigestOutputStream(stream, sha256Digest);
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException("SHA-256 algorithm not available", e);
+        }
+    }
+
+    /**
+     * Creates a DigestOutputStream where the digest uses CRC32C.
+     *
+     * @param stream The output stream to write to.
+     * @return A new DigestOutputStream
+     */
+    public static DigestOutputStream createCrc32cMessageOutputStream(OutputStream stream) {
+        return new DigestOutputStream(stream, new CRC32CDigest());
+    }
+
+    /**
      * Base64 encodes the digest (resets the digest).
      *
      * @param messageDigest The digest

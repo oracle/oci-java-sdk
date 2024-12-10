@@ -378,4 +378,123 @@ public class DiscoveryPaginators {
                     }
                 });
     }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the listSupportedCloudRegions operation. This iterable
+     * will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses received from the service.
+     */
+    public Iterable<ListSupportedCloudRegionsResponse> listSupportedCloudRegionsResponseIterator(
+            final ListSupportedCloudRegionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListSupportedCloudRegionsRequest.Builder, ListSupportedCloudRegionsRequest,
+                ListSupportedCloudRegionsResponse>(
+                new java.util.function.Supplier<ListSupportedCloudRegionsRequest.Builder>() {
+                    @Override
+                    public ListSupportedCloudRegionsRequest.Builder get() {
+                        return ListSupportedCloudRegionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCloudRegionsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCloudRegionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCloudRegionsRequest.Builder>,
+                        ListSupportedCloudRegionsRequest>() {
+                    @Override
+                    public ListSupportedCloudRegionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCloudRegionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>() {
+                    @Override
+                    public ListSupportedCloudRegionsResponse apply(
+                            ListSupportedCloudRegionsRequest request) {
+                        return client.listSupportedCloudRegions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects
+     * contained in responses from the listSupportedCloudRegions operation. This iterable will fetch more data from the
+     * server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary} objects
+     * contained in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>
+            listSupportedCloudRegionsRecordIterator(
+                    final ListSupportedCloudRegionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListSupportedCloudRegionsRequest.Builder, ListSupportedCloudRegionsRequest,
+                ListSupportedCloudRegionsResponse,
+                com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>(
+                new java.util.function.Supplier<ListSupportedCloudRegionsRequest.Builder>() {
+                    @Override
+                    public ListSupportedCloudRegionsRequest.Builder get() {
+                        return ListSupportedCloudRegionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListSupportedCloudRegionsResponse, String>() {
+                    @Override
+                    public String apply(ListSupportedCloudRegionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListSupportedCloudRegionsRequest.Builder>,
+                        ListSupportedCloudRegionsRequest>() {
+                    @Override
+                    public ListSupportedCloudRegionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListSupportedCloudRegionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCloudRegionsRequest, ListSupportedCloudRegionsResponse>() {
+                    @Override
+                    public ListSupportedCloudRegionsResponse apply(
+                            ListSupportedCloudRegionsRequest request) {
+                        return client.listSupportedCloudRegions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListSupportedCloudRegionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.cloudbridge.model.SupportedCloudRegionSummary>
+                            apply(ListSupportedCloudRegionsResponse response) {
+                        return response.getSupportedCloudRegionCollection().getItems();
+                    }
+                });
+    }
 }

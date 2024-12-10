@@ -14,6 +14,7 @@ public enum JobTypes {
     Precheck("PRECHECK"),
     Apply("APPLY"),
     RollbackAndRemoveTarget("ROLLBACK_AND_REMOVE_TARGET"),
+    RollbackMaintenanceCycle("ROLLBACK_MAINTENANCE_CYCLE"),
     Cleanup("CLEANUP"),
 
     /**

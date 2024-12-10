@@ -460,6 +460,107 @@ public class AIServiceDocumentAsyncClient implements AIServiceDocumentAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AddModelLockResponse> addModelLock(
+            AddModelLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<AddModelLockRequest, AddModelLockResponse>
+                    handler) {
+        LOG.trace("Called async addModelLock");
+        final AddModelLockRequest interceptedRequest =
+                AddModelLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddModelLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceDocument",
+                        "AddModelLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/AddModelLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddModelLockResponse>
+                transformer =
+                        AddModelLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddModelLockRequest, AddModelLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddModelLockRequest, AddModelLockResponse>,
+                        java.util.concurrent.Future<AddModelLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddModelLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddModelLockRequest, AddModelLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddProjectLockResponse> addProjectLock(
+            AddProjectLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            AddProjectLockRequest, AddProjectLockResponse>
+                    handler) {
+        LOG.trace("Called async addProjectLock");
+        final AddProjectLockRequest interceptedRequest =
+                AddProjectLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AddProjectLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceDocument",
+                        "AddProjectLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/AddProjectLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, AddProjectLockResponse>
+                transformer =
+                        AddProjectLockConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<AddProjectLockRequest, AddProjectLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AddProjectLockRequest, AddProjectLockResponse>,
+                        java.util.concurrent.Future<AddProjectLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAddProjectLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AddProjectLockRequest, AddProjectLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<AnalyzeDocumentResponse> analyzeDocument(
             AnalyzeDocumentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -1379,6 +1480,110 @@ public class AIServiceDocumentAsyncClient implements AIServiceDocumentAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     PatchModelRequest, PatchModelResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveModelLockResponse> removeModelLock(
+            RemoveModelLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveModelLockRequest, RemoveModelLockResponse>
+                    handler) {
+        LOG.trace("Called async removeModelLock");
+        final RemoveModelLockRequest interceptedRequest =
+                RemoveModelLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveModelLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceDocument",
+                        "RemoveModelLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Model/RemoveModelLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveModelLockResponse>
+                transformer =
+                        RemoveModelLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveModelLockRequest, RemoveModelLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveModelLockRequest, RemoveModelLockResponse>,
+                        java.util.concurrent.Future<RemoveModelLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveModelLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveModelLockRequest, RemoveModelLockResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveProjectLockResponse> removeProjectLock(
+            RemoveProjectLockRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RemoveProjectLockRequest, RemoveProjectLockResponse>
+                    handler) {
+        LOG.trace("Called async removeProjectLock");
+        final RemoveProjectLockRequest interceptedRequest =
+                RemoveProjectLockConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                RemoveProjectLockConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceDocument",
+                        "RemoveProjectLock",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/document-understanding/20221109/Project/RemoveProjectLock");
+        final java.util.function.Function<javax.ws.rs.core.Response, RemoveProjectLockResponse>
+                transformer =
+                        RemoveProjectLockConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<RemoveProjectLockRequest, RemoveProjectLockResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                RemoveProjectLockRequest, RemoveProjectLockResponse>,
+                        java.util.concurrent.Future<RemoveProjectLockResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getRemoveProjectLockDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    RemoveProjectLockRequest, RemoveProjectLockResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
