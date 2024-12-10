@@ -122,6 +122,41 @@ public class DataFlowAsyncClient extends com.oracle.bmc.http.internal.BaseAsyncC
     }
 
     @Override
+    public java.util.concurrent.Future<CascadingDeleteApplicationResponse>
+            cascadingDeleteApplication(
+                    CascadingDeleteApplicationRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    CascadingDeleteApplicationRequest,
+                                    CascadingDeleteApplicationResponse>
+                            handler) {
+
+        Validate.notBlank(request.getApplicationId(), "applicationId must not be blank");
+
+        return clientCall(request, CascadingDeleteApplicationResponse::builder)
+                .logger(LOG, "cascadingDeleteApplication")
+                .serviceDetails(
+                        "DataFlow",
+                        "CascadingDeleteApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/data-flow/20200129/Application/CascadingDeleteApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CascadingDeleteApplicationRequest::builder)
+                .basePath("/20200129")
+                .appendPathParam("applications")
+                .appendPathParam(request.getApplicationId())
+                .appendPathParam("actions")
+                .appendPathParam("cascadingDeleteApplication")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CascadingDeleteApplicationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CascadingDeleteApplicationResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeApplicationCompartmentResponse>
             changeApplicationCompartment(
                     ChangeApplicationCompartmentRequest request,

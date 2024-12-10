@@ -33,6 +33,7 @@ import com.oracle.bmc.internal.Alloy;
 import com.oracle.bmc.internal.EndpointBuilder;
 import com.oracle.bmc.requests.BmcRequest;
 import com.oracle.bmc.responses.BmcResponse;
+import com.oracle.bmc.util.internal.Validate;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -358,36 +359,9 @@ abstract class BaseClient implements AutoCloseable {
      * @param endpoint The updated endpoint to use
      */
     public final synchronized void updateBaseEndpoint(String endpoint) {
+        Validate.notBlank(endpoint, "Cannot update the endpoint since it is null or blank.");
         logger.info("Updating endpoint to {}", endpoint);
-
-        HttpClientBuilder builder =
-                httpProvider
-                        .newBuilder()
-                        .baseUri(endpoint)
-                        .property(
-                                StandardClientProperties.CONNECT_TIMEOUT,
-                                Duration.ofMillis(
-                                        clientConfigurationToUse.getConnectionTimeoutMillis()))
-                        .property(
-                                StandardClientProperties.READ_TIMEOUT,
-                                Duration.ofMillis(clientConfigurationToUse.getReadTimeoutMillis()))
-                        .property(
-                                StandardClientProperties.ASYNC_POOL_SIZE,
-                                clientConfigurationToUse.getMaxAsyncThreads())
-                        .registerRequestInterceptor(
-                                Priorities.AUTHENTICATION,
-                                new AuthnClientFilter(defaultRequestSigner, requestSigners))
-                        .registerRequestInterceptor(Priorities.HEADER_DECORATOR, CLIENT_ID_FILTER)
-                        .registerRequestInterceptor(Priorities.USER, LOG_HEADERS_FILTER);
-        clientConfigurator.customizeClient(builder);
-        HttpClient oldClient = this.httpClient;
-        if (oldClient != null) {
-            oldClient.close();
-        }
-        this.httpClient = builder.build();
-
-        circuitBreaker =
-                CircuitBreakerHelper.makeCircuitBreaker(httpClient, circuitBreakerConfiguration);
+        this.httpClient.updateEndpoint(endpoint);
     }
 
     public final synchronized void setEndpoint(String endpoint) {

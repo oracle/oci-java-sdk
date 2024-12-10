@@ -19,6 +19,7 @@ import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.client.StandardClientProperties;
 import com.oracle.bmc.http.internal.SyncFutureWaiter;
 import com.oracle.bmc.util.CircuitBreakerUtils;
+import com.oracle.bmc.util.internal.StringUtils;
 import com.oracle.bmc.waiter.ExponentialBackoffDelayStrategyWithJitter;
 import com.oracle.bmc.waiter.WaiterConfiguration;
 import org.slf4j.Logger;
@@ -65,8 +66,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** Default base url of metadata service. */
     public static final String METADATA_SERVICE_BASE_URL = "http://169.254.169.254/opc/v2/";
 
-    /** fallback base url of metadata service. */
-    protected static final String FALLBACK_METADATA_SERVICE_URL = "http://169.254.169.254/opc/v1/";
+    /** Environment variable used to overwrite the default metadata base url. */
+    public static final String METADATA_BASE_URL_ENV_VAR = "OCI_METADATA_BASE_URL";
+
+    /** Metadata URL from environment variable, to use if present. */
+    public static final String METADATA_URL_OVERRIDE = System.getenv(METADATA_BASE_URL_ENV_VAR);
 
     /** The Authorization header value to be sent for requests to the metadata service. */
     public static final String AUTHORIZATION_HEADER_VALUE = "Bearer Oracle";
@@ -89,8 +93,8 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     /** The custom timeout for each retry for auto-detecting endpoint. */
     protected int timeoutForEachRetry = 0;
 
-    /** Flag to ensure fallback logic executed only once. */
-    private volatile boolean wasFallbackCheckExecuted = false;
+    /** Flag to ensure V2 endpoint is only checked once, if successful. */
+    private volatile boolean wasImdsV2CheckExecuted = false;
 
     /** The leaf certificate, or null if detecting from instance metadata. */
     protected X509CertificateSupplier leafCertificateSupplier;
@@ -264,7 +268,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     protected String autoDetectEndpointUsingMetadataUrl() {
         if (federationEndpoint == null) {
 
-            executeInstanceFallback();
+            executeImdsV2EndpointCheck();
             String regionStr = fetchRegion(resp -> resp.textBody());
             LOG.info("Looking up region for {}", regionStr);
 
@@ -299,11 +303,11 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     protected void autoDetectCertificatesUsingMetadataUrl() {
         try {
 
-            if (!wasFallbackCheckExecuted) {
+            if (!wasImdsV2CheckExecuted) {
                 LOG.info(
-                        " Executing fallback check for certificates as federation endpoint was already set to {}",
+                        "Executing V2 endpoint check for certificates as federation endpoint was already set to {}",
                         getFederationEndpoint());
-                executeInstanceFallback();
+                executeImdsV2EndpointCheck();
             }
 
             if (leafCertificateSupplier == null) {
@@ -349,7 +353,7 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
                         .build()) {
 
             ExponentialBackoffDelayStrategyWithJitter strategy =
-                    new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(100));
+                    new ExponentialBackoffDelayStrategyWithJitter(TimeUnit.SECONDS.toMillis(30));
             WaiterConfiguration.WaitContext context =
                     new WaiterConfiguration.WaitContext(System.currentTimeMillis());
 
@@ -410,29 +414,27 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     }
 
     /**
-     * Checks and falls back to V1 endpoint for both federation endpoint detection & certificates if
-     * necessary.
+     * Checks the V2 endpoint for both federation endpoint detection & certificates if necessary.
      */
-    private void executeInstanceFallback() {
+    private void executeImdsV2EndpointCheck() {
         try {
             // don't care about the body, just get me the status!
             int status = fetchRegion(resp -> CompletableFuture.completedFuture(resp.status()));
-            LOG.info("Rest call to verify if v2 endpoint exists, response from v2 was {}", status);
+            LOG.info(
+                    "REST request to verify if IMDS v2 endpoint exists, response from v2 was {}",
+                    status);
 
             // fallback to v1 if v2 endpoint throws resource not found else raise exception
-            if (status == 404) {
-                LOG.warn("Falling back to v1, response from v2 was {}", status);
-                this.metadataBaseUrl = FALLBACK_METADATA_SERVICE_URL;
-            } else if (status >= 300) {
+            if (status >= 300) {
                 throw new RuntimeException(
-                        "Rest call to v2 endpoint failed : HTTP error code : " + status);
+                        "REST request to IMDS v2 endpoint failed : HTTP error code : " + status);
             }
-            wasFallbackCheckExecuted = true;
-            LOG.info(
-                    " Metadata base url on executing instance fallback is {}",
-                    getMetadataBaseUrl());
+            wasImdsV2CheckExecuted = true;
+            LOG.info("Metadata base url {}", getMetadataBaseUrl());
         } catch (RuntimeException e) {
-            LOG.warn("Rest call to v2 endpoint failed & cannot fallback as it's not 404 ", e);
+            LOG.warn(
+                    "REST request to IMDS v2 endpoint failed with unexpected Runtime exception ",
+                    e);
         }
     }
 
@@ -461,7 +463,17 @@ public abstract class AbstractFederationClientAuthenticationDetailsProviderBuild
     protected abstract P buildProvider(SessionKeySupplier sessionKeySupplierToUse);
 
     public String getMetadataBaseUrl() {
-        return this.metadataBaseUrl;
+        if (!StringUtils.isBlank(METADATA_URL_OVERRIDE)) {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is present. Overriding default base url to: {}",
+                    METADATA_URL_OVERRIDE);
+            return METADATA_URL_OVERRIDE;
+        } else {
+            LOG.info(
+                    "Environment Variable OCI_METADATA_BASE_URL is not present. Using url: {}",
+                    this.metadataBaseUrl);
+            return this.metadataBaseUrl;
+        }
     }
 
     public String getFederationEndpoint() {

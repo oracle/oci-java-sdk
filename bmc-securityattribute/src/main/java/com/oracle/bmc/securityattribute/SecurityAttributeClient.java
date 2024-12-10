@@ -133,7 +133,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, BulkDeleteSecurityAttributesResponse::builder)
                 .logger(LOG, "bulkDeleteSecurityAttributes")
-                .serviceDetails("SecurityAttribute", "BulkDeleteSecurityAttributes", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "BulkDeleteSecurityAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkDeleteSecurityAttributes")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkDeleteSecurityAttributesRequest::builder)
                 .basePath("/20240815")
@@ -160,7 +163,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, BulkEditSecurityAttributesResponse::builder)
                 .logger(LOG, "bulkEditSecurityAttributes")
-                .serviceDetails("SecurityAttribute", "BulkEditSecurityAttributes", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "BulkEditSecurityAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/BulkEditSecurityAttributes")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(BulkEditSecurityAttributesRequest::builder)
                 .basePath("/20240815")
@@ -192,7 +198,9 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
         return clientCall(request, CascadingDeleteSecurityAttributeNamespaceResponse::builder)
                 .logger(LOG, "cascadingDeleteSecurityAttributeNamespace")
                 .serviceDetails(
-                        "SecurityAttribute", "CascadingDeleteSecurityAttributeNamespace", "")
+                        "SecurityAttribute",
+                        "CascadingDeleteSecurityAttributeNamespace",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CascadingDeleteSecurityAttributeNamespace")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CascadingDeleteSecurityAttributeNamespaceRequest::builder)
                 .basePath("/20240815")
@@ -229,7 +237,9 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
         return clientCall(request, ChangeSecurityAttributeNamespaceCompartmentResponse::builder)
                 .logger(LOG, "changeSecurityAttributeNamespaceCompartment")
                 .serviceDetails(
-                        "SecurityAttribute", "ChangeSecurityAttributeNamespaceCompartment", "")
+                        "SecurityAttribute",
+                        "ChangeSecurityAttributeNamespaceCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/ChangeSecurityAttributeNamespaceCompartment")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeSecurityAttributeNamespaceCompartmentRequest::builder)
                 .basePath("/20240815")
@@ -262,7 +272,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CreateSecurityAttributeResponse::builder)
                 .logger(LOG, "createSecurityAttribute")
-                .serviceDetails("SecurityAttribute", "CreateSecurityAttribute", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "CreateSecurityAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/CreateSecurityAttribute")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSecurityAttributeRequest::builder)
                 .basePath("/20240815")
@@ -292,7 +305,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, CreateSecurityAttributeNamespaceResponse::builder)
                 .logger(LOG, "createSecurityAttributeNamespace")
-                .serviceDetails("SecurityAttribute", "CreateSecurityAttributeNamespace", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "CreateSecurityAttributeNamespace",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/CreateSecurityAttributeNamespace")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateSecurityAttributeNamespaceRequest::builder)
                 .basePath("/20240815")
@@ -327,7 +343,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, DeleteSecurityAttributeResponse::builder)
                 .logger(LOG, "deleteSecurityAttribute")
-                .serviceDetails("SecurityAttribute", "DeleteSecurityAttribute", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "DeleteSecurityAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/DeleteSecurityAttribute")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSecurityAttributeRequest::builder)
                 .basePath("/20240815")
@@ -358,7 +377,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, DeleteSecurityAttributeNamespaceResponse::builder)
                 .logger(LOG, "deleteSecurityAttributeNamespace")
-                .serviceDetails("SecurityAttribute", "DeleteSecurityAttributeNamespace", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "DeleteSecurityAttributeNamespace",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/DeleteSecurityAttributeNamespace")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteSecurityAttributeNamespaceRequest::builder)
                 .basePath("/20240815")
@@ -387,7 +409,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetSecurityAttributeResponse::builder)
                 .logger(LOG, "getSecurityAttribute")
-                .serviceDetails("SecurityAttribute", "GetSecurityAttribute", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/GetSecurityAttribute")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityAttributeRequest::builder)
                 .basePath("/20240815")
@@ -417,7 +442,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetSecurityAttributeNamespaceResponse::builder)
                 .logger(LOG, "getSecurityAttributeNamespace")
-                .serviceDetails("SecurityAttribute", "GetSecurityAttributeNamespace", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttributeNamespace",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/GetSecurityAttributeNamespace")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityAttributeNamespaceRequest::builder)
                 .basePath("/20240815")
@@ -445,7 +473,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, GetSecurityAttributeWorkRequestResponse::builder)
                 .logger(LOG, "getSecurityAttributeWorkRequest")
-                .serviceDetails("SecurityAttribute", "GetSecurityAttributeWorkRequest", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "GetSecurityAttributeWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequest/GetSecurityAttributeWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetSecurityAttributeWorkRequestRequest::builder)
                 .basePath("/20240815")
@@ -472,7 +503,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListSecurityAttributeNamespacesResponse::builder)
                 .logger(LOG, "listSecurityAttributeNamespaces")
-                .serviceDetails("SecurityAttribute", "ListSecurityAttributeNamespaces", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeNamespaces",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespaceSummary/ListSecurityAttributeNamespaces")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityAttributeNamespacesRequest::builder)
                 .basePath("/20240815")
@@ -509,7 +543,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListSecurityAttributeWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listSecurityAttributeWorkRequestErrors")
-                .serviceDetails("SecurityAttribute", "ListSecurityAttributeWorkRequestErrors", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestErrorSummary/ListSecurityAttributeWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityAttributeWorkRequestErrorsRequest::builder)
                 .basePath("/20240815")
@@ -545,7 +582,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListSecurityAttributeWorkRequestLogsResponse::builder)
                 .logger(LOG, "listSecurityAttributeWorkRequestLogs")
-                .serviceDetails("SecurityAttribute", "ListSecurityAttributeWorkRequestLogs", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestLogSummary/ListSecurityAttributeWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityAttributeWorkRequestLogsRequest::builder)
                 .basePath("/20240815")
@@ -579,7 +619,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListSecurityAttributeWorkRequestsResponse::builder)
                 .logger(LOG, "listSecurityAttributeWorkRequests")
-                .serviceDetails("SecurityAttribute", "ListSecurityAttributeWorkRequests", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributeWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeWorkRequestSummary/ListSecurityAttributeWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityAttributeWorkRequestsRequest::builder)
                 .basePath("/20240815")
@@ -614,7 +657,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, ListSecurityAttributesResponse::builder)
                 .logger(LOG, "listSecurityAttributes")
-                .serviceDetails("SecurityAttribute", "ListSecurityAttributes", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "ListSecurityAttributes",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeSummary/ListSecurityAttributes")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListSecurityAttributesRequest::builder)
                 .basePath("/20240815")
@@ -653,7 +699,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, UpdateSecurityAttributeResponse::builder)
                 .logger(LOG, "updateSecurityAttribute")
-                .serviceDetails("SecurityAttribute", "UpdateSecurityAttribute", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "UpdateSecurityAttribute",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttribute/UpdateSecurityAttribute")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSecurityAttributeRequest::builder)
                 .basePath("/20240815")
@@ -689,7 +738,10 @@ public class SecurityAttributeClient extends com.oracle.bmc.http.internal.BaseSy
 
         return clientCall(request, UpdateSecurityAttributeNamespaceResponse::builder)
                 .logger(LOG, "updateSecurityAttributeNamespace")
-                .serviceDetails("SecurityAttribute", "UpdateSecurityAttributeNamespace", "")
+                .serviceDetails(
+                        "SecurityAttribute",
+                        "UpdateSecurityAttributeNamespace",
+                        "https://docs.oracle.com/iaas/api/#/en/security-attribute/20240815/SecurityAttributeNamespace/UpdateSecurityAttributeNamespace")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateSecurityAttributeNamespaceRequest::builder)
                 .basePath("/20240815")

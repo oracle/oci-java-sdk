@@ -412,6 +412,43 @@ public class VbInstanceAsyncClient extends com.oracle.bmc.http.internal.BaseAsyn
     }
 
     @Override
+    public java.util.concurrent.Future<ReconfigurePrivateEndpointVbInstanceResponse>
+            reconfigurePrivateEndpointVbInstance(
+                    ReconfigurePrivateEndpointVbInstanceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ReconfigurePrivateEndpointVbInstanceRequest,
+                                    ReconfigurePrivateEndpointVbInstanceResponse>
+                            handler) {
+
+        Validate.notBlank(request.getVbInstanceId(), "vbInstanceId must not be blank");
+
+        return clientCall(request, ReconfigurePrivateEndpointVbInstanceResponse::builder)
+                .logger(LOG, "reconfigurePrivateEndpointVbInstance")
+                .serviceDetails(
+                        "VbInstance",
+                        "ReconfigurePrivateEndpointVbInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/visual-builder/20210601/VbInstance/ReconfigurePrivateEndpointVbInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReconfigurePrivateEndpointVbInstanceRequest::builder)
+                .basePath("/20210601")
+                .appendPathParam("vbInstances")
+                .appendPathParam(request.getVbInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("reconfigurePrivateEndpoint")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ReconfigurePrivateEndpointVbInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ReconfigurePrivateEndpointVbInstanceResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<RequestSummarizedApplicationsResponse>
             requestSummarizedApplications(
                     RequestSummarizedApplicationsRequest request,

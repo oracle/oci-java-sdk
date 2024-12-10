@@ -4,67 +4,43 @@
  */
 package com.oracle.bmc.http.internal;
 
-import com.oracle.bmc.auth.AbstractAuthenticationDetailsProvider;
 import com.oracle.bmc.auth.BasicAuthenticationDetailsProvider;
-import com.oracle.bmc.auth.InstancePrincipalsAuthenticationDetailsProvider;
-import com.oracle.bmc.auth.ResourcePrincipalAuthenticationDetailsProvider;
 import com.oracle.bmc.common.InternalBuilderAccess;
-import com.oracle.bmc.http.client.HttpClient;
 import com.oracle.bmc.http.client.HttpProvider;
-import com.oracle.bmc.http.client.HttpRequest;
-import com.oracle.bmc.http.client.HttpResponse;
-import com.oracle.bmc.http.client.Method;
 import com.oracle.bmc.http.signing.RequestSigner;
 import com.oracle.bmc.http.signing.RequestSignerFactory;
 import com.oracle.bmc.http.signing.SigningStrategy;
-import com.oracle.bmc.model.BmcException;
 import com.oracle.bmc.util.CircuitBreakerUtils;
-import com.oracle.bmc.util.internal.Validate;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.powermock.api.mockito.PowerMockito;
 import org.powermock.core.classloader.annotations.PrepareForTest;
 import org.powermock.modules.junit4.PowerMockRunner;
-import org.slf4j.Logger;
 
-import java.io.InputStream;
-import java.net.URI;
-import java.net.URISyntaxException;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-import java.util.concurrent.ExecutionException;
-import java.util.function.Supplier;
 
-import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertThat;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 import static org.mockito.Matchers.any;
-import static org.mockito.Mockito.atLeastOnce;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 @RunWith(PowerMockRunner.class)
 @PrepareForTest({HttpProvider.class, InternalBuilderAccess.class})
 public class BaseClientTest {
-    @Test
-    public void testCloseWithoutEndpoint() {
+
+    private BasicAuthenticationDetailsProvider mockAuthProvider;
+
+    @Before
+    public void setup() {
         HttpProvider mockHttpProvider = mock(HttpProvider.class);
 
         PowerMockito.mockStatic(HttpProvider.class);
         PowerMockito.when(HttpProvider.getDefault()).thenReturn(mockHttpProvider);
 
-        BasicAuthenticationDetailsProvider mockAuthProvider =
-                mock(BasicAuthenticationDetailsProvider.class);
+        mockAuthProvider = mock(BasicAuthenticationDetailsProvider.class);
 
         RequestSigner mockRequestSigner = mock(RequestSigner.class);
 
@@ -81,9 +57,34 @@ public class BaseClientTest {
         }
         PowerMockito.when(InternalBuilderAccess.getSigningStrategyRequestSignerFactories(any()))
                 .thenReturn(factories);
+    }
 
+    @Test
+    public void testCloseWithoutEndpoint() {
         TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
         client.close();
+    }
+
+    @Test
+    public void testEmptyUpdateBaseEndpoint() {
+        try {
+            TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
+            client.updateBaseEndpoint("");
+        } catch (Exception e) {
+            assertTrue(e instanceof IllegalArgumentException);
+            assertEquals("Cannot update the endpoint since it is null or blank.", e.getMessage());
+        }
+    }
+
+    @Test
+    public void testNullUpdateBaseEndpoint() {
+        try {
+            TestBaseClient client = TestBaseClient.builder().build(mockAuthProvider);
+            client.updateBaseEndpoint(null);
+        } catch (Exception e) {
+            assertTrue(e instanceof NullPointerException);
+            assertEquals("Cannot update the endpoint since it is null or blank.", e.getMessage());
+        }
     }
 
     private static class TestBaseClient extends BaseClient {

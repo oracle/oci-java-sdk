@@ -118,7 +118,7 @@ public class OperatorControlAssignmentAsyncClient
                 .serviceDetails(
                         "OperatorControlAssignment",
                         "ChangeOperatorControlAssignmentCompartment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ChangeOperatorControlAssignmentCompartment")
+                        "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChangeOperatorControlAssignmentCompartmentRequest::builder)
                 .basePath("/20200630")
@@ -151,10 +151,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, CreateOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "createOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "CreateOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/CreateOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "CreateOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -192,10 +189,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, DeleteOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "deleteOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "DeleteOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/DeleteOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "DeleteOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -226,10 +220,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, GetAssignmentValidationStatusResponse::builder)
                 .logger(LOG, "getAssignmentValidationStatus")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "GetAssignmentValidationStatus",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetAssignmentValidationStatus")
+                .serviceDetails("OperatorControlAssignment", "GetAssignmentValidationStatus", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetAssignmentValidationStatusRequest::builder)
                 .basePath("/20200630")
@@ -265,10 +256,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, GetOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "getOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "GetOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/GetOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "GetOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -299,10 +287,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, ListOperatorControlAssignmentsResponse::builder)
                 .logger(LOG, "listOperatorControlAssignments")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "ListOperatorControlAssignments",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ListOperatorControlAssignments")
+                .serviceDetails("OperatorControlAssignment", "ListOperatorControlAssignments", "")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListOperatorControlAssignmentsRequest::builder)
                 .basePath("/20200630")
@@ -350,10 +335,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, UpdateOperatorControlAssignmentResponse::builder)
                 .logger(LOG, "updateOperatorControlAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "UpdateOperatorControlAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/UpdateOperatorControlAssignment")
+                .serviceDetails("OperatorControlAssignment", "UpdateOperatorControlAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateOperatorControlAssignmentRequest::builder)
                 .basePath("/20200630")
@@ -392,10 +374,7 @@ public class OperatorControlAssignmentAsyncClient
 
         return clientCall(request, ValidateOperatorAssignmentResponse::builder)
                 .logger(LOG, "validateOperatorAssignment")
-                .serviceDetails(
-                        "OperatorControlAssignment",
-                        "ValidateOperatorAssignment",
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControlAssignment/ValidateOperatorAssignment")
+                .serviceDetails("OperatorControlAssignment", "ValidateOperatorAssignment", "")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ValidateOperatorAssignmentRequest::builder)
                 .basePath("/20200630")

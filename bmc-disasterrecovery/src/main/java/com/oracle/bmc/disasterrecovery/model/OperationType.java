@@ -17,6 +17,8 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     CreateDrPlan("CREATE_DR_PLAN"),
     UpdateDrPlan("UPDATE_DR_PLAN"),
     DeleteDrPlan("DELETE_DR_PLAN"),
+    RefreshDrPlan("REFRESH_DR_PLAN"),
+    VerifyDrPlan("VERIFY_DR_PLAN"),
     CreateDrPlanExecution("CREATE_DR_PLAN_EXECUTION"),
     UpdateDrPlanExecution("UPDATE_DR_PLAN_EXECUTION"),
     DeleteDrPlanExecution("DELETE_DR_PLAN_EXECUTION"),

@@ -28,6 +28,9 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PrecheckAction.class,
             name = "PRECHECK"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = RollbackCycleAction.class,
+            name = "ROLLBACK_MAINTENANCE_CYCLE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = StageAction.class, name = "STAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ApplyAction.class, name = "APPLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

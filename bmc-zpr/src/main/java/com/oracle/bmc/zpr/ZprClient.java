@@ -127,7 +127,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateConfigurationResponse::builder)
                 .logger(LOG, "createConfiguration")
-                .serviceDetails("Zpr", "CreateConfiguration", "")
+                .serviceDetails(
+                        "Zpr",
+                        "CreateConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/CreateConfiguration")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateConfigurationRequest::builder)
                 .basePath("/20240301")
@@ -153,7 +156,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, CreateZprPolicyResponse::builder)
                 .logger(LOG, "createZprPolicy")
-                .serviceDetails("Zpr", "CreateZprPolicy", "")
+                .serviceDetails(
+                        "Zpr",
+                        "CreateZprPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/CreateZprPolicy")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(CreateZprPolicyRequest::builder)
                 .basePath("/20240301")
@@ -184,7 +190,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, DeleteZprPolicyResponse::builder)
                 .logger(LOG, "deleteZprPolicy")
-                .serviceDetails("Zpr", "DeleteZprPolicy", "")
+                .serviceDetails(
+                        "Zpr",
+                        "DeleteZprPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/DeleteZprPolicy")
                 .method(com.oracle.bmc.http.client.Method.DELETE)
                 .requestBuilder(DeleteZprPolicyRequest::builder)
                 .basePath("/20240301")
@@ -207,7 +216,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetConfigurationResponse::builder)
                 .logger(LOG, "getConfiguration")
-                .serviceDetails("Zpr", "GetConfiguration", "")
+                .serviceDetails(
+                        "Zpr",
+                        "GetConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/Configuration/GetConfiguration")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetConfigurationRequest::builder)
                 .basePath("/20240301")
@@ -233,7 +245,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetZprConfigurationWorkRequestResponse::builder)
                 .logger(LOG, "getZprConfigurationWorkRequest")
-                .serviceDetails("Zpr", "GetZprConfigurationWorkRequest", "")
+                .serviceDetails(
+                        "Zpr",
+                        "GetZprConfigurationWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprConfigurationWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetZprConfigurationWorkRequestRequest::builder)
                 .basePath("/20240301")
@@ -262,7 +277,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetZprPolicyResponse::builder)
                 .logger(LOG, "getZprPolicy")
-                .serviceDetails("Zpr", "GetZprPolicy", "")
+                .serviceDetails(
+                        "Zpr",
+                        "GetZprPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/GetZprPolicy")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetZprPolicyRequest::builder)
                 .basePath("/20240301")
@@ -288,7 +306,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, GetZprPolicyWorkRequestResponse::builder)
                 .logger(LOG, "getZprPolicyWorkRequest")
-                .serviceDetails("Zpr", "GetZprPolicyWorkRequest", "")
+                .serviceDetails(
+                        "Zpr",
+                        "GetZprPolicyWorkRequest",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/GetZprPolicyWorkRequest")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(GetZprPolicyWorkRequestRequest::builder)
                 .basePath("/20240301")
@@ -316,7 +337,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprConfigurationWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestErrors")
-                .serviceDetails("Zpr", "ListZprConfigurationWorkRequestErrors", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprConfigurationWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprConfigurationWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprConfigurationWorkRequestErrorsRequest::builder)
                 .basePath("/20240301")
@@ -351,7 +375,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprConfigurationWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequestLogs")
-                .serviceDetails("Zpr", "ListZprConfigurationWorkRequestLogs", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprConfigurationWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprConfigurationWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprConfigurationWorkRequestLogsRequest::builder)
                 .basePath("/20240301")
@@ -384,7 +411,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprConfigurationWorkRequestsResponse::builder)
                 .logger(LOG, "listZprConfigurationWorkRequests")
-                .serviceDetails("Zpr", "ListZprConfigurationWorkRequests", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprConfigurationWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprConfigurationWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprConfigurationWorkRequestsRequest::builder)
                 .basePath("/20240301")
@@ -418,7 +448,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprPoliciesResponse::builder)
                 .logger(LOG, "listZprPolicies")
-                .serviceDetails("Zpr", "ListZprPolicies", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprPolicies",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicyCollection/ListZprPolicies")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprPoliciesRequest::builder)
                 .basePath("/20240301")
@@ -452,7 +485,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprPolicyWorkRequestErrorsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestErrors")
-                .serviceDetails("Zpr", "ListZprPolicyWorkRequestErrors", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprPolicyWorkRequestErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestError/ListZprPolicyWorkRequestErrors")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprPolicyWorkRequestErrorsRequest::builder)
                 .basePath("/20240301")
@@ -486,7 +522,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprPolicyWorkRequestLogsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequestLogs")
-                .serviceDetails("Zpr", "ListZprPolicyWorkRequestLogs", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprPolicyWorkRequestLogs",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequestLogEntry/ListZprPolicyWorkRequestLogs")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprPolicyWorkRequestLogsRequest::builder)
                 .basePath("/20240301")
@@ -517,7 +556,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, ListZprPolicyWorkRequestsResponse::builder)
                 .logger(LOG, "listZprPolicyWorkRequests")
-                .serviceDetails("Zpr", "ListZprPolicyWorkRequests", "")
+                .serviceDetails(
+                        "Zpr",
+                        "ListZprPolicyWorkRequests",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/WorkRequest/ListZprPolicyWorkRequests")
                 .method(com.oracle.bmc.http.client.Method.GET)
                 .requestBuilder(ListZprPolicyWorkRequestsRequest::builder)
                 .basePath("/20240301")
@@ -552,7 +594,10 @@ public class ZprClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
 
         return clientCall(request, UpdateZprPolicyResponse::builder)
                 .logger(LOG, "updateZprPolicy")
-                .serviceDetails("Zpr", "UpdateZprPolicy", "")
+                .serviceDetails(
+                        "Zpr",
+                        "UpdateZprPolicy",
+                        "https://docs.oracle.com/iaas/api/#/en/zero-trust-packet-routing/20240301/ZprPolicy/UpdateZprPolicy")
                 .method(com.oracle.bmc.http.client.Method.PUT)
                 .requestBuilder(UpdateZprPolicyRequest::builder)
                 .basePath("/20240301")

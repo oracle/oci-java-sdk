@@ -3,6 +3,24 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.55.0 - 2024-12-10
+### Added 
+- Support for Bring Your Own Key (BYOK) in the Database service
+- Support for refreshing disaster recovery plans in the Disaster Recovery service
+- Support for private access to service instances in the Visual Builder service
+- Support for exadata fleet update and rollback maintenance cycle in the Fleet Application Management service
+- Support for Bring Your Own License (BYOL) for windows virtual machines in the Compute service
+- Support for cascading deletion of applications and runs in the Data Flow service
+- Support for on-demand translation and auto language detection during file translation in the AI Language service
+- Support for alias for endpoints in custom model flow and custom anonymization in the AI Language service
+- Removed fallback to the deprecated Instance Metadata service (IMDS) V1 endpoint
+
+### Breaking Changes 
+- Method `public java.util.List getAttachments()` has been removed from model `com.oracle.bmc.visualbuilder.model.VbInstance` in the the Visual Builder service 
+- Method `public com.oracle.bmc.visualbuilder.model.IdcsInfoDetails getIdcsInfo()` has been removed from `com.oracle.bmc.visualbuilder.model.VbInstance` in the the Visual Builder service 
+- Class `com.oracle.bmc.visualbuilder.model.AttachmentDetails` has been removed in the the Visual Builder service 
+- Class `com.oracle.bmc.visualbuilder.model.IdcsInfoDetails` has been removed in the the Visual Builder service
+
 ## 3.54.0 - 2024-11-19
 ### Added 
 - Support for optional parameters for unified auditing in the Database service 

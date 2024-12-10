@@ -75,7 +75,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         "agentConfig",
         "timeMaintenanceRebootDue",
         "platformConfig",
-        "instanceConfigurationId"
+        "instanceConfigurationId",
+        "licensingConfigs"
     })
     public Instance(
             String availabilityDomain,
@@ -110,7 +111,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             InstanceAgentConfig agentConfig,
             java.util.Date timeMaintenanceRebootDue,
             PlatformConfig platformConfig,
-            String instanceConfigurationId) {
+            String instanceConfigurationId,
+            java.util.List<LicensingConfig> licensingConfigs) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.capacityReservationId = capacityReservationId;
@@ -145,6 +147,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         this.timeMaintenanceRebootDue = timeMaintenanceRebootDue;
         this.platformConfig = platformConfig;
         this.instanceConfigurationId = instanceConfigurationId;
+        this.licensingConfigs = licensingConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -789,6 +792,21 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("instanceConfigurationId");
             return this;
         }
+        /** List of licensing configurations associated with the instance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+        private java.util.List<LicensingConfig> licensingConfigs;
+
+        /**
+         * List of licensing configurations associated with the instance.
+         *
+         * @param licensingConfigs the value to set
+         * @return this builder
+         */
+        public Builder licensingConfigs(java.util.List<LicensingConfig> licensingConfigs) {
+            this.licensingConfigs = licensingConfigs;
+            this.__explicitlySet__.add("licensingConfigs");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -828,7 +846,8 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                             this.agentConfig,
                             this.timeMaintenanceRebootDue,
                             this.platformConfig,
-                            this.instanceConfigurationId);
+                            this.instanceConfigurationId,
+                            this.licensingConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -935,6 +954,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("instanceConfigurationId")) {
                 this.instanceConfigurationId(model.getInstanceConfigurationId());
+            }
+            if (model.wasPropertyExplicitlySet("licensingConfigs")) {
+                this.licensingConfigs(model.getLicensingConfigs());
             }
             return this;
         }
@@ -1671,6 +1693,19 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         return instanceConfigurationId;
     }
 
+    /** List of licensing configurations associated with the instance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("licensingConfigs")
+    private final java.util.List<LicensingConfig> licensingConfigs;
+
+    /**
+     * List of licensing configurations associated with the instance.
+     *
+     * @return the value
+     */
+    public java.util.List<LicensingConfig> getLicensingConfigs() {
+        return licensingConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1724,6 +1759,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", platformConfig=").append(String.valueOf(this.platformConfig));
         sb.append(", instanceConfigurationId=")
                 .append(String.valueOf(this.instanceConfigurationId));
+        sb.append(", licensingConfigs=").append(String.valueOf(this.licensingConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -1776,6 +1812,7 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.platformConfig, other.platformConfig)
                 && java.util.Objects.equals(
                         this.instanceConfigurationId, other.instanceConfigurationId)
+                && java.util.Objects.equals(this.licensingConfigs, other.licensingConfigs)
                 && super.equals(other);
     }
 
@@ -1870,6 +1907,9 @@ public final class Instance extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.instanceConfigurationId == null
                                 ? 43
                                 : this.instanceConfigurationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.licensingConfigs == null ? 43 : this.licensingConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -23,6 +23,9 @@ package com.oracle.bmc.fleetsoftwareupdate.model;
         defaultImpl = CreateFsuActionDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateRollbackCycleApplyActionDetails.class,
+            name = "ROLLBACK_MAINTENANCE_CYCLE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateApplyActionDetails.class,
             name = "APPLY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

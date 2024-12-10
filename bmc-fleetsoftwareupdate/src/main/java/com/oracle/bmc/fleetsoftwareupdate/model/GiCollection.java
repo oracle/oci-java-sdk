@@ -116,6 +116,15 @@ public final class GiCollection extends FsuCollection {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("lastCompletedFsuCycleId")
+        private String lastCompletedFsuCycleId;
+
+        public Builder lastCompletedFsuCycleId(String lastCompletedFsuCycleId) {
+            this.lastCompletedFsuCycleId = lastCompletedFsuCycleId;
+            this.__explicitlySet__.add("lastCompletedFsuCycleId");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("freeformTags")
         private java.util.Map<String, String> freeformTags;
 
@@ -190,6 +199,7 @@ public final class GiCollection extends FsuCollection {
                             this.timeUpdated,
                             this.lifecycleState,
                             this.lifecycleDetails,
+                            this.lastCompletedFsuCycleId,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags,
@@ -233,6 +243,9 @@ public final class GiCollection extends FsuCollection {
             if (model.wasPropertyExplicitlySet("lifecycleDetails")) {
                 this.lifecycleDetails(model.getLifecycleDetails());
             }
+            if (model.wasPropertyExplicitlySet("lastCompletedFsuCycleId")) {
+                this.lastCompletedFsuCycleId(model.getLastCompletedFsuCycleId());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -273,6 +286,7 @@ public final class GiCollection extends FsuCollection {
             java.util.Date timeUpdated,
             CollectionLifecycleStates lifecycleState,
             String lifecycleDetails,
+            String lastCompletedFsuCycleId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags,
@@ -289,6 +303,7 @@ public final class GiCollection extends FsuCollection {
                 timeUpdated,
                 lifecycleState,
                 lifecycleDetails,
+                lastCompletedFsuCycleId,
                 freeformTags,
                 definedTags,
                 systemTags);

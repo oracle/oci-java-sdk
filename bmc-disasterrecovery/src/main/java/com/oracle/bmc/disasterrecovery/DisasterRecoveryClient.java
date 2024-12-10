@@ -693,6 +693,7 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("lifecycleSubState", request.getLifecycleSubState())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()
@@ -879,6 +880,39 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         PauseDrPlanExecutionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", PauseDrPlanExecutionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RefreshDrPlanResponse refreshDrPlan(RefreshDrPlanRequest request) {
+        Objects.requireNonNull(
+                request.getRefreshDrPlanDetails(), "refreshDrPlanDetails is required");
+
+        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
+
+        return clientCall(request, RefreshDrPlanResponse::builder)
+                .logger(LOG, "refreshDrPlan")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "RefreshDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/RefreshDrPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshDrPlanRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("drPlans")
+                .appendPathParam(request.getDrPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("refresh")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", RefreshDrPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RefreshDrPlanResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1083,6 +1117,38 @@ public class DisasterRecoveryClient extends com.oracle.bmc.http.internal.BaseSyn
                         UpdateDrProtectionGroupRoleResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateDrProtectionGroupRoleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public VerifyDrPlanResponse verifyDrPlan(VerifyDrPlanRequest request) {
+        Objects.requireNonNull(request.getVerifyDrPlanDetails(), "verifyDrPlanDetails is required");
+
+        Validate.notBlank(request.getDrPlanId(), "drPlanId must not be blank");
+
+        return clientCall(request, VerifyDrPlanResponse::builder)
+                .logger(LOG, "verifyDrPlan")
+                .serviceDetails(
+                        "DisasterRecovery",
+                        "VerifyDrPlan",
+                        "https://docs.oracle.com/iaas/api/#/en/disaster-recovery/20220125/DrPlan/VerifyDrPlan")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(VerifyDrPlanRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("drPlans")
+                .appendPathParam(request.getDrPlanId())
+                .appendPathParam("actions")
+                .appendPathParam("verify")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id", VerifyDrPlanResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", VerifyDrPlanResponse.Builder::opcRequestId)
                 .callSync();
     }
 

@@ -15,11 +15,12 @@ import javax.ws.rs.ProcessingException;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.WebTarget;
 import java.util.List;
+import java.util.function.Supplier;
 
 final class JerseyHttpClient implements HttpClient {
     final List<RequestInterceptor> requestInterceptors;
 
-    private final WebTarget baseTarget;
+    private volatile Supplier<WebTarget> baseTargetSupplier;
     final Client client;
     final boolean isApacheNonBufferingClient;
     final HttpClientConnectionManager httpClientConnectionManager;
@@ -38,8 +39,14 @@ final class JerseyHttpClient implements HttpClient {
             List<RequestInterceptor> requestInterceptors,
             boolean isApacheNonBufferingClient,
             HttpClientConnectionManager httpClientConnectionManager) {
+        if (client == null) {
+            throw new IllegalArgumentException("Client must be non-null");
+        }
+        if (baseTarget == null) {
+            throw new IllegalArgumentException("Endpoint must be non-null");
+        }
         this.client = client;
-        this.baseTarget = baseTarget;
+        this.baseTargetSupplier = () -> baseTarget;
         this.requestInterceptors = requestInterceptors;
         this.isApacheNonBufferingClient = isApacheNonBufferingClient;
         this.httpClientConnectionManager = httpClientConnectionManager;
@@ -47,7 +54,7 @@ final class JerseyHttpClient implements HttpClient {
 
     @Override
     public HttpRequest createRequest(Method method) {
-        return new JerseyHttpRequest(this, method, baseTarget);
+        return new JerseyHttpRequest(this, method, this.baseTargetSupplier.get());
     }
 
     @Override
@@ -61,5 +68,32 @@ final class JerseyHttpClient implements HttpClient {
     @Override
     public boolean isProcessingException(Exception e) {
         return e instanceof ProcessingException;
+    }
+
+    @Override
+    public synchronized void updateEndpoint(String baseTarget) {
+        if (!(this.baseTargetSupplier instanceof ThreadLocalWebTargetSupplier)) {
+            // switch to "each thread has its own endpoint"
+            this.baseTargetSupplier = new ThreadLocalWebTargetSupplier(this.baseTargetSupplier);
+        }
+        ThreadLocalWebTargetSupplier supplier =
+                (ThreadLocalWebTargetSupplier) this.baseTargetSupplier;
+        supplier.set(this.client.target(baseTarget));
+    }
+
+    static final class ThreadLocalWebTargetSupplier implements Supplier<WebTarget> {
+        private final ThreadLocal<WebTarget> threadLocal;
+
+        public ThreadLocalWebTargetSupplier(Supplier<WebTarget> initial) {
+            threadLocal = ThreadLocal.withInitial(initial);
+        }
+
+        public WebTarget get() {
+            return threadLocal.get();
+        }
+
+        public void set(WebTarget updated) {
+            threadLocal.set(updated);
+        }
     }
 }

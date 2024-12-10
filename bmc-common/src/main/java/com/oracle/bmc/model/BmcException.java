@@ -12,7 +12,7 @@ import com.oracle.bmc.util.internal.StringUtils;
 import java.util.Date;
 import java.util.Map;
 
-public class BmcException extends RuntimeException {
+public class BmcException extends SdkRuntimeException {
     /** Name of the header that contains the request id. */
     public static final String OPC_REQUEST_ID_HEADER = "opc-request-id";
 

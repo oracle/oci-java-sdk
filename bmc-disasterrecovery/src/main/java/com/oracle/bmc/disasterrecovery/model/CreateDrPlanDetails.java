@@ -27,6 +27,7 @@ public final class CreateDrPlanDetails
         "displayName",
         "type",
         "drProtectionGroupId",
+        "sourcePlanId",
         "freeformTags",
         "definedTags"
     })
@@ -34,12 +35,14 @@ public final class CreateDrPlanDetails
             String displayName,
             DrPlanType type,
             String drProtectionGroupId,
+            String sourcePlanId,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
         this.displayName = displayName;
         this.type = type;
         this.drProtectionGroupId = drProtectionGroupId;
+        this.sourcePlanId = sourcePlanId;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -104,6 +107,27 @@ public final class CreateDrPlanDetails
             return this;
         }
         /**
+         * The OCID of the source DR plan that should be cloned.
+         *
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("sourcePlanId")
+        private String sourcePlanId;
+
+        /**
+         * The OCID of the source DR plan that should be cloned.
+         *
+         * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+         *
+         * @param sourcePlanId the value to set
+         * @return this builder
+         */
+        public Builder sourcePlanId(String sourcePlanId) {
+            this.sourcePlanId = sourcePlanId;
+            this.__explicitlySet__.add("sourcePlanId");
+            return this;
+        }
+        /**
          * Simple key-value pair that is applied without any predefined name, type or scope. Exists
          * for cross-compatibility only.
          *
@@ -158,6 +182,7 @@ public final class CreateDrPlanDetails
                             this.displayName,
                             this.type,
                             this.drProtectionGroupId,
+                            this.sourcePlanId,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -176,6 +201,9 @@ public final class CreateDrPlanDetails
             }
             if (model.wasPropertyExplicitlySet("drProtectionGroupId")) {
                 this.drProtectionGroupId(model.getDrProtectionGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("sourcePlanId")) {
+                this.sourcePlanId(model.getSourcePlanId());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -248,6 +276,25 @@ public final class CreateDrPlanDetails
     }
 
     /**
+     * The OCID of the source DR plan that should be cloned.
+     *
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("sourcePlanId")
+    private final String sourcePlanId;
+
+    /**
+     * The OCID of the source DR plan that should be cloned.
+     *
+     * <p>Example: {@code ocid1.drplan.oc1..uniqueID}
+     *
+     * @return the value
+     */
+    public String getSourcePlanId() {
+        return sourcePlanId;
+    }
+
+    /**
      * Simple key-value pair that is applied without any predefined name, type or scope. Exists for
      * cross-compatibility only.
      *
@@ -305,6 +352,7 @@ public final class CreateDrPlanDetails
         sb.append("displayName=").append(String.valueOf(this.displayName));
         sb.append(", type=").append(String.valueOf(this.type));
         sb.append(", drProtectionGroupId=").append(String.valueOf(this.drProtectionGroupId));
+        sb.append(", sourcePlanId=").append(String.valueOf(this.sourcePlanId));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -324,6 +372,7 @@ public final class CreateDrPlanDetails
         return java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.type, other.type)
                 && java.util.Objects.equals(this.drProtectionGroupId, other.drProtectionGroupId)
+                && java.util.Objects.equals(this.sourcePlanId, other.sourcePlanId)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -340,6 +389,7 @@ public final class CreateDrPlanDetails
                         + (this.drProtectionGroupId == null
                                 ? 43
                                 : this.drProtectionGroupId.hashCode());
+        result = (result * PRIME) + (this.sourcePlanId == null ? 43 : this.sourcePlanId.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();
