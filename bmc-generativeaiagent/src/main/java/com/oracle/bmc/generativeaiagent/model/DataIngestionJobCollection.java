@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **DataIngestionJobCollection**
- *
- * <p>Results of a data ingestion job search. Contains both DataIngestionJobSummary items and other
+ * Results of a data ingestion job search. Contains both DataIngestionJobSummary items and other
  * information, such as metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

@@ -483,6 +483,15 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("secretId")
         private String secretId;
 
@@ -557,6 +566,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
                             this.dbToolsDetails,
+                            this.isBackupRetentionLocked,
                             this.secretId,
                             this.secretVersionNumber);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -719,6 +729,9 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             if (model.wasPropertyExplicitlySet("dbToolsDetails")) {
                 this.dbToolsDetails(model.getDbToolsDetails());
             }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
+            }
             if (model.wasPropertyExplicitlySet("secretId")) {
                 this.secretId(model.getSecretId());
             }
@@ -790,6 +803,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber) {
         super(
@@ -843,6 +857,7 @@ public final class CreateAutonomousDatabaseDetails extends CreateAutonomousDatab
                 isAutoScalingForStorageEnabled,
                 databaseEdition,
                 dbToolsDetails,
+                isBackupRetentionLocked,
                 secretId,
                 secretVersionNumber);
     }

@@ -1542,7 +1542,6 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
 
     @Override
     public ListMetricExtensionsResponse listMetricExtensions(ListMetricExtensionsRequest request) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListMetricExtensionsResponse::builder)
                 .logger(LOG, "listMetricExtensions")
@@ -1564,6 +1563,7 @@ public class StackMonitoringClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("enabledOnResourceId", request.getEnabledOnResourceId())
+                .appendQueryParam("metricExtensionId", request.getMetricExtensionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .operationUsesDefaultRetries()

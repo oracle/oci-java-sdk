@@ -115,6 +115,7 @@ public class CreateAutonomousDatabaseBase
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
         "dbToolsDetails",
+        "isBackupRetentionLocked",
         "secretId",
         "secretVersionNumber"
     })
@@ -169,6 +170,7 @@ public class CreateAutonomousDatabaseBase
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber) {
         super();
@@ -222,6 +224,7 @@ public class CreateAutonomousDatabaseBase
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
         this.dbToolsDetails = dbToolsDetails;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
     }
@@ -1647,6 +1650,19 @@ public class CreateAutonomousDatabaseBase
         return dbToolsDetails;
     }
 
+    /** True if the Autonomous Database is backup retention locked. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * True if the Autonomous Database is backup retention locked.
+     *
+     * @return the value
+     */
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
+    }
+
     /**
      * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      *
@@ -1754,6 +1770,8 @@ public class CreateAutonomousDatabaseBase
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(")");
@@ -1831,6 +1849,8 @@ public class CreateAutonomousDatabaseBase
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && super.equals(other);
@@ -1994,6 +2014,11 @@ public class CreateAutonomousDatabaseBase
         result =
                 (result * PRIME)
                         + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)

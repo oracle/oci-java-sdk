@@ -1653,7 +1653,6 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
             final com.oracle.bmc.responses.AsyncHandler<
                             ListMetricExtensionsRequest, ListMetricExtensionsResponse>
                     handler) {
-        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
         return clientCall(request, ListMetricExtensionsResponse::builder)
                 .logger(LOG, "listMetricExtensions")
@@ -1675,6 +1674,7 @@ public class StackMonitoringAsyncClient extends com.oracle.bmc.http.internal.Bas
                 .appendEnumQueryParam("status", request.getStatus())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendQueryParam("enabledOnResourceId", request.getEnabledOnResourceId())
+                .appendQueryParam("metricExtensionId", request.getMetricExtensionId())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

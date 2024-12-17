@@ -129,6 +129,21 @@ public class AuthUtilsTest {
     }
 
     @Test
+    public void testGetTenantIdFromR1SPCertificate() throws FileNotFoundException {
+        final String certificate =
+                StreamUtils.toString(
+                        new FileInputStream("src/test/resources/r1_sp_cert.pem"),
+                        StandardCharsets.UTF_8);
+        final String expected =
+                "ocid1.tenancy.region1..aaaaaaaay3tnpvhk7bgpgaltjdre5xwoecds53nj46kiy25leg4i2wdr4n6a";
+
+        final X509Certificate x509Certificate =
+                (X509Certificate) Pem.decoder().decodeCertificate(certificate);
+        final String tenantId = AuthUtils.getTenantIdFromCertificate(x509Certificate);
+        assertEquals(expected, tenantId);
+    }
+
+    @Test
     public void testToByteArrayFromRSAPrivateKey() throws Exception {
         final String privateKeyText =
                 StreamUtils.toString(

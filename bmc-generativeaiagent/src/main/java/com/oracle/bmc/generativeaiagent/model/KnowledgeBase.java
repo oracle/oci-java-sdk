@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **KnowledgeBase**
- *
- * <p>A knowledge base is the base for all the data sources that an agent can use to retrieve
+ * A knowledge base is the base for all the data sources that an agent can use to retrieve
  * information for its responses.
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
@@ -36,6 +34,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
         "description",
         "compartmentId",
         "indexConfig",
+        "knowledgeBaseStatistics",
         "timeCreated",
         "timeUpdated",
         "lifecycleState",
@@ -50,6 +49,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
             String description,
             String compartmentId,
             IndexConfig indexConfig,
+            KnowledgeBaseStatistics knowledgeBaseStatistics,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
@@ -63,6 +63,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
         this.description = description;
         this.compartmentId = compartmentId;
         this.indexConfig = indexConfig;
+        this.knowledgeBaseStatistics = knowledgeBaseStatistics;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
@@ -149,6 +150,15 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
         public Builder indexConfig(IndexConfig indexConfig) {
             this.indexConfig = indexConfig;
             this.__explicitlySet__.add("indexConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseStatistics")
+        private KnowledgeBaseStatistics knowledgeBaseStatistics;
+
+        public Builder knowledgeBaseStatistics(KnowledgeBaseStatistics knowledgeBaseStatistics) {
+            this.knowledgeBaseStatistics = knowledgeBaseStatistics;
+            this.__explicitlySet__.add("knowledgeBaseStatistics");
             return this;
         }
         /**
@@ -317,6 +327,7 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
                             this.description,
                             this.compartmentId,
                             this.indexConfig,
+                            this.knowledgeBaseStatistics,
                             this.timeCreated,
                             this.timeUpdated,
                             this.lifecycleState,
@@ -346,6 +357,9 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("indexConfig")) {
                 this.indexConfig(model.getIndexConfig());
+            }
+            if (model.wasPropertyExplicitlySet("knowledgeBaseStatistics")) {
+                this.knowledgeBaseStatistics(model.getKnowledgeBaseStatistics());
             }
             if (model.wasPropertyExplicitlySet("timeCreated")) {
                 this.timeCreated(model.getTimeCreated());
@@ -446,6 +460,13 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
 
     public IndexConfig getIndexConfig() {
         return indexConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseStatistics")
+    private final KnowledgeBaseStatistics knowledgeBaseStatistics;
+
+    public KnowledgeBaseStatistics getKnowledgeBaseStatistics() {
+        return knowledgeBaseStatistics;
     }
 
     /**
@@ -656,6 +677,8 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", indexConfig=").append(String.valueOf(this.indexConfig));
+        sb.append(", knowledgeBaseStatistics=")
+                .append(String.valueOf(this.knowledgeBaseStatistics));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -682,6 +705,8 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.indexConfig, other.indexConfig)
+                && java.util.Objects.equals(
+                        this.knowledgeBaseStatistics, other.knowledgeBaseStatistics)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -703,6 +728,11 @@ public final class KnowledgeBase extends com.oracle.bmc.http.client.internal.Exp
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.indexConfig == null ? 43 : this.indexConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.knowledgeBaseStatistics == null
+                                ? 43
+                                : this.knowledgeBaseStatistics.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result =

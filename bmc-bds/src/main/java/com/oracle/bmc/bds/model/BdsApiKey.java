@@ -30,7 +30,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         "fingerprint",
         "pemfilepath",
         "timeCreated",
-        "lifecycleState"
+        "lifecycleState",
+        "domainOcid"
     })
     public BdsApiKey(
             String id,
@@ -41,7 +42,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
             String fingerprint,
             String pemfilepath,
             java.util.Date timeCreated,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            String domainOcid) {
         super();
         this.id = id;
         this.userId = userId;
@@ -52,6 +54,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         this.pemfilepath = pemfilepath;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.domainOcid = domainOcid;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -201,6 +204,25 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * Identity domain OCID ,where user is present. For default domain ,this field will be
+         * optional.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+        private String domainOcid;
+
+        /**
+         * Identity domain OCID ,where user is present. For default domain ,this field will be
+         * optional.
+         *
+         * @param domainOcid the value to set
+         * @return this builder
+         */
+        public Builder domainOcid(String domainOcid) {
+            this.domainOcid = domainOcid;
+            this.__explicitlySet__.add("domainOcid");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -216,7 +238,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
                             this.fingerprint,
                             this.pemfilepath,
                             this.timeCreated,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.domainOcid);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -251,6 +274,9 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("domainOcid")) {
+                this.domainOcid(model.getDomainOcid());
             }
             return this;
         }
@@ -439,6 +465,21 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         return lifecycleState;
     }
 
+    /**
+     * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+    private final String domainOcid;
+
+    /**
+     * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     *
+     * @return the value
+     */
+    public String getDomainOcid() {
+        return domainOcid;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -463,6 +504,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", pemfilepath=").append(String.valueOf(this.pemfilepath));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", domainOcid=").append(String.valueOf(this.domainOcid));
         sb.append(")");
         return sb.toString();
     }
@@ -486,6 +528,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.pemfilepath, other.pemfilepath)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.domainOcid, other.domainOcid)
                 && super.equals(other);
     }
 
@@ -506,6 +549,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.client.internal.Explici
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.domainOcid == null ? 43 : this.domainOcid.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **AgentEndpoint**
- *
- * <p>The endpoint to access a deployed agent.
+ * The endpoint to access a deployed agent.
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you're not
  * authorized, talk to an administrator. If you're an administrator who needs to write policies to

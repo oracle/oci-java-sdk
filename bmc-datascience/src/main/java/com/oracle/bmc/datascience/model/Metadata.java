@@ -35,7 +35,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
          * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testartifactresults
+         * hyperParameters * testArtifactresults
          */
         @com.fasterxml.jackson.annotation.JsonProperty("key")
         private String key;
@@ -43,7 +43,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
          * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass *
-         * hyperParameters * testartifactresults
+         * hyperParameters * testArtifactresults
          *
          * @param key the value to set
          * @return this builder
@@ -102,7 +102,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Category of model metadata which should be null for defined metadata.For custom metadata
          * is should be one of the following values "Performance,Training Profile,Training and
-         * Validation Datasets,Training Environment,other".
+         * Validation Datasets,Training Environment,Reports,Readme,other".
          */
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
@@ -110,7 +110,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
         /**
          * Category of model metadata which should be null for defined metadata.For custom metadata
          * is should be one of the following values "Performance,Training Profile,Training and
-         * Validation Datasets,Training Environment,other".
+         * Validation Datasets,Training Environment,Reports,Readme,other".
          *
          * @param category the value to set
          * @return this builder
@@ -162,7 +162,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
      * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      */
     @com.fasterxml.jackson.annotation.JsonProperty("key")
     private final String key;
@@ -170,7 +170,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Key of the model Metadata. The key can either be user defined or OCI defined. List of OCI
      * defined keys: * useCaseType * libraryName * libraryVersion * estimatorClass * hyperParameters
-     * * testartifactresults
+     * * testArtifactresults
      *
      * @return the value
      */
@@ -223,7 +223,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Category of model metadata which should be null for defined metadata.For custom metadata is
      * should be one of the following values "Performance,Training Profile,Training and Validation
-     * Datasets,Training Environment,other".
+     * Datasets,Training Environment,Reports,Readme,other".
      */
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
@@ -231,7 +231,7 @@ public final class Metadata extends com.oracle.bmc.http.client.internal.Explicit
     /**
      * Category of model metadata which should be null for defined metadata.For custom metadata is
      * should be one of the following values "Performance,Training Profile,Training and Validation
-     * Datasets,Training Environment,other".
+     * Datasets,Training Environment,Reports,Readme,other".
      *
      * @return the value
      */

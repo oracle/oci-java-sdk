@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **WorkRequest**
- *
- * <p>An asynchronous work request. Work requests help you monitor long-running operations. When you
+ * An asynchronous work request. Work requests help you monitor long-running operations. When you
  * start a long-running operation, the service creates a work request. A work request is an activity
  * log that lets you track each step in the operation's progress. Each work request has an OCID that
  * lets you interact with it programmatically and use it for automation. <br>

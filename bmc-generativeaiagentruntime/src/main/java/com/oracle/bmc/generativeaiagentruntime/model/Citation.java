@@ -22,11 +22,25 @@ package com.oracle.bmc.generativeaiagentruntime.model;
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
 public final class Citation extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"sourceText", "sourceLocation"})
-    public Citation(String sourceText, SourceLocation sourceLocation) {
+    @java.beans.ConstructorProperties({
+        "sourceText",
+        "sourceLocation",
+        "title",
+        "docId",
+        "pageNumbers"
+    })
+    public Citation(
+            String sourceText,
+            SourceLocation sourceLocation,
+            String title,
+            String docId,
+            java.util.List<Integer> pageNumbers) {
         super();
         this.sourceText = sourceText;
         this.sourceLocation = sourceLocation;
+        this.title = title;
+        this.docId = docId;
+        this.pageNumbers = pageNumbers;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -55,12 +69,63 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("sourceLocation");
             return this;
         }
+        /** The title of the source text, if available. */
+        @com.fasterxml.jackson.annotation.JsonProperty("title")
+        private String title;
+
+        /**
+         * The title of the source text, if available.
+         *
+         * @param title the value to set
+         * @return this builder
+         */
+        public Builder title(String title) {
+            this.title = title;
+            this.__explicitlySet__.add("title");
+            return this;
+        }
+        /** The id of the retrieved document, if available. */
+        @com.fasterxml.jackson.annotation.JsonProperty("docId")
+        private String docId;
+
+        /**
+         * The id of the retrieved document, if available.
+         *
+         * @param docId the value to set
+         * @return this builder
+         */
+        public Builder docId(String docId) {
+            this.docId = docId;
+            this.__explicitlySet__.add("docId");
+            return this;
+        }
+        /** The page numbers on the retrieved document, if available. */
+        @com.fasterxml.jackson.annotation.JsonProperty("pageNumbers")
+        private java.util.List<Integer> pageNumbers;
+
+        /**
+         * The page numbers on the retrieved document, if available.
+         *
+         * @param pageNumbers the value to set
+         * @return this builder
+         */
+        public Builder pageNumbers(java.util.List<Integer> pageNumbers) {
+            this.pageNumbers = pageNumbers;
+            this.__explicitlySet__.add("pageNumbers");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public Citation build() {
-            Citation model = new Citation(this.sourceText, this.sourceLocation);
+            Citation model =
+                    new Citation(
+                            this.sourceText,
+                            this.sourceLocation,
+                            this.title,
+                            this.docId,
+                            this.pageNumbers);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -74,6 +139,15 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("sourceLocation")) {
                 this.sourceLocation(model.getSourceLocation());
+            }
+            if (model.wasPropertyExplicitlySet("title")) {
+                this.title(model.getTitle());
+            }
+            if (model.wasPropertyExplicitlySet("docId")) {
+                this.docId(model.getDocId());
+            }
+            if (model.wasPropertyExplicitlySet("pageNumbers")) {
+                this.pageNumbers(model.getPageNumbers());
             }
             return this;
         }
@@ -108,6 +182,45 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         return sourceLocation;
     }
 
+    /** The title of the source text, if available. */
+    @com.fasterxml.jackson.annotation.JsonProperty("title")
+    private final String title;
+
+    /**
+     * The title of the source text, if available.
+     *
+     * @return the value
+     */
+    public String getTitle() {
+        return title;
+    }
+
+    /** The id of the retrieved document, if available. */
+    @com.fasterxml.jackson.annotation.JsonProperty("docId")
+    private final String docId;
+
+    /**
+     * The id of the retrieved document, if available.
+     *
+     * @return the value
+     */
+    public String getDocId() {
+        return docId;
+    }
+
+    /** The page numbers on the retrieved document, if available. */
+    @com.fasterxml.jackson.annotation.JsonProperty("pageNumbers")
+    private final java.util.List<Integer> pageNumbers;
+
+    /**
+     * The page numbers on the retrieved document, if available.
+     *
+     * @return the value
+     */
+    public java.util.List<Integer> getPageNumbers() {
+        return pageNumbers;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -125,6 +238,9 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         sb.append("super=").append(super.toString());
         sb.append("sourceText=").append(String.valueOf(this.sourceText));
         sb.append(", sourceLocation=").append(String.valueOf(this.sourceLocation));
+        sb.append(", title=").append(String.valueOf(this.title));
+        sb.append(", docId=").append(String.valueOf(this.docId));
+        sb.append(", pageNumbers=").append(String.valueOf(this.pageNumbers));
         sb.append(")");
         return sb.toString();
     }
@@ -141,6 +257,9 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         Citation other = (Citation) o;
         return java.util.Objects.equals(this.sourceText, other.sourceText)
                 && java.util.Objects.equals(this.sourceLocation, other.sourceLocation)
+                && java.util.Objects.equals(this.title, other.title)
+                && java.util.Objects.equals(this.docId, other.docId)
+                && java.util.Objects.equals(this.pageNumbers, other.pageNumbers)
                 && super.equals(other);
     }
 
@@ -152,6 +271,9 @@ public final class Citation extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.sourceLocation == null ? 43 : this.sourceLocation.hashCode());
+        result = (result * PRIME) + (this.title == null ? 43 : this.title.hashCode());
+        result = (result * PRIME) + (this.docId == null ? 43 : this.docId.hashCode());
+        result = (result * PRIME) + (this.pageNumbers == null ? 43 : this.pageNumbers.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

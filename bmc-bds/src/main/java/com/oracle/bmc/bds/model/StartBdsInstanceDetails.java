@@ -23,10 +23,12 @@ package com.oracle.bmc.bds.model;
 public final class StartBdsInstanceDetails
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
-    @java.beans.ConstructorProperties({"clusterAdminPassword"})
-    public StartBdsInstanceDetails(String clusterAdminPassword) {
+    @java.beans.ConstructorProperties({"clusterAdminPassword", "startClusterShapeConfigs"})
+    public StartBdsInstanceDetails(
+            String clusterAdminPassword, StartClusterShapeConfigs startClusterShapeConfigs) {
         super();
         this.clusterAdminPassword = clusterAdminPassword;
+        this.startClusterShapeConfigs = startClusterShapeConfigs;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -47,11 +49,22 @@ public final class StartBdsInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("startClusterShapeConfigs")
+        private StartClusterShapeConfigs startClusterShapeConfigs;
+
+        public Builder startClusterShapeConfigs(StartClusterShapeConfigs startClusterShapeConfigs) {
+            this.startClusterShapeConfigs = startClusterShapeConfigs;
+            this.__explicitlySet__.add("startClusterShapeConfigs");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public StartBdsInstanceDetails build() {
-            StartBdsInstanceDetails model = new StartBdsInstanceDetails(this.clusterAdminPassword);
+            StartBdsInstanceDetails model =
+                    new StartBdsInstanceDetails(
+                            this.clusterAdminPassword, this.startClusterShapeConfigs);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -62,6 +75,9 @@ public final class StartBdsInstanceDetails
         public Builder copy(StartBdsInstanceDetails model) {
             if (model.wasPropertyExplicitlySet("clusterAdminPassword")) {
                 this.clusterAdminPassword(model.getClusterAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("startClusterShapeConfigs")) {
+                this.startClusterShapeConfigs(model.getStartClusterShapeConfigs());
             }
             return this;
         }
@@ -89,6 +105,13 @@ public final class StartBdsInstanceDetails
         return clusterAdminPassword;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("startClusterShapeConfigs")
+    private final StartClusterShapeConfigs startClusterShapeConfigs;
+
+    public StartClusterShapeConfigs getStartClusterShapeConfigs() {
+        return startClusterShapeConfigs;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -105,6 +128,8 @@ public final class StartBdsInstanceDetails
         sb.append("StartBdsInstanceDetails(");
         sb.append("super=").append(super.toString());
         sb.append("clusterAdminPassword=").append("<redacted>");
+        sb.append(", startClusterShapeConfigs=")
+                .append(String.valueOf(this.startClusterShapeConfigs));
         sb.append(")");
         return sb.toString();
     }
@@ -120,6 +145,8 @@ public final class StartBdsInstanceDetails
 
         StartBdsInstanceDetails other = (StartBdsInstanceDetails) o;
         return java.util.Objects.equals(this.clusterAdminPassword, other.clusterAdminPassword)
+                && java.util.Objects.equals(
+                        this.startClusterShapeConfigs, other.startClusterShapeConfigs)
                 && super.equals(other);
     }
 
@@ -132,6 +159,11 @@ public final class StartBdsInstanceDetails
                         + (this.clusterAdminPassword == null
                                 ? 43
                                 : this.clusterAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.startClusterShapeConfigs == null
+                                ? 43
+                                : this.startClusterShapeConfigs.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

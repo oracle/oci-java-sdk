@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **OciObjectStorageDataSourceConfig**
- *
- * <p>The details of OCI Search with OpenSearch data source information. <br>
+ * The details of OCI Search with OpenSearch data source information. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -29,6 +27,14 @@ package com.oracle.bmc.generativeaiagent.model;
 public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldEnableMultiModality")
+        private Boolean shouldEnableMultiModality;
+
+        public Builder shouldEnableMultiModality(Boolean shouldEnableMultiModality) {
+            this.shouldEnableMultiModality = shouldEnableMultiModality;
+            this.__explicitlySet__.add("shouldEnableMultiModality");
+            return this;
+        }
         /**
          * The locations of data items in Object Storage, can either be an object (File) or a prefix
          * (folder).
@@ -55,7 +61,8 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
         public OciObjectStorageDataSourceConfig build() {
             OciObjectStorageDataSourceConfig model =
-                    new OciObjectStorageDataSourceConfig(this.objectStoragePrefixes);
+                    new OciObjectStorageDataSourceConfig(
+                            this.shouldEnableMultiModality, this.objectStoragePrefixes);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -64,6 +71,9 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         public Builder copy(OciObjectStorageDataSourceConfig model) {
+            if (model.wasPropertyExplicitlySet("shouldEnableMultiModality")) {
+                this.shouldEnableMultiModality(model.getShouldEnableMultiModality());
+            }
             if (model.wasPropertyExplicitlySet("objectStoragePrefixes")) {
                 this.objectStoragePrefixes(model.getObjectStoragePrefixes());
             }
@@ -82,8 +92,9 @@ public final class OciObjectStorageDataSourceConfig extends DataSourceConfig {
 
     @Deprecated
     public OciObjectStorageDataSourceConfig(
+            Boolean shouldEnableMultiModality,
             java.util.List<ObjectStoragePrefix> objectStoragePrefixes) {
-        super();
+        super(shouldEnableMultiModality);
         this.objectStoragePrefixes = objectStoragePrefixes;
     }
 

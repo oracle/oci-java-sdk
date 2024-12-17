@@ -826,6 +826,39 @@ public class OcbAgentSvcClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public UpdatePluginResponse updatePlugin(UpdatePluginRequest request) {
+
+        Validate.notBlank(request.getAgentId(), "agentId must not be blank");
+
+        Validate.notBlank(request.getPluginName(), "pluginName must not be blank");
+        Objects.requireNonNull(request.getUpdatePluginDetails(), "updatePluginDetails is required");
+
+        return clientCall(request, UpdatePluginResponse::builder)
+                .logger(LOG, "updatePlugin")
+                .serviceDetails(
+                        "OcbAgentSvc",
+                        "UpdatePlugin",
+                        "https://docs.oracle.com/iaas/api/#/en/OCB/20220509/Plugin/UpdatePlugin")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdatePluginRequest::builder)
+                .basePath("/20220509")
+                .appendPathParam("agents")
+                .appendPathParam(request.getAgentId())
+                .appendPathParam("plugins")
+                .appendPathParam(request.getPluginName())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdatePluginResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdatePluginResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public OcbAgentSvcWaiters getWaiters() {
         return waiters;
     }

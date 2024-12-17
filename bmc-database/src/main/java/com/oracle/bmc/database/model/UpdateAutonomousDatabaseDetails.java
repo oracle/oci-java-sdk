@@ -77,6 +77,7 @@ public final class UpdateAutonomousDatabaseDetails
         "isMtlsConnectionRequired",
         "resourcePoolLeaderId",
         "resourcePoolSummary",
+        "isBackupRetentionLocked",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
@@ -131,6 +132,7 @@ public final class UpdateAutonomousDatabaseDetails
             Boolean isMtlsConnectionRequired,
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
+            Boolean isBackupRetentionLocked,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
@@ -184,6 +186,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
@@ -1578,6 +1581,21 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("resourcePoolSummary");
             return this;
         }
+        /** True if the Autonomous Database is backup retention locked. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        /**
+         * True if the Autonomous Database is backup retention locked.
+         *
+         * @param isBackupRetentionLocked the value to set
+         * @return this builder
+         */
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
+            return this;
+        }
         /**
          * The list of scheduled operations. Consists of values such as dayOfWeek,
          * scheduledStartTime, scheduledStopTime.
@@ -1782,6 +1800,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.isMtlsConnectionRequired,
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
+                            this.isBackupRetentionLocked,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
                             this.databaseEdition,
@@ -1932,6 +1951,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
                 this.resourcePoolSummary(model.getResourcePoolSummary());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("scheduledOperations")) {
                 this.scheduledOperations(model.getScheduledOperations());
@@ -3467,6 +3489,19 @@ public final class UpdateAutonomousDatabaseDetails
         return resourcePoolSummary;
     }
 
+    /** True if the Autonomous Database is backup retention locked. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * True if the Autonomous Database is backup retention locked.
+     *
+     * @return the value
+     */
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
+    }
+
     /**
      * The list of scheduled operations. Consists of values such as dayOfWeek, scheduledStartTime,
      * scheduledStopTime.
@@ -3669,6 +3704,8 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.isMtlsConnectionRequired));
         sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
         sb.append(", isAutoScalingForStorageEnabled=")
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
@@ -3747,6 +3784,8 @@ public final class UpdateAutonomousDatabaseDetails
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
                 && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
                 && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
                 && java.util.Objects.equals(
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
@@ -3907,6 +3946,11 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.resourcePoolSummary == null
                                 ? 43
                                 : this.resourcePoolSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
         result =
                 (result * PRIME)
                         + (this.scheduledOperations == null

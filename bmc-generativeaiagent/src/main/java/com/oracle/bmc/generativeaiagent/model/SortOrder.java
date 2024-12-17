@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **SortOrder**
- *
- * <p>The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The {@code
+ * The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). The {@code
  * displayName} sort order is case sensitive.
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")

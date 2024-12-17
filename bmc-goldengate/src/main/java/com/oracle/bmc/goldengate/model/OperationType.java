@@ -43,6 +43,12 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     GoldengateDeploymentUpgradeSnooze("GOLDENGATE_DEPLOYMENT_UPGRADE_SNOOZE"),
     GoldengateDeploymentCertificateCreate("GOLDENGATE_DEPLOYMENT_CERTIFICATE_CREATE"),
     GoldengateDeploymentCertificateDelete("GOLDENGATE_DEPLOYMENT_CERTIFICATE_DELETE"),
+    GoldengatePipelineCreate("GOLDENGATE_PIPELINE_CREATE"),
+    GoldengatePipelineStart("GOLDENGATE_PIPELINE_START"),
+    GoldengatePipelineStop("GOLDENGATE_PIPELINE_STOP"),
+    GoldengatePipelineUpdate("GOLDENGATE_PIPELINE_UPDATE"),
+    GoldengatePipelineDelete("GOLDENGATE_PIPELINE_DELETE"),
+    GoldengatePipelineMove("GOLDENGATE_PIPELINE_MOVE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

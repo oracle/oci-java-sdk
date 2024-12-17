@@ -246,7 +246,7 @@ public class AuthUtils {
         final String name = principal.getName();
         Optional<String> tenancyId = getValue(name, "OU", "opc-tenant"); // IP
         if (!tenancyId.isPresent()) {
-            tenancyId = getValue(name, "OU", "opc-identity"); // SP
+            tenancyId = getValue(name, "O", "opc-identity"); // SP
         }
         if (tenancyId.isPresent()) {
             return tenancyId.get();

@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **AgentCollection**
- *
- * <p>Results of an agent search. Contains both AgentSummary items and other information, such as
+ * Results of an agent search. Contains both AgentSummary items and other information, such as
  * metadata. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly

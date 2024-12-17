@@ -56,6 +56,15 @@ public enum OperationTypes implements com.oracle.bmc.http.internal.BmcEnum {
     DeleteResourcePrincipalConfiguration("DELETE_RESOURCE_PRINCIPAL_CONFIGURATION"),
     UpdateResourcePrincipalConfiguration("UPDATE_RESOURCE_PRINCIPAL_CONFIGURATION"),
     RefreshResourcePrincipal("REFRESH_RESOURCE_PRINCIPAL"),
+    CreateIdentityConfig("CREATE_IDENTITY_CONFIG"),
+    DeleteIdentityConfig("DELETE_IDENTITY_CONFIG"),
+    UpdateIdentityConfig("UPDATE_IDENTITY_CONFIG"),
+    ActivateUpstConfig("ACTIVATE_UPST_CONFIG"),
+    DeactivateUpstConfig("DEACTIVATE_UPST_CONFIG"),
+    RefreshConfidentialApplication("REFRESH_CONFIDENTIAL_APPLICATION"),
+    RefreshTokenExchangeKeytab("REFRESH_TOKEN_EXCHANGE_KEYTAB"),
+    ActivateIamUserSyncConfig("ACTIVATE_IAM_USER_SYNC_CONFIG"),
+    DeactivateIamUserSyncConfig("DEACTIVATE_IAM_USER_SYNC_CONFIG"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
