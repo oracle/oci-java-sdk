@@ -42,13 +42,35 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
             this.__explicitlySet__.add("waitTimeBetweenDomainInSeconds");
             return this;
         }
+        /**
+         * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of
+         * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master
+         * nodes.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerDomain")
+        private Integer toleranceThresholdPerDomain;
+
+        /**
+         * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of
+         * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master
+         * nodes.
+         *
+         * @param toleranceThresholdPerDomain the value to set
+         * @return this builder
+         */
+        public Builder toleranceThresholdPerDomain(Integer toleranceThresholdPerDomain) {
+            this.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
+            this.__explicitlySet__.add("toleranceThresholdPerDomain");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
         public DomainBasedOdhPatchingConfig build() {
             DomainBasedOdhPatchingConfig model =
-                    new DomainBasedOdhPatchingConfig(this.waitTimeBetweenDomainInSeconds);
+                    new DomainBasedOdhPatchingConfig(
+                            this.waitTimeBetweenDomainInSeconds, this.toleranceThresholdPerDomain);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -59,6 +81,9 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
         public Builder copy(DomainBasedOdhPatchingConfig model) {
             if (model.wasPropertyExplicitlySet("waitTimeBetweenDomainInSeconds")) {
                 this.waitTimeBetweenDomainInSeconds(model.getWaitTimeBetweenDomainInSeconds());
+            }
+            if (model.wasPropertyExplicitlySet("toleranceThresholdPerDomain")) {
+                this.toleranceThresholdPerDomain(model.getToleranceThresholdPerDomain());
             }
             return this;
         }
@@ -74,9 +99,11 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
     }
 
     @Deprecated
-    public DomainBasedOdhPatchingConfig(Integer waitTimeBetweenDomainInSeconds) {
+    public DomainBasedOdhPatchingConfig(
+            Integer waitTimeBetweenDomainInSeconds, Integer toleranceThresholdPerDomain) {
         super();
         this.waitTimeBetweenDomainInSeconds = waitTimeBetweenDomainInSeconds;
+        this.toleranceThresholdPerDomain = toleranceThresholdPerDomain;
     }
 
     /** The wait time between AD/FD in seconds. */
@@ -90,6 +117,23 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
      */
     public Integer getWaitTimeBetweenDomainInSeconds() {
         return waitTimeBetweenDomainInSeconds;
+    }
+
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of
+     * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("toleranceThresholdPerDomain")
+    private final Integer toleranceThresholdPerDomain;
+
+    /**
+     * Acceptable number of failed-to-be-patched nodes in each domain. The maximum number of
+     * failed-to-patch nodes cannot exceed 20% of the number of non-utility and non-master nodes.
+     *
+     * @return the value
+     */
+    public Integer getToleranceThresholdPerDomain() {
+        return toleranceThresholdPerDomain;
     }
 
     @Override
@@ -109,6 +153,8 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
         sb.append("super=").append(super.toString(includeByteArrayContents));
         sb.append(", waitTimeBetweenDomainInSeconds=")
                 .append(String.valueOf(this.waitTimeBetweenDomainInSeconds));
+        sb.append(", toleranceThresholdPerDomain=")
+                .append(String.valueOf(this.toleranceThresholdPerDomain));
         sb.append(")");
         return sb.toString();
     }
@@ -125,6 +171,8 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
         DomainBasedOdhPatchingConfig other = (DomainBasedOdhPatchingConfig) o;
         return java.util.Objects.equals(
                         this.waitTimeBetweenDomainInSeconds, other.waitTimeBetweenDomainInSeconds)
+                && java.util.Objects.equals(
+                        this.toleranceThresholdPerDomain, other.toleranceThresholdPerDomain)
                 && super.equals(other);
     }
 
@@ -137,6 +185,11 @@ public final class DomainBasedOdhPatchingConfig extends OdhPatchingConfig {
                         + (this.waitTimeBetweenDomainInSeconds == null
                                 ? 43
                                 : this.waitTimeBetweenDomainInSeconds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.toleranceThresholdPerDomain == null
+                                ? 43
+                                : this.toleranceThresholdPerDomain.hashCode());
         return result;
     }
 }

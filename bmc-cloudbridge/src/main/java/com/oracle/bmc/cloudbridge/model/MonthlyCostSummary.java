@@ -47,12 +47,12 @@ public final class MonthlyCostSummary
             this.__explicitlySet__.add("amount");
             return this;
         }
-        /** Currency code as defined by ISO-4217. */
+        /** Currency code */
         @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
         private String currencyCode;
 
         /**
-         * Currency code as defined by ISO-4217.
+         * Currency code
          *
          * @param currencyCode the value to set
          * @return this builder
@@ -108,12 +108,12 @@ public final class MonthlyCostSummary
         return amount;
     }
 
-    /** Currency code as defined by ISO-4217. */
+    /** Currency code */
     @com.fasterxml.jackson.annotation.JsonProperty("currencyCode")
     private final String currencyCode;
 
     /**
-     * Currency code as defined by ISO-4217.
+     * Currency code
      *
      * @return the value
      */

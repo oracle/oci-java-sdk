@@ -30,7 +30,10 @@ package com.oracle.bmc.stackmonitoring.model;
             name = "SQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = JmxQueryProperties.class,
-            name = "JMX")
+            name = "JMX"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HttpQueryProperties.class,
+            name = "HTTP")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

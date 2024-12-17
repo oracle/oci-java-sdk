@@ -84,6 +84,40 @@ public interface Bds extends AutoCloseable {
             ActivateBdsMetastoreConfigurationRequest request);
 
     /**
+     * Activate IAM user sync configuration for the given identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateIamUserSyncConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ActivateIamUserSyncConfiguration API.
+     */
+    ActivateIamUserSyncConfigurationResponse activateIamUserSyncConfiguration(
+            ActivateIamUserSyncConfigurationRequest request);
+
+    /**
+     * Activate UPST configuration for the given identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ActivateUpstConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ActivateUpstConfiguration API.
+     */
+    ActivateUpstConfigurationResponse activateUpstConfiguration(
+            ActivateUpstConfigurationRequest request);
+
+    /**
      * Add an autoscale configuration to the cluster.
      *
      * @param request The request object containing the details to send
@@ -319,6 +353,23 @@ public interface Bds extends AutoCloseable {
             CreateBdsMetastoreConfigurationRequest request);
 
     /**
+     * Create an identity configuration for the cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/CreateIdentityConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateIdentityConfiguration API.
+     */
+    CreateIdentityConfigurationResponse createIdentityConfiguration(
+            CreateIdentityConfigurationRequest request);
+
+    /**
      * Add a node volume backup configuration to the cluster for an indicated node type or node.
      *
      * @param request The request object containing the details to send
@@ -370,6 +421,40 @@ public interface Bds extends AutoCloseable {
             CreateResourcePrincipalConfigurationRequest request);
 
     /**
+     * Deactivate the IAM user sync configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeactivateIamUserSyncConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeactivateIamUserSyncConfiguration API.
+     */
+    DeactivateIamUserSyncConfigurationResponse deactivateIamUserSyncConfiguration(
+            DeactivateIamUserSyncConfigurationRequest request);
+
+    /**
+     * Deactivate the UPST configuration represented by the provided ID.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeactivateUpstConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeactivateUpstConfiguration API.
+     */
+    DeactivateUpstConfigurationResponse deactivateUpstConfiguration(
+            DeactivateUpstConfigurationRequest request);
+
+    /**
      * Deletes the user's API key represented by the provided ID.
      *
      * @param request The request object containing the details to send
@@ -417,6 +502,25 @@ public interface Bds extends AutoCloseable {
      */
     DeleteBdsMetastoreConfigurationResponse deleteBdsMetastoreConfiguration(
             DeleteBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Delete the identity configuration represented by the provided ID. Deletion is only allowed if
+     * this identity configuration is not associated with any active IAM user sync configuration or
+     * UPST configuration.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/DeleteIdentityConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteIdentityConfiguration API.
+     */
+    DeleteIdentityConfigurationResponse deleteIdentityConfiguration(
+            DeleteIdentityConfigurationRequest request);
 
     /**
      * Delete the NodeBackup represented by the provided ID.
@@ -581,6 +685,23 @@ public interface Bds extends AutoCloseable {
             GetBdsMetastoreConfigurationRequest request);
 
     /**
+     * Get details of one identity config on the cluster
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/GetIdentityConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetIdentityConfiguration API.
+     */
+    GetIdentityConfigurationResponse getIdentityConfiguration(
+            GetIdentityConfigurationRequest request);
+
+    /**
      * Returns details of NodeBackup identified by the given ID.
      *
      * @param request The request object containing the details to send
@@ -740,6 +861,22 @@ public interface Bds extends AutoCloseable {
     ListBdsApiKeysResponse listBdsApiKeys(ListBdsApiKeysRequest request);
 
     /**
+     * Returns a list of cluster versions with associated odh and bds versions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListBdsClusterVersionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListBdsClusterVersions API.
+     */
+    ListBdsClusterVersionsResponse listBdsClusterVersions(ListBdsClusterVersionsRequest request);
+
+    /**
      * Returns a list of all Big Data Service clusters in a compartment.
      *
      * @param request The request object containing the details to send
@@ -771,6 +908,23 @@ public interface Bds extends AutoCloseable {
      */
     ListBdsMetastoreConfigurationsResponse listBdsMetastoreConfigurations(
             ListBdsMetastoreConfigurationsRequest request);
+
+    /**
+     * Returns a list of all identity configurations associated with this Big Data Service cluster.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/ListIdentityConfigurationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListIdentityConfigurations API.
+     */
+    ListIdentityConfigurationsResponse listIdentityConfigurations(
+            ListIdentityConfigurationsRequest request);
 
     /**
      * Returns information about the NodeBackupConfigurations.
@@ -932,6 +1086,41 @@ public interface Bds extends AutoCloseable {
      *     API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
+
+    /**
+     * Refresh confidential application for the given identity configuration in case of any update
+     * to the confidential application (e.g. regenerated client secret)
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RefreshConfidentialApplicationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RefreshConfidentialApplication API.
+     */
+    RefreshConfidentialApplicationResponse refreshConfidentialApplication(
+            RefreshConfidentialApplicationRequest request);
+
+    /**
+     * Refresh token exchange kerberos principal keytab for the UPST enabled identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/RefreshUpstTokenExchangeKeytabExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RefreshUpstTokenExchangeKeytab API.
+     */
+    RefreshUpstTokenExchangeKeytabResponse refreshUpstTokenExchangeKeytab(
+            RefreshUpstTokenExchangeKeytabRequest request);
 
     /**
      * Deletes an autoscale configuration.
@@ -1191,6 +1380,23 @@ public interface Bds extends AutoCloseable {
      */
     UpdateBdsMetastoreConfigurationResponse updateBdsMetastoreConfiguration(
             UpdateBdsMetastoreConfigurationRequest request);
+
+    /**
+     * Update the IAM user sync and UPST configuration for the specified identity configuration
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/bds/UpdateIdentityConfigurationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateIdentityConfiguration API.
+     */
+    UpdateIdentityConfigurationResponse updateIdentityConfiguration(
+            UpdateIdentityConfigurationRequest request);
 
     /**
      * Updates fields on NodeBackupConfiguration, including the name, the schedule.

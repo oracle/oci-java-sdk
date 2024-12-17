@@ -5,7 +5,7 @@
 package com.oracle.bmc.datascience.model;
 
 /**
- * Summary information for a Job. <br>
+ * Summary information for a job run. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -165,14 +165,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * of the project to associate the job run with.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("projectId")
         private String projectId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the project to associate the job with.
+         * of the project to associate the job run with.
          *
          * @param projectId the value to set
          * @return this builder
@@ -184,14 +184,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * of the compartment where you want to create the job run.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the compartment where you want to create the job.
+         * of the compartment where you want to create the job run.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -203,14 +203,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * of the job.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("jobId")
         private String jobId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the job run.
+         * of the job.
          *
          * @param jobId the value to set
          * @return this builder
@@ -235,12 +235,12 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The state of the job. */
+        /** The state of the job run. */
         @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
         private JobRunLifecycleState lifecycleState;
 
         /**
-         * The state of the job.
+         * The state of the job run.
          *
          * @param lifecycleState the value to set
          * @return this builder
@@ -477,14 +477,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * the project to associate the job run with.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("projectId")
     private final String projectId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the project to associate the job with.
+     * the project to associate the job run with.
      *
      * @return the value
      */
@@ -494,14 +494,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * the compartment where you want to create the job run.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the compartment where you want to create the job.
+     * the compartment where you want to create the job run.
      *
      * @return the value
      */
@@ -511,14 +511,14 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * the job.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("jobId")
     private final String jobId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the job run.
+     * the job.
      *
      * @return the value
      */
@@ -539,12 +539,12 @@ public final class JobRunSummary extends com.oracle.bmc.http.client.internal.Exp
         return displayName;
     }
 
-    /** The state of the job. */
+    /** The state of the job run. */
     @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
     private final JobRunLifecycleState lifecycleState;
 
     /**
-     * The state of the job.
+     * The state of the job run.
      *
      * @return the value
      */

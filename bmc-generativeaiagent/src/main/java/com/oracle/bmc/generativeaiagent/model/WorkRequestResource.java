@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **WorkRequestResource**
- *
- * <p>A resource created or operated on by a work request. <br>
+ * A resource created or operated on by a work request. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

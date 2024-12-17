@@ -63,6 +63,7 @@ public final class AutonomousDatabase
         "infrastructureType",
         "isDedicated",
         "autonomousContainerDatabaseId",
+        "isBackupRetentionLocked",
         "timeUndeleted",
         "timeCreated",
         "displayName",
@@ -188,6 +189,7 @@ public final class AutonomousDatabase
             InfrastructureType infrastructureType,
             Boolean isDedicated,
             String autonomousContainerDatabaseId,
+            Boolean isBackupRetentionLocked,
             java.util.Date timeUndeleted,
             java.util.Date timeCreated,
             String displayName,
@@ -312,6 +314,7 @@ public final class AutonomousDatabase
         this.infrastructureType = infrastructureType;
         this.isDedicated = isDedicated;
         this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.timeUndeleted = timeUndeleted;
         this.timeCreated = timeCreated;
         this.displayName = displayName;
@@ -1207,6 +1210,21 @@ public final class AutonomousDatabase
         public Builder autonomousContainerDatabaseId(String autonomousContainerDatabaseId) {
             this.autonomousContainerDatabaseId = autonomousContainerDatabaseId;
             this.__explicitlySet__.add("autonomousContainerDatabaseId");
+            return this;
+        }
+        /** Indicates if the Autonomous Database is backup retention locked. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+        private Boolean isBackupRetentionLocked;
+
+        /**
+         * Indicates if the Autonomous Database is backup retention locked.
+         *
+         * @param isBackupRetentionLocked the value to set
+         * @return this builder
+         */
+        public Builder isBackupRetentionLocked(Boolean isBackupRetentionLocked) {
+            this.isBackupRetentionLocked = isBackupRetentionLocked;
+            this.__explicitlySet__.add("isBackupRetentionLocked");
             return this;
         }
         /** The date and time the Autonomous Database was most recently undeleted. */
@@ -3100,6 +3118,7 @@ public final class AutonomousDatabase
                             this.infrastructureType,
                             this.isDedicated,
                             this.autonomousContainerDatabaseId,
+                            this.isBackupRetentionLocked,
                             this.timeUndeleted,
                             this.timeCreated,
                             this.displayName,
@@ -3311,6 +3330,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("autonomousContainerDatabaseId")) {
                 this.autonomousContainerDatabaseId(model.getAutonomousContainerDatabaseId());
+            }
+            if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
+                this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
             }
             if (model.wasPropertyExplicitlySet("timeUndeleted")) {
                 this.timeUndeleted(model.getTimeUndeleted());
@@ -4454,6 +4476,19 @@ public final class AutonomousDatabase
      */
     public String getAutonomousContainerDatabaseId() {
         return autonomousContainerDatabaseId;
+    }
+
+    /** Indicates if the Autonomous Database is backup retention locked. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * Indicates if the Autonomous Database is backup retention locked.
+     *
+     * @return the value
+     */
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
     }
 
     /** The date and time the Autonomous Database was most recently undeleted. */
@@ -6934,6 +6969,8 @@ public final class AutonomousDatabase
         sb.append(", isDedicated=").append(String.valueOf(this.isDedicated));
         sb.append(", autonomousContainerDatabaseId=")
                 .append(String.valueOf(this.autonomousContainerDatabaseId));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", timeUndeleted=").append(String.valueOf(this.timeUndeleted));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
@@ -7113,6 +7150,8 @@ public final class AutonomousDatabase
                 && java.util.Objects.equals(this.isDedicated, other.isDedicated)
                 && java.util.Objects.equals(
                         this.autonomousContainerDatabaseId, other.autonomousContainerDatabaseId)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.timeUndeleted, other.timeUndeleted)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.displayName, other.displayName)
@@ -7359,6 +7398,11 @@ public final class AutonomousDatabase
                         + (this.autonomousContainerDatabaseId == null
                                 ? 43
                                 : this.autonomousContainerDatabaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeUndeleted == null ? 43 : this.timeUndeleted.hashCode());

@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **DataIngestionJob**
- *
- * <p>When you create a data source, you specify the location of the data files. To make those files
+ * When you create a data source, you specify the location of the data files. To make those files
  * usable by an agent, you must download them into the agent's associated knowledge base, a process
  * known as data ingestion. Data ingestion is a process that extracts data from data source
  * documents, converts it into a structured format suitable for analysis, and then stores it in a
@@ -40,6 +38,7 @@ public final class DataIngestionJob
         "description",
         "compartmentId",
         "dataSourceId",
+        "knowledgeBaseId",
         "dataIngestionJobStatistics",
         "timeCreated",
         "timeUpdated",
@@ -55,6 +54,7 @@ public final class DataIngestionJob
             String description,
             String compartmentId,
             String dataSourceId,
+            String knowledgeBaseId,
             DataIngestionJobStatistics dataIngestionJobStatistics,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
@@ -69,6 +69,7 @@ public final class DataIngestionJob
         this.description = description;
         this.compartmentId = compartmentId;
         this.dataSourceId = dataSourceId;
+        this.knowledgeBaseId = knowledgeBaseId;
         this.dataIngestionJobStatistics = dataIngestionJobStatistics;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
@@ -166,6 +167,25 @@ public final class DataIngestionJob
         public Builder dataSourceId(String dataSourceId) {
             this.dataSourceId = dataSourceId;
             this.__explicitlySet__.add("dataSourceId");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent KnowledgeBase.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
+        private String knowledgeBaseId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the parent KnowledgeBase.
+         *
+         * @param knowledgeBaseId the value to set
+         * @return this builder
+         */
+        public Builder knowledgeBaseId(String knowledgeBaseId) {
+            this.knowledgeBaseId = knowledgeBaseId;
+            this.__explicitlySet__.add("knowledgeBaseId");
             return this;
         }
 
@@ -344,6 +364,7 @@ public final class DataIngestionJob
                             this.description,
                             this.compartmentId,
                             this.dataSourceId,
+                            this.knowledgeBaseId,
                             this.dataIngestionJobStatistics,
                             this.timeCreated,
                             this.timeUpdated,
@@ -374,6 +395,9 @@ public final class DataIngestionJob
             }
             if (model.wasPropertyExplicitlySet("dataSourceId")) {
                 this.dataSourceId(model.getDataSourceId());
+            }
+            if (model.wasPropertyExplicitlySet("knowledgeBaseId")) {
+                this.knowledgeBaseId(model.getKnowledgeBaseId());
             }
             if (model.wasPropertyExplicitlySet("dataIngestionJobStatistics")) {
                 this.dataIngestionJobStatistics(model.getDataIngestionJobStatistics());
@@ -487,6 +511,23 @@ public final class DataIngestionJob
      */
     public String getDataSourceId() {
         return dataSourceId;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent KnowledgeBase.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("knowledgeBaseId")
+    private final String knowledgeBaseId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the parent KnowledgeBase.
+     *
+     * @return the value
+     */
+    public String getKnowledgeBaseId() {
+        return knowledgeBaseId;
     }
 
     @com.fasterxml.jackson.annotation.JsonProperty("dataIngestionJobStatistics")
@@ -704,6 +745,7 @@ public final class DataIngestionJob
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(", dataSourceId=").append(String.valueOf(this.dataSourceId));
+        sb.append(", knowledgeBaseId=").append(String.valueOf(this.knowledgeBaseId));
         sb.append(", dataIngestionJobStatistics=")
                 .append(String.valueOf(this.dataIngestionJobStatistics));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
@@ -732,6 +774,7 @@ public final class DataIngestionJob
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.dataSourceId, other.dataSourceId)
+                && java.util.Objects.equals(this.knowledgeBaseId, other.knowledgeBaseId)
                 && java.util.Objects.equals(
                         this.dataIngestionJobStatistics, other.dataIngestionJobStatistics)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
@@ -755,6 +798,9 @@ public final class DataIngestionJob
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.dataSourceId == null ? 43 : this.dataSourceId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.knowledgeBaseId == null ? 43 : this.knowledgeBaseId.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataIngestionJobStatistics == null

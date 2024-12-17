@@ -28,7 +28,8 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "uuidLun",
         "sizeInMBs",
         "location",
-        "persistentMode"
+        "persistentMode",
+        "isCbtEnabled"
     })
     public Disk(
             String name,
@@ -37,7 +38,8 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
             String uuidLun,
             Long sizeInMBs,
             String location,
-            String persistentMode) {
+            String persistentMode,
+            Boolean isCbtEnabled) {
         super();
         this.name = name;
         this.bootOrder = bootOrder;
@@ -46,6 +48,7 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.sizeInMBs = sizeInMBs;
         this.location = location;
         this.persistentMode = persistentMode;
+        this.isCbtEnabled = isCbtEnabled;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -155,6 +158,21 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("persistentMode");
             return this;
         }
+        /** Indicates that CBT (change disk tracking) is enabled for this virtual disk. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isCbtEnabled")
+        private Boolean isCbtEnabled;
+
+        /**
+         * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+         *
+         * @param isCbtEnabled the value to set
+         * @return this builder
+         */
+        public Builder isCbtEnabled(Boolean isCbtEnabled) {
+            this.isCbtEnabled = isCbtEnabled;
+            this.__explicitlySet__.add("isCbtEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -168,7 +186,8 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.uuidLun,
                             this.sizeInMBs,
                             this.location,
-                            this.persistentMode);
+                            this.persistentMode,
+                            this.isCbtEnabled);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -197,6 +216,9 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("persistentMode")) {
                 this.persistentMode(model.getPersistentMode());
+            }
+            if (model.wasPropertyExplicitlySet("isCbtEnabled")) {
+                this.isCbtEnabled(model.getIsCbtEnabled());
             }
             return this;
         }
@@ -302,6 +324,19 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return persistentMode;
     }
 
+    /** Indicates that CBT (change disk tracking) is enabled for this virtual disk. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isCbtEnabled")
+    private final Boolean isCbtEnabled;
+
+    /**
+     * Indicates that CBT (change disk tracking) is enabled for this virtual disk.
+     *
+     * @return the value
+     */
+    public Boolean getIsCbtEnabled() {
+        return isCbtEnabled;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -324,6 +359,7 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", sizeInMBs=").append(String.valueOf(this.sizeInMBs));
         sb.append(", location=").append(String.valueOf(this.location));
         sb.append(", persistentMode=").append(String.valueOf(this.persistentMode));
+        sb.append(", isCbtEnabled=").append(String.valueOf(this.isCbtEnabled));
         sb.append(")");
         return sb.toString();
     }
@@ -345,6 +381,7 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.sizeInMBs, other.sizeInMBs)
                 && java.util.Objects.equals(this.location, other.location)
                 && java.util.Objects.equals(this.persistentMode, other.persistentMode)
+                && java.util.Objects.equals(this.isCbtEnabled, other.isCbtEnabled)
                 && super.equals(other);
     }
 
@@ -361,6 +398,7 @@ public final class Disk extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.persistentMode == null ? 43 : this.persistentMode.hashCode());
+        result = (result * PRIME) + (this.isCbtEnabled == null ? 43 : this.isCbtEnabled.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

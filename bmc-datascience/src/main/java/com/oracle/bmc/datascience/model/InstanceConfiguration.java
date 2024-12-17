@@ -26,16 +26,19 @@ public final class InstanceConfiguration
     @java.beans.ConstructorProperties({
         "instanceShapeName",
         "modelDeploymentInstanceShapeConfigDetails",
-        "subnetId"
+        "subnetId",
+        "privateEndpointId"
     })
     public InstanceConfiguration(
             String instanceShapeName,
             ModelDeploymentInstanceShapeConfigDetails modelDeploymentInstanceShapeConfigDetails,
-            String subnetId) {
+            String subnetId,
+            String privateEndpointId) {
         super();
         this.instanceShapeName = instanceShapeName;
         this.modelDeploymentInstanceShapeConfigDetails = modelDeploymentInstanceShapeConfigDetails;
         this.subnetId = subnetId;
+        this.privateEndpointId = privateEndpointId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -90,6 +93,21 @@ public final class InstanceConfiguration
             this.__explicitlySet__.add("subnetId");
             return this;
         }
+        /** The OCID of a Data Science private endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+        private String privateEndpointId;
+
+        /**
+         * The OCID of a Data Science private endpoint.
+         *
+         * @param privateEndpointId the value to set
+         * @return this builder
+         */
+        public Builder privateEndpointId(String privateEndpointId) {
+            this.privateEndpointId = privateEndpointId;
+            this.__explicitlySet__.add("privateEndpointId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -99,7 +117,8 @@ public final class InstanceConfiguration
                     new InstanceConfiguration(
                             this.instanceShapeName,
                             this.modelDeploymentInstanceShapeConfigDetails,
-                            this.subnetId);
+                            this.subnetId,
+                            this.privateEndpointId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -117,6 +136,9 @@ public final class InstanceConfiguration
             }
             if (model.wasPropertyExplicitlySet("subnetId")) {
                 this.subnetId(model.getSubnetId());
+            }
+            if (model.wasPropertyExplicitlySet("privateEndpointId")) {
+                this.privateEndpointId(model.getPrivateEndpointId());
             }
             return this;
         }
@@ -172,6 +194,19 @@ public final class InstanceConfiguration
         return subnetId;
     }
 
+    /** The OCID of a Data Science private endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateEndpointId")
+    private final String privateEndpointId;
+
+    /**
+     * The OCID of a Data Science private endpoint.
+     *
+     * @return the value
+     */
+    public String getPrivateEndpointId() {
+        return privateEndpointId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -191,6 +226,7 @@ public final class InstanceConfiguration
         sb.append(", modelDeploymentInstanceShapeConfigDetails=")
                 .append(String.valueOf(this.modelDeploymentInstanceShapeConfigDetails));
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
+        sb.append(", privateEndpointId=").append(String.valueOf(this.privateEndpointId));
         sb.append(")");
         return sb.toString();
     }
@@ -210,6 +246,7 @@ public final class InstanceConfiguration
                         this.modelDeploymentInstanceShapeConfigDetails,
                         other.modelDeploymentInstanceShapeConfigDetails)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
+                && java.util.Objects.equals(this.privateEndpointId, other.privateEndpointId)
                 && super.equals(other);
     }
 
@@ -226,6 +263,9 @@ public final class InstanceConfiguration
                                 ? 43
                                 : this.modelDeploymentInstanceShapeConfigDetails.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.privateEndpointId == null ? 43 : this.privateEndpointId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

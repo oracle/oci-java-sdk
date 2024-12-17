@@ -288,6 +288,7 @@ public final class WorkRequest extends com.oracle.bmc.http.client.internal.Expli
         StopPlatform("STOP_PLATFORM"),
         CustomizePlatform("CUSTOMIZE_PLATFORM"),
         ScaleStorage("SCALE_STORAGE"),
+        WorkrequestCleanup("WORKREQUEST_CLEANUP"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

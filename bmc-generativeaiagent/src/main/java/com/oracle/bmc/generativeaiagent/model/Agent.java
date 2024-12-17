@@ -5,9 +5,7 @@
 package com.oracle.bmc.generativeaiagent.model;
 
 /**
- * **Agent**
- *
- * <p>An agent is an LLM-based autonomous system that understands and generates human-like text,
+ * An agent is an LLM-based autonomous system that understands and generates human-like text,
  * enabling natural-language processing interactions. OCI Generative AI Agents supports
  * retrieval-augmented generation (RAG) agents. A RAG agent connects to a data source, retrieves
  * data, and augments model responses with the information from the data sources to generate more

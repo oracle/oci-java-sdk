@@ -26,6 +26,7 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     RefreshAssetSource("REFRESH_ASSET_SOURCE"),
     CreateAssetSource("CREATE_ASSET_SOURCE"),
     UpdateAssetSource("UPDATE_ASSET_SOURCE"),
+    UpdatePluginState("UPDATE_PLUGIN_STATE"),
     CloudAwsDiscovery("CLOUD_AWS_DISCOVERY"),
     CollectAwsRealtimeMetrics("COLLECT_AWS_REALTIME_METRICS"),
     CollectAwsHistoricalMetrics("COLLECT_AWS_HISTORICAL_METRICS"),

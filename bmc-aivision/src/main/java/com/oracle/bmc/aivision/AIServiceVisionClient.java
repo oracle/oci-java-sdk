@@ -233,6 +233,32 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CancelVideoJobResponse cancelVideoJob(CancelVideoJobRequest request) {
+
+        Validate.notBlank(request.getVideoJobId(), "videoJobId must not be blank");
+
+        return clientCall(request, CancelVideoJobResponse::builder)
+                .logger(LOG, "cancelVideoJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "CancelVideoJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/CancelVideoJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CancelVideoJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("videoJobs")
+                .appendPathParam(request.getVideoJobId())
+                .appendPathParam("actions")
+                .appendPathParam("cancel")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", CancelVideoJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request) {
 
         Validate.notBlank(request.getWorkRequestId(), "workRequestId must not be blank");
@@ -428,6 +454,34 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public CreateVideoJobResponse createVideoJob(CreateVideoJobRequest request) {
+        Objects.requireNonNull(
+                request.getCreateVideoJobDetails(), "createVideoJobDetails is required");
+
+        return clientCall(request, CreateVideoJobResponse::builder)
+                .logger(LOG, "createVideoJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "CreateVideoJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/CreateVideoJob")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateVideoJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("videoJobs")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.aivision.model.VideoJob.class,
+                        CreateVideoJobResponse.Builder::videoJob)
+                .handleResponseHeaderString("etag", CreateVideoJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateVideoJobResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteModelResponse deleteModel(DeleteModelRequest request) {
 
         Validate.notBlank(request.getModelId(), "modelId must not be blank");
@@ -583,6 +637,33 @@ public class AIServiceVisionClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString("etag", GetProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetVideoJobResponse getVideoJob(GetVideoJobRequest request) {
+
+        Validate.notBlank(request.getVideoJobId(), "videoJobId must not be blank");
+
+        return clientCall(request, GetVideoJobResponse::builder)
+                .logger(LOG, "getVideoJob")
+                .serviceDetails(
+                        "AIServiceVision",
+                        "GetVideoJob",
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/GetVideoJob")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetVideoJobRequest::builder)
+                .basePath("/20220125")
+                .appendPathParam("videoJobs")
+                .appendPathParam(request.getVideoJobId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.aivision.model.VideoJob.class,
+                        GetVideoJobResponse.Builder::videoJob)
+                .handleResponseHeaderString("etag", GetVideoJobResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetVideoJobResponse.Builder::opcRequestId)
                 .callSync();
     }
 

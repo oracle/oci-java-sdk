@@ -162,6 +162,87 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public ActivateIamUserSyncConfigurationResponse activateIamUserSyncConfiguration(
+            ActivateIamUserSyncConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateIamUserSyncConfigurationDetails(),
+                "activateIamUserSyncConfigurationDetails is required");
+
+        return clientCall(request, ActivateIamUserSyncConfigurationResponse::builder)
+                .logger(LOG, "activateIamUserSyncConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "ActivateIamUserSyncConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ActivateIamUserSyncConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateIamUserSyncConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("activateIamUserSyncConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ActivateIamUserSyncConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateIamUserSyncConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ActivateUpstConfigurationResponse activateUpstConfiguration(
+            ActivateUpstConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getActivateUpstConfigurationDetails(),
+                "activateUpstConfigurationDetails is required");
+
+        return clientCall(request, ActivateUpstConfigurationResponse::builder)
+                .logger(LOG, "activateUpstConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "ActivateUpstConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ActivateUpstConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateUpstConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("activateUpstConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateUpstConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ActivateUpstConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public AddAutoScalingConfigurationResponse addAutoScalingConfiguration(
             AddAutoScalingConfigurationRequest request) {
 
@@ -610,6 +691,39 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public CreateIdentityConfigurationResponse createIdentityConfiguration(
+            CreateIdentityConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateIdentityConfigurationDetails(),
+                "createIdentityConfigurationDetails is required");
+
+        return clientCall(request, CreateIdentityConfigurationResponse::builder)
+                .logger(LOG, "createIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "CreateIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/CreateIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateIdentityConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateNodeBackupConfigurationResponse createNodeBackupConfiguration(
             CreateNodeBackupConfigurationRequest request) {
 
@@ -712,6 +826,87 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public DeactivateIamUserSyncConfigurationResponse deactivateIamUserSyncConfiguration(
+            DeactivateIamUserSyncConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getDeactivateIamUserSyncConfigurationDetails(),
+                "deactivateIamUserSyncConfigurationDetails is required");
+
+        return clientCall(request, DeactivateIamUserSyncConfigurationResponse::builder)
+                .logger(LOG, "deactivateIamUserSyncConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeactivateIamUserSyncConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeactivateIamUserSyncConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateIamUserSyncConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivateIamUserSyncConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeactivateIamUserSyncConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateIamUserSyncConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeactivateUpstConfigurationResponse deactivateUpstConfiguration(
+            DeactivateUpstConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getDeactivateUpstConfigurationDetails(),
+                "deactivateUpstConfigurationDetails is required");
+
+        return clientCall(request, DeactivateUpstConfigurationResponse::builder)
+                .logger(LOG, "deactivateUpstConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeactivateUpstConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeactivateUpstConfiguration")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateUpstConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivateUpstConfiguration")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateUpstConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeactivateUpstConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteBdsApiKeyResponse deleteBdsApiKey(DeleteBdsApiKeyRequest request) {
 
         Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
@@ -797,6 +992,39 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         DeleteBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteIdentityConfigurationResponse deleteIdentityConfiguration(
+            DeleteIdentityConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+
+        return clientCall(request, DeleteIdentityConfigurationResponse::builder)
+                .logger(LOG, "deleteIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "DeleteIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/DeleteIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteIdentityConfigurationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1130,6 +1358,43 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         GetBdsMetastoreConfigurationResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", GetBdsMetastoreConfigurationResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetIdentityConfigurationResponse getIdentityConfiguration(
+            GetIdentityConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+
+        return clientCall(request, GetIdentityConfigurationResponse::builder)
+                .logger(LOG, "getIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "GetIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/GetIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.bds.model.IdentityConfiguration.class,
+                        GetIdentityConfigurationResponse.Builder::identityConfiguration)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetIdentityConfigurationResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1471,6 +1736,36 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
     }
 
     @Override
+    public ListBdsClusterVersionsResponse listBdsClusterVersions(
+            ListBdsClusterVersionsRequest request) {
+
+        return clientCall(request, ListBdsClusterVersionsResponse::builder)
+                .logger(LOG, "listBdsClusterVersions")
+                .serviceDetails(
+                        "Bds",
+                        "ListBdsClusterVersions",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/BdsClusterVersionSummary/ListBdsClusterVersions")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListBdsClusterVersionsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsClusterVersions")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.BdsClusterVersionSummary.class,
+                        ListBdsClusterVersionsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListBdsClusterVersionsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListBdsClusterVersionsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListBdsInstancesResponse listBdsInstances(ListBdsInstancesRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -1541,6 +1836,44 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListBdsMetastoreConfigurationsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListIdentityConfigurationsResponse listIdentityConfigurations(
+            ListIdentityConfigurationsRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListIdentityConfigurationsResponse::builder)
+                .logger(LOG, "listIdentityConfigurations")
+                .serviceDetails(
+                        "Bds",
+                        "ListIdentityConfigurations",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/ListIdentityConfigurations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListIdentityConfigurationsRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBodyList(
+                        com.oracle.bmc.bds.model.IdentityConfigurationSummary.class,
+                        ListIdentityConfigurationsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListIdentityConfigurationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListIdentityConfigurationsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -1892,6 +2225,88 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                         "opc-request-id", ListWorkRequestsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListWorkRequestsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public RefreshConfidentialApplicationResponse refreshConfidentialApplication(
+            RefreshConfidentialApplicationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshConfidentialApplicationDetails(),
+                "refreshConfidentialApplicationDetails is required");
+
+        return clientCall(request, RefreshConfidentialApplicationResponse::builder)
+                .logger(LOG, "refreshConfidentialApplication")
+                .serviceDetails(
+                        "Bds",
+                        "RefreshConfidentialApplication",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/RefreshConfidentialApplication")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshConfidentialApplicationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshConfidentialApplication")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshConfidentialApplicationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshConfidentialApplicationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RefreshUpstTokenExchangeKeytabResponse refreshUpstTokenExchangeKeytab(
+            RefreshUpstTokenExchangeKeytabRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getRefreshUpstTokenExchangeKeytabDetails(),
+                "refreshUpstTokenExchangeKeytabDetails is required");
+
+        return clientCall(request, RefreshUpstTokenExchangeKeytabResponse::builder)
+                .logger(LOG, "refreshUpstTokenExchangeKeytab")
+                .serviceDetails(
+                        "Bds",
+                        "RefreshUpstTokenExchangeKeytab",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/RefreshUpstTokenExchangeKeytab")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RefreshUpstTokenExchangeKeytabRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .appendPathParam("actions")
+                .appendPathParam("refreshUpstTokenExchangeKeytab")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        RefreshUpstTokenExchangeKeytabResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RefreshUpstTokenExchangeKeytabResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -2449,6 +2864,44 @@ public class BdsClient extends com.oracle.bmc.http.internal.BaseSyncClient imple
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateBdsMetastoreConfigurationResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateIdentityConfigurationResponse updateIdentityConfiguration(
+            UpdateIdentityConfigurationRequest request) {
+
+        Validate.notBlank(request.getBdsInstanceId(), "bdsInstanceId must not be blank");
+
+        Validate.notBlank(
+                request.getIdentityConfigurationId(), "identityConfigurationId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateIdentityConfigurationDetails(),
+                "updateIdentityConfigurationDetails is required");
+
+        return clientCall(request, UpdateIdentityConfigurationResponse::builder)
+                .logger(LOG, "updateIdentityConfiguration")
+                .serviceDetails(
+                        "Bds",
+                        "UpdateIdentityConfiguration",
+                        "https://docs.oracle.com/iaas/api/#/en/bigdata/20190531/IdentityConfiguration/UpdateIdentityConfiguration")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateIdentityConfigurationRequest::builder)
+                .basePath("/20190531")
+                .appendPathParam("bdsInstances")
+                .appendPathParam(request.getBdsInstanceId())
+                .appendPathParam("identityConfigurations")
+                .appendPathParam(request.getIdentityConfigurationId())
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateIdentityConfigurationResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateIdentityConfigurationResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

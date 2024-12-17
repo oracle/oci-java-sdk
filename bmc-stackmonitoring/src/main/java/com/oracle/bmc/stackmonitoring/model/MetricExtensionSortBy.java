@@ -9,6 +9,7 @@ package com.oracle.bmc.stackmonitoring.model;
 public enum MetricExtensionSortBy implements com.oracle.bmc.http.internal.BmcEnum {
     Name("NAME"),
     TimeCreated("TIME_CREATED"),
+    EnabledOnResourceCount("ENABLED_ON_RESOURCE_COUNT"),
     ;
 
     private final String value;

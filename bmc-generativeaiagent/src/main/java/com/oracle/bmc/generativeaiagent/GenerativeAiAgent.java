@@ -8,9 +8,7 @@ import com.oracle.bmc.generativeaiagent.requests.*;
 import com.oracle.bmc.generativeaiagent.responses.*;
 
 /**
- * **Generative AI Agents API**
- *
- * <p>OCI Generative AI Agents is a fully managed service that combines the power of large language
+ * OCI Generative AI Agents is a fully managed service that combines the power of large language
  * models (LLMs) with an intelligent retrieval system to create contextually relevant answers by
  * searching your knowledge base, making your AI applications smart and efficient.
  *
@@ -82,9 +80,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * **CancelWorkRequest**
-     *
-     * <p>Cancels a work request.
+     * Cancels a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -100,9 +96,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
     /**
-     * **ChangeAgentCompartment**
-     *
-     * <p>Moves an agent into a different compartment within the same tenancy. For information about
+     * Moves an agent into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
@@ -120,10 +114,8 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ChangeAgentCompartmentResponse changeAgentCompartment(ChangeAgentCompartmentRequest request);
 
     /**
-     * **ChangeAgentEndpointCompartment**
-     *
-     * <p>Moves an endpoint into a different compartment within the same tenancy. For information
-     * about moving resources between compartments, see [Moving Resources to a Different
+     * Moves an endpoint into a different compartment within the same tenancy. For information about
+     * moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -141,10 +133,8 @@ public interface GenerativeAiAgent extends AutoCloseable {
             ChangeAgentEndpointCompartmentRequest request);
 
     /**
-     * **ChangeKnowledgeBaseCompartment**
-     *
-     * <p>Moves a knowledge base into a different compartment within the same tenancy. For
-     * information about moving resources between compartments, see [Moving Resources to a Different
+     * Moves a knowledge base into a different compartment within the same tenancy. For information
+     * about moving resources between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
@@ -162,9 +152,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
             ChangeKnowledgeBaseCompartmentRequest request);
 
     /**
-     * **CreateAgent**
-     *
-     * <p>Creates an agent.
+     * Creates an agent.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -179,9 +167,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateAgentResponse createAgent(CreateAgentRequest request);
 
     /**
-     * **CreateAgentEndpoint**
-     *
-     * <p>Creates an endpoint.
+     * Creates an endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -197,9 +183,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateAgentEndpointResponse createAgentEndpoint(CreateAgentEndpointRequest request);
 
     /**
-     * **CreateDataIngestionJob**
-     *
-     * <p>Creates a data ingestion job.
+     * Creates a data ingestion job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -215,9 +199,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateDataIngestionJobResponse createDataIngestionJob(CreateDataIngestionJobRequest request);
 
     /**
-     * **CreateDataSource**
-     *
-     * <p>Creates a data source.
+     * Creates a data source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -233,9 +215,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateDataSourceResponse createDataSource(CreateDataSourceRequest request);
 
     /**
-     * **CreateKnowledgeBase**
-     *
-     * <p>Creates a knowledge base.
+     * Creates a knowledge base.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -251,9 +231,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     CreateKnowledgeBaseResponse createKnowledgeBase(CreateKnowledgeBaseRequest request);
 
     /**
-     * **DeleteAgent**
-     *
-     * <p>Deletes an agent.
+     * Deletes an agent.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -268,9 +246,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     DeleteAgentResponse deleteAgent(DeleteAgentRequest request);
 
     /**
-     * **DeleteAgentEndpoint**
-     *
-     * <p>Deletes an endpoint.
+     * Deletes an endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -286,9 +262,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     DeleteAgentEndpointResponse deleteAgentEndpoint(DeleteAgentEndpointRequest request);
 
     /**
-     * **DeleteDataIngestionJob**
-     *
-     * <p>Deletes a data ingestion job.
+     * Deletes a data ingestion job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -304,9 +278,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     DeleteDataIngestionJobResponse deleteDataIngestionJob(DeleteDataIngestionJobRequest request);
 
     /**
-     * **DeleteDataSource**
-     *
-     * <p>Deletes a data source.
+     * Deletes a data source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -322,9 +294,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     DeleteDataSourceResponse deleteDataSource(DeleteDataSourceRequest request);
 
     /**
-     * **DeleteKnowledgeBase**
-     *
-     * <p>Deletes a knowledge base.
+     * Deletes a knowledge base.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -340,9 +310,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     DeleteKnowledgeBaseResponse deleteKnowledgeBase(DeleteKnowledgeBaseRequest request);
 
     /**
-     * **GetAgent**
-     *
-     * <p>Gets information about an agent.
+     * Gets information about an agent.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -357,9 +325,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetAgentResponse getAgent(GetAgentRequest request);
 
     /**
-     * **GetAgentEndpoint**
-     *
-     * <p>Gets information about an endpoint.
+     * Gets information about an endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -375,9 +341,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetAgentEndpointResponse getAgentEndpoint(GetAgentEndpointRequest request);
 
     /**
-     * **GetDataIngestionJob**
-     *
-     * <p>Gets information about a data ingestion job.
+     * Gets information about a data ingestion job.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -393,9 +357,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetDataIngestionJobResponse getDataIngestionJob(GetDataIngestionJobRequest request);
 
     /**
-     * **GetDataIngestionJobLogContent**
-     *
-     * <p>Returns the raw log file for the specified data ingestion job in text format.
+     * Returns the raw log file for the specified data ingestion job in text format.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -412,9 +374,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
             GetDataIngestionJobLogContentRequest request);
 
     /**
-     * **GetDataSource**
-     *
-     * <p>Gets information about a data source.
+     * Gets information about a data source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -429,9 +389,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetDataSourceResponse getDataSource(GetDataSourceRequest request);
 
     /**
-     * **GetKnowledgeBase**
-     *
-     * <p>Gets information about a knowledge base.
+     * Gets information about a knowledge base.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -447,9 +405,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetKnowledgeBaseResponse getKnowledgeBase(GetKnowledgeBaseRequest request);
 
     /**
-     * **GetWorkRequest**
-     *
-     * <p>Gets the details of a work request.
+     * Gets the details of a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -464,9 +420,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
     /**
-     * **ListAgentEndpoints**
-     *
-     * <p>Gets a list of endpoints.
+     * Gets a list of endpoints.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -482,9 +436,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListAgentEndpointsResponse listAgentEndpoints(ListAgentEndpointsRequest request);
 
     /**
-     * **ListAgents**
-     *
-     * <p>Gets a list of agents.
+     * Gets a list of agents.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -499,9 +451,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListAgentsResponse listAgents(ListAgentsRequest request);
 
     /**
-     * **ListDataIngestionJobs**
-     *
-     * <p>Gets a list of data ingestion jobs.
+     * Gets a list of data ingestion jobs.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -517,9 +467,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListDataIngestionJobsResponse listDataIngestionJobs(ListDataIngestionJobsRequest request);
 
     /**
-     * **ListDataSources**
-     *
-     * <p>Gets a list of data sources.
+     * Gets a list of data sources.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -535,9 +483,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListDataSourcesResponse listDataSources(ListDataSourcesRequest request);
 
     /**
-     * **ListKnowledgeBases**
-     *
-     * <p>Gets a list of knowledge bases.
+     * Gets a list of knowledge bases.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -553,9 +499,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListKnowledgeBasesResponse listKnowledgeBases(ListKnowledgeBasesRequest request);
 
     /**
-     * **ListWorkRequestErrors**
-     *
-     * <p>Lists the errors for a work request.
+     * Lists the errors for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -571,9 +515,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
     /**
-     * **ListWorkRequestLogs**
-     *
-     * <p>Lists the logs for a work request.
+     * Lists the logs for a work request.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -589,9 +531,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
     /**
-     * **ListWorkRequests**
-     *
-     * <p>Lists the work requests in a compartment.
+     * Lists the work requests in a compartment.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -607,9 +547,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
     /**
-     * **UpdateAgent**
-     *
-     * <p>Updates an agent.
+     * Updates an agent.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -624,9 +562,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     UpdateAgentResponse updateAgent(UpdateAgentRequest request);
 
     /**
-     * **UpdateAgentEndpoint**
-     *
-     * <p>Updates an endpoint.
+     * Updates an endpoint.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -642,9 +578,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     UpdateAgentEndpointResponse updateAgentEndpoint(UpdateAgentEndpointRequest request);
 
     /**
-     * **UpdateDataSource**
-     *
-     * <p>Updates a data source.
+     * Updates a data source.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -660,9 +594,7 @@ public interface GenerativeAiAgent extends AutoCloseable {
     UpdateDataSourceResponse updateDataSource(UpdateDataSourceRequest request);
 
     /**
-     * **UpdateKnowledgeBase**
-     *
-     * <p>Updates a knowledge base.
+     * Updates a knowledge base.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation

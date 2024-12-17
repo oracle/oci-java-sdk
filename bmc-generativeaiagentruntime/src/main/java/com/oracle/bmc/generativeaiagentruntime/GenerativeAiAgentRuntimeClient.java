@@ -97,7 +97,7 @@ public class GenerativeAiAgentRuntimeClient extends com.oracle.bmc.http.internal
                 .serviceDetails(
                         "GenerativeAiAgentRuntime",
                         "Chat",
-                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/Session/Chat")
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-agents-client/20240531/AgentEndpoint/Chat")
                 .method(com.oracle.bmc.http.client.Method.POST)
                 .requestBuilder(ChatRequest::builder)
                 .basePath("/20240531")

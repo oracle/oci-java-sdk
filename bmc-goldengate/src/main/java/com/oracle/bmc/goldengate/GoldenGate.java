@@ -245,6 +245,26 @@ public interface GoldenGate extends AutoCloseable {
             ChangeDeploymentCompartmentRequest request);
 
     /**
+     * Moves the Pipeline into a different compartment within the same tenancy. When provided,
+     * If-Match is checked against ETag values of the resource. For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ChangePipelineCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangePipelineCompartment API.
+     */
+    ChangePipelineCompartmentResponse changePipelineCompartment(
+            ChangePipelineCompartmentRequest request);
+
+    /**
      * Collects the diagnostic of a Deployment. When provided, If-Match is checked against ETag
      * values of the resource.
      *
@@ -377,6 +397,21 @@ public interface GoldenGate extends AutoCloseable {
     CreateDeploymentBackupResponse createDeploymentBackup(CreateDeploymentBackupRequest request);
 
     /**
+     * Creates a new Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/CreatePipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePipeline API.
+     */
+    CreatePipelineResponse createPipeline(CreatePipelineRequest request);
+
+    /**
      * Deletes the certificate from truststore.
      *
      * @param request The request object containing the details to send
@@ -473,6 +508,21 @@ public interface GoldenGate extends AutoCloseable {
      *     DeleteDeploymentBackup API.
      */
     DeleteDeploymentBackupResponse deleteDeploymentBackup(DeleteDeploymentBackupRequest request);
+
+    /**
+     * Deletes a Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/DeletePipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePipeline API.
+     */
+    DeletePipelineResponse deletePipeline(DeletePipelineRequest request);
 
     /**
      * Checks if a wallet is already present in the deployment. When provided, If-Match is checked
@@ -634,6 +684,21 @@ public interface GoldenGate extends AutoCloseable {
      *     GetDeploymentUpgrade API.
      */
     GetDeploymentUpgradeResponse getDeploymentUpgrade(GetDeploymentUpgradeRequest request);
+
+    /**
+     * Retrieves a Pipeline details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/GetPipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPipeline API.
+     */
+    GetPipelineResponse getPipeline(GetPipelineRequest request);
 
     /**
      * Retrieve the WorkRequest identified by the given OCID.
@@ -863,6 +928,104 @@ public interface GoldenGate extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMessages API.
      */
     ListMessagesResponse listMessages(ListMessagesRequest request);
+
+    /**
+     * Retrieves a Pipeline recipe steps and its progress details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineInitializationStepsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPipelineInitializationSteps API.
+     */
+    ListPipelineInitializationStepsResponse listPipelineInitializationSteps(
+            ListPipelineInitializationStepsRequest request);
+
+    /**
+     * Retrieves a Pipeline's running replication process's status like extracts/replicats.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineRunningProcessesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPipelineRunningProcesses API.
+     */
+    ListPipelineRunningProcessesResponse listPipelineRunningProcesses(
+            ListPipelineRunningProcessesRequest request);
+
+    /**
+     * Returns an array of tables under the given schemas of the pipeline for given source and
+     * target schemas passed as query params.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineSchemaTablesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPipelineSchemaTables API.
+     */
+    ListPipelineSchemaTablesResponse listPipelineSchemaTables(
+            ListPipelineSchemaTablesRequest request);
+
+    /**
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelineSchemasExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelineSchemas
+     *     API.
+     */
+    ListPipelineSchemasResponse listPipelineSchemas(ListPipelineSchemasRequest request);
+
+    /**
+     * Lists the Pipelines in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListPipelinesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPipelines API.
+     */
+    ListPipelinesResponse listPipelines(ListPipelinesRequest request);
+
+    /**
+     * Returns an array of Recipe Summary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/ListRecipesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecipes API.
+     */
+    ListRecipesResponse listRecipes(ListRecipesRequest request);
 
     /**
      * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management
@@ -1097,6 +1260,21 @@ public interface GoldenGate extends AutoCloseable {
     StartDeploymentResponse startDeployment(StartDeploymentRequest request);
 
     /**
+     * Starts the pipeline for data replication.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/StartPipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPipeline API.
+     */
+    StartPipelineResponse startPipeline(StartPipelineRequest request);
+
+    /**
      * Stops a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -1110,6 +1288,21 @@ public interface GoldenGate extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopDeployment API.
      */
     StopDeploymentResponse stopDeployment(StopDeploymentRequest request);
+
+    /**
+     * Stops the pipeline for data replication.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/StopPipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPipeline API.
+     */
+    StopPipelineResponse stopPipeline(StopPipelineRequest request);
 
     /**
      * Tests the connectivity between given GoldenGate deployment and one of the associated database
@@ -1128,6 +1321,23 @@ public interface GoldenGate extends AutoCloseable {
      */
     TestConnectionAssignmentResponse testConnectionAssignment(
             TestConnectionAssignmentRequest request);
+
+    /**
+     * Tests pipeline connections against pipeline to verify the connectivity. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/TestPipelineConnectionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     TestPipelineConnection API.
+     */
+    TestPipelineConnectionResponse testPipelineConnection(TestPipelineConnectionRequest request);
 
     /**
      * Updates the Connection.
@@ -1193,6 +1403,21 @@ public interface GoldenGate extends AutoCloseable {
      *     UpdateDeploymentBackup API.
      */
     UpdateDeploymentBackupResponse updateDeploymentBackup(UpdateDeploymentBackupRequest request);
+
+    /**
+     * Updates the Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/goldengate/UpdatePipelineExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePipeline API.
+     */
+    UpdatePipelineResponse updatePipeline(UpdatePipelineRequest request);
 
     /**
      * Upgrade a Deployment. When provided, If-Match is checked against ETag values of the resource.

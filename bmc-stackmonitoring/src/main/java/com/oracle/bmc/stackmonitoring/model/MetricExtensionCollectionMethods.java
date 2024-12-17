@@ -10,6 +10,7 @@ public enum MetricExtensionCollectionMethods implements com.oracle.bmc.http.inte
     OsCommand("OS_COMMAND"),
     Sql("SQL"),
     Jmx("JMX"),
+    Http("HTTP"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

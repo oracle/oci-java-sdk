@@ -352,14 +352,14 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
             return this;
         }
         /**
-         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+         * Client Key - The base64 encoded content of a .pem or .crt file containing the client
          * private key (for 2-way SSL).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
         private String sslKey;
 
         /**
-         * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
+         * Client Key - The base64 encoded content of a .pem or .crt file containing the client
          * private key (for 2-way SSL).
          *
          * @param sslKey the value to set
@@ -866,15 +866,15 @@ public final class CreateMysqlConnectionDetails extends CreateConnectionDetails 
     }
 
     /**
-     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
-     * private key (for 2-way SSL).
+     * Client Key - The base64 encoded content of a .pem or .crt file containing the client private
+     * key (for 2-way SSL).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKey")
     private final String sslKey;
 
     /**
-     * Client Key \u2013 The base64 encoded content of a .pem or .crt file containing the client
-     * private key (for 2-way SSL).
+     * Client Key - The base64 encoded content of a .pem or .crt file containing the client private
+     * key (for 2-way SSL).
      *
      * @return the value
      */

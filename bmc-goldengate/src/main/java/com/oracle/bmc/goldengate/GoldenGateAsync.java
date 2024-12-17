@@ -241,6 +241,25 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves the Pipeline into a different compartment within the same tenancy. When provided,
+     * If-Match is checked against ETag values of the resource. For information about moving
+     * resources between compartments, see [Moving Resources Between
+     * Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangePipelineCompartmentResponse> changePipelineCompartment(
+            ChangePipelineCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangePipelineCompartmentRequest, ChangePipelineCompartmentResponse>
+                    handler);
+
+    /**
      * Collects the diagnostic of a Deployment. When provided, If-Match is checked against ETag
      * values of the resource.
      *
@@ -368,6 +387,21 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreatePipelineResponse> createPipeline(
+            CreatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreatePipelineRequest, CreatePipelineResponse>
+                    handler);
+
+    /**
      * Deletes the certificate from truststore.
      *
      * @param request The request object containing the details to send
@@ -459,6 +493,21 @@ public interface GoldenGateAsync extends AutoCloseable {
             DeleteDeploymentBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteDeploymentBackupRequest, DeleteDeploymentBackupResponse>
+                    handler);
+
+    /**
+     * Deletes a Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeletePipelineResponse> deletePipeline(
+            DeletePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeletePipelineRequest, DeletePipelineResponse>
                     handler);
 
     /**
@@ -621,6 +670,20 @@ public interface GoldenGateAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             GetDeploymentUpgradeRequest, GetDeploymentUpgradeResponse>
                     handler);
+
+    /**
+     * Retrieves a Pipeline details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetPipelineResponse> getPipeline(
+            GetPipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetPipelineRequest, GetPipelineResponse> handler);
 
     /**
      * Retrieve the WorkRequest identified by the given OCID.
@@ -845,6 +908,103 @@ public interface GoldenGateAsync extends AutoCloseable {
             ListMessagesRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListMessagesRequest, ListMessagesResponse>
                     handler);
+
+    /**
+     * Retrieves a Pipeline recipe steps and its progress details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineInitializationStepsResponse>
+            listPipelineInitializationSteps(
+                    ListPipelineInitializationStepsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPipelineInitializationStepsRequest,
+                                    ListPipelineInitializationStepsResponse>
+                            handler);
+
+    /**
+     * Retrieves a Pipeline's running replication process's status like extracts/replicats.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineRunningProcessesResponse> listPipelineRunningProcesses(
+            ListPipelineRunningProcessesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPipelineRunningProcessesRequest,
+                            ListPipelineRunningProcessesResponse>
+                    handler);
+
+    /**
+     * Returns an array of tables under the given schemas of the pipeline for given source and
+     * target schemas passed as query params.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineSchemaTablesResponse> listPipelineSchemaTables(
+            ListPipelineSchemaTablesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPipelineSchemaTablesRequest, ListPipelineSchemaTablesResponse>
+                    handler);
+
+    /**
+     * Returns an array of schemas based on mapping rules for a pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelineSchemasResponse> listPipelineSchemas(
+            ListPipelineSchemasRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListPipelineSchemasRequest, ListPipelineSchemasResponse>
+                    handler);
+
+    /**
+     * Lists the Pipelines in the compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPipelinesResponse> listPipelines(
+            ListPipelinesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListPipelinesRequest, ListPipelinesResponse>
+                    handler);
+
+    /**
+     * Returns an array of Recipe Summary.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListRecipesResponse> listRecipes(
+            ListRecipesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListRecipesRequest, ListRecipesResponse> handler);
 
     /**
      * Lists the TrailFiles for a deployment. Deprecated: Please access trail file management
@@ -1074,6 +1234,21 @@ public interface GoldenGateAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Starts the pipeline for data replication.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StartPipelineResponse> startPipeline(
+            StartPipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StartPipelineRequest, StartPipelineResponse>
+                    handler);
+
+    /**
      * Stops a Deployment. When provided, If-Match is checked against ETag values of the resource.
      *
      * @param request The request object containing the details to send
@@ -1086,6 +1261,21 @@ public interface GoldenGateAsync extends AutoCloseable {
     java.util.concurrent.Future<StopDeploymentResponse> stopDeployment(
             StopDeploymentRequest request,
             com.oracle.bmc.responses.AsyncHandler<StopDeploymentRequest, StopDeploymentResponse>
+                    handler);
+
+    /**
+     * Stops the pipeline for data replication.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<StopPipelineResponse> stopPipeline(
+            StopPipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<StopPipelineRequest, StopPipelineResponse>
                     handler);
 
     /**
@@ -1103,6 +1293,23 @@ public interface GoldenGateAsync extends AutoCloseable {
             TestConnectionAssignmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TestConnectionAssignmentRequest, TestConnectionAssignmentResponse>
+                    handler);
+
+    /**
+     * Tests pipeline connections against pipeline to verify the connectivity. When provided,
+     * If-Match is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<TestPipelineConnectionResponse> testPipelineConnection(
+            TestPipelineConnectionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            TestPipelineConnectionRequest, TestPipelineConnectionResponse>
                     handler);
 
     /**
@@ -1165,6 +1372,21 @@ public interface GoldenGateAsync extends AutoCloseable {
             UpdateDeploymentBackupRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateDeploymentBackupRequest, UpdateDeploymentBackupResponse>
+                    handler);
+
+    /**
+     * Updates the Pipeline.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePipelineResponse> updatePipeline(
+            UpdatePipelineRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePipelineRequest, UpdatePipelineResponse>
                     handler);
 
     /**

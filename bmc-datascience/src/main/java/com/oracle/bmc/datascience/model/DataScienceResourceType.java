@@ -8,6 +8,7 @@ package com.oracle.bmc.datascience.model;
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20190101")
 public enum DataScienceResourceType implements com.oracle.bmc.http.internal.BmcEnum {
     NotebookSession("NOTEBOOK_SESSION"),
+    ModelDeployment("MODEL_DEPLOYMENT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

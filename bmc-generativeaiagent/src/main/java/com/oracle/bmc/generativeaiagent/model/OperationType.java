@@ -24,6 +24,9 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     MoveKnowledgeBase("MOVE_KNOWLEDGE_BASE"),
     CreateDataIngestionJob("CREATE_DATA_INGESTION_JOB"),
     DeleteDataIngestionJob("DELETE_DATA_INGESTION_JOB"),
+    CreateTool("CREATE_TOOL"),
+    UpdateTool("UPDATE_TOOL"),
+    DeleteTool("DELETE_TOOL"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this
