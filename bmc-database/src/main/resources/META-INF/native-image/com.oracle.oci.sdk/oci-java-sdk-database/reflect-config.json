@@ -8176,6 +8176,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.database.model.UpdateAutonomousDatabaseDetails$AutonomousMaintenanceScheduleType",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.database.model.UpdateAutonomousDatabaseSoftwareImageDetails",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

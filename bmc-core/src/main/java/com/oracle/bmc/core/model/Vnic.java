@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -59,7 +59,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         "skipSourceDestCheck",
         "subnetId",
         "timeCreated",
-        "ipv6Addresses"
+        "ipv6Addresses",
+        "routeTableId"
     })
     public Vnic(
             String availabilityDomain,
@@ -80,7 +81,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             Boolean skipSourceDestCheck,
             String subnetId,
             java.util.Date timeCreated,
-            java.util.List<String> ipv6Addresses) {
+            java.util.List<String> ipv6Addresses,
+            String routeTableId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -101,6 +103,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.ipv6Addresses = ipv6Addresses;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -191,8 +194,11 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             return this;
         }
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
-         * resources are allowed to be accessed by what permission controls.
+         * [Security
+         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
          * {"value":"42","mode":"audit"}}}}
@@ -201,8 +207,11 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         private java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
         /**
-         * Security Attributes for this resource. This is unique to ZPR, and helps identify which
-         * resources are allowed to be accessed by what permission controls.
+         * [Security
+         * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+         * are labels for a resource that can be referenced in a [Zero Trust Packet
+         * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+         * (ZPR) policy to control access to ZPR-supported resources.
          *
          * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
          * {"value":"42","mode":"audit"}}}}
@@ -550,6 +559,25 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             this.__explicitlySet__.add("ipv6Addresses");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the PrivateIp will use.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the PrivateIp will use.
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         */
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -575,7 +603,8 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
                             this.skipSourceDestCheck,
                             this.subnetId,
                             this.timeCreated,
-                            this.ipv6Addresses);
+                            this.ipv6Addresses,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -640,6 +669,9 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("ipv6Addresses")) {
                 this.ipv6Addresses(model.getIpv6Addresses());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -731,8 +763,11 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     }
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
-     * resources are allowed to be accessed by what permission controls.
+     * [Security
+     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -741,8 +776,11 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
     private final java.util.Map<String, java.util.Map<String, Object>> securityAttributes;
 
     /**
-     * Security Attributes for this resource. This is unique to ZPR, and helps identify which
-     * resources are allowed to be accessed by what permission controls.
+     * [Security
+     * attributes](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/zpr-artifacts.htm#security-attributes)
+     * are labels for a resource that can be referenced in a [Zero Trust Packet
+     * Routing](https://docs.cloud.oracle.com/iaas/Content/zero-trust-packet-routing/overview.htm)
+     * (ZPR) policy to control access to ZPR-supported resources.
      *
      * <p>Example: {@code {"Oracle-DataSecurity-ZPR": {"MaxEgressCount":
      * {"value":"42","mode":"audit"}}}}
@@ -1105,6 +1143,23 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         return ipv6Addresses;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the PrivateIp will use.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the PrivateIp will use.
+     *
+     * @return the value
+     */
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1139,6 +1194,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", ipv6Addresses=").append(String.valueOf(this.ipv6Addresses));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -1172,6 +1228,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.ipv6Addresses, other.ipv6Addresses)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -1218,6 +1275,7 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         result =
                 (result * PRIME)
                         + (this.ipv6Addresses == null ? 43 : this.ipv6Addresses.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

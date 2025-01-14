@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -77,6 +77,7 @@ public final class UpdateAutonomousDatabaseDetails
         "isMtlsConnectionRequired",
         "resourcePoolLeaderId",
         "resourcePoolSummary",
+        "autonomousMaintenanceScheduleType",
         "isBackupRetentionLocked",
         "scheduledOperations",
         "isAutoScalingForStorageEnabled",
@@ -132,6 +133,7 @@ public final class UpdateAutonomousDatabaseDetails
             Boolean isMtlsConnectionRequired,
             String resourcePoolLeaderId,
             ResourcePoolSummary resourcePoolSummary,
+            AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType,
             Boolean isBackupRetentionLocked,
             java.util.List<ScheduledOperationDetails> scheduledOperations,
             Boolean isAutoScalingForStorageEnabled,
@@ -186,6 +188,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.isMtlsConnectionRequired = isMtlsConnectionRequired;
         this.resourcePoolLeaderId = resourcePoolLeaderId;
         this.resourcePoolSummary = resourcePoolSummary;
+        this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
         this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.scheduledOperations = scheduledOperations;
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
@@ -1581,6 +1584,28 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("resourcePoolSummary");
             return this;
         }
+        /**
+         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+         * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
+         * maintenance schedule follows the normal cycle
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+        private AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+        /**
+         * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+         * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
+         * maintenance schedule follows the normal cycle
+         *
+         * @param autonomousMaintenanceScheduleType the value to set
+         * @return this builder
+         */
+        public Builder autonomousMaintenanceScheduleType(
+                AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType) {
+            this.autonomousMaintenanceScheduleType = autonomousMaintenanceScheduleType;
+            this.__explicitlySet__.add("autonomousMaintenanceScheduleType");
+            return this;
+        }
         /** True if the Autonomous Database is backup retention locked. */
         @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
         private Boolean isBackupRetentionLocked;
@@ -1800,6 +1825,7 @@ public final class UpdateAutonomousDatabaseDetails
                             this.isMtlsConnectionRequired,
                             this.resourcePoolLeaderId,
                             this.resourcePoolSummary,
+                            this.autonomousMaintenanceScheduleType,
                             this.isBackupRetentionLocked,
                             this.scheduledOperations,
                             this.isAutoScalingForStorageEnabled,
@@ -1951,6 +1977,10 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("resourcePoolSummary")) {
                 this.resourcePoolSummary(model.getResourcePoolSummary());
+            }
+            if (model.wasPropertyExplicitlySet("autonomousMaintenanceScheduleType")) {
+                this.autonomousMaintenanceScheduleType(
+                        model.getAutonomousMaintenanceScheduleType());
             }
             if (model.wasPropertyExplicitlySet("isBackupRetentionLocked")) {
                 this.isBackupRetentionLocked(model.getIsBackupRetentionLocked());
@@ -3489,6 +3519,62 @@ public final class UpdateAutonomousDatabaseDetails
         return resourcePoolSummary;
     }
 
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
+     * maintenance schedule follows the normal cycle
+     */
+    public enum AutonomousMaintenanceScheduleType implements com.oracle.bmc.http.internal.BmcEnum {
+        Early("EARLY"),
+        Regular("REGULAR"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, AutonomousMaintenanceScheduleType> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AutonomousMaintenanceScheduleType v : AutonomousMaintenanceScheduleType.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        AutonomousMaintenanceScheduleType(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AutonomousMaintenanceScheduleType create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid AutonomousMaintenanceScheduleType: " + key);
+        }
+    };
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
+     * maintenance schedule follows the normal cycle
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("autonomousMaintenanceScheduleType")
+    private final AutonomousMaintenanceScheduleType autonomousMaintenanceScheduleType;
+
+    /**
+     * The maintenance schedule type of the Autonomous Database Serverless. An EARLY maintenance
+     * schedule follows a schedule applying patches prior to the REGULAR schedule. A REGULAR
+     * maintenance schedule follows the normal cycle
+     *
+     * @return the value
+     */
+    public AutonomousMaintenanceScheduleType getAutonomousMaintenanceScheduleType() {
+        return autonomousMaintenanceScheduleType;
+    }
+
     /** True if the Autonomous Database is backup retention locked. */
     @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
     private final Boolean isBackupRetentionLocked;
@@ -3704,6 +3790,8 @@ public final class UpdateAutonomousDatabaseDetails
                 .append(String.valueOf(this.isMtlsConnectionRequired));
         sb.append(", resourcePoolLeaderId=").append(String.valueOf(this.resourcePoolLeaderId));
         sb.append(", resourcePoolSummary=").append(String.valueOf(this.resourcePoolSummary));
+        sb.append(", autonomousMaintenanceScheduleType=")
+                .append(String.valueOf(this.autonomousMaintenanceScheduleType));
         sb.append(", isBackupRetentionLocked=")
                 .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", scheduledOperations=").append(String.valueOf(this.scheduledOperations));
@@ -3784,6 +3872,9 @@ public final class UpdateAutonomousDatabaseDetails
                         this.isMtlsConnectionRequired, other.isMtlsConnectionRequired)
                 && java.util.Objects.equals(this.resourcePoolLeaderId, other.resourcePoolLeaderId)
                 && java.util.Objects.equals(this.resourcePoolSummary, other.resourcePoolSummary)
+                && java.util.Objects.equals(
+                        this.autonomousMaintenanceScheduleType,
+                        other.autonomousMaintenanceScheduleType)
                 && java.util.Objects.equals(
                         this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.scheduledOperations, other.scheduledOperations)
@@ -3946,6 +4037,11 @@ public final class UpdateAutonomousDatabaseDetails
                         + (this.resourcePoolSummary == null
                                 ? 43
                                 : this.resourcePoolSummary.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.autonomousMaintenanceScheduleType == null
+                                ? 43
+                                : this.autonomousMaintenanceScheduleType.hashCode());
         result =
                 (result * PRIME)
                         + (this.isBackupRetentionLocked == null
