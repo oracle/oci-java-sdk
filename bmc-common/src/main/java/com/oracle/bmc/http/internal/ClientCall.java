@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.http.internal;
@@ -894,6 +894,12 @@ public final class ClientCall<
     private CompletionStage<RESP> callAsync0(AsyncHandler<REQ, RESP> handler) {
         CompletionStage<RESP> stage;
         boolean discardImmediately = true;
+
+        if (httpRequest != null && httpRequest.uri() != null && httpRequest.method() != null) {
+            logger.debug(
+                    "HTTP request method and URI: {} {}", httpRequest.method(), httpRequest.uri());
+        }
+
         try {
             stage = callAsyncWithRetrier();
             // when the request has been executed for the last time, discard our httpRequest field.

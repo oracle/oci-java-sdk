@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch.model;
@@ -67,7 +67,14 @@ public final class OpensearchCluster
         "availabilityDomains",
         "securityMode",
         "securityMasterUserName",
-        "securityMasterUserPasswordHash"
+        "securityMasterUserPasswordHash",
+        "securitySamlConfig",
+        "backupPolicy",
+        "reverseConnectionEndpointCustomerIps",
+        "reverseConnectionEndpoints",
+        "outboundClusterConfig",
+        "inboundClusterIds",
+        "maintenanceDetails"
     })
     public OpensearchCluster(
             String id,
@@ -109,7 +116,14 @@ public final class OpensearchCluster
             java.util.List<String> availabilityDomains,
             SecurityMode securityMode,
             String securityMasterUserName,
-            String securityMasterUserPasswordHash) {
+            String securityMasterUserPasswordHash,
+            SecuritySamlConfig securitySamlConfig,
+            BackupPolicy backupPolicy,
+            java.util.List<String> reverseConnectionEndpointCustomerIps,
+            java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints,
+            OutboundClusterConfig outboundClusterConfig,
+            java.util.List<String> inboundClusterIds,
+            MaintenanceDetails maintenanceDetails) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -151,6 +165,13 @@ public final class OpensearchCluster
         this.securityMode = securityMode;
         this.securityMasterUserName = securityMasterUserName;
         this.securityMasterUserPasswordHash = securityMasterUserPasswordHash;
+        this.securitySamlConfig = securitySamlConfig;
+        this.backupPolicy = backupPolicy;
+        this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+        this.reverseConnectionEndpoints = reverseConnectionEndpoints;
+        this.outboundClusterConfig = outboundClusterConfig;
+        this.inboundClusterIds = inboundClusterIds;
+        this.maintenanceDetails = maintenanceDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -773,6 +794,89 @@ public final class OpensearchCluster
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+        private SecuritySamlConfig securitySamlConfig;
+
+        public Builder securitySamlConfig(SecuritySamlConfig securitySamlConfig) {
+            this.securitySamlConfig = securitySamlConfig;
+            this.__explicitlySet__.add("securitySamlConfig");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+        private BackupPolicy backupPolicy;
+
+        public Builder backupPolicy(BackupPolicy backupPolicy) {
+            this.backupPolicy = backupPolicy;
+            this.__explicitlySet__.add("backupPolicy");
+            return this;
+        }
+        /** The customer IP addresses of the endpoint in customer VCN */
+        @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+        private java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+        /**
+         * The customer IP addresses of the endpoint in customer VCN
+         *
+         * @param reverseConnectionEndpointCustomerIps the value to set
+         * @return this builder
+         */
+        public Builder reverseConnectionEndpointCustomerIps(
+                java.util.List<String> reverseConnectionEndpointCustomerIps) {
+            this.reverseConnectionEndpointCustomerIps = reverseConnectionEndpointCustomerIps;
+            this.__explicitlySet__.add("reverseConnectionEndpointCustomerIps");
+            return this;
+        }
+        /** The list of reverse connection endpoints. */
+        @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
+        private java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints;
+
+        /**
+         * The list of reverse connection endpoints.
+         *
+         * @param reverseConnectionEndpoints the value to set
+         * @return this builder
+         */
+        public Builder reverseConnectionEndpoints(
+                java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints) {
+            this.reverseConnectionEndpoints = reverseConnectionEndpoints;
+            this.__explicitlySet__.add("reverseConnectionEndpoints");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+        private OutboundClusterConfig outboundClusterConfig;
+
+        public Builder outboundClusterConfig(OutboundClusterConfig outboundClusterConfig) {
+            this.outboundClusterConfig = outboundClusterConfig;
+            this.__explicitlySet__.add("outboundClusterConfig");
+            return this;
+        }
+        /** List of inbound clusters for which this cluster is an outbound cluster */
+        @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
+        private java.util.List<String> inboundClusterIds;
+
+        /**
+         * List of inbound clusters for which this cluster is an outbound cluster
+         *
+         * @param inboundClusterIds the value to set
+         * @return this builder
+         */
+        public Builder inboundClusterIds(java.util.List<String> inboundClusterIds) {
+            this.inboundClusterIds = inboundClusterIds;
+            this.__explicitlySet__.add("inboundClusterIds");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+        private MaintenanceDetails maintenanceDetails;
+
+        public Builder maintenanceDetails(MaintenanceDetails maintenanceDetails) {
+            this.maintenanceDetails = maintenanceDetails;
+            this.__explicitlySet__.add("maintenanceDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -818,7 +922,14 @@ public final class OpensearchCluster
                             this.availabilityDomains,
                             this.securityMode,
                             this.securityMasterUserName,
-                            this.securityMasterUserPasswordHash);
+                            this.securityMasterUserPasswordHash,
+                            this.securitySamlConfig,
+                            this.backupPolicy,
+                            this.reverseConnectionEndpointCustomerIps,
+                            this.reverseConnectionEndpoints,
+                            this.outboundClusterConfig,
+                            this.inboundClusterIds,
+                            this.maintenanceDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -946,6 +1057,28 @@ public final class OpensearchCluster
             }
             if (model.wasPropertyExplicitlySet("securityMasterUserPasswordHash")) {
                 this.securityMasterUserPasswordHash(model.getSecurityMasterUserPasswordHash());
+            }
+            if (model.wasPropertyExplicitlySet("securitySamlConfig")) {
+                this.securitySamlConfig(model.getSecuritySamlConfig());
+            }
+            if (model.wasPropertyExplicitlySet("backupPolicy")) {
+                this.backupPolicy(model.getBackupPolicy());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionEndpointCustomerIps")) {
+                this.reverseConnectionEndpointCustomerIps(
+                        model.getReverseConnectionEndpointCustomerIps());
+            }
+            if (model.wasPropertyExplicitlySet("reverseConnectionEndpoints")) {
+                this.reverseConnectionEndpoints(model.getReverseConnectionEndpoints());
+            }
+            if (model.wasPropertyExplicitlySet("outboundClusterConfig")) {
+                this.outboundClusterConfig(model.getOutboundClusterConfig());
+            }
+            if (model.wasPropertyExplicitlySet("inboundClusterIds")) {
+                this.inboundClusterIds(model.getInboundClusterIds());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceDetails")) {
+                this.maintenanceDetails(model.getMaintenanceDetails());
             }
             return this;
         }
@@ -1544,6 +1677,73 @@ public final class OpensearchCluster
         return securityMasterUserPasswordHash;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("securitySamlConfig")
+    private final SecuritySamlConfig securitySamlConfig;
+
+    public SecuritySamlConfig getSecuritySamlConfig() {
+        return securitySamlConfig;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("backupPolicy")
+    private final BackupPolicy backupPolicy;
+
+    public BackupPolicy getBackupPolicy() {
+        return backupPolicy;
+    }
+
+    /** The customer IP addresses of the endpoint in customer VCN */
+    @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpointCustomerIps")
+    private final java.util.List<String> reverseConnectionEndpointCustomerIps;
+
+    /**
+     * The customer IP addresses of the endpoint in customer VCN
+     *
+     * @return the value
+     */
+    public java.util.List<String> getReverseConnectionEndpointCustomerIps() {
+        return reverseConnectionEndpointCustomerIps;
+    }
+
+    /** The list of reverse connection endpoints. */
+    @com.fasterxml.jackson.annotation.JsonProperty("reverseConnectionEndpoints")
+    private final java.util.List<ReverseConnectionEndpoint> reverseConnectionEndpoints;
+
+    /**
+     * The list of reverse connection endpoints.
+     *
+     * @return the value
+     */
+    public java.util.List<ReverseConnectionEndpoint> getReverseConnectionEndpoints() {
+        return reverseConnectionEndpoints;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("outboundClusterConfig")
+    private final OutboundClusterConfig outboundClusterConfig;
+
+    public OutboundClusterConfig getOutboundClusterConfig() {
+        return outboundClusterConfig;
+    }
+
+    /** List of inbound clusters for which this cluster is an outbound cluster */
+    @com.fasterxml.jackson.annotation.JsonProperty("inboundClusterIds")
+    private final java.util.List<String> inboundClusterIds;
+
+    /**
+     * List of inbound clusters for which this cluster is an outbound cluster
+     *
+     * @return the value
+     */
+    public java.util.List<String> getInboundClusterIds() {
+        return inboundClusterIds;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceDetails")
+    private final MaintenanceDetails maintenanceDetails;
+
+    public MaintenanceDetails getMaintenanceDetails() {
+        return maintenanceDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1605,6 +1805,15 @@ public final class OpensearchCluster
         sb.append(", securityMasterUserName=").append(String.valueOf(this.securityMasterUserName));
         sb.append(", securityMasterUserPasswordHash=")
                 .append(String.valueOf(this.securityMasterUserPasswordHash));
+        sb.append(", securitySamlConfig=").append(String.valueOf(this.securitySamlConfig));
+        sb.append(", backupPolicy=").append(String.valueOf(this.backupPolicy));
+        sb.append(", reverseConnectionEndpointCustomerIps=")
+                .append(String.valueOf(this.reverseConnectionEndpointCustomerIps));
+        sb.append(", reverseConnectionEndpoints=")
+                .append(String.valueOf(this.reverseConnectionEndpoints));
+        sb.append(", outboundClusterConfig=").append(String.valueOf(this.outboundClusterConfig));
+        sb.append(", inboundClusterIds=").append(String.valueOf(this.inboundClusterIds));
+        sb.append(", maintenanceDetails=").append(String.valueOf(this.maintenanceDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1669,6 +1878,16 @@ public final class OpensearchCluster
                         this.securityMasterUserName, other.securityMasterUserName)
                 && java.util.Objects.equals(
                         this.securityMasterUserPasswordHash, other.securityMasterUserPasswordHash)
+                && java.util.Objects.equals(this.securitySamlConfig, other.securitySamlConfig)
+                && java.util.Objects.equals(this.backupPolicy, other.backupPolicy)
+                && java.util.Objects.equals(
+                        this.reverseConnectionEndpointCustomerIps,
+                        other.reverseConnectionEndpointCustomerIps)
+                && java.util.Objects.equals(
+                        this.reverseConnectionEndpoints, other.reverseConnectionEndpoints)
+                && java.util.Objects.equals(this.outboundClusterConfig, other.outboundClusterConfig)
+                && java.util.Objects.equals(this.inboundClusterIds, other.inboundClusterIds)
+                && java.util.Objects.equals(this.maintenanceDetails, other.maintenanceDetails)
                 && super.equals(other);
     }
 
@@ -1804,6 +2023,35 @@ public final class OpensearchCluster
                         + (this.securityMasterUserPasswordHash == null
                                 ? 43
                                 : this.securityMasterUserPasswordHash.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securitySamlConfig == null
+                                ? 43
+                                : this.securitySamlConfig.hashCode());
+        result = (result * PRIME) + (this.backupPolicy == null ? 43 : this.backupPolicy.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionEndpointCustomerIps == null
+                                ? 43
+                                : this.reverseConnectionEndpointCustomerIps.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.reverseConnectionEndpoints == null
+                                ? 43
+                                : this.reverseConnectionEndpoints.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.outboundClusterConfig == null
+                                ? 43
+                                : this.outboundClusterConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.inboundClusterIds == null ? 43 : this.inboundClusterIds.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceDetails == null
+                                ? 43
+                                : this.maintenanceDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

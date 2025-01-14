@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch;
@@ -132,6 +132,45 @@ public class OpensearchClusterAsyncClient extends com.oracle.bmc.http.internal.B
                         BackupOpensearchClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", BackupOpensearchClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureOutboundClusterResponse> configureOutboundCluster(
+            ConfigureOutboundClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOpensearchClusterId(), "opensearchClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getConfigureOutboundClusterDetails(),
+                "configureOutboundClusterDetails is required");
+
+        return clientCall(request, ConfigureOutboundClusterResponse::builder)
+                .logger(LOG, "configureOutboundCluster")
+                .serviceDetails(
+                        "OpensearchCluster",
+                        "ConfigureOutboundCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ConfigureOutboundCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConfigureOutboundClusterRequest::builder)
+                .basePath("/20180828")
+                .appendPathParam("opensearchClusters")
+                .appendPathParam(request.getOpensearchClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("configureOutboundCluster")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConfigureOutboundClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConfigureOutboundClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 
@@ -595,6 +634,45 @@ public class OpensearchClusterAsyncClient extends com.oracle.bmc.http.internal.B
                         UpdateOpensearchClusterResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateOpensearchClusterResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeOpenSearchClusterResponse> upgradeOpenSearchCluster(
+            UpgradeOpenSearchClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>
+                    handler) {
+
+        Validate.notBlank(
+                request.getOpensearchClusterId(), "opensearchClusterId must not be blank");
+        Objects.requireNonNull(
+                request.getUpgradeOpenSearchClusterDetails(),
+                "upgradeOpenSearchClusterDetails is required");
+
+        return clientCall(request, UpgradeOpenSearchClusterResponse::builder)
+                .logger(LOG, "upgradeOpenSearchCluster")
+                .serviceDetails(
+                        "OpensearchCluster",
+                        "UpgradeOpenSearchCluster",
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/UpgradeOpenSearchCluster")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpgradeOpenSearchClusterRequest::builder)
+                .basePath("/20180828")
+                .appendPathParam("opensearchClusters")
+                .appendPathParam(request.getOpensearchClusterId())
+                .appendPathParam("actions")
+                .appendPathParam("upgrade")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpgradeOpenSearchClusterResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpgradeOpenSearchClusterResponse.Builder::opcRequestId)
                 .callAsync(handler);
     }
 

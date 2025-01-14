@@ -3,6 +3,12 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.55.2 - 2025-01-14
+### Added 
+- Support for attaching route tables to VNICs and private IPs in the Networking service 
+- Support for Cross Cluster Search(CCS) for an opensearch cluster in the OpenSearch service 
+- Support for patch-level updates of the autonomous databases after provisioning in the Database service
+
 ## 3.55.1 - 2024-12-17
 ### Added 
 - Support for backup retention locks on autonomous database create and update operations in the Database service 

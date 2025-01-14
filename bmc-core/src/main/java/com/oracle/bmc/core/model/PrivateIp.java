@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -64,7 +64,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "vlanId",
         "subnetId",
         "timeCreated",
-        "vnicId"
+        "vnicId",
+        "routeTableId"
     })
     public PrivateIp(
             String availabilityDomain,
@@ -79,7 +80,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String vlanId,
             String subnetId,
             java.util.Date timeCreated,
-            String vnicId) {
+            String vnicId,
+            String routeTableId) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -94,6 +96,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -412,6 +415,25 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             this.__explicitlySet__.add("vnicId");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the PrivateIp will use.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * of the route table the PrivateIp will use.
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         */
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -431,7 +453,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.vlanId,
                             this.subnetId,
                             this.timeCreated,
-                            this.vnicId);
+                            this.vnicId,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -478,6 +501,9 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
             }
             return this;
         }
@@ -779,6 +805,23 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         return vnicId;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the PrivateIp will use.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
+     * the route table the PrivateIp will use.
+     *
+     * @return the value
+     */
+    public String getRouteTableId() {
+        return routeTableId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -807,6 +850,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -834,6 +878,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -862,6 +907,7 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
