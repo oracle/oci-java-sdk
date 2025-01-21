@@ -40,7 +40,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         "kmsKeyVersionId",
         "vaultId",
         "keyStoreId",
-        "keyStoreWalletName"
+        "keyStoreWalletName",
+        "encryptionKeyLocationDetails"
     })
     public Backup(
             String id,
@@ -61,7 +62,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             String kmsKeyVersionId,
             String vaultId,
             String keyStoreId,
-            String keyStoreWalletName) {
+            String keyStoreWalletName,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -82,6 +84,7 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         this.vaultId = vaultId;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -412,6 +415,16 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -436,7 +449,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                             this.kmsKeyVersionId,
                             this.vaultId,
                             this.keyStoreId,
-                            this.keyStoreWalletName);
+                            this.keyStoreWalletName,
+                            this.encryptionKeyLocationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -501,6 +515,9 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
             }
             if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
                 this.keyStoreWalletName(model.getKeyStoreWalletName());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
             }
             return this;
         }
@@ -945,6 +962,13 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         return keyStoreWalletName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -979,6 +1003,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1012,6 +1038,8 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && super.equals(other);
     }
 
@@ -1058,6 +1086,11 @@ public final class Backup extends com.oracle.bmc.http.client.internal.Explicitly
                         + (this.keyStoreWalletName == null
                                 ? 43
                                 : this.keyStoreWalletName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

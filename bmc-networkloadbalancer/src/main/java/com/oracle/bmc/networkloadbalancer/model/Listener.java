@@ -5,9 +5,10 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The congfiguration of the listener. For more information about backend set configuration, see
- * [Managing Load Balancer
- * Listeners](https://docs.cloud.oracle.com/Content/Balance/Tasks/managinglisteners.htm). <br>
+ * The congfiguration of the listener. For more information about listener configuration, see
+ * [Listeners for Network Load
+ * Balancers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/Listeners/listener-management.htm).
+ * <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a

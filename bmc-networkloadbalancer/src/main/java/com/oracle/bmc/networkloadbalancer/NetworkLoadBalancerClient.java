@@ -508,6 +508,44 @@ public class NetworkLoadBalancerClient extends com.oracle.bmc.http.internal.Base
     }
 
     @Override
+    public GetBackendOperationalStatusResponse getBackendOperationalStatus(
+            GetBackendOperationalStatusRequest request) {
+
+        Validate.notBlank(
+                request.getNetworkLoadBalancerId(), "networkLoadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, GetBackendOperationalStatusResponse::builder)
+                .logger(LOG, "getBackendOperationalStatus")
+                .serviceDetails(
+                        "NetworkLoadBalancer",
+                        "GetBackendOperationalStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendOperationalStatus/GetBackendOperationalStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendOperationalStatusRequest::builder)
+                .basePath("/20200501")
+                .appendPathParam("networkLoadBalancers")
+                .appendPathParam(request.getNetworkLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .appendPathParam("operationalStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.networkloadbalancer.model.BackendOperationalStatus.class,
+                        GetBackendOperationalStatusResponse.Builder::backendOperationalStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendOperationalStatusResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetBackendSetResponse getBackendSet(GetBackendSetRequest request) {
 
         Validate.notBlank(

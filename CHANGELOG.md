@@ -3,6 +3,15 @@ All notable changes to this project will be documented in this file.
 
 The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
+## 3.55.3 - 2025-01-21
+### Added 
+- Support for Bring Your Own ASN (BYOASN) in the Networking service 
+- Support for Data Guard transaction processing in the Database service 
+- Support for permanently disconnecting peer autonomous databases from its primary database in the Database service 
+- Support for databases with external Hardware Security Module (HSM) in the Database service 
+- Support for active and standby purist modes in the Network Load Balancer service 
+- Support for configurable TCP reset in the Network Load Balancer service
+
 ## 3.55.2 - 2025-01-14
 ### Added 
 - Support for attaching route tables to VNICs and private IPs in the Networking service 

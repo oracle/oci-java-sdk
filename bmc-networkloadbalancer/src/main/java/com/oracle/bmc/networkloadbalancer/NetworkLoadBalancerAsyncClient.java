@@ -508,6 +508,48 @@ public class NetworkLoadBalancerAsyncClient extends com.oracle.bmc.http.internal
     }
 
     @Override
+    public java.util.concurrent.Future<GetBackendOperationalStatusResponse>
+            getBackendOperationalStatus(
+                    GetBackendOperationalStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBackendOperationalStatusRequest,
+                                    GetBackendOperationalStatusResponse>
+                            handler) {
+
+        Validate.notBlank(
+                request.getNetworkLoadBalancerId(), "networkLoadBalancerId must not be blank");
+
+        Validate.notBlank(request.getBackendSetName(), "backendSetName must not be blank");
+
+        Validate.notBlank(request.getBackendName(), "backendName must not be blank");
+
+        return clientCall(request, GetBackendOperationalStatusResponse::builder)
+                .logger(LOG, "getBackendOperationalStatus")
+                .serviceDetails(
+                        "NetworkLoadBalancer",
+                        "GetBackendOperationalStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendOperationalStatus/GetBackendOperationalStatus")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetBackendOperationalStatusRequest::builder)
+                .basePath("/20200501")
+                .appendPathParam("networkLoadBalancers")
+                .appendPathParam(request.getNetworkLoadBalancerId())
+                .appendPathParam("backendSets")
+                .appendPathParam(request.getBackendSetName())
+                .appendPathParam("backends")
+                .appendPathParam(request.getBackendName())
+                .appendPathParam("operationalStatus")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.networkloadbalancer.model.BackendOperationalStatus.class,
+                        GetBackendOperationalStatusResponse.Builder::backendOperationalStatus)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetBackendOperationalStatusResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<GetBackendSetResponse> getBackendSet(
             GetBackendSetRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetBackendSetRequest, GetBackendSetResponse>

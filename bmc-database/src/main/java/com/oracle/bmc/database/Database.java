@@ -540,6 +540,23 @@ public interface Database extends AutoCloseable {
             ChangeDisasterRecoveryConfigurationRequest request);
 
     /**
+     * Update the encryption key management location for the database
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ChangeEncryptionKeyLocationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeEncryptionKeyLocation API.
+     */
+    ChangeEncryptionKeyLocationResponse changeEncryptionKeyLocation(
+            ChangeEncryptionKeyLocationRequest request);
+
+    /**
      * Moves an Exadata infrastructure resource and its dependent resources to another compartment.
      * Applies to Exadata Cloud@Customer instances only. To move an Exadata Cloud Service
      * infrastructure resource to another compartment, use the {@link
@@ -915,6 +932,27 @@ public interface Database extends AutoCloseable {
      */
     ConvertToRegularPluggableDatabaseResponse convertToRegularPluggableDatabase(
             ConvertToRegularPluggableDatabaseRequest request);
+
+    /**
+     * Disassociate the standby database identified by the `databaseId` parameter from existing Data
+     * Guard group.
+     *
+     * <p>Convert the standby to a standalone database.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ConvertToStandaloneExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConvertToStandalone
+     *     API.
+     */
+    ConvertToStandaloneResponse convertToStandalone(ConvertToStandaloneRequest request);
 
     /**
      * Creates a new application virtual IP (VIP) address in the specified cloud VM cluster based on
@@ -2759,6 +2797,29 @@ public interface Database extends AutoCloseable {
     FailoverAutonomousContainerDatabaseDataguardAssociationResponse
             failoverAutonomousContainerDatabaseDataguardAssociation(
                     FailoverAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
+     * Performs a failover to transition the standby database identified by the `databaseId` path
+     * parameter into the primary role after the existing primary database fails or becomes
+     * unreachable.
+     *
+     * <p>A failover might result in data loss depending on the protection mode in effect at the
+     * time of the primary database failure.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/FailoverDataGuardExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use FailoverDataGuard
+     *     API.
+     */
+    FailoverDataGuardResponse failoverDataGuard(FailoverDataGuardRequest request);
 
     /**
      * Performs a failover to transition the standby database identified by the `databaseId`
@@ -5539,6 +5600,27 @@ public interface Database extends AutoCloseable {
             LocalClonePluggableDatabaseRequest request);
 
     /**
+     * Migrates the existing Data Guard association to new Data Guard model to support multiple
+     * standby databases functionality.
+     *
+     * <p>This operation should always be performed on primary.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/MigrateDataGuardAssociationToMultiDataGuardsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     MigrateDataGuardAssociationToMultiDataGuards API.
+     */
+    MigrateDataGuardAssociationToMultiDataGuardsResponse
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request);
+
+    /**
      * Migrates the Exadata DB system to the new [Exadata resource
      * model](https://docs.cloud.oracle.com/iaas/Content/Database/Concepts/exaflexsystem.htm#exaflexsystem_topic-resource_model).
      * All related resources will be migrated.
@@ -5678,6 +5760,25 @@ public interface Database extends AutoCloseable {
     ReinstateAutonomousContainerDatabaseDataguardAssociationResponse
             reinstateAutonomousContainerDatabaseDataguardAssociation(
                     ReinstateAutonomousContainerDatabaseDataguardAssociationRequest request);
+
+    /**
+     * Reinstates the database identified by the `databaseId` parameter into the standby role in a
+     * Data Guard association.
+     *
+     * <p>This operation should be performed on disabled standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ReinstateDataGuardExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReinstateDataGuard
+     *     API.
+     */
+    ReinstateDataGuardResponse reinstateDataGuard(ReinstateDataGuardRequest request);
 
     /**
      * Reinstates the database identified by the `databaseId` parameter into the standby role in a
@@ -6243,6 +6344,28 @@ public interface Database extends AutoCloseable {
     StopPluggableDatabaseResponse stopPluggableDatabase(StopPluggableDatabaseRequest request);
 
     /**
+     * Performs a switchover to transition primary database of this Data Guard association into a
+     * standby role. The standby database associated with the `dataGuardAssociationId` assumes the
+     * primary database role.
+     *
+     * <p>A switchover guarantees no data loss.
+     *
+     * <p>This operation should be performed on respective standby database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/SwitchOverDataGuardExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SwitchOverDataGuard
+     *     API.
+     */
+    SwitchOverDataGuardResponse switchOverDataGuard(SwitchOverDataGuardRequest request);
+
+    /**
      * Switches over the primary Autonomous Container Database of an Autonomous Data Guard peer
      * association to standby role. The standby Autonomous Container Database associated with
      * autonomousContainerDatabaseDataguardAssociationId assumes the primary Autonomous Container
@@ -6664,6 +6787,25 @@ public interface Database extends AutoCloseable {
      *     UpdateConsoleHistory API.
      */
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
+
+    /**
+     * Update an existing Data Guard member. A Data Guard member represents the replication
+     * relationship between the specified database and a standby database. For more information, see
+     * [Using Oracle Data
+     * Guard](https://docs.cloud.oracle.com/Content/Database/Tasks/usingdataguard.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateDataGuardExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataGuard
+     *     API.
+     */
+    UpdateDataGuardResponse updateDataGuard(UpdateDataGuardRequest request);
 
     /**
      * Updates the Data Guard association the specified database. This API can be used to change the

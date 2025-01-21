@@ -85,7 +85,8 @@ public final class UpdateAutonomousDatabaseDetails
         "dbToolsDetails",
         "secretId",
         "secretVersionNumber",
-        "encryptionKey"
+        "encryptionKey",
+        "isDisconnectPeer"
     })
     public UpdateAutonomousDatabaseDetails(
             Integer backupRetentionPeriodInDays,
@@ -141,7 +142,8 @@ public final class UpdateAutonomousDatabaseDetails
             java.util.List<DatabaseTool> dbToolsDetails,
             String secretId,
             Integer secretVersionNumber,
-            AutonomousDatabaseEncryptionKeyDetails encryptionKey) {
+            AutonomousDatabaseEncryptionKeyDetails encryptionKey,
+            Boolean isDisconnectPeer) {
         super();
         this.backupRetentionPeriodInDays = backupRetentionPeriodInDays;
         this.computeModel = computeModel;
@@ -197,6 +199,7 @@ public final class UpdateAutonomousDatabaseDetails
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
         this.encryptionKey = encryptionKey;
+        this.isDisconnectPeer = isDisconnectPeer;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -1773,6 +1776,31 @@ public final class UpdateAutonomousDatabaseDetails
             this.__explicitlySet__.add("encryptionKey");
             return this;
         }
+        /**
+         * If true, this will disconnect the Autonomous Database from its peer and the Autonomous
+         * Database can work permanently as a standalone database.
+         *
+         * <p>To disconnect a cross region standby, please also provide the OCID of the standby
+         * database in the {@code peerDbId} parameter.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isDisconnectPeer")
+        private Boolean isDisconnectPeer;
+
+        /**
+         * If true, this will disconnect the Autonomous Database from its peer and the Autonomous
+         * Database can work permanently as a standalone database.
+         *
+         * <p>To disconnect a cross region standby, please also provide the OCID of the standby
+         * database in the {@code peerDbId} parameter.
+         *
+         * @param isDisconnectPeer the value to set
+         * @return this builder
+         */
+        public Builder isDisconnectPeer(Boolean isDisconnectPeer) {
+            this.isDisconnectPeer = isDisconnectPeer;
+            this.__explicitlySet__.add("isDisconnectPeer");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -1833,7 +1861,8 @@ public final class UpdateAutonomousDatabaseDetails
                             this.dbToolsDetails,
                             this.secretId,
                             this.secretVersionNumber,
-                            this.encryptionKey);
+                            this.encryptionKey,
+                            this.isDisconnectPeer);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -2005,6 +2034,9 @@ public final class UpdateAutonomousDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("encryptionKey")) {
                 this.encryptionKey(model.getEncryptionKey());
+            }
+            if (model.wasPropertyExplicitlySet("isDisconnectPeer")) {
+                this.isDisconnectPeer(model.getIsDisconnectPeer());
             }
             return this;
         }
@@ -3723,6 +3755,29 @@ public final class UpdateAutonomousDatabaseDetails
         return encryptionKey;
     }
 
+    /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous
+     * Database can work permanently as a standalone database.
+     *
+     * <p>To disconnect a cross region standby, please also provide the OCID of the standby database
+     * in the {@code peerDbId} parameter.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isDisconnectPeer")
+    private final Boolean isDisconnectPeer;
+
+    /**
+     * If true, this will disconnect the Autonomous Database from its peer and the Autonomous
+     * Database can work permanently as a standalone database.
+     *
+     * <p>To disconnect a cross region standby, please also provide the OCID of the standby database
+     * in the {@code peerDbId} parameter.
+     *
+     * @return the value
+     */
+    public Boolean getIsDisconnectPeer() {
+        return isDisconnectPeer;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -3802,6 +3857,7 @@ public final class UpdateAutonomousDatabaseDetails
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(", encryptionKey=").append(String.valueOf(this.encryptionKey));
+        sb.append(", isDisconnectPeer=").append(String.valueOf(this.isDisconnectPeer));
         sb.append(")");
         return sb.toString();
     }
@@ -3885,6 +3941,7 @@ public final class UpdateAutonomousDatabaseDetails
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && java.util.Objects.equals(this.encryptionKey, other.encryptionKey)
+                && java.util.Objects.equals(this.isDisconnectPeer, other.isDisconnectPeer)
                 && super.equals(other);
     }
 
@@ -4072,6 +4129,9 @@ public final class UpdateAutonomousDatabaseDetails
         result =
                 (result * PRIME)
                         + (this.encryptionKey == null ? 43 : this.encryptionKey.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isDisconnectPeer == null ? 43 : this.isDisconnectPeer.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -5,8 +5,9 @@
 package com.oracle.bmc.networkloadbalancer.model;
 
 /**
- * The properties that define a network load balancer. For more information, see [Managing a network
- * load balancer](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingloadbalancer.htm).
+ * The properties that define a network load balancer. For more information, see [Introduction to
+ * Network Load
+ * Balancer](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm).
  *
  * <p>To use any of the API operations, you must be authorized in an IAM policy. If you are not
  * authorized, contact an administrator. If you are an administrator who writes policies to give
@@ -280,8 +281,8 @@ public final class NetworkLoadBalancer
          * [security list
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
-         * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * balancers, see [Network Load Balancer
+         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -300,8 +301,8 @@ public final class NetworkLoadBalancer
          * [security list
          * rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for your
          * virtual cloudn network. For more information about public and private network load
-         * balancers, see [How Network Load Balancing
-         * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+         * balancers, see [Network Load Balancer
+         * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
          * This value is true by default.
          *
          * <p>Example: {@code true}
@@ -815,8 +816,8 @@ public final class NetworkLoadBalancer
      * <p>A public network load balancer is accessible from the internet, depending the [security
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * balancers, see [Network Load Balancer
+     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}
@@ -834,8 +835,8 @@ public final class NetworkLoadBalancer
      * <p>A public network load balancer is accessible from the internet, depending the [security
      * list rules](https://docs.cloud.oracle.com/Content/network/Concepts/securitylists.htm) for
      * your virtual cloudn network. For more information about public and private network load
-     * balancers, see [How Network Load Balancing
-     * Works](https://docs.cloud.oracle.com/Content/Balance/Concepts/balanceoverview.htm#how-network-load-balancing-works).
+     * balancers, see [Network Load Balancer
+     * Types](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/introduction.htm#NetworkLoadBalancerTypes).
      * This value is true by default.
      *
      * <p>Example: {@code true}

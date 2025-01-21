@@ -6,8 +6,8 @@ package com.oracle.bmc.networkloadbalancer.model;
 
 /**
  * The configuration details for creating a backend set in a network load balancer. For more
- * information about backend set configuration, see [Managing Backend
- * Sets](https://docs.cloud.oracle.com/Content/Balance/Tasks/managingbackendsets.htm).
+ * information about backend set configuration, see [Backend Sets for Network Load
+ * Balancers](https://docs.cloud.oracle.com/Content/NetworkLoadBalancer/BackendSets/backend-set-management.htm).
  *
  * <p>*Caution:** Oracle recommends that you avoid using any confidential information when you
  * supply string values using the API. <br>
@@ -34,6 +34,8 @@ public final class CreateBackendSetDetails
         "isPreserveSource",
         "isFailOpen",
         "isInstantFailoverEnabled",
+        "isInstantFailoverTcpResetEnabled",
+        "areOperationallyActiveBackendsPreferred",
         "ipVersion",
         "backends",
         "healthChecker"
@@ -44,6 +46,8 @@ public final class CreateBackendSetDetails
             Boolean isPreserveSource,
             Boolean isFailOpen,
             Boolean isInstantFailoverEnabled,
+            Boolean isInstantFailoverTcpResetEnabled,
+            Boolean areOperationallyActiveBackendsPreferred,
             IpVersion ipVersion,
             java.util.List<BackendDetails> backends,
             HealthCheckerDetails healthChecker) {
@@ -53,6 +57,8 @@ public final class CreateBackendSetDetails
         this.isPreserveSource = isPreserveSource;
         this.isFailOpen = isFailOpen;
         this.isInstantFailoverEnabled = isInstantFailoverEnabled;
+        this.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
+        this.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
         this.ipVersion = ipVersion;
         this.backends = backends;
         this.healthChecker = healthChecker;
@@ -171,6 +177,49 @@ public final class CreateBackendSetDetails
             this.__explicitlySet__.add("isInstantFailoverEnabled");
             return this;
         }
+        /**
+         * If enabled along with instant failover, the network load balancer will send TCP RST to
+         * the clients for the existing connections instead of failing over to a healthy backend.
+         * This only applies when using the instant failover. By default, TCP RST is enabled.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
+        private Boolean isInstantFailoverTcpResetEnabled;
+
+        /**
+         * If enabled along with instant failover, the network load balancer will send TCP RST to
+         * the clients for the existing connections instead of failing over to a healthy backend.
+         * This only applies when using the instant failover. By default, TCP RST is enabled.
+         *
+         * @param isInstantFailoverTcpResetEnabled the value to set
+         * @return this builder
+         */
+        public Builder isInstantFailoverTcpResetEnabled(Boolean isInstantFailoverTcpResetEnabled) {
+            this.isInstantFailoverTcpResetEnabled = isInstantFailoverTcpResetEnabled;
+            this.__explicitlySet__.add("isInstantFailoverTcpResetEnabled");
+            return this;
+        }
+        /**
+         * If enabled, NLB supports active-standby backends. The standby backend takes over the
+         * traffic when the active node fails, and continues to serve the traffic even when the old
+         * active node is back healthy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
+        private Boolean areOperationallyActiveBackendsPreferred;
+
+        /**
+         * If enabled, NLB supports active-standby backends. The standby backend takes over the
+         * traffic when the active node fails, and continues to serve the traffic even when the old
+         * active node is back healthy.
+         *
+         * @param areOperationallyActiveBackendsPreferred the value to set
+         * @return this builder
+         */
+        public Builder areOperationallyActiveBackendsPreferred(
+                Boolean areOperationallyActiveBackendsPreferred) {
+            this.areOperationallyActiveBackendsPreferred = areOperationallyActiveBackendsPreferred;
+            this.__explicitlySet__.add("areOperationallyActiveBackendsPreferred");
+            return this;
+        }
         /** IP version associated with the backend set. */
         @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
         private IpVersion ipVersion;
@@ -222,6 +271,8 @@ public final class CreateBackendSetDetails
                             this.isPreserveSource,
                             this.isFailOpen,
                             this.isInstantFailoverEnabled,
+                            this.isInstantFailoverTcpResetEnabled,
+                            this.areOperationallyActiveBackendsPreferred,
                             this.ipVersion,
                             this.backends,
                             this.healthChecker);
@@ -247,6 +298,13 @@ public final class CreateBackendSetDetails
             }
             if (model.wasPropertyExplicitlySet("isInstantFailoverEnabled")) {
                 this.isInstantFailoverEnabled(model.getIsInstantFailoverEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("isInstantFailoverTcpResetEnabled")) {
+                this.isInstantFailoverTcpResetEnabled(model.getIsInstantFailoverTcpResetEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("areOperationallyActiveBackendsPreferred")) {
+                this.areOperationallyActiveBackendsPreferred(
+                        model.getAreOperationallyActiveBackendsPreferred());
             }
             if (model.wasPropertyExplicitlySet("ipVersion")) {
                 this.ipVersion(model.getIpVersion());
@@ -369,6 +427,44 @@ public final class CreateBackendSetDetails
         return isInstantFailoverEnabled;
     }
 
+    /**
+     * If enabled along with instant failover, the network load balancer will send TCP RST to the
+     * clients for the existing connections instead of failing over to a healthy backend. This only
+     * applies when using the instant failover. By default, TCP RST is enabled.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isInstantFailoverTcpResetEnabled")
+    private final Boolean isInstantFailoverTcpResetEnabled;
+
+    /**
+     * If enabled along with instant failover, the network load balancer will send TCP RST to the
+     * clients for the existing connections instead of failing over to a healthy backend. This only
+     * applies when using the instant failover. By default, TCP RST is enabled.
+     *
+     * @return the value
+     */
+    public Boolean getIsInstantFailoverTcpResetEnabled() {
+        return isInstantFailoverTcpResetEnabled;
+    }
+
+    /**
+     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic
+     * when the active node fails, and continues to serve the traffic even when the old active node
+     * is back healthy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("areOperationallyActiveBackendsPreferred")
+    private final Boolean areOperationallyActiveBackendsPreferred;
+
+    /**
+     * If enabled, NLB supports active-standby backends. The standby backend takes over the traffic
+     * when the active node fails, and continues to serve the traffic even when the old active node
+     * is back healthy.
+     *
+     * @return the value
+     */
+    public Boolean getAreOperationallyActiveBackendsPreferred() {
+        return areOperationallyActiveBackendsPreferred;
+    }
+
     /** IP version associated with the backend set. */
     @com.fasterxml.jackson.annotation.JsonProperty("ipVersion")
     private final IpVersion ipVersion;
@@ -423,6 +519,10 @@ public final class CreateBackendSetDetails
         sb.append(", isFailOpen=").append(String.valueOf(this.isFailOpen));
         sb.append(", isInstantFailoverEnabled=")
                 .append(String.valueOf(this.isInstantFailoverEnabled));
+        sb.append(", isInstantFailoverTcpResetEnabled=")
+                .append(String.valueOf(this.isInstantFailoverTcpResetEnabled));
+        sb.append(", areOperationallyActiveBackendsPreferred=")
+                .append(String.valueOf(this.areOperationallyActiveBackendsPreferred));
         sb.append(", ipVersion=").append(String.valueOf(this.ipVersion));
         sb.append(", backends=").append(String.valueOf(this.backends));
         sb.append(", healthChecker=").append(String.valueOf(this.healthChecker));
@@ -446,6 +546,12 @@ public final class CreateBackendSetDetails
                 && java.util.Objects.equals(this.isFailOpen, other.isFailOpen)
                 && java.util.Objects.equals(
                         this.isInstantFailoverEnabled, other.isInstantFailoverEnabled)
+                && java.util.Objects.equals(
+                        this.isInstantFailoverTcpResetEnabled,
+                        other.isInstantFailoverTcpResetEnabled)
+                && java.util.Objects.equals(
+                        this.areOperationallyActiveBackendsPreferred,
+                        other.areOperationallyActiveBackendsPreferred)
                 && java.util.Objects.equals(this.ipVersion, other.ipVersion)
                 && java.util.Objects.equals(this.backends, other.backends)
                 && java.util.Objects.equals(this.healthChecker, other.healthChecker)
@@ -467,6 +573,16 @@ public final class CreateBackendSetDetails
                         + (this.isInstantFailoverEnabled == null
                                 ? 43
                                 : this.isInstantFailoverEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isInstantFailoverTcpResetEnabled == null
+                                ? 43
+                                : this.isInstantFailoverTcpResetEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areOperationallyActiveBackendsPreferred == null
+                                ? 43
+                                : this.areOperationallyActiveBackendsPreferred.hashCode());
         result = (result * PRIME) + (this.ipVersion == null ? 43 : this.ipVersion.hashCode());
         result = (result * PRIME) + (this.backends == null ? 43 : this.backends.hashCode());
         result =

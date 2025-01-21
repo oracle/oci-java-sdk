@@ -48,6 +48,16 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
@@ -143,6 +153,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
                             this.databaseSoftwareImageId,
                             this.databaseAdminPassword,
+                            this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
                             this.transportType,
                             this.isActiveDataGuardEnabled,
@@ -163,6 +174,10 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
@@ -202,6 +217,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     public CreateDataGuardAssociationToExistingVmClusterDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -212,6 +228,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
+                sourceEncryptionKeyLocationDetails,
                 protectionMode,
                 transportType,
                 isActiveDataGuardEnabled,

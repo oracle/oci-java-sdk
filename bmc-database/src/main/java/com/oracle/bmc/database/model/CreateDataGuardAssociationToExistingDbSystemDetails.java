@@ -53,6 +53,16 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("protectionMode")
         private ProtectionMode protectionMode;
 
@@ -148,6 +158,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
                     new CreateDataGuardAssociationToExistingDbSystemDetails(
                             this.databaseSoftwareImageId,
                             this.databaseAdminPassword,
+                            this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
                             this.transportType,
                             this.isActiveDataGuardEnabled,
@@ -168,6 +179,10 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
@@ -207,6 +222,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
     public CreateDataGuardAssociationToExistingDbSystemDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -217,6 +233,7 @@ public final class CreateDataGuardAssociationToExistingDbSystemDetails
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
+                sourceEncryptionKeyLocationDetails,
                 protectionMode,
                 transportType,
                 isActiveDataGuardEnabled,

@@ -160,6 +160,120 @@ public class VirtualNetworkPaginators {
     }
 
     /**
+     * Creates a new iterable which will iterate over the responses received from the listByoasns
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListByoasnsResponse> listByoasnsResponseIterator(
+            final ListByoasnsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListByoasnsRequest.Builder, ListByoasnsRequest, ListByoasnsResponse>(
+                new java.util.function.Supplier<ListByoasnsRequest.Builder>() {
+                    @Override
+                    public ListByoasnsRequest.Builder get() {
+                        return ListByoasnsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListByoasnsResponse, String>() {
+                    @Override
+                    public String apply(ListByoasnsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoasnsRequest.Builder>,
+                        ListByoasnsRequest>() {
+                    @Override
+                    public ListByoasnsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoasnsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListByoasnsRequest, ListByoasnsResponse>() {
+                    @Override
+                    public ListByoasnsResponse apply(ListByoasnsRequest request) {
+                        return client.listByoasns(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.core.model.ByoasnSummary} objects contained in responses from the listByoasns
+     * operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.core.model.ByoasnSummary} objects contained in responses received from the
+     *     service.
+     */
+    public Iterable<com.oracle.bmc.core.model.ByoasnSummary> listByoasnsRecordIterator(
+            final ListByoasnsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListByoasnsRequest.Builder,
+                ListByoasnsRequest,
+                ListByoasnsResponse,
+                com.oracle.bmc.core.model.ByoasnSummary>(
+                new java.util.function.Supplier<ListByoasnsRequest.Builder>() {
+                    @Override
+                    public ListByoasnsRequest.Builder get() {
+                        return ListByoasnsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListByoasnsResponse, String>() {
+                    @Override
+                    public String apply(ListByoasnsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListByoasnsRequest.Builder>,
+                        ListByoasnsRequest>() {
+                    @Override
+                    public ListByoasnsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListByoasnsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<ListByoasnsRequest, ListByoasnsResponse>() {
+                    @Override
+                    public ListByoasnsResponse apply(ListByoasnsRequest request) {
+                        return client.listByoasns(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListByoasnsResponse,
+                        java.util.List<com.oracle.bmc.core.model.ByoasnSummary>>() {
+                    @Override
+                    public java.util.List<com.oracle.bmc.core.model.ByoasnSummary> apply(
+                            ListByoasnsResponse response) {
+                        return response.getByoasnCollection().getItems();
+                    }
+                });
+    }
+
+    /**
      * Creates a new iterable which will iterate over the responses received from the
      * listByoipAllocatedRanges operation. This iterable will fetch more data from the server as
      * needed.
