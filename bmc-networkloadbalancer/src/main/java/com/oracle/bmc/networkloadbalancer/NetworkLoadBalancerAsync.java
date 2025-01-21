@@ -234,6 +234,22 @@ public interface NetworkLoadBalancerAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves the current operational status of the specified backend server.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetBackendOperationalStatusResponse> getBackendOperationalStatus(
+            GetBackendOperationalStatusRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetBackendOperationalStatusRequest, GetBackendOperationalStatusResponse>
+                    handler);
+
+    /**
      * Retrieves the configuration information for the specified backend set.
      *
      * @param request The request object containing the details to send

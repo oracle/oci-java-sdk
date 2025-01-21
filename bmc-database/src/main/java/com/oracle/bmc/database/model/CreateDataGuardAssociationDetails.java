@@ -43,6 +43,7 @@ public class CreateDataGuardAssociationDetails
     @java.beans.ConstructorProperties({
         "databaseSoftwareImageId",
         "databaseAdminPassword",
+        "sourceEncryptionKeyLocationDetails",
         "protectionMode",
         "transportType",
         "isActiveDataGuardEnabled",
@@ -52,6 +53,7 @@ public class CreateDataGuardAssociationDetails
     protected CreateDataGuardAssociationDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -60,6 +62,7 @@ public class CreateDataGuardAssociationDetails
         super();
         this.databaseSoftwareImageId = databaseSoftwareImageId;
         this.databaseAdminPassword = databaseAdminPassword;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
         this.protectionMode = protectionMode;
         this.transportType = transportType;
         this.isActiveDataGuardEnabled = isActiveDataGuardEnabled;
@@ -123,6 +126,13 @@ public class CreateDataGuardAssociationDetails
      */
     public String getDatabaseAdminPassword() {
         return databaseAdminPassword;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getSourceEncryptionKeyLocationDetails() {
+        return sourceEncryptionKeyLocationDetails;
     }
 
     /**
@@ -334,6 +344,8 @@ public class CreateDataGuardAssociationDetails
         sb.append("super=").append(super.toString());
         sb.append("databaseSoftwareImageId=").append(String.valueOf(this.databaseSoftwareImageId));
         sb.append(", databaseAdminPassword=").append(String.valueOf(this.databaseAdminPassword));
+        sb.append(", sourceEncryptionKeyLocationDetails=")
+                .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
         sb.append(", protectionMode=").append(String.valueOf(this.protectionMode));
         sb.append(", transportType=").append(String.valueOf(this.transportType));
         sb.append(", isActiveDataGuardEnabled=")
@@ -356,6 +368,9 @@ public class CreateDataGuardAssociationDetails
         CreateDataGuardAssociationDetails other = (CreateDataGuardAssociationDetails) o;
         return java.util.Objects.equals(this.databaseSoftwareImageId, other.databaseSoftwareImageId)
                 && java.util.Objects.equals(this.databaseAdminPassword, other.databaseAdminPassword)
+                && java.util.Objects.equals(
+                        this.sourceEncryptionKeyLocationDetails,
+                        other.sourceEncryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.protectionMode, other.protectionMode)
                 && java.util.Objects.equals(this.transportType, other.transportType)
                 && java.util.Objects.equals(
@@ -379,6 +394,11 @@ public class CreateDataGuardAssociationDetails
                         + (this.databaseAdminPassword == null
                                 ? 43
                                 : this.databaseAdminPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceEncryptionKeyLocationDetails == null
+                                ? 43
+                                : this.sourceEncryptionKeyLocationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.protectionMode == null ? 43 : this.protectionMode.hashCode());

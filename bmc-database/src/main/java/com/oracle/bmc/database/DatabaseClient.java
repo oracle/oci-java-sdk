@@ -1122,6 +1122,41 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeEncryptionKeyLocationResponse changeEncryptionKeyLocation(
+            ChangeEncryptionKeyLocationRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEncryptionKeyLocationDetails(),
+                "encryptionKeyLocationDetails is required");
+
+        return clientCall(request, ChangeEncryptionKeyLocationResponse::builder)
+                .logger(LOG, "changeEncryptionKeyLocation")
+                .serviceDetails(
+                        "Database",
+                        "ChangeEncryptionKeyLocation",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ChangeEncryptionKeyLocation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeEncryptionKeyLocationRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("changeEncryptionKeyLocation")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeEncryptionKeyLocationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeEncryptionKeyLocationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeExadataInfrastructureCompartmentResponse changeExadataInfrastructureCompartment(
             ChangeExadataInfrastructureCompartmentRequest request) {
         Objects.requireNonNull(
@@ -1866,6 +1901,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ConvertToRegularPluggableDatabaseResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ConvertToStandaloneResponse convertToStandalone(ConvertToStandaloneRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getConvertToStandaloneDetails(), "convertToStandaloneDetails is required");
+
+        return clientCall(request, ConvertToStandaloneResponse::builder)
+                .logger(LOG, "convertToStandalone")
+                .serviceDetails(
+                        "Database",
+                        "ConvertToStandalone",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ConvertToStandalone")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ConvertToStandaloneRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("convertToStandalone")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        ConvertToStandaloneResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ConvertToStandaloneResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ConvertToStandaloneResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ConvertToStandaloneResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -5351,6 +5424,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id",
                         FailoverAutonomousContainerDatabaseDataguardAssociationResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public FailoverDataGuardResponse failoverDataGuard(FailoverDataGuardRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getFailoverDataGuardDetails(), "failoverDataGuardDetails is required");
+
+        return clientCall(request, FailoverDataGuardResponse::builder)
+                .logger(LOG, "failoverDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "FailoverDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/FailoverDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(FailoverDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("failover")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        FailoverDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", FailoverDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", FailoverDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", FailoverDataGuardResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -10641,6 +10751,50 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public MigrateDataGuardAssociationToMultiDataGuardsResponse
+            migrateDataGuardAssociationToMultiDataGuards(
+                    MigrateDataGuardAssociationToMultiDataGuardsRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+
+        Validate.notBlank(
+                request.getDataGuardAssociationId(), "dataGuardAssociationId must not be blank");
+
+        return clientCall(request, MigrateDataGuardAssociationToMultiDataGuardsResponse::builder)
+                .logger(LOG, "migrateDataGuardAssociationToMultiDataGuards")
+                .serviceDetails(
+                        "Database",
+                        "MigrateDataGuardAssociationToMultiDataGuards",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/DataGuardAssociation/MigrateDataGuardAssociationToMultiDataGuards")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(MigrateDataGuardAssociationToMultiDataGuardsRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuardAssociations")
+                .appendPathParam(request.getDataGuardAssociationId())
+                .appendPathParam("actions")
+                .appendPathParam("migrate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", MigrateDataGuardAssociationToMultiDataGuardsResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
     public MigrateExadataDbSystemResourceModelResponse migrateExadataDbSystemResourceModel(
             MigrateExadataDbSystemResourceModelRequest request) {
 
@@ -10952,6 +11106,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-work-request-id",
                         ReinstateAutonomousContainerDatabaseDataguardAssociationResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ReinstateDataGuardResponse reinstateDataGuard(ReinstateDataGuardRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getReinstateDataGuardDetails(), "reinstateDataGuardDetails is required");
+
+        return clientCall(request, ReinstateDataGuardResponse::builder)
+                .logger(LOG, "reinstateDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "ReinstateDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/ReinstateDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ReinstateDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("reinstate")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        ReinstateDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ReinstateDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", ReinstateDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", ReinstateDataGuardResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -12141,6 +12332,44 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public SwitchOverDataGuardResponse switchOverDataGuard(SwitchOverDataGuardRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getSwitchOverDataGuardDetails(), "switchOverDataGuardDetails is required");
+
+        return clientCall(request, SwitchOverDataGuardResponse::builder)
+                .logger(LOG, "switchOverDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "SwitchOverDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/SwitchOverDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(SwitchOverDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("switchover")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        SwitchOverDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        SwitchOverDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", SwitchOverDataGuardResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", SwitchOverDataGuardResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SwitchoverAutonomousContainerDatabaseDataguardAssociationResponse
             switchoverAutonomousContainerDatabaseDataguardAssociation(
                     SwitchoverAutonomousContainerDatabaseDataguardAssociationRequest request) {
@@ -12979,6 +13208,43 @@ public class DatabaseClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateConsoleHistoryResponse.Builder::opcRequestId)
                 .handleResponseHeaderString("etag", UpdateConsoleHistoryResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateDataGuardResponse updateDataGuard(UpdateDataGuardRequest request) {
+
+        Validate.notBlank(request.getDatabaseId(), "databaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateDataGuardDetails(), "updateDataGuardDetails is required");
+
+        return clientCall(request, UpdateDataGuardResponse::builder)
+                .logger(LOG, "updateDataGuard")
+                .serviceDetails(
+                        "Database",
+                        "UpdateDataGuard",
+                        "https://docs.oracle.com/iaas/api/#/en/database/20160918/Database/UpdateDataGuard")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(UpdateDataGuardRequest::builder)
+                .basePath("/20160918")
+                .appendPathParam("databases")
+                .appendPathParam(request.getDatabaseId())
+                .appendPathParam("dataGuard")
+                .appendPathParam("actions")
+                .appendPathParam("updateDataGuard")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.database.model.Database.class,
+                        UpdateDataGuardResponse.Builder::database)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateDataGuardResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateDataGuardResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString("etag", UpdateDataGuardResponse.Builder::etag)
                 .callSync();
     }
 

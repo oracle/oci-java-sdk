@@ -52,7 +52,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         "databaseManagementConfig",
         "sidPrefix",
         "keyStoreId",
-        "keyStoreWalletName"
+        "keyStoreWalletName",
+        "dataGuardGroup",
+        "encryptionKeyLocationDetails"
     })
     public Database(
             String id,
@@ -85,7 +87,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             CloudDatabaseManagementConfig databaseManagementConfig,
             String sidPrefix,
             String keyStoreId,
-            String keyStoreWalletName) {
+            String keyStoreWalletName,
+            DataGuardGroup dataGuardGroup,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -119,6 +123,8 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         this.sidPrefix = sidPrefix;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
+        this.dataGuardGroup = dataGuardGroup;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -677,6 +683,25 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("dataGuardGroup")
+        private DataGuardGroup dataGuardGroup;
+
+        public Builder dataGuardGroup(DataGuardGroup dataGuardGroup) {
+            this.dataGuardGroup = dataGuardGroup;
+            this.__explicitlySet__.add("dataGuardGroup");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -713,7 +738,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                             this.databaseManagementConfig,
                             this.sidPrefix,
                             this.keyStoreId,
-                            this.keyStoreWalletName);
+                            this.keyStoreWalletName,
+                            this.dataGuardGroup,
+                            this.encryptionKeyLocationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -815,6 +842,12 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
             }
             if (model.wasPropertyExplicitlySet("keyStoreWalletName")) {
                 this.keyStoreWalletName(model.getKeyStoreWalletName());
+            }
+            if (model.wasPropertyExplicitlySet("dataGuardGroup")) {
+                this.dataGuardGroup(model.getDataGuardGroup());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
             }
             return this;
         }
@@ -1370,6 +1403,20 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         return keyStoreWalletName;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("dataGuardGroup")
+    private final DataGuardGroup dataGuardGroup;
+
+    public DataGuardGroup getDataGuardGroup() {
+        return dataGuardGroup;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1421,6 +1468,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
+        sb.append(", dataGuardGroup=").append(String.valueOf(this.dataGuardGroup));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -1472,6 +1522,9 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
+                && java.util.Objects.equals(this.dataGuardGroup, other.dataGuardGroup)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && super.equals(other);
     }
 
@@ -1552,6 +1605,14 @@ public final class Database extends com.oracle.bmc.http.client.internal.Explicit
                         + (this.keyStoreWalletName == null
                                 ? 43
                                 : this.keyStoreWalletName.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.dataGuardGroup == null ? 43 : this.dataGuardGroup.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

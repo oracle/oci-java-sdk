@@ -282,6 +282,24 @@ public interface VirtualNetwork extends AutoCloseable {
             BulkDeleteVirtualCircuitPublicPrefixesRequest request);
 
     /**
+     * Moves a BYOASN Resource to a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeByoasnCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeByoasnCompartment API.
+     */
+    ChangeByoasnCompartmentResponse changeByoasnCompartment(ChangeByoasnCompartmentRequest request);
+
+    /**
      * Moves a BYOIP CIDR block to a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -763,6 +781,21 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     ConnectRemotePeeringConnectionsResponse connectRemotePeeringConnections(
             ConnectRemotePeeringConnectionsRequest request);
+
+    /**
+     * Creates a BYOASN Resource
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateByoasnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateByoasn API.
+     */
+    CreateByoasnResponse createByoasn(CreateByoasnRequest request);
 
     /**
      * Creates a subrange of the BYOIP CIDR block.
@@ -1562,6 +1595,24 @@ public interface VirtualNetwork extends AutoCloseable {
     CreateVtapResponse createVtap(CreateVtapRequest request);
 
     /**
+     * Deletes the specified `Byoasn` resource. The resource must be in one of the following states:
+     * CREATING, ACTIVE or FAILED. It must not be in use by any of the byoipRanges or deletion will
+     * fail. You must specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteByoasnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteByoasn API.
+     */
+    DeleteByoasnResponse deleteByoasn(DeleteByoasnRequest request);
+
+    /**
      * Deletes the specified `ByoipRange` resource. The resource must be in one of the following
      * states: CREATING, PROVISIONED, ACTIVE, or FAILED. It must not have any subranges currently
      * allocated to a PublicIpPool object or the deletion will fail. You must specify the
@@ -2165,6 +2216,22 @@ public interface VirtualNetwork extends AutoCloseable {
      */
     GetAllowedIkeIPSecParametersResponse getAllowedIkeIPSecParameters(
             GetAllowedIkeIPSecParametersRequest request);
+
+    /**
+     * Gets the `Byoasn` resource. You must specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetByoasnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetByoasn API.
+     */
+    GetByoasnResponse getByoasn(GetByoasnRequest request);
 
     /**
      * Gets the `ByoipRange` resource. You must specify the
@@ -3230,6 +3297,22 @@ public interface VirtualNetwork extends AutoCloseable {
             ListAllowedPeerRegionsForRemotePeeringRequest request);
 
     /**
+     * Lists the `Byoasn` resources in the specified compartment. You can filter the list using
+     * query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListByoasnsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListByoasns API.
+     */
+    ListByoasnsResponse listByoasns(ListByoasnsRequest request);
+
+    /**
      * Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool. Each
      * `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      *
@@ -4288,6 +4371,52 @@ public interface VirtualNetwork extends AutoCloseable {
     RemoveVcnCidrResponse removeVcnCidr(RemoveVcnCidrRequest request);
 
     /**
+     * Update BYOIP's origin ASN to byoasn.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SetOriginAsnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetOriginAsn API.
+     */
+    SetOriginAsnResponse setOriginAsn(SetOriginAsnRequest request);
+
+    /**
+     * Update prefix's origin ASN to OCI
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/SetOriginAsnToOracleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SetOriginAsnToOracle API.
+     */
+    SetOriginAsnToOracleResponse setOriginAsnToOracle(SetOriginAsnToOracleRequest request);
+
+    /**
+     * Updates the tags or display name associated with the specified BYOASN Resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateByoasnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateByoasn API.
+     */
+    UpdateByoasnResponse updateByoasn(UpdateByoasnRequest request);
+
+    /**
      * Updates the tags or display name associated to the specified BYOIP CIDR block.
      *
      * @param request The request object containing the details to send
@@ -4987,6 +5116,24 @@ public interface VirtualNetwork extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeDrg API.
      */
     UpgradeDrgResponse upgradeDrg(UpgradeDrgRequest request);
+
+    /**
+     * Submits the BYOASN for validation. Please do not submit to Oracle for validation if the
+     * information for the BYOASN is not already modified in the Regional Internet Registry. See [To
+     * import a BYOASN](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for
+     * details.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ValidateByoasnExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateByoasn API.
+     */
+    ValidateByoasnResponse validateByoasn(ValidateByoasnRequest request);
 
     /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for

@@ -99,6 +99,9 @@ public class LengthLimitedInputStream extends FilterInputStream {
 
     @Override
     public synchronized void reset() throws IOException {
+        if (super.markSupported()) {
+            super.reset();
+        }
         // Reset remainingBytes to the specified read limit length
         remainingBytes = remainingBytesAtMark;
     }

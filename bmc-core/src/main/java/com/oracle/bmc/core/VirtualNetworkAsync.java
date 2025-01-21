@@ -280,6 +280,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves a BYOASN Resource to a different compartment. For information about moving resources
+     * between compartments, see [Moving Resources to a Different
+     * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeByoasnCompartmentResponse> changeByoasnCompartment(
+            ChangeByoasnCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>
+                    handler);
+
+    /**
      * Moves a BYOIP CIDR block to a different compartment. For information about moving resources
      * between compartments, see [Moving Resources to a Different
      * Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
@@ -769,6 +787,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                                     ConnectRemotePeeringConnectionsRequest,
                                     ConnectRemotePeeringConnectionsResponse>
                             handler);
+
+    /**
+     * Creates a BYOASN Resource
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateByoasnResponse> createByoasn(
+            CreateByoasnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateByoasnRequest, CreateByoasnResponse>
+                    handler);
 
     /**
      * Creates a subrange of the BYOIP CIDR block.
@@ -1556,6 +1589,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateVtapRequest, CreateVtapResponse> handler);
 
     /**
+     * Deletes the specified `Byoasn` resource. The resource must be in one of the following states:
+     * CREATING, ACTIVE or FAILED. It must not be in use by any of the byoipRanges or deletion will
+     * fail. You must specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteByoasnResponse> deleteByoasn(
+            DeleteByoasnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteByoasnRequest, DeleteByoasnResponse>
+                    handler);
+
+    /**
      * Deletes the specified `ByoipRange` resource. The resource must be in one of the following
      * states: CREATING, PROVISIONED, ACTIVE, or FAILED. It must not have any subranges currently
      * allocated to a PublicIpPool object or the deletion will fail. You must specify the
@@ -2148,6 +2199,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             GetAllowedIkeIPSecParametersRequest,
                             GetAllowedIkeIPSecParametersResponse>
                     handler);
+
+    /**
+     * Gets the `Byoasn` resource. You must specify the
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetByoasnResponse> getByoasn(
+            GetByoasnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetByoasnRequest, GetByoasnResponse> handler);
 
     /**
      * Gets the `ByoipRange` resource. You must specify the
@@ -3206,6 +3272,21 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Lists the `Byoasn` resources in the specified compartment. You can filter the list using
+     * query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListByoasnsResponse> listByoasns(
+            ListByoasnsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListByoasnsRequest, ListByoasnsResponse> handler);
+
+    /**
      * Lists the subranges of a BYOIP CIDR block currently allocated to an IP pool. Each
      * `ByoipAllocatedRange` object also lists the IP pool where it is allocated.
      *
@@ -4258,6 +4339,52 @@ public interface VirtualNetworkAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Update BYOIP's origin ASN to byoasn.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetOriginAsnResponse> setOriginAsn(
+            SetOriginAsnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<SetOriginAsnRequest, SetOriginAsnResponse>
+                    handler);
+
+    /**
+     * Update prefix's origin ASN to OCI
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<SetOriginAsnToOracleResponse> setOriginAsnToOracle(
+            SetOriginAsnToOracleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>
+                    handler);
+
+    /**
+     * Updates the tags or display name associated with the specified BYOASN Resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateByoasnResponse> updateByoasn(
+            UpdateByoasnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateByoasnRequest, UpdateByoasnResponse>
+                    handler);
+
+    /**
      * Updates the tags or display name associated to the specified BYOIP CIDR block.
      *
      * @param request The request object containing the details to send
@@ -4946,6 +5073,24 @@ public interface VirtualNetworkAsync extends AutoCloseable {
     java.util.concurrent.Future<UpgradeDrgResponse> upgradeDrg(
             UpgradeDrgRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpgradeDrgRequest, UpgradeDrgResponse> handler);
+
+    /**
+     * Submits the BYOASN for validation. Please do not submit to Oracle for validation if the
+     * information for the BYOASN is not already modified in the Regional Internet Registry. See [To
+     * import a BYOASN](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/BYOASN.htm) for
+     * details.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ValidateByoasnResponse> validateByoasn(
+            ValidateByoasnRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ValidateByoasnRequest, ValidateByoasnResponse>
+                    handler);
 
     /**
      * Submits the BYOIP CIDR block you are importing for validation. Do not submit to Oracle for

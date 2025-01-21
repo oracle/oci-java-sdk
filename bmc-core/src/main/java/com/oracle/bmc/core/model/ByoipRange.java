@@ -33,6 +33,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         "definedTags",
         "displayName",
         "freeformTags",
+        "originAsn",
         "id",
         "ipv6CidrBlock",
         "lifecycleDetails",
@@ -50,6 +51,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String displayName,
             java.util.Map<String, String> freeformTags,
+            ByoipRangeOriginAsn originAsn,
             String id,
             String ipv6CidrBlock,
             LifecycleDetails lifecycleDetails,
@@ -66,6 +68,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         this.definedTags = definedTags;
         this.displayName = displayName;
         this.freeformTags = freeformTags;
+        this.originAsn = originAsn;
         this.id = id;
         this.ipv6CidrBlock = ipv6CidrBlock;
         this.lifecycleDetails = lifecycleDetails;
@@ -197,6 +200,15 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         public Builder freeformTags(java.util.Map<String, String> freeformTags) {
             this.freeformTags = freeformTags;
             this.__explicitlySet__.add("freeformTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("originAsn")
+        private ByoipRangeOriginAsn originAsn;
+
+        public Builder originAsn(ByoipRangeOriginAsn originAsn) {
+            this.originAsn = originAsn;
+            this.__explicitlySet__.add("originAsn");
             return this;
         }
         /**
@@ -401,6 +413,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
                             this.definedTags,
                             this.displayName,
                             this.freeformTags,
+                            this.originAsn,
                             this.id,
                             this.ipv6CidrBlock,
                             this.lifecycleDetails,
@@ -435,6 +448,9 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
+            }
+            if (model.wasPropertyExplicitlySet("originAsn")) {
+                this.originAsn(model.getOriginAsn());
             }
             if (model.wasPropertyExplicitlySet("id")) {
                 this.id(model.getId());
@@ -580,6 +596,13 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
      */
     public java.util.Map<String, String> getFreeformTags() {
         return freeformTags;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("originAsn")
+    private final ByoipRangeOriginAsn originAsn;
+
+    public ByoipRangeOriginAsn getOriginAsn() {
+        return originAsn;
     }
 
     /**
@@ -877,6 +900,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
+        sb.append(", originAsn=").append(String.valueOf(this.originAsn));
         sb.append(", id=").append(String.valueOf(this.id));
         sb.append(", ipv6CidrBlock=").append(String.valueOf(this.ipv6CidrBlock));
         sb.append(", lifecycleDetails=").append(String.valueOf(this.lifecycleDetails));
@@ -907,6 +931,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
+                && java.util.Objects.equals(this.originAsn, other.originAsn)
                 && java.util.Objects.equals(this.id, other.id)
                 && java.util.Objects.equals(this.ipv6CidrBlock, other.ipv6CidrBlock)
                 && java.util.Objects.equals(this.lifecycleDetails, other.lifecycleDetails)
@@ -935,6 +960,7 @@ public final class ByoipRange extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
+        result = (result * PRIME) + (this.originAsn == null ? 43 : this.originAsn.hashCode());
         result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result =
                 (result * PRIME)

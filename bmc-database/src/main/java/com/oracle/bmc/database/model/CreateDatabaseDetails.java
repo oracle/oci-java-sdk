@@ -43,7 +43,8 @@ public final class CreateDatabaseDetails
         "kmsKeyVersionId",
         "vaultId",
         "sidPrefix",
-        "keyStoreId"
+        "keyStoreId",
+        "encryptionKeyLocationDetails"
     })
     public CreateDatabaseDetails(
             String dbName,
@@ -62,7 +63,8 @@ public final class CreateDatabaseDetails
             String kmsKeyVersionId,
             String vaultId,
             String sidPrefix,
-            String keyStoreId) {
+            String keyStoreId,
+            EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
         super();
         this.dbName = dbName;
         this.dbUniqueName = dbUniqueName;
@@ -81,6 +83,7 @@ public final class CreateDatabaseDetails
         this.vaultId = vaultId;
         this.sidPrefix = sidPrefix;
         this.keyStoreId = keyStoreId;
+        this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -458,6 +461,16 @@ public final class CreateDatabaseDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+        public Builder encryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails encryptionKeyLocationDetails) {
+            this.encryptionKeyLocationDetails = encryptionKeyLocationDetails;
+            this.__explicitlySet__.add("encryptionKeyLocationDetails");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -480,7 +493,8 @@ public final class CreateDatabaseDetails
                             this.kmsKeyVersionId,
                             this.vaultId,
                             this.sidPrefix,
-                            this.keyStoreId);
+                            this.keyStoreId,
+                            this.encryptionKeyLocationDetails);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -539,6 +553,9 @@ public final class CreateDatabaseDetails
             }
             if (model.wasPropertyExplicitlySet("keyStoreId")) {
                 this.keyStoreId(model.getKeyStoreId());
+            }
+            if (model.wasPropertyExplicitlySet("encryptionKeyLocationDetails")) {
+                this.encryptionKeyLocationDetails(model.getEncryptionKeyLocationDetails());
             }
             return this;
         }
@@ -929,6 +946,13 @@ public final class CreateDatabaseDetails
         return keyStoreId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("encryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails encryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getEncryptionKeyLocationDetails() {
+        return encryptionKeyLocationDetails;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -962,6 +986,8 @@ public final class CreateDatabaseDetails
         sb.append(", vaultId=").append(String.valueOf(this.vaultId));
         sb.append(", sidPrefix=").append(String.valueOf(this.sidPrefix));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
+        sb.append(", encryptionKeyLocationDetails=")
+                .append(String.valueOf(this.encryptionKeyLocationDetails));
         sb.append(")");
         return sb.toString();
     }
@@ -994,6 +1020,8 @@ public final class CreateDatabaseDetails
                 && java.util.Objects.equals(this.vaultId, other.vaultId)
                 && java.util.Objects.equals(this.sidPrefix, other.sidPrefix)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
+                && java.util.Objects.equals(
+                        this.encryptionKeyLocationDetails, other.encryptionKeyLocationDetails)
                 && super.equals(other);
     }
 
@@ -1032,6 +1060,11 @@ public final class CreateDatabaseDetails
         result = (result * PRIME) + (this.vaultId == null ? 43 : this.vaultId.hashCode());
         result = (result * PRIME) + (this.sidPrefix == null ? 43 : this.sidPrefix.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.encryptionKeyLocationDetails == null
+                                ? 43
+                                : this.encryptionKeyLocationDetails.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

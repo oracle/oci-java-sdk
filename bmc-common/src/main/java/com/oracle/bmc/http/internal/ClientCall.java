@@ -970,7 +970,7 @@ public final class ClientCall<
 
     private CompletionStage<RESP> callAsyncImpl() {
         if (!firstAttempt && hasBinaryRequestBody) {
-            Retriers.tryResetStreamForRetry((InputStream) request.getBody$(), true);
+            Retriers.tryResetStreamForRetry((InputStream) httpRequest.body(), true);
         }
         firstAttempt = false;
 
