@@ -30,6 +30,11 @@ public enum WorkRequestOperationType implements com.oracle.bmc.http.internal.Bmc
     EnableDbmgmt("ENABLE_DBMGMT"),
     DisableDbmgmt("DISABLE_DBMGMT"),
     ModifyDbmgmt("MODIFY_DBMGMT"),
+    CheckExternalMysqlConnection("CHECK_EXTERNAL_MYSQL_CONNECTION"),
+    UpdateExternalMysqlCredential("UPDATE_EXTERNAL_MYSQL_CREDENTIAL"),
+    CreateExternalMysqlConnector("CREATE_EXTERNAL_MYSQL_CONNECTOR"),
+    DeleteExternalMysqlConnector("DELETE_EXTERNAL_MYSQL_CONNECTOR"),
+    DeleteExternalMysqlDatabase("DELETE_EXTERNAL_MYSQL_DATABASE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

@@ -110,6 +110,33 @@ package com.oracle.bmc.disasterrecovery.model;
  * COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK - A precheck step for validating a compute
  * capacity availability during a switchover. - COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK - A
  * precheck step for validating a compute capacity availability during a failover. -
+ * OKE_CLUSTER_SWITCHOVER_CLEANUP_PRIMARY_PRECHECK - A precheck step for validating clean up of an
+ * OKE cluster in the primary region during a switchover. -
+ * OKE_CLUSTER_SWITCHOVER_RESTORE_STANDBY_PRECHECK - A precheck step for validating restoration of
+ * an OKE cluster in the standby region during a switchover. -
+ * OKE_CLUSTER_FAILOVER_RESTORE_STANDBY_PRECHECK - A precheck step for validating restoration of an
+ * OKE cluster in the standby region during a failover. -
+ * OKE_CLUSTER_STOP_DRILL_CLEANUP_STANDBY_PRECHECK - A precheck step for validating clean up of an
+ * OKE cluster in the standby region during a stop drill. -
+ * OKE_CLUSTER_START_DRILL_RESTORE_STANDBY_PRECHECK - A precheck step for validating restoration of
+ * an OKE cluster in the standby region during a start drill. -
+ * OKE_CLUSTER_SWITCHOVER_CLEANUP_PRIMARY - A DR plan step to clean up an OKE cluster in the primary
+ * region during a switchover. - OKE_CLUSTER_SWITCHOVER_SCALE_UP_STANDBY - A DR plan step to scale
+ * up the node pool of an OKE cluster in the standby during a switchover. -
+ * OKE_CLUSTER_SWITCHOVER_RESTORE_STANDBY - A DR plan step to restore an OKE cluster in the standby
+ * region during a switchover. - OKE_CLUSTER_SWITCHOVER_REVERSE_BACKUP_STANDBY - A DR plan step to
+ * reverse an OKE cluster backup in the standby during a switchover. -
+ * OKE_CLUSTER_SWITCHOVER_SCALE_DOWN_PRIMARY - A DR plan step to scale down the node pool of an OKE
+ * cluster in the primary during a switchover. - OKE_CLUSTER_FAILOVER_RESTORE_STANDBY - A DR plan
+ * step to restore an OKE cluster in the standby region during a failover. -
+ * OKE_CLUSTER_FAILOVER_SCALE_UP_STANDBY - A DR plan step to scale up the node pool of an OKE
+ * cluster in the standby region during a failover. - OKE_CLUSTER_START_DRILL_RESTORE_STANDBY - A DR
+ * plan step to restore an OKE cluster in the standby region during a start drill. -
+ * OKE_CLUSTER_START_DRILL_SCALE_UP_STANDBY - A DR plan step to scale up the node pool of an OKE
+ * cluster in the standby region during a start drill. - OKE_CLUSTER_STOP_DRILL_CLEANUP_STANDBY - A
+ * DR plan step to clean up an OKE cluster in the standby region during a stop drill. -
+ * OKE_CLUSTER_STOP_DRILL_SCALE_DOWN_STANDBY - A DR plan step to scale down the node pool of an OKE
+ * cluster in the standby region during a stop drill. -
  * OBJECT_STORAGE_BUCKET_SWITCHOVER_DELETE_REPLICATION_PRIMARY_PRECHECK - A precheck step for
  * validating the deletion of an object storage bucket replication in the primary region during a
  * switchover. - OBJECT_STORAGE_BUCKET_SWITCHOVER_SETUP_REVERSE_REPLICATION_STANDBY_PRECHECK - A
@@ -234,6 +261,22 @@ public enum DrPlanStepType implements com.oracle.bmc.http.internal.BmcEnum {
     ComputeCapacityAvailabilitySwitchoverPrecheck(
             "COMPUTE_CAPACITY_AVAILABILITY_SWITCHOVER_PRECHECK"),
     ComputeCapacityAvailabilityFailoverPrecheck("COMPUTE_CAPACITY_AVAILABILITY_FAILOVER_PRECHECK"),
+    OkeClusterSwitchoverCleanupPrimaryPrecheck("OKE_CLUSTER_SWITCHOVER_CLEANUP_PRIMARY_PRECHECK"),
+    OkeClusterSwitchoverRestoreStandbyPrecheck("OKE_CLUSTER_SWITCHOVER_RESTORE_STANDBY_PRECHECK"),
+    OkeClusterFailoverRestoreStandbyPrecheck("OKE_CLUSTER_FAILOVER_RESTORE_STANDBY_PRECHECK"),
+    OkeClusterStopDrillCleanupStandbyPrecheck("OKE_CLUSTER_STOP_DRILL_CLEANUP_STANDBY_PRECHECK"),
+    OkeClusterStartDrillRestoreStandbyPrecheck("OKE_CLUSTER_START_DRILL_RESTORE_STANDBY_PRECHECK"),
+    OkeClusterSwitchoverCleanupPrimary("OKE_CLUSTER_SWITCHOVER_CLEANUP_PRIMARY"),
+    OkeClusterSwitchoverScaleUpStandby("OKE_CLUSTER_SWITCHOVER_SCALE_UP_STANDBY"),
+    OkeClusterSwitchoverRestoreStandby("OKE_CLUSTER_SWITCHOVER_RESTORE_STANDBY"),
+    OkeClusterSwitchoverReverseBackupStandby("OKE_CLUSTER_SWITCHOVER_REVERSE_BACKUP_STANDBY"),
+    OkeClusterSwitchoverScaleDownPrimary("OKE_CLUSTER_SWITCHOVER_SCALE_DOWN_PRIMARY"),
+    OkeClusterFailoverRestoreStandby("OKE_CLUSTER_FAILOVER_RESTORE_STANDBY"),
+    OkeClusterFailoverScaleUpStandby("OKE_CLUSTER_FAILOVER_SCALE_UP_STANDBY"),
+    OkeClusterStartDrillRestoreStandby("OKE_CLUSTER_START_DRILL_RESTORE_STANDBY"),
+    OkeClusterStartDrillScaleUpStandby("OKE_CLUSTER_START_DRILL_SCALE_UP_STANDBY"),
+    OkeClusterStopDrillCleanupStandby("OKE_CLUSTER_STOP_DRILL_CLEANUP_STANDBY"),
+    OkeClusterStopDrillScaleDownStandby("OKE_CLUSTER_STOP_DRILL_SCALE_DOWN_STANDBY"),
     ObjectStorageBucketSwitchoverDeleteReplicationPrimaryPrecheck(
             "OBJECT_STORAGE_BUCKET_SWITCHOVER_DELETE_REPLICATION_PRIMARY_PRECHECK"),
     ObjectStorageBucketSwitchoverSetupReverseReplicationStandbyPrecheck(

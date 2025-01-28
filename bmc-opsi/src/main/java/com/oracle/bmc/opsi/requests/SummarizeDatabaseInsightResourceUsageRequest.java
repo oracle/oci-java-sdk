@@ -114,6 +114,7 @@ public class SummarizeDatabaseInsightResourceUsageRequest
         ComanagedExaccPdb("COMANAGED-EXACC-PDB"),
         ComanagedExaccNoncdb("COMANAGED-EXACC-NONCDB"),
         MdsMysql("MDS-MYSQL"),
+        ExternalMysql("EXTERNAL-MYSQL"),
         ;
 
         private final String value;

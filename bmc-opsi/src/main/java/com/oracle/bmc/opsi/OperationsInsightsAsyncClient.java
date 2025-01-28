@@ -371,6 +371,48 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
     }
 
     @Override
+    public java.util.concurrent.Future<ChangeExternalMysqlDatabaseInsightConnectionResponse>
+            changeExternalMysqlDatabaseInsightConnection(
+                    ChangeExternalMysqlDatabaseInsightConnectionRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeExternalMysqlDatabaseInsightConnectionRequest,
+                                    ChangeExternalMysqlDatabaseInsightConnectionResponse>
+                            handler) {
+
+        Validate.notBlank(request.getDatabaseInsightId(), "databaseInsightId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeExternalMysqlDatabaseInsightConnectionDetails(),
+                "changeExternalMysqlDatabaseInsightConnectionDetails is required");
+
+        return clientCall(request, ChangeExternalMysqlDatabaseInsightConnectionResponse::builder)
+                .logger(LOG, "changeExternalMysqlDatabaseInsightConnection")
+                .serviceDetails(
+                        "OperationsInsights",
+                        "ChangeExternalMysqlDatabaseInsightConnection",
+                        "https://docs.oracle.com/iaas/api/#/en/operations-insights/20200630/DatabaseInsights/ChangeExternalMysqlDatabaseInsightConnection")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeExternalMysqlDatabaseInsightConnectionRequest::builder)
+                .basePath("/20200630")
+                .appendPathParam("databaseInsights")
+                .appendPathParam(request.getDatabaseInsightId())
+                .appendPathParam("actions")
+                .appendPathParam("changeExternalMysqlDatabaseInsightConnectionDetails")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeExternalMysqlDatabaseInsightConnectionResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeExternalMysqlDatabaseInsightConnectionResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeHostInsightCompartmentResponse>
             changeHostInsightCompartment(
                     ChangeHostInsightCompartmentRequest request,
@@ -7443,6 +7485,8 @@ public class OperationsInsightsAsyncClient extends com.oracle.bmc.http.internal.
                         request.getFreeformTagExists(),
                         com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("highUtilizationThreshold", request.getHighUtilizationThreshold())
+                .appendQueryParam("lowUtilizationThreshold", request.getLowUtilizationThreshold())
                 .accept("application/json")
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleBody(

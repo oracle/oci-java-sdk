@@ -67,6 +67,42 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Disable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalMysqlAssociatedServiceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalMysqlAssociatedService API.
+     */
+    DisableExternalMysqlAssociatedServiceResponse disableExternalMysqlAssociatedService(
+            DisableExternalMysqlAssociatedServiceRequest request);
+
+    /**
+     * Enable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalMysqlAssociatedServiceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalMysqlAssociatedService API.
+     */
+    EnableExternalMysqlAssociatedServiceResponse enableExternalMysqlAssociatedService(
+            EnableExternalMysqlAssociatedServiceRequest request);
+
+    /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
      *
      * @param request The request object containing the details to send
@@ -182,6 +218,13 @@ public interface ManagedMySqlDatabases extends AutoCloseable {
     SummarizeManagedMySqlDatabaseAvailabilityMetricsResponse
             summarizeManagedMySqlDatabaseAvailabilityMetrics(
                     SummarizeManagedMySqlDatabaseAvailabilityMetricsRequest request);
+
+    /**
+     * Gets the pre-configured waiters available for resources for this service.
+     *
+     * @return The service waiters.
+     */
+    ManagedMySqlDatabasesWaiters getWaiters();
 
     /**
      * Gets the pre-configured paginators available for list operations in this service which may

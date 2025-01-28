@@ -26,6 +26,9 @@ package com.oracle.bmc.opsi.model;
             value = CreateMacsManagedCloudDatabaseInsightDetails.class,
             name = "MACS_MANAGED_CLOUD_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateExternalMysqlDatabaseInsightDetails.class,
+            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateAutonomousDatabaseInsightDetails.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

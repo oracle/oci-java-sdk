@@ -2956,6 +2956,133 @@ public class DbManagementPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listExternalMySqlDatabases operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListExternalMySqlDatabasesResponse> listExternalMySqlDatabasesResponseIterator(
+            final ListExternalMySqlDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListExternalMySqlDatabasesRequest.Builder,
+                ListExternalMySqlDatabasesRequest,
+                ListExternalMySqlDatabasesResponse>(
+                new java.util.function.Supplier<ListExternalMySqlDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalMySqlDatabasesRequest.Builder get() {
+                        return ListExternalMySqlDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalMySqlDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalMySqlDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalMySqlDatabasesRequest.Builder>,
+                        ListExternalMySqlDatabasesRequest>() {
+                    @Override
+                    public ListExternalMySqlDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalMySqlDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalMySqlDatabasesRequest, ListExternalMySqlDatabasesResponse>() {
+                    @Override
+                    public ListExternalMySqlDatabasesResponse apply(
+                            ListExternalMySqlDatabasesRequest request) {
+                        return client.listExternalMySqlDatabases(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseSummary} objects contained in
+     * responses from the listExternalMySqlDatabases operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseSummary>
+            listExternalMySqlDatabasesRecordIterator(
+                    final ListExternalMySqlDatabasesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListExternalMySqlDatabasesRequest.Builder,
+                ListExternalMySqlDatabasesRequest,
+                ListExternalMySqlDatabasesResponse,
+                com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseSummary>(
+                new java.util.function.Supplier<ListExternalMySqlDatabasesRequest.Builder>() {
+                    @Override
+                    public ListExternalMySqlDatabasesRequest.Builder get() {
+                        return ListExternalMySqlDatabasesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListExternalMySqlDatabasesResponse, String>() {
+                    @Override
+                    public String apply(ListExternalMySqlDatabasesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListExternalMySqlDatabasesRequest.Builder>,
+                        ListExternalMySqlDatabasesRequest>() {
+                    @Override
+                    public ListExternalMySqlDatabasesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListExternalMySqlDatabasesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalMySqlDatabasesRequest, ListExternalMySqlDatabasesResponse>() {
+                    @Override
+                    public ListExternalMySqlDatabasesResponse apply(
+                            ListExternalMySqlDatabasesRequest request) {
+                        return client.listExternalMySqlDatabases(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListExternalMySqlDatabasesResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .ExternalMySqlDatabaseSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .ExternalMySqlDatabaseSummary>
+                            apply(ListExternalMySqlDatabasesResponse response) {
+                        return response.getExternalMySqlDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listJobExecutions operation. This iterable will fetch more data from the server as needed.
      *
      * @param request a request which can be sent to the service operation
@@ -3546,6 +3673,134 @@ public class DbManagementPaginators {
                                     com.oracle.bmc.databasemanagement.model.ManagedDatabaseSummary>
                             apply(ListManagedDatabasesResponse response) {
                         return response.getManagedDatabaseCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMySqlDatabaseConnectors operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMySqlDatabaseConnectorsResponse>
+            listMySqlDatabaseConnectorsResponseIterator(
+                    final ListMySqlDatabaseConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMySqlDatabaseConnectorsRequest.Builder,
+                ListMySqlDatabaseConnectorsRequest,
+                ListMySqlDatabaseConnectorsResponse>(
+                new java.util.function.Supplier<ListMySqlDatabaseConnectorsRequest.Builder>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsRequest.Builder get() {
+                        return ListMySqlDatabaseConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMySqlDatabaseConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListMySqlDatabaseConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMySqlDatabaseConnectorsRequest.Builder>,
+                        ListMySqlDatabaseConnectorsRequest>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMySqlDatabaseConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDatabaseConnectorsRequest, ListMySqlDatabaseConnectorsResponse>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsResponse apply(
+                            ListMySqlDatabaseConnectorsRequest request) {
+                        return client.listMySqlDatabaseConnectors(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.databasemanagement.model.MySqlDatabaseConnectorSummary} objects contained in
+     * responses from the listMySqlDatabaseConnectors operation. This iterable will fetch more data
+     * from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.databasemanagement.model.MySqlDatabaseConnectorSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.databasemanagement.model.MySqlDatabaseConnectorSummary>
+            listMySqlDatabaseConnectorsRecordIterator(
+                    final ListMySqlDatabaseConnectorsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMySqlDatabaseConnectorsRequest.Builder,
+                ListMySqlDatabaseConnectorsRequest,
+                ListMySqlDatabaseConnectorsResponse,
+                com.oracle.bmc.databasemanagement.model.MySqlDatabaseConnectorSummary>(
+                new java.util.function.Supplier<ListMySqlDatabaseConnectorsRequest.Builder>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsRequest.Builder get() {
+                        return ListMySqlDatabaseConnectorsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMySqlDatabaseConnectorsResponse, String>() {
+                    @Override
+                    public String apply(ListMySqlDatabaseConnectorsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMySqlDatabaseConnectorsRequest.Builder>,
+                        ListMySqlDatabaseConnectorsRequest>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMySqlDatabaseConnectorsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDatabaseConnectorsRequest, ListMySqlDatabaseConnectorsResponse>() {
+                    @Override
+                    public ListMySqlDatabaseConnectorsResponse apply(
+                            ListMySqlDatabaseConnectorsRequest request) {
+                        return client.listMySqlDatabaseConnectors(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMySqlDatabaseConnectorsResponse,
+                        java.util.List<
+                                com.oracle.bmc.databasemanagement.model
+                                        .MySqlDatabaseConnectorSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.databasemanagement.model
+                                            .MySqlDatabaseConnectorSummary>
+                            apply(ListMySqlDatabaseConnectorsResponse response) {
+                        return response.getMySqlConnectorCollection().getItems();
                     }
                 });
     }

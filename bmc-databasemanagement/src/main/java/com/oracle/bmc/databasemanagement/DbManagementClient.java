@@ -649,6 +649,46 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public CheckExternalMySqlDatabaseConnectorConnectionStatusResponse
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(
+                        request,
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse::builder)
+                .logger(LOG, "checkExternalMySqlDatabaseConnectorConnectionStatus")
+                .serviceDetails(
+                        "DbManagement",
+                        "CheckExternalMySqlDatabaseConnectorConnectionStatus",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CheckExternalMySqlDatabaseConnectorConnectionStatus")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CheckExternalMySqlDatabaseConnectorConnectionStatusRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .appendPathParam("actions")
+                .appendPathParam("checkConnectionStatus")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CheckExternalMySqlDatabaseConnectorConnectionStatusResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ConfigureAutomaticCaptureFiltersResponse configureAutomaticCaptureFilters(
             ConfigureAutomaticCaptureFiltersRequest request) {
 
@@ -928,6 +968,87 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         CreateExternalExadataStorageConnectorResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "etag", CreateExternalExadataStorageConnectorResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseResponse createExternalMySqlDatabase(
+            CreateExternalMySqlDatabaseRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseDetails(),
+                "createExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/CreateExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        CreateExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseResponse.Builder::contentLocation)
+                .callSync();
+    }
+
+    @Override
+    public CreateExternalMySqlDatabaseConnectorResponse createExternalMySqlDatabaseConnector(
+            CreateExternalMySqlDatabaseConnectorRequest request) {
+        Objects.requireNonNull(
+                request.getCreateExternalMySqlDatabaseConnectorDetails(),
+                "createExternalMySqlDatabaseConnectorDetails is required");
+
+        Objects.requireNonNull(
+                request.getIsTestConnectionParam(), "isTestConnectionParam is required");
+
+        return clientCall(request, CreateExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "createExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "CreateExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/CreateExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("isTestConnectionParam", request.getIsTestConnectionParam())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateExternalMySqlDatabaseConnectorResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location",
+                        CreateExternalMySqlDatabaseConnectorResponse.Builder::contentLocation)
+                .handleResponseHeaderString(
+                        "etag", CreateExternalMySqlDatabaseConnectorResponse.Builder::etag)
                 .callSync();
     }
 
@@ -1226,6 +1347,66 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-request-id",
                         DeleteExternalExadataStorageConnectorResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalMySqlDatabaseResponse deleteExternalMySqlDatabase(
+            DeleteExternalMySqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DeleteExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteExternalMySqlDatabaseConnectorResponse deleteExternalMySqlDatabaseConnector(
+            DeleteExternalMySqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, DeleteExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "deleteExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "DeleteExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/DeleteExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DeleteExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1618,6 +1799,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-work-request-id",
                         DisableExternalExadataInfrastructureManagementResponse.Builder
                                 ::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DisableExternalMySqlDatabaseManagementResponse disableExternalMySqlDatabaseManagement(
+            DisableExternalMySqlDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, DisableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "disableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "DisableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DisableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("disableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DisableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2219,6 +2434,44 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public EnableExternalMySqlDatabaseManagementResponse enableExternalMySqlDatabaseManagement(
+            EnableExternalMySqlDatabaseManagementRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getEnableExternalDatabaseManagementDetails(),
+                "enableExternalDatabaseManagementDetails is required");
+
+        return clientCall(request, EnableExternalMySqlDatabaseManagementResponse::builder)
+                .logger(LOG, "enableExternalMySqlDatabaseManagement")
+                .serviceDetails(
+                        "DbManagement",
+                        "EnableExternalMySqlDatabaseManagement",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMySqlDatabaseManagement")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(EnableExternalMySqlDatabaseManagementRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .appendPathParam("actions")
+                .appendPathParam("enableDatabaseManagement")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        EnableExternalMySqlDatabaseManagementResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public EnableExternalNonContainerDatabaseManagementFeatureResponse
             enableExternalNonContainerDatabaseManagementFeature(
                     EnableExternalNonContainerDatabaseManagementFeatureRequest request) {
@@ -2562,6 +2815,172 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public GetDatabaseFleetBackupMetricsResponse getDatabaseFleetBackupMetrics(
+            GetDatabaseFleetBackupMetricsRequest request) {
+        Objects.requireNonNull(request.getDatabaseHostedIn(), "databaseHostedIn is required");
+
+        Objects.requireNonNull(request.getStartTime(), "startTime is required");
+
+        Objects.requireNonNull(request.getEndTime(), "endTime is required");
+
+        return clientCall(request, GetDatabaseFleetBackupMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetBackupMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetBackupMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetBackupMetrics/GetDatabaseFleetBackupMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetBackupMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetBackupMetrics")
+                .appendEnumQueryParam("databaseHostedIn", request.getDatabaseHostedIn())
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("startTime", request.getStartTime())
+                .appendQueryParam("endTime", request.getEndTime())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetBackupMetrics.class,
+                        GetDatabaseFleetBackupMetricsResponse.Builder::databaseFleetBackupMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetBackupMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", GetDatabaseFleetBackupMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseFleetDataguardMetricsResponse getDatabaseFleetDataguardMetrics(
+            GetDatabaseFleetDataguardMetricsRequest request) {
+
+        return clientCall(request, GetDatabaseFleetDataguardMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetDataguardMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetDataguardMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetDataguardMetrics/GetDatabaseFleetDataguardMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetDataguardMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetDataguardMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetDataguardMetrics.class,
+                        GetDatabaseFleetDataguardMetricsResponse.Builder
+                                ::databaseFleetDataguardMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetDataguardMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseFleetHaOverviewMetricsResponse getDatabaseFleetHaOverviewMetrics(
+            GetDatabaseFleetHaOverviewMetricsRequest request) {
+
+        return clientCall(request, GetDatabaseFleetHaOverviewMetricsResponse::builder)
+                .logger(LOG, "getDatabaseFleetHaOverviewMetrics")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseFleetHaOverviewMetrics",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseFleetHaOverviewMetrics/GetDatabaseFleetHaOverviewMetrics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseFleetHaOverviewMetricsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("databaseFleetHaOverviewMetrics")
+                .appendQueryParam("managedDatabaseGroupId", request.getManagedDatabaseGroupId())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("filterByMetricNames", request.getFilterByMetricNames())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendListQueryParam(
+                        "definedTagEquals",
+                        request.getDefinedTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagEquals",
+                        request.getFreeformTagEquals(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "definedTagExists",
+                        request.getDefinedTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "freeformTagExists",
+                        request.getFreeformTagExists(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseFleetHaOverviewMetrics
+                                .class,
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder
+                                ::databaseFleetHaOverviewMetrics)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        GetDatabaseFleetHaOverviewMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public GetDatabaseFleetHealthMetricsResponse getDatabaseFleetHealthMetrics(
             GetDatabaseFleetHealthMetricsRequest request) {
         Objects.requireNonNull(request.getCompareBaselineTime(), "compareBaselineTime is required");
@@ -2620,6 +3039,36 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         GetDatabaseFleetHealthMetricsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", GetDatabaseFleetHealthMetricsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public GetDatabaseHaBackupDetailsResponse getDatabaseHaBackupDetails(
+            GetDatabaseHaBackupDetailsRequest request) {
+
+        Validate.notBlank(request.getManagedDatabaseId(), "managedDatabaseId must not be blank");
+
+        return clientCall(request, GetDatabaseHaBackupDetailsResponse::builder)
+                .logger(LOG, "getDatabaseHaBackupDetails")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetDatabaseHaBackupDetails",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/DatabaseHaBackupDetails/GetDatabaseHaBackupDetails")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetDatabaseHaBackupDetailsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("managedDatabases")
+                .appendPathParam(request.getManagedDatabaseId())
+                .appendPathParam("haBackupDetails")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-named-credential-id", request.getOpcNamedCredentialId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.DatabaseHaBackupDetails.class,
+                        GetDatabaseHaBackupDetailsResponse.Builder::databaseHaBackupDetails)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetDatabaseHaBackupDetailsResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3183,6 +3632,71 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString("etag", GetExternalListenerResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetExternalListenerResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseResponse getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        GetExternalMySqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetExternalMySqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString("etag", GetExternalMySqlDatabaseResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public GetExternalMySqlDatabaseConnectorResponse getExternalMySqlDatabaseConnector(
+            GetExternalMySqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+
+        return clientCall(request, GetExternalMySqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "getExternalMySqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "GetExternalMySqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/GetExternalMySqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetExternalMySqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        GetExternalMySqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        GetExternalMySqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", GetExternalMySqlDatabaseConnectorResponse.Builder::etag)
                 .callSync();
     }
 
@@ -4822,6 +5336,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
     }
 
     @Override
+    public ListExternalMySqlDatabasesResponse listExternalMySqlDatabases(
+            ListExternalMySqlDatabasesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListExternalMySqlDatabasesResponse::builder)
+                .logger(LOG, "listExternalMySqlDatabases")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListExternalMySqlDatabases",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseCollection/ListExternalMySqlDatabases")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListExternalMySqlDatabasesRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseCollection
+                                .class,
+                        ListExternalMySqlDatabasesResponse.Builder::externalMySqlDatabaseCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListExternalMySqlDatabasesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListExternalMySqlDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListJobExecutionsResponse listJobExecutions(ListJobExecutionsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -5002,6 +5550,40 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                         "opc-request-id", ListManagedDatabasesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedDatabasesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListMySqlDatabaseConnectorsResponse listMySqlDatabaseConnectors(
+            ListMySqlDatabaseConnectorsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListMySqlDatabaseConnectorsResponse::builder)
+                .logger(LOG, "listMySqlDatabaseConnectors")
+                .serviceDetails(
+                        "DbManagement",
+                        "ListMySqlDatabaseConnectors",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/MySqlConnectorCollection/ListMySqlDatabaseConnectors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMySqlDatabaseConnectorsRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendQueryParam("externalDatabaseId", request.getExternalDatabaseId())
+                .appendQueryParam("name", request.getName())
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("page", request.getPage())
+                .appendQueryParam("limit", request.getLimit())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.MySqlConnectorCollection.class,
+                        ListMySqlDatabaseConnectorsResponse.Builder::mySqlConnectorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListMySqlDatabaseConnectorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListMySqlDatabaseConnectorsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -7479,6 +8061,83 @@ public class DbManagementClient extends com.oracle.bmc.http.internal.BaseSyncCli
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         UpdateExternalListenerResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalMysqlDatabaseResponse updateExternalMysqlDatabase(
+            UpdateExternalMysqlDatabaseRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseId(), "externalMySqlDatabaseId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseDetails(),
+                "updateExternalMySqlDatabaseDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabase")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabase",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/UpdateExternalMysqlDatabase")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabases")
+                .appendPathParam(request.getExternalMySqlDatabaseId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabase.class,
+                        UpdateExternalMysqlDatabaseResponse.Builder::externalMySqlDatabase)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateExternalMysqlDatabaseResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseResponse.Builder::etag)
+                .callSync();
+    }
+
+    @Override
+    public UpdateExternalMysqlDatabaseConnectorResponse updateExternalMysqlDatabaseConnector(
+            UpdateExternalMysqlDatabaseConnectorRequest request) {
+
+        Validate.notBlank(
+                request.getExternalMySqlDatabaseConnectorId(),
+                "externalMySqlDatabaseConnectorId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateExternalMySqlDatabaseConnectorDetails(),
+                "updateExternalMySqlDatabaseConnectorDetails is required");
+
+        return clientCall(request, UpdateExternalMysqlDatabaseConnectorResponse::builder)
+                .logger(LOG, "updateExternalMysqlDatabaseConnector")
+                .serviceDetails(
+                        "DbManagement",
+                        "UpdateExternalMysqlDatabaseConnector",
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabaseConnector/UpdateExternalMysqlDatabaseConnector")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateExternalMysqlDatabaseConnectorRequest::builder)
+                .basePath("/20201101")
+                .appendPathParam("externalMySqlDatabaseConnectors")
+                .appendPathParam(request.getExternalMySqlDatabaseConnectorId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.databasemanagement.model.ExternalMySqlDatabaseConnector
+                                .class,
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder
+                                ::externalMySqlDatabaseConnector)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateExternalMysqlDatabaseConnectorResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "etag", UpdateExternalMysqlDatabaseConnectorResponse.Builder::etag)
                 .callSync();
     }
 

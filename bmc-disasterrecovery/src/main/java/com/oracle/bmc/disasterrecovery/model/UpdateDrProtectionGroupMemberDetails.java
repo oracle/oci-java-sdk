@@ -29,6 +29,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = UpdateDrProtectionGroupMemberNetworkLoadBalancerDetails.class,
             name = "NETWORK_LOAD_BALANCER"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateDrProtectionGroupMemberOkeClusterDetails.class,
+            name = "OKE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateDrProtectionGroupMemberAutonomousDatabaseDetails.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

@@ -90,6 +90,15 @@ public final class CloudSubscriptionSummary extends SubscriptionSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Unique Oracle Cloud Subscriptions identifier that is immutable on creation. */
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionNumber")
         private String subscriptionNumber;
@@ -149,6 +158,7 @@ public final class CloudSubscriptionSummary extends SubscriptionSummary {
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.subscriptionNumber,
                             this.currencyCode,
                             this.lifecycleState);
@@ -181,6 +191,9 @@ public final class CloudSubscriptionSummary extends SubscriptionSummary {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("subscriptionNumber")) {
                 this.subscriptionNumber(model.getSubscriptionNumber());
             }
@@ -212,10 +225,19 @@ public final class CloudSubscriptionSummary extends SubscriptionSummary {
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String subscriptionNumber,
             String currencyCode,
             SubscriptionLifecycleState lifecycleState) {
-        super(id, compartmentId, serviceName, timeCreated, timeUpdated, freeformTags, definedTags);
+        super(
+                id,
+                compartmentId,
+                serviceName,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.subscriptionNumber = subscriptionNumber;
         this.currencyCode = currencyCode;
         this.lifecycleState = lifecycleState;

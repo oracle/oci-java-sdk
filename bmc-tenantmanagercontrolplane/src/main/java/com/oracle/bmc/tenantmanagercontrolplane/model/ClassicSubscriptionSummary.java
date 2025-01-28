@@ -90,6 +90,15 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Classic subscription ID. */
         @com.fasterxml.jackson.annotation.JsonProperty("classicSubscriptionId")
         private String classicSubscriptionId;
@@ -209,6 +218,7 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.classicSubscriptionId,
                             this.isClassicSubscription,
                             this.paymentModel,
@@ -244,6 +254,9 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("classicSubscriptionId")) {
                 this.classicSubscriptionId(model.getClassicSubscriptionId());
@@ -288,6 +301,7 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String classicSubscriptionId,
             Boolean isClassicSubscription,
             String paymentModel,
@@ -295,7 +309,15 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             ClassicSubscriptionLifecycleState lifecycleState,
             java.util.Date startDate,
             java.util.Date endDate) {
-        super(id, compartmentId, serviceName, timeCreated, timeUpdated, freeformTags, definedTags);
+        super(
+                id,
+                compartmentId,
+                serviceName,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.classicSubscriptionId = classicSubscriptionId;
         this.isClassicSubscription = isClassicSubscription;
         this.paymentModel = paymentModel;

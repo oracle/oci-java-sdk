@@ -285,6 +285,7 @@ public final class AttentionLogSummary
         Soon("SOON"),
         Deferrable("DEFERRABLE"),
         Info("INFO"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -348,6 +349,7 @@ public final class AttentionLogSummary
         Warning("WARNING"),
         Notification("NOTIFICATION"),
         Trace("TRACE"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

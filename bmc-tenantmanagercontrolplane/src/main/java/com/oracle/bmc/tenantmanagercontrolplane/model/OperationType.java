@@ -23,8 +23,13 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     HardTerminateTenancy("HARD_TERMINATE_TENANCY"),
     RestoreTenancy("RESTORE_TENANCY"),
     LogTenancyTerminationRequest("LOG_TENANCY_TERMINATION_REQUEST"),
+    StandaloneTenancyTerminationRequest("STANDALONE_TENANCY_TERMINATION_REQUEST"),
     SelfOptIn("SELF_OPT_IN"),
     SelfOptOut("SELF_OPT_OUT"),
+    OrderPayloadsBackfillEtl("ORDER_PAYLOADS_BACKFILL_ETL"),
+    PublishToTopic("PUBLISH_TO_TOPIC"),
+    TerminateLink("TERMINATE_LINK"),
+    TransferSubscription("TRANSFER_SUBSCRIPTION"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

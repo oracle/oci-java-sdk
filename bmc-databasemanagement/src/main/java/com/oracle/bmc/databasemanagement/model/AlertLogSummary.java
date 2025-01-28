@@ -196,6 +196,7 @@ public final class AlertLogSummary
         Severe("SEVERE"),
         Important("IMPORTANT"),
         Normal("NORMAL"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -259,6 +260,7 @@ public final class AlertLogSummary
         Warning("WARNING"),
         Notification("NOTIFICATION"),
         Trace("TRACE"),
+        Other("OTHER"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

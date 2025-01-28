@@ -5,7 +5,7 @@
     <parent>
         <artifactId>oci-java-sdk-addons</artifactId>
         <groupId>com.oracle.oci.sdk</groupId>
-        <version>3.55.3</version>
+        <version>3.56.0</version>
         <relativePath>../pom.xml</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
@@ -150,12 +150,12 @@
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common</artifactId>
-            <version>3.55.3</version>
+            <version>3.56.0</version>
         </dependency>
         <dependency>
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-generativeaiinference</artifactId>
-            <version>3.55.3</version>
+            <version>3.56.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -164,7 +164,7 @@
                  but the code in it needs it. -->
             <groupId>com.oracle.oci.sdk</groupId>
             <artifactId>oci-java-sdk-common-httpclient-jersey</artifactId>
-            <version>3.55.3</version>
+            <version>3.56.0</version>
         </dependency>
     </dependencies>
 

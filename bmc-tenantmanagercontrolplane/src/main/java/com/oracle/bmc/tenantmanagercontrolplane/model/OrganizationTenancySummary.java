@@ -31,7 +31,8 @@ public final class OrganizationTenancySummary
         "timeJoined",
         "timeLeft",
         "isApprovedForTransfer",
-        "governanceStatus"
+        "governanceStatus",
+        "systemTags"
     })
     public OrganizationTenancySummary(
             String tenancyId,
@@ -41,7 +42,8 @@ public final class OrganizationTenancySummary
             java.util.Date timeJoined,
             java.util.Date timeLeft,
             Boolean isApprovedForTransfer,
-            GovernanceStatus governanceStatus) {
+            GovernanceStatus governanceStatus,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.tenancyId = tenancyId;
         this.name = name;
@@ -51,6 +53,7 @@ public final class OrganizationTenancySummary
         this.timeLeft = timeLeft;
         this.isApprovedForTransfer = isApprovedForTransfer;
         this.governanceStatus = governanceStatus;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -175,6 +178,25 @@ public final class OrganizationTenancySummary
             this.__explicitlySet__.add("governanceStatus");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -189,7 +211,8 @@ public final class OrganizationTenancySummary
                             this.timeJoined,
                             this.timeLeft,
                             this.isApprovedForTransfer,
-                            this.governanceStatus);
+                            this.governanceStatus,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +244,9 @@ public final class OrganizationTenancySummary
             }
             if (model.wasPropertyExplicitlySet("governanceStatus")) {
                 this.governanceStatus(model.getGovernanceStatus());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -339,6 +365,23 @@ public final class OrganizationTenancySummary
         return governanceStatus;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -362,6 +405,7 @@ public final class OrganizationTenancySummary
         sb.append(", timeLeft=").append(String.valueOf(this.timeLeft));
         sb.append(", isApprovedForTransfer=").append(String.valueOf(this.isApprovedForTransfer));
         sb.append(", governanceStatus=").append(String.valueOf(this.governanceStatus));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -384,6 +428,7 @@ public final class OrganizationTenancySummary
                 && java.util.Objects.equals(this.timeLeft, other.timeLeft)
                 && java.util.Objects.equals(this.isApprovedForTransfer, other.isApprovedForTransfer)
                 && java.util.Objects.equals(this.governanceStatus, other.governanceStatus)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -407,6 +452,7 @@ public final class OrganizationTenancySummary
         result =
                 (result * PRIME)
                         + (this.governanceStatus == null ? 43 : this.governanceStatus.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }
