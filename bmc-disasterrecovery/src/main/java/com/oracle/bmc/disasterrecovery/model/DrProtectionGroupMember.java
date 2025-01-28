@@ -54,7 +54,10 @@ package com.oracle.bmc.disasterrecovery.model;
             name = "AUTONOMOUS_CONTAINER_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = DrProtectionGroupMemberDatabase.class,
-            name = "DATABASE")
+            name = "DATABASE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DrProtectionGroupMemberOkeCluster.class,
+            name = "OKE_CLUSTER")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

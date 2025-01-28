@@ -29,7 +29,8 @@ public final class NewsContentTypes
         "sqlInsightsTopDatabasesResources",
         "sqlInsightsTopSqlByInsightsResources",
         "sqlInsightsTopSqlResources",
-        "sqlInsightsPerformanceDegradationResources"
+        "sqlInsightsPerformanceDegradationResources",
+        "actionableInsightsResources"
     })
     public NewsContentTypes(
             java.util.List<NewsContentTypesResource> capacityPlanningResources,
@@ -40,7 +41,8 @@ public final class NewsContentTypes
                     sqlInsightsTopSqlByInsightsResources,
             java.util.List<NewsSqlInsightsContentTypesResource> sqlInsightsTopSqlResources,
             java.util.List<NewsSqlInsightsContentTypesResource>
-                    sqlInsightsPerformanceDegradationResources) {
+                    sqlInsightsPerformanceDegradationResources,
+            java.util.List<ActionableInsightsContentTypesResource> actionableInsightsResources) {
         super();
         this.capacityPlanningResources = capacityPlanningResources;
         this.sqlInsightsFleetAnalysisResources = sqlInsightsFleetAnalysisResources;
@@ -50,6 +52,7 @@ public final class NewsContentTypes
         this.sqlInsightsTopSqlResources = sqlInsightsTopSqlResources;
         this.sqlInsightsPerformanceDegradationResources =
                 sqlInsightsPerformanceDegradationResources;
+        this.actionableInsightsResources = actionableInsightsResources;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -176,6 +179,23 @@ public final class NewsContentTypes
             this.__explicitlySet__.add("sqlInsightsPerformanceDegradationResources");
             return this;
         }
+        /** Supported resources for actionable insights content type. */
+        @com.fasterxml.jackson.annotation.JsonProperty("actionableInsightsResources")
+        private java.util.List<ActionableInsightsContentTypesResource> actionableInsightsResources;
+
+        /**
+         * Supported resources for actionable insights content type.
+         *
+         * @param actionableInsightsResources the value to set
+         * @return this builder
+         */
+        public Builder actionableInsightsResources(
+                java.util.List<ActionableInsightsContentTypesResource>
+                        actionableInsightsResources) {
+            this.actionableInsightsResources = actionableInsightsResources;
+            this.__explicitlySet__.add("actionableInsightsResources");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -189,7 +209,8 @@ public final class NewsContentTypes
                             this.sqlInsightsTopDatabasesResources,
                             this.sqlInsightsTopSqlByInsightsResources,
                             this.sqlInsightsTopSqlResources,
-                            this.sqlInsightsPerformanceDegradationResources);
+                            this.sqlInsightsPerformanceDegradationResources,
+                            this.actionableInsightsResources);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -221,6 +242,9 @@ public final class NewsContentTypes
             if (model.wasPropertyExplicitlySet("sqlInsightsPerformanceDegradationResources")) {
                 this.sqlInsightsPerformanceDegradationResources(
                         model.getSqlInsightsPerformanceDegradationResources());
+            }
+            if (model.wasPropertyExplicitlySet("actionableInsightsResources")) {
+                this.actionableInsightsResources(model.getActionableInsightsResources());
             }
             return this;
         }
@@ -336,6 +360,20 @@ public final class NewsContentTypes
         return sqlInsightsPerformanceDegradationResources;
     }
 
+    /** Supported resources for actionable insights content type. */
+    @com.fasterxml.jackson.annotation.JsonProperty("actionableInsightsResources")
+    private final java.util.List<ActionableInsightsContentTypesResource>
+            actionableInsightsResources;
+
+    /**
+     * Supported resources for actionable insights content type.
+     *
+     * @return the value
+     */
+    public java.util.List<ActionableInsightsContentTypesResource> getActionableInsightsResources() {
+        return actionableInsightsResources;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -365,6 +403,8 @@ public final class NewsContentTypes
                 .append(String.valueOf(this.sqlInsightsTopSqlResources));
         sb.append(", sqlInsightsPerformanceDegradationResources=")
                 .append(String.valueOf(this.sqlInsightsPerformanceDegradationResources));
+        sb.append(", actionableInsightsResources=")
+                .append(String.valueOf(this.actionableInsightsResources));
         sb.append(")");
         return sb.toString();
     }
@@ -397,6 +437,8 @@ public final class NewsContentTypes
                 && java.util.Objects.equals(
                         this.sqlInsightsPerformanceDegradationResources,
                         other.sqlInsightsPerformanceDegradationResources)
+                && java.util.Objects.equals(
+                        this.actionableInsightsResources, other.actionableInsightsResources)
                 && super.equals(other);
     }
 
@@ -439,6 +481,11 @@ public final class NewsContentTypes
                         + (this.sqlInsightsPerformanceDegradationResources == null
                                 ? 43
                                 : this.sqlInsightsPerformanceDegradationResources.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.actionableInsightsResources == null
+                                ? 43
+                                : this.actionableInsightsResources.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

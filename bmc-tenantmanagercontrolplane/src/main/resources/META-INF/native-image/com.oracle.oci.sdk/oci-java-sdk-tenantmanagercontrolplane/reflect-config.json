@@ -165,13 +165,13 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionEnvironmentName",
+    "name": "com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionLifecycleState",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
-    "name": "com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionLifecycleState",
+    "name": "com.oracle.bmc.tenantmanagercontrolplane.model.ClassicSubscriptionManagedBy",
     "allDeclaredFields": true,
     "allDeclaredMethods": true
   },

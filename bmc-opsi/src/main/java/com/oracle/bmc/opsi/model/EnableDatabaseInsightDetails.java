@@ -29,6 +29,9 @@ package com.oracle.bmc.opsi.model;
             value = EnableMdsMySqlDatabaseInsightDetails.class,
             name = "MDS_MYSQL_DATABASE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = EnableExternalMysqlDatabaseInsightDetails.class,
+            name = "EXTERNAL_MYSQL_DATABASE_SYSTEM"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = EnableAutonomousDatabaseInsightDetails.class,
             name = "AUTONOMOUS_DATABASE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

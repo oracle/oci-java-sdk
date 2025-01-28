@@ -29,7 +29,8 @@ public final class SubscriptionLineItemSummary
         "quantity",
         "billingModel",
         "timeStarted",
-        "timeEnded"
+        "timeEnded",
+        "systemTags"
     })
     public SubscriptionLineItemSummary(
             String id,
@@ -37,7 +38,8 @@ public final class SubscriptionLineItemSummary
             Float quantity,
             BillingModel billingModel,
             java.util.Date timeStarted,
-            java.util.Date timeEnded) {
+            java.util.Date timeEnded,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags) {
         super();
         this.id = id;
         this.productCode = productCode;
@@ -45,6 +47,7 @@ public final class SubscriptionLineItemSummary
         this.billingModel = billingModel;
         this.timeStarted = timeStarted;
         this.timeEnded = timeEnded;
+        this.systemTags = systemTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -147,6 +150,25 @@ public final class SubscriptionLineItemSummary
             this.__explicitlySet__.add("timeEnded");
             return this;
         }
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+         * {"orcl-cloud": {"free-tier-retained": "true"}}}
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -159,7 +181,8 @@ public final class SubscriptionLineItemSummary
                             this.quantity,
                             this.billingModel,
                             this.timeStarted,
-                            this.timeEnded);
+                            this.timeEnded,
+                            this.systemTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -185,6 +208,9 @@ public final class SubscriptionLineItemSummary
             }
             if (model.wasPropertyExplicitlySet("timeEnded")) {
                 this.timeEnded(model.getTimeEnded());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             return this;
         }
@@ -285,6 +311,23 @@ public final class SubscriptionLineItemSummary
         return timeEnded;
     }
 
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * Usage of system tag keys. These predefined keys are scoped to namespaces. Example: {@code
+     * {"orcl-cloud": {"free-tier-retained": "true"}}}
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -306,6 +349,7 @@ public final class SubscriptionLineItemSummary
         sb.append(", billingModel=").append(String.valueOf(this.billingModel));
         sb.append(", timeStarted=").append(String.valueOf(this.timeStarted));
         sb.append(", timeEnded=").append(String.valueOf(this.timeEnded));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(")");
         return sb.toString();
     }
@@ -326,6 +370,7 @@ public final class SubscriptionLineItemSummary
                 && java.util.Objects.equals(this.billingModel, other.billingModel)
                 && java.util.Objects.equals(this.timeStarted, other.timeStarted)
                 && java.util.Objects.equals(this.timeEnded, other.timeEnded)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && super.equals(other);
     }
 
@@ -339,6 +384,7 @@ public final class SubscriptionLineItemSummary
         result = (result * PRIME) + (this.billingModel == null ? 43 : this.billingModel.hashCode());
         result = (result * PRIME) + (this.timeStarted == null ? 43 : this.timeStarted.hashCode());
         result = (result * PRIME) + (this.timeEnded == null ? 43 : this.timeEnded.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

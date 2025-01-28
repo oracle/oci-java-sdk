@@ -31,6 +31,9 @@ public final class MySqlDataSummary
         "minTimerWait",
         "avgTimerWait",
         "maxTimerWait",
+        "maxControlledMemory",
+        "maxTotalMemory",
+        "sumCpuTime",
         "sumLockTime",
         "sumErrors",
         "sumWarnings",
@@ -67,6 +70,9 @@ public final class MySqlDataSummary
             java.math.BigDecimal minTimerWait,
             java.math.BigDecimal avgTimerWait,
             java.math.BigDecimal maxTimerWait,
+            Long maxControlledMemory,
+            Long maxTotalMemory,
+            Long sumCpuTime,
             java.math.BigDecimal sumLockTime,
             java.math.BigDecimal sumErrors,
             java.math.BigDecimal sumWarnings,
@@ -102,6 +108,9 @@ public final class MySqlDataSummary
         this.minTimerWait = minTimerWait;
         this.avgTimerWait = avgTimerWait;
         this.maxTimerWait = maxTimerWait;
+        this.maxControlledMemory = maxControlledMemory;
+        this.maxTotalMemory = maxTotalMemory;
+        this.sumCpuTime = sumCpuTime;
         this.sumLockTime = sumLockTime;
         this.sumErrors = sumErrors;
         this.sumWarnings = sumWarnings;
@@ -254,6 +263,51 @@ public final class MySqlDataSummary
         public Builder maxTimerWait(java.math.BigDecimal maxTimerWait) {
             this.maxTimerWait = maxTimerWait;
             this.__explicitlySet__.add("maxTimerWait");
+            return this;
+        }
+        /** The maximum amount of controlled memory used by a statement during execution. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
+        private Long maxControlledMemory;
+
+        /**
+         * The maximum amount of controlled memory used by a statement during execution.
+         *
+         * @param maxControlledMemory the value to set
+         * @return this builder
+         */
+        public Builder maxControlledMemory(Long maxControlledMemory) {
+            this.maxControlledMemory = maxControlledMemory;
+            this.__explicitlySet__.add("maxControlledMemory");
+            return this;
+        }
+        /** The maximum amount of memory used by a statement during execution. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
+        private Long maxTotalMemory;
+
+        /**
+         * The maximum amount of memory used by a statement during execution.
+         *
+         * @param maxTotalMemory the value to set
+         * @return this builder
+         */
+        public Builder maxTotalMemory(Long maxTotalMemory) {
+            this.maxTotalMemory = maxTotalMemory;
+            this.__explicitlySet__.add("maxTotalMemory");
+            return this;
+        }
+        /** The total amount of time spent on CPU for this statement. */
+        @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
+        private Long sumCpuTime;
+
+        /**
+         * The total amount of time spent on CPU for this statement.
+         *
+         * @param sumCpuTime the value to set
+         * @return this builder
+         */
+        public Builder sumCpuTime(Long sumCpuTime) {
+            this.sumCpuTime = sumCpuTime;
+            this.__explicitlySet__.add("sumCpuTime");
             return this;
         }
         /** The total amount of time that has been spent waiting for table locks. */
@@ -717,6 +771,9 @@ public final class MySqlDataSummary
                             this.minTimerWait,
                             this.avgTimerWait,
                             this.maxTimerWait,
+                            this.maxControlledMemory,
+                            this.maxTotalMemory,
+                            this.sumCpuTime,
                             this.sumLockTime,
                             this.sumErrors,
                             this.sumWarnings,
@@ -774,6 +831,15 @@ public final class MySqlDataSummary
             }
             if (model.wasPropertyExplicitlySet("maxTimerWait")) {
                 this.maxTimerWait(model.getMaxTimerWait());
+            }
+            if (model.wasPropertyExplicitlySet("maxControlledMemory")) {
+                this.maxControlledMemory(model.getMaxControlledMemory());
+            }
+            if (model.wasPropertyExplicitlySet("maxTotalMemory")) {
+                this.maxTotalMemory(model.getMaxTotalMemory());
+            }
+            if (model.wasPropertyExplicitlySet("sumCpuTime")) {
+                this.sumCpuTime(model.getSumCpuTime());
             }
             if (model.wasPropertyExplicitlySet("sumLockTime")) {
                 this.sumLockTime(model.getSumLockTime());
@@ -972,6 +1038,45 @@ public final class MySqlDataSummary
      */
     public java.math.BigDecimal getMaxTimerWait() {
         return maxTimerWait;
+    }
+
+    /** The maximum amount of controlled memory used by a statement during execution. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxControlledMemory")
+    private final Long maxControlledMemory;
+
+    /**
+     * The maximum amount of controlled memory used by a statement during execution.
+     *
+     * @return the value
+     */
+    public Long getMaxControlledMemory() {
+        return maxControlledMemory;
+    }
+
+    /** The maximum amount of memory used by a statement during execution. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maxTotalMemory")
+    private final Long maxTotalMemory;
+
+    /**
+     * The maximum amount of memory used by a statement during execution.
+     *
+     * @return the value
+     */
+    public Long getMaxTotalMemory() {
+        return maxTotalMemory;
+    }
+
+    /** The total amount of time spent on CPU for this statement. */
+    @com.fasterxml.jackson.annotation.JsonProperty("sumCpuTime")
+    private final Long sumCpuTime;
+
+    /**
+     * The total amount of time spent on CPU for this statement.
+     *
+     * @return the value
+     */
+    public Long getSumCpuTime() {
+        return sumCpuTime;
     }
 
     /** The total amount of time that has been spent waiting for table locks. */
@@ -1385,6 +1490,9 @@ public final class MySqlDataSummary
         sb.append(", minTimerWait=").append(String.valueOf(this.minTimerWait));
         sb.append(", avgTimerWait=").append(String.valueOf(this.avgTimerWait));
         sb.append(", maxTimerWait=").append(String.valueOf(this.maxTimerWait));
+        sb.append(", maxControlledMemory=").append(String.valueOf(this.maxControlledMemory));
+        sb.append(", maxTotalMemory=").append(String.valueOf(this.maxTotalMemory));
+        sb.append(", sumCpuTime=").append(String.valueOf(this.sumCpuTime));
         sb.append(", sumLockTime=").append(String.valueOf(this.sumLockTime));
         sb.append(", sumErrors=").append(String.valueOf(this.sumErrors));
         sb.append(", sumWarnings=").append(String.valueOf(this.sumWarnings));
@@ -1434,6 +1542,9 @@ public final class MySqlDataSummary
                 && java.util.Objects.equals(this.minTimerWait, other.minTimerWait)
                 && java.util.Objects.equals(this.avgTimerWait, other.avgTimerWait)
                 && java.util.Objects.equals(this.maxTimerWait, other.maxTimerWait)
+                && java.util.Objects.equals(this.maxControlledMemory, other.maxControlledMemory)
+                && java.util.Objects.equals(this.maxTotalMemory, other.maxTotalMemory)
+                && java.util.Objects.equals(this.sumCpuTime, other.sumCpuTime)
                 && java.util.Objects.equals(this.sumLockTime, other.sumLockTime)
                 && java.util.Objects.equals(this.sumErrors, other.sumErrors)
                 && java.util.Objects.equals(this.sumWarnings, other.sumWarnings)
@@ -1477,6 +1588,15 @@ public final class MySqlDataSummary
         result = (result * PRIME) + (this.minTimerWait == null ? 43 : this.minTimerWait.hashCode());
         result = (result * PRIME) + (this.avgTimerWait == null ? 43 : this.avgTimerWait.hashCode());
         result = (result * PRIME) + (this.maxTimerWait == null ? 43 : this.maxTimerWait.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxControlledMemory == null
+                                ? 43
+                                : this.maxControlledMemory.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maxTotalMemory == null ? 43 : this.maxTotalMemory.hashCode());
+        result = (result * PRIME) + (this.sumCpuTime == null ? 43 : this.sumCpuTime.hashCode());
         result = (result * PRIME) + (this.sumLockTime == null ? 43 : this.sumLockTime.hashCode());
         result = (result * PRIME) + (this.sumErrors == null ? 43 : this.sumErrors.hashCode());
         result = (result * PRIME) + (this.sumWarnings == null ? 43 : this.sumWarnings.hashCode());

@@ -36,7 +36,9 @@ public final class CreateCloudExadataInfrastructureDetails
         "definedTags",
         "clusterPlacementGroupId",
         "subscriptionId",
-        "customerContacts"
+        "customerContacts",
+        "databaseServerType",
+        "storageServerType"
     })
     public CreateCloudExadataInfrastructureDetails(
             String availabilityDomain,
@@ -50,7 +52,9 @@ public final class CreateCloudExadataInfrastructureDetails
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             String clusterPlacementGroupId,
             String subscriptionId,
-            java.util.List<CustomerContact> customerContacts) {
+            java.util.List<CustomerContact> customerContacts,
+            String databaseServerType,
+            String storageServerType) {
         super();
         this.availabilityDomain = availabilityDomain;
         this.compartmentId = compartmentId;
@@ -64,6 +68,8 @@ public final class CreateCloudExadataInfrastructureDetails
         this.clusterPlacementGroupId = clusterPlacementGroupId;
         this.subscriptionId = subscriptionId;
         this.customerContacts = customerContacts;
+        this.databaseServerType = databaseServerType;
+        this.storageServerType = storageServerType;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -275,6 +281,36 @@ public final class CreateCloudExadataInfrastructureDetails
             this.__explicitlySet__.add("customerContacts");
             return this;
         }
+        /** The database server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+        private String databaseServerType;
+
+        /**
+         * The database server type of the Exadata infrastructure.
+         *
+         * @param databaseServerType the value to set
+         * @return this builder
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            this.databaseServerType = databaseServerType;
+            this.__explicitlySet__.add("databaseServerType");
+            return this;
+        }
+        /** The storage server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+        private String storageServerType;
+
+        /**
+         * The storage server type of the Exadata infrastructure.
+         *
+         * @param storageServerType the value to set
+         * @return this builder
+         */
+        public Builder storageServerType(String storageServerType) {
+            this.storageServerType = storageServerType;
+            this.__explicitlySet__.add("storageServerType");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -293,7 +329,9 @@ public final class CreateCloudExadataInfrastructureDetails
                             this.definedTags,
                             this.clusterPlacementGroupId,
                             this.subscriptionId,
-                            this.customerContacts);
+                            this.customerContacts,
+                            this.databaseServerType,
+                            this.storageServerType);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -337,6 +375,12 @@ public final class CreateCloudExadataInfrastructureDetails
             }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("databaseServerType")) {
+                this.databaseServerType(model.getDatabaseServerType());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerType")) {
+                this.storageServerType(model.getStorageServerType());
             }
             return this;
         }
@@ -533,6 +577,32 @@ public final class CreateCloudExadataInfrastructureDetails
         return customerContacts;
     }
 
+    /** The database server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+    private final String databaseServerType;
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getDatabaseServerType() {
+        return databaseServerType;
+    }
+
+    /** The storage server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+    private final String storageServerType;
+
+    /**
+     * The storage server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getStorageServerType() {
+        return storageServerType;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -561,6 +631,8 @@ public final class CreateCloudExadataInfrastructureDetails
                 .append(String.valueOf(this.clusterPlacementGroupId));
         sb.append(", subscriptionId=").append(String.valueOf(this.subscriptionId));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
+        sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(")");
         return sb.toString();
     }
@@ -588,6 +660,8 @@ public final class CreateCloudExadataInfrastructureDetails
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
                 && java.util.Objects.equals(this.subscriptionId, other.subscriptionId)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
+                && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && super.equals(other);
     }
 
@@ -623,6 +697,14 @@ public final class CreateCloudExadataInfrastructureDetails
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseServerType == null
+                                ? 43
+                                : this.databaseServerType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

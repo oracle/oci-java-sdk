@@ -55,6 +55,13 @@ public class ListManagedMySqlDatabasesRequest
     public Integer getLimit() {
         return limit;
     }
+    /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+    private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam;
+
+    /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+    public com.oracle.bmc.databasemanagement.model.MySqlType getFilterByMySqlDatabaseTypeParam() {
+        return filterByMySqlDatabaseTypeParam;
+    }
     /**
      * The field to sort information by. Only one sortOrder can be used. The default sort order for
      * \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019 is
@@ -192,6 +199,22 @@ public class ListManagedMySqlDatabasesRequest
             return this;
         }
 
+        /** The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS. */
+        private com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam =
+                null;
+
+        /**
+         * The parameter to filter by MySQL database type. Allowed values are EXTERNAL or MDS.
+         *
+         * @param filterByMySqlDatabaseTypeParam the value to set
+         * @return this builder instance
+         */
+        public Builder filterByMySqlDatabaseTypeParam(
+                com.oracle.bmc.databasemanagement.model.MySqlType filterByMySqlDatabaseTypeParam) {
+            this.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
+            return this;
+        }
+
         /**
          * The field to sort information by. Only one sortOrder can be used. The default sort order
          * for \u2018TIMECREATED\u2019 is descending and the default sort order for \u2018NAME\u2019
@@ -264,6 +287,7 @@ public class ListManagedMySqlDatabasesRequest
             opcRequestId(o.getOpcRequestId());
             page(o.getPage());
             limit(o.getLimit());
+            filterByMySqlDatabaseTypeParam(o.getFilterByMySqlDatabaseTypeParam());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             invocationCallback(o.getInvocationCallback());
@@ -304,11 +328,12 @@ public class ListManagedMySqlDatabasesRequest
             request.opcRequestId = opcRequestId;
             request.page = page;
             request.limit = limit;
+            request.filterByMySqlDatabaseTypeParam = filterByMySqlDatabaseTypeParam;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             return request;
             // new ListManagedMySqlDatabasesRequest(compartmentId, opcRequestId, page, limit,
-            // sortBy, sortOrder);
+            // filterByMySqlDatabaseTypeParam, sortBy, sortOrder);
         }
     }
 
@@ -323,6 +348,7 @@ public class ListManagedMySqlDatabasesRequest
                 .opcRequestId(opcRequestId)
                 .page(page)
                 .limit(limit)
+                .filterByMySqlDatabaseTypeParam(filterByMySqlDatabaseTypeParam)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder);
     }
@@ -345,6 +371,8 @@ public class ListManagedMySqlDatabasesRequest
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(",page=").append(String.valueOf(this.page));
         sb.append(",limit=").append(String.valueOf(this.limit));
+        sb.append(",filterByMySqlDatabaseTypeParam=")
+                .append(String.valueOf(this.filterByMySqlDatabaseTypeParam));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(")");
@@ -366,6 +394,8 @@ public class ListManagedMySqlDatabasesRequest
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId)
                 && java.util.Objects.equals(this.page, other.page)
                 && java.util.Objects.equals(this.limit, other.limit)
+                && java.util.Objects.equals(
+                        this.filterByMySqlDatabaseTypeParam, other.filterByMySqlDatabaseTypeParam)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder);
     }
@@ -380,6 +410,11 @@ public class ListManagedMySqlDatabasesRequest
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.filterByMySqlDatabaseTypeParam == null
+                                ? 43
+                                : this.filterByMySqlDatabaseTypeParam.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         return result;

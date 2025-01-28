@@ -47,6 +47,9 @@ package com.oracle.bmc.disasterrecovery.model;
             value = CreateDrProtectionGroupMemberVolumeGroupDetails.class,
             name = "VOLUME_GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateDrProtectionGroupMemberOkeClusterDetails.class,
+            name = "OKE_CLUSTER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateDrProtectionGroupMemberFileSystemDetails.class,
             name = "FILE_SYSTEM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(

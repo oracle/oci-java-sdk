@@ -9,7 +9,15 @@ package com.oracle.bmc.databasemanagement.model;
 public enum MySqlDeploymentType implements com.oracle.bmc.http.internal.BmcEnum {
     Onpremise("ONPREMISE"),
     Mds("MDS"),
-    ;
+
+    /**
+     * This value is used if a service returns a value for this enum that is not recognized by this
+     * version of the SDK.
+     */
+    UnknownEnumValue(null);
+
+    private static final org.slf4j.Logger LOG =
+            org.slf4j.LoggerFactory.getLogger(MySqlDeploymentType.class);
 
     private final String value;
     private static java.util.Map<String, MySqlDeploymentType> map;
@@ -17,7 +25,9 @@ public enum MySqlDeploymentType implements com.oracle.bmc.http.internal.BmcEnum 
     static {
         map = new java.util.HashMap<>();
         for (MySqlDeploymentType v : MySqlDeploymentType.values()) {
-            map.put(v.getValue(), v);
+            if (v != UnknownEnumValue) {
+                map.put(v.getValue(), v);
+            }
         }
     }
 
@@ -35,6 +45,9 @@ public enum MySqlDeploymentType implements com.oracle.bmc.http.internal.BmcEnum 
         if (map.containsKey(key)) {
             return map.get(key);
         }
-        throw new IllegalArgumentException("Invalid MySqlDeploymentType: " + key);
+        LOG.warn(
+                "Received unknown value '{}' for enum 'MySqlDeploymentType', returning UnknownEnumValue",
+                key);
+        return UnknownEnumValue;
     }
 }

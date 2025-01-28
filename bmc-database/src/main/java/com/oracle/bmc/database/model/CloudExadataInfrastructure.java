@@ -61,7 +61,10 @@ public final class CloudExadataInfrastructure
         "monthlyStorageServerVersion",
         "monthlyDbServerVersion",
         "definedFileSystemConfigurations",
-        "isSchedulingPolicyAssociated"
+        "isSchedulingPolicyAssociated",
+        "databaseServerType",
+        "storageServerType",
+        "computeModel"
     })
     public CloudExadataInfrastructure(
             String id,
@@ -100,7 +103,10 @@ public final class CloudExadataInfrastructure
             String monthlyStorageServerVersion,
             String monthlyDbServerVersion,
             java.util.List<DefinedFileSystemConfiguration> definedFileSystemConfigurations,
-            Boolean isSchedulingPolicyAssociated) {
+            Boolean isSchedulingPolicyAssociated,
+            String databaseServerType,
+            String storageServerType,
+            ComputeModel computeModel) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -139,6 +145,9 @@ public final class CloudExadataInfrastructure
         this.monthlyDbServerVersion = monthlyDbServerVersion;
         this.definedFileSystemConfigurations = definedFileSystemConfigurations;
         this.isSchedulingPolicyAssociated = isSchedulingPolicyAssociated;
+        this.databaseServerType = databaseServerType;
+        this.storageServerType = storageServerType;
+        this.computeModel = computeModel;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -786,6 +795,59 @@ public final class CloudExadataInfrastructure
             this.__explicitlySet__.add("isSchedulingPolicyAssociated");
             return this;
         }
+        /** The database server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+        private String databaseServerType;
+
+        /**
+         * The database server type of the Exadata infrastructure.
+         *
+         * @param databaseServerType the value to set
+         * @return this builder
+         */
+        public Builder databaseServerType(String databaseServerType) {
+            this.databaseServerType = databaseServerType;
+            this.__explicitlySet__.add("databaseServerType");
+            return this;
+        }
+        /** The storage server type of the Exadata infrastructure. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+        private String storageServerType;
+
+        /**
+         * The storage server type of the Exadata infrastructure.
+         *
+         * @param storageServerType the value to set
+         * @return this builder
+         */
+        public Builder storageServerType(String storageServerType) {
+            this.storageServerType = storageServerType;
+            this.__explicitlySet__.add("storageServerType");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code
+         * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify
+         * {@code computeModel} to a non-null value. ECPU compute model is the recommended model and
+         * OCPU compute model is legacy.
+         *
+         * @param computeModel the value to set
+         * @return this builder
+         */
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -829,7 +891,10 @@ public final class CloudExadataInfrastructure
                             this.monthlyStorageServerVersion,
                             this.monthlyDbServerVersion,
                             this.definedFileSystemConfigurations,
-                            this.isSchedulingPolicyAssociated);
+                            this.isSchedulingPolicyAssociated,
+                            this.databaseServerType,
+                            this.storageServerType,
+                            this.computeModel);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -948,6 +1013,15 @@ public final class CloudExadataInfrastructure
             }
             if (model.wasPropertyExplicitlySet("isSchedulingPolicyAssociated")) {
                 this.isSchedulingPolicyAssociated(model.getIsSchedulingPolicyAssociated());
+            }
+            if (model.wasPropertyExplicitlySet("databaseServerType")) {
+                this.databaseServerType(model.getDatabaseServerType());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerType")) {
+                this.storageServerType(model.getStorageServerType());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
             }
             return this;
         }
@@ -1576,6 +1650,104 @@ public final class CloudExadataInfrastructure
         return isSchedulingPolicyAssociated;
     }
 
+    /** The database server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+    private final String databaseServerType;
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getDatabaseServerType() {
+        return databaseServerType;
+    }
+
+    /** The storage server type of the Exadata infrastructure. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+    private final String storageServerType;
+
+    /**
+     * The storage server type of the Exadata infrastructure.
+     *
+     * @return the value
+     */
+    public String getStorageServerType() {
+        return storageServerType;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    public enum ComputeModel implements com.oracle.bmc.http.internal.BmcEnum {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code
+     * computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code
+     * computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU
+     * compute model is legacy.
+     *
+     * @return the value
+     */
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1633,6 +1805,9 @@ public final class CloudExadataInfrastructure
                 .append(String.valueOf(this.definedFileSystemConfigurations));
         sb.append(", isSchedulingPolicyAssociated=")
                 .append(String.valueOf(this.isSchedulingPolicyAssociated));
+        sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
+        sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
         sb.append(")");
         return sb.toString();
     }
@@ -1692,6 +1867,9 @@ public final class CloudExadataInfrastructure
                         this.definedFileSystemConfigurations, other.definedFileSystemConfigurations)
                 && java.util.Objects.equals(
                         this.isSchedulingPolicyAssociated, other.isSchedulingPolicyAssociated)
+                && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
+                && java.util.Objects.equals(this.storageServerType, other.storageServerType)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
                 && super.equals(other);
     }
 
@@ -1822,6 +2000,15 @@ public final class CloudExadataInfrastructure
                         + (this.isSchedulingPolicyAssociated == null
                                 ? 43
                                 : this.isSchedulingPolicyAssociated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseServerType == null
+                                ? 43
+                                : this.databaseServerType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

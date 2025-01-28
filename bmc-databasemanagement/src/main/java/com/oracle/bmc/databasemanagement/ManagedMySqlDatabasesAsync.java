@@ -64,6 +64,44 @@ public interface ManagedMySqlDatabasesAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Disable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
+            disableExternalMysqlAssociatedService(
+                    DisableExternalMysqlAssociatedServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMysqlAssociatedServiceRequest,
+                                    DisableExternalMysqlAssociatedServiceResponse>
+                            handler);
+
+    /**
+     * Enable an Associated Service for an external MySQL database resource. An Associated Service
+     * example is OPSI.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
+            enableExternalMysqlAssociatedService(
+                    EnableExternalMysqlAssociatedServiceRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMysqlAssociatedServiceRequest,
+                                    EnableExternalMysqlAssociatedServiceResponse>
+                            handler);
+
+    /**
      * Gets the health metrics for a fleet of HeatWave clusters in a compartment.
      *
      * @param request The request object containing the details to send

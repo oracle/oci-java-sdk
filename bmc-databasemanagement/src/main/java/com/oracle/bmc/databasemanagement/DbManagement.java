@@ -341,6 +341,25 @@ public interface DbManagement extends AutoCloseable {
             CheckExternalExadataStorageConnectorRequest request);
 
     /**
+     * Check the status of the external database connection specified in this connector. This
+     * operation will refresh the connectionStatus and timeConnectionStatusLastUpdated fields.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CheckExternalMySqlDatabaseConnectorConnectionStatusExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CheckExternalMySqlDatabaseConnectorConnectionStatus API.
+     */
+    CheckExternalMySqlDatabaseConnectorConnectionStatusResponse
+            checkExternalMySqlDatabaseConnectorConnectionStatus(
+                    CheckExternalMySqlDatabaseConnectorConnectionStatusRequest request);
+
+    /**
      * Configures automatic capture filters to capture only those statements that match the filter
      * criteria.
      *
@@ -478,6 +497,40 @@ public interface DbManagement extends AutoCloseable {
      */
     CreateExternalExadataStorageConnectorResponse createExternalExadataStorageConnector(
             CreateExternalExadataStorageConnectorRequest request);
+
+    /**
+     * Creates an external MySQL database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateExternalMySqlDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateExternalMySqlDatabase API.
+     */
+    CreateExternalMySqlDatabaseResponse createExternalMySqlDatabase(
+            CreateExternalMySqlDatabaseRequest request);
+
+    /**
+     * Creates an external MySQL connector resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/CreateExternalMySqlDatabaseConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateExternalMySqlDatabaseConnector API.
+     */
+    CreateExternalMySqlDatabaseConnectorResponse createExternalMySqlDatabaseConnector(
+            CreateExternalMySqlDatabaseConnectorRequest request);
 
     /**
      * Creates a job to be executed on a Managed Database or Managed Database Group. Only one of the
@@ -646,6 +699,41 @@ public interface DbManagement extends AutoCloseable {
      */
     DeleteExternalExadataStorageConnectorResponse deleteExternalExadataStorageConnector(
             DeleteExternalExadataStorageConnectorRequest request);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteExternalMySqlDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteExternalMySqlDatabase API.
+     */
+    DeleteExternalMySqlDatabaseResponse deleteExternalMySqlDatabase(
+            DeleteExternalMySqlDatabaseRequest request);
+
+    /**
+     * Deletes the Oracle Cloud Infrastructure resource representing an external MySQL database
+     * connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DeleteExternalMySqlDatabaseConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteExternalMySqlDatabaseConnector API.
+     */
+    DeleteExternalMySqlDatabaseConnectorResponse deleteExternalMySqlDatabaseConnector(
+            DeleteExternalMySqlDatabaseConnectorRequest request);
 
     /**
      * Deletes the job specified by jobId.
@@ -861,6 +949,23 @@ public interface DbManagement extends AutoCloseable {
     DisableExternalExadataInfrastructureManagementResponse
             disableExternalExadataInfrastructureManagement(
                     DisableExternalExadataInfrastructureManagementRequest request);
+
+    /**
+     * Disables Database Management for an external MySQL Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/DisableExternalMySqlDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DisableExternalMySqlDatabaseManagement API.
+     */
+    DisableExternalMySqlDatabaseManagementResponse disableExternalMySqlDatabaseManagement(
+            DisableExternalMySqlDatabaseManagementRequest request);
 
     /**
      * Disables a Database Management feature for the specified external non-container database.
@@ -1185,6 +1290,23 @@ public interface DbManagement extends AutoCloseable {
                     EnableExternalExadataInfrastructureManagementRequest request);
 
     /**
+     * Enables Database Management for an external MySQL Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/EnableExternalMySqlDatabaseManagementExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     EnableExternalMySqlDatabaseManagement API.
+     */
+    EnableExternalMySqlDatabaseManagementResponse enableExternalMySqlDatabaseManagement(
+            EnableExternalMySqlDatabaseManagementRequest request);
+
+    /**
      * Enables Database Management feature for the specified external non-container database.
      *
      * @param request The request object containing the details to send
@@ -1347,6 +1469,65 @@ public interface DbManagement extends AutoCloseable {
     GetClusterCacheMetricResponse getClusterCacheMetric(GetClusterCacheMetricRequest request);
 
     /**
+     * Gets the fleet of container databases (CDBs) and their backup details and metrics, in a
+     * compartment or Database Group. The databaseHostedIn query parameter must be provided to list
+     * either cloud or external databases. Either the CompartmentId or the ManagedDatabaseGroupId
+     * query parameters must be provided to retrieve the HA and backup metrics.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetBackupMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseFleetBackupMetrics API.
+     */
+    GetDatabaseFleetBackupMetricsResponse getDatabaseFleetBackupMetrics(
+            GetDatabaseFleetBackupMetricsRequest request);
+
+    /**
+     * Gets the fleet of Oracle Data Guard-enabled container databases (CDBs) along with Data Guard
+     * metrics and standby databases, in a compartment or Database Group. Either the CompartmentId
+     * or the ManagedDatabaseGroupId query parameters must be provided to retrieve the list of
+     * databases and Data Guard metrics.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetDataguardMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseFleetDataguardMetrics API.
+     */
+    GetDatabaseFleetDataguardMetricsResponse getDatabaseFleetDataguardMetrics(
+            GetDatabaseFleetDataguardMetricsRequest request);
+
+    /**
+     * Gets the fleet of container databases (CDBs) and their HA and backup metrics in a compartment
+     * or in a Database Group. Either the CompartmentId or the ManagedDatabaseGroupId query
+     * parameters must be provided to retrieve the HA and backup metrics.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseFleetHaOverviewMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseFleetHaOverviewMetrics API.
+     */
+    GetDatabaseFleetHaOverviewMetricsResponse getDatabaseFleetHaOverviewMetrics(
+            GetDatabaseFleetHaOverviewMetricsRequest request);
+
+    /**
      * Gets the health metrics for a fleet of databases in a compartment or in a Managed Database
      * Group. Either the CompartmentId or the ManagedDatabaseGroupId query parameters must be
      * provided to retrieve the health metrics.
@@ -1364,6 +1545,23 @@ public interface DbManagement extends AutoCloseable {
      */
     GetDatabaseFleetHealthMetricsResponse getDatabaseFleetHealthMetrics(
             GetDatabaseFleetHealthMetricsRequest request);
+
+    /**
+     * Gets HA and backup details with metrics and backup history for a single database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetDatabaseHaBackupDetailsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetDatabaseHaBackupDetails API.
+     */
+    GetDatabaseHaBackupDetailsResponse getDatabaseHaBackupDetails(
+            GetDatabaseHaBackupDetailsRequest request);
 
     /**
      * Gets a summary of the activity and resource usage metrics like DB Time, CPU, User I/O, Wait,
@@ -1670,6 +1868,40 @@ public interface DbManagement extends AutoCloseable {
      *     API.
      */
     GetExternalListenerResponse getExternalListener(GetExternalListenerRequest request);
+
+    /**
+     * Retrieves the external MySQL database information.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalMySqlDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetExternalMySqlDatabase API.
+     */
+    GetExternalMySqlDatabaseResponse getExternalMySqlDatabase(
+            GetExternalMySqlDatabaseRequest request);
+
+    /**
+     * Retrieves the MySQL database connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/GetExternalMySqlDatabaseConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetExternalMySqlDatabaseConnector API.
+     */
+    GetExternalMySqlDatabaseConnectorResponse getExternalMySqlDatabaseConnector(
+            GetExternalMySqlDatabaseConnectorRequest request);
 
     /**
      * Get the IORM plan from the specific Exadata storage server.
@@ -2454,6 +2686,23 @@ public interface DbManagement extends AutoCloseable {
     ListExternalListenersResponse listExternalListeners(ListExternalListenersRequest request);
 
     /**
+     * Gets the list of External MySQL Databases.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListExternalMySqlDatabasesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListExternalMySqlDatabases API.
+     */
+    ListExternalMySqlDatabasesResponse listExternalMySqlDatabases(
+            ListExternalMySqlDatabasesRequest request);
+
+    /**
      * Gets the job execution for a specific ID or the list of job executions for a job, job run,
      * Managed Database or Managed Database Group in a specific compartment. Only one of the
      * parameters, ID, jobId, jobRunId, managedDatabaseId or managedDatabaseGroupId should be
@@ -2552,6 +2801,23 @@ public interface DbManagement extends AutoCloseable {
      *     ListManagedDatabases API.
      */
     ListManagedDatabasesResponse listManagedDatabases(ListManagedDatabasesRequest request);
+
+    /**
+     * Gets the list of External MySQL Database connectors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/ListMySqlDatabaseConnectorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMySqlDatabaseConnectors API.
+     */
+    ListMySqlDatabaseConnectorsResponse listMySqlDatabaseConnectors(
+            ListMySqlDatabaseConnectorsRequest request);
 
     /**
      * Gets a single named credential specified by the name or all the named credentials in a
@@ -3672,6 +3938,40 @@ public interface DbManagement extends AutoCloseable {
      *     UpdateExternalListener API.
      */
     UpdateExternalListenerResponse updateExternalListener(UpdateExternalListenerRequest request);
+
+    /**
+     * Updates the External Mysql Database.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalMysqlDatabaseExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalMysqlDatabase API.
+     */
+    UpdateExternalMysqlDatabaseResponse updateExternalMysqlDatabase(
+            UpdateExternalMysqlDatabaseRequest request);
+
+    /**
+     * Updates the External Mysql Database Connector.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/databasemanagement/UpdateExternalMysqlDatabaseConnectorExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateExternalMysqlDatabaseConnector API.
+     */
+    UpdateExternalMysqlDatabaseConnectorResponse updateExternalMysqlDatabaseConnector(
+            UpdateExternalMysqlDatabaseConnectorRequest request);
 
     /**
      * Updates the details for the recurring scheduled job specified by jobId. Note that

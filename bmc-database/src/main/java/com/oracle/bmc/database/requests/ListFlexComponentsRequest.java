@@ -39,6 +39,19 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
     public String getName() {
         return name;
     }
+    /**
+     * A filter to return only resources that belong to the entire shape name given. The match is
+     * not case sensitive.
+     */
+    private String shape;
+
+    /**
+     * A filter to return only resources that belong to the entire shape name given. The match is
+     * not case sensitive.
+     */
+    public String getShape() {
+        return shape;
+    }
     /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
     private SortOrder sortOrder;
 
@@ -186,6 +199,24 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             return this;
         }
 
+        /**
+         * A filter to return only resources that belong to the entire shape name given. The match
+         * is not case sensitive.
+         */
+        private String shape = null;
+
+        /**
+         * A filter to return only resources that belong to the entire shape name given. The match
+         * is not case sensitive.
+         *
+         * @param shape the value to set
+         * @return this builder instance
+         */
+        public Builder shape(String shape) {
+            this.shape = shape;
+            return this;
+        }
+
         /** The sort order to use, either ascending ({@code ASC}) or descending ({@code DESC}). */
         private SortOrder sortOrder = null;
 
@@ -278,6 +309,7 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         public Builder copy(ListFlexComponentsRequest o) {
             compartmentId(o.getCompartmentId());
             name(o.getName());
+            shape(o.getShape());
             sortOrder(o.getSortOrder());
             sortBy(o.getSortBy());
             limit(o.getLimit());
@@ -318,12 +350,14 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
             ListFlexComponentsRequest request = new ListFlexComponentsRequest();
             request.compartmentId = compartmentId;
             request.name = name;
+            request.shape = shape;
             request.sortOrder = sortOrder;
             request.sortBy = sortBy;
             request.limit = limit;
             request.page = page;
             return request;
-            // new ListFlexComponentsRequest(compartmentId, name, sortOrder, sortBy, limit, page);
+            // new ListFlexComponentsRequest(compartmentId, name, shape, sortOrder, sortBy, limit,
+            // page);
         }
     }
 
@@ -336,6 +370,7 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         return new Builder()
                 .compartmentId(compartmentId)
                 .name(name)
+                .shape(shape)
                 .sortOrder(sortOrder)
                 .sortBy(sortBy)
                 .limit(limit)
@@ -358,6 +393,7 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         sb.append("super=").append(super.toString());
         sb.append(",compartmentId=").append(String.valueOf(this.compartmentId));
         sb.append(",name=").append(String.valueOf(this.name));
+        sb.append(",shape=").append(String.valueOf(this.shape));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",limit=").append(String.valueOf(this.limit));
@@ -379,6 +415,7 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
         return super.equals(o)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
                 && java.util.Objects.equals(this.name, other.name)
+                && java.util.Objects.equals(this.shape, other.shape)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.limit, other.limit)
@@ -393,6 +430,7 @@ public class ListFlexComponentsRequest extends com.oracle.bmc.requests.BmcReques
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
         result = (result * PRIME) + (this.name == null ? 43 : this.name.hashCode());
+        result = (result * PRIME) + (this.shape == null ? 43 : this.shape.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
