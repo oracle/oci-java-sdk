@@ -44,7 +44,10 @@ public final class DbSystemSummary
         "backupPolicy",
         "shapeName",
         "crashRecovery",
-        "databaseManagement"
+        "databaseManagement",
+        "databaseMode",
+        "accessMode",
+        "readEndpoint"
     })
     public DbSystemSummary(
             String id,
@@ -68,7 +71,10 @@ public final class DbSystemSummary
             BackupPolicy backupPolicy,
             String shapeName,
             CrashRecoveryStatus crashRecovery,
-            DatabaseManagementStatus databaseManagement) {
+            DatabaseManagementStatus databaseManagement,
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -92,6 +98,9 @@ public final class DbSystemSummary
         this.shapeName = shapeName;
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -459,6 +468,69 @@ public final class DbSystemSummary
             this.__explicitlySet__.add("databaseManagement");
             return this;
         }
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the DB
+         * system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DbSystem.DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the DB
+         * system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         */
+        public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: the access is
+         * allowed only to users with specific privileges; RESTRICTED will correspond to setting the
+         * MySQL system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private DbSystem.AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: the access is
+         * allowed only to users with specific privileges; RESTRICTED will correspond to setting the
+         * MySQL system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         */
+        public Builder accessMode(DbSystem.AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -487,7 +559,10 @@ public final class DbSystemSummary
                             this.backupPolicy,
                             this.shapeName,
                             this.crashRecovery,
-                            this.databaseManagement);
+                            this.databaseManagement,
+                            this.databaseMode,
+                            this.accessMode,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -561,6 +636,15 @@ public final class DbSystemSummary
             }
             if (model.wasPropertyExplicitlySet("databaseManagement")) {
                 this.databaseManagement(model.getDatabaseManagement());
+            }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -893,6 +977,63 @@ public final class DbSystemSummary
         return databaseManagement;
     }
 
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DbSystem.DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     *
+     * @return the value
+     */
+    public DbSystem.DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: the access is allowed only to
+     * users with specific privileges; RESTRICTED will correspond to setting the MySQL system
+     * variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final DbSystem.AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: the access is allowed only to
+     * users with specific privileges; RESTRICTED will correspond to setting the MySQL system
+     * variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     *
+     * @return the value
+     */
+    public DbSystem.AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -931,6 +1072,9 @@ public final class DbSystemSummary
         sb.append(", shapeName=").append(String.valueOf(this.shapeName));
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -968,6 +1112,9 @@ public final class DbSystemSummary
                 && java.util.Objects.equals(this.shapeName, other.shapeName)
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1023,6 +1170,9 @@ public final class DbSystemSummary
                         + (this.databaseManagement == null
                                 ? 43
                                 : this.databaseManagement.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

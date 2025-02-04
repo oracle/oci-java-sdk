@@ -71,7 +71,7 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
             LOG.warn(
                     com.oracle.bmc.util.StreamUtils.getStreamWarningMessage(
                             "DataSafeClient",
-                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
+                            "downloadDiscoveryReport,downloadMaskingLog,downloadMaskingPolicy,downloadMaskingReport,downloadPrivilegeScript,downloadSecurityAssessmentReport,downloadSensitiveDataModel,downloadSensitiveTypesExport,downloadUserAssessmentReport,generateOnPremConnectorConfiguration,getReportContent"));
         }
     }
 
@@ -319,6 +319,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ApplySdmMaskingPolicyDifferenceResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public BulkCreateSensitiveTypesResponse bulkCreateSensitiveTypes(
+            BulkCreateSensitiveTypesRequest request) {
+        Objects.requireNonNull(
+                request.getBulkCreateSensitiveTypesDetails(),
+                "bulkCreateSensitiveTypesDetails is required");
+
+        Objects.requireNonNull(request.getOpcCompartmentId(), "opcCompartmentId is required");
+
+        return clientCall(request, BulkCreateSensitiveTypesResponse::builder)
+                .logger(LOG, "bulkCreateSensitiveTypes")
+                .serviceDetails(
+                        "DataSafe",
+                        "BulkCreateSensitiveTypes",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveType/BulkCreateSensitiveTypes")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(BulkCreateSensitiveTypesRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypes")
+                .appendPathParam("actions")
+                .appendPathParam("bulkCreateSensitiveTypes")
+                .accept("application/json")
+                .appendHeader("opc-compartment-id", request.getOpcCompartmentId())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBinaryRequestBody()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        BulkCreateSensitiveTypesResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", BulkCreateSensitiveTypesResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1248,6 +1283,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ChangeSensitiveTypesExportCompartmentResponse changeSensitiveTypesExportCompartment(
+            ChangeSensitiveTypesExportCompartmentRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeSensitiveTypesExportCompartmentDetails(),
+                "changeSensitiveTypesExportCompartmentDetails is required");
+
+        return clientCall(request, ChangeSensitiveTypesExportCompartmentResponse::builder)
+                .logger(LOG, "changeSensitiveTypesExportCompartment")
+                .serviceDetails(
+                        "DataSafe",
+                        "ChangeSensitiveTypesExportCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/ChangeSensitiveTypesExportCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeSensitiveTypesExportCompartmentRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ChangeSensitiveTypesExportCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public ChangeSqlCollectionCompartmentResponse changeSqlCollectionCompartment(
             ChangeSqlCollectionCompartmentRequest request) {
 
@@ -1853,6 +1923,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public CreateReferentialRelationResponse createReferentialRelation(
+            CreateReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+        Objects.requireNonNull(
+                request.getCreateReferentialRelationDetails(),
+                "createReferentialRelationDetails is required");
+
+        return clientCall(request, CreateReferentialRelationResponse::builder)
+                .logger(LOG, "createReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/CreateReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateReferentialRelationResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateReferentialRelationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateReportDefinitionResponse createReportDefinition(
             CreateReportDefinitionRequest request) {
         Objects.requireNonNull(
@@ -2057,6 +2162,43 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", CreateSensitiveTypeResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "location", CreateSensitiveTypeResponse.Builder::location)
+                .callSync();
+    }
+
+    @Override
+    public CreateSensitiveTypesExportResponse createSensitiveTypesExport(
+            CreateSensitiveTypesExportRequest request) {
+        Objects.requireNonNull(
+                request.getCreateSensitiveTypesExportDetails(),
+                "createSensitiveTypesExportDetails is required");
+
+        return clientCall(request, CreateSensitiveTypesExportResponse::builder)
+                .logger(LOG, "createSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "CreateSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/CreateSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExport.class,
+                        CreateSensitiveTypesExportResponse.Builder::sensitiveTypesExport)
+                .handleResponseHeaderString(
+                        "etag", CreateSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        CreateSensitiveTypesExportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateSensitiveTypesExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "location", CreateSensitiveTypesExportResponse.Builder::location)
                 .callSync();
     }
 
@@ -2618,6 +2760,38 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public DeleteReferentialRelationResponse deleteReferentialRelation(
+            DeleteReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        Validate.notBlank(
+                request.getReferentialRelationKey(), "referentialRelationKey must not be blank");
+
+        return clientCall(request, DeleteReferentialRelationResponse::builder)
+                .logger(LOG, "deleteReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/DeleteReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendPathParam(request.getReferentialRelationKey())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteReferentialRelationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public DeleteReportDefinitionResponse deleteReportDefinition(
             DeleteReportDefinitionRequest request) {
 
@@ -2791,6 +2965,33 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .operationUsesDefaultRetries()
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteSensitiveTypesExportResponse deleteSensitiveTypesExport(
+            DeleteSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+
+        return clientCall(request, DeleteSensitiveTypesExportResponse::builder)
+                .logger(LOG, "deleteSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DeleteSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/DeleteSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -3257,6 +3458,47 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "etag", DownloadSensitiveDataModelResponse.Builder::etag)
                 .handleResponseHeaderLong(
                         "content-length", DownloadSensitiveDataModelResponse.Builder::contentLength)
+                .callSync();
+    }
+
+    @Override
+    public DownloadSensitiveTypesExportResponse downloadSensitiveTypesExport(
+            DownloadSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getDownloadSensitiveTypesExportDetails(),
+                "downloadSensitiveTypesExportDetails is required");
+
+        return clientCall(request, DownloadSensitiveTypesExportResponse::builder)
+                .logger(LOG, "downloadSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "DownloadSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/DownloadSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DownloadSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .appendPathParam("actions")
+                .appendPathParam("download")
+                .accept("application/octet-stream")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        java.io.InputStream.class,
+                        DownloadSensitiveTypesExportResponse.Builder::inputStream)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        DownloadSensitiveTypesExportResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "etag", DownloadSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderLong(
+                        "content-length",
+                        DownloadSensitiveTypesExportResponse.Builder::contentLength)
                 .callSync();
     }
 
@@ -4475,6 +4717,41 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public GetReferentialRelationResponse getReferentialRelation(
+            GetReferentialRelationRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        Validate.notBlank(
+                request.getReferentialRelationKey(), "referentialRelationKey must not be blank");
+
+        return clientCall(request, GetReferentialRelationResponse::builder)
+                .logger(LOG, "getReferentialRelation")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetReferentialRelation",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/GetReferentialRelation")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetReferentialRelationRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendPathParam(request.getReferentialRelationKey())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.ReferentialRelation.class,
+                        GetReferentialRelationResponse.Builder::referentialRelation)
+                .handleResponseHeaderString("etag", GetReferentialRelationResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetReferentialRelationResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetReportResponse getReport(GetReportRequest request) {
 
         Validate.notBlank(request.getReportId(), "reportId must not be blank");
@@ -4880,6 +5157,36 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .handleResponseHeaderString("etag", GetSensitiveTypeResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", GetSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public GetSensitiveTypesExportResponse getSensitiveTypesExport(
+            GetSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+
+        return clientCall(request, GetSensitiveTypesExportResponse::builder)
+                .logger(LOG, "getSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "GetSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/GetSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExport.class,
+                        GetSensitiveTypesExportResponse.Builder::sensitiveTypesExport)
+                .handleResponseHeaderString("etag", GetSensitiveTypesExportResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -6758,6 +7065,64 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListMaskingPolicyReferentialRelationsResponse listMaskingPolicyReferentialRelations(
+            ListMaskingPolicyReferentialRelationsRequest request) {
+
+        Validate.notBlank(request.getMaskingPolicyId(), "maskingPolicyId must not be blank");
+
+        return clientCall(request, ListMaskingPolicyReferentialRelationsResponse::builder)
+                .logger(LOG, "listMaskingPolicyReferentialRelations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListMaskingPolicyReferentialRelations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/MaskingPolicyReferentialRelationSummary/ListMaskingPolicyReferentialRelations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListMaskingPolicyReferentialRelationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("maskingPolicies")
+                .appendPathParam(request.getMaskingPolicyId())
+                .appendPathParam("referentialRelations")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "relationType",
+                        request.getRelationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.MaskingPolicyReferentialRelationCollection
+                                .class,
+                        ListMaskingPolicyReferentialRelationsResponse.Builder
+                                ::maskingPolicyReferentialRelationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page",
+                        ListMaskingPolicyReferentialRelationsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
     public ListMaskingReportsResponse listMaskingReports(ListMaskingReportsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
 
@@ -6870,6 +7235,44 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-request-id", ListOnPremConnectorsResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListOnPremConnectorsResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
+    public ListPasswordExpiryDateAnalyticsResponse listPasswordExpiryDateAnalytics(
+            ListPasswordExpiryDateAnalyticsRequest request) {
+
+        Validate.notBlank(request.getUserAssessmentId(), "userAssessmentId must not be blank");
+
+        return clientCall(request, ListPasswordExpiryDateAnalyticsResponse::builder)
+                .logger(LOG, "listPasswordExpiryDateAnalytics")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListPasswordExpiryDateAnalytics",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/UserAssessment/ListPasswordExpiryDateAnalytics")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPasswordExpiryDateAnalyticsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("userAssessments")
+                .appendPathParam(request.getUserAssessmentId())
+                .appendPathParam("passwordExpiryDateAnalytics")
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("userCategory", request.getUserCategory())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datasafe.model.UserAggregation.class,
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page",
+                        ListPasswordExpiryDateAnalyticsResponse.Builder::opcNextPage)
                 .callSync();
     }
 
@@ -7016,6 +7419,61 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         "opc-next-page", ListProfileSummariesResponse.Builder::opcNextPage)
                 .handleResponseHeaderString(
                         "opc-prev-page", ListProfileSummariesResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
+    public ListReferentialRelationsResponse listReferentialRelations(
+            ListReferentialRelationsRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveDataModelId(), "sensitiveDataModelId must not be blank");
+
+        return clientCall(request, ListReferentialRelationsResponse::builder)
+                .logger(LOG, "listReferentialRelations")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListReferentialRelations",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/ReferentialRelation/ListReferentialRelations")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListReferentialRelationsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveDataModels")
+                .appendPathParam(request.getSensitiveDataModelId())
+                .appendPathParam("referentialRelations")
+                .appendListQueryParam(
+                        "schemaName",
+                        request.getSchemaName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "objectName",
+                        request.getObjectName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "columnName",
+                        request.getColumnName(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isSensitive", request.getIsSensitive())
+                .appendListQueryParam(
+                        "relationType",
+                        request.getRelationType(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.ReferentialRelationCollection.class,
+                        ListReferentialRelationsResponse.Builder::referentialRelationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListReferentialRelationsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListReferentialRelationsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListReferentialRelationsResponse.Builder::opcPrevPage)
                 .callSync();
     }
 
@@ -7893,6 +8351,50 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
     }
 
     @Override
+    public ListSensitiveTypesExportsResponse listSensitiveTypesExports(
+            ListSensitiveTypesExportsRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSensitiveTypesExportsResponse::builder)
+                .logger(LOG, "listSensitiveTypesExports")
+                .serviceDetails(
+                        "DataSafe",
+                        "ListSensitiveTypesExports",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExportCollection/ListSensitiveTypesExports")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSensitiveTypesExportsRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendEnumQueryParam("accessLevel", request.getAccessLevel())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("sensitiveTypesExportId", request.getSensitiveTypesExportId())
+                .appendQueryParam(
+                        "timeCreatedGreaterThanOrEqualTo",
+                        request.getTimeCreatedGreaterThanOrEqualTo())
+                .appendQueryParam("timeCreatedLessThan", request.getTimeCreatedLessThan())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datasafe.model.SensitiveTypesExportCollection.class,
+                        ListSensitiveTypesExportsResponse.Builder::sensitiveTypesExportCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSensitiveTypesExportsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSensitiveTypesExportsResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListSensitiveTypesExportsResponse.Builder::opcPrevPage)
+                .callSync();
+    }
+
+    @Override
     public ListSqlCollectionAnalyticsResponse listSqlCollectionAnalytics(
             ListSqlCollectionAnalyticsRequest request) {
         Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
@@ -8511,6 +9013,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam(
                         "timePasswordLastChangedLessThan",
                         request.getTimePasswordLastChangedLessThan())
+                .appendQueryParam(
+                        "timePasswordExpiryGreaterThanOrEqualTo",
+                        request.getTimePasswordExpiryGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -8618,6 +9125,11 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                 .appendQueryParam(
                         "timePasswordLastChangedLessThan",
                         request.getTimePasswordLastChangedLessThan())
+                .appendQueryParam(
+                        "timePasswordExpiryGreaterThanOrEqualTo",
+                        request.getTimePasswordExpiryGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timePasswordExpiryLessThan", request.getTimePasswordExpiryLessThan())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
@@ -10552,6 +11064,40 @@ public class DataSafeClient extends com.oracle.bmc.http.internal.BaseSyncClient
                         UpdateSensitiveTypeResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateSensitiveTypeResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateSensitiveTypesExportResponse updateSensitiveTypesExport(
+            UpdateSensitiveTypesExportRequest request) {
+
+        Validate.notBlank(
+                request.getSensitiveTypesExportId(), "sensitiveTypesExportId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateSensitiveTypesExportDetails(),
+                "updateSensitiveTypesExportDetails is required");
+
+        return clientCall(request, UpdateSensitiveTypesExportResponse::builder)
+                .logger(LOG, "updateSensitiveTypesExport")
+                .serviceDetails(
+                        "DataSafe",
+                        "UpdateSensitiveTypesExport",
+                        "https://docs.oracle.com/iaas/api/#/en/data-safe/20181201/SensitiveTypesExport/UpdateSensitiveTypesExport")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateSensitiveTypesExportRequest::builder)
+                .basePath("/20181201")
+                .appendPathParam("sensitiveTypesExports")
+                .appendPathParam(request.getSensitiveTypesExportId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        UpdateSensitiveTypesExportResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateSensitiveTypesExportResponse.Builder::opcRequestId)
                 .callSync();
     }
 

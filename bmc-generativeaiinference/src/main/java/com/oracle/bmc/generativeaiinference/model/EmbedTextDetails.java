@@ -49,14 +49,16 @@ public final class EmbedTextDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
+         * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
          * maximum length of each string entry in the list is 512 tokens.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("inputs")
         private java.util.List<String> inputs;
 
         /**
-         * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The
+         * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
+         * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
          * maximum length of each string entry in the list is 512 tokens.
          *
          * @param inputs the value to set
@@ -199,15 +201,17 @@ public final class EmbedTextDetails
     }
 
     /**
-     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum
-     * length of each string entry in the list is 512 tokens.
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
+     * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
+     * maximum length of each string entry in the list is 512 tokens.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("inputs")
     private final java.util.List<String> inputs;
 
     /**
-     * Provide a list of strings. Each string can be words, a phrase, or a paragraph. The maximum
-     * length of each string entry in the list is 512 tokens.
+     * Provide a list of strings or one base64 encoded image with {@code input_type} setting to
+     * {@code IMAGE}. If text embedding, each string can be words, a phrase, or a paragraph. The
+     * maximum length of each string entry in the list is 512 tokens.
      *
      * @return the value
      */
@@ -310,6 +314,7 @@ public final class EmbedTextDetails
         SearchQuery("SEARCH_QUERY"),
         Classification("CLASSIFICATION"),
         Clustering("CLUSTERING"),
+        Image("IMAGE"),
         ;
 
         private final String value;

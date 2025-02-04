@@ -146,6 +146,24 @@ public interface GenerativeAiInference extends AutoCloseable {
     GenerateTextResponse generateText(GenerateTextRequest request);
 
     /**
+     * Reranks the text responses based on the input documents and a prompt.
+     *
+     * <p>Rerank assigns an index and a relevance score to each document, indicating which document
+     * is most related to the prompt.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/RerankTextExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use RerankText API.
+     */
+    RerankTextResponse rerankText(RerankTextRequest request);
+
+    /**
      * Summarizes the input text.
      *
      * @param request The request object containing the details to send

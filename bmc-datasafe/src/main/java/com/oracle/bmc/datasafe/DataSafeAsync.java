@@ -156,6 +156,22 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Uploads a sensitive types xml file (also called template) to create new sensitive types.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<BulkCreateSensitiveTypesResponse> bulkCreateSensitiveTypes(
+            BulkCreateSensitiveTypesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            BulkCreateSensitiveTypesRequest, BulkCreateSensitiveTypesResponse>
+                    handler);
+
+    /**
      * Appends the allowedSqls with entries from the logs.
      *
      * @param request The request object containing the details to send
@@ -630,6 +646,24 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Moves the specified sensitive types export into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeSensitiveTypesExportCompartmentResponse>
+            changeSensitiveTypesExportCompartment(
+                    ChangeSensitiveTypesExportCompartmentRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ChangeSensitiveTypesExportCompartmentRequest,
+                                    ChangeSensitiveTypesExportCompartmentResponse>
+                            handler);
+
+    /**
      * Moves the specified SQL collection and its dependent resources into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -974,6 +1008,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new referential relation in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateReferentialRelationResponse> createReferentialRelation(
+            CreateReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateReferentialRelationRequest, CreateReferentialRelationResponse>
+                    handler);
+
+    /**
      * Creates a new report definition with parameters specified in the body. The report definition
      * is stored in the specified compartment.
      *
@@ -1082,6 +1132,25 @@ public interface DataSafeAsync extends AutoCloseable {
             CreateSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             CreateSensitiveTypeRequest, CreateSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Generates a downloadable file corresponding to the specified list of sensitive types. It's a
+     * prerequisite for the DownloadSensitiveTypesExport operation. Use this endpoint to generate a
+     * sensitive Types Export file and then use DownloadSensitiveTypesExport to download the
+     * generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateSensitiveTypesExportResponse> createSensitiveTypesExport(
+            CreateSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateSensitiveTypesExportRequest, CreateSensitiveTypesExportResponse>
                     handler);
 
     /**
@@ -1384,6 +1453,22 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteReferentialRelationResponse> deleteReferentialRelation(
+            DeleteReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteReferentialRelationRequest, DeleteReferentialRelationResponse>
+                    handler);
+
+    /**
      * Deletes the specified report definition. Only the user created report definition can be
      * deleted. The seeded report definitions cannot be deleted.
      *
@@ -1484,6 +1569,22 @@ public interface DataSafeAsync extends AutoCloseable {
             DeleteSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeleteSensitiveTypeRequest, DeleteSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Deletes the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteSensitiveTypesExportResponse> deleteSensitiveTypesExport(
+            DeleteSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteSensitiveTypesExportRequest, DeleteSensitiveTypesExportResponse>
                     handler);
 
     /**
@@ -1739,6 +1840,25 @@ public interface DataSafeAsync extends AutoCloseable {
             DownloadSensitiveDataModelRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DownloadSensitiveDataModelRequest, DownloadSensitiveDataModelResponse>
+                    handler);
+
+    /**
+     * Downloads an already-generated file corresponding to the specified sensitive types export.
+     * Use CreateSensitiveTypesExport to generate an XML file and then use
+     * DownloadSensitiveTypesExport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DownloadSensitiveTypesExportResponse> downloadSensitiveTypesExport(
+            DownloadSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DownloadSensitiveTypesExportRequest,
+                            DownloadSensitiveTypesExportResponse>
                     handler);
 
     /**
@@ -2370,6 +2490,22 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse> handler);
 
     /**
+     * Gets the details of the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetReferentialRelationResponse> getReferentialRelation(
+            GetReferentialRelationRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetReferentialRelationRequest, GetReferentialRelationResponse>
+                    handler);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -2576,6 +2712,22 @@ public interface DataSafeAsync extends AutoCloseable {
     java.util.concurrent.Future<GetSensitiveTypeResponse> getSensitiveType(
             GetSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetSensitiveTypeRequest, GetSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Gets the details of the specified sensitive types export by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetSensitiveTypesExportResponse> getSensitiveTypesExport(
+            GetSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetSensitiveTypesExportRequest, GetSensitiveTypesExportResponse>
                     handler);
 
     /**
@@ -2791,15 +2943,15 @@ public interface DataSafeAsync extends AutoCloseable {
      * filter for a specific summary column, specify it in the `summaryField` query parameter.
      *
      * <p>*Example:**
-     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
+     * /auditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
      * &summaryField=dmls&summaryField=privilegeChanges&summaryField=ddls&summaryField=loginFailure&summaryField=loginSuccess
-     * &summaryField=allRecord&q=(auditEventTime ge \"2021-06-13T23:49:14\")
+     * &summaryField=allRecord&scimQuery=(auditEventTime ge \"2021-06-13T23:49:14\")
      *
-     * <p>/ListAuditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
+     * <p>/auditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
      * This will give number of events grouped by periods. Period can be 1 day, 1 week, etc.
      *
-     * <p>/ListAuditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the
-     * number of events group by targetName. Only targetName summary column would be returned.
+     * <p>/auditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the number
+     * of events group by targetName. Only targetName summary column would be returned.
      *
      * @param request The request object containing the details to send
      * @param handler The request handler to invoke upon completion, may be null.
@@ -3447,6 +3599,25 @@ public interface DataSafeAsync extends AutoCloseable {
                             handler);
 
     /**
+     * Gets a list of referential relations present in the specified masking policy based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMaskingPolicyReferentialRelationsResponse>
+            listMaskingPolicyReferentialRelations(
+                    ListMaskingPolicyReferentialRelationsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListMaskingPolicyReferentialRelationsRequest,
+                                    ListMaskingPolicyReferentialRelationsResponse>
+                            handler);
+
+    /**
      * Gets a list of masking reports based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -3494,6 +3665,38 @@ public interface DataSafeAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<
                             ListOnPremConnectorsRequest, ListOnPremConnectorsResponse>
                     handler);
+
+    /**
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next
+     * 30-90 days, and beyond 90 days based on specified user assessment. It internally uses the
+     * aforementioned userAnalytics api.
+     *
+     * <p>When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the
+     * operation is performed at the root compartment and the requestor does not have access to at
+     * least one subcompartment of the compartment specified by compartmentId, then \"Not
+     * Authorized\" is returned.
+     *
+     * <p>To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and
+     * subcompartments in the tenancy from the root compartment, set the parameter
+     * compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListPasswordExpiryDateAnalyticsResponse>
+            listPasswordExpiryDateAnalytics(
+                    ListPasswordExpiryDateAnalyticsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListPasswordExpiryDateAnalyticsRequest,
+                                    ListPasswordExpiryDateAnalyticsResponse>
+                            handler);
 
     /**
      * Lists all the peer target databases under the primary target database identified by the OCID
@@ -3579,6 +3782,23 @@ public interface DataSafeAsync extends AutoCloseable {
             ListProfileSummariesRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ListProfileSummariesRequest, ListProfileSummariesResponse>
+                    handler);
+
+    /**
+     * Gets a list of referential relations present in the specified sensitive data model based on
+     * the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListReferentialRelationsResponse> listReferentialRelations(
+            ListReferentialRelationsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListReferentialRelationsRequest, ListReferentialRelationsResponse>
                     handler);
 
     /**
@@ -3973,6 +4193,24 @@ public interface DataSafeAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query
+     * parameters. The ListSensitiveTypesExports operation returns only the sensitive types export
+     * in the specified `compartmentId`.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSensitiveTypesExportsResponse> listSensitiveTypesExports(
+            ListSensitiveTypesExportsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListSensitiveTypesExportsRequest, ListSensitiveTypesExportsResponse>
+                    handler);
+
+    /**
      * Retrieves a list of all SQL collection analytics in Data Safe.
      *
      * <p>The ListSqlCollectionAnalytics operation returns only the analytics for the SQL
@@ -4282,7 +4520,7 @@ public interface DataSafeAsync extends AutoCloseable {
      *
      * <p>When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree
      * is set to \"true,\" and if the parameter accessLevel is set to ACCESSIBLE, then the operation
-     * returns compartments in which the requestor has INSPECT permissions on at least one resource,
+     * returns compartments in which the requestor has READ permissions on at least one resource,
      * directly or indirectly (in subcompartments). If the operation is performed at the root
      * compartment and the requestor does not have access to at least one subcompartment of the
      * compartment specified by compartmentId, then \"Not Authorized\" is returned.
@@ -5323,6 +5561,22 @@ public interface DataSafeAsync extends AutoCloseable {
             UpdateSensitiveTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateSensitiveTypeRequest, UpdateSensitiveTypeResponse>
+                    handler);
+
+    /**
+     * Updates one or more attributes of the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateSensitiveTypesExportResponse> updateSensitiveTypesExport(
+            UpdateSensitiveTypesExportRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateSensitiveTypesExportRequest, UpdateSensitiveTypesExportResponse>
                     handler);
 
     /**

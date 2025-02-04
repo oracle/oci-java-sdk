@@ -28,7 +28,8 @@ package com.oracle.bmc.generativeaiinference.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AssistantMessage.class,
             name = "ASSISTANT"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UserMessage.class, name = "USER")
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = UserMessage.class, name = "USER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = ToolMessage.class, name = "TOOL")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -100,6 +101,7 @@ public class Message extends com.oracle.bmc.http.client.internal.ExplicitlySetBm
         System("SYSTEM"),
         User("USER"),
         Assistant("ASSISTANT"),
+        Tool("TOOL"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

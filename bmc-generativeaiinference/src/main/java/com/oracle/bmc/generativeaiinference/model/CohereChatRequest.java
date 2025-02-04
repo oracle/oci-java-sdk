@@ -367,17 +367,17 @@ public final class CohereChatRequest extends BaseChatRequest {
             return this;
         }
         /**
-         * If specified, the backend will make a best effort to sample tokens deterministically,
-         * such that repeated requests with the same seed and parameters should return the same
-         * result. However, determinism cannot be totally guaranteed.
+         * If specified, the backend will make a best effort to sample tokens deterministically, so
+         * that repeated requests with the same seed and parameters yield the same result. However,
+         * determinism cannot be fully guaranteed.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("seed")
         private Integer seed;
 
         /**
-         * If specified, the backend will make a best effort to sample tokens deterministically,
-         * such that repeated requests with the same seed and parameters should return the same
-         * result. However, determinism cannot be totally guaranteed.
+         * If specified, the backend will make a best effort to sample tokens deterministically, so
+         * that repeated requests with the same seed and parameters yield the same result. However,
+         * determinism cannot be fully guaranteed.
          *
          * @param seed the value to set
          * @return this builder
@@ -1022,17 +1022,17 @@ public final class CohereChatRequest extends BaseChatRequest {
     }
 
     /**
-     * If specified, the backend will make a best effort to sample tokens deterministically, such
-     * that repeated requests with the same seed and parameters should return the same result.
-     * However, determinism cannot be totally guaranteed.
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that
+     * repeated requests with the same seed and parameters yield the same result. However,
+     * determinism cannot be fully guaranteed.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("seed")
     private final Integer seed;
 
     /**
-     * If specified, the backend will make a best effort to sample tokens deterministically, such
-     * that repeated requests with the same seed and parameters should return the same result.
-     * However, determinism cannot be totally guaranteed.
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that
+     * repeated requests with the same seed and parameters yield the same result. However,
+     * determinism cannot be fully guaranteed.
      *
      * @return the value
      */

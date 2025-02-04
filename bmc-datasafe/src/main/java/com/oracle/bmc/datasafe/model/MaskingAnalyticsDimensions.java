@@ -47,12 +47,12 @@ public final class MaskingAnalyticsDimensions
             this.__explicitlySet__.add("targetId");
             return this;
         }
-        /** The OCID of the masking policy.. */
+        /** The OCID of the masking policy. */
         @com.fasterxml.jackson.annotation.JsonProperty("policyId")
         private String policyId;
 
         /**
-         * The OCID of the masking policy..
+         * The OCID of the masking policy.
          *
          * @param policyId the value to set
          * @return this builder
@@ -109,12 +109,12 @@ public final class MaskingAnalyticsDimensions
         return targetId;
     }
 
-    /** The OCID of the masking policy.. */
+    /** The OCID of the masking policy. */
     @com.fasterxml.jackson.annotation.JsonProperty("policyId")
     private final String policyId;
 
     /**
-     * The OCID of the masking policy..
+     * The OCID of the masking policy.
      *
      * @return the value
      */

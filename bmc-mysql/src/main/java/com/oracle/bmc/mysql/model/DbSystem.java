@@ -58,7 +58,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         "pointInTimeRecoveryDetails",
         "databaseManagement",
         "secureConnections",
-        "customerContacts"
+        "databaseMode",
+        "accessMode",
+        "customerContacts",
+        "readEndpoint"
     })
     public DbSystem(
             String id,
@@ -97,7 +100,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             PointInTimeRecoveryDetails pointInTimeRecoveryDetails,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
-            java.util.List<CustomerContact> customerContacts) {
+            DatabaseMode databaseMode,
+            AccessMode accessMode,
+            java.util.List<CustomerContact> customerContacts,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -135,7 +141,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         this.pointInTimeRecoveryDetails = pointInTimeRecoveryDetails;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
         this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -707,6 +716,60 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             return this;
         }
         /**
+         * The database mode indicating the types of statements that are allowed to run in the the
+         * DB system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that are allowed to run in the the
+         * DB system. This mode applies only to statements run by user connections. Replicated write
+         * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow
+         * running read and write statements on the DB system; - READ_ONLY: only allow running read
+         * statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         */
+        public Builder databaseMode(DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: access allowed
+         * only to users with specific privileges; RESTRICTED will correspond to setting the MySQL
+         * system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access is unrestricted (to all MySQL user
+         * accounts), or restricted (to only certain users with specific privileges): -
+         * UNRESTRICTED: the access to the database is not restricted; - RESTRICTED: access allowed
+         * only to users with specific privileges; RESTRICTED will correspond to setting the MySQL
+         * system variable
+         * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+         * to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         */
+        public Builder accessMode(AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+        /**
          * The list of customer email addresses that receive information from Oracle about the
          * specified OCI DB System resource. Oracle uses these email addresses to send notifications
          * about planned and unplanned software maintenance updates, information about system
@@ -729,6 +792,15 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
             return this;
         }
 
@@ -774,7 +846,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                             this.pointInTimeRecoveryDetails,
                             this.databaseManagement,
                             this.secureConnections,
-                            this.customerContacts);
+                            this.databaseMode,
+                            this.accessMode,
+                            this.customerContacts,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -891,8 +966,17 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
             }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -1451,6 +1535,159 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
     }
 
     /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     */
+    public enum DatabaseMode implements com.oracle.bmc.http.internal.BmcEnum {
+        ReadWrite("READ_WRITE"),
+        ReadOnly("READ_ONLY"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(DatabaseMode.class);
+
+        private final String value;
+        private static java.util.Map<String, DatabaseMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (DatabaseMode v : DatabaseMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        DatabaseMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static DatabaseMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'DatabaseMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that are allowed to run in the the DB
+     * system. This mode applies only to statements run by user connections. Replicated write
+     * statements continue to be allowed regardless of the DatabaseMode. - READ_WRITE: allow running
+     * read and write statements on the DB system; - READ_ONLY: only allow running read statements
+     * on the DB system.
+     *
+     * @return the value
+     */
+    public DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    public enum AccessMode implements com.oracle.bmc.http.internal.BmcEnum {
+        Unrestricted("UNRESTRICTED"),
+        Restricted("RESTRICTED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(AccessMode.class);
+
+        private final String value;
+        private static java.util.Map<String, AccessMode> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (AccessMode v : AccessMode.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        AccessMode(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static AccessMode create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'AccessMode', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access is unrestricted (to all MySQL user
+     * accounts), or restricted (to only certain users with specific privileges): - UNRESTRICTED:
+     * the access to the database is not restricted; - RESTRICTED: access allowed only to users with
+     * specific privileges; RESTRICTED will correspond to setting the MySQL system variable
+     * [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode)
+     * to ON.
+     *
+     * @return the value
+     */
+    public AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    /**
      * The list of customer email addresses that receive information from Oracle about the specified
      * OCI DB System resource. Oracle uses these email addresses to send notifications about planned
      * and unplanned software maintenance updates, information about system hardware, and other
@@ -1471,6 +1708,13 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
      */
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
     }
 
     @Override
@@ -1526,7 +1770,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                 .append(String.valueOf(this.pointInTimeRecoveryDetails));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1579,7 +1826,10 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
                         this.pointInTimeRecoveryDetails, other.pointInTimeRecoveryDetails)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1665,9 +1915,12 @@ public final class DbSystem extends com.oracle.bmc.http.client.internal.Explicit
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

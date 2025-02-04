@@ -40,14 +40,16 @@ public final class ChangeRetentionDetails
     public static class Builder {
         /**
          * Indicates the number of months the audit records will be stored online in Oracle Data
-         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum:12 months
+         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12
+         * months
          */
         @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
         private Integer onlineMonths;
 
         /**
          * Indicates the number of months the audit records will be stored online in Oracle Data
-         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum:12 months
+         * Safe audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12
+         * months
          *
          * @param onlineMonths the value to set
          * @return this builder
@@ -139,14 +141,14 @@ public final class ChangeRetentionDetails
 
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe
-     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum:12 months
+     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      */
     @com.fasterxml.jackson.annotation.JsonProperty("onlineMonths")
     private final Integer onlineMonths;
 
     /**
      * Indicates the number of months the audit records will be stored online in Oracle Data Safe
-     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum:12 months
+     * audit repository for immediate reporting and analysis. Minimum: 1; Maximum: 12 months
      *
      * @return the value
      */

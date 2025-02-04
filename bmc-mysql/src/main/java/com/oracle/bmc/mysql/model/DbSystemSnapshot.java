@@ -50,7 +50,8 @@ public final class DbSystemSnapshot
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
-        "region"
+        "region",
+        "readEndpoint"
     })
     public DbSystemSnapshot(
             String id,
@@ -80,7 +81,8 @@ public final class DbSystemSnapshot
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
-            String region) {
+            String region,
+            ReadEndpointDetails readEndpoint) {
         super();
         this.id = id;
         this.displayName = displayName;
@@ -110,6 +112,7 @@ public final class DbSystemSnapshot
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
         this.region = region;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -554,6 +557,15 @@ public final class DbSystemSnapshot
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private ReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(ReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -587,7 +599,8 @@ public final class DbSystemSnapshot
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
-                            this.region);
+                            this.region,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -679,6 +692,9 @@ public final class DbSystemSnapshot
             }
             if (model.wasPropertyExplicitlySet("region")) {
                 this.region(model.getRegion());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -1075,6 +1091,13 @@ public final class DbSystemSnapshot
         return region;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final ReadEndpointDetails readEndpoint;
+
+    public ReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -1118,6 +1141,7 @@ public final class DbSystemSnapshot
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
         sb.append(", region=").append(String.valueOf(this.region));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1160,6 +1184,7 @@ public final class DbSystemSnapshot
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
                 && java.util.Objects.equals(this.region, other.region)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1223,6 +1248,7 @@ public final class DbSystemSnapshot
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
         result = (result * PRIME) + (this.region == null ? 43 : this.region.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

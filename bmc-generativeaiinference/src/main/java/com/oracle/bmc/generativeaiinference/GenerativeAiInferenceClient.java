@@ -175,6 +175,35 @@ public class GenerativeAiInferenceClient extends com.oracle.bmc.http.internal.Ba
     }
 
     @Override
+    public RerankTextResponse rerankText(RerankTextRequest request) {
+        Objects.requireNonNull(request.getRerankTextDetails(), "rerankTextDetails is required");
+
+        return clientCall(request, RerankTextResponse::builder)
+                .logger(LOG, "rerankText")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "RerankText",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/RerankTextResult/RerankText")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RerankTextRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("rerankText")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.RerankTextResult.class,
+                        RerankTextResponse.Builder::rerankTextResult)
+                .handleResponseHeaderString("etag", RerankTextResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RerankTextResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public SummarizeTextResponse summarizeText(SummarizeTextRequest request) {
         Objects.requireNonNull(
                 request.getSummarizeTextDetails(), "summarizeTextDetails is required");

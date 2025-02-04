@@ -141,6 +141,23 @@ public interface GenerativeAiInferenceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Reranks the text responses based on the input documents and a prompt.
+     *
+     * <p>Rerank assigns an index and a relevance score to each document, indicating which document
+     * is most related to the prompt.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RerankTextResponse> rerankText(
+            RerankTextRequest request,
+            com.oracle.bmc.responses.AsyncHandler<RerankTextRequest, RerankTextResponse> handler);
+
+    /**
      * Summarizes the input text.
      *
      * @param request The request object containing the details to send
