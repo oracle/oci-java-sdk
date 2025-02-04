@@ -38,12 +38,16 @@ public final class ProfileAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The array of profile aggregation data. */
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
         /**
-         * The array of profile aggregation data.
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
          *
          * @param items the value to set
          * @return this builder
@@ -82,8 +86,7 @@ public final class ProfileAggregation
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -92,8 +95,7 @@ public final class ProfileAggregation
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -141,12 +143,14 @@ public final class ProfileAggregation
         return new Builder().copy(this);
     }
 
-    /** The array of profile aggregation data. */
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
     /**
-     * The array of profile aggregation data.
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
      *
      * @return the value
      */
@@ -180,9 +184,8 @@ public final class ProfileAggregation
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -190,9 +193,8 @@ public final class ProfileAggregation
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */

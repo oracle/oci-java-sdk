@@ -72,6 +72,12 @@ public class ListWorkRequestsRequest extends com.oracle.bmc.requests.BmcRequest<
         PrivateEndpointDelete("PRIVATE_ENDPOINT_DELETE"),
         PrivateEndpointMove("PRIVATE_ENDPOINT_MOVE"),
         PrivateEndpointUpdate("PRIVATE_ENDPOINT_UPDATE"),
+        ScheduleCreate("SCHEDULE_CREATE"),
+        ScheduleUpdate("SCHEDULE_UPDATE"),
+        ScheduleDelete("SCHEDULE_DELETE"),
+        ScheduleMove("SCHEDULE_MOVE"),
+        ScheduleActivate("SCHEDULE_ACTIVATE"),
+        ScheduleDeactivate("SCHEDULE_DEACTIVATE"),
         RestoreArchivedModel("RESTORE_ARCHIVED_MODEL"),
         ;
 

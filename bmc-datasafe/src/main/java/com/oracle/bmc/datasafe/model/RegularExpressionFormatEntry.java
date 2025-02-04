@@ -56,14 +56,14 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
         }
         /**
          * The value that should be used to replace the data matching the regular expression. It can
-         * be a fixed string, fixed number, null value, or SQL expression.
+         * be a fixed string, fixed number or null value.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
         private String replaceWith;
 
         /**
          * The value that should be used to replace the data matching the regular expression. It can
-         * be a fixed string, fixed number, null value, or SQL expression.
+         * be a fixed string, fixed number or null value.
          *
          * @param replaceWith the value to set
          * @return this builder
@@ -134,14 +134,14 @@ public final class RegularExpressionFormatEntry extends FormatEntry {
 
     /**
      * The value that should be used to replace the data matching the regular expression. It can be
-     * a fixed string, fixed number, null value, or SQL expression.
+     * a fixed string, fixed number or null value.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("replaceWith")
     private final String replaceWith;
 
     /**
      * The value that should be used to replace the data matching the regular expression. It can be
-     * a fixed string, fixed number, null value, or SQL expression.
+     * a fixed string, fixed number or null value.
      *
      * @return the value
      */

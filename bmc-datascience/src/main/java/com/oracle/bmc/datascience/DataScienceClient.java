@@ -241,6 +241,36 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ActivateScheduleResponse activateSchedule(ActivateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, ActivateScheduleResponse::builder)
+                .logger(LOG, "activateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "ActivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ActivateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ActivateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("activate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", ActivateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", ActivateScheduleResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
     public CancelJobRunResponse cancelJobRun(CancelJobRunRequest request) {
 
         Validate.notBlank(request.getJobRunId(), "jobRunId must not be blank");
@@ -648,6 +678,42 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .hasBody()
                 .handleResponseHeaderString(
                         "opc-request-id", ChangeProjectCompartmentResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ChangeScheduleCompartmentResponse changeScheduleCompartment(
+            ChangeScheduleCompartmentRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getChangeScheduleCompartmentDetails(),
+                "changeScheduleCompartmentDetails is required");
+
+        return clientCall(request, ChangeScheduleCompartmentResponse::builder)
+                .logger(LOG, "changeScheduleCompartment")
+                .serviceDetails(
+                        "DataScience",
+                        "ChangeScheduleCompartment",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ChangeScheduleCompartment")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(ChangeScheduleCompartmentRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("changeCompartment")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        ChangeScheduleCompartmentResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", ChangeScheduleCompartmentResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1066,6 +1132,40 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public CreateScheduleResponse createSchedule(CreateScheduleRequest request) {
+        Objects.requireNonNull(
+                request.getCreateScheduleDetails(), "createScheduleDetails is required");
+
+        return clientCall(request, CreateScheduleResponse::builder)
+                .logger(LOG, "createSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "CreateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/CreateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(CreateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Schedule.class,
+                        CreateScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString("location", CreateScheduleResponse.Builder::location)
+                .handleResponseHeaderString(
+                        "content-location", CreateScheduleResponse.Builder::contentLocation)
+                .handleResponseHeaderString("etag", CreateScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", CreateScheduleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", CreateScheduleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public CreateStepArtifactResponse createStepArtifact(CreateStepArtifactRequest request) {
 
         Validate.notBlank(request.getPipelineId(), "pipelineId must not be blank");
@@ -1188,6 +1288,36 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         DeactivateNotebookSessionResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeactivateNotebookSessionResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeactivateScheduleResponse deactivateSchedule(DeactivateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, DeactivateScheduleResponse::builder)
+                .logger(LOG, "deactivateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "DeactivateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/DeactivateSchedule")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(DeactivateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .appendPathParam("actions")
+                .appendPathParam("deactivate")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .handleResponseHeaderString(
+                        "opc-request-id", DeactivateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeactivateScheduleResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 
@@ -1466,6 +1596,32 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                         "opc-work-request-id", DeleteProjectResponse.Builder::opcWorkRequestId)
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, DeleteScheduleResponse::builder)
+                .logger(LOG, "deleteSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "DeleteSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/DeleteSchedule")
+                .method(com.oracle.bmc.http.client.Method.DELETE)
+                .requestBuilder(DeleteScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleResponseHeaderString(
+                        "opc-work-request-id", DeleteScheduleResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", DeleteScheduleResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -1897,6 +2053,34 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public GetScheduleResponse getSchedule(GetScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+
+        return clientCall(request, GetScheduleResponse::builder)
+                .logger(LOG, "getSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "GetSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/GetSchedule")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(GetScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBody(
+                        com.oracle.bmc.datascience.model.Schedule.class,
+                        GetScheduleResponse.Builder::schedule)
+                .handleResponseHeaderString("etag", GetScheduleResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", GetScheduleResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public GetStepArtifactContentResponse getStepArtifactContent(
             GetStepArtifactContentRequest request) {
 
@@ -2111,6 +2295,43 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString(
                         "opc-work-request-id",
                         ImportModelArtifactResponse.Builder::opcWorkRequestId)
+                .callSync();
+    }
+
+    @Override
+    public ListContainersResponse listContainers(ListContainersRequest request) {
+
+        return clientCall(request, ListContainersResponse::builder)
+                .logger(LOG, "listContainers")
+                .serviceDetails(
+                        "DataScience",
+                        "ListContainers",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/ContainerSummary/ListContainers")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListContainersRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("containers")
+                .appendQueryParam("isLatest", request.getIsLatest())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("containerName", request.getContainerName())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendEnumQueryParam("targetWorkload", request.getTargetWorkload())
+                .appendEnumQueryParam("usageQueryParam", request.getUsageQueryParam())
+                .appendQueryParam("tagQueryParam", request.getTagQueryParam())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ContainerSummary.class,
+                        ListContainersResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListContainersResponse.Builder::opcNextPage)
+                .handleResponseHeaderString(
+                        "opc-prev-page", ListContainersResponse.Builder::opcPrevPage)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListContainersResponse.Builder::opcRequestId)
                 .callSync();
     }
 
@@ -2639,6 +2860,42 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
     }
 
     @Override
+    public ListSchedulesResponse listSchedules(ListSchedulesRequest request) {
+        Objects.requireNonNull(request.getCompartmentId(), "compartmentId is required");
+
+        return clientCall(request, ListSchedulesResponse::builder)
+                .logger(LOG, "listSchedules")
+                .serviceDetails(
+                        "DataScience",
+                        "ListSchedules",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/ListSchedules")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListSchedulesRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("projectId", request.getProjectId())
+                .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
+                .appendQueryParam("displayName", request.getDisplayName())
+                .appendQueryParam("id", request.getId())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .operationUsesDefaultRetries()
+                .handleBodyList(
+                        com.oracle.bmc.datascience.model.ScheduleSummary.class,
+                        ListSchedulesResponse.Builder::items)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListSchedulesResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListSchedulesResponse.Builder::opcNextPage)
+                .callSync();
+    }
+
+    @Override
     public ListWorkRequestErrorsResponse listWorkRequestErrors(
             ListWorkRequestErrorsRequest request) {
 
@@ -3136,6 +3393,35 @@ public class DataScienceClient extends com.oracle.bmc.http.internal.BaseSyncClie
                 .handleResponseHeaderString("etag", UpdateProjectResponse.Builder::etag)
                 .handleResponseHeaderString(
                         "opc-request-id", UpdateProjectResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request) {
+
+        Validate.notBlank(request.getScheduleId(), "scheduleId must not be blank");
+        Objects.requireNonNull(
+                request.getUpdateScheduleDetails(), "updateScheduleDetails is required");
+
+        return clientCall(request, UpdateScheduleResponse::builder)
+                .logger(LOG, "updateSchedule")
+                .serviceDetails(
+                        "DataScience",
+                        "UpdateSchedule",
+                        "https://docs.oracle.com/iaas/api/#/en/data-science/20190101/Schedule/UpdateSchedule")
+                .method(com.oracle.bmc.http.client.Method.PUT)
+                .requestBuilder(UpdateScheduleRequest::builder)
+                .basePath("/20190101")
+                .appendPathParam("schedules")
+                .appendPathParam(request.getScheduleId())
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-request-id", UpdateScheduleResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-work-request-id", UpdateScheduleResponse.Builder::opcWorkRequestId)
                 .callSync();
     }
 

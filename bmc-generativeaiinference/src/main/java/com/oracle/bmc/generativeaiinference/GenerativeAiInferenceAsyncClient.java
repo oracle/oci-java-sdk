@@ -190,6 +190,37 @@ public class GenerativeAiInferenceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<RerankTextResponse> rerankText(
+            RerankTextRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<RerankTextRequest, RerankTextResponse>
+                    handler) {
+        Objects.requireNonNull(request.getRerankTextDetails(), "rerankTextDetails is required");
+
+        return clientCall(request, RerankTextResponse::builder)
+                .logger(LOG, "rerankText")
+                .serviceDetails(
+                        "GenerativeAiInference",
+                        "RerankText",
+                        "https://docs.oracle.com/iaas/api/#/en/generative-ai-inference/20231130/RerankTextResult/RerankText")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RerankTextRequest::builder)
+                .basePath("/20231130")
+                .appendPathParam("actions")
+                .appendPathParam("rerankText")
+                .accept("application/json")
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .hasBody()
+                .handleBody(
+                        com.oracle.bmc.generativeaiinference.model.RerankTextResult.class,
+                        RerankTextResponse.Builder::rerankTextResult)
+                .handleResponseHeaderString("etag", RerankTextResponse.Builder::etag)
+                .handleResponseHeaderString(
+                        "opc-request-id", RerankTextResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeTextResponse> summarizeText(
             SummarizeTextRequest request,
             final com.oracle.bmc.responses.AsyncHandler<SummarizeTextRequest, SummarizeTextResponse>

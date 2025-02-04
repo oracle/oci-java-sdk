@@ -437,6 +437,10 @@ public final class DiscoveryJobSummary
         CustomResource("CUSTOM_RESOURCE"),
         OracleHttpServer("ORACLE_HTTP_SERVER"),
         MicrosoftIis("MICROSOFT_IIS"),
+        Nginx("NGINX"),
+        JbossServer("JBOSS_SERVER"),
+        JbossDomain("JBOSS_DOMAIN"),
+        OracleJvm("ORACLE_JVM"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

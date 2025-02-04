@@ -33,6 +33,8 @@ public final class MaskingPolicyHealthReport
         "timeUpdated",
         "lifecycleState",
         "description",
+        "errorCount",
+        "warningCount",
         "freeformTags",
         "definedTags"
     })
@@ -46,6 +48,8 @@ public final class MaskingPolicyHealthReport
             java.util.Date timeUpdated,
             LifecycleState lifecycleState,
             String description,
+            Long errorCount,
+            Long warningCount,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -58,6 +62,8 @@ public final class MaskingPolicyHealthReport
         this.timeUpdated = timeUpdated;
         this.lifecycleState = lifecycleState;
         this.description = description;
+        this.errorCount = errorCount;
+        this.warningCount = warningCount;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -207,6 +213,36 @@ public final class MaskingPolicyHealthReport
             this.__explicitlySet__.add("description");
             return this;
         }
+        /** The count of errors in the masking health report. */
+        @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
+        private Long errorCount;
+
+        /**
+         * The count of errors in the masking health report.
+         *
+         * @param errorCount the value to set
+         * @return this builder
+         */
+        public Builder errorCount(Long errorCount) {
+            this.errorCount = errorCount;
+            this.__explicitlySet__.add("errorCount");
+            return this;
+        }
+        /** The count of warnings in the masking health report. */
+        @com.fasterxml.jackson.annotation.JsonProperty("warningCount")
+        private Long warningCount;
+
+        /**
+         * The count of warnings in the masking health report.
+         *
+         * @param warningCount the value to set
+         * @return this builder
+         */
+        public Builder warningCount(Long warningCount) {
+            this.warningCount = warningCount;
+            this.__explicitlySet__.add("warningCount");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -236,8 +272,7 @@ public final class MaskingPolicyHealthReport
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -246,8 +281,7 @@ public final class MaskingPolicyHealthReport
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -274,6 +308,8 @@ public final class MaskingPolicyHealthReport
                             this.timeUpdated,
                             this.lifecycleState,
                             this.description,
+                            this.errorCount,
+                            this.warningCount,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -310,6 +346,12 @@ public final class MaskingPolicyHealthReport
             }
             if (model.wasPropertyExplicitlySet("description")) {
                 this.description(model.getDescription());
+            }
+            if (model.wasPropertyExplicitlySet("errorCount")) {
+                this.errorCount(model.getErrorCount());
+            }
+            if (model.wasPropertyExplicitlySet("warningCount")) {
+                this.warningCount(model.getWarningCount());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -504,6 +546,32 @@ public final class MaskingPolicyHealthReport
         return description;
     }
 
+    /** The count of errors in the masking health report. */
+    @com.fasterxml.jackson.annotation.JsonProperty("errorCount")
+    private final Long errorCount;
+
+    /**
+     * The count of errors in the masking health report.
+     *
+     * @return the value
+     */
+    public Long getErrorCount() {
+        return errorCount;
+    }
+
+    /** The count of warnings in the masking health report. */
+    @com.fasterxml.jackson.annotation.JsonProperty("warningCount")
+    private final Long warningCount;
+
+    /**
+     * The count of warnings in the masking health report.
+     *
+     * @return the value
+     */
+    public Long getWarningCount() {
+        return warningCount;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -530,9 +598,8 @@ public final class MaskingPolicyHealthReport
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -540,9 +607,8 @@ public final class MaskingPolicyHealthReport
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -574,6 +640,8 @@ public final class MaskingPolicyHealthReport
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(", description=").append(String.valueOf(this.description));
+        sb.append(", errorCount=").append(String.valueOf(this.errorCount));
+        sb.append(", warningCount=").append(String.valueOf(this.warningCount));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -599,6 +667,8 @@ public final class MaskingPolicyHealthReport
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.description, other.description)
+                && java.util.Objects.equals(this.errorCount, other.errorCount)
+                && java.util.Objects.equals(this.warningCount, other.warningCount)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -623,6 +693,8 @@ public final class MaskingPolicyHealthReport
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
+        result = (result * PRIME) + (this.errorCount == null ? 43 : this.errorCount.hashCode());
+        result = (result * PRIME) + (this.warningCount == null ? 43 : this.warningCount.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

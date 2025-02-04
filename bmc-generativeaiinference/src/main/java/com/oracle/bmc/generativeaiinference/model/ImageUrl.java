@@ -5,7 +5,7 @@
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Represents a single instance of chat image url. <br>
+ * Provide a base64 encoded image. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -30,12 +30,20 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The URL of the image. */
+        /**
+         * The base64 encoded image data.
+         *
+         * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
+         * "data:image/png;base64,<base64 encoded image content>" } }}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
-         * The URL of the image.
+         * The base64 encoded image data.
+         *
+         * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
+         * "data:image/png;base64,<base64 encoded image content>" } }}
          *
          * @param url the value to set
          * @return this builder
@@ -45,12 +53,16 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
             this.__explicitlySet__.add("url");
             return this;
         }
-        /** The level of the detail. */
+        /**
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert
+         * the base64 encoded image to tokens.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("detail")
         private Detail detail;
 
         /**
-         * The level of the detail.
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert
+         * the base64 encoded image to tokens.
          *
          * @param detail the value to set
          * @return this builder
@@ -93,12 +105,20 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
         return new Builder().copy(this);
     }
 
-    /** The URL of the image. */
+    /**
+     * The base64 encoded image data.
+     *
+     * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
+     * "data:image/png;base64,<base64 encoded image content>" } }}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * The URL of the image.
+     * The base64 encoded image data.
+     *
+     * <p>Example for a png image: {@code { "type": "IMAGE", "imageUrl": { "url":
+     * "data:image/png;base64,<base64 encoded image content>" } }}
      *
      * @return the value
      */
@@ -106,7 +126,10 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
         return url;
     }
 
-    /** The level of the detail. */
+    /**
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
+     * base64 encoded image to tokens.
+     */
     public enum Detail implements com.oracle.bmc.http.internal.BmcEnum {
         Auto("AUTO"),
         High("HIGH"),
@@ -152,12 +175,16 @@ public final class ImageUrl extends com.oracle.bmc.http.client.internal.Explicit
             return UnknownEnumValue;
         }
     };
-    /** The level of the detail. */
+    /**
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
+     * base64 encoded image to tokens.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("detail")
     private final Detail detail;
 
     /**
-     * The level of the detail.
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the
+     * base64 encoded image to tokens.
      *
      * @return the value
      */

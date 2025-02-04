@@ -111,6 +111,21 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Activate schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ActivateScheduleResponse> activateSchedule(
+            ActivateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ActivateScheduleRequest, ActivateScheduleResponse>
+                    handler);
+
+    /**
      * Cancels an IN_PROGRESS job run.
      *
      * @param request The request object containing the details to send
@@ -331,6 +346,23 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Moves a Schedule resource from one compartment identifier to another. When provided, If-Match
+     * is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ChangeScheduleCompartmentResponse> changeScheduleCompartment(
+            ChangeScheduleCompartmentRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ChangeScheduleCompartmentRequest, ChangeScheduleCompartmentResponse>
+                    handler);
+
+    /**
      * Creates a Data Science private endpoint to be used by a Data Science resource.
      *
      * @param request The request object containing the details to send
@@ -534,6 +566,21 @@ public interface DataScienceAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new Schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateScheduleResponse> createSchedule(
+            CreateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<CreateScheduleRequest, CreateScheduleResponse>
+                    handler);
+
+    /**
      * Upload the artifact for a step in the pipeline.
      *
      * @param request The request object containing the details to send
@@ -594,6 +641,22 @@ public interface DataScienceAsync extends AutoCloseable {
             DeactivateNotebookSessionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             DeactivateNotebookSessionRequest, DeactivateNotebookSessionResponse>
+                    handler);
+
+    /**
+     * Deactivate schedule.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeactivateScheduleResponse> deactivateSchedule(
+            DeactivateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeactivateScheduleRequest, DeactivateScheduleResponse>
                     handler);
 
     /**
@@ -751,6 +814,21 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<DeleteProjectResponse> deleteProject(
             DeleteProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<DeleteProjectRequest, DeleteProjectResponse>
+                    handler);
+
+    /**
+     * Deletes a Schedule resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteScheduleResponse> deleteSchedule(
+            DeleteScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<DeleteScheduleRequest, DeleteScheduleResponse>
                     handler);
 
     /**
@@ -969,6 +1047,20 @@ public interface DataScienceAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetProjectRequest, GetProjectResponse> handler);
 
     /**
+     * Gets a Schedule by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetScheduleResponse> getSchedule(
+            GetScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<GetScheduleRequest, GetScheduleResponse> handler);
+
+    /**
      * Download the artifact for a step in the pipeline.
      *
      * @param request The request object containing the details to send
@@ -1059,6 +1151,21 @@ public interface DataScienceAsync extends AutoCloseable {
             ImportModelArtifactRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ImportModelArtifactRequest, ImportModelArtifactResponse>
+                    handler);
+
+    /**
+     * List containers.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListContainersResponse> listContainers(
+            ListContainersRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListContainersRequest, ListContainersResponse>
                     handler);
 
     /**
@@ -1281,6 +1388,21 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<ListProjectsResponse> listProjects(
             ListProjectsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListProjectsRequest, ListProjectsResponse>
+                    handler);
+
+    /**
+     * Returns a list of Schedules.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListSchedulesResponse> listSchedules(
+            ListSchedulesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<ListSchedulesRequest, ListSchedulesResponse>
                     handler);
 
     /**
@@ -1531,5 +1653,20 @@ public interface DataScienceAsync extends AutoCloseable {
     java.util.concurrent.Future<UpdateProjectResponse> updateProject(
             UpdateProjectRequest request,
             com.oracle.bmc.responses.AsyncHandler<UpdateProjectRequest, UpdateProjectResponse>
+                    handler);
+
+    /**
+     * Updates the Schedule
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateScheduleResponse> updateSchedule(
+            UpdateScheduleRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdateScheduleRequest, UpdateScheduleResponse>
                     handler);
 }

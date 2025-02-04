@@ -106,6 +106,8 @@ public class ListMaskedColumnsRequest extends com.oracle.bmc.requests.BmcRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         SchemaName("schemaName"),
         ObjectName("objectName"),
+        SensitiveTypeId("sensitiveTypeId"),
+        MaskingColumnGroupId("maskingColumnGroupId"),
         ;
 
         private final String value;

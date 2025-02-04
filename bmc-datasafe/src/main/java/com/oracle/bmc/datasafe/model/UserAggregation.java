@@ -32,12 +32,16 @@ public final class UserAggregation
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** The array of user aggregation data. */
+        /**
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("items")
         private java.util.List<java.util.Map<String, Object>> items;
 
         /**
-         * The array of user aggregation data.
+         * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ]
+         * }}
          *
          * @param items the value to set
          * @return this builder
@@ -77,12 +81,14 @@ public final class UserAggregation
         return new Builder().copy(this);
     }
 
-    /** The array of user aggregation data. */
+    /**
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("items")
     private final java.util.List<java.util.Map<String, Object>> items;
 
     /**
-     * The array of user aggregation data.
+     * List containing maps as values. Example: {@code {"Operations": [ {"CostCenter": "42"} ] }}
      *
      * @return the value
      */

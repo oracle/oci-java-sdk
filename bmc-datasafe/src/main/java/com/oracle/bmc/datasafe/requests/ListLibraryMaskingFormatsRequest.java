@@ -262,6 +262,8 @@ public class ListLibraryMaskingFormatsRequest
     public enum SortBy implements com.oracle.bmc.http.internal.BmcEnum {
         DisplayName("displayName"),
         TimeCreated("timeCreated"),
+        TimeUpdated("timeUpdated"),
+        LifecycleState("lifecycleState"),
         ;
 
         private final String value;

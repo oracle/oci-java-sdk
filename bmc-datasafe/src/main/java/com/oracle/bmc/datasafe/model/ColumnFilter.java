@@ -188,6 +188,7 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
     public enum Operator implements com.oracle.bmc.http.internal.BmcEnum {
         In("IN"),
         Eq("EQ"),
+        EqCs("EQ_CS"),
         Gt("GT"),
         Ge("GE"),
         Lt("LT"),
@@ -196,6 +197,7 @@ public final class ColumnFilter extends com.oracle.bmc.http.client.internal.Expl
         Or("OR"),
         Ne("NE"),
         Co("CO"),
+        CoCs("CO_CS"),
         Not("NOT"),
         NotIn("NOT_IN"),
 

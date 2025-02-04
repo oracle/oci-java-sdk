@@ -161,6 +161,53 @@ public interface DataSafe extends AutoCloseable {
             ApplySdmMaskingPolicyDifferenceRequest request);
 
     /**
+     * Uploads a sensitive types xml file (also called template) to create new sensitive types.
+     *
+     * <p>Note: This operation consumes a stream.
+     *
+     * <p>If the stream supports {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, when a retry is necessary, the stream is reset so it starts at
+     * the beginning (or whatever the stream's position was at the time this operation is called}.
+     *
+     * <p>Note this means that if the caller has used {@link java.io.InputStream#mark(int)} before,
+     * then the mark will not be the same anymore after this operation, and a subsequent call to
+     * {@link java.io.InputStream#reset()} by the caller will reset the stream not to the caller's
+     * mark, but to the position the stream was in when this operation was called.
+     *
+     * <p>If the stream is a {@link java.io.FileInputStream}, and the stream's {@link
+     * java.nio.channels.FileChannel} position can be changed (like for a regular file), the stream
+     * will be wrapped in such a way that it does provide support for {@link
+     * java.io.InputStream#mark(int)} and {@link java.io.InputStream#reset()}. Then the same
+     * procedure as above is followed. If the stream's {@link java.nio.channels.FileChannel}
+     * position cannot be changed (like for a named pipe), then the stream's contents will be
+     * buffered in memory, as described below.
+     *
+     * <p>If the stream does not support {@link java.io.InputStream#mark(int)} and {@link
+     * java.io.InputStream#reset()}, then the stream is wrapped in a {@link
+     * java.io.BufferedInputStream}, which means the entire contents may be buffered in memory. Then
+     * the same procedure as above is followed.
+     *
+     * <p>The contents of the stream, except when the stream is a {@link java.io.FileInputStream}
+     * whose {@link java.nio.channels.FileChannel} position can be changed, should be less than 2
+     * GiB in size if retries are used. This is because streams 2 GiB in size or larger do no
+     * guarantee that mark-and-reset can be performed. If the stream is larger, do not use built-in
+     * retries and manage retries yourself.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/BulkCreateSensitiveTypesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     BulkCreateSensitiveTypes API.
+     */
+    BulkCreateSensitiveTypesResponse bulkCreateSensitiveTypes(
+            BulkCreateSensitiveTypesRequest request);
+
+    /**
      * Appends the allowedSqls with entries from the logs.
      *
      * @param request The request object containing the details to send
@@ -616,6 +663,23 @@ public interface DataSafe extends AutoCloseable {
             ChangeSensitiveTypeCompartmentRequest request);
 
     /**
+     * Moves the specified sensitive types export into a different compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ChangeSensitiveTypesExportCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeSensitiveTypesExportCompartment API.
+     */
+    ChangeSensitiveTypesExportCompartmentResponse changeSensitiveTypesExportCompartment(
+            ChangeSensitiveTypesExportCompartmentRequest request);
+
+    /**
      * Moves the specified SQL collection and its dependent resources into a different compartment.
      *
      * @param request The request object containing the details to send
@@ -959,6 +1023,23 @@ public interface DataSafe extends AutoCloseable {
             CreatePeerTargetDatabaseRequest request);
 
     /**
+     * Creates a new referential relation in the specified sensitive data model.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateReferentialRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateReferentialRelation API.
+     */
+    CreateReferentialRelationResponse createReferentialRelation(
+            CreateReferentialRelationRequest request);
+
+    /**
      * Creates a new report definition with parameters specified in the body. The report definition
      * is stored in the specified compartment.
      *
@@ -1069,6 +1150,26 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     CreateSensitiveTypeResponse createSensitiveType(CreateSensitiveTypeRequest request);
+
+    /**
+     * Generates a downloadable file corresponding to the specified list of sensitive types. It's a
+     * prerequisite for the DownloadSensitiveTypesExport operation. Use this endpoint to generate a
+     * sensitive Types Export file and then use DownloadSensitiveTypesExport to download the
+     * generated file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/CreateSensitiveTypesExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateSensitiveTypesExport API.
+     */
+    CreateSensitiveTypesExportResponse createSensitiveTypesExport(
+            CreateSensitiveTypesExportRequest request);
 
     /**
      * Creates a new SQL collection resource.
@@ -1373,6 +1474,23 @@ public interface DataSafe extends AutoCloseable {
             DeletePeerTargetDatabaseRequest request);
 
     /**
+     * Deletes the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteReferentialRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteReferentialRelation API.
+     */
+    DeleteReferentialRelationResponse deleteReferentialRelation(
+            DeleteReferentialRelationRequest request);
+
+    /**
      * Deletes the specified report definition. Only the user created report definition can be
      * deleted. The seeded report definitions cannot be deleted.
      *
@@ -1475,6 +1593,23 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     DeleteSensitiveTypeResponse deleteSensitiveType(DeleteSensitiveTypeRequest request);
+
+    /**
+     * Deletes the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DeleteSensitiveTypesExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteSensitiveTypesExport API.
+     */
+    DeleteSensitiveTypesExportResponse deleteSensitiveTypesExport(
+            DeleteSensitiveTypesExportRequest request);
 
     /**
      * Deletes the specified SQL collection.
@@ -1730,6 +1865,25 @@ public interface DataSafe extends AutoCloseable {
      */
     DownloadSensitiveDataModelResponse downloadSensitiveDataModel(
             DownloadSensitiveDataModelRequest request);
+
+    /**
+     * Downloads an already-generated file corresponding to the specified sensitive types export.
+     * Use CreateSensitiveTypesExport to generate an XML file and then use
+     * DownloadSensitiveTypesExport to download the generated file.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/DownloadSensitiveTypesExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DownloadSensitiveTypesExport API.
+     */
+    DownloadSensitiveTypesExportResponse downloadSensitiveTypesExport(
+            DownloadSensitiveTypesExportRequest request);
 
     /**
      * Downloads the report of the specified user assessment. To download the user assessment
@@ -2367,6 +2521,22 @@ public interface DataSafe extends AutoCloseable {
     GetProfileResponse getProfile(GetProfileRequest request);
 
     /**
+     * Gets the details of the specified referential relation.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetReferentialRelationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetReferentialRelation API.
+     */
+    GetReferentialRelationResponse getReferentialRelation(GetReferentialRelationRequest request);
+
+    /**
      * Gets a report by identifier
      *
      * @param request The request object containing the details to send
@@ -2577,6 +2747,22 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     GetSensitiveTypeResponse getSensitiveType(GetSensitiveTypeRequest request);
+
+    /**
+     * Gets the details of the specified sensitive types export by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/GetSensitiveTypesExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetSensitiveTypesExport API.
+     */
+    GetSensitiveTypesExportResponse getSensitiveTypesExport(GetSensitiveTypesExportRequest request);
 
     /**
      * Gets a SQL collection by identifier.
@@ -2795,15 +2981,15 @@ public interface DataSafe extends AutoCloseable {
      * filter for a specific summary column, specify it in the `summaryField` query parameter.
      *
      * <p>*Example:**
-     * /ListAuditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
+     * /auditEventAnalytics?summaryField=targetName&summaryField=userName&summaryField=clientHostname
      * &summaryField=dmls&summaryField=privilegeChanges&summaryField=ddls&summaryField=loginFailure&summaryField=loginSuccess
-     * &summaryField=allRecord&q=(auditEventTime ge \"2021-06-13T23:49:14\")
+     * &summaryField=allRecord&scimQuery=(auditEventTime ge \"2021-06-13T23:49:14\")
      *
-     * <p>/ListAuditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
+     * <p>/auditEventAnalytics?timeStarted=2022-08-18T11:02:26.000Z&timeEnded=2022-08-24T11:02:26.000Z
      * This will give number of events grouped by periods. Period can be 1 day, 1 week, etc.
      *
-     * <p>/ListAuditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the
-     * number of events group by targetName. Only targetName summary column would be returned.
+     * <p>/auditEventAnalytics?summaryField=targetName&groupBy=targetName This will give the number
+     * of events group by targetName. Only targetName summary column would be returned.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -3458,6 +3644,24 @@ public interface DataSafe extends AutoCloseable {
             ListMaskingPolicyHealthReportsRequest request);
 
     /**
+     * Gets a list of referential relations present in the specified masking policy based on the
+     * specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListMaskingPolicyReferentialRelationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMaskingPolicyReferentialRelations API.
+     */
+    ListMaskingPolicyReferentialRelationsResponse listMaskingPolicyReferentialRelations(
+            ListMaskingPolicyReferentialRelationsRequest request);
+
+    /**
      * Gets a list of masking reports based on the specified query parameters.
      *
      * @param request The request object containing the details to send
@@ -3505,6 +3709,37 @@ public interface DataSafe extends AutoCloseable {
      *     ListOnPremConnectors API.
      */
     ListOnPremConnectorsResponse listOnPremConnectors(ListOnPremConnectorsRequest request);
+
+    /**
+     * Gets a list of count of the users with password expiry dates in next 30 days, between next
+     * 30-90 days, and beyond 90 days based on specified user assessment. It internally uses the
+     * aforementioned userAnalytics api.
+     *
+     * <p>When you perform the ListPasswordExpiryDateAnalytics operation, if the parameter
+     * compartmentIdInSubtree is set to \"true,\" and if the parameter accessLevel is set to
+     * ACCESSIBLE, then the operation returns compartments in which the requestor has READ
+     * permissions on at least one resource, directly or indirectly (in subcompartments). If the
+     * operation is performed at the root compartment and the requestor does not have access to at
+     * least one subcompartment of the compartment specified by compartmentId, then \"Not
+     * Authorized\" is returned.
+     *
+     * <p>To use ListPasswordExpiryDateAnalytics to get a full list of all compartments and
+     * subcompartments in the tenancy from the root compartment, set the parameter
+     * compartmentIdInSubtree to true and accessLevel to ACCESSIBLE.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListPasswordExpiryDateAnalyticsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListPasswordExpiryDateAnalytics API.
+     */
+    ListPasswordExpiryDateAnalyticsResponse listPasswordExpiryDateAnalytics(
+            ListPasswordExpiryDateAnalyticsRequest request);
 
     /**
      * Lists all the peer target databases under the primary target database identified by the OCID
@@ -3591,6 +3826,24 @@ public interface DataSafe extends AutoCloseable {
      *     ListProfileSummaries API.
      */
     ListProfileSummariesResponse listProfileSummaries(ListProfileSummariesRequest request);
+
+    /**
+     * Gets a list of referential relations present in the specified sensitive data model based on
+     * the specified query parameters.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListReferentialRelationsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListReferentialRelations API.
+     */
+    ListReferentialRelationsResponse listReferentialRelations(
+            ListReferentialRelationsRequest request);
 
     /**
      * Gets a list of report definitions. The ListReportDefinitions operation returns only the
@@ -3984,6 +4237,25 @@ public interface DataSafe extends AutoCloseable {
     ListSensitiveTypesResponse listSensitiveTypes(ListSensitiveTypesRequest request);
 
     /**
+     * Retrieves a list of all sensitive types export in Data Safe based on the specified query
+     * parameters. The ListSensitiveTypesExports operation returns only the sensitive types export
+     * in the specified `compartmentId`.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListSensitiveTypesExportsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListSensitiveTypesExports API.
+     */
+    ListSensitiveTypesExportsResponse listSensitiveTypesExports(
+            ListSensitiveTypesExportsRequest request);
+
+    /**
      * Retrieves a list of all SQL collection analytics in Data Safe.
      *
      * <p>The ListSqlCollectionAnalytics operation returns only the analytics for the SQL
@@ -4293,7 +4565,7 @@ public interface DataSafe extends AutoCloseable {
      *
      * <p>When you perform the ListUserAnalytics operation, if the parameter compartmentIdInSubtree
      * is set to \"true,\" and if the parameter accessLevel is set to ACCESSIBLE, then the operation
-     * returns compartments in which the requestor has INSPECT permissions on at least one resource,
+     * returns compartments in which the requestor has READ permissions on at least one resource,
      * directly or indirectly (in subcompartments). If the operation is performed at the root
      * compartment and the requestor does not have access to at least one subcompartment of the
      * compartment specified by compartmentId, then \"Not Authorized\" is returned.
@@ -5345,6 +5617,23 @@ public interface DataSafe extends AutoCloseable {
      *     API.
      */
     UpdateSensitiveTypeResponse updateSensitiveType(UpdateSensitiveTypeRequest request);
+
+    /**
+     * Updates one or more attributes of the specified sensitive types export.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/UpdateSensitiveTypesExportExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateSensitiveTypesExport API.
+     */
+    UpdateSensitiveTypesExportResponse updateSensitiveTypesExport(
+            UpdateSensitiveTypesExportRequest request);
 
     /**
      * Updates the SQL collection.

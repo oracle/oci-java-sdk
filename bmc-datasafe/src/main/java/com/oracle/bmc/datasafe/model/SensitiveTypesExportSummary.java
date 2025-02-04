@@ -5,7 +5,7 @@
 package com.oracle.bmc.datasafe.model;
 
 /**
- * Details for the new audit policy. <br>
+ * The resource represents collection of sensitive types needed to be exported. <br>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model
  * distinguishes fields that are {@code null} because they are unset from fields that are explicitly
  * set to {@code null}. This is done in the setter methods of the {@link Builder}, which maintain a
@@ -17,48 +17,68 @@ package com.oracle.bmc.datasafe.model;
  */
 @jakarta.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 @com.fasterxml.jackson.databind.annotation.JsonDeserialize(
-        builder = CreateAuditPolicyDetails.Builder.class)
+        builder = SensitiveTypesExportSummary.Builder.class)
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
-public final class CreateAuditPolicyDetails
+public final class SensitiveTypesExportSummary
         extends com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel {
     @Deprecated
     @java.beans.ConstructorProperties({
+        "id",
         "displayName",
-        "description",
         "compartmentId",
-        "targetId",
+        "timeCreated",
+        "timeUpdated",
+        "lifecycleState",
+        "description",
         "freeformTags",
         "definedTags"
     })
-    public CreateAuditPolicyDetails(
+    public SensitiveTypesExportSummary(
+            String id,
             String displayName,
-            String description,
             String compartmentId,
-            String targetId,
+            java.util.Date timeCreated,
+            java.util.Date timeUpdated,
+            SensitiveTypesExportLifecycleState lifecycleState,
+            String description,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
+        this.id = id;
         this.displayName = displayName;
-        this.description = description;
         this.compartmentId = compartmentId;
-        this.targetId = targetId;
+        this.timeCreated = timeCreated;
+        this.timeUpdated = timeUpdated;
+        this.lifecycleState = lifecycleState;
+        this.description = description;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
+        /** The OCID of the sensitive types export. */
+        @com.fasterxml.jackson.annotation.JsonProperty("id")
+        private String id;
+
         /**
-         * The display name of the audit policy. The name does not have to be unique, and it is
-         * changeable.
+         * The OCID of the sensitive types export.
+         *
+         * @param id the value to set
+         * @return this builder
          */
+        public Builder id(String id) {
+            this.id = id;
+            this.__explicitlySet__.add("id");
+            return this;
+        }
+        /** The display name of the sensitive types export. */
         @com.fasterxml.jackson.annotation.JsonProperty("displayName")
         private String displayName;
 
         /**
-         * The display name of the audit policy. The name does not have to be unique, and it is
-         * changeable.
+         * The display name of the sensitive types export.
          *
          * @param displayName the value to set
          * @return this builder
@@ -68,27 +88,12 @@ public final class CreateAuditPolicyDetails
             this.__explicitlySet__.add("displayName");
             return this;
         }
-        /** The description of the audit policy. */
-        @com.fasterxml.jackson.annotation.JsonProperty("description")
-        private String description;
-
-        /**
-         * The description of the audit policy.
-         *
-         * @param description the value to set
-         * @return this builder
-         */
-        public Builder description(String description) {
-            this.description = description;
-            this.__explicitlySet__.add("description");
-            return this;
-        }
-        /** The OCID of the compartment where you want to create the audit policy. */
+        /** The OCID of the compartment that contains sensitive types export. */
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The OCID of the compartment where you want to create the audit policy.
+         * The OCID of the compartment that contains sensitive types export.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -98,19 +103,72 @@ public final class CreateAuditPolicyDetails
             this.__explicitlySet__.add("compartmentId");
             return this;
         }
-        /** The OCID of the target for which the audit policy has to be created. */
-        @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-        private String targetId;
+        /**
+         * The date and time the sensitive types export was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+        private java.util.Date timeCreated;
 
         /**
-         * The OCID of the target for which the audit policy has to be created.
+         * The date and time the sensitive types export was created, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
          *
-         * @param targetId the value to set
+         * @param timeCreated the value to set
          * @return this builder
          */
-        public Builder targetId(String targetId) {
-            this.targetId = targetId;
-            this.__explicitlySet__.add("targetId");
+        public Builder timeCreated(java.util.Date timeCreated) {
+            this.timeCreated = timeCreated;
+            this.__explicitlySet__.add("timeCreated");
+            return this;
+        }
+        /**
+         * The date and time the sensitive types export was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the sensitive types export was last updated, in the format defined by
+         * [RFC3339](https://tools.ietf.org/html/rfc3339).
+         *
+         * @param timeUpdated the value to set
+         * @return this builder
+         */
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
+        /** The current state of the sensitive types export. */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private SensitiveTypesExportLifecycleState lifecycleState;
+
+        /**
+         * The current state of the sensitive types export.
+         *
+         * @param lifecycleState the value to set
+         * @return this builder
+         */
+        public Builder lifecycleState(SensitiveTypesExportLifecycleState lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /** The description of the sensitive types export. */
+        @com.fasterxml.jackson.annotation.JsonProperty("description")
+        private String description;
+
+        /**
+         * The description of the sensitive types export.
+         *
+         * @param description the value to set
+         * @return this builder
+         */
+        public Builder description(String description) {
+            this.description = description;
+            this.__explicitlySet__.add("description");
             return this;
         }
         /**
@@ -142,8 +200,7 @@ public final class CreateAuditPolicyDetails
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          */
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
         private java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -152,8 +209,7 @@ public final class CreateAuditPolicyDetails
          * Defined tags for this resource. Each key is predefined and scoped to a namespace. For
          * more information, see [Resource
          * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-         *
-         * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+         * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
          * @return this builder
@@ -168,13 +224,16 @@ public final class CreateAuditPolicyDetails
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
-        public CreateAuditPolicyDetails build() {
-            CreateAuditPolicyDetails model =
-                    new CreateAuditPolicyDetails(
+        public SensitiveTypesExportSummary build() {
+            SensitiveTypesExportSummary model =
+                    new SensitiveTypesExportSummary(
+                            this.id,
                             this.displayName,
-                            this.description,
                             this.compartmentId,
-                            this.targetId,
+                            this.timeCreated,
+                            this.timeUpdated,
+                            this.lifecycleState,
+                            this.description,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -184,18 +243,27 @@ public final class CreateAuditPolicyDetails
         }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
-        public Builder copy(CreateAuditPolicyDetails model) {
+        public Builder copy(SensitiveTypesExportSummary model) {
+            if (model.wasPropertyExplicitlySet("id")) {
+                this.id(model.getId());
+            }
             if (model.wasPropertyExplicitlySet("displayName")) {
                 this.displayName(model.getDisplayName());
-            }
-            if (model.wasPropertyExplicitlySet("description")) {
-                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("compartmentId")) {
                 this.compartmentId(model.getCompartmentId());
             }
-            if (model.wasPropertyExplicitlySet("targetId")) {
-                this.targetId(model.getTargetId());
+            if (model.wasPropertyExplicitlySet("timeCreated")) {
+                this.timeCreated(model.getTimeCreated());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("description")) {
+                this.description(model.getDescription());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -216,16 +284,25 @@ public final class CreateAuditPolicyDetails
         return new Builder().copy(this);
     }
 
+    /** The OCID of the sensitive types export. */
+    @com.fasterxml.jackson.annotation.JsonProperty("id")
+    private final String id;
+
     /**
-     * The display name of the audit policy. The name does not have to be unique, and it is
-     * changeable.
+     * The OCID of the sensitive types export.
+     *
+     * @return the value
      */
+    public String getId() {
+        return id;
+    }
+
+    /** The display name of the sensitive types export. */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * The display name of the audit policy. The name does not have to be unique, and it is
-     * changeable.
+     * The display name of the sensitive types export.
      *
      * @return the value
      */
@@ -233,25 +310,12 @@ public final class CreateAuditPolicyDetails
         return displayName;
     }
 
-    /** The description of the audit policy. */
-    @com.fasterxml.jackson.annotation.JsonProperty("description")
-    private final String description;
-
-    /**
-     * The description of the audit policy.
-     *
-     * @return the value
-     */
-    public String getDescription() {
-        return description;
-    }
-
-    /** The OCID of the compartment where you want to create the audit policy. */
+    /** The OCID of the compartment that contains sensitive types export. */
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The OCID of the compartment where you want to create the audit policy.
+     * The OCID of the compartment that contains sensitive types export.
      *
      * @return the value
      */
@@ -259,17 +323,64 @@ public final class CreateAuditPolicyDetails
         return compartmentId;
     }
 
-    /** The OCID of the target for which the audit policy has to be created. */
-    @com.fasterxml.jackson.annotation.JsonProperty("targetId")
-    private final String targetId;
+    /**
+     * The date and time the sensitive types export was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
+    private final java.util.Date timeCreated;
 
     /**
-     * The OCID of the target for which the audit policy has to be created.
+     * The date and time the sensitive types export was created, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
      *
      * @return the value
      */
-    public String getTargetId() {
-        return targetId;
+    public java.util.Date getTimeCreated() {
+        return timeCreated;
+    }
+
+    /**
+     * The date and time the sensitive types export was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the sensitive types export was last updated, in the format defined by
+     * [RFC3339](https://tools.ietf.org/html/rfc3339).
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
+    /** The current state of the sensitive types export. */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final SensitiveTypesExportLifecycleState lifecycleState;
+
+    /**
+     * The current state of the sensitive types export.
+     *
+     * @return the value
+     */
+    public SensitiveTypesExportLifecycleState getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /** The description of the sensitive types export. */
+    @com.fasterxml.jackson.annotation.JsonProperty("description")
+    private final String description;
+
+    /**
+     * The description of the sensitive types export.
+     *
+     * @return the value
+     */
+    public String getDescription() {
+        return description;
     }
 
     /**
@@ -298,9 +409,8 @@ public final class CreateAuditPolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      */
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
     private final java.util.Map<String, java.util.Map<String, Object>> definedTags;
@@ -308,9 +418,8 @@ public final class CreateAuditPolicyDetails
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace. For more
      * information, see [Resource
-     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm)
-     *
-     * <p>Example: {@code {"Operations": {"CostCenter": "42"}}}
+     * Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm) Example:
+     * {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value
      */
@@ -331,12 +440,15 @@ public final class CreateAuditPolicyDetails
      */
     public String toString(boolean includeByteArrayContents) {
         java.lang.StringBuilder sb = new java.lang.StringBuilder();
-        sb.append("CreateAuditPolicyDetails(");
+        sb.append("SensitiveTypesExportSummary(");
         sb.append("super=").append(super.toString());
-        sb.append("displayName=").append(String.valueOf(this.displayName));
-        sb.append(", description=").append(String.valueOf(this.description));
+        sb.append("id=").append(String.valueOf(this.id));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", compartmentId=").append(String.valueOf(this.compartmentId));
-        sb.append(", targetId=").append(String.valueOf(this.targetId));
+        sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -348,15 +460,18 @@ public final class CreateAuditPolicyDetails
         if (this == o) {
             return true;
         }
-        if (!(o instanceof CreateAuditPolicyDetails)) {
+        if (!(o instanceof SensitiveTypesExportSummary)) {
             return false;
         }
 
-        CreateAuditPolicyDetails other = (CreateAuditPolicyDetails) o;
-        return java.util.Objects.equals(this.displayName, other.displayName)
-                && java.util.Objects.equals(this.description, other.description)
+        SensitiveTypesExportSummary other = (SensitiveTypesExportSummary) o;
+        return java.util.Objects.equals(this.id, other.id)
+                && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.compartmentId, other.compartmentId)
-                && java.util.Objects.equals(this.targetId, other.targetId)
+                && java.util.Objects.equals(this.timeCreated, other.timeCreated)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -366,12 +481,17 @@ public final class CreateAuditPolicyDetails
     public int hashCode() {
         final int PRIME = 59;
         int result = 1;
+        result = (result * PRIME) + (this.id == null ? 43 : this.id.hashCode());
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
-        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result =
                 (result * PRIME)
                         + (this.compartmentId == null ? 43 : this.compartmentId.hashCode());
-        result = (result * PRIME) + (this.targetId == null ? 43 : this.targetId.hashCode());
+        result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

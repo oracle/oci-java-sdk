@@ -114,6 +114,22 @@ public interface DataScience extends AutoCloseable {
     ActivateNotebookSessionResponse activateNotebookSession(ActivateNotebookSessionRequest request);
 
     /**
+     * Activate schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ActivateScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateSchedule
+     *     API.
+     */
+    ActivateScheduleResponse activateSchedule(ActivateScheduleRequest request);
+
+    /**
      * Cancels an IN_PROGRESS job run.
      *
      * @param request The request object containing the details to send
@@ -330,6 +346,24 @@ public interface DataScience extends AutoCloseable {
      */
     ChangeProjectCompartmentResponse changeProjectCompartment(
             ChangeProjectCompartmentRequest request);
+
+    /**
+     * Moves a Schedule resource from one compartment identifier to another. When provided, If-Match
+     * is checked against ETag values of the resource.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ChangeScheduleCompartmentExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ChangeScheduleCompartment API.
+     */
+    ChangeScheduleCompartmentResponse changeScheduleCompartment(
+            ChangeScheduleCompartmentRequest request);
 
     /**
      * Creates a Data Science private endpoint to be used by a Data Science resource.
@@ -596,6 +630,21 @@ public interface DataScience extends AutoCloseable {
     CreateProjectResponse createProject(CreateProjectRequest request);
 
     /**
+     * Creates a new Schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/CreateScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
+     */
+    CreateScheduleResponse createSchedule(CreateScheduleRequest request);
+
+    /**
      * Upload the artifact for a step in the pipeline.
      *
      * <p>Note: This operation consumes a stream.
@@ -690,6 +739,22 @@ public interface DataScience extends AutoCloseable {
      */
     DeactivateNotebookSessionResponse deactivateNotebookSession(
             DeactivateNotebookSessionRequest request);
+
+    /**
+     * Deactivate schedule.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeactivateScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeactivateSchedule
+     *     API.
+     */
+    DeactivateScheduleResponse deactivateSchedule(DeactivateScheduleRequest request);
 
     /**
      * Deletes a private endpoint using `privateEndpointId`.
@@ -848,6 +913,21 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProject API.
      */
     DeleteProjectResponse deleteProject(DeleteProjectRequest request);
+
+    /**
+     * Deletes a Schedule resource by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/DeleteScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
+     */
+    DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
     /**
      * Export model artifact from source to the service bucket
@@ -1069,6 +1149,21 @@ public interface DataScience extends AutoCloseable {
     GetProjectResponse getProject(GetProjectRequest request);
 
     /**
+     * Gets a Schedule by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/GetScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
+     */
+    GetScheduleResponse getSchedule(GetScheduleRequest request);
+
+    /**
      * Download the artifact for a step in the pipeline.
      *
      * @param request The request object containing the details to send
@@ -1162,6 +1257,21 @@ public interface DataScience extends AutoCloseable {
      *     API.
      */
     ImportModelArtifactResponse importModelArtifact(ImportModelArtifactRequest request);
+
+    /**
+     * List containers.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListContainersExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListContainers API.
+     */
+    ListContainersResponse listContainers(ListContainersRequest request);
 
     /**
      * Lists all Data Science private endpoints in the specified compartment. The query must include
@@ -1390,6 +1500,21 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProjects API.
      */
     ListProjectsResponse listProjects(ListProjectsRequest request);
+
+    /**
+     * Returns a list of Schedules.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/ListSchedulesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
+     */
+    ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
     /**
      * Lists work request errors for the specified work request.
@@ -1642,6 +1767,21 @@ public interface DataScience extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProject API.
      */
     UpdateProjectResponse updateProject(UpdateProjectRequest request);
+
+    /**
+     * Updates the Schedule
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datascience/UpdateScheduleExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
+     */
+    UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
 
     /**
      * Gets the pre-configured waiters available for resources for this service.
