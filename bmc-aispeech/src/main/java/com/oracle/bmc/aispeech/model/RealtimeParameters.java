@@ -32,7 +32,8 @@ public final class RealtimeParameters
         "modelDomain",
         "languageCode",
         "shouldIgnoreInvalidCustomizations",
-        "customizations"
+        "customizations",
+        "punctuation"
     })
     public RealtimeParameters(
             String encoding,
@@ -43,7 +44,8 @@ public final class RealtimeParameters
             ModelDomain modelDomain,
             String languageCode,
             Boolean shouldIgnoreInvalidCustomizations,
-            java.util.List<CustomizationInference> customizations) {
+            java.util.List<CustomizationInference> customizations,
+            Punctuation punctuation) {
         super();
         this.encoding = encoding;
         this.isAckEnabled = isAckEnabled;
@@ -54,6 +56,7 @@ public final class RealtimeParameters
         this.languageCode = languageCode;
         this.shouldIgnoreInvalidCustomizations = shouldIgnoreInvalidCustomizations;
         this.customizations = customizations;
+        this.punctuation = punctuation;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -222,6 +225,29 @@ public final class RealtimeParameters
             this.__explicitlySet__.add("customizations");
             return this;
         }
+        /**
+         * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
+         * punctuation in the transcription response - SPOKEN: Punctuations in response only when
+         * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
+         * disabled
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
+        private Punctuation punctuation;
+
+        /**
+         * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
+         * punctuation in the transcription response - SPOKEN: Punctuations in response only when
+         * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
+         * disabled
+         *
+         * @param punctuation the value to set
+         * @return this builder
+         */
+        public Builder punctuation(Punctuation punctuation) {
+            this.punctuation = punctuation;
+            this.__explicitlySet__.add("punctuation");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -237,7 +263,8 @@ public final class RealtimeParameters
                             this.modelDomain,
                             this.languageCode,
                             this.shouldIgnoreInvalidCustomizations,
-                            this.customizations);
+                            this.customizations,
+                            this.punctuation);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -273,6 +300,9 @@ public final class RealtimeParameters
             }
             if (model.wasPropertyExplicitlySet("customizations")) {
                 this.customizations(model.getCustomizations());
+            }
+            if (model.wasPropertyExplicitlySet("punctuation")) {
+                this.punctuation(model.getPunctuation());
             }
             return this;
         }
@@ -503,6 +533,66 @@ public final class RealtimeParameters
         return customizations;
     }
 
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
+     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
+     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
+     * disabled
+     */
+    public enum Punctuation implements com.oracle.bmc.http.internal.BmcEnum {
+        None("NONE"),
+        Spoken("SPOKEN"),
+        Auto("AUTO"),
+        ;
+
+        private final String value;
+        private static java.util.Map<String, Punctuation> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Punctuation v : Punctuation.values()) {
+                map.put(v.getValue(), v);
+            }
+        }
+
+        Punctuation(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Punctuation create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            throw new IllegalArgumentException("Invalid Punctuation: " + key);
+        }
+    };
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
+     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
+     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
+     * disabled
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("punctuation")
+    private final Punctuation punctuation;
+
+    /**
+     * Configure punctuations in the generated transcriptions. Disabled by default. - NONE: No
+     * punctuation in the transcription response - SPOKEN: Punctuations in response only when
+     * verbally spoken - AUTO: Automatic punctuation in the response, spoken punctuations are
+     * disabled
+     *
+     * @return the value
+     */
+    public Punctuation getPunctuation() {
+        return punctuation;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -531,6 +621,7 @@ public final class RealtimeParameters
         sb.append(", shouldIgnoreInvalidCustomizations=")
                 .append(String.valueOf(this.shouldIgnoreInvalidCustomizations));
         sb.append(", customizations=").append(String.valueOf(this.customizations));
+        sb.append(", punctuation=").append(String.valueOf(this.punctuation));
         sb.append(")");
         return sb.toString();
     }
@@ -559,6 +650,7 @@ public final class RealtimeParameters
                         this.shouldIgnoreInvalidCustomizations,
                         other.shouldIgnoreInvalidCustomizations)
                 && java.util.Objects.equals(this.customizations, other.customizations)
+                && java.util.Objects.equals(this.punctuation, other.punctuation)
                 && super.equals(other);
     }
 
@@ -593,6 +685,7 @@ public final class RealtimeParameters
         result =
                 (result * PRIME)
                         + (this.customizations == null ? 43 : this.customizations.hashCode());
+        result = (result * PRIME) + (this.punctuation == null ? 43 : this.punctuation.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

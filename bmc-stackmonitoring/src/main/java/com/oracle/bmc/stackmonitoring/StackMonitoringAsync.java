@@ -60,6 +60,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Apply the Monitoring Template identified by the id
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ApplyMonitoringTemplateResponse> applyMonitoringTemplate(
+            ApplyMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ApplyMonitoringTemplateRequest, ApplyMonitoringTemplateResponse>
+                    handler);
+
+    /**
      * Create an association between two monitored resources. Associations can be created between
      * resources from different compartments as long they are in same tenancy. User should have
      * required access in both the compartments.
@@ -175,6 +191,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
             ChangeProcessSetCompartmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ChangeProcessSetCompartmentRequest, ChangeProcessSetCompartmentResponse>
+                    handler);
+
+    /**
+     * Create a new alarm condition in same monitoringTemplate compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateAlarmConditionResponse> createAlarmCondition(
+            CreateAlarmConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateAlarmConditionRequest, CreateAlarmConditionResponse>
                     handler);
 
     /**
@@ -313,6 +345,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Creates a new monitoring template for a given compartment.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<CreateMonitoringTemplateResponse> createMonitoringTemplate(
+            CreateMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            CreateMonitoringTemplateRequest, CreateMonitoringTemplateResponse>
+                    handler);
+
+    /**
      * API to create Process Set.
      *
      * @param request The request object containing the details to send
@@ -325,6 +373,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
     java.util.concurrent.Future<CreateProcessSetResponse> createProcessSet(
             CreateProcessSetRequest request,
             com.oracle.bmc.responses.AsyncHandler<CreateProcessSetRequest, CreateProcessSetResponse>
+                    handler);
+
+    /**
+     * Deletes the alarm conditions by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteAlarmConditionResponse> deleteAlarmCondition(
+            DeleteAlarmConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteAlarmConditionRequest, DeleteAlarmConditionResponse>
                     handler);
 
     /**
@@ -444,6 +508,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Deletes the monitoring template by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<DeleteMonitoringTemplateResponse> deleteMonitoringTemplate(
+            DeleteMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            DeleteMonitoringTemplateRequest, DeleteMonitoringTemplateResponse>
+                    handler);
+
+    /**
      * Deletes a Process Set
      *
      * @param request The request object containing the details to send
@@ -557,6 +637,38 @@ public interface StackMonitoringAsync extends AutoCloseable {
             ExportMetricExtensionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             ExportMetricExtensionRequest, ExportMetricExtensionResponse>
+                    handler);
+
+    /**
+     * Export the specified monitoring template
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ExportMonitoringTemplateResponse> exportMonitoringTemplate(
+            ExportMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ExportMonitoringTemplateRequest, ExportMonitoringTemplateResponse>
+                    handler);
+
+    /**
+     * Gets a Alarm Condition by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetAlarmConditionResponse> getAlarmCondition(
+            GetAlarmConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetAlarmConditionRequest, GetAlarmConditionResponse>
                     handler);
 
     /**
@@ -689,6 +801,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Gets a Monitoring Template by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<GetMonitoringTemplateResponse> getMonitoringTemplate(
+            GetMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+                    handler);
+
+    /**
      * API to get the details of a Process Set by identifier.
      *
      * @param request The request object containing the details to send
@@ -716,6 +844,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
     java.util.concurrent.Future<GetWorkRequestResponse> getWorkRequest(
             GetWorkRequestRequest request,
             com.oracle.bmc.responses.AsyncHandler<GetWorkRequestRequest, GetWorkRequestResponse>
+                    handler);
+
+    /**
+     * Returns a list of Alarm Conditions.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListAlarmConditionsResponse> listAlarmConditions(
+            ListAlarmConditionsRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListAlarmConditionsRequest, ListAlarmConditionsResponse>
                     handler);
 
     /**
@@ -747,6 +891,24 @@ public interface StackMonitoringAsync extends AutoCloseable {
     java.util.concurrent.Future<ListConfigsResponse> listConfigs(
             ListConfigsRequest request,
             com.oracle.bmc.responses.AsyncHandler<ListConfigsRequest, ListConfigsResponse> handler);
+
+    /**
+     * List Defined Monitoring Templates.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListDefinedMonitoringTemplatesResponse>
+            listDefinedMonitoringTemplates(
+                    ListDefinedMonitoringTemplatesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    ListDefinedMonitoringTemplatesRequest,
+                                    ListDefinedMonitoringTemplatesResponse>
+                            handler);
 
     /**
      * API to get all the logs of a Discovery Job.
@@ -865,6 +1027,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     handler);
 
     /**
+     * Returns a list of Monitoring Templates.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<ListMonitoringTemplatesResponse> listMonitoringTemplates(
+            ListMonitoringTemplatesRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            ListMonitoringTemplatesRequest, ListMonitoringTemplatesResponse>
+                    handler);
+
+    /**
      * API to get the details of all Process Sets.
      *
      * @param request The request object containing the details to send
@@ -976,6 +1154,46 @@ public interface StackMonitoringAsync extends AutoCloseable {
                     com.oracle.bmc.responses.AsyncHandler<
                                     RequestMonitoredResourcesSummarizedCountRequest,
                                     RequestMonitoredResourcesSummarizedCountResponse>
+                            handler);
+
+    /**
+     * Gets metric extension metrics count based on the aggregation criteria specified using request
+     * body. Either metricExtensionId or compartmentId must be passed even when no other filter
+     * property is passed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestSummarizedMetricExtensionsMetricsResponse>
+            requestSummarizedMetricExtensionsMetrics(
+                    RequestSummarizedMetricExtensionsMetricsRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedMetricExtensionsMetricsRequest,
+                                    RequestSummarizedMetricExtensionsMetricsResponse>
+                            handler);
+
+    /**
+     * Gets metric extension resources count based on the aggregation criteria specified using
+     * request body. Either metricExtensionId or compartmentId should be passed, if no other
+     * property is passed.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<RequestSummarizedMetricExtensionsResourcesResponse>
+            requestSummarizedMetricExtensionsResources(
+                    RequestSummarizedMetricExtensionsResourcesRequest request,
+                    com.oracle.bmc.responses.AsyncHandler<
+                                    RequestSummarizedMetricExtensionsResourcesRequest,
+                                    RequestSummarizedMetricExtensionsResourcesResponse>
                             handler);
 
     /**
@@ -1097,6 +1315,38 @@ public interface StackMonitoringAsync extends AutoCloseable {
             TestMetricExtensionRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             TestMetricExtensionRequest, TestMetricExtensionResponse>
+                    handler);
+
+    /**
+     * Unapply the Monitoring Template identified by the id
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UnapplyMonitoringTemplateResponse> unapplyMonitoringTemplate(
+            UnapplyMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UnapplyMonitoringTemplateRequest, UnapplyMonitoringTemplateResponse>
+                    handler);
+
+    /**
+     * Update a Alarm Condition by identifier
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateAlarmConditionResponse> updateAlarmCondition(
+            UpdateAlarmConditionRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateAlarmConditionRequest, UpdateAlarmConditionResponse>
                     handler);
 
     /**
@@ -1234,6 +1484,22 @@ public interface StackMonitoringAsync extends AutoCloseable {
             UpdateMonitoredResourceTypeRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateMonitoredResourceTypeRequest, UpdateMonitoredResourceTypeResponse>
+                    handler);
+
+    /**
+     * Updates the Monitoring Template
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was provided. Note,
+     *     if you provide an AsyncHandler and use the Future, some types of responses (like
+     *     java.io.InputStream) may not be able to be read in both places as the underlying stream
+     *     may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdateMonitoringTemplateResponse> updateMonitoringTemplate(
+            UpdateMonitoringTemplateRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            UpdateMonitoringTemplateRequest, UpdateMonitoringTemplateResponse>
                     handler);
 
     /**

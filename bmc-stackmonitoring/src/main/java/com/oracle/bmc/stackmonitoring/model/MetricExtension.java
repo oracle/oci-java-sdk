@@ -359,12 +359,16 @@ public final class MetricExtension
             this.__explicitlySet__.add("queryProperties");
             return this;
         }
-        /** List of resource objects on which this metric extension is enabled. */
+        /**
+         * List of resource details objects having resourceIds on which this metric extension is
+         * enabled.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
         private java.util.List<EnabledResourceDetails> enabledOnResources;
 
         /**
-         * List of resource objects on which this metric extension is enabled.
+         * List of resource details objects having resourceIds on which this metric extension is
+         * enabled.
          *
          * @param enabledOnResources the value to set
          * @return this builder
@@ -748,12 +752,16 @@ public final class MetricExtension
         return queryProperties;
     }
 
-    /** List of resource objects on which this metric extension is enabled. */
+    /**
+     * List of resource details objects having resourceIds on which this metric extension is
+     * enabled.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("enabledOnResources")
     private final java.util.List<EnabledResourceDetails> enabledOnResources;
 
     /**
-     * List of resource objects on which this metric extension is enabled.
+     * List of resource details objects having resourceIds on which this metric extension is
+     * enabled.
      *
      * @return the value
      */

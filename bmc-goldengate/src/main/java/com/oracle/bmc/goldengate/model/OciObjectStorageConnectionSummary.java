@@ -232,12 +232,16 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** The name of the region. e.g.: us-ashburn-1 */
+        /**
+         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+         * default to the default region.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The name of the region. e.g.: us-ashburn-1
+         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+         * default to the default region.
          *
          * @param region the value to set
          * @return this builder
@@ -250,7 +254,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Object Storage. The user must have write access to the
-         * bucket they want to connect to.
+         * bucket they want to connect to. If the user is not provided, backend will default to the
+         * user who is calling the API endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
@@ -258,7 +263,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Object Storage. The user must have write access to the
-         * bucket they want to connect to.
+         * bucket they want to connect to. If the user is not provided, backend will default to the
+         * user who is calling the API endpoint.
          *
          * @param userId the value to set
          * @return this builder
@@ -314,6 +320,23 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             this.__explicitlySet__.add("privateKeyPassphraseSecretId");
             return this;
         }
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+        private Boolean shouldUseResourcePrincipal;
+
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         *
+         * @param shouldUseResourcePrincipal the value to set
+         * @return this builder
+         */
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            this.__explicitlySet__.add("shouldUseResourcePrincipal");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -345,7 +368,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
                             this.region,
                             this.userId,
                             this.privateKeyFileSecretId,
-                            this.privateKeyPassphraseSecretId);
+                            this.privateKeyPassphraseSecretId,
+                            this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -429,6 +453,9 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             if (model.wasPropertyExplicitlySet("privateKeyPassphraseSecretId")) {
                 this.privateKeyPassphraseSecretId(model.getPrivateKeyPassphraseSecretId());
             }
+            if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
+                this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
+            }
             return this;
         }
     }
@@ -468,7 +495,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
             String region,
             String userId,
             String privateKeyFileSecretId,
-            String privateKeyPassphraseSecretId) {
+            String privateKeyPassphraseSecretId,
+            Boolean shouldUseResourcePrincipal) {
         super(
                 id,
                 displayName,
@@ -495,6 +523,7 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         this.userId = userId;
         this.privateKeyFileSecretId = privateKeyFileSecretId;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
     /** The OCI Object Storage technology type. */
@@ -527,12 +556,16 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         return tenancyId;
     }
 
-    /** The name of the region. e.g.: us-ashburn-1 */
+    /**
+     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+     * default to the default region.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The name of the region. e.g.: us-ashburn-1
+     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+     * default to the default region.
      *
      * @return the value
      */
@@ -543,7 +576,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Object Storage. The user must have write access to the bucket they
-     * want to connect to.
+     * want to connect to. If the user is not provided, backend will default to the user who is
+     * calling the API endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
@@ -551,7 +585,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Object Storage. The user must have write access to the bucket they
-     * want to connect to.
+     * want to connect to. If the user is not provided, backend will default to the user who is
+     * calling the API endpoint.
      *
      * @return the value
      */
@@ -601,6 +636,19 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         return privateKeyPassphraseSecretId;
     }
 
+    /** Indicates that the user intents to connect to the instance through resource principal. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+    private final Boolean shouldUseResourcePrincipal;
+
+    /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     *
+     * @return the value
+     */
+    public Boolean getShouldUseResourcePrincipal() {
+        return shouldUseResourcePrincipal;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -623,6 +671,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
         sb.append(", privateKeyFileSecretId=").append(String.valueOf(this.privateKeyFileSecretId));
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
+        sb.append(", shouldUseResourcePrincipal=")
+                .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
         return sb.toString();
     }
@@ -645,6 +695,8 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
                         this.privateKeyFileSecretId, other.privateKeyFileSecretId)
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
+                && java.util.Objects.equals(
+                        this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
     }
 
@@ -668,6 +720,11 @@ public final class OciObjectStorageConnectionSummary extends ConnectionSummary {
                         + (this.privateKeyPassphraseSecretId == null
                                 ? 43
                                 : this.privateKeyPassphraseSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseResourcePrincipal == null
+                                ? 43
+                                : this.shouldUseResourcePrincipal.hashCode());
         return result;
     }
 }

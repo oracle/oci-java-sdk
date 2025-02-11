@@ -214,12 +214,18 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server. */
+        /**
+         * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -602,12 +608,18 @@ public final class CreateMicrosoftSqlserverConnectionDetails extends CreateConne
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server. */
+    /**
+     * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password Oracle GoldenGate uses to connect the associated Microsoft SQL Server.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */

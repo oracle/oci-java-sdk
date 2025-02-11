@@ -9,6 +9,7 @@ package com.oracle.bmc.stackmonitoring.model;
 public enum LicenseType implements com.oracle.bmc.http.internal.BmcEnum {
     StandardEdition("STANDARD_EDITION"),
     EnterpriseEdition("ENTERPRISE_EDITION"),
+    EnterpriseEditionForGpuInfrastructure("ENTERPRISE_EDITION_FOR_GPU_INFRASTRUCTURE"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

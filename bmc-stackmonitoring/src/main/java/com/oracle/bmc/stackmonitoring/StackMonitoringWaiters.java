@@ -33,6 +33,115 @@ public class StackMonitoringWaiters {
      *     waiter will return once the resource reaches any of the provided states
      * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
      */
+    public com.oracle.bmc.waiter.Waiter<GetAlarmConditionRequest, GetAlarmConditionResponse>
+            forAlarmCondition(
+                    GetAlarmConditionRequest request,
+                    com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlarmCondition(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlarmConditionRequest, GetAlarmConditionResponse>
+            forAlarmCondition(
+                    GetAlarmConditionRequest request,
+                    com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forAlarmCondition(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetAlarmConditionRequest, GetAlarmConditionResponse>
+            forAlarmCondition(
+                    GetAlarmConditionRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forAlarmCondition(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for AlarmCondition.
+    private com.oracle.bmc.waiter.Waiter<GetAlarmConditionRequest, GetAlarmConditionResponse>
+            forAlarmCondition(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetAlarmConditionRequest request,
+                    final com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetAlarmConditionRequest, GetAlarmConditionResponse>() {
+                            @Override
+                            public GetAlarmConditionResponse apply(
+                                    GetAlarmConditionRequest request) {
+                                return client.getAlarmCondition(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetAlarmConditionResponse>() {
+                            @Override
+                            public boolean test(GetAlarmConditionResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getAlarmCondition().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.stackmonitoring.model.AlarmConditionLifeCycleStates
+                                        .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
     public com.oracle.bmc.waiter.Waiter<GetBaselineableMetricRequest, GetBaselineableMetricResponse>
             forBaselineableMetric(
                     GetBaselineableMetricRequest request,
@@ -892,6 +1001,117 @@ public class StackMonitoringWaiters {
                         targetStatesSet.contains(
                                 com.oracle.bmc.stackmonitoring.model.ResourceTypeLifecycleState
                                         .Deleted)),
+                request);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the default configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired states to wait for. If multiple states are provided then the
+     *     waiter will return once the resource reaches any of the provided states
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+            forMonitoringTemplate(
+                    GetMonitoringTemplateRequest request,
+                    com.oracle.bmc.stackmonitoring.model.MonitoringTemplateLifeCycleStates...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMonitoringTemplate(
+                com.oracle.bmc.waiter.Waiters.DEFAULT_POLLING_WAITER, request, targetStates);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param targetState the desired state to wait for
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @return a new {@code com.oracle.bmc.waiter.Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+            forMonitoringTemplate(
+                    GetMonitoringTemplateRequest request,
+                    com.oracle.bmc.stackmonitoring.model.MonitoringTemplateLifeCycleStates
+                            targetState,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy) {
+        com.oracle.bmc.util.internal.Validate.notNull(
+                targetState, "The targetState cannot be null");
+
+        return forMonitoringTemplate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetState);
+    }
+
+    /**
+     * Creates a new {@link com.oracle.bmc.waiter.Waiter} using the provided configuration.
+     *
+     * @param request the request to send
+     * @param terminationStrategy the {@link com.oracle.bmc.waiter.TerminationStrategy} to use
+     * @param delayStrategy the {@link com.oracle.bmc.waiter.DelayStrategy} to use
+     * @param targetStates the desired states to wait for. The waiter will return once the resource
+     *     reaches any of the provided states
+     * @return a new {@code Waiter} instance
+     */
+    public com.oracle.bmc.waiter.Waiter<GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+            forMonitoringTemplate(
+                    GetMonitoringTemplateRequest request,
+                    com.oracle.bmc.waiter.TerminationStrategy terminationStrategy,
+                    com.oracle.bmc.waiter.DelayStrategy delayStrategy,
+                    com.oracle.bmc.stackmonitoring.model.MonitoringTemplateLifeCycleStates...
+                            targetStates) {
+        com.oracle.bmc.util.internal.Validate.notEmpty(
+                targetStates, "At least one targetState must be provided");
+        com.oracle.bmc.util.internal.Validate.noNullElements(
+                targetStates, "Null targetState values are not permitted");
+
+        return forMonitoringTemplate(
+                com.oracle.bmc.waiter.Waiters.newWaiter(terminationStrategy, delayStrategy),
+                request,
+                targetStates);
+    }
+
+    // Helper method to create a new Waiter for MonitoringTemplate.
+    private com.oracle.bmc.waiter.Waiter<
+                    GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>
+            forMonitoringTemplate(
+                    com.oracle.bmc.waiter.BmcGenericWaiter waiter,
+                    final GetMonitoringTemplateRequest request,
+                    final com.oracle.bmc.stackmonitoring.model.MonitoringTemplateLifeCycleStates...
+                            targetStates) {
+        final java.util.Set<com.oracle.bmc.stackmonitoring.model.MonitoringTemplateLifeCycleStates>
+                targetStatesSet = new java.util.HashSet<>(java.util.Arrays.asList(targetStates));
+
+        return new com.oracle.bmc.waiter.internal.SimpleWaiterImpl<>(
+                executorService,
+                waiter.toCallable(
+                        () -> request,
+                        new java.util.function.Function<
+                                GetMonitoringTemplateRequest, GetMonitoringTemplateResponse>() {
+                            @Override
+                            public GetMonitoringTemplateResponse apply(
+                                    GetMonitoringTemplateRequest request) {
+                                return client.getMonitoringTemplate(request);
+                            }
+                        },
+                        new java.util.function.Predicate<GetMonitoringTemplateResponse>() {
+                            @Override
+                            public boolean test(GetMonitoringTemplateResponse response) {
+                                return targetStatesSet.contains(
+                                        response.getMonitoringTemplate().getLifecycleState());
+                            }
+                        },
+                        targetStatesSet.contains(
+                                com.oracle.bmc.stackmonitoring.model
+                                        .MonitoringTemplateLifeCycleStates.Deleted)),
                 request);
     }
 

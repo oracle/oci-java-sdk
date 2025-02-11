@@ -193,7 +193,8 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -201,7 +202,8 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -423,7 +425,8 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
@@ -431,7 +434,8 @@ public final class CreateAzureSynapseConnectionDetails extends CreateConnectionD
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      *
      * @return the value
      */

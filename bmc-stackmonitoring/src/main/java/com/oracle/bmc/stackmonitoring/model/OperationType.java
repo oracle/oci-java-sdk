@@ -17,6 +17,8 @@ public enum OperationType implements com.oracle.bmc.http.internal.BmcEnum {
     EnableMetricExtension("ENABLE_METRIC_EXTENSION"),
     DisableMetricExtension("DISABLE_METRIC_EXTENSION"),
     TestMetricExtension("TEST_METRIC_EXTENSION"),
+    ApplyMonitoringTemplate("APPLY_MONITORING_TEMPLATE"),
+    UnapplyMonitoringTemplate("UNAPPLY_MONITORING_TEMPLATE"),
     BulkAddResources("BULK_ADD_RESOURCES"),
     BulkDeleteResources("BULK_DELETE_RESOURCES"),
     UpdateAndPropagateTags("UPDATE_AND_PROPAGATE_TAGS"),

@@ -598,6 +598,11 @@ public final class OracleConnection extends Connection {
         OracleDatabase("ORACLE_DATABASE"),
         OracleExadata("ORACLE_EXADATA"),
         OracleExadataDatabaseAtAzure("ORACLE_EXADATA_DATABASE_AT_AZURE"),
+        OracleAutonomousDatabaseAtAzure("ORACLE_AUTONOMOUS_DATABASE_AT_AZURE"),
+        OracleExadataDatabaseAtGoogleCloud("ORACLE_EXADATA_DATABASE_AT_GOOGLE_CLOUD"),
+        OracleAutonomousDatabaseAtGoogleCloud("ORACLE_AUTONOMOUS_DATABASE_AT_GOOGLE_CLOUD"),
+        OracleExadataDatabaseAtAws("ORACLE_EXADATA_DATABASE_AT_AWS"),
+        OracleAutonomousDatabaseAtAws("ORACLE_AUTONOMOUS_DATABASE_AT_AWS"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

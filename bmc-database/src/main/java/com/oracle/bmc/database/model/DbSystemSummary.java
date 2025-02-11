@@ -88,6 +88,8 @@ public final class DbSystemSummary
         "sparseDiskgroup",
         "scanIpIds",
         "vipIds",
+        "scanIpv6Ids",
+        "vipv6Ids",
         "scanDnsRecordId",
         "scanDnsName",
         "zoneId",
@@ -140,6 +142,8 @@ public final class DbSystemSummary
             Boolean sparseDiskgroup,
             java.util.List<String> scanIpIds,
             java.util.List<String> vipIds,
+            java.util.List<String> scanIpv6Ids,
+            java.util.List<String> vipv6Ids,
             String scanDnsRecordId,
             String scanDnsName,
             String zoneId,
@@ -191,6 +195,8 @@ public final class DbSystemSummary
         this.sparseDiskgroup = sparseDiskgroup;
         this.scanIpIds = scanIpIds;
         this.vipIds = vipIds;
+        this.scanIpv6Ids = scanIpv6Ids;
+        this.vipv6Ids = vipv6Ids;
         this.scanDnsRecordId = scanDnsRecordId;
         this.scanDnsName = scanDnsName;
         this.zoneId = zoneId;
@@ -812,7 +818,7 @@ public final class DbSystemSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
          * addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          *
@@ -823,7 +829,7 @@ public final class DbSystemSummary
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+         * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
          * addresses are typically used for load balancing and are not assigned to any interface.
          * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
          *
@@ -839,9 +845,10 @@ public final class DbSystemSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services
-         * (CRS) creates and maintains one VIP address for each node in the DB system to enable
-         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable
+         * failover. If one node fails, the VIPv4 is reassigned to another active node in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          */
@@ -850,9 +857,10 @@ public final class DbSystemSummary
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services
-         * (CRS) creates and maintains one VIP address for each node in the DB system to enable
-         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIPv4 address for each node in the DB system to enable
+         * failover. If one node fails, the VIPv4 is reassigned to another active node in the
+         * cluster.
          *
          * <p>*Note:** For a single-node DB system, this list is empty.
          *
@@ -862,6 +870,60 @@ public final class DbSystemSummary
         public Builder vipIds(java.util.List<String> vipIds) {
             this.vipIds = vipIds;
             this.__explicitlySet__.add("vipIds");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+         * addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+        private java.util.List<String> scanIpv6Ids;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+         * addresses are typically used for load balancing and are not assigned to any interface.
+         * Oracle Clusterware directs the requests to the appropriate nodes in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param scanIpv6Ids the value to set
+         * @return this builder
+         */
+        public Builder scanIpv6Ids(java.util.List<String> scanIpv6Ids) {
+            this.scanIpv6Ids = scanIpv6Ids;
+            this.__explicitlySet__.add("scanIpv6Ids");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable
+         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+        private java.util.List<String> vipv6Ids;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services
+         * (CRS) creates and maintains one VIP IpV6 address for each node in the DB system to enable
+         * failover. If one node fails, the VIP is reassigned to another active node in the cluster.
+         *
+         * <p>*Note:** For a single-node DB system, this list is empty.
+         *
+         * @param vipv6Ids the value to set
+         * @return this builder
+         */
+        public Builder vipv6Ids(java.util.List<String> vipv6Ids) {
+            this.vipv6Ids = vipv6Ids;
+            this.__explicitlySet__.add("vipv6Ids");
             return this;
         }
         /**
@@ -1198,6 +1260,8 @@ public final class DbSystemSummary
                             this.sparseDiskgroup,
                             this.scanIpIds,
                             this.vipIds,
+                            this.scanIpv6Ids,
+                            this.vipv6Ids,
                             this.scanDnsRecordId,
                             this.scanDnsName,
                             this.zoneId,
@@ -1323,6 +1387,12 @@ public final class DbSystemSummary
             }
             if (model.wasPropertyExplicitlySet("vipIds")) {
                 this.vipIds(model.getVipIds());
+            }
+            if (model.wasPropertyExplicitlySet("scanIpv6Ids")) {
+                this.scanIpv6Ids(model.getScanIpv6Ids());
+            }
+            if (model.wasPropertyExplicitlySet("vipv6Ids")) {
+                this.vipv6Ids(model.getVipv6Ids());
             }
             if (model.wasPropertyExplicitlySet("scanDnsRecordId")) {
                 this.scanDnsRecordId(model.getScanDnsRecordId());
@@ -2116,7 +2186,7 @@ public final class DbSystemSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
      * addresses are typically used for load balancing and are not assigned to any interface. Oracle
      * Clusterware directs the requests to the appropriate nodes in the cluster.
      *
@@ -2127,7 +2197,7 @@ public final class DbSystemSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * Single Client Access Name (SCAN) IP addresses associated with the DB system. SCAN IP
+     * Single Client Access Name (SCAN) IPv4 addresses associated with the DB system. SCAN IPv4
      * addresses are typically used for load balancing and are not assigned to any interface. Oracle
      * Clusterware directs the requests to the appropriate nodes in the cluster.
      *
@@ -2141,9 +2211,9 @@ public final class DbSystemSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
-     * creates and maintains one VIP address for each node in the DB system to enable failover. If
-     * one node fails, the VIP is reassigned to another active node in the cluster.
+     * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIPv4 address for each node in the DB system to enable failover. If
+     * one node fails, the VIPv4 is reassigned to another active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      */
@@ -2152,9 +2222,9 @@ public final class DbSystemSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * virtual IP (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
-     * creates and maintains one VIP address for each node in the DB system to enable failover. If
-     * one node fails, the VIP is reassigned to another active node in the cluster.
+     * virtual IPv4 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIPv4 address for each node in the DB system to enable failover. If
+     * one node fails, the VIPv4 is reassigned to another active node in the cluster.
      *
      * <p>*Note:** For a single-node DB system, this list is empty.
      *
@@ -2162,6 +2232,56 @@ public final class DbSystemSummary
      */
     public java.util.List<String> getVipIds() {
         return vipIds;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
+     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("scanIpv6Ids")
+    private final java.util.List<String> scanIpv6Ids;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Single Client Access Name (SCAN) IPv6 addresses associated with the DB system. SCAN IPv6
+     * addresses are typically used for load balancing and are not assigned to any interface. Oracle
+     * Clusterware directs the requests to the appropriate nodes in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getScanIpv6Ids() {
+        return scanIpv6Ids;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIP IpV6 address for each node in the DB system to enable failover.
+     * If one node fails, the VIP is reassigned to another active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("vipv6Ids")
+    private final java.util.List<String> vipv6Ids;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * virtual IPv6 (VIP) addresses associated with the DB system. The Cluster Ready Services (CRS)
+     * creates and maintains one VIP IpV6 address for each node in the DB system to enable failover.
+     * If one node fails, the VIP is reassigned to another active node in the cluster.
+     *
+     * <p>*Note:** For a single-node DB system, this list is empty.
+     *
+     * @return the value
+     */
+    public java.util.List<String> getVipv6Ids() {
+        return vipv6Ids;
     }
 
     /**
@@ -2518,6 +2638,8 @@ public final class DbSystemSummary
         sb.append(", sparseDiskgroup=").append(String.valueOf(this.sparseDiskgroup));
         sb.append(", scanIpIds=").append(String.valueOf(this.scanIpIds));
         sb.append(", vipIds=").append(String.valueOf(this.vipIds));
+        sb.append(", scanIpv6Ids=").append(String.valueOf(this.scanIpv6Ids));
+        sb.append(", vipv6Ids=").append(String.valueOf(this.vipv6Ids));
         sb.append(", scanDnsRecordId=").append(String.valueOf(this.scanDnsRecordId));
         sb.append(", scanDnsName=").append(String.valueOf(this.scanDnsName));
         sb.append(", zoneId=").append(String.valueOf(this.zoneId));
@@ -2585,6 +2707,8 @@ public final class DbSystemSummary
                 && java.util.Objects.equals(this.sparseDiskgroup, other.sparseDiskgroup)
                 && java.util.Objects.equals(this.scanIpIds, other.scanIpIds)
                 && java.util.Objects.equals(this.vipIds, other.vipIds)
+                && java.util.Objects.equals(this.scanIpv6Ids, other.scanIpv6Ids)
+                && java.util.Objects.equals(this.vipv6Ids, other.vipv6Ids)
                 && java.util.Objects.equals(this.scanDnsRecordId, other.scanDnsRecordId)
                 && java.util.Objects.equals(this.scanDnsName, other.scanDnsName)
                 && java.util.Objects.equals(this.zoneId, other.zoneId)
@@ -2686,6 +2810,8 @@ public final class DbSystemSummary
                         + (this.sparseDiskgroup == null ? 43 : this.sparseDiskgroup.hashCode());
         result = (result * PRIME) + (this.scanIpIds == null ? 43 : this.scanIpIds.hashCode());
         result = (result * PRIME) + (this.vipIds == null ? 43 : this.vipIds.hashCode());
+        result = (result * PRIME) + (this.scanIpv6Ids == null ? 43 : this.scanIpv6Ids.hashCode());
+        result = (result * PRIME) + (this.vipv6Ids == null ? 43 : this.vipv6Ids.hashCode());
         result =
                 (result * PRIME)
                         + (this.scanDnsRecordId == null ? 43 : this.scanDnsRecordId.hashCode());

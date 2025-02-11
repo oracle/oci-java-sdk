@@ -29,9 +29,6 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PostgresqlConnection.class,
             name = "POSTGRESQL"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = JavaMessageServiceConnection.class,
-            name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Db2Connection.class, name = "DB2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ElasticsearchConnection.class,
@@ -39,6 +36,36 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonRedshiftConnection.class,
             name = "AMAZON_REDSHIFT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AmazonS3Connection.class,
+            name = "AMAZON_S3"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MongoDbConnection.class,
+            name = "MONGODB"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = HdfsConnection.class,
+            name = "HDFS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = OciObjectStorageConnection.class,
+            name = "OCI_OBJECT_STORAGE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MicrosoftSqlserverConnection.class,
+            name = "MICROSOFT_SQLSERVER"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GenericConnection.class,
+            name = "GENERIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = AzureSynapseConnection.class,
+            name = "AZURE_SYNAPSE_ANALYTICS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = MicrosoftFabricConnection.class,
+            name = "MICROSOFT_FABRIC"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = DatabricksConnection.class,
+            name = "DATABRICKS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = JavaMessageServiceConnection.class,
+            name = "JAVA_MESSAGE_SERVICE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = SnowflakeConnection.class,
             name = "SNOWFLAKE"),
@@ -49,9 +76,6 @@ package com.oracle.bmc.goldengate.model;
             value = MysqlConnection.class,
             name = "MYSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AmazonS3Connection.class,
-            name = "AMAZON_S3"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleBigQueryConnection.class,
             name = "GOOGLE_BIGQUERY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -61,38 +85,23 @@ package com.oracle.bmc.goldengate.model;
             value = AzureDataLakeStorageConnection.class,
             name = "AZURE_DATA_LAKE_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MongoDbConnection.class,
-            name = "MONGODB"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = HdfsConnection.class,
-            name = "HDFS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = GoogleCloudStorageConnection.class,
             name = "GOOGLE_CLOUD_STORAGE"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = OciObjectStorageConnection.class,
-            name = "OCI_OBJECT_STORAGE"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = KafkaSchemaRegistryConnection.class,
             name = "KAFKA_SCHEMA_REGISTRY"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = MicrosoftSqlserverConnection.class,
-            name = "MICROSOFT_SQLSERVER"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = AmazonKinesisConnection.class,
             name = "AMAZON_KINESIS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = GenericConnection.class,
-            name = "GENERIC"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = OracleNosqlConnection.class,
             name = "ORACLE_NOSQL"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = AzureSynapseConnection.class,
-            name = "AZURE_SYNAPSE_ANALYTICS"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = RedisConnection.class,
-            name = "REDIS")
+            name = "REDIS"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = GooglePubSubConnection.class,
+            name = "GOOGLE_PUBSUB")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

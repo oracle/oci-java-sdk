@@ -60,6 +60,9 @@ public final class AutonomousContainerDatabaseSummary
         "availabilityDomain",
         "dbVersion",
         "backupConfig",
+        "backupDestinationPropertiesList",
+        "associatedBackupConfigurationDetails",
+        "recoveryApplianceDetails",
         "keyStoreId",
         "keyStoreWalletName",
         "memoryPerOracleComputeUnitInGBs",
@@ -112,6 +115,10 @@ public final class AutonomousContainerDatabaseSummary
             String availabilityDomain,
             String dbVersion,
             AutonomousContainerDatabaseBackupConfig backupConfig,
+            java.util.List<BackupDestinationProperties> backupDestinationPropertiesList,
+            java.util.List<BackupDestinationConfigurationSummary>
+                    associatedBackupConfigurationDetails,
+            RecoveryApplianceDetails recoveryApplianceDetails,
             String keyStoreId,
             String keyStoreWalletName,
             Integer memoryPerOracleComputeUnitInGBs,
@@ -163,6 +170,9 @@ public final class AutonomousContainerDatabaseSummary
         this.availabilityDomain = availabilityDomain;
         this.dbVersion = dbVersion;
         this.backupConfig = backupConfig;
+        this.backupDestinationPropertiesList = backupDestinationPropertiesList;
+        this.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+        this.recoveryApplianceDetails = recoveryApplianceDetails;
         this.keyStoreId = keyStoreId;
         this.keyStoreWalletName = keyStoreWalletName;
         this.memoryPerOracleComputeUnitInGBs = memoryPerOracleComputeUnitInGBs;
@@ -762,6 +772,63 @@ public final class AutonomousContainerDatabaseSummary
             return this;
         }
         /**
+         * This list describes the backup destination properties associated with the Autonomous
+         * Container Database (ACD) 's preferred backup destination. The object at a given index is
+         * associated with the destination present at the same index in the backup destination
+         * details list of the ACD Backup Configuration.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationPropertiesList")
+        private java.util.List<BackupDestinationProperties> backupDestinationPropertiesList;
+
+        /**
+         * This list describes the backup destination properties associated with the Autonomous
+         * Container Database (ACD) 's preferred backup destination. The object at a given index is
+         * associated with the destination present at the same index in the backup destination
+         * details list of the ACD Backup Configuration.
+         *
+         * @param backupDestinationPropertiesList the value to set
+         * @return this builder
+         */
+        public Builder backupDestinationPropertiesList(
+                java.util.List<BackupDestinationProperties> backupDestinationPropertiesList) {
+            this.backupDestinationPropertiesList = backupDestinationPropertiesList;
+            this.__explicitlySet__.add("backupDestinationPropertiesList");
+            return this;
+        }
+        /**
+         * A backup config object holds information about preferred backup destinations only. This
+         * object holds information about the associated backup destinations, such as secondary
+         * backup destinations created for local backups or remote replicated backups.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("associatedBackupConfigurationDetails")
+        private java.util.List<BackupDestinationConfigurationSummary>
+                associatedBackupConfigurationDetails;
+
+        /**
+         * A backup config object holds information about preferred backup destinations only. This
+         * object holds information about the associated backup destinations, such as secondary
+         * backup destinations created for local backups or remote replicated backups.
+         *
+         * @param associatedBackupConfigurationDetails the value to set
+         * @return this builder
+         */
+        public Builder associatedBackupConfigurationDetails(
+                java.util.List<BackupDestinationConfigurationSummary>
+                        associatedBackupConfigurationDetails) {
+            this.associatedBackupConfigurationDetails = associatedBackupConfigurationDetails;
+            this.__explicitlySet__.add("associatedBackupConfigurationDetails");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceDetails")
+        private RecoveryApplianceDetails recoveryApplianceDetails;
+
+        public Builder recoveryApplianceDetails(RecoveryApplianceDetails recoveryApplianceDetails) {
+            this.recoveryApplianceDetails = recoveryApplianceDetails;
+            this.__explicitlySet__.add("recoveryApplianceDetails");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * key store of Oracle Vault.
          */
@@ -1123,6 +1190,9 @@ public final class AutonomousContainerDatabaseSummary
                             this.availabilityDomain,
                             this.dbVersion,
                             this.backupConfig,
+                            this.backupDestinationPropertiesList,
+                            this.associatedBackupConfigurationDetails,
+                            this.recoveryApplianceDetails,
                             this.keyStoreId,
                             this.keyStoreWalletName,
                             this.memoryPerOracleComputeUnitInGBs,
@@ -1247,6 +1317,16 @@ public final class AutonomousContainerDatabaseSummary
             }
             if (model.wasPropertyExplicitlySet("backupConfig")) {
                 this.backupConfig(model.getBackupConfig());
+            }
+            if (model.wasPropertyExplicitlySet("backupDestinationPropertiesList")) {
+                this.backupDestinationPropertiesList(model.getBackupDestinationPropertiesList());
+            }
+            if (model.wasPropertyExplicitlySet("associatedBackupConfigurationDetails")) {
+                this.associatedBackupConfigurationDetails(
+                        model.getAssociatedBackupConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("recoveryApplianceDetails")) {
+                this.recoveryApplianceDetails(model.getRecoveryApplianceDetails());
             }
             if (model.wasPropertyExplicitlySet("keyStoreId")) {
                 this.keyStoreId(model.getKeyStoreId());
@@ -2114,6 +2194,55 @@ public final class AutonomousContainerDatabaseSummary
     }
 
     /**
+     * This list describes the backup destination properties associated with the Autonomous
+     * Container Database (ACD) 's preferred backup destination. The object at a given index is
+     * associated with the destination present at the same index in the backup destination details
+     * list of the ACD Backup Configuration.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("backupDestinationPropertiesList")
+    private final java.util.List<BackupDestinationProperties> backupDestinationPropertiesList;
+
+    /**
+     * This list describes the backup destination properties associated with the Autonomous
+     * Container Database (ACD) 's preferred backup destination. The object at a given index is
+     * associated with the destination present at the same index in the backup destination details
+     * list of the ACD Backup Configuration.
+     *
+     * @return the value
+     */
+    public java.util.List<BackupDestinationProperties> getBackupDestinationPropertiesList() {
+        return backupDestinationPropertiesList;
+    }
+
+    /**
+     * A backup config object holds information about preferred backup destinations only. This
+     * object holds information about the associated backup destinations, such as secondary backup
+     * destinations created for local backups or remote replicated backups.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("associatedBackupConfigurationDetails")
+    private final java.util.List<BackupDestinationConfigurationSummary>
+            associatedBackupConfigurationDetails;
+
+    /**
+     * A backup config object holds information about preferred backup destinations only. This
+     * object holds information about the associated backup destinations, such as secondary backup
+     * destinations created for local backups or remote replicated backups.
+     *
+     * @return the value
+     */
+    public java.util.List<BackupDestinationConfigurationSummary>
+            getAssociatedBackupConfigurationDetails() {
+        return associatedBackupConfigurationDetails;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("recoveryApplianceDetails")
+    private final RecoveryApplianceDetails recoveryApplianceDetails;
+
+    public RecoveryApplianceDetails getRecoveryApplianceDetails() {
+        return recoveryApplianceDetails;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the key
      * store of Oracle Vault.
      */
@@ -2596,6 +2725,12 @@ public final class AutonomousContainerDatabaseSummary
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", dbVersion=").append(String.valueOf(this.dbVersion));
         sb.append(", backupConfig=").append(String.valueOf(this.backupConfig));
+        sb.append(", backupDestinationPropertiesList=")
+                .append(String.valueOf(this.backupDestinationPropertiesList));
+        sb.append(", associatedBackupConfigurationDetails=")
+                .append(String.valueOf(this.associatedBackupConfigurationDetails));
+        sb.append(", recoveryApplianceDetails=")
+                .append(String.valueOf(this.recoveryApplianceDetails));
         sb.append(", keyStoreId=").append(String.valueOf(this.keyStoreId));
         sb.append(", keyStoreWalletName=").append(String.valueOf(this.keyStoreWalletName));
         sb.append(", memoryPerOracleComputeUnitInGBs=")
@@ -2670,6 +2805,13 @@ public final class AutonomousContainerDatabaseSummary
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(this.dbVersion, other.dbVersion)
                 && java.util.Objects.equals(this.backupConfig, other.backupConfig)
+                && java.util.Objects.equals(
+                        this.backupDestinationPropertiesList, other.backupDestinationPropertiesList)
+                && java.util.Objects.equals(
+                        this.associatedBackupConfigurationDetails,
+                        other.associatedBackupConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.recoveryApplianceDetails, other.recoveryApplianceDetails)
                 && java.util.Objects.equals(this.keyStoreId, other.keyStoreId)
                 && java.util.Objects.equals(this.keyStoreWalletName, other.keyStoreWalletName)
                 && java.util.Objects.equals(
@@ -2791,6 +2933,21 @@ public final class AutonomousContainerDatabaseSummary
                                 : this.availabilityDomain.hashCode());
         result = (result * PRIME) + (this.dbVersion == null ? 43 : this.dbVersion.hashCode());
         result = (result * PRIME) + (this.backupConfig == null ? 43 : this.backupConfig.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.backupDestinationPropertiesList == null
+                                ? 43
+                                : this.backupDestinationPropertiesList.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.associatedBackupConfigurationDetails == null
+                                ? 43
+                                : this.associatedBackupConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.recoveryApplianceDetails == null
+                                ? 43
+                                : this.recoveryApplianceDetails.hashCode());
         result = (result * PRIME) + (this.keyStoreId == null ? 43 : this.keyStoreId.hashCode());
         result =
                 (result * PRIME)

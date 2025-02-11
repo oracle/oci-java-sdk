@@ -171,12 +171,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect to Snowflake platform. */
+        /**
+         * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This
+         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+         * February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect to Snowflake platform.
+         * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This
+         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+         * February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -207,12 +213,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** The base64 encoded content of private key file in PEM format. */
+        /**
+         * The base64 encoded content of private key file in PEM format. Deprecated: This field is
+         * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
+         * February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
         private String privateKeyFile;
 
         /**
-         * The base64 encoded content of private key file in PEM format.
+         * The base64 encoded content of private key file in PEM format. Deprecated: This field is
+         * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
+         * February 15 2026.
          *
          * @param privateKeyFile the value to set
          * @return this builder
@@ -247,12 +259,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
             this.__explicitlySet__.add("privateKeyFileSecretId");
             return this;
         }
-        /** Password if the private key file is encrypted. */
+        /**
+         * Password if the private key file is encrypted. Deprecated: This field is deprecated and
+         * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
+         * 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
         private String privateKeyPassphrase;
 
         /**
-         * Password if the private key file is encrypted.
+         * Password if the private key file is encrypted. Deprecated: This field is deprecated and
+         * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
+         * 2026.
          *
          * @param privateKeyPassphrase the value to set
          * @return this builder
@@ -477,12 +495,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect to Snowflake platform. */
+    /**
+     * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
+     * is deprecated and replaced by "passwordSecretId". This field will be removed after February
+     * 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect to Snowflake platform.
+     * The password Oracle GoldenGate uses to connect to Snowflake platform. Deprecated: This field
+     * is deprecated and replaced by "passwordSecretId". This field will be removed after February
+     * 15 2026.
      *
      * @return the value
      */
@@ -509,12 +533,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         return passwordSecretId;
     }
 
-    /** The base64 encoded content of private key file in PEM format. */
+    /**
+     * The base64 encoded content of private key file in PEM format. Deprecated: This field is
+     * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
+     * February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
     private final String privateKeyFile;
 
     /**
-     * The base64 encoded content of private key file in PEM format.
+     * The base64 encoded content of private key file in PEM format. Deprecated: This field is
+     * deprecated and replaced by "privateKeyFileSecretId". This field will be removed after
+     * February 15 2026.
      *
      * @return the value
      */
@@ -545,12 +575,18 @@ public final class UpdateSnowflakeConnectionDetails extends UpdateConnectionDeta
         return privateKeyFileSecretId;
     }
 
-    /** Password if the private key file is encrypted. */
+    /**
+     * Password if the private key file is encrypted. Deprecated: This field is deprecated and
+     * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
+     * 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
     private final String privateKeyPassphrase;
 
     /**
-     * Password if the private key file is encrypted.
+     * Password if the private key file is encrypted. Deprecated: This field is deprecated and
+     * replaced by "privateKeyPassphraseSecretId". This field will be removed after February 15
+     * 2026.
      *
      * @return the value
      */

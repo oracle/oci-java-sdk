@@ -70,6 +70,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         "definedTags",
         "securityAttributes",
         "privateIp",
+        "privateIpV6",
         "dataCollectionOptions"
     })
     protected LaunchDbSystemBase(
@@ -100,6 +101,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
+            String privateIpV6,
             DataCollectionOptions dataCollectionOptions) {
         super();
         this.compartmentId = compartmentId;
@@ -129,6 +131,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         this.definedTags = definedTags;
         this.securityAttributes = securityAttributes;
         this.privateIp = privateIp;
+        this.privateIpV6 = privateIpV6;
         this.dataCollectionOptions = dataCollectionOptions;
     }
 
@@ -763,6 +766,25 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         return privateIp;
     }
 
+    /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet's
+     * CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns
+     * a private IPv6 address from the subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+    private final String privateIpV6;
+
+    /**
+     * A private IPv6 address of your choice. Must be an available IP address within the subnet's
+     * CIDR. If you don't specify a value and the subnet is dual stack, Oracle automatically assigns
+     * a private IPv6 address from the subnet.
+     *
+     * @return the value
+     */
+    public String getPrivateIpV6() {
+        return privateIpV6;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
     private final DataCollectionOptions dataCollectionOptions;
 
@@ -814,6 +836,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", securityAttributes=").append(String.valueOf(this.securityAttributes));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
         sb.append(", dataCollectionOptions=").append(String.valueOf(this.dataCollectionOptions));
         sb.append(")");
         return sb.toString();
@@ -858,6 +881,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.securityAttributes, other.securityAttributes)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
                 && java.util.Objects.equals(this.dataCollectionOptions, other.dataCollectionOptions)
                 && super.equals(other);
     }
@@ -929,6 +953,7 @@ public class LaunchDbSystemBase extends com.oracle.bmc.http.client.internal.Expl
                                 ? 43
                                 : this.securityAttributes.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.privateIpV6 == null ? 43 : this.privateIpV6.hashCode());
         result =
                 (result * PRIME)
                         + (this.dataCollectionOptions == null

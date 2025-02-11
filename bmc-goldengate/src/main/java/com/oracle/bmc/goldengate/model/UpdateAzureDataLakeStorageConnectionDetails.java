@@ -152,6 +152,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
         private String accountKey;
@@ -160,6 +162,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * Azure storage account key. This property is required when 'authenticationType' is set to
          * 'SHARED_KEY'. e.g.:
          * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+         * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field
+         * will be removed after February 15 2026.
          *
          * @param accountKey the value to set
          * @return this builder
@@ -195,6 +199,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
+         * be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
         private String sasToken;
@@ -204,6 +210,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
          * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
          * e.g.:
          * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+         * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param sasToken the value to set
          * @return this builder
@@ -275,7 +283,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
+         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
         private String clientSecret;
@@ -283,7 +292,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
         /**
          * Azure client secret (aka application password) for authentication. This property is
          * required when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+         * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and
+         * replaced by "clientSecretSecretId". This field will be removed after February 15 2026.
          *
          * @param clientSecret the value to set
          * @return this builder
@@ -518,6 +528,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("accountKey")
     private final String accountKey;
@@ -526,6 +538,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * Azure storage account key. This property is required when 'authenticationType' is set to
      * 'SHARED_KEY'. e.g.:
      * pa3WbhVATzj56xD4DH1VjOUhApRGEGHvOo58eQJVWIzX+j8j4CUVFcTjpIqDSRaSa1Wo2LbWY5at+AStEgLOIQ==
+     * Deprecated: This field is deprecated and replaced by "accountKeySecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
@@ -557,6 +571,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
+     * removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sasToken")
     private final String sasToken;
@@ -566,6 +582,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
      * This property is required when 'authenticationType' is set to 'SHARED_ACCESS_SIGNATURE'.
      * e.g.:
      * ?sv=2020-06-08&ss=bfqt&srt=sco&sp=rwdlacupyx&se=2020-09-10T20:27:28Z&st=2022-08-05T12:27:28Z&spr=https&sig=C1IgHsiLBmTSStYkXXGLTP8it0xBrArcgCqOsZbXwIQ%3D
+     * Deprecated: This field is deprecated and replaced by "sasTokenSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */
@@ -629,7 +647,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
+     * "clientSecretSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("clientSecret")
     private final String clientSecret;
@@ -637,7 +656,8 @@ public final class UpdateAzureDataLakeStorageConnectionDetails extends UpdateCon
     /**
      * Azure client secret (aka application password) for authentication. This property is required
      * when 'authenticationType' is set to 'AZURE_ACTIVE_DIRECTORY'. e.g.:
-     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1
+     * dO29Q~F5-VwnA.lZdd11xFF_t5NAXCaGwDl9NbT1 Deprecated: This field is deprecated and replaced by
+     * "clientSecretSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */

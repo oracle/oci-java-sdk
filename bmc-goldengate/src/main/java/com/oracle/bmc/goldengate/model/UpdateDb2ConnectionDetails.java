@@ -181,12 +181,18 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect the associated DB2 database. */
+        /**
+         * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
+         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
+         * after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated DB2 database.
+         * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated:
+         * This field is deprecated and replaced by "passwordSecretId". This field will be removed
+         * after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -253,14 +259,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         }
         /**
          * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate.
+         * / CA root certificate. Deprecated: This field is deprecated and replaced by
+         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
         private String sslClientKeystoredb;
 
         /**
          * The base64 encoded keystore file created at the client containing the server certificate
-         * / CA root certificate.
+         * / CA root certificate. Deprecated: This field is deprecated and replaced by
+         * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
          *
          * @param sslClientKeystoredb the value to set
          * @return this builder
@@ -295,14 +303,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         }
         /**
          * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file.
+         * database file. Deprecated: This field is deprecated and replaced by
+         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
         private String sslClientKeystash;
 
         /**
          * The base64 encoded keystash file which contains the encrypted password to the key
-         * database file.
+         * database file. Deprecated: This field is deprecated and replaced by
+         * "sslClientKeystashSecretId". This field will be removed after February 15 2026.
          *
          * @param sslClientKeystash the value to set
          * @return this builder
@@ -579,12 +589,18 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect the associated DB2 database. */
+    /**
+     * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
+     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated DB2 database.
+     * The password Oracle GoldenGate uses to connect the associated DB2 database. Deprecated: This
+     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
      *
      * @return the value
      */
@@ -643,14 +659,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate.
+     * root certificate. Deprecated: This field is deprecated and replaced by
+     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystoredb")
     private final String sslClientKeystoredb;
 
     /**
      * The base64 encoded keystore file created at the client containing the server certificate / CA
-     * root certificate.
+     * root certificate. Deprecated: This field is deprecated and replaced by
+     * "sslClientKeystoredbSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -681,14 +699,16 @@ public final class UpdateDb2ConnectionDetails extends UpdateConnectionDetails {
 
     /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file.
+     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+     * field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslClientKeystash")
     private final String sslClientKeystash;
 
     /**
      * The base64 encoded keystash file which contains the encrypted password to the key database
-     * file.
+     * file. Deprecated: This field is deprecated and replaced by "sslClientKeystashSecretId". This
+     * field will be removed after February 15 2026.
      *
      * @return the value
      */

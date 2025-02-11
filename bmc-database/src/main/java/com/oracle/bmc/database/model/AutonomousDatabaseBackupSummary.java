@@ -652,6 +652,9 @@ public final class AutonomousDatabaseBackupSummary
         Incremental("INCREMENTAL"),
         Full("FULL"),
         Longterm("LONGTERM"),
+        VirtualFull("VIRTUAL_FULL"),
+        CumulativeIncremental("CUMULATIVE_INCREMENTAL"),
+        RollForwardImageCopy("ROLL_FORWARD_IMAGE_COPY"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

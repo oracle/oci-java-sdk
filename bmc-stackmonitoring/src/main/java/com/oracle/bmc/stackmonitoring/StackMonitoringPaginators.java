@@ -43,6 +43,127 @@ public class StackMonitoringPaginators {
 
     /**
      * Creates a new iterable which will iterate over the responses received from the
+     * listAlarmConditions operation. This iterable will fetch more data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListAlarmConditionsResponse> listAlarmConditionsResponseIterator(
+            final ListAlarmConditionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListAlarmConditionsRequest.Builder,
+                ListAlarmConditionsRequest,
+                ListAlarmConditionsResponse>(
+                new java.util.function.Supplier<ListAlarmConditionsRequest.Builder>() {
+                    @Override
+                    public ListAlarmConditionsRequest.Builder get() {
+                        return ListAlarmConditionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAlarmConditionsResponse, String>() {
+                    @Override
+                    public String apply(ListAlarmConditionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAlarmConditionsRequest.Builder>,
+                        ListAlarmConditionsRequest>() {
+                    @Override
+                    public ListAlarmConditionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAlarmConditionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmConditionsRequest, ListAlarmConditionsResponse>() {
+                    @Override
+                    public ListAlarmConditionsResponse apply(ListAlarmConditionsRequest request) {
+                        return client.listAlarmConditions(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects contained in responses
+     * from the listAlarmConditions operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>
+            listAlarmConditionsRecordIterator(final ListAlarmConditionsRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListAlarmConditionsRequest.Builder,
+                ListAlarmConditionsRequest,
+                ListAlarmConditionsResponse,
+                com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>(
+                new java.util.function.Supplier<ListAlarmConditionsRequest.Builder>() {
+                    @Override
+                    public ListAlarmConditionsRequest.Builder get() {
+                        return ListAlarmConditionsRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListAlarmConditionsResponse, String>() {
+                    @Override
+                    public String apply(ListAlarmConditionsResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListAlarmConditionsRequest.Builder>,
+                        ListAlarmConditionsRequest>() {
+                    @Override
+                    public ListAlarmConditionsRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListAlarmConditionsRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmConditionsRequest, ListAlarmConditionsResponse>() {
+                    @Override
+                    public ListAlarmConditionsResponse apply(ListAlarmConditionsRequest request) {
+                        return client.listAlarmConditions(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListAlarmConditionsResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.AlarmConditionSummary>
+                            apply(ListAlarmConditionsResponse response) {
+                        return response.getAlarmConditionCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
      * listBaselineableMetrics operation. This iterable will fetch more data from the server as
      * needed.
      *
@@ -275,6 +396,136 @@ public class StackMonitoringPaginators {
                     public java.util.List<com.oracle.bmc.stackmonitoring.model.ConfigSummary> apply(
                             ListConfigsResponse response) {
                         return response.getConfigCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listDefinedMonitoringTemplates operation. This iterable will fetch more data from the server
+     * as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListDefinedMonitoringTemplatesResponse>
+            listDefinedMonitoringTemplatesResponseIterator(
+                    final ListDefinedMonitoringTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListDefinedMonitoringTemplatesRequest.Builder,
+                ListDefinedMonitoringTemplatesRequest,
+                ListDefinedMonitoringTemplatesResponse>(
+                new java.util.function.Supplier<ListDefinedMonitoringTemplatesRequest.Builder>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesRequest.Builder get() {
+                        return ListDefinedMonitoringTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDefinedMonitoringTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListDefinedMonitoringTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDefinedMonitoringTemplatesRequest.Builder>,
+                        ListDefinedMonitoringTemplatesRequest>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDefinedMonitoringTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDefinedMonitoringTemplatesRequest,
+                        ListDefinedMonitoringTemplatesResponse>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesResponse apply(
+                            ListDefinedMonitoringTemplatesRequest request) {
+                        return client.listDefinedMonitoringTemplates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects contained in
+     * responses from the listDefinedMonitoringTemplates operation. This iterable will fetch more
+     * data from the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary} objects contained
+     *     in responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary>
+            listDefinedMonitoringTemplatesRecordIterator(
+                    final ListDefinedMonitoringTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListDefinedMonitoringTemplatesRequest.Builder,
+                ListDefinedMonitoringTemplatesRequest,
+                ListDefinedMonitoringTemplatesResponse,
+                com.oracle.bmc.stackmonitoring.model.DefinedMonitoringTemplateSummary>(
+                new java.util.function.Supplier<ListDefinedMonitoringTemplatesRequest.Builder>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesRequest.Builder get() {
+                        return ListDefinedMonitoringTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListDefinedMonitoringTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListDefinedMonitoringTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListDefinedMonitoringTemplatesRequest.Builder>,
+                        ListDefinedMonitoringTemplatesRequest>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListDefinedMonitoringTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListDefinedMonitoringTemplatesRequest,
+                        ListDefinedMonitoringTemplatesResponse>() {
+                    @Override
+                    public ListDefinedMonitoringTemplatesResponse apply(
+                            ListDefinedMonitoringTemplatesRequest request) {
+                        return client.listDefinedMonitoringTemplates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListDefinedMonitoringTemplatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model
+                                        .DefinedMonitoringTemplateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model
+                                            .DefinedMonitoringTemplateSummary>
+                            apply(ListDefinedMonitoringTemplatesResponse response) {
+                        return response.getDefinedMonitoringTemplateCollection().getItems();
                     }
                 });
     }
@@ -1139,6 +1390,130 @@ public class StackMonitoringPaginators {
                                     com.oracle.bmc.stackmonitoring.model.MonitoredResourceSummary>
                             apply(ListMonitoredResourcesResponse response) {
                         return response.getMonitoredResourceCollection().getItems();
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the responses received from the
+     * listMonitoringTemplates operation. This iterable will fetch more data from the server as
+     * needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the responses
+     *     received from the service.
+     */
+    public Iterable<ListMonitoringTemplatesResponse> listMonitoringTemplatesResponseIterator(
+            final ListMonitoringTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseIterable<
+                ListMonitoringTemplatesRequest.Builder,
+                ListMonitoringTemplatesRequest,
+                ListMonitoringTemplatesResponse>(
+                new java.util.function.Supplier<ListMonitoringTemplatesRequest.Builder>() {
+                    @Override
+                    public ListMonitoringTemplatesRequest.Builder get() {
+                        return ListMonitoringTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoringTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoringTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoringTemplatesRequest.Builder>,
+                        ListMonitoringTemplatesRequest>() {
+                    @Override
+                    public ListMonitoringTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoringTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoringTemplatesRequest, ListMonitoringTemplatesResponse>() {
+                    @Override
+                    public ListMonitoringTemplatesResponse apply(
+                            ListMonitoringTemplatesRequest request) {
+                        return client.listMonitoringTemplates(request);
+                    }
+                });
+    }
+
+    /**
+     * Creates a new iterable which will iterate over the {@link
+     * com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects contained in
+     * responses from the listMonitoringTemplates operation. This iterable will fetch more data from
+     * the server as needed.
+     *
+     * @param request a request which can be sent to the service operation
+     * @return an {@link java.lang.Iterable} which can be used to iterate over the {@link
+     *     com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary} objects contained in
+     *     responses received from the service.
+     */
+    public Iterable<com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>
+            listMonitoringTemplatesRecordIterator(final ListMonitoringTemplatesRequest request) {
+        return new com.oracle.bmc.paginator.internal.ResponseRecordIterable<
+                ListMonitoringTemplatesRequest.Builder,
+                ListMonitoringTemplatesRequest,
+                ListMonitoringTemplatesResponse,
+                com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>(
+                new java.util.function.Supplier<ListMonitoringTemplatesRequest.Builder>() {
+                    @Override
+                    public ListMonitoringTemplatesRequest.Builder get() {
+                        return ListMonitoringTemplatesRequest.builder().copy(request);
+                    }
+                },
+                new java.util.function.Function<ListMonitoringTemplatesResponse, String>() {
+                    @Override
+                    public String apply(ListMonitoringTemplatesResponse response) {
+                        return response.getOpcNextPage();
+                    }
+                },
+                new java.util.function.Function<
+                        com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                ListMonitoringTemplatesRequest.Builder>,
+                        ListMonitoringTemplatesRequest>() {
+                    @Override
+                    public ListMonitoringTemplatesRequest apply(
+                            com.oracle.bmc.paginator.internal.RequestBuilderAndToken<
+                                            ListMonitoringTemplatesRequest.Builder>
+                                    input) {
+                        if (input.getNextPageToken() == null) {
+                            return input.getRequestBuilder().build();
+                        } else {
+                            return input.getRequestBuilder()
+                                    .page(input.getNextPageToken().orElse(null))
+                                    .build();
+                        }
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoringTemplatesRequest, ListMonitoringTemplatesResponse>() {
+                    @Override
+                    public ListMonitoringTemplatesResponse apply(
+                            ListMonitoringTemplatesRequest request) {
+                        return client.listMonitoringTemplates(request);
+                    }
+                },
+                new java.util.function.Function<
+                        ListMonitoringTemplatesResponse,
+                        java.util.List<
+                                com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>>() {
+                    @Override
+                    public java.util.List<
+                                    com.oracle.bmc.stackmonitoring.model.MonitoringTemplateSummary>
+                            apply(ListMonitoringTemplatesResponse response) {
+                        return response.getMonitoringTemplateCollection().getItems();
                     }
                 });
     }

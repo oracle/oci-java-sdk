@@ -26,18 +26,21 @@ public final class ClusterEndpoints
         "kubernetes",
         "publicEndpoint",
         "privateEndpoint",
-        "vcnHostnameEndpoint"
+        "vcnHostnameEndpoint",
+        "ipv6Endpoint"
     })
     public ClusterEndpoints(
             String kubernetes,
             String publicEndpoint,
             String privateEndpoint,
-            String vcnHostnameEndpoint) {
+            String vcnHostnameEndpoint,
+            String ipv6Endpoint) {
         super();
         this.kubernetes = kubernetes;
         this.publicEndpoint = publicEndpoint;
         this.privateEndpoint = privateEndpoint;
         this.vcnHostnameEndpoint = vcnHostnameEndpoint;
+        this.ipv6Endpoint = ipv6Endpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -106,6 +109,21 @@ public final class ClusterEndpoints
             this.__explicitlySet__.add("vcnHostnameEndpoint");
             return this;
         }
+        /** The IPv6 networking Kubernetes API server endpoint. */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipv6Endpoint")
+        private String ipv6Endpoint;
+
+        /**
+         * The IPv6 networking Kubernetes API server endpoint.
+         *
+         * @param ipv6Endpoint the value to set
+         * @return this builder
+         */
+        public Builder ipv6Endpoint(String ipv6Endpoint) {
+            this.ipv6Endpoint = ipv6Endpoint;
+            this.__explicitlySet__.add("ipv6Endpoint");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -116,7 +134,8 @@ public final class ClusterEndpoints
                             this.kubernetes,
                             this.publicEndpoint,
                             this.privateEndpoint,
-                            this.vcnHostnameEndpoint);
+                            this.vcnHostnameEndpoint,
+                            this.ipv6Endpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -136,6 +155,9 @@ public final class ClusterEndpoints
             }
             if (model.wasPropertyExplicitlySet("vcnHostnameEndpoint")) {
                 this.vcnHostnameEndpoint(model.getVcnHostnameEndpoint());
+            }
+            if (model.wasPropertyExplicitlySet("ipv6Endpoint")) {
+                this.ipv6Endpoint(model.getIpv6Endpoint());
             }
             return this;
         }
@@ -206,6 +228,19 @@ public final class ClusterEndpoints
         return vcnHostnameEndpoint;
     }
 
+    /** The IPv6 networking Kubernetes API server endpoint. */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipv6Endpoint")
+    private final String ipv6Endpoint;
+
+    /**
+     * The IPv6 networking Kubernetes API server endpoint.
+     *
+     * @return the value
+     */
+    public String getIpv6Endpoint() {
+        return ipv6Endpoint;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -225,6 +260,7 @@ public final class ClusterEndpoints
         sb.append(", publicEndpoint=").append(String.valueOf(this.publicEndpoint));
         sb.append(", privateEndpoint=").append(String.valueOf(this.privateEndpoint));
         sb.append(", vcnHostnameEndpoint=").append(String.valueOf(this.vcnHostnameEndpoint));
+        sb.append(", ipv6Endpoint=").append(String.valueOf(this.ipv6Endpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -243,6 +279,7 @@ public final class ClusterEndpoints
                 && java.util.Objects.equals(this.publicEndpoint, other.publicEndpoint)
                 && java.util.Objects.equals(this.privateEndpoint, other.privateEndpoint)
                 && java.util.Objects.equals(this.vcnHostnameEndpoint, other.vcnHostnameEndpoint)
+                && java.util.Objects.equals(this.ipv6Endpoint, other.ipv6Endpoint)
                 && super.equals(other);
     }
 
@@ -262,6 +299,7 @@ public final class ClusterEndpoints
                         + (this.vcnHostnameEndpoint == null
                                 ? 43
                                 : this.vcnHostnameEndpoint.hashCode());
+        result = (result * PRIME) + (this.ipv6Endpoint == null ? 43 : this.ipv6Endpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

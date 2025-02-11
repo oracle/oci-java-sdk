@@ -169,12 +169,16 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             this.__explicitlySet__.add("tenancyId");
             return this;
         }
-        /** The name of the region. e.g.: us-ashburn-1 */
+        /**
+         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+         * default to the default region.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("region")
         private String region;
 
         /**
-         * The name of the region. e.g.: us-ashburn-1
+         * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+         * default to the default region.
          *
          * @param region the value to set
          * @return this builder
@@ -187,7 +191,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Oracle NoSQL database. The user must have write access to
-         * the table they want to connect to.
+         * the table they want to connect to. If the user is not provided, backend will default to
+         * the user who is calling the API endpoint.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("userId")
         private String userId;
@@ -195,7 +200,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
          * OCI user who will access the Oracle NoSQL database. The user must have write access to
-         * the table they want to connect to.
+         * the table they want to connect to. If the user is not provided, backend will default to
+         * the user who is calling the API endpoint.
          *
          * @param userId the value to set
          * @return this builder
@@ -209,6 +215,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
          * The base64 encoded content of the private key file (PEM file) corresponding to the API
          * key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field
+         * will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
         private String privateKeyFile;
@@ -217,6 +225,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
          * The base64 encoded content of the private key file (PEM file) corresponding to the API
          * key of the fingerprint. See documentation:
          * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+         * Deprecated: This field is deprecated and replaced by "privateKeyFileSecretId". This field
+         * will be removed after February 15 2026.
          *
          * @param privateKeyFile the value to set
          * @return this builder
@@ -251,12 +261,16 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             this.__explicitlySet__.add("privateKeyFileSecretId");
             return this;
         }
-        /** The passphrase of the private key. */
+        /**
+         * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
+         * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
         private String privateKeyPassphrase;
 
         /**
-         * The passphrase of the private key.
+         * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
+         * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
          *
          * @param privateKeyPassphrase the value to set
          * @return this builder
@@ -306,6 +320,23 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             this.__explicitlySet__.add("publicKeyFingerprint");
             return this;
         }
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+        private Boolean shouldUseResourcePrincipal;
+
+        /**
+         * Indicates that the user intents to connect to the instance through resource principal.
+         *
+         * @param shouldUseResourcePrincipal the value to set
+         * @return this builder
+         */
+        public Builder shouldUseResourcePrincipal(Boolean shouldUseResourcePrincipal) {
+            this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
+            this.__explicitlySet__.add("shouldUseResourcePrincipal");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -333,7 +364,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
                             this.privateKeyFileSecretId,
                             this.privateKeyPassphrase,
                             this.privateKeyPassphraseSecretId,
-                            this.publicKeyFingerprint);
+                            this.publicKeyFingerprint,
+                            this.shouldUseResourcePrincipal);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -405,6 +437,9 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             if (model.wasPropertyExplicitlySet("publicKeyFingerprint")) {
                 this.publicKeyFingerprint(model.getPublicKeyFingerprint());
             }
+            if (model.wasPropertyExplicitlySet("shouldUseResourcePrincipal")) {
+                this.shouldUseResourcePrincipal(model.getShouldUseResourcePrincipal());
+            }
             return this;
         }
     }
@@ -440,7 +475,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
             String privateKeyFileSecretId,
             String privateKeyPassphrase,
             String privateKeyPassphraseSecretId,
-            String publicKeyFingerprint) {
+            String publicKeyFingerprint,
+            Boolean shouldUseResourcePrincipal) {
         super(
                 displayName,
                 description,
@@ -463,6 +499,7 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         this.privateKeyPassphrase = privateKeyPassphrase;
         this.privateKeyPassphraseSecretId = privateKeyPassphraseSecretId;
         this.publicKeyFingerprint = publicKeyFingerprint;
+        this.shouldUseResourcePrincipal = shouldUseResourcePrincipal;
     }
 
     /** The Oracle NoSQL technology type. */
@@ -495,12 +532,16 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         return tenancyId;
     }
 
-    /** The name of the region. e.g.: us-ashburn-1 */
+    /**
+     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+     * default to the default region.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("region")
     private final String region;
 
     /**
-     * The name of the region. e.g.: us-ashburn-1
+     * The name of the region. e.g.: us-ashburn-1 If the region is not provided, backend will
+     * default to the default region.
      *
      * @return the value
      */
@@ -511,7 +552,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Oracle NoSQL database. The user must have write access to the table
-     * they want to connect to.
+     * they want to connect to. If the user is not provided, backend will default to the user who is
+     * calling the API endpoint.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("userId")
     private final String userId;
@@ -519,7 +561,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the OCI
      * user who will access the Oracle NoSQL database. The user must have write access to the table
-     * they want to connect to.
+     * they want to connect to. If the user is not provided, backend will default to the user who is
+     * calling the API endpoint.
      *
      * @return the value
      */
@@ -530,7 +573,9 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
     /**
      * The base64 encoded content of the private key file (PEM file) corresponding to the API key of
      * the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated:
+     * This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed
+     * after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyFile")
     private final String privateKeyFile;
@@ -538,7 +583,9 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
     /**
      * The base64 encoded content of the private key file (PEM file) corresponding to the API key of
      * the fingerprint. See documentation:
-     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm
+     * https://docs.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcredentials.htm Deprecated:
+     * This field is deprecated and replaced by "privateKeyFileSecretId". This field will be removed
+     * after February 15 2026.
      *
      * @return the value
      */
@@ -569,12 +616,16 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         return privateKeyFileSecretId;
     }
 
-    /** The passphrase of the private key. */
+    /**
+     * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
+     * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("privateKeyPassphrase")
     private final String privateKeyPassphrase;
 
     /**
-     * The passphrase of the private key.
+     * The passphrase of the private key. Deprecated: This field is deprecated and replaced by
+     * "privateKeyPassphraseSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -618,6 +669,19 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         return publicKeyFingerprint;
     }
 
+    /** Indicates that the user intents to connect to the instance through resource principal. */
+    @com.fasterxml.jackson.annotation.JsonProperty("shouldUseResourcePrincipal")
+    private final Boolean shouldUseResourcePrincipal;
+
+    /**
+     * Indicates that the user intents to connect to the instance through resource principal.
+     *
+     * @return the value
+     */
+    public Boolean getShouldUseResourcePrincipal() {
+        return shouldUseResourcePrincipal;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -643,6 +707,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
         sb.append(", privateKeyPassphraseSecretId=")
                 .append(String.valueOf(this.privateKeyPassphraseSecretId));
         sb.append(", publicKeyFingerprint=").append(String.valueOf(this.publicKeyFingerprint));
+        sb.append(", shouldUseResourcePrincipal=")
+                .append(String.valueOf(this.shouldUseResourcePrincipal));
         sb.append(")");
         return sb.toString();
     }
@@ -668,6 +734,8 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
                 && java.util.Objects.equals(
                         this.privateKeyPassphraseSecretId, other.privateKeyPassphraseSecretId)
                 && java.util.Objects.equals(this.publicKeyFingerprint, other.publicKeyFingerprint)
+                && java.util.Objects.equals(
+                        this.shouldUseResourcePrincipal, other.shouldUseResourcePrincipal)
                 && super.equals(other);
     }
 
@@ -704,6 +772,11 @@ public final class CreateOracleNosqlConnectionDetails extends CreateConnectionDe
                         + (this.publicKeyFingerprint == null
                                 ? 43
                                 : this.publicKeyFingerprint.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.shouldUseResourcePrincipal == null
+                                ? 43
+                                : this.shouldUseResourcePrincipal.hashCode());
         return result;
     }
 }
