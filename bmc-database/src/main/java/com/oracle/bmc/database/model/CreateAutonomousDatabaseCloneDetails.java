@@ -929,6 +929,7 @@ public final class CreateAutonomousDatabaseCloneDetails extends CreateAutonomous
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
+        Partial("PARTIAL"),
         ;
 
         private final String value;

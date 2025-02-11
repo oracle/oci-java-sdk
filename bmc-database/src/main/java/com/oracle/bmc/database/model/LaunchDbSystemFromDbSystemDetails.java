@@ -273,6 +273,15 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+        private String privateIpV6;
+
+        public Builder privateIpV6(String privateIpV6) {
+            this.privateIpV6 = privateIpV6;
+            this.__explicitlySet__.add("privateIpV6");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonProperty("dataCollectionOptions")
         private DataCollectionOptions dataCollectionOptions;
 
@@ -362,6 +371,7 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
                             this.definedTags,
                             this.securityAttributes,
                             this.privateIp,
+                            this.privateIpV6,
                             this.dataCollectionOptions,
                             this.sourceDbSystemId,
                             this.dbHome,
@@ -455,6 +465,9 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("privateIpV6")) {
+                this.privateIpV6(model.getPrivateIpV6());
+            }
             if (model.wasPropertyExplicitlySet("dataCollectionOptions")) {
                 this.dataCollectionOptions(model.getDataCollectionOptions());
             }
@@ -509,6 +522,7 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> securityAttributes,
             String privateIp,
+            String privateIpV6,
             DataCollectionOptions dataCollectionOptions,
             String sourceDbSystemId,
             CreateDbHomeFromDbSystemDetails dbHome,
@@ -541,6 +555,7 @@ public final class LaunchDbSystemFromDbSystemDetails extends LaunchDbSystemBase 
                 definedTags,
                 securityAttributes,
                 privateIp,
+                privateIpV6,
                 dataCollectionOptions);
         this.sourceDbSystemId = sourceDbSystemId;
         this.dbHome = dbHome;

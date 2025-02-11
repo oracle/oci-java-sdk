@@ -645,6 +645,12 @@
   },
   {
     "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
+    "name": "com.oracle.bmc.aispeech.model.RealtimeParameters$Punctuation",
+    "allDeclaredFields": true,
+    "allDeclaredMethods": true
+  },
+  {
+    "condition" : { "typeReachable" : "com.fasterxml.jackson.databind.ObjectMapper" },
     "name": "com.oracle.bmc.aispeech.model.RealtimeSessionToken",
     "allDeclaredFields": true,
     "allDeclaredMethods": true,

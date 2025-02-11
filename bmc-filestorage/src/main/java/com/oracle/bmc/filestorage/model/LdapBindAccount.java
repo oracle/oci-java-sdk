@@ -107,6 +107,15 @@ public final class LdapBindAccount extends OutboundConnector {
             this.__explicitlySet__.add("definedTags");
             return this;
         }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
+            return this;
+        }
         /** Array of server endpoints to use when connecting with the LDAP bind account. */
         @com.fasterxml.jackson.annotation.JsonProperty("endpoints")
         private java.util.List<Endpoint> endpoints;
@@ -187,6 +196,7 @@ public final class LdapBindAccount extends OutboundConnector {
                             this.locks,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.endpoints,
                             this.bindDistinguishedName,
                             this.passwordSecretId,
@@ -226,6 +236,9 @@ public final class LdapBindAccount extends OutboundConnector {
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
             }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
+            }
             if (model.wasPropertyExplicitlySet("endpoints")) {
                 this.endpoints(model.getEndpoints());
             }
@@ -262,6 +275,7 @@ public final class LdapBindAccount extends OutboundConnector {
             java.util.List<ResourceLock> locks,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             java.util.List<Endpoint> endpoints,
             String bindDistinguishedName,
             String passwordSecretId,
@@ -275,7 +289,8 @@ public final class LdapBindAccount extends OutboundConnector {
                 timeCreated,
                 locks,
                 freeformTags,
-                definedTags);
+                definedTags,
+                systemTags);
         this.endpoints = endpoints;
         this.bindDistinguishedName = bindDistinguishedName;
         this.passwordSecretId = passwordSecretId;

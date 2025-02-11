@@ -63,6 +63,22 @@ public interface StackMonitoring extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Apply the Monitoring Template identified by the id
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ApplyMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ApplyMonitoringTemplate API.
+     */
+    ApplyMonitoringTemplateResponse applyMonitoringTemplate(ApplyMonitoringTemplateRequest request);
+
+    /**
      * Create an association between two monitored resources. Associations can be created between
      * resources from different compartments as long they are in same tenancy. User should have
      * required access in both the compartments.
@@ -178,6 +194,22 @@ public interface StackMonitoring extends AutoCloseable {
      */
     ChangeProcessSetCompartmentResponse changeProcessSetCompartment(
             ChangeProcessSetCompartmentRequest request);
+
+    /**
+     * Create a new alarm condition in same monitoringTemplate compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/CreateAlarmConditionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateAlarmCondition API.
+     */
+    CreateAlarmConditionResponse createAlarmCondition(CreateAlarmConditionRequest request);
 
     /**
      * Creates the specified Baseline-able metric
@@ -318,6 +350,23 @@ public interface StackMonitoring extends AutoCloseable {
             CreateMonitoredResourceTypeRequest request);
 
     /**
+     * Creates a new monitoring template for a given compartment.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/CreateMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     CreateMonitoringTemplate API.
+     */
+    CreateMonitoringTemplateResponse createMonitoringTemplate(
+            CreateMonitoringTemplateRequest request);
+
+    /**
      * API to create Process Set.
      *
      * @param request The request object containing the details to send
@@ -332,6 +381,22 @@ public interface StackMonitoring extends AutoCloseable {
      *     API.
      */
     CreateProcessSetResponse createProcessSet(CreateProcessSetRequest request);
+
+    /**
+     * Deletes the alarm conditions by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteAlarmConditionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteAlarmCondition API.
+     */
+    DeleteAlarmConditionResponse deleteAlarmCondition(DeleteAlarmConditionRequest request);
 
     /**
      * Deletes the Baseline-able metric for the given id
@@ -452,6 +517,23 @@ public interface StackMonitoring extends AutoCloseable {
             DeleteMonitoredResourceTypeRequest request);
 
     /**
+     * Deletes the monitoring template by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/DeleteMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     DeleteMonitoringTemplate API.
+     */
+    DeleteMonitoringTemplateResponse deleteMonitoringTemplate(
+            DeleteMonitoringTemplateRequest request);
+
+    /**
      * Deletes a Process Set
      *
      * @param request The request object containing the details to send
@@ -567,6 +649,39 @@ public interface StackMonitoring extends AutoCloseable {
      *     ExportMetricExtension API.
      */
     ExportMetricExtensionResponse exportMetricExtension(ExportMetricExtensionRequest request);
+
+    /**
+     * Export the specified monitoring template
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ExportMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ExportMonitoringTemplate API.
+     */
+    ExportMonitoringTemplateResponse exportMonitoringTemplate(
+            ExportMonitoringTemplateRequest request);
+
+    /**
+     * Gets a Alarm Condition by identifier.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/GetAlarmConditionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAlarmCondition
+     *     API.
+     */
+    GetAlarmConditionResponse getAlarmCondition(GetAlarmConditionRequest request);
 
     /**
      * Get the Baseline-able metric for the given id
@@ -702,6 +817,22 @@ public interface StackMonitoring extends AutoCloseable {
             GetMonitoredResourceTypeRequest request);
 
     /**
+     * Gets a Monitoring Template by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/GetMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     GetMonitoringTemplate API.
+     */
+    GetMonitoringTemplateResponse getMonitoringTemplate(GetMonitoringTemplateRequest request);
+
+    /**
      * API to get the details of a Process Set by identifier.
      *
      * @param request The request object containing the details to send
@@ -730,6 +861,22 @@ public interface StackMonitoring extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
+
+    /**
+     * Returns a list of Alarm Conditions.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListAlarmConditionsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAlarmConditions
+     *     API.
+     */
+    ListAlarmConditionsResponse listAlarmConditions(ListAlarmConditionsRequest request);
 
     /**
      * List of summary of baseline-able metrics for a given resource group if specified.
@@ -761,6 +908,23 @@ public interface StackMonitoring extends AutoCloseable {
      *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConfigs API.
      */
     ListConfigsResponse listConfigs(ListConfigsRequest request);
+
+    /**
+     * List Defined Monitoring Templates.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListDefinedMonitoringTemplatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListDefinedMonitoringTemplates API.
+     */
+    ListDefinedMonitoringTemplatesResponse listDefinedMonitoringTemplates(
+            ListDefinedMonitoringTemplatesRequest request);
 
     /**
      * API to get all the logs of a Discovery Job.
@@ -881,6 +1045,22 @@ public interface StackMonitoring extends AutoCloseable {
     ListMonitoredResourcesResponse listMonitoredResources(ListMonitoredResourcesRequest request);
 
     /**
+     * Returns a list of Monitoring Templates.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/ListMonitoringTemplatesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     ListMonitoringTemplates API.
+     */
+    ListMonitoringTemplatesResponse listMonitoringTemplates(ListMonitoringTemplatesRequest request);
+
+    /**
      * API to get the details of all Process Sets.
      *
      * @param request The request object containing the details to send
@@ -994,6 +1174,44 @@ public interface StackMonitoring extends AutoCloseable {
      */
     RequestMonitoredResourcesSummarizedCountResponse requestMonitoredResourcesSummarizedCount(
             RequestMonitoredResourcesSummarizedCountRequest request);
+
+    /**
+     * Gets metric extension metrics count based on the aggregation criteria specified using request
+     * body. Either metricExtensionId or compartmentId must be passed even when no other filter
+     * property is passed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/RequestSummarizedMetricExtensionsMetricsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RequestSummarizedMetricExtensionsMetrics API.
+     */
+    RequestSummarizedMetricExtensionsMetricsResponse requestSummarizedMetricExtensionsMetrics(
+            RequestSummarizedMetricExtensionsMetricsRequest request);
+
+    /**
+     * Gets metric extension resources count based on the aggregation criteria specified using
+     * request body. Either metricExtensionId or compartmentId should be passed, if no other
+     * property is passed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/RequestSummarizedMetricExtensionsResourcesExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RequestSummarizedMetricExtensionsResources API.
+     */
+    RequestSummarizedMetricExtensionsResourcesResponse requestSummarizedMetricExtensionsResources(
+            RequestSummarizedMetricExtensionsResourcesRequest request);
 
     /**
      * Retry the last failed operation. The operation failed will be the most recent one. It won't
@@ -1114,6 +1332,39 @@ public interface StackMonitoring extends AutoCloseable {
      *     API.
      */
     TestMetricExtensionResponse testMetricExtension(TestMetricExtensionRequest request);
+
+    /**
+     * Unapply the Monitoring Template identified by the id
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UnapplyMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UnapplyMonitoringTemplate API.
+     */
+    UnapplyMonitoringTemplateResponse unapplyMonitoringTemplate(
+            UnapplyMonitoringTemplateRequest request);
+
+    /**
+     * Update a Alarm Condition by identifier
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateAlarmConditionExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateAlarmCondition API.
+     */
+    UpdateAlarmConditionResponse updateAlarmCondition(UpdateAlarmConditionRequest request);
 
     /**
      * Provided tags will be added or updated in the existing list of tags for the affected
@@ -1254,6 +1505,23 @@ public interface StackMonitoring extends AutoCloseable {
      */
     UpdateMonitoredResourceTypeResponse updateMonitoredResourceType(
             UpdateMonitoredResourceTypeRequest request);
+
+    /**
+     * Updates the Monitoring Template
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation will not retry by default, users
+     *     can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to
+     *     enable retries for it. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/stackmonitoring/UpdateMonitoringTemplateExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     UpdateMonitoringTemplate API.
+     */
+    UpdateMonitoringTemplateResponse updateMonitoringTemplate(
+            UpdateMonitoringTemplateRequest request);
 
     /**
      * API to update a Process Set identified by a given ocid.

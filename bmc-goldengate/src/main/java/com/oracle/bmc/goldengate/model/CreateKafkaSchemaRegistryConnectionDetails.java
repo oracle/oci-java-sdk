@@ -203,6 +203,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password to access Schema Registry using basic authentication. This value is injected
          * into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -210,6 +212,8 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         /**
          * The password to access Schema Registry using basic authentication. This value is injected
          * into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -244,12 +248,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("passwordSecretId");
             return this;
         }
-        /** The base64 encoded content of the TrustStore file. */
+        /**
+         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
+         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
         private String trustStore;
 
         /**
-         * The base64 encoded content of the TrustStore file.
+         * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated
+         * and replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStore the value to set
          * @return this builder
@@ -280,12 +288,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("trustStoreSecretId");
             return this;
         }
-        /** The TrustStore password. */
+        /**
+         * The TrustStore password. Deprecated: This field is deprecated and replaced by
+         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
         private String trustStorePassword;
 
         /**
-         * The TrustStore password.
+         * The TrustStore password. Deprecated: This field is deprecated and replaced by
+         * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param trustStorePassword the value to set
          * @return this builder
@@ -316,12 +328,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("trustStorePasswordSecretId");
             return this;
         }
-        /** The base64 encoded content of the KeyStore file. */
+        /**
+         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
         private String keyStore;
 
         /**
-         * The base64 encoded content of the KeyStore file.
+         * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+         * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStore the value to set
          * @return this builder
@@ -352,12 +368,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
             this.__explicitlySet__.add("keyStoreSecretId");
             return this;
         }
-        /** The KeyStore password. */
+        /**
+         * The KeyStore password. Deprecated: This field is deprecated and replaced by
+         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
         private String keyStorePassword;
 
         /**
-         * The KeyStore password.
+         * The KeyStore password. Deprecated: This field is deprecated and replaced by
+         * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param keyStorePassword the value to set
          * @return this builder
@@ -390,14 +410,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         }
         /**
          * The password for the cert inside the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided.
+         * password, it should be provided. Deprecated: This field is deprecated and replaced by
+         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
         private String sslKeyPassword;
 
         /**
          * The password for the cert inside the KeyStore. In case it differs from the KeyStore
-         * password, it should be provided.
+         * password, it should be provided. Deprecated: This field is deprecated and replaced by
+         * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
          *
          * @param sslKeyPassword the value to set
          * @return this builder
@@ -730,14 +752,18 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The password to access Schema Registry using basic authentication. This value is injected
-     * into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+     * into 'schema.registry.basic.auth.user.info=user:password' configuration property. Deprecated:
+     * This field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password to access Schema Registry using basic authentication. This value is injected
-     * into 'schema.registry.basic.auth.user.info=user:password' configuration property.
+     * into 'schema.registry.basic.auth.user.info=user:password' configuration property. Deprecated:
+     * This field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
      *
      * @return the value
      */
@@ -768,12 +794,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         return passwordSecretId;
     }
 
-    /** The base64 encoded content of the TrustStore file. */
+    /**
+     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
+     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStore")
     private final String trustStore;
 
     /**
-     * The base64 encoded content of the TrustStore file.
+     * The base64 encoded content of the TrustStore file. Deprecated: This field is deprecated and
+     * replaced by "trustStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -800,12 +830,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         return trustStoreSecretId;
     }
 
-    /** The TrustStore password. */
+    /**
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("trustStorePassword")
     private final String trustStorePassword;
 
     /**
-     * The TrustStore password.
+     * The TrustStore password. Deprecated: This field is deprecated and replaced by
+     * "trustStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -832,12 +866,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         return trustStorePasswordSecretId;
     }
 
-    /** The base64 encoded content of the KeyStore file. */
+    /**
+     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStore")
     private final String keyStore;
 
     /**
-     * The base64 encoded content of the KeyStore file.
+     * The base64 encoded content of the KeyStore file. Deprecated: This field is deprecated and
+     * replaced by "keyStoreSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -864,12 +902,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
         return keyStoreSecretId;
     }
 
-    /** The KeyStore password. */
+    /**
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("keyStorePassword")
     private final String keyStorePassword;
 
     /**
-     * The KeyStore password.
+     * The KeyStore password. Deprecated: This field is deprecated and replaced by
+     * "keyStorePasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -898,14 +940,16 @@ public final class CreateKafkaSchemaRegistryConnectionDetails extends CreateConn
 
     /**
      * The password for the cert inside the KeyStore. In case it differs from the KeyStore password,
-     * it should be provided.
+     * it should be provided. Deprecated: This field is deprecated and replaced by
+     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("sslKeyPassword")
     private final String sslKeyPassword;
 
     /**
      * The password for the cert inside the KeyStore. In case it differs from the KeyStore password,
-     * it should be provided.
+     * it should be provided. Deprecated: This field is deprecated and replaced by
+     * "sslKeyPasswordSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */

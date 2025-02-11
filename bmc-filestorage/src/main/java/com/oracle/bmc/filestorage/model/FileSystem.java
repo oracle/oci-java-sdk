@@ -38,6 +38,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         "timeCreated",
         "freeformTags",
         "definedTags",
+        "systemTags",
         "kmsKeyId",
         "sourceDetails",
         "isCloneParent",
@@ -60,6 +61,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             java.util.Date timeCreated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String kmsKeyId,
             SourceDetails sourceDetails,
             Boolean isCloneParent,
@@ -81,6 +83,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         this.timeCreated = timeCreated;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
+        this.systemTags = systemTags;
         this.kmsKeyId = kmsKeyId;
         this.sourceDetails = sourceDetails;
         this.isCloneParent = isCloneParent;
@@ -284,6 +287,25 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+        /**
+         * System tags for this resource. System tags are applied to resources by internal OCI
+         * services.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        /**
+         * System tags for this resource. System tags are applied to resources by internal OCI
+         * services.
+         *
+         * @param systemTags the value to set
+         * @return this builder
+         */
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -505,6 +527,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                             this.timeCreated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.kmsKeyId,
                             this.sourceDetails,
                             this.isCloneParent,
@@ -550,6 +573,9 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
@@ -819,6 +845,21 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
     }
 
     /**
+     * System tags for this resource. System tags are applied to resources by internal OCI services.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+    private final java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+    /**
+     * System tags for this resource. System tags are applied to resources by internal OCI services.
+     *
+     * @return the value
+     */
+    public java.util.Map<String, java.util.Map<String, Object>> getSystemTags() {
+        return systemTags;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the KMS
      * key which is the master encryption key for the file system.
      */
@@ -1070,6 +1111,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
+        sb.append(", systemTags=").append(String.valueOf(this.systemTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
         sb.append(", sourceDetails=").append(String.valueOf(this.sourceDetails));
         sb.append(", isCloneParent=").append(String.valueOf(this.isCloneParent));
@@ -1105,6 +1147,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
+                && java.util.Objects.equals(this.systemTags, other.systemTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
                 && java.util.Objects.equals(this.sourceDetails, other.sourceDetails)
                 && java.util.Objects.equals(this.isCloneParent, other.isCloneParent)
@@ -1141,6 +1184,7 @@ public final class FileSystem extends com.oracle.bmc.http.client.internal.Explic
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
+        result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
         result =
                 (result * PRIME)

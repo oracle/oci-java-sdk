@@ -147,7 +147,8 @@ public final class AutonomousDwDatabase
         "remoteDisasterRecoveryConfiguration",
         "netServicesArchitecture",
         "availabilityDomain",
-        "clusterPlacementGroupId"
+        "clusterPlacementGroupId",
+        "cloneTableSpaceList"
     })
     public AutonomousDwDatabase(
             String id,
@@ -273,7 +274,8 @@ public final class AutonomousDwDatabase
             DisasterRecoveryConfiguration remoteDisasterRecoveryConfiguration,
             NetServicesArchitecture netServicesArchitecture,
             String availabilityDomain,
-            String clusterPlacementGroupId) {
+            String clusterPlacementGroupId,
+            java.util.List<Integer> cloneTableSpaceList) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -399,6 +401,7 @@ public final class AutonomousDwDatabase
         this.netServicesArchitecture = netServicesArchitecture;
         this.availabilityDomain = availabilityDomain;
         this.clusterPlacementGroupId = clusterPlacementGroupId;
+        this.cloneTableSpaceList = cloneTableSpaceList;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -3072,6 +3075,25 @@ public final class AutonomousDwDatabase
             this.__explicitlySet__.add("clusterPlacementGroupId");
             return this;
         }
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+        private java.util.List<Integer> cloneTableSpaceList;
+
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         *
+         * @param cloneTableSpaceList the value to set
+         * @return this builder
+         */
+        public Builder cloneTableSpaceList(java.util.List<Integer> cloneTableSpaceList) {
+            this.cloneTableSpaceList = cloneTableSpaceList;
+            this.__explicitlySet__.add("cloneTableSpaceList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -3202,7 +3224,8 @@ public final class AutonomousDwDatabase
                             this.remoteDisasterRecoveryConfiguration,
                             this.netServicesArchitecture,
                             this.availabilityDomain,
-                            this.clusterPlacementGroupId);
+                            this.clusterPlacementGroupId,
+                            this.cloneTableSpaceList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -3587,6 +3610,9 @@ public final class AutonomousDwDatabase
             }
             if (model.wasPropertyExplicitlySet("clusterPlacementGroupId")) {
                 this.clusterPlacementGroupId(model.getClusterPlacementGroupId());
+            }
+            if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
+                this.cloneTableSpaceList(model.getCloneTableSpaceList());
             }
             return this;
         }
@@ -6673,6 +6699,23 @@ public final class AutonomousDwDatabase
         return clusterPlacementGroupId;
     }
 
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+    private final java.util.List<Integer> cloneTableSpaceList;
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     *
+     * @return the value
+     */
+    public java.util.List<Integer> getCloneTableSpaceList() {
+        return cloneTableSpaceList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -6850,6 +6893,7 @@ public final class AutonomousDwDatabase
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(", clusterPlacementGroupId=")
                 .append(String.valueOf(this.clusterPlacementGroupId));
+        sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(")");
         return sb.toString();
     }
@@ -7036,6 +7080,7 @@ public final class AutonomousDwDatabase
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && java.util.Objects.equals(
                         this.clusterPlacementGroupId, other.clusterPlacementGroupId)
+                && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && super.equals(other);
     }
 
@@ -7483,6 +7528,11 @@ public final class AutonomousDwDatabase
                         + (this.clusterPlacementGroupId == null
                                 ? 43
                                 : this.clusterPlacementGroupId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneTableSpaceList == null
+                                ? 43
+                                : this.cloneTableSpaceList.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

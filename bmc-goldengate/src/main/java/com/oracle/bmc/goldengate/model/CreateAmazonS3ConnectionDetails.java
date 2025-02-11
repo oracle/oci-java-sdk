@@ -165,12 +165,18 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
             this.__explicitlySet__.add("accessKeyId");
             return this;
         }
-        /** Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+        /**
+         * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
         private String secretAccessKey;
 
         /**
          * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+         * Deprecated: This field is deprecated and replaced by "secretAccessKeySecretId". This
+         * field will be removed after February 15 2026.
          *
          * @param secretAccessKey the value to set
          * @return this builder
@@ -356,12 +362,18 @@ public final class CreateAmazonS3ConnectionDetails extends CreateConnectionDetai
         return accessKeyId;
     }
 
-    /** Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" */
+    /**
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("secretAccessKey")
     private final String secretAccessKey;
 
     /**
-     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret"
+     * Secret access key to access the Amazon S3 bucket. e.g.: "this-is-not-the-secret" Deprecated:
+     * This field is deprecated and replaced by "secretAccessKeySecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */

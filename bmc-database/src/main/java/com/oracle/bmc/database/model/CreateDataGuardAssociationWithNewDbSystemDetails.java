@@ -445,6 +445,25 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             return this;
         }
         /**
+         * The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If
+         * not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+        private String privateIpV6;
+
+        /**
+         * The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If
+         * not provided, it will be auto-assigned with an available IPv6 address from the subnet.
+         *
+         * @param privateIpV6 the value to set
+         * @return this builder
+         */
+        public Builder privateIpV6(String privateIpV6) {
+            this.privateIpV6 = privateIpV6;
+            this.__explicitlySet__.add("privateIpV6");
+            return this;
+        }
+        /**
          * The Oracle license model that applies to all the databases on the dataguard standby DB
          * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to
          * select the DB edition using the optional parameter, for Autonomous Database Serverless.
@@ -621,6 +640,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                             this.timeZone,
                             this.faultDomains,
                             this.privateIp,
+                            this.privateIpV6,
                             this.licenseModel,
                             this.dbSystemFreeformTags,
                             this.dbSystemDefinedTags,
@@ -703,6 +723,9 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             if (model.wasPropertyExplicitlySet("privateIp")) {
                 this.privateIp(model.getPrivateIp());
             }
+            if (model.wasPropertyExplicitlySet("privateIpV6")) {
+                this.privateIpV6(model.getPrivateIpV6());
+            }
             if (model.wasPropertyExplicitlySet("licenseModel")) {
                 this.licenseModel(model.getLicenseModel());
             }
@@ -761,6 +784,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
             String timeZone,
             java.util.List<String> faultDomains,
             String privateIp,
+            String privateIpV6,
             LicenseModel licenseModel,
             java.util.Map<String, String> dbSystemFreeformTags,
             java.util.Map<String, java.util.Map<String, Object>> dbSystemDefinedTags,
@@ -791,6 +815,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         this.timeZone = timeZone;
         this.faultDomains = faultDomains;
         this.privateIp = privateIp;
+        this.privateIpV6 = privateIpV6;
         this.licenseModel = licenseModel;
         this.dbSystemFreeformTags = dbSystemFreeformTags;
         this.dbSystemDefinedTags = dbSystemDefinedTags;
@@ -1141,6 +1166,23 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
     }
 
     /**
+     * The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If not
+     * provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("privateIpV6")
+    private final String privateIpV6;
+
+    /**
+     * The IPv6 address from the provided OCI subnet which needs to be assigned to the VNIC. If not
+     * provided, it will be auto-assigned with an available IPv6 address from the subnet.
+     *
+     * @return the value
+     */
+    public String getPrivateIpV6() {
+        return privateIpV6;
+    }
+
+    /**
      * The Oracle license model that applies to all the databases on the dataguard standby DB
      * system. The default is LICENSE_INCLUDED. Bring your own license (BYOL) allows you to select
      * the DB edition using the optional parameter, for Autonomous Database Serverless.
@@ -1338,6 +1380,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         sb.append(", timeZone=").append(String.valueOf(this.timeZone));
         sb.append(", faultDomains=").append(String.valueOf(this.faultDomains));
         sb.append(", privateIp=").append(String.valueOf(this.privateIp));
+        sb.append(", privateIpV6=").append(String.valueOf(this.privateIpV6));
         sb.append(", licenseModel=").append(String.valueOf(this.licenseModel));
         sb.append(", dbSystemFreeformTags=").append(String.valueOf(this.dbSystemFreeformTags));
         sb.append(", dbSystemDefinedTags=").append(String.valueOf(this.dbSystemDefinedTags));
@@ -1376,6 +1419,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
                 && java.util.Objects.equals(this.timeZone, other.timeZone)
                 && java.util.Objects.equals(this.faultDomains, other.faultDomains)
                 && java.util.Objects.equals(this.privateIp, other.privateIp)
+                && java.util.Objects.equals(this.privateIpV6, other.privateIpV6)
                 && java.util.Objects.equals(this.licenseModel, other.licenseModel)
                 && java.util.Objects.equals(this.dbSystemFreeformTags, other.dbSystemFreeformTags)
                 && java.util.Objects.equals(this.dbSystemDefinedTags, other.dbSystemDefinedTags)
@@ -1417,6 +1461,7 @@ public final class CreateDataGuardAssociationWithNewDbSystemDetails
         result = (result * PRIME) + (this.timeZone == null ? 43 : this.timeZone.hashCode());
         result = (result * PRIME) + (this.faultDomains == null ? 43 : this.faultDomains.hashCode());
         result = (result * PRIME) + (this.privateIp == null ? 43 : this.privateIp.hashCode());
+        result = (result * PRIME) + (this.privateIpV6 == null ? 43 : this.privateIpV6.hashCode());
         result = (result * PRIME) + (this.licenseModel == null ? 43 : this.licenseModel.hashCode());
         result =
                 (result * PRIME)

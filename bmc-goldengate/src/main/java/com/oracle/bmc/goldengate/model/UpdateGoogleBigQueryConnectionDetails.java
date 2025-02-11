@@ -119,14 +119,16 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
         }
         /**
          * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google BigQuery.
+         * required to use Google BigQuery. Deprecated: This field is deprecated and replaced by
+         * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
         private String serviceAccountKeyFile;
 
         /**
          * The base64 encoded content of the service account key file containing the credentials
-         * required to use Google BigQuery.
+         * required to use Google BigQuery. Deprecated: This field is deprecated and replaced by
+         * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
          *
          * @param serviceAccountKeyFile the value to set
          * @return this builder
@@ -266,14 +268,16 @@ public final class UpdateGoogleBigQueryConnectionDetails extends UpdateConnectio
 
     /**
      * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google BigQuery.
+     * required to use Google BigQuery. Deprecated: This field is deprecated and replaced by
+     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("serviceAccountKeyFile")
     private final String serviceAccountKeyFile;
 
     /**
      * The base64 encoded content of the service account key file containing the credentials
-     * required to use Google BigQuery.
+     * required to use Google BigQuery. Deprecated: This field is deprecated and replaced by
+     * "serviceAccountKeyFileSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */

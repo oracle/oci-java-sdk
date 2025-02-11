@@ -275,7 +275,8 @@ public final class CreateDatabaseRegistrationDetails
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
@@ -283,7 +284,8 @@ public final class CreateDatabaseRegistrationDetails
         /**
          * The password Oracle GoldenGate uses to connect the associated system of the given
          * technology. It must conform to the specific security requirements including length, case
-         * sensitivity, and so on.
+         * sensitivity, and so on. Deprecated: This field is deprecated and replaced by
+         * "passwordSecretId". This field will be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -333,14 +335,16 @@ public final class CreateDatabaseRegistrationDetails
         }
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded.
+         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
+         * replaced by "walletSecretId". This field will be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("wallet")
         private String wallet;
 
         /**
          * The wallet contents Oracle GoldenGate uses to make connections to a database. This
-         * attribute is expected to be base64 encoded.
+         * attribute is expected to be base64 encoded. Deprecated: This field is deprecated and
+         * replaced by "walletSecretId". This field will be removed after February 15 2026.
          *
          * @param wallet the value to set
          * @return this builder
@@ -695,7 +699,8 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
@@ -703,7 +708,8 @@ public final class CreateDatabaseRegistrationDetails
     /**
      * The password Oracle GoldenGate uses to connect the associated system of the given technology.
      * It must conform to the specific security requirements including length, case sensitivity, and
-     * so on.
+     * so on. Deprecated: This field is deprecated and replaced by "passwordSecretId". This field
+     * will be removed after February 15 2026.
      *
      * @return the value
      */
@@ -785,14 +791,16 @@ public final class CreateDatabaseRegistrationDetails
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded.
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This field will be removed after February 15 2026.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("wallet")
     private final String wallet;
 
     /**
      * The wallet contents Oracle GoldenGate uses to make connections to a database. This attribute
-     * is expected to be base64 encoded.
+     * is expected to be base64 encoded. Deprecated: This field is deprecated and replaced by
+     * "walletSecretId". This field will be removed after February 15 2026.
      *
      * @return the value
      */

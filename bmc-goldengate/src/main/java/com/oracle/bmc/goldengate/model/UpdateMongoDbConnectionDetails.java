@@ -153,12 +153,18 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             this.__explicitlySet__.add("username");
             return this;
         }
-        /** The password Oracle GoldenGate uses to connect the associated database. */
+        /**
+         * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
+         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+         * February 15 2026.
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
-         * The password Oracle GoldenGate uses to connect the associated database.
+         * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
+         * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+         * February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -208,6 +214,127 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             this.__explicitlySet__.add("databaseId");
             return this;
         }
+        /** Security Type for MongoDB. */
+        @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+        private MongoDbConnection.SecurityProtocol securityProtocol;
+
+        /**
+         * Security Type for MongoDB.
+         *
+         * @param securityProtocol the value to set
+         * @return this builder
+         */
+        public Builder securityProtocol(MongoDbConnection.SecurityProtocol securityProtocol) {
+            this.securityProtocol = securityProtocol;
+            this.__explicitlySet__.add("securityProtocol");
+            return this;
+        }
+        /**
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server
+         * public key (for 1 and 2-way SSL).
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
+        private String tlsCaFile;
+
+        /**
+         * Database Certificate - The base64 encoded content of a .pem file, containing the server
+         * public key (for 1 and 2-way SSL).
+         *
+         * @param tlsCaFile the value to set
+         * @return this builder
+         */
+        public Builder tlsCaFile(String tlsCaFile) {
+            this.tlsCaFile = tlsCaFile;
+            this.__explicitlySet__.add("tlsCaFile");
+            return this;
+        }
+        /**
+         * Client Certificate - The base64 encoded content of a .pem file, containing the client
+         * public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
+         * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
+        private String tlsCertificateKeyFile;
+
+        /**
+         * Client Certificate - The base64 encoded content of a .pem file, containing the client
+         * public key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
+         * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+         *
+         * @param tlsCertificateKeyFile the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFile(String tlsCertificateKeyFile) {
+            this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+            this.__explicitlySet__.add("tlsCertificateKeyFile");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the certificate key file of the mtls connection. - The content of a
+         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
+         * 'tlsCertificateKeyFile' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
+        private String tlsCertificateKeyFileSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the certificate key file of the mtls connection. - The content of a
+         * .pem file containing the client private key (for 2-way SSL). Note: When provided,
+         * 'tlsCertificateKeyFile' field must not be provided.
+         *
+         * @param tlsCertificateKeyFileSecretId the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFileSecretId(String tlsCertificateKeyFileSecretId) {
+            this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+            this.__explicitlySet__.add("tlsCertificateKeyFileSecretId");
+            return this;
+        }
+        /**
+         * Client Certificate key file password. Deprecated: This field is deprecated and replaced
+         * by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15
+         * 2026.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
+        private String tlsCertificateKeyFilePassword;
+
+        /**
+         * Client Certificate key file password. Deprecated: This field is deprecated and replaced
+         * by "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15
+         * 2026.
+         *
+         * @param tlsCertificateKeyFilePassword the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFilePassword(String tlsCertificateKeyFilePassword) {
+            this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+            this.__explicitlySet__.add("tlsCertificateKeyFilePassword");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password of the tls certificate key file. Note: When provided,
+         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
+        private String tlsCertificateKeyFilePasswordSecretId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+         * Secret that stores the password of the tls certificate key file. Note: When provided,
+         * 'tlsCertificateKeyFilePassword' field must not be provided.
+         *
+         * @param tlsCertificateKeyFilePasswordSecretId the value to set
+         * @return this builder
+         */
+        public Builder tlsCertificateKeyFilePasswordSecretId(
+                String tlsCertificateKeyFilePasswordSecretId) {
+            this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
+            this.__explicitlySet__.add("tlsCertificateKeyFilePasswordSecretId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -229,7 +356,13 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                             this.username,
                             this.password,
                             this.passwordSecretId,
-                            this.databaseId);
+                            this.databaseId,
+                            this.securityProtocol,
+                            this.tlsCaFile,
+                            this.tlsCertificateKeyFile,
+                            this.tlsCertificateKeyFileSecretId,
+                            this.tlsCertificateKeyFilePassword,
+                            this.tlsCertificateKeyFilePasswordSecretId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -283,6 +416,25 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             if (model.wasPropertyExplicitlySet("databaseId")) {
                 this.databaseId(model.getDatabaseId());
             }
+            if (model.wasPropertyExplicitlySet("securityProtocol")) {
+                this.securityProtocol(model.getSecurityProtocol());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCaFile")) {
+                this.tlsCaFile(model.getTlsCaFile());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFile")) {
+                this.tlsCertificateKeyFile(model.getTlsCertificateKeyFile());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFileSecretId")) {
+                this.tlsCertificateKeyFileSecretId(model.getTlsCertificateKeyFileSecretId());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFilePassword")) {
+                this.tlsCertificateKeyFilePassword(model.getTlsCertificateKeyFilePassword());
+            }
+            if (model.wasPropertyExplicitlySet("tlsCertificateKeyFilePasswordSecretId")) {
+                this.tlsCertificateKeyFilePasswordSecretId(
+                        model.getTlsCertificateKeyFilePasswordSecretId());
+            }
             return this;
         }
     }
@@ -312,7 +464,13 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
             String username,
             String password,
             String passwordSecretId,
-            String databaseId) {
+            String databaseId,
+            MongoDbConnection.SecurityProtocol securityProtocol,
+            String tlsCaFile,
+            String tlsCertificateKeyFile,
+            String tlsCertificateKeyFileSecretId,
+            String tlsCertificateKeyFilePassword,
+            String tlsCertificateKeyFilePasswordSecretId) {
         super(
                 displayName,
                 description,
@@ -329,6 +487,12 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         this.password = password;
         this.passwordSecretId = passwordSecretId;
         this.databaseId = databaseId;
+        this.securityProtocol = securityProtocol;
+        this.tlsCaFile = tlsCaFile;
+        this.tlsCertificateKeyFile = tlsCertificateKeyFile;
+        this.tlsCertificateKeyFileSecretId = tlsCertificateKeyFileSecretId;
+        this.tlsCertificateKeyFilePassword = tlsCertificateKeyFilePassword;
+        this.tlsCertificateKeyFilePasswordSecretId = tlsCertificateKeyFilePasswordSecretId;
     }
 
     /** MongoDB connection string. e.g.: 'mongodb://mongodb0.example.com:27017/recordsrecords' */
@@ -361,12 +525,18 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         return username;
     }
 
-    /** The password Oracle GoldenGate uses to connect the associated database. */
+    /**
+     * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
+     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
-     * The password Oracle GoldenGate uses to connect the associated database.
+     * The password Oracle GoldenGate uses to connect the associated database. Deprecated: This
+     * field is deprecated and replaced by "passwordSecretId". This field will be removed after
+     * February 15 2026.
      *
      * @return the value
      */
@@ -410,6 +580,112 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         return databaseId;
     }
 
+    /** Security Type for MongoDB. */
+    @com.fasterxml.jackson.annotation.JsonProperty("securityProtocol")
+    private final MongoDbConnection.SecurityProtocol securityProtocol;
+
+    /**
+     * Security Type for MongoDB.
+     *
+     * @return the value
+     */
+    public MongoDbConnection.SecurityProtocol getSecurityProtocol() {
+        return securityProtocol;
+    }
+
+    /**
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server
+     * public key (for 1 and 2-way SSL).
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCaFile")
+    private final String tlsCaFile;
+
+    /**
+     * Database Certificate - The base64 encoded content of a .pem file, containing the server
+     * public key (for 1 and 2-way SSL).
+     *
+     * @return the value
+     */
+    public String getTlsCaFile() {
+        return tlsCaFile;
+    }
+
+    /**
+     * Client Certificate - The base64 encoded content of a .pem file, containing the client public
+     * key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
+     * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFile")
+    private final String tlsCertificateKeyFile;
+
+    /**
+     * Client Certificate - The base64 encoded content of a .pem file, containing the client public
+     * key (for 2-way SSL). Deprecated: This field is deprecated and replaced by
+     * "tlsCertificateKeyFileSecretId". This field will be removed after February 15 2026.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFile() {
+        return tlsCertificateKeyFile;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
+     * file containing the client private key (for 2-way SSL). Note: When provided,
+     * 'tlsCertificateKeyFile' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFileSecretId")
+    private final String tlsCertificateKeyFileSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the certificate key file of the mtls connection. - The content of a .pem
+     * file containing the client private key (for 2-way SSL). Note: When provided,
+     * 'tlsCertificateKeyFile' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFileSecretId() {
+        return tlsCertificateKeyFileSecretId;
+    }
+
+    /**
+     * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
+     * "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePassword")
+    private final String tlsCertificateKeyFilePassword;
+
+    /**
+     * Client Certificate key file password. Deprecated: This field is deprecated and replaced by
+     * "tlsCertificateKeyFilePasswordSecretId". This field will be removed after February 15 2026.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFilePassword() {
+        return tlsCertificateKeyFilePassword;
+    }
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password of the tls certificate key file. Note: When provided,
+     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("tlsCertificateKeyFilePasswordSecretId")
+    private final String tlsCertificateKeyFilePasswordSecretId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
+     * Secret that stores the password of the tls certificate key file. Note: When provided,
+     * 'tlsCertificateKeyFilePassword' field must not be provided.
+     *
+     * @return the value
+     */
+    public String getTlsCertificateKeyFilePasswordSecretId() {
+        return tlsCertificateKeyFilePasswordSecretId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -430,6 +706,14 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
         sb.append(", password=").append("<redacted>");
         sb.append(", passwordSecretId=").append(String.valueOf(this.passwordSecretId));
         sb.append(", databaseId=").append(String.valueOf(this.databaseId));
+        sb.append(", securityProtocol=").append(String.valueOf(this.securityProtocol));
+        sb.append(", tlsCaFile=").append(String.valueOf(this.tlsCaFile));
+        sb.append(", tlsCertificateKeyFile=").append(String.valueOf(this.tlsCertificateKeyFile));
+        sb.append(", tlsCertificateKeyFileSecretId=")
+                .append(String.valueOf(this.tlsCertificateKeyFileSecretId));
+        sb.append(", tlsCertificateKeyFilePassword=").append("<redacted>");
+        sb.append(", tlsCertificateKeyFilePasswordSecretId=")
+                .append(String.valueOf(this.tlsCertificateKeyFilePasswordSecretId));
         sb.append(")");
         return sb.toString();
     }
@@ -449,6 +733,16 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                 && java.util.Objects.equals(this.password, other.password)
                 && java.util.Objects.equals(this.passwordSecretId, other.passwordSecretId)
                 && java.util.Objects.equals(this.databaseId, other.databaseId)
+                && java.util.Objects.equals(this.securityProtocol, other.securityProtocol)
+                && java.util.Objects.equals(this.tlsCaFile, other.tlsCaFile)
+                && java.util.Objects.equals(this.tlsCertificateKeyFile, other.tlsCertificateKeyFile)
+                && java.util.Objects.equals(
+                        this.tlsCertificateKeyFileSecretId, other.tlsCertificateKeyFileSecretId)
+                && java.util.Objects.equals(
+                        this.tlsCertificateKeyFilePassword, other.tlsCertificateKeyFilePassword)
+                && java.util.Objects.equals(
+                        this.tlsCertificateKeyFilePasswordSecretId,
+                        other.tlsCertificateKeyFilePasswordSecretId)
                 && super.equals(other);
     }
 
@@ -465,6 +759,30 @@ public final class UpdateMongoDbConnectionDetails extends UpdateConnectionDetail
                 (result * PRIME)
                         + (this.passwordSecretId == null ? 43 : this.passwordSecretId.hashCode());
         result = (result * PRIME) + (this.databaseId == null ? 43 : this.databaseId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.securityProtocol == null ? 43 : this.securityProtocol.hashCode());
+        result = (result * PRIME) + (this.tlsCaFile == null ? 43 : this.tlsCaFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFile == null
+                                ? 43
+                                : this.tlsCertificateKeyFile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFileSecretId == null
+                                ? 43
+                                : this.tlsCertificateKeyFileSecretId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFilePassword == null
+                                ? 43
+                                : this.tlsCertificateKeyFilePassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.tlsCertificateKeyFilePasswordSecretId == null
+                                ? 43
+                                : this.tlsCertificateKeyFilePasswordSecretId.hashCode());
         return result;
     }
 }

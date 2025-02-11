@@ -183,12 +183,16 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         }
         /**
          * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("password")
         private String password;
 
         /**
          * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+         * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will
+         * be removed after February 15 2026.
          *
          * @param password the value to set
          * @return this builder
@@ -447,12 +451,18 @@ public final class UpdateGoldenGateConnectionDetails extends UpdateConnectionDet
         return username;
     }
 
-    /** The password used to connect to the Oracle GoldenGate accessed trough this connection. */
+    /**
+     * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("password")
     private final String password;
 
     /**
      * The password used to connect to the Oracle GoldenGate accessed trough this connection.
+     * Deprecated: This field is deprecated and replaced by "passwordSecretId". This field will be
+     * removed after February 15 2026.
      *
      * @return the value
      */

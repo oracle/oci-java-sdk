@@ -546,6 +546,25 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             this.__explicitlySet__.add("cloneType");
             return this;
         }
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+        private java.util.List<Integer> cloneTableSpaceList;
+
+        /**
+         * A list of the source Autonomous Database's table space number(s) used to create this
+         * partial clone from the backup.
+         *
+         * @param cloneTableSpaceList the value to set
+         * @return this builder
+         */
+        public Builder cloneTableSpaceList(java.util.List<Integer> cloneTableSpaceList) {
+            this.cloneTableSpaceList = cloneTableSpaceList;
+            this.__explicitlySet__.add("cloneTableSpaceList");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -607,7 +626,8 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                             this.secretId,
                             this.secretVersionNumber,
                             this.autonomousDatabaseBackupId,
-                            this.cloneType);
+                            this.cloneType,
+                            this.cloneTableSpaceList);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -783,6 +803,9 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             if (model.wasPropertyExplicitlySet("cloneType")) {
                 this.cloneType(model.getCloneType());
             }
+            if (model.wasPropertyExplicitlySet("cloneTableSpaceList")) {
+                this.cloneTableSpaceList(model.getCloneTableSpaceList());
+            }
             return this;
         }
     }
@@ -852,7 +875,8 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
             String secretId,
             Integer secretVersionNumber,
             String autonomousDatabaseBackupId,
-            CloneType cloneType) {
+            CloneType cloneType,
+            java.util.List<Integer> cloneTableSpaceList) {
         super(
                 subscriptionId,
                 compartmentId,
@@ -909,6 +933,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                 secretVersionNumber);
         this.autonomousDatabaseBackupId = autonomousDatabaseBackupId;
         this.cloneType = cloneType;
+        this.cloneTableSpaceList = cloneTableSpaceList;
     }
 
     /**
@@ -932,6 +957,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
     public enum CloneType implements com.oracle.bmc.http.internal.BmcEnum {
         Full("FULL"),
         Metadata("METADATA"),
+        Partial("PARTIAL"),
         ;
 
         private final String value;
@@ -974,6 +1000,23 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return cloneType;
     }
 
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("cloneTableSpaceList")
+    private final java.util.List<Integer> cloneTableSpaceList;
+
+    /**
+     * A list of the source Autonomous Database's table space number(s) used to create this partial
+     * clone from the backup.
+     *
+     * @return the value
+     */
+    public java.util.List<Integer> getCloneTableSpaceList() {
+        return cloneTableSpaceList;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -992,6 +1035,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         sb.append(", autonomousDatabaseBackupId=")
                 .append(String.valueOf(this.autonomousDatabaseBackupId));
         sb.append(", cloneType=").append(String.valueOf(this.cloneType));
+        sb.append(", cloneTableSpaceList=").append(String.valueOf(this.cloneTableSpaceList));
         sb.append(")");
         return sb.toString();
     }
@@ -1010,6 +1054,7 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
         return java.util.Objects.equals(
                         this.autonomousDatabaseBackupId, other.autonomousDatabaseBackupId)
                 && java.util.Objects.equals(this.cloneType, other.cloneType)
+                && java.util.Objects.equals(this.cloneTableSpaceList, other.cloneTableSpaceList)
                 && super.equals(other);
     }
 
@@ -1023,6 +1068,11 @@ public final class CreateAutonomousDatabaseFromBackupDetails extends CreateAuton
                                 ? 43
                                 : this.autonomousDatabaseBackupId.hashCode());
         result = (result * PRIME) + (this.cloneType == null ? 43 : this.cloneType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.cloneTableSpaceList == null
+                                ? 43
+                                : this.cloneTableSpaceList.hashCode());
         return result;
     }
 }
