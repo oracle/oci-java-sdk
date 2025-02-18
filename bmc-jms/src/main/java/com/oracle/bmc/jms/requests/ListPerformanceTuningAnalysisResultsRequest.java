@@ -42,6 +42,13 @@ public class ListPerformanceTuningAnalysisResultsRequest
     public String getApplicationId() {
         return applicationId;
     }
+    /** The name of the application. */
+    private String applicationName;
+
+    /** The name of the application. */
+    public String getApplicationName() {
+        return applicationName;
+    }
     /**
      * The host [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of
      * the managed instance.
@@ -182,6 +189,20 @@ public class ListPerformanceTuningAnalysisResultsRequest
          */
         public Builder applicationId(String applicationId) {
             this.applicationId = applicationId;
+            return this;
+        }
+
+        /** The name of the application. */
+        private String applicationName = null;
+
+        /**
+         * The name of the application.
+         *
+         * @param applicationName the value to set
+         * @return this builder instance
+         */
+        public Builder applicationName(String applicationName) {
+            this.applicationName = applicationName;
             return this;
         }
 
@@ -355,6 +376,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
             fleetId(o.getFleetId());
             managedInstanceId(o.getManagedInstanceId());
             applicationId(o.getApplicationId());
+            applicationName(o.getApplicationName());
             hostName(o.getHostName());
             timeStart(o.getTimeStart());
             timeEnd(o.getTimeEnd());
@@ -403,6 +425,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
             request.fleetId = fleetId;
             request.managedInstanceId = managedInstanceId;
             request.applicationId = applicationId;
+            request.applicationName = applicationName;
             request.hostName = hostName;
             request.timeStart = timeStart;
             request.timeEnd = timeEnd;
@@ -413,8 +436,8 @@ public class ListPerformanceTuningAnalysisResultsRequest
             request.opcRequestId = opcRequestId;
             return request;
             // new ListPerformanceTuningAnalysisResultsRequest(fleetId, managedInstanceId,
-            // applicationId, hostName, timeStart, timeEnd, limit, page, sortOrder, sortBy,
-            // opcRequestId);
+            // applicationId, applicationName, hostName, timeStart, timeEnd, limit, page, sortOrder,
+            // sortBy, opcRequestId);
         }
     }
 
@@ -428,6 +451,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
                 .fleetId(fleetId)
                 .managedInstanceId(managedInstanceId)
                 .applicationId(applicationId)
+                .applicationName(applicationName)
                 .hostName(hostName)
                 .timeStart(timeStart)
                 .timeEnd(timeEnd)
@@ -455,6 +479,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
         sb.append(",fleetId=").append(String.valueOf(this.fleetId));
         sb.append(",managedInstanceId=").append(String.valueOf(this.managedInstanceId));
         sb.append(",applicationId=").append(String.valueOf(this.applicationId));
+        sb.append(",applicationName=").append(String.valueOf(this.applicationName));
         sb.append(",hostName=").append(String.valueOf(this.hostName));
         sb.append(",timeStart=").append(String.valueOf(this.timeStart));
         sb.append(",timeEnd=").append(String.valueOf(this.timeEnd));
@@ -482,6 +507,7 @@ public class ListPerformanceTuningAnalysisResultsRequest
                 && java.util.Objects.equals(this.fleetId, other.fleetId)
                 && java.util.Objects.equals(this.managedInstanceId, other.managedInstanceId)
                 && java.util.Objects.equals(this.applicationId, other.applicationId)
+                && java.util.Objects.equals(this.applicationName, other.applicationName)
                 && java.util.Objects.equals(this.hostName, other.hostName)
                 && java.util.Objects.equals(this.timeStart, other.timeStart)
                 && java.util.Objects.equals(this.timeEnd, other.timeEnd)
@@ -503,6 +529,9 @@ public class ListPerformanceTuningAnalysisResultsRequest
         result =
                 (result * PRIME)
                         + (this.applicationId == null ? 43 : this.applicationId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.applicationName == null ? 43 : this.applicationName.hashCode());
         result = (result * PRIME) + (this.hostName == null ? 43 : this.hostName.hashCode());
         result = (result * PRIME) + (this.timeStart == null ? 43 : this.timeStart.hashCode());
         result = (result * PRIME) + (this.timeEnd == null ? 43 : this.timeEnd.hashCode());

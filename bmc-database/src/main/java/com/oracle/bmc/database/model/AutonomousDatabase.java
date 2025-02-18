@@ -98,6 +98,7 @@ public final class AutonomousDatabase
         "databaseManagementStatus",
         "timeMaintenanceBegin",
         "timeMaintenanceEnd",
+        "maintenanceTargetComponent",
         "isRefreshableClone",
         "timeOfLastRefresh",
         "timeOfLastRefreshPoint",
@@ -225,6 +226,7 @@ public final class AutonomousDatabase
             DatabaseManagementStatus databaseManagementStatus,
             java.util.Date timeMaintenanceBegin,
             java.util.Date timeMaintenanceEnd,
+            String maintenanceTargetComponent,
             Boolean isRefreshableClone,
             java.util.Date timeOfLastRefresh,
             java.util.Date timeOfLastRefreshPoint,
@@ -351,6 +353,7 @@ public final class AutonomousDatabase
         this.databaseManagementStatus = databaseManagementStatus;
         this.timeMaintenanceBegin = timeMaintenanceBegin;
         this.timeMaintenanceEnd = timeMaintenanceEnd;
+        this.maintenanceTargetComponent = maintenanceTargetComponent;
         this.isRefreshableClone = isRefreshableClone;
         this.timeOfLastRefresh = timeOfLastRefresh;
         this.timeOfLastRefreshPoint = timeOfLastRefreshPoint;
@@ -2048,6 +2051,21 @@ public final class AutonomousDatabase
             this.__explicitlySet__.add("timeMaintenanceEnd");
             return this;
         }
+        /** The component chosen for maintenance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+        private String maintenanceTargetComponent;
+
+        /**
+         * The component chosen for maintenance.
+         *
+         * @param maintenanceTargetComponent the value to set
+         * @return this builder
+         */
+        public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
+            this.maintenanceTargetComponent = maintenanceTargetComponent;
+            this.__explicitlySet__.add("maintenanceTargetComponent");
+            return this;
+        }
         /**
          * Indicates if the Autonomous Database is a refreshable clone.
          *
@@ -3175,6 +3193,7 @@ public final class AutonomousDatabase
                             this.databaseManagementStatus,
                             this.timeMaintenanceBegin,
                             this.timeMaintenanceEnd,
+                            this.maintenanceTargetComponent,
                             this.isRefreshableClone,
                             this.timeOfLastRefresh,
                             this.timeOfLastRefreshPoint,
@@ -3458,6 +3477,9 @@ public final class AutonomousDatabase
             }
             if (model.wasPropertyExplicitlySet("timeMaintenanceEnd")) {
                 this.timeMaintenanceEnd(model.getTimeMaintenanceEnd());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceTargetComponent")) {
+                this.maintenanceTargetComponent(model.getMaintenanceTargetComponent());
             }
             if (model.wasPropertyExplicitlySet("isRefreshableClone")) {
                 this.isRefreshableClone(model.getIsRefreshableClone());
@@ -5518,6 +5540,19 @@ public final class AutonomousDatabase
         return timeMaintenanceEnd;
     }
 
+    /** The component chosen for maintenance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+    private final String maintenanceTargetComponent;
+
+    /**
+     * The component chosen for maintenance.
+     *
+     * @return the value
+     */
+    public String getMaintenanceTargetComponent() {
+        return maintenanceTargetComponent;
+    }
+
     /**
      * Indicates if the Autonomous Database is a refreshable clone.
      *
@@ -7052,6 +7087,8 @@ public final class AutonomousDatabase
                 .append(String.valueOf(this.databaseManagementStatus));
         sb.append(", timeMaintenanceBegin=").append(String.valueOf(this.timeMaintenanceBegin));
         sb.append(", timeMaintenanceEnd=").append(String.valueOf(this.timeMaintenanceEnd));
+        sb.append(", maintenanceTargetComponent=")
+                .append(String.valueOf(this.maintenanceTargetComponent));
         sb.append(", isRefreshableClone=").append(String.valueOf(this.isRefreshableClone));
         sb.append(", timeOfLastRefresh=").append(String.valueOf(this.timeOfLastRefresh));
         sb.append(", timeOfLastRefreshPoint=").append(String.valueOf(this.timeOfLastRefreshPoint));
@@ -7235,6 +7272,8 @@ public final class AutonomousDatabase
                         this.databaseManagementStatus, other.databaseManagementStatus)
                 && java.util.Objects.equals(this.timeMaintenanceBegin, other.timeMaintenanceBegin)
                 && java.util.Objects.equals(this.timeMaintenanceEnd, other.timeMaintenanceEnd)
+                && java.util.Objects.equals(
+                        this.maintenanceTargetComponent, other.maintenanceTargetComponent)
                 && java.util.Objects.equals(this.isRefreshableClone, other.isRefreshableClone)
                 && java.util.Objects.equals(this.timeOfLastRefresh, other.timeOfLastRefresh)
                 && java.util.Objects.equals(
@@ -7552,6 +7591,11 @@ public final class AutonomousDatabase
                         + (this.timeMaintenanceEnd == null
                                 ? 43
                                 : this.timeMaintenanceEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceTargetComponent == null
+                                ? 43
+                                : this.maintenanceTargetComponent.hashCode());
         result =
                 (result * PRIME)
                         + (this.isRefreshableClone == null

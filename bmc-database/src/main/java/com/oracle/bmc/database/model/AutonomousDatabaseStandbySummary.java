@@ -29,6 +29,9 @@ public final class AutonomousDatabaseStandbySummary
         "lifecycleDetails",
         "timeDataGuardRoleChanged",
         "timeDisasterRecoveryRoleChanged",
+        "timeMaintenanceBegin",
+        "timeMaintenanceEnd",
+        "maintenanceTargetComponent",
         "availabilityDomain"
     })
     public AutonomousDatabaseStandbySummary(
@@ -37,6 +40,9 @@ public final class AutonomousDatabaseStandbySummary
             String lifecycleDetails,
             java.util.Date timeDataGuardRoleChanged,
             java.util.Date timeDisasterRecoveryRoleChanged,
+            java.util.Date timeMaintenanceBegin,
+            java.util.Date timeMaintenanceEnd,
+            String maintenanceTargetComponent,
             String availabilityDomain) {
         super();
         this.lagTimeInSeconds = lagTimeInSeconds;
@@ -44,6 +50,9 @@ public final class AutonomousDatabaseStandbySummary
         this.lifecycleDetails = lifecycleDetails;
         this.timeDataGuardRoleChanged = timeDataGuardRoleChanged;
         this.timeDisasterRecoveryRoleChanged = timeDisasterRecoveryRoleChanged;
+        this.timeMaintenanceBegin = timeMaintenanceBegin;
+        this.timeMaintenanceEnd = timeMaintenanceEnd;
+        this.maintenanceTargetComponent = maintenanceTargetComponent;
         this.availabilityDomain = availabilityDomain;
     }
 
@@ -139,6 +148,51 @@ public final class AutonomousDatabaseStandbySummary
             this.__explicitlySet__.add("timeDisasterRecoveryRoleChanged");
             return this;
         }
+        /** The date and time when maintenance will begin. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
+        private java.util.Date timeMaintenanceBegin;
+
+        /**
+         * The date and time when maintenance will begin.
+         *
+         * @param timeMaintenanceBegin the value to set
+         * @return this builder
+         */
+        public Builder timeMaintenanceBegin(java.util.Date timeMaintenanceBegin) {
+            this.timeMaintenanceBegin = timeMaintenanceBegin;
+            this.__explicitlySet__.add("timeMaintenanceBegin");
+            return this;
+        }
+        /** The date and time when maintenance will end. */
+        @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
+        private java.util.Date timeMaintenanceEnd;
+
+        /**
+         * The date and time when maintenance will end.
+         *
+         * @param timeMaintenanceEnd the value to set
+         * @return this builder
+         */
+        public Builder timeMaintenanceEnd(java.util.Date timeMaintenanceEnd) {
+            this.timeMaintenanceEnd = timeMaintenanceEnd;
+            this.__explicitlySet__.add("timeMaintenanceEnd");
+            return this;
+        }
+        /** The component chosen for maintenance. */
+        @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+        private String maintenanceTargetComponent;
+
+        /**
+         * The component chosen for maintenance.
+         *
+         * @param maintenanceTargetComponent the value to set
+         * @return this builder
+         */
+        public Builder maintenanceTargetComponent(String maintenanceTargetComponent) {
+            this.maintenanceTargetComponent = maintenanceTargetComponent;
+            this.__explicitlySet__.add("maintenanceTargetComponent");
+            return this;
+        }
         /**
          * The availability domain of a local Autonomous Data Guard standby database of an
          * Autonomous Database Serverless instance.
@@ -170,6 +224,9 @@ public final class AutonomousDatabaseStandbySummary
                             this.lifecycleDetails,
                             this.timeDataGuardRoleChanged,
                             this.timeDisasterRecoveryRoleChanged,
+                            this.timeMaintenanceBegin,
+                            this.timeMaintenanceEnd,
+                            this.maintenanceTargetComponent,
                             this.availabilityDomain);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -193,6 +250,15 @@ public final class AutonomousDatabaseStandbySummary
             }
             if (model.wasPropertyExplicitlySet("timeDisasterRecoveryRoleChanged")) {
                 this.timeDisasterRecoveryRoleChanged(model.getTimeDisasterRecoveryRoleChanged());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceBegin")) {
+                this.timeMaintenanceBegin(model.getTimeMaintenanceBegin());
+            }
+            if (model.wasPropertyExplicitlySet("timeMaintenanceEnd")) {
+                this.timeMaintenanceEnd(model.getTimeMaintenanceEnd());
+            }
+            if (model.wasPropertyExplicitlySet("maintenanceTargetComponent")) {
+                this.maintenanceTargetComponent(model.getMaintenanceTargetComponent());
             }
             if (model.wasPropertyExplicitlySet("availabilityDomain")) {
                 this.availabilityDomain(model.getAvailabilityDomain());
@@ -354,6 +420,45 @@ public final class AutonomousDatabaseStandbySummary
         return timeDisasterRecoveryRoleChanged;
     }
 
+    /** The date and time when maintenance will begin. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceBegin")
+    private final java.util.Date timeMaintenanceBegin;
+
+    /**
+     * The date and time when maintenance will begin.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMaintenanceBegin() {
+        return timeMaintenanceBegin;
+    }
+
+    /** The date and time when maintenance will end. */
+    @com.fasterxml.jackson.annotation.JsonProperty("timeMaintenanceEnd")
+    private final java.util.Date timeMaintenanceEnd;
+
+    /**
+     * The date and time when maintenance will end.
+     *
+     * @return the value
+     */
+    public java.util.Date getTimeMaintenanceEnd() {
+        return timeMaintenanceEnd;
+    }
+
+    /** The component chosen for maintenance. */
+    @com.fasterxml.jackson.annotation.JsonProperty("maintenanceTargetComponent")
+    private final String maintenanceTargetComponent;
+
+    /**
+     * The component chosen for maintenance.
+     *
+     * @return the value
+     */
+    public String getMaintenanceTargetComponent() {
+        return maintenanceTargetComponent;
+    }
+
     /**
      * The availability domain of a local Autonomous Data Guard standby database of an Autonomous
      * Database Serverless instance.
@@ -393,6 +498,10 @@ public final class AutonomousDatabaseStandbySummary
                 .append(String.valueOf(this.timeDataGuardRoleChanged));
         sb.append(", timeDisasterRecoveryRoleChanged=")
                 .append(String.valueOf(this.timeDisasterRecoveryRoleChanged));
+        sb.append(", timeMaintenanceBegin=").append(String.valueOf(this.timeMaintenanceBegin));
+        sb.append(", timeMaintenanceEnd=").append(String.valueOf(this.timeMaintenanceEnd));
+        sb.append(", maintenanceTargetComponent=")
+                .append(String.valueOf(this.maintenanceTargetComponent));
         sb.append(", availabilityDomain=").append(String.valueOf(this.availabilityDomain));
         sb.append(")");
         return sb.toString();
@@ -415,6 +524,10 @@ public final class AutonomousDatabaseStandbySummary
                         this.timeDataGuardRoleChanged, other.timeDataGuardRoleChanged)
                 && java.util.Objects.equals(
                         this.timeDisasterRecoveryRoleChanged, other.timeDisasterRecoveryRoleChanged)
+                && java.util.Objects.equals(this.timeMaintenanceBegin, other.timeMaintenanceBegin)
+                && java.util.Objects.equals(this.timeMaintenanceEnd, other.timeMaintenanceEnd)
+                && java.util.Objects.equals(
+                        this.maintenanceTargetComponent, other.maintenanceTargetComponent)
                 && java.util.Objects.equals(this.availabilityDomain, other.availabilityDomain)
                 && super.equals(other);
     }
@@ -442,6 +555,21 @@ public final class AutonomousDatabaseStandbySummary
                         + (this.timeDisasterRecoveryRoleChanged == null
                                 ? 43
                                 : this.timeDisasterRecoveryRoleChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceBegin == null
+                                ? 43
+                                : this.timeMaintenanceBegin.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timeMaintenanceEnd == null
+                                ? 43
+                                : this.timeMaintenanceEnd.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.maintenanceTargetComponent == null
+                                ? 43
+                                : this.maintenanceTargetComponent.hashCode());
         result =
                 (result * PRIME)
                         + (this.availabilityDomain == null

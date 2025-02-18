@@ -1463,6 +1463,53 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<ListFleetErrorsResponse> listFleetErrors(
+            ListFleetErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListFleetErrorsRequest, ListFleetErrorsResponse>
+                    handler) {
+
+        return clientCall(request, ListFleetErrorsResponse::builder)
+                .logger(LOG, "listFleetErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListFleetErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorSummary/ListFleetErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListFleetErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleetErrors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("fleetId", request.getFleetId())
+                .appendQueryParam(
+                        "timeFirstSeenLessThanOrEqualTo",
+                        request.getTimeFirstSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeFirstSeenGreaterThanOrEqualTo",
+                        request.getTimeFirstSeenGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenLessThanOrEqualTo", request.getTimeLastSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenGreaterThanOrEqualTo",
+                        request.getTimeLastSeenGreaterThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetErrorCollection.class,
+                        ListFleetErrorsResponse.Builder::fleetErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListFleetErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListFleetErrorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<ListFleetsResponse> listFleets(
             ListFleetsRequest request,
             final com.oracle.bmc.responses.AsyncHandler<ListFleetsRequest, ListFleetsResponse>
@@ -1695,6 +1742,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .appendQueryParam("agentId", request.getAgentId())
                 .appendEnumQueryParam("lifecycleState", request.getLifecycleState())
                 .appendEnumQueryParam("availabilityStatus", request.getAvailabilityStatus())
+                .appendEnumQueryParam("agentType", request.getAgentType())
                 .appendQueryParam(
                         "timeRegisteredLessThanOrEqualTo",
                         request.getTimeRegisteredLessThanOrEqualTo())
@@ -1780,6 +1828,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .appendPathParam("performanceTuningAnalysisResults")
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .appendQueryParam("applicationId", request.getApplicationId())
+                .appendQueryParam("applicationName", request.getApplicationName())
                 .appendQueryParam("hostName", request.getHostName())
                 .appendQueryParam("timeStart", request.getTimeStart())
                 .appendQueryParam("timeEnd", request.getTimeEnd())
@@ -1799,6 +1848,53 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .handleResponseHeaderString(
                         "opc-next-page",
                         ListPerformanceTuningAnalysisResultsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPluginErrorsResponse> listPluginErrors(
+            ListPluginErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ListPluginErrorsRequest, ListPluginErrorsResponse>
+                    handler) {
+
+        return clientCall(request, ListPluginErrorsResponse::builder)
+                .logger(LOG, "listPluginErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "ListPluginErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorSummary/ListPluginErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(ListPluginErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("pluginErrors")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
+                .appendQueryParam(
+                        "timeFirstSeenLessThanOrEqualTo",
+                        request.getTimeFirstSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeFirstSeenGreaterThanOrEqualTo",
+                        request.getTimeFirstSeenGreaterThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenLessThanOrEqualTo", request.getTimeLastSeenLessThanOrEqualTo())
+                .appendQueryParam(
+                        "timeLastSeenGreaterThanOrEqualTo",
+                        request.getTimeLastSeenGreaterThanOrEqualTo())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .appendEnumQueryParam("sortBy", request.getSortBy())
+                .appendEnumQueryParam("sortOrder", request.getSortOrder())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.PluginErrorCollection.class,
+                        ListPluginErrorsResponse.Builder::pluginErrorCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", ListPluginErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", ListPluginErrorsResponse.Builder::opcNextPage)
                 .callAsync(handler);
     }
 
@@ -2482,6 +2578,39 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizeFleetErrorsResponse> summarizeFleetErrors(
+            SummarizeFleetErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizeFleetErrorsRequest, SummarizeFleetErrorsResponse>
+                    handler) {
+
+        return clientCall(request, SummarizeFleetErrorsResponse::builder)
+                .logger(LOG, "summarizeFleetErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizeFleetErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorAggregation/SummarizeFleetErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizeFleetErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("fleetErrorAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.FleetErrorAggregationCollection.class,
+                        SummarizeFleetErrorsResponse.Builder::fleetErrorAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizeFleetErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizeFleetErrorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeInstallationUsageResponse>
             summarizeInstallationUsage(
                     SummarizeInstallationUsageRequest request,
@@ -2800,6 +2929,39 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
     }
 
     @Override
+    public java.util.concurrent.Future<SummarizePluginErrorsResponse> summarizePluginErrors(
+            SummarizePluginErrorsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SummarizePluginErrorsRequest, SummarizePluginErrorsResponse>
+                    handler) {
+
+        return clientCall(request, SummarizePluginErrorsResponse::builder)
+                .logger(LOG, "summarizePluginErrors")
+                .serviceDetails(
+                        "JavaManagementService",
+                        "SummarizePluginErrors",
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorAggregation/SummarizePluginErrors")
+                .method(com.oracle.bmc.http.client.Method.GET)
+                .requestBuilder(SummarizePluginErrorsRequest::builder)
+                .basePath("/20210610")
+                .appendPathParam("pluginErrorAnalytics")
+                .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
+                .appendQueryParam("limit", request.getLimit())
+                .appendQueryParam("page", request.getPage())
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .handleBody(
+                        com.oracle.bmc.jms.model.PluginErrorAggregationCollection.class,
+                        SummarizePluginErrorsResponse.Builder::pluginErrorAggregationCollection)
+                .handleResponseHeaderString(
+                        "opc-request-id", SummarizePluginErrorsResponse.Builder::opcRequestId)
+                .handleResponseHeaderString(
+                        "opc-next-page", SummarizePluginErrorsResponse.Builder::opcNextPage)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<SummarizeResourceInventoryResponse>
             summarizeResourceInventory(
                     SummarizeResourceInventoryRequest request,
@@ -2819,6 +2981,7 @@ public class JavaManagementServiceAsyncClient extends com.oracle.bmc.http.intern
                 .basePath("/20210610")
                 .appendPathParam("summarizeResourceInventory")
                 .appendQueryParam("compartmentId", request.getCompartmentId())
+                .appendQueryParam("compartmentIdInSubtree", request.getCompartmentIdInSubtree())
                 .appendQueryParam("timeStart", request.getTimeStart())
                 .appendQueryParam("timeEnd", request.getTimeEnd())
                 .accept("application/json")
