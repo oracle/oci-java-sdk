@@ -34,14 +34,14 @@ public final class GenerateAgentInstallerConfigurationDetails
     public static class Builder {
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * install key for which to generate the configuration file.
+         * management agent install key for which to generate the configuration file.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
         private String installKeyId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-         * install key for which to generate the configuration file.
+         * management agent install key for which to generate the configuration file.
          *
          * @param installKeyId the value to set
          * @return this builder
@@ -106,14 +106,14 @@ public final class GenerateAgentInstallerConfigurationDetails
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * install key for which to generate the configuration file.
+     * management agent install key for which to generate the configuration file.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("installKeyId")
     private final String installKeyId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the
-     * install key for which to generate the configuration file.
+     * management agent install key for which to generate the configuration file.
      *
      * @return the value
      */

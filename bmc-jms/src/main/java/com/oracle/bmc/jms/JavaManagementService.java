@@ -689,6 +689,22 @@ public interface JavaManagementService extends AutoCloseable {
     ListFleetDiagnosesResponse listFleetDiagnoses(ListFleetDiagnosesRequest request);
 
     /**
+     * Returns a list of fleet errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListFleetErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetErrors
+     *     API.
+     */
+    ListFleetErrorsResponse listFleetErrors(ListFleetErrorsRequest request);
+
+    /**
      * Returns a list of all the Fleets contained by a compartment. The query parameter
      * `compartmentId` is required unless the query parameter `id` is specified.
      *
@@ -816,6 +832,22 @@ public interface JavaManagementService extends AutoCloseable {
      */
     ListPerformanceTuningAnalysisResultsResponse listPerformanceTuningAnalysisResults(
             ListPerformanceTuningAnalysisResultsRequest request);
+
+    /**
+     * Returns a list of plugin errors that describe all detected errors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/ListPluginErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPluginErrors
+     *     API.
+     */
+    ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request);
 
     /**
      * Retrieve a paginated list of work items for a specified work request.
@@ -1099,6 +1131,22 @@ public interface JavaManagementService extends AutoCloseable {
             SummarizeDeployedApplicationUsageRequest request);
 
     /**
+     * Returns a high level summary of FleetErrors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizeFleetErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizeFleetErrors API.
+     */
+    SummarizeFleetErrorsResponse summarizeFleetErrors(SummarizeFleetErrorsRequest request);
+
+    /**
      * List Java installation usage in a Fleet filtered by query parameters.
      *
      * @param request The request object containing the details to send
@@ -1197,6 +1245,22 @@ public interface JavaManagementService extends AutoCloseable {
      */
     SummarizeManagedInstanceUsageResponse summarizeManagedInstanceUsage(
             SummarizeManagedInstanceUsageRequest request);
+
+    /**
+     * Returns a high level summary of PluginErrors.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/jms/SummarizePluginErrorsExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     SummarizePluginErrors API.
+     */
+    SummarizePluginErrorsResponse summarizePluginErrors(SummarizePluginErrorsRequest request);
 
     /**
      * Retrieve the inventory of JMS resources in the specified compartment: a list of the number of

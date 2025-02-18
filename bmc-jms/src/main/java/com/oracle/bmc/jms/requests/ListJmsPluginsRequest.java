@@ -88,6 +88,13 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
     public com.oracle.bmc.jms.model.JmsPluginAvailabilityStatus getAvailabilityStatus() {
         return availabilityStatus;
     }
+    /** Filter JmsPlugin with agent type. */
+    private com.oracle.bmc.jms.model.AgentType agentType;
+
+    /** Filter JmsPlugin with agent type. */
+    public com.oracle.bmc.jms.model.AgentType getAgentType() {
+        return agentType;
+    }
     /**
      * If present, only plugins with a registration time before this parameter are searched
      * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -293,6 +300,20 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             return this;
         }
 
+        /** Filter JmsPlugin with agent type. */
+        private com.oracle.bmc.jms.model.AgentType agentType = null;
+
+        /**
+         * Filter JmsPlugin with agent type.
+         *
+         * @param agentType the value to set
+         * @return this builder instance
+         */
+        public Builder agentType(com.oracle.bmc.jms.model.AgentType agentType) {
+            this.agentType = agentType;
+            return this;
+        }
+
         /**
          * If present, only plugins with a registration time before this parameter are searched
          * (formatted according to [RFC3339](https://datatracker.ietf.org/doc/html/rfc3339)).
@@ -459,6 +480,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             agentId(o.getAgentId());
             lifecycleState(o.getLifecycleState());
             availabilityStatus(o.getAvailabilityStatus());
+            agentType(o.getAgentType());
             timeRegisteredLessThanOrEqualTo(o.getTimeRegisteredLessThanOrEqualTo());
             timeLastSeenLessThanOrEqualTo(o.getTimeLastSeenLessThanOrEqualTo());
             limit(o.getLimit());
@@ -508,6 +530,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.agentId = agentId;
             request.lifecycleState = lifecycleState;
             request.availabilityStatus = availabilityStatus;
+            request.agentType = agentType;
             request.timeRegisteredLessThanOrEqualTo = timeRegisteredLessThanOrEqualTo;
             request.timeLastSeenLessThanOrEqualTo = timeLastSeenLessThanOrEqualTo;
             request.limit = limit;
@@ -518,9 +541,9 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
             request.opcRequestId = opcRequestId;
             return request;
             // new ListJmsPluginsRequest(compartmentId, compartmentIdInSubtree, id, fleetId,
-            // agentId, lifecycleState, availabilityStatus, timeRegisteredLessThanOrEqualTo,
-            // timeLastSeenLessThanOrEqualTo, limit, page, sortOrder, sortBy, hostnameContains,
-            // opcRequestId);
+            // agentId, lifecycleState, availabilityStatus, agentType,
+            // timeRegisteredLessThanOrEqualTo, timeLastSeenLessThanOrEqualTo, limit, page,
+            // sortOrder, sortBy, hostnameContains, opcRequestId);
         }
     }
 
@@ -538,6 +561,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 .agentId(agentId)
                 .lifecycleState(lifecycleState)
                 .availabilityStatus(availabilityStatus)
+                .agentType(agentType)
                 .timeRegisteredLessThanOrEqualTo(timeRegisteredLessThanOrEqualTo)
                 .timeLastSeenLessThanOrEqualTo(timeLastSeenLessThanOrEqualTo)
                 .limit(limit)
@@ -569,6 +593,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
         sb.append(",agentId=").append(String.valueOf(this.agentId));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
         sb.append(",availabilityStatus=").append(String.valueOf(this.availabilityStatus));
+        sb.append(",agentType=").append(String.valueOf(this.agentType));
         sb.append(",timeRegisteredLessThanOrEqualTo=")
                 .append(String.valueOf(this.timeRegisteredLessThanOrEqualTo));
         sb.append(",timeLastSeenLessThanOrEqualTo=")
@@ -602,6 +627,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                 && java.util.Objects.equals(this.agentId, other.agentId)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
                 && java.util.Objects.equals(this.availabilityStatus, other.availabilityStatus)
+                && java.util.Objects.equals(this.agentType, other.agentType)
                 && java.util.Objects.equals(
                         this.timeRegisteredLessThanOrEqualTo, other.timeRegisteredLessThanOrEqualTo)
                 && java.util.Objects.equals(
@@ -637,6 +663,7 @@ public class ListJmsPluginsRequest extends com.oracle.bmc.requests.BmcRequest<ja
                         + (this.availabilityStatus == null
                                 ? 43
                                 : this.availabilityStatus.hashCode());
+        result = (result * PRIME) + (this.agentType == null ? 43 : this.agentType.hashCode());
         result =
                 (result * PRIME)
                         + (this.timeRegisteredLessThanOrEqualTo == null
