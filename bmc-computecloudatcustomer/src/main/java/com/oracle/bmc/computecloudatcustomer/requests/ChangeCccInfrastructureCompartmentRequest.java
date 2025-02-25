@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer.requests;
 
 import com.oracle.bmc.computecloudatcustomer.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeCccInfrastructureCompartmentRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/computecloudatcustomer/ChangeCccInfrastructureCompartmentExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ChangeCccInfrastructureCompartmentRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20221208")
 public class ChangeCccInfrastructureCompartmentRequest
@@ -15,14 +15,14 @@ public class ChangeCccInfrastructureCompartmentRequest
                         .ChangeCccInfrastructureCompartmentDetails> {
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      *
      */
     private String cccInfrastructureId;
 
     /**
-     * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+     * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
      * Compute Cloud@Customer Infrastructure.
      *
      */
@@ -31,7 +31,7 @@ public class ChangeCccInfrastructureCompartmentRequest
     }
     /**
      * Details about the compartment change operation including the destination compartment
-     * specified by the resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * specified by the resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     private com.oracle.bmc.computecloudatcustomer.model.ChangeCccInfrastructureCompartmentDetails
@@ -39,7 +39,7 @@ public class ChangeCccInfrastructureCompartmentRequest
 
     /**
      * Details about the compartment change operation including the destination compartment
-     * specified by the resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * specified by the resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      */
     public com.oracle.bmc.computecloudatcustomer.model.ChangeCccInfrastructureCompartmentDetails
@@ -89,13 +89,13 @@ public class ChangeCccInfrastructureCompartmentRequest
         return opcRetryToken;
     }
     /**
-     * The client request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
+     * The client request [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      *
      */
     private String opcRequestId;
 
     /**
-     * The client request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
+     * The client request [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
      *
      */
     public String getOpcRequestId() {
@@ -123,14 +123,14 @@ public class ChangeCccInfrastructureCompartmentRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
          * Compute Cloud@Customer Infrastructure.
          *
          */
         private String cccInfrastructureId = null;
 
         /**
-         * An [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
+         * An [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for a
          * Compute Cloud@Customer Infrastructure.
          *
          * @param cccInfrastructureId the value to set
@@ -143,7 +143,7 @@ public class ChangeCccInfrastructureCompartmentRequest
 
         /**
          * Details about the compartment change operation including the destination compartment
-         * specified by the resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * specified by the resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          */
         private com.oracle.bmc.computecloudatcustomer.model
@@ -152,7 +152,7 @@ public class ChangeCccInfrastructureCompartmentRequest
 
         /**
          * Details about the compartment change operation including the destination compartment
-         * specified by the resource [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * specified by the resource [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param changeCccInfrastructureCompartmentDetails the value to set
          * @return this builder instance
@@ -217,13 +217,13 @@ public class ChangeCccInfrastructureCompartmentRequest
         }
 
         /**
-         * The client request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
+         * The client request [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
          *
          */
         private String opcRequestId = null;
 
         /**
-         * The client request [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
+         * The client request [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for tracing.
          *
          * @param opcRequestId the value to set
          * @return this builder instance

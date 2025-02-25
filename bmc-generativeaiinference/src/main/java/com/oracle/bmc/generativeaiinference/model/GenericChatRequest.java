@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
@@ -73,6 +73,24 @@ public final class GenericChatRequest extends BaseChatRequest {
         public Builder numGenerations(Integer numGenerations) {
             this.numGenerations = numGenerations;
             this.__explicitlySet__.add("numGenerations");
+            return this;
+        }
+        /**
+         * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("seed")
+        private Integer seed;
+
+        /**
+         * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+         *
+         * @param seed the value to set
+         * @return this builder
+         **/
+        public Builder seed(Integer seed) {
+            this.seed = seed;
+            this.__explicitlySet__.add("seed");
             return this;
         }
         /**
@@ -276,6 +294,31 @@ public final class GenericChatRequest extends BaseChatRequest {
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("toolChoice")
+        private ToolChoice toolChoice;
+
+        public Builder toolChoice(ToolChoice toolChoice) {
+            this.toolChoice = toolChoice;
+            this.__explicitlySet__.add("toolChoice");
+            return this;
+        }
+        /**
+         * A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("tools")
+        private java.util.List<ToolDefinition> tools;
+
+        /**
+         * A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+         * @param tools the value to set
+         * @return this builder
+         **/
+        public Builder tools(java.util.List<ToolDefinition> tools) {
+            this.tools = tools;
+            this.__explicitlySet__.add("tools");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -285,6 +328,7 @@ public final class GenericChatRequest extends BaseChatRequest {
                             this.messages,
                             this.isStream,
                             this.numGenerations,
+                            this.seed,
                             this.isEcho,
                             this.topK,
                             this.topP,
@@ -294,7 +338,9 @@ public final class GenericChatRequest extends BaseChatRequest {
                             this.stop,
                             this.logProbs,
                             this.maxTokens,
-                            this.logitBias);
+                            this.logitBias,
+                            this.toolChoice,
+                            this.tools);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -311,6 +357,9 @@ public final class GenericChatRequest extends BaseChatRequest {
             }
             if (model.wasPropertyExplicitlySet("numGenerations")) {
                 this.numGenerations(model.getNumGenerations());
+            }
+            if (model.wasPropertyExplicitlySet("seed")) {
+                this.seed(model.getSeed());
             }
             if (model.wasPropertyExplicitlySet("isEcho")) {
                 this.isEcho(model.getIsEcho());
@@ -342,6 +391,12 @@ public final class GenericChatRequest extends BaseChatRequest {
             if (model.wasPropertyExplicitlySet("logitBias")) {
                 this.logitBias(model.getLogitBias());
             }
+            if (model.wasPropertyExplicitlySet("toolChoice")) {
+                this.toolChoice(model.getToolChoice());
+            }
+            if (model.wasPropertyExplicitlySet("tools")) {
+                this.tools(model.getTools());
+            }
             return this;
         }
     }
@@ -362,6 +417,7 @@ public final class GenericChatRequest extends BaseChatRequest {
             java.util.List<Message> messages,
             Boolean isStream,
             Integer numGenerations,
+            Integer seed,
             Boolean isEcho,
             Integer topK,
             Double topP,
@@ -371,11 +427,14 @@ public final class GenericChatRequest extends BaseChatRequest {
             java.util.List<String> stop,
             Integer logProbs,
             Integer maxTokens,
-            Object logitBias) {
+            Object logitBias,
+            ToolChoice toolChoice,
+            java.util.List<ToolDefinition> tools) {
         super();
         this.messages = messages;
         this.isStream = isStream;
         this.numGenerations = numGenerations;
+        this.seed = seed;
         this.isEcho = isEcho;
         this.topK = topK;
         this.topP = topP;
@@ -386,6 +445,8 @@ public final class GenericChatRequest extends BaseChatRequest {
         this.logProbs = logProbs;
         this.maxTokens = maxTokens;
         this.logitBias = logitBias;
+        this.toolChoice = toolChoice;
+        this.tools = tools;
     }
 
     /**
@@ -428,6 +489,22 @@ public final class GenericChatRequest extends BaseChatRequest {
      **/
     public Integer getNumGenerations() {
         return numGenerations;
+    }
+
+    /**
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("seed")
+    private final Integer seed;
+
+    /**
+     * If specified, the backend will make a best effort to sample tokens deterministically, so that repeated requests with the same seed and parameters yield the same result. However, determinism cannot be fully guaranteed.
+     *
+     * @return the value
+     **/
+    public Integer getSeed() {
+        return seed;
     }
 
     /**
@@ -610,6 +687,27 @@ public final class GenericChatRequest extends BaseChatRequest {
         return logitBias;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("toolChoice")
+    private final ToolChoice toolChoice;
+
+    public ToolChoice getToolChoice() {
+        return toolChoice;
+    }
+
+    /**
+     * A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("tools")
+    private final java.util.List<ToolDefinition> tools;
+
+    /**
+     * A list of tools the model may call. Use this to provide a list of functions the model may generate JSON inputs for. A max of 128 functions are supported.
+     * @return the value
+     **/
+    public java.util.List<ToolDefinition> getTools() {
+        return tools;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -627,6 +725,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append(", messages=").append(String.valueOf(this.messages));
         sb.append(", isStream=").append(String.valueOf(this.isStream));
         sb.append(", numGenerations=").append(String.valueOf(this.numGenerations));
+        sb.append(", seed=").append(String.valueOf(this.seed));
         sb.append(", isEcho=").append(String.valueOf(this.isEcho));
         sb.append(", topK=").append(String.valueOf(this.topK));
         sb.append(", topP=").append(String.valueOf(this.topP));
@@ -637,6 +736,8 @@ public final class GenericChatRequest extends BaseChatRequest {
         sb.append(", logProbs=").append(String.valueOf(this.logProbs));
         sb.append(", maxTokens=").append(String.valueOf(this.maxTokens));
         sb.append(", logitBias=").append(String.valueOf(this.logitBias));
+        sb.append(", toolChoice=").append(String.valueOf(this.toolChoice));
+        sb.append(", tools=").append(String.valueOf(this.tools));
         sb.append(")");
         return sb.toString();
     }
@@ -654,6 +755,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         return java.util.Objects.equals(this.messages, other.messages)
                 && java.util.Objects.equals(this.isStream, other.isStream)
                 && java.util.Objects.equals(this.numGenerations, other.numGenerations)
+                && java.util.Objects.equals(this.seed, other.seed)
                 && java.util.Objects.equals(this.isEcho, other.isEcho)
                 && java.util.Objects.equals(this.topK, other.topK)
                 && java.util.Objects.equals(this.topP, other.topP)
@@ -664,6 +766,8 @@ public final class GenericChatRequest extends BaseChatRequest {
                 && java.util.Objects.equals(this.logProbs, other.logProbs)
                 && java.util.Objects.equals(this.maxTokens, other.maxTokens)
                 && java.util.Objects.equals(this.logitBias, other.logitBias)
+                && java.util.Objects.equals(this.toolChoice, other.toolChoice)
+                && java.util.Objects.equals(this.tools, other.tools)
                 && super.equals(other);
     }
 
@@ -676,6 +780,7 @@ public final class GenericChatRequest extends BaseChatRequest {
         result =
                 (result * PRIME)
                         + (this.numGenerations == null ? 43 : this.numGenerations.hashCode());
+        result = (result * PRIME) + (this.seed == null ? 43 : this.seed.hashCode());
         result = (result * PRIME) + (this.isEcho == null ? 43 : this.isEcho.hashCode());
         result = (result * PRIME) + (this.topK == null ? 43 : this.topK.hashCode());
         result = (result * PRIME) + (this.topP == null ? 43 : this.topP.hashCode());
@@ -690,6 +795,8 @@ public final class GenericChatRequest extends BaseChatRequest {
         result = (result * PRIME) + (this.logProbs == null ? 43 : this.logProbs.hashCode());
         result = (result * PRIME) + (this.maxTokens == null ? 43 : this.maxTokens.hashCode());
         result = (result * PRIME) + (this.logitBias == null ? 43 : this.logitBias.hashCode());
+        result = (result * PRIME) + (this.toolChoice == null ? 43 : this.toolChoice.hashCode());
+        result = (result * PRIME) + (this.tools == null ? 43 : this.tools.hashCode());
         return result;
     }
 }

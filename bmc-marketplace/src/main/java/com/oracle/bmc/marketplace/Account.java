@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplace;
@@ -8,7 +8,7 @@ import com.oracle.bmc.marketplace.requests.*;
 import com.oracle.bmc.marketplace.responses.*;
 
 /**
- * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](https://docs.cloud.oracle.com/Content/Marketplace/Concepts/marketoverview.htm)
+ * Use the Marketplace API to manage applications in Oracle Cloud Infrastructure Marketplace. For more information, see [Overview of Marketplace](https://docs.oracle.com/iaas/Content/Marketplace/Concepts/marketoverview.htm)
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181001")
@@ -67,7 +67,7 @@ public interface Account extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetLaunchEligibilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLaunchEligibility API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetLaunchEligibilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLaunchEligibility API.
      */
     GetLaunchEligibilityResponse getLaunchEligibility(GetLaunchEligibilityRequest request);
 
@@ -79,7 +79,7 @@ public interface Account extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetThirdPartyPaidListingEligibilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetThirdPartyPaidListingEligibility API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplace/GetThirdPartyPaidListingEligibilityExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetThirdPartyPaidListingEligibility API.
      */
     GetThirdPartyPaidListingEligibilityResponse getThirdPartyPaidListingEligibility(
             GetThirdPartyPaidListingEligibilityRequest request);

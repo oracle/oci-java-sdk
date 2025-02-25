@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -27,20 +27,23 @@ public final class UpdateBdsInstanceDetails
         "bootstrapScriptUrl",
         "freeformTags",
         "definedTags",
-        "kmsKeyId"
+        "kmsKeyId",
+        "networkConfig"
     })
     public UpdateBdsInstanceDetails(
             String displayName,
             String bootstrapScriptUrl,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
-            String kmsKeyId) {
+            String kmsKeyId,
+            NetworkConfig networkConfig) {
         super();
         this.displayName = displayName;
         this.bootstrapScriptUrl = bootstrapScriptUrl;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.kmsKeyId = kmsKeyId;
+        this.networkConfig = networkConfig;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -135,6 +138,15 @@ public final class UpdateBdsInstanceDetails
             return this;
         }
 
+        @com.fasterxml.jackson.annotation.JsonProperty("networkConfig")
+        private NetworkConfig networkConfig;
+
+        public Builder networkConfig(NetworkConfig networkConfig) {
+            this.networkConfig = networkConfig;
+            this.__explicitlySet__.add("networkConfig");
+            return this;
+        }
+
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
 
@@ -145,7 +157,8 @@ public final class UpdateBdsInstanceDetails
                             this.bootstrapScriptUrl,
                             this.freeformTags,
                             this.definedTags,
-                            this.kmsKeyId);
+                            this.kmsKeyId,
+                            this.networkConfig);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -168,6 +181,9 @@ public final class UpdateBdsInstanceDetails
             }
             if (model.wasPropertyExplicitlySet("kmsKeyId")) {
                 this.kmsKeyId(model.getKmsKeyId());
+            }
+            if (model.wasPropertyExplicitlySet("networkConfig")) {
+                this.networkConfig(model.getNetworkConfig());
             }
             return this;
         }
@@ -262,6 +278,13 @@ public final class UpdateBdsInstanceDetails
         return kmsKeyId;
     }
 
+    @com.fasterxml.jackson.annotation.JsonProperty("networkConfig")
+    private final NetworkConfig networkConfig;
+
+    public NetworkConfig getNetworkConfig() {
+        return networkConfig;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -281,6 +304,7 @@ public final class UpdateBdsInstanceDetails
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", kmsKeyId=").append(String.valueOf(this.kmsKeyId));
+        sb.append(", networkConfig=").append(String.valueOf(this.networkConfig));
         sb.append(")");
         return sb.toString();
     }
@@ -300,6 +324,7 @@ public final class UpdateBdsInstanceDetails
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.kmsKeyId, other.kmsKeyId)
+                && java.util.Objects.equals(this.networkConfig, other.networkConfig)
                 && super.equals(other);
     }
 
@@ -316,6 +341,9 @@ public final class UpdateBdsInstanceDetails
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.kmsKeyId == null ? 43 : this.kmsKeyId.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.networkConfig == null ? 43 : this.networkConfig.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

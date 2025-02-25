@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.recovery;
@@ -67,7 +67,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CancelProtectedDatabaseDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelProtectedDatabaseDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CancelProtectedDatabaseDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelProtectedDatabaseDeletion API.
      */
     CancelProtectedDatabaseDeletionResponse cancelProtectedDatabaseDeletion(
             CancelProtectedDatabaseDeletionRequest request);
@@ -80,7 +80,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectedDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectedDatabaseCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectedDatabaseCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectedDatabaseCompartment API.
      */
     ChangeProtectedDatabaseCompartmentResponse changeProtectedDatabaseCompartment(
             ChangeProtectedDatabaseCompartmentRequest request);
@@ -93,7 +93,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectedDatabaseSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectedDatabaseSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectedDatabaseSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectedDatabaseSubscription API.
      */
     ChangeProtectedDatabaseSubscriptionResponse changeProtectedDatabaseSubscription(
             ChangeProtectedDatabaseSubscriptionRequest request);
@@ -106,7 +106,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectionPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectionPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeProtectionPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeProtectionPolicyCompartment API.
      */
     ChangeProtectionPolicyCompartmentResponse changeProtectionPolicyCompartment(
             ChangeProtectionPolicyCompartmentRequest request);
@@ -119,7 +119,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeRecoveryServiceSubnetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRecoveryServiceSubnetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ChangeRecoveryServiceSubnetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRecoveryServiceSubnetCompartment API.
      */
     ChangeRecoveryServiceSubnetCompartmentResponse changeRecoveryServiceSubnetCompartment(
             ChangeRecoveryServiceSubnetCompartmentRequest request);
@@ -133,7 +133,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProtectedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProtectedDatabase API.
      */
     CreateProtectedDatabaseResponse createProtectedDatabase(CreateProtectedDatabaseRequest request);
 
@@ -146,7 +146,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProtectionPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProtectionPolicy API.
      */
     CreateProtectionPolicyResponse createProtectionPolicy(CreateProtectionPolicyRequest request);
 
@@ -159,7 +159,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRecoveryServiceSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/CreateRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRecoveryServiceSubnet API.
      */
     CreateRecoveryServiceSubnetResponse createRecoveryServiceSubnet(
             CreateRecoveryServiceSubnetRequest request);
@@ -172,7 +172,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectedDatabase API.
      */
     DeleteProtectedDatabaseResponse deleteProtectedDatabase(DeleteProtectedDatabaseRequest request);
 
@@ -186,7 +186,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectionPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProtectionPolicy API.
      */
     DeleteProtectionPolicyResponse deleteProtectionPolicy(DeleteProtectionPolicyRequest request);
 
@@ -198,7 +198,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRecoveryServiceSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/DeleteRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRecoveryServiceSubnet API.
      */
     DeleteRecoveryServiceSubnetResponse deleteRecoveryServiceSubnet(
             DeleteRecoveryServiceSubnetRequest request);
@@ -211,7 +211,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/FetchProtectedDatabaseConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchProtectedDatabaseConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/FetchProtectedDatabaseConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use FetchProtectedDatabaseConfiguration API.
      */
     FetchProtectedDatabaseConfigurationResponse fetchProtectedDatabaseConfiguration(
             FetchProtectedDatabaseConfigurationRequest request);
@@ -224,7 +224,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectedDatabase API.
      */
     GetProtectedDatabaseResponse getProtectedDatabase(GetProtectedDatabaseRequest request);
 
@@ -236,7 +236,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectionPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProtectionPolicy API.
      */
     GetProtectionPolicyResponse getProtectionPolicy(GetProtectionPolicyRequest request);
 
@@ -248,7 +248,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRecoveryServiceSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRecoveryServiceSubnet API.
      */
     GetRecoveryServiceSubnetResponse getRecoveryServiceSubnet(
             GetRecoveryServiceSubnetRequest request);
@@ -261,7 +261,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -274,7 +274,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectedDatabases API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectedDatabasesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectedDatabases API.
      */
     ListProtectedDatabasesResponse listProtectedDatabases(ListProtectedDatabasesRequest request);
 
@@ -287,7 +287,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectionPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListProtectionPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProtectionPolicies API.
      */
     ListProtectionPoliciesResponse listProtectionPolicies(ListProtectionPoliciesRequest request);
 
@@ -300,7 +300,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListRecoveryServiceSubnetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecoveryServiceSubnets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListRecoveryServiceSubnetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRecoveryServiceSubnets API.
      */
     ListRecoveryServiceSubnetsResponse listRecoveryServiceSubnets(
             ListRecoveryServiceSubnetsRequest request);
@@ -314,7 +314,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -327,7 +327,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -340,7 +340,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -355,7 +355,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ScheduleProtectedDatabaseDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleProtectedDatabaseDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/ScheduleProtectedDatabaseDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleProtectedDatabaseDeletion API.
      */
     ScheduleProtectedDatabaseDeletionResponse scheduleProtectedDatabaseDeletion(
             ScheduleProtectedDatabaseDeletionRequest request);
@@ -368,7 +368,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectedDatabase API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateProtectedDatabaseExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectedDatabase API.
      */
     UpdateProtectedDatabaseResponse updateProtectedDatabase(UpdateProtectedDatabaseRequest request);
 
@@ -380,7 +380,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectionPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateProtectionPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProtectionPolicy API.
      */
     UpdateProtectionPolicyResponse updateProtectionPolicy(UpdateProtectionPolicyRequest request);
 
@@ -392,7 +392,7 @@ public interface DatabaseRecovery extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRecoveryServiceSubnet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/recovery/UpdateRecoveryServiceSubnetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRecoveryServiceSubnet API.
      */
     UpdateRecoveryServiceSubnetResponse updateRecoveryServiceSubnet(
             UpdateRecoveryServiceSubnetRequest request);

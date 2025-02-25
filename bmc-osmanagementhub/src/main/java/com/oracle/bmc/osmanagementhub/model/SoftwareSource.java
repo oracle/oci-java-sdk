@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
 
 /**
- * The object that defines a software source. A software source contains a collection of packages. For more information, see [Managing Software Sources](https://docs.cloud.oracle.com/iaas/osmh/doc/software-sources.htm).
+ * The object that defines a software source. A software source contains a collection of packages. For more information, see [Managing Software Sources](https://docs.oracle.com/iaas/osmh/doc/software-sources.htm).
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -27,12 +27,20 @@ package com.oracle.bmc.osmanagementhub.model;
         name = "VENDOR"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = ThirdPartySoftwareSource.class,
+        name = "THIRD_PARTY"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = CustomSoftwareSource.class,
         name = "CUSTOM"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = VersionedCustomSoftwareSource.class,
         name = "VERSIONED"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = PrivateSoftwareSource.class,
+        name = "PRIVATE"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -108,13 +116,13 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the software source.
      * @return the value
      **/
     public String getId() {
@@ -122,13 +130,13 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the software source.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -222,13 +230,13 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      * @return the value
      **/
     public OsFamily getOsFamily() {
@@ -260,6 +268,7 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by this
@@ -359,13 +368,13 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * URL of the GPG key for this software source.
+     * URI of the GPG key for this software source.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
     private final String gpgKeyUrl;
 
     /**
-     * URL of the GPG key for this software source.
+     * URI of the GPG key for this software source.
      * @return the value
      **/
     public String getGpgKeyUrl() {
@@ -401,13 +410,13 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Double size;
 
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      * @return the value
      **/
     public Double getSize() {
@@ -416,7 +425,7 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -425,7 +434,7 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -436,7 +445,7 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -445,7 +454,7 @@ public class SoftwareSource extends com.oracle.bmc.http.internal.ExplicitlySetBm
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

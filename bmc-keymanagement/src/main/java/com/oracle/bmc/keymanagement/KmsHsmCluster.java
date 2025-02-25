@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.keymanagement;
@@ -8,7 +8,7 @@ import com.oracle.bmc.keymanagement.requests.*;
 import com.oracle.bmc.keymanagement.responses.*;
 
 /**
- * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.cloud.oracle.com/Content/KeyManagement/Tasks/managingkeys.htm).
+ * Use the Key Management API to manage vaults and keys. For more information, see [Managing Vaults](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingvaults.htm) and [Managing Keys](https://docs.oracle.com/iaas/Content/KeyManagement/Tasks/managingkeys.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -68,7 +68,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelHsmClusterDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelHsmClusterDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CancelHsmClusterDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelHsmClusterDeletion API.
      */
     CancelHsmClusterDeletionResponse cancelHsmClusterDeletion(
             CancelHsmClusterDeletionRequest request);
@@ -82,7 +82,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeHsmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeHsmClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ChangeHsmClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeHsmClusterCompartment API.
      */
     ChangeHsmClusterCompartmentResponse changeHsmClusterCompartment(
             ChangeHsmClusterCompartmentRequest request);
@@ -96,7 +96,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHsmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/CreateHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateHsmCluster API.
      */
     CreateHsmClusterResponse createHsmCluster(CreateHsmClusterRequest request);
 
@@ -109,7 +109,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DownloadCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadCertificateSigningRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/DownloadCertificateSigningRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DownloadCertificateSigningRequest API.
      */
     DownloadCertificateSigningRequestResponse downloadCertificateSigningRequest(
             DownloadCertificateSigningRequestRequest request);
@@ -128,7 +128,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHsmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHsmCluster API.
      */
     GetHsmClusterResponse getHsmCluster(GetHsmClusterRequest request);
 
@@ -141,7 +141,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetHsmPartitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHsmPartition API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetHsmPartitionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHsmPartition API.
      */
     GetHsmPartitionResponse getHsmPartition(GetHsmPartitionRequest request);
 
@@ -154,7 +154,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetPreCoUserCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreCoUserCredentials API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/GetPreCoUserCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreCoUserCredentials API.
      */
     GetPreCoUserCredentialsResponse getPreCoUserCredentials(GetPreCoUserCredentialsRequest request);
 
@@ -172,7 +172,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListHsmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHsmClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListHsmClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHsmClusters API.
      */
     ListHsmClustersResponse listHsmClusters(ListHsmClustersRequest request);
 
@@ -185,7 +185,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListHsmPartitionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHsmPartitions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ListHsmPartitionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHsmPartitions API.
      */
     ListHsmPartitionsResponse listHsmPartitions(ListHsmPartitionsRequest request);
 
@@ -199,7 +199,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleHsmClusterDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleHsmClusterDeletion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/ScheduleHsmClusterDeletionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScheduleHsmClusterDeletion API.
      */
     ScheduleHsmClusterDeletionResponse scheduleHsmClusterDeletion(
             ScheduleHsmClusterDeletionRequest request);
@@ -218,7 +218,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHsmCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UpdateHsmClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHsmCluster API.
      */
     UpdateHsmClusterResponse updateHsmCluster(UpdateHsmClusterRequest request);
 
@@ -231,7 +231,7 @@ public interface KmsHsmCluster extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UploadPartitionCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadPartitionCertificates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/keymanagement/UploadPartitionCertificatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadPartitionCertificates API.
      */
     UploadPartitionCertificatesResponse uploadPartitionCertificates(
             UploadPartitionCertificatesRequest request);

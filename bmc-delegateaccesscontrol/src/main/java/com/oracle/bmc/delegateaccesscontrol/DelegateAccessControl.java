@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.delegateaccesscontrol;
@@ -73,7 +73,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ApproveDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveDelegatedResourceAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ApproveDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ApproveDelegatedResourceAccessRequest API.
      */
     ApproveDelegatedResourceAccessRequestResponse approveDelegatedResourceAccessRequest(
             ApproveDelegatedResourceAccessRequestRequest request);
@@ -87,7 +87,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ChangeDelegationControlCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDelegationControlCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ChangeDelegationControlCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDelegationControlCompartment API.
      */
     ChangeDelegationControlCompartmentResponse changeDelegationControlCompartment(
             ChangeDelegationControlCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ChangeDelegationSubscriptionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDelegationSubscriptionCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ChangeDelegationSubscriptionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDelegationSubscriptionCompartment API.
      */
     ChangeDelegationSubscriptionCompartmentResponse changeDelegationSubscriptionCompartment(
             ChangeDelegationSubscriptionCompartmentRequest request);
@@ -115,7 +115,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/CreateDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDelegationControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/CreateDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDelegationControl API.
      */
     CreateDelegationControlResponse createDelegationControl(CreateDelegationControlRequest request);
 
@@ -128,7 +128,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/CreateDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDelegationSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/CreateDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDelegationSubscription API.
      */
     CreateDelegationSubscriptionResponse createDelegationSubscription(
             CreateDelegationSubscriptionRequest request);
@@ -146,7 +146,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/DeleteDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDelegationControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/DeleteDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDelegationControl API.
      */
     DeleteDelegationControlResponse deleteDelegationControl(DeleteDelegationControlRequest request);
 
@@ -158,7 +158,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/DeleteDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDelegationSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/DeleteDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDelegationSubscription API.
      */
     DeleteDelegationSubscriptionResponse deleteDelegationSubscription(
             DeleteDelegationSubscriptionRequest request);
@@ -171,7 +171,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegatedResourceAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegatedResourceAccessRequest API.
      */
     GetDelegatedResourceAccessRequestResponse getDelegatedResourceAccessRequest(
             GetDelegatedResourceAccessRequestRequest request);
@@ -184,7 +184,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegatedResourceAccessRequestAuditLogReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegatedResourceAccessRequestAuditLogReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegatedResourceAccessRequestAuditLogReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegatedResourceAccessRequestAuditLogReport API.
      */
     GetDelegatedResourceAccessRequestAuditLogReportResponse
             getDelegatedResourceAccessRequestAuditLogReport(
@@ -198,7 +198,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegationControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegationControl API.
      */
     GetDelegationControlResponse getDelegationControl(GetDelegationControlRequest request);
 
@@ -210,7 +210,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegationSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDelegationSubscription API.
      */
     GetDelegationSubscriptionResponse getDelegationSubscription(
             GetDelegationSubscriptionRequest request);
@@ -223,7 +223,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetServiceProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceProvider API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetServiceProviderExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceProvider API.
      */
     GetServiceProviderResponse getServiceProvider(GetServiceProviderRequest request);
 
@@ -235,7 +235,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetServiceProviderActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceProviderAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/GetServiceProviderActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetServiceProviderAction API.
      */
     GetServiceProviderActionResponse getServiceProviderAction(
             GetServiceProviderActionRequest request);
@@ -249,7 +249,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegatedResourceAccessRequestHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegatedResourceAccessRequestHistories API.
      */
     ListDelegatedResourceAccessRequestHistoriesResponse listDelegatedResourceAccessRequestHistories(
             ListDelegatedResourceAccessRequestHistoriesRequest request);
@@ -263,7 +263,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegatedResourceAccessRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegatedResourceAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegatedResourceAccessRequests API.
      */
     ListDelegatedResourceAccessRequestsResponse listDelegatedResourceAccessRequests(
             ListDelegatedResourceAccessRequestsRequest request);
@@ -277,7 +277,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationControlResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationControlResources API.
      */
     ListDelegationControlResourcesResponse listDelegationControlResources(
             ListDelegationControlResourcesRequest request);
@@ -291,7 +291,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationControls API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationControlsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationControls API.
      */
     ListDelegationControlsResponse listDelegationControls(ListDelegationControlsRequest request);
 
@@ -304,7 +304,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationSubscriptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListDelegationSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDelegationSubscriptions API.
      */
     ListDelegationSubscriptionsResponse listDelegationSubscriptions(
             ListDelegationSubscriptionsRequest request);
@@ -318,7 +318,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProviderActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviderActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProviderActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviderActions API.
      */
     ListServiceProviderActionsResponse listServiceProviderActions(
             ListServiceProviderActionsRequest request);
@@ -332,7 +332,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProviderInteractionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviderInteractions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProviderInteractionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviderInteractions API.
      */
     ListServiceProviderInteractionsResponse listServiceProviderInteractions(
             ListServiceProviderInteractionsRequest request);
@@ -346,7 +346,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviders API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ListServiceProvidersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListServiceProviders API.
      */
     ListServiceProvidersResponse listServiceProviders(ListServiceProvidersRequest request);
 
@@ -359,7 +359,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/RejectDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RejectDelegatedResourceAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/RejectDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RejectDelegatedResourceAccessRequest API.
      */
     RejectDelegatedResourceAccessRequestResponse rejectDelegatedResourceAccessRequest(
             RejectDelegatedResourceAccessRequestRequest request);
@@ -373,7 +373,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/RevokeDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeDelegatedResourceAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/RevokeDelegatedResourceAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RevokeDelegatedResourceAccessRequest API.
      */
     RevokeDelegatedResourceAccessRequestResponse revokeDelegatedResourceAccessRequest(
             RevokeDelegatedResourceAccessRequestRequest request);
@@ -387,7 +387,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ServiceProviderInteractionRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ServiceProviderInteractionRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/ServiceProviderInteractionRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ServiceProviderInteractionRequest API.
      */
     ServiceProviderInteractionRequestResponse serviceProviderInteractionRequest(
             ServiceProviderInteractionRequestRequest request);
@@ -401,7 +401,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/UpdateDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDelegationControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/UpdateDelegationControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDelegationControl API.
      */
     UpdateDelegationControlResponse updateDelegationControl(UpdateDelegationControlRequest request);
 
@@ -414,7 +414,7 @@ public interface DelegateAccessControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/UpdateDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDelegationSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/delegateaccesscontrol/UpdateDelegationSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDelegationSubscription API.
      */
     UpdateDelegationSubscriptionResponse updateDelegationSubscription(
             UpdateDelegationSubscriptionRequest request);

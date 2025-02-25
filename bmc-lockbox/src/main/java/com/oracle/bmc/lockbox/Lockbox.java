@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.lockbox;
@@ -70,7 +70,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -82,7 +82,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeApprovalTemplateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApprovalTemplateCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeApprovalTemplateCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApprovalTemplateCompartment API.
      */
     ChangeApprovalTemplateCompartmentResponse changeApprovalTemplateCompartment(
             ChangeApprovalTemplateCompartmentRequest request);
@@ -95,7 +95,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeLockboxCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLockboxCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ChangeLockboxCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeLockboxCompartment API.
      */
     ChangeLockboxCompartmentResponse changeLockboxCompartment(
             ChangeLockboxCompartmentRequest request);
@@ -109,7 +109,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAccessRequest API.
      */
     CreateAccessRequestResponse createAccessRequest(CreateAccessRequestRequest request);
 
@@ -122,7 +122,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApprovalTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApprovalTemplate API.
      */
     CreateApprovalTemplateResponse createApprovalTemplate(CreateApprovalTemplateRequest request);
 
@@ -135,7 +135,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLockbox API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/CreateLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateLockbox API.
      */
     CreateLockboxResponse createLockbox(CreateLockboxRequest request);
 
@@ -147,7 +147,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApprovalTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApprovalTemplate API.
      */
     DeleteApprovalTemplateResponse deleteApprovalTemplate(DeleteApprovalTemplateRequest request);
 
@@ -159,7 +159,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLockbox API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/DeleteLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteLockbox API.
      */
     DeleteLockboxResponse deleteLockbox(DeleteLockboxRequest request);
 
@@ -172,7 +172,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportAccessRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ExportAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportAccessRequests API.
      */
     ExportAccessRequestsResponse exportAccessRequests(ExportAccessRequestsRequest request);
 
@@ -185,7 +185,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessMaterialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessMaterials API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessMaterialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessMaterials API.
      */
     GetAccessMaterialsResponse getAccessMaterials(GetAccessMaterialsRequest request);
 
@@ -197,7 +197,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequest API.
      */
     GetAccessRequestResponse getAccessRequest(GetAccessRequestRequest request);
 
@@ -209,7 +209,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequestInternal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetAccessRequestInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAccessRequestInternal API.
      */
     GetAccessRequestInternalResponse getAccessRequestInternal(
             GetAccessRequestInternalRequest request);
@@ -222,7 +222,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApprovalTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApprovalTemplate API.
      */
     GetApprovalTemplateResponse getApprovalTemplate(GetApprovalTemplateRequest request);
 
@@ -234,7 +234,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLockbox API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetLockbox API.
      */
     GetLockboxResponse getLockbox(GetLockboxRequest request);
 
@@ -246,7 +246,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -258,7 +258,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/HandleAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HandleAccessRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/HandleAccessRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HandleAccessRequest API.
      */
     HandleAccessRequestResponse handleAccessRequest(HandleAccessRequestRequest request);
 
@@ -271,7 +271,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListAccessRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAccessRequests API.
      */
     ListAccessRequestsResponse listAccessRequests(ListAccessRequestsRequest request);
 
@@ -284,7 +284,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListApprovalTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApprovalTemplates API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListApprovalTemplatesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApprovalTemplates API.
      */
     ListApprovalTemplatesResponse listApprovalTemplates(ListApprovalTemplatesRequest request);
 
@@ -297,7 +297,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListLockboxesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLockboxes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListLockboxesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListLockboxes API.
      */
     ListLockboxesResponse listLockboxes(ListLockboxesRequest request);
 
@@ -310,7 +310,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -323,7 +323,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -336,7 +336,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -348,7 +348,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApprovalTemplate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateApprovalTemplateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApprovalTemplate API.
      */
     UpdateApprovalTemplateResponse updateApprovalTemplate(UpdateApprovalTemplateRequest request);
 
@@ -360,7 +360,7 @@ public interface Lockbox extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLockbox API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/lockbox/UpdateLockboxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateLockbox API.
      */
     UpdateLockboxResponse updateLockbox(UpdateLockboxRequest request);
 

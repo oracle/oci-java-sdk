@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.resourcemanager.model;
 
 /**
  * Job details that are specific to a plan rollback job. For more information about plan rollback jobs,
- * see [Creating a Plan Rollback Job](https://docs.cloud.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm).
+ * see [Creating a Plan Rollback Job](https://docs.oracle.com/iaas/Content/ResourceManager/Tasks/create-job-plan-rollback.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -47,14 +47,14 @@ public final class CreatePlanRollbackJobOperationDetails extends CreateJobOperat
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
         private String targetRollbackJobId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
          *
          * @param targetRollbackJobId the value to set
          * @return this builder
@@ -124,14 +124,14 @@ public final class CreatePlanRollbackJobOperationDetails extends CreateJobOperat
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("targetRollbackJobId")
     private final String targetRollbackJobId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a successful apply job to use for the plan rollback job.
      *
      * @return the value
      **/

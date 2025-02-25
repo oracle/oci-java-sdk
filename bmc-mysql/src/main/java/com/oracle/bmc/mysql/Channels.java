@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql;
@@ -68,7 +68,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/CreateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateChannel API.
      */
     CreateChannelResponse createChannel(CreateChannelRequest request);
 
@@ -80,7 +80,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/DeleteChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteChannel API.
      */
     DeleteChannelResponse deleteChannel(DeleteChannelRequest request);
 
@@ -95,7 +95,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/GetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetChannel API.
      */
     GetChannelResponse getChannel(GetChannelRequest request);
 
@@ -107,7 +107,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ListChannelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListChannels API.
      */
     ListChannelsResponse listChannels(ListChannelsRequest request);
 
@@ -121,7 +121,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResetChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResetChannel API.
      */
     ResetChannelResponse resetChannel(ResetChannelRequest request);
 
@@ -136,7 +136,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResumeChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/ResumeChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeChannel API.
      */
     ResumeChannelResponse resumeChannel(ResumeChannelRequest request);
 
@@ -152,7 +152,7 @@ public interface Channels extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateChannel API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/mysql/UpdateChannelExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateChannel API.
      */
     UpdateChannelResponse updateChannel(UpdateChannelRequest request);
 

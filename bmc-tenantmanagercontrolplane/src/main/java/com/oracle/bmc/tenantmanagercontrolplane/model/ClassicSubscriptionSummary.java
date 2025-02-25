@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -88,6 +88,15 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
                 java.util.Map<String, java.util.Map<String, Object>> definedTags) {
             this.definedTags = definedTags;
             this.__explicitlySet__.add("definedTags");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("systemTags")
+        private java.util.Map<String, java.util.Map<String, Object>> systemTags;
+
+        public Builder systemTags(java.util.Map<String, java.util.Map<String, Object>> systemTags) {
+            this.systemTags = systemTags;
+            this.__explicitlySet__.add("systemTags");
             return this;
         }
         /**
@@ -216,6 +225,7 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
                             this.timeUpdated,
                             this.freeformTags,
                             this.definedTags,
+                            this.systemTags,
                             this.classicSubscriptionId,
                             this.isClassicSubscription,
                             this.paymentModel,
@@ -251,6 +261,9 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             }
             if (model.wasPropertyExplicitlySet("definedTags")) {
                 this.definedTags(model.getDefinedTags());
+            }
+            if (model.wasPropertyExplicitlySet("systemTags")) {
+                this.systemTags(model.getSystemTags());
             }
             if (model.wasPropertyExplicitlySet("classicSubscriptionId")) {
                 this.classicSubscriptionId(model.getClassicSubscriptionId());
@@ -297,6 +310,7 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             java.util.Date timeUpdated,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
+            java.util.Map<String, java.util.Map<String, Object>> systemTags,
             String classicSubscriptionId,
             Boolean isClassicSubscription,
             String paymentModel,
@@ -304,7 +318,15 @@ public final class ClassicSubscriptionSummary extends SubscriptionSummary {
             ClassicSubscriptionLifecycleState lifecycleState,
             java.util.Date startDate,
             java.util.Date endDate) {
-        super(id, compartmentId, serviceName, timeCreated, timeUpdated, freeformTags, definedTags);
+        super(
+                id,
+                compartmentId,
+                serviceName,
+                timeCreated,
+                timeUpdated,
+                freeformTags,
+                definedTags,
+                systemTags);
         this.classicSubscriptionId = classicSubscriptionId;
         this.isClassicSubscription = isClassicSubscription;
         this.paymentModel = paymentModel;

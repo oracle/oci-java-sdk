@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datascience.model;
@@ -38,7 +38,7 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *          * libraryVersion
          *          * estimatorClass
          *          * hyperParameters
-         *          * testartifactresults
+         *          * testArtifactresults
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("key")
@@ -52,7 +52,7 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
          *          * libraryVersion
          *          * estimatorClass
          *          * hyperParameters
-         *          * testartifactresults
+         *          * testArtifactresults
          *
          * @param key the value to set
          * @return this builder
@@ -113,13 +113,13 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("category")
         private String category;
 
         /**
-         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+         * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
          * @param category the value to set
          * @return this builder
          **/
@@ -177,7 +177,7 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
      *          * libraryVersion
      *          * estimatorClass
      *          * hyperParameters
-     *          * testartifactresults
+     *          * testArtifactresults
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("key")
@@ -191,7 +191,7 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
      *          * libraryVersion
      *          * estimatorClass
      *          * hyperParameters
-     *          * testartifactresults
+     *          * testArtifactresults
      *
      * @return the value
      **/
@@ -246,13 +246,13 @@ public final class Metadata extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("category")
     private final String category;
 
     /**
-     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,other".
+     * Category of model metadata which should be null for defined metadata.For custom metadata is should be one of the following values "Performance,Training Profile,Training and Validation Datasets,Training Environment,Reports,Readme,other".
      * @return the value
      **/
     public String getCategory() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -131,7 +131,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -141,7 +141,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -176,12 +176,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * The fault domain for the dedicated virtual machine host's assigned instances.
-         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * For more information, see [Fault Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
          * <p>
          * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
          * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
          * <p>
-         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
          * <p>
          * Example: {@code FAULT-DOMAIN-1}
          *
@@ -191,12 +191,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * The fault domain for the dedicated virtual machine host's assigned instances.
-         * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+         * For more information, see [Fault Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
          * <p>
          * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
          * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
          * <p>
-         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+         * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
          * <p>
          * Example: {@code FAULT-DOMAIN-1}
          *
@@ -210,7 +210,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -220,7 +220,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -233,13 +233,13 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
          * @param id the value to set
          * @return this builder
          **/
@@ -500,7 +500,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -510,7 +510,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -540,12 +540,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances.
-     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+     * For more information, see [Fault Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
      * <p>
      * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
      * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
      * <p>
-     * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
      * Example: {@code FAULT-DOMAIN-1}
      *
@@ -555,12 +555,12 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * The fault domain for the dedicated virtual machine host's assigned instances.
-     * For more information, see [Fault Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
+     * For more information, see [Fault Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm#fault).
      * <p>
      * If you do not specify the fault domain, the system selects one for you. To change the fault domain for a dedicated virtual machine host,
      * delete it, and then create a new dedicated virtual machine host in the preferred fault domain.
      * <p>
-     * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.cloud.oracle.com/iaas/api/#/en/identity/20160918/).
+     * To get a list of fault domains, use the {@code ListFaultDomains} operation in the [Identity and Access Management Service API](https://docs.oracle.com/iaas/api/#/en/identity/20160918/).
      * <p>
      * Example: {@code FAULT-DOMAIN-1}
      *
@@ -572,7 +572,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -582,7 +582,7 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -593,13 +593,13 @@ public final class DedicatedVmHost extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the dedicated VM host.
      * @return the value
      **/
     public String getId() {

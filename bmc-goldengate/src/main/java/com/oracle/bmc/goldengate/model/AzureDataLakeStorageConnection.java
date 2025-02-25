@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -312,7 +312,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          * Note: When provided, 'accountKey' field must not be provided.
          *
          **/
@@ -320,7 +320,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
         private String accountKeySecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
          * Note: When provided, 'accountKey' field must not be provided.
          *
          * @param accountKeySecretId the value to set
@@ -332,7 +332,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
          * Note: When provided, 'sasToken' field must not be provided.
          *
          **/
@@ -340,7 +340,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
         private String sasTokenSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
          * Note: When provided, 'sasToken' field must not be provided.
          *
          * @param sasTokenSecretId the value to set
@@ -352,7 +352,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
          *
          **/
@@ -360,7 +360,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
         private String clientSecretSecretId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
          * Note: When provided, 'clientSecret' field must not be provided.
          *
          * @param clientSecretSecretId the value to set
@@ -772,7 +772,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * Note: When provided, 'accountKey' field must not be provided.
      *
      **/
@@ -780,7 +780,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     private final String accountKeySecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the account key is stored.
      * Note: When provided, 'accountKey' field must not be provided.
      *
      * @return the value
@@ -790,7 +790,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
      * Note: When provided, 'sasToken' field must not be provided.
      *
      **/
@@ -798,7 +798,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     private final String sasTokenSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the sas token is stored.
      * Note: When provided, 'sasToken' field must not be provided.
      *
      * @return the value
@@ -808,7 +808,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      * Note: When provided, 'clientSecret' field must not be provided.
      *
      **/
@@ -816,7 +816,7 @@ public final class AzureDataLakeStorageConnection extends Connection {
     private final String clientSecretSecretId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Secret where the client secret is stored.
      * Note: When provided, 'clientSecret' field must not be provided.
      *
      * @return the value

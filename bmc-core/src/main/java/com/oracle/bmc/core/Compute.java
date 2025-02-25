@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -10,11 +10,11 @@ import com.oracle.bmc.core.responses.*;
 /**
  * Use the Core Services API to manage resources such as virtual cloud networks (VCNs),
  * compute instances, and block storage volumes. For more information, see the console
- * documentation for the [Networking](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/overview.htm),
- * [Compute](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
- * [Block Volume](https://docs.cloud.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
+ * documentation for the [Networking](https://docs.oracle.com/iaas/Content/Network/Concepts/overview.htm),
+ * [Compute](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm), and
+ * [Block Volume](https://docs.oracle.com/iaas/Content/Block/Concepts/overview.htm) services.
  * The required permissions are documented in the
- * [Details for the Core Services](https://docs.cloud.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
+ * [Details for the Core Services](https://docs.oracle.com/iaas/Content/Identity/Reference/corepolicyreference.htm) article.
  *
  * This service client does not use circuit breakers by default if the user has not defined a circuit breaker configuration.
  */
@@ -74,7 +74,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AcceptShieldedIntegrityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AcceptShieldedIntegrityPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AcceptShieldedIntegrityPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AcceptShieldedIntegrityPolicy API.
      */
     AcceptShieldedIntegrityPolicyResponse acceptShieldedIntegrityPolicy(
             AcceptShieldedIntegrityPolicyRequest request);
@@ -87,7 +87,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AddImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddImageShapeCompatibilityEntry API.
      */
     AddImageShapeCompatibilityEntryResponse addImageShapeCompatibilityEntry(
             AddImageShapeCompatibilityEntryRequest request);
@@ -101,14 +101,14 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachBootVolume API.
      */
     AttachBootVolumeResponse attachBootVolume(AttachBootVolumeRequest request);
 
     /**
      * Creates a secondary VNIC and attaches it to the specified instance.
      * For more information about secondary VNICs, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -116,7 +116,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVnic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVnic API.
      */
     AttachVnicResponse attachVnic(AttachVnicRequest request);
 
@@ -129,7 +129,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVolume API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/AttachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AttachVolume API.
      */
     AttachVolumeResponse attachVolume(AttachVolumeRequest request);
 
@@ -158,14 +158,14 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CaptureConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CaptureConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CaptureConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CaptureConsoleHistory API.
      */
     CaptureConsoleHistoryResponse captureConsoleHistory(CaptureConsoleHistoryRequest request);
 
     /**
      * Moves a compute capacity reservation into a different compartment. For information about
      * moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -173,14 +173,14 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityReservationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeCapacityReservationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityReservationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeCapacityReservationCompartment API.
      */
     ChangeComputeCapacityReservationCompartmentResponse changeComputeCapacityReservationCompartment(
             ChangeComputeCapacityReservationCompartmentRequest request);
 
     /**
      * Moves a compute capacity topology into a different compartment. For information about moving resources between
-     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -188,17 +188,17 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityTopologyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeCapacityTopologyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeCapacityTopologyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeCapacityTopologyCompartment API.
      */
     ChangeComputeCapacityTopologyCompartmentResponse changeComputeCapacityTopologyCompartment(
             ChangeComputeCapacityTopologyCompartmentRequest request);
 
     /**
      * Moves a compute cluster into a different compartment within the same tenancy.
-     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      * <p>
      * For information about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -206,7 +206,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeClusterCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeClusterCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeClusterCompartment API.
      */
     ChangeComputeClusterCompartmentResponse changeComputeClusterCompartment(
             ChangeComputeClusterCompartmentRequest request);
@@ -214,7 +214,7 @@ public interface Compute extends AutoCloseable {
     /**
      * Moves a compute image capability schema into a different compartment within the same tenancy.
      * For information about moving resources between compartments, see
-     *         [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     *         [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -222,7 +222,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeImageCapabilitySchemaCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeImageCapabilitySchemaCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeComputeImageCapabilitySchemaCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeComputeImageCapabilitySchemaCompartment API.
      */
     ChangeComputeImageCapabilitySchemaCompartmentResponse
             changeComputeImageCapabilitySchemaCompartment(
@@ -236,7 +236,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDedicatedVmHostCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDedicatedVmHostCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeDedicatedVmHostCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDedicatedVmHostCompartment API.
      */
     ChangeDedicatedVmHostCompartmentResponse changeDedicatedVmHostCompartment(
             ChangeDedicatedVmHostCompartmentRequest request);
@@ -244,7 +244,7 @@ public interface Compute extends AutoCloseable {
     /**
      * Moves an image into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -252,14 +252,14 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeImageCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeImageCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeImageCompartment API.
      */
     ChangeImageCompartmentResponse changeImageCompartment(ChangeImageCompartmentRequest request);
 
     /**
      * Moves an instance into a different compartment within the same tenancy. For information about
      * moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * When you move an instance to a different compartment, associated resources such as boot volumes and VNICs
      * are not moved.
@@ -270,7 +270,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInstanceCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ChangeInstanceCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeInstanceCompartment API.
      */
     ChangeInstanceCompartmentResponse changeInstanceCompartment(
             ChangeInstanceCompartmentRequest request);
@@ -284,7 +284,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAppCatalogSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAppCatalogSubscription API.
      */
     CreateAppCatalogSubscriptionResponse createAppCatalogSubscription(
             CreateAppCatalogSubscriptionRequest request);
@@ -303,7 +303,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityReport API.
      */
     CreateComputeCapacityReportResponse createComputeCapacityReport(
             CreateComputeCapacityReportRequest request);
@@ -313,7 +313,7 @@ public interface Compute extends AutoCloseable {
      * Compute capacity reservations let you reserve instances in a compartment.
      * When you launch an instance using this reservation, you are assured that you have enough space for your instance,
      * and you won't get out of capacity errors.
-     * For more information, see [Reserved Capacity](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
+     * For more information, see [Reserved Capacity](https://docs.oracle.com/iaas/Content/Compute/Tasks/reserve-capacity.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -321,7 +321,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityReservation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityReservation API.
      */
     CreateComputeCapacityReservationResponse createComputeCapacityReservation(
             CreateComputeCapacityReservationRequest request);
@@ -340,13 +340,13 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCapacityTopology API.
      */
     CreateComputeCapacityTopologyResponse createComputeCapacityTopology(
             CreateComputeCapacityTopologyRequest request);
 
     /**
-     * Creates an empty [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
+     * Creates an empty [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm). A compute cluster
      * is a remote direct memory access (RDMA) network group.
      * <p>
      * After the compute cluster is created, you can use the compute cluster's OCID with the
@@ -365,7 +365,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeCluster API.
      */
     CreateComputeClusterResponse createComputeCluster(CreateComputeClusterRequest request);
 
@@ -378,7 +378,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateComputeImageCapabilitySchema API.
      */
     CreateComputeImageCapabilitySchemaResponse createComputeImageCapabilitySchema(
             CreateComputeImageCapabilitySchemaRequest request);
@@ -387,7 +387,7 @@ public interface Compute extends AutoCloseable {
      * Creates a new dedicated virtual machine host in the specified compartment and the specified availability domain.
      * Dedicated virtual machine hosts enable you to run your Compute virtual machine (VM) instances on dedicated servers
      * that are a single tenant and not shared with other customers.
-     * For more information, see [Dedicated Virtual Machine Hosts](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
+     * For more information, see [Dedicated Virtual Machine Hosts](https://docs.oracle.com/iaas/Content/Compute/Concepts/dedicatedvmhosts.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -395,7 +395,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDedicatedVmHost API.
      */
     CreateDedicatedVmHostResponse createDedicatedVmHost(CreateDedicatedVmHostRequest request);
 
@@ -404,7 +404,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      * When creating a new image, you must provide the OCID of the instance you want to use as the basis for the image, and
      * the OCID of the compartment containing that instance. For more information about images,
-     * see [Managing Custom Images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * see [Managing Custom Images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * <p>
      * When importing an exported image from Object Storage, you specify the source information
      * in {@link #imageSourceDetails(ImageSourceDetailsRequest) imageSourceDetails}.
@@ -414,11 +414,11 @@ public interface Compute extends AutoCloseable {
      * <p>
      * When importing an image based on the Object Storage URL, use
      * {@link #imageSourceViaObjectStorageUriDetails(ImageSourceViaObjectStorageUriDetailsRequest) imageSourceViaObjectStorageUriDetails}.
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * See [Object Storage URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      * <p>
      * For more information about importing exported images, see
-     * [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * [Image Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * You may optionally specify a *display name* for the image, which is simply a friendly name or description.
      * It does not have to be unique, and you can change it. See {@link #updateImage(UpdateImageRequest) updateImage}.
@@ -430,7 +430,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateImage API.
      */
     CreateImageResponse createImage(CreateImageRequest request);
 
@@ -439,7 +439,7 @@ public interface Compute extends AutoCloseable {
      * After the console connection has been created and is available,
      * you connect to the console using SSH.
      * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -447,7 +447,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/CreateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInstanceConsoleConnection API.
      */
     CreateInstanceConsoleConnectionResponse createInstanceConsoleConnection(
             CreateInstanceConsoleConnectionRequest request);
@@ -460,7 +460,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAppCatalogSubscription API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteAppCatalogSubscriptionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAppCatalogSubscription API.
      */
     DeleteAppCatalogSubscriptionResponse deleteAppCatalogSubscription(
             DeleteAppCatalogSubscriptionRequest request);
@@ -473,7 +473,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCapacityReservation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCapacityReservation API.
      */
     DeleteComputeCapacityReservationResponse deleteComputeCapacityReservation(
             DeleteComputeCapacityReservationRequest request);
@@ -486,13 +486,13 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCapacityTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCapacityTopology API.
      */
     DeleteComputeCapacityTopologyResponse deleteComputeCapacityTopology(
             DeleteComputeCapacityTopologyRequest request);
 
     /**
-     * Deletes a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * Deletes a compute cluster. A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
      * <p>
      * Before you delete a compute cluster, first delete all instances in the cluster by using
@@ -504,7 +504,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeCluster API.
      */
     DeleteComputeClusterResponse deleteComputeCluster(DeleteComputeClusterRequest request);
 
@@ -517,7 +517,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteComputeImageCapabilitySchema API.
      */
     DeleteComputeImageCapabilitySchemaResponse deleteComputeImageCapabilitySchema(
             DeleteComputeImageCapabilitySchemaRequest request);
@@ -531,7 +531,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteConsoleHistory API.
      */
     DeleteConsoleHistoryResponse deleteConsoleHistory(DeleteConsoleHistoryRequest request);
 
@@ -547,7 +547,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDedicatedVmHost API.
      */
     DeleteDedicatedVmHostResponse deleteDedicatedVmHost(DeleteDedicatedVmHostRequest request);
 
@@ -559,7 +559,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteImage API.
      */
     DeleteImageResponse deleteImage(DeleteImageRequest request);
 
@@ -571,7 +571,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DeleteInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInstanceConsoleConnection API.
      */
     DeleteInstanceConsoleConnectionResponse deleteInstanceConsoleConnection(
             DeleteInstanceConsoleConnectionRequest request);
@@ -588,7 +588,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachBootVolume API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachBootVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachBootVolume API.
      */
     DetachBootVolumeResponse detachBootVolume(DetachBootVolumeRequest request);
 
@@ -600,7 +600,7 @@ public interface Compute extends AutoCloseable {
      * <p>
      **Important:** If the VNIC has a
      * {@link PrivateIp} that is the
-     * [target of a route rule](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
+     * [target of a route rule](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#privateip),
      * deleting the VNIC causes that route rule to blackhole and the traffic
      * will be dropped.
      *
@@ -610,7 +610,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVnic API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVnicExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVnic API.
      */
     DetachVnicResponse detachVnic(DetachVnicRequest request);
 
@@ -626,7 +626,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVolume API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/DetachVolumeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DetachVolume API.
      */
     DetachVolumeResponse detachVolume(DetachVolumeRequest request);
 
@@ -634,12 +634,12 @@ public interface Compute extends AutoCloseable {
      * Exports the specified image to the Oracle Cloud Infrastructure Object Storage service. You can use the Object Storage URL,
      * or the namespace, bucket name, and object name when specifying the location to export to.
      * <p>
-     * For more information about exporting images, see [Image Import/Export](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
+     * For more information about exporting images, see [Image Import/Export](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm).
      * <p>
      * To perform an image export, you need write access to the Object Storage bucket for the image,
-     * see [Let Users Write Objects to Object Storage Buckets](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
+     * see [Let Users Write Objects to Object Storage Buckets](https://docs.oracle.com/iaas/Content/Identity/Concepts/commonpolicies.htm#Let4).
      * <p>
-     * See [Object Storage URLs](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.cloud.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
+     * See [Object Storage URLs](https://docs.oracle.com/iaas/Content/Compute/Tasks/imageimportexport.htm#URLs) and [Using Pre-Authenticated Requests](https://docs.oracle.com/iaas/Content/Object/Tasks/usingpreauthenticatedrequests.htm)
      * for constructing URLs for image import/export.
      *
      * @param request The request object containing the details to send
@@ -648,7 +648,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ExportImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ExportImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportImage API.
      */
     ExportImageResponse exportImage(ExportImageRequest request);
 
@@ -660,7 +660,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListing API.
      */
     GetAppCatalogListingResponse getAppCatalogListing(GetAppCatalogListingRequest request);
 
@@ -672,7 +672,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingAgreementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingAgreements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingAgreementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingAgreements API.
      */
     GetAppCatalogListingAgreementsResponse getAppCatalogListingAgreements(
             GetAppCatalogListingAgreementsRequest request);
@@ -685,7 +685,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingResourceVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingResourceVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetAppCatalogListingResourceVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAppCatalogListingResourceVersion API.
      */
     GetAppCatalogListingResourceVersionResponse getAppCatalogListingResourceVersion(
             GetAppCatalogListingResourceVersionRequest request);
@@ -698,7 +698,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetBootVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBootVolumeAttachment API.
      */
     GetBootVolumeAttachmentResponse getBootVolumeAttachment(GetBootVolumeAttachmentRequest request);
 
@@ -710,7 +710,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCapacityReservation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCapacityReservation API.
      */
     GetComputeCapacityReservationResponse getComputeCapacityReservation(
             GetComputeCapacityReservationRequest request);
@@ -723,13 +723,13 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCapacityTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCapacityTopology API.
      */
     GetComputeCapacityTopologyResponse getComputeCapacityTopology(
             GetComputeCapacityTopologyRequest request);
 
     /**
-     * Gets information about a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
+     * Gets information about a compute cluster. A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm)
      * is a remote direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
@@ -738,7 +738,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeCluster API.
      */
     GetComputeClusterResponse getComputeCluster(GetComputeClusterRequest request);
 
@@ -750,7 +750,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchema API.
      */
     GetComputeGlobalImageCapabilitySchemaResponse getComputeGlobalImageCapabilitySchema(
             GetComputeGlobalImageCapabilitySchemaRequest request);
@@ -763,7 +763,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchemaVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeGlobalImageCapabilitySchemaVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeGlobalImageCapabilitySchemaVersion API.
      */
     GetComputeGlobalImageCapabilitySchemaVersionResponse
             getComputeGlobalImageCapabilitySchemaVersion(
@@ -778,7 +778,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComputeImageCapabilitySchema API.
      */
     GetComputeImageCapabilitySchemaResponse getComputeImageCapabilitySchema(
             GetComputeImageCapabilitySchemaRequest request);
@@ -794,7 +794,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistory API.
      */
     GetConsoleHistoryResponse getConsoleHistory(GetConsoleHistoryRequest request);
 
@@ -809,7 +809,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistoryContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetConsoleHistoryContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetConsoleHistoryContent API.
      */
     GetConsoleHistoryContentResponse getConsoleHistoryContent(
             GetConsoleHistoryContentRequest request);
@@ -822,7 +822,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDedicatedVmHost API.
      */
     GetDedicatedVmHostResponse getDedicatedVmHost(GetDedicatedVmHostRequest request);
 
@@ -834,7 +834,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImage API.
      */
     GetImageResponse getImage(GetImageRequest request);
 
@@ -846,7 +846,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetImageShapeCompatibilityEntry API.
      */
     GetImageShapeCompatibilityEntryResponse getImageShapeCompatibilityEntry(
             GetImageShapeCompatibilityEntryRequest request);
@@ -863,7 +863,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstance API.
      */
     GetInstanceResponse getInstance(GetInstanceRequest request);
 
@@ -875,7 +875,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceConsoleConnection API.
      */
     GetInstanceConsoleConnectionResponse getInstanceConsoleConnection(
             GetInstanceConsoleConnectionRequest request);
@@ -889,14 +889,14 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceEvent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceEvent API.
      */
     GetInstanceMaintenanceEventResponse getInstanceMaintenanceEvent(
             GetInstanceMaintenanceEventRequest request);
 
     /**
      * Gets the maximum possible date that a maintenance reboot can be extended. For more information, see
-     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * [Infrastructure Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -904,7 +904,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceRebootExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceReboot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetInstanceMaintenanceRebootExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInstanceMaintenanceReboot API.
      */
     GetInstanceMaintenanceRebootResponse getInstanceMaintenanceReboot(
             GetInstanceMaintenanceRebootRequest request);
@@ -917,7 +917,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetMeasuredBootReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMeasuredBootReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetMeasuredBootReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMeasuredBootReport API.
      */
     GetMeasuredBootReportResponse getMeasuredBootReport(GetMeasuredBootReportRequest request);
 
@@ -930,7 +930,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVnicAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVnicAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVnicAttachment API.
      */
     GetVnicAttachmentResponse getVnicAttachment(GetVnicAttachmentRequest request);
 
@@ -942,7 +942,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetVolumeAttachment API.
      */
     GetVolumeAttachmentResponse getVolumeAttachment(GetVolumeAttachmentRequest request);
 
@@ -956,7 +956,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetWindowsInstanceInitialCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWindowsInstanceInitialCredentials API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/GetWindowsInstanceInitialCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWindowsInstanceInitialCredentials API.
      */
     GetWindowsInstanceInitialCredentialsResponse getWindowsInstanceInitialCredentials(
             GetWindowsInstanceInitialCredentialsRequest request);
@@ -986,23 +986,23 @@ public interface Compute extends AutoCloseable {
      * OS to crash and then reboot. Before you send a diagnostic interrupt, you must configure the instance to generate a
      * crash dump file when it crashes. The crash dump captures information about the state of the OS at the time of
      * the crash. After the OS restarts, you can analyze the crash dump to diagnose the issue. For more information, see
-     * [Sending a Diagnostic Interrupt](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
+     * [Sending a Diagnostic Interrupt](https://docs.oracle.com/iaas/Content/Compute/Tasks/sendingdiagnosticinterrupt.htm).
      * <p>
      *
      * <p>
      * - **DIAGNOSTICREBOOT** - Powers off the instance, rebuilds it, and then powers it back on.
      * Before you send a diagnostic reboot, restart the instance's OS, confirm that the instance and networking settings are configured
-     * correctly, and try other [troubleshooting steps](https://docs.cloud.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
+     * correctly, and try other [troubleshooting steps](https://docs.oracle.com/iaas/Content/Compute/References/troubleshooting-compute-instances.htm).
      * Use diagnostic reboot as a final attempt to troubleshoot an unreachable instance. For virtual machine (VM) instances only.
-     * For more information, see [Performing a Diagnostic Reboot](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
+     * For more information, see [Performing a Diagnostic Reboot](https://docs.oracle.com/iaas/Content/Compute/Tasks/diagnostic-reboot.htm).
      * <p>
      *
      * - **REBOOTMIGRATE** - Powers off the instance, moves it to new hardware, and then powers it back on. For more information, see
-     * [Infrastructure Maintenance](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
+     * [Infrastructure Maintenance](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm).
      * <p>
      *
      * For more information about managing instance lifecycle states, see
-     * [Stopping and Starting an Instance](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
+     * [Stopping and Starting an Instance](https://docs.oracle.com/iaas/Content/Compute/Tasks/restartinginstance.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1010,20 +1010,20 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/InstanceActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstanceAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/InstanceActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use InstanceAction API.
      */
     InstanceActionResponse instanceAction(InstanceActionRequest request);
 
     /**
      * Creates a new instance in the specified compartment and the specified availability domain.
      * For general information about instances, see
-     * [Overview of the Compute Service](https://docs.cloud.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
+     * [Overview of the Compute Service](https://docs.oracle.com/iaas/Content/Compute/Concepts/computeoverview.htm).
      * <p>
      * For information about access control and compartments, see
-     * [Overview of the IAM Service](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
+     * [Overview of the IAM Service](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm).
      * <p>
      * For information about availability domains, see
-     * [Regions and Availability Domains](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/regions.htm).
+     * [Regions and Availability Domains](https://docs.oracle.com/iaas/Content/General/Concepts/regions.htm).
      * To get a list of availability domains, use the `ListAvailabilityDomains` operation
      * in the Identity and Access Management Service API.
      * <p>
@@ -1045,7 +1045,7 @@ public interface Compute extends AutoCloseable {
      * {@link #getVnic(GetVnicRequest) getVnic} with the VNIC ID.
      * <p>
      * You can later add secondary VNICs to an instance. For more information, see
-     * [Virtual Network Interface Cards (VNICs)](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
+     * [Virtual Network Interface Cards (VNICs)](https://docs.oracle.com/iaas/Content/Network/Tasks/managingVNICs.htm).
      * <p>
      * To launch an instance from a Marketplace image listing, you must provide the image ID of the
      * listing resource version that you want, but you also must subscribe to the listing before you try
@@ -1071,7 +1071,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/LaunchInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use LaunchInstance API.
      */
     LaunchInstanceResponse launchInstance(LaunchInstanceRequest request);
 
@@ -1083,7 +1083,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingResourceVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListingResourceVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingResourceVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListingResourceVersions API.
      */
     ListAppCatalogListingResourceVersionsResponse listAppCatalogListingResourceVersions(
             ListAppCatalogListingResourceVersionsRequest request);
@@ -1096,7 +1096,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogListings API.
      */
     ListAppCatalogListingsResponse listAppCatalogListings(ListAppCatalogListingsRequest request);
 
@@ -1108,7 +1108,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogSubscriptions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListAppCatalogSubscriptionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAppCatalogSubscriptions API.
      */
     ListAppCatalogSubscriptionsResponse listAppCatalogSubscriptions(
             ListAppCatalogSubscriptionsRequest request);
@@ -1123,7 +1123,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListBootVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBootVolumeAttachments API.
      */
     ListBootVolumeAttachmentsResponse listBootVolumeAttachments(
             ListBootVolumeAttachmentsRequest request);
@@ -1137,7 +1137,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservationInstanceShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservationInstanceShapes API.
      */
     ListComputeCapacityReservationInstanceShapesResponse
             listComputeCapacityReservationInstanceShapes(
@@ -1152,7 +1152,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservationInstances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservationInstances API.
      */
     ListComputeCapacityReservationInstancesResponse listComputeCapacityReservationInstances(
             ListComputeCapacityReservationInstancesRequest request);
@@ -1169,7 +1169,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityReservationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityReservations API.
      */
     ListComputeCapacityReservationsResponse listComputeCapacityReservations(
             ListComputeCapacityReservationsRequest request);
@@ -1184,7 +1184,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologies API.
      */
     ListComputeCapacityTopologiesResponse listComputeCapacityTopologies(
             ListComputeCapacityTopologiesRequest request);
@@ -1197,7 +1197,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeBareMetalHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeBareMetalHosts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeBareMetalHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeBareMetalHosts API.
      */
     ListComputeCapacityTopologyComputeBareMetalHostsResponse
             listComputeCapacityTopologyComputeBareMetalHosts(
@@ -1211,7 +1211,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeHpcIslandsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeHpcIslands API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeHpcIslandsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeHpcIslands API.
      */
     ListComputeCapacityTopologyComputeHpcIslandsResponse
             listComputeCapacityTopologyComputeHpcIslands(
@@ -1225,7 +1225,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeNetworkBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeNetworkBlocks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeCapacityTopologyComputeNetworkBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeCapacityTopologyComputeNetworkBlocks API.
      */
     ListComputeCapacityTopologyComputeNetworkBlocksResponse
             listComputeCapacityTopologyComputeNetworkBlocks(
@@ -1233,7 +1233,7 @@ public interface Compute extends AutoCloseable {
 
     /**
      * Lists the compute clusters in the specified compartment.
-     * A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
+     * A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a remote direct memory access (RDMA) network group.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1241,7 +1241,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeClusters API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeClustersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeClusters API.
      */
     ListComputeClustersResponse listComputeClusters(ListComputeClustersRequest request);
 
@@ -1254,7 +1254,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemaVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemaVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemaVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemaVersions API.
      */
     ListComputeGlobalImageCapabilitySchemaVersionsResponse
             listComputeGlobalImageCapabilitySchemaVersions(
@@ -1269,7 +1269,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemas API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeGlobalImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeGlobalImageCapabilitySchemas API.
      */
     ListComputeGlobalImageCapabilitySchemasResponse listComputeGlobalImageCapabilitySchemas(
             ListComputeGlobalImageCapabilitySchemasRequest request);
@@ -1283,7 +1283,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeImageCapabilitySchemas API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListComputeImageCapabilitySchemasExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListComputeImageCapabilitySchemas API.
      */
     ListComputeImageCapabilitySchemasResponse listComputeImageCapabilitySchemas(
             ListComputeImageCapabilitySchemasRequest request);
@@ -1297,7 +1297,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListConsoleHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleHistories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListConsoleHistoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListConsoleHistories API.
      */
     ListConsoleHistoriesResponse listConsoleHistories(ListConsoleHistoriesRequest request);
 
@@ -1311,7 +1311,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstanceShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstanceShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstanceShapes API.
      */
     ListDedicatedVmHostInstanceShapesResponse listDedicatedVmHostInstanceShapes(
             ListDedicatedVmHostInstanceShapesRequest request);
@@ -1325,7 +1325,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostInstances API.
      */
     ListDedicatedVmHostInstancesResponse listDedicatedVmHostInstances(
             ListDedicatedVmHostInstancesRequest request);
@@ -1339,7 +1339,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHostShapes API.
      */
     ListDedicatedVmHostShapesResponse listDedicatedVmHostShapes(
             ListDedicatedVmHostShapesRequest request);
@@ -1356,7 +1356,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHosts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListDedicatedVmHostsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDedicatedVmHosts API.
      */
     ListDedicatedVmHostsResponse listDedicatedVmHosts(ListDedicatedVmHostsRequest request);
 
@@ -1368,15 +1368,15 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImageShapeCompatibilityEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImageShapeCompatibilityEntries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImageShapeCompatibilityEntriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImageShapeCompatibilityEntries API.
      */
     ListImageShapeCompatibilityEntriesResponse listImageShapeCompatibilityEntries(
             ListImageShapeCompatibilityEntriesRequest request);
 
     /**
      * Lists a subset of images available in the specified compartment, including
-     * [platform images](https://docs.cloud.oracle.com/iaas/Content/Compute/References/images.htm) and
-     * [custom images](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
+     * [platform images](https://docs.oracle.com/iaas/Content/Compute/References/images.htm) and
+     * [custom images](https://docs.oracle.com/iaas/Content/Compute/Tasks/managingcustomimages.htm).
      * The list of platform images includes the three most recently published versions
      * of each major distribution. The list does not support filtering based on image tags.
      * <p>
@@ -1392,14 +1392,14 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListImagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListImages API.
      */
     ListImagesResponse listImages(ListImagesRequest request);
 
     /**
      * Lists the console connections for the specified compartment or instance.
      * <p>
-     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.cloud.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
+     * For more information about instance console connections, see [Troubleshooting Instances Using Instance Console Connections](https://docs.oracle.com/iaas/Content/Compute/References/serialconsole.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -1407,7 +1407,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConsoleConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceConsoleConnections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceConsoleConnectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceConsoleConnections API.
      */
     ListInstanceConsoleConnectionsResponse listInstanceConsoleConnections(
             ListInstanceConsoleConnectionsRequest request);
@@ -1420,7 +1420,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceDevicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceDevices API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceDevicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceDevices API.
      */
     ListInstanceDevicesResponse listInstanceDevices(ListInstanceDevicesRequest request);
 
@@ -1433,7 +1433,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceMaintenanceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceMaintenanceEvents API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstanceMaintenanceEventsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstanceMaintenanceEvents API.
      */
     ListInstanceMaintenanceEventsResponse listInstanceMaintenanceEvents(
             ListInstanceMaintenanceEventsRequest request);
@@ -1452,7 +1452,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstances API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListInstancesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInstances API.
      */
     ListInstancesResponse listInstances(ListInstancesRequest request);
 
@@ -1466,7 +1466,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListShapes API.
      */
     ListShapesResponse listShapes(ListShapesRequest request);
 
@@ -1481,7 +1481,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVnicAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVnicAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVnicAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVnicAttachments API.
      */
     ListVnicAttachmentsResponse listVnicAttachments(ListVnicAttachmentsRequest request);
 
@@ -1498,7 +1498,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/ListVolumeAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVolumeAttachments API.
      */
     ListVolumeAttachmentsResponse listVolumeAttachments(ListVolumeAttachmentsRequest request);
 
@@ -1510,7 +1510,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImageShapeCompatibilityEntry API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/RemoveImageShapeCompatibilityEntryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveImageShapeCompatibilityEntry API.
      */
     RemoveImageShapeCompatibilityEntryResponse removeImageShapeCompatibilityEntry(
             RemoveImageShapeCompatibilityEntryRequest request);
@@ -1535,7 +1535,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/TerminateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use TerminateInstance API.
      */
     TerminateInstanceResponse terminateInstance(TerminateInstanceRequest request);
 
@@ -1550,7 +1550,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCapacityReservation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityReservationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCapacityReservation API.
      */
     UpdateComputeCapacityReservationResponse updateComputeCapacityReservation(
             UpdateComputeCapacityReservationRequest request);
@@ -1564,13 +1564,13 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCapacityTopology API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeCapacityTopologyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCapacityTopology API.
      */
     UpdateComputeCapacityTopologyResponse updateComputeCapacityTopology(
             UpdateComputeCapacityTopologyRequest request);
 
     /**
-     * Updates a compute cluster. A [compute cluster](https://docs.cloud.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
+     * Updates a compute cluster. A [compute cluster](https://docs.oracle.com/iaas/Content/Compute/Tasks/compute-clusters.htm) is a
      * remote direct memory access (RDMA) network group.
      * <p>
      * To create instances within a compute cluster, use the {@link #launchInstance(LaunchInstanceRequest) launchInstance}
@@ -1585,7 +1585,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeCluster API.
      */
     UpdateComputeClusterResponse updateComputeCluster(UpdateComputeClusterRequest request);
 
@@ -1598,7 +1598,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeImageCapabilitySchema API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateComputeImageCapabilitySchemaExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateComputeImageCapabilitySchema API.
      */
     UpdateComputeImageCapabilitySchemaResponse updateComputeImageCapabilitySchema(
             UpdateComputeImageCapabilitySchemaRequest request);
@@ -1611,7 +1611,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleHistory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateConsoleHistoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateConsoleHistory API.
      */
     UpdateConsoleHistoryResponse updateConsoleHistory(UpdateConsoleHistoryRequest request);
 
@@ -1625,7 +1625,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDedicatedVmHost API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateDedicatedVmHostExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDedicatedVmHost API.
      */
     UpdateDedicatedVmHostResponse updateDedicatedVmHost(UpdateDedicatedVmHostRequest request);
 
@@ -1638,7 +1638,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateImageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateImage API.
      */
     UpdateImageResponse updateImage(UpdateImageRequest request);
 
@@ -1657,7 +1657,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstance API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstance API.
      */
     UpdateInstanceResponse updateInstance(UpdateInstanceRequest request);
 
@@ -1669,7 +1669,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceConsoleConnection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceConsoleConnectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceConsoleConnection API.
      */
     UpdateInstanceConsoleConnectionResponse updateInstanceConsoleConnection(
             UpdateInstanceConsoleConnectionRequest request);
@@ -1683,7 +1683,7 @@ public interface Compute extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceMaintenanceEvent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateInstanceMaintenanceEventExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInstanceMaintenanceEvent API.
      */
     UpdateInstanceMaintenanceEventResponse updateInstanceMaintenanceEvent(
             UpdateInstanceMaintenanceEventRequest request);
@@ -1696,7 +1696,7 @@ public interface Compute extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/core/UpdateVolumeAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateVolumeAttachment API.
      */
     UpdateVolumeAttachmentResponse updateVolumeAttachment(UpdateVolumeAttachmentRequest request);
 

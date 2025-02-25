@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine.model;
@@ -23,6 +23,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
     @Deprecated
     @java.beans.ConstructorProperties({
         "serviceLbSubnetIds",
+        "ipFamilies",
         "kubernetesNetworkConfig",
         "addOns",
         "admissionControllerOptions",
@@ -33,6 +34,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
     })
     public ClusterCreateOptions(
             java.util.List<String> serviceLbSubnetIds,
+            java.util.List<IpFamilies> ipFamilies,
             KubernetesNetworkConfig kubernetesNetworkConfig,
             AddOnOptions addOns,
             AdmissionControllerOptions admissionControllerOptions,
@@ -42,6 +44,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
             OpenIdConnectDiscovery openIdConnectDiscovery) {
         super();
         this.serviceLbSubnetIds = serviceLbSubnetIds;
+        this.ipFamilies = ipFamilies;
         this.kubernetesNetworkConfig = kubernetesNetworkConfig;
         this.addOns = addOns;
         this.admissionControllerOptions = admissionControllerOptions;
@@ -67,6 +70,22 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
         public Builder serviceLbSubnetIds(java.util.List<String> serviceLbSubnetIds) {
             this.serviceLbSubnetIds = serviceLbSubnetIds;
             this.__explicitlySet__.add("serviceLbSubnetIds");
+            return this;
+        }
+        /**
+         * IP family to use for single stack or define the order of IP families for dual-stack
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
+        private java.util.List<IpFamilies> ipFamilies;
+
+        /**
+         * IP family to use for single stack or define the order of IP families for dual-stack
+         * @param ipFamilies the value to set
+         * @return this builder
+         **/
+        public Builder ipFamilies(java.util.List<IpFamilies> ipFamilies) {
+            this.ipFamilies = ipFamilies;
+            this.__explicitlySet__.add("ipFamilies");
             return this;
         }
         /**
@@ -164,6 +183,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
             ClusterCreateOptions model =
                     new ClusterCreateOptions(
                             this.serviceLbSubnetIds,
+                            this.ipFamilies,
                             this.kubernetesNetworkConfig,
                             this.addOns,
                             this.admissionControllerOptions,
@@ -181,6 +201,9 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
         public Builder copy(ClusterCreateOptions model) {
             if (model.wasPropertyExplicitlySet("serviceLbSubnetIds")) {
                 this.serviceLbSubnetIds(model.getServiceLbSubnetIds());
+            }
+            if (model.wasPropertyExplicitlySet("ipFamilies")) {
+                this.ipFamilies(model.getIpFamilies());
             }
             if (model.wasPropertyExplicitlySet("kubernetesNetworkConfig")) {
                 this.kubernetesNetworkConfig(model.getKubernetesNetworkConfig());
@@ -231,6 +254,67 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
      **/
     public java.util.List<String> getServiceLbSubnetIds() {
         return serviceLbSubnetIds;
+    }
+
+    /**
+     **/
+    public enum IpFamilies {
+        IPv4("IPv4"),
+        IPv6("IPv6"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpFamilies.class);
+
+        private final String value;
+        private static java.util.Map<String, IpFamilies> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpFamilies v : IpFamilies.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpFamilies(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpFamilies create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpFamilies', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * IP family to use for single stack or define the order of IP families for dual-stack
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipFamilies")
+    private final java.util.List<IpFamilies> ipFamilies;
+
+    /**
+     * IP family to use for single stack or define the order of IP families for dual-stack
+     * @return the value
+     **/
+    public java.util.List<IpFamilies> getIpFamilies() {
+        return ipFamilies;
     }
 
     /**
@@ -318,6 +402,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
         sb.append("ClusterCreateOptions(");
         sb.append("super=").append(super.toString());
         sb.append("serviceLbSubnetIds=").append(String.valueOf(this.serviceLbSubnetIds));
+        sb.append(", ipFamilies=").append(String.valueOf(this.ipFamilies));
         sb.append(", kubernetesNetworkConfig=")
                 .append(String.valueOf(this.kubernetesNetworkConfig));
         sb.append(", addOns=").append(String.valueOf(this.addOns));
@@ -343,6 +428,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
 
         ClusterCreateOptions other = (ClusterCreateOptions) o;
         return java.util.Objects.equals(this.serviceLbSubnetIds, other.serviceLbSubnetIds)
+                && java.util.Objects.equals(this.ipFamilies, other.ipFamilies)
                 && java.util.Objects.equals(
                         this.kubernetesNetworkConfig, other.kubernetesNetworkConfig)
                 && java.util.Objects.equals(this.addOns, other.addOns)
@@ -368,6 +454,7 @@ public final class ClusterCreateOptions extends com.oracle.bmc.http.internal.Exp
                         + (this.serviceLbSubnetIds == null
                                 ? 43
                                 : this.serviceLbSubnetIds.hashCode());
+        result = (result * PRIME) + (this.ipFamilies == null ? 43 : this.ipFamilies.hashCode());
         result =
                 (result * PRIME)
                         + (this.kubernetesNetworkConfig == null

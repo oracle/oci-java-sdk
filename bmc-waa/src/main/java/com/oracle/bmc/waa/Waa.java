@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.waa;
@@ -72,7 +72,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ChangeWebAppAccelerationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppAccelerationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ChangeWebAppAccelerationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppAccelerationCompartment API.
      */
     ChangeWebAppAccelerationCompartmentResponse changeWebAppAccelerationCompartment(
             ChangeWebAppAccelerationCompartmentRequest request);
@@ -87,7 +87,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ChangeWebAppAccelerationPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppAccelerationPolicyCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ChangeWebAppAccelerationPolicyCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeWebAppAccelerationPolicyCompartment API.
      */
     ChangeWebAppAccelerationPolicyCompartmentResponse changeWebAppAccelerationPolicyCompartment(
             ChangeWebAppAccelerationPolicyCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/CreateWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppAcceleration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/CreateWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppAcceleration API.
      */
     CreateWebAppAccelerationResponse createWebAppAcceleration(
             CreateWebAppAccelerationRequest request);
@@ -115,7 +115,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/CreateWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppAccelerationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/CreateWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateWebAppAccelerationPolicy API.
      */
     CreateWebAppAccelerationPolicyResponse createWebAppAccelerationPolicy(
             CreateWebAppAccelerationPolicyRequest request);
@@ -128,7 +128,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppAcceleration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppAcceleration API.
      */
     DeleteWebAppAccelerationResponse deleteWebAppAcceleration(
             DeleteWebAppAccelerationRequest request);
@@ -141,7 +141,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppAccelerationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/DeleteWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWebAppAccelerationPolicy API.
      */
     DeleteWebAppAccelerationPolicyResponse deleteWebAppAccelerationPolicy(
             DeleteWebAppAccelerationPolicyRequest request);
@@ -154,7 +154,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/GetWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppAcceleration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/GetWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppAcceleration API.
      */
     GetWebAppAccelerationResponse getWebAppAcceleration(GetWebAppAccelerationRequest request);
 
@@ -166,7 +166,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/GetWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppAccelerationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/GetWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWebAppAccelerationPolicy API.
      */
     GetWebAppAccelerationPolicyResponse getWebAppAccelerationPolicy(
             GetWebAppAccelerationPolicyRequest request);
@@ -180,7 +180,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppAccelerationPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppAccelerationPolicies API.
      */
     ListWebAppAccelerationPoliciesResponse listWebAppAccelerationPolicies(
             ListWebAppAccelerationPoliciesRequest request);
@@ -194,7 +194,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppAccelerations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/ListWebAppAccelerationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWebAppAccelerations API.
      */
     ListWebAppAccelerationsResponse listWebAppAccelerations(ListWebAppAccelerationsRequest request);
 
@@ -208,7 +208,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/PurgeWebAppAccelerationCacheExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PurgeWebAppAccelerationCache API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/PurgeWebAppAccelerationCacheExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PurgeWebAppAccelerationCache API.
      */
     PurgeWebAppAccelerationCacheResponse purgeWebAppAccelerationCache(
             PurgeWebAppAccelerationCacheRequest request);
@@ -221,7 +221,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/UpdateWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppAcceleration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/UpdateWebAppAccelerationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppAcceleration API.
      */
     UpdateWebAppAccelerationResponse updateWebAppAcceleration(
             UpdateWebAppAccelerationRequest request);
@@ -234,7 +234,7 @@ public interface Waa extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/UpdateWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppAccelerationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/waa/UpdateWebAppAccelerationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateWebAppAccelerationPolicy API.
      */
     UpdateWebAppAccelerationPolicyResponse updateWebAppAccelerationPolicy(
             UpdateWebAppAccelerationPolicyRequest request);

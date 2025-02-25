@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer;
@@ -61,7 +61,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
 
     /**
      * Moves a network load balancer into a different compartment within the same tenancy. For information about moving resources
-     * between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -69,7 +69,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ChangeNetworkLoadBalancerCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkLoadBalancerCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ChangeNetworkLoadBalancerCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeNetworkLoadBalancerCompartment API.
      */
     ChangeNetworkLoadBalancerCompartmentResponse changeNetworkLoadBalancerCompartment(
             ChangeNetworkLoadBalancerCompartmentRequest request);
@@ -82,7 +82,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackend API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackend API.
      */
     CreateBackendResponse createBackend(CreateBackendRequest request);
 
@@ -94,7 +94,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBackendSet API.
      */
     CreateBackendSetResponse createBackendSet(CreateBackendSetRequest request);
 
@@ -106,7 +106,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListener API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListener API.
      */
     CreateListenerResponse createListener(CreateListenerRequest request);
 
@@ -119,7 +119,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/CreateNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateNetworkLoadBalancer API.
      */
     CreateNetworkLoadBalancerResponse createNetworkLoadBalancer(
             CreateNetworkLoadBalancerRequest request);
@@ -132,7 +132,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackend API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackend API.
      */
     DeleteBackendResponse deleteBackend(DeleteBackendRequest request);
 
@@ -147,7 +147,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBackendSet API.
      */
     DeleteBackendSetResponse deleteBackendSet(DeleteBackendSetRequest request);
 
@@ -159,7 +159,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListener API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListener API.
      */
     DeleteListenerResponse deleteListener(DeleteListenerRequest request);
 
@@ -171,7 +171,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/DeleteNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteNetworkLoadBalancer API.
      */
     DeleteNetworkLoadBalancerResponse deleteNetworkLoadBalancer(
             DeleteNetworkLoadBalancerRequest request);
@@ -184,7 +184,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackend API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackend API.
      */
     GetBackendResponse getBackend(GetBackendRequest request);
 
@@ -196,9 +196,22 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendHealth API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendHealth API.
      */
     GetBackendHealthResponse getBackendHealth(GetBackendHealthRequest request);
+
+    /**
+     * Retrieves the current operational status of the specified backend server.
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendOperationalStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendOperationalStatus API.
+     */
+    GetBackendOperationalStatusResponse getBackendOperationalStatus(
+            GetBackendOperationalStatusRequest request);
 
     /**
      * Retrieves the configuration information for the specified backend set.
@@ -208,7 +221,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSet API.
      */
     GetBackendSetResponse getBackendSet(GetBackendSetRequest request);
 
@@ -220,7 +233,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSetHealth API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetBackendSetHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBackendSetHealth API.
      */
     GetBackendSetHealthResponse getBackendSetHealth(GetBackendSetHealthRequest request);
 
@@ -232,7 +245,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHealthChecker API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetHealthChecker API.
      */
     GetHealthCheckerResponse getHealthChecker(GetHealthCheckerRequest request);
 
@@ -244,7 +257,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListener API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListener API.
      */
     GetListenerResponse getListener(GetListenerRequest request);
 
@@ -256,7 +269,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkLoadBalancer API.
      */
     GetNetworkLoadBalancerResponse getNetworkLoadBalancer(GetNetworkLoadBalancerRequest request);
 
@@ -268,7 +281,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkLoadBalancerHealth API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetNetworkLoadBalancerHealthExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNetworkLoadBalancerHealth API.
      */
     GetNetworkLoadBalancerHealthResponse getNetworkLoadBalancerHealth(
             GetNetworkLoadBalancerHealthRequest request);
@@ -281,7 +294,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -293,7 +306,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackendSets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendSetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackendSets API.
      */
     ListBackendSetsResponse listBackendSets(ListBackendSetsRequest request);
 
@@ -305,7 +318,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackends API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListBackendsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBackends API.
      */
     ListBackendsResponse listBackends(ListBackendsRequest request);
 
@@ -317,7 +330,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListListenersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListeners API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListListenersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListeners API.
      */
     ListListenersResponse listListeners(ListListenersRequest request);
 
@@ -329,7 +342,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancerHealthsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancerHealths API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancerHealthsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancerHealths API.
      */
     ListNetworkLoadBalancerHealthsResponse listNetworkLoadBalancerHealths(
             ListNetworkLoadBalancerHealthsRequest request);
@@ -343,7 +356,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancers API.
      */
     ListNetworkLoadBalancersResponse listNetworkLoadBalancers(
             ListNetworkLoadBalancersRequest request);
@@ -356,7 +369,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancersPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancersPolicies API.
      */
     ListNetworkLoadBalancersPoliciesResponse listNetworkLoadBalancersPolicies(
             ListNetworkLoadBalancersPoliciesRequest request);
@@ -371,7 +384,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersProtocolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancersProtocols API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListNetworkLoadBalancersProtocolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListNetworkLoadBalancersProtocols API.
      */
     ListNetworkLoadBalancersProtocolsResponse listNetworkLoadBalancersProtocols(
             ListNetworkLoadBalancersProtocolsRequest request);
@@ -385,7 +398,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -398,7 +411,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -410,7 +423,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -422,7 +435,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackend API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackend API.
      */
     UpdateBackendResponse updateBackend(UpdateBackendRequest request);
 
@@ -434,7 +447,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackendSet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateBackendSetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBackendSet API.
      */
     UpdateBackendSetResponse updateBackendSet(UpdateBackendSetRequest request);
 
@@ -446,7 +459,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHealthChecker API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateHealthCheckerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateHealthChecker API.
      */
     UpdateHealthCheckerResponse updateHealthChecker(UpdateHealthCheckerRequest request);
 
@@ -458,7 +471,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListener API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateListenerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListener API.
      */
     UpdateListenerResponse updateListener(UpdateListenerRequest request);
 
@@ -470,7 +483,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkLoadBalancer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkLoadBalancerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkLoadBalancer API.
      */
     UpdateNetworkLoadBalancerResponse updateNetworkLoadBalancer(
             UpdateNetworkLoadBalancerRequest request);
@@ -483,7 +496,7 @@ public interface NetworkLoadBalancer extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/UpdateNetworkSecurityGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNetworkSecurityGroups API.
      */
     UpdateNetworkSecurityGroupsResponse updateNetworkSecurityGroups(
             UpdateNetworkSecurityGroupsRequest request);

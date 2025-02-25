@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -69,7 +69,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AnalyzeAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/AnalyzeAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AnalyzeAssets API.
      */
     AnalyzeAssetsResponse analyzeAssets(AnalyzeAssetsRequest request);
 
@@ -81,7 +81,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetCompartment API.
      */
     ChangeAssetCompartmentResponse changeAssetCompartment(ChangeAssetCompartmentRequest request);
 
@@ -93,7 +93,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetTags API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ChangeAssetTagsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeAssetTags API.
      */
     ChangeAssetTagsResponse changeAssetTags(ChangeAssetTagsRequest request);
 
@@ -105,7 +105,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateAsset API.
      */
     CreateAssetResponse createAsset(CreateAssetRequest request);
 
@@ -117,7 +117,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/CreateInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateInventory API.
      */
     CreateInventoryResponse createInventory(CreateInventoryRequest request);
 
@@ -129,7 +129,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteAsset API.
      */
     DeleteAssetResponse deleteAsset(DeleteAssetRequest request);
 
@@ -141,7 +141,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/DeleteInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteInventory API.
      */
     DeleteInventoryResponse deleteInventory(DeleteInventoryRequest request);
 
@@ -153,7 +153,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAsset API.
      */
     GetAssetResponse getAsset(GetAssetRequest request);
 
@@ -165,7 +165,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/GetInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetInventory API.
      */
     GetInventoryResponse getInventory(GetInventoryRequest request);
 
@@ -177,7 +177,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ImportInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ImportInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportInventory API.
      */
     ImportInventoryResponse importInventory(ImportInventoryRequest request);
 
@@ -190,7 +190,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAssets API.
      */
     ListAssetsResponse listAssets(ListAssetsRequest request);
 
@@ -202,7 +202,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHistoricalMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListHistoricalMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListHistoricalMetrics API.
      */
     ListHistoricalMetricsResponse listHistoricalMetrics(ListHistoricalMetricsRequest request);
 
@@ -215,7 +215,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListInventoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInventories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/ListInventoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInventories API.
      */
     ListInventoriesResponse listInventories(ListInventoriesRequest request);
 
@@ -227,7 +227,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/SubmitHistoricalMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubmitHistoricalMetrics API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/SubmitHistoricalMetricsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubmitHistoricalMetrics API.
      */
     SubmitHistoricalMetricsResponse submitHistoricalMetrics(SubmitHistoricalMetricsRequest request);
 
@@ -239,7 +239,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateAsset API.
      */
     UpdateAssetResponse updateAsset(UpdateAssetRequest request);
 
@@ -251,7 +251,7 @@ public interface Inventory extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInventory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudbridge/UpdateInventoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInventory API.
      */
     UpdateInventoryResponse updateInventory(UpdateInventoryRequest request);
 

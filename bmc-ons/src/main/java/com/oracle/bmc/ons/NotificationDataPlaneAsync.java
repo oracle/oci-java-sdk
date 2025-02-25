@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ons;
@@ -9,7 +9,7 @@ import com.oracle.bmc.ons.responses.*;
 
 /**
  * Use the Notifications API to broadcast messages to distributed components by topic, using a publish-subscribe pattern.
- * For information about managing topics, subscriptions, and messages, see [Notifications Overview](https://docs.cloud.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
+ * For information about managing topics, subscriptions, and messages, see [Notifications Overview](https://docs.oracle.com/iaas/Content/Notification/Concepts/notificationoverview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
@@ -63,7 +63,7 @@ public interface NotificationDataPlaneAsync extends AutoCloseable {
     /**
      * Moves a subscription into a different compartment within the same tenancy. For information about moving
      * resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -86,7 +86,7 @@ public interface NotificationDataPlaneAsync extends AutoCloseable {
     /**
      * Creates a subscription for the specified topic and sends a subscription confirmation URL to the endpoint. The subscription remains in \"Pending\" status until it has been confirmed.
      * For information about confirming subscriptions, see
-     * [To confirm a subscription](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
+     * [To confirm a subscription](https://docs.oracle.com/iaas/Content/Notification/Tasks/managingtopicsandsubscriptions.htm#confirmSub).
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60.
      *
@@ -214,8 +214,8 @@ public interface NotificationDataPlaneAsync extends AutoCloseable {
      * <p>
      * Transactions Per Minute (TPM) per-tenancy limit for this operation: 60 per topic. (This TPM limit represents messages per minute.)
      * <p>
-     * For more information about publishing messages, see [Publishing Messages](https://docs.cloud.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
-     * For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three).
+     * For more information about publishing messages, see [Publishing Messages](https://docs.oracle.com/iaas/Content/Notification/Tasks/publishingmessages.htm).
+     * For steps to request a limit increase, see [Requesting a Service Limit Increase](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm#three).
      *
      *
      * @param request The request object containing the details to send

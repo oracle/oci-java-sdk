@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer;
@@ -988,6 +988,57 @@ public class NetworkLoadBalancerAsyncClient implements NetworkLoadBalancerAsync 
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetBackendHealthRequest, GetBackendHealthResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetBackendOperationalStatusResponse>
+            getBackendOperationalStatus(
+                    GetBackendOperationalStatusRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    GetBackendOperationalStatusRequest,
+                                    GetBackendOperationalStatusResponse>
+                            handler) {
+        LOG.trace("Called async getBackendOperationalStatus");
+        final GetBackendOperationalStatusRequest interceptedRequest =
+                GetBackendOperationalStatusConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetBackendOperationalStatusConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "NetworkLoadBalancer",
+                        "GetBackendOperationalStatus",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/networkloadbalancer/20200501/BackendOperationalStatus/GetBackendOperationalStatus");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, GetBackendOperationalStatusResponse>
+                transformer =
+                        GetBackendOperationalStatusConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        GetBackendOperationalStatusRequest, GetBackendOperationalStatusResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetBackendOperationalStatusRequest,
+                                GetBackendOperationalStatusResponse>,
+                        java.util.concurrent.Future<GetBackendOperationalStatusResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetBackendOperationalStatusRequest, GetBackendOperationalStatusResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

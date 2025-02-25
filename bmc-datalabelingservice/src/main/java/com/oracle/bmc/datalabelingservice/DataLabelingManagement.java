@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datalabelingservice;
@@ -68,7 +68,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/AddDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDatasetLabels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/AddDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddDatasetLabels API.
      */
     AddDatasetLabelsResponse addDatasetLabels(AddDatasetLabelsRequest request);
 
@@ -80,7 +80,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ChangeDatasetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDatasetCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ChangeDatasetCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeDatasetCompartment API.
      */
     ChangeDatasetCompartmentResponse changeDatasetCompartment(
             ChangeDatasetCompartmentRequest request);
@@ -94,7 +94,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/CreateDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/CreateDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateDataset API.
      */
     CreateDatasetResponse createDataset(CreateDatasetRequest request);
 
@@ -106,7 +106,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/DeleteDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/DeleteDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteDataset API.
      */
     DeleteDatasetResponse deleteDataset(DeleteDatasetRequest request);
 
@@ -118,7 +118,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GenerateDatasetRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateDatasetRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GenerateDatasetRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateDatasetRecords API.
      */
     GenerateDatasetRecordsResponse generateDatasetRecords(GenerateDatasetRecordsRequest request);
 
@@ -130,7 +130,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GetDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GetDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetDataset API.
      */
     GetDatasetResponse getDataset(GetDatasetRequest request);
 
@@ -142,7 +142,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -154,7 +154,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ImportPreAnnotatedDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportPreAnnotatedData API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ImportPreAnnotatedDataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportPreAnnotatedData API.
      */
     ImportPreAnnotatedDataResponse importPreAnnotatedData(ImportPreAnnotatedDataRequest request);
 
@@ -166,7 +166,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListAnnotationFormatsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnotationFormats API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListAnnotationFormatsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnotationFormats API.
      */
     ListAnnotationFormatsResponse listAnnotationFormats(ListAnnotationFormatsRequest request);
 
@@ -179,7 +179,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListDatasetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatasets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListDatasetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListDatasets API.
      */
     ListDatasetsResponse listDatasets(ListDatasetsRequest request);
 
@@ -192,7 +192,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -205,7 +205,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -218,7 +218,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -231,7 +231,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/RemoveDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDatasetLabels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/RemoveDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveDatasetLabels API.
      */
     RemoveDatasetLabelsResponse removeDatasetLabels(RemoveDatasetLabelsRequest request);
 
@@ -244,7 +244,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/RenameDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenameDatasetLabels API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/RenameDatasetLabelsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenameDatasetLabels API.
      */
     RenameDatasetLabelsResponse renameDatasetLabels(RenameDatasetLabelsRequest request);
 
@@ -258,7 +258,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/SnapshotDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SnapshotDataset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/SnapshotDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SnapshotDataset API.
      */
     SnapshotDatasetResponse snapshotDataset(SnapshotDatasetRequest request);
 
@@ -270,7 +270,7 @@ public interface DataLabelingManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/UpdateDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datalabelingservice/UpdateDatasetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateDataset API.
      */
     UpdateDatasetResponse updateDataset(UpdateDatasetRequest request);
 

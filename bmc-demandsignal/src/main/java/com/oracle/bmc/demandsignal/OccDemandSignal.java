@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.demandsignal;
@@ -61,7 +61,7 @@ public interface OccDemandSignal extends AutoCloseable {
 
     /**
      * Moves a OccDemandSignal into a different compartment within the same tenancy. For information about moving resources between
-     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -69,7 +69,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ChangeOccDemandSignalCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOccDemandSignalCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ChangeOccDemandSignalCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOccDemandSignalCompartment API.
      */
     ChangeOccDemandSignalCompartmentResponse changeOccDemandSignalCompartment(
             ChangeOccDemandSignalCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/CreateOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccDemandSignal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/CreateOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccDemandSignal API.
      */
     CreateOccDemandSignalResponse createOccDemandSignal(CreateOccDemandSignalRequest request);
 
@@ -95,7 +95,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/DeleteOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccDemandSignal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/DeleteOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccDemandSignal API.
      */
     DeleteOccDemandSignalResponse deleteOccDemandSignal(DeleteOccDemandSignalRequest request);
 
@@ -107,7 +107,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/GetOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccDemandSignal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/GetOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccDemandSignal API.
      */
     GetOccDemandSignalResponse getOccDemandSignal(GetOccDemandSignalRequest request);
 
@@ -120,7 +120,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ListOccDemandSignalsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccDemandSignals API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/ListOccDemandSignalsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccDemandSignals API.
      */
     ListOccDemandSignalsResponse listOccDemandSignals(ListOccDemandSignalsRequest request);
 
@@ -132,7 +132,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/PatchOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchOccDemandSignal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/PatchOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchOccDemandSignal API.
      */
     PatchOccDemandSignalResponse patchOccDemandSignal(PatchOccDemandSignalRequest request);
 
@@ -144,7 +144,7 @@ public interface OccDemandSignal extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/UpdateOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccDemandSignal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/demandsignal/UpdateOccDemandSignalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccDemandSignal API.
      */
     UpdateOccDemandSignalResponse updateOccDemandSignal(UpdateOccDemandSignalRequest request);
 

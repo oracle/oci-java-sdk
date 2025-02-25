@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.networkloadbalancer.requests;
 
 import com.oracle.bmc.networkloadbalancer.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/networkloadbalancer/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListWorkRequestErrorsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200501")
 public class ListWorkRequestErrorsRequest
@@ -24,13 +24,13 @@ public class ListWorkRequestErrorsRequest
         return workRequestId;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
      *
      */
     private String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
      *
      */
     public String getCompartmentId() {
@@ -54,7 +54,7 @@ public class ListWorkRequestErrorsRequest
     /**
      * The page token representing the page from which to start retrieving results.
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
@@ -62,7 +62,7 @@ public class ListWorkRequestErrorsRequest
     /**
      * The page token representing the page from which to start retrieving results.
      * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public String getPage() {
@@ -70,14 +70,14 @@ public class ListWorkRequestErrorsRequest
     }
     /**
      * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
      * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
-     * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public Integer getLimit() {
@@ -107,13 +107,13 @@ public class ListWorkRequestErrorsRequest
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
          *
          */
         private String compartmentId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the network load balancers to list.
          *
          * @param compartmentId the value to set
          * @return this builder instance
@@ -145,7 +145,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * The page token representing the page from which to start retrieving results.
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private String page = null;
@@ -153,7 +153,7 @@ public class ListWorkRequestErrorsRequest
         /**
          * The page token representing the page from which to start retrieving results.
          * For list pagination. The value of the {@code opc-next-page} response header from the previous "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -165,14 +165,14 @@ public class ListWorkRequestErrorsRequest
 
         /**
          * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private Integer limit = null;
 
         /**
          * For list pagination. The maximum number of results per page or items to return, in a paginated "List" call.
-         * For important details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For important details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance

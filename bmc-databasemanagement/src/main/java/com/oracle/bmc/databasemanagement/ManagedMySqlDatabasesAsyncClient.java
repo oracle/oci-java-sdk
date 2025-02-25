@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement;
@@ -456,6 +456,127 @@ public class ManagedMySqlDatabasesAsyncClient implements ManagedMySqlDatabasesAs
     @Override
     public void close() {
         client.close();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>
+            disableExternalMysqlAssociatedService(
+                    DisableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DisableExternalMysqlAssociatedServiceRequest,
+                                    DisableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+        LOG.trace("Called async disableExternalMysqlAssociatedService");
+        final DisableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                DisableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DisableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "DisableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/DisableExternalMysqlAssociatedService");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DisableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        DisableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DisableExternalMysqlAssociatedServiceRequest,
+                        DisableExternalMysqlAssociatedServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DisableExternalMysqlAssociatedServiceRequest,
+                                DisableExternalMysqlAssociatedServiceResponse>,
+                        java.util.concurrent.Future<DisableExternalMysqlAssociatedServiceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest
+                                        .getDisableExternalMysqlAssociatedServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DisableExternalMysqlAssociatedServiceRequest,
+                    DisableExternalMysqlAssociatedServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>
+            enableExternalMysqlAssociatedService(
+                    EnableExternalMysqlAssociatedServiceRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    EnableExternalMysqlAssociatedServiceRequest,
+                                    EnableExternalMysqlAssociatedServiceResponse>
+                            handler) {
+        LOG.trace("Called async enableExternalMysqlAssociatedService");
+        final EnableExternalMysqlAssociatedServiceRequest interceptedRequest =
+                EnableExternalMysqlAssociatedServiceConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                EnableExternalMysqlAssociatedServiceConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "ManagedMySqlDatabases",
+                        "EnableExternalMysqlAssociatedService",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/database-management/20201101/ExternalMySqlDatabase/EnableExternalMysqlAssociatedService");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, EnableExternalMysqlAssociatedServiceResponse>
+                transformer =
+                        EnableExternalMysqlAssociatedServiceConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        EnableExternalMysqlAssociatedServiceRequest,
+                        EnableExternalMysqlAssociatedServiceResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                EnableExternalMysqlAssociatedServiceRequest,
+                                EnableExternalMysqlAssociatedServiceResponse>,
+                        java.util.concurrent.Future<EnableExternalMysqlAssociatedServiceResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getEnableExternalMysqlAssociatedServiceDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    EnableExternalMysqlAssociatedServiceRequest,
+                    EnableExternalMysqlAssociatedServiceResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
     }
 
     @Override

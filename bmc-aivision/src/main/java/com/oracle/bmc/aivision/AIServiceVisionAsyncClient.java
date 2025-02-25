@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aivision;
@@ -651,6 +651,51 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CancelVideoJobResponse> cancelVideoJob(
+            CancelVideoJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CancelVideoJobRequest, CancelVideoJobResponse>
+                    handler) {
+        LOG.trace("Called async cancelVideoJob");
+        final CancelVideoJobRequest interceptedRequest =
+                CancelVideoJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CancelVideoJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CancelVideoJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/CancelVideoJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CancelVideoJobResponse>
+                transformer =
+                        CancelVideoJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CancelVideoJobRequest, CancelVideoJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CancelVideoJobRequest, CancelVideoJobResponse>,
+                        java.util.concurrent.Future<CancelVideoJobResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CancelVideoJobRequest, CancelVideoJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<CancelWorkRequestResponse> cancelWorkRequest(
             CancelWorkRequestRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -999,6 +1044,57 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<CreateVideoJobResponse> createVideoJob(
+            CreateVideoJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            CreateVideoJobRequest, CreateVideoJobResponse>
+                    handler) {
+        LOG.trace("Called async createVideoJob");
+        final CreateVideoJobRequest interceptedRequest =
+                CreateVideoJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateVideoJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "CreateVideoJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/CreateVideoJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateVideoJobResponse>
+                transformer =
+                        CreateVideoJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateVideoJobRequest, CreateVideoJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateVideoJobRequest, CreateVideoJobResponse>,
+                        java.util.concurrent.Future<CreateVideoJobResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateVideoJobDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateVideoJobRequest, CreateVideoJobResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteModelResponse> deleteModel(
             DeleteModelRequest request,
             final com.oracle.bmc.responses.AsyncHandler<DeleteModelRequest, DeleteModelResponse>
@@ -1247,6 +1343,50 @@ public class AIServiceVisionAsyncClient implements AIServiceVisionAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetProjectRequest, GetProjectResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetVideoJobResponse> getVideoJob(
+            GetVideoJobRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetVideoJobRequest, GetVideoJobResponse>
+                    handler) {
+        LOG.trace("Called async getVideoJob");
+        final GetVideoJobRequest interceptedRequest =
+                GetVideoJobConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetVideoJobConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "AIServiceVision",
+                        "GetVideoJob",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/vision/20220125/VideoJob/GetVideoJob");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetVideoJobResponse>
+                transformer =
+                        GetVideoJobConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetVideoJobRequest, GetVideoJobResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetVideoJobRequest, GetVideoJobResponse>,
+                        java.util.concurrent.Future<GetVideoJobResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetVideoJobRequest, GetVideoJobResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

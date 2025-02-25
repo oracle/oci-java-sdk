@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage;
@@ -9,8 +9,8 @@ import com.oracle.bmc.objectstorage.responses.*;
 
 /**
  * Use Object Storage and Archive Storage APIs to manage buckets, objects, and related resources.
- * For more information, see [Overview of Object Storage](https://docs.cloud.oracle.com/Content/Object/Concepts/objectstorageoverview.htm) and
- * [Overview of Archive Storage](https://docs.cloud.oracle.com/Content/Archive/Concepts/archivestorageoverview.htm).
+ * For more information, see [Overview of Object Storage](https://docs.oracle.com/iaas/Content/Object/Concepts/objectstorageoverview.htm) and
+ * [Overview of Archive Storage](https://docs.oracle.com/iaas/Content/Archive/Concepts/archivestorageoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -71,7 +71,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/AbortMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AbortMultipartUpload API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/AbortMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AbortMultipartUpload API.
      */
     AbortMultipartUploadResponse abortMultipartUpload(AbortMultipartUploadRequest request);
 
@@ -84,7 +84,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -97,14 +97,14 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CommitMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CommitMultipartUpload API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CommitMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CommitMultipartUpload API.
      */
     CommitMultipartUploadResponse commitMultipartUpload(CommitMultipartUploadRequest request);
 
     /**
      * Creates a request to copy an object within a region or to another region.
      * <p>
-     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * See [Object Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -113,7 +113,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CopyObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CopyObject API.
      */
     CopyObjectResponse copyObject(CopyObjectRequest request);
 
@@ -127,14 +127,14 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBucket API.
      */
     CreateBucketResponse createBucket(CreateBucketRequest request);
 
     /**
      * Starts a new multipart upload to a specific object in the given bucket in the given namespace.
      * <p>
-     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * See [Object Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -143,7 +143,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMultipartUpload API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateMultipartUploadExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMultipartUpload API.
      */
     CreateMultipartUploadResponse createMultipartUpload(CreateMultipartUploadRequest request);
 
@@ -156,7 +156,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePreauthenticatedRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePreauthenticatedRequest API.
      */
     CreatePreauthenticatedRequestResponse createPreauthenticatedRequest(
             CreatePreauthenticatedRequestRequest request);
@@ -170,7 +170,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
      */
     CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
 
@@ -183,7 +183,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplicationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplicationPolicy API.
      */
     CreateReplicationPolicyResponse createReplicationPolicy(CreateReplicationPolicyRequest request);
 
@@ -197,7 +197,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRetentionRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/CreateRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRetentionRule API.
      */
     CreateRetentionRuleResponse createRetentionRule(CreateRetentionRuleRequest request);
 
@@ -213,7 +213,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBucket API.
      */
     DeleteBucketResponse deleteBucket(DeleteBucketRequest request);
 
@@ -226,7 +226,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteObject API.
      */
     DeleteObjectResponse deleteObject(DeleteObjectRequest request);
 
@@ -239,7 +239,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteObjectLifecyclePolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteObjectLifecyclePolicy API.
      */
     DeleteObjectLifecyclePolicyResponse deleteObjectLifecyclePolicy(
             DeleteObjectLifecyclePolicyRequest request);
@@ -252,7 +252,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePreauthenticatedRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePreauthenticatedRequest API.
      */
     DeletePreauthenticatedRequestResponse deletePreauthenticatedRequest(
             DeletePreauthenticatedRequestRequest request);
@@ -266,7 +266,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
      */
     DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
@@ -279,7 +279,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationPolicy API.
      */
     DeleteReplicationPolicyResponse deleteReplicationPolicy(DeleteReplicationPolicyRequest request);
 
@@ -291,7 +291,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRetentionRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/DeleteRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRetentionRule API.
      */
     DeleteRetentionRuleResponse deleteRetentionRule(DeleteRetentionRuleRequest request);
 
@@ -304,7 +304,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBucket API.
      */
     GetBucketResponse getBucket(GetBucketRequest request);
 
@@ -323,7 +323,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespace API.
      */
     GetNamespaceResponse getNamespace(GetNamespaceRequest request);
 
@@ -334,7 +334,7 @@ public interface ObjectStorage extends AutoCloseable {
      * Any user with the OBJECTSTORAGE_NAMESPACE_READ permission will be able to see the current metadata. If you are
      * not authorized, talk to an administrator. If you are an administrator who needs to write policies
      * to give users access, see
-     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -342,7 +342,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespaceMetadata API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetNamespaceMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetNamespaceMetadata API.
      */
     GetNamespaceMetadataResponse getNamespaceMetadata(GetNamespaceMetadataRequest request);
 
@@ -355,7 +355,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObject API.
      */
     GetObjectResponse getObject(GetObjectRequest request);
 
@@ -368,7 +368,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObjectLifecyclePolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetObjectLifecyclePolicy API.
      */
     GetObjectLifecyclePolicyResponse getObjectLifecyclePolicy(
             GetObjectLifecyclePolicyRequest request);
@@ -381,7 +381,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreauthenticatedRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPreauthenticatedRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPreauthenticatedRequest API.
      */
     GetPreauthenticatedRequestResponse getPreauthenticatedRequest(
             GetPreauthenticatedRequestRequest request);
@@ -395,7 +395,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
      */
     GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
@@ -408,7 +408,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetReplicationPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationPolicy API.
      */
     GetReplicationPolicyResponse getReplicationPolicy(GetReplicationPolicyRequest request);
 
@@ -420,7 +420,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRetentionRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRetentionRule API.
      */
     GetRetentionRuleResponse getRetentionRule(GetRetentionRuleRequest request);
 
@@ -432,7 +432,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -445,7 +445,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadBucket API.
      */
     HeadBucketResponse headBucket(HeadBucketRequest request);
 
@@ -458,7 +458,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/HeadObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use HeadObject API.
      */
     HeadObjectResponse headObject(HeadObjectRequest request);
 
@@ -471,7 +471,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -479,7 +479,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListBucketsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuckets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListBucketsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBuckets API.
      */
     ListBucketsResponse listBuckets(ListBucketsRequest request);
 
@@ -492,7 +492,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadPartsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMultipartUploadParts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadPartsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMultipartUploadParts API.
      */
     ListMultipartUploadPartsResponse listMultipartUploadParts(
             ListMultipartUploadPartsRequest request);
@@ -506,7 +506,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMultipartUploads API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListMultipartUploadsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMultipartUploads API.
      */
     ListMultipartUploadsResponse listMultipartUploads(ListMultipartUploadsRequest request);
 
@@ -518,7 +518,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -526,7 +526,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListObjectVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListObjectVersions API.
      */
     ListObjectVersionsResponse listObjectVersions(ListObjectVersionsRequest request);
 
@@ -540,7 +540,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -548,7 +548,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListObjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListObjects API.
      */
     ListObjectsResponse listObjects(ListObjectsRequest request);
 
@@ -561,7 +561,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPreauthenticatedRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPreauthenticatedRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPreauthenticatedRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPreauthenticatedRequests API.
      */
     ListPreauthenticatedRequestsResponse listPreauthenticatedRequests(
             ListPreauthenticatedRequestsRequest request);
@@ -570,7 +570,7 @@ public interface ObjectStorage extends AutoCloseable {
      * Gets a list of all PrivateEndpointSummary in a compartment associated with a namespace.
      * To use this and other API operations, you must be authorized in an IAM policy. If you are not authorized,
      * talk to an administrator. If you are an administrator who needs to write policies to give users access, see
-     * [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+     * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -578,7 +578,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
      */
     ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
@@ -591,7 +591,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationPolicies API.
      */
     ListReplicationPoliciesResponse listReplicationPolicies(ListReplicationPoliciesRequest request);
 
@@ -604,7 +604,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationSources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListReplicationSourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationSources API.
      */
     ListReplicationSourcesResponse listReplicationSources(ListReplicationSourcesRequest request);
 
@@ -618,7 +618,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListRetentionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRetentionRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListRetentionRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRetentionRules API.
      */
     ListRetentionRulesResponse listRetentionRules(ListRetentionRulesRequest request);
 
@@ -630,7 +630,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -642,7 +642,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -655,7 +655,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -671,7 +671,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/MakeBucketWritableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MakeBucketWritable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/MakeBucketWritableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MakeBucketWritable API.
      */
     MakeBucketWritableResponse makeBucketWritable(MakeBucketWritableRequest request);
 
@@ -679,10 +679,10 @@ public interface ObjectStorage extends AutoCloseable {
      * Creates a new object or overwrites an existing object with the same name. The maximum object size allowed by
      * PutObject is 50 GiB.
      * <p>
-     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * See [Object Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      * <p>
-     * See [Special Instructions for Object Storage PUT](https://docs.cloud.oracle.com/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
+     * See [Special Instructions for Object Storage PUT](https://docs.oracle.com/iaas/Content/API/Concepts/signingrequests.htm#ObjectStoragePut)
      * for request signature requirements.
      *
      *
@@ -718,7 +718,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutObject API.
      */
     PutObjectResponse putObject(PutObjectRequest request);
 
@@ -731,7 +731,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutObjectLifecyclePolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectLifecyclePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutObjectLifecyclePolicy API.
      */
     PutObjectLifecyclePolicyResponse putObjectLifecyclePolicy(
             PutObjectLifecyclePolicyRequest request);
@@ -759,7 +759,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReencryptBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReencryptBucket API.
      */
     ReencryptBucketResponse reencryptBucket(ReencryptBucketRequest request);
 
@@ -780,14 +780,14 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReencryptObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/ReencryptObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ReencryptObject API.
      */
     ReencryptObjectResponse reencryptObject(ReencryptObjectRequest request);
 
     /**
      * Rename an object in the given Object Storage namespace.
      * <p>
-     * See [Object Names](https://docs.cloud.oracle.com/Content/Object/Tasks/managingobjects.htm#namerequirements)
+     * See [Object Names](https://docs.oracle.com/iaas/Content/Object/Tasks/managingobjects.htm#namerequirements)
      * for object naming requirements.
      *
      * @param request The request object containing the details to send
@@ -796,7 +796,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RenameObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenameObject API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RenameObjectExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RenameObject API.
      */
     RenameObjectResponse renameObject(RenameObjectRequest request);
 
@@ -810,7 +810,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RestoreObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreObjects API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/RestoreObjectsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RestoreObjects API.
      */
     RestoreObjectsResponse restoreObjects(RestoreObjectsRequest request);
 
@@ -819,7 +819,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * Use UpdateBucket to move a bucket from one compartment to another within the same tenancy. Supply the compartmentID
      * of the compartment that you want to move the bucket to. For more information about moving resources between compartments,
-     * see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -827,7 +827,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBucket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateBucketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBucket API.
      */
     UpdateBucketResponse updateBucket(UpdateBucketRequest request);
 
@@ -846,7 +846,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateNamespaceMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNamespaceMetadata API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateNamespaceMetadataExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateNamespaceMetadata API.
      */
     UpdateNamespaceMetadataResponse updateNamespaceMetadata(UpdateNamespaceMetadataRequest request);
 
@@ -859,7 +859,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateObjectStorageTierExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateObjectStorageTier API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateObjectStorageTierExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateObjectStorageTier API.
      */
     UpdateObjectStorageTierResponse updateObjectStorageTier(UpdateObjectStorageTierRequest request);
 
@@ -868,7 +868,7 @@ public interface ObjectStorage extends AutoCloseable {
      * <p>
      * Use UpdatePrivateEndpoint to move a Private Endpoint from one compartment to another within the same tenancy. Supply the compartmentID
      * of the compartment that you want to move the Private Endpoint to. Or use it to update the name, subnetId, endpointFqdn or privateEndpointIp or accessTargets of the Private Endpoint.
-     * For more information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For more information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      * <p>
      * This API follows replace semantics (rather than merge semantics). That means if the body provides values for
      * parameters and the resource has exisiting ones, this operation will replace those existing values.
@@ -879,7 +879,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
      */
     UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
@@ -892,7 +892,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRetentionRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UpdateRetentionRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRetentionRule API.
      */
     UpdateRetentionRuleResponse updateRetentionRule(UpdateRetentionRuleRequest request);
 
@@ -932,7 +932,7 @@ public interface ObjectStorage extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UploadPartExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadPart API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/UploadPartExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UploadPart API.
      */
     UploadPartResponse uploadPart(UploadPartRequest request);
 

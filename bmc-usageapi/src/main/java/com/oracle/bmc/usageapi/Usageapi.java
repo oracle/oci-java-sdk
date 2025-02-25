@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.usageapi;
@@ -8,7 +8,7 @@ import com.oracle.bmc.usageapi.requests.*;
 import com.oracle.bmc.usageapi.responses.*;
 
 /**
- * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See [Cost Analysis Overview](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm) and [Using the Usage API](https://docs.cloud.oracle.com/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
+ * Use the Usage API to view your Oracle Cloud usage and costs. The API allows you to request data that meets the specified filter criteria, and to group that data by the chosen dimension. The Usage API is used by the Cost Analysis and Carbon Emissions Analysis tools in the Console. See [Cost Analysis Overview](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm) and [Using the Usage API](https://docs.oracle.com/iaas/Content/Billing/Concepts/costanalysisoverview.htm#cost_analysis_using_the_api) for more information.
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20200107")
@@ -68,7 +68,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomTable API.
      */
     CreateCustomTableResponse createCustomTable(CreateCustomTableRequest request);
 
@@ -81,7 +81,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailRecipientsGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateEmailRecipientsGroup API.
      */
     CreateEmailRecipientsGroupResponse createEmailRecipientsGroup(
             CreateEmailRecipientsGroupRequest request);
@@ -95,7 +95,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateQuery API.
      */
     CreateQueryResponse createQuery(CreateQueryRequest request);
 
@@ -108,7 +108,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSchedule API.
      */
     CreateScheduleResponse createSchedule(CreateScheduleRequest request);
 
@@ -121,7 +121,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUsageCarbonEmissionsQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/CreateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateUsageCarbonEmissionsQuery API.
      */
     CreateUsageCarbonEmissionsQueryResponse createUsageCarbonEmissionsQuery(
             CreateUsageCarbonEmissionsQueryRequest request);
@@ -135,7 +135,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomTable API.
      */
     DeleteCustomTableResponse deleteCustomTable(DeleteCustomTableRequest request);
 
@@ -148,7 +148,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailRecipientsGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteEmailRecipientsGroup API.
      */
     DeleteEmailRecipientsGroupResponse deleteEmailRecipientsGroup(
             DeleteEmailRecipientsGroupRequest request);
@@ -162,7 +162,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteQuery API.
      */
     DeleteQueryResponse deleteQuery(DeleteQueryRequest request);
 
@@ -175,7 +175,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSchedule API.
      */
     DeleteScheduleResponse deleteSchedule(DeleteScheduleRequest request);
 
@@ -188,7 +188,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUsageCarbonEmissionsQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/DeleteUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteUsageCarbonEmissionsQuery API.
      */
     DeleteUsageCarbonEmissionsQueryResponse deleteUsageCarbonEmissionsQuery(
             DeleteUsageCarbonEmissionsQueryRequest request);
@@ -202,7 +202,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomTable API.
      */
     GetCustomTableResponse getCustomTable(GetCustomTableRequest request);
 
@@ -215,7 +215,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailRecipientsGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetEmailRecipientsGroup API.
      */
     GetEmailRecipientsGroupResponse getEmailRecipientsGroup(GetEmailRecipientsGroupRequest request);
 
@@ -228,7 +228,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetQuery API.
      */
     GetQueryResponse getQuery(GetQueryRequest request);
 
@@ -241,7 +241,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSchedule API.
      */
     GetScheduleResponse getSchedule(GetScheduleRequest request);
 
@@ -254,7 +254,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduledRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetScheduledRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledRun API.
      */
     GetScheduledRunResponse getScheduledRun(GetScheduledRunRequest request);
 
@@ -267,7 +267,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUsageCarbonEmissionsQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/GetUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetUsageCarbonEmissionsQuery API.
      */
     GetUsageCarbonEmissionsQueryResponse getUsageCarbonEmissionsQuery(
             GetUsageCarbonEmissionsQueryRequest request);
@@ -281,7 +281,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListCustomTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomTables API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListCustomTablesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomTables API.
      */
     ListCustomTablesResponse listCustomTables(ListCustomTablesRequest request);
 
@@ -294,7 +294,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListEmailRecipientsGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailRecipientsGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListEmailRecipientsGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListEmailRecipientsGroups API.
      */
     ListEmailRecipientsGroupsResponse listEmailRecipientsGroups(
             ListEmailRecipientsGroupsRequest request);
@@ -308,7 +308,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQueries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListQueries API.
      */
     ListQueriesResponse listQueries(ListQueriesRequest request);
 
@@ -321,7 +321,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListScheduledRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListScheduledRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledRuns API.
      */
     ListScheduledRunsResponse listScheduledRuns(ListScheduledRunsRequest request);
 
@@ -334,7 +334,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSchedules API.
      */
     ListSchedulesResponse listSchedules(ListSchedulesRequest request);
 
@@ -347,7 +347,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListUsageCarbonEmissionsQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsageCarbonEmissionsQueries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/ListUsageCarbonEmissionsQueriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListUsageCarbonEmissionsQueries API.
      */
     ListUsageCarbonEmissionsQueriesResponse listUsageCarbonEmissionsQueries(
             ListUsageCarbonEmissionsQueriesRequest request);
@@ -361,7 +361,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestAverageCarbonEmissionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestAverageCarbonEmission API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestAverageCarbonEmissionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestAverageCarbonEmission API.
      */
     RequestAverageCarbonEmissionResponse requestAverageCarbonEmission(
             RequestAverageCarbonEmissionRequest request);
@@ -375,7 +375,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestCleanEnergyUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestCleanEnergyUsage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestCleanEnergyUsageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestCleanEnergyUsage API.
      */
     RequestCleanEnergyUsageResponse requestCleanEnergyUsage(RequestCleanEnergyUsageRequest request);
 
@@ -388,7 +388,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestSummarizedConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestSummarizedConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedConfigurations API.
      */
     RequestSummarizedConfigurationsResponse requestSummarizedConfigurations(
             RequestSummarizedConfigurationsRequest request);
@@ -402,7 +402,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestSummarizedUsagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedUsages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestSummarizedUsagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestSummarizedUsages API.
      */
     RequestSummarizedUsagesResponse requestSummarizedUsages(RequestSummarizedUsagesRequest request);
 
@@ -415,7 +415,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissionConfig API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionConfigExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissionConfig API.
      */
     RequestUsageCarbonEmissionConfigResponse requestUsageCarbonEmissionConfig(
             RequestUsageCarbonEmissionConfigRequest request);
@@ -429,7 +429,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/RequestUsageCarbonEmissionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestUsageCarbonEmissions API.
      */
     RequestUsageCarbonEmissionsResponse requestUsageCarbonEmissions(
             RequestUsageCarbonEmissionsRequest request);
@@ -443,7 +443,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomTable API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateCustomTableExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomTable API.
      */
     UpdateCustomTableResponse updateCustomTable(UpdateCustomTableRequest request);
 
@@ -456,7 +456,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailRecipientsGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateEmailRecipientsGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateEmailRecipientsGroup API.
      */
     UpdateEmailRecipientsGroupResponse updateEmailRecipientsGroup(
             UpdateEmailRecipientsGroupRequest request);
@@ -470,7 +470,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateQuery API.
      */
     UpdateQueryResponse updateQuery(UpdateQueryRequest request);
 
@@ -483,7 +483,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSchedule API.
      */
     UpdateScheduleResponse updateSchedule(UpdateScheduleRequest request);
 
@@ -496,7 +496,7 @@ public interface Usageapi extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUsageCarbonEmissionsQuery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/usageapi/UpdateUsageCarbonEmissionsQueryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateUsageCarbonEmissionsQuery API.
      */
     UpdateUsageCarbonEmissionsQueryResponse updateUsageCarbonEmissionsQuery(
             UpdateUsageCarbonEmissionsQueryRequest request);

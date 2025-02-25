@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.tenantmanagercontrolplane.model;
@@ -346,6 +346,22 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
             this.__explicitlySet__.add("endDate");
             return this;
         }
+        /**
+         * Service or component which is used to provision and manage the subscription.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("managedBy")
+        private ClassicSubscriptionManagedBy managedBy;
+
+        /**
+         * Service or component which is used to provision and manage the subscription.
+         * @param managedBy the value to set
+         * @return this builder
+         **/
+        public Builder managedBy(ClassicSubscriptionManagedBy managedBy) {
+            this.managedBy = managedBy;
+            this.__explicitlySet__.add("managedBy");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -375,7 +391,8 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
                             this.promotion,
                             this.purchaseEntitlementId,
                             this.startDate,
-                            this.endDate);
+                            this.endDate,
+                            this.managedBy);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -453,6 +470,9 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
             if (model.wasPropertyExplicitlySet("endDate")) {
                 this.endDate(model.getEndDate());
             }
+            if (model.wasPropertyExplicitlySet("managedBy")) {
+                this.managedBy(model.getManagedBy());
+            }
             return this;
         }
     }
@@ -492,7 +512,8 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
             java.util.List<Promotion> promotion,
             String purchaseEntitlementId,
             java.util.Date startDate,
-            java.util.Date endDate) {
+            java.util.Date endDate,
+            ClassicSubscriptionManagedBy managedBy) {
         super(id, compartmentId, serviceName, timeCreated, timeUpdated, freeformTags, definedTags);
         this.lifecycleState = lifecycleState;
         this.classicSubscriptionId = classicSubscriptionId;
@@ -510,6 +531,7 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
         this.purchaseEntitlementId = purchaseEntitlementId;
         this.startDate = startDate;
         this.endDate = endDate;
+        this.managedBy = managedBy;
     }
 
     /**
@@ -736,6 +758,20 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
         return endDate;
     }
 
+    /**
+     * Service or component which is used to provision and manage the subscription.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managedBy")
+    private final ClassicSubscriptionManagedBy managedBy;
+
+    /**
+     * Service or component which is used to provision and manage the subscription.
+     * @return the value
+     **/
+    public ClassicSubscriptionManagedBy getManagedBy() {
+        return managedBy;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -767,6 +803,7 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
         sb.append(", purchaseEntitlementId=").append(String.valueOf(this.purchaseEntitlementId));
         sb.append(", startDate=").append(String.valueOf(this.startDate));
         sb.append(", endDate=").append(String.valueOf(this.endDate));
+        sb.append(", managedBy=").append(String.valueOf(this.managedBy));
         sb.append(")");
         return sb.toString();
     }
@@ -798,6 +835,7 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
                 && java.util.Objects.equals(this.purchaseEntitlementId, other.purchaseEntitlementId)
                 && java.util.Objects.equals(this.startDate, other.startDate)
                 && java.util.Objects.equals(this.endDate, other.endDate)
+                && java.util.Objects.equals(this.managedBy, other.managedBy)
                 && super.equals(other);
     }
 
@@ -851,6 +889,7 @@ public final class ClassicAssignedSubscription extends AssignedSubscription {
                                 : this.purchaseEntitlementId.hashCode());
         result = (result * PRIME) + (this.startDate == null ? 43 : this.startDate.hashCode());
         result = (result * PRIME) + (this.endDate == null ? 43 : this.endDate.hashCode());
+        result = (result * PRIME) + (this.managedBy == null ? 43 : this.managedBy.hashCode());
         return result;
     }
 }

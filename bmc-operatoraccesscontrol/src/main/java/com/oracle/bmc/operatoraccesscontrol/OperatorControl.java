@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -72,7 +72,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ChangeOperatorControlCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOperatorControlCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ChangeOperatorControlCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeOperatorControlCompartment API.
      */
     ChangeOperatorControlCompartmentResponse changeOperatorControlCompartment(
             ChangeOperatorControlCompartmentRequest request);
@@ -86,7 +86,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/CreateOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOperatorControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/CreateOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOperatorControl API.
      */
     CreateOperatorControlResponse createOperatorControl(CreateOperatorControlRequest request);
 
@@ -103,7 +103,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/DeleteOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOperatorControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/DeleteOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOperatorControl API.
      */
     DeleteOperatorControlResponse deleteOperatorControl(DeleteOperatorControlRequest request);
 
@@ -115,7 +115,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperatorControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/GetOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOperatorControl API.
      */
     GetOperatorControlResponse getOperatorControl(GetOperatorControlRequest request);
 
@@ -128,7 +128,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListOperatorControlsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperatorControls API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/ListOperatorControlsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOperatorControls API.
      */
     ListOperatorControlsResponse listOperatorControls(ListOperatorControlsRequest request);
 
@@ -141,7 +141,7 @@ public interface OperatorControl extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/UpdateOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOperatorControl API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/operatoraccesscontrol/UpdateOperatorControlExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOperatorControl API.
      */
     UpdateOperatorControlResponse updateOperatorControl(UpdateOperatorControlRequest request);
 

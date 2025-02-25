@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -69,7 +69,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CheckResourceTaggingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckResourceTagging API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CheckResourceTaggingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CheckResourceTagging API.
      */
     CheckResourceTaggingResponse checkResourceTagging(CheckResourceTaggingRequest request);
 
@@ -83,7 +83,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ConfirmTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfirmTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ConfirmTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConfirmTargets API.
      */
     ConfirmTargetsResponse confirmTargets(ConfirmTargetsRequest request);
 
@@ -96,7 +96,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleet API.
      */
     CreateFleetResponse createFleet(CreateFleetRequest request);
 
@@ -109,7 +109,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetCredential API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetCredential API.
      */
     CreateFleetCredentialResponse createFleetCredential(CreateFleetCredentialRequest request);
 
@@ -122,7 +122,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetProperty API.
      */
     CreateFleetPropertyResponse createFleetProperty(CreateFleetPropertyRequest request);
 
@@ -135,7 +135,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetResource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFleetResource API.
      */
     CreateFleetResourceResponse createFleetResource(CreateFleetResourceRequest request);
 
@@ -147,7 +147,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleet API.
      */
     DeleteFleetResponse deleteFleet(DeleteFleetRequest request);
 
@@ -159,7 +159,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetCredential API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetCredential API.
      */
     DeleteFleetCredentialResponse deleteFleetCredential(DeleteFleetCredentialRequest request);
 
@@ -171,7 +171,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetProperty API.
      */
     DeleteFleetPropertyResponse deleteFleetProperty(DeleteFleetPropertyRequest request);
 
@@ -183,7 +183,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetResource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFleetResource API.
      */
     DeleteFleetResourceResponse deleteFleetResource(DeleteFleetResourceRequest request);
 
@@ -196,7 +196,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GenerateComplianceReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateComplianceReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GenerateComplianceReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateComplianceReport API.
      */
     GenerateComplianceReportResponse generateComplianceReport(
             GenerateComplianceReportRequest request);
@@ -209,7 +209,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetComplianceReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComplianceReport API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetComplianceReportExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetComplianceReport API.
      */
     GetComplianceReportResponse getComplianceReport(GetComplianceReportRequest request);
 
@@ -221,7 +221,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleet API.
      */
     GetFleetResponse getFleet(GetFleetRequest request);
 
@@ -233,7 +233,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetCredential API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetCredential API.
      */
     GetFleetCredentialResponse getFleetCredential(GetFleetCredentialRequest request);
 
@@ -245,7 +245,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetProperty API.
      */
     GetFleetPropertyResponse getFleetProperty(GetFleetPropertyRequest request);
 
@@ -257,7 +257,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetResource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFleetResource API.
      */
     GetFleetResourceResponse getFleetResource(GetFleetResourceRequest request);
 
@@ -269,7 +269,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -281,7 +281,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListAnnouncementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnouncements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListAnnouncementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAnnouncements API.
      */
     ListAnnouncementsResponse listAnnouncements(ListAnnouncementsRequest request);
 
@@ -294,7 +294,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetCredentials API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetCredentialsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetCredentials API.
      */
     ListFleetCredentialsResponse listFleetCredentials(ListFleetCredentialsRequest request);
 
@@ -307,7 +307,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetProductsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetProducts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetProductsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetProducts API.
      */
     ListFleetProductsResponse listFleetProducts(ListFleetProductsRequest request);
 
@@ -320,7 +320,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetPropertiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetProperties API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetPropertiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetProperties API.
      */
     ListFleetPropertiesResponse listFleetProperties(ListFleetPropertiesRequest request);
 
@@ -333,7 +333,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetResources API.
      */
     ListFleetResourcesResponse listFleetResources(ListFleetResourcesRequest request);
 
@@ -346,7 +346,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleetTargets API.
      */
     ListFleetTargetsResponse listFleetTargets(ListFleetTargetsRequest request);
 
@@ -359,7 +359,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListFleetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFleets API.
      */
     ListFleetsResponse listFleets(ListFleetsRequest request);
 
@@ -372,7 +372,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListInventoryResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInventoryResources API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListInventoryResourcesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInventoryResources API.
      */
     ListInventoryResourcesResponse listInventoryResources(ListInventoryResourcesRequest request);
 
@@ -386,7 +386,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargets API.
      */
     ListTargetsResponse listTargets(ListTargetsRequest request);
 
@@ -399,7 +399,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -412,7 +412,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -425,7 +425,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -438,7 +438,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/RequestResourceValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestResourceValidation API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/RequestResourceValidationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestResourceValidation API.
      */
     RequestResourceValidationResponse requestResourceValidation(
             RequestResourceValidationRequest request);
@@ -453,7 +453,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/RequestTargetDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestTargetDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/RequestTargetDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestTargetDiscovery API.
      */
     RequestTargetDiscoveryResponse requestTargetDiscovery(RequestTargetDiscoveryRequest request);
 
@@ -465,7 +465,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleet API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleet API.
      */
     UpdateFleetResponse updateFleet(UpdateFleetRequest request);
 
@@ -477,7 +477,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetCredential API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetCredentialExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetCredential API.
      */
     UpdateFleetCredentialResponse updateFleetCredential(UpdateFleetCredentialRequest request);
 
@@ -489,7 +489,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetProperty API.
      */
     UpdateFleetPropertyResponse updateFleetProperty(UpdateFleetPropertyRequest request);
 
@@ -501,7 +501,7 @@ public interface FleetAppsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetResource API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateFleetResourceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFleetResource API.
      */
     UpdateFleetResourceResponse updateFleetResource(UpdateFleetResourceRequest request);
 

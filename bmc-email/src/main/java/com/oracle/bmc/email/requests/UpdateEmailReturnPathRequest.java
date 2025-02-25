@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.requests;
 
 import com.oracle.bmc.email.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateEmailReturnPathRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/email/UpdateEmailReturnPathExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateEmailReturnPathRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20170907")
 public class UpdateEmailReturnPathRequest
@@ -14,12 +14,12 @@ public class UpdateEmailReturnPathRequest
                 com.oracle.bmc.email.model.UpdateEmailReturnPathDetails> {
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
      */
     private String emailReturnPathId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
      */
     public String getEmailReturnPathId() {
         return emailReturnPathId;
@@ -84,12 +84,12 @@ public class UpdateEmailReturnPathRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
          */
         private String emailReturnPathId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of this email return path.
          * @param emailReturnPathId the value to set
          * @return this builder instance
          */

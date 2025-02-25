@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch;
@@ -592,6 +592,49 @@ public class OpensearchClusterClient implements OpensearchCluster {
     }
 
     @Override
+    public ConfigureOutboundClusterResponse configureOutboundCluster(
+            ConfigureOutboundClusterRequest request) {
+        LOG.trace("Called configureOutboundCluster");
+        final ConfigureOutboundClusterRequest interceptedRequest =
+                ConfigureOutboundClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureOutboundClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpensearchCluster",
+                        "ConfigureOutboundCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ConfigureOutboundCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, ConfigureOutboundClusterResponse>
+                transformer =
+                        ConfigureOutboundClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getConfigureOutboundClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
     public CreateOpensearchClusterResponse createOpensearchCluster(
             CreateOpensearchClusterRequest request) {
         LOG.trace("Called createOpensearchCluster");
@@ -1102,6 +1145,49 @@ public class OpensearchClusterClient implements OpensearchCluster {
                                         client.put(
                                                 ib,
                                                 retriedRequest.getUpdateOpensearchClusterDetails(),
+                                                retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public UpgradeOpenSearchClusterResponse upgradeOpenSearchCluster(
+            UpgradeOpenSearchClusterRequest request) {
+        LOG.trace("Called upgradeOpenSearchCluster");
+        final UpgradeOpenSearchClusterRequest interceptedRequest =
+                UpgradeOpenSearchClusterConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeOpenSearchClusterConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, false);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpensearchCluster",
+                        "UpgradeOpenSearchCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/UpgradeOpenSearchCluster");
+        java.util.function.Function<javax.ws.rs.core.Response, UpgradeOpenSearchClusterResponse>
+                transformer =
+                        UpgradeOpenSearchClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response =
+                                        client.post(
+                                                ib,
+                                                retriedRequest.getUpgradeOpenSearchClusterDetails(),
                                                 retriedRequest);
                                 return transformer.apply(response);
                             });

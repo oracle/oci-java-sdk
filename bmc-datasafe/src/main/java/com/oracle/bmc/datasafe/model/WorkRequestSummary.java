@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
@@ -406,6 +406,9 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         ApplyDifference("APPLY_DIFFERENCE"),
         MaskPolicyGenerateHealthReport("MASK_POLICY_GENERATE_HEALTH_REPORT"),
         MaskPolicyDeleteHealthReport("MASK_POLICY_DELETE_HEALTH_REPORT"),
+        CreateSensitiveTypesExport("CREATE_SENSITIVE_TYPES_EXPORT"),
+        UpdateSensitiveTypesExport("UPDATE_SENSITIVE_TYPES_EXPORT"),
+        BulkCreateSensitiveTypes("BULK_CREATE_SENSITIVE_TYPES"),
         AbortMasking("ABORT_MASKING"),
         CreateSecurityPolicyReport("CREATE_SECURITY_POLICY_REPORT"),
         RefreshSecurityPolicyCache("REFRESH_SECURITY_POLICY_CACHE"),

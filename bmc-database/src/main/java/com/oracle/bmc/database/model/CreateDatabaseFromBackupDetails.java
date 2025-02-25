@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -25,6 +25,7 @@ public final class CreateDatabaseFromBackupDetails
     @java.beans.ConstructorProperties({
         "backupId",
         "backupTDEPassword",
+        "sourceEncryptionKeyLocationDetails",
         "adminPassword",
         "dbUniqueName",
         "dbName",
@@ -34,6 +35,7 @@ public final class CreateDatabaseFromBackupDetails
     public CreateDatabaseFromBackupDetails(
             String backupId,
             String backupTDEPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             String adminPassword,
             String dbUniqueName,
             String dbName,
@@ -42,6 +44,7 @@ public final class CreateDatabaseFromBackupDetails
         super();
         this.backupId = backupId;
         this.backupTDEPassword = backupTDEPassword;
+        this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
         this.adminPassword = adminPassword;
         this.dbUniqueName = dbUniqueName;
         this.dbName = dbName;
@@ -52,13 +55,13 @@ public final class CreateDatabaseFromBackupDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("backupId")
         private String backupId;
 
         /**
-         * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param backupId the value to set
          * @return this builder
          **/
@@ -81,6 +84,16 @@ public final class CreateDatabaseFromBackupDetails
         public Builder backupTDEPassword(String backupTDEPassword) {
             this.backupTDEPassword = backupTDEPassword;
             this.__explicitlySet__.add("backupTDEPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
             return this;
         }
         /**
@@ -174,6 +187,7 @@ public final class CreateDatabaseFromBackupDetails
                     new CreateDatabaseFromBackupDetails(
                             this.backupId,
                             this.backupTDEPassword,
+                            this.sourceEncryptionKeyLocationDetails,
                             this.adminPassword,
                             this.dbUniqueName,
                             this.dbName,
@@ -192,6 +206,10 @@ public final class CreateDatabaseFromBackupDetails
             }
             if (model.wasPropertyExplicitlySet("backupTDEPassword")) {
                 this.backupTDEPassword(model.getBackupTDEPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("adminPassword")) {
                 this.adminPassword(model.getAdminPassword());
@@ -224,13 +242,13 @@ public final class CreateDatabaseFromBackupDetails
     }
 
     /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("backupId")
     private final String backupId;
 
     /**
-     * The backup [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The backup [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getBackupId() {
@@ -249,6 +267,13 @@ public final class CreateDatabaseFromBackupDetails
      **/
     public String getBackupTDEPassword() {
         return backupTDEPassword;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+    private final EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+    public EncryptionKeyLocationDetails getSourceEncryptionKeyLocationDetails() {
+        return sourceEncryptionKeyLocationDetails;
     }
 
     /**
@@ -339,6 +364,8 @@ public final class CreateDatabaseFromBackupDetails
         sb.append("super=").append(super.toString());
         sb.append("backupId=").append(String.valueOf(this.backupId));
         sb.append(", backupTDEPassword=").append(String.valueOf(this.backupTDEPassword));
+        sb.append(", sourceEncryptionKeyLocationDetails=")
+                .append(String.valueOf(this.sourceEncryptionKeyLocationDetails));
         sb.append(", adminPassword=").append(String.valueOf(this.adminPassword));
         sb.append(", dbUniqueName=").append(String.valueOf(this.dbUniqueName));
         sb.append(", dbName=").append(String.valueOf(this.dbName));
@@ -360,6 +387,9 @@ public final class CreateDatabaseFromBackupDetails
         CreateDatabaseFromBackupDetails other = (CreateDatabaseFromBackupDetails) o;
         return java.util.Objects.equals(this.backupId, other.backupId)
                 && java.util.Objects.equals(this.backupTDEPassword, other.backupTDEPassword)
+                && java.util.Objects.equals(
+                        this.sourceEncryptionKeyLocationDetails,
+                        other.sourceEncryptionKeyLocationDetails)
                 && java.util.Objects.equals(this.adminPassword, other.adminPassword)
                 && java.util.Objects.equals(this.dbUniqueName, other.dbUniqueName)
                 && java.util.Objects.equals(this.dbName, other.dbName)
@@ -376,6 +406,11 @@ public final class CreateDatabaseFromBackupDetails
         result =
                 (result * PRIME)
                         + (this.backupTDEPassword == null ? 43 : this.backupTDEPassword.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.sourceEncryptionKeyLocationDetails == null
+                                ? 43
+                                : this.sourceEncryptionKeyLocationDetails.hashCode());
         result =
                 (result * PRIME)
                         + (this.adminPassword == null ? 43 : this.adminPassword.hashCode());

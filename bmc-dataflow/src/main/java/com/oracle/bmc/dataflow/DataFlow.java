@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.dataflow;
@@ -69,7 +69,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CascadingDeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CascadingDeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteApplication API.
      */
     CascadingDeleteApplicationResponse cascadingDeleteApplication(
             CascadingDeleteApplicationRequest request);
@@ -84,7 +84,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApplicationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApplicationCompartment API.
      */
     ChangeApplicationCompartmentResponse changeApplicationCompartment(
             ChangeApplicationCompartmentRequest request);
@@ -101,7 +101,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePoolCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePoolCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePoolCompartment API.
      */
     ChangePoolCompartmentResponse changePoolCompartment(ChangePoolCompartmentRequest request);
 
@@ -114,7 +114,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateEndpointCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangePrivateEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangePrivateEndpointCompartment API.
      */
     ChangePrivateEndpointCompartmentResponse changePrivateEndpointCompartment(
             ChangePrivateEndpointCompartmentRequest request);
@@ -131,7 +131,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRunCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeRunCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeRunCompartment API.
      */
     ChangeRunCompartmentResponse changeRunCompartment(ChangeRunCompartmentRequest request);
 
@@ -143,7 +143,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeSqlEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSqlEndpointCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ChangeSqlEndpointCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSqlEndpointCompartment API.
      */
     ChangeSqlEndpointCompartmentResponse changeSqlEndpointCompartment(
             ChangeSqlEndpointCompartmentRequest request);
@@ -157,7 +157,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
@@ -170,7 +170,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePool API.
      */
     CreatePoolResponse createPool(CreatePoolRequest request);
 
@@ -183,7 +183,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePrivateEndpoint API.
      */
     CreatePrivateEndpointResponse createPrivateEndpoint(CreatePrivateEndpointRequest request);
 
@@ -196,7 +196,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRun API.
      */
     CreateRunResponse createRun(CreateRunRequest request);
 
@@ -208,7 +208,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSqlEndpoint API.
      */
     CreateSqlEndpointResponse createSqlEndpoint(CreateSqlEndpointRequest request);
 
@@ -221,7 +221,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStatement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/CreateStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateStatement API.
      */
     CreateStatementResponse createStatement(CreateStatementRequest request);
 
@@ -234,7 +234,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
@@ -247,7 +247,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePool API.
      */
     DeletePoolResponse deletePool(DeletePoolRequest request);
 
@@ -260,7 +260,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeletePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePrivateEndpoint API.
      */
     DeletePrivateEndpointResponse deletePrivateEndpoint(DeletePrivateEndpointRequest request);
 
@@ -274,7 +274,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRun API.
      */
     DeleteRunResponse deleteRun(DeleteRunRequest request);
 
@@ -286,7 +286,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSqlEndpoint API.
      */
     DeleteSqlEndpointResponse deleteSqlEndpoint(DeleteSqlEndpointRequest request);
 
@@ -299,7 +299,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStatement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/DeleteStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteStatement API.
      */
     DeleteStatementResponse deleteStatement(DeleteStatementRequest request);
 
@@ -312,7 +312,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
@@ -325,7 +325,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPool API.
      */
     GetPoolResponse getPool(GetPoolRequest request);
 
@@ -338,7 +338,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetPrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPrivateEndpoint API.
      */
     GetPrivateEndpointResponse getPrivateEndpoint(GetPrivateEndpointRequest request);
 
@@ -351,7 +351,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRun API.
      */
     GetRunResponse getRun(GetRunRequest request);
 
@@ -364,7 +364,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunLog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetRunLogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunLog API.
      */
     GetRunLogResponse getRunLog(GetRunLogRequest request);
 
@@ -376,7 +376,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSqlEndpoint API.
      */
     GetSqlEndpointResponse getSqlEndpoint(GetSqlEndpointRequest request);
 
@@ -389,7 +389,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStatement API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetStatementExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetStatement API.
      */
     GetStatementResponse getStatement(GetStatementRequest request);
 
@@ -402,7 +402,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -415,7 +415,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -428,7 +428,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPools API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPoolsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPools API.
      */
     ListPoolsResponse listPools(ListPoolsRequest request);
 
@@ -441,7 +441,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListPrivateEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPrivateEndpoints API.
      */
     ListPrivateEndpointsResponse listPrivateEndpoints(ListPrivateEndpointsRequest request);
 
@@ -454,7 +454,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRunLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRunLogs API.
      */
     ListRunLogsResponse listRunLogs(ListRunLogsRequest request);
 
@@ -467,7 +467,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListRunsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRuns API.
      */
     ListRunsResponse listRuns(ListRunsRequest request);
 
@@ -482,7 +482,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListSqlEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlEndpoints API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListSqlEndpointsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSqlEndpoints API.
      */
     ListSqlEndpointsResponse listSqlEndpoints(ListSqlEndpointsRequest request);
 
@@ -495,7 +495,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStatements API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListStatementsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListStatements API.
      */
     ListStatementsResponse listStatements(ListStatementsRequest request);
 
@@ -508,7 +508,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -521,7 +521,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -534,7 +534,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -547,7 +547,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StartPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StartPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartPool API.
      */
     StartPoolResponse startPool(StartPoolRequest request);
 
@@ -559,7 +559,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StartSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StartSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartSqlEndpoint API.
      */
     StartSqlEndpointResponse startSqlEndpoint(StartSqlEndpointRequest request);
 
@@ -572,7 +572,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StopPoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopPool API.
      */
     StopPoolResponse stopPool(StopPoolRequest request);
 
@@ -584,7 +584,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StopSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/StopSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopSqlEndpoint API.
      */
     StopSqlEndpointResponse stopSqlEndpoint(StopSqlEndpointRequest request);
 
@@ -597,7 +597,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
@@ -612,7 +612,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePool API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePoolExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePool API.
      */
     UpdatePoolResponse updatePool(UpdatePoolRequest request);
 
@@ -627,7 +627,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdatePrivateEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePrivateEndpoint API.
      */
     UpdatePrivateEndpointResponse updatePrivateEndpoint(UpdatePrivateEndpointRequest request);
 
@@ -640,7 +640,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRun API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateRunExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRun API.
      */
     UpdateRunResponse updateRun(UpdateRunRequest request);
 
@@ -652,7 +652,7 @@ public interface DataFlow extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSqlEndpoint API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/dataflow/UpdateSqlEndpointExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSqlEndpoint API.
      */
     UpdateSqlEndpointResponse updateSqlEndpoint(UpdateSqlEndpointRequest request);
 

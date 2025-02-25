@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.queue;
@@ -8,7 +8,7 @@ import com.oracle.bmc.queue.requests.*;
 import com.oracle.bmc.queue.responses.*;
 
 /**
- * Use the Queue API to produce and consume messages, create queues, and manage related items. For more information, see [Queue](https://docs.cloud.oracle.com/iaas/Content/queue/overview.htm).
+ * Use the Queue API to produce and consume messages, create queues, and manage related items. For more information, see [Queue](https://docs.oracle.com/iaas/Content/queue/overview.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20210201")
 public interface QueueAsync extends AutoCloseable {
@@ -60,7 +60,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Deletes the message represented by the receipt from the queue.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to delete messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to delete messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *
@@ -78,7 +78,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Deletes multiple messages from the queue or the consumer group. Only messages from the same queue/consumer group can be deleted at once.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to delete messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to delete messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *
@@ -96,7 +96,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Consumes messages from the queue.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to consume messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to consume messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      * GetMessages accepts optional channelFilter query parameter that can filter source channels of the messages.
      * When channelFilter is present, service will return available messages from the channel which ID exactly matched the filter.
@@ -116,7 +116,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Gets the statistics for the queue and its dead letter queue.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to get a queue's statistics.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to get a queue's statistics.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *
@@ -152,7 +152,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Puts messages into the queue.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to produce messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to produce messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *
@@ -169,7 +169,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Updates the visibility of the message represented by the receipt.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to update messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to update messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *
@@ -187,7 +187,7 @@ public interface QueueAsync extends AutoCloseable {
 
     /**
      * Updates multiple messages in the queue or the consumer group. Only messages from the same queue/consumer group can be updated at once.
-     * You must use the [messages endpoint](https://docs.cloud.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to update messages.
+     * You must use the [messages endpoint](https://docs.oracle.com/iaas/Content/queue/messages.htm#messages__messages-endpoint) to update messages.
      * The messages endpoint may be different for different queues. Use {@link #getQueue(GetQueueRequest, Consumer, Consumer) getQueue} to find the queue's `messagesEndpoint`.
      *
      *

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -46,6 +46,8 @@ public final class CreateExadataInfrastructureDetails
         "ntpServer",
         "isCpsOfflineReportEnabled",
         "networkBondingModeDetails",
+        "databaseServerType",
+        "storageServerType",
         "freeformTags",
         "definedTags"
     })
@@ -71,6 +73,8 @@ public final class CreateExadataInfrastructureDetails
             java.util.List<String> ntpServer,
             Boolean isCpsOfflineReportEnabled,
             NetworkBondingModeDetails networkBondingModeDetails,
+            String databaseServerType,
+            String storageServerType,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
         super();
@@ -95,6 +99,8 @@ public final class CreateExadataInfrastructureDetails
         this.ntpServer = ntpServer;
         this.isCpsOfflineReportEnabled = isCpsOfflineReportEnabled;
         this.networkBondingModeDetails = networkBondingModeDetails;
+        this.databaseServerType = databaseServerType;
+        this.storageServerType = storageServerType;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
     }
@@ -102,14 +108,14 @@ public final class CreateExadataInfrastructureDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -156,14 +162,14 @@ public final class CreateExadataInfrastructureDetails
             return this;
         }
         /**
-         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
         private String timeZone;
 
         /**
-         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+         * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
          *
          * @param timeZone the value to set
          * @return this builder
@@ -443,8 +449,40 @@ public final class CreateExadataInfrastructureDetails
             return this;
         }
         /**
+         * The database server type of the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+        private String databaseServerType;
+
+        /**
+         * The database server type of the Exadata infrastructure.
+         * @param databaseServerType the value to set
+         * @return this builder
+         **/
+        public Builder databaseServerType(String databaseServerType) {
+            this.databaseServerType = databaseServerType;
+            this.__explicitlySet__.add("databaseServerType");
+            return this;
+        }
+        /**
+         * The storage server type of the Exadata infrastructure.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+        private String storageServerType;
+
+        /**
+         * The storage server type of the Exadata infrastructure.
+         * @param storageServerType the value to set
+         * @return this builder
+         **/
+        public Builder storageServerType(String storageServerType) {
+            this.storageServerType = storageServerType;
+            this.__explicitlySet__.add("storageServerType");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -454,7 +492,7 @@ public final class CreateExadataInfrastructureDetails
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -468,7 +506,7 @@ public final class CreateExadataInfrastructureDetails
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -476,7 +514,7 @@ public final class CreateExadataInfrastructureDetails
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          *
          * @param definedTags the value to set
          * @return this builder
@@ -515,6 +553,8 @@ public final class CreateExadataInfrastructureDetails
                             this.ntpServer,
                             this.isCpsOfflineReportEnabled,
                             this.networkBondingModeDetails,
+                            this.databaseServerType,
+                            this.storageServerType,
                             this.freeformTags,
                             this.definedTags);
             for (String explicitlySetProperty : this.__explicitlySet__) {
@@ -588,6 +628,12 @@ public final class CreateExadataInfrastructureDetails
             if (model.wasPropertyExplicitlySet("networkBondingModeDetails")) {
                 this.networkBondingModeDetails(model.getNetworkBondingModeDetails());
             }
+            if (model.wasPropertyExplicitlySet("databaseServerType")) {
+                this.databaseServerType(model.getDatabaseServerType());
+            }
+            if (model.wasPropertyExplicitlySet("storageServerType")) {
+                this.storageServerType(model.getStorageServerType());
+            }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
             }
@@ -610,14 +656,14 @@ public final class CreateExadataInfrastructureDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment.
      *
      * @return the value
      **/
@@ -658,14 +704,14 @@ public final class CreateExadataInfrastructureDetails
     }
 
     /**
-     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("timeZone")
     private final String timeZone;
 
     /**
-     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.cloud.oracle.com/Content/Database/References/timezones.htm).
+     * The time zone of the Exadata infrastructure. For details, see [Exadata Infrastructure Time Zones](https://docs.oracle.com/iaas/Content/Database/References/timezones.htm).
      *
      * @return the value
      **/
@@ -908,8 +954,36 @@ public final class CreateExadataInfrastructureDetails
     }
 
     /**
+     * The database server type of the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseServerType")
+    private final String databaseServerType;
+
+    /**
+     * The database server type of the Exadata infrastructure.
+     * @return the value
+     **/
+    public String getDatabaseServerType() {
+        return databaseServerType;
+    }
+
+    /**
+     * The storage server type of the Exadata infrastructure.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("storageServerType")
+    private final String storageServerType;
+
+    /**
+     * The storage server type of the Exadata infrastructure.
+     * @return the value
+     **/
+    public String getStorageServerType() {
+        return storageServerType;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -919,7 +993,7 @@ public final class CreateExadataInfrastructureDetails
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -931,7 +1005,7 @@ public final class CreateExadataInfrastructureDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -939,7 +1013,7 @@ public final class CreateExadataInfrastructureDetails
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -995,6 +1069,8 @@ public final class CreateExadataInfrastructureDetails
                 .append(String.valueOf(this.isCpsOfflineReportEnabled));
         sb.append(", networkBondingModeDetails=")
                 .append(String.valueOf(this.networkBondingModeDetails));
+        sb.append(", databaseServerType=").append(String.valueOf(this.databaseServerType));
+        sb.append(", storageServerType=").append(String.valueOf(this.storageServerType));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(")");
@@ -1037,6 +1113,8 @@ public final class CreateExadataInfrastructureDetails
                         this.isCpsOfflineReportEnabled, other.isCpsOfflineReportEnabled)
                 && java.util.Objects.equals(
                         this.networkBondingModeDetails, other.networkBondingModeDetails)
+                && java.util.Objects.equals(this.databaseServerType, other.databaseServerType)
+                && java.util.Objects.equals(this.storageServerType, other.storageServerType)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && super.equals(other);
@@ -1099,6 +1177,14 @@ public final class CreateExadataInfrastructureDetails
                         + (this.networkBondingModeDetails == null
                                 ? 43
                                 : this.networkBondingModeDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.databaseServerType == null
+                                ? 43
+                                : this.databaseServerType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageServerType == null ? 43 : this.storageServerType.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + super.hashCode();

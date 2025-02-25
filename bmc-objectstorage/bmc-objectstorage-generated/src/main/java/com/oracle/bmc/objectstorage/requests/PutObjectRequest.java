@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.objectstorage.requests;
 
 import com.oracle.bmc.objectstorage.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutObjectRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/objectstorage/PutObjectExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use PutObjectRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io.InputStream>
@@ -353,14 +353,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     }
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerAlgorithm;
 
     /**
      * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     public String getOpcSseCustomerAlgorithm() {
@@ -369,7 +369,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
      * decrypt the data. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerKey;
@@ -377,7 +377,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
      * decrypt the data. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     public String getOpcSseCustomerKey() {
@@ -386,7 +386,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     private String opcSseCustomerKeySha256;
@@ -394,21 +394,21 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
     /**
      * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
      * value is used to check the integrity of the encryption key. For more information, see
-     * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+     * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
      *
      */
     public String getOpcSseCustomerKeySha256() {
         return opcSseCustomerKeySha256;
     }
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
      * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      *
      */
     private String opcSseKmsKeyId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
      * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
      *
      */
@@ -882,14 +882,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          */
         private String opcSseCustomerAlgorithm = null;
 
         /**
          * The optional header that specifies "AES256" as the encryption algorithm. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerAlgorithm the value to set
          * @return this builder instance
@@ -902,7 +902,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         /**
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
          * decrypt the data. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          */
         private String opcSseCustomerKey = null;
@@ -910,7 +910,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         /**
          * The optional header that specifies the base64-encoded 256-bit encryption key to use to encrypt or
          * decrypt the data. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKey the value to set
          * @return this builder instance
@@ -923,7 +923,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         /**
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
          * value is used to check the integrity of the encryption key. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          */
         private String opcSseCustomerKeySha256 = null;
@@ -931,7 +931,7 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         /**
          * The optional header that specifies the base64-encoded SHA256 hash of the encryption key. This
          * value is used to check the integrity of the encryption key. For more information, see
-         * [Using Your Own Keys for Server-Side Encryption](https://docs.cloud.oracle.com/Content/Object/Tasks/usingyourencryptionkeys.htm).
+         * [Using Your Own Keys for Server-Side Encryption](https://docs.oracle.com/iaas/Content/Object/Tasks/usingyourencryptionkeys.htm).
          *
          * @param opcSseCustomerKeySha256 the value to set
          * @return this builder instance
@@ -942,14 +942,14 @@ public class PutObjectRequest extends com.oracle.bmc.requests.BmcRequest<java.io
         }
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
          * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
          *
          */
         private String opcSseKmsKeyId = null;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of a master encryption key used to call the Key
          * Management service to generate a data encryption key or to encrypt or decrypt a data encryption key.
          *
          * @param opcSseKmsKeyId the value to set

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge;
@@ -404,5 +404,20 @@ public interface OcbAgentSvcAsync extends AutoCloseable {
             UpdateEnvironmentRequest request,
             com.oracle.bmc.responses.AsyncHandler<
                             UpdateEnvironmentRequest, UpdateEnvironmentResponse>
+                    handler);
+
+    /**
+     * Updates the plugin.
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<UpdatePluginResponse> updatePlugin(
+            UpdatePluginRequest request,
+            com.oracle.bmc.responses.AsyncHandler<UpdatePluginRequest, UpdatePluginResponse>
                     handler);
 }

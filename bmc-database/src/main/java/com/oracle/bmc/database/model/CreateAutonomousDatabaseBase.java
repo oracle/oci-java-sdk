@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -122,6 +122,7 @@ public class CreateAutonomousDatabaseBase
         "isAutoScalingForStorageEnabled",
         "databaseEdition",
         "dbToolsDetails",
+        "isBackupRetentionLocked",
         "secretId",
         "secretVersionNumber"
     })
@@ -176,6 +177,7 @@ public class CreateAutonomousDatabaseBase
             Boolean isAutoScalingForStorageEnabled,
             AutonomousDatabaseSummary.DatabaseEdition databaseEdition,
             java.util.List<DatabaseTool> dbToolsDetails,
+            Boolean isBackupRetentionLocked,
             String secretId,
             Integer secretVersionNumber) {
         super();
@@ -229,18 +231,19 @@ public class CreateAutonomousDatabaseBase
         this.isAutoScalingForStorageEnabled = isAutoScalingForStorageEnabled;
         this.databaseEdition = databaseEdition;
         this.dbToolsDetails = dbToolsDetails;
+        this.isBackupRetentionLocked = isBackupRetentionLocked;
         this.secretId = secretId;
         this.secretVersionNumber = secretVersionNumber;
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
     private final String subscriptionId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subscription with which resource needs to be associated with.
      * @return the value
      **/
     public String getSubscriptionId() {
@@ -248,13 +251,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment of the Autonomous Database.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -610,13 +613,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("vaultId")
     private final String vaultId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.cloud.oracle.com/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the Oracle Cloud Infrastructure [vault](https://docs.oracle.com/iaas/Content/KeyManagement/Concepts/keyoverview.htm#concepts). This parameter and {@code secretId} are required for Customer Managed Keys.
      * @return the value
      **/
     public String getVaultId() {
@@ -810,13 +813,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("autonomousContainerDatabaseId")
     private final String autonomousContainerDatabaseId;
 
     /**
-     * The Autonomous Container Database [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
+     * The Autonomous Container Database [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Used only by Autonomous Database on Dedicated Exadata Infrastructure.
      * @return the value
      **/
     public String getAutonomousContainerDatabaseId() {
@@ -996,7 +999,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1012,7 +1015,7 @@ public class CreateAutonomousDatabaseBase
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the resource is associated with.
      * <p>
      **Subnet Restrictions:**
      * - For bare metal DB systems and for single node virtual machine DB systems, do not use a subnet that overlaps with 192.168.16.16/28.
@@ -1030,7 +1033,7 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -1039,7 +1042,7 @@ public class CreateAutonomousDatabaseBase
     private final java.util.List<String> nsgIds;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.cloud.oracle.com/Content/Network/Concepts/securityrules.htm).
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network security groups (NSGs) to which this resource belongs. Setting this to an empty list removes all resources from all NSGs. For more information about NSGs, see [Security Rules](https://docs.oracle.com/iaas/Content/Network/Concepts/securityrules.htm).
      * **NsgIds restrictions:**
      * - A network security group (NSG) is optional for Autonomous Databases with private access. The nsgIds list can be empty.
      *
@@ -1077,7 +1080,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1087,7 +1090,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -1099,7 +1102,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("definedTags")
@@ -1107,7 +1110,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      *
      * @return the value
      **/
@@ -1117,7 +1120,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      **/
@@ -1126,7 +1129,7 @@ public class CreateAutonomousDatabaseBase
 
     /**
      * Security Attributes for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Oracle-ZPR": {"MaxEgressCount": {"value": "42", "mode": "audit"}}}}
      *
      * @return the value
@@ -1214,13 +1217,13 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("resourcePoolLeaderId")
     private final String resourcePoolLeaderId;
 
     /**
-     * The unique identifier for leader autonomous database OCID [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The unique identifier for leader autonomous database OCID [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * @return the value
      **/
     public String getResourcePoolLeaderId() {
@@ -1362,6 +1365,20 @@ public class CreateAutonomousDatabaseBase
     }
 
     /**
+     * True if the Autonomous Database is backup retention locked.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isBackupRetentionLocked")
+    private final Boolean isBackupRetentionLocked;
+
+    /**
+     * True if the Autonomous Database is backup retention locked.
+     * @return the value
+     **/
+    public Boolean getIsBackupRetentionLocked() {
+        return isBackupRetentionLocked;
+    }
+
+    /**
      * The OCI vault secret [/Content/General/Concepts/identifiers.htm]OCID.
      * <p>
      * This cannot be used in conjunction with adminPassword.
@@ -1467,6 +1484,8 @@ public class CreateAutonomousDatabaseBase
                 .append(String.valueOf(this.isAutoScalingForStorageEnabled));
         sb.append(", databaseEdition=").append(String.valueOf(this.databaseEdition));
         sb.append(", dbToolsDetails=").append(String.valueOf(this.dbToolsDetails));
+        sb.append(", isBackupRetentionLocked=")
+                .append(String.valueOf(this.isBackupRetentionLocked));
         sb.append(", secretId=").append(String.valueOf(this.secretId));
         sb.append(", secretVersionNumber=").append(String.valueOf(this.secretVersionNumber));
         sb.append(")");
@@ -1544,6 +1563,8 @@ public class CreateAutonomousDatabaseBase
                         this.isAutoScalingForStorageEnabled, other.isAutoScalingForStorageEnabled)
                 && java.util.Objects.equals(this.databaseEdition, other.databaseEdition)
                 && java.util.Objects.equals(this.dbToolsDetails, other.dbToolsDetails)
+                && java.util.Objects.equals(
+                        this.isBackupRetentionLocked, other.isBackupRetentionLocked)
                 && java.util.Objects.equals(this.secretId, other.secretId)
                 && java.util.Objects.equals(this.secretVersionNumber, other.secretVersionNumber)
                 && super.equals(other);
@@ -1707,6 +1728,11 @@ public class CreateAutonomousDatabaseBase
         result =
                 (result * PRIME)
                         + (this.dbToolsDetails == null ? 43 : this.dbToolsDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isBackupRetentionLocked == null
+                                ? 43
+                                : this.isBackupRetentionLocked.hashCode());
         result = (result * PRIME) + (this.secretId == null ? 43 : this.secretId.hashCode());
         result =
                 (result * PRIME)

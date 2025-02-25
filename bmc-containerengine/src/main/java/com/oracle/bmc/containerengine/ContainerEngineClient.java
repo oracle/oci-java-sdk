@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.containerengine;
@@ -571,7 +571,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "ClusterMigrateToNativeVcn",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ClusterMigrateToNativeVcn");
         java.util.function.Function<javax.ws.rs.core.Response, ClusterMigrateToNativeVcnResponse>
                 transformer =
                         ClusterMigrateToNativeVcnConverter.fromResponse(
@@ -615,7 +615,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "CompleteCredentialRotation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CompleteCredentialRotation");
         java.util.function.Function<javax.ws.rs.core.Response, CompleteCredentialRotationResponse>
                 transformer =
                         CompleteCredentialRotationConverter.fromResponse(
@@ -651,7 +651,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "CreateCluster", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "CreateCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateCluster");
         java.util.function.Function<javax.ws.rs.core.Response, CreateClusterResponse> transformer =
                 CreateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -687,7 +690,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "CreateKubeconfig", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "CreateKubeconfig",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/CreateKubeconfig");
         java.util.function.Function<javax.ws.rs.core.Response, CreateKubeconfigResponse>
                 transformer =
                         CreateKubeconfigConverter.fromResponse(
@@ -727,7 +733,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "CreateNodePool", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "CreateNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/CreateNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, CreateNodePoolResponse> transformer =
                 CreateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -768,7 +777,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "CreateVirtualNodePool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/CreateVirtualNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, CreateVirtualNodePoolResponse>
                 transformer =
                         CreateVirtualNodePoolConverter.fromResponse(
@@ -811,7 +820,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "CreateWorkloadMapping",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/CreateWorkloadMapping");
         java.util.function.Function<javax.ws.rs.core.Response, CreateWorkloadMappingResponse>
                 transformer =
                         CreateWorkloadMappingConverter.fromResponse(
@@ -849,7 +858,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "DeleteCluster", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "DeleteCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DeleteCluster");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteClusterResponse> transformer =
                 DeleteClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -881,7 +893,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "DeleteNode", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "DeleteNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNode");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNodeResponse> transformer =
                 DeleteNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -914,7 +929,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "DeleteNodePool", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "DeleteNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/DeleteNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteNodePoolResponse> transformer =
                 DeleteNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -951,7 +969,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "DeleteVirtualNodePool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/DeleteVirtualNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteVirtualNodePoolResponse>
                 transformer =
                         DeleteVirtualNodePoolConverter.fromResponse(
@@ -986,7 +1004,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "DeleteWorkRequest", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "DeleteWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/DeleteWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkRequestResponse>
                 transformer =
                         DeleteWorkRequestConverter.fromResponse(
@@ -1025,7 +1046,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "DeleteWorkloadMapping",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/DeleteWorkloadMapping");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteWorkloadMappingResponse>
                 transformer =
                         DeleteWorkloadMappingConverter.fromResponse(
@@ -1060,7 +1081,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "DisableAddon", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "DisableAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/DisableAddon");
         java.util.function.Function<javax.ws.rs.core.Response, DisableAddonResponse> transformer =
                 DisableAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1092,7 +1116,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetAddon", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetAddon");
         java.util.function.Function<javax.ws.rs.core.Response, GetAddonResponse> transformer =
                 GetAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1123,7 +1150,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetCluster", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/GetCluster");
         java.util.function.Function<javax.ws.rs.core.Response, GetClusterResponse> transformer =
                 GetClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1159,7 +1189,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "GetClusterMigrateToNativeVcnStatus",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterMigrateToNativeVcnStatus/GetClusterMigrateToNativeVcnStatus");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetClusterMigrateToNativeVcnStatusResponse>
                 transformer =
@@ -1194,7 +1224,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetClusterOptions", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetClusterOptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterOptions/GetClusterOptions");
         java.util.function.Function<javax.ws.rs.core.Response, GetClusterOptionsResponse>
                 transformer =
                         GetClusterOptionsConverter.fromResponse(
@@ -1232,7 +1265,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "GetCredentialRotationStatus",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/CredentialRotationStatus/GetCredentialRotationStatus");
         java.util.function.Function<javax.ws.rs.core.Response, GetCredentialRotationStatusResponse>
                 transformer =
                         GetCredentialRotationStatusConverter.fromResponse(
@@ -1266,7 +1299,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetNodePool", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/GetNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolResponse> transformer =
                 GetNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1298,7 +1334,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetNodePoolOptions", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetNodePoolOptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolOptions/GetNodePoolOptions");
         java.util.function.Function<javax.ws.rs.core.Response, GetNodePoolOptionsResponse>
                 transformer =
                         GetNodePoolOptionsConverter.fromResponse(
@@ -1332,7 +1371,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetVirtualNode", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetVirtualNode",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNode");
         java.util.function.Function<javax.ws.rs.core.Response, GetVirtualNodeResponse> transformer =
                 GetVirtualNodeConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1364,7 +1406,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetVirtualNodePool", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetVirtualNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/GetVirtualNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, GetVirtualNodePoolResponse>
                 transformer =
                         GetVirtualNodePoolConverter.fromResponse(
@@ -1398,7 +1443,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetWorkRequest", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetWorkRequest",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1430,7 +1478,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "GetWorkloadMapping", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "GetWorkloadMapping",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/GetWorkloadMapping");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkloadMappingResponse>
                 transformer =
                         GetWorkloadMappingConverter.fromResponse(
@@ -1465,7 +1516,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "InstallAddon", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "InstallAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/InstallAddon");
         java.util.function.Function<javax.ws.rs.core.Response, InstallAddonResponse> transformer =
                 InstallAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1501,7 +1555,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListAddonOptions", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListAddonOptions",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/AddonOptionSummary/ListAddonOptions");
         java.util.function.Function<javax.ws.rs.core.Response, ListAddonOptionsResponse>
                 transformer =
                         ListAddonOptionsConverter.fromResponse(
@@ -1534,7 +1591,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListAddons", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListAddons",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/ListAddons");
         java.util.function.Function<javax.ws.rs.core.Response, ListAddonsResponse> transformer =
                 ListAddonsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1566,7 +1626,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListClusters", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListClusters",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/ClusterSummary/ListClusters");
         java.util.function.Function<javax.ws.rs.core.Response, ListClustersResponse> transformer =
                 ListClustersConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1598,7 +1661,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListNodePools", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListNodePools",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePoolSummary/ListNodePools");
         java.util.function.Function<javax.ws.rs.core.Response, ListNodePoolsResponse> transformer =
                 ListNodePoolsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1630,7 +1696,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListPodShapes", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListPodShapes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/PodShapeSummary/ListPodShapes");
         java.util.function.Function<javax.ws.rs.core.Response, ListPodShapesResponse> transformer =
                 ListPodShapesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1665,7 +1734,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "ListVirtualNodePools",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePoolSummary/ListVirtualNodePools");
         java.util.function.Function<javax.ws.rs.core.Response, ListVirtualNodePoolsResponse>
                 transformer =
                         ListVirtualNodePoolsConverter.fromResponse(
@@ -1699,7 +1768,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListVirtualNodes", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListVirtualNodes",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/ListVirtualNodes");
         java.util.function.Function<javax.ws.rs.core.Response, ListVirtualNodesResponse>
                 transformer =
                         ListVirtualNodesConverter.fromResponse(
@@ -1737,7 +1809,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -1774,7 +1846,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -1808,7 +1880,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "ListWorkRequests", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "ListWorkRequests",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkRequestSummary/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -1845,7 +1920,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "ListWorkloadMappings",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/ListWorkloadMappings");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkloadMappingsResponse>
                 transformer =
                         ListWorkloadMappingsConverter.fromResponse(
@@ -1884,7 +1959,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "StartCredentialRotation",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/StartCredentialRotation");
         java.util.function.Function<javax.ws.rs.core.Response, StartCredentialRotationResponse>
                 transformer =
                         StartCredentialRotationConverter.fromResponse(
@@ -1922,7 +1997,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "UpdateAddon", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "UpdateAddon",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateAddon");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateAddonResponse> transformer =
                 UpdateAddonConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1958,7 +2036,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "UpdateCluster", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "UpdateCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateCluster");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterResponse> transformer =
                 UpdateClusterConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1998,7 +2079,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "UpdateClusterEndpointConfig",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/Cluster/UpdateClusterEndpointConfig");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateClusterEndpointConfigResponse>
                 transformer =
                         UpdateClusterEndpointConfigConverter.fromResponse(
@@ -2037,7 +2118,10 @@ public class ContainerEngineClient implements ContainerEngine {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "ContainerEngine", "UpdateNodePool", ib.getRequestUri().toString(), "");
+                        "ContainerEngine",
+                        "UpdateNodePool",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/NodePool/UpdateNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateNodePoolResponse> transformer =
                 UpdateNodePoolConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -2077,7 +2161,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "UpdateVirtualNodePool",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/VirtualNodePool/UpdateVirtualNodePool");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateVirtualNodePoolResponse>
                 transformer =
                         UpdateVirtualNodePoolConverter.fromResponse(
@@ -2119,7 +2203,7 @@ public class ContainerEngineClient implements ContainerEngine {
                         "ContainerEngine",
                         "UpdateWorkloadMapping",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/containerengine/20180222/WorkloadMapping/UpdateWorkloadMapping");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateWorkloadMappingResponse>
                 transformer =
                         UpdateWorkloadMappingConverter.fromResponse(

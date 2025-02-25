@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.mysql.model;
@@ -51,7 +51,10 @@ public final class CreateDbSystemDetails
         "crashRecovery",
         "databaseManagement",
         "secureConnections",
-        "customerContacts"
+        "databaseMode",
+        "accessMode",
+        "customerContacts",
+        "readEndpoint"
     })
     public CreateDbSystemDetails(
             String displayName,
@@ -81,7 +84,10 @@ public final class CreateDbSystemDetails
             CrashRecoveryStatus crashRecovery,
             DatabaseManagementStatus databaseManagement,
             SecureConnectionDetails secureConnections,
-            java.util.List<CustomerContact> customerContacts) {
+            DbSystem.DatabaseMode databaseMode,
+            DbSystem.AccessMode accessMode,
+            java.util.List<CustomerContact> customerContacts,
+            CreateReadEndpointDetails readEndpoint) {
         super();
         this.displayName = displayName;
         this.description = description;
@@ -110,7 +116,10 @@ public final class CreateDbSystemDetails
         this.crashRecovery = crashRecovery;
         this.databaseManagement = databaseManagement;
         this.secureConnections = secureConnections;
+        this.databaseMode = databaseMode;
+        this.accessMode = accessMode;
         this.customerContacts = customerContacts;
+        this.readEndpoint = readEndpoint;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -611,6 +620,58 @@ public final class CreateDbSystemDetails
             return this;
         }
         /**
+         * The database mode indicating the types of statements that will be allowed to run in the DB system.
+         * This mode will apply only to statements run by user connections. Replicated write statements will continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE (default): allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+        private DbSystem.DatabaseMode databaseMode;
+
+        /**
+         * The database mode indicating the types of statements that will be allowed to run in the DB system.
+         * This mode will apply only to statements run by user connections. Replicated write statements will continue
+         * to be allowed regardless of the DatabaseMode.
+         *   - READ_WRITE (default): allow running read and write statements on the DB system;
+         *   - READ_ONLY: only allow running read statements on the DB system.
+         *
+         * @param databaseMode the value to set
+         * @return this builder
+         **/
+        public Builder databaseMode(DbSystem.DatabaseMode databaseMode) {
+            this.databaseMode = databaseMode;
+            this.__explicitlySet__.add("databaseMode");
+            return this;
+        }
+        /**
+         * The access mode indicating if the database access will be restricted only to administrators or not:
+         *  - UNRESTRICTED (default): the access to the database is not restricted;
+         *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+        private DbSystem.AccessMode accessMode;
+
+        /**
+         * The access mode indicating if the database access will be restricted only to administrators or not:
+         *  - UNRESTRICTED (default): the access to the database is not restricted;
+         *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+         *    RESTRICTED will correspond to setting the MySQL system variable
+         *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+         *
+         * @param accessMode the value to set
+         * @return this builder
+         **/
+        public Builder accessMode(DbSystem.AccessMode accessMode) {
+            this.accessMode = accessMode;
+            this.__explicitlySet__.add("accessMode");
+            return this;
+        }
+        /**
          * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
          * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
          * Up to 10 email addresses can be added to the customer contacts for a DB System.
@@ -630,6 +691,15 @@ public final class CreateDbSystemDetails
         public Builder customerContacts(java.util.List<CustomerContact> customerContacts) {
             this.customerContacts = customerContacts;
             this.__explicitlySet__.add("customerContacts");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+        private CreateReadEndpointDetails readEndpoint;
+
+        public Builder readEndpoint(CreateReadEndpointDetails readEndpoint) {
+            this.readEndpoint = readEndpoint;
+            this.__explicitlySet__.add("readEndpoint");
             return this;
         }
 
@@ -666,7 +736,10 @@ public final class CreateDbSystemDetails
                             this.crashRecovery,
                             this.databaseManagement,
                             this.secureConnections,
-                            this.customerContacts);
+                            this.databaseMode,
+                            this.accessMode,
+                            this.customerContacts,
+                            this.readEndpoint);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -756,8 +829,17 @@ public final class CreateDbSystemDetails
             if (model.wasPropertyExplicitlySet("secureConnections")) {
                 this.secureConnections(model.getSecureConnections());
             }
+            if (model.wasPropertyExplicitlySet("databaseMode")) {
+                this.databaseMode(model.getDatabaseMode());
+            }
+            if (model.wasPropertyExplicitlySet("accessMode")) {
+                this.accessMode(model.getAccessMode());
+            }
             if (model.wasPropertyExplicitlySet("customerContacts")) {
                 this.customerContacts(model.getCustomerContacts());
+            }
+            if (model.wasPropertyExplicitlySet("readEndpoint")) {
+                this.readEndpoint(model.getReadEndpoint());
             }
             return this;
         }
@@ -1215,6 +1297,54 @@ public final class CreateDbSystemDetails
     }
 
     /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB system.
+     * This mode will apply only to statements run by user connections. Replicated write statements will continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE (default): allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseMode")
+    private final DbSystem.DatabaseMode databaseMode;
+
+    /**
+     * The database mode indicating the types of statements that will be allowed to run in the DB system.
+     * This mode will apply only to statements run by user connections. Replicated write statements will continue
+     * to be allowed regardless of the DatabaseMode.
+     *   - READ_WRITE (default): allow running read and write statements on the DB system;
+     *   - READ_ONLY: only allow running read statements on the DB system.
+     *
+     * @return the value
+     **/
+    public DbSystem.DatabaseMode getDatabaseMode() {
+        return databaseMode;
+    }
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators or not:
+     *  - UNRESTRICTED (default): the access to the database is not restricted;
+     *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("accessMode")
+    private final DbSystem.AccessMode accessMode;
+
+    /**
+     * The access mode indicating if the database access will be restricted only to administrators or not:
+     *  - UNRESTRICTED (default): the access to the database is not restricted;
+     *  - RESTRICTED: the access will be allowed only to users with specific privileges;
+     *    RESTRICTED will correspond to setting the MySQL system variable
+     *    [offline_mode](https://dev.mysql.com/doc/en/server-system-variables.html#sysvar_offline_mode) to ON.
+     *
+     * @return the value
+     **/
+    public DbSystem.AccessMode getAccessMode() {
+        return accessMode;
+    }
+
+    /**
      * The list of customer email addresses that receive information from Oracle about the specified OCI DB System resource.
      * Oracle uses these email addresses to send notifications about planned and unplanned software maintenance updates, information about system hardware, and other information needed by administrators.
      * Up to 10 email addresses can be added to the customer contacts for a DB System.
@@ -1232,6 +1362,13 @@ public final class CreateDbSystemDetails
      **/
     public java.util.List<CustomerContact> getCustomerContacts() {
         return customerContacts;
+    }
+
+    @com.fasterxml.jackson.annotation.JsonProperty("readEndpoint")
+    private final CreateReadEndpointDetails readEndpoint;
+
+    public CreateReadEndpointDetails getReadEndpoint() {
+        return readEndpoint;
     }
 
     @Override
@@ -1275,7 +1412,10 @@ public final class CreateDbSystemDetails
         sb.append(", crashRecovery=").append(String.valueOf(this.crashRecovery));
         sb.append(", databaseManagement=").append(String.valueOf(this.databaseManagement));
         sb.append(", secureConnections=").append(String.valueOf(this.secureConnections));
+        sb.append(", databaseMode=").append(String.valueOf(this.databaseMode));
+        sb.append(", accessMode=").append(String.valueOf(this.accessMode));
         sb.append(", customerContacts=").append(String.valueOf(this.customerContacts));
+        sb.append(", readEndpoint=").append(String.valueOf(this.readEndpoint));
         sb.append(")");
         return sb.toString();
     }
@@ -1317,7 +1457,10 @@ public final class CreateDbSystemDetails
                 && java.util.Objects.equals(this.crashRecovery, other.crashRecovery)
                 && java.util.Objects.equals(this.databaseManagement, other.databaseManagement)
                 && java.util.Objects.equals(this.secureConnections, other.secureConnections)
+                && java.util.Objects.equals(this.databaseMode, other.databaseMode)
+                && java.util.Objects.equals(this.accessMode, other.accessMode)
                 && java.util.Objects.equals(this.customerContacts, other.customerContacts)
+                && java.util.Objects.equals(this.readEndpoint, other.readEndpoint)
                 && super.equals(other);
     }
 
@@ -1382,9 +1525,12 @@ public final class CreateDbSystemDetails
         result =
                 (result * PRIME)
                         + (this.secureConnections == null ? 43 : this.secureConnections.hashCode());
+        result = (result * PRIME) + (this.databaseMode == null ? 43 : this.databaseMode.hashCode());
+        result = (result * PRIME) + (this.accessMode == null ? 43 : this.accessMode.hashCode());
         result =
                 (result * PRIME)
                         + (this.customerContacts == null ? 43 : this.customerContacts.hashCode());
+        result = (result * PRIME) + (this.readEndpoint == null ? 43 : this.readEndpoint.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

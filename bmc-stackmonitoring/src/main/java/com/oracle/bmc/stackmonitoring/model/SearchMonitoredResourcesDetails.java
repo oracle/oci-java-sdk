@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.stackmonitoring.model;
@@ -97,14 +97,14 @@ public final class SearchMonitoredResourcesDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -115,14 +115,14 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Multiple compartment identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
         private java.util.List<String> compartmentIds;
 
         /**
-         * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * Multiple compartment identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param compartmentIds the value to set
          * @return this builder
@@ -253,7 +253,7 @@ public final class SearchMonitoredResourcesDetails
             return this;
         }
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
          * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
@@ -263,7 +263,7 @@ public final class SearchMonitoredResourcesDetails
         private String externalId;
 
         /**
-         * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+         * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
          * which is not a Stack Monitoring service resource.
          * Currently supports only following resource types - Container database, non-container database,
          * pluggable database and OCI compute instance.
@@ -665,14 +665,14 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * Compartment Identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Compartment Identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -681,14 +681,14 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Multiple compartment identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentIds")
     private final java.util.List<String> compartmentIds;
 
     /**
-     * Multiple compartment identifiers [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * Multiple compartment identifiers [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -803,7 +803,7 @@ public final class SearchMonitoredResourcesDetails
     }
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
      * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.
@@ -813,7 +813,7 @@ public final class SearchMonitoredResourcesDetails
     private final String externalId;
 
     /**
-     * External resource is any OCI resource identifier [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm)
+     * External resource is any OCI resource identifier [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
      * which is not a Stack Monitoring service resource.
      * Currently supports only following resource types - Container database, non-container database,
      * pluggable database and OCI compute instance.

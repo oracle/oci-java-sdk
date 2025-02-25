@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -30,7 +30,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
     public static class Builder {
         /**
          * For instances that use a DenseIO shape, the flag denoting whether
-         * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+         * [reboot migration](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
          * is performed for the instance. The default value is {@code false}.
          * <p>
          * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
@@ -49,7 +49,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
 
         /**
          * For instances that use a DenseIO shape, the flag denoting whether
-         * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+         * [reboot migration](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
          * is performed for the instance. The default value is {@code false}.
          * <p>
          * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
@@ -111,7 +111,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
 
     /**
      * For instances that use a DenseIO shape, the flag denoting whether
-     * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+     * [reboot migration](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
      * is performed for the instance. The default value is {@code false}.
      * <p>
      * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance
@@ -130,7 +130,7 @@ public final class SoftResetActionDetails extends InstancePowerActionDetails {
 
     /**
      * For instances that use a DenseIO shape, the flag denoting whether
-     * [reboot migration](https://docs.cloud.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
+     * [reboot migration](https://docs.oracle.com/iaas/Content/Compute/References/infrastructure-maintenance.htm#reboot)
      * is performed for the instance. The default value is {@code false}.
      * <p>
      * If the instance has a date in the Maintenance reboot field and you do nothing (or set this flag to {@code false}), the instance

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.functions;
@@ -62,7 +62,7 @@ public interface FunctionsManagement extends AutoCloseable {
 
     /**
      * Moves an application into a different compartment within the same tenancy.
-     * For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * For information about moving resources between compartments, see [Moving Resources Between Compartments](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -70,7 +70,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ChangeApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApplicationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ChangeApplicationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeApplicationCompartment API.
      */
     ChangeApplicationCompartmentResponse changeApplicationCompartment(
             ChangeApplicationCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateApplication API.
      */
     CreateApplicationResponse createApplication(CreateApplicationRequest request);
 
@@ -95,7 +95,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/CreateFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFunction API.
      */
     CreateFunctionResponse createFunction(CreateFunctionRequest request);
 
@@ -107,7 +107,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteApplication API.
      */
     DeleteApplicationResponse deleteApplication(DeleteApplicationRequest request);
 
@@ -119,7 +119,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/DeleteFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFunction API.
      */
     DeleteFunctionResponse deleteFunction(DeleteFunctionRequest request);
 
@@ -131,7 +131,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetApplication API.
      */
     GetApplicationResponse getApplication(GetApplicationRequest request);
 
@@ -143,7 +143,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFunction API.
      */
     GetFunctionResponse getFunction(GetFunctionRequest request);
 
@@ -156,7 +156,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPbfListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPbfListing API.
      */
     GetPbfListingResponse getPbfListing(GetPbfListingRequest request);
 
@@ -168,7 +168,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPbfListingVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/GetPbfListingVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPbfListingVersion API.
      */
     GetPbfListingVersionResponse getPbfListingVersion(GetPbfListingVersionRequest request);
 
@@ -180,7 +180,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListApplicationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListApplications API.
      */
     ListApplicationsResponse listApplications(ListApplicationsRequest request);
 
@@ -192,7 +192,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListFunctionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFunctions API.
      */
     ListFunctionsResponse listFunctions(ListFunctionsRequest request);
 
@@ -209,7 +209,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPbfListingVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPbfListingVersions API.
      */
     ListPbfListingVersionsResponse listPbfListingVersions(ListPbfListingVersionsRequest request);
 
@@ -223,7 +223,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPbfListings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListPbfListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPbfListings API.
      */
     ListPbfListingsResponse listPbfListings(ListPbfListingsRequest request);
 
@@ -236,7 +236,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTriggers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/ListTriggersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTriggers API.
      */
     ListTriggersResponse listTriggers(ListTriggersRequest request);
 
@@ -248,7 +248,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateApplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateApplication API.
      */
     UpdateApplicationResponse updateApplication(UpdateApplicationRequest request);
 
@@ -260,7 +260,7 @@ public interface FunctionsManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFunction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/functions/UpdateFunctionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFunction API.
      */
     UpdateFunctionResponse updateFunction(UpdateFunctionRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.capacitymanagement;
@@ -8,7 +8,7 @@ import com.oracle.bmc.capacitymanagement.requests.*;
 import com.oracle.bmc.capacitymanagement.responses.*;
 
 /**
- * OCI Control Center (OCC) Capacity Management enables you to manage capacity requests in realms where OCI Control Center Capacity Management is available. For more information, see [OCI Control Center](https://docs.cloud.oracle.com/iaas/Content/control-center/home.htm).
+ * OCI Control Center (OCC) Capacity Management enables you to manage capacity requests in realms where OCI Control Center Capacity Management is available. For more information, see [OCI Control Center](https://docs.oracle.com/iaas/Content/control-center/home.htm).
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20231107")
@@ -67,7 +67,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccAvailabilityCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccAvailabilityCatalog API.
      */
     CreateOccAvailabilityCatalogResponse createOccAvailabilityCatalog(
             CreateOccAvailabilityCatalogRequest request);
@@ -80,7 +80,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCapacityRequest API.
      */
     CreateOccCapacityRequestResponse createOccCapacityRequest(
             CreateOccCapacityRequestRequest request);
@@ -93,7 +93,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCustomer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCustomer API.
      */
     CreateOccCustomerResponse createOccCustomer(CreateOccCustomerRequest request);
 
@@ -105,7 +105,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCustomerGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/CreateOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOccCustomerGroup API.
      */
     CreateOccCustomerGroupResponse createOccCustomerGroup(CreateOccCustomerGroupRequest request);
 
@@ -117,7 +117,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccAvailabilityCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccAvailabilityCatalog API.
      */
     DeleteOccAvailabilityCatalogResponse deleteOccAvailabilityCatalog(
             DeleteOccAvailabilityCatalogRequest request);
@@ -130,7 +130,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCapacityRequest API.
      */
     DeleteOccCapacityRequestResponse deleteOccCapacityRequest(
             DeleteOccCapacityRequestRequest request);
@@ -143,7 +143,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCustomer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCustomer API.
      */
     DeleteOccCustomerResponse deleteOccCustomer(DeleteOccCustomerRequest request);
 
@@ -155,7 +155,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCustomerGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/DeleteOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOccCustomerGroup API.
      */
     DeleteOccCustomerGroupResponse deleteOccCustomerGroup(DeleteOccCustomerGroupRequest request);
 
@@ -167,7 +167,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccAvailabilityCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccAvailabilityCatalog API.
      */
     GetOccAvailabilityCatalogResponse getOccAvailabilityCatalog(
             GetOccAvailabilityCatalogRequest request);
@@ -181,7 +181,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccAvailabilityCatalogContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccAvailabilityCatalogContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccAvailabilityCatalogContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccAvailabilityCatalogContent API.
      */
     GetOccAvailabilityCatalogContentResponse getOccAvailabilityCatalogContent(
             GetOccAvailabilityCatalogContentRequest request);
@@ -194,7 +194,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccCapacityRequest API.
      */
     GetOccCapacityRequestResponse getOccCapacityRequest(GetOccCapacityRequestRequest request);
 
@@ -207,7 +207,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccCustomerGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/GetOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOccCustomerGroup API.
      */
     GetOccCustomerGroupResponse getOccCustomerGroup(GetOccCustomerGroupRequest request);
 
@@ -220,7 +220,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalNamespaceOccOverviewsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalNamespaceOccOverviews API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalNamespaceOccOverviewsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalNamespaceOccOverviews API.
      */
     ListInternalNamespaceOccOverviewsResponse listInternalNamespaceOccOverviews(
             ListInternalNamespaceOccOverviewsRequest request);
@@ -234,7 +234,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlockDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalOccHandoverResourceBlockDetails API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlockDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalOccHandoverResourceBlockDetails API.
      */
     ListInternalOccHandoverResourceBlockDetailsResponse listInternalOccHandoverResourceBlockDetails(
             ListInternalOccHandoverResourceBlockDetailsRequest request);
@@ -248,7 +248,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalOccHandoverResourceBlocks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListInternalOccHandoverResourceBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListInternalOccHandoverResourceBlocks API.
      */
     ListInternalOccHandoverResourceBlocksResponse listInternalOccHandoverResourceBlocks(
             ListInternalOccHandoverResourceBlocksRequest request);
@@ -261,7 +261,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilities API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilitiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilities API.
      */
     ListOccAvailabilitiesResponse listOccAvailabilities(ListOccAvailabilitiesRequest request);
 
@@ -273,7 +273,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilityCatalogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilityCatalogs API.
      */
     ListOccAvailabilityCatalogsResponse listOccAvailabilityCatalogs(
             ListOccAvailabilityCatalogsRequest request);
@@ -286,7 +286,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilityCatalogsInternal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccAvailabilityCatalogsInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccAvailabilityCatalogsInternal API.
      */
     ListOccAvailabilityCatalogsInternalResponse listOccAvailabilityCatalogsInternal(
             ListOccAvailabilityCatalogsInternalRequest request);
@@ -299,7 +299,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCapacityRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCapacityRequests API.
      */
     ListOccCapacityRequestsResponse listOccCapacityRequests(ListOccCapacityRequestsRequest request);
 
@@ -311,7 +311,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCapacityRequestsInternal API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCapacityRequestsInternalExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCapacityRequestsInternal API.
      */
     ListOccCapacityRequestsInternalResponse listOccCapacityRequestsInternal(
             ListOccCapacityRequestsInternalRequest request);
@@ -325,7 +325,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCustomerGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCustomerGroups API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccCustomerGroupsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccCustomerGroups API.
      */
     ListOccCustomerGroupsResponse listOccCustomerGroups(ListOccCustomerGroupsRequest request);
 
@@ -338,7 +338,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccHandoverResourceBlockDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccHandoverResourceBlockDetails API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccHandoverResourceBlockDetailsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccHandoverResourceBlockDetails API.
      */
     ListOccHandoverResourceBlockDetailsResponse listOccHandoverResourceBlockDetails(
             ListOccHandoverResourceBlockDetailsRequest request);
@@ -352,7 +352,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccHandoverResourceBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccHandoverResourceBlocks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccHandoverResourceBlocksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccHandoverResourceBlocks API.
      */
     ListOccHandoverResourceBlocksResponse listOccHandoverResourceBlocks(
             ListOccHandoverResourceBlocksRequest request);
@@ -366,7 +366,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccOverviewsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccOverviews API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/ListOccOverviewsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOccOverviews API.
      */
     ListOccOverviewsResponse listOccOverviews(ListOccOverviewsRequest request);
 
@@ -378,7 +378,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PatchInternalOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchInternalOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PatchInternalOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchInternalOccCapacityRequest API.
      */
     PatchInternalOccCapacityRequestResponse patchInternalOccCapacityRequest(
             PatchInternalOccCapacityRequestRequest request);
@@ -391,7 +391,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PatchOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PatchOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PatchOccCapacityRequest API.
      */
     PatchOccCapacityRequestResponse patchOccCapacityRequest(PatchOccCapacityRequestRequest request);
 
@@ -404,7 +404,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PublishOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishOccAvailabilityCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/PublishOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishOccAvailabilityCatalog API.
      */
     PublishOccAvailabilityCatalogResponse publishOccAvailabilityCatalog(
             PublishOccAvailabilityCatalogRequest request);
@@ -417,7 +417,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateInternalOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInternalOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateInternalOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateInternalOccCapacityRequest API.
      */
     UpdateInternalOccCapacityRequestResponse updateInternalOccCapacityRequest(
             UpdateInternalOccCapacityRequestRequest request);
@@ -430,7 +430,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccAvailabilityCatalog API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccAvailabilityCatalogExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccAvailabilityCatalog API.
      */
     UpdateOccAvailabilityCatalogResponse updateOccAvailabilityCatalog(
             UpdateOccAvailabilityCatalogRequest request);
@@ -443,7 +443,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCapacityRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCapacityRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCapacityRequest API.
      */
     UpdateOccCapacityRequestResponse updateOccCapacityRequest(
             UpdateOccCapacityRequestRequest request);
@@ -456,7 +456,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCustomer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCustomer API.
      */
     UpdateOccCustomerResponse updateOccCustomer(UpdateOccCustomerRequest request);
 
@@ -468,7 +468,7 @@ public interface CapacityManagement extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCustomerGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/capacitymanagement/UpdateOccCustomerGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOccCustomerGroup API.
      */
     UpdateOccCustomerGroupResponse updateOccCustomerGroup(UpdateOccCustomerGroupRequest request);
 

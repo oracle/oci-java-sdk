@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.monitoring.model;
@@ -107,9 +107,9 @@ public final class SummarizeMetricsDataDetails
          * Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
          * <p>
          * For details about Monitoring Query Language (MQL), see
-         * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
          * For available dimensions, review the metric definition for the supported service. See
-         * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          * <p>
          * Example 1: {@code CpuUtilization[1m].sum()}
          * <p>
@@ -130,9 +130,9 @@ public final class SummarizeMetricsDataDetails
          * Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
          * <p>
          * For details about Monitoring Query Language (MQL), see
-         * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+         * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
          * For available dimensions, review the metric definition for the supported service. See
-         * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+         * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
          * <p>
          * Example 1: {@code CpuUtilization[1m].sum()}
          * <p>
@@ -335,9 +335,9 @@ public final class SummarizeMetricsDataDetails
      * Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      * <p>
      * For details about Monitoring Query Language (MQL), see
-     * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service. See
-     * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example 1: {@code CpuUtilization[1m].sum()}
      * <p>
@@ -358,9 +358,9 @@ public final class SummarizeMetricsDataDetails
      * Construct your query to avoid exceeding limits on returned data. See {@link MetricData}.
      * <p>
      * For details about Monitoring Query Language (MQL), see
-     * [Monitoring Query Language (MQL) Reference](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
+     * [Monitoring Query Language (MQL) Reference](https://docs.oracle.com/iaas/Content/Monitoring/Reference/mql.htm).
      * For available dimensions, review the metric definition for the supported service. See
-     * [Supported Services](https://docs.cloud.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
+     * [Supported Services](https://docs.oracle.com/iaas/Content/Monitoring/Concepts/monitoringoverview.htm#SupportedServices).
      * <p>
      * Example 1: {@code CpuUtilization[1m].sum()}
      * <p>

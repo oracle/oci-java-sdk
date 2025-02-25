@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.operatoraccesscontrol;
@@ -478,7 +478,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         "OperatorControl",
                         "ChangeOperatorControlCompartment",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ChangeOperatorControlCompartment");
+                        "");
         final java.util.function.Function<
                         javax.ws.rs.core.Response, ChangeOperatorControlCompartmentResponse>
                 transformer =
@@ -535,7 +535,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         "OperatorControl",
                         "CreateOperatorControl",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/CreateOperatorControl");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, CreateOperatorControlResponse>
                 transformer =
                         CreateOperatorControlConverter.fromResponse(
@@ -587,7 +587,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         "OperatorControl",
                         "DeleteOperatorControl",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/DeleteOperatorControl");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, DeleteOperatorControlResponse>
                 transformer =
                         DeleteOperatorControlConverter.fromResponse(
@@ -631,10 +631,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                 GetOperatorControlConverter.fromRequest(client, interceptedRequest);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "OperatorControl",
-                        "GetOperatorControl",
-                        ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/GetOperatorControl");
+                        "OperatorControl", "GetOperatorControl", ib.getRequestUri().toString(), "");
         final java.util.function.Function<javax.ws.rs.core.Response, GetOperatorControlResponse>
                 transformer =
                         GetOperatorControlConverter.fromResponse(
@@ -680,7 +677,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         "OperatorControl",
                         "ListOperatorControls",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/ListOperatorControls");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, ListOperatorControlsResponse>
                 transformer =
                         ListOperatorControlsConverter.fromResponse(
@@ -727,7 +724,7 @@ public class OperatorControlAsyncClient implements OperatorControlAsync {
                         "OperatorControl",
                         "UpdateOperatorControl",
                         ib.getRequestUri().toString(),
-                        "https://docs.oracle.com/iaas/api/#/en/operatoraccesscontrol/20200630/OperatorControl/UpdateOperatorControl");
+                        "");
         final java.util.function.Function<javax.ws.rs.core.Response, UpdateOperatorControlResponse>
                 transformer =
                         UpdateOperatorControlConverter.fromResponse(

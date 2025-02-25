@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -69,7 +69,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRunbook API.
      */
     CreateRunbookResponse createRunbook(CreateRunbookRequest request);
 
@@ -82,7 +82,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTaskRecord API.
      */
     CreateTaskRecordResponse createTaskRecord(CreateTaskRecordRequest request);
 
@@ -94,7 +94,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteRunbook API.
      */
     DeleteRunbookResponse deleteRunbook(DeleteRunbookRequest request);
 
@@ -106,7 +106,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTaskRecord API.
      */
     DeleteTaskRecordResponse deleteTaskRecord(DeleteTaskRecordRequest request);
 
@@ -118,7 +118,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetRunbook API.
      */
     GetRunbookResponse getRunbook(GetRunbookRequest request);
 
@@ -130,7 +130,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTaskRecord API.
      */
     GetTaskRecordResponse getTaskRecord(GetTaskRecordRequest request);
 
@@ -143,7 +143,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRunbooksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRunbooks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListRunbooksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRunbooks API.
      */
     ListRunbooksResponse listRunbooks(ListRunbooksRequest request);
 
@@ -156,7 +156,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTaskRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRecords API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListTaskRecordsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTaskRecords API.
      */
     ListTaskRecordsResponse listTaskRecords(ListTaskRecordsRequest request);
 
@@ -169,7 +169,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/PublishRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/PublishRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishRunbook API.
      */
     PublishRunbookResponse publishRunbook(PublishRunbookRequest request);
 
@@ -182,7 +182,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SetDefaultRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDefaultRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/SetDefaultRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SetDefaultRunbook API.
      */
     SetDefaultRunbookResponse setDefaultRunbook(SetDefaultRunbookRequest request);
 
@@ -194,7 +194,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRunbook API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateRunbookExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateRunbook API.
      */
     UpdateRunbookResponse updateRunbook(UpdateRunbookRequest request);
 
@@ -206,7 +206,7 @@ public interface FleetAppsManagementRunbooks extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRecord API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateTaskRecordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTaskRecord API.
      */
     UpdateTaskRecordResponse updateTaskRecord(UpdateTaskRecordRequest request);
 

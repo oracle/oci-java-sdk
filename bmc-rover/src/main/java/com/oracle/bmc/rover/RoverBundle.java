@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.rover;
@@ -67,7 +67,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClusterRoverBundleRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverClusterRoverBundleRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverClusterRoverBundleRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverClusterRoverBundleRequests API.
      */
     ListRoverClusterRoverBundleRequestsResponse listRoverClusterRoverBundleRequests(
             ListRoverClusterRoverBundleRequestsRequest request);
@@ -80,7 +80,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodeRoverBundleRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverNodeRoverBundleRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/ListRoverNodeRoverBundleRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListRoverNodeRoverBundleRequests API.
      */
     ListRoverNodeRoverBundleRequestsResponse listRoverNodeRoverBundleRequests(
             ListRoverNodeRoverBundleRequestsRequest request);
@@ -94,7 +94,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestBundleRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestBundleRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestBundleRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestBundleRoverCluster API.
      */
     RequestBundleRoverClusterResponse requestBundleRoverCluster(
             RequestBundleRoverClusterRequest request);
@@ -108,7 +108,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestBundleRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestBundleRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RequestBundleRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RequestBundleRoverNode API.
      */
     RequestBundleRoverNodeResponse requestBundleRoverNode(RequestBundleRoverNodeRequest request);
 
@@ -120,7 +120,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveAvailableBundleVersionsRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveAvailableBundleVersionsRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveAvailableBundleVersionsRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveAvailableBundleVersionsRoverCluster API.
      */
     RetrieveAvailableBundleVersionsRoverClusterResponse retrieveAvailableBundleVersionsRoverCluster(
             RetrieveAvailableBundleVersionsRoverClusterRequest request);
@@ -133,7 +133,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveAvailableBundleVersionsRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveAvailableBundleVersionsRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveAvailableBundleVersionsRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveAvailableBundleVersionsRoverNode API.
      */
     RetrieveAvailableBundleVersionsRoverNodeResponse retrieveAvailableBundleVersionsRoverNode(
             RetrieveAvailableBundleVersionsRoverNodeRequest request);
@@ -146,7 +146,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveBundleStatusRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveBundleStatusRoverCluster API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveBundleStatusRoverClusterExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveBundleStatusRoverCluster API.
      */
     RetrieveBundleStatusRoverClusterResponse retrieveBundleStatusRoverCluster(
             RetrieveBundleStatusRoverClusterRequest request);
@@ -159,7 +159,7 @@ public interface RoverBundle extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveBundleStatusRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveBundleStatusRoverNode API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/rover/RetrieveBundleStatusRoverNodeExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrieveBundleStatusRoverNode API.
      */
     RetrieveBundleStatusRoverNodeResponse retrieveBundleStatusRoverNode(
             RetrieveBundleStatusRoverNodeRequest request);

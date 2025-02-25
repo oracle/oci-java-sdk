@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetsoftwareupdate;
@@ -70,7 +70,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/AbortFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AbortFsuDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/AbortFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AbortFsuDiscovery API.
      */
     AbortFsuDiscoveryResponse abortFsuDiscovery(AbortFsuDiscoveryRequest request);
 
@@ -86,7 +86,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/AddFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFsuCollectionTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/AddFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use AddFsuCollectionTargets API.
      */
     AddFsuCollectionTargetsResponse addFsuCollectionTargets(AddFsuCollectionTargetsRequest request);
 
@@ -99,7 +99,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CancelFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CancelFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelFsuAction API.
      */
     CancelFsuActionResponse cancelFsuAction(CancelFsuActionRequest request);
 
@@ -113,7 +113,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuActionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuActionCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuActionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuActionCompartment API.
      */
     ChangeFsuActionCompartmentResponse changeFsuActionCompartment(
             ChangeFsuActionCompartmentRequest request);
@@ -128,7 +128,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCollectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuCollectionCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCollectionCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuCollectionCompartment API.
      */
     ChangeFsuCollectionCompartmentResponse changeFsuCollectionCompartment(
             ChangeFsuCollectionCompartmentRequest request);
@@ -143,7 +143,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCycleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuCycleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuCycleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuCycleCompartment API.
      */
     ChangeFsuCycleCompartmentResponse changeFsuCycleCompartment(
             ChangeFsuCycleCompartmentRequest request);
@@ -158,7 +158,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuDiscoveryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuDiscoveryCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ChangeFsuDiscoveryCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeFsuDiscoveryCompartment API.
      */
     ChangeFsuDiscoveryCompartmentResponse changeFsuDiscoveryCompartment(
             ChangeFsuDiscoveryCompartmentRequest request);
@@ -172,7 +172,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CloneFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneFsuCycle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CloneFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneFsuCycle API.
      */
     CloneFsuCycleResponse cloneFsuCycle(CloneFsuCycleRequest request);
 
@@ -185,7 +185,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuAction API.
      */
     CreateFsuActionResponse createFsuAction(CreateFsuActionRequest request);
 
@@ -198,7 +198,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuCollection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuCollection API.
      */
     CreateFsuCollectionResponse createFsuCollection(CreateFsuCollectionRequest request);
 
@@ -211,7 +211,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuCycle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuCycle API.
      */
     CreateFsuCycleResponse createFsuCycle(CreateFsuCycleRequest request);
 
@@ -224,7 +224,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/CreateFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateFsuDiscovery API.
      */
     CreateFsuDiscoveryResponse createFsuDiscovery(CreateFsuDiscoveryRequest request);
 
@@ -237,7 +237,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuAction API.
      */
     DeleteFsuActionResponse deleteFsuAction(DeleteFsuActionRequest request);
 
@@ -250,7 +250,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCollection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCollection API.
      */
     DeleteFsuCollectionResponse deleteFsuCollection(DeleteFsuCollectionRequest request);
 
@@ -265,7 +265,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCollectionTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCollectionTarget API.
      */
     DeleteFsuCollectionTargetResponse deleteFsuCollectionTarget(
             DeleteFsuCollectionTargetRequest request);
@@ -279,7 +279,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCycle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuCycle API.
      */
     DeleteFsuCycleResponse deleteFsuCycle(DeleteFsuCycleRequest request);
 
@@ -292,7 +292,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuDiscovery API.
      */
     DeleteFsuDiscoveryResponse deleteFsuDiscovery(DeleteFsuDiscoveryRequest request);
 
@@ -305,7 +305,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/DeleteFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteFsuJob API.
      */
     DeleteFsuJobResponse deleteFsuJob(DeleteFsuJobRequest request);
 
@@ -318,7 +318,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuAction API.
      */
     GetFsuActionResponse getFsuAction(GetFsuActionRequest request);
 
@@ -332,7 +332,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuActionOutputContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuActionOutputContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuActionOutputContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuActionOutputContent API.
      */
     GetFsuActionOutputContentResponse getFsuActionOutputContent(
             GetFsuActionOutputContentRequest request);
@@ -346,7 +346,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollection API.
      */
     GetFsuCollectionResponse getFsuCollection(GetFsuCollectionRequest request);
 
@@ -359,7 +359,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollectionTarget API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCollectionTargetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCollectionTarget API.
      */
     GetFsuCollectionTargetResponse getFsuCollectionTarget(GetFsuCollectionTargetRequest request);
 
@@ -372,7 +372,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCycle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuCycle API.
      */
     GetFsuCycleResponse getFsuCycle(GetFsuCycleRequest request);
 
@@ -385,7 +385,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuDiscovery API.
      */
     GetFsuDiscoveryResponse getFsuDiscovery(GetFsuDiscoveryRequest request);
 
@@ -398,7 +398,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuJob API.
      */
     GetFsuJobResponse getFsuJob(GetFsuJobRequest request);
 
@@ -411,7 +411,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuJobOutputContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuJobOutputContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetFsuJobOutputContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetFsuJobOutputContent API.
      */
     GetFsuJobOutputContentResponse getFsuJobOutputContent(GetFsuJobOutputContentRequest request);
 
@@ -424,7 +424,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -437,7 +437,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuActions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuActionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuActions API.
      */
     ListFsuActionsResponse listFsuActions(ListFsuActionsRequest request);
 
@@ -450,7 +450,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCollectionTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCollectionTargets API.
      */
     ListFsuCollectionTargetsResponse listFsuCollectionTargets(
             ListFsuCollectionTargetsRequest request);
@@ -464,7 +464,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCollectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCollections API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCollectionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCollections API.
      */
     ListFsuCollectionsResponse listFsuCollections(ListFsuCollectionsRequest request);
 
@@ -477,7 +477,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCyclesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCycles API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuCyclesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuCycles API.
      */
     ListFsuCyclesResponse listFsuCycles(ListFsuCyclesRequest request);
 
@@ -490,7 +490,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuDiscoveriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuDiscoveries API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuDiscoveriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuDiscoveries API.
      */
     ListFsuDiscoveriesResponse listFsuDiscoveries(ListFsuDiscoveriesRequest request);
 
@@ -503,7 +503,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuDiscoveryTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuDiscoveryTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuDiscoveryTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuDiscoveryTargets API.
      */
     ListFsuDiscoveryTargetsResponse listFsuDiscoveryTargets(ListFsuDiscoveryTargetsRequest request);
 
@@ -516,7 +516,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuJobOutputsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuJobOutputs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuJobOutputsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuJobOutputs API.
      */
     ListFsuJobOutputsResponse listFsuJobOutputs(ListFsuJobOutputsRequest request);
 
@@ -529,7 +529,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuJobs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListFsuJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListFsuJobs API.
      */
     ListFsuJobsResponse listFsuJobs(ListFsuJobsRequest request);
 
@@ -542,7 +542,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -555,7 +555,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -568,7 +568,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -583,7 +583,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/RemoveFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFsuCollectionTargets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/RemoveFsuCollectionTargetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RemoveFsuCollectionTargets API.
      */
     RemoveFsuCollectionTargetsResponse removeFsuCollectionTargets(
             RemoveFsuCollectionTargetsRequest request);
@@ -597,7 +597,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ResumeFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/ResumeFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ResumeFsuAction API.
      */
     ResumeFsuActionResponse resumeFsuAction(ResumeFsuActionRequest request);
 
@@ -611,7 +611,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/RetryFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryFsuJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/RetryFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetryFsuJob API.
      */
     RetryFsuJobResponse retryFsuJob(RetryFsuJobRequest request);
 
@@ -624,7 +624,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuAction API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuActionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuAction API.
      */
     UpdateFsuActionResponse updateFsuAction(UpdateFsuActionRequest request);
 
@@ -637,7 +637,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuCollection API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCollectionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuCollection API.
      */
     UpdateFsuCollectionResponse updateFsuCollection(UpdateFsuCollectionRequest request);
 
@@ -650,7 +650,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuCycle API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuCycleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuCycle API.
      */
     UpdateFsuCycleResponse updateFsuCycle(UpdateFsuCycleRequest request);
 
@@ -663,7 +663,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuDiscovery API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuDiscoveryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuDiscovery API.
      */
     UpdateFsuDiscoveryResponse updateFsuDiscovery(UpdateFsuDiscoveryRequest request);
 
@@ -676,7 +676,7 @@ public interface FleetSoftwareUpdate extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetsoftwareupdate/UpdateFsuJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateFsuJob API.
      */
     UpdateFsuJobResponse updateFsuJob(UpdateFsuJobRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -168,7 +168,7 @@ public class FileStorageServiceExample {
              *     - Creating a mount target via which the file system can be accessed. The mount target and file system must
              *       be in the same availability domain in order to export the file system from the mount target
              *     - Creating an export so that we can mount the file system (see
-             *       https://docs.cloud.oracle.com/Content/File/Tasks/mountingfilesystems.htm for more information)
+             *       https://docs.oracle.com/iaas/Content/File/Tasks/mountingfilesystems.htm for more information)
              *     - Creating a snapshot of the file system
              *
              * And we'll delete these resources when we're done
@@ -442,7 +442,7 @@ public class FileStorageServiceExample {
      * creating multiple resources.
      *
      * There are rules around export paths and file system associations which you should review here:
-     * https://docs.cloud.oracle.com/api/#/en/filestorage/20171215/Export/
+     * https://docs.oracle.com/iaas/api/#/en/filestorage/20171215/Export/
      *
      * @param fsClient the service client to use to create the export
      * @param fileSystemId the OCID of the file system to associate with the export

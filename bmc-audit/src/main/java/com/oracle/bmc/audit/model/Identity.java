@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.audit.model;
@@ -81,14 +81,14 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("principalId")
         private String principalId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
          *
          * @param principalId the value to set
          * @return this builder
@@ -139,7 +139,7 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
          * request on behalf of the prinicpal.
          *
          **/
@@ -147,7 +147,7 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String callerId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
          * request on behalf of the prinicpal.
          *
          * @param callerId the value to set
@@ -159,14 +159,14 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
         private String tenantId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
          *
          * @param tenantId the value to set
          * @return this builder
@@ -349,14 +349,14 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("principalId")
     private final String principalId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the principal.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the principal.
      *
      * @return the value
      **/
@@ -401,7 +401,7 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
      * request on behalf of the prinicpal.
      *
      **/
@@ -409,7 +409,7 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String callerId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the caller. The caller that made a
      * request on behalf of the prinicpal.
      *
      * @return the value
@@ -419,14 +419,14 @@ public final class Identity extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("tenantId")
     private final String tenantId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the tenant.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the tenant.
      *
      * @return the value
      **/

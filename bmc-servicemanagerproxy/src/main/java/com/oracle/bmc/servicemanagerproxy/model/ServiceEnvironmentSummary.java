@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.servicemanagerproxy.model;
@@ -60,7 +60,7 @@ public final class ServiceEnvironmentSummary
         /**
          * Unqiue identifier for the entitlement related to the environment.
          * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -69,7 +69,7 @@ public final class ServiceEnvironmentSummary
         /**
          * Unqiue identifier for the entitlement related to the environment.
          * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param id the value to set
          * @return this builder
@@ -82,7 +82,7 @@ public final class ServiceEnvironmentSummary
         /**
          * The unique subscription ID associated with the service environment ID.
          * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
@@ -91,7 +91,7 @@ public final class ServiceEnvironmentSummary
         /**
          * The unique subscription ID associated with the service environment ID.
          * <p>
-         **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          *
          * @param subscriptionId the value to set
          * @return this builder
@@ -118,13 +118,13 @@ public final class ServiceEnvironmentSummary
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -177,7 +177,7 @@ public final class ServiceEnvironmentSummary
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -187,7 +187,7 @@ public final class ServiceEnvironmentSummary
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -202,7 +202,7 @@ public final class ServiceEnvironmentSummary
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"CostCenter": "42"}}
          *
@@ -212,7 +212,7 @@ public final class ServiceEnvironmentSummary
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"CostCenter": "42"}}
          *
@@ -293,7 +293,7 @@ public final class ServiceEnvironmentSummary
     /**
      * Unqiue identifier for the entitlement related to the environment.
      * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
@@ -302,7 +302,7 @@ public final class ServiceEnvironmentSummary
     /**
      * Unqiue identifier for the entitlement related to the environment.
      * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -313,7 +313,7 @@ public final class ServiceEnvironmentSummary
     /**
      * The unique subscription ID associated with the service environment ID.
      * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subscriptionId")
@@ -322,7 +322,7 @@ public final class ServiceEnvironmentSummary
     /**
      * The unique subscription ID associated with the service environment ID.
      * <p>
-     **Note:** Not an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     **Note:** Not an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @return the value
      **/
@@ -345,13 +345,13 @@ public final class ServiceEnvironmentSummary
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) for the compartment.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the compartment.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -395,7 +395,7 @@ public final class ServiceEnvironmentSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -405,7 +405,7 @@ public final class ServiceEnvironmentSummary
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -417,7 +417,7 @@ public final class ServiceEnvironmentSummary
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"CostCenter": "42"}}
      *
@@ -427,7 +427,7 @@ public final class ServiceEnvironmentSummary
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"CostCenter": "42"}}
      *

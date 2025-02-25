@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core;
@@ -1044,6 +1044,60 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     BulkDeleteVirtualCircuitPublicPrefixesRequest,
                     BulkDeleteVirtualCircuitPublicPrefixesResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ChangeByoasnCompartmentResponse> changeByoasnCompartment(
+            ChangeByoasnCompartmentRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>
+                    handler) {
+        LOG.trace("Called async changeByoasnCompartment");
+        final ChangeByoasnCompartmentRequest interceptedRequest =
+                ChangeByoasnCompartmentConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ChangeByoasnCompartmentConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ChangeByoasnCompartment",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ChangeByoasnCompartment");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ChangeByoasnCompartmentResponse>
+                transformer =
+                        ChangeByoasnCompartmentConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>,
+                        java.util.concurrent.Future<ChangeByoasnCompartmentResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getChangeByoasnCompartmentDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ChangeByoasnCompartmentRequest, ChangeByoasnCompartmentResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -2467,6 +2521,56 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ConnectRemotePeeringConnectionsRequest,
                     ConnectRemotePeeringConnectionsResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateByoasnResponse> createByoasn(
+            CreateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<CreateByoasnRequest, CreateByoasnResponse>
+                    handler) {
+        LOG.trace("Called async createByoasn");
+        final CreateByoasnRequest interceptedRequest =
+                CreateByoasnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                CreateByoasnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "CreateByoasn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/CreateByoasn");
+        final java.util.function.Function<javax.ws.rs.core.Response, CreateByoasnResponse>
+                transformer =
+                        CreateByoasnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<CreateByoasnRequest, CreateByoasnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                CreateByoasnRequest, CreateByoasnResponse>,
+                        java.util.concurrent.Future<CreateByoasnResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getCreateByoasnDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    CreateByoasnRequest, CreateByoasnResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -3939,6 +4043,50 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteByoasnResponse> deleteByoasn(
+            DeleteByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<DeleteByoasnRequest, DeleteByoasnResponse>
+                    handler) {
+        LOG.trace("Called async deleteByoasn");
+        final DeleteByoasnRequest interceptedRequest =
+                DeleteByoasnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DeleteByoasnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "DeleteByoasn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/DeleteByoasn");
+        final java.util.function.Function<javax.ws.rs.core.Response, DeleteByoasnResponse>
+                transformer =
+                        DeleteByoasnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<DeleteByoasnRequest, DeleteByoasnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DeleteByoasnRequest, DeleteByoasnResponse>,
+                        java.util.concurrent.Future<DeleteByoasnResponse>>
+                futureSupplier = client.deleteFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DeleteByoasnRequest, DeleteByoasnResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteByoipRangeResponse> deleteByoipRange(
             DeleteByoipRangeRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -5327,6 +5475,48 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetAllowedIkeIPSecParametersRequest, GetAllowedIkeIPSecParametersResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetByoasnResponse> getByoasn(
+            GetByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<GetByoasnRequest, GetByoasnResponse>
+                    handler) {
+        LOG.trace("Called async getByoasn");
+        final GetByoasnRequest interceptedRequest = GetByoasnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetByoasnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "GetByoasn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/GetByoasn");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetByoasnResponse>
+                transformer =
+                        GetByoasnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetByoasnRequest, GetByoasnResponse> handlerToUse =
+                handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<GetByoasnRequest, GetByoasnResponse>,
+                        java.util.concurrent.Future<GetByoasnResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetByoasnRequest, GetByoasnResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -7956,6 +8146,52 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<Ipv6VnicDetachResponse> ipv6VnicDetach(
+            Ipv6VnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>
+                    handler) {
+        LOG.trace("Called async ipv6VnicDetach");
+        final Ipv6VnicDetachRequest interceptedRequest =
+                Ipv6VnicDetachConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                Ipv6VnicDetachConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "Ipv6VnicDetach",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Ipv6/Ipv6VnicDetach");
+        final java.util.function.Function<javax.ws.rs.core.Response, Ipv6VnicDetachResponse>
+                transformer =
+                        Ipv6VnicDetachConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>,
+                        java.util.concurrent.Future<Ipv6VnicDetachResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    Ipv6VnicDetachRequest, Ipv6VnicDetachResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAllowedPeerRegionsForRemotePeeringResponse>
             listAllowedPeerRegionsForRemotePeering(
                     ListAllowedPeerRegionsForRemotePeeringRequest request,
@@ -7997,6 +8233,50 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     ListAllowedPeerRegionsForRemotePeeringRequest,
                     ListAllowedPeerRegionsForRemotePeeringResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListByoasnsResponse> listByoasns(
+            ListByoasnsRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<ListByoasnsRequest, ListByoasnsResponse>
+                    handler) {
+        LOG.trace("Called async listByoasns");
+        final ListByoasnsRequest interceptedRequest =
+                ListByoasnsConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListByoasnsConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ListByoasns",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ListByoasns");
+        final java.util.function.Function<javax.ws.rs.core.Response, ListByoasnsResponse>
+                transformer =
+                        ListByoasnsConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ListByoasnsRequest, ListByoasnsResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListByoasnsRequest, ListByoasnsResponse>,
+                        java.util.concurrent.Future<ListByoasnsResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListByoasnsRequest, ListByoasnsResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -10308,6 +10588,54 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<PrivateIpVnicDetachResponse> privateIpVnicDetach(
+            PrivateIpVnicDetachRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>
+                    handler) {
+        LOG.trace("Called async privateIpVnicDetach");
+        final PrivateIpVnicDetachRequest interceptedRequest =
+                PrivateIpVnicDetachConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                PrivateIpVnicDetachConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "PrivateIpVnicDetach",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/PrivateIp/PrivateIpVnicDetach");
+        final java.util.function.Function<javax.ws.rs.core.Response, PrivateIpVnicDetachResponse>
+                transformer =
+                        PrivateIpVnicDetachConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>,
+                        java.util.concurrent.Future<PrivateIpVnicDetachResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    PrivateIpVnicDetachRequest, PrivateIpVnicDetachResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<RemoveDrgRouteDistributionStatementsResponse>
             removeDrgRouteDistributionStatements(
                     RemoveDrgRouteDistributionStatementsRequest request,
@@ -10785,6 +11113,152 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     RemoveVcnCidrRequest, RemoveVcnCidrResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetOriginAsnResponse> setOriginAsn(
+            SetOriginAsnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<SetOriginAsnRequest, SetOriginAsnResponse>
+                    handler) {
+        LOG.trace("Called async setOriginAsn");
+        final SetOriginAsnRequest interceptedRequest =
+                SetOriginAsnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetOriginAsnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "SetOriginAsn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsn");
+        final java.util.function.Function<javax.ws.rs.core.Response, SetOriginAsnResponse>
+                transformer =
+                        SetOriginAsnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<SetOriginAsnRequest, SetOriginAsnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetOriginAsnRequest, SetOriginAsnResponse>,
+                        java.util.concurrent.Future<SetOriginAsnResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getSetOriginAsnDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetOriginAsnRequest, SetOriginAsnResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetOriginAsnToOracleResponse> setOriginAsnToOracle(
+            SetOriginAsnToOracleRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>
+                    handler) {
+        LOG.trace("Called async setOriginAsnToOracle");
+        final SetOriginAsnToOracleRequest interceptedRequest =
+                SetOriginAsnToOracleConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SetOriginAsnToOracleConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "SetOriginAsnToOracle",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/ByoipRange/SetOriginAsnToOracle");
+        final java.util.function.Function<javax.ws.rs.core.Response, SetOriginAsnToOracleResponse>
+                transformer =
+                        SetOriginAsnToOracleConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>,
+                        java.util.concurrent.Future<SetOriginAsnToOracleResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    SetOriginAsnToOracleRequest, SetOriginAsnToOracleResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateByoasnResponse> updateByoasn(
+            UpdateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<UpdateByoasnRequest, UpdateByoasnResponse>
+                    handler) {
+        LOG.trace("Called async updateByoasn");
+        final UpdateByoasnRequest interceptedRequest =
+                UpdateByoasnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpdateByoasnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "UpdateByoasn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/UpdateByoasn");
+        final java.util.function.Function<javax.ws.rs.core.Response, UpdateByoasnResponse>
+                transformer =
+                        UpdateByoasnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<UpdateByoasnRequest, UpdateByoasnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpdateByoasnRequest, UpdateByoasnResponse>,
+                        java.util.concurrent.Future<UpdateByoasnResponse>>
+                futureSupplier =
+                        client.putFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpdateByoasnDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpdateByoasnRequest, UpdateByoasnResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -12651,6 +13125,52 @@ public class VirtualNetworkAsyncClient implements VirtualNetworkAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpgradeDrgRequest, UpgradeDrgResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidateByoasnResponse> validateByoasn(
+            ValidateByoasnRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ValidateByoasnRequest, ValidateByoasnResponse>
+                    handler) {
+        LOG.trace("Called async validateByoasn");
+        final ValidateByoasnRequest interceptedRequest =
+                ValidateByoasnConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ValidateByoasnConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "VirtualNetwork",
+                        "ValidateByoasn",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/iaas/20160918/Byoasn/ValidateByoasn");
+        final java.util.function.Function<javax.ws.rs.core.Response, ValidateByoasnResponse>
+                transformer =
+                        ValidateByoasnConverter.fromResponse(java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<ValidateByoasnRequest, ValidateByoasnResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ValidateByoasnRequest, ValidateByoasnResponse>,
+                        java.util.concurrent.Future<ValidateByoasnResponse>>
+                futureSupplier = client.postFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ValidateByoasnRequest, ValidateByoasnResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

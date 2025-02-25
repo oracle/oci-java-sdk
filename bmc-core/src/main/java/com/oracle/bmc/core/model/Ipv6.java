@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -12,7 +12,7 @@ package com.oracle.bmc.core.model;
  * IPv6-enabled VCN.
  * <p>
  **Note:** IPv6 addressing is supported for all commercial and government regions. For important
- * details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+ * details about IPv6 addressing in a VCN, see [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -37,7 +37,10 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         "lifecycleState",
         "subnetId",
         "timeCreated",
-        "vnicId"
+        "vnicId",
+        "ipState",
+        "lifetime",
+        "routeTableId"
     })
     public Ipv6(
             String compartmentId,
@@ -49,7 +52,10 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             LifecycleState lifecycleState,
             String subnetId,
             java.util.Date timeCreated,
-            String vnicId) {
+            String vnicId,
+            IpState ipState,
+            Lifetime lifetime,
+            String routeTableId) {
         super();
         this.compartmentId = compartmentId;
         this.definedTags = definedTags;
@@ -61,12 +67,15 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
+        this.ipState = ipState;
+        this.lifetime = lifetime;
+        this.routeTableId = routeTableId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
          * This is the same as the VNIC's compartment.
          *
          **/
@@ -74,7 +83,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
          * This is the same as the VNIC's compartment.
          *
          * @param compartmentId the value to set
@@ -87,7 +96,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -97,7 +106,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -132,7 +141,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -142,7 +151,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -155,13 +164,13 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
          * @param id the value to set
          * @return this builder
          **/
@@ -211,13 +220,13 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
         private String subnetId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
          * @param subnetId the value to set
          * @return this builder
          **/
@@ -249,7 +258,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
          * The VNIC and IPv6 must be in the same subnet.
          *
          **/
@@ -257,7 +266,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
          * The VNIC and IPv6 must be in the same subnet.
          *
          * @param vnicId the value to set
@@ -266,6 +275,68 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         public Builder vnicId(String vnicId) {
             this.vnicId = vnicId;
             this.__explicitlySet__.add("vnicId");
+            return this;
+        }
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+        private IpState ipState;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+         *
+         * @param ipState the value to set
+         * @return this builder
+         **/
+        public Builder ipState(IpState ipState) {
+            this.ipState = ipState;
+            this.__explicitlySet__.add("ipState");
+            return this;
+        }
+        /**
+         * Lifetime of the IP address.
+         * There are two types of IPv6 IPs:
+         *  - Ephemeral
+         *  - Reserved
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+        private Lifetime lifetime;
+
+        /**
+         * Lifetime of the IP address.
+         * There are two types of IPv6 IPs:
+         *  - Ephemeral
+         *  - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder
+         **/
+        public Builder lifetime(Lifetime lifetime) {
+            this.lifetime = lifetime;
+            this.__explicitlySet__.add("lifetime");
+            return this;
+        }
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+        private String routeTableId;
+
+        /**
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+         * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+         *
+         * @param routeTableId the value to set
+         * @return this builder
+         **/
+        public Builder routeTableId(String routeTableId) {
+            this.routeTableId = routeTableId;
+            this.__explicitlySet__.add("routeTableId");
             return this;
         }
 
@@ -284,7 +355,10 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                             this.lifecycleState,
                             this.subnetId,
                             this.timeCreated,
-                            this.vnicId);
+                            this.vnicId,
+                            this.ipState,
+                            this.lifetime,
+                            this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -323,6 +397,15 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
             }
+            if (model.wasPropertyExplicitlySet("ipState")) {
+                this.ipState(model.getIpState());
+            }
+            if (model.wasPropertyExplicitlySet("lifetime")) {
+                this.lifetime(model.getLifetime());
+            }
+            if (model.wasPropertyExplicitlySet("routeTableId")) {
+                this.routeTableId(model.getRouteTableId());
+            }
             return this;
         }
     }
@@ -339,7 +422,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
      * This is the same as the VNIC's compartment.
      *
      **/
@@ -347,7 +430,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPv6.
      * This is the same as the VNIC's compartment.
      *
      * @return the value
@@ -358,7 +441,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -368,7 +451,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -398,7 +481,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -408,7 +491,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -419,13 +502,13 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the IPv6.
      * @return the value
      **/
     public String getId() {
@@ -519,13 +602,13 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the subnet the VNIC is in.
      * @return the value
      **/
     public String getSubnetId() {
@@ -553,7 +636,7 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
      * The VNIC and IPv6 must be in the same subnet.
      *
      **/
@@ -561,13 +644,170 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC the IPv6 is assigned to.
      * The VNIC and IPv6 must be in the same subnet.
      *
      * @return the value
      **/
     public String getVnicId() {
         return vnicId;
+    }
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     *
+     **/
+    public enum IpState {
+        Assigned("ASSIGNED"),
+        Available("AVAILABLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpState.class);
+
+        private final String value;
+        private static java.util.Map<String, IpState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpState v : IpState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+    private final IpState ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it is AVAILABLE.
+     *
+     * @return the value
+     **/
+    public IpState getIpState() {
+        return ipState;
+    }
+
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPv6 IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     **/
+    public enum Lifetime {
+        Ephemeral("EPHEMERAL"),
+        Reserved("RESERVED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Lifetime.class);
+
+        private final String value;
+        private static java.util.Map<String, Lifetime> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Lifetime v : Lifetime.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Lifetime(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Lifetime create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Lifetime', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPv6 IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+    private final Lifetime lifetime;
+
+    /**
+     * Lifetime of the IP address.
+     * There are two types of IPv6 IPs:
+     *  - Ephemeral
+     *  - Reserved
+     *
+     * @return the value
+     **/
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
+    private final String routeTableId;
+
+    /**
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the route table the IP address or VNIC will use. For more information, see
+     * [Source Based Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
+     *
+     * @return the value
+     **/
+    public String getRouteTableId() {
+        return routeTableId;
     }
 
     @Override
@@ -594,6 +834,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", ipState=").append(String.valueOf(this.ipState));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
+        sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
     }
@@ -618,6 +861,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
+                && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
 
@@ -639,6 +885,9 @@ public final class Ipv6 extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
+        result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

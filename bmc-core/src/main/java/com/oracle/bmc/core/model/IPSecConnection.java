@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.core.model;
@@ -21,11 +21,11 @@ package com.oracle.bmc.core.model;
  * if that tunnel's {@code routing} attribute = {@code STATIC}. Otherwise the static routes are ignored.
  * <p>
  * For more information about the workflow for setting up an IPSec connection, see
- * [Site-to-Site VPN Overview](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
+ * [Site-to-Site VPN Overview](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm).
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized,
  * talk to an administrator. If you're an administrator who needs to write policies to give users access, see
- * [Getting Started with Policies](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
+ * [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -88,13 +88,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -104,13 +104,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
         private String cpeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
          * @param cpeId the value to set
          * @return this builder
          **/
@@ -121,7 +121,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -131,7 +131,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
-         * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -165,13 +165,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          * @param drgId the value to set
          * @return this builder
          **/
@@ -182,7 +182,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
         }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -192,7 +192,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -205,13 +205,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
             return this;
         }
         /**
-         * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
          **/
@@ -245,7 +245,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
          * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -264,7 +264,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
          * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -308,7 +308,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
          * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
          * <p>
          * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -328,7 +328,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
          * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
          * <p>
          * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -465,13 +465,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the IPSec connection.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -479,13 +479,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     private final String cpeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      * @return the value
      **/
     public String getCpeId() {
@@ -494,7 +494,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -504,7 +504,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
-     * namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -533,13 +533,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * @return the value
      **/
     public String getDrgId() {
@@ -548,7 +548,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -558,7 +558,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -569,13 +569,13 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
     }
 
     /**
-     * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The IPSec connection's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The IPSec connection's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
      **/
     public String getId() {
@@ -655,7 +655,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
      * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -674,7 +674,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
      * for the {@link Cpe} object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -764,7 +764,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
      * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
      * <p>
      * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>
@@ -784,7 +784,7 @@ public final class IPSecConnection extends com.oracle.bmc.http.internal.Explicit
      * tunnels to use BGP dynamic routing, you can provide an empty list for the static routes.
      * <p>
      * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>

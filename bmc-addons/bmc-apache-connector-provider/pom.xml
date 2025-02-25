@@ -4,21 +4,21 @@
   <parent>
     <groupId>com.oracle.oci.sdk</groupId>
     <artifactId>oci-java-sdk-addons</artifactId>
-    <version>2.79.0</version>
+    <version>2.81.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
 
   <artifactId>oci-java-sdk-addons-apache</artifactId>
   <name>Oracle Cloud Infrastructure SDK - ApacheHttpConenctorProvider</name>
   <description>This project adds support for the ApacheHttpConnectorProvider for the Java SDK</description>
-  <url>https://docs.cloud.oracle.com/Content/API/SDKDocs/javasdk.htm</url>
+  <url>https://docs.oracle.com/iaas/Content/API/SDKDocs/javasdk.htm</url>
 
 
   <dependencies>
     <dependency>
       <groupId>com.oracle.oci.sdk</groupId>
       <artifactId>oci-java-sdk-common</artifactId>
-      <version>2.79.0</version>
+      <version>2.81.0</version>
     </dependency>
   </dependencies>
 </project>

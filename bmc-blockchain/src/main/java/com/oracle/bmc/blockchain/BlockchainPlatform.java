@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.blockchain;
@@ -67,7 +67,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ChangeBlockchainPlatformCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBlockchainPlatformCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ChangeBlockchainPlatformCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeBlockchainPlatformCompartment API.
      */
     ChangeBlockchainPlatformCompartmentResponse changeBlockchainPlatformCompartment(
             ChangeBlockchainPlatformCompartmentRequest request);
@@ -81,7 +81,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateBlockchainPlatform API.
      */
     CreateBlockchainPlatformResponse createBlockchainPlatform(
             CreateBlockchainPlatformRequest request);
@@ -94,7 +94,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOsn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreateOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOsn API.
      */
     CreateOsnResponse createOsn(CreateOsnRequest request);
 
@@ -106,7 +106,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreatePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePeer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/CreatePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePeer API.
      */
     CreatePeerResponse createPeer(CreatePeerRequest request);
 
@@ -118,7 +118,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteBlockchainPlatform API.
      */
     DeleteBlockchainPlatformResponse deleteBlockchainPlatform(
             DeleteBlockchainPlatformRequest request);
@@ -131,7 +131,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOsn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOsn API.
      */
     DeleteOsnResponse deleteOsn(DeleteOsnRequest request);
 
@@ -143,7 +143,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeletePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePeer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeletePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePeer API.
      */
     DeletePeerResponse deletePeer(DeletePeerRequest request);
 
@@ -155,7 +155,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/DeleteWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteWorkRequest API.
      */
     DeleteWorkRequestResponse deleteWorkRequest(DeleteWorkRequestRequest request);
 
@@ -167,7 +167,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetBlockchainPlatform API.
      */
     GetBlockchainPlatformResponse getBlockchainPlatform(GetBlockchainPlatformRequest request);
 
@@ -179,7 +179,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOsn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOsn API.
      */
     GetOsnResponse getOsn(GetOsnRequest request);
 
@@ -191,7 +191,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetPeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPeer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetPeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPeer API.
      */
     GetPeerResponse getPeer(GetPeerRequest request);
 
@@ -203,7 +203,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -215,7 +215,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockchainPlatformPatches API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformPatchesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockchainPlatformPatches API.
      */
     ListBlockchainPlatformPatchesResponse listBlockchainPlatformPatches(
             ListBlockchainPlatformPatchesRequest request);
@@ -228,7 +228,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockchainPlatforms API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListBlockchainPlatformsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListBlockchainPlatforms API.
      */
     ListBlockchainPlatformsResponse listBlockchainPlatforms(ListBlockchainPlatformsRequest request);
 
@@ -240,7 +240,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListOsnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOsns API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListOsnsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOsns API.
      */
     ListOsnsResponse listOsns(ListOsnsRequest request);
 
@@ -252,7 +252,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListPeersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPeers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListPeersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPeers API.
      */
     ListPeersResponse listPeers(ListPeersRequest request);
 
@@ -265,7 +265,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -278,7 +278,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -291,7 +291,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -303,7 +303,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/PreviewScaleBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PreviewScaleBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/PreviewScaleBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PreviewScaleBlockchainPlatform API.
      */
     PreviewScaleBlockchainPlatformResponse previewScaleBlockchainPlatform(
             PreviewScaleBlockchainPlatformRequest request);
@@ -316,7 +316,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ScaleBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScaleBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/ScaleBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ScaleBlockchainPlatform API.
      */
     ScaleBlockchainPlatformResponse scaleBlockchainPlatform(ScaleBlockchainPlatformRequest request);
 
@@ -328,7 +328,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StartBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StartBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartBlockchainPlatform API.
      */
     StartBlockchainPlatformResponse startBlockchainPlatform(StartBlockchainPlatformRequest request);
 
@@ -340,7 +340,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StopBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/StopBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StopBlockchainPlatform API.
      */
     StopBlockchainPlatformResponse stopBlockchainPlatform(StopBlockchainPlatformRequest request);
 
@@ -352,7 +352,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateBlockchainPlatform API.
      */
     UpdateBlockchainPlatformResponse updateBlockchainPlatform(
             UpdateBlockchainPlatformRequest request);
@@ -365,7 +365,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOsn API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdateOsnExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOsn API.
      */
     UpdateOsnResponse updateOsn(UpdateOsnRequest request);
 
@@ -377,7 +377,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdatePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePeer API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpdatePeerExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePeer API.
      */
     UpdatePeerResponse updatePeer(UpdatePeerRequest request);
 
@@ -389,7 +389,7 @@ public interface BlockchainPlatform extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpgradeBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeBlockchainPlatform API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/blockchain/UpgradeBlockchainPlatformExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeBlockchainPlatform API.
      */
     UpgradeBlockchainPlatformResponse upgradeBlockchainPlatform(
             UpgradeBlockchainPlatformRequest request);

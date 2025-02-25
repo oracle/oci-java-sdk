@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -13,7 +13,7 @@ package com.oracle.bmc.vnmonitoring.model;
  * 2. Reserved
  * <p>
  * For more information and comparison of the two types,
- * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+ * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -82,7 +82,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
          * being assigned to.
          *
          **/
@@ -90,7 +90,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String assignedEntityId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
          * being assigned to.
          *
          * @param assignedEntityId the value to set
@@ -148,7 +148,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
          * the compartment of its assigned entity (which can be a private IP or a regional entity such
          * as a NAT gateway). For a reserved public IP that is currently assigned,
          * its compartment can be different from the assigned private IP's.
@@ -158,7 +158,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
          * the compartment of its assigned entity (which can be a private IP or a regional entity such
          * as a NAT gateway). For a reserved public IP that is currently assigned,
          * its compartment can be different from the assigned private IP's.
@@ -233,13 +233,13 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+         * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
          * @param id the value to set
          * @return this builder
          **/
@@ -300,7 +300,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * whenever you like. It does not need to be assigned to a private IP at all times.
          * <p>
          * For more information and comparison of the two types,
-         * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
@@ -320,7 +320,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
          * whenever you like. It does not need to be assigned to a private IP at all times.
          * <p>
          * For more information and comparison of the two types,
-         * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+         * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
          *
          * @param lifetime the value to set
          * @return this builder
@@ -333,7 +333,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Deprecated. Use {@code assignedEntityId} instead.
          * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
          * process of being assigned to.
          * <p>
          **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
@@ -346,7 +346,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
         /**
          * Deprecated. Use {@code assignedEntityId} instead.
          * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
          * process of being assigned to.
          * <p>
          **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
@@ -419,13 +419,13 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
         private String publicIpPoolId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
          * @param publicIpPoolId the value to set
          * @return this builder
          **/
@@ -525,7 +525,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
      * being assigned to.
      *
      **/
@@ -533,7 +533,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String assignedEntityId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the entity the public IP is assigned to, or in the process of
      * being assigned to.
      *
      * @return the value
@@ -622,7 +622,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
      * the compartment of its assigned entity (which can be a private IP or a regional entity such
      * as a NAT gateway). For a reserved public IP that is currently assigned,
      * its compartment can be different from the assigned private IP's.
@@ -632,7 +632,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment containing the public IP. For an ephemeral public IP, this is
      * the compartment of its assigned entity (which can be a private IP or a regional entity such
      * as a NAT gateway). For a reserved public IP that is currently assigned,
      * its compartment can be different from the assigned private IP's.
@@ -698,13 +698,13 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The public IP's Oracle ID ([OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
+     * The public IP's Oracle ID ([OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm)).
      * @return the value
      **/
     public String getId() {
@@ -800,7 +800,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     public enum Lifetime {
@@ -849,7 +849,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
@@ -869,7 +869,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
      * whenever you like. It does not need to be assigned to a private IP at all times.
      * <p>
      * For more information and comparison of the two types,
-     * see [Public IP Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
+     * see [Public IP Addresses](https://docs.oracle.com/iaas/Content/Network/Tasks/managingpublicIPs.htm).
      *
      * @return the value
      **/
@@ -880,7 +880,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
      * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
      * <p>
      **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
@@ -893,7 +893,7 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     /**
      * Deprecated. Use {@code assignedEntityId} instead.
      * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the private IP that the public IP is currently assigned to, or in the
      * process of being assigned to.
      * <p>
      **Note:** This is {@code null} if the public IP is not assigned to a private IP, or is
@@ -1005,13 +1005,13 @@ public final class PublicIp extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("publicIpPoolId")
     private final String publicIpPoolId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the pool object created in the current tenancy.
      * @return the value
      **/
     public String getPublicIpPoolId() {

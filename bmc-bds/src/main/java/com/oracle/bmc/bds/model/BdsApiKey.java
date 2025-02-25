@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.bds.model;
@@ -28,7 +28,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
         "fingerprint",
         "pemfilepath",
         "timeCreated",
-        "lifecycleState"
+        "lifecycleState",
+        "domainOcid"
     })
     public BdsApiKey(
             String id,
@@ -39,7 +40,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
             String fingerprint,
             String pemfilepath,
             java.util.Date timeCreated,
-            LifecycleState lifecycleState) {
+            LifecycleState lifecycleState,
+            String domainOcid) {
         super();
         this.id = id;
         this.userId = userId;
@@ -50,6 +52,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
         this.pemfilepath = pemfilepath;
         this.timeCreated = timeCreated;
         this.lifecycleState = lifecycleState;
+        this.domainOcid = domainOcid;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -206,6 +209,22 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
             this.__explicitlySet__.add("lifecycleState");
             return this;
         }
+        /**
+         * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+        private String domainOcid;
+
+        /**
+         * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+         * @param domainOcid the value to set
+         * @return this builder
+         **/
+        public Builder domainOcid(String domainOcid) {
+            this.domainOcid = domainOcid;
+            this.__explicitlySet__.add("domainOcid");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -221,7 +240,8 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
                             this.fingerprint,
                             this.pemfilepath,
                             this.timeCreated,
-                            this.lifecycleState);
+                            this.lifecycleState,
+                            this.domainOcid);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -256,6 +276,9 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
             }
             if (model.wasPropertyExplicitlySet("lifecycleState")) {
                 this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("domainOcid")) {
+                this.domainOcid(model.getDomainOcid());
             }
             return this;
         }
@@ -457,6 +480,20 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
         return lifecycleState;
     }
 
+    /**
+     * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("domainOcid")
+    private final String domainOcid;
+
+    /**
+     * Identity domain OCID ,where user is present. For default domain ,this field will be optional.
+     * @return the value
+     **/
+    public String getDomainOcid() {
+        return domainOcid;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -480,6 +517,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
         sb.append(", pemfilepath=").append(String.valueOf(this.pemfilepath));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", domainOcid=").append(String.valueOf(this.domainOcid));
         sb.append(")");
         return sb.toString();
     }
@@ -503,6 +541,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
                 && java.util.Objects.equals(this.pemfilepath, other.pemfilepath)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.domainOcid, other.domainOcid)
                 && super.equals(other);
     }
 
@@ -523,6 +562,7 @@ public final class BdsApiKey extends com.oracle.bmc.http.internal.ExplicitlySetB
         result =
                 (result * PRIME)
                         + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.domainOcid == null ? 43 : this.domainOcid.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

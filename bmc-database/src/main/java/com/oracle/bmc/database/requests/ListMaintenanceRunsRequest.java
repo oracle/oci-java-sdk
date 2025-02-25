@@ -1,23 +1,23 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaintenanceRunsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/ListMaintenanceRunsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListMaintenanceRunsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcRequest<java.lang.Void> {
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getCompartmentId() {
         return compartmentId;
@@ -79,6 +79,17 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
      */
     public String getPage() {
         return page;
+    }
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     */
+    private Boolean isLocalAdg;
+
+    /**
+     * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+     */
+    public Boolean getIsLocalAdg() {
+        return isLocalAdg;
     }
     /**
      * The field to sort by.  You can provide one sort order ({@code sortOrder}).  Default order for TIME_SCHEDULED and TIME_ENDED is descending. Default order for DISPLAYNAME is ascending. The DISPLAYNAME sort order is case sensitive.
@@ -228,12 +239,12 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String compartmentId = null;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param compartmentId the value to set
          * @return this builder instance
          */
@@ -320,6 +331,21 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
          */
         public Builder page(String page) {
             this.page = page;
+            return this;
+        }
+
+        /**
+         * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         */
+        private Boolean isLocalAdg = null;
+
+        /**
+         * A filter to return the maintenance history results for the local standby Autonomous Database Serverless only.
+         * @param isLocalAdg the value to set
+         * @return this builder instance
+         */
+        public Builder isLocalAdg(Boolean isLocalAdg) {
+            this.isLocalAdg = isLocalAdg;
             return this;
         }
 
@@ -443,6 +469,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
             maintenanceType(o.getMaintenanceType());
             limit(o.getLimit());
             page(o.getPage());
+            isLocalAdg(o.getIsLocalAdg());
             sortBy(o.getSortBy());
             sortOrder(o.getSortOrder());
             lifecycleState(o.getLifecycleState());
@@ -486,13 +513,14 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
             request.maintenanceType = maintenanceType;
             request.limit = limit;
             request.page = page;
+            request.isLocalAdg = isLocalAdg;
             request.sortBy = sortBy;
             request.sortOrder = sortOrder;
             request.lifecycleState = lifecycleState;
             request.availabilityDomain = availabilityDomain;
             request.maintenanceSubtype = maintenanceSubtype;
             return request;
-            // new ListMaintenanceRunsRequest(compartmentId, targetResourceId, targetResourceType, maintenanceType, limit, page, sortBy, sortOrder, lifecycleState, availabilityDomain, maintenanceSubtype);
+            // new ListMaintenanceRunsRequest(compartmentId, targetResourceId, targetResourceType, maintenanceType, limit, page, isLocalAdg, sortBy, sortOrder, lifecycleState, availabilityDomain, maintenanceSubtype);
         }
     }
 
@@ -508,6 +536,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                 .maintenanceType(maintenanceType)
                 .limit(limit)
                 .page(page)
+                .isLocalAdg(isLocalAdg)
                 .sortBy(sortBy)
                 .sortOrder(sortOrder)
                 .lifecycleState(lifecycleState)
@@ -534,6 +563,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
         sb.append(",maintenanceType=").append(String.valueOf(this.maintenanceType));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
+        sb.append(",isLocalAdg=").append(String.valueOf(this.isLocalAdg));
         sb.append(",sortBy=").append(String.valueOf(this.sortBy));
         sb.append(",sortOrder=").append(String.valueOf(this.sortOrder));
         sb.append(",lifecycleState=").append(String.valueOf(this.lifecycleState));
@@ -560,6 +590,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                 && java.util.Objects.equals(this.maintenanceType, other.maintenanceType)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
+                && java.util.Objects.equals(this.isLocalAdg, other.isLocalAdg)
                 && java.util.Objects.equals(this.sortBy, other.sortBy)
                 && java.util.Objects.equals(this.sortOrder, other.sortOrder)
                 && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
@@ -587,6 +618,7 @@ public class ListMaintenanceRunsRequest extends com.oracle.bmc.requests.BmcReque
                         + (this.maintenanceType == null ? 43 : this.maintenanceType.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());
+        result = (result * PRIME) + (this.isLocalAdg == null ? 43 : this.isLocalAdg.hashCode());
         result = (result * PRIME) + (this.sortBy == null ? 43 : this.sortBy.hashCode());
         result = (result * PRIME) + (this.sortOrder == null ? 43 : this.sortOrder.hashCode());
         result =

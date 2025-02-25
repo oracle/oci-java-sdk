@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.goldengate.model;
@@ -31,10 +31,6 @@ package com.oracle.bmc.goldengate.model;
         value = PostgresqlConnection.class,
         name = "POSTGRESQL"
     ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = JavaMessageServiceConnection.class,
-        name = "JAVA_MESSAGE_SERVICE"
-    ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = Db2Connection.class, name = "DB2"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = ElasticsearchConnection.class,
@@ -43,6 +39,46 @@ package com.oracle.bmc.goldengate.model;
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmazonRedshiftConnection.class,
         name = "AMAZON_REDSHIFT"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AmazonS3Connection.class,
+        name = "AMAZON_S3"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MongoDbConnection.class,
+        name = "MONGODB"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = HdfsConnection.class,
+        name = "HDFS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = OciObjectStorageConnection.class,
+        name = "OCI_OBJECT_STORAGE"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MicrosoftSqlserverConnection.class,
+        name = "MICROSOFT_SQLSERVER"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GenericConnection.class,
+        name = "GENERIC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = AzureSynapseConnection.class,
+        name = "AZURE_SYNAPSE_ANALYTICS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = MicrosoftFabricConnection.class,
+        name = "MICROSOFT_FABRIC"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = DatabricksConnection.class,
+        name = "DATABRICKS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = JavaMessageServiceConnection.class,
+        name = "JAVA_MESSAGE_SERVICE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = SnowflakeConnection.class,
@@ -57,10 +93,6 @@ package com.oracle.bmc.goldengate.model;
         name = "MYSQL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AmazonS3Connection.class,
-        name = "AMAZON_S3"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GoogleBigQueryConnection.class,
         name = "GOOGLE_BIGQUERY"
     ),
@@ -73,48 +105,28 @@ package com.oracle.bmc.goldengate.model;
         name = "AZURE_DATA_LAKE_STORAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MongoDbConnection.class,
-        name = "MONGODB"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = HdfsConnection.class,
-        name = "HDFS"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = GoogleCloudStorageConnection.class,
         name = "GOOGLE_CLOUD_STORAGE"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = OciObjectStorageConnection.class,
-        name = "OCI_OBJECT_STORAGE"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = KafkaSchemaRegistryConnection.class,
         name = "KAFKA_SCHEMA_REGISTRY"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = MicrosoftSqlserverConnection.class,
-        name = "MICROSOFT_SQLSERVER"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = AmazonKinesisConnection.class,
         name = "AMAZON_KINESIS"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = GenericConnection.class,
-        name = "GENERIC"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = OracleNosqlConnection.class,
         name = "ORACLE_NOSQL"
     ),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-        value = AzureSynapseConnection.class,
-        name = "AZURE_SYNAPSE_ANALYTICS"
-    ),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
         value = RedisConnection.class,
         name = "REDIS"
+    ),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+        value = GooglePubSubConnection.class,
+        name = "GOOGLE_PUBSUB"
     )
 })
 @com.fasterxml.jackson.annotation.JsonFilter(com.oracle.bmc.http.internal.ExplicitlySetFilter.NAME)
@@ -184,7 +196,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the connection being
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
      * referenced.
      *
      **/
@@ -192,7 +204,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the connection being
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the connection being
      * referenced.
      *
      * @return the value
@@ -234,14 +246,14 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment being referenced.
      *
      * @return the value
      **/
@@ -294,7 +306,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -305,7 +317,7 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     /**
      * The system tags associated with this resource, if any. The system tags are set by Oracle
      * Cloud Infrastructure services. Each key is predefined and scoped to namespaces.  For more
-     * information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {orcl-cloud: {free-tier-retain: true}}}
      *
@@ -525,14 +537,14 @@ public class Connection extends com.oracle.bmc.http.internal.ExplicitlySetBmcMod
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("subnetId")
     private final String subnetId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the target subnet of the dedicated connection.
      *
      * @return the value
      **/

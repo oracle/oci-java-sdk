@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -57,14 +57,14 @@ public final class NoRouteRoutingActionDetails
             return this;
         }
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
         private String evaluatedVcnRouteTableId;
 
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
          *
          * @param evaluatedVcnRouteTableId the value to set
          * @return this builder
@@ -75,14 +75,14 @@ public final class NoRouteRoutingActionDetails
             return this;
         }
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
         private String evaluatedDrgRouteTableId;
 
         /**
-         * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+         * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
          *
          * @param evaluatedDrgRouteTableId the value to set
          * @return this builder
@@ -149,14 +149,14 @@ public final class NoRouteRoutingActionDetails
     }
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedVcnRouteTableId")
     private final String evaluatedVcnRouteTableId;
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the evaluated VCN route table.
      *
      * @return the value
      **/
@@ -165,14 +165,14 @@ public final class NoRouteRoutingActionDetails
     }
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("evaluatedDrgRouteTableId")
     private final String evaluatedDrgRouteTableId;
 
     /**
-     * [OCIDs](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
+     * [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of evaluated DRG route table.
      *
      * @return the value
      **/

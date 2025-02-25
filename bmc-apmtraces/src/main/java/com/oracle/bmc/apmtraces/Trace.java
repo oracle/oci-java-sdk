@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apmtraces;
@@ -69,7 +69,7 @@ public interface Trace extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetAggregatedSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAggregatedSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetAggregatedSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetAggregatedSnapshot API.
      */
     GetAggregatedSnapshotResponse getAggregatedSnapshot(GetAggregatedSnapshotRequest request);
 
@@ -82,7 +82,7 @@ public interface Trace extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetSpanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSpan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetSpanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSpan API.
      */
     GetSpanResponse getSpan(GetSpanRequest request);
 
@@ -95,7 +95,7 @@ public interface Trace extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTrace API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTrace API.
      */
     GetTraceResponse getTrace(GetTraceRequest request);
 
@@ -108,7 +108,7 @@ public interface Trace extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTraceSnapshot API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/apmtraces/GetTraceSnapshotExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTraceSnapshot API.
      */
     GetTraceSnapshotResponse getTraceSnapshot(GetTraceSnapshotRequest request);
 }

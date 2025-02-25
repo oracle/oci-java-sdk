@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.marketplacepublisher;
@@ -67,7 +67,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ActivateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateTermVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ActivateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ActivateTermVersion API.
      */
     ActivateTermVersionResponse activateTermVersion(ActivateTermVersionRequest request);
 
@@ -79,7 +79,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -91,7 +91,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CascadingDeleteListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CascadingDeleteListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteListing API.
      */
     CascadingDeleteListingResponse cascadingDeleteListing(CascadingDeleteListingRequest request);
 
@@ -103,7 +103,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CascadingDeleteListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CascadingDeleteListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CascadingDeleteListingRevision API.
      */
     CascadingDeleteListingRevisionResponse cascadingDeleteListingRevision(
             CascadingDeleteListingRevisionRequest request);
@@ -116,7 +116,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeArtifactCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeArtifactCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeArtifactCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeArtifactCompartment API.
      */
     ChangeArtifactCompartmentResponse changeArtifactCompartment(
             ChangeArtifactCompartmentRequest request);
@@ -129,7 +129,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeListingCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeListingCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeListingCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeListingCompartment API.
      */
     ChangeListingCompartmentResponse changeListingCompartment(
             ChangeListingCompartmentRequest request);
@@ -142,7 +142,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeListingRevisionToNewStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeListingRevisionToNewStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeListingRevisionToNewStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeListingRevisionToNewStatus API.
      */
     ChangeListingRevisionToNewStatusResponse changeListingRevisionToNewStatus(
             ChangeListingRevisionToNewStatusRequest request);
@@ -155,7 +155,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeTermCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTermCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ChangeTermCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTermCompartment API.
      */
     ChangeTermCompartmentResponse changeTermCompartment(ChangeTermCompartmentRequest request);
 
@@ -167,7 +167,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CloneListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CloneListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CloneListingRevision API.
      */
     CloneListingRevisionResponse cloneListingRevision(CloneListingRevisionRequest request);
 
@@ -192,7 +192,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateArtifact API.
      */
     CreateArtifactResponse createArtifact(CreateArtifactRequest request);
 
@@ -213,7 +213,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListing API.
      */
     CreateListingResponse createListing(CreateListingRequest request);
 
@@ -226,7 +226,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevision API.
      */
     CreateListingRevisionResponse createListingRevision(CreateListingRevisionRequest request);
 
@@ -239,7 +239,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionAttachment API.
      */
     CreateListingRevisionAttachmentResponse createListingRevisionAttachment(
             CreateListingRevisionAttachmentRequest request);
@@ -253,7 +253,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionNote API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionNote API.
      */
     CreateListingRevisionNoteResponse createListingRevisionNote(
             CreateListingRevisionNoteRequest request);
@@ -267,7 +267,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateListingRevisionPackage API.
      */
     CreateListingRevisionPackageResponse createListingRevisionPackage(
             CreateListingRevisionPackageRequest request);
@@ -281,7 +281,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTerm API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTerm API.
      */
     CreateTermResponse createTerm(CreateTermRequest request);
 
@@ -320,7 +320,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTermVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/CreateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTermVersion API.
      */
     CreateTermVersionResponse createTermVersion(CreateTermVersionRequest request);
 
@@ -332,7 +332,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteArtifact API.
      */
     DeleteArtifactResponse deleteArtifact(DeleteArtifactRequest request);
 
@@ -344,7 +344,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListing API.
      */
     DeleteListingResponse deleteListing(DeleteListingRequest request);
 
@@ -356,7 +356,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevision API.
      */
     DeleteListingRevisionResponse deleteListingRevision(DeleteListingRevisionRequest request);
 
@@ -368,7 +368,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionAttachment API.
      */
     DeleteListingRevisionAttachmentResponse deleteListingRevisionAttachment(
             DeleteListingRevisionAttachmentRequest request);
@@ -381,7 +381,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionNote API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionNote API.
      */
     DeleteListingRevisionNoteResponse deleteListingRevisionNote(
             DeleteListingRevisionNoteRequest request);
@@ -394,7 +394,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteListingRevisionPackage API.
      */
     DeleteListingRevisionPackageResponse deleteListingRevisionPackage(
             DeleteListingRevisionPackageRequest request);
@@ -407,7 +407,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTerm API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTerm API.
      */
     DeleteTermResponse deleteTerm(DeleteTermRequest request);
 
@@ -419,7 +419,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTermVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/DeleteTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTermVersion API.
      */
     DeleteTermVersionResponse deleteTermVersion(DeleteTermVersionRequest request);
 
@@ -431,7 +431,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetArtifact API.
      */
     GetArtifactResponse getArtifact(GetArtifactRequest request);
 
@@ -443,7 +443,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetCategoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCategory API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetCategoryExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCategory API.
      */
     GetCategoryResponse getCategory(GetCategoryRequest request);
 
@@ -456,7 +456,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListing API.
      */
     GetListingResponse getListing(GetListingRequest request);
 
@@ -469,7 +469,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevision API.
      */
     GetListingRevisionResponse getListingRevision(GetListingRevisionRequest request);
 
@@ -482,7 +482,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionAttachment API.
      */
     GetListingRevisionAttachmentResponse getListingRevisionAttachment(
             GetListingRevisionAttachmentRequest request);
@@ -495,7 +495,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionNote API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionNoteExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionNote API.
      */
     GetListingRevisionNoteResponse getListingRevisionNote(GetListingRevisionNoteRequest request);
 
@@ -508,7 +508,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetListingRevisionPackage API.
      */
     GetListingRevisionPackageResponse getListingRevisionPackage(
             GetListingRevisionPackageRequest request);
@@ -521,7 +521,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetMarketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMarket API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetMarketExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMarket API.
      */
     GetMarketResponse getMarket(GetMarketRequest request);
 
@@ -533,7 +533,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetProductExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProduct API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetProductExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProduct API.
      */
     GetProductResponse getProduct(GetProductRequest request);
 
@@ -545,7 +545,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetPublisherExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublisher API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetPublisherExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPublisher API.
      */
     GetPublisherResponse getPublisher(GetPublisherRequest request);
 
@@ -557,7 +557,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTerm API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTerm API.
      */
     GetTermResponse getTerm(GetTermRequest request);
 
@@ -569,7 +569,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTermVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTermVersion API.
      */
     GetTermVersionResponse getTermVersion(GetTermVersionRequest request);
 
@@ -581,7 +581,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -596,7 +596,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListArtifacts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListArtifactsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListArtifacts API.
      */
     ListArtifactsResponse listArtifacts(ListArtifactsRequest request);
 
@@ -611,7 +611,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListCategoriesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCategories API.
      */
     ListCategoriesResponse listCategories(ListCategoriesRequest request);
 
@@ -624,7 +624,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionAttachments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionAttachmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionAttachments API.
      */
     ListListingRevisionAttachmentsResponse listListingRevisionAttachments(
             ListListingRevisionAttachmentsRequest request);
@@ -638,7 +638,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionNotesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionNotes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionNotesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionNotes API.
      */
     ListListingRevisionNotesResponse listListingRevisionNotes(
             ListListingRevisionNotesRequest request);
@@ -652,7 +652,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionPackages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionPackagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisionPackages API.
      */
     ListListingRevisionPackagesResponse listListingRevisionPackages(
             ListListingRevisionPackagesRequest request);
@@ -669,7 +669,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingRevisionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListingRevisions API.
      */
     ListListingRevisionsResponse listListingRevisions(ListListingRevisionsRequest request);
 
@@ -684,7 +684,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListListingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListListings API.
      */
     ListListingsResponse listListings(ListListingsRequest request);
 
@@ -699,7 +699,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListMarketsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMarkets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListMarketsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMarkets API.
      */
     ListMarketsResponse listMarkets(ListMarketsRequest request);
 
@@ -714,7 +714,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListProductsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProducts API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListProductsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProducts API.
      */
     ListProductsResponse listProducts(ListProductsRequest request);
 
@@ -726,7 +726,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListPublishersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishers API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListPublishersExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPublishers API.
      */
     ListPublishersResponse listPublishers(ListPublishersRequest request);
 
@@ -738,7 +738,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListTermVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTermVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListTermVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTermVersions API.
      */
     ListTermVersionsResponse listTermVersions(ListTermVersionsRequest request);
 
@@ -750,7 +750,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListTermsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTerms API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListTermsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTerms API.
      */
     ListTermsResponse listTerms(ListTermsRequest request);
 
@@ -763,7 +763,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -776,7 +776,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -789,7 +789,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -801,7 +801,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/MarkListingRevisionPackageAsDefaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MarkListingRevisionPackageAsDefault API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/MarkListingRevisionPackageAsDefaultExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use MarkListingRevisionPackageAsDefault API.
      */
     MarkListingRevisionPackageAsDefaultResponse markListingRevisionPackageAsDefault(
             MarkListingRevisionPackageAsDefaultRequest request);
@@ -814,7 +814,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevision API.
      */
     PublishListingRevisionResponse publishListingRevision(PublishListingRevisionRequest request);
 
@@ -826,7 +826,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionAsPrivateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevisionAsPrivate API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionAsPrivateExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevisionAsPrivate API.
      */
     PublishListingRevisionAsPrivateResponse publishListingRevisionAsPrivate(
             PublishListingRevisionAsPrivateRequest request);
@@ -839,7 +839,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/PublishListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PublishListingRevisionPackage API.
      */
     PublishListingRevisionPackageResponse publishListingRevisionPackage(
             PublishListingRevisionPackageRequest request);
@@ -852,7 +852,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/SubmitListingRevisionForReviewExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubmitListingRevisionForReview API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/SubmitListingRevisionForReviewExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SubmitListingRevisionForReview API.
      */
     SubmitListingRevisionForReviewResponse submitListingRevisionForReview(
             SubmitListingRevisionForReviewRequest request);
@@ -865,7 +865,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UnPublishListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnPublishListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UnPublishListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UnPublishListingRevisionPackage API.
      */
     UnPublishListingRevisionPackageResponse unPublishListingRevisionPackage(
             UnPublishListingRevisionPackageRequest request);
@@ -878,7 +878,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateArtifact API.
      */
     UpdateArtifactResponse updateArtifact(UpdateArtifactRequest request);
 
@@ -890,7 +890,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListing API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListing API.
      */
     UpdateListingResponse updateListing(UpdateListingRequest request);
 
@@ -902,7 +902,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevision API.
      */
     UpdateListingRevisionResponse updateListingRevision(UpdateListingRevisionRequest request);
 
@@ -914,7 +914,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionAttachment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionAttachmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionAttachment API.
      */
     UpdateListingRevisionAttachmentResponse updateListingRevisionAttachment(
             UpdateListingRevisionAttachmentRequest request);
@@ -954,7 +954,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionAttachmentContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionAttachmentContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionAttachmentContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionAttachmentContent API.
      */
     UpdateListingRevisionAttachmentContentResponse updateListingRevisionAttachmentContent(
             UpdateListingRevisionAttachmentContentRequest request);
@@ -994,7 +994,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionIconContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionIconContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionIconContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionIconContent API.
      */
     UpdateListingRevisionIconContentResponse updateListingRevisionIconContent(
             UpdateListingRevisionIconContentRequest request);
@@ -1007,7 +1007,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionPackage API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateListingRevisionPackageExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateListingRevisionPackage API.
      */
     UpdateListingRevisionPackageResponse updateListingRevisionPackage(
             UpdateListingRevisionPackageRequest request);
@@ -1020,7 +1020,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTerm API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTerm API.
      */
     UpdateTermResponse updateTerm(UpdateTermRequest request);
 
@@ -1032,7 +1032,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTermVersion API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTermVersion API.
      */
     UpdateTermVersionResponse updateTermVersion(UpdateTermVersionRequest request);
 
@@ -1071,7 +1071,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTermVersionContent API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/UpdateTermVersionContentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTermVersionContent API.
      */
     UpdateTermVersionContentResponse updateTermVersionContent(
             UpdateTermVersionContentRequest request);
@@ -1084,7 +1084,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ValidateAndPublishArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateAndPublishArtifact API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/ValidateAndPublishArtifactExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ValidateAndPublishArtifact API.
      */
     ValidateAndPublishArtifactResponse validateAndPublishArtifact(
             ValidateAndPublishArtifactRequest request);
@@ -1097,7 +1097,7 @@ public interface MarketplacePublisher extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/WithdrawListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use WithdrawListingRevision API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/marketplacepublisher/WithdrawListingRevisionExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use WithdrawListingRevision API.
      */
     WithdrawListingRevisionResponse withdrawListingRevision(WithdrawListingRevisionRequest request);
 

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiagent;
@@ -8,9 +8,6 @@ import com.oracle.bmc.generativeaiagent.requests.*;
 import com.oracle.bmc.generativeaiagent.responses.*;
 
 /**
- * **Generative AI Agents API**
- *
- *
  * OCI Generative AI Agents is a fully managed service that combines the power of large language models (LLMs) with an intelligent retrieval system to create contextually relevant answers by searching your knowledge base, making your AI applications smart and efficient.
  *
  * OCI Generative AI Agents supports several ways to onboard your data and then allows you and your customers to interact with your data using a chat interface or API.
@@ -19,7 +16,7 @@ import com.oracle.bmc.generativeaiagent.responses.*;
  *
  * For creating and managing client chat sessions see the {@link #eNGenerative-ai-agents-clientLatest(ENGenerative-ai-agents-clientLatestRequest) eNGenerative-ai-agents-clientLatest}.
  *
- * To learn more about the service, see the [Generative AI Agents documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai-agents/home.htm).
+ * To learn more about the service, see the [Generative AI Agents documentation](https://docs.oracle.com/iaas/Content/generative-ai-agents/home.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20240531")
@@ -71,8 +68,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
-     * **CancelWorkRequest**
-     * <p>
      * Cancels a work request.
      *
      *
@@ -90,10 +85,8 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ChangeAgentCompartment**
-     * <p>
      * Moves an agent into a different compartment within the same tenancy. For information about moving resources between
-     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -110,10 +103,8 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ChangeAgentEndpointCompartment**
-     * <p>
      * Moves an endpoint into a different compartment within the same tenancy. For information about moving resources between
-     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -132,10 +123,8 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **ChangeKnowledgeBaseCompartment**
-     * <p>
      * Moves a knowledge base into a different compartment within the same tenancy. For information about moving resources between
-     * compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -154,8 +143,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **CreateAgent**
-     * <p>
      * Creates an agent.
      *
      *
@@ -171,8 +158,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateAgentRequest, CreateAgentResponse> handler);
 
     /**
-     * **CreateAgentEndpoint**
-     * <p>
      * Creates an endpoint.
      *
      *
@@ -190,8 +175,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **CreateDataIngestionJob**
-     * <p>
      * Creates a data ingestion job.
      *
      *
@@ -209,8 +192,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **CreateDataSource**
-     * <p>
      * Creates a data source.
      *
      *
@@ -227,8 +208,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **CreateKnowledgeBase**
-     * <p>
      * Creates a knowledge base.
      *
      *
@@ -246,8 +225,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **DeleteAgent**
-     * <p>
      * Deletes an agent.
      *
      *
@@ -263,8 +240,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteAgentRequest, DeleteAgentResponse> handler);
 
     /**
-     * **DeleteAgentEndpoint**
-     * <p>
      * Deletes an endpoint.
      *
      *
@@ -282,8 +257,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **DeleteDataIngestionJob**
-     * <p>
      * Deletes a data ingestion job.
      *
      *
@@ -301,8 +274,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **DeleteDataSource**
-     * <p>
      * Deletes a data source.
      *
      *
@@ -319,8 +290,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **DeleteKnowledgeBase**
-     * <p>
      * Deletes a knowledge base.
      *
      *
@@ -338,8 +307,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **GetAgent**
-     * <p>
      * Gets information about an agent.
      *
      *
@@ -355,8 +322,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<GetAgentRequest, GetAgentResponse> handler);
 
     /**
-     * **GetAgentEndpoint**
-     * <p>
      * Gets information about an endpoint.
      *
      *
@@ -373,8 +338,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **GetDataIngestionJob**
-     * <p>
      * Gets information about a data ingestion job.
      *
      *
@@ -392,8 +355,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **GetDataIngestionJobLogContent**
-     * <p>
      * Returns the raw log file for the specified data ingestion job in text format.
      *
      *
@@ -413,8 +374,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                             handler);
 
     /**
-     * **GetDataSource**
-     * <p>
      * Gets information about a data source.
      *
      *
@@ -431,8 +390,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **GetKnowledgeBase**
-     * <p>
      * Gets information about a knowledge base.
      *
      *
@@ -449,8 +406,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **GetWorkRequest**
-     * <p>
      * Gets the details of a work request.
      *
      *
@@ -467,8 +422,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListAgentEndpoints**
-     * <p>
      * Gets a list of endpoints.
      *
      *
@@ -486,8 +439,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListAgents**
-     * <p>
      * Gets a list of agents.
      *
      *
@@ -503,8 +454,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListAgentsRequest, ListAgentsResponse> handler);
 
     /**
-     * **ListDataIngestionJobs**
-     * <p>
      * Gets a list of data ingestion jobs.
      *
      *
@@ -522,8 +471,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListDataSources**
-     * <p>
      * Gets a list of data sources.
      *
      *
@@ -540,8 +487,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListKnowledgeBases**
-     * <p>
      * Gets a list of knowledge bases.
      *
      *
@@ -559,8 +504,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListWorkRequestErrors**
-     * <p>
      * Lists the errors for a work request.
      *
      *
@@ -578,8 +521,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListWorkRequestLogs**
-     * <p>
      * Lists the logs for a work request.
      *
      *
@@ -597,8 +538,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **ListWorkRequests**
-     * <p>
      * Lists the work requests in a compartment.
      *
      *
@@ -615,8 +554,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **UpdateAgent**
-     * <p>
      * Updates an agent.
      *
      *
@@ -632,8 +569,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateAgentRequest, UpdateAgentResponse> handler);
 
     /**
-     * **UpdateAgentEndpoint**
-     * <p>
      * Updates an endpoint.
      *
      *
@@ -651,8 +586,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **UpdateDataSource**
-     * <p>
      * Updates a data source.
      *
      *
@@ -669,8 +602,6 @@ public interface GenerativeAiAgentAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **UpdateKnowledgeBase**
-     * <p>
      * Updates a knowledge base.
      *
      *

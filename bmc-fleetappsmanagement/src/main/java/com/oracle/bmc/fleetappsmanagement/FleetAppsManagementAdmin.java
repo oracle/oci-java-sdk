@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.fleetappsmanagement;
@@ -69,7 +69,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCompliancePolicyRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCompliancePolicyRule API.
      */
     CreateCompliancePolicyRuleResponse createCompliancePolicyRule(
             CreateCompliancePolicyRuleRequest request);
@@ -84,7 +84,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOnboarding API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreateOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateOnboarding API.
      */
     CreateOnboardingResponse createOnboarding(CreateOnboardingRequest request);
 
@@ -97,7 +97,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePlatformConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreatePlatformConfiguration API.
      */
     CreatePlatformConfigurationResponse createPlatformConfiguration(
             CreatePlatformConfigurationRequest request);
@@ -111,7 +111,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/CreatePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateProperty API.
      */
     CreatePropertyResponse createProperty(CreatePropertyRequest request);
 
@@ -123,7 +123,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCompliancePolicyRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCompliancePolicyRule API.
      */
     DeleteCompliancePolicyRuleResponse deleteCompliancePolicyRule(
             DeleteCompliancePolicyRuleRequest request);
@@ -136,7 +136,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOnboarding API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeleteOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteOnboarding API.
      */
     DeleteOnboardingResponse deleteOnboarding(DeleteOnboardingRequest request);
 
@@ -148,7 +148,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePlatformConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeletePlatformConfiguration API.
      */
     DeletePlatformConfigurationResponse deletePlatformConfiguration(
             DeletePlatformConfigurationRequest request);
@@ -161,7 +161,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/DeletePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteProperty API.
      */
     DeletePropertyResponse deleteProperty(DeletePropertyRequest request);
 
@@ -173,7 +173,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/EnableLatestPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableLatestPolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/EnableLatestPolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EnableLatestPolicy API.
      */
     EnableLatestPolicyResponse enableLatestPolicy(EnableLatestPolicyRequest request);
 
@@ -185,7 +185,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompliancePolicy API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompliancePolicy API.
      */
     GetCompliancePolicyResponse getCompliancePolicy(GetCompliancePolicyRequest request);
 
@@ -197,7 +197,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompliancePolicyRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCompliancePolicyRule API.
      */
     GetCompliancePolicyRuleResponse getCompliancePolicyRule(GetCompliancePolicyRuleRequest request);
 
@@ -209,7 +209,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOnboarding API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetOnboarding API.
      */
     GetOnboardingResponse getOnboarding(GetOnboardingRequest request);
 
@@ -221,7 +221,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPlatformConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetPlatformConfiguration API.
      */
     GetPlatformConfigurationResponse getPlatformConfiguration(
             GetPlatformConfigurationRequest request);
@@ -234,7 +234,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/GetPropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetProperty API.
      */
     GetPropertyResponse getProperty(GetPropertyRequest request);
 
@@ -247,7 +247,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCompliancePolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCompliancePolicies API.
      */
     ListCompliancePoliciesResponse listCompliancePolicies(ListCompliancePoliciesRequest request);
 
@@ -260,7 +260,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePolicyRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCompliancePolicyRules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListCompliancePolicyRulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCompliancePolicyRules API.
      */
     ListCompliancePolicyRulesResponse listCompliancePolicyRules(
             ListCompliancePolicyRulesRequest request);
@@ -274,7 +274,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnboardingPolicies API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingPoliciesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnboardingPolicies API.
      */
     ListOnboardingPoliciesResponse listOnboardingPolicies(ListOnboardingPoliciesRequest request);
 
@@ -287,7 +287,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnboardings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListOnboardingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListOnboardings API.
      */
     ListOnboardingsResponse listOnboardings(ListOnboardingsRequest request);
 
@@ -300,7 +300,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPlatformConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPlatformConfigurations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPlatformConfigurationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListPlatformConfigurations API.
      */
     ListPlatformConfigurationsResponse listPlatformConfigurations(
             ListPlatformConfigurationsRequest request);
@@ -314,7 +314,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPropertiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProperties API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ListPropertiesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListProperties API.
      */
     ListPropertiesResponse listProperties(ListPropertiesRequest request);
 
@@ -326,7 +326,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageSettings API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/ManageSettingsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ManageSettings API.
      */
     ManageSettingsResponse manageSettings(ManageSettingsRequest request);
 
@@ -338,7 +338,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCompliancePolicyRule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateCompliancePolicyRuleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCompliancePolicyRule API.
      */
     UpdateCompliancePolicyRuleResponse updateCompliancePolicyRule(
             UpdateCompliancePolicyRuleRequest request);
@@ -351,7 +351,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOnboarding API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdateOnboardingExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateOnboarding API.
      */
     UpdateOnboardingResponse updateOnboarding(UpdateOnboardingRequest request);
 
@@ -363,7 +363,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePlatformConfiguration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePlatformConfigurationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdatePlatformConfiguration API.
      */
     UpdatePlatformConfigurationResponse updatePlatformConfiguration(
             UpdatePlatformConfigurationRequest request);
@@ -376,7 +376,7 @@ public interface FleetAppsManagementAdmin extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProperty API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/fleetappsmanagement/UpdatePropertyExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateProperty API.
      */
     UpdatePropertyResponse updateProperty(UpdatePropertyRequest request);
 

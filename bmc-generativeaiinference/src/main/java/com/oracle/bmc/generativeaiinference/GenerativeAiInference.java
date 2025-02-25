@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference;
@@ -14,7 +14,7 @@ import com.oracle.bmc.generativeaiinference.responses.*;
  *
  * To use a Generative AI custom model for inference, you must first create an endpoint for that model. Use the {@link #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest} to {@link #eNGenerative-aiLatestModel(ENGenerative-aiLatestModelRequest) eNGenerative-aiLatestModel} by fine-tuning an out-of-the-box model, or a previous version of a custom model, using your own data. Fine-tune the custom model on a {@link #eNGenerative-aiLatestDedicatedAiCluster(ENGenerative-aiLatestDedicatedAiClusterRequest) eNGenerative-aiLatestDedicatedAiCluster}. Then, create a {@link #eNGenerative-aiLatestDedicatedAiCluster(ENGenerative-aiLatestDedicatedAiClusterRequest) eNGenerative-aiLatestDedicatedAiCluster} with an {@link Endpoint} to host your custom model. For resource management in the Generative AI service, use the {@link #eNGenerative-aiLatest(ENGenerative-aiLatestRequest) eNGenerative-aiLatest}.
  *
- * To learn more about the service, see the [Generative AI documentation](https://docs.cloud.oracle.com/iaas/Content/generative-ai/home.htm).
+ * To learn more about the service, see the [Generative AI documentation](https://docs.oracle.com/iaas/Content/generative-ai/home.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -75,7 +75,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ChatExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Chat API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/ChatExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use Chat API.
      */
     ChatResponse chat(ChatRequest request);
 
@@ -90,7 +90,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EmbedText API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/EmbedTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use EmbedText API.
      */
     EmbedTextResponse embedText(EmbedTextRequest request);
 
@@ -103,9 +103,24 @@ public interface GenerativeAiInference extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/GenerateTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateText API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/GenerateTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GenerateText API.
      */
     GenerateTextResponse generateText(GenerateTextRequest request);
+
+    /**
+     * Reranks the text responses based on the input documents and a prompt.
+     * <p>
+     * Rerank assigns an index and a relevance score to each document, indicating which document is most related to the prompt.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs.
+     * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
+     * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/RerankTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RerankText API.
+     */
+    RerankTextResponse rerankText(RerankTextRequest request);
 
     /**
      * Summarizes the input text.
@@ -116,7 +131,7 @@ public interface GenerativeAiInference extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeText API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/generativeaiinference/SummarizeTextExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SummarizeText API.
      */
     SummarizeTextResponse summarizeText(SummarizeTextRequest request);
 }

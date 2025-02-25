@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -64,13 +64,13 @@ public final class CreateIPSecConnectionDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -80,13 +80,13 @@ public final class CreateIPSecConnectionDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
         private String cpeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
          * @param cpeId the value to set
          * @return this builder
          **/
@@ -137,13 +137,13 @@ public final class CreateIPSecConnectionDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("drgId")
         private String drgId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
          * @param drgId the value to set
          * @return this builder
          **/
@@ -181,7 +181,7 @@ public final class CreateIPSecConnectionDetails
          * object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -200,7 +200,7 @@ public final class CreateIPSecConnectionDetails
          * object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
          * <p>
          * For information about why you'd provide this value, see
-         * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+         * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
          * <p>
          * Example IP address: {@code 10.0.3.3}
          * <p>
@@ -245,7 +245,7 @@ public final class CreateIPSecConnectionDetails
          * For more information, see the important note in {@link IPSecConnection}.
          * <p>
          * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -266,7 +266,7 @@ public final class CreateIPSecConnectionDetails
          * For more information, see the important note in {@link IPSecConnection}.
          * <p>
          * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-         * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+         * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
          * <p>
          * Example: {@code 10.0.1.0/24}
          * <p>
@@ -398,13 +398,13 @@ public final class CreateIPSecConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the IPSec connection.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -412,13 +412,13 @@ public final class CreateIPSecConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("cpeId")
     private final String cpeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the {@link Cpe} object.
      * @return the value
      **/
     public String getCpeId() {
@@ -462,13 +462,13 @@ public final class CreateIPSecConnectionDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("drgId")
     private final String drgId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DRG.
      * @return the value
      **/
     public String getDrgId() {
@@ -502,7 +502,7 @@ public final class CreateIPSecConnectionDetails
      * object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -521,7 +521,7 @@ public final class CreateIPSecConnectionDetails
      * object specified by {@code cpeId} is used as the {@code cpeLocalIdentifier}.
      * <p>
      * For information about why you'd provide this value, see
-     * [If Your CPE Is Behind a NAT Device](https://docs.cloud.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
+     * [If Your CPE Is Behind a NAT Device](https://docs.oracle.com/iaas/Content/Network/Tasks/overviewIPsec.htm#nat).
      * <p>
      * Example IP address: {@code 10.0.3.3}
      * <p>
@@ -599,7 +599,7 @@ public final class CreateIPSecConnectionDetails
      * For more information, see the important note in {@link IPSecConnection}.
      * <p>
      * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>
@@ -620,7 +620,7 @@ public final class CreateIPSecConnectionDetails
      * For more information, see the important note in {@link IPSecConnection}.
      * <p>
      * The CIDR can be either IPv4 or IPv6. IPv6 addressing is supported for all commercial and government regions.
-     * See [IPv6 Addresses](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
+     * See [IPv6 Addresses](https://docs.oracle.com/iaas/Content/Network/Concepts/ipv6.htm).
      * <p>
      * Example: {@code 10.0.1.0/24}
      * <p>

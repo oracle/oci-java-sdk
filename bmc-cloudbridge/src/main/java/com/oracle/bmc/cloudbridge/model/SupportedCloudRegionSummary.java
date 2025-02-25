@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudbridge.model;
@@ -95,7 +95,7 @@ public final class SupportedCloudRegionSummary
         }
         /**
          * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          **/
@@ -104,7 +104,7 @@ public final class SupportedCloudRegionSummary
 
         /**
          * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Department": "Finance"}}
          *
          * @param freeformTags the value to set
@@ -117,7 +117,7 @@ public final class SupportedCloudRegionSummary
         }
         /**
          * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          **/
@@ -126,7 +126,7 @@ public final class SupportedCloudRegionSummary
 
         /**
          * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
          * @param definedTags the value to set
@@ -232,7 +232,7 @@ public final class SupportedCloudRegionSummary
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      **/
@@ -241,7 +241,7 @@ public final class SupportedCloudRegionSummary
 
     /**
      * The freeform tags associated with this resource, if any. Each tag is a simple key-value pair with no
-     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * predefined name, type, or namespace/scope. For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Department": "Finance"}}
      *
      * @return the value
@@ -252,7 +252,7 @@ public final class SupportedCloudRegionSummary
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      **/
@@ -261,7 +261,7 @@ public final class SupportedCloudRegionSummary
 
     /**
      * The defined tags associated with this resource, if any. Each key is predefined and scoped to namespaces.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
      * @return the value

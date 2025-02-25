@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -121,7 +121,7 @@ public final class CreatePrivateIpDetails
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -138,7 +138,7 @@ public final class CreatePrivateIpDetails
          * [RFC 1123](https://tools.ietf.org/html/rfc1123).
          * <p>
          * For more information, see
-         * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+         * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
          * <p>
          * Example: {@code bminstance1}
          *
@@ -177,7 +177,7 @@ public final class CreatePrivateIpDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
          * must be in the same subnet.
          *
          **/
@@ -185,7 +185,7 @@ public final class CreatePrivateIpDetails
         private String vnicId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
          * must be in the same subnet.
          *
          * @param vnicId the value to set
@@ -199,7 +199,7 @@ public final class CreatePrivateIpDetails
         /**
          * Use this attribute only with the Oracle Cloud VMware Solution.
          * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
          * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
          *
          **/
@@ -209,7 +209,7 @@ public final class CreatePrivateIpDetails
         /**
          * Use this attribute only with the Oracle Cloud VMware Solution.
          * <p>
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
          * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
          *
          * @param vlanId the value to set
@@ -341,7 +341,7 @@ public final class CreatePrivateIpDetails
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -358,7 +358,7 @@ public final class CreatePrivateIpDetails
      * [RFC 1123](https://tools.ietf.org/html/rfc1123).
      * <p>
      * For more information, see
-     * [DNS in Your Virtual Cloud Network](https://docs.cloud.oracle.com/iaas/Content/Network/Concepts/dns.htm).
+     * [DNS in Your Virtual Cloud Network](https://docs.oracle.com/iaas/Content/Network/Concepts/dns.htm).
      * <p>
      * Example: {@code bminstance1}
      *
@@ -393,7 +393,7 @@ public final class CreatePrivateIpDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
      * must be in the same subnet.
      *
      **/
@@ -401,7 +401,7 @@ public final class CreatePrivateIpDetails
     private final String vnicId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VNIC to assign the private IP to. The VNIC and private IP
      * must be in the same subnet.
      *
      * @return the value
@@ -413,7 +413,7 @@ public final class CreatePrivateIpDetails
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
      * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
      *
      **/
@@ -423,7 +423,7 @@ public final class CreatePrivateIpDetails
     /**
      * Use this attribute only with the Oracle Cloud VMware Solution.
      * <p>
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VLAN from which the private IP is to be drawn. The IP address,
      * *if supplied*, must be valid for the given VLAN. See {@link Vlan}.
      *
      * @return the value

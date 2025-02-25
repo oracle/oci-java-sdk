@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.requests;
 
 import com.oracle.bmc.datasafe.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditEventAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAuditEventAnalyticsRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/datasafe/ListAuditEventAnalyticsExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use ListAuditEventAnalyticsRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20181201")
 public class ListAuditEventAnalyticsRequest
@@ -56,13 +56,13 @@ public class ListAuditEventAnalyticsRequest
         return ifMatch;
     }
     /**
-     * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private Integer limit;
 
     /**
-     * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public Integer getLimit() {
@@ -70,14 +70,14 @@ public class ListAuditEventAnalyticsRequest
     }
     /**
      * It is usually retrieved from a previous "List" call. For details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     private String page;
 
     /**
      * It is usually retrieved from a previous "List" call. For details about how pagination works,
-     * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+     * see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
      *
      */
     public String getPage() {
@@ -164,7 +164,11 @@ public class ListAuditEventAnalyticsRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
+     **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+     * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
+     * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
+     * These define admin user activity, common user activity, sensitive data activity and data safe activity
+     * **Example:** (adminUser eq 1)
      *
      */
     private String scimQuery;
@@ -176,7 +180,11 @@ public class ListAuditEventAnalyticsRequest
      * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
      * (Numeric and boolean values should not be quoted.)
      * <p>
-     **Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
+     **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+     * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
+     * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
+     * These define admin user activity, common user activity, sensitive data activity and data safe activity
+     * **Example:** (adminUser eq 1)
      *
      */
     public String getScimQuery() {
@@ -550,13 +558,13 @@ public class ListAuditEventAnalyticsRequest
         }
 
         /**
-         * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private Integer limit = null;
 
         /**
-         * For details about how pagination works, see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * For details about how pagination works, see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param limit the value to set
          * @return this builder instance
@@ -568,14 +576,14 @@ public class ListAuditEventAnalyticsRequest
 
         /**
          * It is usually retrieved from a previous "List" call. For details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          */
         private String page = null;
 
         /**
          * It is usually retrieved from a previous "List" call. For details about how pagination works,
-         * see [List Pagination](https://docs.cloud.oracle.com/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
+         * see [List Pagination](https://docs.oracle.com/iaas/en-us/iaas/Content/API/Concepts/usingapi.htm#nine).
          *
          * @param page the value to set
          * @return this builder instance
@@ -634,7 +642,11 @@ public class ListAuditEventAnalyticsRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
+         **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+         * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
+         * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
+         * These define admin user activity, common user activity, sensitive data activity and data safe activity
+         * **Example:** (adminUser eq 1)
          *
          */
         private String scimQuery = null;
@@ -646,7 +658,11 @@ public class ListAuditEventAnalyticsRequest
          * text, date, and time values must be enclosed in quotation marks, with date and time values using ISO-8601 format.
          * (Numeric and boolean values should not be quoted.)
          * <p>
-         **Example:** (operationTime ge "2021-06-04T12:00:00.000Z") and (eventName eq "LOGON")
+         **Example:** (operationTime ge "2021-06-04T01-00-26") and (eventName eq "LOGON")
+         * The attrExp or the field (for example, operationTime and eventName in above example) which is used to filter can be any of the fields returned by AuditEventSummary.
+         * adminUser, commonUser, sensitiveActivity, dsActivity can only have eq operation and value 1.
+         * These define admin user activity, common user activity, sensitive data activity and data safe activity
+         * **Example:** (adminUser eq 1)
          *
          * @param scimQuery the value to set
          * @return this builder instance

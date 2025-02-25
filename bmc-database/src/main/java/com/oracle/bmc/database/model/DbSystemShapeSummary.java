@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -9,7 +9,7 @@ package com.oracle.bmc.database.model;
  * <p>
  * To use any of the API operations, you must be authorized in an IAM policy. If you're not authorized, talk to an administrator.
  * If you're an administrator who needs to write policies to give users access,
- * see [Getting Started with Policies](https://docs.cloud.oracle.com/Content/Identity/Concepts/policygetstarted.htm).
+ * see [Getting Started with Policies](https://docs.oracle.com/iaas/Content/Identity/Concepts/policygetstarted.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -46,6 +46,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         "minDbNodeStoragePerNodeInGBs",
         "availableDataStorageInTBs",
         "minDataStorageInTBs",
+        "displayName",
+        "computeModel",
+        "areServerTypesSupported",
         "minimumNodeCount",
         "maximumNodeCount",
         "availableCoreCountPerNode"
@@ -70,6 +73,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             Integer minDbNodeStoragePerNodeInGBs,
             Integer availableDataStorageInTBs,
             Integer minDataStorageInTBs,
+            String displayName,
+            ComputeModel computeModel,
+            Boolean areServerTypesSupported,
             Integer minimumNodeCount,
             Integer maximumNodeCount,
             Integer availableCoreCountPerNode) {
@@ -93,6 +99,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         this.minDbNodeStoragePerNodeInGBs = minDbNodeStoragePerNodeInGBs;
         this.availableDataStorageInTBs = availableDataStorageInTBs;
         this.minDataStorageInTBs = minDataStorageInTBs;
+        this.displayName = displayName;
+        this.computeModel = computeModel;
+        this.areServerTypesSupported = areServerTypesSupported;
         this.minimumNodeCount = minimumNodeCount;
         this.maximumNodeCount = maximumNodeCount;
         this.availableCoreCountPerNode = availableCoreCountPerNode;
@@ -406,6 +415,54 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             return this;
         }
         /**
+         * The display name of the shape used for the DB system.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+        private String displayName;
+
+        /**
+         * The display name of the shape used for the DB system.
+         * @param displayName the value to set
+         * @return this builder
+         **/
+        public Builder displayName(String displayName) {
+            this.displayName = displayName;
+            this.__explicitlySet__.add("displayName");
+            return this;
+        }
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+        private ComputeModel computeModel;
+
+        /**
+         * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+         * @param computeModel the value to set
+         * @return this builder
+         **/
+        public Builder computeModel(ComputeModel computeModel) {
+            this.computeModel = computeModel;
+            this.__explicitlySet__.add("computeModel");
+            return this;
+        }
+        /**
+         * If true, the shape supports configurable DB and Storage Server types.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("areServerTypesSupported")
+        private Boolean areServerTypesSupported;
+
+        /**
+         * If true, the shape supports configurable DB and Storage Server types.
+         * @param areServerTypesSupported the value to set
+         * @return this builder
+         **/
+        public Builder areServerTypesSupported(Boolean areServerTypesSupported) {
+            this.areServerTypesSupported = areServerTypesSupported;
+            this.__explicitlySet__.add("areServerTypesSupported");
+            return this;
+        }
+        /**
          * The minimum number of compute servers available for this shape.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
@@ -479,6 +536,9 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                             this.minDbNodeStoragePerNodeInGBs,
                             this.availableDataStorageInTBs,
                             this.minDataStorageInTBs,
+                            this.displayName,
+                            this.computeModel,
+                            this.areServerTypesSupported,
                             this.minimumNodeCount,
                             this.maximumNodeCount,
                             this.availableCoreCountPerNode);
@@ -547,6 +607,15 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("minDataStorageInTBs")) {
                 this.minDataStorageInTBs(model.getMinDataStorageInTBs());
+            }
+            if (model.wasPropertyExplicitlySet("displayName")) {
+                this.displayName(model.getDisplayName());
+            }
+            if (model.wasPropertyExplicitlySet("computeModel")) {
+                this.computeModel(model.getComputeModel());
+            }
+            if (model.wasPropertyExplicitlySet("areServerTypesSupported")) {
+                this.areServerTypesSupported(model.getAreServerTypesSupported());
             }
             if (model.wasPropertyExplicitlySet("minimumNodeCount")) {
                 this.minimumNodeCount(model.getMinimumNodeCount());
@@ -889,6 +958,96 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
     }
 
     /**
+     * The display name of the shape used for the DB system.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("displayName")
+    private final String displayName;
+
+    /**
+     * The display name of the shape used for the DB system.
+     * @return the value
+     **/
+    public String getDisplayName() {
+        return displayName;
+    }
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
+    public enum ComputeModel {
+        Ecpu("ECPU"),
+        Ocpu("OCPU"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by this
+         * version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(ComputeModel.class);
+
+        private final String value;
+        private static java.util.Map<String, ComputeModel> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (ComputeModel v : ComputeModel.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        ComputeModel(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static ComputeModel create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'ComputeModel', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("computeModel")
+    private final ComputeModel computeModel;
+
+    /**
+     * The compute model of the Autonomous Database. This is required if using the {@code computeCount} parameter. If using {@code cpuCoreCount} then it is an error to specify {@code computeModel} to a non-null value. ECPU compute model is the recommended model and OCPU compute model is legacy.
+     * @return the value
+     **/
+    public ComputeModel getComputeModel() {
+        return computeModel;
+    }
+
+    /**
+     * If true, the shape supports configurable DB and Storage Server types.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("areServerTypesSupported")
+    private final Boolean areServerTypesSupported;
+
+    /**
+     * If true, the shape supports configurable DB and Storage Server types.
+     * @return the value
+     **/
+    public Boolean getAreServerTypesSupported() {
+        return areServerTypesSupported;
+    }
+
+    /**
      * The minimum number of compute servers available for this shape.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("minimumNodeCount")
@@ -969,6 +1128,10 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
         sb.append(", availableDataStorageInTBs=")
                 .append(String.valueOf(this.availableDataStorageInTBs));
         sb.append(", minDataStorageInTBs=").append(String.valueOf(this.minDataStorageInTBs));
+        sb.append(", displayName=").append(String.valueOf(this.displayName));
+        sb.append(", computeModel=").append(String.valueOf(this.computeModel));
+        sb.append(", areServerTypesSupported=")
+                .append(String.valueOf(this.areServerTypesSupported));
         sb.append(", minimumNodeCount=").append(String.valueOf(this.minimumNodeCount));
         sb.append(", maximumNodeCount=").append(String.valueOf(this.maximumNodeCount));
         sb.append(", availableCoreCountPerNode=")
@@ -1013,6 +1176,10 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(
                         this.availableDataStorageInTBs, other.availableDataStorageInTBs)
                 && java.util.Objects.equals(this.minDataStorageInTBs, other.minDataStorageInTBs)
+                && java.util.Objects.equals(this.displayName, other.displayName)
+                && java.util.Objects.equals(this.computeModel, other.computeModel)
+                && java.util.Objects.equals(
+                        this.areServerTypesSupported, other.areServerTypesSupported)
                 && java.util.Objects.equals(this.minimumNodeCount, other.minimumNodeCount)
                 && java.util.Objects.equals(this.maximumNodeCount, other.maximumNodeCount)
                 && java.util.Objects.equals(
@@ -1097,6 +1264,13 @@ public final class DbSystemShapeSummary extends com.oracle.bmc.http.internal.Exp
                         + (this.minDataStorageInTBs == null
                                 ? 43
                                 : this.minDataStorageInTBs.hashCode());
+        result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
+        result = (result * PRIME) + (this.computeModel == null ? 43 : this.computeModel.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.areServerTypesSupported == null
+                                ? 43
+                                : this.areServerTypesSupported.hashCode());
         result =
                 (result * PRIME)
                         + (this.minimumNodeCount == null ? 43 : this.minimumNodeCount.hashCode());

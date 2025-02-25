@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity.model;
@@ -54,8 +54,8 @@ public final class BulkEditTagsResourceType
          * <p>
          * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
          * This information will match the API documentation.
-         * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
-         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         * See [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+         * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
@@ -66,8 +66,8 @@ public final class BulkEditTagsResourceType
          * <p>
          * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
          * This information will match the API documentation.
-         * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
-         * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+         * See [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+         * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
          *
          * @param metadataKeys the value to set
          * @return this builder
@@ -134,8 +134,8 @@ public final class BulkEditTagsResourceType
      * <p>
      * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
      * This information will match the API documentation.
-     * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
-     * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+     * See [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+     * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("metadataKeys")
@@ -146,8 +146,8 @@ public final class BulkEditTagsResourceType
      * <p>
      * For example, for a bucket, the value of {@code metadataKeys} will be ["namespaceName", "bucketName"].
      * This information will match the API documentation.
-     * See [UpdateBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
-     * [DeleteBucket](https://docs.cloud.oracle.com/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
+     * See [UpdateBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/UpdateBucket) and
+     * [DeleteBucket](https://docs.oracle.com/iaas/api/#/en/objectstorage/latest/Bucket/DeleteBucket).
      *
      * @return the value
      **/

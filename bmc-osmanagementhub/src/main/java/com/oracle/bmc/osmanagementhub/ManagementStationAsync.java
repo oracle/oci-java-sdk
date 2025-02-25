@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -79,7 +79,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Create a management station. You must provide proxy and mirror configuration information.
+     * Creates a management station using the proxy and mirror configuration information provided.
      *
      *
      * @param request The request object containing the details to send
@@ -96,7 +96,9 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Deletes a management station.
+     * Deletes a management station. You can't delete a station if there are resources associated with the station
+     * (such as instances using the station or profiles associated with the station). Switch stations and edit profiles
+     * as needed before deleting the station.
      *
      *
      * @param request The request object containing the details to send
@@ -113,7 +115,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Gets information about the specified management station.
+     * Returns information about the specified management station.
      *
      *
      * @param request The request object containing the details to send
@@ -130,7 +132,8 @@ public interface ManagementStationAsync extends AutoCloseable {
                     handler);
 
     /**
-     * Lists management stations in a compartment.
+     * Lists management stations within the specified compartment. Filter the list against a variety of criteria
+     * including but not limited to name, status, and location.
      *
      *
      * @param request The request object containing the details to send
@@ -162,7 +165,7 @@ public interface ManagementStationAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<ListMirrorsRequest, ListMirrorsResponse> handler);
 
     /**
-     * Refreshes the list of software sources mirrored by the management station to support the associated instances.
+     * Refreshes the list of software sources mirrored by the management station.
      *
      *
      * @param request The request object containing the details to send
@@ -181,7 +184,7 @@ public interface ManagementStationAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Synchronize the specified software sources mirrors on the management station.
+     * Synchronize the specified software sources mirrored on the management station.
      *
      *
      * @param request The request object containing the details to send

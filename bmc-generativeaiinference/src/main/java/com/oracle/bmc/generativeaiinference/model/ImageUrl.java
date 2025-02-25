@@ -1,11 +1,11 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.generativeaiinference.model;
 
 /**
- * Represents a single instance of chat image url.
+ * Provide a base64 encoded image.
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
  * that are {@code null} because they are unset from fields that are explicitly set to {@code null}. This is done in
@@ -29,13 +29,31 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The URL of the image.
+         * The base64 encoded image data.
+         * <p>
+         * Example for a png image:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;base64,<base64 encoded image content>"
+         *     }
+         *   }}
+         *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("url")
         private String url;
 
         /**
-         * The URL of the image.
+         * The base64 encoded image data.
+         * <p>
+         * Example for a png image:
+         *   {@code {
+         *     "type": "IMAGE",
+         *     "imageUrl": {
+         *       "url": "data:image/png;base64,<base64 encoded image content>"
+         *     }
+         *   }}
+         *
          * @param url the value to set
          * @return this builder
          **/
@@ -45,13 +63,13 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
             return this;
         }
         /**
-         * The level of the detail.
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("detail")
         private Detail detail;
 
         /**
-         * The level of the detail.
+         * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
          * @param detail the value to set
          * @return this builder
          **/
@@ -96,13 +114,31 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The URL of the image.
+     * The base64 encoded image data.
+     * <p>
+     * Example for a png image:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;base64,<base64 encoded image content>"
+     *     }
+     *   }}
+     *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("url")
     private final String url;
 
     /**
-     * The URL of the image.
+     * The base64 encoded image data.
+     * <p>
+     * Example for a png image:
+     *   {@code {
+     *     "type": "IMAGE",
+     *     "imageUrl": {
+     *       "url": "data:image/png;base64,<base64 encoded image content>"
+     *     }
+     *   }}
+     *
      * @return the value
      **/
     public String getUrl() {
@@ -110,7 +146,7 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
     }
 
     /**
-     * The level of the detail.
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
      **/
     public enum Detail {
         Auto("AUTO"),
@@ -158,13 +194,13 @@ public final class ImageUrl extends com.oracle.bmc.http.internal.ExplicitlySetBm
         }
     };
     /**
-     * The level of the detail.
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("detail")
     private final Detail detail;
 
     /**
-     * The level of the detail.
+     * The default value is AUTO and only AUTO is supported. This option controls how to convert the base64 encoded image to tokens.
      * @return the value
      **/
     public Detail getDetail() {

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.aispeech;
@@ -67,7 +67,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CancelTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelTranscriptionJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CancelTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelTranscriptionJob API.
      */
     CancelTranscriptionJobResponse cancelTranscriptionJob(CancelTranscriptionJobRequest request);
 
@@ -79,7 +79,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CancelTranscriptionTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelTranscriptionTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CancelTranscriptionTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelTranscriptionTask API.
      */
     CancelTranscriptionTaskResponse cancelTranscriptionTask(CancelTranscriptionTaskRequest request);
 
@@ -91,7 +91,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ChangeCustomizationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCustomizationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ChangeCustomizationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeCustomizationCompartment API.
      */
     ChangeCustomizationCompartmentResponse changeCustomizationCompartment(
             ChangeCustomizationCompartmentRequest request);
@@ -104,7 +104,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ChangeTranscriptionJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTranscriptionJobCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ChangeTranscriptionJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeTranscriptionJobCompartment API.
      */
     ChangeTranscriptionJobCompartmentResponse changeTranscriptionJobCompartment(
             ChangeTranscriptionJobCompartmentRequest request);
@@ -118,7 +118,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCustomization API.
      */
     CreateCustomizationResponse createCustomization(CreateCustomizationRequest request);
 
@@ -131,7 +131,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateRealtimeSessionTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRealtimeSessionToken API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateRealtimeSessionTokenExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateRealtimeSessionToken API.
      */
     CreateRealtimeSessionTokenResponse createRealtimeSessionToken(
             CreateRealtimeSessionTokenRequest request);
@@ -145,7 +145,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTranscriptionJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/CreateTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTranscriptionJob API.
      */
     CreateTranscriptionJobResponse createTranscriptionJob(CreateTranscriptionJobRequest request);
 
@@ -157,7 +157,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteCustomization API.
      */
     DeleteCustomizationResponse deleteCustomization(DeleteCustomizationRequest request);
 
@@ -169,7 +169,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTranscriptionJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/DeleteTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTranscriptionJob API.
      */
     DeleteTranscriptionJobResponse deleteTranscriptionJob(DeleteTranscriptionJobRequest request);
 
@@ -181,7 +181,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetCustomization API.
      */
     GetCustomizationResponse getCustomization(GetCustomizationRequest request);
 
@@ -193,7 +193,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranscriptionJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranscriptionJob API.
      */
     GetTranscriptionJobResponse getTranscriptionJob(GetTranscriptionJobRequest request);
 
@@ -205,7 +205,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetTranscriptionTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranscriptionTask API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/GetTranscriptionTaskExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTranscriptionTask API.
      */
     GetTranscriptionTaskResponse getTranscriptionTask(GetTranscriptionTaskRequest request);
 
@@ -218,7 +218,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListCustomizationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomizations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListCustomizationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListCustomizations API.
      */
     ListCustomizationsResponse listCustomizations(ListCustomizationsRequest request);
 
@@ -231,7 +231,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListTranscriptionJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranscriptionJobs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListTranscriptionJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranscriptionJobs API.
      */
     ListTranscriptionJobsResponse listTranscriptionJobs(ListTranscriptionJobsRequest request);
 
@@ -244,7 +244,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListTranscriptionTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranscriptionTasks API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListTranscriptionTasksExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTranscriptionTasks API.
      */
     ListTranscriptionTasksResponse listTranscriptionTasks(ListTranscriptionTasksRequest request);
 
@@ -257,7 +257,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListVoicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVoices API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/ListVoicesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListVoices API.
      */
     ListVoicesResponse listVoices(ListVoicesRequest request);
 
@@ -270,7 +270,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/SynthesizeSpeechExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynthesizeSpeech API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/SynthesizeSpeechExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use SynthesizeSpeech API.
      */
     SynthesizeSpeechResponse synthesizeSpeech(SynthesizeSpeechRequest request);
 
@@ -282,7 +282,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomization API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateCustomizationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateCustomization API.
      */
     UpdateCustomizationResponse updateCustomization(UpdateCustomizationRequest request);
 
@@ -294,7 +294,7 @@ public interface AIServiceSpeech extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTranscriptionJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/aispeech/UpdateTranscriptionJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTranscriptionJob API.
      */
     UpdateTranscriptionJobResponse updateTranscriptionJob(UpdateTranscriptionJobRequest request);
 

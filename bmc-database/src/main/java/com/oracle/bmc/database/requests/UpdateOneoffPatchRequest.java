@@ -1,12 +1,12 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.requests;
 
 import com.oracle.bmc.database.model.*;
 /**
- * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOneoffPatchRequest.
+ * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/database/UpdateOneoffPatchExample.java.html" target="_blank" rel="noopener noreferrer">here</a> to see how to use UpdateOneoffPatchRequest.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public class UpdateOneoffPatchRequest
@@ -14,12 +14,12 @@ public class UpdateOneoffPatchRequest
                 com.oracle.bmc.database.model.UpdateOneoffPatchDetails> {
 
     /**
-     * The one-off patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The one-off patch [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     private String oneoffPatchId;
 
     /**
-     * The one-off patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * The one-off patch [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      */
     public String getOneoffPatchId() {
         return oneoffPatchId;
@@ -85,12 +85,12 @@ public class UpdateOneoffPatchRequest
         private com.oracle.bmc.retrier.RetryConfiguration retryConfiguration = null;
 
         /**
-         * The one-off patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The one-off patch [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          */
         private String oneoffPatchId = null;
 
         /**
-         * The one-off patch [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+         * The one-off patch [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * @param oneoffPatchId the value to set
          * @return this builder instance
          */

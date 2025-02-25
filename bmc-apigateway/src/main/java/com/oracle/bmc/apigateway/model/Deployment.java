@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.apigateway.model;
@@ -7,7 +7,7 @@ package com.oracle.bmc.apigateway.model;
 /**
  * A deployment deploys an API on a gateway. Avoid entering confidential information.
  * For more information, see
- * [API Gateway Concepts](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm).
+ * [API Gateway Concepts](https://docs.oracle.com/iaas/Content/APIGateway/Concepts/apigatewayconcepts.htm).
  *
  * <br/>
  * Note: Objects should always be created or deserialized using the {@link Builder}. This model distinguishes fields
@@ -70,14 +70,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
          *
          * @param id the value to set
          * @return this builder
@@ -88,14 +88,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
         private String gatewayId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
          *
          * @param gatewayId the value to set
          * @return this builder
@@ -130,7 +130,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the
          * resource is created.
          *
          **/
@@ -138,7 +138,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the
          * resource is created.
          *
          * @param compartmentId the value to set
@@ -153,7 +153,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
          * A path on which to deploy all routes contained in the API
          * deployment specification. For more information, see
          * [Deploying an API on an API Gateway by Creating an API
-         * Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
+         * Deployment](https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("pathPrefix")
@@ -163,7 +163,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
          * A path on which to deploy all routes contained in the API
          * deployment specification. For more information, see
          * [Deploying an API on an API Gateway by Creating an API
-         * Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
+         * Deployment](https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
          *
          * @param pathPrefix the value to set
          * @return this builder
@@ -271,7 +271,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          * with no predefined name, type, or namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -282,7 +282,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair
          * with no predefined name, type, or namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -297,7 +297,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
          * namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -308,7 +308,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a
          * namespace. For more information, see
-         * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -404,14 +404,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      *
      * @return the value
      **/
@@ -420,14 +420,14 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("gatewayId")
     private final String gatewayId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the resource.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the resource.
      *
      * @return the value
      **/
@@ -458,7 +458,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the
      * resource is created.
      *
      **/
@@ -466,7 +466,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the compartment in which the
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment in which the
      * resource is created.
      *
      * @return the value
@@ -479,7 +479,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
      * A path on which to deploy all routes contained in the API
      * deployment specification. For more information, see
      * [Deploying an API on an API Gateway by Creating an API
-     * Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
+     * Deployment](https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("pathPrefix")
@@ -489,7 +489,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
      * A path on which to deploy all routes contained in the API
      * deployment specification. For more information, see
      * [Deploying an API on an API Gateway by Creating an API
-     * Deployment](https://docs.cloud.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
+     * Deployment](https://docs.oracle.com/iaas/Content/APIGateway/Tasks/apigatewaycreatingdeployment.htm).
      *
      * @return the value
      **/
@@ -635,7 +635,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -646,7 +646,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair
      * with no predefined name, type, or namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -659,7 +659,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -670,7 +670,7 @@ public final class Deployment extends com.oracle.bmc.http.internal.ExplicitlySet
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a
      * namespace. For more information, see
-     * [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *

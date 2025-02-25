@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.ocvp;
@@ -9,7 +9,7 @@ import com.oracle.bmc.ocvp.responses.*;
 
 /**
  * Use the Oracle Cloud VMware API to create SDDCs and manage ESXi hosts and software.
- * For more information, see [Oracle Cloud VMware Solution](https://docs.cloud.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
+ * For more information, see [Oracle Cloud VMware Solution](https://docs.oracle.com/iaas/Content/VMware/Concepts/ocvsoverview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -70,14 +70,14 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CancelDowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeHcx API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CancelDowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelDowngradeHcx API.
      */
     CancelDowngradeHcxResponse cancelDowngradeHcx(CancelDowngradeHcxRequest request);
 
     /**
      * Moves an SDDC into a different compartment within the same tenancy. For information
      * about moving resources between compartments, see
-     * [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -85,7 +85,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSddcCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ChangeSddcCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeSddcCompartment API.
      */
     ChangeSddcCompartmentResponse changeSddcCompartment(ChangeSddcCompartmentRequest request);
 
@@ -95,7 +95,7 @@ public interface Sddc extends AutoCloseable {
      * Use the {@link WorkRequest} operations to track the
      * creation of the SDDC.
      * <p>
-     **Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.cloud.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
+     **Important:** You must configure the SDDC's networking resources with the security rules detailed in [Security Rules for Oracle Cloud VMware Solution SDDCs](https://docs.oracle.com/iaas/Content/VMware/Reference/ocvssecurityrules.htm). Otherwise, provisioning the SDDC will fail. The rules are based on the requirements set by VMware.
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -103,7 +103,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSddc API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/CreateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateSddc API.
      */
     CreateSddcResponse createSddc(CreateSddcRequest request);
 
@@ -121,7 +121,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSddc API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DeleteSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteSddc API.
      */
     DeleteSddcResponse deleteSddc(DeleteSddcRequest request);
 
@@ -138,7 +138,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DowngradeHcx API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/DowngradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DowngradeHcx API.
      */
     DowngradeHcxResponse downgradeHcx(DowngradeHcxRequest request);
 
@@ -150,7 +150,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSddc API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/GetSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetSddc API.
      */
     GetSddcResponse getSddc(GetSddcRequest request);
 
@@ -164,7 +164,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSddcsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSddcs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSddcsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSddcs API.
      */
     ListSddcsResponse listSddcs(ListSddcsRequest request);
 
@@ -177,7 +177,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedCommitmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCommitments API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedCommitmentsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedCommitments API.
      */
     ListSupportedCommitmentsResponse listSupportedCommitments(
             ListSupportedCommitmentsRequest request);
@@ -191,7 +191,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedHostShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedHostShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedHostShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedHostShapes API.
      */
     ListSupportedHostShapesResponse listSupportedHostShapes(ListSupportedHostShapesRequest request);
 
@@ -205,7 +205,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedVmwareSoftwareVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedVmwareSoftwareVersions API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/ListSupportedVmwareSoftwareVersionsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListSupportedVmwareSoftwareVersions API.
      */
     ListSupportedVmwareSoftwareVersionsResponse listSupportedVmwareSoftwareVersions(
             ListSupportedVmwareSoftwareVersionsRequest request);
@@ -218,7 +218,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RefreshHcxLicenseStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshHcxLicenseStatus API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RefreshHcxLicenseStatusExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshHcxLicenseStatus API.
      */
     RefreshHcxLicenseStatusResponse refreshHcxLicenseStatus(RefreshHcxLicenseStatusRequest request);
 
@@ -231,7 +231,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrievePasswordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrievePassword API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/RetrievePasswordExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RetrievePassword API.
      */
     RetrievePasswordResponse retrievePassword(RetrievePasswordRequest request);
 
@@ -249,7 +249,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSddc API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpdateSddcExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateSddc API.
      */
     UpdateSddcResponse updateSddc(UpdateSddcRequest request);
 
@@ -262,7 +262,7 @@ public interface Sddc extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpgradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeHcx API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/ocvp/UpgradeHcxExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpgradeHcx API.
      */
     UpgradeHcxResponse upgradeHcx(UpgradeHcxRequest request);
 

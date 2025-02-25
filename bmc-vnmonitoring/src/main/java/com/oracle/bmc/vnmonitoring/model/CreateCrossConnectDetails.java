@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.vnmonitoring.model;
@@ -64,13 +64,13 @@ public final class CreateCrossConnectDetails
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
          * @param compartmentId the value to set
          * @return this builder
          **/
@@ -80,14 +80,14 @@ public final class CreateCrossConnectDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
         private String crossConnectGroupId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
          *
          * @param crossConnectGroupId the value to set
          * @return this builder
@@ -141,7 +141,7 @@ public final class CreateCrossConnectDetails
         /**
          * If you already have an existing cross-connect or cross-connect group at this FastConnect
          * location, and you want this new cross-connect to be on a different router (for the
-         * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+         * purposes of redundancy), provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
          * cross-connect group.
          *
          **/
@@ -151,7 +151,7 @@ public final class CreateCrossConnectDetails
         /**
          * If you already have an existing cross-connect or cross-connect group at this FastConnect
          * location, and you want this new cross-connect to be on a different router (for the
-         * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+         * purposes of redundancy), provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
          * cross-connect group.
          *
          * @param farCrossConnectOrCrossConnectGroupId the value to set
@@ -212,7 +212,7 @@ public final class CreateCrossConnectDetails
         /**
          * If you already have an existing cross-connect or cross-connect group at this FastConnect
          * location, and you want this new cross-connect to be on the same router, provide the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
@@ -221,7 +221,7 @@ public final class CreateCrossConnectDetails
         /**
          * If you already have an existing cross-connect or cross-connect group at this FastConnect
          * location, and you want this new cross-connect to be on the same router, provide the
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
          *
          * @param nearCrossConnectOrCrossConnectGroupId the value to set
          * @return this builder
@@ -362,13 +362,13 @@ public final class CreateCrossConnectDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment to contain the cross-connect.
      * @return the value
      **/
     public String getCompartmentId() {
@@ -376,14 +376,14 @@ public final class CreateCrossConnectDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("crossConnectGroupId")
     private final String crossConnectGroupId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the cross-connect group to put this cross-connect in.
      *
      * @return the value
      **/
@@ -430,7 +430,7 @@ public final class CreateCrossConnectDetails
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on a different router (for the
-     * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+     * purposes of redundancy), provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
      * cross-connect group.
      *
      **/
@@ -440,7 +440,7 @@ public final class CreateCrossConnectDetails
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on a different router (for the
-     * purposes of redundancy), provide the [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
+     * purposes of redundancy), provide the [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or
      * cross-connect group.
      *
      * @return the value
@@ -494,7 +494,7 @@ public final class CreateCrossConnectDetails
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on the same router, provide the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("nearCrossConnectOrCrossConnectGroupId")
@@ -503,7 +503,7 @@ public final class CreateCrossConnectDetails
     /**
      * If you already have an existing cross-connect or cross-connect group at this FastConnect
      * location, and you want this new cross-connect to be on the same router, provide the
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of that existing cross-connect or cross-connect group.
      *
      * @return the value
      **/

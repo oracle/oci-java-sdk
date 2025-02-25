@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 import com.oracle.bmc.ConfigFileReader;
@@ -56,8 +56,8 @@ import java.util.List;
  *   <li>Create a VCN and subnet for the DB system and its related resources</li>
  *   <li>
  *     Launch a DB system containing a single DB home and database. See:
- *       <a href="https://docs.cloud.oracle.com/Content/Database/Concepts/overview.htm">overview</a> and
- *       <a href="https://docs.cloud.oracle.com/Content/Database/Tasks/launchingDB.htm">managing DB systems</a>
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Concepts/overview.htm">overview</a> and
+ *       <a href="https://docs.oracle.com/iaas/Content/Database/Tasks/launchingDB.htm">managing DB systems</a>
  *       for more information
  *   <li>Demonstrate listing and retrieving information on individual DB systems, DB homes and databases</li>
  *   <li>Demonstrate taking action on nodes</li>

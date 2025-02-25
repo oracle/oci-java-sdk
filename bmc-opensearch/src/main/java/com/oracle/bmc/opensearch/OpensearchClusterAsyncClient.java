@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.opensearch;
@@ -501,6 +501,60 @@ public class OpensearchClusterAsyncClient implements OpensearchClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     BackupOpensearchClusterRequest, BackupOpensearchClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureOutboundClusterResponse> configureOutboundCluster(
+            ConfigureOutboundClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>
+                    handler) {
+        LOG.trace("Called async configureOutboundCluster");
+        final ConfigureOutboundClusterRequest interceptedRequest =
+                ConfigureOutboundClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ConfigureOutboundClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpensearchCluster",
+                        "ConfigureOutboundCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/ConfigureOutboundCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ConfigureOutboundClusterResponse>
+                transformer =
+                        ConfigureOutboundClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>,
+                        java.util.concurrent.Future<ConfigureOutboundClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getConfigureOutboundClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ConfigureOutboundClusterRequest, ConfigureOutboundClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,
@@ -1154,6 +1208,60 @@ public class OpensearchClusterAsyncClient implements OpensearchClusterAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     UpdateOpensearchClusterRequest, UpdateOpensearchClusterResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpgradeOpenSearchClusterResponse> upgradeOpenSearchCluster(
+            UpgradeOpenSearchClusterRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>
+                    handler) {
+        LOG.trace("Called async upgradeOpenSearchCluster");
+        final UpgradeOpenSearchClusterRequest interceptedRequest =
+                UpgradeOpenSearchClusterConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                UpgradeOpenSearchClusterConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "OpensearchCluster",
+                        "UpgradeOpenSearchCluster",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/opensearch/20180828/OpensearchCluster/UpgradeOpenSearchCluster");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, UpgradeOpenSearchClusterResponse>
+                transformer =
+                        UpgradeOpenSearchClusterConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>,
+                        java.util.concurrent.Future<UpgradeOpenSearchClusterResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getUpgradeOpenSearchClusterDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    UpgradeOpenSearchClusterRequest, UpgradeOpenSearchClusterResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

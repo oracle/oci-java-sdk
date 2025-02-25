@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub.model;
@@ -34,7 +34,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         "percentComplete",
         "timeCreated",
         "timeScheduled",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "rebootTimeoutInMins"
     })
     public WorkRequestSummary(
             WorkRequestOperationType operationType,
@@ -49,7 +50,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             Float percentComplete,
             java.util.Date timeCreated,
             java.util.Date timeScheduled,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            Integer rebootTimeoutInMins) {
         super();
         this.operationType = operationType;
         this.status = status;
@@ -64,6 +66,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         this.timeCreated = timeCreated;
         this.timeScheduled = timeScheduled;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.rebootTimeoutInMins = rebootTimeoutInMins;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -101,13 +104,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
          * @param id the value to set
          * @return this builder
          **/
@@ -165,13 +168,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("parentId")
         private String parentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
          * @param parentId the value to set
          * @return this builder
          **/
@@ -181,13 +184,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
         private java.util.List<String> childrenId;
 
         /**
-         * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
+         * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
          * @param childrenId the value to set
          * @return this builder
          **/
@@ -197,7 +200,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
          * Work requests should be scoped to the same compartment as the resource it affects.
          * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
          *
@@ -206,7 +209,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
          * Work requests should be scoped to the same compartment as the resource it affects.
          * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
          *
@@ -286,6 +289,22 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+        private Integer rebootTimeoutInMins;
+
+        /**
+         * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+         * @param rebootTimeoutInMins the value to set
+         * @return this builder
+         **/
+        public Builder rebootTimeoutInMins(Integer rebootTimeoutInMins) {
+            this.rebootTimeoutInMins = rebootTimeoutInMins;
+            this.__explicitlySet__.add("rebootTimeoutInMins");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -305,7 +324,8 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                             this.percentComplete,
                             this.timeCreated,
                             this.timeScheduled,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.rebootTimeoutInMins);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -353,6 +373,9 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
             }
+            if (model.wasPropertyExplicitlySet("rebootTimeoutInMins")) {
+                this.rebootTimeoutInMins(model.getRebootTimeoutInMins());
+            }
             return this;
         }
     }
@@ -397,13 +420,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the work request.
      * @return the value
      **/
     public String getId() {
@@ -453,13 +476,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("parentId")
     private final String parentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the parent work request, if there is any.
      * @return the value
      **/
     public String getParentId() {
@@ -467,13 +490,13 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("childrenId")
     private final java.util.List<String> childrenId;
 
     /**
-     * The list of [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
+     * The list of [OCIDs](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for child work requests.
      * @return the value
      **/
     public java.util.List<String> getChildrenId() {
@@ -481,7 +504,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
      * Work requests should be scoped to the same compartment as the resource it affects.
      * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
      *
@@ -490,7 +513,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains the work request.
      * Work requests should be scoped to the same compartment as the resource it affects.
      * If the work request affects multiple resources the different compartments, the services selects the compartment of the primary resource.
      *
@@ -560,6 +583,20 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         return isManagedByAutonomousLinux;
     }
 
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("rebootTimeoutInMins")
+    private final Integer rebootTimeoutInMins;
+
+    /**
+     * The number of minutes the service waits for the reboot to complete. If the managed instance doesn't reboot within the timeout, the service marks the reboot job as failed.
+     * @return the value
+     **/
+    public Integer getRebootTimeoutInMins() {
+        return rebootTimeoutInMins;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -588,6 +625,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
         sb.append(", timeScheduled=").append(String.valueOf(this.timeScheduled));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", rebootTimeoutInMins=").append(String.valueOf(this.rebootTimeoutInMins));
         sb.append(")");
         return sb.toString();
     }
@@ -616,6 +654,7 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                 && java.util.Objects.equals(this.timeScheduled, other.timeScheduled)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.rebootTimeoutInMins, other.rebootTimeoutInMins)
                 && super.equals(other);
     }
 
@@ -648,6 +687,11 @@ public final class WorkRequestSummary extends com.oracle.bmc.http.internal.Expli
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.rebootTimeoutInMins == null
+                                ? 43
+                                : this.rebootTimeoutInMins.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

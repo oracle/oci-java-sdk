@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.databasemanagement.model;
@@ -35,7 +35,11 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         "heatWaveMemorySize",
         "heatWaveNodes",
         "isHeatWaveActive",
-        "timeCreatedHeatWave"
+        "timeCreatedHeatWave",
+        "databaseType",
+        "managementState",
+        "lifecycleState",
+        "timeUpdated"
     })
     public ManagedMySqlDatabase(
             String id,
@@ -51,7 +55,11 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
             Integer heatWaveMemorySize,
             java.util.List<HeatWaveNode> heatWaveNodes,
             Boolean isHeatWaveActive,
-            java.util.Date timeCreatedHeatWave) {
+            java.util.Date timeCreatedHeatWave,
+            MySqlType databaseType,
+            ManagementState managementState,
+            LifecycleStates lifecycleState,
+            java.util.Date timeUpdated) {
         super();
         this.id = id;
         this.compartmentId = compartmentId;
@@ -67,6 +75,10 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         this.heatWaveNodes = heatWaveNodes;
         this.isHeatWaveActive = isHeatWaveActive;
         this.timeCreatedHeatWave = timeCreatedHeatWave;
+        this.databaseType = databaseType;
+        this.managementState = managementState;
+        this.lifecycleState = lifecycleState;
+        this.timeUpdated = timeUpdated;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -295,6 +307,74 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
             this.__explicitlySet__.add("timeCreatedHeatWave");
             return this;
         }
+        /**
+         * The type of the MySQL Database. Indicates whether the database
+         * is external or MDS.
+         *
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+        private MySqlType databaseType;
+
+        /**
+         * The type of the MySQL Database. Indicates whether the database
+         * is external or MDS.
+         *
+         * @param databaseType the value to set
+         * @return this builder
+         **/
+        public Builder databaseType(MySqlType databaseType) {
+            this.databaseType = databaseType;
+            this.__explicitlySet__.add("databaseType");
+            return this;
+        }
+        /**
+         * Indicates database management status.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+        private ManagementState managementState;
+
+        /**
+         * Indicates database management status.
+         * @param managementState the value to set
+         * @return this builder
+         **/
+        public Builder managementState(ManagementState managementState) {
+            this.managementState = managementState;
+            this.__explicitlySet__.add("managementState");
+            return this;
+        }
+        /**
+         * Indicates lifecycle  state of the resource.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+        private LifecycleStates lifecycleState;
+
+        /**
+         * Indicates lifecycle  state of the resource.
+         * @param lifecycleState the value to set
+         * @return this builder
+         **/
+        public Builder lifecycleState(LifecycleStates lifecycleState) {
+            this.lifecycleState = lifecycleState;
+            this.__explicitlySet__.add("lifecycleState");
+            return this;
+        }
+        /**
+         * The date and time the Managed MySQL Database was updated.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+        private java.util.Date timeUpdated;
+
+        /**
+         * The date and time the Managed MySQL Database was updated.
+         * @param timeUpdated the value to set
+         * @return this builder
+         **/
+        public Builder timeUpdated(java.util.Date timeUpdated) {
+            this.timeUpdated = timeUpdated;
+            this.__explicitlySet__.add("timeUpdated");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -315,7 +395,11 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
                             this.heatWaveMemorySize,
                             this.heatWaveNodes,
                             this.isHeatWaveActive,
-                            this.timeCreatedHeatWave);
+                            this.timeCreatedHeatWave,
+                            this.databaseType,
+                            this.managementState,
+                            this.lifecycleState,
+                            this.timeUpdated);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -365,6 +449,18 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
             }
             if (model.wasPropertyExplicitlySet("timeCreatedHeatWave")) {
                 this.timeCreatedHeatWave(model.getTimeCreatedHeatWave());
+            }
+            if (model.wasPropertyExplicitlySet("databaseType")) {
+                this.databaseType(model.getDatabaseType());
+            }
+            if (model.wasPropertyExplicitlySet("managementState")) {
+                this.managementState(model.getManagementState());
+            }
+            if (model.wasPropertyExplicitlySet("lifecycleState")) {
+                this.lifecycleState(model.getLifecycleState());
+            }
+            if (model.wasPropertyExplicitlySet("timeUpdated")) {
+                this.timeUpdated(model.getTimeUpdated());
             }
             return this;
         }
@@ -577,6 +673,66 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         return timeCreatedHeatWave;
     }
 
+    /**
+     * The type of the MySQL Database. Indicates whether the database
+     * is external or MDS.
+     *
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("databaseType")
+    private final MySqlType databaseType;
+
+    /**
+     * The type of the MySQL Database. Indicates whether the database
+     * is external or MDS.
+     *
+     * @return the value
+     **/
+    public MySqlType getDatabaseType() {
+        return databaseType;
+    }
+
+    /**
+     * Indicates database management status.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("managementState")
+    private final ManagementState managementState;
+
+    /**
+     * Indicates database management status.
+     * @return the value
+     **/
+    public ManagementState getManagementState() {
+        return managementState;
+    }
+
+    /**
+     * Indicates lifecycle  state of the resource.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("lifecycleState")
+    private final LifecycleStates lifecycleState;
+
+    /**
+     * Indicates lifecycle  state of the resource.
+     * @return the value
+     **/
+    public LifecycleStates getLifecycleState() {
+        return lifecycleState;
+    }
+
+    /**
+     * The date and time the Managed MySQL Database was updated.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timeUpdated")
+    private final java.util.Date timeUpdated;
+
+    /**
+     * The date and time the Managed MySQL Database was updated.
+     * @return the value
+     **/
+    public java.util.Date getTimeUpdated() {
+        return timeUpdated;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -606,6 +762,10 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
         sb.append(", heatWaveNodes=").append(String.valueOf(this.heatWaveNodes));
         sb.append(", isHeatWaveActive=").append(String.valueOf(this.isHeatWaveActive));
         sb.append(", timeCreatedHeatWave=").append(String.valueOf(this.timeCreatedHeatWave));
+        sb.append(", databaseType=").append(String.valueOf(this.databaseType));
+        sb.append(", managementState=").append(String.valueOf(this.managementState));
+        sb.append(", lifecycleState=").append(String.valueOf(this.lifecycleState));
+        sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
         sb.append(")");
         return sb.toString();
     }
@@ -635,6 +795,10 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
                 && java.util.Objects.equals(this.heatWaveNodes, other.heatWaveNodes)
                 && java.util.Objects.equals(this.isHeatWaveActive, other.isHeatWaveActive)
                 && java.util.Objects.equals(this.timeCreatedHeatWave, other.timeCreatedHeatWave)
+                && java.util.Objects.equals(this.databaseType, other.databaseType)
+                && java.util.Objects.equals(this.managementState, other.managementState)
+                && java.util.Objects.equals(this.lifecycleState, other.lifecycleState)
+                && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
                 && super.equals(other);
     }
 
@@ -682,6 +846,14 @@ public final class ManagedMySqlDatabase extends com.oracle.bmc.http.internal.Exp
                         + (this.timeCreatedHeatWave == null
                                 ? 43
                                 : this.timeCreatedHeatWave.hashCode());
+        result = (result * PRIME) + (this.databaseType == null ? 43 : this.databaseType.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementState == null ? 43 : this.managementState.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.lifecycleState == null ? 43 : this.lifecycleState.hashCode());
+        result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

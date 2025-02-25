@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.computecloudatcustomer.model;
@@ -65,7 +65,7 @@ public final class CccInfrastructureSummary
     public static class Builder {
         /**
          * The Compute Cloud@Customer infrastructure
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * This cannot be changed once created.
          *
          **/
@@ -74,7 +74,7 @@ public final class CccInfrastructureSummary
 
         /**
          * The Compute Cloud@Customer infrastructure
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
          * This cannot be changed once created.
          *
          * @param id the value to set
@@ -132,7 +132,7 @@ public final class CccInfrastructureSummary
             return this;
         }
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
          * the infrastructure.
          *
          **/
@@ -140,7 +140,7 @@ public final class CccInfrastructureSummary
         private String compartmentId;
 
         /**
-         * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
+         * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
          * the infrastructure.
          *
          * @param compartmentId the value to set
@@ -152,7 +152,7 @@ public final class CccInfrastructureSummary
             return this;
         }
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
          * used to communicate with Compute Cloud@Customer infrastructure.
          *
          **/
@@ -160,7 +160,7 @@ public final class CccInfrastructureSummary
         private String subnetId;
 
         /**
-         * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+         * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
          * used to communicate with Compute Cloud@Customer infrastructure.
          *
          * @param subnetId the value to set
@@ -362,7 +362,7 @@ public final class CccInfrastructureSummary
 
     /**
      * The Compute Cloud@Customer infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * This cannot be changed once created.
      *
      **/
@@ -371,7 +371,7 @@ public final class CccInfrastructureSummary
 
     /**
      * The Compute Cloud@Customer infrastructure
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * This cannot be changed once created.
      *
      * @return the value
@@ -423,7 +423,7 @@ public final class CccInfrastructureSummary
     }
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
      * the infrastructure.
      *
      **/
@@ -431,7 +431,7 @@ public final class CccInfrastructureSummary
     private final String compartmentId;
 
     /**
-     * The compartment [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
+     * The compartment [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) associated with
      * the infrastructure.
      *
      * @return the value
@@ -441,7 +441,7 @@ public final class CccInfrastructureSummary
     }
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
      * used to communicate with Compute Cloud@Customer infrastructure.
      *
      **/
@@ -449,7 +449,7 @@ public final class CccInfrastructureSummary
     private final String subnetId;
 
     /**
-     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
+     * [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for the network subnet that is
      * used to communicate with Compute Cloud@Customer infrastructure.
      *
      * @return the value

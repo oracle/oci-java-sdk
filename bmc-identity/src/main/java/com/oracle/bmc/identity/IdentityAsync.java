@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.identity;
@@ -8,7 +8,7 @@ import com.oracle.bmc.identity.requests.*;
 import com.oracle.bmc.identity.responses.*;
 
 /**
- * Use the Identity and Access Management Service API to manage users, groups, identity domains, compartments, policies, tagging, and limits. For information about managing users, groups, compartments, and policies, see [Identity and Access Management (without identity domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about tagging and service limits, see [Tagging](https://docs.cloud.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) and [Service Limits](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For information about creating, modifying, and deleting identity domains, see [Identity and Access Management (with identity domains)](https://docs.cloud.oracle.com/iaas/Content/Identity/home.htm).
+ * Use the Identity and Access Management Service API to manage users, groups, identity domains, compartments, policies, tagging, and limits. For information about managing users, groups, compartments, and policies, see [Identity and Access Management (without identity domains)](https://docs.oracle.com/iaas/Content/Identity/Concepts/overview.htm). For information about tagging and service limits, see [Tagging](https://docs.oracle.com/iaas/Content/Tagging/Concepts/taggingoverview.htm) and [Service Limits](https://docs.oracle.com/iaas/Content/General/Concepts/servicelimits.htm). For information about creating, modifying, and deleting identity domains, see [Identity and Access Management (with identity domains)](https://docs.oracle.com/iaas/Content/Identity/home.htm).
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20160918")
 public interface IdentityAsync extends AutoCloseable {
@@ -173,7 +173,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Deletes multiple resources in the compartment. All resources must be in the same compartment. You must have the appropriate
      * permissions to delete the resources in the request. This API can only be invoked from the tenancy's
-     * [home region](https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home). This operation creates a
+     * [home region](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home). This operation creates a
      * {@link WorkRequest}. Use the {@link #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest}
      * API to monitor the status of the bulk action.
      *
@@ -258,7 +258,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Moves multiple resources from one compartment to another. All resources must be in the same compartment.
-     * This API can only be invoked from the tenancy's [home region](https://docs.cloud.oracle.com/Content/Identity/regions/managingregions.htm#Home).
+     * This API can only be invoked from the tenancy's [home region](https://docs.oracle.com/iaas/Content/Identity/regions/managingregions.htm#Home).
      * To move resources, you must have the appropriate permissions to move the resource in both the source and target
      * compartments. This operation creates a {@link WorkRequest}.
      * Use the {@link #getWorkRequest(GetWorkRequestRequest, Consumer, Consumer) getWorkRequest} API to monitor the status of the bulk action.
@@ -361,7 +361,7 @@ public interface IdentityAsync extends AutoCloseable {
      * Moves the specified tag namespace to the specified compartment within the same tenancy.
      * <p>
      * To move the tag namespace, you must have the manage tag-namespaces permission on both compartments.
-     * For more information about IAM policies, see [Details for IAM](https://docs.cloud.oracle.com/Content/Identity/policyreference/iampolicyreference.htm).
+     * For more information about IAM policies, see [Details for IAM](https://docs.oracle.com/iaas/Content/Identity/policyreference/iampolicyreference.htm).
      * <p>
      * Moving a tag namespace moves all the tag key definitions contained in the tag namespace.
      *
@@ -383,7 +383,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new auth token for the specified user. For information about what auth tokens are for, see
-     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+     * [Managing User Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
      * <p>
      * You must specify a *description* for the auth token (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -411,12 +411,12 @@ public interface IdentityAsync extends AutoCloseable {
      * <p>
      * Specify the parent compartment's OCID as the compartment ID in the request object. Remember that the tenancy
      * is simply the root compartment. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the compartment, which must be unique across all compartments in
      * your tenancy. You can use this name or the OCID when writing policies that apply
      * to the compartment. For more information about policies, see
-     * [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * [How Policies Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      * <p>
      * You must also specify a *description* for the compartment (although it can be an empty string). It does
      * not have to be unique, and you can change it anytime with
@@ -442,7 +442,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Creates a new secret key for the specified user. Secret keys are used for authentication with the Object Storage Service's Amazon S3
      * compatible API. The secret key consists of an Access Key/Secret Key pair. For information, see
-     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/access/managing-user-credentials.htm).
+     * [Managing User Credentials](https://docs.oracle.com/iaas/Content/Identity/access/managing-user-credentials.htm).
      * <p>
      * You must specify a *description* for the secret key (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -513,12 +513,12 @@ public interface IdentityAsync extends AutoCloseable {
      * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
      * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
      * reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the dynamic group, which must be unique across all dynamic groups in your
      * tenancy, and cannot be changed. Note that this name has to be also unique across all groups in your tenancy.
      * You can use this name or the OCID when writing policies that apply to the dynamic group. For more information
-     * about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * about policies, see [How Policies Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      * <p>
      * You must also specify a *description* for the dynamic group (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with {@link #updateDynamicGroup(UpdateDynamicGroupRequest, Consumer, Consumer) updateDynamicGroup}.
@@ -547,11 +547,11 @@ public interface IdentityAsync extends AutoCloseable {
      * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
      * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
      * reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the group, which must be unique across all groups in your tenancy and
      * cannot be changed. You can use this name or the OCID when writing policies that apply to the group. For more
-     * information about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * information about policies, see [How Policies Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      * <p>
      * You must also specify a *description* for the group (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with {@link #updateGroup(UpdateGroupRequest, Consumer, Consumer) updateGroup}.
@@ -576,14 +576,14 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<CreateGroupRequest, CreateGroupResponse> handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Creates a new identity provider in your tenancy. For more information, see
-     * [Identity Providers and Federation](https://docs.cloud.oracle.com/Content/Identity/Concepts/federation.htm).
+     * [Identity Providers and Federation](https://docs.oracle.com/iaas/Content/Identity/Concepts/federation.htm).
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object.
      * Remember that the tenancy is simply the root compartment. For information about
-     * OCIDs, see [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * OCIDs, see [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the `IdentityProvider`, which must be unique
      * across all `IdentityProvider` objects in your tenancy and cannot be changed.
@@ -612,7 +612,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Creates a single mapping between an IdP group and an IAM Service
      * {@link Group}.
@@ -655,12 +655,12 @@ public interface IdentityAsync extends AutoCloseable {
      * is simply the root compartment). Notice that IAM resources (users, groups, compartments, and some policies)
      * reside within the tenancy itself, unlike cloud resources such as compute instances, which typically
      * reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the network source, which must be unique across all network sources in your
      * tenancy, and cannot be changed.
      * You can use this name or the OCID when writing policies that apply to the network source. For more information
-     * about policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm).
+     * about policies, see [How Policies Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm).
      * <p>
      * You must also specify a *description* for the network source (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with {@link #updateNetworkSource(UpdateNetworkSourceRequest, Consumer, Consumer) updateNetworkSource}.
@@ -669,7 +669,7 @@ public interface IdentityAsync extends AutoCloseable {
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
      * <p>
      * After your network resource is created, you can use it in policy to restrict access to only requests made from an allowed
-     * IP address specified in your network source. For more information, see [Managing Network Sources](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingnetworksources.htm).
+     * IP address specified in your network source. For more information, see [Managing Network Sources](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingnetworksources.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -704,7 +704,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new Console one-time password for the specified user. For more information about user
-     * credentials, see [User Credentials](https://docs.cloud.oracle.com/Content/Identity/usercred/usercredentials.htm).
+     * credentials, see [User Credentials](https://docs.oracle.com/iaas/Content/Identity/usercred/usercredentials.htm).
      * <p>
      * Use this operation after creating a new user, or if a user forgets their password. The new one-time
      * password is returned to you in the response, and you must securely deliver it to the user. They'll
@@ -735,7 +735,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new policy in the specified compartment (either the tenancy or another of your compartments).
-     * If you're new to policies, see [Get Started with Policies](https://docs.cloud.oracle.com/Content/Identity/policiesgs/get-started-with-policies.htm).
+     * If you're new to policies, see [Get Started with Policies](https://docs.oracle.com/iaas/Content/Identity/policiesgs/get-started-with-policies.htm).
      * <p>
      * You must specify a *name* for the policy, which must be unique across all policies in your tenancy
      * and cannot be changed.
@@ -744,8 +744,8 @@ public interface IdentityAsync extends AutoCloseable {
      * have to be unique, and you can change it anytime with {@link #updatePolicy(UpdatePolicyRequest, Consumer, Consumer) updatePolicy}.
      * <p>
      * You must specify one or more policy statements in the statements array. For information about writing
-     * policies, see [How Policies Work](https://docs.cloud.oracle.com/Content/Identity/policieshow/how-policies-work.htm) and
-     * [Common Policies](https://docs.cloud.oracle.com/Content/Identity/policiescommon/commonpolicies.htm).
+     * policies, see [How Policies Work](https://docs.oracle.com/iaas/Content/Identity/policieshow/how-policies-work.htm) and
+     * [Common Policies](https://docs.oracle.com/iaas/Content/Identity/policiescommon/commonpolicies.htm).
      * <p>
      * After you send your request, the new object's `lifecycleState` will temporarily be CREATING. Before using the
      * object, first make sure its `lifecycleState` has changed to ACTIVE.
@@ -806,7 +806,7 @@ public interface IdentityAsync extends AutoCloseable {
      * **Deprecated. Use {@link #createAuthToken(CreateAuthTokenRequest, Consumer, Consumer) createAuthToken} instead.**
      * <p>
      * Creates a new Swift password for the specified user. For information about what Swift passwords are for, see
-     * [Managing User Credentials](https://docs.cloud.oracle.com/Content/Identity/Tasks/managingcredentials.htm).
+     * [Managing User Credentials](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcredentials.htm).
      * <p>
      * You must specify a *description* for the Swift password (although it can be an empty string). It does not
      * have to be unique, and you can change it anytime with
@@ -921,13 +921,13 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Creates a new user in your tenancy. For conceptual information about users, your tenancy, and other
-     * IAM Service components, see [Overview of IAM](https://docs.cloud.oracle.com/Content/Identity/getstarted/identity-domains.htm).
+     * IAM Service components, see [Overview of IAM](https://docs.oracle.com/iaas/Content/Identity/getstarted/identity-domains.htm).
      * <p>
      * You must specify your tenancy's OCID as the compartment ID in the request object (remember that the
      * tenancy is simply the root compartment). Notice that IAM resources (users, groups, compartments, and
      * some policies) reside within the tenancy itself, unlike cloud resources such as compute instances,
      * which typically reside within compartments inside the tenancy. For information about OCIDs, see
-     * [Resource Identifiers](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm).
+     * [Resource Identifiers](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      * <p>
      * You must also specify a *name* for the user, which must be unique across all users in your tenancy
      * and cannot be changed. Allowed characters: No spaces. Only letters, numerals, hyphens, periods,
@@ -951,7 +951,7 @@ public interface IdentityAsync extends AutoCloseable {
      * {@link #createOrResetUIPassword(CreateOrResetUIPasswordRequest, Consumer, Consumer) createOrResetUIPassword}).
      * If the user needs to access the Oracle Cloud Infrastructure REST API, you need to upload a
      * public API signing key for that user (see
-     * [Required Keys and OCIDs](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm) and also
+     * [Required Keys and OCIDs](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm) and also
      * {@link #uploadApiKey(UploadApiKeyRequest, Consumer, Consumer) uploadApiKey}).
      * <p>
      **Important:** Make sure to inform the new user which compartment(s) they have access to.
@@ -1135,7 +1135,7 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<DeleteGroupRequest, DeleteGroupResponse> handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Deletes the specified identity provider. The identity provider must not have
      * any group mappings (see {@link IdpGroupMapping}).
@@ -1155,7 +1155,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Deletes the specified group mapping.
      *
@@ -1513,7 +1513,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Gets the specified identity provider's information.
      *
@@ -1532,7 +1532,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Gets the specified group mapping.
      *
@@ -1836,7 +1836,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the availability domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * Note that the order of the results returned can change if availability domains are added or removed; therefore, do not
      * create a dependency on the list order.
      *
@@ -1860,7 +1860,7 @@ public interface IdentityAsync extends AutoCloseable {
      * and {@link #bulkMoveResources(BulkMoveResourcesRequest, Consumer, Consumer) bulkMoveResources} operations. The returned list of
      * resource-types provides the appropriate resource-type names to use with the bulk action operations along with
      * the type of identifying information you'll need to provide for each resource-type. Most resource-types just
-     * require an [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) to identify a specific resource, but some resource-types,
+     * require an [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) to identify a specific resource, but some resource-types,
      * such as buckets, require you to provide other identifying information.
      *
      *
@@ -1914,7 +1914,7 @@ public interface IdentityAsync extends AutoCloseable {
      * To get a full list of all compartments and subcompartments in the tenancy (root compartment),
      * set the parameter `compartmentIdInSubtree` to true and `accessLevel` to ANY.
      * <p>
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -1931,7 +1931,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Lists all the tags enabled for cost-tracking in the specified tenancy. For information about
-     * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.cloud.oracle.com/Content/Tagging/Tasks/usingcosttrackingtags.htm).
+     * cost-tracking tags, see [Using Cost-tracking Tags](https://docs.oracle.com/iaas/Content/Tagging/Tasks/usingcosttrackingtags.htm).
      *
      *
      * @param request The request object containing the details to send
@@ -2000,7 +2000,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the dynamic groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2019,7 +2019,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the Fault Domains in your tenancy. Specify the OCID of either the tenancy or another
      * of your compartments as the value for the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2037,7 +2037,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the groups in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2103,7 +2103,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Lists the identity provider groups.
      *
@@ -2122,12 +2122,12 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Lists all the identity providers in your tenancy. You must specify the identity provider type (e.g., `SAML2` for
      * identity providers using the SAML2.0 protocol). You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2144,7 +2144,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Lists the group mappings for the specified identity provider.
      *
@@ -2183,7 +2183,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the network sources in your tenancy. You must specify your tenancy's OCID as the value for
      * the compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2218,7 +2218,7 @@ public interface IdentityAsync extends AutoCloseable {
 
     /**
      * Lists the policies in the specified compartment (either the tenancy or another of your compartments).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      * <p>
      * To determine which policies apply to a particular group or compartment, you must view the individual
      * statements inside all your policies. There isn't a way to automatically obtain that information via the API.
@@ -2424,7 +2424,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the `UserGroupMembership` objects in your tenancy. You must specify your tenancy's OCID
      * as the value for the compartment ID
-     * (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five)).
+     * (see [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five)).
      * You must also then filter the list in one of these ways:
      * <p>
      * - You can limit the results to just the memberships for a given user by specifying a `userId`.
@@ -2450,7 +2450,7 @@ public interface IdentityAsync extends AutoCloseable {
     /**
      * Lists the users in your tenancy. You must specify your tenancy's OCID as the value for the
      * compartment ID (remember that the tenancy is simply the root compartment).
-     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.cloud.oracle.com/Content/API/Concepts/apisigningkey.htm#five).
+     * See [Where to Get the Tenancy's OCID and User's OCID](https://docs.oracle.com/iaas/Content/API/Concepts/apisigningkey.htm#five).
      *
      *
      * @param request The request object containing the details to send
@@ -2488,7 +2488,7 @@ public interface IdentityAsync extends AutoCloseable {
      **IMPORTANT**: After you move a compartment to a new parent compartment, the access policies of
      * the new parent take effect and the policies of the previous parent no longer apply. Ensure that you
      * are aware of the implications for the compartment contents before you move it. For more
-     * information, see [Moving a Compartment](https://docs.cloud.oracle.com/Content/Identity/compartments/managingcompartments.htm#MoveCompartment).
+     * information, see [Moving a Compartment](https://docs.oracle.com/iaas/Content/Identity/compartments/managingcompartments.htm#MoveCompartment).
      *
      *
      * @param request The request object containing the details to send
@@ -2703,7 +2703,7 @@ public interface IdentityAsync extends AutoCloseable {
             com.oracle.bmc.responses.AsyncHandler<UpdateGroupRequest, UpdateGroupResponse> handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Updates the specified identity provider.
      *
@@ -2722,7 +2722,7 @@ public interface IdentityAsync extends AutoCloseable {
                     handler);
 
     /**
-     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.cloud.oracle.com/Content/Identity/Reference/deprecatediamapis.htm).
+     * **Deprecated.** For more information, see [Deprecated IAM Service APIs](https://docs.oracle.com/iaas/Content/Identity/Reference/deprecatediamapis.htm).
      * <p>
      * Updates the specified group mapping.
      *
@@ -2880,7 +2880,7 @@ public interface IdentityAsync extends AutoCloseable {
      * namespace (changing `isRetired` from 'true' to 'false') does not reactivate tag definitions.
      * To reactivate the tag definitions, you must reactivate each one individually *after* you reactivate the namespace,
      * using {@link #updateTag(UpdateTagRequest, Consumer, Consumer) updateTag}. For more information about retiring tag namespaces, see
-     * [Retiring Key Definitions and Namespace Definitions](https://docs.cloud.oracle.com/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
+     * [Retiring Key Definitions and Namespace Definitions](https://docs.oracle.com/iaas/Content/Tagging/Tasks/managingtagsandtagnamespaces.htm#retiringkeys).
      * <p>
      * You can't add a namespace with the same name as a retired namespace in the same tenancy.
      *

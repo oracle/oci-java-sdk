@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.database.model;
@@ -44,6 +44,16 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         public Builder databaseAdminPassword(String databaseAdminPassword) {
             this.databaseAdminPassword = databaseAdminPassword;
             this.__explicitlySet__.add("databaseAdminPassword");
+            return this;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonProperty("sourceEncryptionKeyLocationDetails")
+        private EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails;
+
+        public Builder sourceEncryptionKeyLocationDetails(
+                EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails) {
+            this.sourceEncryptionKeyLocationDetails = sourceEncryptionKeyLocationDetails;
+            this.__explicitlySet__.add("sourceEncryptionKeyLocationDetails");
             return this;
         }
 
@@ -92,7 +102,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
          * You must supply this value if creationType is {@code ExistingVmCluster}.
          *
          **/
@@ -100,7 +110,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         private String peerVmClusterId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
          * You must supply this value if creationType is {@code ExistingVmCluster}.
          *
          * @param peerVmClusterId the value to set
@@ -112,7 +122,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
          * You must supply this value to create standby database with an existing DB home
          *
          **/
@@ -120,7 +130,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         private String peerDbHomeId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
          * You must supply this value to create standby database with an existing DB home
          *
          * @param peerDbHomeId the value to set
@@ -140,6 +150,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
                     new CreateDataGuardAssociationToExistingVmClusterDetails(
                             this.databaseSoftwareImageId,
                             this.databaseAdminPassword,
+                            this.sourceEncryptionKeyLocationDetails,
                             this.protectionMode,
                             this.transportType,
                             this.isActiveDataGuardEnabled,
@@ -160,6 +171,10 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
             }
             if (model.wasPropertyExplicitlySet("databaseAdminPassword")) {
                 this.databaseAdminPassword(model.getDatabaseAdminPassword());
+            }
+            if (model.wasPropertyExplicitlySet("sourceEncryptionKeyLocationDetails")) {
+                this.sourceEncryptionKeyLocationDetails(
+                        model.getSourceEncryptionKeyLocationDetails());
             }
             if (model.wasPropertyExplicitlySet("protectionMode")) {
                 this.protectionMode(model.getProtectionMode());
@@ -201,6 +216,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     public CreateDataGuardAssociationToExistingVmClusterDetails(
             String databaseSoftwareImageId,
             String databaseAdminPassword,
+            EncryptionKeyLocationDetails sourceEncryptionKeyLocationDetails,
             ProtectionMode protectionMode,
             TransportType transportType,
             Boolean isActiveDataGuardEnabled,
@@ -211,6 +227,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
         super(
                 databaseSoftwareImageId,
                 databaseAdminPassword,
+                sourceEncryptionKeyLocationDetails,
                 protectionMode,
                 transportType,
                 isActiveDataGuardEnabled,
@@ -221,7 +238,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
      * You must supply this value if creationType is {@code ExistingVmCluster}.
      *
      **/
@@ -229,7 +246,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     private final String peerVmClusterId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the VM Cluster in which to create the standby database.
      * You must supply this value if creationType is {@code ExistingVmCluster}.
      *
      * @return the value
@@ -239,7 +256,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
      * You must supply this value to create standby database with an existing DB home
      *
      **/
@@ -247,7 +264,7 @@ public final class CreateDataGuardAssociationToExistingVmClusterDetails
     private final String peerDbHomeId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DB home in which to create the standby database.
      * You must supply this value to create standby database with an existing DB home
      *
      * @return the value

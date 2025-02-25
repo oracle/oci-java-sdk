@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20220901")
@@ -99,7 +99,7 @@ public interface ManagedInstanceGroupAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.cloud.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
+     * Moves the specified managed instance group to a different compartment within the same tenancy. For information about moving resources between compartments, see [Moving Resources to a Different Compartment](https://docs.oracle.com/iaas/Content/Identity/Tasks/managingcompartments.htm#moveRes).
      *
      *
      * @param request The request object containing the details to send
@@ -417,7 +417,7 @@ public interface ManagedInstanceGroupAsync extends AutoCloseable {
                             handler);
 
     /**
-     * Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
+     * Lists managed instance groups that match the specified compartment or managed instance group [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm). Filter the list against a variety of criteria including but not limited to name, status, architecture, and OS family.
      *
      *
      * @param request The request object containing the details to send
@@ -452,6 +452,23 @@ public interface ManagedInstanceGroupAsync extends AutoCloseable {
                                     ManageModuleStreamsOnManagedInstanceGroupRequest,
                                     ManageModuleStreamsOnManagedInstanceGroupResponse>
                             handler);
+
+    /**
+     * Reboots all managed instances in the specified group.
+     *
+     *
+     * @param request The request object containing the details to send
+     * @param handler The request handler to invoke upon completion, may be null.
+     * @return A Future that can be used to get the response if no AsyncHandler was
+     *         provided. Note, if you provide an AsyncHandler and use the Future, some
+     *         types of responses (like java.io.InputStream) may not be able to be read in
+     *         both places as the underlying stream may only be consumed once.
+     */
+    java.util.concurrent.Future<RebootManagedInstanceGroupResponse> rebootManagedInstanceGroup(
+            RebootManagedInstanceGroupRequest request,
+            com.oracle.bmc.responses.AsyncHandler<
+                            RebootManagedInstanceGroupRequest, RebootManagedInstanceGroupResponse>
+                    handler);
 
     /**
      * Removes a profile for a module stream that is installed on a managed instance group. Providing the module stream name (without specifying a profile name) removes all profiles that have been installed for the module stream.

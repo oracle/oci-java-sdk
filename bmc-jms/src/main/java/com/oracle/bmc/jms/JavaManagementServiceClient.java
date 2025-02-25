@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.jms;
@@ -574,7 +574,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "AddFleetInstallationSites",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/AddFleetInstallationSites");
         java.util.function.Function<javax.ws.rs.core.Response, AddFleetInstallationSitesResponse>
                 transformer =
                         AddFleetInstallationSitesConverter.fromResponse(
@@ -616,7 +616,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "CancelWorkRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/CancelWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, CancelWorkRequestResponse>
                 transformer =
                         CancelWorkRequestConverter.fromResponse(
@@ -656,7 +656,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ChangeFleetCompartment",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ChangeFleetCompartment");
         java.util.function.Function<javax.ws.rs.core.Response, ChangeFleetCompartmentResponse>
                 transformer =
                         ChangeFleetCompartmentConverter.fromResponse(
@@ -698,7 +698,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "CreateBlocklist",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/CreateBlocklist");
         java.util.function.Function<javax.ws.rs.core.Response, CreateBlocklistResponse>
                 transformer =
                         CreateBlocklistConverter.fromResponse(
@@ -740,7 +740,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "CreateDrsFile",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateDrsFile");
         java.util.function.Function<javax.ws.rs.core.Response, CreateDrsFileResponse> transformer =
                 CreateDrsFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -777,7 +777,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "CreateFleet", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "CreateFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/CreateFleet");
         java.util.function.Function<javax.ws.rs.core.Response, CreateFleetResponse> transformer =
                 CreateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -817,7 +820,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "CreateJmsPlugin",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/CreateJmsPlugin");
         java.util.function.Function<javax.ws.rs.core.Response, CreateJmsPluginResponse>
                 transformer =
                         CreateJmsPluginConverter.fromResponse(
@@ -858,7 +861,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeleteBlocklist",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/DeleteBlocklist");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteBlocklistResponse>
                 transformer =
                         DeleteBlocklistConverter.fromResponse(
@@ -897,7 +900,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeleteCryptoAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/DeleteCryptoAnalysisResult");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteCryptoAnalysisResultResponse>
                 transformer =
                         DeleteCryptoAnalysisResultConverter.fromResponse(
@@ -935,7 +938,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeleteDrsFile",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/DeleteDrsFile");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteDrsFileResponse> transformer =
                 DeleteDrsFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -968,7 +971,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "DeleteFleet", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "DeleteFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DeleteFleet");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteFleetResponse> transformer =
                 DeleteFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1005,7 +1011,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeleteJavaMigrationAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/DeleteJavaMigrationAnalysisResult");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeleteJavaMigrationAnalysisResultResponse>
                 transformer =
@@ -1044,7 +1050,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeleteJmsPlugin",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/DeleteJmsPlugin");
         java.util.function.Function<javax.ws.rs.core.Response, DeleteJmsPluginResponse>
                 transformer =
                         DeleteJmsPluginConverter.fromResponse(
@@ -1084,7 +1090,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "DeletePerformanceTuningAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/DeletePerformanceTuningAnalysisResult");
         java.util.function.Function<
                         javax.ws.rs.core.Response, DeletePerformanceTuningAnalysisResultResponse>
                 transformer =
@@ -1120,7 +1126,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "DisableDrs", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "DisableDrs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/DisableDrs");
         java.util.function.Function<javax.ws.rs.core.Response, DisableDrsResponse> transformer =
                 DisableDrsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1156,7 +1165,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "EnableDrs", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "EnableDrs",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/EnableDrs");
         java.util.function.Function<javax.ws.rs.core.Response, EnableDrsResponse> transformer =
                 EnableDrsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1196,7 +1208,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GenerateAgentDeployScript",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateAgentDeployScript");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateAgentDeployScriptResponse>
                 transformer =
                         GenerateAgentDeployScriptConverter.fromResponse(
@@ -1240,7 +1252,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GenerateAgentInstallerConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/GenerateAgentInstallerConfiguration");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GenerateAgentInstallerConfigurationResponse>
                 transformer =
@@ -1284,7 +1296,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GenerateLoadPipelineScript",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GenerateLoadPipelineScript");
         java.util.function.Function<javax.ws.rs.core.Response, GenerateLoadPipelineScriptResponse>
                 transformer =
                         GenerateLoadPipelineScriptConverter.fromResponse(
@@ -1327,7 +1339,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetCryptoAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/GetCryptoAnalysisResult");
         java.util.function.Function<javax.ws.rs.core.Response, GetCryptoAnalysisResultResponse>
                 transformer =
                         GetCryptoAnalysisResultConverter.fromResponse(
@@ -1360,7 +1372,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "GetDrsFile", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "GetDrsFile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFile/GetDrsFile");
         java.util.function.Function<javax.ws.rs.core.Response, GetDrsFileResponse> transformer =
                 GetDrsFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1395,7 +1410,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetExportSetting",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/GetExportSetting");
         java.util.function.Function<javax.ws.rs.core.Response, GetExportSettingResponse>
                 transformer =
                         GetExportSettingConverter.fromResponse(
@@ -1432,7 +1447,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetExportStatus",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportStatus/GetExportStatus");
         java.util.function.Function<javax.ws.rs.core.Response, GetExportStatusResponse>
                 transformer =
                         GetExportStatusConverter.fromResponse(
@@ -1465,7 +1480,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "GetFleet", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "GetFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/GetFleet");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetResponse> transformer =
                 GetFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1502,7 +1520,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetFleetAdvancedFeatureConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/GetFleetAdvancedFeatureConfiguration");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetFleetAdvancedFeatureConfigurationResponse>
                 transformer =
@@ -1541,7 +1559,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetFleetAgentConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/GetFleetAgentConfiguration");
         java.util.function.Function<javax.ws.rs.core.Response, GetFleetAgentConfigurationResponse>
                 transformer =
                         GetFleetAgentConfigurationConverter.fromResponse(
@@ -1578,7 +1596,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetJavaFamily",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/GetJavaFamily");
         java.util.function.Function<javax.ws.rs.core.Response, GetJavaFamilyResponse> transformer =
                 GetJavaFamilyConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1614,7 +1632,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetJavaMigrationAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/GetJavaMigrationAnalysisResult");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetJavaMigrationAnalysisResultResponse>
                 transformer =
@@ -1652,7 +1670,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetJavaRelease",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/GetJavaRelease");
         java.util.function.Function<javax.ws.rs.core.Response, GetJavaReleaseResponse> transformer =
                 GetJavaReleaseConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1684,7 +1702,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "GetJmsPlugin", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "GetJmsPlugin",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/GetJmsPlugin");
         java.util.function.Function<javax.ws.rs.core.Response, GetJmsPluginResponse> transformer =
                 GetJmsPluginConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1720,7 +1741,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetPerformanceTuningAnalysisResult",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/GetPerformanceTuningAnalysisResult");
         java.util.function.Function<
                         javax.ws.rs.core.Response, GetPerformanceTuningAnalysisResultResponse>
                 transformer =
@@ -1758,7 +1779,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "GetWorkRequest",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/GetWorkRequest");
         java.util.function.Function<javax.ws.rs.core.Response, GetWorkRequestResponse> transformer =
                 GetWorkRequestConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1793,7 +1814,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListAgentInstallers",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AgentInstallerSummary/ListAgentInstallers");
         java.util.function.Function<javax.ws.rs.core.Response, ListAgentInstallersResponse>
                 transformer =
                         ListAgentInstallersConverter.fromResponse(
@@ -1830,7 +1851,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListAnnouncements",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/AnnouncementCollection/ListAnnouncements");
         java.util.function.Function<javax.ws.rs.core.Response, ListAnnouncementsResponse>
                 transformer =
                         ListAnnouncementsConverter.fromResponse(
@@ -1867,7 +1888,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListBlocklists",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Blocklist/ListBlocklists");
         java.util.function.Function<javax.ws.rs.core.Response, ListBlocklistsResponse> transformer =
                 ListBlocklistsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1903,7 +1924,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListCryptoAnalysisResults",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/CryptoAnalysisResult/ListCryptoAnalysisResults");
         java.util.function.Function<javax.ws.rs.core.Response, ListCryptoAnalysisResultsResponse>
                 transformer =
                         ListCryptoAnalysisResultsConverter.fromResponse(
@@ -1937,7 +1958,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "ListDrsFiles", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "ListDrsFiles",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DrsFileCollection/ListDrsFiles");
         java.util.function.Function<javax.ws.rs.core.Response, ListDrsFilesResponse> transformer =
                 ListDrsFilesConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -1972,10 +1996,47 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListFleetDiagnoses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetDiagnosisSummary/ListFleetDiagnoses");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetDiagnosesResponse>
                 transformer =
                         ListFleetDiagnosesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListFleetErrorsResponse listFleetErrors(ListFleetErrorsRequest request) {
+        LOG.trace("Called listFleetErrors");
+        final ListFleetErrorsRequest interceptedRequest =
+                ListFleetErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListFleetErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListFleetErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorSummary/ListFleetErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListFleetErrorsResponse>
+                transformer =
+                        ListFleetErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2005,7 +2066,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "ListFleets", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "ListFleets",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/ListFleets");
         java.util.function.Function<javax.ws.rs.core.Response, ListFleetsResponse> transformer =
                 ListFleetsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -2041,7 +2105,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListInstallationSites",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/ListInstallationSites");
         java.util.function.Function<javax.ws.rs.core.Response, ListInstallationSitesResponse>
                 transformer =
                         ListInstallationSitesConverter.fromResponse(
@@ -2078,7 +2142,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListJavaFamilies",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaFamily/ListJavaFamilies");
         java.util.function.Function<javax.ws.rs.core.Response, ListJavaFamiliesResponse>
                 transformer =
                         ListJavaFamiliesConverter.fromResponse(
@@ -2116,7 +2180,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListJavaMigrationAnalysisResults",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaMigrationAnalysisResult/ListJavaMigrationAnalysisResults");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListJavaMigrationAnalysisResultsResponse>
                 transformer =
@@ -2154,7 +2218,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListJavaReleases",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaRelease/ListJavaReleases");
         java.util.function.Function<javax.ws.rs.core.Response, ListJavaReleasesResponse>
                 transformer =
                         ListJavaReleasesConverter.fromResponse(
@@ -2191,7 +2255,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListJmsPlugins",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/ListJmsPlugins");
         java.util.function.Function<javax.ws.rs.core.Response, ListJmsPluginsResponse> transformer =
                 ListJmsPluginsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -2223,7 +2287,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "ListJreUsage", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "ListJreUsage",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/ListJreUsage");
         java.util.function.Function<javax.ws.rs.core.Response, ListJreUsageResponse> transformer =
                 ListJreUsageConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -2260,11 +2327,48 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListPerformanceTuningAnalysisResults",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PerformanceTuningAnalysisResult/ListPerformanceTuningAnalysisResults");
         java.util.function.Function<
                         javax.ws.rs.core.Response, ListPerformanceTuningAnalysisResultsResponse>
                 transformer =
                         ListPerformanceTuningAnalysisResultsConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public ListPluginErrorsResponse listPluginErrors(ListPluginErrorsRequest request) {
+        LOG.trace("Called listPluginErrors");
+        final ListPluginErrorsRequest interceptedRequest =
+                ListPluginErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListPluginErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "ListPluginErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorSummary/ListPluginErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, ListPluginErrorsResponse>
+                transformer =
+                        ListPluginErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2298,7 +2402,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListWorkItems",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkItemSummary/ListWorkItems");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkItemsResponse> transformer =
                 ListWorkItemsConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -2334,7 +2438,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListWorkRequestErrors",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestError/ListWorkRequestErrors");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestErrorsResponse>
                 transformer =
                         ListWorkRequestErrorsConverter.fromResponse(
@@ -2371,7 +2475,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListWorkRequestLogs",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequestLogEntry/ListWorkRequestLogs");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestLogsResponse>
                 transformer =
                         ListWorkRequestLogsConverter.fromResponse(
@@ -2408,7 +2512,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ListWorkRequests",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/WorkRequest/ListWorkRequests");
         java.util.function.Function<javax.ws.rs.core.Response, ListWorkRequestsResponse>
                 transformer =
                         ListWorkRequestsConverter.fromResponse(
@@ -2447,7 +2551,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RemoveFleetInstallationSites",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationSiteSummary/RemoveFleetInstallationSites");
         java.util.function.Function<javax.ws.rs.core.Response, RemoveFleetInstallationSitesResponse>
                 transformer =
                         RemoveFleetInstallationSitesConverter.fromResponse(
@@ -2490,7 +2594,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RequestCryptoAnalyses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestCryptoAnalyses");
         java.util.function.Function<javax.ws.rs.core.Response, RequestCryptoAnalysesResponse>
                 transformer =
                         RequestCryptoAnalysesConverter.fromResponse(
@@ -2534,7 +2638,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RequestDeployedApplicationMigrationAnalyses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestDeployedApplicationMigrationAnalyses");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         RequestDeployedApplicationMigrationAnalysesResponse>
@@ -2579,7 +2683,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RequestJavaMigrationAnalyses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJavaMigrationAnalyses");
         java.util.function.Function<javax.ws.rs.core.Response, RequestJavaMigrationAnalysesResponse>
                 transformer =
                         RequestJavaMigrationAnalysesConverter.fromResponse(
@@ -2621,7 +2725,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RequestJfrRecordings",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestJfrRecordings");
         java.util.function.Function<javax.ws.rs.core.Response, RequestJfrRecordingsResponse>
                 transformer =
                         RequestJfrRecordingsConverter.fromResponse(
@@ -2663,7 +2767,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "RequestPerformanceTuningAnalyses",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/RequestPerformanceTuningAnalyses");
         java.util.function.Function<
                         javax.ws.rs.core.Response, RequestPerformanceTuningAnalysesResponse>
                 transformer =
@@ -2707,7 +2811,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ScanJavaServerUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/ScanJavaServerUsage");
         java.util.function.Function<javax.ws.rs.core.Response, ScanJavaServerUsageResponse>
                 transformer =
                         ScanJavaServerUsageConverter.fromResponse(
@@ -2749,7 +2853,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "ScanLibraryUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/ScanLibraryUsage");
         java.util.function.Function<javax.ws.rs.core.Response, ScanLibraryUsageResponse>
                 transformer =
                         ScanLibraryUsageConverter.fromResponse(
@@ -2792,7 +2896,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeApplicationInstallationUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationInstallationUsageSummary/SummarizeApplicationInstallationUsage");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeApplicationInstallationUsageResponse>
                 transformer =
@@ -2831,7 +2935,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeApplicationUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ApplicationUsage/SummarizeApplicationUsage");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeApplicationUsageResponse>
                 transformer =
                         SummarizeApplicationUsageConverter.fromResponse(
@@ -2871,7 +2975,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeDeployedApplicationInstallationUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationInstallationUsageSummary/SummarizeDeployedApplicationInstallationUsage");
         java.util.function.Function<
                         javax.ws.rs.core.Response,
                         SummarizeDeployedApplicationInstallationUsageResponse>
@@ -2911,11 +3015,48 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeDeployedApplicationUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/DeployedApplicationUsage/SummarizeDeployedApplicationUsage");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeDeployedApplicationUsageResponse>
                 transformer =
                         SummarizeDeployedApplicationUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizeFleetErrorsResponse summarizeFleetErrors(SummarizeFleetErrorsRequest request) {
+        LOG.trace("Called summarizeFleetErrors");
+        final SummarizeFleetErrorsRequest interceptedRequest =
+                SummarizeFleetErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizeFleetErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "SummarizeFleetErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetErrorAggregation/SummarizeFleetErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizeFleetErrorsResponse>
+                transformer =
+                        SummarizeFleetErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -2950,7 +3091,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeInstallationUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/InstallationUsage/SummarizeInstallationUsage");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeInstallationUsageResponse>
                 transformer =
                         SummarizeInstallationUsageConverter.fromResponse(
@@ -2988,7 +3129,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeJavaServerInstanceUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerInstanceUsage/SummarizeJavaServerInstanceUsage");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeJavaServerInstanceUsageResponse>
                 transformer =
@@ -3027,7 +3168,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeJavaServerUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JavaServerUsage/SummarizeJavaServerUsage");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeJavaServerUsageResponse>
                 transformer =
                         SummarizeJavaServerUsageConverter.fromResponse(
@@ -3064,7 +3205,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeJreUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JreUsage/SummarizeJreUsage");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeJreUsageResponse>
                 transformer =
                         SummarizeJreUsageConverter.fromResponse(
@@ -3102,7 +3243,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeLibraryUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/LibraryUsage/SummarizeLibraryUsage");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeLibraryUsageResponse>
                 transformer =
                         SummarizeLibraryUsageConverter.fromResponse(
@@ -3140,11 +3281,49 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeManagedInstanceUsage",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ManagedInstanceUsage/SummarizeManagedInstanceUsage");
         java.util.function.Function<
                         javax.ws.rs.core.Response, SummarizeManagedInstanceUsageResponse>
                 transformer =
                         SummarizeManagedInstanceUsageConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        return retrier.execute(
+                interceptedRequest,
+                retryRequest -> {
+                    final com.oracle.bmc.retrier.TokenRefreshRetrier tokenRefreshRetrier =
+                            new com.oracle.bmc.retrier.TokenRefreshRetrier(
+                                    authenticationDetailsProvider);
+                    return tokenRefreshRetrier.execute(
+                            retryRequest,
+                            retriedRequest -> {
+                                javax.ws.rs.core.Response response = client.get(ib, retriedRequest);
+                                return transformer.apply(response);
+                            });
+                });
+    }
+
+    @Override
+    public SummarizePluginErrorsResponse summarizePluginErrors(
+            SummarizePluginErrorsRequest request) {
+        LOG.trace("Called summarizePluginErrors");
+        final SummarizePluginErrorsRequest interceptedRequest =
+                SummarizePluginErrorsConverter.interceptRequest(request);
+        com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                SummarizePluginErrorsConverter.fromRequest(client, interceptedRequest);
+
+        final com.oracle.bmc.retrier.BmcGenericRetrier retrier =
+                com.oracle.bmc.retrier.Retriers.createPreferredRetrier(
+                        interceptedRequest.getRetryConfiguration(), retryConfiguration, true);
+        com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "JavaManagementService",
+                        "SummarizePluginErrors",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/PluginErrorAggregation/SummarizePluginErrors");
+        java.util.function.Function<javax.ws.rs.core.Response, SummarizePluginErrorsResponse>
+                transformer =
+                        SummarizePluginErrorsConverter.fromResponse(
                                 java.util.Optional.of(serviceDetails));
         return retrier.execute(
                 interceptedRequest,
@@ -3179,7 +3358,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "SummarizeResourceInventory",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/SummarizeResourceInventory");
         java.util.function.Function<javax.ws.rs.core.Response, SummarizeResourceInventoryResponse>
                 transformer =
                         SummarizeResourceInventoryConverter.fromResponse(
@@ -3217,7 +3396,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "UpdateDrsFile",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateDrsFile");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateDrsFileResponse> transformer =
                 UpdateDrsFileConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -3256,7 +3435,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "UpdateExportSetting",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/ExportSetting/UpdateExportSetting");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateExportSettingResponse>
                 transformer =
                         UpdateExportSettingConverter.fromResponse(
@@ -3294,7 +3473,10 @@ public class JavaManagementServiceClient implements JavaManagementService {
         com.oracle.bmc.http.internal.RetryUtils.setClientRetriesHeader(ib, retrier);
         com.oracle.bmc.ServiceDetails serviceDetails =
                 new com.oracle.bmc.ServiceDetails(
-                        "JavaManagementService", "UpdateFleet", ib.getRequestUri().toString(), "");
+                        "JavaManagementService",
+                        "UpdateFleet",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/Fleet/UpdateFleet");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateFleetResponse> transformer =
                 UpdateFleetConverter.fromResponse(java.util.Optional.of(serviceDetails));
         return retrier.execute(
@@ -3336,7 +3518,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "UpdateFleetAdvancedFeatureConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAdvancedFeatureConfiguration/UpdateFleetAdvancedFeatureConfiguration");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateFleetAdvancedFeatureConfigurationResponse>
                 transformer =
@@ -3380,7 +3562,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "UpdateFleetAgentConfiguration",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/FleetAgentConfiguration/UpdateFleetAgentConfiguration");
         java.util.function.Function<
                         javax.ws.rs.core.Response, UpdateFleetAgentConfigurationResponse>
                 transformer =
@@ -3423,7 +3605,7 @@ public class JavaManagementServiceClient implements JavaManagementService {
                         "JavaManagementService",
                         "UpdateJmsPlugin",
                         ib.getRequestUri().toString(),
-                        "");
+                        "https://docs.oracle.com/iaas/api/#/en/jms/20210610/JmsPlugin/UpdateJmsPlugin");
         java.util.function.Function<javax.ws.rs.core.Response, UpdateJmsPluginResponse>
                 transformer =
                         UpdateJmsPluginConverter.fromResponse(

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.email.model;
@@ -29,6 +29,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "description",
         "timeCreated",
         "timeUpdated",
+        "isImported",
+        "keyLength",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -42,6 +44,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             String description,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            Boolean isImported,
+            Integer keyLength,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -54,6 +58,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.description = description;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.isImported = isImported;
+        this.keyLength = keyLength;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -80,14 +86,14 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("id")
         private String id;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
          *
          * @param id the value to set
          * @return this builder
@@ -98,7 +104,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
          * that this DKIM belongs to.
          *
          **/
@@ -106,7 +112,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         private String emailDomainId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
          * that this DKIM belongs to.
          *
          * @param emailDomainId the value to set
@@ -118,14 +124,14 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
          *
          **/
         @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
         private String compartmentId;
 
         /**
-         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
+         * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
          *
          * @param compartmentId the value to set
          * @return this builder
@@ -218,8 +224,40 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * Indicates whether the DKIM was imported.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("isImported")
+        private Boolean isImported;
+
+        /**
+         * Indicates whether the DKIM was imported.
+         * @param isImported the value to set
+         * @return this builder
+         **/
+        public Builder isImported(Boolean isImported) {
+            this.isImported = isImported;
+            this.__explicitlySet__.add("isImported");
+            return this;
+        }
+        /**
+         * Length of the RSA key used in the DKIM.
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("keyLength")
+        private Integer keyLength;
+
+        /**
+         * Length of the RSA key used in the DKIM.
+         * @param keyLength the value to set
+         * @return this builder
+         **/
+        public Builder keyLength(Integer keyLength) {
+            this.keyLength = keyLength;
+            this.__explicitlySet__.add("keyLength");
+            return this;
+        }
+        /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -229,7 +267,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Department": "Finance"}}
          *
@@ -243,7 +281,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         }
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -253,7 +291,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
         /**
          * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-         * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+         * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
          * <p>
          * Example: {@code {"Operations": {"CostCenter": "42"}}}
          *
@@ -301,6 +339,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.description,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.isImported,
+                            this.keyLength,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -335,6 +375,12 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isImported")) {
+                this.isImported(model.getIsImported());
+            }
+            if (model.wasPropertyExplicitlySet("keyLength")) {
+                this.keyLength(model.getKeyLength());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -377,14 +423,14 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("id")
     private final String id;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the DKIM.
      *
      * @return the value
      **/
@@ -393,7 +439,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
      * that this DKIM belongs to.
      *
      **/
@@ -401,7 +447,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     private final String emailDomainId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the email domain
      * that this DKIM belongs to.
      *
      * @return the value
@@ -411,14 +457,14 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
      *
      **/
     @com.fasterxml.jackson.annotation.JsonProperty("compartmentId")
     private final String compartmentId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
+     * The [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the compartment that contains this DKIM.
      *
      * @return the value
      **/
@@ -501,8 +547,36 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * Indicates whether the DKIM was imported.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("isImported")
+    private final Boolean isImported;
+
+    /**
+     * Indicates whether the DKIM was imported.
+     * @return the value
+     **/
+    public Boolean getIsImported() {
+        return isImported;
+    }
+
+    /**
+     * Length of the RSA key used in the DKIM.
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("keyLength")
+    private final Integer keyLength;
+
+    /**
+     * Length of the RSA key used in the DKIM.
+     * @return the value
+     **/
+    public Integer getKeyLength() {
+        return keyLength;
+    }
+
+    /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -512,7 +586,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined name, type, or namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Department": "Finance"}}
      *
@@ -524,7 +598,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -534,7 +608,7 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
 
     /**
      * Defined tags for this resource. Each key is predefined and scoped to a namespace.
-     * For more information, see [Resource Tags](https://docs.cloud.oracle.com/Content/General/Concepts/resourcetags.htm).
+     * For more information, see [Resource Tags](https://docs.oracle.com/iaas/Content/General/Concepts/resourcetags.htm).
      * <p>
      * Example: {@code {"Operations": {"CostCenter": "42"}}}
      *
@@ -584,6 +658,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isImported=").append(String.valueOf(this.isImported));
+        sb.append(", keyLength=").append(String.valueOf(this.keyLength));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -609,6 +685,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isImported, other.isImported)
+                && java.util.Objects.equals(this.keyLength, other.keyLength)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -633,6 +711,8 @@ public final class DkimSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.isImported == null ? 43 : this.isImported.hashCode());
+        result = (result * PRIME) + (this.keyLength == null ? 43 : this.keyLength.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

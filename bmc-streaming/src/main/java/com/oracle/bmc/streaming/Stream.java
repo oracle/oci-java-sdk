@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.streaming;
@@ -8,7 +8,7 @@ import com.oracle.bmc.streaming.requests.*;
 import com.oracle.bmc.streaming.responses.*;
 
 /**
- * Use the Streaming API to produce and consume messages, create streams and stream pools, and manage related items. For more information, see [Streaming](https://docs.cloud.oracle.com/Content/Streaming/Concepts/streamingoverview.htm).
+ * Use the Streaming API to produce and consume messages, create streams and stream pools, and manage related items. For more information, see [Streaming](https://docs.oracle.com/iaas/Content/Streaming/Concepts/streamingoverview.htm).
  * This service client does not use circuit breakers by default if the user has not defined a circuit breaker configuration.
  */
 @javax.annotation.Generated(value = "OracleSDKGenerator", comments = "API Version: 20180418")
@@ -41,7 +41,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerCommitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConsumerCommit API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerCommitExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConsumerCommit API.
      */
     ConsumerCommitResponse consumerCommit(ConsumerCommitRequest request);
 
@@ -54,7 +54,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerHeartbeatExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConsumerHeartbeat API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/ConsumerHeartbeatExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ConsumerHeartbeat API.
      */
     ConsumerHeartbeatResponse consumerHeartbeat(ConsumerHeartbeatRequest request);
 
@@ -71,7 +71,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateCursorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCursor API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateCursorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateCursor API.
      */
     CreateCursorResponse createCursor(CreateCursorRequest request);
 
@@ -84,7 +84,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateGroupCursorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGroupCursor API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/CreateGroupCursorExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateGroupCursor API.
      */
     CreateGroupCursorResponse createGroupCursor(CreateGroupCursorRequest request);
 
@@ -97,7 +97,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetGroup API.
      */
     GetGroupResponse getGroup(GetGroupRequest request);
 
@@ -112,7 +112,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMessages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/GetMessagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMessages API.
      */
     GetMessagesResponse getMessages(GetMessagesRequest request);
 
@@ -128,7 +128,7 @@ public interface Stream extends AutoCloseable {
      * This operation will not retry by default, users can also use RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION provided by the SDK to enable retries for it.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/PutMessagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutMessages API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/PutMessagesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use PutMessages API.
      */
     PutMessagesResponse putMessages(PutMessagesRequest request);
 
@@ -141,7 +141,7 @@ public interface Stream extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGroup API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/streaming/UpdateGroupExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateGroup API.
      */
     UpdateGroupResponse updateGroup(UpdateGroupRequest request);
 }

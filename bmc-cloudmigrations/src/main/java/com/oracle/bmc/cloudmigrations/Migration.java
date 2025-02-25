@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.cloudmigrations;
@@ -67,7 +67,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CancelWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CancelWorkRequest API.
      */
     CancelWorkRequestResponse cancelWorkRequest(CancelWorkRequestRequest request);
 
@@ -79,7 +79,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeMigrationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMigrationCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeMigrationCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMigrationCompartment API.
      */
     ChangeMigrationCompartmentResponse changeMigrationCompartment(
             ChangeMigrationCompartmentRequest request);
@@ -92,7 +92,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeMigrationPlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMigrationPlanCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeMigrationPlanCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeMigrationPlanCompartment API.
      */
     ChangeMigrationPlanCompartmentResponse changeMigrationPlanCompartment(
             ChangeMigrationPlanCompartmentRequest request);
@@ -105,7 +105,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeReplicationScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeReplicationScheduleCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ChangeReplicationScheduleCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeReplicationScheduleCompartment API.
      */
     ChangeReplicationScheduleCompartmentResponse changeReplicationScheduleCompartment(
             ChangeReplicationScheduleCompartmentRequest request);
@@ -119,7 +119,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigration API.
      */
     CreateMigrationResponse createMigration(CreateMigrationRequest request);
 
@@ -132,7 +132,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigrationAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigrationAsset API.
      */
     CreateMigrationAssetResponse createMigrationAsset(CreateMigrationAssetRequest request);
 
@@ -145,7 +145,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateMigrationPlan API.
      */
     CreateMigrationPlanResponse createMigrationPlan(CreateMigrationPlanRequest request);
 
@@ -158,7 +158,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplicationSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateReplicationSchedule API.
      */
     CreateReplicationScheduleResponse createReplicationSchedule(
             CreateReplicationScheduleRequest request);
@@ -172,7 +172,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/CreateTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateTargetAsset API.
      */
     CreateTargetAssetResponse createTargetAsset(CreateTargetAssetRequest request);
 
@@ -184,7 +184,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigration API.
      */
     DeleteMigrationResponse deleteMigration(DeleteMigrationRequest request);
 
@@ -196,7 +196,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigrationAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigrationAsset API.
      */
     DeleteMigrationAssetResponse deleteMigrationAsset(DeleteMigrationAssetRequest request);
 
@@ -208,7 +208,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteMigrationPlan API.
      */
     DeleteMigrationPlanResponse deleteMigrationPlan(DeleteMigrationPlanRequest request);
 
@@ -220,7 +220,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteReplicationSchedule API.
      */
     DeleteReplicationScheduleResponse deleteReplicationSchedule(
             DeleteReplicationScheduleRequest request);
@@ -233,7 +233,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/DeleteTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteTargetAsset API.
      */
     DeleteTargetAssetResponse deleteTargetAsset(DeleteTargetAssetRequest request);
 
@@ -246,7 +246,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ExecuteMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ExecuteMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExecuteMigrationPlan API.
      */
     ExecuteMigrationPlanResponse executeMigrationPlan(ExecuteMigrationPlanRequest request);
 
@@ -258,7 +258,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ExportMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ExportMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ExportMigrationPlan API.
      */
     ExportMigrationPlanResponse exportMigrationPlan(ExportMigrationPlanRequest request);
 
@@ -270,7 +270,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigration API.
      */
     GetMigrationResponse getMigration(GetMigrationRequest request);
 
@@ -282,7 +282,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigrationAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigrationAsset API.
      */
     GetMigrationAssetResponse getMigrationAsset(GetMigrationAssetRequest request);
 
@@ -294,7 +294,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetMigrationPlan API.
      */
     GetMigrationPlanResponse getMigrationPlan(GetMigrationPlanRequest request);
 
@@ -307,7 +307,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetReplicationProgressExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationProgress API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetReplicationProgressExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationProgress API.
      */
     GetReplicationProgressResponse getReplicationProgress(GetReplicationProgressRequest request);
 
@@ -319,7 +319,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetReplicationSchedule API.
      */
     GetReplicationScheduleResponse getReplicationSchedule(GetReplicationScheduleRequest request);
 
@@ -331,7 +331,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetTargetAsset API.
      */
     GetTargetAssetResponse getTargetAsset(GetTargetAssetRequest request);
 
@@ -343,7 +343,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/GetWorkRequestExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetWorkRequest API.
      */
     GetWorkRequestResponse getWorkRequest(GetWorkRequestRequest request);
 
@@ -382,7 +382,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ImportMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ImportMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ImportMigrationPlan API.
      */
     ImportMigrationPlanResponse importMigrationPlan(ImportMigrationPlanRequest request);
 
@@ -394,7 +394,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListAvailableShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAvailableShapes API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListAvailableShapesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListAvailableShapes API.
      */
     ListAvailableShapesResponse listAvailableShapes(ListAvailableShapesRequest request);
 
@@ -407,7 +407,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationAssets API.
      */
     ListMigrationAssetsResponse listMigrationAssets(ListMigrationAssetsRequest request);
 
@@ -420,7 +420,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationPlans API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationPlansExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrationPlans API.
      */
     ListMigrationPlansResponse listMigrationPlans(ListMigrationPlansRequest request);
 
@@ -433,7 +433,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrations API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListMigrationsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListMigrations API.
      */
     ListMigrationsResponse listMigrations(ListMigrationsRequest request);
 
@@ -446,7 +446,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListReplicationSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationSchedules API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListReplicationSchedulesExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListReplicationSchedules API.
      */
     ListReplicationSchedulesResponse listReplicationSchedules(
             ListReplicationSchedulesRequest request);
@@ -460,7 +460,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListTargetAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetAssets API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListTargetAssetsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListTargetAssets API.
      */
     ListTargetAssetsResponse listTargetAssets(ListTargetAssetsRequest request);
 
@@ -473,7 +473,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestErrorsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestErrors API.
      */
     ListWorkRequestErrorsResponse listWorkRequestErrors(ListWorkRequestErrorsRequest request);
 
@@ -486,7 +486,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestLogsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequestLogs API.
      */
     ListWorkRequestLogsResponse listWorkRequestLogs(ListWorkRequestLogsRequest request);
 
@@ -499,7 +499,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/ListWorkRequestsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListWorkRequests API.
      */
     ListWorkRequestsResponse listWorkRequests(ListWorkRequestsRequest request);
 
@@ -512,7 +512,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigration API.
      */
     RefreshMigrationResponse refreshMigration(RefreshMigrationRequest request);
 
@@ -525,7 +525,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigrationAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigrationAsset API.
      */
     RefreshMigrationAssetResponse refreshMigrationAsset(RefreshMigrationAssetRequest request);
 
@@ -538,7 +538,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/RefreshMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RefreshMigrationPlan API.
      */
     RefreshMigrationPlanResponse refreshMigrationPlan(RefreshMigrationPlanRequest request);
 
@@ -551,7 +551,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/StartAssetReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartAssetReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/StartAssetReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartAssetReplication API.
      */
     StartAssetReplicationResponse startAssetReplication(StartAssetReplicationRequest request);
 
@@ -564,7 +564,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/StartMigrationReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartMigrationReplication API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/StartMigrationReplicationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use StartMigrationReplication API.
      */
     StartMigrationReplicationResponse startMigrationReplication(
             StartMigrationReplicationRequest request);
@@ -577,7 +577,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigration API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigration API.
      */
     UpdateMigrationResponse updateMigration(UpdateMigrationRequest request);
 
@@ -589,7 +589,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigrationAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigrationAsset API.
      */
     UpdateMigrationAssetResponse updateMigrationAsset(UpdateMigrationAssetRequest request);
 
@@ -601,7 +601,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigrationPlan API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateMigrationPlanExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateMigrationPlan API.
      */
     UpdateMigrationPlanResponse updateMigrationPlan(UpdateMigrationPlanRequest request);
 
@@ -613,7 +613,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReplicationSchedule API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateReplicationScheduleExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateReplicationSchedule API.
      */
     UpdateReplicationScheduleResponse updateReplicationSchedule(
             UpdateReplicationScheduleRequest request);
@@ -626,7 +626,7 @@ public interface Migration extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetAsset API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/cloudmigrations/UpdateTargetAssetExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateTargetAsset API.
      */
     UpdateTargetAssetResponse updateTargetAsset(UpdateTargetAssetRequest request);
 

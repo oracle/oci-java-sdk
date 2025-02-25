@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -458,6 +458,240 @@ public class OnboardingAsyncClient implements OnboardingAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<AttachLifecycleStageToProfileResponse>
+            attachLifecycleStageToProfile(
+                    AttachLifecycleStageToProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachLifecycleStageToProfileRequest,
+                                    AttachLifecycleStageToProfileResponse>
+                            handler) {
+        LOG.trace("Called async attachLifecycleStageToProfile");
+        final AttachLifecycleStageToProfileRequest interceptedRequest =
+                AttachLifecycleStageToProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachLifecycleStageToProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "AttachLifecycleStageToProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachLifecycleStageToProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachLifecycleStageToProfileResponse>
+                transformer =
+                        AttachLifecycleStageToProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachLifecycleStageToProfileRequest, AttachLifecycleStageToProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachLifecycleStageToProfileRequest,
+                                AttachLifecycleStageToProfileResponse>,
+                        java.util.concurrent.Future<AttachLifecycleStageToProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachLifecycleStageToProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachLifecycleStageToProfileRequest, AttachLifecycleStageToProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachManagedInstanceGroupToProfileResponse>
+            attachManagedInstanceGroupToProfile(
+                    AttachManagedInstanceGroupToProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachManagedInstanceGroupToProfileRequest,
+                                    AttachManagedInstanceGroupToProfileResponse>
+                            handler) {
+        LOG.trace("Called async attachManagedInstanceGroupToProfile");
+        final AttachManagedInstanceGroupToProfileRequest interceptedRequest =
+                AttachManagedInstanceGroupToProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachManagedInstanceGroupToProfileConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "AttachManagedInstanceGroupToProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachManagedInstanceGroupToProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachManagedInstanceGroupToProfileResponse>
+                transformer =
+                        AttachManagedInstanceGroupToProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachManagedInstanceGroupToProfileRequest,
+                        AttachManagedInstanceGroupToProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachManagedInstanceGroupToProfileRequest,
+                                AttachManagedInstanceGroupToProfileResponse>,
+                        java.util.concurrent.Future<AttachManagedInstanceGroupToProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachManagedInstanceGroupToProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachManagedInstanceGroupToProfileRequest,
+                    AttachManagedInstanceGroupToProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachManagementStationToProfileResponse>
+            attachManagementStationToProfile(
+                    AttachManagementStationToProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachManagementStationToProfileRequest,
+                                    AttachManagementStationToProfileResponse>
+                            handler) {
+        LOG.trace("Called async attachManagementStationToProfile");
+        final AttachManagementStationToProfileRequest interceptedRequest =
+                AttachManagementStationToProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachManagementStationToProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "AttachManagementStationToProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachManagementStationToProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachManagementStationToProfileResponse>
+                transformer =
+                        AttachManagementStationToProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachManagementStationToProfileRequest,
+                        AttachManagementStationToProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachManagementStationToProfileRequest,
+                                AttachManagementStationToProfileResponse>,
+                        java.util.concurrent.Future<AttachManagementStationToProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachManagementStationToProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachManagementStationToProfileRequest,
+                    AttachManagementStationToProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<AttachSoftwareSourcesToProfileResponse>
+            attachSoftwareSourcesToProfile(
+                    AttachSoftwareSourcesToProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    AttachSoftwareSourcesToProfileRequest,
+                                    AttachSoftwareSourcesToProfileResponse>
+                            handler) {
+        LOG.trace("Called async attachSoftwareSourcesToProfile");
+        final AttachSoftwareSourcesToProfileRequest interceptedRequest =
+                AttachSoftwareSourcesToProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                AttachSoftwareSourcesToProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "AttachSoftwareSourcesToProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/AttachSoftwareSourcesToProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, AttachSoftwareSourcesToProfileResponse>
+                transformer =
+                        AttachSoftwareSourcesToProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        AttachSoftwareSourcesToProfileRequest,
+                        AttachSoftwareSourcesToProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                AttachSoftwareSourcesToProfileRequest,
+                                AttachSoftwareSourcesToProfileResponse>,
+                        java.util.concurrent.Future<AttachSoftwareSourcesToProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getAttachSoftwareSourcesToProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    AttachSoftwareSourcesToProfileRequest, AttachSoftwareSourcesToProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<ChangeProfileCompartmentResponse> changeProfileCompartment(
             ChangeProfileCompartmentRequest request,
             final com.oracle.bmc.responses.AsyncHandler<
@@ -606,6 +840,65 @@ public class OnboardingAsyncClient implements OnboardingAsync {
     }
 
     @Override
+    public java.util.concurrent.Future<DetachSoftwareSourcesFromProfileResponse>
+            detachSoftwareSourcesFromProfile(
+                    DetachSoftwareSourcesFromProfileRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    DetachSoftwareSourcesFromProfileRequest,
+                                    DetachSoftwareSourcesFromProfileResponse>
+                            handler) {
+        LOG.trace("Called async detachSoftwareSourcesFromProfile");
+        final DetachSoftwareSourcesFromProfileRequest interceptedRequest =
+                DetachSoftwareSourcesFromProfileConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                DetachSoftwareSourcesFromProfileConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.http.internal.RetryTokenUtils.addRetryToken(ib);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "DetachSoftwareSourcesFromProfile",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/DetachSoftwareSourcesFromProfile");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, DetachSoftwareSourcesFromProfileResponse>
+                transformer =
+                        DetachSoftwareSourcesFromProfileConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        DetachSoftwareSourcesFromProfileRequest,
+                        DetachSoftwareSourcesFromProfileResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                DetachSoftwareSourcesFromProfileRequest,
+                                DetachSoftwareSourcesFromProfileResponse>,
+                        java.util.concurrent.Future<DetachSoftwareSourcesFromProfileResponse>>
+                futureSupplier =
+                        client.postFutureSupplier(
+                                interceptedRequest,
+                                interceptedRequest.getDetachSoftwareSourcesFromProfileDetails(),
+                                ib,
+                                transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    DetachSoftwareSourcesFromProfileRequest,
+                    DetachSoftwareSourcesFromProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
     public java.util.concurrent.Future<GetProfileResponse> getProfile(
             GetProfileRequest request,
             final com.oracle.bmc.responses.AsyncHandler<GetProfileRequest, GetProfileResponse>
@@ -636,6 +929,106 @@ public class OnboardingAsyncClient implements OnboardingAsync {
                 instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
             return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
                     GetProfileRequest, GetProfileResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProfileVersionResponse> getProfileVersion(
+            GetProfileVersionRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            GetProfileVersionRequest, GetProfileVersionResponse>
+                    handler) {
+        LOG.trace("Called async getProfileVersion");
+        final GetProfileVersionRequest interceptedRequest =
+                GetProfileVersionConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                GetProfileVersionConverter.fromRequest(client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "GetProfileVersion",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ProfileVersion/GetProfileVersion");
+        final java.util.function.Function<javax.ws.rs.core.Response, GetProfileVersionResponse>
+                transformer =
+                        GetProfileVersionConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<GetProfileVersionRequest, GetProfileVersionResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                GetProfileVersionRequest, GetProfileVersionResponse>,
+                        java.util.concurrent.Future<GetProfileVersionResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    GetProfileVersionRequest, GetProfileVersionResponse>(
+                    (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
+                            this.authenticationDetailsProvider,
+                    handlerToUse,
+                    futureSupplier) {
+                @Override
+                protected void beforeRetryAction() {}
+            };
+        } else {
+            return futureSupplier.apply(handlerToUse);
+        }
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListProfileAvailableSoftwareSourcesResponse>
+            listProfileAvailableSoftwareSources(
+                    ListProfileAvailableSoftwareSourcesRequest request,
+                    final com.oracle.bmc.responses.AsyncHandler<
+                                    ListProfileAvailableSoftwareSourcesRequest,
+                                    ListProfileAvailableSoftwareSourcesResponse>
+                            handler) {
+        LOG.trace("Called async listProfileAvailableSoftwareSources");
+        final ListProfileAvailableSoftwareSourcesRequest interceptedRequest =
+                ListProfileAvailableSoftwareSourcesConverter.interceptRequest(request);
+        final com.oracle.bmc.http.internal.WrappedInvocationBuilder ib =
+                ListProfileAvailableSoftwareSourcesConverter.fromRequest(
+                        client, interceptedRequest);
+        com.oracle.bmc.ServiceDetails serviceDetails =
+                new com.oracle.bmc.ServiceDetails(
+                        "Onboarding",
+                        "ListProfileAvailableSoftwareSources",
+                        ib.getRequestUri().toString(),
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/Profile/ListProfileAvailableSoftwareSources");
+        final java.util.function.Function<
+                        javax.ws.rs.core.Response, ListProfileAvailableSoftwareSourcesResponse>
+                transformer =
+                        ListProfileAvailableSoftwareSourcesConverter.fromResponse(
+                                java.util.Optional.of(serviceDetails));
+        com.oracle.bmc.responses.AsyncHandler<
+                        ListProfileAvailableSoftwareSourcesRequest,
+                        ListProfileAvailableSoftwareSourcesResponse>
+                handlerToUse = handler;
+
+        java.util.function.Function<
+                        com.oracle.bmc.responses.AsyncHandler<
+                                ListProfileAvailableSoftwareSourcesRequest,
+                                ListProfileAvailableSoftwareSourcesResponse>,
+                        java.util.concurrent.Future<ListProfileAvailableSoftwareSourcesResponse>>
+                futureSupplier = client.getFutureSupplier(interceptedRequest, ib, transformer);
+
+        if (this.authenticationDetailsProvider
+                instanceof com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider) {
+            return new com.oracle.bmc.util.internal.RefreshAuthTokenWrapper<
+                    ListProfileAvailableSoftwareSourcesRequest,
+                    ListProfileAvailableSoftwareSourcesResponse>(
                     (com.oracle.bmc.auth.RefreshableOnNotAuthenticatedProvider)
                             this.authenticationDetailsProvider,
                     handlerToUse,

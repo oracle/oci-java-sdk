@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.osmanagementhub;
@@ -9,7 +9,7 @@ import com.oracle.bmc.osmanagementhub.responses.*;
 
 /**
  * Use the OS Management Hub API to manage and monitor updates and patches for instances in OCI, your private data center, or 3rd-party clouds.
- * For more information, see [Overview of OS Management Hub](https://docs.cloud.oracle.com/iaas/osmh/doc/overview.htm).
+ * For more information, see [Overview of OS Management Hub](https://docs.oracle.com/iaas/osmh/doc/overview.htm).
  *
  * This service client uses CircuitBreakerUtils.DEFAULT_CIRCUIT_BREAKER for all the operations by default if no circuit breaker configuration is defined by the user.
  */
@@ -69,7 +69,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeScheduledJobCompartment API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ChangeScheduledJobCompartmentExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ChangeScheduledJobCompartment API.
      */
     ChangeScheduledJobCompartmentResponse changeScheduledJobCompartment(
             ChangeScheduledJobCompartmentRequest request);
@@ -83,7 +83,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/CreateScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use CreateScheduledJob API.
      */
     CreateScheduledJobResponse createScheduledJob(CreateScheduledJobRequest request);
 
@@ -96,7 +96,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/DeleteScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use DeleteScheduledJob API.
      */
     DeleteScheduledJobResponse deleteScheduledJob(DeleteScheduledJobRequest request);
 
@@ -109,12 +109,12 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/GetScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use GetScheduledJob API.
      */
     GetScheduledJobResponse getScheduledJob(GetScheduledJobRequest request);
 
     /**
-     * Lists scheduled jobs that match the specified compartment or scheduled job [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     * Lists scheduled jobs that match the specified compartment or scheduled job [OCID](https://docs.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
      *
      * @param request The request object containing the details to send
      * @return A response object containing details about the completed operation
@@ -122,7 +122,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledJobs API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/ListScheduledJobsExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use ListScheduledJobs API.
      */
     ListScheduledJobsResponse listScheduledJobs(ListScheduledJobsRequest request);
 
@@ -136,7 +136,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RunScheduledJobNowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunScheduledJobNow API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RunScheduledJobNowExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use RunScheduledJobNow API.
      */
     RunScheduledJobNowResponse runScheduledJobNow(RunScheduledJobNowRequest request);
 
@@ -149,7 +149,7 @@ public interface ScheduledJob extends AutoCloseable {
      * This operation uses RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is provided.
      * The specifics of the default retry strategy are described here https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
      *
-     * <b>Example: </b>Click <a href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledJob API.
+     * <b>Example: </b>Click <a href="https://docs.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/UpdateScheduledJobExample.java.html" target="_blank" rel="noopener noreferrer" >here</a> to see how to use UpdateScheduledJob API.
      */
     UpdateScheduledJobResponse updateScheduledJob(UpdateScheduledJobRequest request);
 

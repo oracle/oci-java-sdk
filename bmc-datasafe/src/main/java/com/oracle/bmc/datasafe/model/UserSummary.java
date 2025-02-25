@@ -1,12 +1,13 @@
 /**
- * Copyright (c) 2016, 2024, Oracle and/or its affiliates.  All rights reserved.
+ * Copyright (c) 2016, 2025, Oracle and/or its affiliates.  All rights reserved.
  * This software is dual-licensed to you under the Universal Permissive License (UPL) 1.0 as shown at https://oss.oracle.com/licenses/upl or Apache License 2.0 as shown at http://www.apache.org/licenses/LICENSE-2.0. You may choose either license.
  */
 package com.oracle.bmc.datasafe.model;
 
 /**
  * The summary of information about the database user. It includes details such as user type, account status,
- * last login time, user creation time, authentication type, user profile, and time and date of the last password change.
+ * last login time, user creation time, authentication type, user profile, and time and date of the last password change and
+ * the date and time of the expiration of the password.
  * It also contains the user category derived from these user details, as well as granted privileges.
  *
  * <br/>
@@ -33,6 +34,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         "authenticationType",
         "userProfile",
         "timePasswordChanged",
+        "timePasswordExpiry",
         "userTypes",
         "adminRoles",
         "areAllSchemasAccessible",
@@ -49,6 +51,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             AuthenticationType authenticationType,
             String userProfile,
             java.util.Date timePasswordChanged,
+            java.util.Date timePasswordExpiry,
             java.util.List<UserTypes> userTypes,
             java.util.List<AdminRoles> adminRoles,
             Boolean areAllSchemasAccessible,
@@ -64,6 +67,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         this.authenticationType = authenticationType;
         this.userProfile = userProfile;
         this.timePasswordChanged = timePasswordChanged;
+        this.timePasswordExpiry = timePasswordExpiry;
         this.userTypes = userTypes;
         this.adminRoles = adminRoles;
         this.areAllSchemasAccessible = areAllSchemasAccessible;
@@ -233,6 +237,22 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             return this;
         }
         /**
+         * The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         **/
+        @com.fasterxml.jackson.annotation.JsonProperty("timePasswordExpiry")
+        private java.util.Date timePasswordExpiry;
+
+        /**
+         * The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+         * @param timePasswordExpiry the value to set
+         * @return this builder
+         **/
+        public Builder timePasswordExpiry(java.util.Date timePasswordExpiry) {
+            this.timePasswordExpiry = timePasswordExpiry;
+            this.__explicitlySet__.add("timePasswordExpiry");
+            return this;
+        }
+        /**
          * The user type, which can be a combination of the following:
          * <p>
          * 'Admin Privileged': The user has administrative privileges.
@@ -327,6 +347,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                             this.authenticationType,
                             this.userProfile,
                             this.timePasswordChanged,
+                            this.timePasswordExpiry,
                             this.userTypes,
                             this.adminRoles,
                             this.areAllSchemasAccessible,
@@ -368,6 +389,9 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
             }
             if (model.wasPropertyExplicitlySet("timePasswordChanged")) {
                 this.timePasswordChanged(model.getTimePasswordChanged());
+            }
+            if (model.wasPropertyExplicitlySet("timePasswordExpiry")) {
+                this.timePasswordExpiry(model.getTimePasswordExpiry());
             }
             if (model.wasPropertyExplicitlySet("userTypes")) {
                 this.userTypes(model.getUserTypes());
@@ -686,6 +710,20 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
     }
 
     /**
+     * The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     **/
+    @com.fasterxml.jackson.annotation.JsonProperty("timePasswordExpiry")
+    private final java.util.Date timePasswordExpiry;
+
+    /**
+     * The date and time the user's password will expire, in the format defined by [RFC3339](https://tools.ietf.org/html/rfc3339).
+     * @return the value
+     **/
+    public java.util.Date getTimePasswordExpiry() {
+        return timePasswordExpiry;
+    }
+
+    /**
      **/
     public enum UserTypes {
         AdminPrivileged("ADMIN_PRIVILEGED"),
@@ -878,6 +916,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
         sb.append(", authenticationType=").append(String.valueOf(this.authenticationType));
         sb.append(", userProfile=").append(String.valueOf(this.userProfile));
         sb.append(", timePasswordChanged=").append(String.valueOf(this.timePasswordChanged));
+        sb.append(", timePasswordExpiry=").append(String.valueOf(this.timePasswordExpiry));
         sb.append(", userTypes=").append(String.valueOf(this.userTypes));
         sb.append(", adminRoles=").append(String.valueOf(this.adminRoles));
         sb.append(", areAllSchemasAccessible=")
@@ -907,6 +946,7 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                 && java.util.Objects.equals(this.authenticationType, other.authenticationType)
                 && java.util.Objects.equals(this.userProfile, other.userProfile)
                 && java.util.Objects.equals(this.timePasswordChanged, other.timePasswordChanged)
+                && java.util.Objects.equals(this.timePasswordExpiry, other.timePasswordExpiry)
                 && java.util.Objects.equals(this.userTypes, other.userTypes)
                 && java.util.Objects.equals(this.adminRoles, other.adminRoles)
                 && java.util.Objects.equals(
@@ -943,6 +983,11 @@ public final class UserSummary extends com.oracle.bmc.http.internal.ExplicitlySe
                         + (this.timePasswordChanged == null
                                 ? 43
                                 : this.timePasswordChanged.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.timePasswordExpiry == null
+                                ? 43
+                                : this.timePasswordExpiry.hashCode());
         result = (result * PRIME) + (this.userTypes == null ? 43 : this.userTypes.hashCode());
         result = (result * PRIME) + (this.adminRoles == null ? 43 : this.adminRoles.hashCode());
         result =
