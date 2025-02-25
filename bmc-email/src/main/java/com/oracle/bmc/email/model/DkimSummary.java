@@ -30,6 +30,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
         "description",
         "timeCreated",
         "timeUpdated",
+        "isImported",
+        "keyLength",
         "freeformTags",
         "definedTags",
         "systemTags"
@@ -43,6 +45,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
             String description,
             java.util.Date timeCreated,
             java.util.Date timeUpdated,
+            Boolean isImported,
+            Integer keyLength,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.Map<String, java.util.Map<String, Object>> systemTags) {
@@ -55,6 +59,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
         this.description = description;
         this.timeCreated = timeCreated;
         this.timeUpdated = timeUpdated;
+        this.isImported = isImported;
+        this.keyLength = keyLength;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
         this.systemTags = systemTags;
@@ -210,6 +216,36 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
             this.__explicitlySet__.add("timeUpdated");
             return this;
         }
+        /** Indicates whether the DKIM was imported. */
+        @com.fasterxml.jackson.annotation.JsonProperty("isImported")
+        private Boolean isImported;
+
+        /**
+         * Indicates whether the DKIM was imported.
+         *
+         * @param isImported the value to set
+         * @return this builder
+         */
+        public Builder isImported(Boolean isImported) {
+            this.isImported = isImported;
+            this.__explicitlySet__.add("isImported");
+            return this;
+        }
+        /** Length of the RSA key used in the DKIM. */
+        @com.fasterxml.jackson.annotation.JsonProperty("keyLength")
+        private Integer keyLength;
+
+        /**
+         * Length of the RSA key used in the DKIM.
+         *
+         * @param keyLength the value to set
+         * @return this builder
+         */
+        public Builder keyLength(Integer keyLength) {
+            this.keyLength = keyLength;
+            this.__explicitlySet__.add("keyLength");
+            return this;
+        }
         /**
          * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
          * name, type, or namespace. For more information, see [Resource
@@ -295,6 +331,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
                             this.description,
                             this.timeCreated,
                             this.timeUpdated,
+                            this.isImported,
+                            this.keyLength,
                             this.freeformTags,
                             this.definedTags,
                             this.systemTags);
@@ -329,6 +367,12 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
             }
             if (model.wasPropertyExplicitlySet("timeUpdated")) {
                 this.timeUpdated(model.getTimeUpdated());
+            }
+            if (model.wasPropertyExplicitlySet("isImported")) {
+                this.isImported(model.getIsImported());
+            }
+            if (model.wasPropertyExplicitlySet("keyLength")) {
+                this.keyLength(model.getKeyLength());
             }
             if (model.wasPropertyExplicitlySet("freeformTags")) {
                 this.freeformTags(model.getFreeformTags());
@@ -482,6 +526,32 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
         return timeUpdated;
     }
 
+    /** Indicates whether the DKIM was imported. */
+    @com.fasterxml.jackson.annotation.JsonProperty("isImported")
+    private final Boolean isImported;
+
+    /**
+     * Indicates whether the DKIM was imported.
+     *
+     * @return the value
+     */
+    public Boolean getIsImported() {
+        return isImported;
+    }
+
+    /** Length of the RSA key used in the DKIM. */
+    @com.fasterxml.jackson.annotation.JsonProperty("keyLength")
+    private final Integer keyLength;
+
+    /**
+     * Length of the RSA key used in the DKIM.
+     *
+     * @return the value
+     */
+    public Integer getKeyLength() {
+        return keyLength;
+    }
+
     /**
      * Free-form tags for this resource. Each tag is a simple key-value pair with no predefined
      * name, type, or namespace. For more information, see [Resource
@@ -568,6 +638,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", timeUpdated=").append(String.valueOf(this.timeUpdated));
+        sb.append(", isImported=").append(String.valueOf(this.isImported));
+        sb.append(", keyLength=").append(String.valueOf(this.keyLength));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
         sb.append(", systemTags=").append(String.valueOf(this.systemTags));
@@ -593,6 +665,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.timeUpdated, other.timeUpdated)
+                && java.util.Objects.equals(this.isImported, other.isImported)
+                && java.util.Objects.equals(this.keyLength, other.keyLength)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
                 && java.util.Objects.equals(this.systemTags, other.systemTags)
@@ -617,6 +691,8 @@ public final class DkimSummary extends com.oracle.bmc.http.client.internal.Expli
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.timeUpdated == null ? 43 : this.timeUpdated.hashCode());
+        result = (result * PRIME) + (this.isImported == null ? 43 : this.isImported.hashCode());
+        result = (result * PRIME) + (this.keyLength == null ? 43 : this.keyLength.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());
         result = (result * PRIME) + (this.systemTags == null ? 43 : this.systemTags.hashCode());

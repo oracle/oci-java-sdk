@@ -83,10 +83,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             getRegistrationType() {
         return registrationType;
     }
-    /** A boolean variable that is used to list only the default profile resources. */
+    /** A filter to return only default profiles. */
     private Boolean isDefaultProfile;
 
-    /** A boolean variable that is used to list only the default profile resources. */
+    /** A filter to return only default profiles. */
     public Boolean getIsDefaultProfile() {
         return isDefaultProfile;
     }
@@ -96,6 +96,39 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
     /** A filter to return only service-provided profiles. */
     public Boolean getIsServiceProvidedProfile() {
         return isServiceProvidedProfile;
+    }
+    /**
+     * A filter to return resources that are associated with the specified management station
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private java.util.List<String> managementStation;
+
+    /**
+     * A filter to return resources that are associated with the specified management station
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public java.util.List<String> getManagementStation() {
+        return managementStation;
+    }
+    /**
+     * A filter to return resources that aren't associated with the specified management station
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    private java.util.List<String> managementStationNotEqualTo;
+
+    /**
+     * A filter to return resources that aren't associated with the specified management station
+     * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+     */
+    public java.util.List<String> getManagementStationNotEqualTo() {
+        return managementStationNotEqualTo;
+    }
+    /** The version of the registration profile. */
+    private String profileVersion;
+
+    /** The version of the registration profile. */
+    public String getProfileVersion() {
+        return profileVersion;
     }
     /** A filter to return only resources that match the given vendor name. */
     private com.oracle.bmc.osmanagementhub.model.VendorName vendorName;
@@ -382,11 +415,11 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return this.registrationType(java.util.Arrays.asList(singularValue));
         }
 
-        /** A boolean variable that is used to list only the default profile resources. */
+        /** A filter to return only default profiles. */
         private Boolean isDefaultProfile = null;
 
         /**
-         * A boolean variable that is used to list only the default profile resources.
+         * A filter to return only default profiles.
          *
          * @param isDefaultProfile the value to set
          * @return this builder instance
@@ -407,6 +440,81 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
          */
         public Builder isServiceProvidedProfile(Boolean isServiceProvidedProfile) {
             this.isServiceProvidedProfile = isServiceProvidedProfile;
+            return this;
+        }
+
+        /**
+         * A filter to return resources that are associated with the specified management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private java.util.List<String> managementStation = null;
+
+        /**
+         * A filter to return resources that are associated with the specified management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStation the value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(java.util.List<String> managementStation) {
+            this.managementStation = managementStation;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that are associated with the specified
+         * management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStation(String singularValue) {
+            return this.managementStation(java.util.Arrays.asList(singularValue));
+        }
+
+        /**
+         * A filter to return resources that aren't associated with the specified management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         */
+        private java.util.List<String> managementStationNotEqualTo = null;
+
+        /**
+         * A filter to return resources that aren't associated with the specified management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param managementStationNotEqualTo the value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(
+                java.util.List<String> managementStationNotEqualTo) {
+            this.managementStationNotEqualTo = managementStationNotEqualTo;
+            return this;
+        }
+
+        /**
+         * Singular setter. A filter to return resources that aren't associated with the specified
+         * management station
+         * [OCIDs](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm).
+         *
+         * @param singularValue the singular value to set
+         * @return this builder instance
+         */
+        public Builder managementStationNotEqualTo(String singularValue) {
+            return this.managementStationNotEqualTo(java.util.Arrays.asList(singularValue));
+        }
+
+        /** The version of the registration profile. */
+        private String profileVersion = null;
+
+        /**
+         * The version of the registration profile.
+         *
+         * @param profileVersion the value to set
+         * @return this builder instance
+         */
+        public Builder profileVersion(String profileVersion) {
+            this.profileVersion = profileVersion;
             return this;
         }
 
@@ -577,6 +685,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             registrationType(o.getRegistrationType());
             isDefaultProfile(o.getIsDefaultProfile());
             isServiceProvidedProfile(o.getIsServiceProvidedProfile());
+            managementStation(o.getManagementStation());
+            managementStationNotEqualTo(o.getManagementStationNotEqualTo());
+            profileVersion(o.getProfileVersion());
             vendorName(o.getVendorName());
             limit(o.getLimit());
             page(o.getPage());
@@ -628,6 +739,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             request.registrationType = registrationType;
             request.isDefaultProfile = isDefaultProfile;
             request.isServiceProvidedProfile = isServiceProvidedProfile;
+            request.managementStation = managementStation;
+            request.managementStationNotEqualTo = managementStationNotEqualTo;
+            request.profileVersion = profileVersion;
             request.vendorName = vendorName;
             request.limit = limit;
             request.page = page;
@@ -638,7 +752,8 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
             return request;
             // new ListProfilesRequest(compartmentId, displayName, displayNameContains, profileType,
             // profileId, osFamily, archType, registrationType, isDefaultProfile,
-            // isServiceProvidedProfile, vendorName, limit, page, lifecycleState, sortOrder, sortBy,
+            // isServiceProvidedProfile, managementStation, managementStationNotEqualTo,
+            // profileVersion, vendorName, limit, page, lifecycleState, sortOrder, sortBy,
             // opcRequestId);
         }
     }
@@ -660,6 +775,9 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 .registrationType(registrationType)
                 .isDefaultProfile(isDefaultProfile)
                 .isServiceProvidedProfile(isServiceProvidedProfile)
+                .managementStation(managementStation)
+                .managementStationNotEqualTo(managementStationNotEqualTo)
+                .profileVersion(profileVersion)
                 .vendorName(vendorName)
                 .limit(limit)
                 .page(page)
@@ -694,6 +812,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
         sb.append(",isDefaultProfile=").append(String.valueOf(this.isDefaultProfile));
         sb.append(",isServiceProvidedProfile=")
                 .append(String.valueOf(this.isServiceProvidedProfile));
+        sb.append(",managementStation=").append(String.valueOf(this.managementStation));
+        sb.append(",managementStationNotEqualTo=")
+                .append(String.valueOf(this.managementStationNotEqualTo));
+        sb.append(",profileVersion=").append(String.valueOf(this.profileVersion));
         sb.append(",vendorName=").append(String.valueOf(this.vendorName));
         sb.append(",limit=").append(String.valueOf(this.limit));
         sb.append(",page=").append(String.valueOf(this.page));
@@ -727,6 +849,10 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                 && java.util.Objects.equals(this.isDefaultProfile, other.isDefaultProfile)
                 && java.util.Objects.equals(
                         this.isServiceProvidedProfile, other.isServiceProvidedProfile)
+                && java.util.Objects.equals(this.managementStation, other.managementStation)
+                && java.util.Objects.equals(
+                        this.managementStationNotEqualTo, other.managementStationNotEqualTo)
+                && java.util.Objects.equals(this.profileVersion, other.profileVersion)
                 && java.util.Objects.equals(this.vendorName, other.vendorName)
                 && java.util.Objects.equals(this.limit, other.limit)
                 && java.util.Objects.equals(this.page, other.page)
@@ -764,6 +890,17 @@ public class ListProfilesRequest extends com.oracle.bmc.requests.BmcRequest<java
                         + (this.isServiceProvidedProfile == null
                                 ? 43
                                 : this.isServiceProvidedProfile.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStation == null ? 43 : this.managementStation.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.managementStationNotEqualTo == null
+                                ? 43
+                                : this.managementStationNotEqualTo.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.profileVersion == null ? 43 : this.profileVersion.hashCode());
         result = (result * PRIME) + (this.vendorName == null ? 43 : this.vendorName.hashCode());
         result = (result * PRIME) + (this.limit == null ? 43 : this.limit.hashCode());
         result = (result * PRIME) + (this.page == null ? 43 : this.page.hashCode());

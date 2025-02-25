@@ -151,16 +151,16 @@ public final class ProfileSummary
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station to associate with an instance once registered. Associating with
-         * a management station applies only to non-OCI instances.
+         * of the management station to associate with an instance once registered. Management
+         * stations are only used with non-OCI instances.
          */
         @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
         private String managementStationId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the management station to associate with an instance once registered. Associating with
-         * a management station applies only to non-OCI instances.
+         * of the management station to associate with an instance once registered. Management
+         * stations are only used with non-OCI instances.
          *
          * @param managementStationId the value to set
          * @return this builder
@@ -245,12 +245,16 @@ public final class ProfileSummary
             this.__explicitlySet__.add("archType");
             return this;
         }
-        /** The time the the Onboarding was created. An RFC3339 formatted datetime string */
+        /**
+         * The time the registration profile was created (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+         */
         @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
         private java.util.Date timeCreated;
 
         /**
-         * The time the the Onboarding was created. An RFC3339 formatted datetime string
+         * The time the registration profile was created (in [RFC
+         * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeCreated the value to set
          * @return this builder
@@ -543,16 +547,16 @@ public final class ProfileSummary
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station to associate with an instance once registered. Associating with a
-     * management station applies only to non-OCI instances.
+     * the management station to associate with an instance once registered. Management stations are
+     * only used with non-OCI instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station to associate with an instance once registered. Associating with a
-     * management station applies only to non-OCI instances.
+     * the management station to associate with an instance once registered. Management stations are
+     * only used with non-OCI instances.
      *
      * @return the value
      */
@@ -625,12 +629,16 @@ public final class ProfileSummary
         return archType;
     }
 
-    /** The time the the Onboarding was created. An RFC3339 formatted datetime string */
+    /**
+     * The time the registration profile was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
+     */
     @com.fasterxml.jackson.annotation.JsonProperty("timeCreated")
     private final java.util.Date timeCreated;
 
     /**
-     * The time the the Onboarding was created. An RFC3339 formatted datetime string
+     * The time the registration profile was created (in [RFC
+     * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value
      */

@@ -26,6 +26,9 @@ package com.oracle.bmc.osmanagementhub.model;
             value = CreateGroupProfileDetails.class,
             name = "GROUP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = CreateWindowsStandAloneProfileDetails.class,
+            name = "WINDOWS_STANDALONE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CreateStationProfileDetails.class,
             name = "STATION"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -71,15 +74,15 @@ public class CreateProfileDetails
     }
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique and you can change the name later. Avoid
+     * entering confidential information.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("displayName")
     private final String displayName;
 
     /**
-     * A user-friendly name. Does not have to be unique, and it's changeable. Avoid entering
-     * confidential information.
+     * A user-friendly name. Does not have to be unique and you can change the name later. Avoid
+     * entering confidential information.
      *
      * @return the value
      */
@@ -118,17 +121,19 @@ public class CreateProfileDetails
     }
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station to associate with an instance once registered. Associating with a
-     * management station applies only to non-OCI instances.
+     * description: The
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station to associate with an instance once registered. This is required when
+     * creating a profile for non-OCI instances.
      */
     @com.fasterxml.jackson.annotation.JsonProperty("managementStationId")
     private final String managementStationId;
 
     /**
-     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the management station to associate with an instance once registered. Associating with a
-     * management station applies only to non-OCI instances.
+     * description: The
+     * [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of the
+     * management station to associate with an instance once registered. This is required when
+     * creating a profile for non-OCI instances.
      *
      * @return the value
      */

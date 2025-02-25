@@ -36,7 +36,8 @@ public final class OpenIdConnectTokenAuthenticationConfig
         "requiredClaims",
         "caCertificate",
         "signingAlgorithms",
-        "isOpenIdConnectAuthEnabled"
+        "isOpenIdConnectAuthEnabled",
+        "configurationFile"
     })
     public OpenIdConnectTokenAuthenticationConfig(
             String issuerUrl,
@@ -48,7 +49,8 @@ public final class OpenIdConnectTokenAuthenticationConfig
             java.util.List<KeyValue> requiredClaims,
             String caCertificate,
             java.util.List<String> signingAlgorithms,
-            Boolean isOpenIdConnectAuthEnabled) {
+            Boolean isOpenIdConnectAuthEnabled,
+            String configurationFile) {
         super();
         this.issuerUrl = issuerUrl;
         this.clientId = clientId;
@@ -60,6 +62,7 @@ public final class OpenIdConnectTokenAuthenticationConfig
         this.caCertificate = caCertificate;
         this.signingAlgorithms = signingAlgorithms;
         this.isOpenIdConnectAuthEnabled = isOpenIdConnectAuthEnabled;
+        this.configurationFile = configurationFile;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -256,6 +259,25 @@ public final class OpenIdConnectTokenAuthenticationConfig
             this.__explicitlySet__.add("isOpenIdConnectAuthEnabled");
             return this;
         }
+        /**
+         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
+         * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("configurationFile")
+        private String configurationFile;
+
+        /**
+         * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
+         * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+         *
+         * @param configurationFile the value to set
+         * @return this builder
+         */
+        public Builder configurationFile(String configurationFile) {
+            this.configurationFile = configurationFile;
+            this.__explicitlySet__.add("configurationFile");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -272,7 +294,8 @@ public final class OpenIdConnectTokenAuthenticationConfig
                             this.requiredClaims,
                             this.caCertificate,
                             this.signingAlgorithms,
-                            this.isOpenIdConnectAuthEnabled);
+                            this.isOpenIdConnectAuthEnabled,
+                            this.configurationFile);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -310,6 +333,9 @@ public final class OpenIdConnectTokenAuthenticationConfig
             }
             if (model.wasPropertyExplicitlySet("isOpenIdConnectAuthEnabled")) {
                 this.isOpenIdConnectAuthEnabled(model.getIsOpenIdConnectAuthEnabled());
+            }
+            if (model.wasPropertyExplicitlySet("configurationFile")) {
+                this.configurationFile(model.getConfigurationFile());
             }
             return this;
         }
@@ -494,6 +520,23 @@ public final class OpenIdConnectTokenAuthenticationConfig
         return isOpenIdConnectAuthEnabled;
     }
 
+    /**
+     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
+     * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("configurationFile")
+    private final String configurationFile;
+
+    /**
+     * A Base64 encoded string of a Kubernetes OIDC Auth Config file. More info
+     * [here](https://kubernetes.io/docs/reference/access-authn-authz/authentication/#using-authentication-configuration)
+     *
+     * @return the value
+     */
+    public String getConfigurationFile() {
+        return configurationFile;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -520,6 +563,7 @@ public final class OpenIdConnectTokenAuthenticationConfig
         sb.append(", signingAlgorithms=").append(String.valueOf(this.signingAlgorithms));
         sb.append(", isOpenIdConnectAuthEnabled=")
                 .append(String.valueOf(this.isOpenIdConnectAuthEnabled));
+        sb.append(", configurationFile=").append(String.valueOf(this.configurationFile));
         sb.append(")");
         return sb.toString();
     }
@@ -545,6 +589,7 @@ public final class OpenIdConnectTokenAuthenticationConfig
                 && java.util.Objects.equals(this.signingAlgorithms, other.signingAlgorithms)
                 && java.util.Objects.equals(
                         this.isOpenIdConnectAuthEnabled, other.isOpenIdConnectAuthEnabled)
+                && java.util.Objects.equals(this.configurationFile, other.configurationFile)
                 && super.equals(other);
     }
 
@@ -576,6 +621,9 @@ public final class OpenIdConnectTokenAuthenticationConfig
                         + (this.isOpenIdConnectAuthEnabled == null
                                 ? 43
                                 : this.isOpenIdConnectAuthEnabled.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.configurationFile == null ? 43 : this.configurationFile.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

@@ -81,6 +81,26 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         return vnicId;
     }
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+     * AVAILABLE
+     */
+    private String ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+     * AVAILABLE
+     */
+    public String getIpState() {
+        return ipState;
+    }
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    private String lifetime;
+
+    /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+    public String getLifetime() {
+        return lifetime;
+    }
+    /**
      * Unique identifier for the request. If you need to contact Oracle about a particular request,
      * please provide the request ID.
      */
@@ -195,6 +215,38 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         }
 
         /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+         * AVAILABLE
+         */
+        private String ipState = null;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED otherwise
+         * AVAILABLE
+         *
+         * @param ipState the value to set
+         * @return this builder instance
+         */
+        public Builder ipState(String ipState) {
+            this.ipState = ipState;
+            return this;
+        }
+
+        /** Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved */
+        private String lifetime = null;
+
+        /**
+         * Lifetime of the IP address. There are two types of IPs: - Ephemeral - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder instance
+         */
+        public Builder lifetime(String lifetime) {
+            this.lifetime = lifetime;
+            return this;
+        }
+
+        /**
          * Unique identifier for the request. If you need to contact Oracle about a particular
          * request, please provide the request ID.
          */
@@ -247,6 +299,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             ipAddress(o.getIpAddress());
             subnetId(o.getSubnetId());
             vnicId(o.getVnicId());
+            ipState(o.getIpState());
+            lifetime(o.getLifetime());
             opcRequestId(o.getOpcRequestId());
             invocationCallback(o.getInvocationCallback());
             retryConfiguration(o.getRetryConfiguration());
@@ -287,9 +341,12 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
             request.ipAddress = ipAddress;
             request.subnetId = subnetId;
             request.vnicId = vnicId;
+            request.ipState = ipState;
+            request.lifetime = lifetime;
             request.opcRequestId = opcRequestId;
             return request;
-            // new ListIpv6sRequest(limit, page, ipAddress, subnetId, vnicId, opcRequestId);
+            // new ListIpv6sRequest(limit, page, ipAddress, subnetId, vnicId, ipState, lifetime,
+            // opcRequestId);
         }
     }
 
@@ -305,6 +362,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 .ipAddress(ipAddress)
                 .subnetId(subnetId)
                 .vnicId(vnicId)
+                .ipState(ipState)
+                .lifetime(lifetime)
                 .opcRequestId(opcRequestId);
     }
 
@@ -327,6 +386,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         sb.append(",ipAddress=").append(String.valueOf(this.ipAddress));
         sb.append(",subnetId=").append(String.valueOf(this.subnetId));
         sb.append(",vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(",ipState=").append(String.valueOf(this.ipState));
+        sb.append(",lifetime=").append(String.valueOf(this.lifetime));
         sb.append(",opcRequestId=").append(String.valueOf(this.opcRequestId));
         sb.append(")");
         return sb.toString();
@@ -348,6 +409,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
                 && java.util.Objects.equals(this.ipAddress, other.ipAddress)
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.opcRequestId, other.opcRequestId);
     }
 
@@ -360,6 +423,8 @@ public class ListIpv6sRequest extends com.oracle.bmc.requests.BmcRequest<java.la
         result = (result * PRIME) + (this.ipAddress == null ? 43 : this.ipAddress.hashCode());
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.opcRequestId == null ? 43 : this.opcRequestId.hashCode());
         return result;
     }

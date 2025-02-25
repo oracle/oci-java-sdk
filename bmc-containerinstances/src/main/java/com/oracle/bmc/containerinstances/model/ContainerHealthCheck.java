@@ -27,10 +27,7 @@ package com.oracle.bmc.containerinstances.model;
             name = "TCP"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ContainerHttpHealthCheck.class,
-            name = "HTTP"),
-    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
-            value = ContainerCommandHealthCheck.class,
-            name = "COMMAND")
+            name = "HTTP")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

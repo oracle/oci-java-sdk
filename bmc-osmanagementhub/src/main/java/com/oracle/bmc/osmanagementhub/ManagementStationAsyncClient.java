@@ -190,6 +190,7 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendPathParam(request.getManagementStationId())
                 .accept("application/json")
                 .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
                 .appendHeader("opc-request-id", request.getOpcRequestId())
                 .handleResponseHeaderString(
                         "opc-request-id", DeleteManagementStationResponse.Builder::opcRequestId)
@@ -254,6 +255,14 @@ public class ManagementStationAsyncClient extends com.oracle.bmc.http.internal.B
                 .appendQueryParam("managedInstanceId", request.getManagedInstanceId())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
+                .appendListQueryParam(
+                        "location",
+                        request.getLocation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "locationNotEqualTo",
+                        request.getLocationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
                 .appendEnumQueryParam("sortBy", request.getSortBy())
                 .appendQueryParam("id", request.getId())

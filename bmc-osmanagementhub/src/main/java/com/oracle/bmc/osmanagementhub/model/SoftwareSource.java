@@ -28,11 +28,17 @@ package com.oracle.bmc.osmanagementhub.model;
             value = VendorSoftwareSource.class,
             name = "VENDOR"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = ThirdPartySoftwareSource.class,
+            name = "THIRD_PARTY"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = CustomSoftwareSource.class,
             name = "CUSTOM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = VersionedCustomSoftwareSource.class,
-            name = "VERSIONED")
+            name = "VERSIONED"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PrivateSoftwareSource.class,
+            name = "PRIVATE")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)
@@ -223,12 +229,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return repoId;
     }
 
-    /** The OS family the software source belongs to. */
+    /** The OS family of the software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("osFamily")
     private final OsFamily osFamily;
 
     /**
-     * The OS family the software source belongs to.
+     * The OS family of the software source.
      *
      * @return the value
      */
@@ -258,6 +264,7 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         Deleting("DELETING"),
         Deleted("DELETED"),
         Failed("FAILED"),
+        NeedsAttention("NEEDS_ATTENTION"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by
@@ -356,12 +363,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return checksumType;
     }
 
-    /** URL of the GPG key for this software source. */
+    /** URI of the GPG key for this software source. */
     @com.fasterxml.jackson.annotation.JsonProperty("gpgKeyUrl")
     private final String gpgKeyUrl;
 
     /**
-     * URL of the GPG key for this software source.
+     * URI of the GPG key for this software source.
      *
      * @return the value
      */
@@ -395,12 +402,12 @@ public class SoftwareSource extends com.oracle.bmc.http.client.internal.Explicit
         return gpgKeyFingerprint;
     }
 
-    /** The size of the software source in gigabytes (GB). */
+    /** The size of the software source in bytes (B). */
     @com.fasterxml.jackson.annotation.JsonProperty("size")
     private final Double size;
 
     /**
-     * The size of the software source in gigabytes (GB).
+     * The size of the software source in bytes (B).
      *
      * @return the value
      */

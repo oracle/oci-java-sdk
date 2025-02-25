@@ -108,14 +108,14 @@ public final class UpdateScheduledJobDetails
             return this;
         }
         /**
-         * The desired time of the next execution of this scheduled job (in [RFC
+         * The time of the next execution of this scheduled job (in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
         private java.util.Date timeNextExecution;
 
         /**
-         * The desired time of the next execution of this scheduled job (in [RFC
+         * The time of the next execution of this scheduled job (in [RFC
          * 3339](https://tools.ietf.org/rfc/rfc3339) format).
          *
          * @param timeNextExecution the value to set
@@ -342,14 +342,14 @@ public final class UpdateScheduledJobDetails
     }
 
     /**
-     * The desired time of the next execution of this scheduled job (in [RFC
+     * The time of the next execution of this scheduled job (in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("timeNextExecution")
     private final java.util.Date timeNextExecution;
 
     /**
-     * The desired time of the next execution of this scheduled job (in [RFC
+     * The time of the next execution of this scheduled job (in [RFC
      * 3339](https://tools.ietf.org/rfc/rfc3339) format).
      *
      * @return the value

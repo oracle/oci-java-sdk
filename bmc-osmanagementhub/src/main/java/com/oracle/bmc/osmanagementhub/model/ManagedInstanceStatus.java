@@ -14,6 +14,7 @@ public enum ManagedInstanceStatus implements com.oracle.bmc.http.internal.BmcEnu
     RegistrationError("REGISTRATION_ERROR"),
     Deleting("DELETING"),
     Onboarding("ONBOARDING"),
+    Rebooting("REBOOTING"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

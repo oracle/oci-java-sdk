@@ -67,6 +67,24 @@ public interface ManagedInstance extends AutoCloseable {
     void useRealmSpecificEndpointTemplate(boolean realmSpecificEndpointTemplateEnabled);
 
     /**
+     * Associates managed instances to the specified management station
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/AssociateManagedInstancesWithManagementStationExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     AssociateManagedInstancesWithManagementStation API.
+     */
+    AssociateManagedInstancesWithManagementStationResponse
+            associateManagedInstancesWithManagementStation(
+                    AssociateManagedInstancesWithManagementStationRequest request);
+
+    /**
      * Adds profile to a managed instance. After the profile has been added, the instance can be
      * registered as a managed instance.
      *
@@ -496,6 +514,23 @@ public interface ManagedInstance extends AutoCloseable {
      */
     ManageModuleStreamsOnManagedInstanceResponse manageModuleStreamsOnManagedInstance(
             ManageModuleStreamsOnManagedInstanceRequest request);
+
+    /**
+     * Initiates a reboot of the specified managed instance. You can also specify the number of
+     * minutes the service waits before marking the reboot operation as failed.
+     *
+     * @param request The request object containing the details to send
+     * @return A response object containing details about the completed operation
+     * @throws BmcException when an error occurs. This operation uses
+     *     RetryConfiguration.SDK_DEFAULT_RETRY_CONFIGURATION as default if no retry strategy is
+     *     provided. The specifics of the default retry strategy are described here
+     *     https://docs.oracle.com/en-us/iaas/Content/API/SDKDocs/javasdkconcepts.htm#javasdkconcepts_topic_Retries
+     *     <p><b>Example: </b>Click <a
+     *     href="https://docs.cloud.oracle.com/en-us/iaas/tools/java-sdk-examples/latest/osmanagementhub/RebootManagedInstanceExample.java.html"
+     *     target="_blank" rel="noopener noreferrer" >here</a> to see how to use
+     *     RebootManagedInstance API.
+     */
+    RebootManagedInstanceResponse rebootManagedInstance(RebootManagedInstanceRequest request);
 
     /**
      * Refreshes the package or Windows update information on a managed instance with the latest

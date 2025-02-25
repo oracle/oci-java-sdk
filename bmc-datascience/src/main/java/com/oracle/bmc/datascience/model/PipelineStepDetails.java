@@ -29,6 +29,9 @@ package com.oracle.bmc.datascience.model;
             value = PipelineMLJobStepDetails.class,
             name = "ML_JOB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PipelineDataflowStepDetails.class,
+            name = "DATAFLOW"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PipelineCustomScriptStepDetails.class,
             name = "CUSTOM_SCRIPT")
 })
@@ -167,6 +170,7 @@ public class PipelineStepDetails extends com.oracle.bmc.http.client.internal.Exp
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
         Container("CONTAINER"),
+        Dataflow("DATAFLOW"),
 
         /**
          * This value is used if a service returns a value for this enum that is not recognized by

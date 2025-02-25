@@ -561,14 +561,18 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
         }
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -1145,14 +1149,16 @@ public final class Vnic extends com.oracle.bmc.http.client.internal.ExplicitlySe
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value
      */

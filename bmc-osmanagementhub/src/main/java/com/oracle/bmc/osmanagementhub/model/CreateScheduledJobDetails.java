@@ -40,7 +40,8 @@ public final class CreateScheduledJobDetails
         "freeformTags",
         "definedTags",
         "retryIntervals",
-        "isManagedByAutonomousLinux"
+        "isManagedByAutonomousLinux",
+        "workRequestId"
     })
     public CreateScheduledJobDetails(
             String compartmentId,
@@ -59,7 +60,8 @@ public final class CreateScheduledJobDetails
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags,
             java.util.List<Integer> retryIntervals,
-            Boolean isManagedByAutonomousLinux) {
+            Boolean isManagedByAutonomousLinux,
+            String workRequestId) {
         super();
         this.compartmentId = compartmentId;
         this.displayName = displayName;
@@ -78,6 +80,7 @@ public final class CreateScheduledJobDetails
         this.definedTags = definedTags;
         this.retryIntervals = retryIntervals;
         this.isManagedByAutonomousLinux = isManagedByAutonomousLinux;
+        this.workRequestId = workRequestId;
     }
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
@@ -442,6 +445,25 @@ public final class CreateScheduledJobDetails
             this.__explicitlySet__.add("isManagedByAutonomousLinux");
             return this;
         }
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the work request that will be rerun.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+        private String workRequestId;
+
+        /**
+         * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
+         * for the work request that will be rerun.
+         *
+         * @param workRequestId the value to set
+         * @return this builder
+         */
+        public Builder workRequestId(String workRequestId) {
+            this.workRequestId = workRequestId;
+            this.__explicitlySet__.add("workRequestId");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonIgnore
         private final java.util.Set<String> __explicitlySet__ = new java.util.HashSet<String>();
@@ -465,7 +487,8 @@ public final class CreateScheduledJobDetails
                             this.freeformTags,
                             this.definedTags,
                             this.retryIntervals,
-                            this.isManagedByAutonomousLinux);
+                            this.isManagedByAutonomousLinux,
+                            this.workRequestId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
             }
@@ -524,6 +547,9 @@ public final class CreateScheduledJobDetails
             }
             if (model.wasPropertyExplicitlySet("isManagedByAutonomousLinux")) {
                 this.isManagedByAutonomousLinux(model.getIsManagedByAutonomousLinux());
+            }
+            if (model.wasPropertyExplicitlySet("workRequestId")) {
+                this.workRequestId(model.getWorkRequestId());
             }
             return this;
         }
@@ -861,6 +887,23 @@ public final class CreateScheduledJobDetails
         return isManagedByAutonomousLinux;
     }
 
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the work request that will be rerun.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("workRequestId")
+    private final String workRequestId;
+
+    /**
+     * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) for
+     * the work request that will be rerun.
+     *
+     * @return the value
+     */
+    public String getWorkRequestId() {
+        return workRequestId;
+    }
+
     @Override
     public String toString() {
         return this.toString(true);
@@ -896,6 +939,7 @@ public final class CreateScheduledJobDetails
         sb.append(", retryIntervals=").append(String.valueOf(this.retryIntervals));
         sb.append(", isManagedByAutonomousLinux=")
                 .append(String.valueOf(this.isManagedByAutonomousLinux));
+        sb.append(", workRequestId=").append(String.valueOf(this.workRequestId));
         sb.append(")");
         return sb.toString();
     }
@@ -930,6 +974,7 @@ public final class CreateScheduledJobDetails
                 && java.util.Objects.equals(this.retryIntervals, other.retryIntervals)
                 && java.util.Objects.equals(
                         this.isManagedByAutonomousLinux, other.isManagedByAutonomousLinux)
+                && java.util.Objects.equals(this.workRequestId, other.workRequestId)
                 && super.equals(other);
     }
 
@@ -984,6 +1029,9 @@ public final class CreateScheduledJobDetails
                         + (this.isManagedByAutonomousLinux == null
                                 ? 43
                                 : this.isManagedByAutonomousLinux.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.workRequestId == null ? 43 : this.workRequestId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;
     }

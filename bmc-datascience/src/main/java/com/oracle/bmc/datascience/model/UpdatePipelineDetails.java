@@ -29,6 +29,7 @@ public final class UpdatePipelineDetails
         "configurationDetails",
         "infrastructureConfigurationDetails",
         "logConfigurationDetails",
+        "storageMountConfigurationDetailsList",
         "stepDetails",
         "freeformTags",
         "definedTags"
@@ -39,6 +40,7 @@ public final class UpdatePipelineDetails
             PipelineConfigurationDetails configurationDetails,
             PipelineInfrastructureConfigurationDetails infrastructureConfigurationDetails,
             PipelineLogConfigurationDetails logConfigurationDetails,
+            java.util.List<StorageMountConfigurationDetails> storageMountConfigurationDetailsList,
             java.util.List<PipelineStepUpdateDetails> stepDetails,
             java.util.Map<String, String> freeformTags,
             java.util.Map<String, java.util.Map<String, Object>> definedTags) {
@@ -48,6 +50,7 @@ public final class UpdatePipelineDetails
         this.configurationDetails = configurationDetails;
         this.infrastructureConfigurationDetails = infrastructureConfigurationDetails;
         this.logConfigurationDetails = logConfigurationDetails;
+        this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
         this.stepDetails = stepDetails;
         this.freeformTags = freeformTags;
         this.definedTags = definedTags;
@@ -112,6 +115,24 @@ public final class UpdatePipelineDetails
                 PipelineLogConfigurationDetails logConfigurationDetails) {
             this.logConfigurationDetails = logConfigurationDetails;
             this.__explicitlySet__.add("logConfigurationDetails");
+            return this;
+        }
+        /** The storage mount details to mount to the instance running the pipeline step. */
+        @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+        private java.util.List<StorageMountConfigurationDetails>
+                storageMountConfigurationDetailsList;
+
+        /**
+         * The storage mount details to mount to the instance running the pipeline step.
+         *
+         * @param storageMountConfigurationDetailsList the value to set
+         * @return this builder
+         */
+        public Builder storageMountConfigurationDetailsList(
+                java.util.List<StorageMountConfigurationDetails>
+                        storageMountConfigurationDetailsList) {
+            this.storageMountConfigurationDetailsList = storageMountConfigurationDetailsList;
+            this.__explicitlySet__.add("storageMountConfigurationDetailsList");
             return this;
         }
         /**
@@ -190,6 +211,7 @@ public final class UpdatePipelineDetails
                             this.configurationDetails,
                             this.infrastructureConfigurationDetails,
                             this.logConfigurationDetails,
+                            this.storageMountConfigurationDetailsList,
                             this.stepDetails,
                             this.freeformTags,
                             this.definedTags);
@@ -216,6 +238,10 @@ public final class UpdatePipelineDetails
             }
             if (model.wasPropertyExplicitlySet("logConfigurationDetails")) {
                 this.logConfigurationDetails(model.getLogConfigurationDetails());
+            }
+            if (model.wasPropertyExplicitlySet("storageMountConfigurationDetailsList")) {
+                this.storageMountConfigurationDetailsList(
+                        model.getStorageMountConfigurationDetailsList());
             }
             if (model.wasPropertyExplicitlySet("stepDetails")) {
                 this.stepDetails(model.getStepDetails());
@@ -284,6 +310,21 @@ public final class UpdatePipelineDetails
 
     public PipelineLogConfigurationDetails getLogConfigurationDetails() {
         return logConfigurationDetails;
+    }
+
+    /** The storage mount details to mount to the instance running the pipeline step. */
+    @com.fasterxml.jackson.annotation.JsonProperty("storageMountConfigurationDetailsList")
+    private final java.util.List<StorageMountConfigurationDetails>
+            storageMountConfigurationDetailsList;
+
+    /**
+     * The storage mount details to mount to the instance running the pipeline step.
+     *
+     * @return the value
+     */
+    public java.util.List<StorageMountConfigurationDetails>
+            getStorageMountConfigurationDetailsList() {
+        return storageMountConfigurationDetailsList;
     }
 
     /**
@@ -365,6 +406,8 @@ public final class UpdatePipelineDetails
                 .append(String.valueOf(this.infrastructureConfigurationDetails));
         sb.append(", logConfigurationDetails=")
                 .append(String.valueOf(this.logConfigurationDetails));
+        sb.append(", storageMountConfigurationDetailsList=")
+                .append(String.valueOf(this.storageMountConfigurationDetailsList));
         sb.append(", stepDetails=").append(String.valueOf(this.stepDetails));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
         sb.append(", definedTags=").append(String.valueOf(this.definedTags));
@@ -390,6 +433,9 @@ public final class UpdatePipelineDetails
                         other.infrastructureConfigurationDetails)
                 && java.util.Objects.equals(
                         this.logConfigurationDetails, other.logConfigurationDetails)
+                && java.util.Objects.equals(
+                        this.storageMountConfigurationDetailsList,
+                        other.storageMountConfigurationDetailsList)
                 && java.util.Objects.equals(this.stepDetails, other.stepDetails)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
                 && java.util.Objects.equals(this.definedTags, other.definedTags)
@@ -417,6 +463,11 @@ public final class UpdatePipelineDetails
                         + (this.logConfigurationDetails == null
                                 ? 43
                                 : this.logConfigurationDetails.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.storageMountConfigurationDetailsList == null
+                                ? 43
+                                : this.storageMountConfigurationDetailsList.hashCode());
         result = (result * PRIME) + (this.stepDetails == null ? 43 : this.stepDetails.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());
         result = (result * PRIME) + (this.definedTags == null ? 43 : this.definedTags.hashCode());

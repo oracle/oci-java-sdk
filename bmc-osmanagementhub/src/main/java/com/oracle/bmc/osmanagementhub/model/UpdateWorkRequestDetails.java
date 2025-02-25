@@ -46,12 +46,12 @@ public final class UpdateWorkRequestDetails
 
     @com.fasterxml.jackson.databind.annotation.JsonPOJOBuilder(withPrefix = "")
     public static class Builder {
-        /** status of current work request. */
+        /** Status of current work request. */
         @com.fasterxml.jackson.annotation.JsonProperty("status")
         private OperationStatus status;
 
         /**
-         * status of current work request.
+         * Status of current work request.
          *
          * @param status the value to set
          * @return this builder
@@ -173,12 +173,12 @@ public final class UpdateWorkRequestDetails
         return new Builder().copy(this);
     }
 
-    /** status of current work request. */
+    /** Status of current work request. */
     @com.fasterxml.jackson.annotation.JsonProperty("status")
     private final OperationStatus status;
 
     /**
-     * status of current work request.
+     * Status of current work request.
      *
      * @return the value
      */

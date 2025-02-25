@@ -541,6 +541,44 @@ public class LifecycleEnvironmentAsyncClient extends com.oracle.bmc.http.interna
     }
 
     @Override
+    public java.util.concurrent.Future<RebootLifecycleStageResponse> rebootLifecycleStage(
+            RebootLifecycleStageRequest request,
+            final com.oracle.bmc.responses.AsyncHandler<
+                            RebootLifecycleStageRequest, RebootLifecycleStageResponse>
+                    handler) {
+
+        Validate.notBlank(request.getLifecycleStageId(), "lifecycleStageId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootLifecycleStageDetails(),
+                "rebootLifecycleStageDetails is required");
+
+        return clientCall(request, RebootLifecycleStageResponse::builder)
+                .logger(LOG, "rebootLifecycleStage")
+                .serviceDetails(
+                        "LifecycleEnvironment",
+                        "RebootLifecycleStage",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/LifecycleStage/RebootLifecycleStage")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootLifecycleStageRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("lifecycleStages")
+                .appendPathParam(request.getLifecycleStageId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootLifecycleStageResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootLifecycleStageResponse.Builder::opcRequestId)
+                .callAsync(handler);
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateLifecycleEnvironmentResponse>
             updateLifecycleEnvironment(
                     UpdateLifecycleEnvironmentRequest request,

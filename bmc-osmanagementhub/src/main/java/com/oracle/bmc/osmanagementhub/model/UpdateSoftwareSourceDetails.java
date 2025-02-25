@@ -26,11 +26,17 @@ package com.oracle.bmc.osmanagementhub.model;
             value = UpdateCustomSoftwareSourceDetails.class,
             name = "CUSTOM"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdatePrivateSoftwareSourceDetails.class,
+            name = "PRIVATE"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVersionedCustomSoftwareSourceDetails.class,
             name = "VERSIONED"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = UpdateVendorSoftwareSourceDetails.class,
-            name = "VENDOR")
+            name = "VENDOR"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = UpdateThirdPartySoftwareSourceDetails.class,
+            name = "THIRD_PARTY")
 })
 @com.fasterxml.jackson.annotation.JsonFilter(
         com.oracle.bmc.http.client.internal.ExplicitlySetBmcModel.EXPLICITLY_SET_FILTER_NAME)

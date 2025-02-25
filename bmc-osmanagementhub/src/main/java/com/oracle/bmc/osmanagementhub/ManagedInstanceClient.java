@@ -89,6 +89,47 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
     }
 
     @Override
+    public AssociateManagedInstancesWithManagementStationResponse
+            associateManagedInstancesWithManagementStation(
+                    AssociateManagedInstancesWithManagementStationRequest request) {
+
+        Validate.notBlank(
+                request.getManagementStationId(), "managementStationId must not be blank");
+        Objects.requireNonNull(
+                request.getAssociateManagedInstancesWithManagementStationDetails(),
+                "associateManagedInstancesWithManagementStationDetails is required");
+
+        return clientCall(request, AssociateManagedInstancesWithManagementStationResponse::builder)
+                .logger(LOG, "associateManagedInstancesWithManagementStation")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "AssociateManagedInstancesWithManagementStation",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/AssociateManagedInstancesWithManagementStation")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(AssociateManagedInstancesWithManagementStationRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managementStations")
+                .appendPathParam(request.getManagementStationId())
+                .appendPathParam("actions")
+                .appendPathParam("associateManagedInstances")
+                .accept("application/json")
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .appendHeader("if-match", request.getIfMatch())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        AssociateManagedInstancesWithManagementStationResponse.Builder
+                                ::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id",
+                        AssociateManagedInstancesWithManagementStationResponse.Builder
+                                ::opcRequestId)
+                .callSync();
+    }
+
+    @Override
     public AttachProfileToManagedInstanceResponse attachProfileToManagedInstance(
             AttachProfileToManagedInstanceRequest request) {
 
@@ -981,6 +1022,16 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .appendQueryParam("isProfileAttached", request.getIsProfileAttached())
                 .appendQueryParam(
                         "isManagedByAutonomousLinux", request.getIsManagedByAutonomousLinux())
+                .appendQueryParam("agentVersion", request.getAgentVersion())
+                .appendListQueryParam(
+                        "managementStation",
+                        request.getManagementStation(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendListQueryParam(
+                        "managementStationNotEqualTo",
+                        request.getManagementStationNotEqualTo(),
+                        com.oracle.bmc.util.internal.CollectionFormatType.Multi)
+                .appendQueryParam("isRebootRequired", request.getIsRebootRequired())
                 .appendQueryParam("limit", request.getLimit())
                 .appendQueryParam("page", request.getPage())
                 .appendEnumQueryParam("sortOrder", request.getSortOrder())
@@ -995,6 +1046,8 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                         "opc-request-id", ListManagedInstancesResponse.Builder::opcRequestId)
                 .handleResponseHeaderString(
                         "opc-next-page", ListManagedInstancesResponse.Builder::opcNextPage)
+                .handleResponseHeaderInteger(
+                        "opc-total-items", ListManagedInstancesResponse.Builder::opcTotalItems)
                 .callSync();
     }
 
@@ -1073,6 +1126,42 @@ public class ManagedInstanceClient extends com.oracle.bmc.http.internal.BaseSync
                 .handleResponseHeaderString(
                         "opc-request-id",
                         ManageModuleStreamsOnManagedInstanceResponse.Builder::opcRequestId)
+                .callSync();
+    }
+
+    @Override
+    public RebootManagedInstanceResponse rebootManagedInstance(
+            RebootManagedInstanceRequest request) {
+
+        Validate.notBlank(request.getManagedInstanceId(), "managedInstanceId must not be blank");
+        Objects.requireNonNull(
+                request.getRebootManagedInstanceDetails(),
+                "rebootManagedInstanceDetails is required");
+
+        return clientCall(request, RebootManagedInstanceResponse::builder)
+                .logger(LOG, "rebootManagedInstance")
+                .serviceDetails(
+                        "ManagedInstance",
+                        "RebootManagedInstance",
+                        "https://docs.oracle.com/iaas/api/#/en/osmh/20220901/ManagedInstance/RebootManagedInstance")
+                .method(com.oracle.bmc.http.client.Method.POST)
+                .requestBuilder(RebootManagedInstanceRequest::builder)
+                .basePath("/20220901")
+                .appendPathParam("managedInstances")
+                .appendPathParam(request.getManagedInstanceId())
+                .appendPathParam("actions")
+                .appendPathParam("reboot")
+                .accept("application/json")
+                .appendHeader("if-match", request.getIfMatch())
+                .appendHeader("opc-request-id", request.getOpcRequestId())
+                .appendHeader("opc-retry-token", request.getOpcRetryToken())
+                .operationUsesDefaultRetries()
+                .hasBody()
+                .handleResponseHeaderString(
+                        "opc-work-request-id",
+                        RebootManagedInstanceResponse.Builder::opcWorkRequestId)
+                .handleResponseHeaderString(
+                        "opc-request-id", RebootManagedInstanceResponse.Builder::opcRequestId)
                 .callSync();
     }
 

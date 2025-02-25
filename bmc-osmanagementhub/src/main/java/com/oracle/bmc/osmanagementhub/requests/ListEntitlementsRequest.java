@@ -28,10 +28,10 @@ public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<
     public String getCompartmentId() {
         return compartmentId;
     }
-    /** A filter to return entitlements that match the given CSI. */
+    /** A filter to return entitlements that match the given customer support identifier (CSI). */
     private String csi;
 
-    /** A filter to return entitlements that match the given CSI. */
+    /** A filter to return entitlements that match the given customer support identifier (CSI). */
     public String getCsi() {
         return csi;
     }
@@ -168,11 +168,13 @@ public class ListEntitlementsRequest extends com.oracle.bmc.requests.BmcRequest<
             return this;
         }
 
-        /** A filter to return entitlements that match the given CSI. */
+        /**
+         * A filter to return entitlements that match the given customer support identifier (CSI).
+         */
         private String csi = null;
 
         /**
-         * A filter to return entitlements that match the given CSI.
+         * A filter to return entitlements that match the given customer support identifier (CSI).
          *
          * @param csi the value to set
          * @return this builder instance

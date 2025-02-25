@@ -15,6 +15,8 @@ public enum EventType implements com.oracle.bmc.http.internal.BmcEnum {
     SoftwareSource("SOFTWARE_SOURCE"),
     Agent("AGENT"),
     ManagementStation("MANAGEMENT_STATION"),
+    Sysadmin("SYSADMIN"),
+    Reboot("REBOOT"),
 
     /**
      * This value is used if a service returns a value for this enum that is not recognized by this

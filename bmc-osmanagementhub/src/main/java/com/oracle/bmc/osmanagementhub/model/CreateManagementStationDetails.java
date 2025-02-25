@@ -28,6 +28,7 @@ public final class CreateManagementStationDetails
         "displayName",
         "description",
         "hostname",
+        "isAutoConfigEnabled",
         "proxy",
         "mirror",
         "freeformTags",
@@ -38,6 +39,7 @@ public final class CreateManagementStationDetails
             String displayName,
             String description,
             String hostname,
+            Boolean isAutoConfigEnabled,
             CreateProxyConfigurationDetails proxy,
             CreateMirrorConfigurationDetails mirror,
             java.util.Map<String, String> freeformTags,
@@ -47,6 +49,7 @@ public final class CreateManagementStationDetails
         this.displayName = displayName;
         this.description = description;
         this.hostname = hostname;
+        this.isAutoConfigEnabled = isAutoConfigEnabled;
         this.proxy = proxy;
         this.mirror = mirror;
         this.freeformTags = freeformTags;
@@ -127,6 +130,25 @@ public final class CreateManagementStationDetails
             this.__explicitlySet__.add("hostname");
             return this;
         }
+        /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+        private Boolean isAutoConfigEnabled;
+
+        /**
+         * When enabled, the station setup script automatically runs to configure the firewall and
+         * SELinux settings on the station.
+         *
+         * @param isAutoConfigEnabled the value to set
+         * @return this builder
+         */
+        public Builder isAutoConfigEnabled(Boolean isAutoConfigEnabled) {
+            this.isAutoConfigEnabled = isAutoConfigEnabled;
+            this.__explicitlySet__.add("isAutoConfigEnabled");
+            return this;
+        }
 
         @com.fasterxml.jackson.annotation.JsonProperty("proxy")
         private CreateProxyConfigurationDetails proxy;
@@ -203,6 +225,7 @@ public final class CreateManagementStationDetails
                             this.displayName,
                             this.description,
                             this.hostname,
+                            this.isAutoConfigEnabled,
                             this.proxy,
                             this.mirror,
                             this.freeformTags,
@@ -226,6 +249,9 @@ public final class CreateManagementStationDetails
             }
             if (model.wasPropertyExplicitlySet("hostname")) {
                 this.hostname(model.getHostname());
+            }
+            if (model.wasPropertyExplicitlySet("isAutoConfigEnabled")) {
+                this.isAutoConfigEnabled(model.getIsAutoConfigEnabled());
             }
             if (model.wasPropertyExplicitlySet("proxy")) {
                 this.proxy(model.getProxy());
@@ -316,6 +342,23 @@ public final class CreateManagementStationDetails
         return hostname;
     }
 
+    /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("isAutoConfigEnabled")
+    private final Boolean isAutoConfigEnabled;
+
+    /**
+     * When enabled, the station setup script automatically runs to configure the firewall and
+     * SELinux settings on the station.
+     *
+     * @return the value
+     */
+    public Boolean getIsAutoConfigEnabled() {
+        return isAutoConfigEnabled;
+    }
+
     @com.fasterxml.jackson.annotation.JsonProperty("proxy")
     private final CreateProxyConfigurationDetails proxy;
 
@@ -391,6 +434,7 @@ public final class CreateManagementStationDetails
         sb.append(", displayName=").append(String.valueOf(this.displayName));
         sb.append(", description=").append(String.valueOf(this.description));
         sb.append(", hostname=").append(String.valueOf(this.hostname));
+        sb.append(", isAutoConfigEnabled=").append(String.valueOf(this.isAutoConfigEnabled));
         sb.append(", proxy=").append(String.valueOf(this.proxy));
         sb.append(", mirror=").append(String.valueOf(this.mirror));
         sb.append(", freeformTags=").append(String.valueOf(this.freeformTags));
@@ -413,6 +457,7 @@ public final class CreateManagementStationDetails
                 && java.util.Objects.equals(this.displayName, other.displayName)
                 && java.util.Objects.equals(this.description, other.description)
                 && java.util.Objects.equals(this.hostname, other.hostname)
+                && java.util.Objects.equals(this.isAutoConfigEnabled, other.isAutoConfigEnabled)
                 && java.util.Objects.equals(this.proxy, other.proxy)
                 && java.util.Objects.equals(this.mirror, other.mirror)
                 && java.util.Objects.equals(this.freeformTags, other.freeformTags)
@@ -430,6 +475,11 @@ public final class CreateManagementStationDetails
         result = (result * PRIME) + (this.displayName == null ? 43 : this.displayName.hashCode());
         result = (result * PRIME) + (this.description == null ? 43 : this.description.hashCode());
         result = (result * PRIME) + (this.hostname == null ? 43 : this.hostname.hashCode());
+        result =
+                (result * PRIME)
+                        + (this.isAutoConfigEnabled == null
+                                ? 43
+                                : this.isAutoConfigEnabled.hashCode());
         result = (result * PRIME) + (this.proxy == null ? 43 : this.proxy.hashCode());
         result = (result * PRIME) + (this.mirror == null ? 43 : this.mirror.hashCode());
         result = (result * PRIME) + (this.freeformTags == null ? 43 : this.freeformTags.hashCode());

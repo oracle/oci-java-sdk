@@ -25,7 +25,7 @@ package com.oracle.bmc.core.model;
  * primary private IP's properties come from the values you specify in {@link CreateVnicDetails}
  * when calling either {@link #launchInstance(LaunchInstanceRequest) launchInstance} or {@link
  * #attachVnic(AttachVnicRequest) attachVnic}. To update the hostname for a primary private IP, you
- * use {@code {@link #updateVnic(UpdateVnicRequest) updateVnic}}.
+ * use {@link #updateVnic(UpdateVnicRequest) updateVnic}.
  *
  * <p>{@code PrivateIp} objects that are created for use with the Oracle Cloud VMware Solution are
  * assigned to a VLAN and not a VNIC in a subnet. See the descriptions of the relevant attributes in
@@ -65,6 +65,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         "subnetId",
         "timeCreated",
         "vnicId",
+        "ipState",
+        "lifetime",
         "routeTableId"
     })
     public PrivateIp(
@@ -81,6 +83,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             String subnetId,
             java.util.Date timeCreated,
             String vnicId,
+            IpState ipState,
+            Lifetime lifetime,
             String routeTableId) {
         super();
         this.availabilityDomain = availabilityDomain;
@@ -96,6 +100,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         this.subnetId = subnetId;
         this.timeCreated = timeCreated;
         this.vnicId = vnicId;
+        this.ipState = ipState;
+        this.lifetime = lifetime;
         this.routeTableId = routeTableId;
     }
 
@@ -416,15 +422,53 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             return this;
         }
         /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise
+         * it is AVAILABLE.
+         */
+        @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+        private IpState ipState;
+
+        /**
+         * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise
+         * it is AVAILABLE.
+         *
+         * @param ipState the value to set
+         * @return this builder
+         */
+        public Builder ipState(IpState ipState) {
+            this.ipState = ipState;
+            this.__explicitlySet__.add("ipState");
+            return this;
+        }
+        /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+        @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+        private Lifetime lifetime;
+
+        /**
+         * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+         *
+         * @param lifetime the value to set
+         * @return this builder
+         */
+        public Builder lifetime(Lifetime lifetime) {
+            this.lifetime = lifetime;
+            this.__explicitlySet__.add("lifetime");
+            return this;
+        }
+        /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          */
         @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
         private String routeTableId;
 
         /**
          * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm)
-         * of the route table the PrivateIp will use.
+         * of the route table the IP address or VNIC will use. For more information, see [Source
+         * Based
+         * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
          *
          * @param routeTableId the value to set
          * @return this builder
@@ -454,6 +498,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                             this.subnetId,
                             this.timeCreated,
                             this.vnicId,
+                            this.ipState,
+                            this.lifetime,
                             this.routeTableId);
             for (String explicitlySetProperty : this.__explicitlySet__) {
                 model.markPropertyAsExplicitlySet(explicitlySetProperty);
@@ -501,6 +547,12 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
             }
             if (model.wasPropertyExplicitlySet("vnicId")) {
                 this.vnicId(model.getVnicId());
+            }
+            if (model.wasPropertyExplicitlySet("ipState")) {
+                this.ipState(model.getIpState());
+            }
+            if (model.wasPropertyExplicitlySet("lifetime")) {
+                this.lifetime(model.getLifetime());
             }
             if (model.wasPropertyExplicitlySet("routeTableId")) {
                 this.routeTableId(model.getRouteTableId());
@@ -806,15 +858,142 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
     }
 
     /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     */
+    public enum IpState implements com.oracle.bmc.http.internal.BmcEnum {
+        Assigned("ASSIGNED"),
+        Available("AVAILABLE"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(IpState.class);
+
+        private final String value;
+        private static java.util.Map<String, IpState> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (IpState v : IpState.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        IpState(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static IpState create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'IpState', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     */
+    @com.fasterxml.jackson.annotation.JsonProperty("ipState")
+    private final IpState ipState;
+
+    /**
+     * State of the IP address. If an IP address is assigned to a VNIC it is ASSIGNED, otherwise it
+     * is AVAILABLE.
+     *
+     * @return the value
+     */
+    public IpState getIpState() {
+        return ipState;
+    }
+
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    public enum Lifetime implements com.oracle.bmc.http.internal.BmcEnum {
+        Ephemeral("EPHEMERAL"),
+        Reserved("RESERVED"),
+
+        /**
+         * This value is used if a service returns a value for this enum that is not recognized by
+         * this version of the SDK.
+         */
+        UnknownEnumValue(null);
+
+        private static final org.slf4j.Logger LOG =
+                org.slf4j.LoggerFactory.getLogger(Lifetime.class);
+
+        private final String value;
+        private static java.util.Map<String, Lifetime> map;
+
+        static {
+            map = new java.util.HashMap<>();
+            for (Lifetime v : Lifetime.values()) {
+                if (v != UnknownEnumValue) {
+                    map.put(v.getValue(), v);
+                }
+            }
+        }
+
+        Lifetime(String value) {
+            this.value = value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @com.fasterxml.jackson.annotation.JsonCreator
+        public static Lifetime create(String key) {
+            if (map.containsKey(key)) {
+                return map.get(key);
+            }
+            LOG.warn(
+                    "Received unknown value '{}' for enum 'Lifetime', returning UnknownEnumValue",
+                    key);
+            return UnknownEnumValue;
+        }
+    };
+    /** Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved */
+    @com.fasterxml.jackson.annotation.JsonProperty("lifetime")
+    private final Lifetime lifetime;
+
+    /**
+     * Lifetime of the IP address. There are two types of IPv6 IPs: - Ephemeral - Reserved
+     *
+     * @return the value
+     */
+    public Lifetime getLifetime() {
+        return lifetime;
+    }
+
+    /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      */
     @com.fasterxml.jackson.annotation.JsonProperty("routeTableId")
     private final String routeTableId;
 
     /**
      * The [OCID](https://docs.cloud.oracle.com/iaas/Content/General/Concepts/identifiers.htm) of
-     * the route table the PrivateIp will use.
+     * the route table the IP address or VNIC will use. For more information, see [Source Based
+     * Routing](https://docs.oracle.com/iaas/Content/Network/Tasks/managingroutetables.htm#Overview_of_Routing_for_Your_VCN__source_routing).
      *
      * @return the value
      */
@@ -850,6 +1029,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         sb.append(", subnetId=").append(String.valueOf(this.subnetId));
         sb.append(", timeCreated=").append(String.valueOf(this.timeCreated));
         sb.append(", vnicId=").append(String.valueOf(this.vnicId));
+        sb.append(", ipState=").append(String.valueOf(this.ipState));
+        sb.append(", lifetime=").append(String.valueOf(this.lifetime));
         sb.append(", routeTableId=").append(String.valueOf(this.routeTableId));
         sb.append(")");
         return sb.toString();
@@ -878,6 +1059,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
                 && java.util.Objects.equals(this.subnetId, other.subnetId)
                 && java.util.Objects.equals(this.timeCreated, other.timeCreated)
                 && java.util.Objects.equals(this.vnicId, other.vnicId)
+                && java.util.Objects.equals(this.ipState, other.ipState)
+                && java.util.Objects.equals(this.lifetime, other.lifetime)
                 && java.util.Objects.equals(this.routeTableId, other.routeTableId)
                 && super.equals(other);
     }
@@ -907,6 +1090,8 @@ public final class PrivateIp extends com.oracle.bmc.http.client.internal.Explici
         result = (result * PRIME) + (this.subnetId == null ? 43 : this.subnetId.hashCode());
         result = (result * PRIME) + (this.timeCreated == null ? 43 : this.timeCreated.hashCode());
         result = (result * PRIME) + (this.vnicId == null ? 43 : this.vnicId.hashCode());
+        result = (result * PRIME) + (this.ipState == null ? 43 : this.ipState.hashCode());
+        result = (result * PRIME) + (this.lifetime == null ? 43 : this.lifetime.hashCode());
         result = (result * PRIME) + (this.routeTableId == null ? 43 : this.routeTableId.hashCode());
         result = (result * PRIME) + super.hashCode();
         return result;

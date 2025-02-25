@@ -23,6 +23,9 @@ package com.oracle.bmc.datascience.model;
         defaultImpl = PipelineStepUpdateDetails.class)
 @com.fasterxml.jackson.annotation.JsonSubTypes({
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = PipelineDataflowStepUpdateDetails.class,
+            name = "DATAFLOW"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = PipelineMLJobStepUpdateDetails.class,
             name = "ML_JOB"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
@@ -141,6 +144,7 @@ public class PipelineStepUpdateDetails
         MlJob("ML_JOB"),
         CustomScript("CUSTOM_SCRIPT"),
         Container("CONTAINER"),
+        Dataflow("DATAFLOW"),
         ;
 
         private final String value;

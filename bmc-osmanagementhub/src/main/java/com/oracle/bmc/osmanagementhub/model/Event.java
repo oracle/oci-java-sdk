@@ -39,6 +39,10 @@ package com.oracle.bmc.osmanagementhub.model;
             value = KernelCrashEvent.class,
             name = "KERNEL_CRASH"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
+            value = SysadminEvent.class,
+            name = "SYSADMIN"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = RebootEvent.class, name = "REBOOT"),
+    @com.fasterxml.jackson.annotation.JsonSubTypes.Type(
             value = ExploitAttemptEvent.class,
             name = "EXPLOIT_ATTEMPT"),
     @com.fasterxml.jackson.annotation.JsonSubTypes.Type(value = AgentEvent.class, name = "AGENT"),
